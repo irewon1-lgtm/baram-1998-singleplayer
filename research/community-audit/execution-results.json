@@ -1,0 +1,43 @@
+{
+  "recorded_at_utc": "2026-10-13T10:04:42.029012+00:00",
+  "initial_clone_note": "First six clones succeeded; remaining initial batch did not finish. Retry to isolated-retry directories succeeded. Incomplete original attempts retained, not counted as clones.",
+  "commands": [
+    {
+      "command": "dotnet --info",
+      "exit_code": 127,
+      "output": "dotnet: command not found",
+      "result": "BLOCKED"
+    },
+    {
+      "command": "dotnet build Server/Server.csproj",
+      "cwd": "isolated/project1998/Project1998",
+      "exit_code": 127,
+      "output": "dotnet: command not found",
+      "result": "BLOCKED"
+    },
+    {
+      "command": "godot --version",
+      "exit_code": 127,
+      "output": "godot: command not found",
+      "result": "BLOCKED"
+    },
+    {
+      "command": "git clone --depth=1 https://github.com/Essorcal/project1998-testclient.git",
+      "exit_code": 128,
+      "output": "could not read Username for https://github.com",
+      "result": "BLOCKED"
+    },
+    {
+      "command": "python tools/validate_research.py",
+      "exit_code": 0,
+      "output": "PASS: research ledger structure and archive hashes | sources=12 facts=23 | 1998 original numeric verified=0",
+      "result": "PASS_STRUCTURE_ONLY"
+    },
+    {
+      "command": "python tools/check_project1998_content.py --source ../isolated/project1998/Project1998 --out research/community-audit",
+      "exit_code": 0,
+      "output": "EXACT=2031 total_map_files=2039",
+      "result": "PASS_MAP_BYTE_LENGTH_ONLY"
+    }
+  ]
+}

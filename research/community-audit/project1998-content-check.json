@@ -1,0 +1,235 @@
+{
+  "Maps.csv": {
+    "raw_noncomment_rows": 9850,
+    "columns": [
+      "MapId",
+      "MapName",
+      "MapBGM",
+      "MapBGMType",
+      "MapPvP",
+      "MapSpells",
+      "MapLight",
+      "MapWeather",
+      "MapSweepTime",
+      "MapChat",
+      "MapGhosts",
+      "MapRegion",
+      "MapIndoor",
+      "MapWarpout",
+      "MapBind",
+      "MapFile",
+      "MapServer",
+      "MapReqLvl",
+      "MapReqPath",
+      "MapReqMark",
+      "MapReqVita",
+      "MapReqMana",
+      "MapLvlMax",
+      "MapVitaMax",
+      "MapManaMax",
+      "MapRejectMsg",
+      "MapCanSummon",
+      "MapCanUse",
+      "MapCanEat",
+      "MapCanSmoke",
+      "MapCanMount",
+      "MapCanGroup",
+      "MapCanEquip"
+    ]
+  },
+  "map_index.csv": {
+    "raw_noncomment_rows": 2031,
+    "columns": [
+      "id",
+      "name",
+      "xs",
+      "ys"
+    ]
+  },
+  "mobs.csv": {
+    "raw_noncomment_rows": 716,
+    "columns": [
+      "MobId",
+      "Identifier",
+      "Description",
+      "MobLook",
+      "MobLookColor",
+      "Vita",
+      "Exp",
+      "Level",
+      "Might",
+      "Grace",
+      "Will",
+      "MinDmg",
+      "MaxDmg",
+      "MobMoveTime",
+      "MobBehavior",
+      "MobIsBoss",
+      "MobProtection",
+      "MobHit",
+      "MobArmor",
+      "Sources",
+      "SpawnTime"
+    ]
+  },
+  "Items.csv": {
+    "raw_noncomment_rows": 2544,
+    "columns": [
+      "ItmId",
+      "ItmPthId",
+      "ItmIdentifier",
+      "ItmDescription",
+      "ItmType",
+      "ItmSkinnable",
+      "ItmStackAmount",
+      "ItmMaximumAmount",
+      "ItmLook",
+      "ItmLookColor",
+      "ItmIcon",
+      "ItmIconColor",
+      "ItmSex",
+      "ItmLevel",
+      "ItmMark",
+      "ItmDurability",
+      "ItmMinimumSDamage",
+      "ItmMaximumSDamage",
+      "ItmMinimumLDamage",
+      "ItmMaximumLDamage",
+      "ItmArmor",
+      "ItmHit",
+      "ItmDam",
+      "ItmVita",
+      "ItmMana",
+      "ItmMight",
+      "ItmWill",
+      "ItmGrace",
+      "ItmProtection",
+      "ItmHealing",
+      "ItmWisdom",
+      "ItmMightRequired",
+      "ItmExchangeable",
+      "ItmDepositable",
+      "ItmDroppable",
+      "ItmCon",
+      "ItmSound",
+      "ItmText",
+      "ItmBuyPrice",
+      "ItmSellPrice",
+      "ItmBuyText",
+      "ItmThrown",
+      "ItmThrownConfirm",
+      "ItmRepairable",
+      "ItmIndestructible",
+      "ItmTimer",
+      "ItmBoD",
+      "ItmProtected",
+      "ItmUnequip"
+    ]
+  },
+  "Spells.csv": {
+    "raw_noncomment_rows": 927,
+    "columns": [
+      "SplId",
+      "SplIdentifier",
+      "SplDescription",
+      "SplType",
+      "SplPthId",
+      "SplAlignment",
+      "SplMark",
+      "SplLevel",
+      "SplQuestion",
+      "SplDispel",
+      "SplAether",
+      "SplMute",
+      "SplActive",
+      "SplCanFail",
+      "SplTicker"
+    ]
+  },
+  "NPCs.csv": {
+    "raw_noncomment_rows": 380,
+    "columns": [
+      "NpcId",
+      "NpcIdentifier",
+      "NpcDescription",
+      "NpcType",
+      "NpcMapId",
+      "NpcX",
+      "NpcY",
+      "NpcTimer",
+      "NpcLook",
+      "NpcLookColor",
+      "NpcSex",
+      "NpcSide",
+      "NpcState",
+      "NpcFace",
+      "NpcFaceColor",
+      "NpcHair",
+      "NpcHairColor",
+      "NpcSkinColor",
+      "NpcIsChar",
+      "NpcIsF1Npc",
+      "NpcIsRepairNpc",
+      "NpcIsShopNpc",
+      "NpcIsBankNpc",
+      "NpcReturnDistance",
+      "NpcMoveTime",
+      "NpcCanReceiveItem",
+      "Enabled",
+      "EraFeature"
+    ]
+  },
+  "Warps.csv": {
+    "raw_noncomment_rows": 4824,
+    "columns": [
+      "WarpId",
+      "SourceMapId",
+      "SourceX",
+      "SourceY",
+      "DestinationMapId",
+      "DestinationX",
+      "DestinationY"
+    ]
+  },
+  "Sources.csv": {
+    "raw_noncomment_rows": 45,
+    "columns": [
+      "SourceId",
+      "Type",
+      "Tier",
+      "Weight",
+      "Title",
+      "Url",
+      "Author",
+      "Date",
+      "Retrieved",
+      "Notes"
+    ]
+  },
+  "EraFeatures.csv": {
+    "raw_noncomment_rows": 10,
+    "columns": [
+      "Feature",
+      "Introduced",
+      "Retired",
+      "Source",
+      "Notes"
+    ]
+  },
+  "LevelExp.csv": {
+    "raw_noncomment_rows": 491,
+    "columns": [
+      "Path",
+      "Level",
+      "CumExp"
+    ]
+  },
+  "map_check": {
+    "method": "Independent byte-length vs xs*ys*4; no C# runtime or rendered gameplay",
+    "counts": {
+      "EXACT": 2031
+    },
+    "total_map_files": 2039,
+    "unique_map_sha256": null
+  }
+}
