@@ -1,0 +1,148 @@
+{
+  "executed_at": "2026-10-13T13:59:31.047828+00:00",
+  "archive_entries": [
+    {
+      "archive": "NexusTK_v4.0.3.7z",
+      "version": "NA-4.03",
+      "name": "Nexus/",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive": "NexusTK_v4.0.3.7z",
+      "version": "NA-4.03",
+      "name": "Nexus/DATA.TAG",
+      "bytes": 84,
+      "sha256": "d1bcfef186ab2b95e13bb72f9ef9fc062fb190b7333c294d5058e31c83ced124"
+    },
+    {
+      "archive": "NexusTK_v4.0.3.7z",
+      "version": "NA-4.03",
+      "name": "Nexus/data1.cab",
+      "bytes": 7844617,
+      "sha256": "d8dde01a3e75e0d74ce5235f73896834cbe5b3c8c3f0ebd1f5fe9ad27b4f4e79"
+    },
+    {
+      "archive": "NexusTK_v4.0.3.7z",
+      "version": "NA-4.03",
+      "name": "Nexus/lang.dat",
+      "bytes": 352,
+      "sha256": "bbd95bb34ea3e0218956828fe931de75efcd666b3d559f0c8fd1912be14833a3"
+    },
+    {
+      "archive": "NexusTK_v4.0.3.7z",
+      "version": "NA-4.03",
+      "name": "Nexus/layout.bin",
+      "bytes": 353,
+      "sha256": "51495d373785505f7898b5654392db431431eb0fff7f761a5ad215fd4c5c6f08"
+    },
+    {
+      "archive": "NexusTK_v4.0.3.7z",
+      "version": "NA-4.03",
+      "name": "Nexus/os.dat",
+      "bytes": 419,
+      "sha256": "f0a23096deb887650dbb000c365d5936fa5aa90ba86b645e43b3fa1583384722"
+    },
+    {
+      "archive": "NexusTK_v4.0.3.7z",
+      "version": "NA-4.03",
+      "name": "Nexus/setup.bmp",
+      "bytes": 82678,
+      "sha256": "ab6260b74a896148e47223581b5f9dfe58fd48aa694c552d878760673aeeb0ea"
+    },
+    {
+      "archive": "NexusTK_v4.0.3.7z",
+      "version": "NA-4.03",
+      "name": "Nexus/SETUP.INI",
+      "bytes": 48,
+      "sha256": "0d98b59e0df4d9d6dcd7e83429d1672bc9f5519db35d641c2b8b1dac7a59fa0d"
+    },
+    {
+      "archive": "NexusTK_v4.0.3.7z",
+      "version": "NA-4.03",
+      "name": "Nexus/setup.ins",
+      "bytes": 57051,
+      "sha256": "830ce749fabd656e37ddd664db255dddbf14d92fa883d2fe0e4e3dd25c46a072"
+    },
+    {
+      "archive": "NexusTK_v4.0.3.7z",
+      "version": "NA-4.03",
+      "name": "Nexus/setup.lid",
+      "bytes": 47,
+      "sha256": "dff6dd773aeaedd00ba76d4f634ec3b63a10f30aae633e1be09861ce739bfd42"
+    },
+    {
+      "archive": "NexusTK_v4.0.3.7z",
+      "version": "NA-4.03",
+      "name": "Nexus/Shot.bmp",
+      "bytes": 77878,
+      "sha256": "aaa390657b964c9485139eb359720ffc028dea118b50e3fe6ae7f43855260e2a"
+    },
+    {
+      "archive": "NexusTK_v4.0.3.7z",
+      "version": "NA-4.03",
+      "name": "Nexus/_INST32I.EX_",
+      "bytes": 316220,
+      "sha256": "1e30b93004db5e58d2e3d9657fc46a7bdc650ca7fa126d7f875cee9687559732"
+    },
+    {
+      "archive": "NexusTK_v4.0.3.7z",
+      "version": "NA-4.03",
+      "name": "Nexus/_sys1.cab",
+      "bytes": 181747,
+      "sha256": "c5dd7fcde370dc8162f7f454dc11a2eca1c1e5db8d563414657d83a2b3be0d67"
+    },
+    {
+      "archive": "NexusTK_v4.0.3.7z",
+      "version": "NA-4.03",
+      "name": "Nexus/_user1.cab",
+      "bytes": 131153,
+      "sha256": "bfc4458b5e667df6e15ef3cf5dc3278b504bda7c102fbdbf836726995275d84b"
+    },
+    {
+      "archive": "NexusTK_v4.0.3.7z",
+      "version": "NA-4.03",
+      "name": "Nexus/SETUP.EXE",
+      "bytes": 59392,
+      "sha256": "0b1bd89e6b2f555a6acbe90cc4e51f71f7b91feb6b9578e7adc252573b5d2cd7"
+    },
+    {
+      "archive": "NexusTK_v4.0.3.7z",
+      "version": "NA-4.03",
+      "name": "Nexus/_ISDEL.EXE",
+      "bytes": 8192,
+      "sha256": "a4261dd5d1816a9938726b2346553b3a7eabc501ce98dde5bae9ee7363ac5ef9"
+    },
+    {
+      "archive": "NexusTK_v4.0.3.7z",
+      "version": "NA-4.03",
+      "name": "Nexus/_SETUP.DLL",
+      "bytes": 11264,
+      "sha256": "ce2cbf52194fb474194ca91f5ecc61ecd1789a096005efdd62e01d28fc44106d"
+    },
+    {
+      "archive": "NexusTK_V_4.66.7z",
+      "version": "NA-4.66",
+      "name": "nxuswind.exe",
+      "bytes": 12971299,
+      "sha256": "2ab28f93cc31ae6c8873242107783f6e1b0377ad2ceffb0a76b06c664607c1c0"
+    },
+    {
+      "archive": "491v.zip",
+      "version": "KR-4.91",
+      "name": "Install/LANG.DAT",
+      "sha256": "bbd95bb34ea3e0218956828fe931de75efcd666b3d559f0c8fd1912be14833a3",
+      "bytes": 352
+    },
+    {
+      "archive": "491v.zip",
+      "version": "KR-4.91",
+      "name": "Install/OS.DAT",
+      "sha256": "f0a23096deb887650dbb000c365d5936fa5aa90ba86b645e43b3fa1583384722",
+      "bytes": 419
+    }
+  ],
+  "DAT_checks": [],
+  "NA495_status": "INSTALLER_HASHED_PAYLOAD_UNEXTRACTED",
+  "rendered_images": 0
+}

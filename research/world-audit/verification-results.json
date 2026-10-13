@@ -1,0 +1,51 @@
+{
+  "logs": [
+    {
+      "log": "project1998-full-build.log",
+      "sha256": "581fe6e08b5ab89800005f25b8517a4a039c8d4ff4c8855c652e887ff2c2b1fa",
+      "bytes": 1572,
+      "status": "PASS",
+      "scope": "Server.slnf .NET8 build, zero warnings/errors"
+    },
+    {
+      "log": "project1998-server-build-diag.log",
+      "sha256": "b229b53a4e93c5f8bf9ea0e2caf100cfd6f1f5cd02eef03612c876575b8952f2",
+      "bytes": 15669210,
+      "status": "PASS",
+      "scope": "Server build"
+    },
+    {
+      "log": "project1998-selftest.log",
+      "sha256": "37295a337ad48c4036696ef95997399d6b9d8c7ac3a77682efd462782ba6e7ec",
+      "bytes": 11444,
+      "status": "PASS",
+      "scope": "upstream selftest exit0"
+    },
+    {
+      "log": "project1998-tests.log",
+      "sha256": "978706ad92f83cc80db0acd7874843272ee25efe380419fdc631953c915719c4",
+      "bytes": 2624,
+      "status": "BLOCKED",
+      "scope": "VSTest failed before completing suite"
+    },
+    {
+      "log": "xunit-direct-retry.log",
+      "sha256": "d74c86e79f03bd8f11a3d0ba6a58d5659893b78aa931f7a38eefb78716426c37",
+      "bytes": 1757560,
+      "status": "FAIL",
+      "scope": "custom runner native dependency load errors, 2034 executed 1072 fail"
+    },
+    {
+      "log": "xunit-direct-native-retry.log",
+      "sha256": "238b9b3c4ed784d5af6660783dbe79c791810a2ae4844e3dd407ecd776a807c9",
+      "bytes": 382052,
+      "status": "FAIL",
+      "scope": "custom runner native-path retry aborted exit134; no suite PASS"
+    }
+  ],
+  "standard_1998_ledger_validation": "PASS: sources12 facts23, original1998 numeric verified0",
+  "original_file_refetch": "14/14 existing bytes hashes verified; fresh refetch network path NOT_RUN by this helper",
+  "atlas": "870 downloads and image.verify PASS; 38 final failures",
+  "malware": "STATIC_ONLY: no AV PASS",
+  "full_game": "NOT_RUN"
+}

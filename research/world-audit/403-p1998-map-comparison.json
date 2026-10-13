@@ -1,0 +1,3387 @@
+{
+  "common_names": 483,
+  "same_bytes": 38,
+  "comparisons": [
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK444.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK444.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK381.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK381.map",
+      "same_bytes": false,
+      "old_bytes": 896,
+      "new_bytes": 2400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK485.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK485.map",
+      "same_bytes": false,
+      "old_bytes": 1584,
+      "new_bytes": 256
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK370.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK370.map",
+      "same_bytes": false,
+      "old_bytes": 2400,
+      "new_bytes": 2400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK452.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK452.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3240.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3240.map",
+      "same_bytes": false,
+      "old_bytes": 4800,
+      "new_bytes": 4800
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3246.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3246.map",
+      "same_bytes": false,
+      "old_bytes": 1920,
+      "new_bytes": 1920
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3012.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3012.map",
+      "same_bytes": false,
+      "old_bytes": 576,
+      "new_bytes": 3472
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK432.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK432.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK367.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK367.map",
+      "same_bytes": false,
+      "old_bytes": 576,
+      "new_bytes": 960
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK233.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK233.map",
+      "same_bytes": false,
+      "old_bytes": 3000,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK173.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK173.map",
+      "same_bytes": false,
+      "old_bytes": 1020,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK66.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK66.map",
+      "same_bytes": false,
+      "old_bytes": 3120,
+      "new_bytes": 3136
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK177.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK177.map",
+      "same_bytes": false,
+      "old_bytes": 2880,
+      "new_bytes": 2880
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK68.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK68.map",
+      "same_bytes": false,
+      "old_bytes": 3136,
+      "new_bytes": 3136
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK166.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK166.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 2912
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3105.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3105.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3720
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3247.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3247.map",
+      "same_bytes": false,
+      "old_bytes": 6400,
+      "new_bytes": 6400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3930.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3930.map",
+      "same_bytes": false,
+      "old_bytes": 2400,
+      "new_bytes": 2400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK461.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK461.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 2400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK256.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK256.map",
+      "same_bytes": false,
+      "old_bytes": 840,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK378.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK378.map",
+      "same_bytes": false,
+      "old_bytes": 728,
+      "new_bytes": 1280
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK1012.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK1012.map",
+      "same_bytes": false,
+      "old_bytes": 2880,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK372.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK372.map",
+      "same_bytes": false,
+      "old_bytes": 4352,
+      "new_bytes": 1200
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK4907.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK4907.map",
+      "same_bytes": true,
+      "old_bytes": 900,
+      "new_bytes": 900
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK230.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK230.map",
+      "same_bytes": false,
+      "old_bytes": 14400,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK179.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK179.map",
+      "same_bytes": false,
+      "old_bytes": 2304,
+      "new_bytes": 2880
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3510.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3510.map",
+      "same_bytes": false,
+      "old_bytes": 2116,
+      "new_bytes": 2116
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK251.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK251.map",
+      "same_bytes": false,
+      "old_bytes": 3040,
+      "new_bytes": 3040
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK142.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK142.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3935.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3935.map",
+      "same_bytes": false,
+      "old_bytes": 840,
+      "new_bytes": 840
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK223.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK223.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 2304
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK197.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK197.map",
+      "same_bytes": false,
+      "old_bytes": 1024,
+      "new_bytes": 2880
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK174.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK174.map",
+      "same_bytes": false,
+      "old_bytes": 1020,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK63.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK63.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 1920
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK123.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK123.map",
+      "same_bytes": false,
+      "old_bytes": 1280,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK501.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK501.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 2560
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK454.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK454.map",
+      "same_bytes": false,
+      "old_bytes": 1296,
+      "new_bytes": 2400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK195.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK195.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK376.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK376.map",
+      "same_bytes": false,
+      "old_bytes": 4352,
+      "new_bytes": 2080
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK71.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK71.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK4915.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK4915.map",
+      "same_bytes": true,
+      "old_bytes": 900,
+      "new_bytes": 900
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3020.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3020.map",
+      "same_bytes": false,
+      "old_bytes": 1020,
+      "new_bytes": 1020
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK375.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK375.map",
+      "same_bytes": false,
+      "old_bytes": 1600,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK4151.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK4151.map",
+      "same_bytes": false,
+      "old_bytes": 2400,
+      "new_bytes": 2400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK183.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK183.map",
+      "same_bytes": false,
+      "old_bytes": 2304,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3707.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3707.map",
+      "same_bytes": false,
+      "old_bytes": 1024,
+      "new_bytes": 1024
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3927.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3927.map",
+      "same_bytes": false,
+      "old_bytes": 3200,
+      "new_bytes": 3200
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK468.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK468.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 2400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK133.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK133.map",
+      "same_bytes": false,
+      "old_bytes": 1584,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK366.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK366.map",
+      "same_bytes": false,
+      "old_bytes": 576,
+      "new_bytes": 960
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK1122.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK1122.map",
+      "same_bytes": false,
+      "old_bytes": 576,
+      "new_bytes": 1200
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK37.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK37.map",
+      "same_bytes": false,
+      "old_bytes": 1680,
+      "new_bytes": 1680
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK527.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK527.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 4096
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK6.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK6.map",
+      "same_bytes": false,
+      "old_bytes": 576,
+      "new_bytes": 576
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK351.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK351.map",
+      "same_bytes": true,
+      "old_bytes": 576,
+      "new_bytes": 576
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3501.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3501.map",
+      "same_bytes": false,
+      "old_bytes": 1600,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3932.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3932.map",
+      "same_bytes": false,
+      "old_bytes": 4900,
+      "new_bytes": 4900
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK248.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK248.map",
+      "same_bytes": false,
+      "old_bytes": 1024,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK83.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK83.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK522.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK522.map",
+      "same_bytes": false,
+      "old_bytes": 900,
+      "new_bytes": 576
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK0.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK0.map",
+      "same_bytes": false,
+      "old_bytes": 193600,
+      "new_bytes": 193600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3951.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3951.map",
+      "same_bytes": false,
+      "old_bytes": 3844,
+      "new_bytes": 3844
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3943.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3943.map",
+      "same_bytes": false,
+      "old_bytes": 900,
+      "new_bytes": 900
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3911.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3911.map",
+      "same_bytes": false,
+      "old_bytes": 3844,
+      "new_bytes": 3844
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK421.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK421.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 2500
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3912.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3912.map",
+      "same_bytes": false,
+      "old_bytes": 6400,
+      "new_bytes": 6400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK54.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK54.map",
+      "same_bytes": false,
+      "old_bytes": 1728,
+      "new_bytes": 1728
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK193.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK193.map",
+      "same_bytes": false,
+      "old_bytes": 3072,
+      "new_bytes": 2304
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK480.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK480.map",
+      "same_bytes": false,
+      "old_bytes": 2080,
+      "new_bytes": 3200
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3934.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3934.map",
+      "same_bytes": false,
+      "old_bytes": 900,
+      "new_bytes": 900
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK59.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK59.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK57.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK57.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK119.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK119.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK1001.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK1001.map",
+      "same_bytes": false,
+      "old_bytes": 1800,
+      "new_bytes": 1800
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3545.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3545.map",
+      "same_bytes": false,
+      "old_bytes": 324,
+      "new_bytes": 324
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK534.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK534.map",
+      "same_bytes": false,
+      "old_bytes": 4356,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK471.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK471.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK176.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK176.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK447.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK447.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK219.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK219.map",
+      "same_bytes": false,
+      "old_bytes": 1600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK4170.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK4170.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK58.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK58.map",
+      "same_bytes": false,
+      "old_bytes": 1280,
+      "new_bytes": 1280
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK1016.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK1016.map",
+      "same_bytes": false,
+      "old_bytes": 960,
+      "new_bytes": 1296
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK504.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK504.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 1680
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK483.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK483.map",
+      "same_bytes": false,
+      "old_bytes": 3200,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK203.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK203.map",
+      "same_bytes": false,
+      "old_bytes": 2304,
+      "new_bytes": 2704
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK420.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK420.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK1010.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK1010.map",
+      "same_bytes": false,
+      "old_bytes": 6400,
+      "new_bytes": 900
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK108.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK108.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK428.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK428.map",
+      "same_bytes": false,
+      "old_bytes": 1024,
+      "new_bytes": 2704
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK431.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK431.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3705.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3705.map",
+      "same_bytes": false,
+      "old_bytes": 1024,
+      "new_bytes": 1024
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK4916.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK4916.map",
+      "same_bytes": true,
+      "old_bytes": 900,
+      "new_bytes": 900
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK1015.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK1015.map",
+      "same_bytes": false,
+      "old_bytes": 960,
+      "new_bytes": 1800
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK116.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK116.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK78.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK78.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK451.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK451.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK4912.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK4912.map",
+      "same_bytes": true,
+      "old_bytes": 900,
+      "new_bytes": 900
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK536.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK536.map",
+      "same_bytes": false,
+      "old_bytes": 1764,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK234.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK234.map",
+      "same_bytes": false,
+      "old_bytes": 3000,
+      "new_bytes": 3360
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK205.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK205.map",
+      "same_bytes": false,
+      "old_bytes": 4680,
+      "new_bytes": 4680
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK69.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK69.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3806.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3806.map",
+      "same_bytes": true,
+      "old_bytes": 576,
+      "new_bytes": 576
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK224.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK224.map",
+      "same_bytes": false,
+      "old_bytes": 1500,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3936.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3936.map",
+      "same_bytes": true,
+      "old_bytes": 900,
+      "new_bytes": 900
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK1024.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK1024.map",
+      "same_bytes": false,
+      "old_bytes": 672,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK511.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK511.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 7168
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK41.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK41.map",
+      "same_bytes": false,
+      "old_bytes": 14400,
+      "new_bytes": 14400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK100.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK100.map",
+      "same_bytes": false,
+      "old_bytes": 1296,
+      "new_bytes": 4096
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK434.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK434.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3120
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK373.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK373.map",
+      "same_bytes": false,
+      "old_bytes": 896,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK1011.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK1011.map",
+      "same_bytes": false,
+      "old_bytes": 2880,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK521.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK521.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK532.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK532.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK206.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK206.map",
+      "same_bytes": false,
+      "old_bytes": 576,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3531.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3531.map",
+      "same_bytes": false,
+      "old_bytes": 2116,
+      "new_bytes": 2116
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3922.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3922.map",
+      "same_bytes": false,
+      "old_bytes": 4900,
+      "new_bytes": 4900
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK411.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK411.map",
+      "same_bytes": false,
+      "old_bytes": 12800,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3910.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3910.map",
+      "same_bytes": false,
+      "old_bytes": 2400,
+      "new_bytes": 2400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK72.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK72.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3631.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3631.map",
+      "same_bytes": false,
+      "old_bytes": 2116,
+      "new_bytes": 2116
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK239.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK239.map",
+      "same_bytes": false,
+      "old_bytes": 2304,
+      "new_bytes": 1200
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3024.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3024.map",
+      "same_bytes": false,
+      "old_bytes": 1020,
+      "new_bytes": 1020
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK114.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK114.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3572.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3572.map",
+      "same_bytes": false,
+      "old_bytes": 864,
+      "new_bytes": 864
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK4901.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK4901.map",
+      "same_bytes": true,
+      "old_bytes": 900,
+      "new_bytes": 900
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK4246.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK4246.map",
+      "same_bytes": false,
+      "old_bytes": 1920,
+      "new_bytes": 1920
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3157.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3157.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK7.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK7.map",
+      "same_bytes": false,
+      "old_bytes": 576,
+      "new_bytes": 576
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK62.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK62.map",
+      "same_bytes": false,
+      "old_bytes": 3120,
+      "new_bytes": 3120
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK218.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK218.map",
+      "same_bytes": false,
+      "old_bytes": 3072,
+      "new_bytes": 5600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK455.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK455.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK60.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK60.map",
+      "same_bytes": false,
+      "old_bytes": 2288,
+      "new_bytes": 2288
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK4914.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK4914.map",
+      "same_bytes": true,
+      "old_bytes": 900,
+      "new_bytes": 900
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK369.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK369.map",
+      "same_bytes": false,
+      "old_bytes": 576,
+      "new_bytes": 960
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK4191.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK4191.map",
+      "same_bytes": false,
+      "old_bytes": 3360,
+      "new_bytes": 3360
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK267.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK267.map",
+      "same_bytes": false,
+      "old_bytes": 1600,
+      "new_bytes": 25600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK90.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK90.map",
+      "same_bytes": false,
+      "old_bytes": 3136,
+      "new_bytes": 3136
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK135.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK135.map",
+      "same_bytes": false,
+      "old_bytes": 1008,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK85.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK85.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3136
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3961.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3961.map",
+      "same_bytes": false,
+      "old_bytes": 4620,
+      "new_bytes": 4620
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK415.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK415.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK474.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK474.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK477.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK477.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK458.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK458.map",
+      "same_bytes": false,
+      "old_bytes": 1296,
+      "new_bytes": 2304
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK87.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK87.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK4903.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK4903.map",
+      "same_bytes": true,
+      "old_bytes": 900,
+      "new_bytes": 900
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK126.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK126.map",
+      "same_bytes": false,
+      "old_bytes": 1584,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK82.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK82.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 2880
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK2002.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK2002.map",
+      "same_bytes": true,
+      "old_bytes": 36,
+      "new_bytes": 36
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK439.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK439.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK412.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK412.map",
+      "same_bytes": false,
+      "old_bytes": 32400,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3242.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3242.map",
+      "same_bytes": false,
+      "old_bytes": 2592,
+      "new_bytes": 2592
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK414.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK414.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3360
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3257.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3257.map",
+      "same_bytes": false,
+      "old_bytes": 1600,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK4909.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK4909.map",
+      "same_bytes": true,
+      "old_bytes": 900,
+      "new_bytes": 900
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3931.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3931.map",
+      "same_bytes": false,
+      "old_bytes": 3844,
+      "new_bytes": 3844
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK75.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK75.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3916.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3916.map",
+      "same_bytes": false,
+      "old_bytes": 900,
+      "new_bytes": 900
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK170.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK170.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3001.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3001.map",
+      "same_bytes": false,
+      "old_bytes": 576,
+      "new_bytes": 960
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3540.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3540.map",
+      "same_bytes": true,
+      "old_bytes": 324,
+      "new_bytes": 324
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3921.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3921.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 4096
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK425.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK425.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK243.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK243.map",
+      "same_bytes": false,
+      "old_bytes": 1024,
+      "new_bytes": 2400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK148.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK148.map",
+      "same_bytes": false,
+      "old_bytes": 2688,
+      "new_bytes": 2688
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK368.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK368.map",
+      "same_bytes": false,
+      "old_bytes": 576,
+      "new_bytes": 960
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK122.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK122.map",
+      "same_bytes": false,
+      "old_bytes": 2080,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3625.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3625.map",
+      "same_bytes": false,
+      "old_bytes": 2116,
+      "new_bytes": 2116
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK446.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK446.map",
+      "same_bytes": false,
+      "old_bytes": 2688,
+      "new_bytes": 2688
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK168.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK168.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK155.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK155.map",
+      "same_bytes": false,
+      "old_bytes": 3360,
+      "new_bytes": 3360
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK515.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK515.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 12800
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK426.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK426.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 4000
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK514.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK514.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 12800
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3953.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3953.map",
+      "same_bytes": true,
+      "old_bytes": 900,
+      "new_bytes": 900
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK535.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK535.map",
+      "same_bytes": false,
+      "old_bytes": 1764,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK516.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK516.map",
+      "same_bytes": false,
+      "old_bytes": 900,
+      "new_bytes": 16384
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK374.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK374.map",
+      "same_bytes": false,
+      "old_bytes": 1728,
+      "new_bytes": 1728
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK247.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK247.map",
+      "same_bytes": false,
+      "old_bytes": 1600,
+      "new_bytes": 6400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK387.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK387.map",
+      "same_bytes": false,
+      "old_bytes": 2560,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK254.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK254.map",
+      "same_bytes": false,
+      "old_bytes": 2400,
+      "new_bytes": 2400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK1127.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK1127.map",
+      "same_bytes": false,
+      "old_bytes": 576,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK185.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK185.map",
+      "same_bytes": false,
+      "old_bytes": 2304,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK228.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK228.map",
+      "same_bytes": false,
+      "old_bytes": 1800,
+      "new_bytes": 2240
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK502.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK502.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 2240
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK1120.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK1120.map",
+      "same_bytes": false,
+      "old_bytes": 1760,
+      "new_bytes": 4640
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK4911.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK4911.map",
+      "same_bytes": true,
+      "old_bytes": 900,
+      "new_bytes": 900
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3011.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3011.map",
+      "same_bytes": true,
+      "old_bytes": 4356,
+      "new_bytes": 4356
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK513.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK513.map",
+      "same_bytes": false,
+      "old_bytes": 2304,
+      "new_bytes": 12800
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3041.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3041.map",
+      "same_bytes": true,
+      "old_bytes": 400,
+      "new_bytes": 400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3702.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3702.map",
+      "same_bytes": false,
+      "old_bytes": 1024,
+      "new_bytes": 1024
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3181.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3181.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK186.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK186.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK524.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK524.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3002.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3002.map",
+      "same_bytes": false,
+      "old_bytes": 576,
+      "new_bytes": 936
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK466.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK466.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 2400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK164.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK164.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 2400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3502.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3502.map",
+      "same_bytes": false,
+      "old_bytes": 576,
+      "new_bytes": 576
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK413.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK413.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3456
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK465.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK465.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 2400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK505.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK505.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 2560
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK222.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK222.map",
+      "same_bytes": false,
+      "old_bytes": 1800,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK207.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK207.map",
+      "same_bytes": false,
+      "old_bytes": 1600,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK427.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK427.map",
+      "same_bytes": false,
+      "old_bytes": 1024,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK139.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK139.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3120
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK5.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK5.map",
+      "same_bytes": false,
+      "old_bytes": 576,
+      "new_bytes": 576
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3804.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3804.map",
+      "same_bytes": false,
+      "old_bytes": 576,
+      "new_bytes": 576
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3950.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3950.map",
+      "same_bytes": false,
+      "old_bytes": 2400,
+      "new_bytes": 2400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK266.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK266.map",
+      "same_bytes": false,
+      "old_bytes": 1600,
+      "new_bytes": 25600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK149.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK149.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK184.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK184.map",
+      "same_bytes": false,
+      "old_bytes": 2304,
+      "new_bytes": 2400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK43.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK43.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 576
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3926.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3926.map",
+      "same_bytes": false,
+      "old_bytes": 1600,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK441.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK441.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 4096
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3703.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3703.map",
+      "same_bytes": false,
+      "old_bytes": 1024,
+      "new_bytes": 1024
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK464.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK464.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK472.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK472.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 1200
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3606.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3606.map",
+      "same_bytes": false,
+      "old_bytes": 2116,
+      "new_bytes": 2116
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3013.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3013.map",
+      "same_bytes": true,
+      "old_bytes": 576,
+      "new_bytes": 576
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK4160.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK4160.map",
+      "same_bytes": false,
+      "old_bytes": 2304,
+      "new_bytes": 2304
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK1123.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK1123.map",
+      "same_bytes": false,
+      "old_bytes": 576,
+      "new_bytes": 440
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3704.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3704.map",
+      "same_bytes": true,
+      "old_bytes": 1024,
+      "new_bytes": 1024
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK198.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK198.map",
+      "same_bytes": false,
+      "old_bytes": 1920,
+      "new_bytes": 2304
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK241.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK241.map",
+      "same_bytes": false,
+      "old_bytes": 2240,
+      "new_bytes": 2240
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK145.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK145.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK165.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK165.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3360
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK416.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK416.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK417.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK417.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 2880
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3543.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3543.map",
+      "same_bytes": false,
+      "old_bytes": 324,
+      "new_bytes": 324
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK4908.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK4908.map",
+      "same_bytes": true,
+      "old_bytes": 900,
+      "new_bytes": 900
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK178.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK178.map",
+      "same_bytes": false,
+      "old_bytes": 2304,
+      "new_bytes": 3240
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK467.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK467.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 4800
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK112.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK112.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK238.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK238.map",
+      "same_bytes": false,
+      "old_bytes": 576,
+      "new_bytes": 2400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3701.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3701.map",
+      "same_bytes": true,
+      "old_bytes": 1024,
+      "new_bytes": 1024
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3010.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3010.map",
+      "same_bytes": false,
+      "old_bytes": 2736,
+      "new_bytes": 4356
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK478.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK478.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK476.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK476.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 1680
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK192.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK192.map",
+      "same_bytes": false,
+      "old_bytes": 1536,
+      "new_bytes": 2400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK422.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK422.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 2000
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK10.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK10.map",
+      "same_bytes": true,
+      "old_bytes": 1152,
+      "new_bytes": 1152
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK38.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK38.map",
+      "same_bytes": false,
+      "old_bytes": 1680,
+      "new_bytes": 1680
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK512.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK512.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 12800
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK1141.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK1141.map",
+      "same_bytes": false,
+      "old_bytes": 4356,
+      "new_bytes": 576
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK4214.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK4214.map",
+      "same_bytes": false,
+      "old_bytes": 4800,
+      "new_bytes": 4800
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK80.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK80.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK4.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK4.map",
+      "same_bytes": false,
+      "old_bytes": 576,
+      "new_bytes": 576
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3248.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3248.map",
+      "same_bytes": false,
+      "old_bytes": 1600,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK4161.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK4161.map",
+      "same_bytes": false,
+      "old_bytes": 2688,
+      "new_bytes": 2688
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK389.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK389.map",
+      "same_bytes": false,
+      "old_bytes": 896,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK138.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK138.map",
+      "same_bytes": false,
+      "old_bytes": 1600,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3620.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3620.map",
+      "same_bytes": false,
+      "old_bytes": 2116,
+      "new_bytes": 2116
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK9.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK9.map",
+      "same_bytes": true,
+      "old_bytes": 400,
+      "new_bytes": 400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK8.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK8.map",
+      "same_bytes": true,
+      "old_bytes": 400,
+      "new_bytes": 400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK529.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK529.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK103.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK103.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK140.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK140.map",
+      "same_bytes": false,
+      "old_bytes": 2160,
+      "new_bytes": 2160
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK1022.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK1022.map",
+      "same_bytes": false,
+      "old_bytes": 5180,
+      "new_bytes": 400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK530.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK530.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK435.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK435.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK161.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK161.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 2688
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK4157.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK4157.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK245.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK245.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK1020.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK1020.map",
+      "same_bytes": false,
+      "old_bytes": 1380,
+      "new_bytes": 1800
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK1014.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK1014.map",
+      "same_bytes": false,
+      "old_bytes": 2880,
+      "new_bytes": 1800
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK4905.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK4905.map",
+      "same_bytes": true,
+      "old_bytes": 900,
+      "new_bytes": 900
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK383.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK383.map",
+      "same_bytes": false,
+      "old_bytes": 2560,
+      "new_bytes": 1920
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK246.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK246.map",
+      "same_bytes": false,
+      "old_bytes": 1920,
+      "new_bytes": 1920
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3933.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3933.map",
+      "same_bytes": false,
+      "old_bytes": 900,
+      "new_bytes": 900
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK79.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK79.map",
+      "same_bytes": false,
+      "old_bytes": 2880,
+      "new_bytes": 2880
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK210.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK210.map",
+      "same_bytes": false,
+      "old_bytes": 1600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK363.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK363.map",
+      "same_bytes": false,
+      "old_bytes": 576,
+      "new_bytes": 576
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK384.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK384.map",
+      "same_bytes": false,
+      "old_bytes": 4352,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK1000.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK1000.map",
+      "same_bytes": false,
+      "old_bytes": 1800,
+      "new_bytes": 1800
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK94.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK94.map",
+      "same_bytes": false,
+      "old_bytes": 2500,
+      "new_bytes": 3136
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK533.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK533.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK200.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK200.map",
+      "same_bytes": false,
+      "old_bytes": 2304,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3920.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3920.map",
+      "same_bytes": false,
+      "old_bytes": 2400,
+      "new_bytes": 2400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK143.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK143.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK1013.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK1013.map",
+      "same_bytes": false,
+      "old_bytes": 2880,
+      "new_bytes": 576
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK506.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK506.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 1536
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3525.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3525.map",
+      "same_bytes": false,
+      "old_bytes": 2116,
+      "new_bytes": 2116
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK523.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK523.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK237.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK237.map",
+      "same_bytes": false,
+      "old_bytes": 2048,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK459.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK459.map",
+      "same_bytes": false,
+      "old_bytes": 1500,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK352.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK352.map",
+      "same_bytes": false,
+      "old_bytes": 900,
+      "new_bytes": 900
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK364.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK364.map",
+      "same_bytes": false,
+      "old_bytes": 576,
+      "new_bytes": 576
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK260.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK260.map",
+      "same_bytes": false,
+      "old_bytes": 1456,
+      "new_bytes": 25600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK77.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK77.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK182.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK182.map",
+      "same_bytes": false,
+      "old_bytes": 2304,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3100.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3100.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 4096
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK211.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK211.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK204.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK204.map",
+      "same_bytes": false,
+      "old_bytes": 768,
+      "new_bytes": 4800
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK4906.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK4906.map",
+      "same_bytes": true,
+      "old_bytes": 900,
+      "new_bytes": 900
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK231.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK231.map",
+      "same_bytes": false,
+      "old_bytes": 6000,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK53.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK53.map",
+      "same_bytes": false,
+      "old_bytes": 1600,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK462.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK462.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK484.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK484.map",
+      "same_bytes": false,
+      "old_bytes": 1584,
+      "new_bytes": 1020
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK475.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK475.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK4181.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK4181.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK55.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK55.map",
+      "same_bytes": false,
+      "old_bytes": 1600,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK242.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK242.map",
+      "same_bytes": false,
+      "old_bytes": 2592,
+      "new_bytes": 2592
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK437.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK437.map",
+      "same_bytes": false,
+      "old_bytes": 3120,
+      "new_bytes": 2500
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK503.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK503.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 2304
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK113.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK113.map",
+      "same_bytes": false,
+      "old_bytes": 3136,
+      "new_bytes": 3136
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK215.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK215.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK443.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK443.map",
+      "same_bytes": false,
+      "old_bytes": 3360,
+      "new_bytes": 3360
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3960.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3960.map",
+      "same_bytes": false,
+      "old_bytes": 2400,
+      "new_bytes": 2400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK96.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK96.map",
+      "same_bytes": false,
+      "old_bytes": 1600,
+      "new_bytes": 3136
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3560.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3560.map",
+      "same_bytes": true,
+      "old_bytes": 616,
+      "new_bytes": 616
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK337.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK337.map",
+      "same_bytes": false,
+      "old_bytes": 576,
+      "new_bytes": 576
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK212.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK212.map",
+      "same_bytes": false,
+      "old_bytes": 2304,
+      "new_bytes": 2500
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3516.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3516.map",
+      "same_bytes": false,
+      "old_bytes": 2116,
+      "new_bytes": 2116
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3009.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3009.map",
+      "same_bytes": true,
+      "old_bytes": 4356,
+      "new_bytes": 4356
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK4913.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK4913.map",
+      "same_bytes": true,
+      "old_bytes": 900,
+      "new_bytes": 900
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK388.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK388.map",
+      "same_bytes": false,
+      "old_bytes": 3136,
+      "new_bytes": 3136
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3515.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3515.map",
+      "same_bytes": false,
+      "old_bytes": 2116,
+      "new_bytes": 2116
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK240.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK240.map",
+      "same_bytes": false,
+      "old_bytes": 1600,
+      "new_bytes": 4800
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK400.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK400.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK424.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK424.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 2500
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK86.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK86.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3924.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3924.map",
+      "same_bytes": true,
+      "old_bytes": 1440,
+      "new_bytes": 1440
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3925.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3925.map",
+      "same_bytes": false,
+      "old_bytes": 1440,
+      "new_bytes": 1440
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK102.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK102.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK91.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK91.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3136
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK118.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK118.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK445.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK445.map",
+      "same_bytes": true,
+      "old_bytes": 2240,
+      "new_bytes": 2240
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK253.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK253.map",
+      "same_bytes": false,
+      "old_bytes": 2400,
+      "new_bytes": 2400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3170.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3170.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK89.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK89.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3913.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3913.map",
+      "same_bytes": true,
+      "old_bytes": 900,
+      "new_bytes": 900
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK470.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK470.map",
+      "same_bytes": false,
+      "old_bytes": 1600,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK232.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK232.map",
+      "same_bytes": false,
+      "old_bytes": 3000,
+      "new_bytes": 2400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK169.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK169.map",
+      "same_bytes": false,
+      "old_bytes": 1020,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3542.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3542.map",
+      "same_bytes": false,
+      "old_bytes": 324,
+      "new_bytes": 324
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK481.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK481.map",
+      "same_bytes": false,
+      "old_bytes": 1280,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK92.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK92.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3136
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK50.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK50.map",
+      "same_bytes": false,
+      "old_bytes": 2400,
+      "new_bytes": 2400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK216.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK216.map",
+      "same_bytes": false,
+      "old_bytes": 3136,
+      "new_bytes": 2116
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3231.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3231.map",
+      "same_bytes": false,
+      "old_bytes": 1600,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK172.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK172.map",
+      "same_bytes": false,
+      "old_bytes": 1020,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK1023.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK1023.map",
+      "same_bytes": false,
+      "old_bytes": 5180,
+      "new_bytes": 36000
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3941.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3941.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK418.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK418.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3360
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3915.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3915.map",
+      "same_bytes": false,
+      "old_bytes": 400,
+      "new_bytes": 400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3615.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3615.map",
+      "same_bytes": false,
+      "old_bytes": 2116,
+      "new_bytes": 2116
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK236.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK236.map",
+      "same_bytes": false,
+      "old_bytes": 1024,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK51.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK51.map",
+      "same_bytes": false,
+      "old_bytes": 1600,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK136.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK136.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK124.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK124.map",
+      "same_bytes": false,
+      "old_bytes": 1280,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK377.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK377.map",
+      "same_bytes": false,
+      "old_bytes": 896,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK1025.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK1025.map",
+      "same_bytes": false,
+      "old_bytes": 1368,
+      "new_bytes": 576
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3530.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3530.map",
+      "same_bytes": false,
+      "old_bytes": 2116,
+      "new_bytes": 2116
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK255.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK255.map",
+      "same_bytes": false,
+      "old_bytes": 1024,
+      "new_bytes": 3200
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3511.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3511.map",
+      "same_bytes": false,
+      "old_bytes": 2116,
+      "new_bytes": 2116
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3025.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3025.map",
+      "same_bytes": false,
+      "old_bytes": 1020,
+      "new_bytes": 1020
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK257.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK257.map",
+      "same_bytes": false,
+      "old_bytes": 1600,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3561.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3561.map",
+      "same_bytes": false,
+      "old_bytes": 616,
+      "new_bytes": 616
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3800.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3800.map",
+      "same_bytes": false,
+      "old_bytes": 16384,
+      "new_bytes": 16384
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK419.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK419.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3136
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3536.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3536.map",
+      "same_bytes": false,
+      "old_bytes": 2116,
+      "new_bytes": 2116
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK487.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK487.map",
+      "same_bytes": false,
+      "old_bytes": 1584,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3003.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3003.map",
+      "same_bytes": false,
+      "old_bytes": 576,
+      "new_bytes": 576
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3535.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3535.map",
+      "same_bytes": false,
+      "old_bytes": 2116,
+      "new_bytes": 2116
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK438.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK438.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 900
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK52.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK52.map",
+      "same_bytes": false,
+      "old_bytes": 1200,
+      "new_bytes": 1200
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK265.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK265.map",
+      "same_bytes": false,
+      "old_bytes": 1600,
+      "new_bytes": 25600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK436.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK436.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK380.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK380.map",
+      "same_bytes": false,
+      "old_bytes": 4352,
+      "new_bytes": 2288
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK244.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK244.map",
+      "same_bytes": false,
+      "old_bytes": 2304,
+      "new_bytes": 2400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK163.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK163.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK517.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK517.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 16384
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK70.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK70.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3708.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3708.map",
+      "same_bytes": false,
+      "old_bytes": 1024,
+      "new_bytes": 1024
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK518.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK518.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 16384
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK463.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK463.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK117.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK117.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK194.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK194.map",
+      "same_bytes": false,
+      "old_bytes": 896,
+      "new_bytes": 2304
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK507.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK507.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 1440
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3803.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3803.map",
+      "same_bytes": false,
+      "old_bytes": 576,
+      "new_bytes": 576
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK473.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK473.map",
+      "same_bytes": false,
+      "old_bytes": 3200,
+      "new_bytes": 3200
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK214.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK214.map",
+      "same_bytes": false,
+      "old_bytes": 400,
+      "new_bytes": 4800
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK442.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK442.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK74.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK74.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK217.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK217.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3805.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3805.map",
+      "same_bytes": true,
+      "old_bytes": 576,
+      "new_bytes": 576
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3611.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3611.map",
+      "same_bytes": false,
+      "old_bytes": 2116,
+      "new_bytes": 2116
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK76.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK76.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK229.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK229.map",
+      "same_bytes": false,
+      "old_bytes": 1800,
+      "new_bytes": 2400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK385.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK385.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 4096
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK225.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK225.map",
+      "same_bytes": false,
+      "old_bytes": 9000,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK125.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK125.map",
+      "same_bytes": false,
+      "old_bytes": 3200,
+      "new_bytes": 2400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK67.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK67.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK456.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK456.map",
+      "same_bytes": false,
+      "old_bytes": 2304,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK4100.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK4100.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 4096
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK199.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK199.map",
+      "same_bytes": false,
+      "old_bytes": 1024,
+      "new_bytes": 2304
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK379.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK379.map",
+      "same_bytes": false,
+      "old_bytes": 2560,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK469.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK469.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK61.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK61.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 2400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3520.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3520.map",
+      "same_bytes": false,
+      "old_bytes": 2116,
+      "new_bytes": 2116
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK1030.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK1030.map",
+      "same_bytes": false,
+      "old_bytes": 864,
+      "new_bytes": 672
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK88.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK88.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 2400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK4910.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK4910.map",
+      "same_bytes": true,
+      "old_bytes": 900,
+      "new_bytes": 900
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3159.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3159.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK371.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK371.map",
+      "same_bytes": false,
+      "old_bytes": 1600,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK235.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK235.map",
+      "same_bytes": false,
+      "old_bytes": 2304,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3031.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3031.map",
+      "same_bytes": false,
+      "old_bytes": 1020,
+      "new_bytes": 1020
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK252.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK252.map",
+      "same_bytes": false,
+      "old_bytes": 3200,
+      "new_bytes": 3200
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK107.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK107.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3621.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3621.map",
+      "same_bytes": false,
+      "old_bytes": 2116,
+      "new_bytes": 2116
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK190.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK190.map",
+      "same_bytes": false,
+      "old_bytes": 2304,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK261.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK261.map",
+      "same_bytes": false,
+      "old_bytes": 2944,
+      "new_bytes": 25600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3802.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3802.map",
+      "same_bytes": false,
+      "old_bytes": 576,
+      "new_bytes": 576
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK508.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK508.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 2304
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK460.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK460.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK42.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK42.map",
+      "same_bytes": false,
+      "old_bytes": 576,
+      "new_bytes": 576
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK162.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK162.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3360
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3630.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3630.map",
+      "same_bytes": false,
+      "old_bytes": 2116,
+      "new_bytes": 2116
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK525.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK525.map",
+      "same_bytes": false,
+      "old_bytes": 900,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3923.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3923.map",
+      "same_bytes": true,
+      "old_bytes": 1296,
+      "new_bytes": 1296
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK382.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK382.map",
+      "same_bytes": false,
+      "old_bytes": 728,
+      "new_bytes": 3120
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK144.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK144.map",
+      "same_bytes": false,
+      "old_bytes": 2880,
+      "new_bytes": 2880
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK365.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK365.map",
+      "same_bytes": false,
+      "old_bytes": 576,
+      "new_bytes": 576
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK386.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK386.map",
+      "same_bytes": false,
+      "old_bytes": 728,
+      "new_bytes": 3136
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK106.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK106.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK262.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK262.map",
+      "same_bytes": false,
+      "old_bytes": 1680,
+      "new_bytes": 25600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK202.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK202.map",
+      "same_bytes": false,
+      "old_bytes": 7056,
+      "new_bytes": 2500
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK1121.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK1121.map",
+      "same_bytes": false,
+      "old_bytes": 4356,
+      "new_bytes": 10000
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3940.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3940.map",
+      "same_bytes": false,
+      "old_bytes": 2400,
+      "new_bytes": 2400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK73.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK73.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK147.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK147.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3040.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3040.map",
+      "same_bytes": false,
+      "old_bytes": 3168,
+      "new_bytes": 3168
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK226.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK226.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 2304
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK64.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK64.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK453.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK453.map",
+      "same_bytes": false,
+      "old_bytes": 1600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK336.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK336.map",
+      "same_bytes": false,
+      "old_bytes": 576,
+      "new_bytes": 576
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK134.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK134.map",
+      "same_bytes": false,
+      "old_bytes": 624,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK4920.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK4920.map",
+      "same_bytes": true,
+      "old_bytes": 900,
+      "new_bytes": 900
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK457.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK457.map",
+      "same_bytes": false,
+      "old_bytes": 1296,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3914.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3914.map",
+      "same_bytes": false,
+      "old_bytes": 900,
+      "new_bytes": 900
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3706.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3706.map",
+      "same_bytes": false,
+      "old_bytes": 1024,
+      "new_bytes": 1024
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK196.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK196.map",
+      "same_bytes": false,
+      "old_bytes": 1600,
+      "new_bytes": 2400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK390.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK390.map",
+      "same_bytes": false,
+      "old_bytes": 728,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK423.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK423.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK167.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK167.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3136
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK208.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK208.map",
+      "same_bytes": false,
+      "old_bytes": 1536,
+      "new_bytes": 3200
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK175.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK175.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK264.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK264.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 25600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK36.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK36.map",
+      "same_bytes": true,
+      "old_bytes": 576,
+      "new_bytes": 576
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK95.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK95.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3136
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK81.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK81.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3136
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK450.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK450.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 4096
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK130.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK130.map",
+      "same_bytes": false,
+      "old_bytes": 1920,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK187.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK187.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3136
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3008.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3008.map",
+      "same_bytes": false,
+      "old_bytes": 4356,
+      "new_bytes": 4356
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK258.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK258.map",
+      "same_bytes": false,
+      "old_bytes": 2500,
+      "new_bytes": 2592
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK528.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK528.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3610.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3610.map",
+      "same_bytes": false,
+      "old_bytes": 2116,
+      "new_bytes": 2116
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK4163.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK4163.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK180.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK180.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3136
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3801.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3801.map",
+      "same_bytes": false,
+      "old_bytes": 576,
+      "new_bytes": 576
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK84.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK84.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK171.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK171.map",
+      "same_bytes": false,
+      "old_bytes": 1020,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3963.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3963.map",
+      "same_bytes": false,
+      "old_bytes": 1520,
+      "new_bytes": 1520
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK263.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK263.map",
+      "same_bytes": false,
+      "old_bytes": 2116,
+      "new_bytes": 25600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK221.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK221.map",
+      "same_bytes": false,
+      "old_bytes": 1800,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3626.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3626.map",
+      "same_bytes": false,
+      "old_bytes": 2116,
+      "new_bytes": 2116
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK1021.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK1021.map",
+      "same_bytes": false,
+      "old_bytes": 1800,
+      "new_bytes": 400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK213.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK213.map",
+      "same_bytes": false,
+      "old_bytes": 2304,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK537.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK537.map",
+      "same_bytes": false,
+      "old_bytes": 840,
+      "new_bytes": 3600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK1031.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK1031.map",
+      "same_bytes": false,
+      "old_bytes": 2916,
+      "new_bytes": 1440
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3616.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3616.map",
+      "same_bytes": false,
+      "old_bytes": 2116,
+      "new_bytes": 2116
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK482.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK482.map",
+      "same_bytes": false,
+      "old_bytes": 1280,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK531.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK531.map",
+      "same_bytes": false,
+      "old_bytes": 3600,
+      "new_bytes": 4096
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK339.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK339.map",
+      "same_bytes": true,
+      "old_bytes": 400,
+      "new_bytes": 400
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK433.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK433.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 1600
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK93.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK93.map",
+      "same_bytes": false,
+      "old_bytes": 4096,
+      "new_bytes": 3136
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK3605.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK3605.map",
+      "same_bytes": false,
+      "old_bytes": 2116,
+      "new_bytes": 2116
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK486.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK486.map",
+      "same_bytes": false,
+      "old_bytes": 1584,
+      "new_bytes": 1984
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK56.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK56.map",
+      "same_bytes": false,
+      "old_bytes": 2080,
+      "new_bytes": 2080
+    },
+    {
+      "old": "world-isolated/extracted/403-client-legacy/Maps/Map/TK4201.map",
+      "new": "isolated/project1998/Project1998/game-data/maps/TK4201.map",
+      "same_bytes": false,
+      "old_bytes": 2304,
+      "new_bytes": 2304
+    }
+  ]
+}

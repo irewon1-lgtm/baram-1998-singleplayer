@@ -1,0 +1,72 @@
+[
+  {
+    "filename": "5.0_or_Older_Clients_(All).7z",
+    "expected_sha256": "d41b644303581f7dfc05ef627d99820f8ccce3152637c9be533f0465dbbcb885",
+    "status": "PASS_EXISTING_BYTES_HASH_ONLY"
+  },
+  {
+    "filename": "Baram_Map_Editor.7z",
+    "expected_sha256": "4b63aaff6aea18c7b038db715e753468f9a0202e0d3e692dfd7f0c3f341c6e5a",
+    "status": "PASS_EXISTING_BYTES_HASH_ONLY"
+  },
+  {
+    "filename": "EPFTool.exe",
+    "expected_sha256": "d58303a3129547505daf7006e7dc58cc27bcfdad33ee5137c1350ef172a02221",
+    "status": "PASS_EXISTING_BYTES_HASH_ONLY"
+  },
+  {
+    "filename": "491v.zip",
+    "expected_sha256": "f11e448db6478b1aca3a7dd47403bdef00cf873b203b14629b0215632190532f",
+    "status": "PASS_EXISTING_BYTES_HASH_ONLY"
+  },
+  {
+    "filename": "CoM_NexusTK_Private_Server_Core_Files.zip",
+    "expected_sha256": "b077718f31f74d666fb3487f582279a11be535e0f081d6920d3acbd8658f072d",
+    "status": "PASS_EXISTING_BYTES_HASH_ONLY"
+  },
+  {
+    "filename": "403french_nexusf.exe",
+    "expected_sha256": "c8820ac5af784fa6aadcdc86198c84f07ac4e73af1c74ece1152a1c9bd52cd4b",
+    "status": "PASS_EXISTING_BYTES_HASH_ONLY"
+  },
+  {
+    "filename": "Judge_Map_Editor.7z",
+    "expected_sha256": "7df59393d9aa077c79e0d6f0b40b89d7b56f0ca7edf9f86f9823dc94aa630646",
+    "status": "PASS_EXISTING_BYTES_HASH_ONLY"
+  },
+  {
+    "filename": "NexusTK_v4.0.3.7z",
+    "expected_sha256": "db89e2b1ac3dfd3f5668fd7746478507b370ee627b4321d7dec441620ce96b53",
+    "status": "PASS_EXISTING_BYTES_HASH_ONLY"
+  },
+  {
+    "filename": "BARAM.PAL",
+    "expected_sha256": "34bee372e754fc423099193587ae265b731d7f7ff0f083a87cb564179aeb266a",
+    "status": "PASS_EXISTING_BYTES_HASH_ONLY"
+  },
+  {
+    "filename": "mithiamapeditor-master.zip",
+    "expected_sha256": "d49ca6f1ee839d8bf3146b1455bbb07f9642fcc945c914d08106beea40bd54b1",
+    "status": "PASS_EXISTING_BYTES_HASH_ONLY"
+  },
+  {
+    "filename": "Runegard_Launcher.rar",
+    "expected_sha256": "b8642cfaf121358c84bb305e8e498118367f34827e9066ce08afa5c124290f58",
+    "status": "PASS_EXISTING_BYTES_HASH_ONLY"
+  },
+  {
+    "filename": "runegardfandomcom-20220301-history.xml.7z",
+    "expected_sha256": "200948423544a99f793ff032206d51cec0935ce6cf544cef30d5e3210f4a03c6",
+    "status": "PASS_EXISTING_BYTES_HASH_ONLY"
+  },
+  {
+    "filename": "nexus495.exe",
+    "expected_sha256": "486f4684b76658d92eaf84aab77fe9be9489ea01de8264fe90d0040466620aaa",
+    "status": "PASS_EXISTING_BYTES_HASH_ONLY"
+  },
+  {
+    "filename": "NexusTK_V_4.66.7z",
+    "expected_sha256": "54ca6b8892a2b44ddfaadebc92e1886a770ac07a82b60ceacbfd3e2e44e5774a",
+    "status": "PASS_EXISTING_BYTES_HASH_ONLY"
+  }
+]

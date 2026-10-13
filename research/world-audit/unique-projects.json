@@ -1,0 +1,213 @@
+{
+  "count": 23,
+  "definition": "Named software/tool/documentation families; includes bots and historical projects, NOT a count of playable games. Two GitHub forks of Project1998, duplicate RTK-Server-1, map-editor forks, bot variants and archive mirrors are not independent projects. EPFViewer implementations in distinct languages remain separate. CoM and RTK share Mithia lineage, independent ancestry not claimed.",
+  "families": {
+    "DizzyThermal/EPFViewer": [
+      {
+        "repository": "DizzyThermal/EPFViewer",
+        "commit": "2bc585b3ae3310df5de46f7789eada92840fbd59",
+        "status": "ACQUIRED_FILE_INSPECTED",
+        "license": "MIT"
+      }
+    ],
+    "DizzyThermal/TKMapper": [
+      {
+        "repository": "DizzyThermal/TKMapper",
+        "commit": "13c6dc3089b51ba2ba390a421125bd55ebf4edd3",
+        "status": "ACQUIRED_FILE_INSPECTED",
+        "license": "MIT"
+      }
+    ],
+    "DizzyThermal/TKViewer": [
+      {
+        "repository": "DizzyThermal/TKViewer",
+        "commit": "2943507d0a8b91b990b94d2cc82c3f589343d3ec",
+        "status": "ACQUIRED_FILE_INSPECTED",
+        "license": "NO_ROOT_LICENSE"
+      }
+    ],
+    "Essorcal/project1998-docs": [
+      {
+        "repository": "Essorcal/project1998-docs",
+        "commit": "66961fa4ebfaa84dc93bf55ce546c5545169b65a",
+        "status": "ACQUIRED_FILE_INSPECTED",
+        "license": "NO_ROOT_LICENSE"
+      }
+    ],
+    "MorneTK/ntk-utils": [
+      {
+        "repository": "MorneTK/ntk-utils",
+        "commit": "a537bd3f448040c98e36a79ceef67244ecf6584b",
+        "status": "ACQUIRED_FILE_INSPECTED",
+        "license": "MIT package declaration only"
+      }
+    ],
+    "ServTK/ServTK": [
+      {
+        "repository": "ServTK/ServTK",
+        "commit": "61427cbc26a3b30286e058e78e6330ed786e4518",
+        "status": "ACQUIRED_FILE_INSPECTED",
+        "license": "GPL-2.0 text"
+      }
+    ],
+    "olds463/EPFViewer": [
+      {
+        "repository": "olds463/EPFViewer",
+        "commit": "056eb4045d2e7592bb17453f8a4a472232a83d7e",
+        "status": "ACQUIRED_FILE_INSPECTED",
+        "license": "GPL-3.0 text"
+      }
+    ],
+    "project1998/Project1998": [
+      {
+        "repository": "project1998/Project1998",
+        "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+        "status": "ACQUIRED_FILE_INSPECTED",
+        "license": "NO_ROOT_LICENSE"
+      }
+    ],
+    "unkmc/RTK-Server": [
+      {
+        "repository": "unkmc/RTK-Server",
+        "commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+        "status": "ACQUIRED_FILE_INSPECTED",
+        "license": "NO_ROOT_LICENSE"
+      },
+      {
+        "repository": "unkmc/RTK-Server-1",
+        "commit": "9757360e4e3ed79519338d39ea6e10b3919bdff9",
+        "status": "ACQUIRED_FILE_INSPECTED",
+        "license": "NO_ROOT_LICENSE"
+      }
+    ],
+    "unkmc/TKClassic": [
+      {
+        "repository": "unkmc/TKClassic",
+        "commit": "f8dac0856ab6d30242edafe941696f9908098868",
+        "status": "ACQUIRED_FILE_INSPECTED",
+        "license": "GPL-3.0 text"
+      }
+    ],
+    "unkmc/ntk-networking": [
+      {
+        "repository": "unkmc/ntk-networking",
+        "commit": "260fa8031c12823ed73d29d302071cefee269a3d",
+        "status": "ACQUIRED_FILE_INSPECTED",
+        "license": "ISC package declaration only"
+      }
+    ],
+    "ShadoMagi/NexusTKMapEditor": [
+      {
+        "repository": "ShadoMagi/NexusTKMapEditor",
+        "commit": "2fae1b184bb6a22d286b43541cf5a22c8bbb5fb6",
+        "status": "ACQUIRED_FILE_INSPECTED",
+        "license": "NO_ROOT_LICENSE"
+      },
+      {
+        "repository": "nmanley/mithiamapeditor",
+        "commit": "30bf49daaedfe3adf661365cdb32b2a9c299d52e",
+        "status": "ACQUIRED_FILE_INSPECTED",
+        "license": "NO_ROOT_LICENSE"
+      }
+    ],
+    "jeedee/TkServer": [
+      {
+        "repository": "jeedee/TkServer",
+        "commit": "96e0950c799c7a6f117b0c68fe6f732d0d4497f7",
+        "status": "ACQUIRED_FILE_INSPECTED",
+        "license": "NO_ROOT_LICENSE"
+      }
+    ],
+    "jaggedsoft/nexustk": [
+      {
+        "repository": "jaggedsoft/nexustk",
+        "commit": "b63f3e034f4da4ac4518c0f65c5848c9ceefedc1",
+        "status": "ACQUIRED_FILE_INSPECTED",
+        "license": "NO_ROOT_LICENSE"
+      }
+    ],
+    "kimjs3374/oldbaram": [
+      {
+        "repository": "kimjs3374/oldbaram",
+        "commit": "bf3882c1180f9eb229b84d73d60e8f57e48d0657",
+        "status": "ACQUIRED_FILE_INSPECTED",
+        "license": "NO_ROOT_LICENSE"
+      },
+      {
+        "repository": "kimjs3374/oldbaram_sunbi",
+        "commit": "b1ca51771ba1bd7c135b9ea664e2271edf74b2f4",
+        "status": "ACQUIRED_FILE_INSPECTED",
+        "license": "NO_ROOT_LICENSE"
+      }
+    ],
+    "mun5424/Baram_Legacy": [
+      {
+        "repository": "mun5424/Baram_Legacy",
+        "commit": "d4c6aab686baab4b338c217965f549b169f18036",
+        "status": "ACQUIRED_FILE_INSPECTED",
+        "license": "NO_ROOT_LICENSE"
+      }
+    ],
+    "RTK-java-version": [
+      {
+        "status": "ACQUIRED_FILE_INSPECTED",
+        "commit": "fec7b36bae0b18471391d652d35a96793cf0be5a",
+        "license": "NOT_VERIFIED"
+      }
+    ],
+    "Chronicles of Mithia 2014 distribution": [
+      {
+        "status": "ACQUIRED_FILE_INSPECTED",
+        "commit": null,
+        "license": "NOT_VERIFIED"
+      }
+    ],
+    "Judge Map Editor": [
+      {
+        "status": "ACQUIRED_FILE_INSPECTED",
+        "commit": null,
+        "license": "NOT_VERIFIED"
+      }
+    ],
+    "Baram Map Editor": [
+      {
+        "status": "ACQUIRED_FILE_INSPECTED",
+        "commit": null,
+        "license": "NOT_VERIFIED"
+      }
+    ],
+    "EPFTool": [
+      {
+        "status": "ACQUIRED_FILE_INSPECTED",
+        "commit": null,
+        "license": "NOT_VERIFIED"
+      }
+    ],
+    "RuneGard": [
+      {
+        "status": "LAUNCHER_AND_WIKI_ONLY",
+        "commit": null,
+        "license": "NOT_VERIFIED"
+      }
+    ],
+    "NemuTK / KamiKaze": [
+      {
+        "status": "HISTORICAL_PAGES_ONLY_SOURCE_DOWNLOAD_FAILED",
+        "commit": null,
+        "license": "NOT_VERIFIED"
+      }
+    ]
+  },
+  "excluded": [
+    "mu29/baram:visual novel engine",
+    "modern nx-mac online launcher",
+    "CFD pyBaram",
+    "baramundi IT tools",
+    "generic unshield extraction utility"
+  ],
+  "data_collections_not_software": [
+    "NexusAtlas",
+    "IA client collections",
+    "Korean 4.91 preservation"
+  ]
+}

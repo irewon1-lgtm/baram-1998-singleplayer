@@ -1,0 +1,94 @@
+{
+  "required_fields": {
+    "monster": {
+      "level": "level",
+      "hp": "HP",
+      "mp": "MP",
+      "attack_min": "damage",
+      "attack_max": "damage",
+      "armor_class": "AC",
+      "experience": "XP",
+      "move_interval_ms": "ms",
+      "attack_interval_ms": "ms",
+      "respawn_interval_ms": "ms",
+      "aggro_radius_tiles": "tile",
+      "leash_radius_tiles": "tile",
+      "hit_probability": "probability"
+    },
+    "item": {
+      "level_required": "level",
+      "strength_required": "stat",
+      "durability": "durability_point",
+      "vendor_buy_price": "전",
+      "vendor_sell_price": "전",
+      "repair_multiplier": "ratio",
+      "damage_min": "damage",
+      "damage_max": "damage",
+      "armor_class": "AC",
+      "hp_bonus": "HP",
+      "mp_bonus": "MP",
+      "strength_bonus": "stat",
+      "dexterity_bonus": "stat",
+      "intelligence_bonus": "stat",
+      "stack_limit": "count",
+      "heal_amount": "HP",
+      "restore_mp": "MP"
+    },
+    "spell": {
+      "learn_level": "level",
+      "learn_money": "전",
+      "cast_mp": "MP",
+      "cast_hp": "HP",
+      "cast_hp_fraction": "ratio",
+      "base_damage": "damage",
+      "heal_amount": "HP",
+      "range_tiles": "tile",
+      "aoe_radius_tiles": "tile",
+      "duration_ms": "ms",
+      "cooldown_ms": "ms",
+      "success_probability": "probability",
+      "learn_experience_cost": "XP"
+    },
+    "npc": {
+      "local_npc_x": "tile",
+      "local_npc_y": "tile",
+      "interaction_range_tiles": "tile",
+      "move_interval_ms": "ms"
+    },
+    "map": {
+      "width_tiles": "tile",
+      "height_tiles": "tile",
+      "spawn_x": "tile",
+      "spawn_y": "tile",
+      "entry_level_requirement": "level"
+    },
+    "growth": {
+      "cumulative_exp_to_next": "XP",
+      "exp_band_to_next": "XP",
+      "hp_gain_min": "HP",
+      "hp_gain_max_inclusive": "HP",
+      "mp_gain_min": "MP",
+      "mp_gain_max_inclusive": "MP",
+      "base_armor_class": "AC"
+    },
+    "advancement": {
+      "rank": "rank",
+      "hp_required": "HP",
+      "mp_required": "MP"
+    }
+  },
+  "extra_units": {
+    "guide_listed_price": "전",
+    "learn_materials": "count",
+    "drop_probability": "probability",
+    "armor_delta": "AC",
+    "strength_bonus": "stat",
+    "initial_hp_min": "HP",
+    "initial_hp_max": "HP",
+    "initial_mp_min": "MP",
+    "initial_mp_max": "MP",
+    "initial_stat": "stat"
+  },
+  "identity_policy": "Never average identifiers, source years or guide coordinates",
+  "profile_version": "1.0"
+}

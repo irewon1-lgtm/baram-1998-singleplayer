@@ -1,0 +1,24 @@
+{
+  "unique_file_payload_hashes": 808,
+  "formats": {
+    "map": 512,
+    "epf": 198,
+    "pal": 30,
+    "emf": 9,
+    "wav": 21,
+    "tbl": 24,
+    "mid": 12,
+    "bmp": 2
+  },
+  "version_appearances": {
+    "NA-4.03": 768,
+    "KR-4.91": 189
+  },
+  "declared_epf_frames": 92005,
+  "decoded_rendered_images": 0,
+  "semantic_entity_motion_links": 0,
+  "count_warning": "Declared frames and file payloads are not decoded pictures; same hash counted once",
+  "NA495_status": "BLOCKED_FULL_PAYLOAD_EXTRACTION",
+  "metadata_reused_original_archives_hash_matched": true,
+  "NA466_status": "INSTALLER_PRESENT_NO_SPRITE_PAYLOAD_CATALOG"
+}

@@ -1,0 +1,33 @@
+{
+  "stage": 5,
+  "decision": "NOT_MADE_WORK_PREPARATION_ONLY",
+  "options": [
+    {
+      "path": "Original client + local server",
+      "candidates": [
+        "NA4.95 + Project1998",
+        "KR4.91 + adapted server"
+      ],
+      "benefit": "Existing original renderer/input/protocol",
+      "blockers": [
+        "NA4.95 payload extraction and real client test",
+        "KR4.91 protocol and Korean fonts/text compatibility",
+        "Original assets and external server public-reuse permissions",
+        "Repair and Korean content still require implementation"
+      ]
+    },
+    {
+      "path": "Independent offline runtime/client",
+      "candidates": [
+        "Own runtime with permitted MIT DAT/EPF tools"
+      ],
+      "benefit": "Single-process offline save and replaceable version profiles",
+      "blockers": [
+        "Implement renderer/input/UI/combat/NPC/store",
+        "Bind and verify all assets and map collision",
+        "Use permitted resources or replace assets before public packaging"
+      ]
+    }
+  ],
+  "order": "Stage4 asset decode/binding evidence -> stage5 path decision -> stage6 working beginner loop"
+}

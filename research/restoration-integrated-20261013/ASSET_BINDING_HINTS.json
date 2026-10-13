@@ -1,0 +1,94 @@
+[
+  {
+    "identifier": "rabbit",
+    "source_file": "game-data/mobs.csv",
+    "source_line": 3,
+    "sha256": "e0d8bf20c57c64bdeef43044cc4562b56f63340b7d856b97102e0a7e5ac985cf",
+    "upstream_visual_ids": {
+      "MobLook": "125",
+      "MobLookColor": "11"
+    },
+    "version": "NA4.95_RESTORATION_REFERENCE",
+    "KR_full_identity_verified": false,
+    "DAT_EPF_frame_binding": null,
+    "render_status": "NOT_RUN"
+  },
+  {
+    "identifier": "squirrel",
+    "source_file": "game-data/mobs.csv",
+    "source_line": 4,
+    "sha256": "e0d8bf20c57c64bdeef43044cc4562b56f63340b7d856b97102e0a7e5ac985cf",
+    "upstream_visual_ids": {
+      "MobLook": "25",
+      "MobLookColor": "9"
+    },
+    "version": "NA4.95_RESTORATION_REFERENCE",
+    "KR_full_identity_verified": false,
+    "DAT_EPF_frame_binding": null,
+    "render_status": "NOT_RUN"
+  },
+  {
+    "identifier": "wooden_saber",
+    "source_file": "game-data/Items.csv",
+    "source_line": 36,
+    "sha256": "f8749498724eab37643022ba0df11f67a3a32630026e729e27fd4ca96b7ed826",
+    "upstream_visual_ids": {
+      "ItmIcon": "2",
+      "ItmIconColor": "0",
+      "ItmLook": "1",
+      "ItmLookColor": "0"
+    },
+    "version": "NA4.95_RESTORATION_REFERENCE",
+    "KR_full_identity_verified": false,
+    "DAT_EPF_frame_binding": null,
+    "render_status": "NOT_RUN"
+  },
+  {
+    "identifier": "wooden_sword",
+    "source_file": "game-data/Items.csv",
+    "source_line": 104,
+    "sha256": "f8749498724eab37643022ba0df11f67a3a32630026e729e27fd4ca96b7ed826",
+    "upstream_visual_ids": {
+      "ItmIcon": "2",
+      "ItmIconColor": "0",
+      "ItmLook": "1",
+      "ItmLookColor": "0"
+    },
+    "version": "NA4.95_RESTORATION_REFERENCE",
+    "KR_full_identity_verified": false,
+    "DAT_EPF_frame_binding": null,
+    "render_status": "NOT_RUN"
+  },
+  {
+    "identifier": "acorn",
+    "source_file": "game-data/Items.csv",
+    "source_line": 187,
+    "sha256": "f8749498724eab37643022ba0df11f67a3a32630026e729e27fd4ca96b7ed826",
+    "upstream_visual_ids": {
+      "ItmIcon": "214",
+      "ItmIconColor": "0",
+      "ItmLook": "0",
+      "ItmLookColor": "0"
+    },
+    "version": "NA4.95_RESTORATION_REFERENCE",
+    "KR_full_identity_verified": false,
+    "DAT_EPF_frame_binding": null,
+    "render_status": "NOT_RUN"
+  },
+  {
+    "identifier": "rabbit_meat",
+    "source_file": "game-data/Items.csv",
+    "source_line": 190,
+    "sha256": "f8749498724eab37643022ba0df11f67a3a32630026e729e27fd4ca96b7ed826",
+    "upstream_visual_ids": {
+      "ItmIcon": "217",
+      "ItmIconColor": "0",
+      "ItmLook": "0",
+      "ItmLookColor": "0"
+    },
+    "version": "NA4.95_RESTORATION_REFERENCE",
+    "KR_full_identity_verified": false,
+    "DAT_EPF_frame_binding": null,
+    "render_status": "NOT_RUN"
+  }
+]

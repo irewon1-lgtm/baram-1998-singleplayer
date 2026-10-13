@@ -1,0 +1,287 @@
+{
+  "executed_at": "2026-10-13T14:24:59.808588+00:00",
+  "command": "python tools/validate_restoration_data.py",
+  "base_sha": "443b49abe97948f59893d3e23f667b0e2eb5e8ff",
+  "checks": [
+    {
+      "name": "Unique content ids",
+      "result": "PASS",
+      "expected": 15971,
+      "observed": 15971,
+      "scope": "RESEARCH_DATA_CONTRACT_ONLY"
+    },
+    {
+      "name": "Unique field ids and content-field pairs",
+      "result": "PASS",
+      "expected": 19477,
+      "observed": 19477,
+      "scope": "RESEARCH_DATA_CONTRACT_ONLY"
+    },
+    {
+      "name": "Unique source observation ids",
+      "result": "PASS",
+      "expected": 9705,
+      "observed": 9705,
+      "scope": "RESEARCH_DATA_CONTRACT_ONLY"
+    },
+    {
+      "name": "All 1674 candidates reconciled exactly once",
+      "result": "PASS",
+      "expected": {
+        "rows": 1674,
+        "missing": [],
+        "extra": []
+      },
+      "observed": {
+        "rows": 1674,
+        "missing": [],
+        "extra": []
+      },
+      "scope": "RESEARCH_DATA_CONTRACT_ONLY"
+    },
+    {
+      "name": "Candidate outcome partition",
+      "result": "PASS",
+      "expected": {
+        "VERIFIED": 1348,
+        "DEFERRED": 8,
+        "INSUFFICIENT_DATA": 240,
+        "ERROR": 36,
+        "DUPLICATE": 42
+      },
+      "observed": {
+        "VERIFIED": 1348,
+        "DEFERRED": 8,
+        "INSUFFICIENT_DATA": 240,
+        "ERROR": 36,
+        "DUPLICATE": 42
+      },
+      "scope": "RESEARCH_DATA_CONTRACT_ONLY"
+    },
+    {
+      "name": "Source HTML byte verification for every candidate",
+      "result": "PASS",
+      "expected": {
+        "verified": 1674,
+        "source_count": 58
+      },
+      "observed": {
+        "verified": 1674,
+        "source_count": 58
+      },
+      "scope": "RESEARCH_DATA_CONTRACT_ONLY"
+    },
+    {
+      "name": "Master content and observation links resolve",
+      "result": "PASS",
+      "expected": [],
+      "observed": [],
+      "scope": "RESEARCH_DATA_CONTRACT_ONLY"
+    },
+    {
+      "name": "Observations have content/source/position",
+      "result": "PASS",
+      "expected": [],
+      "observed": [],
+      "scope": "RESEARCH_DATA_CONTRACT_ONLY"
+    },
+    {
+      "name": "Every applied value has linked evidence or assumption",
+      "result": "PASS",
+      "expected": [],
+      "observed": [],
+      "scope": "RESEARCH_DATA_CONTRACT_ONLY"
+    },
+    {
+      "name": "Original and external values retain URLs",
+      "result": "PASS",
+      "expected": [],
+      "observed": [],
+      "scope": "RESEARCH_DATA_CONTRACT_ONLY"
+    },
+    {
+      "name": "No unknown numeric units",
+      "result": "PASS",
+      "expected": [],
+      "observed": [],
+      "scope": "RESEARCH_DATA_CONTRACT_ONLY"
+    },
+    {
+      "name": "Applied values are finite numeric scalars",
+      "result": "PASS",
+      "expected": [],
+      "observed": [],
+      "scope": "RESEARCH_DATA_CONTRACT_ONLY"
+    },
+    {
+      "name": "Probabilities use 0..1",
+      "result": "PASS",
+      "expected": [],
+      "observed": [],
+      "scope": "RESEARCH_DATA_CONTRACT_ONLY"
+    },
+    {
+      "name": "Integer domains have explicit integer values",
+      "result": "PASS",
+      "expected": [],
+      "observed": [],
+      "scope": "RESEARCH_DATA_CONTRACT_ONLY"
+    },
+    {
+      "name": "Nonnegative resource domains; signed AC separate",
+      "result": "PASS",
+      "expected": [],
+      "observed": [],
+      "scope": "RESEARCH_DATA_CONTRACT_ONLY"
+    },
+    {
+      "name": "Historical, replacement and assumed values stay separate",
+      "result": "PASS",
+      "expected": [],
+      "observed": [],
+      "scope": "RESEARCH_DATA_CONTRACT_ONLY"
+    },
+    {
+      "name": "Means reproduce distinct Korean observations only",
+      "result": "PASS",
+      "expected": {
+        "bad": []
+      },
+      "observed": {
+        "mean_fields": 27,
+        "bad": []
+      },
+      "scope": "RESEARCH_DATA_CONTRACT_ONLY"
+    },
+    {
+      "name": "Every declared early scalar input populated",
+      "result": "PASS",
+      "expected": {
+        "filled": 4216,
+        "total": 4216
+      },
+      "observed": {
+        "filled": 4216,
+        "total": 4216
+      },
+      "scope": "RESEARCH_DATA_CONTRACT_ONLY"
+    },
+    {
+      "name": "Every missing required scalar has one gap row",
+      "result": "PASS",
+      "expected": {
+        "equal": true
+      },
+      "observed": {
+        "required_missing": 8771,
+        "gap_rows": 8771
+      },
+      "scope": "RESEARCH_DATA_CONTRACT_ONLY"
+    },
+    {
+      "name": "Numeric headline reconciles to data",
+      "result": "PASS",
+      "expected": {
+        "required": 16040,
+        "gaps": 8771,
+        "early": 4216
+      },
+      "observed": {
+        "required": 16040,
+        "gaps": 8771,
+        "early": 4216
+      },
+      "scope": "RESEARCH_DATA_CONTRACT_ONLY"
+    },
+    {
+      "name": "Drop monster/item/source links and ranges",
+      "result": "PASS",
+      "expected": [],
+      "observed": [],
+      "scope": "RESEARCH_DATA_CONTRACT_ONLY"
+    },
+    {
+      "name": "Prepared tests are not represented as executed",
+      "result": "PASS",
+      "expected": {
+        "actual_runs": 0,
+        "bad": []
+      },
+      "observed": {
+        "test_definitions": 37,
+        "actual_runs": 0,
+        "bad": []
+      },
+      "scope": "RESEARCH_DATA_CONTRACT_ONLY"
+    },
+    {
+      "name": "Gameplay implementation and screen checks remain unverified",
+      "result": "PASS",
+      "expected": "All independent statuses NOT_RUN",
+      "observed": 30,
+      "scope": "RESEARCH_DATA_CONTRACT_ONLY"
+    },
+    {
+      "name": "Asset catalogue has hashes but no render/public-byte claim",
+      "result": "PASS",
+      "expected": {
+        "bad": []
+      },
+      "observed": {
+        "unique_payloads": 808,
+        "bad": []
+      },
+      "scope": "RESEARCH_DATA_CONTRACT_ONLY"
+    },
+    {
+      "name": "Inherited research file bytes preserved",
+      "result": "PASS",
+      "expected": [],
+      "observed": [],
+      "scope": "RESEARCH_DATA_CONTRACT_ONLY"
+    },
+    {
+      "name": "Public new research contains no raw client/resource binaries",
+      "result": "PASS",
+      "expected": [],
+      "observed": [],
+      "scope": "RESEARCH_DATA_CONTRACT_ONLY"
+    },
+    {
+      "name": "Squirrel blended XP remains 7.5",
+      "result": "PASS",
+      "expected": 7.5,
+      "observed": 7.5,
+      "scope": "RESEARCH_DATA_CONTRACT_ONLY"
+    },
+    {
+      "name": "Gungon cast MP40 differs from learn gold3250",
+      "result": "PASS",
+      "expected": {
+        "cast_mp": 40,
+        "learn_gold": 3250
+      },
+      "observed": {
+        "cast_mp": 40,
+        "learn_gold": 3250
+      },
+      "scope": "RESEARCH_DATA_CONTRACT_ONLY"
+    },
+    {
+      "name": "Exclusive external growth maxima converted explicitly",
+      "result": "PASS",
+      "expected": [],
+      "observed": [],
+      "scope": "RESEARCH_DATA_CONTRACT_ONLY"
+    }
+  ],
+  "pass_checks": 29,
+  "fail_checks": 0,
+  "data_contract_status": "PASS",
+  "original_fidelity": "UNVERIFIED",
+  "actual_game_simulation": "NOT_RUN",
+  "actual_game_screen": "NOT_RUN",
+  "full_later_numeric_completion": "BLOCKED_GAPS_RETAINED",
+  "main_merge": false,
+  "paid_work": false
+}

@@ -1,0 +1,838 @@
+{
+  "test_count": 37,
+  "scope": "Input and expected conditions only",
+  "execution_status": "NOT_RUN",
+  "actual_simulations_executed": 0,
+  "tests": [
+    {
+      "test_id": "XP-FRACTION",
+      "name": "분수 경험치 누적",
+      "inputs": {
+        "monster_xp": 7.5,
+        "kills": 10,
+        "starting_xp": 0
+      },
+      "expected_conditions": {
+        "final_xp": 75,
+        "per_kill_rounding_forbidden": true
+      },
+      "field_refs": [
+        "FIELD-fa64fc7e7917f85e"
+      ],
+      "precondition": null,
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "XP-1-1",
+      "name": "누적 경험치 경계 전사 1",
+      "inputs": {
+        "class_scope": "전사",
+        "current_level": 1,
+        "threshold": 300,
+        "xp_before": 299,
+        "award": 1
+      },
+      "expected_conditions": {
+        "level_after": 2,
+        "threshold_is_cumulative": true
+      },
+      "field_refs": [
+        "FIELD-af945485f11087ab"
+      ],
+      "precondition": null,
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "XP-1-5",
+      "name": "누적 경험치 경계 전사 5",
+      "inputs": {
+        "class_scope": "전사",
+        "current_level": 5,
+        "threshold": 2400,
+        "xp_before": 2399,
+        "award": 1
+      },
+      "expected_conditions": {
+        "level_after": 6,
+        "threshold_is_cumulative": true
+      },
+      "field_refs": [
+        "FIELD-7f569dc8745e5b69"
+      ],
+      "precondition": null,
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "XP-1-29",
+      "name": "누적 경험치 경계 전사 29",
+      "inputs": {
+        "class_scope": "전사",
+        "current_level": 29,
+        "threshold": 920400,
+        "xp_before": 920399,
+        "award": 1
+      },
+      "expected_conditions": {
+        "level_after": 30,
+        "threshold_is_cumulative": true
+      },
+      "field_refs": [
+        "FIELD-dea6f44041076dd6"
+      ],
+      "precondition": null,
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "XP-1-98",
+      "name": "누적 경험치 경계 전사 98",
+      "inputs": {
+        "class_scope": "전사",
+        "current_level": 98,
+        "threshold": 2600000000,
+        "xp_before": 2599999999,
+        "award": 1
+      },
+      "expected_conditions": {
+        "level_after": 99,
+        "threshold_is_cumulative": true
+      },
+      "field_refs": [
+        "FIELD-6fbc0efcdd96a2e6"
+      ],
+      "precondition": null,
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "GROWTH-1",
+      "name": "1~30 성장 전사",
+      "inputs": {
+        "class_scope": "전사",
+        "start_level": 1,
+        "job_select_level": 5,
+        "target_level": 30,
+        "random_seed": 19982001
+      },
+      "expected_conditions": {
+        "all_29_levelups_in_valid_inclusive_hp_mp_ranges": true,
+        "peasant_growth_used_before_job_selection": true,
+        "save_reload_preserves_level_hp_mp_xp_gold": true
+      },
+      "field_refs": [
+        "FIELD-de1682e4cfcb6803",
+        "FIELD-00d5d3cf202b90bd"
+      ],
+      "precondition": null,
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "XP-2-1",
+      "name": "누적 경험치 경계 도적 1",
+      "inputs": {
+        "class_scope": "도적",
+        "current_level": 1,
+        "threshold": 300,
+        "xp_before": 299,
+        "award": 1
+      },
+      "expected_conditions": {
+        "level_after": 2,
+        "threshold_is_cumulative": true
+      },
+      "field_refs": [
+        "FIELD-b643ec96975cd806"
+      ],
+      "precondition": null,
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "XP-2-5",
+      "name": "누적 경험치 경계 도적 5",
+      "inputs": {
+        "class_scope": "도적",
+        "current_level": 5,
+        "threshold": 2100,
+        "xp_before": 2099,
+        "award": 1
+      },
+      "expected_conditions": {
+        "level_after": 6,
+        "threshold_is_cumulative": true
+      },
+      "field_refs": [
+        "FIELD-976ff33f66f92aa3"
+      ],
+      "precondition": null,
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "XP-2-29",
+      "name": "누적 경험치 경계 도적 29",
+      "inputs": {
+        "class_scope": "도적",
+        "current_level": 29,
+        "threshold": 736320,
+        "xp_before": 736319,
+        "award": 1
+      },
+      "expected_conditions": {
+        "level_after": 30,
+        "threshold_is_cumulative": true
+      },
+      "field_refs": [
+        "FIELD-8af2abc42f83c0a1"
+      ],
+      "precondition": null,
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "XP-2-98",
+      "name": "누적 경험치 경계 도적 98",
+      "inputs": {
+        "class_scope": "도적",
+        "current_level": 98,
+        "threshold": 2000000000,
+        "xp_before": 1999999999,
+        "award": 1
+      },
+      "expected_conditions": {
+        "level_after": 99,
+        "threshold_is_cumulative": true
+      },
+      "field_refs": [
+        "FIELD-d495c7b8f7e8950b"
+      ],
+      "precondition": null,
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "GROWTH-2",
+      "name": "1~30 성장 도적",
+      "inputs": {
+        "class_scope": "도적",
+        "start_level": 1,
+        "job_select_level": 5,
+        "target_level": 30,
+        "random_seed": 19982001
+      },
+      "expected_conditions": {
+        "all_29_levelups_in_valid_inclusive_hp_mp_ranges": true,
+        "peasant_growth_used_before_job_selection": true,
+        "save_reload_preserves_level_hp_mp_xp_gold": true
+      },
+      "field_refs": [
+        "FIELD-d91e985a2fea1ea3",
+        "FIELD-7fcdf288517214e5"
+      ],
+      "precondition": null,
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "XP-3-1",
+      "name": "누적 경험치 경계 주술사 1",
+      "inputs": {
+        "class_scope": "주술사",
+        "current_level": 1,
+        "threshold": 300,
+        "xp_before": 299,
+        "award": 1
+      },
+      "expected_conditions": {
+        "level_after": 2,
+        "threshold_is_cumulative": true
+      },
+      "field_refs": [
+        "FIELD-641448f46eb60b38"
+      ],
+      "precondition": null,
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "XP-3-5",
+      "name": "누적 경험치 경계 주술사 5",
+      "inputs": {
+        "class_scope": "주술사",
+        "current_level": 5,
+        "threshold": 2150,
+        "xp_before": 2149,
+        "award": 1
+      },
+      "expected_conditions": {
+        "level_after": 6,
+        "threshold_is_cumulative": true
+      },
+      "field_refs": [
+        "FIELD-f25557e785f6ffe9"
+      ],
+      "precondition": null,
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "XP-3-29",
+      "name": "누적 경험치 경계 주술사 29",
+      "inputs": {
+        "class_scope": "주술사",
+        "current_level": 29,
+        "threshold": 828360,
+        "xp_before": 828359,
+        "award": 1
+      },
+      "expected_conditions": {
+        "level_after": 30,
+        "threshold_is_cumulative": true
+      },
+      "field_refs": [
+        "FIELD-f4b16b8e6eb56db4"
+      ],
+      "precondition": null,
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "XP-3-98",
+      "name": "누적 경험치 경계 주술사 98",
+      "inputs": {
+        "class_scope": "주술사",
+        "current_level": 98,
+        "threshold": 2970000000,
+        "xp_before": 2969999999,
+        "award": 1
+      },
+      "expected_conditions": {
+        "level_after": 99,
+        "threshold_is_cumulative": true
+      },
+      "field_refs": [
+        "FIELD-b720271208b7c8ab"
+      ],
+      "precondition": null,
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "GROWTH-3",
+      "name": "1~30 성장 주술사",
+      "inputs": {
+        "class_scope": "주술사",
+        "start_level": 1,
+        "job_select_level": 5,
+        "target_level": 30,
+        "random_seed": 19982001
+      },
+      "expected_conditions": {
+        "all_29_levelups_in_valid_inclusive_hp_mp_ranges": true,
+        "peasant_growth_used_before_job_selection": true,
+        "save_reload_preserves_level_hp_mp_xp_gold": true
+      },
+      "field_refs": [
+        "FIELD-ab385a76d0a8779f",
+        "FIELD-137d19e3cbb65ede"
+      ],
+      "precondition": null,
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "XP-4-1",
+      "name": "누적 경험치 경계 도사 1",
+      "inputs": {
+        "class_scope": "도사",
+        "current_level": 1,
+        "threshold": 300,
+        "xp_before": 299,
+        "award": 1
+      },
+      "expected_conditions": {
+        "level_after": 2,
+        "threshold_is_cumulative": true
+      },
+      "field_refs": [
+        "FIELD-ff21923b1da077c7"
+      ],
+      "precondition": null,
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "XP-4-5",
+      "name": "누적 경험치 경계 도사 5",
+      "inputs": {
+        "class_scope": "도사",
+        "current_level": 5,
+        "threshold": 2250,
+        "xp_before": 2249,
+        "award": 1
+      },
+      "expected_conditions": {
+        "level_after": 6,
+        "threshold_is_cumulative": true
+      },
+      "field_refs": [
+        "FIELD-cf0ebe9b4debad66"
+      ],
+      "precondition": null,
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "XP-4-29",
+      "name": "누적 경험치 경계 도사 29",
+      "inputs": {
+        "class_scope": "도사",
+        "current_level": 29,
+        "threshold": 828360,
+        "xp_before": 828359,
+        "award": 1
+      },
+      "expected_conditions": {
+        "level_after": 30,
+        "threshold_is_cumulative": true
+      },
+      "field_refs": [
+        "FIELD-3e8040002c276cc0"
+      ],
+      "precondition": null,
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "XP-4-98",
+      "name": "누적 경험치 경계 도사 98",
+      "inputs": {
+        "class_scope": "도사",
+        "current_level": 98,
+        "threshold": 2300000000,
+        "xp_before": 2299999999,
+        "award": 1
+      },
+      "expected_conditions": {
+        "level_after": 99,
+        "threshold_is_cumulative": true
+      },
+      "field_refs": [
+        "FIELD-74e6f3774aa62692"
+      ],
+      "precondition": null,
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "GROWTH-4",
+      "name": "1~30 성장 도사",
+      "inputs": {
+        "class_scope": "도사",
+        "start_level": 1,
+        "job_select_level": 5,
+        "target_level": 30,
+        "random_seed": 19982001
+      },
+      "expected_conditions": {
+        "all_29_levelups_in_valid_inclusive_hp_mp_ranges": true,
+        "peasant_growth_used_before_job_selection": true,
+        "save_reload_preserves_level_hp_mp_xp_gold": true
+      },
+      "field_refs": [
+        "FIELD-734e4550fb2b6316",
+        "FIELD-37fb0450ac26ece1"
+      ],
+      "precondition": null,
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "XP-99-CAP",
+      "name": "99레벨 상한",
+      "inputs": {
+        "current_level": 99,
+        "xp_award": 1000000
+      },
+      "expected_conditions": {
+        "level_after": 99,
+        "xp_bank_preserved": true
+      },
+      "field_refs": [],
+      "precondition": "Decide and implement post-99 XP conversion separately; never use missing next threshold as a level-100 gate",
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "INTEGER-LEARN",
+      "name": "평균 습득레벨 정수화",
+      "inputs": {
+        "raw_average": 71.5
+      },
+      "expected_conditions": {
+        "applied_level": 72
+      },
+      "field_refs": [
+        "FIELD-906642e42c3e422b"
+      ],
+      "precondition": null,
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "INTEGER-AC",
+      "name": "평균 AC 정수화",
+      "inputs": {
+        "raw_average": -11.5
+      },
+      "expected_conditions": {
+        "applied_armor_class": -12
+      },
+      "field_refs": [
+        "FIELD-0a1c4f08de0773ff"
+      ],
+      "precondition": null,
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "EQUIP-STRENGTH",
+      "name": "착용 힘 경계",
+      "inputs": {
+        "item": "목검",
+        "required_strength": 5,
+        "player_strength_cases": [
+          4,
+          5
+        ]
+      },
+      "expected_conditions": {
+        "equip_results": [
+          false,
+          true
+        ],
+        "failed_equip_leaves_inventory_unchanged": true
+      },
+      "field_refs": [
+        "FIELD-480e273f386ca473"
+      ],
+      "precondition": null,
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "DAMAGE-ARMOR",
+      "name": "대체 방어력 공식",
+      "inputs": {
+        "raw_damage": 100,
+        "target_armor_cases": [
+          100,
+          0,
+          -80,
+          -95
+        ],
+        "armor_floor": -95
+      },
+      "expected_conditions": {
+        "damage_cases": [
+          200,
+          100,
+          20,
+          5
+        ],
+        "rounding": "floor once at final multiplication"
+      },
+      "field_refs": [],
+      "precondition": "Only if the selected development path adopts the explicitly labeled NA replacement formula",
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "CAST-RESOURCES",
+      "name": "MP·HP 차감 원자성",
+      "inputs": {
+        "mp_before": 20,
+        "required_mp": 21,
+        "hp_before": 50
+      },
+      "expected_conditions": {
+        "cast_succeeds": false,
+        "mp_after": 20,
+        "hp_after": 50,
+        "cooldown_not_started": true
+      },
+      "field_refs": [],
+      "precondition": null,
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "HEAL-CAP",
+      "name": "회복 상한",
+      "inputs": {
+        "hp_before": 90,
+        "hp_max": 100,
+        "heal": 50
+      },
+      "expected_conditions": {
+        "hp_after": 100
+      },
+      "field_refs": [],
+      "precondition": null,
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "LEARN-COST",
+      "name": "습득 비용과 시전 비용 분리",
+      "inputs": {
+        "skill": "누리의기원",
+        "class_scope": "전사",
+        "level": 10,
+        "gold": 30,
+        "acorns": 70
+      },
+      "expected_conditions": {
+        "learn_gold_deduction": 30,
+        "learn_acorn_deduction": 70,
+        "learning_gold_never_used_as_cast_mp": true
+      },
+      "field_refs": [
+        "FIELD-4e8fef55d88d1006"
+      ],
+      "precondition": null,
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "LEARN-ABORT",
+      "name": "제물 부족",
+      "inputs": {
+        "gold": 30,
+        "acorns": 69,
+        "required_acorns": 70
+      },
+      "expected_conditions": {
+        "learn_succeeds": false,
+        "gold_after": 30,
+        "acorns_after": 69
+      },
+      "field_refs": [],
+      "precondition": null,
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "DROP-10PCT",
+      "name": "서생원 산삼 확률",
+      "inputs": {
+        "kills": 100000,
+        "seed": 1999,
+        "item": "산삼",
+        "probability": 0.1
+      },
+      "expected_conditions": {
+        "drop_count_min": 9500,
+        "drop_count_max": 10500,
+        "listed_item_not_forced_to_probability_one": true
+      },
+      "field_refs": [],
+      "precondition": "Use the actual game RNG, source-linked 10% rule and independently meaningful tolerance",
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "DROP-ALTERNATIVE",
+      "name": "대체 드롭 그룹",
+      "inputs": {
+        "group": [
+          "철단도",
+          "철검"
+        ],
+        "mode": "ALTERNATIVE_NOT_INDEPENDENT",
+        "seed": 2001
+      },
+      "expected_conditions": {
+        "at_most_one_of_group_per_group_roll": true
+      },
+      "field_refs": [],
+      "precondition": "Source says alternative possibilities; choose and label group roll probability separately",
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "TRADE-ROUNDTRIP",
+      "name": "구매·판매·금전",
+      "inputs": {
+        "gold": 1000,
+        "buy_price": 20,
+        "sell_price": 10,
+        "quantity": 3
+      },
+      "expected_conditions": {
+        "gold_after_buy": 940,
+        "gold_after_resell": 970,
+        "negative_balance_forbidden": true
+      },
+      "field_refs": [],
+      "precondition": null,
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "REPAIR-RTK",
+      "name": "RTK 대체 수리 계산",
+      "inputs": {
+        "buy_price": 20,
+        "max_durability": 4000,
+        "current_durability": 2000,
+        "coefficient": 0.5
+      },
+      "expected_conditions": {
+        "repair_cost": 5,
+        "after_durability": 4000
+      },
+      "field_refs": [],
+      "precondition": "If adopting RTK formula; original Korean repair formula remains unverified",
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "REPAIR-BOUNDARY",
+      "name": "수리 경계",
+      "inputs": {
+        "max_durability": 4000,
+        "current_durability": 4000,
+        "gold": 0
+      },
+      "expected_conditions": {
+        "repair_cost": 0,
+        "zero_max_durability_never_divided": true,
+        "nonrepairable_item_rejected": true
+      },
+      "field_refs": [],
+      "precondition": null,
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "CRAFT-ATOMIC",
+      "name": "제작 거래 원자성",
+      "inputs": {
+        "seed": 1998,
+        "ingredients_sufficient": false
+      },
+      "expected_conditions": {
+        "no_gold_or_item_deduction": true,
+        "no_product_grant": true
+      },
+      "field_refs": [],
+      "precondition": null,
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    },
+    {
+      "test_id": "PROGRESSION-RESOURCES",
+      "name": "각 직업 성장 경제",
+      "inputs": {
+        "classes": [
+          "전사",
+          "도적",
+          "주술사",
+          "도사"
+        ],
+        "target_level": 30,
+        "seed": 19982001,
+        "buy_sell_prices": "NUMERIC_MASTER",
+        "drops": "DROP_RULES"
+      },
+      "expected_conditions": {
+        "no_required_skill_material_without_obtainable_source": true,
+        "no_negative_gold": true,
+        "no_required_equipment_stronger_than_available_strength": true
+      },
+      "field_refs": [],
+      "precondition": "Requires actual NPC inventories, spawns, mappings and mechanics; input readiness is not this test passing",
+      "execution_status": "NOT_RUN",
+      "observed_result": null,
+      "evidence_log": null,
+      "required_calculator": "The same module called by the actual game; no separate simulation formula"
+    }
+  ]
+}

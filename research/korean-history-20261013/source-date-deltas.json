@@ -1,0 +1,122 @@
+[
+  {
+    "entity": "다람쥐",
+    "category": "monster",
+    "fact_ids": [
+      "KR-2000-0001",
+      "KR-2001-0021"
+    ],
+    "differences": {
+      "experience": {
+        "2000": 5,
+        "2001": 10
+      }
+    },
+    "effective_patch_date": null,
+    "resolution": "PRESERVE_BOTH; discrepancy/change/stale-guide not yet distinguishable"
+  },
+  {
+    "entity": "구미호",
+    "category": "monster",
+    "fact_ids": [
+      "KR-2000-0020",
+      "KR-2001-0048"
+    ],
+    "differences": {
+      "drop_item_names": {
+        "2000": [
+          "철도"
+        ],
+        "2001": [
+          "사각방패"
+        ]
+      }
+    },
+    "effective_patch_date": null,
+    "resolution": "PRESERVE_BOTH; discrepancy/change/stale-guide not yet distinguishable"
+  },
+  {
+    "entity": "대지의기원",
+    "category": "spell",
+    "fact_ids": [
+      "KR-2000-0105",
+      "KR-2001-0122"
+    ],
+    "differences": {
+      "learn_materials": {
+        "2000": [
+          {
+            "name": "도토리",
+            "quantity": 80
+          }
+        ],
+        "2001": [
+          {
+            "name": "도토리",
+            "quantity": 70
+          }
+        ]
+      }
+    },
+    "effective_patch_date": null,
+    "resolution": "PRESERVE_BOTH; discrepancy/change/stale-guide not yet distinguishable"
+  },
+  {
+    "entity": "건곤대나이",
+    "category": "spell",
+    "fact_ids": [
+      "KR-2000-0115",
+      "KR-2001-0132"
+    ],
+    "differences": {
+      "learn_money": {
+        "2000": 5000,
+        "2001": 1500
+      }
+    },
+    "effective_patch_date": null,
+    "resolution": "PRESERVE_BOTH; discrepancy/change/stale-guide not yet distinguishable"
+  },
+  {
+    "entity": "검신검귀",
+    "category": "spell",
+    "fact_ids": [
+      "KR-2000-0116",
+      "KR-2001-0133"
+    ],
+    "differences": {
+      "learn_materials": {
+        "2000": [
+          {
+            "name": "도토리",
+            "quantity": 80
+          },
+          {
+            "name": "현철중검",
+            "quantity": 1
+          },
+          {
+            "name": "호박",
+            "quantity": 10
+          }
+        ],
+        "2001": [
+          {
+            "name": "도토리",
+            "quantity": 80
+          },
+          {
+            "name": "철도",
+            "quantity": 1
+          },
+          {
+            "name": "자호의가죽",
+            "quantity": 20
+          }
+        ]
+      }
+    },
+    "effective_patch_date": null,
+    "resolution": "PRESERVE_BOTH; discrepancy/change/stale-guide not yet distinguishable"
+  }
+]

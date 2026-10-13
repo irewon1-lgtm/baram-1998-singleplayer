@@ -1,0 +1,46 @@
+{
+  "scope": "Required scalar draft fields; per-drop probability coverage is reported separately. Geometry, mechanics, assets and rights are independent blockers.",
+  "required_fields": 16040,
+  "filled_required_fields": 7269,
+  "classifications": {
+    "KR_CONFIRMED": 1787,
+    "GAP": 8771,
+    "EXTERNAL_REPLACEMENT": 2443,
+    "DEV_ESTIMATE": 3018,
+    "KR_MEAN": 21
+  },
+  "early_required_fields": 4216,
+  "early_filled_fields": 4216,
+  "early_input_rate": 1.0,
+  "early_source_confirmed": 600,
+  "early_source_match_rate": 0.14231499051233396,
+  "later_required_fields": 11824,
+  "remaining_scalar_gaps": 8771,
+  "draft_geometry_values": 195,
+  "content_counts_KR": {
+    "advancement": 12,
+    "game_rule": 41,
+    "growth": 401,
+    "item": 534,
+    "map": 29,
+    "map_topology": 3,
+    "map_visual": 4,
+    "monster": 269,
+    "npc": 59,
+    "recipe": 1,
+    "spell": 199,
+    "version_event": 2
+  },
+  "early_entity_counts": {
+    "growth": 125,
+    "item": 125,
+    "map": 15,
+    "monster": 29,
+    "npc": 30,
+    "spell": 69
+  },
+  "original_runtime_match_rate": "UNVERIFIED",
+  "drop_rule_count": 243,
+  "drop_probability_gaps": 203,
+  "actual_game_simulations_executed": 0
+}

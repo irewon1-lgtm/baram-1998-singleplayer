@@ -1,0 +1,37 @@
+{
+  "executed_at": "2026-10-13T14:26:41.789561+00:00",
+  "python_version": "Python 3.12.14",
+  "commands": [
+    {
+      "command": "python tools/validate_restoration_data.py",
+      "exit_code": 0,
+      "result_file": "VALIDATION.json",
+      "log_file": "validation.log"
+    },
+    {
+      "command": "python private-analysis/evidence-validation-copy/verify_evidence.py",
+      "exit_code": 0,
+      "result_file": "INHERITED_EVIDENCE_VALIDATION.json",
+      "log_file": "inherited-evidence-validation.log"
+    }
+  ],
+  "own_validator_sha256": "b385e9f7aa65c232049e822c4b0559e344bd33078cbb2f7bcb90121db73bb9ea",
+  "scope": "Data and source integrity, not gameplay",
+  "game_tests_executed": 0,
+  "paid_API_calls": 0,
+  "main_merge": false,
+  "deployment": false,
+  "inputs_sha256": {
+    "ASSET_BINDING_GAPS.jsonl": "96eb6d843ef88cc816187b622e2624b5210f298a2fd2d148e1be88d66d43c832",
+    "ASSET_CATALOG.jsonl": "67327d327593c07d011c3d00b2a3d8bbba0d0ad074eb3607f9ceed7449d1f3ef",
+    "CANDIDATE_REVIEW.jsonl": "5e8f100839ea2f34fd09714e7c922c9d7b3112306d3e0503e2c3f5a077be8c46",
+    "CONTENT_CATALOG.jsonl": "da49977a36aa1347c40d4090552fd67cddb21b930cba34b81e5c9cd703da4aa2",
+    "CONTENT_FIELD_MATRIX.jsonl": "b682818cdd4ed7d99d3a02f7db9d5e4ee91f942c3abd5ca14807b5065acb80dd",
+    "DROP_RULES.jsonl": "0900a62c422a46ed0fe1130f8675ae653283b94d9c308486797fd2060afbc271",
+    "GAP_SUPPLEMENT_FACTS.jsonl": "8600728c42e50d4c29c58deaf53618dff54cd0f9e3c45f13bfaf54788782cb13",
+    "NUMERIC_GAPS.jsonl": "772f0c1eda81e12b2dbd461c47da557fc947d68996098881a2ab35762a9a44c2",
+    "NUMERIC_MASTER.jsonl": "98e57c0051c5c51949cbff7f1ea0ac6c1bc789e38670e83777b3eb28bdb95aaa",
+    "NUMERIC_SOURCES.jsonl": "3547d50f63fcbaded3d481517f3ec022a8dbbd2956d1da3392f2a0908d4088cf",
+    "VERIFIED_CANDIDATE_FACTS.jsonl": "76f80f4d101b34157883226606a43575dfcbf8037288a5856536a96ae5072a29"
+  }
+}

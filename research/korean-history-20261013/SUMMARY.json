@@ -1,0 +1,120 @@
+{
+  "as_of_kst": "2026-10-13",
+  "overall_status": "PARTIAL_HISTORICAL_RECONSTRUCTION; NOT_COMPLETE_PASS",
+  "domestic_sites_read": 14,
+  "domestic_sites": [
+    "baram.nexon.co.kr",
+    "dakku.com",
+    "hodduc.com",
+    "koreagamemagazinesarchive.org",
+    "gamemeca.com",
+    "aladin.co.kr",
+    "yes24.com",
+    "gall.dcinside.com",
+    "inven.co.kr",
+    "barch.kr",
+    "gubaram.tistory.com",
+    "paststory.tistory.com",
+    "etnews.com",
+    "df.gamechosun.co.kr"
+  ],
+  "archive_provider": "web.archive.org",
+  "official_html_attempted": 121,
+  "official_html_read": 119,
+  "official_substantive_text_pages_read": 72,
+  "official_image_wrapper_pages_read": 47,
+  "fan_substantive_text_pages_read": 40,
+  "fan_frame_wrapper_pages_read": 1,
+  "official_html_failed": 2,
+  "fan_html_attempted": 64,
+  "fan_html_read": 41,
+  "fan_html_failed": 23,
+  "magazine_images_visually_read": 18,
+  "magazine_issues_by_print_or_catalogue": 11,
+  "magazine_index_year_conflict_images": 3,
+  "guidebook_isbn_records_verified": 2,
+  "guidebook_interior_pages_read": 0,
+  "advertised_additional_revision": 1,
+  "official_image_objects_read": 7,
+  "official_unique_image_hashes_read": 6,
+  "official_map_tile_grids_verified": 0,
+  "full_entity_KR_resource_matches_verified": 0,
+  "curated_fact_records": 378,
+  "curated_fact_records_conflict_blocked": 1,
+  "extracted_candidate_rows": 1674,
+  "candidate_rows_by_category": {
+    "monster": 481,
+    "item": 771,
+    "spell": 377,
+    "npc": 45
+  },
+  "by_year": {
+    "1998": {
+      "fact_records": 83,
+      "by_category": {
+        "monster": 16,
+        "map_site": 17,
+        "spell": 14,
+        "npc": 27,
+        "game_rule": 9
+      },
+      "unique_category_name_pairs": 83
+    },
+    "1999": {
+      "fact_records": 89,
+      "by_category": {
+        "game_rule": 17,
+        "map_site": 12,
+        "npc": 12,
+        "spell": 7,
+        "item": 25,
+        "monster": 15,
+        "map_topology": 1
+      },
+      "unique_category_name_pairs": 89
+    },
+    "2000": {
+      "fact_records": 69,
+      "by_category": {
+        "monster": 20,
+        "item": 20,
+        "spell": 20,
+        "recipe": 1,
+        "npc": 1,
+        "game_rule": 6,
+        "version_event": 1
+      },
+      "unique_category_name_pairs": 69
+    },
+    "2001": {
+      "fact_records": 137,
+      "by_category": {
+        "monster": 41,
+        "item": 24,
+        "spell": 20,
+        "map_site": 8,
+        "npc": 16,
+        "version_event": 1,
+        "game_rule": 9,
+        "advancement": 12,
+        "map_topology": 2,
+        "map_visual": 4
+      },
+      "unique_category_name_pairs": 137
+    }
+  },
+  "known_effective_change_dates_confirmed": [
+    "2000-04-18"
+  ],
+  "gameplay_runtime_tests_run": 0,
+  "paid_work": false,
+  "deployment": false,
+  "main_merge": false,
+  "implementation_average_fields": 5,
+  "implementation_average_profile": "KR_BLEND_1998_2001; USER_DIRECTED_NOT_HISTORICAL_ORIGINAL",
+  "verified_scalar_numeric_cells": 426,
+  "source_record_count": 225,
+  "user_supplied_magazine_pages_read": 4,
+  "user_supplied_embedded_game_screenshots_read": 10,
+  "numeric_count_scope": "Scalar fields in curated records; repeated/derived values included, not unique source measurements"
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "source_id": "WEB-aladin",
+    "isbn13": "9788985966122",
+    "publication_date": "2001-03-03",
+    "pages": 350,
+    "edition_requested": "4.90",
+    "edition_verified": false,
+    "interior_pages_read": 0,
+    "status": "BIBLIOGRAPHY_ONLY"
+  },
+  {
+    "source_id": "WEB-yes24",
+    "isbn13": "9788985966283",
+    "publication_date": "2001-09-30",
+    "pages_catalogue": 447,
+    "pages_description": 432,
+    "patch_in_description": "5.05",
+    "label": "2002최신판",
+    "interior_pages_read": 0,
+    "status": "BIBLIOGRAPHY_AND_DESCRIPTION_ONLY"
+  },
+  {
+    "source_id": "M-netpower-2002_2-17",
+    "patch_advertised": "5.13",
+    "pages_advertised": 448,
+    "isbn13": null,
+    "status": "ADVERTISEMENT_VISUALLY_READ_ONLY"
+  }
+]

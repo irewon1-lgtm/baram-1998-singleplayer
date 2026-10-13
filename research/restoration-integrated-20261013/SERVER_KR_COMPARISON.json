@@ -1,0 +1,186 @@
+[
+  {
+    "project": "Project1998",
+    "version": "2026 reconstruction targeting NA4.95; not proven KR1998~2001",
+    "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+    "reuse": "NO_ROOT_LICENSE_REFERENCE_ONLY",
+    "evidence": [
+      {
+        "path": "game-data/LevelExp.csv",
+        "sha256": "63c33bbe2273e371b31037d91651f0bdb6b0ca5a53d92bc0169f69fb5ea66365",
+        "description": "Cumulative threshold for L -> L+1; no subtraction on level up",
+        "status": "READ_BYTES_STATIC_ONLY"
+      },
+      {
+        "path": "game-data/PathGrowth.csv",
+        "sha256": "c0ea059447f3439b0c12c24ed24eed8d3e46ce6e0928bac48bf761df331880d2",
+        "description": "Upper growth bound exclusive in Random.Next; data normalizes to inclusive max minus one",
+        "status": "READ_BYTES_STATIC_ONLY"
+      },
+      {
+        "path": "Server/Session.Items.cs",
+        "sha256": "475bda71d3672a31b1d295882d68dfda1c653cf24a91540966d96c7e4d06ef65",
+        "description": "S weapon roll and class/strength terms; NA-specific interpretation",
+        "status": "READ_BYTES_STATIC_ONLY"
+      },
+      {
+        "path": "Server/Combat.cs",
+        "sha256": "156ed1ffa78444d79fa41cebd1a55c8c9d165f971a9a5c63e8985ebeeae285f3",
+        "description": "Damage floor once after (100+max(AC,floor))/100; human floor -80, mob -95",
+        "status": "READ_BYTES_STATIC_ONLY"
+      },
+      {
+        "path": "Server/NpcAbility.cs",
+        "sha256": "6abd5e5c0df606c74faf8262950f5ee99076c11e052b9441793f6e2748b43f7d",
+        "description": "RepairAbility exists but is only a stub; code presence is not working repair",
+        "status": "READ_BYTES_STATIC_ONLY"
+      }
+    ],
+    "KR_comparison": "Rabbit XP5 and squirrel XP2001=10 partly match; squirrel blend7.5; HP/AI/full entity match unverified",
+    "gameplay_status": "NOT_RUN_THIS_WORK"
+  },
+  {
+    "project": "Baram Legacy",
+    "version": "Undated later catalogue; not a playable server",
+    "commit": "d4c6aab686baab4b338c217965f549b169f18036",
+    "reuse": "NO_ROOT_LICENSE_REFERENCE_ONLY",
+    "evidence": [
+      {
+        "path": "app/models/monster.rb",
+        "sha256": "1308d5e243e3ea2884eaf16f3db0e92dabca3ba94afb922ea1ed322ecbeb3a72",
+        "description": "Imports a catalogue; no real combat/level calculator found",
+        "status": "READ_BYTES_STATIC_ONLY"
+      },
+      {
+        "path": "app/assets/images/monsters/monsters.xlsx",
+        "sha256": "fcbaf95a4c1040d6f0c1d7f9fca2067fceb36c7e38c331b0addd53a4802b27e6",
+        "description": "619 body rows, rabbit XP5 and squirrel XP10; labels include pre5.50 and post-era references",
+        "status": "READ_BYTES_STATIC_ONLY"
+      },
+      {
+        "path": "app/assets/images/monsters/items.xlsx",
+        "sha256": "57ce878a5046f8f5671e0646a3251c5be3e87f641f1de8489a36e3129eb5ddfe",
+        "description": "2180 body rows; identity/image IDs rather than complete item stats",
+        "status": "READ_BYTES_STATIC_ONLY"
+      }
+    ],
+    "KR_comparison": "Catalogue names and selected XP are reference evidence, not 1998 runtime proof",
+    "gameplay_status": "NOT_RUN"
+  },
+  {
+    "project": "RTK/Mithia later branch",
+    "version": "Later 7.x lineage; balance not assumed equal to NA4.95 or KR",
+    "commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+    "reuse": "NO_ROOT_LICENSE_REFERENCE_ONLY",
+    "evidence": [
+      {
+        "path": "rtklua/Accepted/Scripts/swingDamage.lua",
+        "sha256": "37f9f3966106bdf3de24ea062f918b646db81107ad06da1fb6f19e2cea4a5c0d",
+        "description": "Bosses can use L damage; invisibility9; differs from P1998 S-only/invisibility5",
+        "status": "READ_BYTES_STATIC_ONLY"
+      },
+      {
+        "path": "rtklua/Accepted/player.lua",
+        "sha256": "77d0a861ebf77c2d21e9a8f3eeb9d932ce989ed9e0b7cb58ab4ff1778c4cfd87",
+        "description": "Repair coefficient0.5, ceil; role and duration semantics differ",
+        "status": "READ_BYTES_STATIC_ONLY"
+      }
+    ],
+    "KR_comparison": "Foreign replacement only; do not average this with Korean source values",
+    "gameplay_status": "NOT_RUN"
+  },
+  {
+    "project": "CoM/Mithia",
+    "version": "2014 archive",
+    "archive_sha256": "b077718f31f74d666fb3487f582279a11be535e0f081d6920d3acbd8658f072d",
+    "reuse": "NO_PERMISSION_REFERENCE_ONLY",
+    "evidence": [
+      {
+        "path": "mithialua/Accepted/player.lua",
+        "sha256": "e6d9e736cb695f8bbacf0b296b3e6368638e254fb7459db42fb4d17759a0d72b",
+        "description": "Repair coefficient0.30 versus RTK0.5; equal-gold boundary differs across repair routines",
+        "status": "READ_BYTES_STATIC_ONLY"
+      },
+      {
+        "path": "mithialua/formulae.txt",
+        "sha256": "b0efc3918d186d0e4f3210d06fa7ffd1b9cc5dfc1261482c079d4b75a33a222d",
+        "description": "Hit/crit/regen formulas are later design notes, not contemporary Korean measurements",
+        "status": "READ_BYTES_STATIC_ONLY"
+      }
+    ],
+    "KR_comparison": "Must stay independent of KR year profiles",
+    "gameplay_status": "NOT_RUN"
+  },
+  {
+    "project": "Java RTK",
+    "version": "2026 Java port; RTK2 own protocol, separate libGDX client",
+    "commit": "fec7b36bae0b18471391d652d35a96793cf0be5a",
+    "reuse": "NO_VERIFIED_REUSE_PERMISSION",
+    "evidence": [
+      {
+        "path": "src/org/rtk/map/Pc.java",
+        "sha256": "0c3e2fad7d1ee3c0511b0e81d0bcbbed295b9834daa63bf32ef7ca37f7b3df00",
+        "description": "Checks cumulative class level threshold, delegates actual growth to onLevel Lua",
+        "status": "READ_BYTES_STATIC_ONLY"
+      },
+      {
+        "path": "luascript/Accepted/Scripts/swingDamage.lua",
+        "sha256": "37f9f3966106bdf3de24ea062f918b646db81107ad06da1fb6f19e2cea4a5c0d",
+        "description": "Lua gameplay implementation is separate from Java transport",
+        "status": "READ_BYTES_STATIC_ONLY"
+      },
+      {
+        "path": "src/org/rtk/map/Combat.java",
+        "sha256": "5f7e8100ce8f260f0702102ccdf6a0fc38f85f9f6dc361293f9c018f53a06bce",
+        "description": "Delegates damage to script, not an independent old-Korean damage formula",
+        "status": "READ_BYTES_STATIC_ONLY"
+      }
+    ],
+    "KR_comparison": "Native4.95 compatibility and Korean data not proven",
+    "gameplay_status": "NOT_RUN"
+  },
+  {
+    "project": "한국4.91",
+    "version": "KR4.91/date2000-12-14 preservation claim",
+    "archive_sha256": "f11e448db6478b1aca3a7dd47403bdef00cf873b203b14629b0215632190532f",
+    "urls": [
+      "https://ia600905.us.archive.org/7/items/baram_491/491v.zip"
+    ],
+    "reuse": "PRIVATE_RESEARCH_REFERENCE_ONLY",
+    "KR_comparison": "Client archive does not establish server XP/HP/price/drop formulas; asset identity and rendering remain separate",
+    "gameplay_status": "NOT_RUN"
+  },
+  {
+    "project": "NexusTK4.03",
+    "version": "NA4.03/1999 community attribution",
+    "archive_sha256": "db89e2b1ac3dfd3f5668fd7746478507b370ee627b4321d7dec441620ce96b53",
+    "urls": [
+      "https://ia601903.us.archive.org/27/items/nexus-tk-v-4.0.3.7z/NexusTK%20v4.0.3.7z"
+    ],
+    "reuse": "PRIVATE_RESEARCH_REFERENCE_ONLY",
+    "KR_comparison": "Client archive does not establish server XP/HP/price/drop formulas; asset identity and rendering remain separate",
+    "gameplay_status": "NOT_RUN"
+  },
+  {
+    "project": "NexusTK4.66",
+    "version": "NA4.66/2000 archive attribution",
+    "archive_sha256": "54ca6b8892a2b44ddfaadebc92e1886a770ac07a82b60ceacbfd3e2e44e5774a",
+    "urls": [
+      "https://ia601602.us.archive.org/26/items/nexus-tk-v-4.66.7z/NexusTK%20V%204.66.7z"
+    ],
+    "reuse": "PRIVATE_RESEARCH_REFERENCE_ONLY",
+    "KR_comparison": "Client archive does not establish server XP/HP/price/drop formulas; asset identity and rendering remain separate",
+    "gameplay_status": "NOT_RUN"
+  },
+  {
+    "project": "NexusTK4.95",
+    "version": "NA4.95/2001 official Wayback",
+    "archive_sha256": "486f4684b76658d92eaf84aab77fe9be9489ea01de8264fe90d0040466620aaa",
+    "urls": [
+      "https://web.archive.org/web/20010811181949id_/http://file.nexustk.com:80/NexusTK/Client/Single/Nexus495.exe"
+    ],
+    "reuse": "PRIVATE_RESEARCH_REFERENCE_ONLY",
+    "KR_comparison": "Client archive does not establish server XP/HP/price/drop formulas; asset identity and rendering remain separate",
+    "gameplay_status": "NOT_RUN"
+  }
+]

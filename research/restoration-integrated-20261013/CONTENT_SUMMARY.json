@@ -1,0 +1,49 @@
+{
+  "scope": "Known-source candidate inventory; not a census of every historical Korean game entity",
+  "KR_unique_candidates": {
+    "advancement": 12,
+    "game_rule": 41,
+    "growth": 401,
+    "item": 534,
+    "map": 29,
+    "map_topology": 3,
+    "map_visual": 4,
+    "monster": 269,
+    "npc": 59,
+    "recipe": 1,
+    "spell": 199,
+    "version_event": 2
+  },
+  "P1998_unique_reference_ids": {
+    "item": 2544,
+    "map": 9850,
+    "monster": 716,
+    "npc": 380,
+    "spell": 927
+  },
+  "KR_early_production_candidates": {
+    "growth": 125,
+    "item": 125,
+    "map": 15,
+    "monster": 29,
+    "npc": 30,
+    "spell": 69
+  },
+  "KR_quarantined": {
+    "game_rule": 1,
+    "monster": 1,
+    "npc": 2,
+    "spell": 1
+  },
+  "external_excluded_admin_or_header_candidates": {
+    "item": 73,
+    "map": 6876,
+    "monster": 2,
+    "npc": 2,
+    "spell": 34
+  },
+  "input_candidates": 1674,
+  "candidate_duplicate_rows": 42,
+  "total_catalog_ids": 15971,
+  "native_KR_entity_ids_fully_verified": 0
+}

@@ -1,0 +1,55 @@
+{
+  "profile": "KR_BLEND_1998_2001_PRODUCTION_DRAFT",
+  "runtime_verified": false,
+  "new_character": {
+    "initial_hp_inclusive_range": [45, 55],
+    "initial_mp_inclusive_range": [32, 36],
+    "initial_strength": 3,
+    "initial_dexterity": 3,
+    "initial_intelligence": 3,
+    "classification": "EXTERNAL_REPLACEMENT",
+    "source_repository": "project1998/Project1998",
+    "source_commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+    "source_file": "Shared/CharacterFactory.cs",
+    "source_lines": [158, 169],
+    "KR_original_verified": false,
+    "source_semantics": "Random.Next upper limit exclusive; normalized ranges are inclusive"
+  },
+  "job_selection": {
+    "minimum_level": 5,
+    "required_materials": [{"name": "도토리", "quantity": 50}],
+    "known_KR_source_records": ["KR-1998-0254", "KR-1999-U001", "KR-1999-U002", "KR-1999-U003", "KR-1999-U004"],
+    "confirmed_money_cost": null,
+    "draft_money_cost": 0,
+    "draft_money_classification": "DEV_ESTIMATE",
+    "available_classes": ["전사", "도적", "주술사", "도사"],
+    "peasant_level5_xp_policy": "Must verify Korean behavior; external RTK blocks all XP award until class selection"
+  },
+  "formula_options": {
+    "armor_NA_replacement": {
+      "expression": "max(1, floor(raw_damage * (100 + max(armor_class, armor_floor)) / 100))",
+      "human_armor_floor": -80,
+      "monster_armor_floor": -95,
+      "classification": "EXTERNAL_REPLACEMENT",
+      "source_file": "project1998/Project1998/Server/Combat.cs",
+      "source_commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+      "selected_for_actual_game": false
+    },
+    "repair_RTK_later": {
+      "expression": "ceil(player_purchase_price / max_durability * missing_durability * 0.5)",
+      "source_file": "unkmc/RTK-Server/rtklua/Accepted/player.lua",
+      "source_commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+      "classification": "EXTERNAL_REPLACEMENT_LATER_RTK",
+      "selected_for_actual_game": false,
+      "zero_max_durability": "not a repairable durability item"
+    },
+    "repair_CoM_2014": {
+      "expression": "ceil(player_purchase_price / max_durability * missing_durability * 0.30)",
+      "source_file": "CoM/mithialua/Accepted/player.lua",
+      "source_archive_sha256": "b077718f31f74d666fb3487f582279a11be535e0f081d6920d3acbd8658f072d",
+      "classification": "EXTERNAL_REPLACEMENT_2014_MITHIA",
+      "selected_for_actual_game": false
+    }
+  },
+  "followup": "Stage5 chooses a development/calculation path; stage7 runs these inputs through the actual game code. Do not average foreign formula options or mark them historical Korean originals."
+}

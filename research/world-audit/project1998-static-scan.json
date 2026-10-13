@@ -1,0 +1,31 @@
+{
+  "scope": "Static suspicious-API/build-hook scan of C# and project files; no antivirus or malware-free guarantee",
+  "file_count": 344,
+  "findings": [
+    {
+      "path": "MapEditor/Program.cs",
+      "line": 622,
+      "kind": "process_execution"
+    },
+    {
+      "path": "MapEditor/Program.cs",
+      "line": 126,
+      "kind": "outbound_web"
+    },
+    {
+      "path": "Tests/ChannelPortsTests.cs",
+      "line": 147,
+      "kind": "process_execution"
+    },
+    {
+      "path": "IconStudio/Program.cs",
+      "line": 347,
+      "kind": "process_execution"
+    },
+    {
+      "path": "IconStudio/Program.cs",
+      "line": 96,
+      "kind": "outbound_web"
+    }
+  ]
+}

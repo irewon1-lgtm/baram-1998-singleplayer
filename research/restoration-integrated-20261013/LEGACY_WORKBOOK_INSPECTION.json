@@ -1,0 +1,128 @@
+[
+  {
+    "path": "../private-analysis/repos/mun5424/Baram_Legacy/app/assets/images/monsters/monsters.xlsx",
+    "sha256": "fcbaf95a4c1040d6f0c1d7f9fca2067fceb36c7e38c331b0addd53a4802b27e6",
+    "worksheets": [
+      {
+        "name": "Sheet1",
+        "rows": 620,
+        "columns": 9,
+        "header": [
+          "sun_id",
+          "name",
+          "exp",
+          "description",
+          "image_id",
+          "color",
+          "item_drops",
+          "dungeon",
+          "comments"
+        ],
+        "sample": [
+          [
+            26,
+            "다람쥐",
+            10,
+            "아주 약해서 왕초보에게 적합한 사냥감",
+            32793,
+            9,
+            "도토리",
+            "초보자사냥터",
+            null
+          ],
+          [
+            22,
+            "토끼",
+            5,
+            "아주 약해서 왕초보에게 적합한 사냥감",
+            32789,
+            11,
+            "토끼고기",
+            "초보자사냥터",
+            null
+          ],
+          [
+            121,
+            "쥐",
+            25,
+            "5.50 이전 몹",
+            32888,
+            10,
+            "쥐고기",
+            "쥐굴",
+            "예전에 있었는데 버젼업이후로 없어짐"
+          ]
+        ]
+      },
+      {
+        "name": "Sheet2",
+        "rows": 0,
+        "columns": 1,
+        "header": [],
+        "sample": []
+      },
+      {
+        "name": "Sheet3",
+        "rows": 0,
+        "columns": 1,
+        "header": [],
+        "sample": []
+      }
+    ]
+  },
+  {
+    "path": "../private-analysis/repos/mun5424/Baram_Legacy/app/assets/images/monsters/items.xlsx",
+    "sha256": "57ce878a5046f8f5671e0646a3251c5be3e87f641f1de8489a36e3129eb5ddfe",
+    "worksheets": [
+      {
+        "name": "Sheet1",
+        "rows": 2181,
+        "columns": 5,
+        "header": [
+          "id",
+          "image_id",
+          "name",
+          null,
+          null
+        ],
+        "sample": [
+          [
+            1,
+            49152,
+            "철검",
+            null,
+            null
+          ],
+          [
+            2,
+            49153,
+            "철단도",
+            null,
+            null
+          ],
+          [
+            3,
+            49154,
+            "목도",
+            null,
+            null
+          ]
+        ]
+      },
+      {
+        "name": "Sheet2",
+        "rows": 0,
+        "columns": 1,
+        "header": [],
+        "sample": []
+      },
+      {
+        "name": "Sheet3",
+        "rows": 0,
+        "columns": 1,
+        "header": [],
+        "sample": []
+      }
+    ]
+  }
+]

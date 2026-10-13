@@ -1,0 +1,259 @@
+[
+  [
+    "https://api.github.com/repos/project1998/Project1998/forks?per_page=100",
+    [
+      {
+        "name": "unkmc/Project1998",
+        "pushed": "2026-08-26T07:36:49Z"
+      },
+      {
+        "name": "Essorcal/Project1998",
+        "pushed": "2026-10-11T19:01:25Z"
+      }
+    ]
+  ],
+  [
+    "https://web.archive.org/cdx/search/cdx?url=kamikazeserver.com&matchType=domain&output=json&collapse=urlkey&filter=statuscode:200&limit=50",
+    "[['urlkey', 'timestamp', 'original', 'mimetype', 'statuscode', 'digest', 'length'], ['com,kamikazeserver)/', '20060715183003', 'http://www.kamikazeserver.com:80/', 'text/html', '200', 'U5HYA64LBE5ACVWN5SUQVS6DMFGWPATJ', '1989'], ['com,kamikazeserver)/favicon.ico', '20061203034620', 'http://www.kamikazeserver.com:80/favicon.ico', 'image/x-icon', '200', '6HKILTVZHZ7K633JZYZVV7SGZUNUIZ5W', '1708'], ['com,kamikazeserver)/forums', '20070106054448', 'http://www.kamikazeserver.com:80/forums/', 'text/html', '200', 'ES3VECLG6ANGZON2YBZUXGVJENGN6YT7', '5446'], ['com,kamikazeserver)/forums/index.php', '20070109171343', 'http://www.kamikazeserver.com:80/forums/index.php', 'text/html', '200', '5VYVJ3GXTVDWG2CHFXYYW74TN43FM43I', '5486'], ['com,kamikazeserver)/forums/index.php/board,1.0.html', '20070109170738', 'http://www.kamikazeserver.com:80/forums/index.php/board,1.0.html', 'text/html', '200', 'I5W"
+  ],
+  [
+    "https://archive.org/advancedsearch.php?q=nemutk&output=json&rows=50",
+    0,
+    []
+  ],
+  [
+    "https://archive.org/advancedsearch.php?q=%22Kingdom+of+the+Winds%22&output=json&rows=50",
+    25,
+    [
+      [
+        "OutlandishEpisode35112-19-16",
+        "Outlandish Episode 351 12-19-16"
+      ],
+      [
+        "windows8and10fix",
+        "NexusTK Windows 8/10 Fix"
+      ],
+      [
+        "history-of-games-2020-DkGN02eMdJ8",
+        "Jung Yeop Lee – How can we study nonexistent games? : a study on The Kingdom of the Winds"
+      ],
+      [
+        "baram_651",
+        "바람의나라 The Kingdom of the Winds v6.51 Client"
+      ],
+      [
+        "KCD1999ekstra101spil",
+        "K-CD 1999 Ekstra CD: 101 Games"
+      ],
+      [
+        "comnexustkprivateservercorefiles",
+        "Chronicles of Mithia NexusTK Private Server Files"
+      ],
+      [
+        "wiki-www.wikihouse.com_nexustk-20240316",
+        "Wiki - The Kingdom of the Winds Wikipedia"
+      ],
+      [
+        "spidla-cse0002",
+        "Špidla: Český Softwarový Expres Léto 2000 (shareware compilation)"
+      ],
+      [
+        "nexus-tk-700to-701update",
+        "NexusTK Patch 7.01"
+      ],
+      [
+        "judgemapeditor.7z",
+        "Judge Map Editor for NexusTK"
+      ],
+      [
+        "nexus-tk-v-4.66.7z",
+        "Nexus TK V 4.66.7z"
+      ],
+      [
+        "baram_125",
+        "바람의나라 The Kingdom of the Winds v1.25 Official Cliient"
+      ],
+      [
+        "baram_734_thumb",
+        "바람의나라 The Kingdom of the Winds v7.34 Client"
+      ],
+      [
+        "splay_20260529",
+        "SharePlay: Nr. 4/99: Juni/Juli"
+      ],
+      [
+        "baram_491",
+        "바람의나라 The Kingdom of the Winds v4.91 Official Cliient Installer"
+      ],
+      [
+        "barammapeditor.7z",
+        "Baram Map Editor (NexusTK)"
+      ],
+      [
+        "EPFTool",
+        "EPFTool for NeuxsTK"
+      ],
+      [
+        "baram_565",
+        "바람의나라 The Kingdom of the Winds v5.65 Client"
+      ],
+      [
+        "nexus-tk-701single",
+        "Nexus TK 7.01 Client"
+      ],
+      [
+        "kingdomofwinds0003kimj",
+        "Kingdom of the winds"
+      ],
+      [
+        "nexus-tk-699single",
+        "NexusTK 6.99 Client"
+      ],
+      [
+        "nexus-tk-v-4.0.3.7z",
+        "Nexus TK V 4.0.3.7z"
+      ],
+      [
+        "save-the-game-s-01-e-01-save-the-game",
+        "Save The Game - The History of Korean Games"
+      ],
+      [
+        "runegardlauncher",
+        "Runegard Launcher for NexusTK"
+      ],
+      [
+        "sg-cd",
+        "Shattered Galaxy"
+      ]
+    ]
+  ],
+  [
+    "https://gitlab.com/api/v4/projects?search=baram&simple=true&per_page=30",
+    [
+      {
+        "name": "smin69/py-baram-gmres",
+        "description": ""
+      },
+      {
+        "name": "he0310/py-baram-mac-os",
+        "description": ""
+      },
+      {
+        "name": "smin69/pyBaram",
+        "description": ""
+      },
+      {
+        "name": "knhkse/cubaram",
+        "description": null
+      },
+      {
+        "name": "jeandedieuyonaba669/baramo-frontend",
+        "description": null
+      },
+      {
+        "name": "gitlab-community/community-projects/2026-02-ai-hackathon/34579621",
+        "description": null
+      },
+      {
+        "name": "hyunbin-kang/pyBaram",
+        "description": ""
+      },
+      {
+        "name": "barambar/barambar",
+        "description": null
+      },
+      {
+        "name": "antuan.quinchiguango/reto-akihabaramarket",
+        "description": null
+      },
+      {
+        "name": "yomychoi/pyBaram",
+        "description": ""
+      },
+      {
+        "name": "knhkse/pyBaram",
+        "description": "My pyBaram Working directory"
+      },
+      {
+        "name": "lmrk/20230316-ekambarameswaran-nycschools",
+        "description": null
+      },
+      {
+        "name": "ios-coding-challenge/20230316-ekambarameswaran-nycschools",
+        "description": null
+      },
+      {
+        "name": "aadl_inha/pyBaram_cases_edu",
+        "description": "Educational Flow Simulations using pyBaram"
+      },
+      {
+        "name": "ios-coding-challenge/20221103-ekambarameswaran-nycschools",
+        "description": null
+      },
+      {
+        "name": "ios-coding-challenge/20221027-EkambaramEswaran-NYCSchools",
+        "description": null
+      },
+      {
+        "name": "Baram1a/gagibaramia_web",
+        "description": null
+      },
+      {
+        "name": "JPaulAlf/pruebaramas",
+        "description": null
+      },
+      {
+        "name": "jspark_aadl/pyBaram",
+        "description": ""
+      },
+      {
+        "name": "Yekambaram/skillassure-yekambaram",
+        "description": ""
+      },
+      {
+        "name": "aadl_inha/pyBaram",
+        "description": ""
+      },
+      {
+        "name": "andornot2012/baramsori-config",
+        "description": ""
+      },
+      {
+        "name": "leonardogm554/baramee.chomphoohomework",
+        "description": ""
+      },
+      {
+        "name": "leonardogm554/baramee.chomphoo",
+        "description": ""
+      },
+      {
+        "name": "jroadit/bara",
+        "description": "barameru"
+      },
+      {
+        "name": "labinclude/normas-include",
+        "description": "Aqui você irá encontrar um guia para novos mochileiros que acabaram de chegar nessa nave ou para aqueles que por ventura se esqueceram de algum detalhe desse universo. \r\nSiga este guia e você não terá problemas."
+      },
+      {
+        "name": "liknunuk/dirbaramin",
+        "description": "Admin Panel Direktori Banjarnegara"
+      },
+      {
+        "name": "liknunuk/dirbaramob",
+        "description": "Template Mobile App Direktori Banjarnegara"
+      },
+      {
+        "name": "AlexsyMostovik/RoubaramMeuVeiculo",
+        "description": null
+      },
+      {
+        "name": "mrayoung/jabaram",
+        "description": "Peer To Peer Traveling Platform "
+      }
+    ]
+  ],
+  [
+    "https://codeberg.org/api/v1/repos/search?q=baram",
+    "{'ok': True, 'data': [{'id': 2704023, 'owner': {'id': 672975, 'login': 'mzierer78', 'login_name': '', 'source_id': 0, 'full_name': '', 'email': 'mzierer78@noreply.codeberg.org', 'avatar_url': 'https://codeberg.org/avatars/977feb0656cf9e979551da7fef522dd9', 'html_url': 'https://codeberg.org/mzierer78', 'language': '', 'is_admin': False, 'last_login': '0001-01-01T00:00:00Z', 'created': '2025-12-04T08:52:48+01:00', 'restricted': False, 'active': False, 'prohibit_login': False, 'location': '', 'pronouns': '', 'website': '', 'description': '', 'visibility': 'public', 'followers_count': 0, 'following_count': 0, 'starred_repos_count': 0, 'username': 'mzierer78'}, 'name': 'baramundi', 'full_name': 'mzierer78/baramundi', 'description': '', 'empty': False, 'private': False, 'fork': False, 'template': False, 'parent': None, 'mirror': False, 'size': 5, 'language': '', 'languages_url': 'https://codeb"
+  ]
+]

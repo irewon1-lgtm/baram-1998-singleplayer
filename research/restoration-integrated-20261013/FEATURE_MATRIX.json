@@ -1,0 +1,551 @@
+{
+  "features": [
+    {
+      "feature_id": "character_create",
+      "name": "캐릭터 생성",
+      "data_status": "PARTIAL_SOURCE_DATA",
+      "code_status": "EXTERNAL_CODE_REFERENCE_FOUND",
+      "code_evidence": {
+        "repository": "project1998/Project1998",
+        "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+        "path": "Shared/CharacterFactory.cs",
+        "line": 125,
+        "sha256": "6f8490f027b657187824df91a264fc03bdee98a71962a0da7465e3c651c3ff4e"
+      },
+      "game_implementation": "NOT_RUN",
+      "automatic_game_test": "NOT_RUN",
+      "actual_screen_operation": "NOT_RUN",
+      "needs_own_implementation_or_adaptation": true,
+      "note": "Read-only source evidence; no external source is included or approved for public reuse"
+    },
+    {
+      "feature_id": "class_select",
+      "name": "직업 선택",
+      "data_status": "PARTIAL_SOURCE_DATA",
+      "code_status": "EXTERNAL_CODE_REFERENCE_FOUND",
+      "code_evidence": {
+        "repository": "project1998/Project1998",
+        "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+        "path": "Server/NpcAbility.cs",
+        "line": 298,
+        "sha256": "6abd5e5c0df606c74faf8262950f5ee99076c11e052b9441793f6e2748b43f7d"
+      },
+      "game_implementation": "NOT_RUN",
+      "automatic_game_test": "NOT_RUN",
+      "actual_screen_operation": "NOT_RUN",
+      "needs_own_implementation_or_adaptation": true,
+      "note": "Read-only source evidence; no external source is included or approved for public reuse"
+    },
+    {
+      "feature_id": "movement",
+      "name": "이동·방향",
+      "data_status": "PARTIAL_SOURCE_DATA",
+      "code_status": "EXTERNAL_CODE_REFERENCE_FOUND",
+      "code_evidence": {
+        "repository": "project1998/Project1998",
+        "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+        "path": "Server/Session.Navigation.cs",
+        "line": 31,
+        "sha256": "f81d27dafb8cfc79433b384ec7d15aa9d4589773250d993eabf57eef38c52a34"
+      },
+      "game_implementation": "NOT_RUN",
+      "automatic_game_test": "NOT_RUN",
+      "actual_screen_operation": "NOT_RUN",
+      "needs_own_implementation_or_adaptation": true,
+      "note": "Read-only source evidence; no external source is included or approved for public reuse"
+    },
+    {
+      "feature_id": "collision",
+      "name": "충돌",
+      "data_status": "PARTIAL_SOURCE_DATA",
+      "code_status": "EXTERNAL_CODE_REFERENCE_FOUND",
+      "code_evidence": {
+        "repository": "project1998/Project1998",
+        "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+        "path": "Server/World.cs",
+        "line": 158,
+        "sha256": "23efb5cba62cd62e5aa95af15ddd49dfcbfdb19d2b576a94a8ba0d885d54e72c"
+      },
+      "game_implementation": "NOT_RUN",
+      "automatic_game_test": "NOT_RUN",
+      "actual_screen_operation": "NOT_RUN",
+      "needs_own_implementation_or_adaptation": true,
+      "note": "Read-only source evidence; no external source is included or approved for public reuse"
+    },
+    {
+      "feature_id": "map_transition",
+      "name": "맵 전환",
+      "data_status": "PARTIAL_SOURCE_DATA",
+      "code_status": "EXTERNAL_CODE_REFERENCE_FOUND",
+      "code_evidence": {
+        "repository": "project1998/Project1998",
+        "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+        "path": "Server/Session.Navigation.cs",
+        "line": 28,
+        "sha256": "f81d27dafb8cfc79433b384ec7d15aa9d4589773250d993eabf57eef38c52a34"
+      },
+      "game_implementation": "NOT_RUN",
+      "automatic_game_test": "NOT_RUN",
+      "actual_screen_operation": "NOT_RUN",
+      "needs_own_implementation_or_adaptation": true,
+      "note": "Read-only source evidence; no external source is included or approved for public reuse"
+    },
+    {
+      "feature_id": "pickup",
+      "name": "아이템 획득",
+      "data_status": "PARTIAL_SOURCE_DATA",
+      "code_status": "EXTERNAL_CODE_REFERENCE_FOUND",
+      "code_evidence": {
+        "repository": "project1998/Project1998",
+        "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+        "path": "Server/Session.Items.cs",
+        "line": 160,
+        "sha256": "475bda71d3672a31b1d295882d68dfda1c653cf24a91540966d96c7e4d06ef65"
+      },
+      "game_implementation": "NOT_RUN",
+      "automatic_game_test": "NOT_RUN",
+      "actual_screen_operation": "NOT_RUN",
+      "needs_own_implementation_or_adaptation": true,
+      "note": "Read-only source evidence; no external source is included or approved for public reuse"
+    },
+    {
+      "feature_id": "inventory",
+      "name": "가방",
+      "data_status": "PARTIAL_SOURCE_DATA",
+      "code_status": "EXTERNAL_CODE_REFERENCE_FOUND",
+      "code_evidence": {
+        "repository": "project1998/Project1998",
+        "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+        "path": "Server/Session.Items.cs",
+        "line": 48,
+        "sha256": "475bda71d3672a31b1d295882d68dfda1c653cf24a91540966d96c7e4d06ef65"
+      },
+      "game_implementation": "NOT_RUN",
+      "automatic_game_test": "NOT_RUN",
+      "actual_screen_operation": "NOT_RUN",
+      "needs_own_implementation_or_adaptation": true,
+      "note": "Read-only source evidence; no external source is included or approved for public reuse"
+    },
+    {
+      "feature_id": "equip",
+      "name": "착용·해제",
+      "data_status": "PARTIAL_SOURCE_DATA",
+      "code_status": "EXTERNAL_CODE_REFERENCE_FOUND",
+      "code_evidence": {
+        "repository": "project1998/Project1998",
+        "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+        "path": "Server/Session.Items.cs",
+        "line": 30,
+        "sha256": "475bda71d3672a31b1d295882d68dfda1c653cf24a91540966d96c7e4d06ef65"
+      },
+      "game_implementation": "NOT_RUN",
+      "automatic_game_test": "NOT_RUN",
+      "actual_screen_operation": "NOT_RUN",
+      "needs_own_implementation_or_adaptation": true,
+      "note": "Read-only source evidence; no external source is included or approved for public reuse"
+    },
+    {
+      "feature_id": "equipment_stats",
+      "name": "장비 능력치",
+      "data_status": "PARTIAL_SOURCE_DATA",
+      "code_status": "EXTERNAL_CODE_REFERENCE_FOUND",
+      "code_evidence": {
+        "repository": "project1998/Project1998",
+        "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+        "path": "Server/Session.Items.cs",
+        "line": 675,
+        "sha256": "475bda71d3672a31b1d295882d68dfda1c653cf24a91540966d96c7e4d06ef65"
+      },
+      "game_implementation": "NOT_RUN",
+      "automatic_game_test": "NOT_RUN",
+      "actual_screen_operation": "NOT_RUN",
+      "needs_own_implementation_or_adaptation": true,
+      "note": "Read-only source evidence; no external source is included or approved for public reuse"
+    },
+    {
+      "feature_id": "equipment_appearance",
+      "name": "장비 외형",
+      "data_status": "PARTIAL_SOURCE_DATA",
+      "code_status": "EXTERNAL_CODE_REFERENCE_FOUND",
+      "code_evidence": {
+        "repository": "project1998/Project1998",
+        "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+        "path": "Server/Session.Entity.cs",
+        "line": 27,
+        "sha256": "6f5236ba295fc9ce029c025433d569f973eb9e7837140684efb9fe29d9226833"
+      },
+      "game_implementation": "NOT_RUN",
+      "automatic_game_test": "NOT_RUN",
+      "actual_screen_operation": "NOT_RUN",
+      "needs_own_implementation_or_adaptation": true,
+      "note": "Read-only source evidence; no external source is included or approved for public reuse"
+    },
+    {
+      "feature_id": "spell_learn",
+      "name": "기술 습득",
+      "data_status": "PARTIAL_SOURCE_DATA",
+      "code_status": "EXTERNAL_CODE_REFERENCE_FOUND",
+      "code_evidence": {
+        "repository": "project1998/Project1998",
+        "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+        "path": "Server/NpcAbility.cs",
+        "line": 298,
+        "sha256": "6abd5e5c0df606c74faf8262950f5ee99076c11e052b9441793f6e2748b43f7d"
+      },
+      "game_implementation": "NOT_RUN",
+      "automatic_game_test": "NOT_RUN",
+      "actual_screen_operation": "NOT_RUN",
+      "needs_own_implementation_or_adaptation": true,
+      "note": "Read-only source evidence; no external source is included or approved for public reuse"
+    },
+    {
+      "feature_id": "spell_input",
+      "name": "단축키·기술 입력",
+      "data_status": "PARTIAL_SOURCE_DATA",
+      "code_status": "EXTERNAL_CODE_REFERENCE_FOUND",
+      "code_evidence": {
+        "repository": "project1998/Project1998",
+        "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+        "path": "Server/Session.cs",
+        "line": 780,
+        "sha256": "506d0adc9f6d3d5176db1f73b1b9d61494188a8e52313a2918770b4aa0bf1a6d"
+      },
+      "game_implementation": "NOT_RUN",
+      "automatic_game_test": "NOT_RUN",
+      "actual_screen_operation": "NOT_RUN",
+      "needs_own_implementation_or_adaptation": true,
+      "note": "Read-only source evidence; no external source is included or approved for public reuse"
+    },
+    {
+      "feature_id": "spell_target",
+      "name": "기술 대상 선택",
+      "data_status": "PARTIAL_SOURCE_DATA",
+      "code_status": "EXTERNAL_CODE_REFERENCE_FOUND",
+      "code_evidence": {
+        "repository": "project1998/Project1998",
+        "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+        "path": "Server/Session.Spells.cs",
+        "line": 18,
+        "sha256": "41c86208361c7c90250adf57a7830b6ff64073e68730dbe19c6353abf9eede96"
+      },
+      "game_implementation": "NOT_RUN",
+      "automatic_game_test": "NOT_RUN",
+      "actual_screen_operation": "NOT_RUN",
+      "needs_own_implementation_or_adaptation": true,
+      "note": "Read-only source evidence; no external source is included or approved for public reuse"
+    },
+    {
+      "feature_id": "dialogue",
+      "name": "NPC 대화",
+      "data_status": "PARTIAL_SOURCE_DATA",
+      "code_status": "EXTERNAL_CODE_REFERENCE_FOUND",
+      "code_evidence": {
+        "repository": "project1998/Project1998",
+        "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+        "path": "Server/Session.Dialog.cs",
+        "line": 87,
+        "sha256": "80b34720605ab0f14180c2d9d31ce434ec850df75effbc2976f861151c5c8d85"
+      },
+      "game_implementation": "NOT_RUN",
+      "automatic_game_test": "NOT_RUN",
+      "actual_screen_operation": "NOT_RUN",
+      "needs_own_implementation_or_adaptation": true,
+      "note": "Read-only source evidence; no external source is included or approved for public reuse"
+    },
+    {
+      "feature_id": "shop",
+      "name": "구매·판매",
+      "data_status": "PARTIAL_SOURCE_DATA",
+      "code_status": "EXTERNAL_CODE_REFERENCE_FOUND",
+      "code_evidence": {
+        "repository": "project1998/Project1998",
+        "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+        "path": "Server/NpcAbility.cs",
+        "line": 419,
+        "sha256": "6abd5e5c0df606c74faf8262950f5ee99076c11e052b9441793f6e2748b43f7d"
+      },
+      "game_implementation": "NOT_RUN",
+      "automatic_game_test": "NOT_RUN",
+      "actual_screen_operation": "NOT_RUN",
+      "needs_own_implementation_or_adaptation": true,
+      "note": "Read-only source evidence; no external source is included or approved for public reuse"
+    },
+    {
+      "feature_id": "repair",
+      "name": "장비 수리",
+      "data_status": "PARTIAL_SOURCE_DATA",
+      "code_status": "EXTERNAL_STUB_ONLY",
+      "code_evidence": {
+        "repository": "project1998/Project1998",
+        "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+        "path": "Server/NpcAbility.cs",
+        "line": 530,
+        "sha256": "6abd5e5c0df606c74faf8262950f5ee99076c11e052b9441793f6e2748b43f7d"
+      },
+      "game_implementation": "NOT_RUN",
+      "automatic_game_test": "NOT_RUN",
+      "actual_screen_operation": "NOT_RUN",
+      "needs_own_implementation_or_adaptation": true,
+      "note": "Read-only source evidence; no external source is included or approved for public reuse; repair menu is an explanatory stub"
+    },
+    {
+      "feature_id": "quest",
+      "name": "퀘스트",
+      "data_status": "PARTIAL_SOURCE_DATA",
+      "code_status": "EXTERNAL_CODE_REFERENCE_FOUND",
+      "code_evidence": {
+        "repository": "project1998/Project1998",
+        "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+        "path": "Server/NpcAbility.cs",
+        "line": 677,
+        "sha256": "6abd5e5c0df606c74faf8262950f5ee99076c11e052b9441793f6e2748b43f7d"
+      },
+      "game_implementation": "NOT_RUN",
+      "automatic_game_test": "NOT_RUN",
+      "actual_screen_operation": "NOT_RUN",
+      "needs_own_implementation_or_adaptation": true,
+      "note": "Read-only source evidence; no external source is included or approved for public reuse"
+    },
+    {
+      "feature_id": "mob_ai",
+      "name": "몬스터 AI",
+      "data_status": "PARTIAL_SOURCE_DATA",
+      "code_status": "EXTERNAL_CODE_REFERENCE_FOUND",
+      "code_evidence": {
+        "repository": "project1998/Project1998",
+        "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+        "path": "Server/World.MobAiTick.cs",
+        "line": 6,
+        "sha256": "55e6e400114c56e5c4fef5bf3e781e6ce091abae53b3b88150ee6de4dbf90203"
+      },
+      "game_implementation": "NOT_RUN",
+      "automatic_game_test": "NOT_RUN",
+      "actual_screen_operation": "NOT_RUN",
+      "needs_own_implementation_or_adaptation": true,
+      "note": "Read-only source evidence; no external source is included or approved for public reuse"
+    },
+    {
+      "feature_id": "melee",
+      "name": "일반 공격",
+      "data_status": "PARTIAL_SOURCE_DATA",
+      "code_status": "EXTERNAL_CODE_REFERENCE_FOUND",
+      "code_evidence": {
+        "repository": "project1998/Project1998",
+        "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+        "path": "Server/Session.Combat.cs",
+        "line": 132,
+        "sha256": "93872c33195f15857af61ca547e1d02dda34590de8569a0693f12149a6a74525"
+      },
+      "game_implementation": "NOT_RUN",
+      "automatic_game_test": "NOT_RUN",
+      "actual_screen_operation": "NOT_RUN",
+      "needs_own_implementation_or_adaptation": true,
+      "note": "Read-only source evidence; no external source is included or approved for public reuse"
+    },
+    {
+      "feature_id": "magic_attack",
+      "name": "마법 공격",
+      "data_status": "PARTIAL_SOURCE_DATA",
+      "code_status": "EXTERNAL_CODE_REFERENCE_FOUND",
+      "code_evidence": {
+        "repository": "project1998/Project1998",
+        "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+        "path": "Server/Session.Spells.cs",
+        "line": 18,
+        "sha256": "41c86208361c7c90250adf57a7830b6ff64073e68730dbe19c6353abf9eede96"
+      },
+      "game_implementation": "NOT_RUN",
+      "automatic_game_test": "NOT_RUN",
+      "actual_screen_operation": "NOT_RUN",
+      "needs_own_implementation_or_adaptation": true,
+      "note": "Read-only source evidence; no external source is included or approved for public reuse"
+    },
+    {
+      "feature_id": "damage_death",
+      "name": "피격·사망",
+      "data_status": "PARTIAL_SOURCE_DATA",
+      "code_status": "EXTERNAL_CODE_REFERENCE_FOUND",
+      "code_evidence": {
+        "repository": "project1998/Project1998",
+        "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+        "path": "Server/Session.Combat.cs",
+        "line": 14,
+        "sha256": "93872c33195f15857af61ca547e1d02dda34590de8569a0693f12149a6a74525"
+      },
+      "game_implementation": "NOT_RUN",
+      "automatic_game_test": "NOT_RUN",
+      "actual_screen_operation": "NOT_RUN",
+      "needs_own_implementation_or_adaptation": true,
+      "note": "Read-only source evidence; no external source is included or approved for public reuse"
+    },
+    {
+      "feature_id": "levelup",
+      "name": "경험치·레벨업",
+      "data_status": "PARTIAL_SOURCE_DATA",
+      "code_status": "EXTERNAL_CODE_REFERENCE_FOUND",
+      "code_evidence": {
+        "repository": "project1998/Project1998",
+        "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+        "path": "Server/Session.CharacterApi.cs",
+        "line": 745,
+        "sha256": "f0f8c3f3f01cdea260c995eef4a06d1a122253a49adcc91a0d18abe8672b88c1"
+      },
+      "game_implementation": "NOT_RUN",
+      "automatic_game_test": "NOT_RUN",
+      "actual_screen_operation": "NOT_RUN",
+      "needs_own_implementation_or_adaptation": true,
+      "note": "Read-only source evidence; no external source is included or approved for public reuse"
+    },
+    {
+      "feature_id": "gold_drop",
+      "name": "금전·드롭",
+      "data_status": "PARTIAL_SOURCE_DATA",
+      "code_status": "EXTERNAL_CODE_REFERENCE_FOUND",
+      "code_evidence": {
+        "repository": "project1998/Project1998",
+        "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+        "path": "Server/World.cs",
+        "line": 28,
+        "sha256": "23efb5cba62cd62e5aa95af15ddd49dfcbfdb19d2b576a94a8ba0d885d54e72c"
+      },
+      "game_implementation": "NOT_RUN",
+      "automatic_game_test": "NOT_RUN",
+      "actual_screen_operation": "NOT_RUN",
+      "needs_own_implementation_or_adaptation": true,
+      "note": "Read-only source evidence; no external source is included or approved for public reuse"
+    },
+    {
+      "feature_id": "craft",
+      "name": "제작",
+      "data_status": "PARTIAL_SOURCE_DATA",
+      "code_status": "EXTERNAL_FRAGMENT_ONLY",
+      "code_evidence": {
+        "repository": "project1998/Project1998",
+        "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+        "path": "Server/CraftingToggles.cs",
+        "line": 37,
+        "sha256": "534a26bf46b7fd08b62645614e8f9c1e3e820425d4605ff1f5ada988294d4d59"
+      },
+      "game_implementation": "NOT_RUN",
+      "automatic_game_test": "NOT_RUN",
+      "actual_screen_operation": "NOT_RUN",
+      "needs_own_implementation_or_adaptation": true,
+      "note": "Read-only source evidence; no external source is included or approved for public reuse"
+    },
+    {
+      "feature_id": "trade",
+      "name": "거래",
+      "data_status": "PARTIAL_SOURCE_DATA",
+      "code_status": "EXTERNAL_CODE_REFERENCE_FOUND",
+      "code_evidence": {
+        "repository": "project1998/Project1998",
+        "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+        "path": "Server/Session.cs",
+        "line": 47,
+        "sha256": "506d0adc9f6d3d5176db1f73b1b9d61494188a8e52313a2918770b4aa0bf1a6d"
+      },
+      "game_implementation": "NOT_RUN",
+      "automatic_game_test": "NOT_RUN",
+      "actual_screen_operation": "NOT_RUN",
+      "needs_own_implementation_or_adaptation": true,
+      "note": "Read-only source evidence; no external source is included or approved for public reuse"
+    },
+    {
+      "feature_id": "animation_sound",
+      "name": "애니메이션·효과음·타격 타이밍",
+      "data_status": "PARTIAL_SOURCE_DATA",
+      "code_status": "EXTERNAL_CODE_REFERENCE_FOUND",
+      "code_evidence": {
+        "repository": "project1998/Project1998",
+        "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+        "path": "Server/Session.Entity.cs",
+        "line": 576,
+        "sha256": "6f5236ba295fc9ce029c025433d569f973eb9e7837140684efb9fe29d9226833"
+      },
+      "game_implementation": "NOT_RUN",
+      "automatic_game_test": "NOT_RUN",
+      "actual_screen_operation": "NOT_RUN",
+      "needs_own_implementation_or_adaptation": true,
+      "note": "Read-only source evidence; no external source is included or approved for public reuse"
+    },
+    {
+      "feature_id": "advancement",
+      "name": "레벨 99·승급",
+      "data_status": "PARTIAL_SOURCE_DATA",
+      "code_status": "EXTERNAL_CODE_REFERENCE_FOUND",
+      "code_evidence": {
+        "repository": "project1998/Project1998",
+        "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+        "path": "Server/NpcAbility.cs",
+        "line": 142,
+        "sha256": "6abd5e5c0df606c74faf8262950f5ee99076c11e052b9441793f6e2748b43f7d"
+      },
+      "game_implementation": "NOT_RUN",
+      "automatic_game_test": "NOT_RUN",
+      "actual_screen_operation": "NOT_RUN",
+      "needs_own_implementation_or_adaptation": true,
+      "note": "Read-only source evidence; no external source is included or approved for public reuse"
+    },
+    {
+      "feature_id": "singleplayer_assist",
+      "name": "싱글플레이 보조",
+      "data_status": "PARTIAL_SOURCE_DATA",
+      "code_status": "NO_CONFIRMED_CODE_PATH",
+      "code_evidence": {
+        "repository": "project1998/Project1998",
+        "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+        "path": null,
+        "line": null,
+        "sha256": null
+      },
+      "game_implementation": "NOT_RUN",
+      "automatic_game_test": "NOT_RUN",
+      "actual_screen_operation": "NOT_RUN",
+      "needs_own_implementation_or_adaptation": true,
+      "note": "Read-only source evidence; no external source is included or approved for public reuse"
+    },
+    {
+      "feature_id": "save_load",
+      "name": "저장·불러오기",
+      "data_status": "PARTIAL_SOURCE_DATA",
+      "code_status": "EXTERNAL_CODE_REFERENCE_FOUND",
+      "code_evidence": {
+        "repository": "project1998/Project1998",
+        "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+        "path": "Server/Session.CharacterApi.cs",
+        "line": 134,
+        "sha256": "f0f8c3f3f01cdea260c995eef4a06d1a122253a49adcc91a0d18abe8672b88c1"
+      },
+      "game_implementation": "NOT_RUN",
+      "automatic_game_test": "NOT_RUN",
+      "actual_screen_operation": "NOT_RUN",
+      "needs_own_implementation_or_adaptation": true,
+      "note": "Read-only source evidence; no external source is included or approved for public reuse"
+    },
+    {
+      "feature_id": "offline",
+      "name": "인터넷 없는 실행",
+      "data_status": "PARTIAL_SOURCE_DATA",
+      "code_status": "EXTERNAL_CODE_REFERENCE_FOUND",
+      "code_evidence": {
+        "repository": "project1998/Project1998",
+        "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+        "path": "Server/Program.cs",
+        "line": 51,
+        "sha256": "ffc01f4f972d35820016db18ed37686e9d02c32bd687f9373202005bb39452b8"
+      },
+      "game_implementation": "NOT_RUN",
+      "automatic_game_test": "NOT_RUN",
+      "actual_screen_operation": "NOT_RUN",
+      "needs_own_implementation_or_adaptation": true,
+      "note": "Read-only source evidence; no external source is included or approved for public reuse"
+    }
+  ],
+  "dimensions": [
+    "data_status",
+    "code_status",
+    "game_implementation",
+    "automatic_game_test",
+    "actual_screen_operation"
+  ]
+}

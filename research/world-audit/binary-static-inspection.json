@@ -1,0 +1,495 @@
+[
+  {
+    "path": "world-isolated/EPFTool.exe",
+    "bytes": 385024,
+    "sha256": "d58303a3129547505daf7006e7dc58cc27bcfdad33ee5137c1350ef172a02221",
+    "result": "STATIC_ONLY_NOT_MALWARE_CLEARANCE",
+    "import_dlls": [
+      "mscoree.dll"
+    ],
+    "api_names_for_review": []
+  },
+  {
+    "path": "world-isolated/403french_nexusf.exe",
+    "bytes": 6617137,
+    "sha256": "c8820ac5af784fa6aadcdc86198c84f07ac4e73af1c74ece1152a1c9bd52cd4b",
+    "result": "STATIC_ONLY_NOT_MALWARE_CLEARANCE",
+    "import_dlls": [
+      "KERNEL32.dll",
+      "USER32.dll",
+      "GDI32.dll",
+      "ADVAPI32.dll",
+      "SHELL32.dll",
+      "ole32.dll",
+      "VERSION.dll",
+      "COMCTL32.dll"
+    ],
+    "api_names_for_review": [
+      "CreateProcessA",
+      "LoadLibraryA",
+      "ShellExecuteA"
+    ]
+  },
+  {
+    "path": "world-isolated/nexus495.exe",
+    "bytes": 24658356,
+    "sha256": "486f4684b76658d92eaf84aab77fe9be9489ea01de8264fe90d0040466620aaa",
+    "result": "STATIC_ONLY_NOT_MALWARE_CLEARANCE",
+    "import_dlls": [
+      "KERNEL32.dll",
+      "USER32.dll",
+      "GDI32.dll",
+      "ADVAPI32.dll"
+    ],
+    "api_names_for_review": [
+      "LoadLibraryA",
+      "WinExec"
+    ]
+  },
+  {
+    "path": "world-isolated/extracted/Baram_Map_Editor/Baram Map Editor.exe",
+    "bytes": 389120,
+    "sha256": "be4ccc2f0ebe99223a397c9b5ed05178810dc8ff9ddd05431e6f951ba19dd9e6",
+    "result": "STATIC_ONLY_NOT_MALWARE_CLEARANCE",
+    "import_dlls": [
+      "KERNEL32.dll",
+      "USER32.dll",
+      "GDI32.dll",
+      "comdlg32.dll",
+      "WINSPOOL.DRV",
+      "ADVAPI32.dll",
+      "SHELL32.dll",
+      "COMCTL32.dll"
+    ],
+    "api_names_for_review": [
+      "LoadLibraryA"
+    ]
+  },
+  {
+    "path": "world-isolated/extracted/Baram_Map_Editor/Map Editor.exe",
+    "bytes": 392624,
+    "sha256": "e54ca31b78b4685cf43135fe7a812e81ca9784095d869872c6c29ea6fbcc4ac2",
+    "result": "STATIC_ONLY_NOT_MALWARE_CLEARANCE",
+    "import_dlls": [
+      "KERNEL32.dll",
+      "USER32.dll",
+      "GDI32.dll",
+      "comdlg32.dll",
+      "WINSPOOL.DRV",
+      "ADVAPI32.dll",
+      "SHELL32.dll",
+      "COMCTL32.dll"
+    ],
+    "api_names_for_review": [
+      "LoadLibraryA"
+    ]
+  },
+  {
+    "path": "world-isolated/extracted/Judge_Map_Editor/SOBJADD.EXE",
+    "bytes": 18748,
+    "sha256": "46611468d6b5a1300cdb6c904fd86e5a98d1093e219635b8ebf75f2668ad2890",
+    "result": "PE_PARSE_FAILED",
+    "error": "'Invalid e_lfanew value, probably not a PE file'"
+  },
+  {
+    "path": "world-isolated/extracted/Judge_Map_Editor/Judge.exe",
+    "bytes": 407040,
+    "sha256": "92059b54175546d1cfcef8f088fca5e76f38ff1738eaee5321c4ce5f09616e2e",
+    "result": "STATIC_ONLY_NOT_MALWARE_CLEARANCE",
+    "import_dlls": [
+      "KERNEL32.dll",
+      "USER32.dll",
+      "GDI32.dll",
+      "comdlg32.dll",
+      "WINSPOOL.DRV",
+      "ADVAPI32.dll",
+      "SHELL32.dll",
+      "COMCTL32.dll"
+    ],
+    "api_names_for_review": [
+      "LoadLibraryA"
+    ]
+  },
+  {
+    "path": "world-isolated/extracted/Judge_Map_Editor/BMPVIEW.EXE",
+    "bytes": 58414,
+    "sha256": "6cee2f751bbb9c7d3364631abf8597070a88ecacda0069ea14e93cd6afb6eaca",
+    "result": "PE_PARSE_FAILED",
+    "error": "'Invalid NT Headers signature. Probably a LE file'"
+  },
+  {
+    "path": "world-isolated/extracted/NexusTK_V_4.66/nxuswind.exe",
+    "bytes": 12971299,
+    "sha256": "2ab28f93cc31ae6c8873242107783f6e1b0377ad2ceffb0a76b06c664607c1c0",
+    "result": "STATIC_ONLY_NOT_MALWARE_CLEARANCE",
+    "import_dlls": [
+      "KERNEL32.dll",
+      "USER32.dll",
+      "GDI32.dll"
+    ],
+    "api_names_for_review": [
+      "CreateProcessA",
+      "LoadLibraryA"
+    ]
+  },
+  {
+    "path": "world-isolated/extracted/CoM_NexusTK_Private_Server_Core_Files/mithia/ddraw-test.dll",
+    "bytes": 26112,
+    "sha256": "60b355748dbd757a6f67d392c0704b4fb032ee0fd3b76739c4589bf56c6a6249",
+    "result": "STATIC_ONLY_NOT_MALWARE_CLEARANCE",
+    "import_dlls": [
+      "WS2_32.DLL",
+      "KERNEL32.dll",
+      "msvcrt.dll",
+      "msvcrt.dll",
+      "USER32.dll"
+    ],
+    "api_names_for_review": [
+      "LoadLibraryA"
+    ]
+  },
+  {
+    "path": "world-isolated/extracted/CoM_NexusTK_Private_Server_Core_Files/mithia/ddraw-prod.dll",
+    "bytes": 26112,
+    "sha256": "873bf6a4f75ffe002a29e3b4699ae74b31ccb2dfc3ec8c526443e30203d49c18",
+    "result": "STATIC_ONLY_NOT_MALWARE_CLEARANCE",
+    "import_dlls": [
+      "WS2_32.DLL",
+      "KERNEL32.dll",
+      "msvcrt.dll",
+      "msvcrt.dll",
+      "USER32.dll"
+    ],
+    "api_names_for_review": [
+      "LoadLibraryA"
+    ]
+  },
+  {
+    "path": "world-isolated/extracted/491v/Install/_SETUP.DLL",
+    "bytes": 11264,
+    "sha256": "ce2cbf52194fb474194ca91f5ecc61ecd1789a096005efdd62e01d28fc44106d",
+    "result": "PE_PARSE_FAILED",
+    "error": "'Invalid NT Headers signature. Probably a NE file'"
+  },
+  {
+    "path": "world-isolated/extracted/491v/Install/SETUP.EXE",
+    "bytes": 59392,
+    "sha256": "0b1bd89e6b2f555a6acbe90cc4e51f71f7b91feb6b9578e7adc252573b5d2cd7",
+    "result": "PE_PARSE_FAILED",
+    "error": "'Invalid NT Headers signature. Probably a NE file'"
+  },
+  {
+    "path": "world-isolated/extracted/491v/Install/_ISDEL.EXE",
+    "bytes": 8192,
+    "sha256": "a4261dd5d1816a9938726b2346553b3a7eabc501ce98dde5bae9ee7363ac5ef9",
+    "result": "PE_PARSE_FAILED",
+    "error": "'Invalid NT Headers signature. Probably a NE file'"
+  },
+  {
+    "path": "world-isolated/extracted/403-installshield/disk1/_SETUP.DLL",
+    "bytes": 11264,
+    "sha256": "ce2cbf52194fb474194ca91f5ecc61ecd1789a096005efdd62e01d28fc44106d",
+    "result": "PE_PARSE_FAILED",
+    "error": "'Invalid NT Headers signature. Probably a NE file'"
+  },
+  {
+    "path": "world-isolated/extracted/403-installshield/disk1/SETUP.EXE",
+    "bytes": 59392,
+    "sha256": "0b1bd89e6b2f555a6acbe90cc4e51f71f7b91feb6b9578e7adc252573b5d2cd7",
+    "result": "PE_PARSE_FAILED",
+    "error": "'Invalid NT Headers signature. Probably a NE file'"
+  },
+  {
+    "path": "world-isolated/extracted/403-installshield/disk1/_ISDEL.EXE",
+    "bytes": 8192,
+    "sha256": "a4261dd5d1816a9938726b2346553b3a7eabc501ce98dde5bae9ee7363ac5ef9",
+    "result": "PE_PARSE_FAILED",
+    "error": "'Invalid NT Headers signature. Probably a NE file'"
+  },
+  {
+    "path": "world-isolated/extracted/491-client-legacy/Program_Files/Patcher.exe",
+    "bytes": 360502,
+    "sha256": "5a0278d0fa82e1242dcb4efe01242bc7a47b784a19b972bee0dc70fd9ebf0f6e",
+    "result": "STATIC_ONLY_NOT_MALWARE_CLEARANCE",
+    "import_dlls": [
+      "ICMP.dll",
+      "KERNEL32.dll",
+      "USER32.dll",
+      "GDI32.dll",
+      "comdlg32.dll",
+      "WINSPOOL.DRV",
+      "ADVAPI32.dll",
+      "SHELL32.dll",
+      "COMCTL32.dll",
+      "ole32.dll",
+      "OLEAUT32.dll",
+      "urlmon.dll",
+      "WSOCK32.dll"
+    ],
+    "api_names_for_review": [
+      "WinExec",
+      "LoadLibraryA"
+    ]
+  },
+  {
+    "path": "world-isolated/extracted/491-client-legacy/Program_Files/Winbaram.exe",
+    "bytes": 1101876,
+    "sha256": "f88846f2d3ce394d8dcc6e55288b8977ff3d34e160a4029337bdaccee84475ea",
+    "result": "STATIC_ONLY_NOT_MALWARE_CLEARANCE",
+    "import_dlls": [
+      "KERNEL32.dll",
+      "USER32.dll",
+      "GDI32.dll",
+      "ADVAPI32.dll",
+      "ole32.dll",
+      "OLEAUT32.dll",
+      "DDRAW.dll",
+      "DSOUND.dll",
+      "WINMM.dll",
+      "WSOCK32.dll",
+      "VERSION.dll",
+      "IMM32.dll",
+      "IMAGEHLP.dll"
+    ],
+    "api_names_for_review": [
+      "LoadLibraryA",
+      "CreateProcessA"
+    ]
+  },
+  {
+    "path": "world-isolated/extracted/NexusTK_v4.0.3/Nexus/_SETUP.DLL",
+    "bytes": 11264,
+    "sha256": "ce2cbf52194fb474194ca91f5ecc61ecd1789a096005efdd62e01d28fc44106d",
+    "result": "PE_PARSE_FAILED",
+    "error": "'Invalid NT Headers signature. Probably a NE file'"
+  },
+  {
+    "path": "world-isolated/extracted/NexusTK_v4.0.3/Nexus/SETUP.EXE",
+    "bytes": 59392,
+    "sha256": "0b1bd89e6b2f555a6acbe90cc4e51f71f7b91feb6b9578e7adc252573b5d2cd7",
+    "result": "PE_PARSE_FAILED",
+    "error": "'Invalid NT Headers signature. Probably a NE file'"
+  },
+  {
+    "path": "world-isolated/extracted/NexusTK_v4.0.3/Nexus/_ISDEL.EXE",
+    "bytes": 8192,
+    "sha256": "a4261dd5d1816a9938726b2346553b3a7eabc501ce98dde5bae9ee7363ac5ef9",
+    "result": "PE_PARSE_FAILED",
+    "error": "'Invalid NT Headers signature. Probably a NE file'"
+  },
+  {
+    "path": "world-isolated/extracted/5.0_or_Older_Clients_(All)/5.0 or Older Clients (All)/5.33 Client/Nexus533.exe",
+    "bytes": 52920956,
+    "sha256": "3afeb6fc2207c443eb291514bb7ebfc6319529c1cafddc51d95bf4d16c68b7fe",
+    "result": "STATIC_ONLY_NOT_MALWARE_CLEARANCE",
+    "import_dlls": [
+      "KERNEL32.dll",
+      "USER32.dll",
+      "GDI32.dll",
+      "ADVAPI32.dll"
+    ],
+    "api_names_for_review": [
+      "LoadLibraryA",
+      "WinExec"
+    ]
+  },
+  {
+    "path": "world-isolated/extracted/5.0_or_Older_Clients_(All)/5.0 or Older Clients (All)/4.95 Client/Nexus495.exe",
+    "bytes": 24658356,
+    "sha256": "486f4684b76658d92eaf84aab77fe9be9489ea01de8264fe90d0040466620aaa",
+    "result": "STATIC_ONLY_NOT_MALWARE_CLEARANCE",
+    "import_dlls": [
+      "KERNEL32.dll",
+      "USER32.dll",
+      "GDI32.dll",
+      "ADVAPI32.dll"
+    ],
+    "api_names_for_review": [
+      "LoadLibraryA",
+      "WinExec"
+    ]
+  },
+  {
+    "path": "world-isolated/extracted/5.0_or_Older_Clients_(All)/5.0 or Older Clients (All)/5.32 Client/nexus532.exe",
+    "bytes": 52991672,
+    "sha256": "6368a98a4299932a36978a78a6c4d40264a00b089a498c962b12650d8c3c2d6d",
+    "result": "STATIC_ONLY_NOT_MALWARE_CLEARANCE",
+    "import_dlls": [
+      "KERNEL32.dll",
+      "USER32.dll",
+      "GDI32.dll",
+      "ADVAPI32.dll"
+    ],
+    "api_names_for_review": [
+      "LoadLibraryA",
+      "WinExec"
+    ]
+  },
+  {
+    "path": "world-isolated/extracted/5.0_or_Older_Clients_(All)/5.0 or Older Clients (All)/5.32 Client (French Version)/Nexus-Exile.exe",
+    "bytes": 52593366,
+    "sha256": "bf354957bc4f744e0d27a714594c131d5d2417fc20e2a89faaca4833f43715e4",
+    "result": "STATIC_ONLY_NOT_MALWARE_CLEARANCE",
+    "import_dlls": [
+      "COMCTL32.dll",
+      "KERNEL32.dll",
+      "USER32.dll",
+      "GDI32.dll",
+      "ADVAPI32.dll",
+      "SHELL32.dll",
+      "ole32.dll",
+      "VERSION.dll"
+    ],
+    "api_names_for_review": [
+      "CreateProcessA",
+      "LoadLibraryA",
+      "ShellExecuteA"
+    ]
+  },
+  {
+    "path": "world-isolated/extracted/5.0_or_Older_Clients_(All)/5.0 or Older Clients (All)/4.03 (French Version)/nexusf.exe",
+    "bytes": 6617137,
+    "sha256": "c8820ac5af784fa6aadcdc86198c84f07ac4e73af1c74ece1152a1c9bd52cd4b",
+    "result": "STATIC_ONLY_NOT_MALWARE_CLEARANCE",
+    "import_dlls": [
+      "KERNEL32.dll",
+      "USER32.dll",
+      "GDI32.dll",
+      "ADVAPI32.dll",
+      "SHELL32.dll",
+      "ole32.dll",
+      "VERSION.dll",
+      "COMCTL32.dll"
+    ],
+    "api_names_for_review": [
+      "CreateProcessA",
+      "LoadLibraryA",
+      "ShellExecuteA"
+    ]
+  },
+  {
+    "path": "world-isolated/extracted/5.0_or_Older_Clients_(All)/5.0 or Older Clients (All)/4.83 Client/NexusKey.exe",
+    "bytes": 18636872,
+    "sha256": "66980326ae611630525577fa4da56bb1e6928cf40cc99432b1b0157600a6e8b3",
+    "result": "STATIC_ONLY_NOT_MALWARE_CLEARANCE",
+    "import_dlls": [
+      "KERNEL32.dll",
+      "USER32.dll",
+      "GDI32.dll",
+      "ADVAPI32.dll"
+    ],
+    "api_names_for_review": [
+      "LoadLibraryA",
+      "WinExec"
+    ]
+  },
+  {
+    "path": "world-isolated/extracted/5.0_or_Older_Clients_(All)/5.0 or Older Clients (All)/4.03 Client/NexusKey.exe",
+    "bytes": 8634909,
+    "sha256": "355e4c8f360d15202a12ea7ecf0e8f89b611ffcba6593a3e055d647bc2baa1f9",
+    "result": "STATIC_ONLY_NOT_MALWARE_CLEARANCE",
+    "import_dlls": [
+      "KERNEL32.dll",
+      "USER32.dll",
+      "GDI32.dll",
+      "COMCTL32.dll",
+      "ADVAPI32.dll",
+      "SHELL32.dll",
+      "LZ32.dll"
+    ],
+    "api_names_for_review": [
+      "LoadLibraryA",
+      "CreateProcessA",
+      "ShellExecuteA"
+    ]
+  },
+  {
+    "path": "world-isolated/extracted/5.0_or_Older_Clients_(All)/5.0 or Older Clients (All)/Baram 1996 [Beta]/baram1996.exe",
+    "bytes": 3340944,
+    "sha256": "e07cdf98a4727e2661850c480addf0a52fbafde75c6a5176812eae09ba815886",
+    "result": "STATIC_ONLY_NOT_MALWARE_CLEARANCE",
+    "import_dlls": [
+      "oleaut32.dll",
+      "advapi32.dll",
+      "user32.dll",
+      "kernel32.dll",
+      "kernel32.dll",
+      "user32.dll",
+      "kernel32.dll",
+      "advapi32.dll",
+      "comctl32.dll",
+      "kernel32.dll",
+      "advapi32.dll"
+    ],
+    "api_names_for_review": []
+  },
+  {
+    "path": "world-isolated/extracted/403-client-legacy/Program/Download.exe",
+    "bytes": 12800,
+    "sha256": "4483cce163b5ac2f9a4c9dc994f26cd1cdc35dd64cb4fda86dda5057cc311eee",
+    "result": "STATIC_ONLY_NOT_MALWARE_CLEARANCE",
+    "import_dlls": [
+      "MFC42.DLL",
+      "MSVCRT.dll",
+      "KERNEL32.dll",
+      "USER32.dll"
+    ],
+    "api_names_for_review": [
+      "WinExec"
+    ]
+  },
+  {
+    "path": "world-isolated/extracted/403-client-legacy/Program/NexusPatch.exe",
+    "bytes": 90112,
+    "sha256": "ccc0b00e1b56d08a780c35af47cfe50fee84fb317416018b73f0ef65ad7c570c",
+    "result": "STATIC_ONLY_NOT_MALWARE_CLEARANCE",
+    "import_dlls": [
+      "KERNEL32.dll",
+      "USER32.dll",
+      "COMCTL32.dll",
+      "VERSION.dll"
+    ],
+    "api_names_for_review": [
+      "WinExec",
+      "LoadLibraryA"
+    ]
+  },
+  {
+    "path": "world-isolated/extracted/403-client-legacy/Program/ManualPatcher.exe",
+    "bytes": 90112,
+    "sha256": "951bfc1fcf8dde044db77f4256d2942512bb9580ca25db05c52b401af6777788",
+    "result": "STATIC_ONLY_NOT_MALWARE_CLEARANCE",
+    "import_dlls": [
+      "KERNEL32.dll",
+      "USER32.dll",
+      "COMCTL32.dll",
+      "VERSION.dll"
+    ],
+    "api_names_for_review": [
+      "WinExec",
+      "LoadLibraryA"
+    ]
+  },
+  {
+    "path": "world-isolated/extracted/403-client-legacy/Program/NexusTK.exe",
+    "bytes": 1257549,
+    "sha256": "8420d208b8491df34c1bf57d8a2261d60ea8265c1213cd47ebb024e1ca31a57e",
+    "result": "STATIC_ONLY_NOT_MALWARE_CLEARANCE",
+    "import_dlls": [
+      "KERNEL32.dll",
+      "GDI32.dll",
+      "USER32.dll",
+      "ADVAPI32.dll",
+      "DDRAW.dll",
+      "DSOUND.dll",
+      "WINMM.dll",
+      "WSOCK32.dll",
+      "VERSION.dll",
+      "IMM32.dll"
+    ],
+    "api_names_for_review": [
+      "LoadLibraryA",
+      "WinExec"
+    ]
+  }
+]

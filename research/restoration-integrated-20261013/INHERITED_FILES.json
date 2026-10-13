@@ -1,0 +1,990 @@
+{
+  "base_sha": "443b49abe97948f59893d3e23f667b0e2eb5e8ff",
+  "branch_heads": {
+    "origin/main": "443b49abe97948f59893d3e23f667b0e2eb5e8ff",
+    "origin/research/community-sources-20261013": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+    "origin/research/world-sources-20261013": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f"
+  },
+  "files": [
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": ".gitignore",
+      "blob_sha": "578bd05daa6824843025fc3b25b338f70f97dbcc",
+      "action": "existing_conflict_preserved"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "README.md",
+      "blob_sha": "7fc3800867758acb13765083ca4ede81cba09f4b",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "STATUS.json",
+      "blob_sha": "d4ff71d45549b2fe3980393f611ed5a710071003",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "data/assumed_dev_rules.json",
+      "blob_sha": "e3701c1e4f281a47bb16b14cd2c02f931027a8fe",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "data/evidence_entry_template.json",
+      "blob_sha": "fbbef29ce8550c8b52bc8811626bb52195628911",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "data/strict_1998_rules.json",
+      "blob_sha": "329101bce59224fd5219d61b153ee36070fdf793",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "docs/ACCEPTANCE_CRITERIA.md",
+      "blob_sha": "1268bfde7e65977b9e687064a518b03da1e3b848",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "docs/ASSETS_AND_IP.md",
+      "blob_sha": "dedd4ac8255e9495460c8c3a0c3ce74ce3ed7046",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "docs/COMMUNITY_SOURCE_HANDOFF.md",
+      "blob_sha": "071e011728a0cdefdea878faaadec0e16d06c6e1",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "docs/EVIDENCE_POLICY.md",
+      "blob_sha": "64d7efde8be8ae8dd0f19ca3f02eab1268cff21f",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "docs/GITHUB_SETUP.md",
+      "blob_sha": "b82a1efb306ecf722912c81b7b8522b706ea4143",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "docs/IMPLEMENTATION_PLAN.md",
+      "blob_sha": "35cd72e51590b807c3579b26e583f76e8c9e9dd9",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "docs/RESEARCH_QUEUE.md",
+      "blob_sha": "4b2b61d26860856fe1215ad5ac6231d3dcf9615e",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "docs/TARGET_BASELINE.md",
+      "blob_sha": "ec9cc9b0e188c5e5385b9f05aecbb3d5e5ec366a",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "docs/WORK_ORDERS.md",
+      "blob_sha": "2909bc97f18a205a927ad4003db6d4e0d4e22ca6",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/ASSET_LICENSE_MANIFEST.csv",
+      "blob_sha": "92b1a86110d17f45c5b4db8dc3c210c74bf7482c",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/SHA256SUMS.txt",
+      "blob_sha": "016407e7753243ccdbe5c0f074b7479dc1c31703",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/archive/baram_1998_4_0_research_v1.zip",
+      "blob_sha": "3e4668445b3b4893e0179afe44cdea818dbdf80d",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/community-audit/README.md",
+      "blob_sha": "7d4aa6532470b22ca27e3bf8c84a2ea1942b2fa3",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/community-audit/VERIFICATION_CONTRACT.md",
+      "blob_sha": "6261d8b746818d89d70f586bf973c737faa40d06",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/community-audit/additional_meta.json",
+      "blob_sha": "c0ea51932b080eaff244d0db147b84c9be26b2ff",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/community-audit/content-index.md",
+      "blob_sha": "914f29c273a0e5cbde58da57e10b700f0e2280e8",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/community-audit/cross-repository-duplicates.json",
+      "blob_sha": "d6c2948b672fe4c4e71017cf0e2eea71b2f69c35",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/community-audit/execution-results.json",
+      "blob_sha": "c0ca71db16a7ac0e613a02e637939c599c875978",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/community-audit/file-inventory.json",
+      "blob_sha": "7f7d7e1badf0bd05fab9146f819e14554bd9c4e7",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/community-audit/gaps.md",
+      "blob_sha": "129a2a07f3e4fb66fbd81f0e5e2516e4f4bfcb62",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/community-audit/git-integrity-checks.json",
+      "blob_sha": "54cd7a6e5c16def44f21dac15dc71ccf0380165e",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/community-audit/initial_meta.json",
+      "blob_sha": "0b335867401012d6622f04cd3566c5261e3bee24",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/community-audit/install-and-implementation.md",
+      "blob_sha": "4cda21118646ecd37abfeea016d1df46ecbdc055",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/community-audit/project1998-content-check.json",
+      "blob_sha": "87acd6e39b158b295138c1e6b091c29dd126acb2",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/community-audit/project1998-deep-review.md",
+      "blob_sha": "43b0aec25dc5c42444f2dba5cb2f63f1bd891d85",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/community-audit/project1998-map-check.json",
+      "blob_sha": "a926d89ea8afc9314bb6f7b09578184a6d5a6b75",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/community-audit/repository-audit.json",
+      "blob_sha": "3b9918562fadae0a2d1323a005c508373a10595e",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/community-audit/reuse-matrix.md",
+      "blob_sha": "9d1727f3bc130eb49289424d70334f020e775a2b",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/community-audit/search-results-extra.json",
+      "blob_sha": "0e13a6385d35afe1af9a8b4685246627136811dc",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/community-audit/search-results.json",
+      "blob_sha": "cfaa0338bac24d8e4cf8c03fcde77bc17845e46b",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/community-audit/source-quality.md",
+      "blob_sha": "4680216fb91985b9b681c844d7eba8cae95e4afa",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/community_sources_20261013.json",
+      "blob_sha": "6b62fdb462141be2d701d7a981eb60814d46f578",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/korean-history-20261013/CHECKPOINT.json",
+      "blob_sha": "8563ff6035f584c9cffeb3f565e7bd7265e8bbcb",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/korean-history-20261013/HANDOFF.md",
+      "blob_sha": "9624cbae8f3511b7c68cf955d12688796b1dcbce",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/korean-history-20261013/IMPLEMENTATION_AVERAGES.json",
+      "blob_sha": "9a33e576357cdfa11732fe1b1a86d9ffb5284126",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/korean-history-20261013/KR-1998.json",
+      "blob_sha": "6f492393e6b8826031fc55d6149c954863e142af",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/korean-history-20261013/KR-1999.json",
+      "blob_sha": "bebcc657a4781807f46eaed7bdd077c341aa09b9",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/korean-history-20261013/KR-2000.json",
+      "blob_sha": "7301e35e24b528b43bc31109f0a9c1f3cd83e19f",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/korean-history-20261013/KR-2001.json",
+      "blob_sha": "60a25004ad4c6a786ec51e55076d8596f43dff08",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/korean-history-20261013/README.md",
+      "blob_sha": "cad452be7cefca62a92471de2e9fcc7c48e0f2ae",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/korean-history-20261013/SEARCH_PATHS.md",
+      "blob_sha": "d4e282231826103f106aadd4de847b7dc6bff92e",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/korean-history-20261013/SUMMARY.json",
+      "blob_sha": "8f88e38efcd31d7993174ff44e069e4e1758903c",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/korean-history-20261013/USER_INPUT_REQUESTS.md",
+      "blob_sha": "8a4e8824487e09de30b52f605e8eae9b0643a4c9",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/korean-history-20261013/VALIDATION.json",
+      "blob_sha": "6d9207bb9d61f2ff7afce7ec4dd2942775bd3313",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/korean-history-20261013/VALIDATION_HISTORY.json",
+      "blob_sha": "6f8873d2a5da7f65eaaa07f4f884bbf30f6f2cdc",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/korean-history-20261013/VCHAMP-1999-09-REVIEW.json",
+      "blob_sha": "d33ad7ac116f60eb174f0ea5c0c515db9a85744a",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/korean-history-20261013/code-comparison.json",
+      "blob_sha": "229a3126edabdad1c8f1c69a8649b678fbb0394f",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/korean-history-20261013/contradictions.json",
+      "blob_sha": "ad6dc105090048e8496cb6ccad9ae3c09a4b2459",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/korean-history-20261013/extracted-candidates.jsonl",
+      "blob_sha": "0b17e9f5b591298bf6fb2680c7c457feeeba3f57",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/korean-history-20261013/facts.jsonl",
+      "blob_sha": "98bf73440e8e3ecacdcbc431f4caa2c0bf20c2a1",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/korean-history-20261013/guidebooks.json",
+      "blob_sha": "84f3a527107b83a027f0423dbad959edc6c23431",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/korean-history-20261013/magazines.json",
+      "blob_sha": "def71f7f3159888041b28b3763844fa914e561fa",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/korean-history-20261013/missing.json",
+      "blob_sha": "708654c310aaaf203e80054db771f0eb5fe2282c",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/korean-history-20261013/source-date-deltas.json",
+      "blob_sha": "7d8712a34be92497fd65f5bd69db76f748ebced8",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/korean-history-20261013/sources.json",
+      "blob_sha": "44348b9a56e00ef12897883716749bacd57024ec",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/korean-history-20261013/verify_evidence.py",
+      "blob_sha": "01bd4d0dc80597f1220b8333803d032ab963a970",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/v1/1998_4.0_research_report.md",
+      "blob_sha": "ffc6c2f5d98d9606b13777a677b8ae7cf84fabaf",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "research/v1/1998_4.0_source_ledger.json",
+      "blob_sha": "92d6b71ece713e2182778dd697620c407f7fa290",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "tools/audit_local_sources.py",
+      "blob_sha": "4a16d1ef586a173194376f1c10f70a6db8ddba35",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "tools/check_project1998_content.py",
+      "blob_sha": "9fd816fe24de1b396c8fc0708276bdb3f03ec738",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "tools/fetch_community_refs.py",
+      "blob_sha": "7eaf0e76ea07251df48ecbc9c145b9fb4ecd2e37",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "tools/refetch_audited_sources.py",
+      "blob_sha": "598e804b792858b0181e627b249f1e0ad0d05677",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/community-sources-20261013",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "path": "tools/validate_research.py",
+      "blob_sha": "fc4b35a4df2509ba50409f68ce99c933802de36a",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": ".gitignore",
+      "blob_sha": "578bd05daa6824843025fc3b25b338f70f97dbcc",
+      "action": "existing_conflict_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "README.md",
+      "blob_sha": "7fc3800867758acb13765083ca4ede81cba09f4b",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "STATUS.json",
+      "blob_sha": "d4ff71d45549b2fe3980393f611ed5a710071003",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "data/assumed_dev_rules.json",
+      "blob_sha": "e3701c1e4f281a47bb16b14cd2c02f931027a8fe",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "data/evidence_entry_template.json",
+      "blob_sha": "fbbef29ce8550c8b52bc8811626bb52195628911",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "data/strict_1998_rules.json",
+      "blob_sha": "329101bce59224fd5219d61b153ee36070fdf793",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "docs/ACCEPTANCE_CRITERIA.md",
+      "blob_sha": "1268bfde7e65977b9e687064a518b03da1e3b848",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "docs/ASSETS_AND_IP.md",
+      "blob_sha": "dedd4ac8255e9495460c8c3a0c3ce74ce3ed7046",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "docs/COMMUNITY_SOURCE_HANDOFF.md",
+      "blob_sha": "071e011728a0cdefdea878faaadec0e16d06c6e1",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "docs/EVIDENCE_POLICY.md",
+      "blob_sha": "64d7efde8be8ae8dd0f19ca3f02eab1268cff21f",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "docs/GITHUB_SETUP.md",
+      "blob_sha": "b82a1efb306ecf722912c81b7b8522b706ea4143",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "docs/IMPLEMENTATION_PLAN.md",
+      "blob_sha": "35cd72e51590b807c3579b26e583f76e8c9e9dd9",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "docs/RESEARCH_QUEUE.md",
+      "blob_sha": "4b2b61d26860856fe1215ad5ac6231d3dcf9615e",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "docs/TARGET_BASELINE.md",
+      "blob_sha": "ec9cc9b0e188c5e5385b9f05aecbb3d5e5ec366a",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "docs/WORK_ORDERS.md",
+      "blob_sha": "2909bc97f18a205a927ad4003db6d4e0d4e22ca6",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/ASSET_LICENSE_MANIFEST.csv",
+      "blob_sha": "92b1a86110d17f45c5b4db8dc3c210c74bf7482c",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/SHA256SUMS.txt",
+      "blob_sha": "016407e7753243ccdbe5c0f074b7479dc1c31703",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/archive/baram_1998_4_0_research_v1.zip",
+      "blob_sha": "3e4668445b3b4893e0179afe44cdea818dbdf80d",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/community-audit/README.md",
+      "blob_sha": "7d4aa6532470b22ca27e3bf8c84a2ea1942b2fa3",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/community-audit/VERIFICATION_CONTRACT.md",
+      "blob_sha": "6261d8b746818d89d70f586bf973c737faa40d06",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/community-audit/additional_meta.json",
+      "blob_sha": "c0ea51932b080eaff244d0db147b84c9be26b2ff",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/community-audit/content-index.md",
+      "blob_sha": "914f29c273a0e5cbde58da57e10b700f0e2280e8",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/community-audit/cross-repository-duplicates.json",
+      "blob_sha": "d6c2948b672fe4c4e71017cf0e2eea71b2f69c35",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/community-audit/execution-results.json",
+      "blob_sha": "c0ca71db16a7ac0e613a02e637939c599c875978",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/community-audit/file-inventory.json",
+      "blob_sha": "7f7d7e1badf0bd05fab9146f819e14554bd9c4e7",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/community-audit/gaps.md",
+      "blob_sha": "129a2a07f3e4fb66fbd81f0e5e2516e4f4bfcb62",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/community-audit/git-integrity-checks.json",
+      "blob_sha": "54cd7a6e5c16def44f21dac15dc71ccf0380165e",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/community-audit/initial_meta.json",
+      "blob_sha": "0b335867401012d6622f04cd3566c5261e3bee24",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/community-audit/install-and-implementation.md",
+      "blob_sha": "4cda21118646ecd37abfeea016d1df46ecbdc055",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/community-audit/project1998-content-check.json",
+      "blob_sha": "87acd6e39b158b295138c1e6b091c29dd126acb2",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/community-audit/project1998-deep-review.md",
+      "blob_sha": "43b0aec25dc5c42444f2dba5cb2f63f1bd891d85",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/community-audit/project1998-map-check.json",
+      "blob_sha": "a926d89ea8afc9314bb6f7b09578184a6d5a6b75",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/community-audit/repository-audit.json",
+      "blob_sha": "3b9918562fadae0a2d1323a005c508373a10595e",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/community-audit/reuse-matrix.md",
+      "blob_sha": "9d1727f3bc130eb49289424d70334f020e775a2b",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/community-audit/search-results-extra.json",
+      "blob_sha": "0e13a6385d35afe1af9a8b4685246627136811dc",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/community-audit/search-results.json",
+      "blob_sha": "cfaa0338bac24d8e4cf8c03fcde77bc17845e46b",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/community-audit/source-quality.md",
+      "blob_sha": "4680216fb91985b9b681c844d7eba8cae95e4afa",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/community_sources_20261013.json",
+      "blob_sha": "6b62fdb462141be2d701d7a981eb60814d46f578",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/v1/1998_4.0_research_report.md",
+      "blob_sha": "ffc6c2f5d98d9606b13777a677b8ae7cf84fabaf",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/v1/1998_4.0_source_ledger.json",
+      "blob_sha": "92d6b71ece713e2182778dd697620c407f7fa290",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/world-audit/403-p1998-map-comparison.json",
+      "blob_sha": "52784151620ce3eea61a8cf226593c73338db9ab",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/world-audit/HANDOFF.md",
+      "blob_sha": "5db155365a8cc6d573a0adcb746749355144a53f",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/world-audit/README.md",
+      "blob_sha": "6b081ea06ec7fa541ebd31ce4d98b3258428fa35",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/world-audit/SEARCH_AND_VERSIONS.md",
+      "blob_sha": "58f64aeae8110b3f2be18fca53f057dac342fe26",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/world-audit/acquired-original-files.json",
+      "blob_sha": "f60f132ffeb51142d96d1c6b546d8e4c295351f5",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/world-audit/additional-source-static-triage.json",
+      "blob_sha": "3a8ffab34b844619154afe8c9da350835adc1dba",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/world-audit/atlas-results.json",
+      "blob_sha": "8d78d90d439f9c744eb4417ddbb5aa687fbd02c3",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/world-audit/binary-static-inspection.json",
+      "blob_sha": "c41951685cce493ee2aab8612b20966db545a8a4",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/world-audit/dat-directory-check.json",
+      "blob_sha": "8ad2fc9dee4189b2afd842fe977757481082aad5",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/world-audit/download-attempts.json",
+      "blob_sha": "6f7bce30126f16ed1f5772140e66e3a8e5bfd2a4",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/world-audit/epf-header-check.json",
+      "blob_sha": "7c0f8c0600d1a709b187c871a5311d952c08f697",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/world-audit/extended-probes.json",
+      "blob_sha": "d67c16c2a14c996470549e0bc790011c5382f941",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/world-audit/kamikaze-pages.json",
+      "blob_sha": "9cde25f8859be97ebabc29b226e3b122c30ad69e",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/world-audit/live-login-report.json",
+      "blob_sha": "12c232c38cc751ce0b25ad49474e442ae590e914",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/world-audit/new-file-inventory.json",
+      "blob_sha": "8f46dfba815bb60046a92ff1a4377572b9044e63",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/world-audit/new-git-integrity.json",
+      "blob_sha": "f3470f7c17c60d8360db946359607d6f9d290455",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/world-audit/project1998-history.json",
+      "blob_sha": "79ed9c4d65f54e3ee5e2806e6350b31addea2a91",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/world-audit/project1998-static-scan.json",
+      "blob_sha": "e717dc19fa32f6762566c2728c12b9d3a465d0a9",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/world-audit/refetch-existing-hash-check.json",
+      "blob_sha": "0cf2f5166dfed357ef673df65496c06e8420dad6",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/world-audit/restart-login-report.json",
+      "blob_sha": "5c902206a5543acfcd4d29a165107dc405d9583a",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/world-audit/unique-projects.json",
+      "blob_sha": "d5d1bbf93dd646237792cbebf1be4520cb10dfac",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/world-audit/verification-results.json",
+      "blob_sha": "d8f3e6d1682beb96531a2d1606564d8bec68a634",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "research/world-audit/wise-probe.json",
+      "blob_sha": "049f2cd08439a7e09db7fa9a23776a4086694afd",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "tools/audit_local_sources.py",
+      "blob_sha": "4a16d1ef586a173194376f1c10f70a6db8ddba35",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "tools/check_project1998_content.py",
+      "blob_sha": "9fd816fe24de1b396c8fc0708276bdb3f03ec738",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "tools/fetch_community_refs.py",
+      "blob_sha": "7eaf0e76ea07251df48ecbc9c145b9fb4ecd2e37",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "tools/inspect_legacy_dat.py",
+      "blob_sha": "1e96b73138109035bc7f513f152bc4cc9e0cc0e2",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "tools/refetch_audited_sources.py",
+      "blob_sha": "598e804b792858b0181e627b249f1e0ad0d05677",
+      "action": "same_blob_preserved"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "tools/refetch_world_files.py",
+      "blob_sha": "efb1f84cd9fda3bfef80d67276a87b0e01c68269",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "tools/run_local_server_probe.py",
+      "blob_sha": "41fc1a3e6ce9d2c6865fc94b0971ec1006e1d677",
+      "action": "reviewed_new_research_file_import"
+    },
+    {
+      "branch": "origin/research/world-sources-20261013",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "path": "tools/validate_research.py",
+      "blob_sha": "fc4b35a4df2509ba50409f68ce99c933802de36a",
+      "action": "same_blob_preserved"
+    }
+  ]
+}

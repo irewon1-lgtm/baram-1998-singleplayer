@@ -1,0 +1,12 @@
+{
+  "total_features": 30,
+  "source_code_reference_features": 27,
+  "stub_features": 1,
+  "code_review_gaps": [
+    "singleplayer_assist"
+  ],
+  "needs_own_implementation_or_adaptation": 30,
+  "gameplay_unverified": 30,
+  "asset_binding_gaps": 9936,
+  "content_field_mapping_gaps": 9184
+}

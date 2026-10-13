@@ -1,0 +1,432 @@
+[
+  {
+    "content_id": "kr.item.0b55ed8b4ec1",
+    "field": "guide_listed_price",
+    "distinct_values": [
+      2500,
+      25000,
+      250000
+    ],
+    "raw_arithmetic_mean": 92500.0,
+    "observation_ids": [
+      "OBS-bea3dcdc06d5e77c",
+      "OBS-37afc4b3a45c4990",
+      "OBS-a78b4095b4dfe81e",
+      "OBS-35b4da20487c446f",
+      "OBS-762c7836da44fd1e"
+    ],
+    "profile": "KR_BLEND_1998_2001",
+    "historical_original": false
+  },
+  {
+    "content_id": "kr.item.18ad6775cb56",
+    "field": "armor_class",
+    "distinct_values": [
+      -28,
+      -25
+    ],
+    "raw_arithmetic_mean": -26.5,
+    "observation_ids": [
+      "OBS-5aa5d6a629bc868b",
+      "OBS-8c0e69cde62b1f40"
+    ],
+    "profile": "KR_BLEND_1998_2001",
+    "historical_original": false
+  },
+  {
+    "content_id": "kr.item.195b2038cf9e",
+    "field": "hp_bonus",
+    "distinct_values": [
+      20,
+      200
+    ],
+    "raw_arithmetic_mean": 110.0,
+    "observation_ids": [
+      "OBS-02456c4f84339282",
+      "OBS-d222c439199c449f"
+    ],
+    "profile": "KR_BLEND_1998_2001",
+    "historical_original": false
+  },
+  {
+    "content_id": "kr.item.1f79a840c980",
+    "field": "guide_listed_price",
+    "distinct_values": [
+      8,
+      10
+    ],
+    "raw_arithmetic_mean": 9.0,
+    "observation_ids": [
+      "OBS-52a966a2242747fc",
+      "OBS-e26b47cb8111ee5b",
+      "OBS-260d3dc308787d01"
+    ],
+    "profile": "KR_BLEND_1998_2001",
+    "historical_original": false
+  },
+  {
+    "content_id": "kr.item.2dee221ea2d4",
+    "field": "guide_listed_price",
+    "distinct_values": [
+      8,
+      10
+    ],
+    "raw_arithmetic_mean": 9.0,
+    "observation_ids": [
+      "OBS-8e60367afbbde740",
+      "OBS-5c2d1451847b4fec",
+      "OBS-c47a4b75dbd71f1a"
+    ],
+    "profile": "KR_BLEND_1998_2001",
+    "historical_original": false
+  },
+  {
+    "content_id": "kr.item.38187c9e1672",
+    "field": "guide_listed_price",
+    "distinct_values": [
+      2500,
+      250000
+    ],
+    "raw_arithmetic_mean": 126250.0,
+    "observation_ids": [
+      "OBS-cd000d4b7c494917",
+      "OBS-85d58b39ec68b48e",
+      "OBS-6d2b9a7f68c3e713"
+    ],
+    "profile": "KR_BLEND_1998_2001",
+    "historical_original": false
+  },
+  {
+    "content_id": "kr.item.3bc81b9415a6",
+    "field": "armor_class",
+    "distinct_values": [
+      -32,
+      -23
+    ],
+    "raw_arithmetic_mean": -27.5,
+    "observation_ids": [
+      "OBS-927bdad7738daa3b",
+      "OBS-0eb9f21d132221ac"
+    ],
+    "profile": "KR_BLEND_1998_2001",
+    "historical_original": false
+  },
+  {
+    "content_id": "kr.item.4158c778bae7",
+    "field": "armor_class",
+    "distinct_values": [
+      -20,
+      -19
+    ],
+    "raw_arithmetic_mean": -19.5,
+    "observation_ids": [
+      "OBS-41995bfa1857703a",
+      "OBS-2096eace70c157ae"
+    ],
+    "profile": "KR_BLEND_1998_2001",
+    "historical_original": false
+  },
+  {
+    "content_id": "kr.item.51044c5b6455",
+    "field": "level_required",
+    "distinct_values": [
+      40,
+      50
+    ],
+    "raw_arithmetic_mean": 45.0,
+    "observation_ids": [
+      "OBS-2e056e32664d5caa",
+      "OBS-5faed535db7cebdb"
+    ],
+    "profile": "KR_BLEND_1998_2001",
+    "historical_original": false
+  },
+  {
+    "content_id": "kr.item.65a047e9af07",
+    "field": "armor_class",
+    "distinct_values": [
+      -25,
+      -20
+    ],
+    "raw_arithmetic_mean": -22.5,
+    "observation_ids": [
+      "OBS-c03a58044e270bd1",
+      "OBS-469d2ea1be54f258"
+    ],
+    "profile": "KR_BLEND_1998_2001",
+    "historical_original": false
+  },
+  {
+    "content_id": "kr.item.9b986761fd4f",
+    "field": "armor_class",
+    "distinct_values": [
+      -32,
+      -7
+    ],
+    "raw_arithmetic_mean": -19.5,
+    "observation_ids": [
+      "OBS-e1a9238974fdb19b",
+      "OBS-323208d955fbd847"
+    ],
+    "profile": "KR_BLEND_1998_2001",
+    "historical_original": false
+  },
+  {
+    "content_id": "kr.item.b01a157e1993",
+    "field": "armor_class",
+    "distinct_values": [
+      -19,
+      -17
+    ],
+    "raw_arithmetic_mean": -18.0,
+    "observation_ids": [
+      "OBS-c7fe49774c7c3a07",
+      "OBS-cc0445c357d7ba9b"
+    ],
+    "profile": "KR_BLEND_1998_2001",
+    "historical_original": false
+  },
+  {
+    "content_id": "kr.item.e0363be2c9ef",
+    "field": "guide_listed_price",
+    "distinct_values": [
+      2500,
+      25000,
+      250000
+    ],
+    "raw_arithmetic_mean": 92500.0,
+    "observation_ids": [
+      "OBS-a56487ef6c8b9764",
+      "OBS-56949c0682ca84d9",
+      "OBS-f909fa17876babcb"
+    ],
+    "profile": "KR_BLEND_1998_2001",
+    "historical_original": false
+  },
+  {
+    "content_id": "kr.item.f932bf84c976",
+    "field": "armor_class",
+    "distinct_values": [
+      -20,
+      -3
+    ],
+    "raw_arithmetic_mean": -11.5,
+    "observation_ids": [
+      "OBS-d50d75b2a8c79913",
+      "OBS-f839c6ba2a21ad00"
+    ],
+    "profile": "KR_BLEND_1998_2001",
+    "historical_original": false
+  },
+  {
+    "content_id": "kr.monster.313ea14bde98",
+    "field": "experience",
+    "distinct_values": [
+      200000.0,
+      300000.0
+    ],
+    "raw_arithmetic_mean": 250000.0,
+    "observation_ids": [
+      "OBS-12dcdd07eaf3b429",
+      "OBS-ed6e4acc4457062f"
+    ],
+    "profile": "KR_BLEND_1998_2001",
+    "historical_original": false
+  },
+  {
+    "content_id": "kr.monster.bc85d3766325",
+    "field": "experience",
+    "distinct_values": [
+      5,
+      10
+    ],
+    "raw_arithmetic_mean": 7.5,
+    "observation_ids": [
+      "OBS-13fadd66359b5d38",
+      "OBS-74d85819a94edd5b",
+      "OBS-3c87fb8130483e5c",
+      "OBS-e6e97dca993a750b",
+      "OBS-2323342ff7232f5a",
+      "OBS-852d9b6b511f3d17"
+    ],
+    "profile": "KR_BLEND_1998_2001",
+    "historical_original": false
+  },
+  {
+    "content_id": "kr.spell.00ab334b664d",
+    "field": "learn_materials.도토리.quantity",
+    "distinct_values": [
+      50,
+      70
+    ],
+    "raw_arithmetic_mean": 60.0,
+    "observation_ids": [
+      "OBS-fdeade84d44232a7",
+      "OBS-bd68b9f9641664d6"
+    ],
+    "profile": "KR_BLEND_1998_2001",
+    "historical_original": false
+  },
+  {
+    "content_id": "kr.spell.020377d1baa3",
+    "field": "learn_materials.도토리.quantity",
+    "distinct_values": [
+      50,
+      70
+    ],
+    "raw_arithmetic_mean": 60.0,
+    "observation_ids": [
+      "OBS-f61cedee9c74e30f",
+      "OBS-046f3b44657b4400"
+    ],
+    "profile": "KR_BLEND_1998_2001",
+    "historical_original": false
+  },
+  {
+    "content_id": "kr.spell.08b1b1564835",
+    "field": "learn_materials.진호박.quantity",
+    "distinct_values": [
+      1,
+      20
+    ],
+    "raw_arithmetic_mean": 10.5,
+    "observation_ids": [
+      "OBS-869cbda91775d482",
+      "OBS-fbf25b623e327e54"
+    ],
+    "profile": "KR_BLEND_1998_2001",
+    "historical_original": false
+  },
+  {
+    "content_id": "kr.spell.1e93ed1d3e72",
+    "field": "learn_materials.도토리.quantity",
+    "distinct_values": [
+      70,
+      80
+    ],
+    "raw_arithmetic_mean": 75.0,
+    "observation_ids": [
+      "OBS-ed64f2afd59d500d",
+      "OBS-381835e2a4841600",
+      "OBS-7c6c5ecc4a30fd82",
+      "OBS-b732ab3814dffe8c",
+      "OBS-2ee2d74bfccfea0c",
+      "OBS-2df7cc81878d2254"
+    ],
+    "profile": "KR_BLEND_1998_2001",
+    "historical_original": false
+  },
+  {
+    "content_id": "kr.spell.5f6aadb98359",
+    "field": "learn_money",
+    "distinct_values": [
+      500,
+      800
+    ],
+    "raw_arithmetic_mean": 650.0,
+    "observation_ids": [
+      "OBS-b10e340b8922cba4",
+      "OBS-73957fc1c7b8fa73"
+    ],
+    "profile": "KR_BLEND_1998_2001",
+    "historical_original": false
+  },
+  {
+    "content_id": "kr.spell.5f6aadb98359",
+    "field": "learn_materials.도토리.quantity",
+    "distinct_values": [
+      70,
+      100
+    ],
+    "raw_arithmetic_mean": 85.0,
+    "observation_ids": [
+      "OBS-cfd3cbc31965341a",
+      "OBS-ab51a327cc378ca9"
+    ],
+    "profile": "KR_BLEND_1998_2001",
+    "historical_original": false
+  },
+  {
+    "content_id": "kr.spell.5f6aadb98359",
+    "field": "learn_materials.자호의가죽.quantity",
+    "distinct_values": [
+      2,
+      5
+    ],
+    "raw_arithmetic_mean": 3.5,
+    "observation_ids": [
+      "OBS-9523060b7f290770",
+      "OBS-d56bbcb5891adbf2"
+    ],
+    "profile": "KR_BLEND_1998_2001",
+    "historical_original": false
+  },
+  {
+    "content_id": "kr.spell.5fb26430108d",
+    "field": "learn_materials.도토리.quantity",
+    "distinct_values": [
+      50,
+      70
+    ],
+    "raw_arithmetic_mean": 60.0,
+    "observation_ids": [
+      "OBS-383f18e1925d8a66",
+      "OBS-78ad042074ce44e4"
+    ],
+    "profile": "KR_BLEND_1998_2001",
+    "historical_original": false
+  },
+  {
+    "content_id": "kr.spell.7984ae09154e",
+    "field": "learn_materials.도토리.quantity",
+    "distinct_values": [
+      50,
+      70
+    ],
+    "raw_arithmetic_mean": 60.0,
+    "observation_ids": [
+      "OBS-256540855f3839a2",
+      "OBS-664844c0eff7350e"
+    ],
+    "profile": "KR_BLEND_1998_2001",
+    "historical_original": false
+  },
+  {
+    "content_id": "kr.spell.7b2308c1c84a",
+    "field": "learn_level",
+    "distinct_values": [
+      63,
+      80
+    ],
+    "raw_arithmetic_mean": 71.5,
+    "observation_ids": [
+      "OBS-ebd09890c01c81de",
+      "OBS-ba92d8e828940066",
+      "OBS-dc995625dbd0c96f",
+      "OBS-f2e143bc0e9ff96b",
+      "OBS-582e654e3525aa0d",
+      "OBS-8a7367ebeed1dcf9"
+    ],
+    "profile": "KR_BLEND_1998_2001",
+    "historical_original": false
+  },
+  {
+    "content_id": "kr.spell.7b2308c1c84a",
+    "field": "learn_money",
+    "distinct_values": [
+      1500,
+      5000
+    ],
+    "raw_arithmetic_mean": 3250.0,
+    "observation_ids": [
+      "OBS-2503880e6446a49a",
+      "OBS-d1c1512928e26e9b",
+      "OBS-6d4006ceb6d703fa",
+      "OBS-5dc973d2fb130b22",
+      "OBS-7b9f4e38f6683fcb",
+      "OBS-3ed41a7013e43901"
+    ],
+    "profile": "KR_BLEND_1998_2001",
+    "historical_original": false
+  }
+]

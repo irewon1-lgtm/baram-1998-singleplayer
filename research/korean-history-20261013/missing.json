@@ -1,0 +1,80 @@
+[
+  {
+    "id": "G01",
+    "area": "1996–1999 official original pages",
+    "status": "BLOCKED",
+    "evidence": "official-pre2000 CDX read timeout",
+    "resume": "bounded root/known paths CDX by year after network allows; no random entire-domain retries"
+  },
+  {
+    "id": "G02",
+    "area": "1999 V챔프 인쇄272–275/뷰어294–297후보",
+    "status": "RESOLVED_BY_USER_IMAGES",
+    "evidence": "사용자 제공4이미지 날짜·인쇄번호·본문·표 확대판독. 두 NPC 글자와 개별뷰어인덱스는보류.",
+    "resume": "같은 사람확인 자료를 다시요청하지 않음. 다른호수 또는 새 데이터표로 확대"
+  },
+  {
+    "id": "G03",
+    "area": "윈즈커뮤니티",
+    "status": "DOMAIN_UNRESOLVED",
+    "evidence": "later references only; no attributable original URL or snapshot verified",
+    "resume": "dakku2001 link board and contemporaneous fan banner lists; first prove domain"
+  },
+  {
+    "id": "G04",
+    "area": "호떡 본문",
+    "status": "PARTIAL_ACCESS",
+    "evidence": "64 fan targets:41read/23failure incl21tunnel403 and2HTTP502",
+    "resume": "exact failing original URLs in sources.json, no PASS on CDX entries"
+  },
+  {
+    "id": "G05",
+    "area": "guidebooks4.90/5.05/5.13 interiors",
+    "status": "NOT_ACQUIRED",
+    "evidence": "catalogue/description/ad only;0 interiorpages",
+    "resume": "lawful public sample or user-provided copy; purchase requires prior approval"
+  },
+  {
+    "id": "G06",
+    "area": "1998/1999 full monsterHP/XP/drop/AI",
+    "status": "INSUFFICIENT_EVIDENCE",
+    "resume": "1998full contemporary guides/patch notice/server bytes; laterclassic values remain separate"
+  },
+  {
+    "id": "G07",
+    "area": "1998–2001 level1–99 XP/growth tables",
+    "status": "NOT_ACQUIRED",
+    "resume": "contemporaneous table; P1998 NA491rows not a KR substitute"
+  },
+  {
+    "id": "G08",
+    "area": "all tilemaps/portals/NPC interiorcoordinates",
+    "status": "UNVERIFIED",
+    "resume": "KRresource file mapped to official screenshots/map grids; current map visuals/topology not tilemaps"
+  },
+  {
+    "id": "G09",
+    "area": "animation timing/effects/audio",
+    "status": "UNVERIFIED",
+    "resume": "dated real gameplay recording or instrumented originalclient; stillscreens do not prove millisecond timing"
+  },
+  {
+    "id": "G10",
+    "area": "all quests/recipes/spellMP/formulas",
+    "status": "PARTIAL",
+    "resume": "individual dated source validation incl itemdescription and fanrecipes; exact probabilities null"
+  },
+  {
+    "id": "G11",
+    "area": "KR4.91 graphicsemantic mapping",
+    "status": "NOT_RUN",
+    "resume": "refetch exact priorhash in personal analysis folder, decodeEPF/PAL, compare ID/frame to dated KRimage"
+  },
+  {
+    "id": "G12",
+    "area": "magazine supplement CD",
+    "status": "CATALOGUE_LEAD_ONLY",
+    "evidence": "2000-02 ad shows4.5 CD pathD:/MUGGAME/baram-R.exe; actualCD bytes unacquired",
+    "resume": "public preservedCD manifest then filehash and version; no wholeCD public upload"
+  }
+]

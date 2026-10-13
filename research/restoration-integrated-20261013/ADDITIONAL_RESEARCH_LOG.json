@@ -1,0 +1,32 @@
+{
+  "priority": "After all 1674 input candidate rows reconciled",
+  "reused_archived_fan_sources": 13,
+  "supplement_records": 23,
+  "additional_field_keys": 10,
+  "additional_distinct_value_for_known_field": 0,
+  "already_known_values_rechecked": 13,
+  "public_searches": [
+    {
+      "queries": [
+        "바람의나라 구버전 2001 레벨 경험치표 체력 마력 성장",
+        "바람의나라 1999 2000 마법 소모 마력 누리의기원 화염주 바다의기원",
+        "바람의나라 2001 아이템 수리비 공식 내구도"
+      ],
+      "outcome": "Mostly later classic/user recollection; no contemporary original admitted"
+    },
+    {
+      "queries": [
+        "바람의나라 1999 경험치표",
+        "바람의나라 2001 누리의기원 마력",
+        "바람의나라 2000 수리비"
+      ],
+      "outcome": "Coverage verification yielded mostly unrelated or later material; no extra historical number admitted"
+    }
+  ],
+  "blocked_original_guidebooks": [
+    "ISBN9788985966122",
+    "ISBN9788985966283"
+  ],
+  "VCHAMP_re_requested": false,
+  "search_count_not_a_completion_metric": true
+}
