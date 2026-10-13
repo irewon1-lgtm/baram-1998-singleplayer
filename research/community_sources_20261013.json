@@ -1,0 +1,143 @@
+{
+  "schema": "community-reference-repositories-v1",
+  "as_of": "2026-10-13",
+  "project": "baram-1998-singleplayer",
+  "goal": "1998–2001 시대감의 개인용 싱글플레이; 2001 참조 허용",
+  "preservation": "기존 1998 원본 연구 원장 변경 금지",
+  "license_rule": "Public 저장소에 외부 소스·CSV·원작 리소스 일괄 복제 금지. 각 저장소 라이선스와 에셋 권리 별도 검증",
+  "scope": "GitHub 저장소와 README/LICENSE 확인 단계. 현 환경 GitHub 외부 clone 실행 불가 (DNS). 저장소 실행·파일 검사 결과가 아님",
+  "repositories": [
+    {
+      "name": "project1998/Project1998",
+      "kind": "2001 server emulator/world reference",
+      "priority": 1,
+      "era": "2001-07-09 NexusTK 4.95",
+      "license": "NONE_DECLARED_IN_README",
+      "use": "연구·구현 비교. 라이선스 허가 전 코드/CSV/에셋 재배포·병합 금지",
+      "verified": "README read",
+      "url": "https://github.com/project1998/Project1998",
+      "local_clone_status": "NOT_RUN"
+    },
+    {
+      "name": "unkmc/TKClassic",
+      "kind": "legacy graphics mapping and conversion",
+      "priority": 1,
+      "era": "pre-5.0 graphics / later classic restoration",
+      "license": "GPL-3.0",
+      "use": "별도 로컬 도구로 연구. GPL 조항 준수, 게임 에셋은 별도 권리 검증",
+      "verified": "README + LICENSE read",
+      "url": "https://github.com/unkmc/TKClassic",
+      "local_clone_status": "NOT_RUN"
+    },
+    {
+      "name": "DizzyThermal/TKViewer",
+      "kind": "DAT EPF MAP EPF/animation structure viewer",
+      "priority": 1,
+      "era": "NexusTK various; 1998 unverified",
+      "license": "UNVERIFIED_ROOT_LICENSE_NOT_FOUND",
+      "use": "파일 포맷과 데이터 구조 참고; 라이선스 확인 전 코드 통합 금지",
+      "verified": "README read",
+      "url": "https://github.com/DizzyThermal/TKViewer",
+      "local_clone_status": "NOT_RUN"
+    },
+    {
+      "name": "DizzyThermal/TKMapper",
+      "kind": "Godot map editor",
+      "priority": 1,
+      "era": "NexusTK modern tool; 1998 data unverified",
+      "license": "MIT",
+      "use": "Godot 지도 제작 참고·코드 활용 가능(라이선스 고지 유지)",
+      "verified": "README + LICENSE read",
+      "url": "https://github.com/DizzyThermal/TKMapper",
+      "local_clone_status": "NOT_RUN"
+    },
+    {
+      "name": "DizzyThermal/EPFViewer",
+      "kind": "Godot EPF sprite viewer",
+      "priority": 1,
+      "era": "NexusTK modern tool; 1998 data unverified",
+      "license": "MIT",
+      "use": "그래픽 뷰어 참고·코드 활용 가능(라이선스 고지 유지)",
+      "verified": "README + LICENSE read",
+      "url": "https://github.com/DizzyThermal/EPFViewer",
+      "local_clone_status": "NOT_RUN"
+    },
+    {
+      "name": "ServTK/ServTK",
+      "kind": "open source NexusTK server emulator",
+      "priority": 2,
+      "era": "unknown version; 1998 unverified",
+      "license": "GPL-2.0",
+      "use": "서버 구조 참고. 코드를 통합한다면 GPL 준수 검토",
+      "verified": "README + LICENSE read",
+      "url": "https://github.com/ServTK/ServTK",
+      "local_clone_status": "NOT_RUN"
+    },
+    {
+      "name": "jeedee/TkServer",
+      "kind": "barebones server emulator",
+      "priority": 2,
+      "era": "unknown",
+      "license": "UNVERIFIED_ROOT_LICENSE_NOT_FOUND",
+      "use": "구조 연구만; 직접 코드 통합 금지",
+      "verified": "README read",
+      "url": "https://github.com/jeedee/TkServer",
+      "local_clone_status": "NOT_RUN"
+    },
+    {
+      "name": "mun5424/Baram_Legacy",
+      "kind": "old game content reference web app",
+      "priority": 2,
+      "era": "nostalgia reference; 1998 unverified",
+      "license": "UNVERIFIED_ROOT_LICENSE_NOT_FOUND",
+      "use": "콘텐츠 목록 교차조사. 무허가 자료 복제 금지",
+      "verified": "README read",
+      "url": "https://github.com/mun5424/Baram_Legacy",
+      "local_clone_status": "NOT_RUN"
+    },
+    {
+      "name": "ShadoMagi/NexusTKMapEditor",
+      "kind": "map editing candidate",
+      "priority": 3,
+      "era": "unverified",
+      "license": "UNVERIFIED",
+      "use": "실제 기능·저작권·파일 포맷 확인 전 후보 상태 유지",
+      "verified": "GitHub repository exists",
+      "url": "https://github.com/ShadoMagi/NexusTKMapEditor",
+      "local_clone_status": "NOT_RUN"
+    },
+    {
+      "name": "kimjs3374/oldbaram",
+      "kind": "older baram candidate",
+      "priority": 3,
+      "era": "unverified",
+      "license": "UNVERIFIED",
+      "use": "저장소 내용과 관련성 검토 우선. 원본 근거로 사용 금지",
+      "verified": "GitHub repository exists",
+      "url": "https://github.com/kimjs3374/oldbaram",
+      "local_clone_status": "NOT_RUN"
+    },
+    {
+      "name": "kimjs3374/oldbaram_sunbi",
+      "kind": "older baram candidate",
+      "priority": 3,
+      "era": "unverified",
+      "license": "UNVERIFIED",
+      "use": "저장소 내용과 관련성 검토 우선. 원본 근거로 사용 금지",
+      "verified": "GitHub repository exists",
+      "url": "https://github.com/kimjs3374/oldbaram_sunbi",
+      "local_clone_status": "NOT_RUN"
+    },
+    {
+      "name": "jaggedsoft/nexustk",
+      "kind": "NexusTK tooling candidate",
+      "priority": 3,
+      "era": "unverified",
+      "license": "UNVERIFIED",
+      "use": "저장소 내용과 유용성 확인 후 판정",
+      "verified": "GitHub repository exists",
+      "url": "https://github.com/jaggedsoft/nexustk",
+      "local_clone_status": "NOT_RUN"
+    }
+  ]
+}
