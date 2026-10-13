@@ -1,0 +1,17 @@
+Test run for /workspace/baram-private/repos/project1998/Project1998/Tests/bin/Debug/net8.0/Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:05:16.21]     Tests.StatusFileTests.TheMemoryFieldsRenderInTheRelationsTheRuntimeGuarantees [FAIL]
+  Failed Tests.StatusFileTests.TheMemoryFieldsRenderInTheRelationsTheRuntimeGuarantees [37 ms]
+  Error Message:
+   gcHighLoadMb 29491 is not a threshold inside gcAvailableMb 24576
+  Stack Trace:
+     at Tests.StatusFileTests.TheMemoryFieldsRenderInTheRelationsTheRuntimeGuarantees() in /workspace/baram-private/repos/project1998/Project1998/Tests/StatusFileTests.cs:line 307
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Standard Output Messages:
+ workingSetMb 436, gcHeapMb 200, gcCommittedAtLastGcMb 218, gcAvailableMb 24576, gcHighLoadMb 29491, gen0/1/2 49/44/21, gcMode workstation-concurrent
+
+
+Results File: /workspace/baram-private/server-tests/server-tests.trx
+
+Failed!  - Failed:     1, Passed:  2033, Skipped:     0, Total:  2034, Duration: 8 m 35 s - Tests.dll (net8.0)

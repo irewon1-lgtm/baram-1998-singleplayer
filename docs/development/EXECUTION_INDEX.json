@@ -1,0 +1,36 @@
+{
+  "research_base_sha": "2775b1166a760b6a1757f09f2faf1e799d3fd59e",
+  "source_sha256": {
+    "tools/legacy_assets.py": "5e2edf47136f5f7f63109ffc2e0b9b9515bd5a805accb486fda6b5ef97b4172a",
+    "tools/render_legacy_assets.py": "a559c0656f2217da43badc4705153a65bf23e60a1c9a61fcfbed1677c7ee08a4",
+    "tools/recover_runtime_inputs.py": "abbac5fedfac22063a575a9e2dacd44718743e1eb209fcbcd484dfc25ce9d9c4",
+    "tools/asset_viewer/viewer.gd": "abe0d1f53542e75087611b297ef246f515d40f96ebccc6b73a5d856c775c72a7",
+    "tools/run_local_server_probe.py": "0ff19809125672d594475dd09ed264cb6cfb58dbaf63c4fea1e034d611f1c14e",
+    "tools/setup_restoration_environment.py": "c3308513373a1ebf4b3e46ad49431a5b32465d8a725cb36ef61e50c92a450e77",
+    "tests/test_legacy_assets.py": "cafe57b6fd2b49dbec33ca734afeacc263496b600699119b72031ac616f03fb9",
+    "tests/smoke_asset_viewer.py": "e177330ec22b3358266048f5b38174c938b6aea4195e54079762e63e5da8544a"
+  },
+  "proof_file_sha256": {
+    "docs/development/runs/20261014/decoder-tests.log": "90b6529d27c51ec54f769d741baea4dfb90bd1ce37ac59d52a14c742a0170bd5",
+    "docs/development/runs/20261014/dotnet-install.json": "c174fd5b8fa72da24bd04e6d2f3226a420481c4311b8b08c959f2d14d0c3ab65",
+    "docs/development/runs/20261014/exporter-guard-tests.log": "0a52ba56ce9120ac1c2c21af630335662c84601dc162c18ddb8185dad7e1fcd1",
+    "docs/development/runs/20261014/godot-import-fixed.log": "9572934ad4d57fbab2c09b2c82f3821584fba7ba71d7e1dec5055bc7fa531f3f",
+    "docs/development/runs/20261014/godot-import.log": "750508717a65ec13b0a94969162406a99783c63f1bea58685318f1c8b6f7e51e",
+    "docs/development/runs/20261014/initial-input-recovery.json": "380ff5e49c72dfd5b61cec664f343c90f7a46d0a0795a704a280b2e0b3ec80bd",
+    "docs/development/runs/20261014/project1998-build.log": "7d4c50db34570381314003c748bf28144269a3483bf3de3d99bd2f2fea47769e",
+    "docs/development/runs/20261014/project1998-tests.json": "31bc95affc99c4d406d07d0dec10c2cc6e1fffdba0f0d1baab2b535a881ff9fa",
+    "docs/development/runs/20261014/project1998-tests.log": "ad6c64b121895a4121338bb4fc9fe465a31143f4ffb550f7c5dd487977c11fd5",
+    "docs/development/runs/20261014/reference-recovery.json": "10a303401f1ad7db9d8b1bad0db6ebca0553cc001549d54f65c42384437828c9",
+    "docs/development/runs/20261014/server-probe-fail.json": "50275886cb3c3d242f32f75123b7c319b21ab83298114bc7ed04d101a0d0f445",
+    "docs/development/runs/20261014/server-probe-pass.json": "870fa4fc366ff565f1d2d37c7b692e2802e8e27bbbd40827539b7d0eea155020",
+    "docs/development/runs/20261014/server-probe-restart.json": "a299560daaa7d4f255c4ce9cea855d02297372d6900857f5e85d9a076d66e183",
+    "docs/development/runs/20261014/setup-first-fail.log": "8119bf59f56645412d47fcaab947877aa960e1b02bed7ee17264606dee12a9a5",
+    "docs/development/runs/20261014/setup-fixed.log": "b351b81f9d9184392948ee5180945140e7d916e6d27bc0420a3a6b526180e8ae",
+    "docs/development/runs/20261014/setup-report.json": "434a5ba38f7c425a601f09900ade1e5072130b2cd6bfa3d95f4638d07aa78ef0",
+    "docs/development/runs/20261014/setup.log": "8119bf59f56645412d47fcaab947877aa960e1b02bed7ee17264606dee12a9a5",
+    "docs/development/runs/20261014/viewer-smoke-1.json": "e83db788047adc16061b78a8768bd94dc76afce4b5856b79bb808cba01743908",
+    "docs/development/runs/20261014/viewer-smoke-2.json": "3522449b2e17d046b0c4d69622077489173b356e0772fa5a201ff80f7c1dcc35",
+    "docs/development/runs/20261014/viewer-smoke-3.json": "93dd25c030eb4b31e483400e5c38076b4d4c28d76744ad07126f74187b2f99fb"
+  },
+  "notes": "Core decoder file unchanged since 12-test run. Only changed exporter guard was rechecked. Smoke fixture generation unchanged by subsequent test-method additions. No unexecuted original check is PASS."
+}

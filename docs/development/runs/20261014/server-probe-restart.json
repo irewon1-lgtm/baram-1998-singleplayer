@@ -1,0 +1,22 @@
+{
+  "scope": "Headless localhost login/name-check/character-create/handoff/world-entry only; no Windows rendering or hunting PASS",
+  "runs": [
+    {
+      "process": "LoginServer",
+      "ports": "3100,3101",
+      "ready": true,
+      "ready_timeout_seconds": 45.0
+    },
+    {
+      "process": "Server",
+      "ports": "3105,3106",
+      "ready": true,
+      "ready_timeout_seconds": 45.0
+    }
+  ],
+  "probe_exit": 0,
+  "character_created": false,
+  "world_entry": true,
+  "result": "PASS_HEADLESS_LOGIN_ONLY",
+  "evidence_file_mtime_utc": "2026-10-13T15:40:59.322660+00:00"
+}

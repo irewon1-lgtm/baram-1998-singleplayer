@@ -1,0 +1,8 @@
+{
+  "sdk": "8.0.425",
+  "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/8.0.425/dotnet-sdk-8.0.425-linux-x64.tar.gz",
+  "expected_sha512": "934b8060a7190e5909ad1fd0785db542f487b3bbf6cdd14826b02095fdd0d0394298b1634085eff302928fccc33f7c1a7253e9b87df555fc36fce819bcd2e798",
+  "actual_sha512": "934b8060a7190e5909ad1fd0785db542f487b3bbf6cdd14826b02095fdd0d0394298b1634085eff302928fccc33f7c1a7253e9b87df555fc36fce819bcd2e798",
+  "status": "PASS_VERIFIED_SDK_INSTALL",
+  "evidence_file_mtime_utc": "2026-10-13T15:15:23.876733+00:00"
+}

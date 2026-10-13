@@ -1,0 +1,39 @@
+
+Welcome to .NET 8.0!
+---------------------
+SDK Version: 8.0.425
+
+----------------
+Installed an ASP.NET Core HTTPS development certificate.
+To trust the certificate, view the instructions: https://aka.ms/dotnet-https-linux
+
+----------------
+Write your first app: https://aka.ms/dotnet-hello-world
+Find out what's new: https://aka.ms/dotnet-whats-new
+Explore documentation: https://aka.ms/dotnet-docs
+Report issues and find source on GitHub: https://github.com/dotnet/core
+Use 'dotnet --help' to see available commands or visit: https://aka.ms/dotnet-cli
+--------------------------------------------------------------------------------------
+  Determining projects to restore...
+  Restored /workspace/baram-private/repos/project1998/Project1998/Server/Server.csproj (in 13.56 sec).
+  Restored /workspace/baram-private/repos/project1998/Project1998/Protocol.Tk495/Protocol.Tk495.csproj (in 13.56 sec).
+  Restored /workspace/baram-private/repos/project1998/Project1998/LoginServer/LoginServer.csproj (in 13.56 sec).
+  Restored /workspace/baram-private/repos/project1998/Project1998/LoginProbe/LoginProbe.csproj (in 13.56 sec).
+  Restored /workspace/baram-private/repos/project1998/Project1998/Shared/Shared.csproj (in 15 ms).
+  Restored /workspace/baram-private/repos/project1998/Project1998/Tools/Tools.csproj (in 37 ms).
+  Restored /workspace/baram-private/repos/project1998/Project1998/Shared.Core/Shared.Core.csproj (in 2 ms).
+  Restored /workspace/baram-private/repos/project1998/Project1998/Tests/Tests.csproj (in 5.63 sec).
+  Shared.Core -> /workspace/baram-private/repos/project1998/Project1998/Shared.Core/bin/Debug/net8.0/Shared.Core.dll
+  Shared -> /workspace/baram-private/repos/project1998/Project1998/Shared/bin/Debug/net8.0/Shared.dll
+  Protocol.Tk495 -> /workspace/baram-private/repos/project1998/Project1998/Protocol.Tk495/bin/Debug/net8.0/Protocol.Tk495.dll
+  LoginProbe -> /workspace/baram-private/repos/project1998/Project1998/LoginProbe/bin/Debug/net8.0/LoginProbe.dll
+  LoginServer -> /workspace/baram-private/repos/project1998/Project1998/LoginServer/bin/Debug/net8.0/LoginServer.dll
+  Server -> /workspace/baram-private/repos/project1998/Project1998/Server/bin/Debug/net8.0/Server.dll
+  Tests -> /workspace/baram-private/repos/project1998/Project1998/Tests/bin/Debug/net8.0/Tests.dll
+  Tools -> /workspace/baram-private/repos/project1998/Project1998/Tools/bin/Debug/net8.0/Tools.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:03:31.93

@@ -1,0 +1,17 @@
+test_dat_exact_entries_case_and_payload (test_legacy_assets.LegacyAssetsTests.test_dat_exact_entries_case_and_payload) ... ok
+test_dat_truncation_overlap_reversal_and_duplicate (test_legacy_assets.LegacyAssetsTests.test_dat_truncation_overlap_reversal_and_duplicate) ... ok
+test_epf_invalid_frame_indices_and_tables (test_legacy_assets.LegacyAssetsTests.test_epf_invalid_frame_indices_and_tables) ... ok
+test_epf_invalid_pixel_mask_rectangle_and_noop (test_legacy_assets.LegacyAssetsTests.test_epf_invalid_pixel_mask_rectangle_and_noop) ... ok
+test_epf_nonzero_offsets_and_empty_frame (test_legacy_assets.LegacyAssetsTests.test_epf_nonzero_offsets_and_empty_frame) ... ok
+test_epf_pixels_negative_pivot_and_each_mask_row (test_legacy_assets.LegacyAssetsTests.test_epf_pixels_negative_pivot_and_each_mask_row) ... ok
+test_export_cli_hashes_status_and_invalid_palette (test_legacy_assets.LegacyAssetsTests.test_export_cli_hashes_status_and_invalid_palette) ... ok
+test_malformed_palettes_fail_closed (test_legacy_assets.LegacyAssetsTests.test_malformed_palettes_fail_closed) ... ok
+test_palette_explicit_index_rgb_reserved_alpha_and_ranges (test_legacy_assets.LegacyAssetsTests.test_palette_explicit_index_rgb_reserved_alpha_and_ranges) ... ok
+test_png_external_container_crc_and_scanlines (test_legacy_assets.LegacyAssetsTests.test_png_external_container_crc_and_scanlines) ... ok
+test_raw_rgb_palette_and_empty_palette_bank (test_legacy_assets.LegacyAssetsTests.test_raw_rgb_palette_and_empty_palette_bank) ... ok
+test_resource_output_refuses_checkout_and_ancestors (test_legacy_assets.LegacyAssetsTests.test_resource_output_refuses_checkout_and_ancestors) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 1.544s
+
+OK

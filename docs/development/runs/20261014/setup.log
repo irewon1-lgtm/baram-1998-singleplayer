@@ -1,0 +1,6 @@
+Verified .NET SDK 8.0.425
+Hit:1 https://deb.debian.org/debian trixie InRelease
+Get:2 https://deb.debian.org/debian trixie/main Translation-en [6486 kB]
+Fetched 6486 kB in 22s (290 kB/s)
+Reading package lists...
+{"status": "FAIL", "error": "ValueError: Expected exactly three Debian packages"}

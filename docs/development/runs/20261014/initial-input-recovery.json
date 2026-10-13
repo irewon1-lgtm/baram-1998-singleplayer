@@ -1,0 +1,100 @@
+{
+  "scope": "PINNED_INPUT_RECOVERY_NO_RENDER",
+  "evidence_file_mtime_utc": "2026-10-13T15:12:03.569717+00:00",
+  "records": [
+    {
+      "kind": "ORIGINAL_ARCHIVE",
+      "id": "nexus495.exe",
+      "url": "https://web.archive.org/web/20010811181949id_/http://file.nexustk.com:80/NexusTK/Client/Single/Nexus495.exe",
+      "expected_sha256": "486f4684b76658d92eaf84aab77fe9be9489ea01de8264fe90d0040466620aaa",
+      "relative_path": "archives/nexus495.exe",
+      "started_at": "2026-10-13T15:11:03.025502+00:00",
+      "status": "BLOCKED",
+      "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+      "seconds": 0.059,
+      "local_path": "/workspace/baram-private/archives/nexus495.exe"
+    },
+    {
+      "kind": "ORIGINAL_ARCHIVE",
+      "id": "491v.zip",
+      "url": "https://ia600905.us.archive.org/7/items/baram_491/491v.zip",
+      "expected_sha256": "f11e448db6478b1aca3a7dd47403bdef00cf873b203b14629b0215632190532f",
+      "relative_path": "archives/491v.zip",
+      "started_at": "2026-10-13T15:11:03.011940+00:00",
+      "status": "BLOCKED",
+      "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+      "seconds": 0.085,
+      "local_path": "/workspace/baram-private/archives/491v.zip"
+    },
+    {
+      "kind": "ORIGINAL_ARCHIVE",
+      "id": "BARAM.PAL",
+      "url": "https://ia600702.us.archive.org/23/items/EPFTool/BARAM.PAL",
+      "expected_sha256": "34bee372e754fc423099193587ae265b731d7f7ff0f083a87cb564179aeb266a",
+      "relative_path": "archives/BARAM.PAL",
+      "started_at": "2026-10-13T15:11:03.019524+00:00",
+      "status": "BLOCKED",
+      "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+      "seconds": 0.083,
+      "local_path": "/workspace/baram-private/archives/BARAM.PAL"
+    },
+    {
+      "kind": "ORIGINAL_ARCHIVE",
+      "id": "NexusTK_V_4.66.7z",
+      "url": "https://ia601602.us.archive.org/26/items/nexus-tk-v-4.66.7z/NexusTK%20V%204.66.7z",
+      "expected_sha256": "54ca6b8892a2b44ddfaadebc92e1886a770ac07a82b60ceacbfd3e2e44e5774a",
+      "relative_path": "archives/NexusTK_V_4.66.7z",
+      "started_at": "2026-10-13T15:11:03.026782+00:00",
+      "status": "BLOCKED",
+      "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+      "seconds": 0.086,
+      "local_path": "/workspace/baram-private/archives/NexusTK_V_4.66.7z"
+    },
+    {
+      "kind": "ORIGINAL_ARCHIVE",
+      "id": "NexusTK_v4.0.3.7z",
+      "url": "https://ia601903.us.archive.org/27/items/nexus-tk-v-4.0.3.7z/NexusTK%20v4.0.3.7z",
+      "expected_sha256": "db89e2b1ac3dfd3f5668fd7746478507b370ee627b4321d7dec441620ce96b53",
+      "relative_path": "archives/NexusTK_v4.0.3.7z",
+      "started_at": "2026-10-13T15:11:03.020493+00:00",
+      "status": "BLOCKED",
+      "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+      "seconds": 0.097,
+      "local_path": "/workspace/baram-private/archives/NexusTK_v4.0.3.7z"
+    },
+    {
+      "name": "DizzyThermal/EPFViewer",
+      "url": "https://github.com/DizzyThermal/EPFViewer.git",
+      "commit": "2bc585b3ae3310df5de46f7789eada92840fbd59",
+      "started_at": "2026-10-13T15:11:03.096825+00:00",
+      "local_path": "/workspace/baram-private/repos/DizzyThermal/EPFViewer",
+      "status": "BLOCKED",
+      "error": "CalledProcessError: Command '['git', '-C', '/workspace/baram-private/repos/DizzyThermal/EPFViewer', 'checkout', '--detach', '2bc585b3ae3310df5de46f7789eada92840fbd59']' returned non-zero exit status 128.",
+      "seconds": 16.237
+    },
+    {
+      "name": "project1998/Project1998",
+      "url": "https://github.com/project1998/Project1998.git",
+      "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+      "started_at": "2026-10-13T15:11:03.084919+00:00",
+      "local_path": "/workspace/baram-private/repos/project1998/Project1998",
+      "status": "PASS_PINNED_CHECKOUT",
+      "actual_commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+      "fsck_exit": 0,
+      "fsck_diagnostic": "",
+      "seconds": 37.683
+    },
+    {
+      "name": "DizzyThermal/TKMapper",
+      "url": "https://github.com/DizzyThermal/TKMapper.git",
+      "commit": "13c6dc3089b51ba2ba390a421125bd55ebf4edd3",
+      "started_at": "2026-10-13T15:11:03.102505+00:00",
+      "local_path": "/workspace/baram-private/repos/DizzyThermal/TKMapper",
+      "status": "PASS_PINNED_CHECKOUT",
+      "actual_commit": "13c6dc3089b51ba2ba390a421125bd55ebf4edd3",
+      "fsck_exit": 0,
+      "fsck_diagnostic": "",
+      "seconds": 60.463
+    }
+  ]
+}

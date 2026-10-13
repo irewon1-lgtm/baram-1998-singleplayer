@@ -1,0 +1,94 @@
+{
+  "recorded_at_utc": "2026-10-13T15:48:19.989147+00:00",
+  "user_timezone": "Asia/Seoul",
+  "research_base_sha": "2775b1166a760b6a1757f09f2faf1e799d3fd59e",
+  "development_branch": "dev/restoration-runtime-20261014",
+  "workflow_lock": "docs/RESTORATION_WORKFLOW_LOCK.md",
+  "overall": "BLOCKED_STAGE_4_ORIGINAL_INPUT_ACCESS",
+  "research_1_3": "PRESERVED_UNCHANGED_RESEARCH_ONLY",
+  "stage_4": {
+    "status": "BLOCKED",
+    "original_archives_requested": 5,
+    "original_archives_recovered": 0,
+    "original_decoded_frames": 0,
+    "original_semantic_motion_links": 0,
+    "original_sound_links": 0,
+    "original_required_binding_gaps": 9936,
+    "own_fixture_decoder_tests": 12,
+    "fixture_viewport_pixel_checks": 12,
+    "fixture_input_check": "PASS_INSPECTOR_ONLY",
+    "palette_animation_playback": "NOT_RUN",
+    "evidence": "docs/development/runs/20261014/viewer-smoke-3.json"
+  },
+  "stage_5": {
+    "status": "NOT_RUN",
+    "decision": "NOT_MADE_PENDING_REAL_ASSETS_AND_CLIENT",
+    "external_reference_source_commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+    "external_server_build": "PASS",
+    "external_server_tests": {
+      "total": 2034,
+      "pass": 2033,
+      "fail": 1,
+      "skip": 0
+    },
+    "external_headless_create_login_world_entry": "PASS_PROTOCOL_ONLY",
+    "external_headless_restart_entry": "PASS_PROTOCOL_ONLY",
+    "NA495_real_client": "NOT_RUN",
+    "KR491_real_client": "NOT_RUN"
+  },
+  "stage_6": {
+    "status": "NOT_RUN",
+    "original_feature_matrix_implemented_checks": 0,
+    "feature_count": 30
+  },
+  "stage_7": {
+    "status": "NOT_RUN",
+    "balance_test_definitions": 37,
+    "executed_same_game_code_tests": 0
+  },
+  "stage_8": {
+    "status": "NOT_RUN"
+  },
+  "stage_9": {
+    "status": "NOT_RUN"
+  },
+  "next_action": "After environment network settings are saved and published, resume ONLY the five blocked original downloads; do not repeat valid fixture, source or research checks.",
+  "resume_command": "python3 tools/recover_runtime_inputs.py --private-dir /workspace/baram-private --only archives --report /workspace/baram-private/asset-recovery-resume.json",
+  "network_domains_requested": [
+    "archive.org",
+    "web.archive.org",
+    "ia600905.us.archive.org",
+    "ia601903.us.archive.org",
+    "ia601602.us.archive.org",
+    "ia600702.us.archive.org"
+  ],
+  "private_dir": "/workspace/baram-private",
+  "source_sha256": {
+    "tools/legacy_assets.py": "5e2edf47136f5f7f63109ffc2e0b9b9515bd5a805accb486fda6b5ef97b4172a",
+    "tools/render_legacy_assets.py": "a559c0656f2217da43badc4705153a65bf23e60a1c9a61fcfbed1677c7ee08a4",
+    "tools/recover_runtime_inputs.py": "abbac5fedfac22063a575a9e2dacd44718743e1eb209fcbcd484dfc25ce9d9c4",
+    "tools/asset_viewer/viewer.gd": "abe0d1f53542e75087611b297ef246f515d40f96ebccc6b73a5d856c775c72a7",
+    "tools/run_local_server_probe.py": "0ff19809125672d594475dd09ed264cb6cfb58dbaf63c4fea1e034d611f1c14e",
+    "tools/setup_restoration_environment.py": "c3308513373a1ebf4b3e46ad49431a5b32465d8a725cb36ef61e50c92a450e77",
+    "tests/test_legacy_assets.py": "cafe57b6fd2b49dbec33ca734afeacc263496b600699119b72031ac616f03fb9",
+    "tests/smoke_asset_viewer.py": "e177330ec22b3358266048f5b38174c938b6aea4195e54079762e63e5da8544a"
+  },
+  "main_merge": false,
+  "operating_deployment": false,
+  "paid_actions": false,
+  "public_original_or_unlicensed_source_bytes_included": false,
+  "known_failures": [
+    "Original download proxy403",
+    "External Project1998 GC memory relation test FAIL preserved"
+  ],
+  "resolved_environment_failures": [
+    "Read-only home: configured writable XDG and DOTNET_CLI_HOME",
+    "Viewer timeout: socket dir prepared and logs preserved; subsequent real screen PASS",
+    "Server startup deadline: optional 45s then real protocol PASS; original 8s FAIL preserved",
+    "APT cached packages omitted URI plans: plan in fresh folder and verify cached package SHA256"
+  ],
+  "baseline_preservation_check": {
+    "command": "git diff --name-only 2775b1166a760b6a1757f09f2faf1e799d3fd59e -- research data docs/RESTORATION_WORKFLOW_LOCK.md",
+    "observed_changed_paths": []
+  }
+}

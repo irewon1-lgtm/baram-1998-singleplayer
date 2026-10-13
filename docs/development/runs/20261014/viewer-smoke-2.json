@@ -1,0 +1,314 @@
+{
+  "executed_at": "2026-10-13T15:27:56.355546+00:00",
+  "scope": "OWN_FIXTURE_INSPECTOR_ONLY_NOT_ORIGINAL_ASSETS_OR_GAMEPLAY",
+  "status": "PASS_OWN_FIXTURE_VIEWPORT_AND_INSPECTOR_INPUT_ONLY",
+  "commands": [
+    {
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/baram-1998-singleplayer/tools/render_legacy_assets.py",
+        "--container",
+        "/workspace/baram-private/viewer-run-2/sample.dat",
+        "--container-sha256",
+        "94eee4daa0499db59e2817a3bdaa0f95a5925087c0f50da7d244f3c193741f1c",
+        "--epf",
+        "sample.epf",
+        "--palette",
+        "sample.pal",
+        "--palette-sha256",
+        "f1bd18eb030145c09968dac39050457fb8494598ebf74426411fffa43fae60a5",
+        "--palette-index",
+        "0",
+        "--frames",
+        "0-2",
+        "--version",
+        "OWN_FIXTURE",
+        "--out",
+        "/workspace/baram-private/viewer-run-2/images",
+        "--report",
+        "/workspace/baram-private/viewer-run-2/decode.json"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "/workspace/baram-private/setup/x11/usr/bin/Xvfb",
+        "-displayfd",
+        "4",
+        "-screen",
+        "0",
+        "960x640x24",
+        "-nolisten",
+        "tcp"
+      ],
+      "scope": "PRIVATE_DISPLAY_NOT_PUBLIC_SERVICE"
+    },
+    {
+      "argv": [
+        "godot",
+        "--path",
+        "/workspace/baram-1998-singleplayer/tools/asset_viewer",
+        "--display-driver",
+        "x11",
+        "--rendering-method",
+        "gl_compatibility",
+        "--audio-driver",
+        "Dummy",
+        "--",
+        "--report=/workspace/baram-private/viewer-run-2/decode.json",
+        "--capture=/workspace/baram-private/viewer-run-2/viewport.png",
+        "--screen-report=/workspace/baram-private/viewer-run-2/screen.json",
+        "--exercise",
+        "--exit"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "checks": [
+    {
+      "pixel": 0,
+      "screen_point": [
+        156,
+        188
+      ],
+      "expected": [
+        255,
+        0,
+        0
+      ],
+      "observed": [
+        255,
+        0,
+        0
+      ],
+      "result": "PASS"
+    },
+    {
+      "pixel": 1,
+      "screen_point": [
+        164,
+        188
+      ],
+      "expected": [
+        0,
+        255,
+        0
+      ],
+      "observed": [
+        0,
+        255,
+        0
+      ],
+      "result": "PASS"
+    },
+    {
+      "pixel": 2,
+      "screen_point": [
+        172,
+        188
+      ],
+      "expected": [
+        31,
+        36,
+        46
+      ],
+      "observed": [
+        31,
+        36,
+        46
+      ],
+      "result": "PASS"
+    },
+    {
+      "pixel": 3,
+      "screen_point": [
+        180,
+        188
+      ],
+      "expected": [
+        255,
+        255,
+        255
+      ],
+      "observed": [
+        255,
+        255,
+        255
+      ],
+      "result": "PASS"
+    },
+    {
+      "pixel": 4,
+      "screen_point": [
+        156,
+        196
+      ],
+      "expected": [
+        31,
+        36,
+        46
+      ],
+      "observed": [
+        31,
+        36,
+        46
+      ],
+      "result": "PASS"
+    },
+    {
+      "pixel": 5,
+      "screen_point": [
+        164,
+        196
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "observed": [
+        0,
+        0,
+        0
+      ],
+      "result": "PASS"
+    },
+    {
+      "pixel": 6,
+      "screen_point": [
+        172,
+        196
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "observed": [
+        0,
+        0,
+        0
+      ],
+      "result": "PASS"
+    },
+    {
+      "pixel": 7,
+      "screen_point": [
+        180,
+        196
+      ],
+      "expected": [
+        31,
+        36,
+        46
+      ],
+      "observed": [
+        31,
+        36,
+        46
+      ],
+      "result": "PASS"
+    },
+    {
+      "pixel": 8,
+      "screen_point": [
+        156,
+        204
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "observed": [
+        0,
+        0,
+        0
+      ],
+      "result": "PASS"
+    },
+    {
+      "pixel": 9,
+      "screen_point": [
+        164,
+        204
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "observed": [
+        0,
+        0,
+        0
+      ],
+      "result": "PASS"
+    },
+    {
+      "pixel": 10,
+      "screen_point": [
+        172,
+        204
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "observed": [
+        0,
+        0,
+        0
+      ],
+      "result": "PASS"
+    },
+    {
+      "pixel": 11,
+      "screen_point": [
+        180,
+        204
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "observed": [
+        0,
+        0,
+        0
+      ],
+      "result": "PASS"
+    }
+  ],
+  "expected": "12 viewport pixel centers preserve palette, stencil and pivot; inspector right/left keys work",
+  "source_sha256": {
+    "tools/legacy_assets.py": "5e2edf47136f5f7f63109ffc2e0b9b9515bd5a805accb486fda6b5ef97b4172a",
+    "tools/render_legacy_assets.py": "4d0a3d690898dddc80458c6f6f0207fbeb1e1e92633912ec1cd95c6350f46924",
+    "tools/asset_viewer/viewer.gd": "37926fd9f678fd3234f1a16c7117e7b3725df4d27e6eca31b0bc670526cbc269",
+    "tests/smoke_asset_viewer.py": "e177330ec22b3358266048f5b38174c938b6aea4195e54079762e63e5da8544a",
+    "tests/test_legacy_assets.py": "be65afbed1387222e3a9acf4f37e340b5195531319fa2701f31b072c31af9066"
+  },
+  "godot_screen": {
+    "display_driver": "X11",
+    "engine": "4.6.3-stable (official)",
+    "executed_at_utc": "2026-10-13T15:28:14",
+    "frame_index": 0.0,
+    "frame_position": [
+      152.0,
+      184.0
+    ],
+    "frame_scale": 8,
+    "key_navigation_status": "PASS_INSPECTOR_RIGHT_LEFT_INPUT_ONLY",
+    "loaded_png_count": 2,
+    "original_game_play_status": "NOT_RUN",
+    "pixel_load_status": "PASS_GODOT_RGBA_HASH_MATCH_ONLY",
+    "screen_status": "PASS_INSPECTOR_VIEWPORT_CAPTURE_ONLY",
+    "screenshot_path": "/workspace/baram-private/viewer-run-2/viewport.png",
+    "screenshot_sha256": "0bdcfdaa22dc70e01bba55ae8af05fc7fa818934060b404eeb9c5a75690794ba",
+    "semantic_identification_status": "NOT_RUN",
+    "version": "OWN_FIXTURE"
+  },
+  "finished_at": "2026-10-13T15:28:16.369452+00:00"
+}

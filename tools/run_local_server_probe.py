@@ -4,7 +4,10 @@ import argparse, json, os, signal, socket, subprocess, time
 from pathlib import Path
 
 def main():
-    a=argparse.ArgumentParser();a.add_argument('--source',required=True);a.add_argument('--dotnet',required=True);a.add_argument('--state',required=True);a.add_argument('--logs',required=True);args=a.parse_args()
+    a=argparse.ArgumentParser();a.add_argument('--source',required=True);a.add_argument('--dotnet',required=True);a.add_argument('--state',required=True);a.add_argument('--logs',required=True)
+    a.add_argument('--ready-timeout-seconds',type=float,default=8.0,help='Startup deadline; readiness still requires the protocol probe')
+    args=a.parse_args()
+    if not 0 < args.ready_timeout_seconds <= 60:a.error('ready-timeout-seconds must be in (0,60]')
     repo=Path(args.source).resolve();dotnet=Path(args.dotnet).resolve();state=Path(args.state).resolve();logs=Path(args.logs).resolve()
     state.mkdir(parents=True,exist_ok=True);logs.mkdir(parents=True,exist_ok=True)
     env=dict(os.environ,P1998_BIND='127.0.0.1',P1998_STATE=str(state),DOTNET_ROOT=str(dotnet.parent),DOTNET_CLI_TELEMETRY_OPTOUT='1')
@@ -16,8 +19,9 @@ def main():
                 with socket.socket() as s:s.bind(('127.0.0.1',port))
             log=(logs/('live-'+project+'.log')).open('w')
             p=subprocess.Popen([str(dotnet),str(repo/project/'bin/Debug/net8.0'/(project+'.dll')),'--ports',ports],cwd=repo,env=env,stdout=log,stderr=subprocess.STDOUT,start_new_session=True);processes.append((p,log))
-            row={'process':project,'ports':ports,'ready':False};report['runs'].append(row)
-            for _ in range(80):
+            row={'process':project,'ports':ports,'ready':False,'ready_timeout_seconds':args.ready_timeout_seconds};report['runs'].append(row)
+            deadline=time.monotonic()+args.ready_timeout_seconds
+            while time.monotonic()<deadline:
                 if p.poll() is not None:break
                 try:
                     with socket.create_connection(('127.0.0.1',int(ports.split(',')[0])),timeout=.2):pass

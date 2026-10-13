@@ -1,0 +1,45 @@
+{
+  "executed_at": "2026-10-13T15:23:32.768532+00:00",
+  "source_ledger": "research/restoration-integrated-20261013/INPUT_RECOVERY.json",
+  "source_ledger_sha256": "52e2493a7cb266ce74bf65f2ae18c82a8e672390f4e35c677fa3650b29843b5b",
+  "research_base": "2775b1166a760b6a1757f09f2faf1e799d3fd59e",
+  "scope": "PINNED_INPUT_RECOVERY_ONLY_NO_EXTRACTION_RENDER_OR_PLAY",
+  "records": [
+    {
+      "name": "project1998/Project1998",
+      "url": "https://github.com/project1998/Project1998.git",
+      "commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+      "kind": "EXTERNAL_REFERENCE",
+      "started_at": "2026-10-13T15:23:32.982797+00:00",
+      "status": "PASS_PINNED_CHECKOUT",
+      "local_path": "/workspace/baram-private/repos/project1998/Project1998",
+      "actual_commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+      "fsck_exit": 0,
+      "finished_at": "2026-10-13T15:23:37.059745+00:00"
+    },
+    {
+      "name": "DizzyThermal/EPFViewer",
+      "url": "https://github.com/DizzyThermal/EPFViewer.git",
+      "commit": "2bc585b3ae3310df5de46f7789eada92840fbd59",
+      "kind": "EXTERNAL_REFERENCE",
+      "started_at": "2026-10-13T15:23:33.007834+00:00",
+      "status": "PASS_PINNED_CHECKOUT",
+      "local_path": "/workspace/baram-private/repos/DizzyThermal/EPFViewer",
+      "actual_commit": "2bc585b3ae3310df5de46f7789eada92840fbd59",
+      "fsck_exit": 0,
+      "finished_at": "2026-10-13T15:23:54.534075+00:00"
+    },
+    {
+      "name": "DizzyThermal/TKMapper",
+      "url": "https://github.com/DizzyThermal/TKMapper.git",
+      "commit": "13c6dc3089b51ba2ba390a421125bd55ebf4edd3",
+      "kind": "EXTERNAL_REFERENCE",
+      "started_at": "2026-10-13T15:23:33.022072+00:00",
+      "status": "PASS_PINNED_CHECKOUT",
+      "local_path": "/workspace/baram-private/repos/DizzyThermal/TKMapper",
+      "actual_commit": "13c6dc3089b51ba2ba390a421125bd55ebf4edd3",
+      "fsck_exit": 0,
+      "finished_at": "2026-10-13T15:23:56.559821+00:00"
+    }
+  ]
+}
