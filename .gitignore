@@ -13,3 +13,6 @@ build/
 dist/
 *.exe
 *.pck
+
+# Locally fetched third-party reference code: never commit it
+.third_party_sources/
