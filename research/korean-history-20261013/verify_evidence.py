@@ -8,7 +8,7 @@ check('Unique source/fact identifiers',len(sm)==len(s) and len({x['id'] for x in
 check('All curated source references resolve',all(x['source_id'] in sm and x.get('source_url') for x in f),'URL/source id/position linkage')
 check('Dates cannot silently cross profiles',all((sm[x['source_id']].get('publication_date') or sm[x['source_id']].get('capture_timestamp') or '').startswith(str(x['year'])) for x in f),'Source year checked, exact patch validity remains unknown')
 check('No 2002 mislabeled scan admitted to1998',not any(x['year']==1998 and 'gamechamp' in x['source_id'] for x in f),'All3 incorrectly indexed scans excluded')
-check('1999 remains empty until original image inspection',len(json.loads((ROOT/'KR-1999.json').read_text()))==0,'OCR retrieval is not image verification')
+check('1999 data comes from inspected user images',all(sm[x['source_id']]['kind']=='CONTEMPORANEOUS_MAGAZINE_USER_SUPPLIED_IMAGE' and x['position'].get('printed_page') in [272,273,274,275] for x in f if x['year']==1999) and len({x['source_id'] for x in f if x['year']==1999})==4,'User supplied original screenshots; source-content scope only, no runtime PASS')
 check('Null unknowns retained',all(x.get('game_runtime_verified') is False and x.get('game_version') is None for x in f),'Game runtime not verified; no inferred common patch')
 check('Learning material parser removed currency prefix',not any(m['name'].startswith('전') for x in f if x['category']=='spell' for m in x['fields'].get('learn_materials',[])), 'Regression: 전 도토리70 must be 도토리70')
 check('Profile files equal canonical facts',all(json.loads((ROOT/f'KR-{y}.json').read_text())==[x for x in f if x['year']==y] for y in [1998,1999,2000,2001]),'No out-of-date derived per-year output')

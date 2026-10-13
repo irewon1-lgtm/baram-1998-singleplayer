@@ -284,5 +284,34 @@
     "verdict": "UNVERIFIED_ENTITY_OR_GRAPHIC_MATCH",
     "note": "prior hashf11e448d; EXE4,9,1,0/EPF133/PAL36; archive2000-12-14 claim not independent launch date",
     "complete_entity_match": false
+  },
+  {
+    "name": "1999 직업길드 위치",
+    "domain": "npc/map",
+    "KR_selected_fields": {
+      "1999_Buya_mage": [
+        130,
+        37
+      ],
+      "2001_Buya_mage": [
+        127,
+        37
+      ],
+      "1999_Buya_poet": [
+        97,
+        103
+      ],
+      "2001_Buya_poet": [
+        138,
+        37
+      ]
+    },
+    "source_ids": [
+      "M-vchamp-1999_9-print273-user",
+      "bf5cc80931d2"
+    ],
+    "verdict": "REQUIRES_YEAR_SPECIFIC_CITY_GUILD_ENTRANCE; NO_LOCAL_NPC_COORD_COPY",
+    "complete_entity_match": false,
+    "note": "P1998음역·역할후보와대조하는입력. 현재한국도시좌표도연도차가확인됐으므로 북미 내부맵NPC좌표와 숫자만 맞춰 재사용하지않음."
   }
 ]

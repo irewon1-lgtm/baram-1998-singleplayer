@@ -133,5 +133,43 @@
       "주변형제300만/350만/450만"
     ],
     "resolution": "QUARANTINE; do not append 만 to800 without independent proof"
+  },
+  {
+    "id": "C11",
+    "topic": "1999주술사/도사 길드대장 인쇄 판독",
+    "source_ids": [
+      "M-vchamp-1999_9-print273-user"
+    ],
+    "claims": [
+      "첨부 주술사 표 여두/해두 글자 판독 차이 가능",
+      "도사 표 전선/진선 글자 판독 차이 가능",
+      "다른 연도 공식 이름은 해두/진선"
+    ],
+    "resolution": "좌표는 채택. 두 이름은null+reading_candidates로 보류. 숫자 평균 정책의 대상 아님."
+  },
+  {
+    "id": "C12",
+    "topic": "자호와 진호 호칭",
+    "source_ids": [
+      "M-vchamp-1999_9-print275-user"
+    ],
+    "claims": [
+      "자주색 호랑이를 자호라고 소개",
+      "같은 문단 진호라고도 표현하고 진호의가죽 언급"
+    ],
+    "resolution": "PRESERVE_RAW_TERMS; 진호의가죽을 자호의가죽으로 자동개명하거나 동일드롭으로 채택하지 않음"
+  },
+  {
+    "id": "C13",
+    "topic": "부여 직업 길드 좌표1999–2001차이",
+    "source_ids": [
+      "M-vchamp-1999_9-print273-user",
+      "bf5cc80931d2"
+    ],
+    "claims": [
+      "1999부여주술사130,37/도사97,103",
+      "2001공식부여주술사127,37/도사138,37"
+    ],
+    "resolution": "PRESERVE_BY_SOURCE_YEAR; exact relocation date/map revisions unknown. Coordinates are identifiers/locations rather than quantities and must not be averaged."
   }
 ]
