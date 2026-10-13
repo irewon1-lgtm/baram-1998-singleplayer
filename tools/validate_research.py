@@ -50,7 +50,7 @@ def checks():
                 continue
             errors.append(f'archive missing: {rel}'); continue
         got=hashlib.sha256(p.read_bytes()).hexdigest()
-        if got!=h: errors.append(f'archive SHA mismatch: {rel}')
+        if got!=h:errors.append(f'archive SHA mismatch: {rel}')
     return errors,len(sources),len(facts)
 
 if __name__=='__main__':
