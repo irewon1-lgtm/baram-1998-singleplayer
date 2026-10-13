@@ -1,0 +1,32 @@
+{
+  "as_of": "2026-10-13",
+  "github_repository": "irewon1-lgtm/baram-1998-singleplayer",
+  "github_visibility": "public",
+  "github_uploaded": true,
+  "scope": "1998-12 4.0 single-player research and prep",
+  "research": {
+    "status": "PARTIAL",
+    "sources_registered": 12,
+    "facts_registered": 23,
+    "original_numeric_values_verified": 0,
+    "original_snapshot_build_confirmed": false
+  },
+  "local_packaging": {
+    "status": "PASS",
+    "validator": "PASS",
+    "source_archive_hash_checked": true
+  },
+  "godot_project": {
+    "status": "NOT_STARTED",
+    "gameplay_function_tests": "UNVERIFIED"
+  },
+  "art_audio_rights": {
+    "status": "UNVERIFIED"
+  },
+  "steps": {
+    "create_public_repo": "PASS",
+    "commit_and_verify": "PENDING_REMOTE_READBACK",
+    "research": "IN_PROGRESS",
+    "vertical_slice": "NOT_STARTED"
+  }
+}

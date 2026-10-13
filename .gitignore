@@ -1,0 +1,15 @@
+# OS and editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+__pycache__/
+*.pyc
+# Godot generated caches
+.godot/
+.import/
+# build outputs
+build/
+dist/
+*.exe
+*.pck
