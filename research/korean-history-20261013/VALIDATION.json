@@ -1,0 +1,106 @@
+{
+  "executed_at": "2026-10-13T12:56:44.807455+00:00",
+  "checks": [
+    {
+      "name": "Unique source/fact identifiers",
+      "result": "PASS",
+      "scope": "RESEARCH_DATA_ONLY",
+      "detail": {
+        "sources": 221,
+        "facts": 289
+      }
+    },
+    {
+      "name": "All curated source references resolve",
+      "result": "PASS",
+      "scope": "RESEARCH_DATA_ONLY",
+      "detail": "URL/source id/position linkage"
+    },
+    {
+      "name": "Dates cannot silently cross profiles",
+      "result": "PASS",
+      "scope": "RESEARCH_DATA_ONLY",
+      "detail": "Source year checked, exact patch validity remains unknown"
+    },
+    {
+      "name": "No 2002 mislabeled scan admitted to1998",
+      "result": "PASS",
+      "scope": "RESEARCH_DATA_ONLY",
+      "detail": "All3 incorrectly indexed scans excluded"
+    },
+    {
+      "name": "1999 remains empty until original image inspection",
+      "result": "PASS",
+      "scope": "RESEARCH_DATA_ONLY",
+      "detail": "OCR retrieval is not image verification"
+    },
+    {
+      "name": "Null unknowns retained",
+      "result": "PASS",
+      "scope": "RESEARCH_DATA_ONLY",
+      "detail": "Game runtime not verified; no inferred common patch"
+    },
+    {
+      "name": "Learning material parser removed currency prefix",
+      "result": "PASS",
+      "scope": "RESEARCH_DATA_ONLY",
+      "detail": "Regression: 전 도토리70 must be 도토리70"
+    },
+    {
+      "name": "Profile files equal canonical facts",
+      "result": "PASS",
+      "scope": "RESEARCH_DATA_ONLY",
+      "detail": "No out-of-date derived per-year output"
+    },
+    {
+      "name": "Curated HTML numeric cells agree with extraction",
+      "result": "PASS",
+      "scope": "RESEARCH_DATA_ONLY",
+      "detail": {
+        "rows_compared": 159,
+        "mismatches": []
+      }
+    },
+    {
+      "name": "Summary recount",
+      "result": "PASS",
+      "scope": "RESEARCH_DATA_ONLY",
+      "detail": {
+        "curated": 289,
+        "candidate": 1674
+      }
+    },
+    {
+      "name": "No raw protected assets included",
+      "result": "PASS",
+      "scope": "RESEARCH_DATA_ONLY",
+      "detail": "No scan/client/DAT/EPF/audio/source archive bytes in publish directory"
+    },
+    {
+      "name": "Conflict entry remains blocked",
+      "result": "PASS",
+      "scope": "RESEARCH_DATA_ONLY",
+      "detail": "No promotion to unconditional mechanic"
+    },
+    {
+      "name": "Averages reproduce linked originals",
+      "result": "PASS",
+      "scope": "RESEARCH_DATA_ONLY",
+      "detail": {
+        "fields": 5,
+        "bad": [],
+        "scope": "USER_DIRECTED_ARITHMETIC_ONLY"
+      }
+    },
+    {
+      "name": "Numeric cells recount",
+      "result": "PASS",
+      "scope": "RESEARCH_DATA_ONLY",
+      "detail": "Numeric cell count is not distinct complete game entities"
+    }
+  ],
+  "overall": "PASS_RESEARCH_INTEGRITY_ONLY",
+  "historical_completeness": "NOT_PASS",
+  "gameplay_runtime": "NOT_RUN",
+  "KR_resource_full_match": "NOT_RUN"
+}

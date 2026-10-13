@@ -1,0 +1,99 @@
+{
+  "base_branch": "research/community-sources-20261013",
+  "base_commit": "9973e7bb25910a1bfaac1775f34dfef104bac82e",
+  "prior_world_report_branch": "research/world-sources-20261013",
+  "prior_world_report_commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+  "main_before": "443b49abe97948f59893d3e23f667b0e2eb5e8ff",
+  "raw_resources_added_to_public": false,
+  "files": {
+    "HANDOFF.md": {
+      "bytes": 4322,
+      "sha256": "6d15890cf6b140400ee64ea347313939034a793a424f978770c79e714a7352df"
+    },
+    "IMPLEMENTATION_AVERAGES.json": {
+      "bytes": 8189,
+      "sha256": "73c52a52c8f4e8146ca56b8098b96bc9f07101d1413e7985422c4f01e59c4623"
+    },
+    "KR-1998.json": {
+      "bytes": 74437,
+      "sha256": "e9c4efa0b2118d19681a64797260eaa6496f2717b92e6ab0686173061314c7a3"
+    },
+    "KR-1999.json": {
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "KR-2000.json": {
+      "bytes": 74641,
+      "sha256": "8de051d448155a5b3f13daf854227709fda53b340bd59740951ef930a36f6584"
+    },
+    "KR-2001.json": {
+      "bytes": 145386,
+      "sha256": "13ca78e1049c8796ae63085e4752dab43ab47b95b3441fca32e3ba64cd003ace"
+    },
+    "README.md": {
+      "bytes": 10529,
+      "sha256": "959bd4d0397c7b47c66cdd9fde231a476938237bc02cb625105817fd6532f8f2"
+    },
+    "SEARCH_PATHS.md": {
+      "bytes": 2872,
+      "sha256": "15b2e2e3f77a6efc5e725e73b28ff5de8c078520bea689d9deaa21595f1ac72f"
+    },
+    "SUMMARY.json": {
+      "bytes": 2850,
+      "sha256": "eb129acb21f25d6096a57a4dfbed8211ef58fa53633ad4da247d914e26d7fd26"
+    },
+    "USER_INPUT_REQUESTS.md": {
+      "bytes": 2303,
+      "sha256": "c491be9de16eb3c5e46f6be30efd2cfc2a1b74ea57a02fd810af5a3a272c98da"
+    },
+    "VALIDATION.json": {
+      "bytes": 2997,
+      "sha256": "47a3740169c37d2b937d930191b8e86275759699f5155b5f27ab2a41596af72e"
+    },
+    "VALIDATION_HISTORY.json": {
+      "bytes": 5936,
+      "sha256": "6753029a6eda0add199001a0df8b28b75eb377ad847e7931ed00745267464574"
+    },
+    "code-comparison.json": {
+      "bytes": 8662,
+      "sha256": "de8b6450dc8a1b41e16da19231326bc0c133652e8e7f80612c86e505df8c2c0f"
+    },
+    "contradictions.json": {
+      "bytes": 3699,
+      "sha256": "b1e2f97463c5e18c88aa6d7d2b80bda9226fd9e2e7e3d44bf6fa4fce9bf932ac"
+    },
+    "extracted-candidates.jsonl": {
+      "bytes": 888342,
+      "sha256": "0c80d6c8fc99e743ebf88e4c62a6c5d1a6710f1a67346eabce5d97ed167e270d"
+    },
+    "facts.jsonl": {
+      "bytes": 247918,
+      "sha256": "5b4feebb2a2898c14ae23c144639eb9b8854dc0e0e309f81e2cb156c1ca0d550"
+    },
+    "guidebooks.json": {
+      "bytes": 750,
+      "sha256": "f17f6043d23d90bf606bda1c8a0f0cb92c6a37b31a84523379290d46a50df095"
+    },
+    "magazines.json": {
+      "bytes": 9407,
+      "sha256": "8558d36f548b01cf4af66b4a964cf355d6112e5fc117af9e63009db17aac4064"
+    },
+    "missing.json": {
+      "bytes": 2968,
+      "sha256": "7ff1e802ae2c15aca3a6fa6e098cd66fb59d168891769c3554122f30056cbb40"
+    },
+    "source-date-deltas.json": {
+      "bytes": 2566,
+      "sha256": "579053b470c1ef981ab88ab0e8282db4121ff54b947f8471b9d11c3fbeeea3f5"
+    },
+    "sources.json": {
+      "bytes": 195149,
+      "sha256": "0ea52d45295794aba471441c0939ba11cbb93a6434c3a44338eb385d21786a00"
+    },
+    "verify_evidence.py": {
+      "bytes": 4615,
+      "sha256": "786b94a0356d6a3f4948a34b560d5dd814ad341580848268caa1621eed20c0f6"
+    }
+  },
+  "manifest_scope": "All adjacent files except self; hashes computed after final validation"
+}

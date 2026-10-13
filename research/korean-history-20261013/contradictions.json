@@ -1,0 +1,137 @@
+[
+  {
+    "id": "C01",
+    "topic": "잡지 인덱스 연도 오류",
+    "source_ids": [
+      "M-gamechamp-1998_7-328",
+      "M-gamechamp-1998_7-330",
+      "M-gamechamp-1998_7-332"
+    ],
+    "claims": [
+      "검색/URL1998-07",
+      "원본스캔May2002 PC POWER Zine pp333/335"
+    ],
+    "resolution": "EXCLUDE_FROM_1998; use2002 reference only"
+  },
+  {
+    "id": "C02",
+    "topic": "뷰어페이지와 인쇄페이지",
+    "source_ids": [
+      "M-netpower-2000_3-135",
+      "M-netpower-2000_6-159",
+      "M-pcchamp-2001_12-322"
+    ],
+    "claims": [
+      "viewer135/159/322",
+      "print190/174/355"
+    ],
+    "resolution": "STORE_BOTH; no inferred fixed offset"
+  },
+  {
+    "id": "C03",
+    "topic": "가이드북 길이와 개정판 혼재",
+    "source_ids": [
+      "WEB-yes24",
+      "M-netpower-2002_2-17"
+    ],
+    "claims": [
+      "ISBN9788985966283 상품447쪽/소개432면/5.05/2002최신판",
+      "당대광고5.13 총448면/16면추가"
+    ],
+    "resolution": "UNRESOLVED_IMPRESSION; inspect colophon and contents before assigning per-stat version"
+  },
+  {
+    "id": "C04",
+    "topic": "다람쥐 경험치",
+    "source_ids": [
+      "297641cd3e8f",
+      "a112c0ab5043"
+    ],
+    "claims": [
+      "2000-05-11 보존5",
+      "2001-10-03 보존10"
+    ],
+    "resolution": "PRESERVE_SOURCE_DATE_VALUES; exact change date unknown",
+    "implementation_resolution": "USER_REQUESTED_ARITHMETIC_MEAN: 7.5; originals5/10 retained"
+  },
+  {
+    "id": "C05",
+    "topic": "동귀어진 잔여체력과 죽음",
+    "source_ids": [
+      "099322417685",
+      "8f225df9fd00",
+      "8303cbe2108b"
+    ],
+    "claims": [
+      "공식기술설명 자기체력모두사용/자신도죽음",
+      "다꾸2001 사용후체력10"
+    ],
+    "resolution": "BLOCK_MECHANIC; obtain actual contemporary test/patch notice"
+  },
+  {
+    "id": "C06",
+    "topic": "건곤대나이 습득레벨/시전마력/습득비용 혼용",
+    "source_ids": [
+      "M-netpower-2000_6-159",
+      "099322417685",
+      "8f225df9fd00"
+    ],
+    "claims": [
+      "2000-04-18 레벨80→63/MP40",
+      "2000공식 learnMoney5000",
+      "2001공식 learnMoney1500"
+    ],
+    "resolution": "KEEP_SEPARATE_FIELDS; cannot claim MP=1500 or1998learn63",
+    "implementation_resolution": "USER_REQUESTED_ARITHMETIC_MEAN for same learn_money: 3250전. castMP40 and learn_level are separate meanings."
+  },
+  {
+    "id": "C07",
+    "topic": "5.0라는 같은 버전번호의 다른 역사",
+    "source_ids": [
+      "WEB-gamechosun5",
+      "M-netpower-2001_9-160"
+    ],
+    "claims": [
+      "후대회고1999취소된그래픽테스트5.0",
+      "당대2001 5.0 UI기행"
+    ],
+    "resolution": "DISTINCT_EVENTS; do not merge screenshots"
+  },
+  {
+    "id": "C08",
+    "topic": "1996복원판의 합성연도",
+    "source_ids": [
+      "WEB-inven",
+      "WEB-restoration"
+    ],
+    "claims": [
+      "1997assets/1998server/1999client",
+      "1998아이템스킬및현대전시기능"
+    ],
+    "resolution": "RESTORATION_REFERENCE; not untouched1996 or full1998 proof"
+  },
+  {
+    "id": "C09",
+    "topic": "Wayback 이미지의 날짜 이동",
+    "source_ids": [
+      "IMG-42abc2cf07e2"
+    ],
+    "claims": [
+      "부모HTML2000-05-11",
+      "이미지redirect2001-06-10"
+    ],
+    "resolution": "USE_ACTUAL_IMAGE_CAPTURE; do not label2000 image"
+  },
+  {
+    "id": "C10",
+    "topic": "공식12지신 백호왕 경험치 의심값",
+    "source_ids": [
+      "869a82c0f87a"
+    ],
+    "claims": [
+      "백호왕 경험치칸800",
+      "주변형제300만/350만/450만"
+    ],
+    "resolution": "QUARANTINE; do not append 만 to800 without independent proof"
+  }
+]

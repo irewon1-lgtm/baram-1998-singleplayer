@@ -1,0 +1,2458 @@
+[
+  {
+    "id": "KR-2000-0001",
+    "category": "monster",
+    "name": "다람쥐",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "297641cd3e8f",
+    "position": {
+      "xpath": "(//table)[5]/tr[2]",
+      "table_1based": 5,
+      "row_1based": 2
+    },
+    "fields": {
+      "experience": 5,
+      "drop_item_names": [
+        "도토리"
+      ],
+      "hp": null,
+      "attack": null,
+      "drop_probability": null,
+      "move_interval_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511021422id_/http://baram.nexon.co.kr:80/guide/dungeon/begin.html",
+    "source_date": null,
+    "capture_timestamp": "20000511021422",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0002",
+    "category": "monster",
+    "name": "토끼",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "297641cd3e8f",
+    "position": {
+      "xpath": "(//table)[5]/tr[3]",
+      "table_1based": 5,
+      "row_1based": 3
+    },
+    "fields": {
+      "experience": 5,
+      "drop_item_names": [
+        "토끼고기"
+      ],
+      "hp": null,
+      "attack": null,
+      "drop_probability": null,
+      "move_interval_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511021422id_/http://baram.nexon.co.kr:80/guide/dungeon/begin.html",
+    "source_date": null,
+    "capture_timestamp": "20000511021422",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0003",
+    "category": "monster",
+    "name": "시궁쥐",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "297641cd3e8f",
+    "position": {
+      "xpath": "(//table)[7]/tr[2]",
+      "table_1based": 7,
+      "row_1based": 2
+    },
+    "fields": {
+      "experience": 150,
+      "drop_item_names": [
+        "쥐고기"
+      ],
+      "hp": null,
+      "attack": null,
+      "drop_probability": null,
+      "move_interval_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511021422id_/http://baram.nexon.co.kr:80/guide/dungeon/begin.html",
+    "source_date": null,
+    "capture_timestamp": "20000511021422",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0004",
+    "category": "monster",
+    "name": "박쥐",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "297641cd3e8f",
+    "position": {
+      "xpath": "(//table)[7]/tr[3]",
+      "table_1based": 7,
+      "row_1based": 3
+    },
+    "fields": {
+      "experience": 150,
+      "drop_item_names": [
+        "쥐고기"
+      ],
+      "hp": null,
+      "attack": null,
+      "drop_probability": null,
+      "move_interval_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511021422id_/http://baram.nexon.co.kr:80/guide/dungeon/begin.html",
+    "source_date": null,
+    "capture_timestamp": "20000511021422",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0005",
+    "category": "monster",
+    "name": "병든쥐",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "297641cd3e8f",
+    "position": {
+      "xpath": "(//table)[7]/tr[4]",
+      "table_1based": 7,
+      "row_1based": 4
+    },
+    "fields": {
+      "experience": 250,
+      "drop_item_names": [
+        "쥐고기"
+      ],
+      "hp": null,
+      "attack": null,
+      "drop_probability": null,
+      "move_interval_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511021422id_/http://baram.nexon.co.kr:80/guide/dungeon/begin.html",
+    "source_date": null,
+    "capture_timestamp": "20000511021422",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0006",
+    "category": "monster",
+    "name": "빨간박쥐",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "297641cd3e8f",
+    "position": {
+      "xpath": "(//table)[7]/tr[5]",
+      "table_1based": 7,
+      "row_1based": 5
+    },
+    "fields": {
+      "experience": 600,
+      "drop_item_names": [
+        "쥐고기",
+        "다람쥐방열쇠"
+      ],
+      "hp": null,
+      "attack": null,
+      "drop_probability": null,
+      "move_interval_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511021422id_/http://baram.nexon.co.kr:80/guide/dungeon/begin.html",
+    "source_date": null,
+    "capture_timestamp": "20000511021422",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0007",
+    "category": "monster",
+    "name": "흡혈쥐",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "297641cd3e8f",
+    "position": {
+      "xpath": "(//table)[7]/tr[6]",
+      "table_1based": 7,
+      "row_1based": 6
+    },
+    "fields": {
+      "experience": 1500,
+      "drop_item_names": [
+        "쥐고기"
+      ],
+      "hp": null,
+      "attack": null,
+      "drop_probability": null,
+      "move_interval_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511021422id_/http://baram.nexon.co.kr:80/guide/dungeon/begin.html",
+    "source_date": null,
+    "capture_timestamp": "20000511021422",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0008",
+    "category": "monster",
+    "name": "서생원",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "297641cd3e8f",
+    "position": {
+      "xpath": "(//table)[7]/tr[7]",
+      "table_1based": 7,
+      "row_1based": 7
+    },
+    "fields": {
+      "experience": 2000,
+      "drop_item_names": [
+        "산삼"
+      ],
+      "hp": null,
+      "attack": null,
+      "drop_probability": {
+        "산삼": 0.1
+      },
+      "move_interval_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511021422id_/http://baram.nexon.co.kr:80/guide/dungeon/begin.html",
+    "source_date": null,
+    "capture_timestamp": "20000511021422",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0009",
+    "category": "monster",
+    "name": "독사",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "297641cd3e8f",
+    "position": {
+      "xpath": "(//table)[9]/tr[2]",
+      "table_1based": 9,
+      "row_1based": 2
+    },
+    "fields": {
+      "experience": 1000,
+      "drop_item_names": [
+        "뱀고기"
+      ],
+      "hp": null,
+      "attack": null,
+      "drop_probability": null,
+      "move_interval_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511021422id_/http://baram.nexon.co.kr:80/guide/dungeon/begin.html",
+    "source_date": null,
+    "capture_timestamp": "20000511021422",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0010",
+    "category": "monster",
+    "name": "백사",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "297641cd3e8f",
+    "position": {
+      "xpath": "(//table)[9]/tr[3]",
+      "table_1based": 9,
+      "row_1based": 3
+    },
+    "fields": {
+      "experience": 1900,
+      "drop_item_names": [
+        "뱀고기"
+      ],
+      "hp": null,
+      "attack": null,
+      "drop_probability": null,
+      "move_interval_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511021422id_/http://baram.nexon.co.kr:80/guide/dungeon/begin.html",
+    "source_date": null,
+    "capture_timestamp": "20000511021422",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0011",
+    "category": "monster",
+    "name": "구렁이",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "297641cd3e8f",
+    "position": {
+      "xpath": "(//table)[9]/tr[4]",
+      "table_1based": 9,
+      "row_1based": 4
+    },
+    "fields": {
+      "experience": 4444,
+      "drop_item_names": [
+        "좋은뱀고기"
+      ],
+      "hp": null,
+      "attack": null,
+      "drop_probability": null,
+      "move_interval_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511021422id_/http://baram.nexon.co.kr:80/guide/dungeon/begin.html",
+    "source_date": null,
+    "capture_timestamp": "20000511021422",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0012",
+    "category": "monster",
+    "name": "곰",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "297641cd3e8f",
+    "position": {
+      "xpath": "(//table)[11]/tr[2]",
+      "table_1based": 11,
+      "row_1based": 2
+    },
+    "fields": {
+      "experience": 1000,
+      "drop_item_names": [
+        "곰가죽"
+      ],
+      "hp": null,
+      "attack": null,
+      "drop_probability": null,
+      "move_interval_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511021422id_/http://baram.nexon.co.kr:80/guide/dungeon/begin.html",
+    "source_date": null,
+    "capture_timestamp": "20000511021422",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0013",
+    "category": "monster",
+    "name": "호랑이",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "297641cd3e8f",
+    "position": {
+      "xpath": "(//table)[11]/tr[3]",
+      "table_1based": 11,
+      "row_1based": 3
+    },
+    "fields": {
+      "experience": 1500,
+      "drop_item_names": [
+        "호랑이가죽"
+      ],
+      "hp": null,
+      "attack": null,
+      "drop_probability": null,
+      "move_interval_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511021422id_/http://baram.nexon.co.kr:80/guide/dungeon/begin.html",
+    "source_date": null,
+    "capture_timestamp": "20000511021422",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0014",
+    "category": "monster",
+    "name": "평웅",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "297641cd3e8f",
+    "position": {
+      "xpath": "(//table)[11]/tr[4]",
+      "table_1based": 11,
+      "row_1based": 4
+    },
+    "fields": {
+      "experience": 1800,
+      "drop_item_names": [
+        "웅담"
+      ],
+      "hp": null,
+      "attack": null,
+      "drop_probability": null,
+      "move_interval_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511021422id_/http://baram.nexon.co.kr:80/guide/dungeon/begin.html",
+    "source_date": null,
+    "capture_timestamp": "20000511021422",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0015",
+    "category": "monster",
+    "name": "평호",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "297641cd3e8f",
+    "position": {
+      "xpath": "(//table)[11]/tr[5]",
+      "table_1based": 11,
+      "row_1based": 5
+    },
+    "fields": {
+      "experience": 3000,
+      "drop_item_names": [
+        "호랑이고기"
+      ],
+      "hp": null,
+      "attack": null,
+      "drop_probability": null,
+      "move_interval_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511021422id_/http://baram.nexon.co.kr:80/guide/dungeon/begin.html",
+    "source_date": null,
+    "capture_timestamp": "20000511021422",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0016",
+    "category": "monster",
+    "name": "진호",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "297641cd3e8f",
+    "position": {
+      "xpath": "(//table)[11]/tr[6]",
+      "table_1based": 11,
+      "row_1based": 6
+    },
+    "fields": {
+      "experience": 10000,
+      "drop_item_names": [
+        "진호의가죽"
+      ],
+      "hp": null,
+      "attack": null,
+      "drop_probability": null,
+      "move_interval_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511021422id_/http://baram.nexon.co.kr:80/guide/dungeon/begin.html",
+    "source_date": null,
+    "capture_timestamp": "20000511021422",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0017",
+    "category": "monster",
+    "name": "흑여우",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "297641cd3e8f",
+    "position": {
+      "xpath": "(//table)[13]/tr[2]",
+      "table_1based": 13,
+      "row_1based": 2
+    },
+    "fields": {
+      "experience": 3800,
+      "drop_item_names": [
+        "여우모피"
+      ],
+      "hp": null,
+      "attack": null,
+      "drop_probability": null,
+      "move_interval_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511021422id_/http://baram.nexon.co.kr:80/guide/dungeon/begin.html",
+    "source_date": null,
+    "capture_timestamp": "20000511021422",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0018",
+    "category": "monster",
+    "name": "백여우",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "297641cd3e8f",
+    "position": {
+      "xpath": "(//table)[13]/tr[3]",
+      "table_1based": 13,
+      "row_1based": 3
+    },
+    "fields": {
+      "experience": 4200,
+      "drop_item_names": [
+        "여우모피"
+      ],
+      "hp": null,
+      "attack": null,
+      "drop_probability": null,
+      "move_interval_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511021422id_/http://baram.nexon.co.kr:80/guide/dungeon/begin.html",
+    "source_date": null,
+    "capture_timestamp": "20000511021422",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0019",
+    "category": "monster",
+    "name": "불여우",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "297641cd3e8f",
+    "position": {
+      "xpath": "(//table)[13]/tr[4]",
+      "table_1based": 13,
+      "row_1based": 4
+    },
+    "fields": {
+      "experience": 13000,
+      "drop_item_names": [
+        "여우모피"
+      ],
+      "hp": null,
+      "attack": null,
+      "drop_probability": null,
+      "move_interval_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511021422id_/http://baram.nexon.co.kr:80/guide/dungeon/begin.html",
+    "source_date": null,
+    "capture_timestamp": "20000511021422",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0020",
+    "category": "monster",
+    "name": "구미호",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "297641cd3e8f",
+    "position": {
+      "xpath": "(//table)[13]/tr[5]",
+      "table_1based": 13,
+      "row_1based": 5
+    },
+    "fields": {
+      "experience": 50000,
+      "drop_item_names": [
+        "철도"
+      ],
+      "hp": null,
+      "attack": null,
+      "drop_probability": null,
+      "move_interval_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511021422id_/http://baram.nexon.co.kr:80/guide/dungeon/begin.html",
+    "source_date": null,
+    "capture_timestamp": "20000511021422",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0062",
+    "category": "item",
+    "name": "목도",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "3be111c352d6",
+    "position": {
+      "xpath": "(//table)[4]/tr[2]",
+      "table_1based": 4,
+      "row_1based": 2
+    },
+    "fields": {
+      "guide_listed_price": 0,
+      "vendor_buy_price": null,
+      "vendor_sell_price": null,
+      "damage_min": 5,
+      "damage_max": 10,
+      "level_required": 0,
+      "strength_required": 0,
+      "durability": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511071704id_/http://baram.nexon.co.kr:80/guide/item/weapon.html",
+    "source_date": null,
+    "capture_timestamp": "20000511071704",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0063",
+    "category": "item",
+    "name": "목검",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "3be111c352d6",
+    "position": {
+      "xpath": "(//table)[4]/tr[3]",
+      "table_1based": 4,
+      "row_1based": 3
+    },
+    "fields": {
+      "guide_listed_price": 20,
+      "vendor_buy_price": null,
+      "vendor_sell_price": null,
+      "damage_min": 10,
+      "damage_max": 15,
+      "level_required": 0,
+      "strength_required": 5,
+      "durability": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511071704id_/http://baram.nexon.co.kr:80/guide/item/weapon.html",
+    "source_date": null,
+    "capture_timestamp": "20000511071704",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0064",
+    "category": "item",
+    "name": "사두목도",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "3be111c352d6",
+    "position": {
+      "xpath": "(//table)[4]/tr[4]",
+      "table_1based": 4,
+      "row_1based": 4
+    },
+    "fields": {
+      "guide_listed_price": 60,
+      "vendor_buy_price": null,
+      "vendor_sell_price": null,
+      "damage_min": 15,
+      "damage_max": 25,
+      "level_required": 0,
+      "strength_required": 10,
+      "durability": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511071704id_/http://baram.nexon.co.kr:80/guide/item/weapon.html",
+    "source_date": null,
+    "capture_timestamp": "20000511071704",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0065",
+    "category": "item",
+    "name": "사두목검",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "3be111c352d6",
+    "position": {
+      "xpath": "(//table)[4]/tr[5]",
+      "table_1based": 4,
+      "row_1based": 5
+    },
+    "fields": {
+      "guide_listed_price": 150,
+      "vendor_buy_price": null,
+      "vendor_sell_price": null,
+      "damage_min": 20,
+      "damage_max": 35,
+      "level_required": 0,
+      "strength_required": 13,
+      "durability": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511071704id_/http://baram.nexon.co.kr:80/guide/item/weapon.html",
+    "source_date": null,
+    "capture_timestamp": "20000511071704",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0066",
+    "category": "item",
+    "name": "도씨검",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "3be111c352d6",
+    "position": {
+      "xpath": "(//table)[4]/tr[6]",
+      "table_1based": 4,
+      "row_1based": 6
+    },
+    "fields": {
+      "guide_listed_price": 250,
+      "vendor_buy_price": null,
+      "vendor_sell_price": null,
+      "damage_min": 25,
+      "damage_max": 50,
+      "level_required": 0,
+      "strength_required": 15,
+      "durability": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511071704id_/http://baram.nexon.co.kr:80/guide/item/weapon.html",
+    "source_date": null,
+    "capture_timestamp": "20000511071704",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0067",
+    "category": "item",
+    "name": "장창",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "3be111c352d6",
+    "position": {
+      "xpath": "(//table)[4]/tr[7]",
+      "table_1based": 4,
+      "row_1based": 7
+    },
+    "fields": {
+      "guide_listed_price": 400,
+      "vendor_buy_price": null,
+      "vendor_sell_price": null,
+      "damage_min": 30,
+      "damage_max": 60,
+      "level_required": 0,
+      "strength_required": 17,
+      "durability": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511071704id_/http://baram.nexon.co.kr:80/guide/item/weapon.html",
+    "source_date": null,
+    "capture_timestamp": "20000511071704",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0068",
+    "category": "item",
+    "name": "삼지창",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "3be111c352d6",
+    "position": {
+      "xpath": "(//table)[4]/tr[8]",
+      "table_1based": 4,
+      "row_1based": 8
+    },
+    "fields": {
+      "guide_listed_price": 500,
+      "vendor_buy_price": null,
+      "vendor_sell_price": null,
+      "damage_min": 30,
+      "damage_max": 60,
+      "level_required": 0,
+      "strength_required": 20,
+      "durability": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511071704id_/http://baram.nexon.co.kr:80/guide/item/weapon.html",
+    "source_date": null,
+    "capture_timestamp": "20000511071704",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0069",
+    "category": "item",
+    "name": "철단도",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "3be111c352d6",
+    "position": {
+      "xpath": "(//table)[4]/tr[9]",
+      "table_1based": 4,
+      "row_1based": 9
+    },
+    "fields": {
+      "guide_listed_price": 800,
+      "vendor_buy_price": null,
+      "vendor_sell_price": null,
+      "damage_min": 35,
+      "damage_max": 70,
+      "level_required": 0,
+      "strength_required": 20,
+      "durability": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511071704id_/http://baram.nexon.co.kr:80/guide/item/weapon.html",
+    "source_date": null,
+    "capture_timestamp": "20000511071704",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0070",
+    "category": "item",
+    "name": "철도",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "3be111c352d6",
+    "position": {
+      "xpath": "(//table)[4]/tr[10]",
+      "table_1based": 4,
+      "row_1based": 10
+    },
+    "fields": {
+      "guide_listed_price": 1000,
+      "vendor_buy_price": null,
+      "vendor_sell_price": null,
+      "damage_min": 50,
+      "damage_max": 85,
+      "level_required": 0,
+      "strength_required": 30,
+      "durability": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511071704id_/http://baram.nexon.co.kr:80/guide/item/weapon.html",
+    "source_date": null,
+    "capture_timestamp": "20000511071704",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0071",
+    "category": "item",
+    "name": "철검",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "3be111c352d6",
+    "position": {
+      "xpath": "(//table)[4]/tr[11]",
+      "table_1based": 4,
+      "row_1based": 11
+    },
+    "fields": {
+      "guide_listed_price": 2000,
+      "vendor_buy_price": null,
+      "vendor_sell_price": null,
+      "damage_min": 55,
+      "damage_max": 90,
+      "level_required": 0,
+      "strength_required": 30,
+      "durability": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511071704id_/http://baram.nexon.co.kr:80/guide/item/weapon.html",
+    "source_date": null,
+    "capture_timestamp": "20000511071704",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0072",
+    "category": "item",
+    "name": "얼음칼",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "3be111c352d6",
+    "position": {
+      "xpath": "(//table)[4]/tr[12]",
+      "table_1based": 4,
+      "row_1based": 12
+    },
+    "fields": {
+      "guide_listed_price": 50000,
+      "vendor_buy_price": null,
+      "vendor_sell_price": null,
+      "damage_min": 70,
+      "damage_max": 95,
+      "level_required": 50,
+      "strength_required": 10,
+      "durability": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511071704id_/http://baram.nexon.co.kr:80/guide/item/weapon.html",
+    "source_date": null,
+    "capture_timestamp": "20000511071704",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0073",
+    "category": "item",
+    "name": "진명삼지창",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "3be111c352d6",
+    "position": {
+      "xpath": "(//table)[4]/tr[13]",
+      "table_1based": 4,
+      "row_1based": 13
+    },
+    "fields": {
+      "guide_listed_price": 300,
+      "vendor_buy_price": null,
+      "vendor_sell_price": null,
+      "damage_min": 90,
+      "damage_max": 105,
+      "level_required": 0,
+      "strength_required": 20,
+      "durability": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511071704id_/http://baram.nexon.co.kr:80/guide/item/weapon.html",
+    "source_date": null,
+    "capture_timestamp": "20000511071704",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0074",
+    "category": "item",
+    "name": "현랑부",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "3be111c352d6",
+    "position": {
+      "xpath": "(//table)[4]/tr[14]",
+      "table_1based": 4,
+      "row_1based": 14
+    },
+    "fields": {
+      "guide_listed_price": 30000,
+      "vendor_buy_price": null,
+      "vendor_sell_price": null,
+      "damage_min": 50,
+      "damage_max": 90,
+      "level_required": 50,
+      "strength_required": 20,
+      "durability": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511071704id_/http://baram.nexon.co.kr:80/guide/item/weapon.html",
+    "source_date": null,
+    "capture_timestamp": "20000511071704",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0075",
+    "category": "item",
+    "name": "백현모",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "3be111c352d6",
+    "position": {
+      "xpath": "(//table)[4]/tr[15]",
+      "table_1based": 4,
+      "row_1based": 15
+    },
+    "fields": {
+      "guide_listed_price": 80000,
+      "vendor_buy_price": null,
+      "vendor_sell_price": null,
+      "damage_min": 60,
+      "damage_max": 100,
+      "level_required": 70,
+      "strength_required": 20,
+      "durability": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511071704id_/http://baram.nexon.co.kr:80/guide/item/weapon.html",
+    "source_date": null,
+    "capture_timestamp": "20000511071704",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0076",
+    "category": "item",
+    "name": "백화검",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "3be111c352d6",
+    "position": {
+      "xpath": "(//table)[4]/tr[16]",
+      "table_1based": 4,
+      "row_1based": 16
+    },
+    "fields": {
+      "guide_listed_price": 1500000,
+      "vendor_buy_price": null,
+      "vendor_sell_price": null,
+      "damage_min": 90,
+      "damage_max": 100,
+      "level_required": 70,
+      "strength_required": 70,
+      "durability": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511071704id_/http://baram.nexon.co.kr:80/guide/item/weapon.html",
+    "source_date": null,
+    "capture_timestamp": "20000511071704",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0077",
+    "category": "item",
+    "name": "백화별검",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "3be111c352d6",
+    "position": {
+      "xpath": "(//table)[4]/tr[17]",
+      "table_1based": 4,
+      "row_1based": 17
+    },
+    "fields": {
+      "guide_listed_price": 4000000,
+      "vendor_buy_price": null,
+      "vendor_sell_price": null,
+      "damage_min": 100,
+      "damage_max": 150,
+      "level_required": 70,
+      "strength_required": 70,
+      "durability": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511071704id_/http://baram.nexon.co.kr:80/guide/item/weapon.html",
+    "source_date": null,
+    "capture_timestamp": "20000511071704",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0078",
+    "category": "item",
+    "name": "방천화극",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "3be111c352d6",
+    "position": {
+      "xpath": "(//table)[4]/tr[18]",
+      "table_1based": 4,
+      "row_1based": 18
+    },
+    "fields": {
+      "guide_listed_price": 1000000,
+      "vendor_buy_price": null,
+      "vendor_sell_price": null,
+      "damage_min": 80,
+      "damage_max": 90,
+      "level_required": 75,
+      "strength_required": 0,
+      "durability": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511071704id_/http://baram.nexon.co.kr:80/guide/item/weapon.html",
+    "source_date": null,
+    "capture_timestamp": "20000511071704",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0079",
+    "category": "item",
+    "name": "뢰진도",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "3be111c352d6",
+    "position": {
+      "xpath": "(//table)[4]/tr[24]",
+      "table_1based": 4,
+      "row_1based": 24
+    },
+    "fields": {
+      "guide_listed_price": 150000,
+      "vendor_buy_price": null,
+      "vendor_sell_price": null,
+      "damage_min": 40,
+      "damage_max": 60,
+      "level_required": 20,
+      "strength_required": 0,
+      "durability": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511071704id_/http://baram.nexon.co.kr:80/guide/item/weapon.html",
+    "source_date": null,
+    "capture_timestamp": "20000511071704",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0080",
+    "category": "item",
+    "name": "뇌진도",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "3be111c352d6",
+    "position": {
+      "xpath": "(//table)[4]/tr[25]",
+      "table_1based": 4,
+      "row_1based": 25
+    },
+    "fields": {
+      "guide_listed_price": 50000,
+      "vendor_buy_price": null,
+      "vendor_sell_price": null,
+      "damage_min": 55,
+      "damage_max": 70,
+      "level_required": 20,
+      "strength_required": 0,
+      "durability": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511071704id_/http://baram.nexon.co.kr:80/guide/item/weapon.html",
+    "source_date": null,
+    "capture_timestamp": "20000511071704",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0081",
+    "category": "item",
+    "name": "상아검",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "3be111c352d6",
+    "position": {
+      "xpath": "(//table)[4]/tr[26]",
+      "table_1based": 4,
+      "row_1based": 26
+    },
+    "fields": {
+      "guide_listed_price": null,
+      "vendor_buy_price": null,
+      "vendor_sell_price": null,
+      "damage_min": 35,
+      "damage_max": 60,
+      "level_required": 30,
+      "strength_required": 0,
+      "durability": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511071704id_/http://baram.nexon.co.kr:80/guide/item/weapon.html",
+    "source_date": null,
+    "capture_timestamp": "20000511071704",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0104",
+    "category": "spell",
+    "name": "누리의기원",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "099322417685",
+    "position": {
+      "xpath": "(//table)[4]/tr[2]",
+      "table_1based": 4,
+      "row_1based": 2
+    },
+    "fields": {
+      "learn_level": 10,
+      "learn_money": 30,
+      "learn_materials": [
+        {
+          "name": "도토리",
+          "quantity": 70
+        }
+      ],
+      "cast_mp": null,
+      "cast_hp": null,
+      "damage_formula": null,
+      "duration_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "class_scope": "전사",
+    "source_url": "https://web.archive.org/web/20000511154844id_/http://baram.nexon.co.kr:80/guide/magic/fighter.html",
+    "source_date": null,
+    "capture_timestamp": "20000511154844",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0105",
+    "category": "spell",
+    "name": "대지의기원",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "099322417685",
+    "position": {
+      "xpath": "(//table)[4]/tr[3]",
+      "table_1based": 4,
+      "row_1based": 3
+    },
+    "fields": {
+      "learn_level": 15,
+      "learn_money": 40,
+      "learn_materials": [
+        {
+          "name": "도토리",
+          "quantity": 80
+        }
+      ],
+      "cast_mp": null,
+      "cast_hp": null,
+      "damage_formula": null,
+      "duration_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "class_scope": "전사",
+    "source_url": "https://web.archive.org/web/20000511154844id_/http://baram.nexon.co.kr:80/guide/magic/fighter.html",
+    "source_date": null,
+    "capture_timestamp": "20000511154844",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0106",
+    "category": "spell",
+    "name": "이중공격",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "099322417685",
+    "position": {
+      "xpath": "(//table)[4]/tr[4]",
+      "table_1based": 4,
+      "row_1based": 4
+    },
+    "fields": {
+      "learn_level": 18,
+      "learn_money": 100,
+      "learn_materials": [
+        {
+          "name": "도토리",
+          "quantity": 80
+        }
+      ],
+      "cast_mp": null,
+      "cast_hp": null,
+      "damage_formula": null,
+      "duration_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "class_scope": "전사",
+    "source_url": "https://web.archive.org/web/20000511154844id_/http://baram.nexon.co.kr:80/guide/magic/fighter.html",
+    "source_date": null,
+    "capture_timestamp": "20000511154844",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0107",
+    "category": "spell",
+    "name": "신의축복",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "099322417685",
+    "position": {
+      "xpath": "(//table)[4]/tr[5]",
+      "table_1based": 4,
+      "row_1based": 5
+    },
+    "fields": {
+      "learn_level": 23,
+      "learn_money": 80,
+      "learn_materials": [
+        {
+          "name": "도토리",
+          "quantity": 80
+        }
+      ],
+      "cast_mp": null,
+      "cast_hp": null,
+      "damage_formula": null,
+      "duration_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "class_scope": "전사",
+    "source_url": "https://web.archive.org/web/20000511154844id_/http://baram.nexon.co.kr:80/guide/magic/fighter.html",
+    "source_date": null,
+    "capture_timestamp": "20000511154844",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0108",
+    "category": "spell",
+    "name": "후면공격",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "099322417685",
+    "position": {
+      "xpath": "(//table)[4]/tr[6]",
+      "table_1based": 4,
+      "row_1based": 6
+    },
+    "fields": {
+      "learn_level": 25,
+      "learn_money": 100,
+      "learn_materials": [
+        {
+          "name": "도토리",
+          "quantity": 80
+        },
+        {
+          "name": "뱀고기",
+          "quantity": 20
+        }
+      ],
+      "cast_mp": null,
+      "cast_hp": null,
+      "damage_formula": null,
+      "duration_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "class_scope": "전사",
+    "source_url": "https://web.archive.org/web/20000511154844id_/http://baram.nexon.co.kr:80/guide/magic/fighter.html",
+    "source_date": null,
+    "capture_timestamp": "20000511154844",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0109",
+    "category": "spell",
+    "name": "측면공격",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "099322417685",
+    "position": {
+      "xpath": "(//table)[4]/tr[7]",
+      "table_1based": 4,
+      "row_1based": 7
+    },
+    "fields": {
+      "learn_level": 30,
+      "learn_money": 150,
+      "learn_materials": [
+        {
+          "name": "도토리",
+          "quantity": 80
+        },
+        {
+          "name": "뱀고기",
+          "quantity": 20
+        }
+      ],
+      "cast_mp": null,
+      "cast_hp": null,
+      "damage_formula": null,
+      "duration_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "class_scope": "전사",
+    "source_url": "https://web.archive.org/web/20000511154844id_/http://baram.nexon.co.kr:80/guide/magic/fighter.html",
+    "source_date": null,
+    "capture_timestamp": "20000511154844",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0110",
+    "category": "spell",
+    "name": "삼중공격",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "099322417685",
+    "position": {
+      "xpath": "(//table)[4]/tr[8]",
+      "table_1based": 4,
+      "row_1based": 8
+    },
+    "fields": {
+      "learn_level": 32,
+      "learn_money": 300,
+      "learn_materials": [
+        {
+          "name": "도토리",
+          "quantity": 80
+        },
+        {
+          "name": "호랑이고기",
+          "quantity": 15
+        }
+      ],
+      "cast_mp": null,
+      "cast_hp": null,
+      "damage_formula": null,
+      "duration_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "class_scope": "전사",
+    "source_url": "https://web.archive.org/web/20000511154844id_/http://baram.nexon.co.kr:80/guide/magic/fighter.html",
+    "source_date": null,
+    "capture_timestamp": "20000511154844",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0111",
+    "category": "spell",
+    "name": "하늘의기원",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "099322417685",
+    "position": {
+      "xpath": "(//table)[4]/tr[9]",
+      "table_1based": 4,
+      "row_1based": 9
+    },
+    "fields": {
+      "learn_level": 35,
+      "learn_money": 200,
+      "learn_materials": [
+        {
+          "name": "도토리",
+          "quantity": 80
+        },
+        {
+          "name": "웅담",
+          "quantity": 30
+        }
+      ],
+      "cast_mp": null,
+      "cast_hp": null,
+      "damage_formula": null,
+      "duration_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "class_scope": "전사",
+    "source_url": "https://web.archive.org/web/20000511154844id_/http://baram.nexon.co.kr:80/guide/magic/fighter.html",
+    "source_date": null,
+    "capture_timestamp": "20000511154844",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0112",
+    "category": "spell",
+    "name": "신검합일",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "099322417685",
+    "position": {
+      "xpath": "(//table)[4]/tr[10]",
+      "table_1based": 4,
+      "row_1based": 10
+    },
+    "fields": {
+      "learn_level": 45,
+      "learn_money": 500,
+      "learn_materials": [
+        {
+          "name": "도토리",
+          "quantity": 50
+        },
+        {
+          "name": "여우모피",
+          "quantity": 10
+        },
+        {
+          "name": "철도",
+          "quantity": 1
+        }
+      ],
+      "cast_mp": null,
+      "cast_hp": null,
+      "damage_formula": null,
+      "duration_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "class_scope": "전사",
+    "source_url": "https://web.archive.org/web/20000511154844id_/http://baram.nexon.co.kr:80/guide/magic/fighter.html",
+    "source_date": null,
+    "capture_timestamp": "20000511154844",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0113",
+    "category": "spell",
+    "name": "백호령",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "099322417685",
+    "position": {
+      "xpath": "(//table)[4]/tr[11]",
+      "table_1based": 4,
+      "row_1based": 11
+    },
+    "fields": {
+      "learn_level": 50,
+      "learn_money": 500,
+      "learn_materials": [
+        {
+          "name": "도토리",
+          "quantity": 80
+        },
+        {
+          "name": "자호의가죽",
+          "quantity": 2
+        }
+      ],
+      "cast_mp": null,
+      "cast_hp": null,
+      "damage_formula": null,
+      "duration_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "class_scope": "전사",
+    "source_url": "https://web.archive.org/web/20000511154844id_/http://baram.nexon.co.kr:80/guide/magic/fighter.html",
+    "source_date": null,
+    "capture_timestamp": "20000511154844",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0114",
+    "category": "spell",
+    "name": "사중공격",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "099322417685",
+    "position": {
+      "xpath": "(//table)[4]/tr[12]",
+      "table_1based": 4,
+      "row_1based": 12
+    },
+    "fields": {
+      "learn_level": 62,
+      "learn_money": 900,
+      "learn_materials": [
+        {
+          "name": "도토리",
+          "quantity": 80
+        }
+      ],
+      "cast_mp": null,
+      "cast_hp": null,
+      "damage_formula": null,
+      "duration_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "class_scope": "전사",
+    "source_url": "https://web.archive.org/web/20000511154844id_/http://baram.nexon.co.kr:80/guide/magic/fighter.html",
+    "source_date": null,
+    "capture_timestamp": "20000511154844",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0115",
+    "category": "spell",
+    "name": "건곤대나이",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "099322417685",
+    "position": {
+      "xpath": "(//table)[4]/tr[13]",
+      "table_1based": 4,
+      "row_1based": 13
+    },
+    "fields": {
+      "learn_level": 63,
+      "learn_money": 5000,
+      "learn_materials": [
+        {
+          "name": "도토리",
+          "quantity": 100
+        },
+        {
+          "name": "현철중검",
+          "quantity": 2
+        },
+        {
+          "name": "호박",
+          "quantity": 20
+        }
+      ],
+      "cast_mp": null,
+      "cast_hp": null,
+      "damage_formula": null,
+      "duration_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "class_scope": "전사",
+    "source_url": "https://web.archive.org/web/20000511154844id_/http://baram.nexon.co.kr:80/guide/magic/fighter.html",
+    "source_date": null,
+    "capture_timestamp": "20000511154844",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0116",
+    "category": "spell",
+    "name": "검신검귀",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "099322417685",
+    "position": {
+      "xpath": "(//table)[4]/tr[14]",
+      "table_1based": 4,
+      "row_1based": 14
+    },
+    "fields": {
+      "learn_level": 65,
+      "learn_money": 1500,
+      "learn_materials": [
+        {
+          "name": "도토리",
+          "quantity": 80
+        },
+        {
+          "name": "현철중검",
+          "quantity": 1
+        },
+        {
+          "name": "호박",
+          "quantity": 10
+        }
+      ],
+      "cast_mp": null,
+      "cast_hp": null,
+      "damage_formula": null,
+      "duration_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "class_scope": "전사",
+    "source_url": "https://web.archive.org/web/20000511154844id_/http://baram.nexon.co.kr:80/guide/magic/fighter.html",
+    "source_date": null,
+    "capture_timestamp": "20000511154844",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0117",
+    "category": "spell",
+    "name": "대력검신",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "099322417685",
+    "position": {
+      "xpath": "(//table)[4]/tr[15]",
+      "table_1based": 4,
+      "row_1based": 15
+    },
+    "fields": {
+      "learn_level": 78,
+      "learn_money": 3000,
+      "learn_materials": [
+        {
+          "name": "도토리",
+          "quantity": 80
+        },
+        {
+          "name": "현철중검",
+          "quantity": 1
+        },
+        {
+          "name": "호박",
+          "quantity": 10
+        }
+      ],
+      "cast_mp": null,
+      "cast_hp": null,
+      "damage_formula": null,
+      "duration_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "class_scope": "전사",
+    "source_url": "https://web.archive.org/web/20000511154844id_/http://baram.nexon.co.kr:80/guide/magic/fighter.html",
+    "source_date": null,
+    "capture_timestamp": "20000511154844",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0118",
+    "category": "spell",
+    "name": "오중공격",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "099322417685",
+    "position": {
+      "xpath": "(//table)[4]/tr[16]",
+      "table_1based": 4,
+      "row_1based": 16
+    },
+    "fields": {
+      "learn_level": 80,
+      "learn_money": 3500,
+      "learn_materials": [
+        {
+          "name": "도토리",
+          "quantity": 100
+        }
+      ],
+      "cast_mp": null,
+      "cast_hp": null,
+      "damage_formula": null,
+      "duration_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "class_scope": "전사",
+    "source_url": "https://web.archive.org/web/20000511154844id_/http://baram.nexon.co.kr:80/guide/magic/fighter.html",
+    "source_date": null,
+    "capture_timestamp": "20000511154844",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0119",
+    "category": "spell",
+    "name": "사자후 전사",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "099322417685",
+    "position": {
+      "xpath": "(//table)[4]/tr[17]",
+      "table_1based": 4,
+      "row_1based": 17
+    },
+    "fields": {
+      "learn_level": 99,
+      "learn_money": 5000,
+      "learn_materials": [
+        {
+          "name": "도토리",
+          "quantity": 100
+        },
+        {
+          "name": "진호박",
+          "quantity": 20
+        }
+      ],
+      "cast_mp": null,
+      "cast_hp": null,
+      "damage_formula": null,
+      "duration_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "class_scope": "전사",
+    "source_url": "https://web.archive.org/web/20000511154844id_/http://baram.nexon.co.kr:80/guide/magic/fighter.html",
+    "source_date": null,
+    "capture_timestamp": "20000511154844",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0120",
+    "category": "spell",
+    "name": "동귀어진",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "099322417685",
+    "position": {
+      "xpath": "(//table)[4]/tr[18]",
+      "table_1based": 4,
+      "row_1based": 18
+    },
+    "fields": {
+      "learn_level": 99,
+      "learn_money": 10000,
+      "learn_materials": [
+        {
+          "name": "도토리",
+          "quantity": 100
+        },
+        {
+          "name": "환두대도",
+          "quantity": 1
+        },
+        {
+          "name": "진호박",
+          "quantity": 20
+        }
+      ],
+      "cast_mp": null,
+      "cast_hp": null,
+      "damage_formula": null,
+      "duration_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "class_scope": "전사",
+    "source_url": "https://web.archive.org/web/20000511154844id_/http://baram.nexon.co.kr:80/guide/magic/fighter.html",
+    "source_date": null,
+    "capture_timestamp": "20000511154844",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0138",
+    "category": "spell",
+    "name": "성황령",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "717c4f7d24e0",
+    "position": {
+      "xpath": "(//table)[4]/tr[2]",
+      "table_1based": 4,
+      "row_1based": 2
+    },
+    "fields": {
+      "learn_level": 5,
+      "learn_money": 0,
+      "learn_materials": [
+        {
+          "name": "도토리",
+          "quantity": 10
+        },
+        {
+          "name": "토끼고기",
+          "quantity": 10
+        }
+      ],
+      "cast_mp": null,
+      "cast_hp": null,
+      "damage_formula": null,
+      "duration_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "class_scope": "공통",
+    "source_url": "https://web.archive.org/web/20000511101312id_/http://baram.nexon.co.kr:80/guide/magic/common.html",
+    "source_date": null,
+    "capture_timestamp": "20000511101312",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0139",
+    "category": "spell",
+    "name": "비영사천문",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "717c4f7d24e0",
+    "position": {
+      "xpath": "(//table)[4]/tr[3]",
+      "table_1based": 4,
+      "row_1based": 3
+    },
+    "fields": {
+      "learn_level": 5,
+      "learn_money": 0,
+      "learn_materials": [
+        {
+          "name": "도토리",
+          "quantity": 10
+        },
+        {
+          "name": "토끼고기",
+          "quantity": 10
+        }
+      ],
+      "cast_mp": null,
+      "cast_hp": null,
+      "damage_formula": null,
+      "duration_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "class_scope": "공통",
+    "source_url": "https://web.archive.org/web/20000511101312id_/http://baram.nexon.co.kr:80/guide/magic/common.html",
+    "source_date": null,
+    "capture_timestamp": "20000511101312",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0140",
+    "category": "spell",
+    "name": "물품감정",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "717c4f7d24e0",
+    "position": {
+      "xpath": "(//table)[4]/tr[4]",
+      "table_1based": 4,
+      "row_1based": 4
+    },
+    "fields": {
+      "learn_level": 5,
+      "learn_money": 0,
+      "learn_materials": [
+        {
+          "name": "도토리",
+          "quantity": 10
+        },
+        {
+          "name": "토끼고기",
+          "quantity": 10
+        }
+      ],
+      "cast_mp": null,
+      "cast_hp": null,
+      "damage_formula": null,
+      "duration_ms": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "class_scope": "공통",
+    "source_url": "https://web.archive.org/web/20000511101312id_/http://baram.nexon.co.kr:80/guide/magic/common.html",
+    "source_date": null,
+    "capture_timestamp": "20000511101312",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0152",
+    "category": "recipe",
+    "name": "얼음칼",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "3be111c352d6",
+    "position": {
+      "table_1based": 4,
+      "row_name": "얼음칼"
+    },
+    "fields": {
+      "ingredients": {
+        "얼음": 99
+      },
+      "artisan": "한빙장",
+      "success_probability": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511071704id_/http://baram.nexon.co.kr:80/guide/item/weapon.html",
+    "source_date": null,
+    "capture_timestamp": "20000511071704",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0153",
+    "category": "npc",
+    "name": "한빙장",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "3be111c352d6",
+    "position": {
+      "table_1based": 4,
+      "row_name": "얼음칼"
+    },
+    "fields": {
+      "guide_location": "극지방입구",
+      "role": "ICE_SWORD_CRAFT",
+      "local_npc_xy": null
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://web.archive.org/web/20000511071704id_/http://baram.nexon.co.kr:80/guide/item/weapon.html",
+    "source_date": null,
+    "capture_timestamp": "20000511071704",
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0255",
+    "category": "game_rule",
+    "name": "2000-04-18 전사밸런싱",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "M-netpower-2000_6-159",
+    "position": {
+      "section": "오른쪽상단 밸런싱 박스"
+    },
+    "fields": {
+      "event_date": "2000-04-18",
+      "learn_level_gungeon": 63,
+      "previous_learn_level_gungeon": 80
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://www.gamemeca.com/magazine/view.php?mgz=netpower&ym=2000_6&p=159",
+    "source_date": "2000-06",
+    "capture_timestamp": null,
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0256",
+    "category": "game_rule",
+    "name": "동귀어진 마력",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "M-netpower-2000_6-159",
+    "position": {
+      "section": "오른쪽상단 밸런싱 박스"
+    },
+    "fields": {
+      "cast_mp": 350
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://www.gamemeca.com/magazine/view.php?mgz=netpower&ym=2000_6&p=159",
+    "source_date": "2000-06",
+    "capture_timestamp": null,
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0257",
+    "category": "game_rule",
+    "name": "백호령 마력",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "M-netpower-2000_6-159",
+    "position": {
+      "section": "오른쪽상단 밸런싱 박스"
+    },
+    "fields": {
+      "cast_mp": 60
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://www.gamemeca.com/magazine/view.php?mgz=netpower&ym=2000_6&p=159",
+    "source_date": "2000-06",
+    "capture_timestamp": null,
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0258",
+    "category": "game_rule",
+    "name": "건곤대나이 마력",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "M-netpower-2000_6-159",
+    "position": {
+      "section": "오른쪽상단 밸런싱 박스"
+    },
+    "fields": {
+      "cast_mp": 40
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://www.gamemeca.com/magazine/view.php?mgz=netpower&ym=2000_6&p=159",
+    "source_date": "2000-06",
+    "capture_timestamp": null,
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0259",
+    "category": "game_rule",
+    "name": "사각방패 AC",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "M-netpower-2000_6-159",
+    "position": {
+      "section": "오른쪽상단 밸런싱 박스"
+    },
+    "fields": {
+      "armor_class": -3,
+      "previous_armor_class": -20
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://www.gamemeca.com/magazine/view.php?mgz=netpower&ym=2000_6&p=159",
+    "source_date": "2000-06",
+    "capture_timestamp": null,
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0260",
+    "category": "game_rule",
+    "name": "오중공격",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "M-netpower-2000_6-159",
+    "position": {
+      "section": "오른쪽상단 밸런싱 박스"
+    },
+    "fields": {
+      "learn_level": 80
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://www.gamemeca.com/magazine/view.php?mgz=netpower&ym=2000_6&p=159",
+    "source_date": "2000-06",
+    "capture_timestamp": null,
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  },
+  {
+    "id": "KR-2000-0261",
+    "category": "version_event",
+    "name": "4.51 멀티서버",
+    "year": 2000,
+    "region": "KR",
+    "game_version": null,
+    "source_id": "M-netpower-2000_3-135",
+    "position": {
+      "section": "제목아래 본문"
+    },
+    "fields": {
+      "event_date": "2000-02-02",
+      "game_version": "4.51"
+    },
+    "evidence_status": "CONTEMPORANEOUS_SOURCE_CONFIRMED",
+    "game_runtime_verified": false,
+    "valid_from": null,
+    "valid_to": null,
+    "notes": "해당 자료에 기재된 사실을 확인. 연도 전체·실제 서버 동작 동일성을 보증하지 않음.",
+    "source_url": "https://www.gamemeca.com/magazine/view.php?mgz=netpower&ym=2000_3&p=135",
+    "source_date": "2000-03",
+    "capture_timestamp": null,
+    "source_version": null,
+    "verification_scope": "SOURCE_CONTENT_ONLY"
+  }
+]

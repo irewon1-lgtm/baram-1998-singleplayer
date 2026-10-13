@@ -1,0 +1,288 @@
+[
+  {
+    "name": "다람쥐",
+    "domain": "monster",
+    "upstream_repository": "project1998/Project1998",
+    "upstream_commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+    "upstream_path": "game-data/mobs.csv",
+    "upstream_selected_fields": {
+      "id": "2",
+      "Exp": 10,
+      "Vita": 18
+    },
+    "KR_selected_fields": {
+      "2000_guide_xp": 5,
+      "2001_guide_xp": 10,
+      "KR_HP": null
+    },
+    "verdict": "MODIFY_FOR_2000_PARTIAL_MATCH_2001",
+    "note": "경험치만 일치. HP18·AI·드롭·외형의 한국판 근거 없음",
+    "complete_entity_match": false
+  },
+  {
+    "name": "토끼",
+    "domain": "monster",
+    "upstream_repository": "project1998/Project1998",
+    "upstream_commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+    "upstream_path": "game-data/mobs.csv",
+    "upstream_selected_fields": {
+      "id": "1",
+      "Exp": 5,
+      "Vita": 10
+    },
+    "KR_selected_fields": {
+      "2000_guide_xp": 5,
+      "2001_guide_xp": 5,
+      "KR_HP": null
+    },
+    "verdict": "PARTIAL_FIELD_MATCH",
+    "note": "경험치5만 대조. HP·외형·드롭 미검증",
+    "complete_entity_match": false
+  },
+  {
+    "name": "목검",
+    "domain": "item",
+    "upstream_repository": "project1998/Project1998",
+    "upstream_commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+    "upstream_path": "game-data/Items.csv",
+    "upstream_selected_fields": {
+      "ItmId": 3001,
+      "ItmBuyPrice": 20,
+      "ItmMinimumSDamage": 10,
+      "ItmMaximumSDamage": 15,
+      "ItmMinimumLDamage": 13,
+      "ItmMaximumLDamage": 16,
+      "ItmMightRequired": 5,
+      "ItmLevel": 0,
+      "ItmDurability": 4000
+    },
+    "KR_selected_fields": {
+      "guide_price": 20,
+      "damage_range": [
+        10,
+        15
+      ],
+      "strength": 5,
+      "level": 0,
+      "durability": null
+    },
+    "verdict": "PARTIAL_FIELD_MATCH",
+    "note": "guide listed price not proved vendor buy/sell; upstream large-target damage13–16 has no KR support",
+    "complete_entity_match": false
+  },
+  {
+    "name": "태백",
+    "domain": "npc",
+    "upstream_repository": "project1998/Project1998",
+    "upstream_commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+    "upstream_path": "game-data/NPCs.csv",
+    "upstream_selected_fields": {
+      "name": "Tabaek",
+      "id": 36,
+      "map_id": 12,
+      "interior_xy": [
+        4,
+        3
+      ]
+    },
+    "KR_selected_fields": {
+      "name": "태백"
+    },
+    "verdict": "ROLE_NAME_CANDIDATE_MODIFY_REQUIRED",
+    "note": "음역·직업 역할 대응 후보; 지도·좌표·대사 자동복사 금지",
+    "complete_entity_match": false
+  },
+  {
+    "name": "해두",
+    "domain": "npc",
+    "upstream_repository": "project1998/Project1998",
+    "upstream_commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+    "upstream_path": "game-data/NPCs.csv",
+    "upstream_selected_fields": {
+      "name": "Haedu",
+      "id": 35,
+      "map_id": 14,
+      "interior_xy": [
+        5,
+        2
+      ]
+    },
+    "KR_selected_fields": {
+      "name": "해두"
+    },
+    "verdict": "ROLE_NAME_CANDIDATE_MODIFY_REQUIRED",
+    "note": "음역·직업 역할 대응 후보; 지도·좌표·대사 자동복사 금지",
+    "complete_entity_match": false
+  },
+  {
+    "name": "마로",
+    "domain": "npc",
+    "upstream_repository": "project1998/Project1998",
+    "upstream_commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+    "upstream_path": "game-data/NPCs.csv",
+    "upstream_selected_fields": {
+      "name": "Maro",
+      "id": 37,
+      "map_id": 16,
+      "interior_xy": [
+        5,
+        4
+      ]
+    },
+    "KR_selected_fields": {
+      "name": "마로"
+    },
+    "verdict": "ROLE_NAME_CANDIDATE_MODIFY_REQUIRED",
+    "note": "음역·직업 역할 대응 후보; 지도·좌표·대사 자동복사 금지",
+    "complete_entity_match": false
+  },
+  {
+    "name": "진선",
+    "domain": "npc",
+    "upstream_repository": "project1998/Project1998",
+    "upstream_commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+    "upstream_path": "game-data/NPCs.csv",
+    "upstream_selected_fields": {
+      "name": "Jinsun",
+      "id": 38,
+      "map_id": 18,
+      "interior_xy": [
+        6,
+        2
+      ]
+    },
+    "KR_selected_fields": {
+      "name": "진선"
+    },
+    "verdict": "ROLE_NAME_CANDIDATE_MODIFY_REQUIRED",
+    "note": "음역·직업 역할 대응 후보; 지도·좌표·대사 자동복사 금지",
+    "complete_entity_match": false
+  },
+  {
+    "name": "예백",
+    "domain": "npc",
+    "upstream_repository": "project1998/Project1998",
+    "upstream_commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+    "upstream_path": "game-data/NPCs.csv",
+    "upstream_selected_fields": {
+      "name": "Yabaek",
+      "id": 41,
+      "map_id": 366,
+      "interior_xy": [
+        6,
+        2
+      ]
+    },
+    "KR_selected_fields": {
+      "name": "예백"
+    },
+    "verdict": "ROLE_NAME_CANDIDATE_MODIFY_REQUIRED",
+    "note": "음역·직업 역할 대응 후보; 지도·좌표·대사 자동복사 금지",
+    "complete_entity_match": false
+  },
+  {
+    "name": "마서",
+    "domain": "npc",
+    "upstream_repository": "project1998/Project1998",
+    "upstream_commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+    "upstream_path": "game-data/NPCs.csv",
+    "upstream_selected_fields": {
+      "name": "Maso",
+      "id": 42,
+      "map_id": 368,
+      "interior_xy": [
+        6,
+        2
+      ]
+    },
+    "KR_selected_fields": {
+      "name": "마서"
+    },
+    "verdict": "ROLE_NAME_CANDIDATE_MODIFY_REQUIRED",
+    "note": "음역·직업 역할 대응 후보; 지도·좌표·대사 자동복사 금지",
+    "complete_entity_match": false
+  },
+  {
+    "name": "처연",
+    "domain": "npc",
+    "upstream_repository": "project1998/Project1998",
+    "upstream_commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+    "upstream_path": "game-data/NPCs.csv",
+    "upstream_selected_fields": {
+      "name": "Eldritch",
+      "id": 39
+    },
+    "KR_selected_fields": {
+      "name": "처연"
+    },
+    "verdict": "DIFFERENT_NAME_CONTENT",
+    "note": "부여주술사/도사 역할만 비슷한 별도NPC; 한글대사와배치 새고증 필요",
+    "complete_entity_match": false
+  },
+  {
+    "name": "선후",
+    "domain": "npc",
+    "upstream_repository": "project1998/Project1998",
+    "upstream_commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+    "upstream_path": "game-data/NPCs.csv",
+    "upstream_selected_fields": {
+      "name": "Song",
+      "id": 40
+    },
+    "KR_selected_fields": {
+      "name": "선후"
+    },
+    "verdict": "DIFFERENT_NAME_CONTENT",
+    "note": "부여주술사/도사 역할만 비슷한 별도NPC; 한글대사와배치 새고증 필요",
+    "complete_entity_match": false
+  },
+  {
+    "name": "헬파이어",
+    "domain": "spell",
+    "upstream_repository": "project1998/Project1998",
+    "upstream_commit": "36905428ff59329be28c6a4579e41f4fd9e9a967",
+    "upstream_path": "game-data/Spells.csv",
+    "upstream_selected_fields": {
+      "id": 3148,
+      "name": "Hellfire",
+      "SplLevel": 0
+    },
+    "KR_selected_fields": {
+      "name": "헬파이어",
+      "learn_level": 99
+    },
+    "verdict": "MAPPING_ONLY_UNVERIFIED_FORMULA",
+    "note": "SplLevel0 cannot substitute for learning condition; SpellLevels/learn costs/runtime formula need separate KR evidence",
+    "complete_entity_match": false
+  },
+  {
+    "name": "NexusTK4.03",
+    "domain": "NA_CLIENT",
+    "verification": "REUSED_PRIOR_METADATA",
+    "source_branch": "research/world-sources-20261013",
+    "source_commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+    "verdict": "UNVERIFIED_ENTITY_OR_GRAPHIC_MATCH",
+    "note": "prior world audit613maps/483shared filenames/38byteidentical withP1998; no KR match proof",
+    "complete_entity_match": false
+  },
+  {
+    "name": "NexusTK4.95",
+    "domain": "NA_INSTALLER",
+    "verification": "REUSED_PRIOR_METADATA",
+    "source_branch": "research/world-sources-20261013",
+    "source_commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+    "verdict": "UNVERIFIED_ENTITY_OR_GRAPHIC_MATCH",
+    "note": "prior hash486f4684; full payload unextracted; no KR item mapping",
+    "complete_entity_match": false
+  },
+  {
+    "name": "한국4.91",
+    "domain": "KR_CLIENT",
+    "verification": "REUSED_PRIOR_METADATA",
+    "source_branch": "research/world-sources-20261013",
+    "source_commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+    "verdict": "UNVERIFIED_ENTITY_OR_GRAPHIC_MATCH",
+    "note": "prior hashf11e448d; EXE4,9,1,0/EPF133/PAL36; archive2000-12-14 claim not independent launch date",
+    "complete_entity_match": false
+  }
+]

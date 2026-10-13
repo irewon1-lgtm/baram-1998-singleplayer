@@ -1,0 +1,255 @@
+{
+  "user_instruction_date": "2026-10-13",
+  "policy": "숫자가 다르면 평균값을 제작용으로 사용한다. 같은 KR개체/직업/필드의 서로 다른 확인값을 각각 한 번씩 산술평균한다. 같은 값의 재게시 횟수는 가중치가 아니다. 원문 수치를 보존하며 실제1998/2001원본 수치라고 주장하지 않는다.",
+  "exclusions": [
+    "미확인 자동후보",
+    "북미/현재클래식",
+    "null",
+    "서로 다른 의미의 필드",
+    "좌표",
+    "문자 설명과 숫자의 충돌",
+    "백호왕800 의심값",
+    "서로 다른 제물 품목을0으로 만들어 합산"
+  ],
+  "numeric_discrepancy_fields_averaged": 5,
+  "values": [
+    {
+      "id": "AVG-001",
+      "region": "KR",
+      "profile": "KR_BLEND_1998_2001",
+      "category": "monster",
+      "name": "다람쥐",
+      "class_scope": null,
+      "field": "experience",
+      "distinct_source_values": [
+        5,
+        10
+      ],
+      "arithmetic_mean": 7.5,
+      "unit": "경험치",
+      "observations": [
+        {
+          "value": 5,
+          "fact_id": "KR-2000-0001",
+          "source_id": "297641cd3e8f",
+          "source_url": "https://web.archive.org/web/20000511021422id_/http://baram.nexon.co.kr:80/guide/dungeon/begin.html",
+          "year": 2000,
+          "source_date": null,
+          "capture_timestamp": "20000511021422",
+          "position": {
+            "xpath": "(//table)[5]/tr[2]",
+            "table_1based": 5,
+            "row_1based": 2
+          }
+        },
+        {
+          "value": 10,
+          "fact_id": "KR-2001-0021",
+          "source_id": "a112c0ab5043",
+          "source_url": "https://web.archive.org/web/20011003195358id_/http://baram.nexon.co.kr:80/guide/middle/dungeon/begin.html",
+          "year": 2001,
+          "source_date": null,
+          "capture_timestamp": "20011003195358",
+          "position": {
+            "xpath": "(//table)[5]/tr[2]",
+            "table_1based": 5,
+            "row_1based": 2
+          }
+        }
+      ],
+      "historical_original_value": false,
+      "rounding": "NONE; fraction retained",
+      "game_runtime_verified": false
+    },
+    {
+      "id": "AVG-002",
+      "region": "KR",
+      "profile": "KR_BLEND_1998_2001",
+      "category": "spell",
+      "name": "건곤대나이",
+      "class_scope": "전사",
+      "field": "learn_money",
+      "distinct_source_values": [
+        1500,
+        5000
+      ],
+      "arithmetic_mean": 3250.0,
+      "unit": "전",
+      "observations": [
+        {
+          "value": 5000,
+          "fact_id": "KR-2000-0115",
+          "source_id": "099322417685",
+          "source_url": "https://web.archive.org/web/20000511154844id_/http://baram.nexon.co.kr:80/guide/magic/fighter.html",
+          "year": 2000,
+          "source_date": null,
+          "capture_timestamp": "20000511154844",
+          "position": {
+            "xpath": "(//table)[4]/tr[13]",
+            "table_1based": 4,
+            "row_1based": 13
+          }
+        },
+        {
+          "value": 1500,
+          "fact_id": "KR-2001-0132",
+          "source_id": "8f225df9fd00",
+          "source_url": "https://web.archive.org/web/20010705223439id_/http://baram.nexon.co.kr:80/guide/middle/magic/fighter.html",
+          "year": 2001,
+          "source_date": null,
+          "capture_timestamp": "20010705223439",
+          "position": {
+            "xpath": "(//table)[4]/tr[24]",
+            "table_1based": 4,
+            "row_1based": 24
+          }
+        }
+      ],
+      "historical_original_value": false,
+      "rounding": "NONE; fraction retained",
+      "game_runtime_verified": false
+    },
+    {
+      "id": "AVG-003",
+      "region": "KR",
+      "profile": "KR_BLEND_1998_2001",
+      "category": "spell",
+      "name": "대지의기원",
+      "class_scope": "전사",
+      "field": "learn_materials.도토리.quantity",
+      "distinct_source_values": [
+        70,
+        80
+      ],
+      "arithmetic_mean": 75.0,
+      "unit": "개",
+      "observations": [
+        {
+          "value": 80,
+          "fact_id": "KR-2000-0105",
+          "source_id": "099322417685",
+          "source_url": "https://web.archive.org/web/20000511154844id_/http://baram.nexon.co.kr:80/guide/magic/fighter.html",
+          "year": 2000,
+          "source_date": null,
+          "capture_timestamp": "20000511154844",
+          "position": {
+            "xpath": "(//table)[4]/tr[3]",
+            "table_1based": 4,
+            "row_1based": 3
+          }
+        },
+        {
+          "value": 70,
+          "fact_id": "KR-2001-0122",
+          "source_id": "8f225df9fd00",
+          "source_url": "https://web.archive.org/web/20010705223439id_/http://baram.nexon.co.kr:80/guide/middle/magic/fighter.html",
+          "year": 2001,
+          "source_date": null,
+          "capture_timestamp": "20010705223439",
+          "position": {
+            "xpath": "(//table)[4]/tr[4]",
+            "table_1based": 4,
+            "row_1based": 4
+          }
+        }
+      ],
+      "historical_original_value": false,
+      "rounding": "NONE; fraction retained",
+      "game_runtime_verified": false
+    },
+    {
+      "id": "AVG-004",
+      "region": "KR",
+      "profile": "KR_BLEND_1998_2001",
+      "category": "spell",
+      "name": "건곤대나이",
+      "class_scope": "전사",
+      "field": "learn_level",
+      "distinct_source_values": [
+        63,
+        80
+      ],
+      "arithmetic_mean": 71.5,
+      "unit": "레벨",
+      "observations": [
+        {
+          "value": 80,
+          "fact_id": "KR-2000-0255",
+          "source_id": "M-netpower-2000_6-159",
+          "source_url": "https://www.gamemeca.com/magazine/view.php?mgz=netpower&ym=2000_6&p=159",
+          "year": 2000,
+          "source_date": "2000-06",
+          "capture_timestamp": null,
+          "position": {
+            "section": "오른쪽상단 밸런싱 박스"
+          },
+          "phase": "before 2000-04-18"
+        },
+        {
+          "value": 63,
+          "fact_id": "KR-2000-0255",
+          "source_id": "M-netpower-2000_6-159",
+          "source_url": "https://www.gamemeca.com/magazine/view.php?mgz=netpower&ym=2000_6&p=159",
+          "year": 2000,
+          "source_date": "2000-06",
+          "capture_timestamp": null,
+          "position": {
+            "section": "오른쪽상단 밸런싱 박스"
+          },
+          "phase": "after 2000-04-18"
+        }
+      ],
+      "historical_original_value": false,
+      "rounding": "NONE; fraction retained",
+      "game_runtime_verified": false,
+      "notes": "당대기사의 변경 전후 값 평균. 날짜별 원래 수치와 별도로 사용."
+    },
+    {
+      "id": "AVG-005",
+      "region": "KR",
+      "profile": "KR_BLEND_1998_2001",
+      "category": "item",
+      "name": "사각방패",
+      "class_scope": null,
+      "field": "armor_class",
+      "distinct_source_values": [
+        -20,
+        -3
+      ],
+      "arithmetic_mean": -11.5,
+      "unit": "AC",
+      "observations": [
+        {
+          "value": -20,
+          "fact_id": "KR-2000-0259",
+          "source_id": "M-netpower-2000_6-159",
+          "source_url": "https://www.gamemeca.com/magazine/view.php?mgz=netpower&ym=2000_6&p=159",
+          "year": 2000,
+          "source_date": "2000-06",
+          "capture_timestamp": null,
+          "position": {
+            "section": "오른쪽상단 밸런싱 박스"
+          },
+          "phase": "before 2000-04-18"
+        },
+        {
+          "value": -3,
+          "fact_id": "KR-2000-0259",
+          "source_id": "M-netpower-2000_6-159",
+          "source_url": "https://www.gamemeca.com/magazine/view.php?mgz=netpower&ym=2000_6&p=159",
+          "year": 2000,
+          "source_date": "2000-06",
+          "capture_timestamp": null,
+          "position": {
+            "section": "오른쪽상단 밸런싱 박스"
+          },
+          "phase": "after 2000-04-18"
+        }
+      ],
+      "historical_original_value": false,
+      "rounding": "NONE; fraction retained",
+      "game_runtime_verified": false,
+      "notes": "당대기사의 변경 전후 값 평균. 날짜별 원래 수치와 별도로 사용."
+    }
+  ]
+}
