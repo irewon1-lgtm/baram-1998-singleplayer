@@ -1,0 +1,56 @@
+{
+  "commits": "1260",
+  "tags": [],
+  "branches": [
+    {
+      "branch": "origin",
+      "head_relative_behind_ahead": "0\t0",
+      "sha": "36905428ff59329be28c6a4579e41f4fd9e9a967"
+    },
+    {
+      "branch": "origin/armor-quests",
+      "head_relative_behind_ahead": "997\t0",
+      "sha": "5fb6db59f1f4bed42d1919b45e69adb09decf362"
+    },
+    {
+      "branch": "origin/cemetery-crypt-warps",
+      "head_relative_behind_ahead": "607\t0",
+      "sha": "a57dd304a9a5d032d29b4597d75d1dcf117b157b"
+    },
+    {
+      "branch": "origin/forgotten-past-orbs",
+      "head_relative_behind_ahead": "598\t0",
+      "sha": "d1c057a5e62789f1658e7e4516cc79ca76487287"
+    },
+    {
+      "branch": "origin/leviathan-talisman-drop-and-fox-spirits",
+      "head_relative_behind_ahead": "968\t0",
+      "sha": "9ae5e92f25140866f2c846908ae2379132788b07"
+    },
+    {
+      "branch": "origin/master",
+      "head_relative_behind_ahead": "0\t0",
+      "sha": "36905428ff59329be28c6a4579e41f4fd9e9a967"
+    },
+    {
+      "branch": "origin/nagnang-shield-quest",
+      "head_relative_behind_ahead": "654\t0",
+      "sha": "7e6e03c5bb0307eb54f8d4b6de778c77eb8cc7df"
+    },
+    {
+      "branch": "origin/poet-whip-quest",
+      "head_relative_behind_ahead": "636\t0",
+      "sha": "1f5fa4ad0d136739c4d9e19c1549f52a6b4986c3"
+    },
+    {
+      "branch": "origin/pr/dagger-uniform-quest",
+      "head_relative_behind_ahead": "655\t0",
+      "sha": "d975a29ebcdb3a6d7dfdfd636b6b2de009de395c"
+    },
+    {
+      "branch": "origin/quest/mage-spirit-stone",
+      "head_relative_behind_ahead": "656\t0",
+      "sha": "b792cc116721d824775d0b829820b22114a51675"
+    }
+  ]
+}

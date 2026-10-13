@@ -1,0 +1,373 @@
+[
+  {
+    "root": "world-isolated/RTK-java-version",
+    "files_scanned": 1029,
+    "hits": [
+      {
+        "path": "world-isolated/RTK-java-version/src/org/rtk/common/Core.java",
+        "line": 49,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/RTK-java-version/luascript/Accepted/speech.lua",
+        "line": 2160,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/RTK-java-version/luascript/Accepted/speech.lua",
+        "line": 2173,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/RTK-java-version/luascript/Accepted/speech.lua",
+        "line": 2179,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/RTK-java-version/luascript/Accepted/speech.lua",
+        "line": 2181,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/RTK-java-version/luascript/Accepted/speech.lua",
+        "line": 2186,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/RTK-java-version/luascript/Accepted/speech.lua",
+        "line": 2189,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/RTK-java-version/luascript/Accepted/speech.lua",
+        "line": 2194,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/RTK-java-version/luascript/Accepted/speech.lua",
+        "line": 2197,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/RTK-java-version/luascript/Accepted/speech.lua",
+        "line": 2203,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/RTK-java-version/luascript/Accepted/speech.lua",
+        "line": 2215,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/RTK-java-version/luascript/Accepted/speech.lua",
+        "line": 2219,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/RTK-java-version/luascript/Accepted/speech.lua",
+        "line": 2225,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/RTK-java-version/luascript/Accepted/speech.lua",
+        "line": 2231,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/RTK-java-version/luascript/Accepted/speech.lua",
+        "line": 2234,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/RTK-java-version/luascript/Accepted/speech.lua",
+        "line": 2240,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/RTK-java-version/luascript/Accepted/speech.lua",
+        "line": 2246,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/RTK-java-version/luascript/Developers/Devs.lua",
+        "line": 113,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/RTK-java-version/luascript/Developers/sys.lua",
+        "line": 50,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/RTK-java-version/luascript/Accepted/NPCs/Common/general_npc_funcs.lua",
+        "line": 2368,
+        "kinds": [
+          "download_or_shell"
+        ]
+      },
+      {
+        "path": "world-isolated/RTK-java-version/luascript/Accepted/NPCs/Common/general_npc_funcs.lua",
+        "line": 2416,
+        "kinds": [
+          "download_or_shell"
+        ]
+      },
+      {
+        "path": "world-isolated/RTK-java-version/database/scripts/2020-07-04-14-47_CreateTables.sql",
+        "line": 1039,
+        "kinds": [
+          "download_or_shell"
+        ]
+      },
+      {
+        "path": "world-isolated/RTK-java-version/database/references/CTK - closing - 08-31-2019.sql",
+        "line": 3609,
+        "kinds": [
+          "download_or_shell"
+        ]
+      },
+      {
+        "path": "world-isolated/RTK-java-version/database/references/CTK - closing - 08-31-2019.sql",
+        "line": 4725,
+        "kinds": [
+          "download_or_shell"
+        ]
+      },
+      {
+        "path": "world-isolated/RTK-java-version/database/references/CTK - closing - 08-31-2019.sql",
+        "line": 5170,
+        "kinds": [
+          "download_or_shell"
+        ]
+      },
+      {
+        "path": "world-isolated/RTK-java-version/database/scripts_dev/2020-07-04-15-15_DenoteBossAndFallRooms.sql",
+        "line": 20,
+        "kinds": [
+          "download_or_shell"
+        ]
+      }
+    ],
+    "result": "STATIC_TRIAGE_ONLY_NOT_MALWARE_CLEARANCE_NOT_EXECUTED"
+  },
+  {
+    "root": "world-isolated/extracted/CoM_NexusTK_Private_Server_Core_Files",
+    "files_scanned": 1415,
+    "hits": [
+      {
+        "path": "world-isolated/extracted/CoM_NexusTK_Private_Server_Core_Files/mithialua/Accepted/speech.lua",
+        "line": 39,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/extracted/CoM_NexusTK_Private_Server_Core_Files/mithialua/Accepted/speech.lua",
+        "line": 42,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/extracted/CoM_NexusTK_Private_Server_Core_Files/mithialua/Accepted/speech.lua",
+        "line": 44,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/extracted/CoM_NexusTK_Private_Server_Core_Files/mithialua/Accepted/speech.lua",
+        "line": 46,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/extracted/CoM_NexusTK_Private_Server_Core_Files/mithialua/Accepted/speech.lua",
+        "line": 49,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/extracted/CoM_NexusTK_Private_Server_Core_Files/mithialua/Accepted/speech.lua",
+        "line": 51,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/extracted/CoM_NexusTK_Private_Server_Core_Files/mithialua/Accepted/speech.lua",
+        "line": 54,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/extracted/CoM_NexusTK_Private_Server_Core_Files/mithialua/Accepted/speech.lua",
+        "line": 57,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/extracted/CoM_NexusTK_Private_Server_Core_Files/mithialua/Accepted/speech.lua",
+        "line": 63,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/extracted/CoM_NexusTK_Private_Server_Core_Files/mithialua/Accepted/speech.lua",
+        "line": 67,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/extracted/CoM_NexusTK_Private_Server_Core_Files/mithialua/Accepted/speech.lua",
+        "line": 70,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/extracted/CoM_NexusTK_Private_Server_Core_Files/mithialua/Accepted/speech.lua",
+        "line": 73,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/extracted/CoM_NexusTK_Private_Server_Core_Files/mithialua/Accepted/speech.lua",
+        "line": 76,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/extracted/CoM_NexusTK_Private_Server_Core_Files/mithialua/Accepted/speech.lua",
+        "line": 79,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/extracted/CoM_NexusTK_Private_Server_Core_Files/mithialua/Accepted/speech.lua",
+        "line": 82,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/extracted/CoM_NexusTK_Private_Server_Core_Files/mithialua/Accepted/speech.lua",
+        "line": 728,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/extracted/CoM_NexusTK_Private_Server_Core_Files/mithialua/Accepted/speech.lua",
+        "line": 1167,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/extracted/CoM_NexusTK_Private_Server_Core_Files/mithialua/Accepted/speech.lua",
+        "line": 1169,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/extracted/CoM_NexusTK_Private_Server_Core_Files/mithialua/Developers/Devs.lua",
+        "line": 116,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/extracted/CoM_NexusTK_Private_Server_Core_Files/mithialua/Developers/sys.lua",
+        "line": 50,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/extracted/CoM_NexusTK_Private_Server_Core_Files/mithialua/Accepted/NPC/dev.lua",
+        "line": 110,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/extracted/CoM_NexusTK_Private_Server_Core_Files/mithialua/Accepted/NPC/dev.lua",
+        "line": 123,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/extracted/CoM_NexusTK_Private_Server_Core_Files/mithialua/Deprecated/NPCs/Real Npcs/Uruzgard/Xanthir.lua",
+        "line": 104,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/extracted/CoM_NexusTK_Private_Server_Core_Files/mithia/src/decrypt/main.c",
+        "line": 287,
+        "kinds": [
+          "process_execution"
+        ]
+      },
+      {
+        "path": "world-isolated/extracted/CoM_NexusTK_Private_Server_Core_Files/mithia/src/decrypt/main.c",
+        "line": 306,
+        "kinds": [
+          "process_execution"
+        ]
+      }
+    ],
+    "result": "STATIC_TRIAGE_ONLY_NOT_MALWARE_CLEARANCE_NOT_EXECUTED"
+  }
+]

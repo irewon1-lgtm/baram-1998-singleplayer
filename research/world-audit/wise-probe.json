@@ -1,0 +1,19 @@
+{
+  "installer": "world-isolated/nexus495.exe",
+  "overlay": 14848,
+  "scope": "Raw DEFLATE bounded scan only; not a complete installation",
+  "hits": [
+    {
+      "offset": 15041,
+      "bytes": 16824,
+      "sha256": "cc5a514ce4d5df729fb4b36431db8cb0ec673b979afd865dd2518c0d993bb5ca",
+      "prefix": "28000000"
+    },
+    {
+      "offset": 20102,
+      "bytes": 168197,
+      "sha256": "0f4e98bcd9d7f12caac204b7c38eb3bf616eebb9479aea38b9c5289cb2ea3cab",
+      "prefix": "08000441"
+    }
+  ]
+}
