@@ -25,8 +25,18 @@
   },
   "steps": {
     "create_public_repo": "PASS",
-    "commit_and_verify": "PENDING_REMOTE_READBACK",
+    "commit_and_verify": "PASS_REMOTE_TREE_AND_BLOB_READBACK",
     "research": "IN_PROGRESS",
     "vertical_slice": "NOT_STARTED"
+  },
+  "github_file_count": 20,
+  "remote_validation": {
+    "tree_paths": 20,
+    "status": "PASS",
+    "original_report_git_blob_sha": "ffc6c2f5d98d9606b13777a677b8ae7cf84fabaf",
+    "original_ledger_git_blob_sha": "92d6b71ece713e2182778dd697620c407f7fa290",
+    "original_zip_git_blob_sha": "3e4668445b3b4893e0179afe44cdea818dbdf80d",
+    "validator_source_git_blob_sha": "fc4b35a4df2509ba50409f68ce99c933802de36a",
+    "remote_runtime_test": "UNVERIFIED_CONTAINER_DNS_NO_CLONE"
   }
 }
