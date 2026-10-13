@@ -1,0 +1,54 @@
+{
+  "verified_at": "2026-10-13T15:00:20.586Z",
+  "repository": "irewon1-lgtm/baram-1998-singleplayer",
+  "branch": "research/restoration-integrated-20261013",
+  "remote_commit": "614ed0f30707abcda98fc29abd3a786f6867da1c",
+  "payload_tree": "8a0fbec1b02d1e7ce451245db5f43a08751a9ccb",
+  "local_prepublication_commit": "73cf74ed493eb4483230ee9751017cce1eb7b98d",
+  "checks": [
+    {
+      "check": "All published files equal local prepared files",
+      "result": "PASS",
+      "files": 143,
+      "mismatches": 0,
+      "extra_files": 0
+    },
+    {
+      "check": "Root tree SHA equals local prepared tree",
+      "result": "PASS",
+      "observed": "8a0fbec1b02d1e7ce451245db5f43a08751a9ccb",
+      "expected": "8a0fbec1b02d1e7ce451245db5f43a08751a9ccb"
+    },
+    {
+      "check": "Remote NUMERIC_SUMMARY equals local file",
+      "result": "PASS"
+    },
+    {
+      "check": "Remote VALIDATION equals local execution log",
+      "result": "PASS"
+    },
+    {
+      "check": "Recorded validation inputs and validator SHA256 unchanged",
+      "result": "PASS",
+      "input_hash_mismatches": 0,
+      "validator_hash_match": true
+    },
+    {
+      "check": "Existing data validation evidence reused",
+      "result": "PASS",
+      "executed_at": "2026-10-13T14:24:59.808588+00:00",
+      "pass_checks": 29,
+      "fail_checks": 0
+    },
+    {
+      "check": "Main branch preserved",
+      "result": "PASS",
+      "sha": "443b49abe97948f59893d3e23f667b0e2eb5e8ff"
+    }
+  ],
+  "original_game_fidelity": "UNVERIFIED",
+  "game_simulations": "NOT_RUN",
+  "actual_gameplay": "NOT_RUN",
+  "paid_work": false,
+  "main_merge": false
+}
