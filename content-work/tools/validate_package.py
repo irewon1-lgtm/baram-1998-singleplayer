@@ -20,7 +20,7 @@ from PIL import Image
 sys.dont_write_bytecode=True
 from common import ROOT, WORK, BASE, canonical, file_sha, lines, load, sha, write
 
-def validate(package, dependency_dirs=(), bundle=None, write_report=True, verify_manifest=False):
+def validate(package, dependency_dirs=(), bundle=None, write_report=True, verify_manifest=False, dependency_bundles=()):
     package=Path(package);schema=load(package/'schema/content-v1.json')
     own=[]
     for p in sorted(package.glob('content-*.jsonl')):
@@ -193,6 +193,21 @@ def validate(package, dependency_dirs=(), bundle=None, write_report=True, verify
         acquire=load(package/'acquisition.json');p=Path(bundle)
         if p.stat().st_size!=acquire['size_bytes'] or file_sha(p)!=acquire['sha256']:fail({},'bundle',str(p),'matching acquisition size/SHA')
         with zipfile.ZipFile(p) as z:
+            bundle_readers={acquire['bundle_id']:z}
+            for dep_path in dependency_bundles:
+                dep_path=Path(dep_path)
+                matches=[load(Path(d)/'acquisition.json') for d in dependency_dirs if (Path(d)/'acquisition.json').exists() and load(Path(d)/'acquisition.json')['file_name']==dep_path.name]
+                if not matches:fail({},'dependency_bundle',dep_path.name,'declared dependency acquisition');continue
+                ac=matches[0]
+                if dep_path.stat().st_size!=ac['size_bytes'] or file_sha(dep_path)!=ac['sha256']:
+                    fail({},'dependency_bundle',dep_path.name,'matching pinned dependency bytes');continue
+                bundle_readers[ac['bundle_id']]=zipfile.ZipFile(dep_path)
+            def layout_bytes(d):
+                ac=d['layout_acquisition'];reader=bundle_readers.get(ac['bundle_id'])
+                if reader is None:raise ValueError('Missing pinned layout bundle '+ac['bundle_id'])
+                raw=reader.read(ac['member'])
+                if sha(raw)!=ac['sha256']:raise ValueError('Layout hash changed '+ac['member'])
+                return raw
             names=z.namelist()
             if len(set(names))!=len(names) or len({n.casefold() for n in names})!=len(names):fail({},'bundle.names',len(names),'unique case-exact paths')
             manifest=load_json_bytes(z.read('PRIVATE_MANIFEST.json'))
@@ -221,7 +236,7 @@ def validate(package, dependency_dirs=(), bundle=None, write_report=True, verify
             placement_ids=set()
             for _,_,r in own:
                 if r['kind']!='map':continue
-                d=r['data'];ac=d['layout_acquisition'];raw=z.read(ac['member'])
+                d=r['data'];ac=d['layout_acquisition'];raw=layout_bytes(d)
                 if sha(raw)!=ac['sha256']:fail(r,'layout_acquisition',ac,'matching layout hash')
                 layout=load_json_bytes(raw);w,h=d['width'],d['height']
                 if (w,h)!=(layout['width'],layout['height']):fail(r,'dimensions',[w,h],'layout dimensions')
@@ -248,9 +263,11 @@ def validate(package, dependency_dirs=(), bundle=None, write_report=True, verify
                             if not dest or dest['kind']!='map':fail(r,'portal.destination',pl,'known map');continue
                             target=dest['data'];tx,ty=pl['destination_xy']
                             if not 0<=tx<target['width'] or not 0<=ty<target['height']:fail(r,'portal.destination_xy',pl,'within target map')
-                            target_layout=load_json_bytes(z.read(target['layout_acquisition']['member']))
+                            target_layout=load_json_bytes(layout_bytes(target))
                             if target_layout['collision_masks'][ty*target['width']+tx]==15:fail(r,'portal.destination_collision',pl,'walkable target')
                 if d.get('variant_active') is not False and not d['portals']:fail(r,'portals',[],'at least one reachable return route')
+            for reader in bundle_readers.values():
+                if reader is not z:reader.close()
     if verify_manifest:
         m=load(package/'manifest.json')
         for f in m['files']:
@@ -271,7 +288,7 @@ def load_json_bytes(data):return json.loads(data.decode('utf-8'))
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('package');p.add_argument('--dependency',action='append',default=[]);p.add_argument('--bundle')
-    p.add_argument('--verify-manifest',action='store_true');p.add_argument('--report-only',action='store_true')
-    a=p.parse_args();r=validate(a.package,a.dependency,a.bundle,not a.report_only,a.verify_manifest)
+    p.add_argument('--verify-manifest',action='store_true');p.add_argument('--report-only',action='store_true');p.add_argument('--dependency-bundle',action='append',default=[])
+    a=p.parse_args();r=validate(a.package,a.dependency,a.bundle,not a.report_only,a.verify_manifest,a.dependency_bundle)
     print(json.dumps({'batch_id':r['batch_id'],'result':r['result'],'checks':r['checks'],'errors':r['errors'][:12]},ensure_ascii=False))
     raise SystemExit(r['result']!='PASS')

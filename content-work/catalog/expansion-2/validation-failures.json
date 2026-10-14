@@ -1,0 +1,1 @@
+{"batch_id":"WK-CONTENT-003","cause":"new reference walker incorrectly included instance-placement and bundle identifiers in definition references","failure_count":1981,"fields":{"references":1981},"repair":"exclude those identifiers just as existing schema semantics require; no reference/schema validation disabled","result":"FAIL","scope":"DATA_ONLY"}

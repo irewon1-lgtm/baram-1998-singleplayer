@@ -24,7 +24,7 @@ def data_refs(data, assets):
     def walk(v,k='definition'):
         if isinstance(v,dict):
             for name,x in v.items():
-                if name.endswith('_id') and isinstance(x,str) and x.startswith(('kr.','wk.')):
+                if name not in ('placement_id','bundle_id','source_id','rule_id','original_map_id') and name.endswith('_id') and isinstance(x,str) and x.startswith(('kr.','wk.')):
                     key=(name,x)
                     if key not in seen:out.append(ref(name,x));seen.add(key)
                 elif name.endswith('_ids') and isinstance(x,list):
