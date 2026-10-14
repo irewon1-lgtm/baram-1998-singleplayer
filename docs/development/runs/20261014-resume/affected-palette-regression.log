@@ -1,0 +1,9 @@
+test_export_cli_hashes_status_and_invalid_palette (test_legacy_assets.LegacyAssetsTests.test_export_cli_hashes_status_and_invalid_palette) ... ok
+test_malformed_palettes_fail_closed (test_legacy_assets.LegacyAssetsTests.test_malformed_palettes_fail_closed) ... ok
+test_palette_explicit_index_rgb_reserved_alpha_and_ranges (test_legacy_assets.LegacyAssetsTests.test_palette_explicit_index_rgb_reserved_alpha_and_ranges) ... ok
+test_raw_rgb_palette_and_empty_palette_bank (test_legacy_assets.LegacyAssetsTests.test_raw_rgb_palette_and_empty_palette_bank) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.178s
+
+OK

@@ -109,10 +109,15 @@ class Frame:
     indices: bytes
     alpha: bytes
 
-    def rgba(self, palette: Palette) -> bytes:
+    def rgba(self, palette: Palette, recolor_byte: int = 0) -> bytes:
+        if not 0 <= recolor_byte <= 255:
+            raise AssetError('Recolor byte outside 0..255')
         result = bytearray()
         for index, alpha in zip(self.indices, self.alpha):
-            result.extend((*palette.colors[index], alpha))
+            # Measured in the original NA4.95 binary at 0x428d56/0x428e1c.
+            # Outline/skin indices below 0x30 stay unchanged; the 8-bit sum wraps.
+            lookup = (index + recolor_byte * 8) & 255 if index >= 0x30 else index
+            result.extend((*palette.colors[lookup], alpha))
         return bytes(result)
 
 

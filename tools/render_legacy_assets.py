@@ -38,6 +38,7 @@ def main():
     parser.add_argument('--palette', required=True, help='PAL entry name in same DAT or external PAL path')
     parser.add_argument('--palette-sha256', required=True, help='Expected selected PAL payload SHA256')
     parser.add_argument('--palette-index', type=int, required=True)
+    parser.add_argument('--recolor-byte', type=int, default=0, help='Explicit NA4.95 ramp byte; table palette index stays independent')
     parser.add_argument('--frames', required=True, help='Explicit zero-based frames, e.g. 0-3,8')
     parser.add_argument('--version', required=True, choices=['KR-4.91', 'NA-4.03', 'NA-4.66', 'NA-4.95', 'OWN_FIXTURE'])
     parser.add_argument('--out', required=True, help='Private PNG output directory outside checkout')
@@ -45,7 +46,7 @@ def main():
     args = parser.parse_args()
     report = dict(executed_at=datetime.datetime.now(datetime.timezone.utc).isoformat(), version=args.version,
                   source=str(Path(args.container).resolve()), expected_container_sha256=args.container_sha256,
-                  epf=args.epf, palette=args.palette, palette_index=args.palette_index,
+                  epf=args.epf, palette=args.palette, palette_index=args.palette_index, recolor_byte=args.recolor_byte,
                   rights='OWN_FIXTURE' if args.version == 'OWN_FIXTURE' else 'NO_DISTRIBUTION_PERMISSION_VERIFIED',
                   decoded_render_status='NOT_RUN', screen_status='NOT_RUN', semantic_identification_status='NOT_RUN',
                   public_resource_bytes_included=False, frames=[])
@@ -86,7 +87,7 @@ def main():
             row = dict(index=index, left=frame.left, top=frame.top, width=frame.width, height=frame.height,
                        status='EMPTY_FRAME', screen_status='NOT_RUN', semantic_status='NOT_RUN')
             if frame.width and frame.height:
-                rgba = frame.rgba(palette)
+                rgba = frame.rgba(palette, args.recolor_byte)
                 png = png_bytes(frame.width, frame.height, rgba)
                 destination = output / f'frame_{index:06d}.png'
                 if destination.is_symlink():
