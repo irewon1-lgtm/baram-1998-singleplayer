@@ -51,6 +51,8 @@ jobs:
         run: |
           python -m unittest discover -s tests -p 'test_windows*.py' -v
           if ($LASTEXITCODE) { throw 'Packaging gate failed' }
+          python tools/restore_private_runtime.py --vault vault --out vault/runtime
+          if ($LASTEXITCODE) { throw 'Private input integrity/restore failed; delivery blocked' }
           python tools/windows_ci.py build --runtime vault/runtime --template vault/runtime/template-win64.exe --godot "$env:GODOT" --out player-build
           if ($LASTEXITCODE) { throw 'Build/export failed' }
       - name: Actual Windows EXE startup and live input/save/restart regression

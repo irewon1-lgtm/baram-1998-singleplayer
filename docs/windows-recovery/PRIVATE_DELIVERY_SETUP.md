@@ -17,7 +17,7 @@
 ## Work가 이어서 수행할 설정
 
 1. GitHub 웹 설정 경로 사용이 승인되면 계정을 확인하고 위 비공개 저장소를 생성한다. 공개 생성 후 변경하는 방식을 쓰지 않는다.
-2. 준비된 private runtime seed의 `runtime/` 및 `.gitattributes`를 비공개 저장소에 보존한다. 그래픽·음향·콘텐츠 943개 원본 바이트는 그대로 유지한다.
+2. 준비된 private runtime seed는 비공개 저장소의 `baram-private-runtime.part000`부터 순서대로 분할 보존한다. `private-runtime-manifest.json`이 각 조각 및 전체 ZIP의 SHA256을 고정한다. CI가 `tools/restore_private_runtime.py`로 무결성·경로·CRC를 검사한 뒤 `vault/runtime/`으로 복원한다. 그래픽·음향·콘텐츠 943개 원본 바이트는 그대로 유지한다. 브라우저 전송 크기 제한 때문에 입력만 분할하며, 사용자에게 전달하는 게임은 하나의 ZIP이다.
 3. 해당 비공개 저장소 하나에만 Contents read/write와 Metadata read 권한을 갖는 인증을 연결한다. 토큰을 대화/로그/공개 Git에 출력하지 않는다.
 4. 소스 저장소 환경 `baram-windows-private`에 `BARAM_PRIVATE_REPO_TOKEN` Secret 및 `BARAM_PRIVATE_REPOSITORY` 변수(다른 실제 이름이면 그 이름)를 등록한다. 개발 브랜치에서만 이 환경을 사용한다.
 5. 동일 수정 소스의 전체 Windows EXE 자동 실행을 실시하고 오류가 있으면 원인부터 최소 수정한다. Linux나 fixture 결과로 Windows 전체 PASS를 쓰지 않는다.
@@ -31,5 +31,5 @@ Git CLI push도 인증 부재로 실패했다. 코드 게시 및 공개 Actions 
 
 Windows 변환을 Work에 다시 요청할 필요가 없도록 위 연결은 한 번만 설정한다.
 게임 코드 변경은 개발 브랜치에 정상 커밋하면 된다. 원본 자산/비공개 콘텐츠를 변경한 경우에는 개발의 일부로 비공개 runtime 및 해시 명세도 같은 버전으로 갱신한다.
-`.gitattributes`의 `runtime/** -text`를 보존해 Windows checkout의 CRLF 변환으로 원본 해시가 변하지 않도록 한다.
+`.gitattributes`의 `*.part* -text`, `runtime/** -text`를 보존해 Windows checkout의 CRLF 변환으로 원본 해시가 변하지 않도록 한다.
 누락되거나 손상된 비공개 runtime은 자동으로 빌드/배포를 중단한다.
