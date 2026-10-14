@@ -257,11 +257,13 @@ def empty_release():
 
 
 class PackageStore:
-    def __init__(self, root, baseline, capabilities=(), bundles=None):
+    def __init__(self, root, baseline, capabilities=(), bundles=None, member_dirs=None, selection=None):
         self.root = Path(root)
         self.baseline = copy.deepcopy(baseline)
         self.capabilities = set(capabilities)
         self.bundles = bundles or {}
+        self.member_dirs = member_dirs or {}
+        self.selection = selection or {}
 
     def pointer(self):
         path = self.root / "ACTIVE.json"
@@ -298,6 +300,11 @@ class PackageStore:
         data = path.read_bytes()
         if sha(data) != previous["sha256"]:
             fail("PREVIOUS_INTEGRITY", "Previous release is also invalid", status="CONFLICT")
+        release=decode(data)
+        for item in release['assets'].values():
+            content=read_bounded(path.parent/'files',item['stored_path'])
+            if len(content)!=item['bytes'] or sha(content)!=item['sha256']:
+                fail('PREVIOUS_ASSET_INTEGRITY','Previous asset is invalid; keep current pointer',status='CONFLICT',file=item['stored_path'])
         atomic_write(self.root / "ACTIVE.json", encode(previous))
         return self.load()
 
@@ -371,8 +378,11 @@ class PackageStore:
             if prior["manifest_sha256"] != receipt["manifest_sha256"]:
                 fail("BATCH_MUTATED", "Same batch ID has different manifest bytes", "CONFLICT",
                      expected=prior["manifest_sha256"], current=receipt["manifest_sha256"])
-            receipt.update(import_status="ALREADY_IMPORTED", applied_ids=prior["applied_ids"], release_id=self.pointer()["release_id"])
-            return receipt
+            wanted=self.selection.get(manifest['batch_id'])
+            if prior.get('status')=='IMPORTED' or (wanted is not None and set(wanted)<=set(prior['applied_ids'])):
+                receipt.update(import_status="ALREADY_IMPORTED", applied_ids=prior["applied_ids"], held_ids=prior.get('held_ids',[]),
+                               original_import_status=prior.get('status'), release_id=self.pointer()["release_id"])
+                return receipt
         for dependency in manifest.get("dependencies", []):
             if not isinstance(dependency, dict) or not dependency.get("batch_id"):
                 fail("DEPENDENCY_FORMAT", "Dependencies must identify a fixed batch/hash or commit")
@@ -464,6 +474,12 @@ class PackageStore:
         if missing:
             receipt['held_ids']=sorted(r.get('target_id',r['id']) for _,r in incoming)
             fail("CAPABILITY_MISSING", "Required execution handlers not available", "PENDING_CAPABILITY", current=missing)
+        all_incoming=incoming
+        wanted=set(self.selection.get(manifest['batch_id'],effective_ids))
+        if wanted-effective_ids:fail('SELECTION_UNKNOWN','Selected IDs absent from fixed package',current=sorted(wanted-effective_ids))
+        old_applied=set(prior['applied_ids']) if prior else set()
+        incoming=[(file,r) for file,r in all_incoming if r.get('target_id',r['id']) in wanted-old_applied]
+        selected_ids={r.get('target_id',r['id']) for _,r in incoming}|{r['id'] for _,r in incoming}
         candidate = copy.deepcopy(release)
         supersedes = manifest.get("supersedes", [])
         if isinstance(supersedes, str):
@@ -473,7 +489,7 @@ class PackageStore:
             if old not in release["imports"]:
                 fail("SUPERSEDES_MISSING", "Replacement relation points to unknown imported batch", "WAITING_DEPENDENCY", current=old)
         # Whole ID space before resolving any forward reference.
-        available = set(self.baseline) | set(candidate["records"]) | ids
+        available = set(self.baseline) | set(candidate["records"]) | selected_ids
         external = manifest.get("external_references", manifest.get("external_refs", []))
         for ref in reference_ids(external):
             if ref not in set(self.baseline) | set(release["records"]):
@@ -483,7 +499,7 @@ class PackageStore:
             rid = record["id"]
             for ref in reference_ids(record["references"]):
                 if ref not in available:
-                    fail("REFERENCE_MISSING", "Unresolved forward/external reference", file=file, content_id=rid, field="references", current=ref)
+                    fail("REFERENCE_MISSING", "Selected scope lacks referenced content", status="WAITING_DEPENDENCY" if ref in effective_ids else "REJECTED", file=file, content_id=rid, field="references", current=ref)
             if record["operation"] == "add":
                 existing = candidate["records"].get(rid)
                 if rid in self.baseline or (existing and existing["batch_id"] not in superseded):
@@ -526,6 +542,9 @@ class PackageStore:
                     # Keep complete proposed runtime definition separate from
                     # original numeric values; never replace the base record.
                     target_record['runtime_definition']=copy.deepcopy(record['data'])
+                    target_record['runtime_source_mode']=record['source_mode']
+                    target_record['runtime_provenance_refs']=record['provenance_refs']
+                    target_record['runtime_source_commit']=source_commit
                 target_record["data"] = normalize_units(target_record["data"], target)
                 target_record.setdefault("patch_history", []).append(dict(batch_id=manifest["batch_id"], source_commit=source_commit,
                                                                             proposal_id=rid, provenance_refs=record["provenance_refs"], source_mode=record["source_mode"]))
@@ -551,11 +570,17 @@ class PackageStore:
                     staging=self.root/'.acquired'/digest
                     if not staging.exists():extract_zip(supplied,staging)
                     bundle_inputs[bundle_id]=staging
+                elif self.member_dirs.get(bundle_id):
+                    bundle_inputs[bundle_id]=Path(self.member_dirs[bundle_id]).resolve()
+                    receipt['acquisition_method']='INDIVIDUAL_PUBLISHED_MEMBER_HASHES_FROM_PINNED_LOCAL_REBUILD'
+                    receipt['whole_private_zip_acquired']=False
         for rid, record in candidate["records"].items():
-            if record["kind"] != "asset" or record.get("batch_id") != manifest["batch_id"]:
+            if record["kind"] not in ('asset','map') or (record.get("batch_id") != manifest["batch_id"] and not any(h['batch_id']==manifest['batch_id'] for h in record.get('patch_history',[]))):
                 continue
-            path = record["data"].get("path")
-            acquisition=record['data'].get('acquisition',{})
+            data_definition=record.get('runtime_definition',record['data'])
+            path = data_definition.get("path")
+            acquisition=data_definition.get('layout_acquisition',{}) if record['kind']=='map' else data_definition.get('acquisition',{})
+            if record['kind']=='map' and not acquisition:continue
             if not path and acquisition.get('bundle_id'):
                 bundle=acquisition['bundle_id'];member=acquisition.get('member')
                 if bundle not in bundle_inputs:
@@ -563,15 +588,37 @@ class PackageStore:
                 data=read_bounded(bundle_inputs[bundle],member)
                 if sha(data)!=acquisition.get('sha256'):fail('BUNDLE_MEMBER_HASH','Acquired member differs from asset definition',file=member,content_id=rid)
                 members={member: data}
-                meta=record['data'].get('metadata',{})
+                meta=data_definition.get('metadata',{})
+                if record['kind']=='map':
+                    layout=decode(data,member)
+                    if len(layout.get('layers',{}).get('ground',[]))!=int(data_definition['width'])*int(data_definition['height']):fail('LAYOUT_CELLS','Layout dimensions disagree',file=member,content_id=rid)
+                    shared=layout.get('objects_member')
+                    if shared:members[shared]=read_bounded(bundle_inputs[bundle],shared)
+                elif data_definition.get('asset_type') in ('frame_sheet','tile_sheet') and meta.get('pages'):
+                    table=decode(data,member);pages={p['path']:p for p in meta['pages']}
+                    if len(table.get('frames',[]))!=data_definition.get('frame_count'):fail('FRAME_COUNT','Sheet count differs from definition',file=member,content_id=rid)
+                    for index,frame in enumerate(table['frames']):
+                        page=pages.get(frame.get('path'));rect=frame.get('region',[]);pivot=frame.get('pivot',[])
+                        if not page or frame.get('frame')!=index or len(rect)!=4 or len(pivot)!=2 or any(not isinstance(x,int) for x in rect+pivot):fail('FRAME_METADATA','Invalid index/page/region/pivot',file=member,content_id=rid,current=index)
+                        x,y,w,h=rect
+                        if min(x,y,w,h)<0 or x+w>page['width'] or y+h>page['height']:fail('FRAME_BOUNDS','Frame exceeds pinned PNG dimensions',file=member,content_id=rid,current=index)
+                elif data_definition.get('asset_type')=='audio':
+                    import io,wave
+                    try:
+                        with wave.open(io.BytesIO(data)) as audio:
+                            if [audio.getnchannels(),audio.getsampwidth(),audio.getframerate(),audio.getnframes()]!=[meta[k] for k in ('channels','sample_width','rate','samples')]:fail('AUDIO_METADATA','WAV dimensions differ',file=member,content_id=rid)
+                    except (wave.Error,EOFError) as error:fail('AUDIO_DECODE',str(error),file=member,content_id=rid)
                 for page in meta.get('pages',[]):
                     pixel=read_bounded(bundle_inputs[bundle],page['path'])
                     if len(pixel)!=page.get('size_bytes') or sha(pixel)!=page['sha256']:fail('BUNDLE_PAGE_HASH','Pinned PNG differs',file=page['path'],content_id=rid)
                     from PIL import Image
                     import io
-                    with Image.open(io.BytesIO(pixel)) as image:
-                        if image.width*image.height>16777216:fail('PAGE_PIXEL_BOUND','Decoded image exceeds pixel bound',file=page['path'])
-                        image.verify()
+                    try:
+                        with Image.open(io.BytesIO(pixel)) as image:
+                            if image.width*image.height>16777216:fail('PAGE_PIXEL_BOUND','Decoded image exceeds pixel bound',file=page['path'])
+                            if [image.width,image.height]!=[page['width'],page['height']]:fail('PAGE_DIMENSIONS','PNG dimensions disagree',file=page['path'])
+                            image.verify()
+                    except (OSError,ValueError,SyntaxError) as error:fail('PAGE_DECODE',str(error),file=page['path'],content_id=rid)
                     members[page['path']]=pixel
                 if meta.get('atlas_member'):
                     pixel=read_bounded(bundle_inputs[bundle],meta['atlas_member'])
@@ -591,9 +638,15 @@ class PackageStore:
             candidate["assets"][rid] = dict(stored_path=stored_path, sha256=sha(data), bytes=len(data))
             asset_bytes[stored_path] = data
         candidate["generation"] += 1
+        applied=sorted(set(applied)|old_applied)
+        held=sorted(effective_ids-set(applied))
+        import_status='PARTIALLY_IMPORTED' if held else 'IMPORTED'
+        applied_counts={}
+        for _,r in all_incoming:
+            if r.get('target_id',r['id']) in applied:applied_counts[r['kind']]=applied_counts.get(r['kind'],0)+1
         candidate["imports"][manifest["batch_id"]] = dict(manifest_sha256=receipt["manifest_sha256"], source_commit=source_commit,
             base_game_commit=manifest["base_game_commit"], applied_before_game_commit=game_commit,
-            applied_ids=sorted(set(applied)), tool_version=TOOL_VERSION, supersedes=supersedes, status="IMPORTED", fixture=fixture)
+            applied_ids=applied, held_ids=held, tool_version=TOOL_VERSION, supersedes=supersedes, status=import_status, fixture=fixture)
         payload = encode(candidate)
         release_id = sha(payload)
         directory = self.root / "releases" / release_id
@@ -612,7 +665,7 @@ class PackageStore:
                        bytes=len(payload), generation=candidate["generation"], previous=previous_summary)
         atomic_write(self.root / "ACTIVE.json", encode(pointer))
         self.load()  # record only the actual validated active version
-        receipt.update(import_status="IMPORTED", applied_ids=sorted(set(applied)), applied_counts=count,
+        receipt.update(import_status=import_status, applied_ids=applied, held_ids=held, applied_counts=applied_counts,
                        release_id=release_id, active_generation=candidate["generation"], fixture=fixture)
         if interrupt == "after_activate":
             receipt["receipt_recovery"] = "ACTIVE_OWNS_IMPORT_LEDGER_REIMPORT_RECONSTRUCTS_RECEIPT"

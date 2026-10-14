@@ -52,7 +52,12 @@ def execute(args):
     if index.get("protocol_id") != PROTOCOL:
         raise ValueError("Work handoff protocol mismatch")
     capabilities = json.loads((repository / "integration/content-import/capabilities.json").read_text())["implemented"]
-    store = PackageStore(args.runtime_root, baseline(repository, args.private_assets), capabilities)
+    def assignments(values):
+        return dict(value.split('=',1) for value in values)
+    selections={}
+    for batch,path in assignments(args.selection).items():selections[batch]=json.loads(Path(path).read_text())
+    store = PackageStore(args.runtime_root, baseline(repository, args.private_assets), capabilities,
+                         bundles=assignments(args.bundle),member_dirs=assignments(args.members),selection=selections)
     receipts = []
     with tempfile.TemporaryDirectory(prefix="baram-work-snapshot-", dir=args.staging_root) as temp:
         for entry in index.get("packages", []):
@@ -91,6 +96,9 @@ if __name__ == "__main__":
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--repo", default=str(ROOT));p.add_argument("--work-commit")
     p.add_argument("--runtime-root", required=True);p.add_argument("--private-assets")
+    p.add_argument('--bundle',action='append',default=[],help='bundle_id=verified ZIP path')
+    p.add_argument('--members',action='append',default=[],help='bundle_id=private pinned-member rebuild directory')
+    p.add_argument('--selection',action='append',default=[],help='batch_id=JSON list of exact selected effective IDs')
     p.add_argument("--staging-root", default="/tmp");p.add_argument("--receipts", default=str(ROOT / "integration/content-import/receipts"))
     p.add_argument("--report", required=True)
     raise SystemExit(execute(p.parse_args()))

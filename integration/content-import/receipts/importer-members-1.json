@@ -1,0 +1,14 @@
+{
+  "protocol_id": "BARAM_PARALLEL_V1",
+  "result": "PASS",
+  "checks": 29,
+  "scope": "SYNTHETIC_FOCUSED_INTAKE_AND_RECOVERY_NOT_PLAYBACK",
+  "command": "python -m unittest discover -s tests -p test_content_import.py",
+  "stdout": ".............................\n----------------------------------------------------------------------\nRan 29 tests in 0.065s\n\nOK\n",
+  "source_sha256": {
+    "tools/baram_content.py": "51055a1d8e25dac7181da5f8ac9637c87c816ab0f0ed9caa7dd69b3335917053",
+    "tools/import_work_content.py": "6ebdc4222e95d34cc8d228184a9087d4921f2e6568c83aeb3ba8f138261cc76d",
+    "tests/test_content_import.py": "c8f9849437da3c7680fea087fe2aa5674b3a9c2f98668e0df96023e78f7a41ad"
+  },
+  "time": "2026-10-14T11:33:01.598453+00:00"
+}

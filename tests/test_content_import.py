@@ -113,4 +113,43 @@ class IntakeTests(unittest.TestCase):
         r=self.store.import_package(p,COMMIT,GAME,fixture=True);self.assertEqual(r["import_status"],"REJECTED");self.assertEqual(r["errors"][0]["code"],"SCHEMA_VALIDATION")
 
 
+    def test_partial_scope_extends_without_duplicate_or_repatch(self):
+        first=record('test.item.first');second=record('test.item.second')
+        p=package(self.root/'partial',[first,second])
+        self.store.selection={'synthetic-1':{'test.item.first'}}
+        r=self.store.import_package(p,COMMIT,GAME,fixture=True)
+        self.assertEqual(r['import_status'],'PARTIALLY_IMPORTED');self.assertEqual(r['held_ids'],['test.item.second'])
+        self.assertEqual(self.store.import_package(p,COMMIT,GAME,fixture=True)['import_status'],'ALREADY_IMPORTED')
+        self.store.selection={}
+        r=self.store.import_package(p,COMMIT,GAME,fixture=True)
+        self.assertEqual(r['import_status'],'IMPORTED');self.assertEqual(len(self.store.load()['records']),2)
+
+    def test_partial_scope_does_not_resolve_unapplied_reference(self):
+        a=record('test.item.first');a['references']=['test.item.second']
+        p=package(self.root/'partial',[a,record('test.item.second')])
+        self.store.selection={'synthetic-1':{'test.item.first'}}
+        r=self.store.import_package(p,COMMIT,GAME,fixture=True)
+        self.assertEqual(r['import_status'],'WAITING_DEPENDENCY');self.assertIsNone(self.store.pointer())
+
+    def test_published_absence_guard_preserves_source_values(self):
+        p=record('test.item.proposal');p.update(operation='propose_patch',target_id='legacy.item.sword',
+            data={'name':'runtime sword','stats':{'damage_max':8}},changes=[{'path':'runtime_definition','before':{'exists':False},'after':{'name':'runtime sword'},'reason':'test','provenance_ref':'test'}])
+        r=self.run_package([p]);self.assertEqual(r['import_status'],'IMPORTED')
+        active=self.store.load()['records']['legacy.item.sword']
+        self.assertEqual(active['data']['values']['damage_max'],5)
+        self.assertEqual(active['runtime_definition']['stats']['damage_max'],8)
+        r=self.run_package([p],'other');self.assertEqual(r['import_status'],'CONFLICT')
+
+    def test_rebuilt_members_require_exact_published_hash(self):
+        raw=b'not-a-real-wave';a=record('test.asset.audio','asset',{'name':'synthetic','asset_type':'blob','acquisition':{'bundle_id':'test.bundle','member':'audio.bin','sha256':sha(raw)},'metadata':{}})
+        p=package(self.root/'member',[a]);acquisition=encode({'bundle_id':'test.bundle','size_bytes':1,'sha256':'a'*64})
+        (p/'acquisition.json').write_bytes(acquisition);m=decode((p/'manifest.json').read_bytes());m['files'].append({'path':'acquisition.json','bytes':len(acquisition),'sha256':sha(acquisition)});(p/'manifest.json').write_bytes(encode(m))
+        directory=self.root/'rebuild';directory.mkdir();(directory/'audio.bin').write_bytes(b'wrong')
+        self.store.member_dirs={'test.bundle':directory}
+        r=self.store.import_package(p,COMMIT,GAME,fixture=True)
+        self.assertEqual(r['import_status'],'REJECTED');self.assertIsNone(self.store.pointer())
+        (directory/'audio.bin').write_bytes(raw)
+        r=self.store.import_package(p,COMMIT,GAME,fixture=True)
+        self.assertEqual(r['import_status'],'IMPORTED');self.assertFalse(r['whole_private_zip_acquired'])
+
 if __name__ == "__main__":unittest.main()
