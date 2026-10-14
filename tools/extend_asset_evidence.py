@@ -21,12 +21,22 @@ def run(a):
     actors=json.loads((assets/'actors.json').read_text())
     sources=json.loads((assets/'source_tiles/registry.json').read_text())
     reports=[];tiles=set();frames=set();entered=set();casts=set();sounds=set()
-    prefixes=['source-screen-1','content-screen-1','content-screen-2','content-screen-fixed-1','content-screen-fixed-2','content-actions-screen','cure-actions-screen','town-all-screen','natural-progress-screen']
+    tile_refs=collections.defaultdict(set);frame_refs=collections.defaultdict(set)
+    prefixes=['source-screen-1','content-screen-1','content-screen-2','content-screen-fixed-1','content-screen-fixed-2','content-actions-screen','cure-actions-screen','town-all-screen','town-all-screen-fixed','town-all-screen-resume','town-all-screen-resume2','town-all-screen-last-room','natural-progress-screen','gear-guide-screen','gear-guide-screen-fixed','expansion-unpacked-screen']
     for folder in prefixes:
-        for p in sorted((private/folder).rglob('*-report.json')):
+        candidates=sorted((private/folder).rglob('*-report.json'))+sorted((private/folder).rglob('partial-checks.json'))
+        for p in candidates:
             r=json.loads(p.read_text());reports.append(dict(path=str(p.relative_to(private)),sha256=digest(p),status=r['status'],scope=r.get('scope'),checks=len(r['checks'])))
             tiles.update(r.get('rendered_tile_ids',[]));frames.update(r.get('rendered_actor_frames',[]))
-            entered.add(r['player']['map'])
+            for asset_id in r.get('rendered_tile_ids',[]):tile_refs[asset_id].add(str(p.relative_to(private)))
+            for asset_id in r.get('rendered_actor_frames',[]):frame_refs[asset_id].add(str(p.relative_to(private)))
+            if 'player' in r:entered.add(r['player']['map'])
+            # A resumed save carries previous completed rooms. Only successful
+            # checks in this actual run prove new scene entry; placement is not
+            # evidence of visibility of every tile in that scene.
+            for check in r['checks']:
+                if check.get('status')=='PASS' and check.get('name','').startswith('town_room_enter_'):
+                    entered.add(check['name'].removeprefix('town_room_enter_'))
             for event in r.get('events',[]):
                 kind=event['event'];v=event['details']
                 if kind=='map_changed':entered.add(v['map'])
@@ -35,6 +45,16 @@ def run(a):
     # Retired old effect keys are preserved in the atlas but no longer called by
     # the current TBL-driven skill renderer. They do not count as current use.
     frames={f for f in frames if not f.startswith(('effect_heal:','effect_damage:'))}
+    map_inventory=json.loads((assets/'source_maps/inventory.json').read_text())
+    connected_by_file={m['source_file']:m for m in world['maps']}
+    for source_map in map_inventory:
+        scene=connected_by_file.get(source_map['file'])
+        source_map['game_connection']=scene['id'] if scene else 'NOT_CONNECTED'
+        source_map['application_status']='NORMAL_GAME_REACHED' if scene and scene['id'] in entered else 'CONNECTED_NOT_EXERCISED' if scene else source_map['status']
+        source_map['visual_review']='GAME_SCREEN_CONTEXT_NOT_INDIVIDUAL_FULL_MAP_REVIEW' if scene and scene['id'] in entered else 'NOT_REVIEWED'
+    write(assets/'source_maps/inventory.json',map_inventory)
+    map_content_groups=collections.defaultdict(list)
+    for m in world['maps']:map_content_groups[m['source_sha256']].append(m['id'])
     placement=collections.Counter();locations=[];map_usage={}
     for m in world['maps']:
         counts=collections.Counter()
@@ -61,6 +81,7 @@ def run(a):
                  game_use=int(f['asset_id'] in tiles),map_placement_count=placement[f['asset_id']],
                  connected_to_game=placement[f['asset_id']]>0,visual_review='NOT_INDIVIDUALLY_REVIEWED_SOURCE_MAP_CONTEXT_SEPARATE',
                  use_positions_private_file='source_maps/asset-use-locations.jsonl')
+        f['runtime_evidence_reports']=sorted(tile_refs[f['asset_id']])
         f['unused_reason']=None if f['game_use'] else 'CONNECTED_SOURCE_POSITION_NOT_EXERCISED' if f['connected_to_game'] else 'NORMAL_DECODED_NATIVE_MAP_OR_DECOR_ROLE_NOT_CONNECTED'
         source_rows.append(f)
     uploaded['source_frames']=source_rows
@@ -69,7 +90,7 @@ def run(a):
         f['historical_game_use']=max(int(f.get('historical_game_use',0)),int(f['game_use']))
         f['game_use']=int(f['asset_id'] in tiles);f['source_map_placement_count']=parent_placements[f['asset_id']]
         f['connected_to_game']=parent_placements[f['asset_id']]>0
-        f['runtime_evidence_reports']=[r['path'] for r in reports] if f['game_use'] else []
+        f['runtime_evidence_reports']=sorted(tile_refs[f['asset_id']])
         if f['game_use']:f['unused_reason']=None;f['application_status']='NORMAL_GAME_RENDERED_EXACT_RGBA_ALIAS'
         elif parent_placements[f['asset_id']]:f['unused_reason']='CONNECTED_SOURCE_MAP_POSITION_NOT_REACHED_BY_CAPTURE_ROUTE';f['application_status']='CONNECTED_NOT_RENDERED'
         elif f['asset_id'] in matched_uploaded:f['unused_reason']='NORMAL_DECODED_SOURCE_EQUIVALENT_NOT_SELECTED_BY_CONNECTED_MAP_LAYOUT';f['application_status']='NORMAL_DECODED_UNCONNECTED'
@@ -95,16 +116,25 @@ def run(a):
             canonical=f"KR491/{spec['epf']}/{f['frame']}/pal{pal}/tint{spec['recolor_byte']}"
             review=reviewed.get((spec['epf'],f['frame'],f['rgba_sha256']),'DIRECT_MAGNIFIED_UI_REVIEW' if key=='ui_border' else 'NOT_INDIVIDUALLY_REVIEWED')
             used=alias in frames
+            connected=True
+            if category=='character':connected=index<12 if key=='ghost' else index<52 or 72<=index<80
+            elif category=='npc':connected=key=='innkeeper' or 6<=index<9
+            elif category=='effect':connected=not key.startswith('effect_')
+            elif key=='ui_bars':connected=index<2
             reason=None if used else 'REPLACED_BY_TBL_SEQUENCE_ROLE' if key.startswith('effect_') else 'RESERVED_OTHER_MOTION_NEEDS_GAMEPLAY_BINDING' if category=='character' and index>=80 else 'CONNECTED_ACTION_OR_DIRECTION_NOT_EXERCISED' if category in ['equipment','monster','npc','effect','icon','ui'] else 'REGISTERED_POSE_NOT_EXERCISED'
             if not used and category=='character' and 52<=index<=71:reason='BOW_MOTION_AVAILABLE_BUT_ZERO_FRAME_BOW_EPF_NO_WEAPON_BINDING'
+            if not used and key=='ghost' and index>=12:reason='GHOST_OTHER_MOTIONS_NOT_CONNECTED'
+            if not used and category=='npc' and not connected:reason='NPC_DIRECTION_NOT_SELECTED_IN_CURRENT_GAME_DATA'
+            if not used and key=='ui_bars' and not connected:reason='THIRD_BAR_ROLE_UNRESOLVED_NOT_CONNECTED'
             row=dict(asset_id=alias,canonical_asset_id=canonical,category=category,original_epf=spec['epf'],original_frame=f['frame'],
                      original_source='KR-4.91/NWind.dat/'+spec['epf']+'.epf',rgba_sha256=f['rgba_sha256'],
                      palette_index=pal,recolor_byte=spec['recolor_byte'],source_kind=spec['source_kind'],
                      automatic_status='PASS_BOUNDED_DECODE_PALETTE_AND_ATLAS',visual_review=review,
-                     engine_registration='PASS_LIVE_TEXTURE_AND_FRAME_TABLE',game_use=int(used),unused_reason=reason,
+                     engine_registration='PASS_LIVE_TEXTURE_AND_FRAME_TABLE',connected_to_game=connected,game_use=int(used),unused_reason=reason,
+                     application_status='NORMAL_GAME_RENDERED' if used else 'CONNECTED_NOT_EXERCISED' if connected else 'NORMAL_DECODED_NOT_CONNECTED',
                      parent_and_recipe='game/data/runtime_bindings.json; tools/build_playable_assets.py',
                      game_connection='main.gd actor/UI/effect dispatch from equipment/motion/NPC data',
-                     runtime_evidence_reports=[r['path'] for r in reports] if used else [])
+                     runtime_evidence_reports=sorted(frame_refs[alias]))
             actor_rows.append(row);categories[category].append(row)
     actor_doc=dict(frames=actor_rows,processed=len(actor_rows),registered=len(actor_rows),
                    individual_contact_review=sum(not r['visual_review'].startswith('NOT') for r in actor_rows),
@@ -146,8 +176,28 @@ def run(a):
           'Read all source PCM headers; separate real engine attack/hit/skill/level voices and mixed PCM signal verified.',
           'Only event-bound actually played files count as use; human audible review is NOT_RUN.',
           'Four source WAV event replacements applied to real combat/skills/level UI.','Identify original event-to-WAV table/listen to remaining exact filenames; do not call them unnecessary.')
+    member_doc=json.loads((RUN/'source-member-inventory.json').read_text())
+    member_groups=collections.defaultdict(list)
+    for member in member_doc['members']:member_groups[member['sha256']].append(member['asset_id'])
+    raw_epf=[]
+    for member in member_doc['members']:
+        if member['format']!='.epf':continue
+        stem=Path(member['asset_id']).stem.lower()
+        connected_frames=sorted({r['original_frame'] for r in actor_rows if member['source']=='KR-4.91/NWind.dat' and r['original_epf'].lower()==stem})
+        if stem in ['tilea','tileb','tilec'] and member['source'] in ['KR-4.91/NWind.dat','NA-4.95/NexusTK.dat']:continue
+        count=member.get('frames')
+        raw_epf.append(dict(asset_file_id=member['asset_id'],sha256=member['sha256'],source_frames=count,
+                            unexported_frame_ids=sorted(set(range(count))-set(connected_frames)) if isinstance(count,int) else None,
+                            connected_source_frame_ids=connected_frames,identical_file_ids=member_groups[member['sha256']],
+                            status='FRAME_TABLE_CHECKED_NOT_ALL_RGBA_DECODED_OR_CLASSIFIED' if isinstance(count,int) and count else member['internal_inspection'],
+                            actual_attempt='Read header, frame count and bounded frame-table entries; selected gameplay families decoded through existing PAL/TBL dispatcher.',
+                            result='Selected source IDs only are in actor-status-current.json; file-table validation does not prove every frame, palette or motion.',
+                            remaining_action='Resolve per-family palette/tint/motion role and bounded pixel decode; classify at useful content locations, not a gallery.'))
     write(RUN/'unused-resolution-current.json',dict(issues=issues,scope='Exact source/runtime IDs; grouped causes; unresolved is not resolved',
+        remaining_epf_families=raw_epf,raw_source_members=len(member_doc['members']),
+        raw_unique_member_content=len(member_groups),duplicate_file_groups=[dict(sha256=k,ids=v) for k,v in member_groups.items() if len(v)>1],
         additional_file_and_map_blockers='source-member-inventory.json; source_maps/inventory.json; town-door-resolution.json',
+        map_inventory=map_inventory,
         source_coordinates_private=dict(path='source_maps/asset-use-locations.jsonl',sha256=digest(loc),rows=len(locations))))
     summary=dict(status='PASS_EXECUTED_SCOPES_WIP_ENTIRE_RESTORATION',before=dict(uploaded_tiles=14835,reviewed=1536,placed_unique=149,rendered_unique=138,actor_frames=1137,actor_rendered=239,maps=8,natural_level=5),
         uploaded_tiles=dict(processed=14835,unique_rgba=uploaded['unique_rgba'],reviewed_contact=14835,registered=14835,
@@ -159,19 +209,34 @@ def run(a):
         combined_tile_unique_rgba=len({f['rgba_sha256'] for f in uploaded['frames']+source_rows}),
         actual_rendered_unique_tile_rgba=len({f['rgba_sha256'] for f in uploaded['frames']+source_rows if f['game_use']}),
         same_picture_aliases_are_not_double_unique_assets=True,
-        categories={k:dict(registered=len(v),unique_rgba=len({r['rgba_sha256'] for r in v}),reviewed=sum(not r['visual_review'].startswith('NOT') for r in v),
+        categories={k:dict(registered=len(v),unique_rgba=len({r['rgba_sha256'] for r in v}),reviewed=sum(not r['visual_review'].startswith('NOT') for r in v),connected=sum(r['connected_to_game'] for r in v),
                           rendered=sum(r['game_use'] for r in v),unused=sum(not r['game_use'] for r in v)) for k,v in categories.items()},
         actor_frames=actor_doc, # removed below to keep the summary compact
         sounds=dict(registered=len(actors['sounds']),actual_played_unique=len(sounds),human_audible_review='NOT_RUN'),
         maps=dict(connected=len(world['maps']),actual_entered=len(entered),entered=sorted(entered),source_files=2363,structure_valid=1738,
+                  unique_source_file_content=len({m['sha256'] for m in map_inventory}),
+                  connected_unique_source_layouts=len(map_content_groups),
+                  duplicate_connected_layouts=[dict(sha256=k,scene_ids=v) for k,v in map_content_groups.items() if len(v)>1],
                   usage=map_usage,placements=sum(placement.values()),unique_source_ids=len(placement),original_identity='NA495_NATIVE_LAYOUT_NOT_KR1998_IDENTITY'),
         skills=dict(job_level30_profiles=66,common_distinct=3,source_profile_records=72,actual_cast_job_skill_pairs=len(casts),cast_ids=sorted(casts),
                     four_job_level30='CONTROLLED_FIXTURE_SKILL_EQUIPMENT_TEST_NOT_NATURAL_PLAYTHROUGH'),
         generated=dict(new_independent_bitmaps=0,source_outfit_color_parameter_variants=6,source_sequences=6,source_ui_frames=12,
                        authored_npcs=sum(len(m['npcs']) for m in world['maps']),authored_region_links=sum(len(m['portals']) for m in world['maps']),
                        new_layouts=0,native_layouts=len(world['maps']),legacy_authored_layouts_preserved=8),
-        reports=reports,original_similarity_percent=None,natural_full_four_job_level30='NOT_RUN',level31_99_and_advancement='NOT_COMPLETE',
+        reports=reports,original_similarity_percent=None,natural_level=6,natural_kills=28,
+        natural_evidence='natural-progress-screen/natural-progress/natural-progress-report.json',
+        natural_full_four_job_level30='NOT_RUN',level31_99_and_advancement='NOT_COMPLETE',
         asset_coordinate_ledger_private_sha256=digest(loc))
+    # Frozen intake baseline from afe0252, not current runtime IDs reinterpreted
+    # with today's source bindings. Changed species/palettes remain explicit.
+    summary['before_categories']={
+        'character':dict(registered=900,unique_rgba=544,reviewed=12,rendered=96),
+        'equipment':dict(registered=40,unique_rgba=16,reviewed=4,rendered=20),
+        'monster':dict(registered=124,unique_rgba=122,reviewed=32,rendered=100),
+        'npc':dict(registered=48,unique_rgba=47,reviewed=0,rendered=12),
+        'icon':dict(registered=9,unique_rgba=8,reviewed=0,rendered=3),
+        'effect':dict(registered=16,unique_rgba=16,reviewed=8,rendered=8),
+        'ui':dict(registered=0,unique_rgba=0,reviewed=0,rendered=0)}
     summary.pop('actor_frames')
     write(RUN/'asset-game-summary.json',summary)
     print(json.dumps({k:summary[k] for k in ['uploaded_tiles','source_tiles','categories','sounds','generated']},ensure_ascii=False))

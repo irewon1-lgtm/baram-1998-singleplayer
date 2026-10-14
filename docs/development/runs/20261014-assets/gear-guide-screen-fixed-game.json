@@ -1,0 +1,2926 @@
+{
+  "audio_events": [
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "playing": true,
+      "time": 24.2972050000001,
+      "voice": "attack"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 24.2972050000001,
+      "voice": "hit"
+    }
+  ],
+  "checks": [
+    {
+      "name": "gear_fixture_not_natural_growth",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "gear_return_city",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "gear_actual_shop",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "gear_shop_stock_초록색 도포",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "gear_shop_purchase_초록색 도포",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "gear_shop_stock_보라 남자갑옷",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "gear_shop_purchase_보라 남자갑옷",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "gear_shop_stock_장창",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "gear_shop_purchase_장창",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "gear_actual_equip_초록색 도포",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_gear-0",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "gear_actual_equip_보라 남자갑옷",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_gear-1",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "gear_actual_equip_장창",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_gear-2",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "gear_source_field",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "source_spear_actual_combat",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "source_spear_frames_actually_drawn",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_spear-combat",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "corrected_source_room_entry",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_corrected-guide-position",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "corrected_guide_reachable_in_normal_room",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "corrected_room_normal_exit",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_gear-saved",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "engine_audio_mix_recorded",
+      "observed": {
+
+      },
+      "status": "PASS"
+    }
+  ],
+  "elapsed_ms": 30935,
+  "events": [
+    {
+      "details": {
+        "equipped": "철검",
+        "level": 30,
+        "map": "village"
+      },
+      "event": "save_restored",
+      "time": 0.0
+    },
+    {
+      "details": {
+        "loaded_save": true,
+        "registered_tiles": 50104,
+        "renderer": "gl_compatibility"
+      },
+      "event": "ready",
+      "time": 0.0
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 89,
+        "y": 113
+      },
+      "event": "moved",
+      "time": 0.133
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 89,
+        "y": 114
+      },
+      "event": "moved",
+      "time": 0.518
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 89,
+        "y": 115
+      },
+      "event": "moved",
+      "time": 0.766
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 89,
+        "y": 116
+      },
+      "event": "moved",
+      "time": 1.01
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 89,
+        "y": 117
+      },
+      "event": "moved",
+      "time": 1.248
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 89,
+        "y": 118
+      },
+      "event": "moved",
+      "time": 1.502
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 89,
+        "y": 119
+      },
+      "event": "moved",
+      "time": 1.753
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 89,
+        "y": 120
+      },
+      "event": "moved",
+      "time": 1.998
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 90,
+        "y": 120
+      },
+      "event": "moved",
+      "time": 2.248
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 90,
+        "y": 121
+      },
+      "event": "moved",
+      "time": 2.5
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 90,
+        "y": 122
+      },
+      "event": "moved",
+      "time": 2.742
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 89,
+        "y": 122
+      },
+      "event": "moved",
+      "time": 2.984
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 88,
+        "y": 122
+      },
+      "event": "moved",
+      "time": 3.223
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 87,
+        "y": 122
+      },
+      "event": "moved",
+      "time": 3.454
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 86,
+        "y": 122
+      },
+      "event": "moved",
+      "time": 3.704
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 85,
+        "y": 122
+      },
+      "event": "moved",
+      "time": 3.95
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 85,
+        "y": 123
+      },
+      "event": "moved",
+      "time": 4.189
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 85,
+        "y": 124
+      },
+      "event": "moved",
+      "time": 4.426
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 85,
+        "y": 125
+      },
+      "event": "moved",
+      "time": 4.674
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 85,
+        "y": 126
+      },
+      "event": "moved",
+      "time": 4.917
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 85,
+        "y": 127
+      },
+      "event": "moved",
+      "time": 5.159
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 85,
+        "y": 128
+      },
+      "event": "moved",
+      "time": 5.4
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 85,
+        "y": 129
+      },
+      "event": "moved",
+      "time": 5.637
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 85,
+        "y": 130
+      },
+      "event": "moved",
+      "time": 5.889
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 85,
+        "y": 131
+      },
+      "event": "moved",
+      "time": 6.133
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 85,
+        "y": 132
+      },
+      "event": "moved",
+      "time": 6.381
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 85,
+        "y": 133
+      },
+      "event": "moved",
+      "time": 6.615
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 85,
+        "y": 134
+      },
+      "event": "moved",
+      "time": 6.87
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 85,
+        "y": 135
+      },
+      "event": "moved",
+      "time": 7.12
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 85,
+        "y": 136
+      },
+      "event": "moved",
+      "time": 7.365
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 85,
+        "y": 137
+      },
+      "event": "moved",
+      "time": 7.618
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 85,
+        "y": 138
+      },
+      "event": "moved",
+      "time": 7.867
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 84,
+        "y": 138
+      },
+      "event": "moved",
+      "time": 8.11
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 83,
+        "y": 138
+      },
+      "event": "moved",
+      "time": 8.361
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 82,
+        "y": 138
+      },
+      "event": "moved",
+      "time": 8.596
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 81,
+        "y": 138
+      },
+      "event": "moved",
+      "time": 8.851
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 80,
+        "y": 138
+      },
+      "event": "moved",
+      "time": 9.086
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 79,
+        "y": 138
+      },
+      "event": "moved",
+      "time": 9.337
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 78,
+        "y": 138
+      },
+      "event": "moved",
+      "time": 9.576
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 77,
+        "y": 138
+      },
+      "event": "moved",
+      "time": 9.815
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 76,
+        "y": 138
+      },
+      "event": "moved",
+      "time": 10.059
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 75,
+        "y": 138
+      },
+      "event": "moved",
+      "time": 10.302
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 74,
+        "y": 138
+      },
+      "event": "moved",
+      "time": 10.541
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 73,
+        "y": 138
+      },
+      "event": "moved",
+      "time": 10.795
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 72,
+        "y": 138
+      },
+      "event": "moved",
+      "time": 11.046
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 71,
+        "y": 138
+      },
+      "event": "moved",
+      "time": 11.293
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 70,
+        "y": 138
+      },
+      "event": "moved",
+      "time": 11.528
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 69,
+        "y": 138
+      },
+      "event": "moved",
+      "time": 11.779
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 69,
+        "y": 139
+      },
+      "event": "moved",
+      "time": 12.031
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 69,
+        "y": 140
+      },
+      "event": "moved",
+      "time": 12.281
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 69,
+        "y": 141
+      },
+      "event": "moved",
+      "time": 12.526
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 69,
+        "y": 142
+      },
+      "event": "moved",
+      "time": 12.775
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 69,
+        "y": 143
+      },
+      "event": "moved",
+      "time": 13.009
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 69,
+        "y": 144
+      },
+      "event": "moved",
+      "time": 13.249
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 69,
+        "y": 145
+      },
+      "event": "moved",
+      "time": 13.48
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 69,
+        "y": 146
+      },
+      "event": "moved",
+      "time": 13.714
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 69,
+        "y": 147
+      },
+      "event": "moved",
+      "time": 13.947
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 69,
+        "y": 148
+      },
+      "event": "moved",
+      "time": 14.177
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 69,
+        "y": 149
+      },
+      "event": "moved",
+      "time": 14.415
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 69,
+        "y": 150
+      },
+      "event": "moved",
+      "time": 14.654
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 69,
+        "y": 151
+      },
+      "event": "moved",
+      "time": 14.898
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 69,
+        "y": 152
+      },
+      "event": "moved",
+      "time": 15.136
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 69,
+        "y": 153
+      },
+      "event": "moved",
+      "time": 15.385
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 68,
+        "y": 153
+      },
+      "event": "moved",
+      "time": 15.625
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 68,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 15.875
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 67,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 16.107
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 66,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 16.342
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 65,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 16.576
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 64,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 16.813
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 63,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 17.062
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 62,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 17.316
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 61,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 17.561
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 17.811
+    },
+    {
+      "details": {
+        "id": "village-shop-0",
+        "role": "shop"
+      },
+      "event": "npc_dialogue",
+      "time": 17.877
+    },
+    {
+      "details": {
+        "buy": true,
+        "gold": 995668,
+        "item": "초록색 도포",
+        "success": false
+      },
+      "event": "trade",
+      "time": 18.416
+    },
+    {
+      "details": {
+        "buy": true,
+        "gold": 995508,
+        "item": "보라 남자갑옷",
+        "success": true
+      },
+      "event": "trade",
+      "time": 18.474
+    },
+    {
+      "details": {
+        "buy": true,
+        "gold": 995108,
+        "item": "장창",
+        "success": true
+      },
+      "event": "trade",
+      "time": 18.532
+    },
+    {
+      "details": {
+        "item": "초록색 도포",
+        "success": true
+      },
+      "event": "equipped",
+      "time": 18.739
+    },
+    {
+      "details": {
+        "item": "보라 남자갑옷",
+        "success": true
+      },
+      "event": "equipped",
+      "time": 19.239
+    },
+    {
+      "details": {
+        "item": "장창",
+        "success": true
+      },
+      "event": "equipped",
+      "time": 19.763
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 62,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 20.067
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 63,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 20.305
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 64,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 20.555
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 65,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 20.81
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 66,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 21.059
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 67,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 21.304
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 21.552
+    },
+    {
+      "details": {
+        "id": "village-travel-3",
+        "role": "travel"
+      },
+      "event": "npc_dialogue",
+      "time": 21.608
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 30,
+        "y": 56
+      },
+      "event": "map_changed",
+      "time": 21.683
+    },
+    {
+      "details": {
+        "classification": "SINGLEPLAYER_COMPLETION",
+        "destination": "field"
+      },
+      "event": "guide_travel",
+      "time": 21.683
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 29,
+        "y": 56
+      },
+      "event": "moved",
+      "time": 21.748
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 28,
+        "y": 56
+      },
+      "event": "moved",
+      "time": 21.982
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "field",
+        "x": 28,
+        "y": 55
+      },
+      "event": "moved",
+      "time": 22.217
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 27,
+        "y": 55
+      },
+      "event": "moved",
+      "time": 22.45
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 26,
+        "y": 55
+      },
+      "event": "moved",
+      "time": 22.69
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 25,
+        "y": 55
+      },
+      "event": "moved",
+      "time": 22.928
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "field",
+        "x": 25,
+        "y": 56
+      },
+      "event": "moved",
+      "time": 23.16
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "field",
+        "x": 25,
+        "y": 57
+      },
+      "event": "moved",
+      "time": 23.398
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 26,
+        "y": 57
+      },
+      "event": "moved",
+      "time": 23.628
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 27,
+        "y": 57
+      },
+      "event": "moved",
+      "time": 23.861
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "turned",
+      "time": 24.092
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-2"
+      },
+      "event": "attack_started",
+      "time": 24.131
+    },
+    {
+      "details": {
+        "damage": 118,
+        "hp": -108.0,
+        "impact_time": 0.165880666666667,
+        "skill": "",
+        "source": "melee",
+        "target": "field-2"
+      },
+      "event": "damage_applied",
+      "time": 24.297
+    },
+    {
+      "details": {
+        "drops": [
+          {
+            "item": "토끼고기",
+            "quantity": 1
+          }
+        ],
+        "gold": 1,
+        "id": "field-2",
+        "level": 30,
+        "xp": 5.0
+      },
+      "event": "monster_killed",
+      "time": 24.297
+    },
+    {
+      "details": {
+        "item": "토끼고기",
+        "map": "field",
+        "quantity": 1,
+        "x": 28,
+        "y": 57
+      },
+      "event": "item_picked_up",
+      "time": 24.836
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "field",
+        "x": 27,
+        "y": 56
+      },
+      "event": "moved",
+      "time": 25.127
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 28,
+        "y": 56
+      },
+      "event": "moved",
+      "time": 25.367
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 29,
+        "y": 56
+      },
+      "event": "moved",
+      "time": 25.599
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 30,
+        "y": 56
+      },
+      "event": "moved",
+      "time": 25.83
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 26.061
+    },
+    {
+      "details": {
+        "id": "field-travel-0",
+        "role": "travel"
+      },
+      "event": "npc_dialogue",
+      "time": 26.103
+    },
+    {
+      "details": {
+        "map": "village",
+        "x": 59,
+        "y": 152
+      },
+      "event": "map_changed",
+      "time": 26.163
+    },
+    {
+      "details": {
+        "classification": "SINGLEPLAYER_COMPLETION",
+        "destination": "village"
+      },
+      "event": "guide_travel",
+      "time": 26.163
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 59,
+        "y": 153
+      },
+      "event": "moved",
+      "time": 26.246
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 59,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 26.478
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 60,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 26.72
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 61,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 26.951
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 62,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 27.202
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 63,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 27.442
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 64,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 27.694
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 65,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 27.948
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 66,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 28.183
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 67,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 28.436
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 28.667
+    },
+    {
+      "details": {
+        "id": "village-travel-3",
+        "role": "travel"
+      },
+      "event": "npc_dialogue",
+      "time": 28.722
+    },
+    {
+      "details": {
+        "map": "town-room-50",
+        "x": 9,
+        "y": 18
+      },
+      "event": "map_changed",
+      "time": 29.393
+    },
+    {
+      "details": {
+        "classification": "SINGLEPLAYER_COMPLETION",
+        "destination": "town-room-50"
+      },
+      "event": "guide_travel",
+      "time": 29.393
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 29.715
+    },
+    {
+      "details": {
+        "id": "town-room-50-service",
+        "role": "travel"
+      },
+      "event": "npc_dialogue",
+      "time": 29.747
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "town-room-50",
+        "x": 9,
+        "y": 19
+      },
+      "event": "moved",
+      "time": 30.062
+    },
+    {
+      "details": {
+        "map": "village",
+        "x": 46,
+        "y": 114
+      },
+      "event": "map_changed",
+      "time": 30.062
+    },
+    {
+      "details": {
+        "sha256": "13339ffecfdd151bd790f2f80dbac8f5985c53bc6230bc2dd4f4f2861ab7d202",
+        "success": true
+      },
+      "event": "save_written",
+      "time": 30.311
+    }
+  ],
+  "player": {
+    "armor_equipped": "보라 남자갑옷",
+    "buffs": {
+      "누리의빛": 0.0,
+      "누리의힘": 0.0,
+      "이중공격": 0.0
+    },
+    "cooldowns": {
+      "경수": 0.0,
+      "금수": 0.0,
+      "누리의기원": 0.0,
+      "누리의빛": 0.0,
+      "누리의힘": 0.0,
+      "대지의기원": 0.0,
+      "대지의빛": 0.0,
+      "동해의기원": 0.0,
+      "뢰진주(풍뢰)": 0.0,
+      "무영보법": 0.0,
+      "물품감정": 0.0,
+      "바다의 빛": 0.0,
+      "백열주(지)": 0.0,
+      "비영사천문": 0.0,
+      "성황령": 0.0,
+      "이중공격": 0.0,
+      "자무주(수)": 0.0,
+      "화염주(화)": 0.0
+    },
+    "direction": 2,
+    "durability": {
+      "목도": 1000,
+      "장창": 2999,
+      "철검": 3000
+    },
+    "equipped": "장창",
+    "gold": 995109,
+    "growth_log": [
+      {
+        "from": 1,
+        "hp_gain": 48,
+        "job": "평민",
+        "mp_gain": 36
+      },
+      {
+        "from": 2,
+        "hp_gain": 49,
+        "job": "평민",
+        "mp_gain": 33
+      },
+      {
+        "from": 3,
+        "hp_gain": 53,
+        "job": "평민",
+        "mp_gain": 32
+      },
+      {
+        "from": 4,
+        "hp_gain": 46,
+        "job": "평민",
+        "mp_gain": 36
+      },
+      {
+        "from": 5,
+        "hp_gain": 56,
+        "job": "도적",
+        "mp_gain": 24
+      },
+      {
+        "from": 6,
+        "hp_gain": 58,
+        "job": "도적",
+        "mp_gain": 24
+      },
+      {
+        "from": 7,
+        "hp_gain": 60,
+        "job": "도적",
+        "mp_gain": 25
+      },
+      {
+        "from": 8,
+        "hp_gain": 61,
+        "job": "도적",
+        "mp_gain": 24
+      },
+      {
+        "from": 9,
+        "hp_gain": 56,
+        "job": "도적",
+        "mp_gain": 24
+      },
+      {
+        "from": 10,
+        "hp_gain": 56,
+        "job": "도적",
+        "mp_gain": 26
+      },
+      {
+        "from": 11,
+        "hp_gain": 62,
+        "job": "도적",
+        "mp_gain": 27
+      },
+      {
+        "from": 12,
+        "hp_gain": 56,
+        "job": "도적",
+        "mp_gain": 25
+      },
+      {
+        "from": 13,
+        "hp_gain": 63,
+        "job": "도적",
+        "mp_gain": 26
+      },
+      {
+        "from": 14,
+        "hp_gain": 63,
+        "job": "도적",
+        "mp_gain": 26
+      },
+      {
+        "from": 15,
+        "hp_gain": 56,
+        "job": "도적",
+        "mp_gain": 27
+      },
+      {
+        "from": 16,
+        "hp_gain": 57,
+        "job": "도적",
+        "mp_gain": 25
+      },
+      {
+        "from": 17,
+        "hp_gain": 62,
+        "job": "도적",
+        "mp_gain": 26
+      },
+      {
+        "from": 18,
+        "hp_gain": 57,
+        "job": "도적",
+        "mp_gain": 25
+      },
+      {
+        "from": 19,
+        "hp_gain": 57,
+        "job": "도적",
+        "mp_gain": 26
+      },
+      {
+        "from": 20,
+        "hp_gain": 58,
+        "job": "도적",
+        "mp_gain": 27
+      },
+      {
+        "from": 21,
+        "hp_gain": 61,
+        "job": "도적",
+        "mp_gain": 25
+      },
+      {
+        "from": 22,
+        "hp_gain": 61,
+        "job": "도적",
+        "mp_gain": 25
+      },
+      {
+        "from": 23,
+        "hp_gain": 63,
+        "job": "도적",
+        "mp_gain": 24
+      },
+      {
+        "from": 24,
+        "hp_gain": 61,
+        "job": "도적",
+        "mp_gain": 26
+      },
+      {
+        "from": 25,
+        "hp_gain": 59,
+        "job": "도적",
+        "mp_gain": 27
+      },
+      {
+        "from": 26,
+        "hp_gain": 60,
+        "job": "도적",
+        "mp_gain": 24
+      },
+      {
+        "from": 27,
+        "hp_gain": 56,
+        "job": "도적",
+        "mp_gain": 26
+      },
+      {
+        "from": 28,
+        "hp_gain": 59,
+        "job": "도적",
+        "mp_gain": 25
+      },
+      {
+        "from": 29,
+        "hp_gain": 59,
+        "job": "도적",
+        "mp_gain": 27
+      }
+    ],
+    "hotbar": [
+      "물품감정",
+      "비영사천문",
+      "물품감정"
+    ],
+    "hp": 1723,
+    "hp_max": 1723,
+    "inventory": {
+      "도토리": 0,
+      "목도": 1,
+      "뱀고기": 0,
+      "보라 남자갑옷": 1,
+      "연두색 남자도복": 1,
+      "장창": 1,
+      "철검": 1,
+      "초록색 도포": 1,
+      "초보 회복약": 11,
+      "토끼고기": 2,
+      "호랑이고기": 0
+    },
+    "job": "도적",
+    "kills": 5,
+    "level": 30,
+    "map": "village",
+    "mp": 808,
+    "mp_max": 808,
+    "name": "자료통합검증",
+    "quests": [],
+    "rank": 0,
+    "rng_state": "5925585658821259820",
+    "skill_page": 0,
+    "skills": [
+      "기초 회복",
+      "비영사천문",
+      "성황령",
+      "물품감정",
+      "누리의기원",
+      "대지의기원",
+      "누리의빛",
+      "금수",
+      "누리의힘",
+      "대지의빛",
+      "뢰진주(풍뢰)",
+      "화염주(화)",
+      "자무주(수)",
+      "백열주(지)",
+      "동해의기원",
+      "무영보법",
+      "경수",
+      "바다의 빛",
+      "이중공격"
+    ],
+    "strength": 34,
+    "town_verified": [
+      "town-room-5",
+      "town-room-6",
+      "town-room-7",
+      "town-room-8",
+      "town-room-9",
+      "town-room-10",
+      "town-room-19",
+      "town-room-20",
+      "town-room-28",
+      "town-room-29",
+      "town-room-30",
+      "town-room-31",
+      "town-room-36",
+      "town-room-37",
+      "town-room-38",
+      "town-room-43",
+      "town-room-50",
+      "town-room-70",
+      "town-room-80",
+      "town-room-90",
+      "town-room-121",
+      "town-room-1011",
+      "town-room-3400"
+    ],
+    "validation_fixture": "CONTROLLED_LEVEL30_NOT_NATURAL_PLAYTHROUGH",
+    "visited": [
+      "village",
+      "village",
+      "rogue_guild",
+      "field",
+      "town-room-5",
+      "town-room-43",
+      "town-room-10",
+      "cave",
+      "town-room-6",
+      "town-room-7",
+      "town-room-8",
+      "town-room-9",
+      "town-room-19",
+      "town-room-20",
+      "town-room-28",
+      "town-room-29",
+      "town-room-30",
+      "town-room-31",
+      "town-room-36",
+      "town-room-37",
+      "town-room-38",
+      "town-room-50",
+      "town-room-70",
+      "town-room-80",
+      "town-room-90",
+      "town-room-121",
+      "town-room-1011",
+      "town-room-3400"
+    ],
+    "world_revision": "source-maps-2",
+    "x": 46,
+    "xp2": 1472700,
+    "y": 114
+  },
+  "registered_tile_sources": 6,
+  "registered_tiles": 50104,
+  "rendered_actor_frames": [
+    "cloth_1:19",
+    "head_1:19",
+    "iron_weapon:7",
+    "ui_border:0",
+    "ui_border:1",
+    "ui_border:2",
+    "ui_border:3",
+    "ui_border:4",
+    "ui_border:5",
+    "ui_border:6",
+    "ui_border:7",
+    "ui_bars:0",
+    "ui_bars:1",
+    "cloth_1:20",
+    "head_1:20",
+    "iron_weapon:8",
+    "cloth_1:18",
+    "head_1:18",
+    "iron_weapon:6",
+    "iron_weapon:10",
+    "cloth_1:22",
+    "head_1:22",
+    "iron_weapon:11",
+    "cloth_1:23",
+    "head_1:23",
+    "iron_weapon:9",
+    "cloth_1:21",
+    "head_1:21",
+    "cloth_1:17",
+    "head_1:17",
+    "iron_weapon:5",
+    "cloth_1:15",
+    "head_1:15",
+    "iron_weapon:3",
+    "cloth_1:16",
+    "head_1:16",
+    "iron_weapon:4",
+    "merchant:7",
+    "teacher:7",
+    "priest:7",
+    "merchant:8",
+    "teacher:8",
+    "priest:8",
+    "teacher:6",
+    "merchant:6",
+    "priest:6",
+    "iron_weapon:1",
+    "cloth_1:13",
+    "head_1:13",
+    "icons:0",
+    "icons:1",
+    "icons:5",
+    "icons:4",
+    "icons:2",
+    "icons:3",
+    "icons:6",
+    "icons:9",
+    "icons:10",
+    "icons:11",
+    "icons:12",
+    "robe:13",
+    "mail:13",
+    "spear_weapon:1",
+    "mail:33",
+    "head_1:33",
+    "spear_weapon:11",
+    "mail:43",
+    "head_1:43",
+    "spear_weapon:9",
+    "mail:41",
+    "head_1:41",
+    "spear_weapon:10",
+    "mail:42",
+    "head_1:42",
+    "squirrel:1",
+    "rabbit:1",
+    "rabbit:10",
+    "squirrel:4",
+    "squirrel:10",
+    "mail:36",
+    "head_1:36",
+    "spear_weapon:4",
+    "mail:37",
+    "head_1:37",
+    "spear_weapon:5",
+    "squirrel:2",
+    "rabbit:2",
+    "rabbit:11",
+    "squirrel:5",
+    "squirrel:11",
+    "mail:35",
+    "head_1:35",
+    "spear_weapon:3",
+    "squirrel:0",
+    "rabbit:0",
+    "rabbit:9",
+    "squirrel:3",
+    "squirrel:9",
+    "spear_weapon:0",
+    "mail:32",
+    "head_1:32",
+    "mail:38",
+    "head_1:38",
+    "spear_weapon:6",
+    "mail:39",
+    "head_1:39",
+    "spear_weapon:7",
+    "mail:40",
+    "head_1:40",
+    "spear_weapon:8",
+    "spear_weapon:18",
+    "mail:50",
+    "head_1:50",
+    "squirrel:8",
+    "spear_weapon:19",
+    "mail:51",
+    "head_1:51",
+    "rabbit:8",
+    "squirrel:6",
+    "rabbit:6",
+    "squirrel:7",
+    "rabbit:7",
+    "mail:79",
+    "head_1:79",
+    "spear_weapon:2",
+    "mail:34",
+    "head_1:34",
+    "bat:8",
+    "bat:6",
+    "bat:7"
+  ],
+  "rendered_tile_ids": [
+    "KR491/A:44",
+    "A:44",
+    "KR491/A:305",
+    "A:305",
+    "KR491/B:217",
+    "A:296",
+    "B:217",
+    "KR491/B:216",
+    "A:449",
+    "B:216",
+    "KR491/A:333",
+    "A:333",
+    "KR491/A:297",
+    "A:297",
+    "B:208",
+    "KR491/A:290",
+    "A:290",
+    "KR491/A:291",
+    "A:291",
+    "KR491/A:309",
+    "A:309",
+    "KR491/A:304",
+    "A:304",
+    "KR491/A:302",
+    "A:302",
+    "KR491/A:301",
+    "A:301",
+    "KR491/A:49",
+    "A:49",
+    "KR491/A:45",
+    "A:45",
+    "KR491/A:56",
+    "A:56",
+    "KR491/A:306",
+    "A:306",
+    "KR491/A:55",
+    "A:55",
+    "KR491/C:252",
+    "KR491/C:487",
+    "KR491/C:507",
+    "C:507",
+    "KR491/C:510",
+    "C:510",
+    "KR491/C:703",
+    "C:703",
+    "KR491/C:702",
+    "C:702",
+    "KR491/C:701",
+    "C:701",
+    "KR491/C:700",
+    "C:700",
+    "KR491/C:668",
+    "KR491/C:667",
+    "KR491/C:666",
+    "KR491/C:658",
+    "C:658",
+    "KR491/C:660",
+    "C:660",
+    "KR491/C:647",
+    "C:647",
+    "C:650",
+    "KR491/C:697",
+    "C:697",
+    "KR491/C:659",
+    "C:659",
+    "KR491/C:661",
+    "C:661",
+    "KR491/C:698",
+    "C:698",
+    "KR491/C:646",
+    "KR491/C:1609",
+    "KR491/C:1611",
+    "KR491/C:648",
+    "KR491/C:643",
+    "C:643",
+    "KR491/C:665",
+    "KR491/C:664",
+    "C:664",
+    "KR491/C:663",
+    "C:663",
+    "KR491/C:662",
+    "KR491/C:649",
+    "C:649",
+    "KR491/C:642",
+    "C:642",
+    "KR491/C:1610",
+    "KR491/C:1612",
+    "KR491/C:644",
+    "KR491/C:494",
+    "C:494",
+    "KR491/C:503",
+    "KR491/C:493",
+    "C:493",
+    "KR491/C:502",
+    "KR491/C:492",
+    "C:470",
+    "C:492",
+    "KR491/C:501",
+    "KR491/C:500",
+    "KR491/C:496",
+    "KR491/C:505",
+    "KR491/C:497",
+    "KR491/C:506",
+    "C:506",
+    "KR491/C:498",
+    "KR491/C:491",
+    "C:491",
+    "KR491/C:499",
+    "KR491/C:1971",
+    "KR491/C:1988",
+    "KR491/C:1986",
+    "KR491/C:1973",
+    "KR491/C:1985",
+    "KR491/C:1969",
+    "KR491/C:1996",
+    "KR491/C:1972",
+    "KR491/C:1987",
+    "KR491/C:1998",
+    "KR491/C:1975",
+    "KR491/C:1968",
+    "KR491/C:1994",
+    "KR491/C:1974",
+    "KR491/C:1970",
+    "KR491/C:1984",
+    "KR491/C:1989",
+    "KR491/C:1980",
+    "KR491/C:1976",
+    "KR491/C:1990",
+    "KR491/C:1981",
+    "KR491/C:1977",
+    "KR491/C:1991",
+    "KR491/C:1982",
+    "KR491/C:1978",
+    "KR491/C:1992",
+    "KR491/C:1983",
+    "KR491/C:1979",
+    "KR491/C:1993",
+    "KR491/A:63",
+    "A:63",
+    "B:206",
+    "KR491/A:43",
+    "A:43",
+    "KR491/A:78",
+    "A:78",
+    "KR491/A:73",
+    "A:73",
+    "B:227",
+    "KR491/C:1997",
+    "KR491/C:1995",
+    "KR491/C:2054",
+    "KR491/C:2055",
+    "KR491/C:2056",
+    "KR491/C:2057",
+    "KR491/A:71",
+    "A:71",
+    "B:225",
+    "KR491/A:627",
+    "A:627",
+    "KR491/C:2061",
+    "KR491/C:2060",
+    "KR491/C:2058",
+    "KR491/C:2059",
+    "KR491/C:297",
+    "KR491/C:298",
+    "C:298",
+    "KR491/C:299",
+    "KR491/C:2064",
+    "KR491/C:2063",
+    "KR491/C:2062",
+    "KR491/C:340",
+    "C:340",
+    "KR491/C:1591",
+    "KR491/C:1589",
+    "KR491/C:1590",
+    "C:1590",
+    "KR491/C:2040",
+    "KR491/C:2041",
+    "KR491/C:2042",
+    "KR491/A:296",
+    "KR491/A:76",
+    "A:76",
+    "KR491/A:68",
+    "A:68",
+    "B:222",
+    "KR491/C:348",
+    "C:348",
+    "KR491/C:1594",
+    "C:1594",
+    "KR491/C:1595",
+    "C:1595",
+    "KR491/C:2043",
+    "KR491/C:2044",
+    "C:2044",
+    "KR491/C:2045",
+    "KR491/C:2046",
+    "KR491/A:42",
+    "A:42",
+    "A:177",
+    "B:204",
+    "C:3973",
+    "KR491/A:1040",
+    "A:1040",
+    "KR491/A:1041",
+    "A:1041",
+    "KR491/C:356",
+    "KR491/C:1598",
+    "KR491/C:1599",
+    "KR491/C:2047",
+    "KR491/C:2048",
+    "KR491/C:2049",
+    "KR491/C:2050",
+    "KR491/A:66",
+    "A:66",
+    "KR491/A:65",
+    "A:65",
+    "KR491/C:2053",
+    "KR491/C:2051",
+    "KR491/C:2052",
+    "KR491/C:2001",
+    "KR491/C:2025",
+    "KR491/C:1999",
+    "KR491/C:2024",
+    "KR491/C:2027",
+    "KR491/C:2030",
+    "KR491/C:2031",
+    "KR491/C:2032",
+    "KR491/C:2026",
+    "KR491/C:2028",
+    "KR491/C:2029",
+    "KR491/A:18",
+    "A:18",
+    "KR491/A:272",
+    "A:272",
+    "KR491/A:273",
+    "A:273",
+    "KR491/A:17",
+    "A:17",
+    "KR491/C:2037",
+    "KR491/C:2036",
+    "KR491/C:2034",
+    "KR491/C:2035",
+    "C:2035",
+    "KR491/C:2039",
+    "KR491/C:2038",
+    "KR491/C:2033",
+    "KR491/B:133",
+    "B:133",
+    "KR491/A:274",
+    "A:274",
+    "KR491/A:275",
+    "A:275",
+    "KR491/B:134",
+    "B:134",
+    "KR491/C:2019",
+    "KR491/C:2023",
+    "KR491/C:2020",
+    "KR491/C:2021",
+    "KR491/C:2022",
+    "KR491/C:2017",
+    "KR491/C:2018",
+    "KR491/B:293",
+    "B:293",
+    "KR491/B:294",
+    "B:294",
+    "KR491/A:276",
+    "A:276",
+    "KR491/A:277",
+    "A:277",
+    "KR491/B:295",
+    "B:295",
+    "KR491/B:292",
+    "B:292",
+    "C:3965",
+    "KR491/C:333",
+    "KR491/C:355",
+    "KR491/C:347",
+    "C:347",
+    "KR491/C:339",
+    "KR491/A:64",
+    "A:64",
+    "KR491/B:300",
+    "B:300",
+    "KR491/B:301",
+    "B:301",
+    "KR491/B:302",
+    "B:302",
+    "KR491/A:278",
+    "A:278",
+    "KR491/A:279",
+    "A:279",
+    "KR491/B:303",
+    "B:303",
+    "KR491/A:9",
+    "A:9",
+    "KR491/A:13",
+    "A:13",
+    "KR491/A:14",
+    "A:14",
+    "KR491/A:235",
+    "A:235",
+    "KR491/B:44",
+    "B:44",
+    "KR491/B:43",
+    "B:43",
+    "KR491/B:45",
+    "B:45",
+    "KR491/B:26",
+    "B:26",
+    "KR491/A:231",
+    "A:231",
+    "KR491/A:233",
+    "A:233",
+    "KR491/B:27",
+    "B:27",
+    "KR491/C:1146",
+    "C:1146",
+    "KR491/C:1140",
+    "C:1140",
+    "KR491/B:52",
+    "B:52",
+    "KR491/B:51",
+    "B:51",
+    "KR491/B:38",
+    "B:38",
+    "KR491/B:59",
+    "B:59",
+    "KR491/B:58",
+    "B:58",
+    "KR491/B:61",
+    "B:61",
+    "KR491/B:60",
+    "B:60",
+    "KR491/B:39",
+    "B:39",
+    "KR491/B:68",
+    "B:68",
+    "KR491/B:67",
+    "B:67",
+    "KR491/B:40",
+    "B:40",
+    "KR491/C:1851",
+    "KR491/C:1852",
+    "KR491/B:118",
+    "B:0",
+    "B:118",
+    "KR491/B:41",
+    "B:41",
+    "KR491/C:1853",
+    "KR491/C:1854",
+    "KR491/C:1855",
+    "KR491/B:32",
+    "B:32",
+    "KR491/B:36",
+    "B:36",
+    "KR491/A:232",
+    "A:232",
+    "KR491/B:37",
+    "B:37",
+    "KR491/C:1147",
+    "C:1147",
+    "KR491/C:1139",
+    "KR491/C:1858",
+    "KR491/C:1857",
+    "KR491/C:1856",
+    "KR491/A:60",
+    "A:60",
+    "KR491/A:237",
+    "A:237",
+    "KR491/A:238",
+    "A:238",
+    "KR491/A:239",
+    "A:239",
+    "KR491/C:1860",
+    "KR491/C:1859",
+    "KR491/A:97",
+    "A:97",
+    "KR491/A:109",
+    "A:109",
+    "KR491/A:59",
+    "A:59",
+    "KR491/A:41",
+    "A:41",
+    "B:207",
+    "KR491/A:99",
+    "A:99",
+    "KR491/C:1074",
+    "KR491/C:1073",
+    "KR491/C:1072",
+    "KR491/C:1076",
+    "KR491/C:1075",
+    "KR491/C:1078",
+    "KR491/A:47",
+    "A:47",
+    "KR491/A:46",
+    "A:46",
+    "KR491/A:48",
+    "A:48",
+    "KR491/A:52",
+    "A:52",
+    "KR491/C:1090",
+    "C:1090",
+    "KR491/C:1087",
+    "C:1087",
+    "KR491/C:1088",
+    "C:1088",
+    "KR491/C:1086",
+    "C:1086",
+    "KR491/C:1085",
+    "KR491/C:1084",
+    "KR491/C:1080",
+    "KR491/C:866",
+    "KR491/C:867",
+    "KR491/C:868",
+    "KR491/C:869",
+    "C:869",
+    "KR491/C:870",
+    "C:870",
+    "KR491/C:871",
+    "KR491/C:872",
+    "KR491/C:873",
+    "KR491/B:207",
+    "KR491/C:1720",
+    "KR491/C:1721",
+    "C:3098",
+    "KR491/B:204",
+    "KR491/C:1719",
+    "C:3096",
+    "KR491/C:2065",
+    "KR491/B:89",
+    "B:89",
+    "KR491/B:95",
+    "B:95",
+    "KR491/B:99",
+    "B:99",
+    "KR491/B:88",
+    "B:88",
+    "KR491/B:94",
+    "B:94",
+    "KR491/B:98",
+    "B:98",
+    "KR491/B:198",
+    "B:198",
+    "KR491/C:1724",
+    "KR491/C:1725",
+    "KR491/B:81",
+    "B:81",
+    "KR491/B:93",
+    "B:93",
+    "KR491/B:80",
+    "B:80",
+    "KR491/B:86",
+    "B:86",
+    "KR491/B:110",
+    "B:110",
+    "KR491/B:115",
+    "B:115",
+    "KR491/A:105",
+    "A:105",
+    "KR491/A:107",
+    "A:107",
+    "KR491/C:1868",
+    "KR491/C:1866",
+    "KR491/C:1864",
+    "KR491/C:1862",
+    "KR491/B:65",
+    "B:65",
+    "KR491/B:73",
+    "B:73",
+    "KR491/B:109",
+    "B:109",
+    "KR491/B:114",
+    "B:114",
+    "KR491/A:98",
+    "A:98",
+    "KR491/C:1867",
+    "KR491/C:1865",
+    "KR491/C:1863",
+    "KR491/C:1861",
+    "KR491/C:1079",
+    "KR491/B:64",
+    "B:64",
+    "KR491/B:72",
+    "B:72",
+    "KR491/B:108",
+    "B:108",
+    "KR491/A:106",
+    "A:106",
+    "KR491/A:24",
+    "A:24",
+    "KR491/A:26",
+    "A:26",
+    "KR491/C:1091",
+    "KR491/A:158",
+    "A:158",
+    "KR491/A:169",
+    "A:169",
+    "KR491/A:21",
+    "A:21",
+    "KR491/C:1722",
+    "KR491/C:1726",
+    "B:200",
+    "KR491/C:1081",
+    "KR491/C:1843",
+    "KR491/C:1844",
+    "KR491/A:176",
+    "A:176",
+    "KR491/A:157",
+    "A:157",
+    "KR491/B:194",
+    "B:194",
+    "KR491/C:1723",
+    "KR491/C:1727",
+    "KR491/C:1845",
+    "KR491/C:1846",
+    "KR491/C:946",
+    "C:946",
+    "KR491/C:1008",
+    "C:1008",
+    "KR491/C:1009",
+    "C:1009",
+    "KR491/C:1010",
+    "KR491/C:1011",
+    "KR491/C:1007",
+    "C:1007",
+    "KR491/A:101",
+    "A:101",
+    "KR491/C:1848",
+    "KR491/C:1847",
+    "KR491/C:954",
+    "C:954",
+    "KR491/C:1016",
+    "C:1016",
+    "KR491/C:1017",
+    "C:1017",
+    "KR491/C:1018",
+    "C:1018",
+    "KR491/C:1019",
+    "C:1019",
+    "KR491/C:1020",
+    "KR491/B:213",
+    "A:426",
+    "B:213",
+    "KR491/B:206",
+    "KR491/C:1849",
+    "KR491/C:1850",
+    "KR491/C:256",
+    "KR491/C:759",
+    "C:759",
+    "KR491/C:962",
+    "C:962",
+    "KR491/C:1025",
+    "C:1025",
+    "KR491/C:1027",
+    "C:1027",
+    "KR491/C:769",
+    "C:769",
+    "KR491/C:1029",
+    "C:1029",
+    "KR491/C:1030",
+    "C:1030",
+    "KR491/C:1028",
+    "C:1028",
+    "KR491/C:796",
+    "KR491/C:1034",
+    "C:1034",
+    "KR491/C:1032",
+    "C:1032",
+    "KR491/C:1031",
+    "C:1031",
+    "KR491/C:1035",
+    "C:1035",
+    "KR491/C:1033",
+    "C:1033",
+    "KR491/A:198",
+    "A:198",
+    "KR491/C:764",
+    "C:764",
+    "KR491/C:763",
+    "C:763",
+    "KR491/C:860",
+    "C:860",
+    "KR491/C:861",
+    "KR491/C:1038",
+    "C:1038",
+    "KR491/C:1040",
+    "KR491/C:1037",
+    "C:1037",
+    "KR491/C:1036",
+    "KR491/C:1039",
+    "C:1039",
+    "KR491/C:271",
+    "KR491/C:863",
+    "KR491/C:848",
+    "C:848",
+    "KR491/C:1083",
+    "KR491/C:781",
+    "C:781",
+    "KR491/C:862",
+    "C:862",
+    "KR491/A:131",
+    "A:131",
+    "KR491/C:1093",
+    "KR491/C:865",
+    "KR491/C:280",
+    "KR491/C:851",
+    "KR491/C:853",
+    "KR491/C:864",
+    "KR491/C:852",
+    "KR491/A:128",
+    "A:128",
+    "KR491/A:140",
+    "A:140",
+    "KR491/C:1052",
+    "KR491/C:1057",
+    "C:1057",
+    "KR491/C:1051",
+    "KR491/A:132",
+    "A:132",
+    "KR491/A:133",
+    "A:133",
+    "KR491/C:1060",
+    "KR491/C:1054",
+    "KR491/C:1055",
+    "KR491/C:1835",
+    "KR491/C:1836",
+    "KR491/C:1838",
+    "KR491/C:1837",
+    "KR491/A:145",
+    "A:145",
+    "KR491/A:138",
+    "A:138",
+    "KR491/A:100",
+    "A:100",
+    "KR491/C:1840",
+    "KR491/C:1839",
+    "KR491/A:129",
+    "A:129",
+    "KR491/C:1659",
+    "KR491/C:1657",
+    "KR491/C:1053",
+    "KR491/C:1050",
+    "KR491/C:1841",
+    "KR491/C:1062",
+    "KR491/C:1063",
+    "KR491/C:1658",
+    "KR491/C:795",
+    "KR491/C:1043",
+    "KR491/C:1046",
+    "KR491/C:1049",
+    "KR491/C:1042",
+    "KR491/C:1045",
+    "C:1045",
+    "KR491/C:1048",
+    "KR491/A:130",
+    "A:130",
+    "KR491/C:1041",
+    "KR491/C:1044",
+    "C:1044",
+    "KR491/C:1047",
+    "KR491/C:807",
+    "KR491/C:804",
+    "KR491/C:811",
+    "KR491/C:813",
+    "KR491/C:965",
+    "KR491/C:957",
+    "KR491/C:949",
+    "KR491/C:794",
+    "KR491/C:964",
+    "KR491/C:956",
+    "C:956",
+    "KR491/C:948",
+    "KR491/C:816",
+    "KR491/C:963",
+    "C:963",
+    "KR491/C:955",
+    "C:955",
+    "KR491/C:947",
+    "KR491/A:53",
+    "A:53",
+    "KR491/B:255",
+    "B:255",
+    "KR491/A:8",
+    "A:8",
+    "KR491/B:273",
+    "B:273",
+    "KR491/B:274",
+    "B:274",
+    "KR491/B:288",
+    "B:288",
+    "KR491/B:121",
+    "B:121",
+    "KR491/B:267",
+    "B:267",
+    "KR491/A:269",
+    "A:269",
+    "KR491/B:270",
+    "B:270",
+    "KR491/B:124",
+    "KR491/B:128",
+    "B:128",
+    "KR491/A:16",
+    "A:16",
+    "KR491/B:271",
+    "B:271",
+    "KR491/A:271",
+    "A:271",
+    "KR491/B:272",
+    "B:272",
+    "KR491/A:20",
+    "A:20",
+    "B:205",
+    "KR491/B:296",
+    "B:296",
+    "KR491/C:2071",
+    "KR491/C:2068",
+    "KR491/C:2069",
+    "KR491/C:2082",
+    "KR491/C:2084",
+    "KR491/C:2081",
+    "KR491/C:2083",
+    "KR491/A:15",
+    "A:15",
+    "KR491/A:10",
+    "A:10",
+    "KR491/B:258",
+    "B:258",
+    "KR491/B:308",
+    "B:308",
+    "KR491/B:129",
+    "B:129",
+    "KR491/B:125",
+    "B:125",
+    "KR491/C:1656",
+    "KR491/C:777",
+    "C:777",
+    "KR491/C:758",
+    "C:758",
+    "KR491/C:768",
+    "C:768",
+    "KR491/C:812",
+    "C:812",
+    "KR491/C:814",
+    "C:814",
+    "KR491/C:961",
+    "C:961",
+    "KR491/C:960",
+    "C:960",
+    "KR491/C:959",
+    "KR491/C:958",
+    "KR491/C:953",
+    "C:953",
+    "KR491/C:945",
+    "C:945",
+    "KR491/C:1058",
+    "KR491/C:1061",
+    "KR491/B:660",
+    "B:660",
+    "KR491/B:661",
+    "B:661",
+    "KR491/B:662",
+    "B:662",
+    "KR491/A:1444",
+    "A:1444",
+    "KR491/A:1462",
+    "A:1462",
+    "KR491/B:663",
+    "B:663",
+    "KR491/B:658",
+    "B:658",
+    "KR491/B:665",
+    "B:665",
+    "KR491/A:1445",
+    "A:1445",
+    "KR491/B:666",
+    "B:666",
+    "KR491/A:1450",
+    "A:1450",
+    "KR491/A:1447",
+    "A:1447",
+    "KR491/A:1790",
+    "A:1790",
+    "KR491/B:667",
+    "B:667",
+    "KR491/A:1458",
+    "A:1458",
+    "KR491/B:686",
+    "B:686",
+    "KR491/B:944",
+    "B:944",
+    "KR491/B:671",
+    "B:671",
+    "KR491/B:668",
+    "B:668",
+    "KR491/A:1451",
+    "A:1451",
+    "A:1453",
+    "KR491/A:1452",
+    "A:1452",
+    "KR491/A:1453",
+    "KR491/A:1448",
+    "A:1448",
+    "KR491/A:1439",
+    "A:1439",
+    "KR491/B:655",
+    "B:655",
+    "KR491/B:656",
+    "B:656",
+    "KR491/B:657",
+    "B:657",
+    "KR491/B:677",
+    "B:677",
+    "KR491/B:678",
+    "B:678",
+    "KR491/B:694",
+    "B:694",
+    "B:1962",
+    "B:2077",
+    "B:2257",
+    "C:4484",
+    "KR491/A:1437",
+    "A:1437",
+    "KR491/A:1440",
+    "A:1440",
+    "KR491/B:1994",
+    "B:1994",
+    "KR491/A:1459",
+    "A:1459",
+    "KR491/B:680",
+    "B:680",
+    "KR491/B:681",
+    "B:681",
+    "KR491/A:1460",
+    "A:1460",
+    "KR491/A:1443",
+    "A:1443",
+    "KR491/B:683",
+    "B:683",
+    "KR491/A:1455",
+    "A:1455",
+    "KR491/A:1457",
+    "A:1457",
+    "KR491/B:670",
+    "B:670",
+    "KR491/B:672",
+    "B:672",
+    "KR491/A:1463",
+    "A:1463",
+    "KR491/A:1461",
+    "A:1461",
+    "KR491/A:1464",
+    "A:1464",
+    "KR491/A:62",
+    "A:62",
+    "KR491/A:114",
+    "A:114",
+    "KR491/A:115",
+    "A:115",
+    "KR491/A:102",
+    "A:102",
+    "KR491/A:70",
+    "A:70",
+    "B:224",
+    "KR491/A:110",
+    "A:110",
+    "KR491/A:77",
+    "A:77",
+    "KR491/A:74",
+    "A:74",
+    "B:228",
+    "KR491/A:72",
+    "A:72",
+    "B:226",
+    "KR491/A:51",
+    "A:51",
+    "KR491/A:69",
+    "A:69",
+    "B:223",
+    "KR491/A:67",
+    "A:67",
+    "B:221",
+    "KR491/A:75",
+    "A:75",
+    "KR491/A:54",
+    "A:54",
+    "KR491/C:1796",
+    "KR491/C:1795",
+    "KR491/C:1802",
+    "KR491/C:1807",
+    "KR491/C:1794",
+    "KR491/C:1801",
+    "KR491/C:1806",
+    "KR491/C:1793",
+    "C:1793",
+    "KR491/C:1800",
+    "KR491/C:1805",
+    "KR491/C:1792",
+    "C:1792",
+    "KR491/C:1799",
+    "KR491/C:1804",
+    "KR491/C:1791",
+    "C:1791",
+    "KR491/C:1798",
+    "KR491/C:1803",
+    "KR491/C:1790",
+    "KR491/C:1797",
+    "KR491/C:1789",
+    "KR491/C:1788",
+    "KR491/C:1064",
+    "KR491/C:1065",
+    "KR491/C:3956",
+    "KR491/C:3953",
+    "KR491/C:3954",
+    "KR491/C:3955"
+  ],
+  "save_loaded": true,
+  "scope": "REAL_X11_GODOT_VIEWPORT_WITH_INPUT_EVENTS_NOT_FULL_1_TO_99_PLAYTHROUGH",
+  "screenshots": [
+    {
+      "height": 640,
+      "name": "gear-0",
+      "path": "/workspace/baram-private/gear-guide-screen-fixed/gear-guide/gear-0.png",
+      "sha256": "adfd64d025620b3867241eb7d32e97fde697593b4016b62e01b3b578d546f3d9",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "gear-1",
+      "path": "/workspace/baram-private/gear-guide-screen-fixed/gear-guide/gear-1.png",
+      "sha256": "616e62e60f1a815cab95fe01231c027d6e76f2a674869deced2d217be95c373f",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "gear-2",
+      "path": "/workspace/baram-private/gear-guide-screen-fixed/gear-guide/gear-2.png",
+      "sha256": "9b7fec76a20d177d3b4c9720c784c0a3fe0fdfcc2efa422d3a1103ffc99c4841",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "spear-combat",
+      "path": "/workspace/baram-private/gear-guide-screen-fixed/gear-guide/spear-combat.png",
+      "sha256": "f044a1835712ca9381469fbc53a1d4569a6db8f9ce8e019a0596a464faf8cbc1",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "corrected-guide-position",
+      "path": "/workspace/baram-private/gear-guide-screen-fixed/gear-guide/corrected-guide-position.png",
+      "sha256": "27c8e0d16a31f427dcf0bb87d77b545341dd44f52106a515f942707c6d5c95f6",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "gear-saved",
+      "path": "/workspace/baram-private/gear-guide-screen-fixed/gear-guide/gear-saved.png",
+      "sha256": "ac588396760cf6d7e8be9866e2fa7c3f52e40e6554daa8f39315d7143b0b17ee",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    }
+  ],
+  "status": "PASS_EXECUTED_SCREEN_INPUT"
+}

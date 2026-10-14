@@ -50,6 +50,10 @@ docs/development/runs/20261014-assets/asset-game-summary.json와 tile-status-cur
 최신 기준 브랜치 dev/codex-asset-intake-20261014의 80d3da1과 상세 기준서를 읽고
 현재 개발 계보에 앞으로 병합했다. 원격 SHA와 상태는 최신 CHECKPOINT와 재조회 기록을 읽는다.
 main/reset/force push를 하지 않는다. 전체 연락시트는 private_assets/review/index.html에서 찾는다.
+새 캐릭터로 시작하거나, saves가 비어 있을 때 resume_saves/natural_level6.json을
+saves/character.json으로 복사해 실제 이전 캐릭터를 이어갈 수 있다. 기존 저장은 먼저 보존한다.
+FINAL_VERIFICATION.json이 있으면 압축 해제 후 실제 실행·복구 증거와 입력 해시를 읽는다.
+코드 인계 커밋 시점의 CHECKPOINT와 최종 생성된 실행 증거의 작성 시간을 구분한다.
 '''
 
 
@@ -91,16 +95,31 @@ def build(a):
     if sha(handoff)!='f36929c43d775058678a708a1da7a140ea13e0e9243d5f4fc2b5e304fa54500b':raise ValueError('Handoff SHA mismatch')
     shutil.copy2(handoff,originals/'baram_Codex_tile_handoff_PRIVATE.zip')
     evidence=staging/'private_evidence';evidence.mkdir(exist_ok=True)
-    for name in ['game-screen-run2','game-screen-run3','game-screen-run4','game-screen-run5','game-screen-resume6','game-screen-classes','game-screen-classes2','review','source-screen-1','content-screen-1','content-screen-2','content-screen-fixed-1','content-screen-fixed-2','content-actions-screen','cure-actions-screen','town-all-screen']:
+    for name in ['game-screen-run2','game-screen-run3','game-screen-run4','game-screen-run5','game-screen-resume6','game-screen-classes','game-screen-classes2','review','source-screen-1','content-screen-1','content-screen-2','content-screen-fixed-1','content-screen-fixed-2','content-actions-screen','cure-actions-screen','town-all-screen','town-all-screen-fixed','town-all-screen-resume','town-all-screen-resume2','town-all-screen-final','town-all-screen-last-room','natural-progress-screen','gear-guide-screen','gear-guide-screen-fixed','expansion-unpacked-screen']:
         source=private/name
         if source.exists():shutil.copytree(source,evidence/name,dirs_exist_ok=True,ignore=shutil.ignore_patterns('data','cache','config'))
+    comparisons=evidence/'comparisons';comparisons.mkdir(exist_ok=True)
+    for name in ['town-before-after_PRIVATE.png','light-before-after_PRIVATE.png','outfit-before-after_PRIVATE.png']:
+        source=output/name
+        if source.is_file():shutil.copy2(source,comparisons/name)
+    natural=private/'natural-progress-screen/natural-progress/character.json'
+    if natural.is_file():
+        saved=json.loads(natural.read_text());payload=json.loads(saved['payload'])
+        if 'validation_fixture' in payload['player']:raise ValueError('Natural continuation must not be a prepared test fixture')
+        resume=staging/'resume_saves';resume.mkdir(exist_ok=True);shutil.copy2(natural,resume/'natural_level6.json')
+    final_proof=private/'expansion-final-verification.json'
+    if final_proof.is_file():shutil.copy2(final_proof,staging/'FINAL_VERIFICATION.json')
+    final_screen=private/'expansion-unpacked-final'
+    if final_screen.is_dir():shutil.copytree(final_screen,evidence/'expansion-unpacked-final',dirs_exist_ok=True,ignore=shutil.ignore_patterns('data','cache','config'))
     (staging/'launch-linux.sh').write_text(LAUNCH);(staging/'launch-linux.sh').chmod(0o755)
     (staging/'READ_ME.md').write_text(README)
     bundle=staging/'development.bundle'
     subprocess.run(['git','bundle','create',str(bundle),branch],cwd=ROOT,check=True,capture_output=True)
     verification=subprocess.run(['git','bundle','verify',str(bundle)],cwd=ROOT,check=True,capture_output=True,text=True)
     checkpoint=json.loads((ROOT/'docs/development/CHECKPOINT.json').read_text())
-    manifest={'source_branch':branch,'source_commit':commit,'private_only':True,'remote_publication':checkpoint.get('remote_status','PENDING_READBACK'),
+    manifest={'source_branch':branch,'source_commit':commit,
+              'source_commit_scope':'GAME_CODE_RECIPES_AND_BUNDLED_HISTORY; GENERATED_LEDGERS_PRIVATE_ASSETS_AND_VERIFICATION_HASHED_IN_FILES',
+              'private_only':True,'remote_publication':checkpoint.get('remote_status','PENDING_READBACK'),
               'files':[{'path':str(p.relative_to(staging)),'bytes':p.stat().st_size,'sha256':sha(p)} for p in sorted(staging.rglob('*')) if p.is_file() and p.name!='PACKAGE_MANIFEST.json'],
               'git_bundle_verification':verification.stdout+verification.stderr,
               'original_archive_pins':pins,'core_generated_content':{'native_layouts':38,'legacy_authored_layouts_preserved':8,'items':3,'training_skills':1,'quests':2,'outfit_color_parameters':6,'new_independent_bitmaps':0},

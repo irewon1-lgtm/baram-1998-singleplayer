@@ -1,0 +1,562 @@
+{
+  "audio_events": [],
+  "checks": [
+    {
+      "name": "fresh_process_loaded_save",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "restart_preserves_entire_player",
+      "observed": {
+        "equipped": "장창",
+        "gold": 995109,
+        "level": 30
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "restart_preserves_world_and_loot",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "restart_preserves_rng",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_restart",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "engine_audio_mix_recorded",
+      "observed": {
+
+      },
+      "status": "PASS"
+    }
+  ],
+  "elapsed_ms": 280,
+  "events": [
+    {
+      "details": {
+        "equipped": "장창",
+        "level": 30,
+        "map": "village"
+      },
+      "event": "save_restored",
+      "time": 0.0
+    },
+    {
+      "details": {
+        "loaded_save": true,
+        "registered_tiles": 50104,
+        "renderer": "gl_compatibility"
+      },
+      "event": "ready",
+      "time": 0.0
+    }
+  ],
+  "player": {
+    "armor_equipped": "보라 남자갑옷",
+    "buffs": {
+      "누리의빛": 0.0,
+      "누리의힘": 0.0,
+      "이중공격": 0.0
+    },
+    "cooldowns": {
+      "경수": 0.0,
+      "금수": 0.0,
+      "누리의기원": 0.0,
+      "누리의빛": 0.0,
+      "누리의힘": 0.0,
+      "대지의기원": 0.0,
+      "대지의빛": 0.0,
+      "동해의기원": 0.0,
+      "뢰진주(풍뢰)": 0.0,
+      "무영보법": 0.0,
+      "물품감정": 0.0,
+      "바다의 빛": 0.0,
+      "백열주(지)": 0.0,
+      "비영사천문": 0.0,
+      "성황령": 0.0,
+      "이중공격": 0.0,
+      "자무주(수)": 0.0,
+      "화염주(화)": 0.0
+    },
+    "direction": 2,
+    "durability": {
+      "목도": 1000,
+      "장창": 2999,
+      "철검": 3000
+    },
+    "equipped": "장창",
+    "gold": 995109,
+    "growth_log": [
+      {
+        "from": 1,
+        "hp_gain": 48,
+        "job": "평민",
+        "mp_gain": 36
+      },
+      {
+        "from": 2,
+        "hp_gain": 49,
+        "job": "평민",
+        "mp_gain": 33
+      },
+      {
+        "from": 3,
+        "hp_gain": 53,
+        "job": "평민",
+        "mp_gain": 32
+      },
+      {
+        "from": 4,
+        "hp_gain": 46,
+        "job": "평민",
+        "mp_gain": 36
+      },
+      {
+        "from": 5,
+        "hp_gain": 56,
+        "job": "도적",
+        "mp_gain": 24
+      },
+      {
+        "from": 6,
+        "hp_gain": 58,
+        "job": "도적",
+        "mp_gain": 24
+      },
+      {
+        "from": 7,
+        "hp_gain": 60,
+        "job": "도적",
+        "mp_gain": 25
+      },
+      {
+        "from": 8,
+        "hp_gain": 61,
+        "job": "도적",
+        "mp_gain": 24
+      },
+      {
+        "from": 9,
+        "hp_gain": 56,
+        "job": "도적",
+        "mp_gain": 24
+      },
+      {
+        "from": 10,
+        "hp_gain": 56,
+        "job": "도적",
+        "mp_gain": 26
+      },
+      {
+        "from": 11,
+        "hp_gain": 62,
+        "job": "도적",
+        "mp_gain": 27
+      },
+      {
+        "from": 12,
+        "hp_gain": 56,
+        "job": "도적",
+        "mp_gain": 25
+      },
+      {
+        "from": 13,
+        "hp_gain": 63,
+        "job": "도적",
+        "mp_gain": 26
+      },
+      {
+        "from": 14,
+        "hp_gain": 63,
+        "job": "도적",
+        "mp_gain": 26
+      },
+      {
+        "from": 15,
+        "hp_gain": 56,
+        "job": "도적",
+        "mp_gain": 27
+      },
+      {
+        "from": 16,
+        "hp_gain": 57,
+        "job": "도적",
+        "mp_gain": 25
+      },
+      {
+        "from": 17,
+        "hp_gain": 62,
+        "job": "도적",
+        "mp_gain": 26
+      },
+      {
+        "from": 18,
+        "hp_gain": 57,
+        "job": "도적",
+        "mp_gain": 25
+      },
+      {
+        "from": 19,
+        "hp_gain": 57,
+        "job": "도적",
+        "mp_gain": 26
+      },
+      {
+        "from": 20,
+        "hp_gain": 58,
+        "job": "도적",
+        "mp_gain": 27
+      },
+      {
+        "from": 21,
+        "hp_gain": 61,
+        "job": "도적",
+        "mp_gain": 25
+      },
+      {
+        "from": 22,
+        "hp_gain": 61,
+        "job": "도적",
+        "mp_gain": 25
+      },
+      {
+        "from": 23,
+        "hp_gain": 63,
+        "job": "도적",
+        "mp_gain": 24
+      },
+      {
+        "from": 24,
+        "hp_gain": 61,
+        "job": "도적",
+        "mp_gain": 26
+      },
+      {
+        "from": 25,
+        "hp_gain": 59,
+        "job": "도적",
+        "mp_gain": 27
+      },
+      {
+        "from": 26,
+        "hp_gain": 60,
+        "job": "도적",
+        "mp_gain": 24
+      },
+      {
+        "from": 27,
+        "hp_gain": 56,
+        "job": "도적",
+        "mp_gain": 26
+      },
+      {
+        "from": 28,
+        "hp_gain": 59,
+        "job": "도적",
+        "mp_gain": 25
+      },
+      {
+        "from": 29,
+        "hp_gain": 59,
+        "job": "도적",
+        "mp_gain": 27
+      }
+    ],
+    "hotbar": [
+      "물품감정",
+      "비영사천문",
+      "물품감정"
+    ],
+    "hp": 1723,
+    "hp_max": 1723,
+    "inventory": {
+      "도토리": 0,
+      "목도": 1,
+      "뱀고기": 0,
+      "보라 남자갑옷": 1,
+      "연두색 남자도복": 1,
+      "장창": 1,
+      "철검": 1,
+      "초록색 도포": 1,
+      "초보 회복약": 11,
+      "토끼고기": 2,
+      "호랑이고기": 0
+    },
+    "job": "도적",
+    "kills": 5,
+    "level": 30,
+    "map": "village",
+    "mp": 808,
+    "mp_max": 808,
+    "name": "자료통합검증",
+    "quests": [],
+    "rank": 0,
+    "rng_state": "5925585658821259820",
+    "skill_page": 0,
+    "skills": [
+      "기초 회복",
+      "비영사천문",
+      "성황령",
+      "물품감정",
+      "누리의기원",
+      "대지의기원",
+      "누리의빛",
+      "금수",
+      "누리의힘",
+      "대지의빛",
+      "뢰진주(풍뢰)",
+      "화염주(화)",
+      "자무주(수)",
+      "백열주(지)",
+      "동해의기원",
+      "무영보법",
+      "경수",
+      "바다의 빛",
+      "이중공격"
+    ],
+    "strength": 34,
+    "town_verified": [
+      "town-room-5",
+      "town-room-6",
+      "town-room-7",
+      "town-room-8",
+      "town-room-9",
+      "town-room-10",
+      "town-room-19",
+      "town-room-20",
+      "town-room-28",
+      "town-room-29",
+      "town-room-30",
+      "town-room-31",
+      "town-room-36",
+      "town-room-37",
+      "town-room-38",
+      "town-room-43",
+      "town-room-50",
+      "town-room-70",
+      "town-room-80",
+      "town-room-90",
+      "town-room-121",
+      "town-room-1011",
+      "town-room-3400"
+    ],
+    "validation_fixture": "CONTROLLED_LEVEL30_NOT_NATURAL_PLAYTHROUGH",
+    "visited": [
+      "village",
+      "village",
+      "rogue_guild",
+      "field",
+      "town-room-5",
+      "town-room-43",
+      "town-room-10",
+      "cave",
+      "town-room-6",
+      "town-room-7",
+      "town-room-8",
+      "town-room-9",
+      "town-room-19",
+      "town-room-20",
+      "town-room-28",
+      "town-room-29",
+      "town-room-30",
+      "town-room-31",
+      "town-room-36",
+      "town-room-37",
+      "town-room-38",
+      "town-room-50",
+      "town-room-70",
+      "town-room-80",
+      "town-room-90",
+      "town-room-121",
+      "town-room-1011",
+      "town-room-3400"
+    ],
+    "world_revision": "source-maps-2",
+    "x": 46,
+    "xp2": 1472700,
+    "y": 114
+  },
+  "registered_tile_sources": 6,
+  "registered_tiles": 50104,
+  "rendered_actor_frames": [
+    "mail:39",
+    "head_1:39",
+    "spear_weapon:7",
+    "ui_border:0",
+    "ui_border:1",
+    "ui_border:2",
+    "ui_border:3",
+    "ui_border:4",
+    "ui_border:5",
+    "ui_border:6",
+    "ui_border:7",
+    "ui_bars:0",
+    "ui_bars:1"
+  ],
+  "rendered_tile_ids": [
+    "KR491/A:62",
+    "A:62",
+    "KR491/A:63",
+    "A:63",
+    "B:206",
+    "KR491/A:114",
+    "A:114",
+    "KR491/A:115",
+    "A:115",
+    "KR491/A:41",
+    "A:41",
+    "B:207",
+    "KR491/A:101",
+    "A:101",
+    "KR491/A:102",
+    "A:102",
+    "KR491/A:71",
+    "A:71",
+    "B:225",
+    "KR491/A:70",
+    "A:70",
+    "B:224",
+    "KR491/A:100",
+    "A:100",
+    "KR491/A:110",
+    "A:110",
+    "KR491/A:98",
+    "A:98",
+    "KR491/A:78",
+    "A:78",
+    "KR491/A:73",
+    "A:73",
+    "B:227",
+    "KR491/A:77",
+    "A:77",
+    "KR491/A:74",
+    "A:74",
+    "B:228",
+    "KR491/A:627",
+    "A:627",
+    "KR491/A:72",
+    "A:72",
+    "B:226",
+    "KR491/A:51",
+    "A:51",
+    "KR491/A:76",
+    "A:76",
+    "KR491/A:69",
+    "A:69",
+    "B:223",
+    "KR491/A:67",
+    "A:67",
+    "B:221",
+    "KR491/A:75",
+    "A:75",
+    "KR491/A:52",
+    "A:52",
+    "KR491/A:54",
+    "A:54",
+    "KR491/A:44",
+    "A:44",
+    "KR491/A:42",
+    "A:42",
+    "A:177",
+    "B:204",
+    "C:3973",
+    "KR491/A:53",
+    "A:53",
+    "KR491/A:68",
+    "A:68",
+    "B:222",
+    "KR491/C:1796",
+    "KR491/C:1795",
+    "KR491/C:1802",
+    "KR491/C:1807",
+    "KR491/C:1794",
+    "KR491/C:1801",
+    "KR491/C:1806",
+    "KR491/C:1793",
+    "C:1793",
+    "KR491/C:1800",
+    "KR491/C:1805",
+    "KR491/C:1792",
+    "C:1792",
+    "KR491/C:1799",
+    "KR491/C:1804",
+    "KR491/C:1791",
+    "C:1791",
+    "KR491/C:1798",
+    "KR491/C:1803",
+    "KR491/C:1790",
+    "KR491/C:1797",
+    "KR491/C:1789",
+    "KR491/C:1788",
+    "KR491/C:2059",
+    "KR491/C:2055",
+    "KR491/C:2063",
+    "KR491/C:2060",
+    "KR491/C:2056",
+    "KR491/C:2064",
+    "KR491/C:2061",
+    "KR491/C:2057",
+    "KR491/C:1856",
+    "KR491/C:1853",
+    "KR491/C:1849",
+    "KR491/C:1847",
+    "KR491/C:1845",
+    "KR491/C:1843",
+    "KR491/C:1850",
+    "KR491/C:1848",
+    "KR491/C:1846",
+    "KR491/C:1844",
+    "KR491/C:2058",
+    "KR491/C:2054",
+    "KR491/C:2062",
+    "KR491/C:1064",
+    "KR491/C:1062",
+    "KR491/C:1065",
+    "KR491/C:1063",
+    "KR491/C:3956",
+    "KR491/C:3953",
+    "KR491/C:3954",
+    "KR491/C:3955",
+    "KR491/C:1086",
+    "C:1086",
+    "KR491/C:1074",
+    "KR491/C:1080",
+    "KR491/C:2043",
+    "KR491/C:2040",
+    "KR491/C:2044",
+    "C:2044",
+    "KR491/C:2041",
+    "KR491/C:2045",
+    "KR491/C:2042",
+    "KR491/C:2046"
+  ],
+  "save_loaded": true,
+  "scope": "REAL_X11_GODOT_VIEWPORT_WITH_INPUT_EVENTS_NOT_FULL_1_TO_99_PLAYTHROUGH",
+  "screenshots": [
+    {
+      "height": 640,
+      "name": "restart",
+      "path": "/workspace/baram-private/gear-guide-screen-fixed/gear-guide/restart.png",
+      "sha256": "565855a4a5dbd34bc00658a9befe0c230bcbdd644d86861d00e12f8dc1493271",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    }
+  ],
+  "status": "PASS_EXECUTED_SCREEN_INPUT"
+}

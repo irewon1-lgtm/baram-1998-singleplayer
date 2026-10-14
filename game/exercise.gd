@@ -108,7 +108,10 @@ func hunt_one(kind: String = "") -> bool:
             if not portal_here and (at==game.cell() or game.free_cell(game.player.map,at)):adjacent.append({"at":at,"direction":d})
         adjacent.sort_custom(func(a,b):return a.at.distance_to(game.cell())<b.at.distance_to(game.cell()))
         if adjacent.is_empty():return false
-        if not await route(adjacent[0].at):return false
+        var reached=false
+        for option in adjacent:
+            if await route(option.at):reached=true;break
+        if not reached:return false
         var offset=Vector2i(target.x,target.y)-game.cell()
         var direction=game.DIRECTIONS.find(offset)
         if direction<0:continue
@@ -148,7 +151,10 @@ func run(g, mode: String, directory: String):
     if mode=="natural-progress":
         await natural_progress()
         return
-    if mode in ["restart","source-restart","actions-restart"]:
+    if mode=="gear-guide":
+        await gear_guide()
+        return
+    if mode in ["restart","source-restart","actions-restart","gear-restart"]:
         check(game.save_loaded,"fresh_process_loaded_save")
         var before=game.store.read_state(root.path_join("expected-state.json"))
         check(game.loaded_snapshot.player==before.player,"restart_preserves_entire_player",{"level":game.player.level,"gold":game.player.gold,"equipped":game.player.equipped})
@@ -259,9 +265,11 @@ func approach(role: String) -> bool:
     return false
 
 func guided(destination: String) -> bool:
+    if game.player.map==destination:return true
+    if game.menu!="":await key(KEY_ESCAPE,0.01)
     if not await approach("travel") or game.menu!="travel":return false
     var index=game.choices.find(destination)
-    if index<0:return false
+    if index<0:await key(KEY_ESCAPE,0.01);return false
     for i in range(index):await key(KEY_DOWN,0.02)
     await key(KEY_ENTER,0.06)
     return game.player.map==destination
@@ -578,10 +586,39 @@ func town_all():
         game.player.town_verified.append(m.id)
         await key(KEY_F5,0.03)
         var partial=FileAccess.open(root.path_join("partial-checks.json"),FileAccess.WRITE)
-        partial.store_string(JSON.stringify({"status":"PARTIAL_EXECUTED","checks":checks,"completed_rooms":game.player.town_verified}));partial.close()
+        partial.store_string(JSON.stringify({"status":"PARTIAL_EXECUTED","checks":checks,"completed_rooms":game.player.town_verified,
+            "rendered_tile_ids":game.assets.used_tiles.keys(),"rendered_actor_frames":game.assets.used_frames.keys(),
+            "events":game.event_log,"audio_events":game.audio_events}));partial.close()
     await key(KEY_F5,0.03)
     game.store.write_state(root.path_join("expected-state.json"),game.store.read_state(game.save_path))
     await capture("town-saved")
+    finish()
+
+func gear_guide():
+    check(game.save_loaded and game.player.has("validation_fixture"),"gear_fixture_not_natural_growth")
+    check(await guided("village"),"gear_return_city")
+    check(await approach("shop"),"gear_actual_shop")
+    for item in ["초록색 도포","보라 남자갑옷","장창"]:
+        check(await choose_menu(item),"gear_shop_stock_"+item)
+        await key(KEY_B,0.02)
+        check(game.player.inventory.get(item,0)>0,"gear_shop_purchase_"+item)
+    await key(KEY_ESCAPE,0.02)
+    for item in ["초록색 도포","보라 남자갑옷","장창"]:
+        check(await wear(item),"gear_actual_equip_"+item)
+        await capture("gear-"+str(["초록색 도포","보라 남자갑옷","장창"].find(item)))
+    check(await guided("field"),"gear_source_field")
+    check(await hunt_one("rabbit"),"source_spear_actual_combat")
+    check(game.player.equipped=="장창" and game.assets.used_frames.keys().any(func(k):return str(k).begins_with("spear_weapon:")),"source_spear_frames_actually_drawn")
+    await capture("spear-combat")
+    check(await guided("village") and await guided("town-room-50"),"corrected_source_room_entry")
+    await capture("corrected-guide-position")
+    check(await approach("travel") and game.menu=="travel","corrected_guide_reachable_in_normal_room")
+    await key(KEY_ESCAPE,0.02)
+    var portal=game.maps[game.player.map].portals[0]
+    check(await clear_route(Vector2i(portal.x,portal.y)) and game.player.map=="village","corrected_room_normal_exit")
+    await key(KEY_F5,0.03)
+    game.store.write_state(root.path_join("expected-state.json"),game.store.read_state(game.save_path))
+    await capture("gear-saved")
     finish()
 
 func natural_progress():

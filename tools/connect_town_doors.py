@@ -84,6 +84,8 @@ def build(a):
             notes.append(dict(original_map_id=mid,status='BLOCKED_ISOLATED_REFERENCE_ENTRY',actual_attempt='Decoded source collision flood from reference entry yields fewer than four cells',remaining='Resolve dimension/door collision reference'));continue
         options=sorted(area-{tuple(m['entry'])},key=lambda p:(abs(p[0]-w//2)+abs(p[1]-h//2),p))
         at=next((p for p in options if sum((p[0]+dx,p[1]+dy) in area for dx,dy in [(0,1),(0,-1),(1,0),(-1,0)])>=3),options[0])
+        if combat:
+            at=min((p for p in area if p!=tuple(m['entry'])),key=lambda p:(abs(p[0]-m['entry'][0])+abs(p[1]-m['entry'][1]),p))
         role='travel' if combat else 'inn' if any(k in lower for k in ['tavern','home']) else 'revive' if any(k in lower for k in ['shaman','chapel']) else 'shop'
         npc=dict(id=sid+'-service',kind='innkeeper' if role=='inn' else 'priest' if role=='revive' else 'teacher' if role=='travel' else 'merchant',
                  x=at[0],y=at[1],name={'travel':'귀로 안내인','inn':'주모','revive':'성황','shop':'가게 주인'}[role],role=role,

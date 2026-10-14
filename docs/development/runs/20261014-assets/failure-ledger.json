@@ -77,6 +77,69 @@
       "fix": "Separate attack/hit/skill/level voices",
       "evidence": "package-playtest.json",
       "observed_playback": "Package live test: attack and hit separate voices both playing true; nonzero recorded PCM signal"
+    },
+    {
+      "id": "POET-CATALOG-NULL",
+      "status": "RESOLVED",
+      "observed": "Original upper-level learn-money unknown(null) caused int(null) renderer error.",
+      "fix": "Render 미확정 for missing source values; do not coerce original data.",
+      "evidence": "content-poet-pass.json"
+    },
+    {
+      "id": "STACK-NONSTACK-TRADE",
+      "status": "RESOLVED",
+      "observed": "Multi-stack aggregation allowed duplicate nonstackable sword; TRADE-ROUNDTRIP expected rejection failed.",
+      "fix": "Enforce limit 1 for nonstackable items; repeat only affected trade case.",
+      "evidence": "balance-extended-first-fail.json; balance-extended-trade-fix.json; balance-current.json"
+    },
+    {
+      "id": "DUNGEON-TOUR-COLLISION",
+      "status": "RESOLVED_TEST_PATH",
+      "observed": "Test expected walk through living enemy.",
+      "fix": "Clear blocked route through actual attacks and loot input; no teleport of character in test.",
+      "evidence": "source-dungeon-cleared-pass.json"
+    },
+    {
+      "id": "CITY-SCREEN-PATH-TIMEOUT",
+      "status": "RESOLVED_TEST_PATH",
+      "observed": "Large source city routing recomputed full BFS for every key and exceeded 720s.",
+      "fix": "Cache planned route per destination; preserve every completed room checkpoint.",
+      "evidence": "town-first-timeout.json; town-room-service-current.json"
+    },
+    {
+      "id": "COMBAT-ROOM-GUIDE-ACCESS",
+      "status": "RESOLVED_GAME_DATA",
+      "observed": "Centre guide inside live combat lane obstructed automated approach; 480s timeout after 16 completed rooms.",
+      "fix": "Move six return guides to reachable legal cells next to actual source entrance; restore vacated collision; tested six live services/exits.",
+      "evidence": "town-guide-access-fix.json; town-room-service-current.json"
+    },
+    {
+      "id": "GUIDE-SAME-DESTINATION-MENU",
+      "status": "RESOLVED_TEST_PATH",
+      "observed": "Test tried to select village while already there and left travel menu open.",
+      "fix": "Treat already-current destination as reached; close residual menu before/after approach.",
+      "evidence": "town-all-screen-resume.json; town-all-screen-resume2.json; town-room-service-current.json"
+    },
+    {
+      "id": "CITY-RESUME-240S",
+      "status": "RESOLVED_BY_CHECKPOINT",
+      "observed": "Continued six rooms successfully but overall 240s deadline before final room3400.",
+      "fix": "Reuse 22 completed room services; continue only3400 using real saved state. Overall timeout stays FAIL.",
+      "evidence": "town-all-screen-resume2.json; town-all-screen-last-room.json"
+    },
+    {
+      "id": "TEST-FIXTURE-COPY-ABORT",
+      "status": "PRESERVED_OPERATOR_ERROR",
+      "observed": "Save payload is a JSON string, initial continuation helper assumed dictionary; old fixture was launched before copy.",
+      "fix": "Stop owned duplicate attempt, preserve aborted run report, decode payload and resume correct 22-room save.",
+      "evidence": "town-all-screen-final.json; town-all-screen-last-room.json"
+    },
+    {
+      "id": "SPEAR-TEST-ADJACENT-PATH",
+      "status": "RESOLVED_TEST_PATH",
+      "observed": "Nearest rabbit first adjacent cell was valid as a tile but unreachable by directional collision; no attack had executed.",
+      "fix": "Try other legal adjacent cells through actual movement; spear combat and asset frames are tested independently from purchase/equip.",
+      "evidence": "gear-guide-screen.json; gear-guide-screen-fixed.json"
     }
   ]
 }

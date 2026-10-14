@@ -1,9 +1,16 @@
 {
-  "original_research_data_lock_modified_paths": [],
-  "incoming_research_inventory_preserved": "research/private-asset-inventory-20261014.json from requested base 80d3da1",
-  "original_main_remote_readback": "443b49abe97948f59893d3e23f667b0e2eb5e8ff",
-  "requested_base_ancestor": true,
-  "operating_deployment": false,
-  "paid_actions": false,
-  "main_merge": false
+  "status": "PASS_NO_ORIGINAL_BINARY_OR_PROTECTED_PATH_CHANGE",
+  "at": "2026-10-14T07:39:35.061093+00:00",
+  "branch": "dev/codex-asset-runtime-20261014",
+  "baseline_report_commit": "afe0252",
+  "checked_changed_and_untracked_files": 80,
+  "binary_magic_findings": [],
+  "research_numeric_and_workflow_changed_paths": [],
+  "private_raw_source_map_coordinates_public": false,
+  "no_main_merge": true,
+  "no_paid_actions": true,
+  "no_deployment": true,
+  "initial_guard_result": "FAIL",
+  "initial_guard_note": "Full research diff against 2775 included inventory added by 46637b0 before current afe0252 baseline. Existing original research files have no modified content; current task did not change this prior inventory.",
+  "original_research_numeric_and_lock_modified_paths": []
 }

@@ -41,12 +41,12 @@ def execute(args):
         environment['DISPLAY'] = ':' + display
         modes = args.modes.split(',')
         for mode in modes:
-            folder = directory / ('content-actions' if mode=='actions-restart' else 'source-core' if mode=='source-restart' else 'primary' if mode in ('primary','resume','restart') else mode)
+            folder = directory / ('gear-guide' if mode=='gear-restart' else 'content-actions' if mode=='actions-restart' else 'source-core' if mode=='source-restart' else 'primary' if mode in ('primary','resume','restart') else mode)
             folder.mkdir(exist_ok=True)
             save = folder / 'character.json'
-            if mode not in ('restart','resume','source-restart','actions-restart') and save.exists():
+            if mode not in ('restart','resume','source-restart','actions-restart','gear-restart') and save.exists():
                 raise RuntimeError('Use a fresh evidence directory; existing saves are preserved')
-            if mode.startswith('skills-') or mode in ['tour-resume','content-actions','cure-actions','town-all','natural-progress']:
+            if mode.startswith('skills-') or mode in ['tour-resume','content-actions','cure-actions','town-all','natural-progress','gear-guide']:
                 if not args.fixtures:raise RuntimeError('Controlled skills checks require labeled --fixtures')
                 fixture=Path(args.fixtures)/(mode+'.json')
                 if not fixture.is_file():raise RuntimeError('Missing controlled skill fixture')

@@ -1,0 +1,74 @@
+[
+  {
+    "scene": "town-room-31",
+    "old": [
+      11,
+      11
+    ],
+    "new": [
+      10,
+      19
+    ],
+    "cause": "Return guide moved from combat lane to legally adjacent source entry cell; source floor/objects unchanged"
+  },
+  {
+    "scene": "town-room-50",
+    "old": [
+      15,
+      10
+    ],
+    "new": [
+      9,
+      17
+    ],
+    "cause": "Return guide moved from combat lane to legally adjacent source entry cell; source floor/objects unchanged"
+  },
+  {
+    "scene": "town-room-70",
+    "old": [
+      13,
+      15
+    ],
+    "new": [
+      12,
+      27
+    ],
+    "cause": "Return guide moved from combat lane to legally adjacent source entry cell; source floor/objects unchanged"
+  },
+  {
+    "scene": "town-room-80",
+    "old": [
+      14,
+      14
+    ],
+    "new": [
+      0,
+      3
+    ],
+    "cause": "Return guide moved from combat lane to legally adjacent source entry cell; source floor/objects unchanged"
+  },
+  {
+    "scene": "town-room-90",
+    "old": [
+      14,
+      13
+    ],
+    "new": [
+      2,
+      0
+    ],
+    "cause": "Return guide moved from combat lane to legally adjacent source entry cell; source floor/objects unchanged"
+  },
+  {
+    "scene": "town-room-121",
+    "old": [
+      16,
+      17
+    ],
+    "new": [
+      5,
+      29
+    ],
+    "cause": "Return guide moved from combat lane to legally adjacent source entry cell; source floor/objects unchanged"
+  }
+]

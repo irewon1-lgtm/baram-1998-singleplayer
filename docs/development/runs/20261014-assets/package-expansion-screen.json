@@ -1,0 +1,124 @@
+{
+  "started_at": "2026-10-14T06:46:14.581245+00:00",
+  "scope": "REAL_GAME_X11_WINDOW_AND_GODOT_INPUT_EVENTS",
+  "runs": [
+    {
+      "mode": "source-core",
+      "exit_code": 0,
+      "game_report": "/workspace/baram-private/expansion-unpacked-screen/source-core/source-core-report.json",
+      "game_status": "PASS_EXECUTED_SCREEN_INPUT",
+      "x11_captures": [
+        {
+          "name": "source-village-before-gear",
+          "sha256": "6ba97a2c12790b9be496aa6170a39886e599c7e9c7f98314ced4d07795fb6a0f",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 168,
+          "status": "PASS"
+        },
+        {
+          "name": "source-village-equipped",
+          "sha256": "bb68ddba279d571f50e3fefc32eb4567eb114d54c534f32b19bc19466fde3b2c",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 170,
+          "status": "PASS"
+        },
+        {
+          "name": "source-inn",
+          "sha256": "358b3759fda809affef6d25c7071e795c8580e012bcf2a1df5efed5e1ae8f0d8",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 147,
+          "status": "PASS"
+        },
+        {
+          "name": "source-field",
+          "sha256": "48b14f9ba5a6468cb49ebb38505f0d874cc6543eb2b299c83089cec080972ed6",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 159,
+          "status": "PASS"
+        },
+        {
+          "name": "source-field-combat",
+          "sha256": "e4f9bfebdef3149fbaed62ceeb22b25084fc7dd06bd1f4c518dbc2a31727dee6",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 163,
+          "status": "PASS"
+        },
+        {
+          "name": "source-field-skill",
+          "sha256": "2b7344996d55b0809e3409dc8b1db58883cd2954fdf1bab71fac33407a9f0cb2",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 162,
+          "status": "PASS"
+        },
+        {
+          "name": "source-guild",
+          "sha256": "5724918b7393a815dfeace77a84bd3b00f18006e6c81b0927250f7c631907901",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 174,
+          "status": "PASS"
+        },
+        {
+          "name": "source-saved",
+          "sha256": "7e20b37d46cf993b4c68803fba6711092961b56219d091104420b7afc1098a40",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 171,
+          "status": "PASS"
+        }
+      ],
+      "audio_mix": {
+        "status": "PASS_PCM_SIGNAL",
+        "samples": 1802240,
+        "rms": 2187.5005647254748,
+        "driver": "Dummy",
+        "audible_human_review": "NOT_RUN"
+      },
+      "argv": [
+        "/workspace/baram-private/expansion-unpacked/baram_playable_PRIVATE_20261014/launch-linux.sh",
+        "--save=/workspace/baram-private/expansion-unpacked-screen/source-core/character.json",
+        "--exercise=source-core",
+        "--evidence=/workspace/baram-private/expansion-unpacked-screen/source-core"
+      ],
+      "registered_tiles": 50104,
+      "checks": 25
+    },
+    {
+      "mode": "source-restart",
+      "exit_code": 0,
+      "game_report": "/workspace/baram-private/expansion-unpacked-screen/source-core/source-restart-report.json",
+      "game_status": "PASS_EXECUTED_SCREEN_INPUT",
+      "x11_captures": [
+        {
+          "name": "restart",
+          "sha256": "77c804c36ba3619dab6f7018784fe40d5763de1830ca8ad79cb35d6d7ca3a7a9",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 171,
+          "status": "PASS"
+        }
+      ],
+      "audio_mix": {
+        "status": "NOT_APPLICABLE_NO_AUDIO_EVENTS",
+        "samples": 40960,
+        "rms": 0.0,
+        "driver": "Dummy",
+        "audible_human_review": "NOT_RUN"
+      },
+      "argv": [
+        "/workspace/baram-private/expansion-unpacked/baram_playable_PRIVATE_20261014/launch-linux.sh",
+        "--save=/workspace/baram-private/expansion-unpacked-screen/source-core/character.json",
+        "--exercise=source-restart",
+        "--evidence=/workspace/baram-private/expansion-unpacked-screen/source-core"
+      ],
+      "registered_tiles": 50104,
+      "checks": 6
+    }
+  ],
+  "status": "PASS_EXECUTED_SCREEN_INPUT",
+  "finished_at": "2026-10-14T06:47:23.697394+00:00",
+  "source_sha256": {
+    "game/main.gd": "f4918c96ea2014a966921669c9c79ed0b2ed9143d0807b0a11a44f54de94073f",
+    "game/exercise.gd": "83bd56df0ba8542c53d8bbce49689a1829e475e6f69ef8077d9c0dadc1ef447e",
+    "game/rules.gd": "58b05bf12277ce870259d6d732d40c0a8e6b7bc63ceea083171a84b02396bbdc",
+    "game/save_store.gd": "0f1c8b9fea8baf986a750afaf2636dee6925b97442724226a098cbc9937460ac",
+    "tests/run_playable_screen.py": "11f19d6fb83f042c079c569d089b6e9ae0d45f4958520f7b0f95b18cea1a81fb"
+  }
+}

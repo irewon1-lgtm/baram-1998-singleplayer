@@ -1,0 +1,62 @@
+{
+  "started_at": "2026-10-14T07:15:13.936456+00:00",
+  "scope": "REAL_GAME_X11_WINDOW_AND_GODOT_INPUT_EVENTS",
+  "runs": [
+    {
+      "mode": "town-all",
+      "exit_code": 0,
+      "game_report": "/workspace/baram-private/town-all-screen-last-room/town-all/town-all-report.json",
+      "game_status": "PASS_EXECUTED_SCREEN_INPUT",
+      "x11_captures": [
+        {
+          "name": "room-town-room-3400",
+          "sha256": "be3e2fc8dea4fe296fb778cd728e46792a3961569f7fe14ecbf1a0c103443b71",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 180,
+          "status": "PASS"
+        },
+        {
+          "name": "town-saved",
+          "sha256": "a4e0a8ab1bb106fadb7b8bfee6b11907e0b559be916accdec1ce6ec941de63f0",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 182,
+          "status": "PASS"
+        }
+      ],
+      "audio_mix": {
+        "status": "NOT_APPLICABLE_NO_AUDIO_EVENTS",
+        "samples": 5316608,
+        "rms": 0.0,
+        "driver": "Dummy",
+        "audible_human_review": "NOT_RUN"
+      },
+      "argv": [
+        "godot",
+        "--path",
+        "/workspace/baram-1998-singleplayer/game",
+        "--display-driver",
+        "x11",
+        "--rendering-method",
+        "gl_compatibility",
+        "--audio-driver",
+        "Dummy",
+        "--",
+        "--assets=/workspace/baram-private/game-assets",
+        "--save=/workspace/baram-private/town-all-screen-last-room/town-all/character.json",
+        "--exercise=town-all",
+        "--evidence=/workspace/baram-private/town-all-screen-last-room/town-all"
+      ],
+      "registered_tiles": 50104,
+      "checks": 10
+    }
+  ],
+  "status": "PASS_EXECUTED_SCREEN_INPUT",
+  "finished_at": "2026-10-14T07:16:37.669322+00:00",
+  "source_sha256": {
+    "game/main.gd": "f4918c96ea2014a966921669c9c79ed0b2ed9143d0807b0a11a44f54de94073f",
+    "game/exercise.gd": "b4cd2151c00e5e461beb446977145556b21696c76eff44bb6dad2a838b8eb6e8",
+    "game/rules.gd": "58b05bf12277ce870259d6d732d40c0a8e6b7bc63ceea083171a84b02396bbdc",
+    "game/save_store.gd": "0f1c8b9fea8baf986a750afaf2636dee6925b97442724226a098cbc9937460ac",
+    "tests/run_playable_screen.py": "11f19d6fb83f042c079c569d089b6e9ae0d45f4958520f7b0f95b18cea1a81fb"
+  }
+}

@@ -1,0 +1,1991 @@
+{
+  "audio_events": [
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "playing": true,
+      "time": 11.204634,
+      "voice": "attack"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 11.204634,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bb129e81fea6134daba37fbf5aabc96df4a9f9be90ebdc027e7924ecf882591c",
+      "kind": "skill",
+      "playing": true,
+      "time": 12.2588513333334,
+      "voice": "skill"
+    }
+  ],
+  "checks": [
+    {
+      "name": "declared_original_maps_loaded",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "source_and_uploaded_tiles_registered_separately",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "creation_uses_reachable_source_town_entry",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_source-village-before-gear",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "source_town_actual_shop",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "source_town_purchase",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "source_town_equip",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_source-village-equipped",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "original_tavern_doorway_by_movement",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_source-inn",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "source_inn_functional_keeper",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "source_inn_rest_transaction",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "original_tavern_exit_by_movement",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "guide_connects_original_hunting_field",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_source-field",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "original_field_normal_combat",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "original_field_real_xp_reward",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_source-field-combat",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_source-field-skill",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "source_field_return_guide",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "source_warrior_guild_reached",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_source-guild",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "source_guild_training_role",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_source-saved",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "engine_audio_mix_recorded",
+      "observed": {
+
+      },
+      "status": "PASS"
+    }
+  ],
+  "elapsed_ms": 20225,
+  "events": [
+    {
+      "details": {
+        "loaded_save": false,
+        "registered_tiles": 50104,
+        "renderer": "gl_compatibility"
+      },
+      "event": "ready",
+      "time": 0.0
+    },
+    {
+      "details": {
+        "job": "전사",
+        "name": "바람여행자"
+      },
+      "event": "character_created",
+      "time": 0.144
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 59,
+        "y": 153
+      },
+      "event": "moved",
+      "time": 0.544
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 59,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 0.802
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 60,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 1.042
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 61,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 1.279
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 1.535
+    },
+    {
+      "details": {
+        "id": "village-shop-0",
+        "role": "shop"
+      },
+      "event": "npc_dialogue",
+      "time": 1.606
+    },
+    {
+      "details": {
+        "buy": true,
+        "gold": 10,
+        "item": "목검",
+        "success": true
+      },
+      "event": "trade",
+      "time": 1.733
+    },
+    {
+      "details": {
+        "item": "목검",
+        "success": true
+      },
+      "event": "equipped",
+      "time": 1.916
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 60,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 2.233
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 60,
+        "y": 153
+      },
+      "event": "moved",
+      "time": 2.491
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 60,
+        "y": 152
+      },
+      "event": "moved",
+      "time": 2.75
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 60,
+        "y": 151
+      },
+      "event": "moved",
+      "time": 2.981
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 60,
+        "y": 150
+      },
+      "event": "moved",
+      "time": 3.222
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 59,
+        "y": 150
+      },
+      "event": "moved",
+      "time": 3.463
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 59,
+        "y": 149
+      },
+      "event": "moved",
+      "time": 3.702
+    },
+    {
+      "details": {
+        "map": "inn",
+        "x": 21,
+        "y": 12
+      },
+      "event": "map_changed",
+      "time": 3.702
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "inn",
+        "x": 21,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 4.195
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "inn",
+        "x": 21,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 4.428
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "inn",
+        "x": 21,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 4.666
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "inn",
+        "x": 21,
+        "y": 8
+      },
+      "event": "moved",
+      "time": 4.898
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "inn",
+        "x": 21,
+        "y": 7
+      },
+      "event": "moved",
+      "time": 5.134
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 5.365
+    },
+    {
+      "details": {
+        "id": "inn-inn-0",
+        "role": "inn"
+      },
+      "event": "npc_dialogue",
+      "time": 5.398
+    },
+    {
+      "details": {
+
+      },
+      "event": "rested",
+      "time": 5.465
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "inn",
+        "x": 21,
+        "y": 8
+      },
+      "event": "moved",
+      "time": 5.548
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "inn",
+        "x": 21,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 5.787
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "inn",
+        "x": 21,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 6.023
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "inn",
+        "x": 21,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 6.261
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "inn",
+        "x": 21,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 6.496
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "inn",
+        "x": 21,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 6.731
+    },
+    {
+      "details": {
+        "map": "village",
+        "x": 59,
+        "y": 150
+      },
+      "event": "map_changed",
+      "time": 6.731
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 59,
+        "y": 151
+      },
+      "event": "moved",
+      "time": 6.963
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 59,
+        "y": 152
+      },
+      "event": "moved",
+      "time": 7.202
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 59,
+        "y": 153
+      },
+      "event": "moved",
+      "time": 7.437
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 59,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 7.669
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 60,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 7.901
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 61,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 8.142
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 62,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 8.391
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 63,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 8.643
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 64,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 8.882
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 65,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 9.119
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 66,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 9.359
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 67,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 9.614
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 9.861
+    },
+    {
+      "details": {
+        "id": "village-travel-3",
+        "role": "travel"
+      },
+      "event": "npc_dialogue",
+      "time": 9.891
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 30,
+        "y": 56
+      },
+      "event": "map_changed",
+      "time": 9.947
+    },
+    {
+      "details": {
+        "classification": "SINGLEPLAYER_COMPLETION",
+        "destination": "field"
+      },
+      "event": "guide_travel",
+      "time": 9.947
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 31,
+        "y": 56
+      },
+      "event": "moved",
+      "time": 10.276
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "field",
+        "x": 31,
+        "y": 55
+      },
+      "event": "moved",
+      "time": 10.518
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 32,
+        "y": 55
+      },
+      "event": "moved",
+      "time": 10.759
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 11.0
+    },
+    {
+      "details": {
+        "direction": 0,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-6"
+      },
+      "event": "attack_started",
+      "time": 11.037
+    },
+    {
+      "details": {
+        "damage": 22,
+        "hp": -12,
+        "impact_time": 0.168104333333333,
+        "skill": "",
+        "source": "melee",
+        "target": "field-6"
+      },
+      "event": "damage_applied",
+      "time": 11.205
+    },
+    {
+      "details": {
+        "drops": [
+          {
+            "item": "토끼고기",
+            "quantity": 1
+          }
+        ],
+        "gold": 1,
+        "id": "field-6",
+        "level": 1,
+        "xp": 5.0
+      },
+      "event": "monster_killed",
+      "time": 11.205
+    },
+    {
+      "details": {
+        "item": "토끼고기",
+        "map": "field",
+        "quantity": 1,
+        "x": 32.0,
+        "y": 54.0
+      },
+      "event": "item_picked_up",
+      "time": 11.75
+    },
+    {
+      "details": {
+        "classification": "GENERATED_TRAINING",
+        "impact_ms": 180,
+        "skill": "기초 회복",
+        "slot": 0
+      },
+      "event": "skill_started",
+      "time": 12.067
+    },
+    {
+      "details": {
+        "behavior": "heal",
+        "classification": "GENERATED_TRAINING",
+        "hp": 50,
+        "mp": 30,
+        "skill": "기초 회복",
+        "slot": 0
+      },
+      "event": "skill_cast",
+      "time": 12.259
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 31,
+        "y": 55
+      },
+      "event": "moved",
+      "time": 12.595
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "field",
+        "x": 31,
+        "y": 56
+      },
+      "event": "moved",
+      "time": 12.836
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 30,
+        "y": 56
+      },
+      "event": "moved",
+      "time": 13.067
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 13.31
+    },
+    {
+      "details": {
+        "id": "field-travel-0",
+        "role": "travel"
+      },
+      "event": "npc_dialogue",
+      "time": 13.35
+    },
+    {
+      "details": {
+        "map": "village",
+        "x": 59,
+        "y": 152
+      },
+      "event": "map_changed",
+      "time": 13.414
+    },
+    {
+      "details": {
+        "classification": "SINGLEPLAYER_COMPLETION",
+        "destination": "village"
+      },
+      "event": "guide_travel",
+      "time": 13.414
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 59,
+        "y": 153
+      },
+      "event": "moved",
+      "time": 13.526
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 59,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 13.721
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 60,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 13.967
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 61,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 14.214
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 62,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 14.475
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 63,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 14.709
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 64,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 14.949
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 65,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 15.207
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 66,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 15.467
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 67,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 15.723
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 15.973
+    },
+    {
+      "details": {
+        "id": "village-travel-3",
+        "role": "travel"
+      },
+      "event": "npc_dialogue",
+      "time": 16.008
+    },
+    {
+      "details": {
+        "map": "guild",
+        "x": 9,
+        "y": 21
+      },
+      "event": "map_changed",
+      "time": 16.226
+    },
+    {
+      "details": {
+        "classification": "SINGLEPLAYER_COMPLETION",
+        "destination": "guild"
+      },
+      "event": "guide_travel",
+      "time": 16.226
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "guild",
+        "x": 9,
+        "y": 20
+      },
+      "event": "moved",
+      "time": 16.538
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "guild",
+        "x": 9,
+        "y": 19
+      },
+      "event": "moved",
+      "time": 16.779
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "guild",
+        "x": 9,
+        "y": 18
+      },
+      "event": "moved",
+      "time": 17.02
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "guild",
+        "x": 9,
+        "y": 17
+      },
+      "event": "moved",
+      "time": 17.258
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "guild",
+        "x": 9,
+        "y": 16
+      },
+      "event": "moved",
+      "time": 17.5
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "guild",
+        "x": 9,
+        "y": 15
+      },
+      "event": "moved",
+      "time": 17.731
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "guild",
+        "x": 9,
+        "y": 14
+      },
+      "event": "moved",
+      "time": 17.964
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "guild",
+        "x": 9,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 18.206
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "guild",
+        "x": 9,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 18.443
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "guild",
+        "x": 9,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 18.687
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "guild",
+        "x": 9,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 18.926
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "guild",
+        "x": 9,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 19.169
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "guild",
+        "x": 9,
+        "y": 8
+      },
+      "event": "moved",
+      "time": 19.406
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 19.644
+    },
+    {
+      "details": {
+        "id": "guild-trainer-0",
+        "role": "trainer"
+      },
+      "event": "npc_dialogue",
+      "time": 19.684
+    },
+    {
+      "details": {
+        "sha256": "a4d65b38db2b3771a734eca277c7131c4cfca5a8c58c8c99955496f49639d4bd",
+        "success": true
+      },
+      "event": "save_written",
+      "time": 19.788
+    }
+  ],
+  "player": {
+    "buffs": {
+
+    },
+    "cooldowns": {
+      "기초 회복": 0.0
+    },
+    "direction": 0,
+    "durability": {
+      "목검": 3999,
+      "목도": 1000
+    },
+    "equipped": "목검",
+    "gold": 6,
+    "growth_log": [],
+    "hotbar": [
+      "기초 회복",
+      "비영사천문",
+      "물품감정"
+    ],
+    "hp": 50,
+    "hp_max": 50,
+    "inventory": {
+      "목검": 1,
+      "목도": 1,
+      "토끼고기": 1
+    },
+    "job": "전사",
+    "kills": 1,
+    "level": 1,
+    "map": "guild",
+    "mp": 30,
+    "mp_max": 35,
+    "name": "바람여행자",
+    "quests": [],
+    "rank": 0,
+    "rng_state": "3650685026019133339",
+    "skill_page": 0,
+    "skills": [
+      "기초 회복",
+      "비영사천문",
+      "성황령",
+      "물품감정"
+    ],
+    "strength": 5,
+    "visited": [
+      "inn",
+      "village",
+      "field",
+      "guild"
+    ],
+    "world_revision": "source-maps-2",
+    "x": 9,
+    "xp2": 10,
+    "y": 8
+  },
+  "registered_tile_sources": 6,
+  "registered_tiles": 50104,
+  "rendered_actor_frames": [
+    "ui_border:0",
+    "ui_border:1",
+    "ui_border:2",
+    "ui_border:3",
+    "ui_border:4",
+    "ui_border:5",
+    "ui_border:6",
+    "ui_border:7",
+    "body_0:7",
+    "head_0:7",
+    "merchant:6",
+    "teacher:6",
+    "priest:6",
+    "ui_bars:0",
+    "ui_bars:1",
+    "merchant:7",
+    "teacher:7",
+    "priest:7",
+    "merchant:8",
+    "teacher:8",
+    "priest:8",
+    "body_0:8",
+    "head_0:8",
+    "body_0:6",
+    "head_0:6",
+    "body_0:10",
+    "head_0:10",
+    "body_0:11",
+    "head_0:11",
+    "body_0:9",
+    "head_0:9",
+    "body_0:1",
+    "head_0:1",
+    "icons:0",
+    "icons:1",
+    "icons:5",
+    "icons:4",
+    "icons:2",
+    "icons:3",
+    "icons:6",
+    "wood_weapon:1",
+    "body_0:13",
+    "head_0:13",
+    "body_0:16",
+    "head_0:16",
+    "wood_weapon:4",
+    "body_0:17",
+    "head_0:17",
+    "wood_weapon:5",
+    "wood_weapon:0",
+    "body_0:12",
+    "head_0:12",
+    "wood_weapon:2",
+    "body_0:14",
+    "head_0:14",
+    "body_0:15",
+    "head_0:15",
+    "wood_weapon:3",
+    "innkeeper:7",
+    "innkeeper:8",
+    "innkeeper:6",
+    "body_0:19",
+    "head_0:19",
+    "wood_weapon:7",
+    "body_0:20",
+    "head_0:20",
+    "wood_weapon:8",
+    "body_0:18",
+    "head_0:18",
+    "wood_weapon:6",
+    "wood_weapon:10",
+    "body_0:22",
+    "head_0:22",
+    "wood_weapon:11",
+    "body_0:23",
+    "head_0:23",
+    "wood_weapon:9",
+    "body_0:21",
+    "head_0:21",
+    "squirrel:6",
+    "rabbit:6",
+    "squirrel:7",
+    "rabbit:7",
+    "squirrel:8",
+    "rabbit:8",
+    "body_0:24",
+    "head_0:24",
+    "wood_weapon:12",
+    "wood_weapon:13",
+    "body_0:25",
+    "head_0:25",
+    "body_0:76",
+    "head_0:76",
+    "body_0:72",
+    "head_0:72",
+    "fx_heal:0",
+    "fx_heal:1",
+    "fx_heal:2",
+    "fx_heal:3",
+    "fx_heal:4",
+    "fx_heal:5",
+    "fx_heal:6",
+    "rabbit:5",
+    "squirrel:5",
+    "rabbit:11",
+    "fx_heal:7",
+    "rabbit:3",
+    "squirrel:3",
+    "rabbit:9",
+    "rabbit:4",
+    "squirrel:4",
+    "rabbit:10"
+  ],
+  "rendered_tile_ids": [
+    "KR491/A:43",
+    "A:43",
+    "KR491/A:100",
+    "A:100",
+    "KR491/A:99",
+    "A:99",
+    "KR491/A:44",
+    "A:44",
+    "KR491/A:42",
+    "A:42",
+    "A:177",
+    "B:204",
+    "C:3973",
+    "KR491/B:2015",
+    "A:2273",
+    "B:2015",
+    "KR491/A:20",
+    "A:20",
+    "B:205",
+    "KR491/A:0",
+    "A:0",
+    "KR491/A:9",
+    "A:9",
+    "KR491/B:206",
+    "A:63",
+    "B:206",
+    "KR491/A:41",
+    "A:41",
+    "B:207",
+    "KR491/B:207",
+    "KR491/A:101",
+    "A:101",
+    "KR491/A:98",
+    "A:98",
+    "KR491/A:63",
+    "KR491/C:126",
+    "C:126",
+    "KR491/C:132",
+    "C:132",
+    "KR491/C:139",
+    "KR491/C:128",
+    "C:128",
+    "KR491/C:134",
+    "C:134",
+    "KR491/C:141",
+    "KR491/C:127",
+    "C:127",
+    "KR491/C:136",
+    "KR491/C:143",
+    "KR491/C:129",
+    "C:129",
+    "KR491/C:135",
+    "C:135",
+    "KR491/C:142",
+    "KR491/C:1114",
+    "C:1114",
+    "KR491/C:1124",
+    "C:1124",
+    "KR491/C:1125",
+    "C:1125",
+    "KR491/C:1110",
+    "C:1110",
+    "KR491/C:1129",
+    "C:1129",
+    "KR491/C:1113",
+    "KR491/C:1128",
+    "C:1128",
+    "KR491/C:195",
+    "C:195",
+    "KR491/C:194",
+    "C:194",
+    "KR491/C:757",
+    "C:757",
+    "KR491/C:767",
+    "C:767",
+    "KR491/C:800",
+    "KR491/C:1641",
+    "KR491/C:1643",
+    "KR491/C:1640",
+    "KR491/C:1642",
+    "KR491/C:756",
+    "C:756",
+    "KR491/C:766",
+    "C:766",
+    "KR491/C:798",
+    "KR491/C:812",
+    "C:812",
+    "KR491/C:814",
+    "C:814",
+    "KR491/C:816",
+    "KR491/C:1133",
+    "C:1133",
+    "KR491/C:921",
+    "C:921",
+    "KR491/C:913",
+    "C:913",
+    "KR491/C:905",
+    "KR491/C:924",
+    "C:924",
+    "KR491/C:916",
+    "C:916",
+    "KR491/C:908",
+    "KR491/C:925",
+    "KR491/C:917",
+    "C:917",
+    "KR491/C:909",
+    "KR491/C:904",
+    "KR491/C:912",
+    "C:912",
+    "KR491/C:920",
+    "KR491/C:903",
+    "KR491/C:911",
+    "KR491/C:919",
+    "KR491/C:153",
+    "KR491/C:187",
+    "KR491/C:193",
+    "KR491/C:1117",
+    "KR491/C:1116",
+    "KR491/C:1111",
+    "KR491/C:154",
+    "KR491/C:188",
+    "KR491/A:198",
+    "A:198",
+    "KR491/B:213",
+    "A:426",
+    "B:213",
+    "KR491/A:129",
+    "A:129",
+    "KR491/A:176",
+    "A:176",
+    "KR491/A:132",
+    "A:132",
+    "KR491/A:133",
+    "A:133",
+    "KR491/A:128",
+    "A:128",
+    "KR491/A:140",
+    "A:140",
+    "KR491/A:131",
+    "A:131",
+    "KR491/C:759",
+    "C:759",
+    "KR491/C:769",
+    "C:769",
+    "KR491/C:796",
+    "KR491/C:1657",
+    "KR491/C:1659",
+    "KR491/C:1656",
+    "KR491/C:1658",
+    "KR491/C:777",
+    "C:777",
+    "KR491/C:795",
+    "KR491/C:758",
+    "C:758",
+    "KR491/C:768",
+    "C:768",
+    "KR491/C:794",
+    "KR491/C:962",
+    "C:962",
+    "KR491/C:961",
+    "C:961",
+    "KR491/C:960",
+    "C:960",
+    "KR491/C:959",
+    "KR491/C:958",
+    "KR491/C:851",
+    "KR491/C:848",
+    "C:848",
+    "KR491/C:763",
+    "C:763",
+    "KR491/C:852",
+    "KR491/C:781",
+    "C:781",
+    "KR491/C:764",
+    "C:764",
+    "KR491/C:853",
+    "KR491/C:865",
+    "KR491/C:863",
+    "KR491/C:861",
+    "KR491/C:2058",
+    "KR491/C:2054",
+    "KR491/C:2062",
+    "KR491/C:2059",
+    "KR491/C:2055",
+    "KR491/C:2063",
+    "KR491/C:2060",
+    "KR491/C:860",
+    "C:860",
+    "KR491/C:862",
+    "C:862",
+    "KR491/C:864",
+    "KR491/C:2056",
+    "KR491/C:2064",
+    "KR491/C:2057",
+    "KR491/C:2061",
+    "KR491/C:1038",
+    "C:1038",
+    "KR491/C:1033",
+    "C:1033",
+    "KR491/C:1029",
+    "C:1029",
+    "KR491/C:1018",
+    "C:1018",
+    "KR491/C:1039",
+    "C:1039",
+    "KR491/C:1034",
+    "C:1034",
+    "KR491/C:1030",
+    "C:1030",
+    "KR491/C:1019",
+    "C:1019",
+    "KR491/C:1040",
+    "KR491/C:1035",
+    "C:1035",
+    "KR491/C:1027",
+    "C:1027",
+    "KR491/C:1047",
+    "KR491/C:1044",
+    "C:1044",
+    "KR491/C:1041",
+    "KR491/C:1048",
+    "KR491/C:1045",
+    "C:1045",
+    "KR491/C:1042",
+    "KR491/C:1049",
+    "KR491/C:1046",
+    "KR491/C:1017",
+    "C:1017",
+    "KR491/C:1028",
+    "C:1028",
+    "KR491/C:1032",
+    "C:1032",
+    "KR491/C:1037",
+    "C:1037",
+    "KR491/C:1025",
+    "C:1025",
+    "KR491/C:1043",
+    "KR491/C:1036",
+    "KR491/C:1031",
+    "C:1031",
+    "KR491/C:1053",
+    "KR491/C:1050",
+    "KR491/C:1060",
+    "KR491/C:1057",
+    "C:1057",
+    "KR491/C:1054",
+    "KR491/C:1051",
+    "KR491/C:1052",
+    "KR491/C:1055",
+    "KR491/C:2042",
+    "KR491/C:2045",
+    "KR491/C:2041",
+    "KR491/C:2044",
+    "C:2044",
+    "KR491/C:2040",
+    "KR491/C:2043",
+    "KR491/C:953",
+    "C:953",
+    "KR491/C:945",
+    "C:945",
+    "KR491/C:954",
+    "C:954",
+    "KR491/C:946",
+    "C:946",
+    "KR491/C:955",
+    "C:955",
+    "KR491/C:947",
+    "KR491/C:956",
+    "C:956",
+    "KR491/C:948",
+    "KR491/C:957",
+    "KR491/C:949",
+    "KR491/A:130",
+    "A:130",
+    "KR491/A:145",
+    "A:145",
+    "KR491/C:2049",
+    "KR491/C:1058",
+    "KR491/C:2048",
+    "KR491/C:2047",
+    "KR491/C:811",
+    "KR491/C:804",
+    "KR491/C:965",
+    "KR491/C:964",
+    "KR491/C:963",
+    "C:963",
+    "KR491/C:1061",
+    "KR491/C:2052",
+    "KR491/C:2051",
+    "KR491/C:813",
+    "KR491/C:807",
+    "KR491/C:1062",
+    "KR491/A:138",
+    "A:138",
+    "KR491/C:252",
+    "KR491/C:271",
+    "KR491/C:280",
+    "KR491/C:2046",
+    "KR491/C:2050",
+    "KR491/C:2053",
+    "KR491/C:1063",
+    "KR491/A:157",
+    "A:157",
+    "KR491/C:1081",
+    "KR491/C:1093",
+    "KR491/C:1083",
+    "KR491/C:256",
+    "KR491/C:952",
+    "C:952",
+    "KR491/C:951",
+    "C:951",
+    "KR491/C:950",
+    "KR491/C:1020",
+    "KR491/C:1016",
+    "C:1016",
+    "KR491/C:942",
+    "KR491/C:943",
+    "KR491/C:944",
+    "KR491/C:1009",
+    "C:1009",
+    "KR491/C:1010",
+    "KR491/C:1011",
+    "KR491/C:1008",
+    "C:1008",
+    "KR491/C:1007",
+    "C:1007",
+    "KR491/A:606",
+    "A:606",
+    "A:3043",
+    "KR491/B:5901",
+    "KR491/A:603",
+    "A:603",
+    "A:3040",
+    "KR491/A:604",
+    "A:604",
+    "A:3041",
+    "KR491/A:601",
+    "A:601",
+    "A:3038",
+    "KR491/A:605",
+    "A:605",
+    "A:3042",
+    "KR491/C:1374",
+    "C:1374",
+    "KR491/C:1059",
+    "KR491/C:3866",
+    "C:3866",
+    "KR491/C:3869",
+    "C:3869",
+    "KR491/C:3865",
+    "C:3865",
+    "KR491/C:3867",
+    "C:3867",
+    "KR491/C:1361",
+    "C:1361",
+    "KR491/C:1363",
+    "C:1363",
+    "KR491/C:1366",
+    "C:1366",
+    "KR491/C:1357",
+    "C:1357",
+    "KR491/C:1362",
+    "C:1362",
+    "KR491/B:332",
+    "B:332",
+    "KR491/A:600",
+    "A:600",
+    "A:3037",
+    "KR491/A:602",
+    "A:602",
+    "A:3039",
+    "KR491/B:331",
+    "B:331",
+    "KR491/B:333",
+    "B:333",
+    "KR491/B:334",
+    "B:334",
+    "KR491/C:1367",
+    "C:1367",
+    "KR491/C:1056",
+    "KR491/C:1342",
+    "C:1342",
+    "KR491/C:1337",
+    "C:1337",
+    "KR491/C:1336",
+    "C:1336",
+    "KR491/C:1341",
+    "C:1341",
+    "KR491/C:1340",
+    "C:1340",
+    "KR491/C:1335",
+    "C:1335",
+    "KR491/C:1334",
+    "C:1334",
+    "KR491/C:1364",
+    "C:1364",
+    "KR491/C:1365",
+    "C:1365",
+    "KR491/A:21",
+    "A:21",
+    "KR491/C:1849",
+    "KR491/C:1847",
+    "KR491/C:1843",
+    "KR491/A:106",
+    "A:106",
+    "KR491/C:1850",
+    "KR491/C:1848",
+    "KR491/C:1844",
+    "KR491/A:97",
+    "A:97",
+    "KR491/A:105",
+    "A:105",
+    "KR491/A:53",
+    "A:53",
+    "KR491/A:46",
+    "A:46",
+    "KR491/A:52",
+    "A:52",
+    "KR491/A:65",
+    "A:65",
+    "KR491/B:255",
+    "B:255",
+    "KR491/A:8",
+    "A:8",
+    "KR491/B:273",
+    "B:273",
+    "KR491/A:273",
+    "A:273",
+    "KR491/B:274",
+    "B:274",
+    "KR491/B:288",
+    "B:288",
+    "KR491/B:121",
+    "B:121",
+    "KR491/B:267",
+    "B:267",
+    "KR491/A:269",
+    "A:269",
+    "KR491/B:270",
+    "B:270",
+    "KR491/B:124",
+    "KR491/B:128",
+    "B:128",
+    "KR491/A:17",
+    "A:17",
+    "KR491/A:64",
+    "A:64",
+    "KR491/A:16",
+    "A:16",
+    "KR491/B:271",
+    "B:271",
+    "KR491/A:271",
+    "A:271",
+    "KR491/B:272",
+    "B:272",
+    "KR491/B:296",
+    "B:296",
+    "KR491/B:301",
+    "B:301",
+    "KR491/C:1995",
+    "KR491/C:1996",
+    "KR491/C:1997",
+    "KR491/C:2071",
+    "KR491/C:2065",
+    "KR491/C:2068",
+    "KR491/C:2069",
+    "KR491/C:2082",
+    "KR491/C:2084",
+    "KR491/C:2081",
+    "KR491/C:2083",
+    "KR491/B:120",
+    "B:120",
+    "KR491/A:2272",
+    "A:2272",
+    "B:2014",
+    "KR491/A:1819",
+    "A:1819",
+    "KR491/A:1408",
+    "A:1408",
+    "KR491/C:1998",
+    "KR491/C:1744",
+    "KR491/C:1749",
+    "KR491/A:1386",
+    "A:1386",
+    "KR491/A:18",
+    "A:18",
+    "KR491/A:19",
+    "A:19",
+    "KR491/C:1745",
+    "KR491/C:1750",
+    "KR491/C:1753",
+    "KR491/C:1755",
+    "KR491/A:568",
+    "A:568",
+    "KR491/A:498",
+    "A:498",
+    "KR491/A:499",
+    "A:499",
+    "KR491/A:500",
+    "A:500",
+    "KR491/A:501",
+    "A:501",
+    "KR491/A:502",
+    "A:502",
+    "KR491/A:503",
+    "A:503",
+    "KR491/A:572",
+    "A:572",
+    "KR491/A:569",
+    "A:569",
+    "KR491/A:504",
+    "A:504",
+    "KR491/A:505",
+    "A:505",
+    "KR491/A:506",
+    "A:506",
+    "KR491/A:507",
+    "A:507",
+    "KR491/A:508",
+    "A:508",
+    "KR491/A:509",
+    "A:509",
+    "KR491/A:510",
+    "A:510",
+    "KR491/A:511",
+    "A:511",
+    "KR491/A:512",
+    "A:512",
+    "KR491/A:513",
+    "A:513",
+    "KR491/A:514",
+    "A:514",
+    "KR491/A:515",
+    "A:515",
+    "KR491/A:566",
+    "A:566",
+    "KR491/A:571",
+    "A:571",
+    "KR491/A:567",
+    "A:567",
+    "KR491/A:427",
+    "A:427",
+    "B:214",
+    "KR491/A:412",
+    "A:412",
+    "KR491/C:1153",
+    "KR491/C:1152",
+    "KR491/C:1151",
+    "KR491/C:1171",
+    "KR491/C:1170",
+    "KR491/C:1168",
+    "KR491/C:1241",
+    "KR491/C:1251",
+    "KR491/C:1242",
+    "KR491/C:1258",
+    "KR491/C:1252",
+    "KR491/C:1243",
+    "KR491/C:1259",
+    "KR491/C:1253",
+    "KR491/C:1244",
+    "KR491/C:1254",
+    "KR491/C:1245",
+    "KR491/C:1255",
+    "C:1255",
+    "KR491/C:1246",
+    "C:1246",
+    "KR491/C:1237",
+    "KR491/C:1256",
+    "KR491/C:1247",
+    "KR491/C:1238",
+    "KR491/C:1257",
+    "KR491/C:1248",
+    "KR491/C:1239",
+    "KR491/C:1249",
+    "KR491/C:1240",
+    "KR491/C:1250",
+    "KR491/C:1215",
+    "C:1215",
+    "KR491/C:1219",
+    "KR491/C:1213",
+    "C:1213",
+    "C:1214",
+    "KR491/C:1217",
+    "KR491/C:1212",
+    "C:1212",
+    "KR491/C:1216",
+    "KR491/C:3851",
+    "C:3851",
+    "KR491/C:3849",
+    "C:3849",
+    "KR491/C:3847",
+    "C:3847",
+    "KR491/C:1419",
+    "C:1419",
+    "KR491/C:1410",
+    "C:1410",
+    "KR491/C:1429",
+    "C:1429",
+    "KR491/C:1431",
+    "C:1431",
+    "KR491/C:1428",
+    "C:1428",
+    "KR491/C:1430",
+    "C:1430",
+    "KR491/A:492",
+    "A:492",
+    "KR491/A:493",
+    "A:493",
+    "KR491/A:494",
+    "A:494",
+    "KR491/A:495",
+    "A:495",
+    "KR491/A:496",
+    "A:496",
+    "KR491/A:497",
+    "A:497",
+    "KR491/C:1167",
+    "KR491/C:1150",
+    "KR491/C:1149",
+    "KR491/A:564",
+    "A:564",
+    "KR491/A:570",
+    "A:570",
+    "KR491/A:565",
+    "A:565",
+    "KR491/C:1148"
+  ],
+  "save_loaded": false,
+  "scope": "REAL_X11_GODOT_VIEWPORT_WITH_INPUT_EVENTS_NOT_FULL_1_TO_99_PLAYTHROUGH",
+  "screenshots": [
+    {
+      "height": 640,
+      "name": "source-village-before-gear",
+      "path": "/workspace/baram-private/expansion-unpacked-screen/source-core/source-village-before-gear.png",
+      "sha256": "bcdde4ddcdd350a0770687203784aa3118cb6d4b15bb71088ec51cd3963c4f13",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "source-village-equipped",
+      "path": "/workspace/baram-private/expansion-unpacked-screen/source-core/source-village-equipped.png",
+      "sha256": "3d18b89d25b9f1d30b9c7ba5d7faea5c9de4e15f7cb6d65bc9deadc5f5ec2b2b",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "source-inn",
+      "path": "/workspace/baram-private/expansion-unpacked-screen/source-core/source-inn.png",
+      "sha256": "c71fa6663855dcedd1fdc4ec306fc5f5639d29f02643bc6cd54ba82afef18b5e",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "source-field",
+      "path": "/workspace/baram-private/expansion-unpacked-screen/source-core/source-field.png",
+      "sha256": "e0129baaad950c9f3266a5b2df39a5341ca9da2f8848a291ef1442461e1e4e43",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "source-field-combat",
+      "path": "/workspace/baram-private/expansion-unpacked-screen/source-core/source-field-combat.png",
+      "sha256": "ed3dd2eac23279155d5bebef853d2eab61b07799496374e9e636d73ab36b8946",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "source-field-skill",
+      "path": "/workspace/baram-private/expansion-unpacked-screen/source-core/source-field-skill.png",
+      "sha256": "4890aec398f773db33424a36611c5bcf09a439de1598873a5badd0c3620aa692",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "source-guild",
+      "path": "/workspace/baram-private/expansion-unpacked-screen/source-core/source-guild.png",
+      "sha256": "554b02e8b6d57288c2961fc45b18de451ea81eccadabbbf6702b98116bb6a709",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "source-saved",
+      "path": "/workspace/baram-private/expansion-unpacked-screen/source-core/source-saved.png",
+      "sha256": "f0a399987614624187b3ad5b111515d1857bd8988018fa2233f7f3a5b307d3fc",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    }
+  ],
+  "status": "PASS_EXECUTED_SCREEN_INPUT"
+}
