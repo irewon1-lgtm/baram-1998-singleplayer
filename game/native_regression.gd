@@ -13,6 +13,17 @@ func run(g,mode,directory):
         check(game.maps.size()>0 and game.assets.tiles.size()>=14835,"content_and_all_tile_ids_registered")
         check(game.menu=="creation" or game.save_loaded,"creation_or_existing_save_reached")
         await get_tree().process_frame
+        if DisplayServer.get_name()!="headless":
+            await RenderingServer.frame_post_draw
+            var frame=game.get_viewport().get_texture().get_image()
+            var colors={}
+            if not frame.is_empty():
+                for y in range(0,frame.get_height(),16):
+                    for x in range(0,frame.get_width(),16):
+                        colors[frame.get_pixel(x,y).to_rgba32()]=true
+            var captured=not frame.is_empty() and colors.size()>=8
+            if captured:captured=frame.save_png(root.path_join("windows-startup-frame.png"))==OK
+            check(captured,"windowed_game_frame_rendered",{"sampled_colors":colors.size(),"width":frame.get_width(),"height":frame.get_height()})
         finish();return
     await super.run(g,"work-restart" if mode=="native-restart" else "work-core",directory)
 

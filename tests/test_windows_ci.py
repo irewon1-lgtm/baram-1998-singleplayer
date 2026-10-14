@@ -19,7 +19,7 @@ class WindowsCIGates(unittest.TestCase):
         self.args=SimpleNamespace(out=str(self.out),require_windows=True)
     def tearDown(self):self.tmp.cleanup()
     def report(self,**changes):
-        value={'status':'PASS','game_function_automation':'PASS','windows_native_execution':'PASS','source_sha':'a'*40}
+        value={'status':'PASS','game_function_automation':'PASS','windows_native_execution':'PASS','windows_windowed_startup':'PASS','source_sha':'a'*40}
         value.update(changes);windows_ci.write_json(self.out/'verification.json',value)
     def test_failed_game_tests_block_zip_before_stage_access(self):
         self.report(status='FAIL')
@@ -28,6 +28,10 @@ class WindowsCIGates(unittest.TestCase):
     def test_linux_execution_cannot_be_native_pass(self):
         self.report(windows_native_execution='NOT_RUN_LINUX_EMBEDDED_PCK_ONLY')
         with self.assertRaisesRegex(ValueError,'Windows-native'):windows_ci.archive(self.args)
+    def test_unexecuted_normal_windows_startup_blocks_zip(self):
+        self.report(windows_windowed_startup='NOT_RUN')
+        with self.assertRaisesRegex(ValueError,'Normal Windows EXE'):windows_ci.archive(self.args)
+        self.assertEqual(list(self.out.glob('*.zip')),[])
     def test_public_actions_cannot_archive_private_payload(self):
         self.report()
         with patch.dict(os.environ,{'GITHUB_ACTIONS':'true','BARAM_PRIVATE_REPOSITORY':'false'}):

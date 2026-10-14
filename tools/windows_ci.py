@@ -130,10 +130,10 @@ texture_format/etc2_astc=false
     print('BUILD_EXPORTED '+commit)
 
 
-def run_probe(args, stage, mode, evidence, save):
+def run_probe(args, stage, mode, evidence, save, windowed=False):
     exe = stage/EXE
     if os.name=='nt':
-        cmd=[str(exe),'--headless']
+        cmd=[str(exe)] if windowed else [str(exe),'--headless']
     else:
         if not args.godot:raise ValueError('Linux verification requires --godot')
         cmd=[args.godot,'--headless','--main-pack',str(exe)]
@@ -163,7 +163,10 @@ def run_probe(args, stage, mode, evidence, save):
     if report['status']!='PASS' or any(c['status']!='PASS' for c in report['checks']):raise RuntimeError('Game checks failed')
     if ready is None or ready['elapsed_ms']>60000:raise RuntimeError('Missing/tardy ready marker')
     if os.name=='nt' and peak==0:raise RuntimeError('Windows memory monitor returned no evidence')
+    if windowed and not any(c['name']=='windowed_game_frame_rendered' and c['status']=='PASS' for c in report['checks']):
+        raise RuntimeError('Normal Windows EXE did not prove a rendered game frame')
     return {'mode':mode,'status':'PASS','platform':report['platform'],'peak_rss_bytes':peak if peak else None,
+            'execution_mode':'WINDOWED_EXE' if windowed else 'HEADLESS_EXE',
             'rss_monitoring':'PASS' if peak else 'BLOCKED_LINUX_PID_NAMESPACE',
             'engine_static_memory_bytes':ready['static_memory'],
             'wall_seconds':round(time.monotonic()-start,3),'startup':ready,
@@ -173,12 +176,16 @@ def run_probe(args, stage, mode, evidence, save):
 def verify(args):
     out=Path(args.out).resolve();build_info=json.loads((out/'build.json').read_text())
     stage=Path(build_info['stage']);runs=[]
+    if os.name=='nt':
+        folder=out/'evidence'/'windowed'
+        runs.append(run_probe(args,stage,'native-smoke',folder,folder/'saves/v2/character.json',windowed=True))
     for mode in ['native-smoke','native-core','native-restart']:
         folder=out/'evidence'/('smoke' if mode=='native-smoke' else 'core')
         runs.append(run_probe(args,stage,mode,folder,folder/'saves/v2/character.json'))
     manifest=json.loads((stage/'PACKAGE_MANIFEST.json').read_text())
     if any(r['game_build']!=manifest['build']['commit'] for r in runs):raise ValueError('Evidence belongs to another build')
     result={'status':'PASS','windows_native_execution':'PASS' if os.name=='nt' else 'NOT_RUN_LINUX_EMBEDDED_PCK_ONLY',
+            'windows_windowed_startup':'PASS' if os.name=='nt' else 'NOT_RUN_LINUX',
             'game_function_automation':'PASS','actual_windows_gui':'BLOCKED_NO_OPERATOR_GUI_OBSERVATION',
             'runs':runs,'source_sha':manifest['build']['commit']}
     write_json(out/'verification.json',result)
@@ -190,6 +197,7 @@ def archive(args):
     out=Path(args.out).resolve();result=json.loads((out/'verification.json').read_text())
     if result['status']!='PASS' or result['game_function_automation']!='PASS':raise ValueError('Verification gate failed')
     if args.require_windows and result['windows_native_execution']!='PASS':raise ValueError('Windows-native evidence is required')
+    if args.require_windows and result.get('windows_windowed_startup')!='PASS':raise ValueError('Normal Windows EXE rendering evidence is required')
     if os.environ.get('GITHUB_ACTIONS')=='true' and os.environ.get('BARAM_PRIVATE_REPOSITORY')!='true' and os.environ.get('BARAM_PRIVATE_DELIVERY_VERIFIED')!='true':
         raise ValueError('Public repository may not create/publish a plaintext private game ZIP')
     stage=Path(json.loads((out/'build.json').read_text())['stage'])
