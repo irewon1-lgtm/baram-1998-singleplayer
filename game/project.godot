@@ -1,0 +1,21 @@
+config_version=5
+
+[application]
+config/name="바람의나라 · 개인용 오프라인 복원"
+run/main_scene="res://main.tscn"
+
+[display]
+window/size/viewport_width=960
+window/size/viewport_height=640
+window/size/window_width_override=960
+window/size/window_height_override=640
+window/stretch/mode="canvas_items"
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/default_filters/use_nearest_mipmap_filter=false
+textures/canvas_textures/default_texture_filter=0
+
+[audio]
+driver/enable_input=false
