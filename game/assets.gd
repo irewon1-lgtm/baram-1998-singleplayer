@@ -9,6 +9,7 @@ var actor_data = {}
 var used_tiles = {}
 var used_frames = {}
 var folder = ""
+var source_aliases = {}
 
 func load_directory(path: String) -> bool:
     folder = path
@@ -65,10 +66,46 @@ func load_directory(path: String) -> bool:
                 var r=f.region
                 if r[0]<0 or r[1]<0 or r[2]<=0 or r[3]<=0 or r[0]+r[2]>image.get_width() or r[1]+r[3]>image.get_height():return false
             textures[key] = ImageTexture.create_from_image(image)
-    return tiles.size() == 14835
+    if FileAccess.file_exists(folder.path_join("source_tiles/registry.json")):
+        if not load_source_tiles():return false
+    return tiles.size() >= 14835
+
+func load_source_tiles() -> bool:
+    var registry=JSON.parse_string(FileAccess.get_file_as_string(folder.path_join("source_tiles/registry.json")))
+    if typeof(registry)!=TYPE_DICTIONARY or registry.get("source_dat_sha256","")!="f8271a52d8dbde5601a0c7bf7460052376b2651930b6bc004eeb1ed20357bfc7":return false
+    var counts={"A":9922,"B":8938,"C":16409}
+    var originals={}
+    var next_source=tile_set.get_source_count()
+    for g in registry.groups:
+        if not counts.has(g.group) or int(g.count)!=counts[g.group]:return false
+        var path=folder.path_join(g.path)
+        if not FileAccess.file_exists(path) or FileAccess.get_sha256(path)!=g.sha256:return false
+        var im=Image.new()
+        if im.load(path)!=OK or im.get_width()!=3072 or im.get_height()!=ceili(float(g.count)/128)*24:return false
+        var source=TileSetAtlasSource.new()
+        source.texture=ImageTexture.create_from_image(im)
+        source.texture_region_size=Vector2i(24,24)
+        tile_set.add_source(source,next_source)
+        next_source+=1
+        originals[g.group]=source
+    var indices={"A":0,"B":0,"C":0}
+    for f in registry.frames:
+        if not originals.has(f.group) or int(f.index)!=indices[f.group]:return false
+        var i=int(f.index)
+        var source=originals[f.group]
+        source.create_tile(Vector2i(i%128,int(i/128)))
+        var region=AtlasTexture.new()
+        region.atlas=source.texture
+        region.region=Rect2(i%128*24,int(i/128)*24,24,24)
+        tiles[f.asset_id]=region
+        source_aliases[f.asset_id]=f.get("uploaded_equal_ids",[])
+        indices[f.group]+=1
+    return indices==counts
 
 func tile(id: String) -> Texture2D:
     used_tiles[id] = int(used_tiles.get(id,0)) + 1
+    for alias in source_aliases.get(id,[]):
+        used_tiles[alias]=int(used_tiles.get(alias,0))+1 # exact RGBA equivalence, not guessed index conversion
     return tiles.get(id)
 
 func actor_region(key: String, frame: int) -> Rect2:

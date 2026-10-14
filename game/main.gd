@@ -67,7 +67,8 @@ func _ready():
         return
     font.data = FileAccess.get_file_as_bytes(asset_folder.path_join("fonts/NotoSansCJK-Regular.ttc"))
     font.antialiasing = TextServer.FONT_ANTIALIASING_NONE
-    world = JSON.parse_string(FileAccess.get_file_as_string("res://data/world.json"))
+    var world_path=asset_folder.path_join("source_maps/world.json")
+    world = JSON.parse_string(FileAccess.get_file_as_string(world_path if FileAccess.file_exists(world_path) else "res://data/world.json"))
     for m in world.maps:
         maps[m.id] = m
         for spawn in m.spawns:
@@ -132,6 +133,9 @@ func create_character():
     if title == "":
         title = "바람여행자"
     player = rules.new_player(Rules.JOBS[creation_job],title)
+    var start=world.get("start",{"map":"village","entry":[12,12]})
+    player.map=start.map;player.x=int(start.entry[0]);player.y=int(start.entry[1])
+    player.world_revision=world.get("revision","authored-1")
     creation_controls.queue_free()
     menu = ""
     event("character_created",{"job":player.job,"name":player.name})
@@ -208,6 +212,7 @@ func _input(input):
     elif key in [KEY_UP,KEY_LEFT,KEY_DOWN,KEY_RIGHT,KEY_W,KEY_A,KEY_S,KEY_D]:
         var d = {KEY_UP:0,KEY_LEFT:1,KEY_DOWN:2,KEY_RIGHT:3,KEY_W:0,KEY_A:1,KEY_S:2,KEY_D:3}[key]
         if input.shift_pressed:
+            if attack_elapsed >= 0:return
             player.direction = d
             move_wait = 0.18
             event("turned",{"direction":d})
@@ -255,15 +260,16 @@ func camera() -> Vector2:
     if player.is_empty():
         return Vector2(4,7)
     var m = maps[player.map]
-    return Vector2(clampi(int(player.x)-8,0,int(m.width)-16),clampi(int(player.y)-5,0,int(m.height)-10))
+    return Vector2(clampi(int(player.x)-8,0,maxi(0,int(m.width)-16)),clampi(int(player.y)-5,0,maxi(0,int(m.height)-10)))
 
 func screen_point(x: float,y: float) -> Vector2:
     return VIEW.position + (Vector2(x,y)-camera())*STEP + Vector2(STEP/2,STEP)
 
-func free_cell(map_id: String, pos: Vector2i, actor_id: String = "") -> bool:
+func free_cell(map_id: String, pos: Vector2i, actor_id: String = "",direction: int = -1) -> bool:
     var m = maps[map_id]
     if pos.x < 0 or pos.y < 0 or pos.x >= int(m.width) or pos.y >= int(m.height) or m.blocked[pos.y][pos.x]:
         return false
+    if direction>=0 and m.has("collision_masks") and (int(m.collision_masks[pos.y][pos.x]) & [1,8,2,4][direction])!=0:return false
     if actor_id != "":
         for portal in m.portals:
             if pos==Vector2i(portal.x,portal.y):return false
@@ -278,7 +284,7 @@ func move_player(direction: int):
         return
     player.direction = direction
     var next = cell() + DIRECTIONS[direction]
-    if not free_cell(player.map,next):
+    if not free_cell(player.map,next,"",direction):
         event("collision",{"map":player.map,"x":next.x,"y":next.y})
         return
     from_position = Vector2(player.x,player.y)
@@ -499,9 +505,13 @@ func interact():
                 menu = "trainer"
                 choices = []
                 for c in rules.contents:
-                    if c.category == "spell" and str(c.job) == player.job and c.values.get("learn_level") != null and float(c.values.learn_level) <= 30:
+                    if c.category == "spell" and str(c.job) == player.job and c.values.get("learn_level") != null and float(c.values.learn_level) <= 99:
                         choices.append(c.name)
                 choices.sort_custom(func(a,b):return int(rules.skill(player,a).learn_level) < int(rules.skill(player,b).learn_level))
+            elif n.role == "travel":
+                menu="travel"
+                choices=n.destinations.duplicate()
+                notice("길잡이가 지역 이동을 돕습니다. ↑↓ 선택, Enter 이동")
             elif n.role == "quest":
                 for quest in world.generated_quests:
                     if int(player.kills) >= int(quest.kills) and quest.id not in player.quests:
@@ -528,6 +538,12 @@ func open_inventory():
     choices = player.inventory.keys().filter(func(k):return int(player.inventory[k]) > 0)
 
 func handle_menu_key(key: int):
+    if menu=="travel" and key in [KEY_ENTER,KEY_F] and not choices.is_empty():
+        var destination=str(choices[selected])
+        menu=""
+        transition(destination,maps[destination].entry)
+        event("guide_travel",{"destination":destination,"classification":"SINGLEPLAYER_COMPLETION"})
+        return
     if menu == "pause":
         if key == KEY_ENTER:
             menu = ""
@@ -598,8 +614,29 @@ func snapshot() -> Dictionary:
             "rng_state":str(rules.rng.state)}
 
 func restore(state: Dictionary):
+    var fresh_entities=entities.duplicate(true)
     player = state.player
     entities = state.world
+    if player.get("world_revision","authored-1")!=world.get("revision","authored-1"):
+        # Preserve progress/inventory/loot; migrate only changed layout positions.
+        # Store.read_state does not write the user's original file during loading.
+        for id in entities:
+            if fresh_entities.has(id):
+                var old=entities[id]
+                var replacement=fresh_entities[id]
+                for field in ["alive","hp","respawn","provoked","hurt","attack_timer","move_timer"]:
+                    replacement[field]=old.get(field,replacement[field])
+                fresh_entities[id]=replacement
+        entities=fresh_entities
+        if not maps.has(player.map):player.map=world.get("home",{"map":"village"}).map
+        var entry=maps[player.map].entry
+        player.x=int(entry[0]);player.y=int(entry[1])
+        for drop in state.get("loot",[]):
+            if maps.has(drop.map):
+                var at=maps[drop.map].entry
+                drop.x=int(at[0]);drop.y=int(at[1])
+        player.world_revision=world.get("revision","authored-1")
+        event("layout_migrated",{"revision":player.world_revision,"progress_preserved":true})
     # Migrate our earlier generated spawn layout that overlapped a doorway.
     for id in entities:
         var e=entities[id]
@@ -654,10 +691,7 @@ func _draw():
     for y in range(int(cam.y),mini(int(m.height),int(cam.y)+10)):
         for x in range(int(cam.x),mini(int(m.width),int(cam.x)+16)):
             var tile = str(m.ground[y][x])
-            draw_texture_rect(assets.tile(tile),Rect2(VIEW.position+(Vector2(x,y)-cam)*STEP,Vector2(STEP,STEP)),false)
-    for d in m.decorations:
-        if Rect2(cam,Vector2(16,10)).has_point(Vector2(d.x,d.y)):
-            draw_texture_rect(assets.tile(d.tile),Rect2(VIEW.position+(Vector2(d.x,d.y)-cam)*STEP,Vector2(STEP,STEP)),false)
+            if tile!="" and assets.tiles.has(tile):draw_texture_rect(assets.tile(tile),Rect2(VIEW.position+(Vector2(x,y)-cam)*STEP,Vector2(STEP,STEP)),false)
     for portal in m.portals:
         if Rect2(cam,Vector2(16,10)).has_point(Vector2(portal.x,portal.y)):
             var p = screen_point(portal.x,portal.y)
@@ -667,6 +701,9 @@ func _draw():
         if drop.map == map_id and Rect2(cam,Vector2(16,10)).has_point(Vector2(drop.x,drop.y)):
             icon(drop.item,screen_point(drop.x,drop.y))
     var visible = []
+    for d in m.decorations:
+        if Rect2(cam,Vector2(16,10)).has_point(Vector2(d.x,d.y)):
+            visible.append({"type":"decoration","y":d.get("anchor_y",d.y),"data":d})
     for n in m.npcs:
         visible.append({"type":"npc","y":n.y,"data":n})
     for id in entities:
@@ -678,6 +715,9 @@ func _draw():
     visible.sort_custom(func(a,b):return a.y < b.y)
     for v in visible:
         var e = v.data
+        if v.type=="decoration":
+            draw_texture_rect(assets.tile(e.tile),Rect2(VIEW.position+(Vector2(e.x,e.y)-cam)*STEP,Vector2(STEP,STEP)),false)
+            continue
         if not Rect2(cam-Vector2(1,1),Vector2(18,12)).has_point(Vector2(e.x,e.y)):
             continue
         var pos = screen_point(e.x,e.y)
@@ -767,7 +807,7 @@ func draw_hud():
 
 func draw_menu():
     box(Rect2(164,106,536,398),Color(0.12,0.13,0.11))
-    var heading = {"shop":"물품 거래","trainer":"기술 수련","inventory":"보유 물품","dialogue":"안내","pause":"여정 저장"}.get(menu,menu)
+    var heading = {"shop":"물품 거래","trainer":"기술 수련","inventory":"보유 물품","dialogue":"안내","pause":"여정 저장","travel":"길 안내","map":"지역 목록"}.get(menu,menu)
     label(heading,Vector2(191,144),22,Color(1,0.88,0.5))
     if menu == "pause":
         label("Enter: 계속하기 · Q: 게임 종료",Vector2(194,205),18)
@@ -776,6 +816,7 @@ func draw_menu():
     for j in range(start,mini(choices.size(),start+8)):
         var y = 184+(j-start)*31
         var title = str(choices[j])
+        if menu=="travel":title=maps[title].name
         if j == selected:
             draw_rect(Rect2(184,y-21,496,29),Color(0.32,0.29,0.16))
         label(title,Vector2(198,y),15)

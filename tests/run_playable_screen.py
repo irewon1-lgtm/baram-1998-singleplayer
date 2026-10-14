@@ -41,10 +41,10 @@ def execute(args):
         environment['DISPLAY'] = ':' + display
         modes = args.modes.split(',')
         for mode in modes:
-            folder = directory / ('primary' if mode in ('primary','resume','restart') else mode)
+            folder = directory / ('source-core' if mode=='source-restart' else 'primary' if mode in ('primary','resume','restart') else mode)
             folder.mkdir(exist_ok=True)
             save = folder / 'character.json'
-            if mode not in ('restart','resume') and save.exists():
+            if mode not in ('restart','resume','source-restart') and save.exists():
                 raise RuntimeError('Use a fresh evidence directory; existing saves are preserved')
             command = [args.godot,'--path',str(ROOT/'game'),'--display-driver','x11','--rendering-method','gl_compatibility',
                 '--audio-driver','Dummy','--','--assets='+str(Path(args.assets).resolve()),'--save='+str(save),

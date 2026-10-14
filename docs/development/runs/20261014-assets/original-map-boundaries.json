@@ -1,0 +1,52 @@
+{
+  "status": "PASS",
+  "scope": "SOURCE_FORMAT_AND_BOUNDS_NOT_LIVE_CLIENT_EQUIVALENCE",
+  "checks": [
+    {
+      "name": "actual_table_bases_select_different_sheets_without_masking",
+      "status": "PASS"
+    },
+    {
+      "name": "null_object_has_no_collision_despite_header_flag",
+      "status": "PASS"
+    },
+    {
+      "name": "actual_object_one_is_column_95_86_74",
+      "status": "PASS"
+    },
+    {
+      "name": "maximum_one_based_tilec_word_stays_in_bounds",
+      "status": "PASS"
+    },
+    {
+      "name": "actual_city_byte_count_and_first_cell",
+      "status": "PASS"
+    },
+    {
+      "name": "wrong_dimensions_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "truncated_map_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "out_of_range_ground_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "out_of_range_static_object_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "missing_palette_rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "truncated_object_table_rejected",
+      "status": "PASS"
+    }
+  ],
+  "source_sha256": "f8271a52d8dbde5601a0c7bf7460052376b2651930b6bc004eeb1ed20357bfc7",
+  "map_sha256": "88a5d13247dcff1245bbb818a67820ab421b064e17acb1fe6fef12ba607a2315"
+}

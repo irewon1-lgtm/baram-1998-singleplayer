@@ -1,0 +1,55 @@
+{
+  "started_at": "2026-10-14T04:56:47.534737+00:00",
+  "scope": "REAL_GAME_X11_WINDOW_AND_GODOT_INPUT_EVENTS",
+  "runs": [
+    {
+      "mode": "source-restart",
+      "exit_code": 0,
+      "game_report": "/workspace/baram-private/source-screen-1/source-core/source-restart-report.json",
+      "game_status": "PASS_EXECUTED_SCREEN_INPUT",
+      "x11_captures": [
+        {
+          "name": "restart",
+          "sha256": "671435e3f78d60df148b34ad79ea043da90cbdafa661190a739c26d32879efe8",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 146,
+          "status": "PASS"
+        }
+      ],
+      "audio_mix": {
+        "status": "NOT_APPLICABLE_NO_AUDIO_EVENTS",
+        "samples": 32768,
+        "rms": 0.0,
+        "driver": "Dummy",
+        "audible_human_review": "NOT_RUN"
+      },
+      "argv": [
+        "godot",
+        "--path",
+        "/workspace/baram-1998-singleplayer/game",
+        "--display-driver",
+        "x11",
+        "--rendering-method",
+        "gl_compatibility",
+        "--audio-driver",
+        "Dummy",
+        "--",
+        "--assets=/workspace/baram-private/game-assets",
+        "--save=/workspace/baram-private/source-screen-1/source-core/character.json",
+        "--exercise=source-restart",
+        "--evidence=/workspace/baram-private/source-screen-1/source-core"
+      ],
+      "registered_tiles": 50104,
+      "checks": 6
+    }
+  ],
+  "status": "PASS_EXECUTED_SCREEN_INPUT",
+  "finished_at": "2026-10-14T04:57:09.060842+00:00",
+  "source_sha256": {
+    "game/main.gd": "b17b14fe93828a2a08aa00967c5ad03d9210f98b0bb78ef5e908c39a8c231bf1",
+    "game/exercise.gd": "3a93784b42e430fa9e1e5c853ecdc47276401be027ae1e3f98e683d3cb9c7c02",
+    "game/rules.gd": "d65d7872d675e5652a251396233297970cfe885ece9c72c86679df088bebdd95",
+    "game/save_store.gd": "0f1c8b9fea8baf986a750afaf2636dee6925b97442724226a098cbc9937460ac",
+    "tests/run_playable_screen.py": "55978aa0fc5a60922d0b6d7b2de58a08826deca39cc701757221283da2c7c11d"
+  }
+}

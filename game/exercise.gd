@@ -58,7 +58,7 @@ func route(target: Vector2i) -> bool:
             if at==target:found=true;break
             for d in range(4):
                 var next=at+game.DIRECTIONS[d]
-                if parents.has(next) or not game.free_cell(game.player.map,next):continue
+                if parents.has(next) or not game.free_cell(game.player.map,next,"",d):continue
                 var portal_here=false
                 for portal in game.maps[game.player.map].portals:
                     if next==Vector2i(portal.x,portal.y) and next!=target:
@@ -121,7 +121,10 @@ func use_potion():
 func run(g, mode: String, directory: String):
     game=g;root=directory;started=Time.get_ticks_msec()
     DirAccess.make_dir_recursive_absolute(root)
-    if mode=="restart":
+    if mode=="source-core":
+        await source_core()
+        return
+    if mode in ["restart","source-restart"]:
         check(game.save_loaded,"fresh_process_loaded_save")
         var before=game.store.read_state(root.path_join("expected-state.json"))
         check(game.loaded_snapshot.player==before.player,"restart_preserves_entire_player",{"level":game.player.level,"gold":game.player.gold,"equipped":game.player.equipped})
@@ -218,6 +221,74 @@ func run(g, mode: String, directory: String):
     await key(KEY_ESCAPE)
     check(await route(Vector2i(11,12)) and game.player.map=="village","guild_exit_by_walking")
     await dungeon_tour()
+
+func approach(role: String) -> bool:
+    for n in game.maps[game.player.map].npcs:
+        if n.role!=role:continue
+        for d in range(4):
+            var at=Vector2i(n.x,n.y)-game.DIRECTIONS[d]
+            if not game.free_cell(game.player.map,at):continue
+            if await route(at):
+                await key([KEY_UP,KEY_LEFT,KEY_DOWN,KEY_RIGHT][d],0.03,true)
+                await key(KEY_ENTER,0.05)
+                return true
+    return false
+
+func guided(destination: String) -> bool:
+    if not await approach("travel") or game.menu!="travel":return false
+    var index=game.choices.find(destination)
+    if index<0:return false
+    for i in range(index):await key(KEY_DOWN,0.02)
+    await key(KEY_ENTER,0.06)
+    return game.player.map==destination
+
+func source_core():
+    check(game.maps.size()==15,"fifteen_original_maps_loaded")
+    check(game.assets.tiles.size()==50104,"source_and_uploaded_tiles_registered_separately")
+    await key(KEY_ENTER)
+    check(game.cell()==Vector2i(59,152),"creation_uses_reachable_source_town_entry")
+    await capture("source-village-before-gear")
+    check(await approach("shop") and game.menu=="shop","source_town_actual_shop")
+    if game.menu!="shop":finish();return
+    var index=game.choices.find("목검")
+    for i in range(index):await key(KEY_DOWN,0.02)
+    await key(KEY_B,0.03)
+    check(game.player.inventory.get("목검",0)==1,"source_town_purchase")
+    await key(KEY_ESCAPE,0.03)
+    await key(KEY_I,0.03)
+    index=game.choices.find("목검")
+    for i in range(index):await key(KEY_DOWN,0.02)
+    await key(KEY_E,0.03)
+    check(game.player.equipped=="목검","source_town_equip")
+    await key(KEY_ESCAPE,0.03)
+    await capture("source-village-equipped")
+    check(await route(Vector2i(59,149)) and game.player.map=="inn","original_tavern_doorway_by_movement")
+    if game.player.map!="inn":finish();return
+    await capture("source-inn")
+    check(await approach("inn") and game.menu=="shop","source_inn_functional_keeper")
+    await key(KEY_H,0.03)
+    check(game.event_log.any(func(e):return e.event=="rested"),"source_inn_rest_transaction")
+    await key(KEY_ESCAPE,0.03)
+    check(await route(Vector2i(21,13)) and game.player.map=="village","original_tavern_exit_by_movement")
+    check(await guided("field"),"guide_connects_original_hunting_field")
+    if game.player.map!="field":finish();return
+    await capture("source-field")
+    var xp=int(game.player.xp2)
+    check(await hunt_one("rabbit"),"original_field_normal_combat")
+    check(game.player.xp2>xp,"original_field_real_xp_reward")
+    await capture("source-field-combat")
+    await key(KEY_1,0.03)
+    await capture("source-field-skill")
+    check(await guided("village"),"source_field_return_guide")
+    check(await guided("guild"),"source_warrior_guild_reached")
+    await capture("source-guild")
+    check(await approach("trainer") and game.menu=="trainer","source_guild_training_role")
+    await key(KEY_ESCAPE,0.03)
+    await key(KEY_F5,0.03)
+    var expected=game.store.read_state(game.save_path)
+    game.store.write_state(root.path_join("expected-state.json"),expected)
+    await capture("source-saved")
+    finish()
 
 func go_portal(target: Vector2i,destination: String,title: String) -> bool:
     var ok=await route(target) and game.player.map==destination
