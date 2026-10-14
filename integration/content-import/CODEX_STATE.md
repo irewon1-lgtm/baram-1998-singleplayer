@@ -5,7 +5,7 @@
 - 개발: `codex/game-core`, 독립 worktree `/workspace/baram-codex-core`.
 - 최초 게임 기준: `dev/codex-asset-runtime-20261014`, `dea6574c9a69ebb04432d10fc32951aacd8b66cb`. 원래 폴더와 main·조사·수치 원문은 보존했다.
 - 마지막 확인된 원격 저장: `b5ef10646a2a41ff16ad575df47373c4b0399788`(확인된 실행본 빌드). 실행 통합 코드 묶음은 ae4fb282315955c566b6b08ebf210b2301a9597f이며 수신 기록은 후속 커밋에 연결돼 있다. 최종 원격 HEAD는 최신 문서/검증 후속 커밋을 포함하므로 git ls-remote로 확인한다.
-- Work 마지막 읽은 HEAD: `d4bd4b17a5307d5c882936c39547d698736d3733`. 이 목록의 확정 커밋만 읽었다. 브랜치 병합/루트 덮어쓰기/상류 파일 수정은 하지 않았다.
+- 실제 반영 목록 HEAD: `d4bd4b17a5307d5c882936c39547d698736d3733`. 최종 새 전달 목록은 `6bfa2687a996f3e80297df9e7a51e7e364a67b5a`에서 읽었다. 검증 실행본은 기존 확정 커밋들로 고정했다. 브랜치 병합/루트 덮어쓰기/상류 파일 수정은 하지 않았다.
 - 엔진: 기존 Godot 4.6.3. Work schema 1은 그대로, Codex runtime envelope 2와 저장 schema 2를 사용한다. 이전 envelope 1 로드 경로도 유지한다.
 - 활성 콘텐츠: `9e30ec651489a4f5bdbf5c4e727a41a3c7a2b2825a373262056c1e896a82fb7c`.
 - 실행 정본과 실제 픽셀은 `/workspace/baram-private/codex-core-20261014/active-content`, 기존 자산은 `/workspace/baram-private/game-assets`에 있다. Git에는 원본/추출/파생 픽셀·사운드·사용자 저장을 커밋하지 않는다.
@@ -62,3 +62,9 @@
 - Codex 후속 코드: `game/main.gd` dungeon 밝기 분기는 아직 legacy buff 이름을 읽고, Work `status.light`는 저장/만료 처리만 연결됐다. 기존 light 선언의 화면 밝기 연결과 비걷기 동작의 반복/종료 타이밍 대조를 다음 영향 검사 대상으로 남긴다. 모든 기술의 효과 완성을 주장하지 않는다.
 - v125 정확한 미확보 9개 ID는 content-summary와 WK-ASSETS-001 receipt에 있다. 다른 패키지 적용을 막지 않는다.
 - 실행본에 사용자 저장을 넣지 않는다. 실행본 검증과 확인된 코드 원격 SHA를 이 문서에 기록했다. 세션 종료 뒤 자동 감시하고 있다고 주장하지 않는다.
+
+## 실행본 고정 후 새 전달
+
+- WK-CONTENT-005/006/007/008와 WK-ASSETS-003의 고정 manifest와 index SHA는 실제 일치했다. 상세 데이터 검사/취득/반영/플레이는 NOT_RUN이며 READY_NOT_RECEIVED로 남긴다.
+- 다음 바로 시작할 파일: integration/content-import/receipts/followup-inputs.json. 각 source_commit/manifest_path에서 스냅샷을 읽고 PROTOCOL/schema 및 새로운 capability 이름의 실제 의미를 대조한다. 기능이 이미 있으면 명칭 차이로 반려하지 않는다.
+- 활성9e30ec65...와 실행 ZIP83ae609b...에 새 자료를 섞지 않았다. 새 버전은 별도 검증·커밋·ZIP으로 처리하고 현재 정상 실행/저장 복구 기준을 보존한다.

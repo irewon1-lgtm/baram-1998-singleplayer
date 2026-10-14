@@ -1,0 +1,129 @@
+{
+  "active_release": "9e30ec651489a4f5bdbf5c4e727a41a3c7a2b2825a373262056c1e896a82fb7c",
+  "packages": [
+    {
+      "batch_id": "WK-CONTENT-005",
+      "counts": {
+        "class": 4,
+        "item": 24,
+        "npc": 4,
+        "quest": 8,
+        "skill": 16
+      },
+      "data_validation": "NOT_RUN",
+      "implemented_capability_alias_review_pending": [],
+      "import_status": "READY_NOT_RECEIVED",
+      "index_commit": "6bfa2687a996f3e80297df9e7a51e7e364a67b5a",
+      "manifest_path": "content-work/packages/WK-CONTENT-005/manifest.json",
+      "manifest_pin_result": "PASS",
+      "manifest_sha256": "53af2b585050dfd21edd1b439442bd0afee545f33592f5c4909ea84765edeca6",
+      "protocol_id": "BARAM_PARALLEL_V1",
+      "reason": "Published after the tested executable/content snapshot was frozen. Keep this runnable build intact; consume in the next separate integration batch. No data activation or gameplay PASS claimed.",
+      "required_capabilities": [
+        "declarative_skill_effects_and_status",
+        "effect_front_back_repeat_timing",
+        "atomic_consumption_and_rewards",
+        "skill_learn_rank_and_bound_materials",
+        "item_requirements_advancement_rank"
+      ],
+      "source_commit": "901a85be123ff0bf80beb09f30fa5ba35b08a276"
+    },
+    {
+      "batch_id": "WK-ASSETS-003",
+      "counts": {
+        "asset": 8
+      },
+      "data_validation": "NOT_RUN",
+      "implemented_capability_alias_review_pending": [
+        "effect_blank_frame_wait"
+      ],
+      "import_status": "READY_NOT_RECEIVED",
+      "index_commit": "6bfa2687a996f3e80297df9e7a51e7e364a67b5a",
+      "manifest_path": "content-work/packages/WK-ASSETS-003/manifest.json",
+      "manifest_pin_result": "PASS",
+      "manifest_sha256": "cb7e81e4047da7419c231d8031129272b28577ae99bdaf266ddca5b54c90c45f",
+      "protocol_id": "BARAM_PARALLEL_V1",
+      "reason": "Published after the tested executable/content snapshot was frozen. Keep this runnable build intact; consume in the next separate integration batch. No data activation or gameplay PASS claimed.",
+      "required_capabilities": [
+        "effect_blank_frame_wait",
+        "effect_front_back_repeat_timing",
+        "private_bundle_acquisition_and_hash_verification"
+      ],
+      "source_commit": "7051fd1b2ce68fb62decf6094f8b2d78cf121662"
+    },
+    {
+      "batch_id": "WK-CONTENT-006",
+      "counts": {
+        "skill": 7
+      },
+      "data_validation": "NOT_RUN",
+      "implemented_capability_alias_review_pending": [
+        "effect_blank_frame_wait"
+      ],
+      "import_status": "READY_NOT_RECEIVED",
+      "index_commit": "6bfa2687a996f3e80297df9e7a51e7e364a67b5a",
+      "manifest_path": "content-work/packages/WK-CONTENT-006/manifest.json",
+      "manifest_pin_result": "PASS",
+      "manifest_sha256": "29216fdd87f09a289a1fd3ad5205e5b2b3157245d1ea01f34776fab16137ef7e",
+      "protocol_id": "BARAM_PARALLEL_V1",
+      "reason": "Published after the tested executable/content snapshot was frozen. Keep this runnable build intact; consume in the next separate integration batch. No data activation or gameplay PASS claimed.",
+      "required_capabilities": [
+        "effect_blank_frame_wait",
+        "effect_front_back_repeat_timing"
+      ],
+      "source_commit": "d4bd4b17a5307d5c882936c39547d698736d3733"
+    },
+    {
+      "batch_id": "WK-CONTENT-007",
+      "counts": {
+        "item": 23,
+        "npc": 14,
+        "recipe": 22
+      },
+      "data_validation": "NOT_RUN",
+      "implemented_capability_alias_review_pending": [
+        "original_sword_spear_attachment"
+      ],
+      "import_status": "READY_NOT_RECEIVED",
+      "index_commit": "6bfa2687a996f3e80297df9e7a51e7e364a67b5a",
+      "manifest_path": "content-work/packages/WK-CONTENT-007/manifest.json",
+      "manifest_pin_result": "PASS",
+      "manifest_sha256": "26d0a495104daedf461b6e41cd8b41bd8574bff09fa892a8c169a3f1aaf8316f",
+      "protocol_id": "BARAM_PARALLEL_V1",
+      "reason": "Published after the tested executable/content snapshot was frozen. Keep this runnable build intact; consume in the next separate integration batch. No data activation or gameplay PASS claimed.",
+      "required_capabilities": [
+        "atomic_consumption_and_rewards",
+        "original_sword_spear_attachment"
+      ],
+      "source_commit": "381cfefad15a2fff6356f2e9a0bd3859af3fc703"
+    },
+    {
+      "batch_id": "WK-CONTENT-008",
+      "counts": {
+        "item": 16,
+        "npc": 12,
+        "recipe": 16
+      },
+      "data_validation": "NOT_RUN",
+      "implemented_capability_alias_review_pending": [
+        "fan_weapon_animation_attachment",
+        "offhand_slot_and_shield_animation_attachment"
+      ],
+      "import_status": "READY_NOT_RECEIVED",
+      "index_commit": "6bfa2687a996f3e80297df9e7a51e7e364a67b5a",
+      "manifest_path": "content-work/packages/WK-CONTENT-008/manifest.json",
+      "manifest_pin_result": "PASS",
+      "manifest_sha256": "d9f69210a63b0cdcd6013561cdbc83d2976bb9fcdcd65437f170bb40433dfa4b",
+      "protocol_id": "BARAM_PARALLEL_V1",
+      "reason": "Published after the tested executable/content snapshot was frozen. Keep this runnable build intact; consume in the next separate integration batch. No data activation or gameplay PASS claimed.",
+      "required_capabilities": [
+        "fan_weapon_animation_attachment",
+        "offhand_slot_and_shield_animation_attachment",
+        "atomic_consumption_and_rewards"
+      ],
+      "source_commit": "2935c1f7cebed5a673dca1660d6bb0fbff0ae35d"
+    }
+  ],
+  "protocol_id": "BARAM_PARALLEL_V1",
+  "work_head": "6bfa2687a996f3e80297df9e7a51e7e364a67b5a"
+}
