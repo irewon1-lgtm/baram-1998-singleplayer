@@ -63,6 +63,7 @@ var options = {}
 var save_loaded = false
 var save_queued = false
 var loaded_snapshot = {}
+var service_definition = {}
 
 func _ready():
     for arg in OS.get_cmdline_user_args():
@@ -79,6 +80,13 @@ func _ready():
         push_error(JSON.stringify(content.last_error));get_tree().quit(2);return
     content.apply_rules(rules)
     store.content_version=content.version
+    var build_path="res://data/build_info.json"
+    if FileAccess.file_exists(build_path):
+        var build_info=JSON.parse_string(FileAccess.get_file_as_string(build_path))
+        if typeof(build_info)!=TYPE_DICTIONARY or build_info.get("content_version","")!=content.version:
+            push_error("PACKAGE_CONTENT_VERSION: build_info.json and ACTIVE content disagree")
+            get_tree().quit(2);return
+        store.game_build=str(build_info.get("commit","unidentified-package"))
     test_mode = options.get("exercise","")
     test_root = options.get("evidence","")
     if not assets.load_directory(asset_folder):
@@ -289,7 +297,8 @@ func _process(delta: float):
     step_progress = minf(1,step_progress + delta/0.18)
     if cast_elapsed>=0:
         cast_elapsed+=delta
-        if cast_elapsed>=0.18 and not pending_spell.is_empty():
+        var impact=float(pending_spell.get("profile",{}).get("definition",{}).get("animation",{}).get("impact_delay_ms",180))/1000.0
+        if cast_elapsed>=impact and not pending_spell.is_empty():
             resolve_spell(pending_spell)
             pending_spell={}
         if cast_elapsed>=0.42:cast_elapsed=-1.0
@@ -347,11 +356,11 @@ func free_cell(map_id: String, pos: Vector2i, actor_id: String = "",direction: i
         if id != actor_id and e.alive and e.map == map_id and Vector2i(e.x,e.y) == pos:
             return false
     for n in m.npcs:
-        if Vector2i(n.x,n.y)==pos:return false
+        if n.get("blocking",true) and Vector2i(n.x,n.y)==pos:return false
     return true
 
 func move_player(direction: int):
-    if move_wait > 0 or attack_elapsed >= 0 or cast_elapsed>=0 or menu != "":
+    if move_wait > 0 or attack_elapsed >= 0 or cast_elapsed>=0 or menu != "" or rules.actions.status_modifier(player,"stun")>0:
         return
     player.direction = direction
     var next = cell() + DIRECTIONS[direction]
@@ -365,11 +374,14 @@ func move_player(direction: int):
     move_wait = 0.18
     event("moved",{"map":player.map,"x":player.x,"y":player.y,"direction":direction})
     for portal in maps[player.map].portals:
-        if next == Vector2i(portal.x,portal.y):
+        if portal.get("trigger","walk")=="walk" and next == Vector2i(portal.x,portal.y):
             transition(portal.target,portal.entry)
             break
 
 func transition(map_id: String, entry: Array):
+    map_id=world.get("map_aliases",{}).get(map_id,map_id)
+    if not maps.has(map_id) or entry.size()!=2:
+        event("map_transition_error",{"code":"DESTINATION_MISSING","map":map_id,"entry":entry});return
     player.map = map_id
     player.x = int(entry[0])
     player.y = int(entry[1])
@@ -377,6 +389,8 @@ func transition(map_id: String, entry: Array):
     if map_id not in player.visited:player.visited.append(map_id)
     step_progress = 1.0
     selected_target = ""
+    attack_elapsed=-1.0;attack_target="";cast_elapsed=-1.0;pending_spell={};effects.clear()
+    work_assets.tile_cache.clear()
     event("map_changed",{"map":map_id,"x":player.x,"y":player.y})
     notice(maps[map_id].name)
 
@@ -392,7 +406,7 @@ func cycle_target():
         selected_target = available[(available.find(selected_target)+1)%available.size()]
 
 func begin_attack():
-    if attack_wait > 0 or cast_elapsed>=0 or int(player.hp) <= 0 or menu != "":
+    if attack_wait > 0 or cast_elapsed>=0 or int(player.hp) <= 0 or menu != "" or rules.actions.status_modifier(player,"stun")>0:
         return
     attack_wait = 0.6
     attack_elapsed = 0.0
@@ -418,7 +432,7 @@ func apply_attack():
     if not rules.roll(0.99 if player.buffs.get("신의축복",0)>0 else 0.9):
         event("attack_missed_probability")
         return
-    var amount = rules.damage(rules.weapon_damage(player),int(e.spec.values.armor_class))
+    var amount = rules.damage(rules.weapon_damage(player),int(e.spec.values.armor_class)+rules.actions.status_modifier(e,"armor_class"))
     player.buffs.erase("무영보법");player.buffs.erase("금수");player.buffs.erase("경수")
     hit_monster(e,amount,"melee")
     for offset in [2,1,3]:
@@ -480,27 +494,39 @@ func update_monsters(delta: float):
                 e.alive=true;e.hp=int(e.spec.values.hp);e.x=e.home_x;e.y=e.home_y;e.provoked=false;e.attack_elapsed=-1.0
             continue
         if e.map!=player.map:continue
+        Effects.tick_at(rules.actions,e,int(player.time_us)/1000)
+        if e.hp<=0:hit_monster(e,0,"status", "",true);continue
+        if rules.actions.status_modifier(e,"stun")>0:continue
         e.move_timer-=delta;e.attack_timer-=delta
         var distance=Vector2i(e.x,e.y).distance_to(cell())
         var hidden=player.buffs.get("무영보법",0)>0 or player.buffs.get("금수",0)>0 or player.buffs.get("경수",0)>0 or rules.actions.status_modifier(player,"hidden")!=0
-        var aggressive=(e.kind not in ["rabbit","squirrel"] or e.provoked) and (not hidden or e.provoked)
+        var behavior=rules.runtime_definitions.get(e.kind,{}).get("data",{}).get("behavior",{})
+        var aggressive=(behavior.get("aggression","passive" if e.kind in ["rabbit","squirrel"] else "hostile")=="hostile" or e.provoked) and (not hidden or e.provoked)
         var elapsed=float(e.get("attack_elapsed",-1))
         if elapsed>=0:
             e.attack_elapsed=elapsed+delta
             if e.get("attack_pending",false) and e.attack_elapsed>=0.16:
                 e.attack_pending=false
-                if player.hp>0 and cell()==Vector2i(e.x,e.y)+DIRECTIONS[int(e.direction)] and rules.roll(float(e.spec.values.hit_probability)):
+                var probability=e.spec.values.hit_probability
+                var hit=Rules.Precision.roll(rules.rng,probability) if typeof(probability)==TYPE_DICTIONARY else rules.roll(float(probability))
+                if rules.actions.status_modifier(e,"blind")>0:hit=hit and rules.rng.randi_range(0,99)>=clampi(rules.actions.status_modifier(e,"blind"),0,100)
+                var in_range=Vector2i(e.x,e.y).distance_to(cell())<=int(e.spec.values.get("attack_range_tiles",1))
+                var targeting=in_range and line_of_sight(e.map,Vector2i(e.x,e.y),cell()) if e.spec.values.get("attack_kind","melee")=="ranged" else cell()==Vector2i(e.x,e.y)+DIRECTIONS[int(e.direction)]
+                if player.hp>0 and targeting and hit:
                     var attack=rules.rng.randi_range(int(e.spec.values.attack_min),int(e.spec.values.attack_max))
                     hurt_player(rules.incoming_damage(player,attack),id)
+                    apply_monster_specials(e)
                     if e.kind=="snake" and player.hp>0 and rules.roll(0.15):
                         player.buffs["독"]=8.0
                         event("poison_applied",{"source":"snake","classification":"SINGLEPLAYER_ESTIMATE"})
             var spec=assets.actor_data.get(visual_key(e.kind),{"attack":1,"delay_ms":100})
             if e.attack_elapsed>=maxf(0.28,int(spec.attack)*float(spec.delay_ms)/1000.0):e.attack_elapsed=-1.0
             continue
-        if player.hp>0 and aggressive and distance<1.1 and e.attack_timer<=0:
+        var range_tiles=int(e.spec.values.get("attack_range_tiles",1))
+        if player.hp>0 and aggressive and distance<=range_tiles and e.attack_timer<=0 and line_of_sight(e.map,Vector2i(e.x,e.y),cell()):
             e.attack_timer=float(e.spec.values.attack_interval_ms)/1000.0
-            e.direction=DIRECTIONS.find(cell()-Vector2i(e.x,e.y))
+            var offset=cell()-Vector2i(e.x,e.y)
+            e.direction=(3 if offset.x>0 else 1) if absi(offset.x)>absi(offset.y) else (2 if offset.y>0 else 0)
             e.attack_elapsed=0.0;e.attack_pending=true
             event("monster_attack_started",{"id":id,"direction":e.direction,"impact_ms":160,"source_attack_frames":assets.actor_data.get(visual_key(e.kind),{}).get("attack",0)})
             continue
@@ -511,6 +537,7 @@ func update_monsters(delta: float):
                 var offset=cell()-Vector2i(e.x,e.y)
                 d=3 if offset.x>0 else 1
                 if absi(offset.y)>absi(offset.x):d=2 if offset.y>0 else 0
+            if rules.actions.status_modifier(e,"confuse")>0:d=rules.rng.randi_range(0,3)
             var next=Vector2i(e.x,e.y)+DIRECTIONS[d]
             if aggressive and distance<12 and not free_cell(e.map,next,id,d):
                 var destination=cell()-DIRECTIONS[d]
@@ -529,12 +556,31 @@ func pickup():
             remaining.append(drop)
     loot = remaining
 
+func line_of_sight(map_id: String, origin: Vector2i, destination: Vector2i) -> bool:
+    var difference=destination-origin;var steps=maxi(absi(difference.x),absi(difference.y))
+    if steps>32:return false
+    for step in range(1,steps):
+        var position=origin+Vector2i(roundi(float(difference.x)*step/steps),roundi(float(difference.y)*step/steps))
+        if maps[map_id].blocked[position.y][position.x]:return false
+    return true
+
+func apply_monster_specials(e: Dictionary):
+    if player.hp<=0:return
+    var behavior=rules.runtime_definitions.get(e.kind,{}).get("data",{}).get("behavior",{})
+    for special in behavior.get("special",[]):
+        if special.get("trigger","")!="attack_hit" or special.get("op","")!="status" or special.get("status","")!="poison":
+            event("monster_special_error",{"code":"UNKNOWN_MONSTER_SPECIAL","monster_id":e.kind,"data":special});continue
+        if Rules.Precision.roll(rules.rng,special.probability):
+            var result=Effects.apply(rules.actions,player,[],[{"type":"status","target":"self","status_id":"poison","duration_ms":special.duration_ms,"tick_ms":special.period_ms,"amount":special.damage}])
+            event("monster_status_applied",{"monster_id":e.kind,"result":result,"status":"poison"})
+
 func cast_skill(slot: int):
     if slot>=player.hotbar.size() or player.hotbar[slot]=="" or cast_elapsed>=0 or attack_elapsed>=0:return
     var title=str(player.hotbar[slot])
-    if int(player.hp)<=0 and title!="성황령":return
     var s=rules.skill(player,title)
     var profile=rules.skill_profile(player,title)
+    var ghost_allowed=title=="성황령" or profile.get("effects",[]).any(func(e):return e.get("requires_ghost",false) or e.get("type","")=="revive")
+    if int(player.hp)<=0 and not ghost_allowed:return
     if profile.type=="work_effects":
         var validated=Effects.validate(profile.effects)
         if not validated.ok:
@@ -556,6 +602,9 @@ func cast_skill(slot: int):
         var delta=Vector2i(target.x,target.y)-cell()
         player.direction=(3 if delta.x>0 else 1) if absi(delta.x)>absi(delta.y) else (2 if delta.y>0 else 0)
     var hp_cost=int(rules.value_or(s,"cast_hp",0))+floori(float(player.hp)*float(rules.value_or(s,"cast_hp_fraction",0)))
+    if profile.has("definition"):
+        var ratio=profile.definition.cost.get("hp_fraction",{"numerator":0,"denominator":1})
+        hp_cost=int(profile.definition.cost.hp)+int(player.hp)*int(ratio.numerator)/int(ratio.denominator)
     if player.hp>0 and not rules.cast_resources(player,int(rules.value_or(s,"cast_mp",0)),hp_cost,float(rules.value_or(s,"cooldown_ms",1000))/1000.0,title):
         notice("마력·체력이 부족하거나 기술 준비 중입니다.")
         event("skill_rejected_resources",{"skill":title});return
@@ -573,16 +622,23 @@ func resolve_spell(cast: Dictionary):
         var target=[]
         if entities.has(cast.target_id):
             var e=entities[cast.target_id]
-            if e.alive and e.map==player.map and Vector2i(e.x,e.y).distance_to(cell())<=float(rules.value_or(s,"range_tiles",6)):target=[e]
+            if e.alive and e.map==player.map and Vector2i(e.x,e.y).distance_to(cell())<=float(rules.value_or(s,"range_tiles",6)):
+                target=[e]
+                var radius=int(profile.definition.get("aoe_radius_tiles",0))
+                if radius>0:
+                    target=entities.values().filter(func(other):return other.alive and other.map==player.map and Vector2i(other.x,other.y).distance_to(Vector2i(e.x,e.y))<=radius)
+        if not Rules.Precision.roll(rules.rng,profile.definition.get("success_ratio",{"numerator":1,"denominator":1})):
+            event("skill_failed_probability",{"skill":title});notice("기술이 실패했습니다.");return
         var result=Effects.apply(rules.actions,player,target,profile.effects)
         if not result.ok:event("skill_effect_error",{"skill":title,"result":result});notice("기술 적용 오류: "+result.error);return
         for action in result.damage_events:
             if entities.has(action.id):hit_monster(entities[action.id],int(action.damage),"skill",title,true)
         for action in result.movement:
-            if maps.has(action.map):transition(action.map,action.entry)
-        var visual=content.definition(title).get("animation",{})
+            apply_work_action(action)
+        var visual=profile.definition.get("animation",{})
         var effect_id=visual.get("effect_asset_id","")
         if effect_id!="":effects.append({"work_asset":effect_id,"x":player.x,"y":player.y,"time":0.0,"lifetime_ms":int(visual.get("effect_duration_ms",2000))})
+        if visual.get("sound_asset_id","")!="":play_work_sound(visual.sound_asset_id)
     elif kind=="heal":rules.heal(player,int(rules.value_or(s,"heal_amount",0)))
     elif kind=="damage":
         if entities.has(cast.target_id):
@@ -618,11 +674,15 @@ func resolve_spell(cast: Dictionary):
                 m.npcs=m.npcs.filter(func(n):return n.id!="summoned-guide")
                 m.npcs.append(guide);player.summoned_guide=guide;break
     else:player.buffs[title]=float(rules.value_or(s,"duration_ms",30000))/1000.0
-    effects.append({"key":"fx_"+str(profile.effect),"x":at.x,"y":at.y,"time":0.0})
-    play_sound("skill")
+    if kind!="work_effects":
+        effects.append({"key":"fx_"+str(profile.effect),"x":at.x,"y":at.y,"time":0.0})
+        play_sound("skill")
     event("skill_cast",{"skill":title,"mp":player.mp,"hp":player.hp,"slot":cast.slot,"behavior":kind,"classification":profile.get("classification","")})
 
 func interact():
+    for portal in maps[player.map].portals:
+        if portal.get("trigger","walk")=="interact" and Vector2i(portal.x,portal.y)==cell():
+            transition(portal.target,portal.entry);return
     var nearby = maps[player.map].npcs.duplicate()
     var facing = cell() + DIRECTIONS[int(player.direction)]
     nearby.sort_custom(func(a,b):
@@ -636,7 +696,13 @@ func interact():
             rules.actions.quest_event(player,"talk",n.get("definition_id",n.id))
             if n.role=="work_services":
                 menu="services";choices=n.get("services",[]).duplicate(true)
-                if choices.is_empty():menu="dialogue";choices=n.get("dialogue",["현재 이용 가능한 서비스가 없습니다."])
+                for node in n.get("dialogue",[]):
+                    if typeof(node)!=TYPE_DICTIONARY:continue
+                    for choice in node.get("choices",[]):
+                        var index=int(choice.get("service_index",-1))
+                        if index>=0 and index<choices.size():choices[index].name=choice.get("label","서비스")
+                if choices.is_empty():
+                    menu="dialogue";choices=n.get("dialogue",[]).map(func(node):return node.get("text","") if typeof(node)==TYPE_DICTIONARY else str(node))
                 event("npc_dialogue",{"id":n.id,"definition_id":n.get("definition_id",""),"role":n.role})
                 return
             if n.role in ["shop","inn"]:
@@ -671,6 +737,9 @@ func interact():
                 notice("성황이 체력과 마력을 회복해 주었습니다.")
             event("npc_dialogue",{"id":n.id,"role":n.role})
             return
+    for portal in maps[player.map].portals:
+        if portal.get("trigger","walk")=="interact" and Vector2i(portal.x,portal.y).distance_to(cell())<=1.5:
+            transition(portal.target,portal.entry);return
     pickup()
 
 func open_inventory():
@@ -679,6 +748,12 @@ func open_inventory():
     choices = player.inventory.keys().filter(func(k):return int(player.inventory[k]) > 0)
 
 func handle_menu_key(key: int):
+    if menu=="experience_exchange" and key in [KEY_ENTER,KEY_F] and not choices.is_empty():
+        var result=rules.actions.experience_exchange(player,service_definition,selected)
+        event("experience_exchange",{"option":selected,"result":result});notice("경험치를 능력치로 교환했습니다." if result.ok else result.error);return
+    if menu=="recipe" and key in [KEY_ENTER,KEY_F] and not choices.is_empty():
+        var id=str(choices[selected]);var result=rules.actions.recipe(player,content.definition(id))
+        event("recipe",{"id":id,"result":result});notice("제작 완료" if result.ok and result.get("success",false) else result.get("error","제작 실패"));return
     if menu=="services" and key in [KEY_ENTER,KEY_F] and not choices.is_empty():
         work_service(choices[selected]);return
     if menu=="quests" and key in [KEY_ENTER,KEY_F] and not choices.is_empty():
@@ -696,6 +771,8 @@ func handle_menu_key(key: int):
             for slot in player.equipment_slots.keys():
                 if player.equipment_slots[slot]==id:rules.actions.unequip(player,slot)
         elif key==KEY_N:
+            player.extensions["optional_enhancement"]=true
+            event("extension_opt_in",{"extension":"optional_enhancement","original_rule":false})
             enhancement_instance=id;menu="enhancement";selected=0
             choices=content.by_kind("enhancement").filter(func(rule):return gear.definition_id in content.definition(rule).get("applicable_item_ids",[]))
             if choices.is_empty():notice("이 장비에 전달된 강화 규칙이 없습니다.")
@@ -742,7 +819,9 @@ func handle_menu_key(key: int):
             var price = int(rules.value_or(rules.item(title),"vendor_buy_price" if buy else "vendor_sell_price",5 if buy else 1))
             for offer in npc.get("work_offers",[]):
                 if offer.get("item_id","")==title:
-                    price=int(offer.get("buy_price",offer.get("price",price))) if buy else int(offer.get("sell_price",price))
+                    if buy and int(player.level)<int(offer.get("requirements",{}).get("min_level",0)):notice("구매 레벨 조건을 충족하지 못했습니다.");return
+                    price=int(offer.get("price_gold",offer.get("buy_price",offer.get("price",price)))) if buy else int(offer.get("sell_price",price))
+            if not buy and rules.item(title).get("flags",{}).get("quest_bound",false):notice("의뢰 전용 물품은 판매할 수 없습니다.");return
             var success = rules.trade(player,title,1,price,buy)
             notice(("구매: " if buy else "판매: ")+title if success else "금전·수량·가방 조건을 확인하세요.")
             event("trade",{"item":title,"buy":buy,"success":success,"gold":player.gold})
@@ -765,6 +844,10 @@ func handle_menu_key(key: int):
             notice(title+" 장착" if success else "착용 조건 또는 무기 종류를 확인하세요.")
             event("equipped",{"item":title,"success":success})
         elif key == KEY_U:
+            if rules.item(title).get("teleport_safe_return",false):
+                var result=rules.actions.use_return_item(player,title,world.home)
+                if result.ok:menu="";transition(world.home.map,world.home.entry)
+                event("return_item",{"id":title,"result":result});return
             var success = rules.consume(player,title)
             notice(title+" 사용" if success else "사용할 수 없는 물품입니다.")
             event("consumed",{"item":title,"success":success})
@@ -788,10 +871,18 @@ func play_sound(kind: String):
         voice.play()
         audio_events.append({"time":clock,"kind":kind,"voice":kind,"playing":voice.is_playing(),"file_sha256":FileAccess.get_sha256(path)})
 
+func play_work_sound(id: String):
+    var path=work_assets.file_path(id)
+    if path=="":event("sound_error",{"code":"SOUND_NOT_ACQUIRED","id":id});return
+    var stream=AudioStreamWAV.load_from_file(path)
+    if stream==null:event("sound_error",{"code":"SOUND_DECODE","id":id});return
+    audio_voices.skill.stream=stream;audio_voices.skill.play()
+    audio_events.append({"time":clock,"kind":"work_skill","asset_id":id,"playing":audio_voices.skill.is_playing(),"file_sha256":content.assets[id].sha256})
+
 func snapshot() -> Dictionary:
     player.rng_state = str(rules.rng.state)
     return {"player":player.duplicate(true),"world":entities.duplicate(true),"loot":loot.duplicate(true),
-            "rng_state":str(rules.rng.state),"content_version":content.version,"game_build":"codex-core-1","save_format_version":Store.VERSION}
+            "rng_state":str(rules.rng.state),"content_version":content.version,"game_build":store.game_build,"save_format_version":Store.VERSION}
 
 func restore(state: Dictionary):
     var fresh_entities=entities.duplicate(true)
@@ -824,6 +915,13 @@ func restore(state: Dictionary):
     # Migrate our earlier generated spawn layout that overlapped a doorway.
     for id in entities:
         var e=entities[id]
+        if fresh_entities.has(id):
+            # A saved instance keeps its progress, never an obsolete copy of
+            # the monster definition after a guarded content update.
+            var current_definition=fresh_entities[id]
+            for field in ["kind","spec","hp_max","mp_max"]:e[field]=current_definition[field]
+            e.hp=clampi(int(e.hp),0,int(e.hp_max))
+            e.mp=clampi(int(e.get("mp",0)),0,int(e.mp_max))
         if not maps.has(e.map):e.retired=true;continue
         for portal in maps[e.map].portals:
             if Vector2i(e.home_x,e.home_y)==Vector2i(portal.x,portal.y):e.home_y+=2
@@ -867,7 +965,7 @@ func write_diagnostic(code: String):
     var f=FileAccess.open(path,FileAccess.WRITE)
     if f==null:return
     # One bounded local file; no full user save or secret is uploaded/packaged.
-    f.store_string(JSON.stringify({"code":code,"build":"codex-core-1","content_version":content.version,
+    f.store_string(JSON.stringify({"code":code,"build":store.game_build,"content_version":content.version,
         "map_id":player.get("map",""),"rng_state":str(rules.rng.state),"recent_events":event_log.slice(maxi(0,event_log.size()-32)),
         "rules_error":rules.actions.last_error,"save_error":store.last_error},"  "))
     f.close();notice("오류 재현 기록을 개인 저장 폴더에 남겼습니다.")
@@ -906,6 +1004,13 @@ func draw_actor(key: String, frame: int, feet: Vector2, opacity: float = 1.0):
     draw_texture_rect_region(texture,Rect2(feet-Vector2(spec.origin[0],spec.origin[1])*2,Vector2(spec.canvas[0],spec.canvas[1])*2),region,Color(1,1,1,opacity))
 
 func icon(title: String, at: Vector2):
+    var data=rules.runtime_definitions.get(rules.find_content("item",title).get("id",title),{}).get("data",{})
+    var visual=data.get("visual",{})
+    if visual.has("icon_id"):
+        var texture=work_assets.icon(visual.icon_id,int(visual.get("icon_frame",0)))
+        if texture!=null:
+            var size=texture.get_size()*minf(2,48.0/maxi(texture.get_width(),texture.get_height()))
+            draw_texture_rect(texture,Rect2(at-size/2,size),false);return
     var names = assets.actor_data.icons.names
     var index = names.find(title)
     if index < 0:
@@ -921,6 +1026,7 @@ func icon(title: String, at: Vector2):
 func _draw():
     if assets.tiles.is_empty() or font.data.is_empty():
         return
+    work_assets.begin_frame()
     draw_rect(Rect2(0,0,960,640),Color(0.055,0.065,0.055))
     var map_id = "village" if player.is_empty() else player.map
     var m = maps[map_id]
@@ -928,7 +1034,8 @@ func _draw():
     for y in range(int(cam.y),mini(int(m.height),int(cam.y)+10)):
         for x in range(int(cam.x),mini(int(m.width),int(cam.x)+16)):
             var tile = str(m.ground[y][x])
-            if tile!="" and assets.tiles.has(tile):draw_texture_rect(assets.tile(tile),Rect2(VIEW.position+(Vector2(x,y)-cam)*STEP,Vector2(STEP,STEP)),false)
+            var texture=tile_texture(tile)
+            if texture!=null:draw_texture_rect(texture,Rect2(VIEW.position+(Vector2(x,y)-cam)*STEP,Vector2(STEP,STEP)),false)
     for portal in m.portals:
         if Rect2(cam,Vector2(16,10)).has_point(Vector2(portal.x,portal.y)):
             var p = screen_point(portal.x,portal.y)
@@ -956,7 +1063,8 @@ func _draw():
     for v in visible:
         var e = v.data
         if v.type=="decoration":
-            draw_texture_rect(assets.tile(e.tile),Rect2(VIEW.position+(Vector2(e.x,e.y)-cam)*STEP,Vector2(STEP,STEP)),false)
+            var texture=tile_texture(e.tile)
+            if texture!=null:draw_texture_rect(texture,Rect2(VIEW.position+(Vector2(e.x,e.y)-cam)*STEP,Vector2(STEP,STEP)),false)
             continue
         if not Rect2(cam-Vector2(1,1),Vector2(18,12)).has_point(Vector2(e.x,e.y)):
             continue
@@ -974,7 +1082,9 @@ func _draw():
             if v.type=="monster" and float(e.get("attack_elapsed",-1))>=0 and int(spec.attack)>0:
                 frame=4*int(spec.walk)+direction*int(spec.attack)+mini(int(spec.attack)-1,int(float(e.attack_elapsed)*1000/maxi(1,int(spec.delay_ms))))
             var opacity = 0.7 if float(e.get("hurt",0)) > 0 else 1.0
-            if content.records.has(key):work_assets.draw_animation(self,key,"attack" if float(e.get("attack_elapsed",-1))>=0 else "walk",direction,int((e.get("attack_elapsed",clock))*1000),pos,opacity)
+            if content.records.has(key):
+                var attacking=float(e.get("attack_elapsed",-1))>=0
+                work_assets.draw_animation(self,key,"attack" if attacking else "walk",direction,int((e.attack_elapsed if attacking else clock)*1000),pos,opacity)
             else:draw_actor(key,frame,pos,opacity)
             var title = e.name if v.type == "npc" else e.spec.name
             label(title,pos-Vector2(28,90),13,Color(0.9,0.9,0.65))
@@ -1026,6 +1136,12 @@ func draw_player(pos: Vector2):
         draw_actor("ghost",int(player.direction)*3+int(clock*6)%3,pos)
         return
     var direction = int(player.direction)
+    for status in player.statuses.values():
+        var replacement=status.get("visual",{}).get("replacement_actor","")
+        if replacement!="":
+            var spec=assets.actor_data.get(replacement,{})
+            if not spec.is_empty():draw_actor(replacement,direction*int(spec.walk)+int(clock*6)%int(spec.walk),pos);return
+    if draw_work_player(pos,direction):return
     if player.buffs.get("금수",0)>0:
         var spec=assets.actor_data.rabbit
         draw_actor("rabbit",direction*int(spec.walk)+int(clock*6)%int(spec.walk),pos)
@@ -1079,13 +1195,13 @@ func draw_hud():
     label("경험치 %s" % str(float(player.xp2)/2.0),Vector2(784,224),14)
     label("금전 %d전" % player.gold,Vector2(784,248),15)
     label("힘 %d · 사냥 %d" % [player.strength,player.kills],Vector2(784,273),14)
-    label("무기: "+(player.equipped if player.equipped!="" else "맨손"),Vector2(784,302),15)
+    label("무기: "+(rules.display_name(player.equipped) if player.equipped!="" else "맨손"),Vector2(784,302),15)
     if player.equipped != "":
         label("내구 %d" % int(player.durability[player.equipped]),Vector2(784,325),13)
-    if player.get("armor_equipped","")!="":label("옷: "+player.armor_equipped,Vector2(784,342),11)
+    if player.get("armor_equipped","")!="":label("옷: "+rules.display_name(player.armor_equipped),Vector2(784,342),11)
     for i in range(3):
         box(Rect2(782,346+i*39,166,34))
-        label(str(i+1)+"  "+str(player.hotbar[i]),Vector2(790,368+i*39),13)
+        label(str(i+1)+"  "+rules.display_name(str(player.hotbar[i])),Vector2(790,368+i*39),13)
     label("화살표  이동",Vector2(784,478),13)
     label("Space  공격 / G  줍기",Vector2(784,500),12)
     label("Enter 대화 · I 물품 · F5 저장",Vector2(668,631),12)
@@ -1100,37 +1216,42 @@ func draw_menu():
     var start = maxi(0,selected-4)
     for j in range(start,mini(choices.size(),start+8)):
         var y = 184+(j-start)*31
-        var title = rules.display_name(str(choices[j]))
-        if menu=="services":title=choices[j].get("name",choices[j].get("type","서비스"))
+        var id=str(choices[j])
+        if menu in ["shop","inventory"] and rules.runtime_definitions.has("wk.class.novice"):id=rules.find_content("item",id).get("id",id)
+        var title = rules.display_name(id)
+        if menu=="services":title=choices[j].get("name",{"shop":"물품 거래","learn_skills":"기술 수련","quests":"의뢰 접수와 보상","experience_exchange":"99레벨 경험치 교환","recipe_book":"재료 제작","repair":"장비 수리","rest":"주막에서 쉬기","revive":"성황에게 부활"}.get(choices[j].get("type",""),"서비스"))
         if menu=="equipment":
             var gear=player.equipment_instances[choices[j]]
-            title=rules.display_name(gear.definition_id)+" +"+str(int(gear.enhancement_level))+" ["+str(gear.id)+"]"
-        if menu=="travel":title=maps[title].name
+            title=rules.display_name(gear.definition_id)+" +"+str(int(gear.enhancement_level))+" ("+str(gear.id).trim_prefix("gear.instance.")+")"
+        if menu=="travel":title=maps[world.get("map_aliases",{}).get(id,id)].name
+        if menu=="quests":title+=" · "+{"ACTIVE":"진행 중","CLAIMED":"보상 받음"}.get(player.quest_progress.get(id,{}).get("state",""),"접수 가능")
         if j == selected:
             draw_rect(Rect2(184,y-21,496,29),Color(0.32,0.29,0.16))
         label(title,Vector2(198,y),15)
         if menu == "shop":
-            icon(title,Vector2(445,y-8))
-            label("%d전  보유 %d" % [int(rules.value_or(rules.item(title),"vendor_buy_price",5)),int(player.inventory.get(title,0))],Vector2(478,y),14)
+            icon(id,Vector2(445,y-8))
+            label("%d전  보유 %d" % [int(rules.value_or(rules.item(id),"vendor_buy_price",5)),int(player.inventory.get(id,0))],Vector2(478,y),14)
         elif menu == "inventory":
-            icon(title,Vector2(559,y-8))
-            label("%d개" % int(player.inventory[title]),Vector2(596,y),14)
+            icon(id,Vector2(559,y-8))
+            label("%d개" % int(player.inventory[id]),Vector2(596,y),14)
         elif menu == "trainer":
-            var s = rules.skill(player,title)
+            var s = rules.skill(player,id)
             var cost="미확정" if s.get("learn_money")==null else str(int(s.learn_money))+"전"
-            label("Lv.%d / %s %s" % [int(s.learn_level),cost,"습득" if title in player.skills else ""],Vector2(467,y),13)
+            label("Lv.%d / %s %s" % [int(s.learn_level),cost,"습득" if id in player.skills else ""],Vector2(467,y),13)
     var hint = {"shop":"↑↓ 선택 · B 구매 · V 판매 · R 수리 · C 요리 · Esc 닫기",
         "inventory":"↑↓ 선택 · E 장착 · U 사용 · Esc 닫기",
         "trainer":"Enter 습득 · 1~3 단축키 지정 · Esc 닫기",
         "dialogue":"Esc 닫기","skills":"↑↓ 선택 · 1~3 단축키 지정 · Esc 닫기","travel":"↑↓ 선택 · Enter 이동 · Esc 닫기"}.get(menu,"")
     label(hint,Vector2(190,485),13)
+    if menu=="services" and not npc.get("dialogue",[]).is_empty():
+        draw_multiline_string(font,Vector2(194,439),npc.dialogue[0].get("text",""),HORIZONTAL_ALIGNMENT_LEFT,470,12,2,Color(0.9,0.87,0.7))
     if menu=="inventory" and not choices.is_empty():
         var it=rules.item(str(choices[selected]))
         label("공격 %d~%d · 방어 %d · 필요 힘 %d" % [int(rules.value_or(it,"damage_min",0)),int(rules.value_or(it,"damage_max",0)),int(rules.value_or(it,"armor_class",0)),int(rules.value_or(it,"strength_required",0))],Vector2(194,459),13)
 
 func start_exercise():
     # Implemented in a separate script so validation calls the actual event handlers.
-    var runner = load("res://exercise.gd").new()
+    var runner = load("res://work_play_probe.gd" if test_mode.begins_with("work-") else "res://exercise.gd").new()
     add_child(runner)
     await runner.run(self,test_mode,test_root)
 
@@ -1148,7 +1269,19 @@ func work_service(service):
         if shop.get("currency","gold")!="gold":notice("미지원 통화: "+str(shop.currency));return
         npc.work_offers=shop.get("offers",[]);menu="shop";choices=npc.work_offers.map(func(o):return o.item_id)
     elif kind in ["quest","quests"]:menu="quests";choices=service.get("quest_ids",[]).duplicate()
-    elif kind in ["trainer","skill","skills"]:menu="trainer";choices=service.get("skill_ids",[]).duplicate()
+    elif kind in ["trainer","skill","skills","learn_skills"]:
+        menu="trainer";choices=service.get("skill_ids",[]).filter(func(id):return content.definition(id).get("variant",{}).get("role","primary")=="primary")
+    elif kind=="experience_exchange":
+        menu="experience_exchange";service_definition=content.definition(service.get("economy_id",""));choices=service_definition.get("experience_exchange",{}).get("options",[]).map(func(o):return str(o.stat)+" +"+str(o.amount))
+    elif kind=="recipe_book":menu="recipe";choices=service.get("recipe_ids",[service.get("recipe_id","")]).filter(func(id):return id!="")
+    elif kind=="repair":
+        var values=rules.item(player.equipped)
+        var cost=rules.repair_cost(int(rules.value_or(values,"vendor_buy_price",0)),int(rules.value_or(values,"durability",0)),int(player.durability.get(player.equipped,0)),float(service.get("price_multiplier",0.001)))
+        var success=cost>=0 and rules.actions.repair(player,player.equipped,cost,int(rules.value_or(values,"durability",0)))
+        event("repair",{"success":success,"cost":cost});notice("수리 완료" if success else "수리 조건을 확인하세요.")
+    elif kind=="revive":
+        var result=Effects.apply(rules.actions,player,[],[{"type":"revive","target":"self","hp_fraction":service.get("hp_fraction",{"numerator":1,"denominator":1}),"mp_fraction":service.get("mp_fraction",{"numerator":1,"denominator":1})}])
+        event("work_revive",{"result":result});notice("부활했습니다." if result.ok else "혼령 상태에서 부활할 수 있습니다.")
     elif kind=="advancement":menu="advancement";choices=service.get("advancement_ids",[]).duplicate()
     elif kind in ["travel","teleport"]:menu="travel";choices=service.get("map_ids",[]).duplicate()
     elif kind=="enhancement":menu="equipment";choices=player.equipment_instances.keys().filter(func(id):return not player.equipment_instances[id].destroyed)
@@ -1159,3 +1292,60 @@ func work_service(service):
     else:
         event("service_error",{"code":"UNKNOWN_SERVICE","type":kind,"npc_id":npc.get("definition_id",npc.id)})
         notice("아직 연결되지 않은 서비스: "+kind)
+
+func tile_texture(key: String) -> Texture2D:
+    if "#" in key:
+        var parts=key.split("#");return work_assets.tile(parts[0],int(parts[1]))
+    return assets.tile(key) if assets.tiles.has(key) else null
+
+func draw_work_player(pos: Vector2, direction: int) -> bool:
+    var classes=content.by_kind("class").filter(func(id):return content.definition(id).get("name","")==player.job)
+    if classes.is_empty():return false
+    var visual=content.definition(classes[0]).get("visual",{})
+    var body=visual.get("body_asset_id","");var head=visual.get("head_asset_id","")
+    var head_instance=player.get("equipment_instances",{}).get(player.get("equipment_slots",{}).get("head",""),{})
+    var head_data=rules.runtime_definitions.get(head_instance.get("definition_id",""),{}).get("data",{}).get("visual",{})
+    head=head_data.get("equipment_asset_id",head)
+    var weapon_data=rules.runtime_definitions.get(rules.find_content("item",player.equipped).get("id",player.equipped),{}).get("data",{}).get("visual",{})
+    var body_data=rules.runtime_definitions.get(rules.find_content("item",player.get("armor_equipped","")).get("id",""),{}).get("data",{}).get("visual",{})
+    body=body_data.get("equipment_asset_id",body_data.get("asset_id",body))
+    var weapon=weapon_data.get("equipment_asset_id",weapon_data.get("asset_id",""))
+    var motion=weapon_data.get("motion","sword")
+    var action="walk_"+motion if weapon!="" else "walk_unarmed"
+    var elapsed=int(clock*1000) if step_progress<1 else 100
+    var weapon_action="walk"
+    if attack_elapsed>=0:action="attack_"+motion;weapon_action="attack";elapsed=int(attack_elapsed*1000)
+    elif cast_elapsed>=0:action="cast";elapsed=int(cast_elapsed*1000)
+    elif pickup_elapsed>=0:action="pickup";elapsed=int(pickup_elapsed*1000)
+    var index=work_assets.frame_index(body,action,direction,elapsed)
+    if index<0:return false
+    var relative=index-int(content.definition(body).get("metadata",{}).get("starting_frame",0))
+    var order=world.get("work_draw_order",[])
+    var layers=str(order[relative]) if relative<order.size() else "bhw"
+    var opacity=0.35 if rules.actions.status_modifier(player,"hidden")>0 else 0.72 if hurt_time>0 else 1.0
+    for layer in layers:
+        if layer=="b":work_assets.draw_animation(self,body,action,direction,elapsed,pos,opacity)
+        elif layer=="h":work_assets.draw_animation(self,head,action,direction,elapsed,pos,opacity)
+        elif layer=="w" and weapon!="":work_assets.draw_animation(self,weapon,weapon_action,direction,elapsed,pos,opacity)
+    return true
+
+func apply_work_action(action: Dictionary):
+    if action.mode=="inspect_item":open_inventory();notice("선택한 물품의 능력치와 착용 조건을 확인하세요.");return
+    if action.mode=="local_message":notice(player.name+"의 사자후가 지역에 울려 퍼집니다.");event("local_message",{"channel":action.channel});return
+    if action.mode=="directional_town_gate":menu="compass";choices=["동쪽","서쪽","남쪽","북쪽"];selected=0;return
+    if action.mode in ["home_city","revival_npc","safe_region_entry"]:
+        if action.get("requires_ghost",false) and player.hp>0:notice("혼령 상태에서 사용할 수 있습니다.");return
+        var home=world.home
+        var entry=home.entry
+        if action.mode=="revival_npc":
+            var revival=maps[home.map].npcs.filter(func(n):return n.get("services",[]).any(func(s):return s.type=="revive"))
+            if not revival.is_empty():entry=[revival[0].x,revival[0].y]
+        transition(home.map,entry);return
+    if action.mode=="adjacent_enemy":
+        if not entities.has(selected_target):notice("선택한 대상이 없습니다.");return
+        var e=entities[selected_target]
+        if e.map!=player.map or not e.alive:return
+        for offset in DIRECTIONS:
+            var destination=Vector2i(e.x,e.y)+offset
+            if free_cell(player.map,destination):transition(player.map,[destination.x,destination.y]);return
+    if action.get("map","")!="":transition(action.map,action.entry)

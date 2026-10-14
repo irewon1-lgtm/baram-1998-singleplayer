@@ -1,0 +1,282 @@
+{
+  "checks": [
+    {
+      "id": "active-release-bytes-and-assets",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "original-layout-adapter",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "runtime-map-cells-and-portals",
+      "observed": {
+        "active_definitions": {
+          "advancement": 12,
+          "asset": 1030,
+          "class": 5,
+          "drop_group": 320,
+          "economy": 1,
+          "enhancement": 1,
+          "growth": 401,
+          "item": 613,
+          "map": 386,
+          "monster": 320,
+          "npc": 155,
+          "quest": 99,
+          "recipe": 193,
+          "shop": 62,
+          "skill": 211
+        },
+        "errors": [],
+        "map_count": 423
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "all-physical-Work-maps-connected-to-home",
+      "observed": {
+        "Work_scenes": 385,
+        "graph_reachable_scenes": 415
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "growth-전사-controlled-1-to-99-terminal",
+      "observed": {
+        "gains": 98,
+        "level": 99,
+        "natural_play": "NOT_RUN"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "growth-도적-controlled-1-to-99-terminal",
+      "observed": {
+        "gains": 98,
+        "level": 99,
+        "natural_play": "NOT_RUN"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "growth-주술사-controlled-1-to-99-terminal",
+      "observed": {
+        "gains": 98,
+        "level": 99,
+        "natural_play": "NOT_RUN"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "growth-도사-controlled-1-to-99-terminal",
+      "observed": {
+        "gains": 98,
+        "level": 99,
+        "natural_play": "NOT_RUN"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "all-Work-skill-effect-operators-recognized",
+      "observed": {
+        "errors": [],
+        "skills": 211
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "actual-Work-offensive-effect-changes-target-health",
+      "observed": {
+        "damage": 1,
+        "skill_id": "kr.spell.00ab334b664d"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "actual-Work-learn-handles-declared-materials",
+      "observed": {
+        "skill_id": "kr.spell.0038bf13f8ed"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "actual-Work-skill-learning-atomic",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "actual-Work-healing-effect-changes-health",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "all-Work-drop-ratios-run-with-declared-mode",
+      "observed": {
+        "errors": [],
+        "groups": 320
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "actual-Work-repeat-quest-accept",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "actual-Work-array-reward-claim",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "actual-Work-quest-no-double-reward",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "actual-Work-repeat-cooldown",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "actual-Work-repeat-new-round",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "actual-Work-advancement-quest-start",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "actual-Work-advancement-reward-is-atomic",
+      "observed": {
+        "error": "",
+        "ok": true
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "actual-Work-two-independent-gear-instances",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "actual-Work-enhancement-disabled-by-default",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "actual-Work-enhancement-one-instance-only",
+      "observed": {
+        "error": "",
+        "ok": true,
+        "outcome": "success",
+        "rng_state": "3338501179283781118"
+      },
+      "result": "PASS"
+    },
+    {
+      "id": "actual-Work-recipe-materials-output-and-cost",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "actual-Work-prepared-consumable-keeps-instance-modifier",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "actual-Work-level99-surplus-XP-exchange",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "Work-content-version-save-written",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "Work-content-save-roundtrip-preserves-state",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "actual-prior-level6-save-copy-read",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "actual-prior-progress-retained-under-Work-data",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "actual-prior-save-copy-migrated-and-resaved",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "actual-prior-migrated-save-reloads-original-bytes-unchanged",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "saved-monster-instance-rebinds-current-definition-with-progress-preserved",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "actual-Work-rank1-equipment-rejects-unadvanced-player-atomically",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "actual-Work-rank1-equipment-applies-after-advancement",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "actual-Work-rank1-skill-consumes-one-bound-manual",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "actual-Work-repeat-skill-learning-consumes-no-second-manual",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "actual-Work-bound-training-manual-cannot-be-sold",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "drawn-texture-page-survives-reuse-cache-eviction-until-next-frame",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "texture-frame-lifetime-references-are-released-on-next-draw",
+      "observed": {},
+      "result": "PASS"
+    }
+  ],
+  "command": "godot --headless --path game --script work_integration_runner.gd -- --content=<active-release> --assets=<private-assets> --private=<isolated-test-folder> --report=<report> --legacy=<read-only-prior-level6-save>",
+  "content_version": "9e30ec651489a4f5bdbf5c4e727a41a3c7a2b2825a373262056c1e896a82fb7c",
+  "protocol_id": "BARAM_PARALLEL_V1",
+  "result": "PASS",
+  "scope": "ACTUAL_WORK_DATA_HEADLESS_CONTROLLED_SYSTEMS_NOT_GUI_OR_NATURAL_PLAY",
+  "source_sha256": {
+    "game/content_registry.gd": "1bc747142f4f3c8eaeb6865b5ab04f04d6d54eef8cd59fb877ceb77e112a2df5",
+    "game/core_actions.gd": "ba9ec5a9f89f8127e7918cf274d256cc6629a04edf2c2db5e488f47971641244",
+    "game/effect_runtime.gd": "f2bf48546135c68ed9b583672675358267049309bdec4e2a92b567f208db1faf",
+    "game/main.gd": "672d072d0c653163268beae351fbd7c54e71de0cb85fbfb956513c84bc99544b",
+    "game/rules.gd": "58b3dcc9457e3909aafa6543fd9921be1f1fb3d39629c9271f066f7c9021668b",
+    "game/save_store.gd": "57b0fc0aabbab3bd0ca7568d87ace999bc3daeef7255e502bd71d8d317e09bc9",
+    "game/work_assets.gd": "3e56b7a2a37013652a92e088a3e26ecf83591ba9a2b9f8c380b97d36b466a39f",
+    "game/work_integration_runner.gd": "53daa1c252e5ae72ab5a5c43572690b108f65355688895c2e9e6d26b8ac51ec2"
+  }
+}

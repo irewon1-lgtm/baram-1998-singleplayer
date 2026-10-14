@@ -1,0 +1,235 @@
+{
+  "checks": [
+    {
+      "id": "instance-equipment-two-purchased",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "instance-ids-distinct",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "transaction-event-idempotent",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "money-item-atomic-failure",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "equip-specific-instance",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "material-given-through-common-api",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "enhancement-cost-outcome-transaction",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "one-gear-upgrade-definition-and-other-gear-unchanged",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "enhancement-duplicate-event-no-cost-or-repeat",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "enhancement-failure-state-and-rng-preserved",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "individual-enhancement-affects-actual-equipment-rules",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "unequip-common-api",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "quest-start",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "quest-event-objective-and-reward",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "quest-claim-duplicate-safe",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "repeat-cooldown-milliseconds",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "legitimate-repeat-new-round",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "repeat-reward-not-mistaken-for-duplicate",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "effect-instance-target-isolated",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "unknown-effect-entire-group-refused",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "status-duration-tick-declared",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "status-real-state-tick",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "cure-removes-actual-status",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "advancement-low-level-refused",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "advancement-stats-quest-cost-unlock",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "rank-duplicate-no-cost",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "shared-half-away-rounding",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "rare-ratio-not-zero",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "exclusive-never-independent-double-drop",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "exclusive-no-drop-must-be-explicit",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "weights-separate-from-probability",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "bounded-path-shortest-route",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "unreachable-search-always-terminates",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "schema2-verified-atomic-write",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "gear-quest-rank-save-reload-preserved",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "legacy-read-migration-does-not-write-original",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "legacy-rewrite-retains-exact-original-backup",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "old-reader-cannot-fallback-to-schema1-backup",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "future-version-no-old-backup-downgrade",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "future-version-cannot-overwrite",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "damaged-save-safe-failure",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "corrupt-primary-reads-validated-backup",
+      "observed": {},
+      "result": "PASS"
+    },
+    {
+      "id": "recovered-save-rewrites-and-preserves-broken-primary",
+      "observed": {},
+      "result": "PASS"
+    }
+  ],
+  "command": "godot --headless --path game --script core_runner.gd -- --private=<isolated-private-test-folder> --report=<private-report>",
+  "executed": 43,
+  "pass": 43,
+  "protocol_id": "BARAM_PARALLEL_V1",
+  "scope": "ACTUAL_GODOT_COMMON_SYSTEMS_SYNTHETIC_TEST_DATA_NOT_GUI_OR_NATURAL_LEVELING",
+  "source_sha256": {
+    "game/content_registry.gd": "1bc747142f4f3c8eaeb6865b5ab04f04d6d54eef8cd59fb877ceb77e112a2df5",
+    "game/core_actions.gd": "ba9ec5a9f89f8127e7918cf274d256cc6629a04edf2c2db5e488f47971641244",
+    "game/core_runner.gd": "18efb32ea0a06cfc8ac26cf7494f25a7984758160d9733dd3a013e63ca3a7a7e",
+    "game/effect_runtime.gd": "f2bf48546135c68ed9b583672675358267049309bdec4e2a92b567f208db1faf",
+    "game/main.gd": "672d072d0c653163268beae351fbd7c54e71de0cb85fbfb956513c84bc99544b",
+    "game/rules.gd": "58b3dcc9457e3909aafa6543fd9921be1f1fb3d39629c9271f066f7c9021668b",
+    "game/save_store.gd": "57b0fc0aabbab3bd0ca7568d87ace999bc3daeef7255e502bd71d8d317e09bc9",
+    "game/work_assets.gd": "84ce6d350e426f132ece3c47b53e4cbb75c2ae36847b4a778893c76444503d57"
+  },
+  "status": "PASS"
+}

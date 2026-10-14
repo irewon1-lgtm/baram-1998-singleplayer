@@ -103,6 +103,11 @@ func run():
     verify(not store.write_state(future,state) and FileAccess.get_file_as_string(future)==future_bytes,"future-version-cannot-overwrite")
     var damaged=private_folder.path_join("damaged.json");store.write_bytes(damaged,"corrupt")
     verify(store.read_state(damaged).is_empty() and FileAccess.get_file_as_string(damaged)=="corrupt","damaged-save-safe-failure")
+    var repaired=private_folder.path_join("recoverable.json")
+    store.write_state(repaired,state);store.write_state(repaired,state);store.write_bytes(repaired,"damaged-primary-exact-bytes")
+    var recovered=store.read_state(repaired)
+    verify(not recovered.is_empty() and store.last_status=="RECOVERED_BACKUP","corrupt-primary-reads-validated-backup")
+    verify(store.write_state(repaired,recovered) and FileAccess.get_file_as_string(repaired+".corrupt-preserved")=="damaged-primary-exact-bytes" and not store.read_state(repaired).is_empty(),"recovered-save-rewrites-and-preserves-broken-primary")
     var passed=checks.filter(func(c):return c.result=="PASS").size()
     var output={"status":"PASS" if passed==checks.size() else "FAIL","scope":"ACTUAL_GODOT_COMMON_SYSTEMS_SYNTHETIC_TEST_DATA_NOT_GUI_OR_NATURAL_LEVELING","checks":checks,"executed":checks.size(),"pass":passed,
         "source_sha256":{"rules":FileAccess.get_sha256("res://rules.gd"),"actions":FileAccess.get_sha256("res://core_actions.gd"),"store":FileAccess.get_sha256("res://save_store.gd"),"effects":FileAccess.get_sha256("res://effect_runtime.gd")}}

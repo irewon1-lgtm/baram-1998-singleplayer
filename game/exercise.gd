@@ -61,7 +61,9 @@ func route(target: Vector2i) -> bool:
                 if parents.has(next) or not game.free_cell(game.player.map,next,"",d):continue
                 var portal_here=false
                 for portal in game.maps[game.player.map].portals:
-                    if next==Vector2i(portal.x,portal.y) and next!=target:
+                    # Interact-only doors do not change maps when crossed.
+                    # Excluding them invented walls in Work's dense hubs.
+                    if portal.get("trigger","walk")=="walk" and next==Vector2i(portal.x,portal.y) and next!=target:
                         portal_here=true
                         break
                 if portal_here:continue
@@ -646,6 +648,7 @@ func natural_progress():
     finish()
 
 func finish():
+    print("SCREEN_STAGE finish_audio elapsed_ms="+str(Time.get_ticks_msec()-started))
     if game.recorder.is_recording_active():
         game.recorder.set_recording_active(false)
         var stream=game.recorder.get_recording()
@@ -653,13 +656,18 @@ func finish():
             var path=root.path_join("mixed-audio.wav")
             var ok=stream.save_to_wav(path)==OK
             check(ok,"engine_audio_mix_recorded")
+    print("SCREEN_STAGE finish_report elapsed_ms="+str(Time.get_ticks_msec()-started))
     var failures=checks.filter(func(c):return c.status!="PASS").size()
     var report={"status":"PASS_EXECUTED_SCREEN_INPUT" if failures==0 else "FAIL","checks":checks,
         "elapsed_ms":Time.get_ticks_msec()-started,"screenshots":screenshots,"events":game.event_log,
         "registered_tiles":game.assets.tiles.size(),"registered_tile_sources":game.assets.tile_set.get_source_count(),
         "rendered_tile_ids":game.assets.used_tiles.keys(),"rendered_actor_frames":game.assets.used_frames.keys(),
+        "Work_rendered_sheet_frame_ids":game.work_assets.used_frames.keys(),"content_version":game.content.version,
+        "game_build":game.store.game_build,"Work_frame_texture_pages":game.work_assets.frame_textures.size(),
+        "Work_cached_texture_bytes":game.work_assets.texture_bytes,
         "audio_events":game.audio_events,"player":game.player,"save_loaded":game.save_loaded,
         "scope":"REAL_X11_GODOT_VIEWPORT_WITH_INPUT_EVENTS_NOT_FULL_1_TO_99_PLAYTHROUGH"}
     var file=FileAccess.open(root.path_join(game.test_mode+"-report.json"),FileAccess.WRITE)
     file.store_string(JSON.stringify(report,"  "));file.close()
+    print("SCREEN_STAGE quit elapsed_ms="+str(Time.get_ticks_msec()-started))
     game.get_tree().quit(0 if failures==0 else 1)

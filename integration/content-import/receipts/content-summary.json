@@ -1,0 +1,73 @@
+{
+  "NPCs": {
+    "Work_defined": 155,
+    "Work_distinct_placed_definition_ids": 141,
+    "Work_map_placement_instances": 141
+  },
+  "acquired_source_frame_counts": {
+    "actors_equipment_effects_other": 30780,
+    "recovered_UI": 75,
+    "tiles": 35269
+  },
+  "asset_definition_types": {
+    "animation": 617,
+    "audio": 163,
+    "effect_sequence": 119,
+    "frame_sheet": 128,
+    "tile_sheet": 3
+  },
+  "content_version": "9e30ec651489a4f5bdbf5c4e727a41a3c7a2b2825a373262056c1e896a82fb7c",
+  "data_definition_counts": {
+    "advancement": 12,
+    "asset": 1030,
+    "class": 5,
+    "drop_group": 320,
+    "economy": 1,
+    "enhancement": 1,
+    "growth": 401,
+    "item": 613,
+    "map": 386,
+    "monster": 320,
+    "npc": 155,
+    "quest": 99,
+    "recipe": 193,
+    "shop": 62,
+    "skill": 211
+  },
+  "held_asset_ids": [
+    "wk.asset.v125.sheet.body",
+    "wk.asset.v125.sheet.effect",
+    "wk.asset.v125.sheet.effect1",
+    "wk.asset.v125.sheet.emotion",
+    "wk.asset.v125.sheet.ghost",
+    "wk.asset.v125.sheet.head",
+    "wk.asset.v125.sheet.monster",
+    "wk.asset.v125.sheet.object",
+    "wk.asset.v125.sheet.weapon"
+  ],
+  "maps": {
+    "Work_alias_definitions": 1,
+    "Work_physical_scenes": 385,
+    "Work_unique_source_geometries": 382,
+    "all_unique_source_geometries": 387,
+    "distinct_static_Work_tile_frame_ids": 7392,
+    "normal_route_for_every_map": "NOT_RUN",
+    "preserved_legacy_scenes": 38,
+    "static_Work_tile_placements": 694853,
+    "total_physical_scenes": 423
+  },
+  "pixel_duplicates_do_not_merge_content_identity": true,
+  "protocol_id": "BARAM_PARALLEL_V1",
+  "recovered_UI": {
+    "cause": "Package carries frame sheets but no semantic UI role or event mapping; renderer supports their metadata, no arbitrary button identity assigned",
+    "checked_and_acquired_frames": 75,
+    "direct_visual_review_all_frames": "NOT_RUN",
+    "normal_game_event_bindings": 0,
+    "registered_sheet_definitions": 47
+  },
+  "runtime_envelope": 2,
+  "scope": "COUNTS_FROM_ACTIVE_MANIFEST_AND_LAYOUTS_NOT_ALL_GRAPHICS_REVIEW_OR_PLAYBACK",
+  "source_frames_total": 66124,
+  "source_work_head": "d4bd4b17a5307d5c882936c39547d698736d3733",
+  "unique_pixel_arrays_and_dimensions": 49214
+}

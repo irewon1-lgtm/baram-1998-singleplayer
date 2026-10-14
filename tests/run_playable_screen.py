@@ -41,10 +41,10 @@ def execute(args):
         environment['DISPLAY'] = ':' + display
         modes = args.modes.split(',')
         for mode in modes:
-            folder = directory / ('gear-guide' if mode=='gear-restart' else 'content-actions' if mode=='actions-restart' else 'source-core' if mode=='source-restart' else 'primary' if mode in ('primary','resume','restart') else mode)
+            folder = directory / ('work-core' if mode in ['work-package','work-restart','work-regions','work-visual'] else 'gear-guide' if mode=='gear-restart' else 'content-actions' if mode=='actions-restart' else 'source-core' if mode=='source-restart' else 'primary' if mode in ('primary','resume','restart') else mode)
             folder.mkdir(exist_ok=True)
             save = folder / 'character.json'
-            if mode not in ('restart','resume','source-restart','actions-restart','gear-restart') and save.exists():
+            if mode not in ('restart','resume','source-restart','actions-restart','gear-restart','work-restart','work-regions','work-visual') and save.exists():
                 raise RuntimeError('Use a fresh evidence directory; existing saves are preserved')
             if mode.startswith('skills-') or mode in ['tour-resume','content-actions','cure-actions','town-all','natural-progress','gear-guide']:
                 if not args.fixtures:raise RuntimeError('Controlled skills checks require labeled --fixtures')
@@ -54,6 +54,7 @@ def execute(args):
             command = [args.godot,'--path',str(ROOT/'game'),'--display-driver','x11','--rendering-method','gl_compatibility',
                 '--audio-driver','Dummy','--','--assets='+str(Path(args.assets).resolve()),'--save='+str(save),
                 '--exercise='+mode,'--evidence='+str(folder)]
+            if args.content:command.append('--content='+str(Path(args.content).resolve()))
             if args.launcher:
                 environment['BARAM_AUDIO_DRIVER']='Dummy'
                 command=[str(Path(args.launcher).resolve()),'--save='+str(save),'--exercise='+mode,'--evidence='+str(folder)]
@@ -61,6 +62,7 @@ def execute(args):
             process = subprocess.Popen(command,env=environment,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
             processes.append(process)
             deadline = time.monotonic() + args.timeout
+            run_started = time.monotonic()
             xchecks = []
             pending = b''
             while process.poll() is None:
@@ -73,6 +75,8 @@ def execute(args):
                     raw,pending = pending.split(b'\n',1)
                     line = raw.decode('utf-8',errors='replace')+'\n'
                     log.write(line);log.flush()
+                    if line.startswith('SCREEN_STAGE '):
+                        print(mode,round(time.monotonic()-run_started,2),line.strip(),flush=True)
                     if 'SCRIPT ERROR:' in line or line.startswith('ERROR:'):
                         raise RuntimeError('Runtime error: '+line.strip())
                     if line.startswith('SCREEN_CHECK '):
@@ -113,7 +117,7 @@ def execute(args):
             report['runs'].append(entry)
             if process.returncode or result['status']!='PASS_EXECUTED_SCREEN_INPUT' or not xchecks or any(c['status']!='PASS' for c in xchecks) or audio_check['status']=='FAIL':
                 raise RuntimeError('Executed game check failed; inspect preserved '+mode+' evidence')
-        report['status']='PASS_EXECUTED_SCREEN_INPUT_AND_RESTART' if 'restart' in modes else 'PASS_EXECUTED_SCREEN_INPUT'
+        report['status']='PASS_EXECUTED_SCREEN_INPUT_AND_RESTART' if any(m.endswith('restart') for m in modes) else 'PASS_EXECUTED_SCREEN_INPUT'
     except (OSError,ValueError,RuntimeError,subprocess.SubprocessError,KeyboardInterrupt) as exc:
         report.update(status='FAIL',error=str(exc))
         print('FAIL',str(exc),flush=True)
@@ -130,8 +134,10 @@ def execute(args):
             except subprocess.TimeoutExpired:server.kill();server.wait(timeout=5)
         display_log.close()
         report['finished_at']=datetime.datetime.now(datetime.timezone.utc).isoformat()
-        report['source_sha256']={str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest()
-            for p in [ROOT/'game/main.gd',ROOT/'game/exercise.gd',ROOT/'game/rules.gd',ROOT/'game/save_store.gd',Path(__file__).resolve()]}
+        source_root=Path(args.launcher).resolve().parent if args.launcher else ROOT
+        names=['game/main.gd','game/exercise.gd','game/rules.gd','game/save_store.gd','game/work_assets.gd','game/work_play_probe.gd','game/content_registry.gd']
+        report['source_sha256']={name:hashlib.sha256((source_root/name).read_bytes()).hexdigest() for name in names}
+        report['source_sha256']['tests/run_playable_screen.py']=hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
         Path(args.report).write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
         print(report['status'],flush=True)
     return 0 if report['status'].startswith('PASS_') else 1
@@ -140,6 +146,7 @@ def execute(args):
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--assets',required=True)
+    p.add_argument('--content',help='One verified immutable content root')
     p.add_argument('--out',required=True)
     p.add_argument('--report',required=True)
     p.add_argument('--modes',default='primary,restart,class-1,class-2,class-3')

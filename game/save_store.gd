@@ -95,15 +95,26 @@ func write_state(path: String, state: Dictionary) -> bool:
     var text=document(state)
     if text.to_utf8_buffer().size()>MAX_BYTES:reject("SAVE_SIZE_LIMIT",path);return false
     var previous={}
+    var repairing=false
     if FileAccess.file_exists(path):
         previous=read_one(path)
-        if previous.is_empty():reject("EXISTING_SAVE_NOT_WRITABLE",path);return false
+        if previous.is_empty():
+            if last_status not in ["CORRUPT","CHECKSUM_MISMATCH","INVALID_STATE"]:reject("EXISTING_SAVE_NOT_WRITABLE",path);return false
+            previous=read_one(path+".backup")
+            if previous.is_empty():reject("EXISTING_SAVE_NOT_WRITABLE",path);return false
+            # Keep one bounded exact copy of the broken primary. Only a
+            # validated backup permits repair; future-version saves never do.
+            var broken=FileAccess.open(path,FileAccess.READ)
+            if broken==null or broken.get_length()>MAX_BYTES:return false
+            broken.close()
+            if DirAccess.copy_absolute(path,path+".corrupt-preserved")!=OK:return false
+            repairing=true
     if DirAccess.make_dir_recursive_absolute(path.get_base_dir())!=OK:return false
     if not write_bytes(path+".pending",text):return false
     if read_one(path+".pending").is_empty():return false
     if not previous.is_empty():
-        var old=JSON.parse_string(FileAccess.get_file_as_string(path))
-        if int(old.schema)==1 and not FileAccess.file_exists(path+".legacy-v1.backup"):
+        var old={} if repairing else JSON.parse_string(FileAccess.get_file_as_string(path))
+        if not repairing and int(old.schema)==1 and not FileAccess.file_exists(path+".legacy-v1.backup"):
             if DirAccess.copy_absolute(path,path+".legacy-v1.backup")!=OK:return false
         if not write_bytes(path+".backup.pending",document(previous)):return false
         if read_one(path+".backup.pending").is_empty():return false

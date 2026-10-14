@@ -95,7 +95,7 @@ func award_xp(p: Dictionary, amount: float) -> Array:
         var limit = threshold(p.job, int(p.level))
         if limit < 0 or int(p.xp2) < limit * 2:
             break
-        var used_job = "평민" if int(p.level) < 5 else p.job
+        var used_job = "평민" if int(p.level) < (6 if runtime_definitions.has("wk.class.novice") else 5) else p.job
         var g = growth(used_job,int(p.level))
         var hp_gain = rng.randi_range(int(g.hp_gain_min),int(g.hp_gain_max_inclusive))
         var mp_gain = rng.randi_range(int(g.mp_gain_min),int(g.mp_gain_max_inclusive))
@@ -125,17 +125,22 @@ func weapon_damage(p: Dictionary) -> int:
     var low = int(value_or(it,"damage_min",2))
     var high = int(value_or(it,"damage_max",4))
     var bonus=(5 if p.buffs.get("누리의힘",0)>0 else 0)+(10 if p.buffs.get("대지의힘",0)>0 else 0)
-    return (rng.randi_range(low,high)+bonus+actions.equipped_bonus(p,"damage")+actions.status_modifier(p,"damage"))*(2 if p.buffs.get("이중공격",0)>0 else 1)
+    var raw=rng.randi_range(low,high)+bonus+actions.equipped_bonus(p,"damage")+actions.status_modifier(p,"damage")+actions.status_modifier(p,"strength")
+    return raw*maxi(1,actions.status_modifier(p,"attack_multiplier"))*(2 if p.buffs.get("이중공격",0)>0 else 1)
 
 func incoming_damage(p: Dictionary,raw: float) -> int:
     var amount=damage(raw,armor(p))
     if p.buffs.get("보호",0)>0:amount=maxi(1,floori(amount*0.5))
     if p.buffs.get("차폐",0)>0:amount=maxi(1,floori(amount*0.75))
+    amount=maxi(1,amount*(100-clampi(actions.status_modifier(p,"damage_reduction"),0,100))/100)
     return amount
 
 func skill_profile(p: Dictionary,title: String) -> Dictionary:
-    if runtime_definitions.has(title) and runtime_definitions[title].kind=="skill":
-        return {"type":"work_effects","effect":"","effects":runtime_definitions[title].data.get("effects",[]),"classification":runtime_definitions[title].source_mode}
+    var record=find_content("spell",title,p.job)
+    var id=record.get("id",title)
+    if runtime_definitions.has(id) and runtime_definitions[id].kind=="skill":
+        var definition=runtime_definitions[id].data
+        return {"type":"work_effects","effect":"","effects":preload("res://effect_runtime.gd").compile_skill(definition),"classification":runtime_definitions[id].source_mode,"definition_id":id,"definition":definition}
     if title=="기초 회복":return {"type":"heal","effect":"heal","classification":"GENERATED_TRAINING"}
     var profile=skill_effects.get(p.job+":"+title,skill_effects.get("공통:"+title,skill_effects.get("전직업 공통:"+title,{})))
     if not profile.is_empty():return profile
@@ -151,6 +156,7 @@ func armor(p: Dictionary) -> int:
 func equip(p: Dictionary, title: String) -> bool:
     actions.ensure(p)
     if p.equipment_instances.has(title):return actions.equip_instance(p,title).ok
+    if runtime_definitions.has("wk.class.novice"):title=find_content("item",title).get("id",title)
     var choices=actions.instances(p,title)
     return not choices.is_empty() and actions.equip_instance(p,choices[0]).ok
 
@@ -169,6 +175,9 @@ func skill(p: Dictionary, title: String) -> Dictionary:
     return found.get("values",{})
 
 func learn(p: Dictionary, title: String) -> bool:
+    var definition=find_content("spell",title,p.job)
+    if runtime_definitions.has(definition.get("id","")):
+        return actions.learn_skill(p,definition.id,runtime_definitions[definition.id].data).ok
     var s = skill(p,title)
     if s.is_empty() or title in p.skills or int(p.level) < integer_learn(float(value_or(s,"learn_level",1))) or int(p.gold) < int(value_or(s,"learn_money",0)):
         return false
@@ -202,6 +211,8 @@ func add_item(p: Dictionary, title: String, quantity: int = 1) -> bool:
 
 func trade(p: Dictionary, title: String, quantity: int, price: int, buy: bool) -> bool:
     if quantity<=0 or price<0:return false
+    var flags=item(title).get("flags",{})
+    if not flags.get("buyable" if buy else "sellable",true) or (not buy and flags.get("quest_bound",false)):return false
     if not buy and (p.equipped==title or p.get("armor_equipped","")==title):return false
     return actions.exchange(p,(-1 if buy else 1)*price*quantity,{title:(1 if buy else -1)*quantity}).ok
 
@@ -243,7 +254,9 @@ func monster_drops(p: Dictionary, monster_id: String) -> Array:
             if not picks.ok:actions.error(picks.error,group_id);return []
             var selected=[]
             for entry in picks.items:
-                if entry.get("item_id","")!="":selected.append({"item":entry.item_id,"quantity":int(entry.get("quantity",1))})
+                var quantity=entry.get("quantity",1)
+                if typeof(quantity)==TYPE_DICTIONARY:quantity=rng.randi_range(int(quantity.min),int(quantity.max))
+                if entry.get("item_id","")!="":selected.append({"item":entry.item_id,"quantity":int(quantity)})
             return selected
     var result = []
     for d in drops:
