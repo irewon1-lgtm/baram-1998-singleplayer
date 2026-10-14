@@ -4,7 +4,7 @@
 
 - 개발: `codex/game-core`, 독립 worktree `/workspace/baram-codex-core`.
 - 최초 게임 기준: `dev/codex-asset-runtime-20261014`, `dea6574c9a69ebb04432d10fc32951aacd8b66cb`. 원래 폴더와 main·조사·수치 원문은 보존했다.
-- 마지막 확인된 원격 저장: `855dfd88f5439bda582aadca6c06f95bc128bee4`(가져오기 수정 묶음). 실행 코드 묶음 SHA는 커밋 뒤 후속 수신 기록에 연결한다.
+- 마지막 확인된 원격 저장: `ae4fb282315955c566b6b08ebf210b2301a9597f`(실행 통합 코드 묶음). 이를 가리키는 고정 패키지 수신 기록을 후속 커밋으로 저장한다.
 - Work 마지막 읽은 HEAD: `d4bd4b17a5307d5c882936c39547d698736d3733`. 이 목록의 확정 커밋만 읽었다. 브랜치 병합/루트 덮어쓰기/상류 파일 수정은 하지 않았다.
 - 엔진: 기존 Godot 4.6.3. Work schema 1은 그대로, Codex runtime envelope 2와 저장 schema 2를 사용한다. 이전 envelope 1 로드 경로도 유지한다.
 - 활성 콘텐츠: `9e30ec651489a4f5bdbf5c4e727a41a3c7a2b2825a373262056c1e896a82fb7c`.

@@ -1,0 +1,455 @@
+{
+  "failures_retained": true,
+  "integration_commit": "ae4fb282315955c566b6b08ebf210b2301a9597f",
+  "notes": [
+    "Old successful basic-play/restart evidence has its own source hashes and content version. It is not a claim that every later skill/map was played.",
+    "Region routing harness initially treated interact-only portals as walls; actual return route was verified after correcting the harness. Complete last bridge tour still hit the 75s total budget; FAIL retained.",
+    "Software GL initial load is approximately 45s in this environment; current region frames after retaining recent pages run promptly. Full profiling/stress test remains NOT_RUN."
+  ],
+  "protocol_id": "BARAM_PARALLEL_V1",
+  "reports": [
+    {
+      "error": null,
+      "evidence": "gui-work-3.json",
+      "result": "PASS_EXECUTED_SCREEN_INPUT",
+      "runs": [
+        {
+          "audio_mix": {
+            "audible_human_review": "NOT_RUN",
+            "driver": "Dummy",
+            "rms": 3058.8747754824085,
+            "samples": 1097728,
+            "status": "PASS_PCM_SIGNAL"
+          },
+          "checks": [
+            {
+              "name": "rendered_Work-character-creation",
+              "observed": {},
+              "status": "PASS"
+            },
+            {
+              "name": "Work_normal_level1_character_created",
+              "observed": {},
+              "status": "PASS"
+            },
+            {
+              "name": "Work_existing_starter_equipment_is_migrated_and_equipped",
+              "observed": {},
+              "status": "PASS"
+            },
+            {
+              "name": "rendered_Work-town-equipped",
+              "observed": {},
+              "status": "PASS"
+            },
+            {
+              "name": "Work_directional_movement_runs",
+              "observed": {},
+              "status": "PASS"
+            },
+            {
+              "name": "Work_normal_route_to_NPC",
+              "observed": {},
+              "status": "PASS"
+            },
+            {
+              "name": "Work_NPC_dialogue_or_services_connected",
+              "observed": {},
+              "status": "PASS"
+            },
+            {
+              "name": "rendered_Work-NPC-services",
+              "observed": {},
+              "status": "PASS"
+            },
+            {
+              "name": "Work_existing_guide_reaches_beginner_original_map",
+              "observed": {},
+              "status": "PASS"
+            },
+            {
+              "name": "rendered_Work-beginner-field",
+              "observed": {},
+              "status": "PASS"
+            },
+            {
+              "name": "Work_actual_monster_spawn_connected",
+              "observed": {},
+              "status": "PASS"
+            },
+            {
+              "name": "Work_real_attack_kill_and_reward",
+              "observed": {},
+              "status": "PASS"
+            },
+            {
+              "name": "Work_kill_awards_experience",
+              "observed": {},
+              "status": "PASS"
+            },
+            {
+              "name": "rendered_Work-combat-and-loot",
+              "observed": {},
+              "status": "PASS"
+            },
+            {
+              "name": "Work_skill_hotkey_consumes_resource",
+              "observed": {},
+              "status": "PASS"
+            },
+            {
+              "name": "Work_declarative_teleport_skill_opens_gate_selection",
+              "observed": {},
+              "status": "PASS"
+            },
+            {
+              "name": "rendered_Work-original-skill-effect",
+              "observed": {},
+              "status": "PASS"
+            },
+            {
+              "name": "Work_v2_save_written",
+              "observed": {},
+              "status": "PASS"
+            },
+            {
+              "name": "rendered_Work-before-restart",
+              "observed": {},
+              "status": "PASS"
+            },
+            {
+              "name": "engine_audio_mix_recorded",
+              "observed": {},
+              "status": "PASS"
+            }
+          ],
+          "content_version": "089e9324e265008be8c9a547e6fee0470ca777ab7cf5d43ada7243ad0e5ba7bd",
+          "elapsed_ms": 12183,
+          "mode": "work-core",
+          "screenshots": [
+            {
+              "name": "Work-character-creation",
+              "sha256": "7210acd5496c52c712286533f89ddc78e0f956a7356c359dfed9088fa21308b5"
+            },
+            {
+              "name": "Work-town-equipped",
+              "sha256": "87d769603aa7ec27387454512e325b443ca28446a84d47d14d378c1281acbf09"
+            },
+            {
+              "name": "Work-NPC-services",
+              "sha256": "71f43579c087eeef56f8d40d0287bbb7f435b9a8a47531fa19738f9b52444070"
+            },
+            {
+              "name": "Work-beginner-field",
+              "sha256": "7ab2a485b466c00de4bdf51c6ad66abc90d41c81b3e393bdf75fde8bd5300649"
+            },
+            {
+              "name": "Work-combat-and-loot",
+              "sha256": "6b7801a4dd5604bc40429d3e7dc3f89d7ae20fa69a9790c14e43acd13652894a"
+            },
+            {
+              "name": "Work-original-skill-effect",
+              "sha256": "34c4c02e273c4e9bbc925c8b7da9e627dc73796938cad674302985d3f3ddc52a"
+            },
+            {
+              "name": "Work-before-restart",
+              "sha256": "a42a3d2c7a10b3c22a08860fdf71321e9a7b0071b580349b3f06b8c4e5f73c7d"
+            }
+          ],
+          "status": "PASS_EXECUTED_SCREEN_INPUT",
+          "x11_captures": [
+            {
+              "distinct_colors": 118,
+              "matching_screen_fraction": 1.0,
+              "name": "Work-character-creation",
+              "sha256": "ad8647075a1dda72a6c4753dfd174381aee8c172de5dab00c46a163a3a54c923",
+              "status": "PASS"
+            },
+            {
+              "distinct_colors": 166,
+              "matching_screen_fraction": 1.0,
+              "name": "Work-town-equipped",
+              "sha256": "2c64f8dcdbf69850f42fd324f64e52d8aee8a4bfc542c89ff9b5842733f97e5e",
+              "status": "PASS"
+            },
+            {
+              "distinct_colors": 179,
+              "matching_screen_fraction": 1.0,
+              "name": "Work-NPC-services",
+              "sha256": "927955b19b6d30a46a12e0c0f3437d7c2e7d5016deaf195fa79864140bc59b98",
+              "status": "PASS"
+            },
+            {
+              "distinct_colors": 159,
+              "matching_screen_fraction": 1.0,
+              "name": "Work-beginner-field",
+              "sha256": "a5ff5928795fdee5cb9d0e026e15863070df46aae4142d8c962d836cfb9b1a67",
+              "status": "PASS"
+            },
+            {
+              "distinct_colors": 162,
+              "matching_screen_fraction": 1.0,
+              "name": "Work-combat-and-loot",
+              "sha256": "b0b2fdbfb870a00af541e436dd559b8e6542c330505834173d5af54d84742f8d",
+              "status": "PASS"
+            },
+            {
+              "distinct_colors": 144,
+              "matching_screen_fraction": 1.0,
+              "name": "Work-original-skill-effect",
+              "sha256": "fb91e7409506fb250c34fb50fe4b3853fda5fd35857102834c7e5bb88a73e664",
+              "status": "PASS"
+            },
+            {
+              "distinct_colors": 162,
+              "matching_screen_fraction": 1.0,
+              "name": "Work-before-restart",
+              "sha256": "f3a6e9d4240a996fd46e6bd394cbf092b128c1e2ebaaa2e109b018960c00d35f",
+              "status": "PASS"
+            }
+          ]
+        },
+        {
+          "audio_mix": {
+            "audible_human_review": "NOT_RUN",
+            "driver": "Dummy",
+            "rms": 0.0,
+            "samples": 155648,
+            "status": "NOT_APPLICABLE_NO_AUDIO_EVENTS"
+          },
+          "checks": [
+            {
+              "name": "Work_fresh_process_loaded_save",
+              "observed": {},
+              "status": "PASS"
+            },
+            {
+              "name": "Work_restart_preserves_entire_player",
+              "observed": {},
+              "status": "PASS"
+            },
+            {
+              "name": "Work_restart_preserves_world_and_loot",
+              "observed": {},
+              "status": "PASS"
+            },
+            {
+              "name": "rendered_Work-restart",
+              "observed": {},
+              "status": "PASS"
+            },
+            {
+              "name": "engine_audio_mix_recorded",
+              "observed": {},
+              "status": "PASS"
+            }
+          ],
+          "content_version": "089e9324e265008be8c9a547e6fee0470ca777ab7cf5d43ada7243ad0e5ba7bd",
+          "elapsed_ms": 585,
+          "mode": "work-restart",
+          "screenshots": [
+            {
+              "name": "Work-restart",
+              "sha256": "b5b1093bef5b8a463d8c668b1aec97fadb9b523fb44ca94c26eb271428b99e57"
+            }
+          ],
+          "status": "PASS_EXECUTED_SCREEN_INPUT",
+          "x11_captures": [
+            {
+              "distinct_colors": 162,
+              "matching_screen_fraction": 1.0,
+              "name": "Work-restart",
+              "sha256": "5cac6bb91bd76d2e2a79003c4de970a47f793250800c78435eb48242c6af7284",
+              "status": "PASS"
+            }
+          ]
+        }
+      ],
+      "tested_source_sha256": {
+        "game/exercise.gd": "b0732d6cde2178bccbaeb7afbc69defc96f6d68b46b527e8ae47c40e14fb15cc",
+        "game/main.gd": "1bd85eb80038c3ef83ebe9c386619317c0063c14e32b3525c81d18afb1cbe05b",
+        "game/rules.gd": "4226c6652deb0371ea0ff289350d55e0e5688d542384aac5a644edf33f569c74",
+        "game/save_store.gd": "5deddf213c6aba8963cab8b5c48de93fbcd43a4be8b99a843cb54c5a4cf9a561",
+        "tests/run_playable_screen.py": "cfb6487fdb984558e243550b17196ff8e3521aa1f4873b1de65f4e7ebe798d85"
+      }
+    },
+    {
+      "error": null,
+      "evidence": "gui-work-regions-delivery.json",
+      "result": "PASS_EXECUTED_SCREEN_INPUT",
+      "runs": [
+        {
+          "audio_mix": {
+            "audible_human_review": "NOT_RUN",
+            "driver": "Dummy",
+            "rms": 0.0,
+            "samples": 1679360,
+            "status": "NOT_APPLICABLE_NO_AUDIO_EVENTS"
+          },
+          "checks": [
+            {
+              "name": "Work_region_probe_loads_prior_game_save",
+              "observed": {},
+              "status": "PASS"
+            },
+            {
+              "name": "Work_existing_return_connection",
+              "observed": {},
+              "status": "PASS"
+            },
+            {
+              "name": "Work_integration_bridge_present",
+              "observed": {},
+              "status": "FAIL"
+            },
+            {
+              "name": "engine_audio_mix_recorded",
+              "observed": {},
+              "status": "PASS"
+            }
+          ],
+          "content_version": "e506b06560173ed3f550550838203fe4472d00c3105eb053738c4771cd6e6af9",
+          "elapsed_ms": 8627,
+          "mode": "work-regions",
+          "screenshots": [],
+          "status": "PASS_EXECUTED_SCREEN_INPUT",
+          "x11_captures": [
+            {
+              "distinct_colors": 208,
+              "matching_screen_fraction": 1.0,
+              "name": "Work-connected-region",
+              "sha256": "8120a9abefa8b2d8bbbbb99fbc88a3ca44f8a1a23c47e1b2b5dbf6f4fb8cd4c9",
+              "status": "PASS"
+            },
+            {
+              "distinct_colors": 153,
+              "matching_screen_fraction": 1.0,
+              "name": "Work-connected-NPC",
+              "sha256": "4ebe0421c2ff3cd9cc1d2e4c6d8cc9f48fc454948b081072c0d41b08e1e6ab14",
+              "status": "PASS"
+            }
+          ]
+        }
+      ],
+      "tested_source_sha256": {
+        "game/exercise.gd": "df1719bcc7d62d1bd0b390442f41cb67f0e9cddbd0306935e8eccadce651b1bc",
+        "game/main.gd": "430657481bac9c4d7492fe96bafb6fa6573382d830e392ec64a47bfd02e4fc1c",
+        "game/rules.gd": "4226c6652deb0371ea0ff289350d55e0e5688d542384aac5a644edf33f569c74",
+        "game/save_store.gd": "57b0fc0aabbab3bd0ca7568d87ace999bc3daeef7255e502bd71d8d317e09bc9",
+        "tests/run_playable_screen.py": "21503749670537d6dc86ecfff58c0cf874a41992f4c816324996c6b3d2c85219"
+      }
+    },
+    {
+      "error": "Game exercise timed out: work-regions",
+      "evidence": "gui-work-regions-3.json",
+      "result": "FAIL",
+      "runs": [],
+      "tested_source_sha256": {
+        "game/exercise.gd": "b0732d6cde2178bccbaeb7afbc69defc96f6d68b46b527e8ae47c40e14fb15cc",
+        "game/main.gd": "bbf5af6b45acef95c7a595237285ad94f76ca1430c03749130dd4600dd11995d",
+        "game/rules.gd": "4226c6652deb0371ea0ff289350d55e0e5688d542384aac5a644edf33f569c74",
+        "game/save_store.gd": "57b0fc0aabbab3bd0ca7568d87ace999bc3daeef7255e502bd71d8d317e09bc9",
+        "tests/run_playable_screen.py": "d3b4c4c33022ec4164eb45ecf1a4369c63289ae597126709d94a4a9480b2b3c7"
+      }
+    },
+    {
+      "error": "Game exercise timed out: work-regions",
+      "evidence": "gui-work-release6-bridges.json",
+      "result": "FAIL",
+      "runs": [],
+      "tested_source_sha256": {
+        "game/content_registry.gd": "1bc747142f4f3c8eaeb6865b5ab04f04d6d54eef8cd59fb877ceb77e112a2df5",
+        "game/exercise.gd": "75e0bf15a6872617fd54749619b23a7840bb44437739726ebf584411189ef652",
+        "game/main.gd": "672d072d0c653163268beae351fbd7c54e71de0cb85fbfb956513c84bc99544b",
+        "game/rules.gd": "58b3dcc9457e3909aafa6543fd9921be1f1fb3d39629c9271f066f7c9021668b",
+        "game/save_store.gd": "57b0fc0aabbab3bd0ca7568d87ace999bc3daeef7255e502bd71d8d317e09bc9",
+        "game/work_assets.gd": "84ce6d350e426f132ece3c47b53e4cbb75c2ae36847b4a778893c76444503d57",
+        "game/work_play_probe.gd": "5125e1c08663525e766cd5f83e9f946e0984be8ab1b9e069111079ee74283d4a",
+        "tests/run_playable_screen.py": "3ffaf3a13886e90c8ee1d32e7fbda21b939180a6c51b795a9aba762a81c639c7"
+      }
+    },
+    {
+      "error": null,
+      "evidence": "gui-work-release6-visual.json",
+      "result": "PASS_EXECUTED_SCREEN_INPUT",
+      "runs": [
+        {
+          "audio_mix": {
+            "audible_human_review": "NOT_RUN",
+            "driver": "Dummy",
+            "rms": 0.0,
+            "samples": 212992,
+            "status": "NOT_APPLICABLE_NO_AUDIO_EVENTS"
+          },
+          "checks": [
+            {
+              "name": "Visual_probe_uses_normally_reached_saved_Work_region",
+              "observed": {},
+              "status": "PASS"
+            },
+            {
+              "name": "rendered_Work-corrected-region",
+              "observed": {},
+              "status": "PASS"
+            },
+            {
+              "name": "Work_actor_pages_render_after_LRU_eviction",
+              "observed": {
+                "sampled_pixels": 23040,
+                "white_samples": 0
+              },
+              "status": "PASS"
+            },
+            {
+              "name": "engine_audio_mix_recorded",
+              "observed": {},
+              "status": "PASS"
+            }
+          ],
+          "content_version": "9e30ec651489a4f5bdbf5c4e727a41a3c7a2b2825a373262056c1e896a82fb7c",
+          "elapsed_ms": 254,
+          "mode": "work-visual",
+          "screenshots": [
+            {
+              "name": "Work-corrected-region",
+              "sha256": "e3887c8c85e063fd8c660585a4659fad57a90fc1fb3ec1d454ccd1a4c756ccba"
+            }
+          ],
+          "status": "PASS_EXECUTED_SCREEN_INPUT",
+          "x11_captures": [
+            {
+              "distinct_colors": 275,
+              "matching_screen_fraction": 1.0,
+              "name": "Work-corrected-region",
+              "sha256": "9e105487353b683c49d539f2b6be3ecf62ee3cf05650ddca936c6340442b9e78",
+              "status": "PASS"
+            }
+          ]
+        }
+      ],
+      "tested_source_sha256": {
+        "game/content_registry.gd": "1bc747142f4f3c8eaeb6865b5ab04f04d6d54eef8cd59fb877ceb77e112a2df5",
+        "game/exercise.gd": "75e0bf15a6872617fd54749619b23a7840bb44437739726ebf584411189ef652",
+        "game/main.gd": "672d072d0c653163268beae351fbd7c54e71de0cb85fbfb956513c84bc99544b",
+        "game/rules.gd": "58b3dcc9457e3909aafa6543fd9921be1f1fb3d39629c9271f066f7c9021668b",
+        "game/save_store.gd": "57b0fc0aabbab3bd0ca7568d87ace999bc3daeef7255e502bd71d8d317e09bc9",
+        "game/work_assets.gd": "3e56b7a2a37013652a92e088a3e26ecf83591ba9a2b9f8c380b97d36b466a39f",
+        "game/work_play_probe.gd": "5125e1c08663525e766cd5f83e9f946e0984be8ab1b9e069111079ee74283d4a",
+        "tests/run_playable_screen.py": "3ffaf3a13886e90c8ee1d32e7fbda21b939180a6c51b795a9aba762a81c639c7"
+      }
+    }
+  ],
+  "visual_review": {
+    "after_white_pixel_samples": 0,
+    "cache_lifetime_fix_before_after": "PASS_SAME_SCENE_SOURCE_LAYOUT",
+    "full_asset_visual_review": "NOT_RUN",
+    "original_client_equality": "NOT_CONFIRMED",
+    "reviewed_screens": [
+      "Work-town-equipped",
+      "Work-connected-region",
+      "Work-connected-NPC",
+      "Work-corrected-region"
+    ],
+    "sampled_pixels": 23040
+  }
+}

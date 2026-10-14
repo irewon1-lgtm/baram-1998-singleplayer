@@ -100,6 +100,14 @@ def build(a):
     for name in ['assets001','assets002','content001','content002','content003','content004']:
         source=Path(a.inputs)/name
         if source.is_dir():shutil.copytree(source,stage/'intake_inputs'/name)
+    if a.evidence:
+        source=Path(a.evidence);proof=stage/'verification_evidence';proof.mkdir()
+        for path in (source/'evidence').glob('*'):
+            if path.is_file() and path.suffix in ['.json','.log']:shutil.copy2(path,proof/path.name)
+        for name in ['Work-town-equipped-x11.png','Work-combat-and-loot-x11.png','Work-original-skill-effect-x11.png','Work-restart-x11.png','Work-connected-region-x11.png','Work-connected-NPC-x11.png','Work-corrected-region-x11.png']:
+            path=source/'gui-work-3/work-core'/name
+            if path.is_file():shutil.copy2(path,proof/name)
+        (proof/'README.md').write_text('이 폴더는 버전별 실행 근거와 실패 기록입니다. 과거 화면도 포함하며 각 JSON의 코드/콘텐츠 버전과 PASS/FAIL 범위를 따릅니다. Work-connected-region은 캐시 수정 전 화면, Work-corrected-region은 수정 후 화면입니다. 사용자 저장 파일은 포함하지 않습니다.\n')
     build_info=dict(commit=commit,branch=branch,content_version=pointer['release_id'],runtime_envelope=release['version'],save_format=2)
     (stage/'game/data/build_info.json').write_text(json.dumps(build_info,indent=2)+'\n')
     (stage/'launch-linux.sh').write_text(LAUNCH);(stage/'launch-linux.sh').chmod(0o755)
@@ -125,4 +133,5 @@ if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__)
     for key in ['out','assets','content','licenses','inputs','report']:p.add_argument('--'+key,required=True)
     p.add_argument('--godot',default='/usr/local/bin/godot')
+    p.add_argument('--evidence',help='Private run vault; include version-scoped logs and screenshots, never saves')
     build(p.parse_args())
