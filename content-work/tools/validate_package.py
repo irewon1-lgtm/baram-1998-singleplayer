@@ -73,7 +73,8 @@ def validate(package, dependency_dirs=(), bundle=None, write_report=True, verify
                 if isinstance(x,(int,float)) and not isinstance(x,bool):
                     checks['numeric_values']+=1
                     if not math.isfinite(x):fail(r,path+'.'+k,x,'finite number')
-                    negative_ok=k in ('armor_class','bonus_armor_class','armor_class_delta','x_offset','y_offset') or 'Repeat' in k or path.endswith('.original_rect')
+                    signed_effect_wait=(k=='frame' and x==-1 and r['kind']=='asset' and r['data'].get('asset_type')=='effect_sequence' and re.fullmatch(r'data\.metadata\.(front|back)\[\d+\]',path))
+                    negative_ok=k in ('armor_class','bonus_armor_class','armor_class_delta','x_offset','y_offset') or 'Repeat' in k or path.endswith('.original_rect') or signed_effect_wait
                     if x<0 and not negative_ok and k not in ('left','top','light_parameter','level_delta'):
                         fail(r,path+'.'+k,x,'nonnegative, or explicitly signed stat')
                 numeric_walk(x,r,path+'.'+k)
@@ -129,6 +130,16 @@ def validate(package, dependency_dirs=(), bundle=None, write_report=True, verify
             if not integer(d.get('frame_count')) or d['frame_count']<1:fail(r,'frame_count',d.get('frame_count'),'positive count')
             for name,a in d.get('metadata',{}).get('animations',{}).items():
                 if a['offset']+a['directions']*a['frames_per_direction']>d['frame_count']:fail(r,'metadata.animations.'+name,a,'animation within original model')
+            if d.get('asset_type')=='effect_sequence':
+                md=d['metadata'];entries=md.get('front',[])+md.get('back',[])
+                sheet=byid.get(md.get('sheet_id')) or effective.get(md.get('sheet_id'))
+                if len(entries)!=d['frame_count']:fail(r,'frame_count',d['frame_count'],'exact front+back timeline entry count')
+                for entry in entries:
+                    checks['effect_timeline_entries']+=1
+                    f=entry.get('frame');delay=entry.get('delay_ms')
+                    if not integer(f) or not sheet or not -1<=f<sheet['data']['frame_count']:fail(r,'metadata.effect.frame',f,'-1 timed wait or bounded drawable source frame')
+                    if not integer(delay) or delay<=0:fail(r,'metadata.effect.delay_ms',delay,'positive original milliseconds, including wait')
+                    if f==-1:checks['effect_wait_entries']+=1
         if kind=='item':
             if not integer(d.get('stack_limit')) or d['stack_limit']<1:fail(r,'stack_limit',d.get('stack_limit'),'positive integer')
             if d.get('slot')!='none' and d.get('stack_limit')!=1:fail(r,'stack_limit',d.get('stack_limit'),'equipment does not stack')
