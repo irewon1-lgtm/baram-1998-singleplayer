@@ -83,6 +83,17 @@
 - 그 정상 입력 저장의 정확한 사본으로 제한된 추가 사냥을 실행해 `kr.item.1f5693995ced` 1개가 실제로 드롭/줍기/보유수량 증가/저장됐고, 별도 프로세스에서 player/inventory/world/loot가 유지되는 12검사 PASS. 상태나 레벨·드롭을 주입하지 않았다. 합계37검사는 화면·행동·저장 범위이며 Windows PE 프로세스 실행 시험이 아니다.
 - 비공개 화면·PCM 음향·원시 실행 로그: `/workspace/baram-private/windows64-20261014/gui-pck1`, `gui-loot1`. 공개 metadata는 `integration/content-import/receipts/windows64-package.json`에 있으며 픽셀/음향/저장 원문은 넣지 않았다.
 - Windows 기본 저장은 `%LOCALAPPDATA%\BaramSinglePlayer\saves\v2\character.json`으로 ZIP 외부에 고정했다. schema2의 검증/한 개 백업/안전교체/지원하지 않는 버전 거부 로직을 그대로 사용한다. 실제 Windows 경로 권한·GUI·음향·저장·더블클릭 실행은 **NOT_RUN**이다. Linux 환경이며 Windows runner/Wine가 없다.
-- 대화 파일 전달은 **BLOCKED**이다. 현재 callable 도구에 ZIP 업로드/채팅 첨부 기능이 없고 신뢰된 browser REPL도 없어 실제 사용자 전송은 수행하지 못했다. 파일 참조 링크의 사용자 다운로드도 확인하지 못했다. 사용자에게 별도 비공개 저장소를 만들도록 요구하지 않는다. 공개 업로드·새 과금·배포는 하지 않았다.
+- 당시 대화 직접 첨부는 **BLOCKED**였다. 이후 아래 2026-10-15 비공개 파일 전송으로 실제 업로드·전체 다운로드 검증을 완료했다. 직접 채팅 첨부 기능과 Google Drive 계정 인증은 여전히 제공되지 않았으며, 사용자가 허용한 다른 파일 전송 방법을 사용했다. 사용자에게 별도 비공개 저장소를 요구하지 않았고 공개 배포·새 과금은 하지 않았다.
 - 기존 알려진 일부 습득 메시지의 내부 ID 표시, 미확보 v125 자산9개, 전체 맵 통행/네 직업 자연1–99/승급/장시간 안정성/원작 동일성은 기존 미완료로 보존한다. 이번에 새로 콘텐츠가 연결됐다고 집계하지 않는다.
 - 다음 즉시 작업: 첨부/다운로드 기능이 실제 제공되면 위 SHA ZIP을 재제작 없이 전달한다. 실제 Windows 환경이 있으면 더블클릭과 기본 저장 경로의 짧은 시험부터 한다. 이미 통과한37실행검사나 원본 자료 조사를 반복하지 않는다. 새 Work 통합은 기존 `followup-inputs.json`부터 별도 새 버전으로 시작한다.
+
+## 기존 ZIP 실제 비공개 파일 전송 — 2026-10-15 한국시간
+
+- `/workspace/output/바람의나라_Windows64_개인용.zip` 125493950bytes/SHA2567fe9b59e...를 그대로 전송했다. 게임 재제작·코드·콘텐츠 변경은0개이며 원본 ZIP도 변경하지 않았다.
+- Google Drive API는 HTTP401/UNAUTHENTICATED였다. 제공된 Drive 앱 도구·계정 인증·rclone remote가 없다. 사용자가 다른 파일 전송 방법도 명시적으로 허용하여 무료 Send 서비스 `send.vis.ee`의 암호화 비공개 링크를 사용했다. 새 GitHub 저장소·사용자 가입·과금·공개 자산 배포는 없다.
+- 기존 ffsend 업로드 클라이언트는 WebSocket에서 설정된 HTTPS 프록시를 사용하지 못했다. 표준 WebSocket 클라이언트로 같은 프록시와 TLS 인증 검증을 유지하여 정상 연결했고, Send v3/RFC8188 암호화 형식으로 기존 ZIP 바이트만 업로드했다. 서버에는 해독키를 전송하지 않았으며 링크·관리 토큰은 비공개 vault에만 저장했다.
+- 업로드 성공 확인 후 독립적인 공식 ffsend 클라이언트로 실제 ZIP125493950bytes 전체를 다운로드/해독했다. 원본 SHA256 `7fe9b59e90410ec6af915797ccbb8e7630855574274c419d00fea0a32895baf2`와 정확히 일치하고 CRC 및 Windows EXE 멤버도 PASS였다. 검증 다운로드 뒤 원격 Exists:true/Password:false와 브라우저 다운로드 페이지 HTTP200을 재확인했다.
+- 비공개 링크/전송 상태: `/workspace/baram-private/delivery-20261015/transfer-private.json`. 실제 재다운로드 결과는 같은 폴더의 `download-verified-original.zip`, 로그도 그 vault에 있다. 링크의 해독 fragment와 owner token은 Git에 커밋하지 않는다. 사용자 대화에는 검증된 링크를 제공했다.
+- 요청한 전송 수명24시간/다운로드5회이며 검증에1회를 사용했다. 유효기한은 2026-10-16 00:19 한국시간으로 설정했다. 이후 만료되거나 다운로드 한도가 소진되면 기존 ZIP을 새 비공개 전송으로 다시 제공하며 게임을 재제작하지 않는다.
+- 공개 메타데이터: `integration/content-import/receipts/private-delivery-20261015.json`. Windows-native 실행과 사용자 실제 다운로드·플레이는 아직 NOT_RUN/사용자 확인 대기이며 파일 전송 검증과 혼동하지 않는다.
+- 다음: 사용자의 실제 실행 결과/오류부터 처리한다. 링크가 유효한 동안 같은 업로드·전체 다운로드를 반복하지 않는다. Windows 실행 검증·기존 Work 후속 통합은 기존 고정 계획대로 별도로 진행한다.
