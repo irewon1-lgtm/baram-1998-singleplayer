@@ -110,7 +110,7 @@ def check(package,deps,write_report=True):
             for npc in d['learn']['teacher_npc_ids']:
                 if not npc_at[npc]:fail(r,'learn','Teacher not placed')
             for o in d['learn']['consume']:
-                if not offers[o['item_id']] and not drops[o['item_id']] and not outputs[o['item_id']]:fail(r,'learn.consume','Learning material unavailable')
+                if not offers[o['item_id']] and not drops[o['item_id']] and not outputs[o['item_id']] and not rewards[o['item_id']]:fail(r,'learn.consume','Learning material unavailable')
     report={'scope':'DATA_ONLY','result':'FAIL' if errors else 'PASS','batch_id':package.name,'executed_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),
       'command':' '.join(sys.argv),'checks':dict(checks),'errors':errors,'input_content_sha256':{p.name:file_sha(p) for p in package.glob('content-*.jsonl')},
       'static_map_graph':'Directed declared portal graph only, not directional tile collision or real movement',
