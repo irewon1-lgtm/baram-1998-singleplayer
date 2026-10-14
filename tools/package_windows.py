@@ -219,7 +219,7 @@ def finalize(args):
     manifest.update(windows_native_execution="NOT_RUN", linux_embedded_pck_checks="PASS",
                     finalization_commit=subprocess.check_output(["git","rev-parse","HEAD"],cwd=ROOT,text=True).strip(),
                     delivery="NOT_DELIVERED", evidence=evidence,
-                    files=[dict(path=str(p.relative_to(stage)), bytes=p.stat().st_size, sha256=sha256(p))
+                    files=[dict(path=p.relative_to(stage).as_posix(), bytes=p.stat().st_size, sha256=sha256(p))
                            for p in sorted(stage.rglob("*")) if p.is_file() and p != stage/"PACKAGE_MANIFEST.json"])
     json_write(stage/"PACKAGE_MANIFEST.json",manifest)
     target=output/(PACKAGE_NAME+".zip")
@@ -321,7 +321,7 @@ texture_format/etc2_astc=false
                     windows_template=pe, windows_native_execution="NOT_RUN",
                     persistent_save="%LOCALAPPDATA%\\BaramSinglePlayer\\saves\\v2\\character.json",
                     imports=source["imports"], private_equivalence=equivalence,
-                    files=[dict(path=str(p.relative_to(stage)), bytes=p.stat().st_size, sha256=sha256(p))
+                    files=[dict(path=p.relative_to(stage).as_posix(), bytes=p.stat().st_size, sha256=sha256(p))
                            for p in sorted(stage.rglob("*")) if p.is_file()])
     json_write(stage/"PACKAGE_MANIFEST.json", manifest)
     archive = output/(PACKAGE_NAME+".zip")

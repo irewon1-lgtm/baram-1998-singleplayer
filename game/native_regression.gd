@@ -18,6 +18,10 @@ func run(g,mode,directory):
 
 func capture(title: String):
     # Rendering assertions require an independently observed Windows GUI.
+    # The GUI capture normally consumes real wall time. Headless capture must
+    # explicitly wait for the previous turn/move cooldown before the next key.
+    while game.move_wait>0:
+        await get_tree().create_timer(0.02).timeout
     await get_tree().process_frame
 
 func finish():
