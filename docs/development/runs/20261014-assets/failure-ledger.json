@@ -26,10 +26,10 @@
     },
     {
       "id": "NPC-NEARBY-1",
-      "status": "FIX_APPLIED_RETEST_PENDING",
+      "status": "RESOLVED",
       "observed": "Merchant selected instead of quest NPC when both were in range",
       "fix": "Prefer NPC on facing tile; then closest NPC",
-      "evidence": "game-screen-4.json"
+      "evidence": "game-screen-run5-primary-report.json"
     },
     {
       "id": "GITHUB-BRANCH-SPEC",
@@ -71,10 +71,11 @@
     },
     {
       "id": "AUDIO-VOICE-1",
-      "status": "FIX_APPLIED_PACKAGE_RETEST_PENDING",
+      "status": "RESOLVED",
       "observed": "Attack and hit playback on a single player could replace the first stream before mixing",
       "fix": "Separate attack/hit/skill/level voices",
-      "evidence": "package-playtest.json"
+      "evidence": "package-playtest.json",
+      "observed_playback": "Package live test: attack and hit separate voices both playing true; nonzero recorded PCM signal"
     }
   ]
 }

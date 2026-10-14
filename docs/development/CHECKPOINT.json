@@ -1,10 +1,10 @@
 {
-  "recorded_at_utc": "2026-10-14T02:19:26.921647+00:00",
+  "recorded_at_utc": "2026-10-14T02:40:26.334416+00:00",
   "user_timezone": "Asia/Seoul",
   "research_base_sha": "2775b1166a760b6a1757f09f2faf1e799d3fd59e",
   "development_branch": "dev/codex-asset-runtime-20261014",
   "workflow_lock": "docs/RESTORATION_WORKFLOW_LOCK.md",
-  "overall": "PLAYABLE_EIGHT_MAPS_PRIVATE_PACKAGE_IN_PROGRESS",
+  "overall": "PASS_EXECUTED_PLAYABLE_CORE_LOOP_WIP_FULL_RESTORATION",
   "research_1_3": "PRESERVED_UNCHANGED_RESEARCH_ONLY",
   "stage_4": {
     "status": "PASS_AVAILABLE_INPUT_DECODING_AND_LIVE_USE_WITH_REPLACEMENT_BINDINGS",
@@ -284,7 +284,12 @@
     },
     "historical_exact_identity": "NOT_CONFIRMED",
     "original_sound_identity": "REPLACEMENT_BINDINGS_UNVERIFIED",
-    "palette_animation": "NOT_RUN"
+    "palette_animation": "NOT_RUN",
+    "actual_engine_tileset_source_counts": {
+      "A": 4897,
+      "B": 2973,
+      "C": 6965
+    }
   },
   "stage_5": {
     "status": "GODOT_SELECTED_AFTER_REAL_SCREEN_RUNTIME",
@@ -329,7 +334,8 @@
       "runs/20261014-assets/game-resume-6.json",
       "runs/20261014-assets/game-classes-2.json",
       "runs/20261014-assets/asset-game-summary.json"
-    ]
+    ],
+    "actual_node_state_after_restart": "PASS_ACTUAL_PLAYER_ENTITIES_LOOT_RNG_BEFORE_FIRST_TICK"
   },
   "stage_7": {
     "status": "PASS_37_SAME_CODE_CALCULATION_SIMULATIONS",
@@ -353,7 +359,7 @@
     "level31_99_regions_advancement": "NOT_IMPLEMENTED",
     "entire_game_finish_playthrough": "NOT_RUN"
   },
-  "next_action": "Finish and playtest private ZIP; then restore GitHub allowed host and read requested latest branch/spec before forward integration; do not repeat passed download, decoder, growth or starter-loop tests.",
+  "next_action": "Read latest remote dev/codex-asset-intake-20261014 and its full execution spec when GitHub host is enabled; integrate these preserved development commits forward. Continue original skill effect binding and actual four-job level-30 playthrough before level31-99/advancement. Reuse both result ZIPs; do not redownload verified originals or repeat passed checks.",
   "resume_command": "python3 tools/recover_runtime_inputs.py --private-dir /workspace/baram-private --only archives --report /workspace/baram-private/asset-recovery-resume.json",
   "network_domains_requested": [
     "archive.org",
@@ -395,5 +401,26 @@
   "requested_execution_spec": "docs/development/CODEX_ASSET_EXECUTION_SPEC.md",
   "remote_base_and_spec": "BLOCKED_GITHUB_CONNECT403_NOT_READ_LATEST",
   "user_latest_policy": "Other eras, replaceable assets and generated completion content authorized; no public original graphics, no paid actions/deployment/main merge",
-  "package_state": "IN_PROGRESS_NOT_YET_SAVED_COMPLETE"
+  "package_state": "SAVED_FINAL_ZIPS_UNPACKED_LAUNCH_RESTART_VERIFIED",
+  "packages": [
+    {
+      "path": "/workspace/baram-private/results/baram_playable_PRIVATE_20261014.zip",
+      "bytes": 207633503,
+      "sha256": "faee6f474f7bc723c7a52f4028887f7d17a7b36d7d981e68337099d98a07bb2b",
+      "zip_crc": "PASS_FULL_FINAL_MEMBER_READ_NO_DUPLICATE_NAMES",
+      "contains_engine_and_original_archives": true,
+      "files": 514
+    },
+    {
+      "path": "/workspace/baram-private/results/baram_assets_resume_PRIVATE_20261014.zip",
+      "bytes": 31125172,
+      "sha256": "cf1feca2e63cc8105060fa14ca57feeeedcb6af2eccb6cd6589453075099b9f3",
+      "zip_crc": "PASS_FULL_FINAL_MEMBER_READ_NO_DUPLICATE_NAMES",
+      "contains_engine_and_original_archives": false,
+      "files": 333
+    }
+  ],
+  "package_source_commit": "848e0d6552f78192f7268c183985ac7421540681",
+  "remote_saved": false,
+  "remote_status": "BLOCKED_GITHUB_CONNECT403"
 }

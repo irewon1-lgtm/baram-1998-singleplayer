@@ -1,0 +1,166 @@
+{
+  "audio_events": [],
+  "checks": [
+    {
+      "name": "fresh_process_loaded_save",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "restart_preserves_entire_player",
+      "observed": {
+        "equipped": "목검",
+        "gold": 11,
+        "level": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "restart_preserves_world_and_loot",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "restart_preserves_rng",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_restart",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "engine_audio_mix_recorded",
+      "observed": {
+
+      },
+      "status": "PASS"
+    }
+  ],
+  "elapsed_ms": 232,
+  "events": [
+    {
+      "details": {
+        "equipped": "목검",
+        "level": 1,
+        "map": "field"
+      },
+      "event": "save_restored",
+      "time": 0.0
+    },
+    {
+      "details": {
+        "loaded_save": true,
+        "registered_tiles": 14835,
+        "renderer": "gl_compatibility"
+      },
+      "event": "ready",
+      "time": 0.0
+    }
+  ],
+  "player": {
+    "buffs": {
+
+    },
+    "cooldowns": {
+      "기초 회복": 0.0
+    },
+    "direction": 3,
+    "durability": {
+      "목검": 3999,
+      "목도": 1000
+    },
+    "equipped": "목검",
+    "gold": 11,
+    "growth_log": [],
+    "hotbar": [
+      "기초 회복",
+      "",
+      ""
+    ],
+    "hp": 50,
+    "hp_max": 50,
+    "inventory": {
+      "목검": 1,
+      "목도": 1,
+      "토끼고기": 1
+    },
+    "job": "전사",
+    "kills": 1,
+    "level": 1,
+    "map": "field",
+    "mp": 30,
+    "mp_max": 35,
+    "name": "바람여행자",
+    "quests": [],
+    "rank": 0,
+    "rng_state": "8970098769237327606",
+    "skill_page": 0,
+    "skills": [
+      "기초 회복"
+    ],
+    "strength": 5,
+    "x": 12,
+    "xp2": 10,
+    "y": 12
+  },
+  "registered_tile_sources": 3,
+  "registered_tiles": 14835,
+  "rendered_actor_frames": [
+    "rabbit:6",
+    "squirrel:6",
+    "wood_weapon:10",
+    "body_0:22",
+    "head_0:22",
+    "rabbit:7",
+    "squirrel:7",
+    "rabbit:8",
+    "squirrel:8"
+  ],
+  "rendered_tile_ids": [
+    "A:20",
+    "A:8",
+    "A:6",
+    "A:1",
+    "A:10",
+    "A:4",
+    "A:18",
+    "A:7",
+    "A:5",
+    "A:11",
+    "A:15",
+    "A:3",
+    "A:2",
+    "A:19",
+    "A:14",
+    "A:12",
+    "A:17",
+    "A:0",
+    "A:16",
+    "A:13",
+    "A:268",
+    "A:9"
+  ],
+  "save_loaded": true,
+  "scope": "REAL_X11_GODOT_VIEWPORT_WITH_INPUT_EVENTS_NOT_FULL_1_TO_99_PLAYTHROUGH",
+  "screenshots": [
+    {
+      "height": 640,
+      "name": "restart",
+      "path": "/workspace/baram-private/package-playtest/primary/restart.png",
+      "sha256": "c639067ac229a2a7e451d777c4a685567dcaa90f9fb60215a16dc938096837f2",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    }
+  ],
+  "status": "PASS_EXECUTED_SCREEN_INPUT"
+}

@@ -1,0 +1,27 @@
+{
+  "status": "BLOCKED",
+  "repository": "irewon1-lgtm/baram-1998-singleplayer",
+  "requested_base": "dev/codex-asset-intake-20261014",
+  "detail_spec_read": "BLOCKED_NOT_READ",
+  "published_allowed_hosts": [
+    "archive.org",
+    "ia600702.us.archive.org",
+    "ia600905.us.archive.org",
+    "ia601602.us.archive.org",
+    "ia601903.us.archive.org",
+    "web.archive.org",
+    "www.archive.org"
+  ],
+  "github_allowed": false,
+  "last_observed_error": "git fetch: CONNECT tunnel failed, response 403",
+  "remote_push": "NOT_EXECUTED_WHILE_HOST_POLICY_BLOCKED",
+  "remote_commit_readback": "BLOCKED_NOT_VERIFIED",
+  "preserved_originals": [
+    "main",
+    "research/restoration-integrated-20261013",
+    "NUMERIC_MASTER.jsonl"
+  ],
+  "local_branch": "dev/codex-asset-runtime-20261014",
+  "recoverable_commit_bundle": "Inside full private ZIP: development.bundle",
+  "saved_network_draft": "github.com addition saved earlier; not present in current published policy"
+}

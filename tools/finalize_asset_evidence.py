@@ -51,6 +51,24 @@ def finish():
     (RUN/'tile-status-current.json').write_text(json.dumps(ledger,ensure_ascii=False,separators=(',',':'))+'\n')
     assets=json.loads((PRIVATE/'game-assets/actors.json').read_text())
     all_frames=[(key,f) for key,s in assets.items() if isinstance(s,dict) for f in s.get('frames',[])]
+    reviewed_keys={'body_0','head_0','wood_weapon','ghost','rabbit','squirrel','rat','bat','snake','boar','spider','skeleton','effect_heal','effect_damage'}
+    actor_status=[]
+    for key,spec in assets.items():
+        if not isinstance(spec,dict) or 'frames' not in spec:continue
+        for i,f in enumerate(spec['frames']):
+            aid=f'{key}:{i}'
+            reviewed=(key in reviewed_keys and i<4)
+            actor_status.append({'asset_id':aid,'original_epf':spec['epf'],'original_frame':f['frame'],
+                'rgba_sha256':f['rgba_sha256'],'source_kind':spec['source_kind'],
+                'palette_index':spec['palette_index'],'recolor_byte':spec['recolor_byte'],
+                'automatic_status':'PASS_BOUNDED_DECODE_AND_PNG_EXPORT',
+                'visual_review':'REVIEWED_FIRST_FOUR_FRAME_CONTACT_SHEET' if reviewed else 'NOT_INDIVIDUALLY_REVIEWED',
+                'engine_registration':'PASS_SHEET_TEXTURE_AND_FRAME_TABLE',
+                'game_use':int(aid in actor_rendered),
+                'unused_reason':None if aid in actor_rendered else 'REGISTERED_ACTION_OR_MODEL_NOT_CALLED_ON_EXECUTED_ROUTE'})
+    (RUN/'actor-status-current.json').write_text(json.dumps({'frames':actor_status,'processed':len(actor_status),
+        'registered':len(actor_status),'individual_contact_review':sum(f['visual_review']!='NOT_INDIVIDUALLY_REVIEWED' for f in actor_status),
+        'used':len(actor_rendered),'unused':len(actor_status)-len(actor_rendered)},ensure_ascii=False,separators=(',',':'))+'\n')
     art={'decoded_frames':len(all_frames),'opaque_frames':sum(f['opaque']>0 for _,f in all_frames),
          'transparent_placeholders':sum(f['opaque']==0 for _,f in all_frames),
          'unique_decoded_rgba':len({f['rgba_sha256'] for _,f in all_frames}),

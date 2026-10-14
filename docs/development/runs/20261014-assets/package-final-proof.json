@@ -1,0 +1,13 @@
+{
+  "runtime_source_commit": "848e0d6552f78192f7268c183985ac7421540681",
+  "verified_at_utc": "2026-10-14T02:54:24.258630+00:00",
+  "unpacked_file_sha256_checks": 513,
+  "unpacked_file_sha256_mismatches": 0,
+  "portable_launcher": "PASS_EXECUTED_SCREEN_INPUT",
+  "portable_fresh_process_restart": "PASS_PLAYER_WORLD_LOOT_RNG",
+  "archive_original_pins": "PASS_5_EXACT_SHA256",
+  "metadata_overlay_only": true,
+  "runtime_code_or_graphics_modified_after_package_playtest": false,
+  "final_commit_bundle": "Provided separately as baram_development_20261014.bundle",
+  "remote_publication": "BLOCKED_GITHUB_CONNECT403"
+}
