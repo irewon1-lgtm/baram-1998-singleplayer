@@ -1,0 +1,6 @@
+{
+  "protocol_id": "BARAM_PARALLEL_V1",
+  "tool_version": "codex-import-1",
+  "implemented": ["content.json.v1", "content.atomic_activation.v1", "content.stable_ids.v1"],
+  "note": "Execution handlers are added only with implementation and focused tests. Unknown Work names are PENDING_CAPABILITY, never ignored. No Work schema has yet been published."
+}
