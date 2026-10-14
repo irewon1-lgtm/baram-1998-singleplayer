@@ -1,0 +1,68 @@
+{
+  "executed": 3,
+  "fail": 0,
+  "pass": 3,
+  "results": [
+    {
+      "checks": [
+        {
+          "condition": "Level 99 cap retains XP bank",
+          "result": "PASS"
+        }
+      ],
+      "observed": {
+        "level": 99,
+        "xp2": 2000000
+      },
+      "status": "PASS",
+      "test_id": "XP-99-CAP"
+    },
+    {
+      "checks": [
+        {
+          "condition": "Single-slot item stack limit is enforced",
+          "result": "PASS"
+        },
+        {
+          "condition": "Buy three at 20",
+          "result": "PASS"
+        },
+        {
+          "condition": "Sell three at 10",
+          "result": "PASS"
+        },
+        {
+          "condition": "Insufficient funds preserve entire state",
+          "result": "PASS"
+        }
+      ],
+      "observed": {
+
+      },
+      "status": "PASS",
+      "test_id": "TRADE-ROUNDTRIP"
+    },
+    {
+      "checks": [
+        {
+          "condition": "RTK replacement repair fee equals 5",
+          "result": "PASS"
+        },
+        {
+          "condition": "Repair transaction applies fee and full durability",
+          "result": "PASS"
+        }
+      ],
+      "observed": {
+
+      },
+      "status": "PASS",
+      "test_id": "REPAIR-RTK"
+    }
+  ],
+  "rules_sha256": "afe66ac6bed41f95d3f1872a5fb157226b0fc88d0ca8a7509d3311e4528089cc",
+  "save_module_sha256": "123d291e3142135bdc6728018c448738c5d248f2aa05e7b16c331041b7e72bac",
+  "scope": "SAME_INTERACTIVE_GAME_RULES_NOT_37_MANUAL_SCREEN_PLAYTHROUGHS",
+  "status": "PASS_CALCULATION_SIMULATION",
+  "world_sha256": "75e96433b60a5ab928e52ad38952dab84302e87af80e57caa1b42a95ca8bcb9a"
+}

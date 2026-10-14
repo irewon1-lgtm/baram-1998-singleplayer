@@ -25,7 +25,7 @@ MAX_FILE = 256 * 1024 * 1024
 MAX_TOTAL = 512 * 1024 * 1024
 MAX_JSON = 32 * 1024 * 1024
 MAX_INTEGER = 2**53 - 1  # exact through Godot JSON's numeric representation
-KINDS = {"item", "monster", "npc", "map", "skill", "quest", "asset", "growth", "advancement", "drop", "enchantment"}
+KINDS = {"item", "monster", "npc", "map", "skill", "quest", "asset", "growth", "class", "advancement", "drop_group", "enhancement", "recipe", "economy", "shop", "drop", "enchantment"}
 HEX40 = re.compile(r"[0-9a-f]{40}\Z")
 HEX64 = re.compile(r"[0-9a-f]{64}\Z")
 
@@ -257,10 +257,11 @@ def empty_release():
 
 
 class PackageStore:
-    def __init__(self, root, baseline, capabilities=()):
+    def __init__(self, root, baseline, capabilities=(), bundles=None):
         self.root = Path(root)
         self.baseline = copy.deepcopy(baseline)
         self.capabilities = set(capabilities)
+        self.bundles = bundles or {}
 
     def pointer(self):
         path = self.root / "ACTIVE.json"
@@ -279,7 +280,10 @@ class PackageStore:
         release = decode(data)
         if release.get("format") != "BARAM_RUNTIME_CONTENT" or release.get("version") != 1:
             fail("RUNTIME_VERSION", "Unsupported runtime format", status="CONFLICT")
+        checked=set()
         for item in release["assets"].values():
+            if item['stored_path'] in checked:continue
+            checked.add(item['stored_path'])
             content = read_bounded(self.root, f"releases/{release_id}/files/" + item["stored_path"])
             if len(content) != item["bytes"] or sha(content) != item["sha256"]:
                 fail("ACTIVE_ASSET_INTEGRITY", "Active asset bytes changed", status="CONFLICT", file=item["stored_path"])
@@ -344,7 +348,7 @@ class PackageStore:
             if path.casefold() in folded:
                 fail("FILE_DUPLICATE", "Repeated/case-colliding manifest path", file=path)
             folded.add(path.casefold())
-            size = entry.get("bytes", entry.get("size"))
+            size = entry.get("size_bytes", entry.get("bytes", entry.get("size")))
             expected = entry.get("sha256", "")
             if not isinstance(size, int) or isinstance(size, bool) or not HEX64.fullmatch(expected):
                 fail("FILE_PIN", "Explicit size and SHA256 required", file=path)
@@ -383,12 +387,27 @@ class PackageStore:
         if not isinstance(required, list) or any(not isinstance(x, str) for x in required):
             fail("CAPABILITY_FORMAT", "Capabilities must carry explicit names")
         missing = sorted(set(required) - self.capabilities)
-        if missing:
-            receipt["unmet_required_capabilities"] = missing
-            fail("CAPABILITY_MISSING", "Required execution handlers not available", "PENDING_CAPABILITY", current=missing)
+        receipt["unmet_required_capabilities"] = missing
         incoming = []
+        provenance_ids=set()
+        if 'provenance.json' in verified:
+            provenance=decode(verified['provenance.json'][1],'provenance.json')
+            catalog=provenance if isinstance(provenance,list) else provenance.get('records',provenance.get('sources',[]))
+            provenance_ids={r['id'] for r in catalog if isinstance(r,dict) and 'id' in r}
+        record_schema = next((s for s in schemas.values() if s.get("$id") == "urn:baram:content:1"), None)
         for path, (entry, data) in verified.items():
-            if not path.endswith(".json") or path == "validation.json" or entry.get("kind") in ("schema", "provenance"):
+            if path.endswith(".jsonl"):
+                for line_number, line in enumerate(data.splitlines(), 1):
+                    if not line.strip():continue
+                    record = decode(line, f"{path}:{line_number}")
+                    if record_schema:
+                        self._schema_validate(record, record_schema, f"{path}:{line_number}", schemas)
+                        for key in record_schema.get("kind_required_data", {}).get(record.get("kind"), []):
+                            if key not in record.get("data", {}):
+                                fail("KIND_REQUIRED_DATA", "Field required by published Work schema", file=f"{path}:{line_number}", content_id=record.get("id"), field="data."+key)
+                    incoming.append((f"{path}:{line_number}", record))
+                continue
+            if not path.endswith(".json") or path in ("validation.json","provenance.json","acquisition.json") or entry.get("kind") in ("schema", "provenance"):
                 continue
             document = decode(data, path)
             if entry.get("schema"):
@@ -411,8 +430,8 @@ class PackageStore:
             rid, kind = record["id"], record["kind"]
             prefix = "test." if fixture else "wk."
             supported_namespace = rid.startswith(prefix + kind + ".") if isinstance(rid, str) else False
-            if not fixture and kind in ("growth", "advancement", "drop", "enchantment") and isinstance(rid, str):
-                supported_namespace = any(rid.startswith("wk." + k + ".") for k in ("item", "monster", "npc", "map", "skill", "quest", "asset"))
+            if not fixture and record_schema and isinstance(rid, str):
+                supported_namespace = bool(re.fullmatch(r"wk\.[a-z_]+\.[a-zA-Z0-9_.-]+", rid))
             if not supported_namespace:
                 fail("CONTENT_NAMESPACE", "Content ID has wrong permanent namespace", file=file, content_id=rid)
             if rid in ids:
@@ -425,12 +444,26 @@ class PackageStore:
             for key in ("references", "provenance_refs"):
                 if key not in record:
                     fail("CONTENT_PROVENANCE_REFERENCE", "Common field absent", file=file, content_id=rid, field=key)
+            if provenance_ids:
+                for ref in record['provenance_refs']:
+                    if ref not in provenance_ids:fail('PROVENANCE_MISSING','Pinned provenance target missing',file=file,content_id=rid,current=ref)
         count = {}
         for _, record in incoming:
             count[record["kind"]] = count.get(record["kind"], 0) + 1
         declared = manifest.get("content_counts", manifest.get("counts"))
         if declared is not None and {k: v for k, v in declared.items() if v} != count:
             fail("CONTENT_COUNTS", "Declared counts differ from parsed IDs", expected=declared, current=count)
+        receipt['validated_counts']=count
+        # Work's schema uses a proposal ID and target_id as the effective ID.
+        effective_ids={r.get('target_id',r['id']) for _,r in incoming}
+        available_preview=set(self.baseline)|set(release['records'])|effective_ids
+        for file,record in incoming:
+            for ref in reference_ids(record['references']):
+                if ref not in available_preview:
+                    fail('REFERENCE_MISSING','Unresolved effective/target ID',file=file,content_id=record['id'],current=ref)
+        if missing:
+            receipt['held_ids']=sorted(r.get('target_id',r['id']) for _,r in incoming)
+            fail("CAPABILITY_MISSING", "Required execution handlers not available", "PENDING_CAPABILITY", current=missing)
         candidate = copy.deepcopy(release)
         supersedes = manifest.get("supersedes", [])
         if isinstance(supersedes, str):
@@ -469,21 +502,30 @@ class PackageStore:
                 if target_record is None:
                     fail("PATCH_TARGET", "Patch target ID does not exist", "CONFLICT", file=file, content_id=rid)
                 target_record = copy.deepcopy(target_record)
-                changes = record["data"]
-                conditions = record.get("preconditions", record.get("expected_before"))
+                published_changes=record.get('changes')
+                changes = {c['path']:c['after'] for c in published_changes} if published_changes else record["data"]
+                conditions = {c['path']:c['before'] for c in published_changes} if published_changes else record.get("preconditions", record.get("expected_before"))
                 expected_hash = record.get("expected_sha256")
                 if not conditions and not expected_hash:
                     fail("PATCH_PRECONDITION", "Patch requires expected fields or data hash", file=file, content_id=rid)
                 if expected_hash and sha(encode(target_record["data"])) != expected_hash:
                     fail("PATCH_HASH_CONFLICT", "Target changed since proposal", "CONFLICT", file=file, content_id=target, current=sha(encode(target_record["data"])), expected=expected_hash)
                 for field, proposed in changes.items():
-                    current = get_field(target_record["data"], field)
-                    if not expected_hash and (field not in conditions or native(current) != native(conditions[field])):
+                    try:current = get_field(target_record["data"], field);exists=True
+                    except IntakeError:current=None;exists=False
+                    guard=conditions.get(field) if conditions else None
+                    matched=(guard.get('exists')==exists and (not exists or native(current)==native(guard.get('value')))) if published_changes and isinstance(guard,dict) else field in conditions and native(current)==native(guard)
+                    if not expected_hash and not matched:
                         fail("PATCH_VALUE_CONFLICT", "Changed field differs from old proposal", "CONFLICT", file=file, content_id=target,
                              field=field, current=current, expected=conditions.get(field), proposed=proposed)
                     if target + "/" + field in candidate["owned_fields"]:
                         fail("OWNED_FIELD", "Patch would overwrite a Codex-owned field", "CONFLICT", file=file, content_id=target, field=field, current=current, proposed=proposed)
-                    set_field(target_record["data"], field, proposed)
+                    if not exists and '.' not in field:target_record['data'][field]=proposed
+                    else:set_field(target_record["data"], field, proposed)
+                if published_changes:
+                    # Keep complete proposed runtime definition separate from
+                    # original numeric values; never replace the base record.
+                    target_record['runtime_definition']=copy.deepcopy(record['data'])
                 target_record["data"] = normalize_units(target_record["data"], target)
                 target_record.setdefault("patch_history", []).append(dict(batch_id=manifest["batch_id"], source_commit=source_commit,
                                                                             proposal_id=rid, provenance_refs=record["provenance_refs"], source_mode=record["source_mode"]))
@@ -497,10 +539,51 @@ class PackageStore:
                 if ref not in set(candidate["records"]) | set(self.baseline):
                     fail("ACTIVE_REFERENCE", "Candidate breaks previous active reference", content_id=rid, current=ref)
         asset_bytes = {}
+        bundle_inputs={}
+        if 'acquisition.json' in verified:
+            acquisition=decode(verified['acquisition.json'][1],'acquisition.json')
+            if acquisition.get('bundle_id'):
+                bundle_id=acquisition['bundle_id'];supplied=self.bundles.get(bundle_id)
+                if supplied:
+                    supplied=Path(supplied);size=acquisition.get('size_bytes');digest=acquisition.get('sha256')
+                    if not supplied.is_file() or supplied.stat().st_size!=size or sha(supplied.read_bytes())!=digest:
+                        fail('BUNDLE_HASH','Recipient bytes do not match fixed private-bundle pin',file=str(supplied))
+                    staging=self.root/'.acquired'/digest
+                    if not staging.exists():extract_zip(supplied,staging)
+                    bundle_inputs[bundle_id]=staging
         for rid, record in candidate["records"].items():
             if record["kind"] != "asset" or record.get("batch_id") != manifest["batch_id"]:
                 continue
             path = record["data"].get("path")
+            acquisition=record['data'].get('acquisition',{})
+            if not path and acquisition.get('bundle_id'):
+                bundle=acquisition['bundle_id'];member=acquisition.get('member')
+                if bundle not in bundle_inputs:
+                    fail('REQUIRED_ASSET_UNAVAILABLE','Authenticated Library/bundle has not been materialized and hash verified by Codex','WAITING_DEPENDENCY',content_id=rid,file=member,current=acquisition)
+                data=read_bounded(bundle_inputs[bundle],member)
+                if sha(data)!=acquisition.get('sha256'):fail('BUNDLE_MEMBER_HASH','Acquired member differs from asset definition',file=member,content_id=rid)
+                members={member: data}
+                meta=record['data'].get('metadata',{})
+                for page in meta.get('pages',[]):
+                    pixel=read_bounded(bundle_inputs[bundle],page['path'])
+                    if len(pixel)!=page.get('size_bytes') or sha(pixel)!=page['sha256']:fail('BUNDLE_PAGE_HASH','Pinned PNG differs',file=page['path'],content_id=rid)
+                    from PIL import Image
+                    import io
+                    with Image.open(io.BytesIO(pixel)) as image:
+                        if image.width*image.height>16777216:fail('PAGE_PIXEL_BOUND','Decoded image exceeds pixel bound',file=page['path'])
+                        image.verify()
+                    members[page['path']]=pixel
+                if meta.get('atlas_member'):
+                    pixel=read_bounded(bundle_inputs[bundle],meta['atlas_member'])
+                    if sha(pixel)!=meta.get('sha256'):fail('BUNDLE_PAGE_HASH','Pinned reused atlas differs',file=meta['atlas_member'],content_id=rid)
+                    members[meta['atlas_member']]=pixel
+                for name,content in members.items():
+                    stored_path=sha(content)+'/'+PurePosixPath(name).name
+                    info=dict(stored_path=stored_path,sha256=sha(content),bytes=len(content))
+                    candidate['assets']['bundle_file:'+bundle+':'+name]=info
+                    asset_bytes[stored_path]=content
+                    if name==member:candidate['assets'][rid]=info
+                continue
             if not path or path not in verified:
                 fail("REQUIRED_ASSET_UNAVAILABLE", "Asset is not transferred/pinned; local filename or chat attachment is not delivery", "WAITING_DEPENDENCY", content_id=rid, file=path)
             entry, data = verified[path]
@@ -524,8 +607,9 @@ class PackageStore:
         atomic_write(directory / "release.json", payload)
         if interrupt in ("after_release", "before_activate"):
             fail("INTERRUPTED_BEFORE_ACTIVATE", "Injected interruption; prior active data/ledger preserved", "VALIDATED_NOT_APPLIED")
+        previous_summary={k:v for k,v in previous.items() if k!='previous'} if previous else None
         pointer = dict(format="BARAM_ACTIVE_CONTENT", version=1, release_id=release_id, sha256=release_id,
-                       bytes=len(payload), generation=candidate["generation"], previous=previous)
+                       bytes=len(payload), generation=candidate["generation"], previous=previous_summary)
         atomic_write(self.root / "ACTIVE.json", encode(pointer))
         self.load()  # record only the actual validated active version
         receipt.update(import_status="IMPORTED", applied_ids=sorted(set(applied)), applied_counts=count,
@@ -614,6 +698,8 @@ def snapshot_package(repo, commit, manifest_path, destination):
     pins = manifest.get("schema_hashes", manifest.get("schemas", {}))
     paths = [x["path"] for x in pins] if isinstance(pins, list) else pins
     for schema_path in paths:
+        if any(x.get('path')==schema_path for x in manifest.get('files',[])):
+            continue  # package-local frozen schema, already copied and pinned
         relative = safe_relative(schema_path)
         upstream = schema_path if schema_path.startswith("content-work/schemas/") else "content-work/schemas/" + schema_path
         atomic_write(schema_root / relative, git_bytes(repo, commit, upstream, MAX_JSON))

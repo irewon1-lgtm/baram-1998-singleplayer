@@ -1,0 +1,40 @@
+{
+  "protocol_id": "BARAM_PARALLEL_V1",
+  "batch_id": "WK-ASSETS-001",
+  "source_commit": "1800a3a0d7ffdb4b27212c6dfdd2539a93212d6b",
+  "manifest_sha256": "4e5e6356f30f798657109ff95f204fe5f38351a072b61a8b19e6828f40e23bab",
+  "base_game_commit": "dea6574c9a69ebb04432d10fc32951aacd8b66cb",
+  "applied_before_game_commit": "6a2fd1ffec031b897aa04ad21ebd6f38f75f04cd",
+  "integration_commit": null,
+  "tool_version": "codex-import-1",
+  "import_status": "REJECTED",
+  "applied_ids": [],
+  "held_ids": [],
+  "unmet_required_capabilities": [
+    "atlas_frame_pivots_and_alpha",
+    "audio_event_binding",
+    "effect_front_back_repeat_timing",
+    "four_direction_multilayer_animation",
+    "inferred_name_to_model_bindings",
+    "private_bundle_acquisition_and_hash_verification"
+  ],
+  "errors": [
+    {
+      "code": "CONTENT_ID_KIND",
+      "message": "Explicit supported id/kind required",
+      "file": "provenance.json",
+      "content_id": null,
+      "field": null,
+      "current": null,
+      "expected": null,
+      "proposed": null
+    }
+  ],
+  "work_fix_requests": [],
+  "save_compatibility": "STABLE_IDS_RETAINED_MIGRATION_REQUIRED_FOR_RUNTIME_STATE",
+  "fixture": false,
+  "playback_status": "NOT_RUN",
+  "schema_version": 1,
+  "responsibility": "CODEX_INTAKE_ADAPTER",
+  "resolved_by": "Handle pinned provenance metadata separately from JSONL content; follow published size_bytes/schema/changes semantics"
+}

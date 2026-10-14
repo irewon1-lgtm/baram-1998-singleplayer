@@ -3,6 +3,10 @@ extends Node2D
 const Rules = preload("res://rules.gd")
 const Store = preload("res://save_store.gd")
 const Assets = preload("res://assets.gd")
+const Content = preload("res://content_registry.gd")
+const Effects = preload("res://effect_runtime.gd")
+const Pathfinder = preload("res://pathfinder.gd")
+const WorkAssets = preload("res://work_assets.gd")
 const STEP = 48
 const VIEW = Rect2(0,48,768,480)
 const DIRECTIONS = [Vector2i.UP,Vector2i.LEFT,Vector2i.DOWN,Vector2i.RIGHT]
@@ -11,10 +15,15 @@ var store = Store.new()
 var assets = Assets.new()
 var world = {}
 var maps = {}
+var decoration_rows = {}
 var entities = {}
 var loot = []
 var player = {}
-var save_path = "user://saves/character.json"
+var save_path = "user://saves/v2/character.json"
+var content = Content.new()
+var work_assets = WorkAssets.new(content)
+var enhancement_instance = ""
+var content_folder = ""
 var asset_folder = ""
 var font = FontFile.new()
 var clock = 0.0
@@ -64,6 +73,12 @@ func _ready():
     if asset_folder == "":
         asset_folder = ProjectSettings.globalize_path("res://../private_assets")
     save_path = options.get("save",save_path)
+    content_folder=options.get("content",OS.get_environment("BARAM_PRIVATE_CONTENT"))
+    if content_folder=="":content_folder=ProjectSettings.globalize_path("res://../private_content")
+    if not content.load_directory(content_folder):
+        push_error(JSON.stringify(content.last_error));get_tree().quit(2);return
+    content.apply_rules(rules)
+    store.content_version=content.version
     test_mode = options.get("exercise","")
     test_root = options.get("evidence","")
     if not assets.load_directory(asset_folder):
@@ -74,14 +89,21 @@ func _ready():
     font.antialiasing = TextServer.FONT_ANTIALIASING_NONE
     var world_path=asset_folder.path_join("source_maps/world.json")
     world = JSON.parse_string(FileAccess.get_file_as_string(world_path if FileAccess.file_exists(world_path) else "res://data/world.json"))
+    world=content.merge_world(world)
     for m in world.maps:
         maps[m.id] = m
+        var rows={}
+        for d in m.get("decorations",[]):
+            var y=int(d.y)
+            if not rows.has(y):rows[y]=[]
+            rows[y].append(d)
+        decoration_rows[m.id]=rows
         for spawn in m.spawns:
             var spec = rules.monster(spawn.kind,world.replacements)
             entities[spawn.id] = {"id":spawn.id,"kind":spawn.kind,"map":m.id,"x":spawn.x,"y":spawn.y,
                 "home_x":spawn.x,"home_y":spawn.y,"direction":2,"hp":int(spec.values.hp),"alive":true,
                 "respawn":0.0,"move_timer":3.0,"attack_timer":0.0,"provoked":false,"hurt":0.0,
-                "spec":spec}
+                "hp_max":int(spec.values.hp),"mp":int(rules.value_or(spec.values,"mp",0)),"mp_max":int(rules.value_or(spec.values,"mp",0)),"statuses":{},"spec":spec}
     for kind in ["attack","hit","skill","level"]:
         var voice = AudioStreamPlayer.new()
         add_child(voice)
@@ -89,15 +111,25 @@ func _ready():
     if test_mode != "":
         AudioServer.add_bus_effect(0,recorder)
         recorder.set_recording_active(true)
+    var requested_save=save_path
+    var migrated_path=save_path.get_base_dir().path_join("v2").path_join(save_path.get_file())
+    if not save_path.get_base_dir().ends_with("/v2") and FileAccess.file_exists(migrated_path):save_path=migrated_path
     var saved = store.read_state(save_path)
+    if saved.is_empty() and store.last_status=="MISSING" and save_path.get_base_dir().ends_with("/v2"):
+        var legacy=save_path.get_base_dir().get_base_dir().path_join(save_path.get_file())
+        if FileAccess.file_exists(legacy):saved=store.read_state(legacy)
     if not saved.is_empty():
+        if saved.get("migrated_from_schema",0)==1 and not save_path.get_base_dir().ends_with("/v2"):save_path=migrated_path
         loaded_snapshot = saved.duplicate(true)
         restore(saved)
         menu = ""
         save_loaded = true
         notice("저장한 여정을 이어갑니다.")
-    else:
+    elif store.last_status=="MISSING" and not FileAccess.file_exists(requested_save):
         setup_creation()
+    else:
+        menu="save_error"
+        notice("저장을 읽지 못했습니다: "+store.last_status+". 원본은 보존했습니다. Q: 종료")
     event("ready",{"registered_tiles":assets.tiles.size(),"loaded_save":save_loaded,
                    "renderer":RenderingServer.get_current_rendering_method()})
     if test_mode != "":
@@ -149,6 +181,7 @@ func create_character():
 
 func event(kind: String, info: Dictionary = {}):
     event_log.append({"time":snappedf(clock,0.001),"event":kind,"details":info.duplicate(true)})
+    while event_log.size()>512:event_log.pop_front()
 
 func notice(message: String):
     log_lines.append(message)
@@ -167,6 +200,15 @@ func _input(input):
     if not input is InputEventKey or not input.pressed or input.echo:
         return
     var key = input.keycode
+    if menu=="save_error":
+        if key in [KEY_Q,KEY_ESCAPE]:get_tree().quit()
+        return
+    if key==KEY_F8:
+        write_diagnostic("USER_SNAPSHOT")
+        return
+    if key==KEY_O and menu=="":
+        menu="equipment";selected=0;choices=player.get("equipment_instances",{}).keys().filter(func(id):return not player.equipment_instances[id].destroyed)
+        return
     if menu == "creation":
         if key == KEY_ENTER:
             create_character()
@@ -232,7 +274,11 @@ func _process(delta: float):
     if player.is_empty():
         queue_redraw()
         return
+    if menu in ["pause","save_error"]:queue_redraw();return
     rules.tick(player,delta)
+    var alive_before=player.hp>0
+    Effects.tick(rules.actions,player,delta)
+    if alive_before and player.hp==0:on_player_death()
     if player.buffs.get("독",0)>0 and player.hp>0:
         poison_clock+=delta
         if poison_clock>=1.0:poison_clock-=1.0;hurt_player(2,"poison")
@@ -267,7 +313,7 @@ func _process(delta: float):
         update_monsters(delta)
     for fx in effects:
         fx.time += delta
-    effects = effects.filter(func(fx):return fx.time < float(assets.actor_data.get(fx.key,{}).get("lifetime_ms",800))/1000.0)
+    effects = effects.filter(func(fx):return fx.time < float(fx.get("lifetime_ms",assets.actor_data.get(fx.get("key",""),{}).get("lifetime_ms",800)))/1000.0)
     for text in floating_text:
         text.time += delta
     floating_text = floating_text.filter(func(t):return t.time < 0.9)
@@ -382,13 +428,13 @@ func apply_attack():
         for other in entities.values():
             if other.alive and other.map==player.map and Vector2i(other.x,other.y)==cell()+DIRECTIONS[d]:hit_monster(other,amount,"directional_buff")
     if player.equipped != "":
-        player.durability[player.equipped] = maxi(0,int(player.durability[player.equipped])-1)
-        if player.durability[player.equipped] == 0:
-            player.equipped = ""
+        rules.actions.damage_gear(player,1)
+        if player.equipped=="":
             notice("무기가 파손되었습니다. 장비상에게 수리하세요.")
 
-func hit_monster(e: Dictionary, amount: int, source: String,skill_name: String = ""):
-    e.hp -= amount
+func hit_monster(e: Dictionary, amount: int, source: String,skill_name: String = "", already_applied: bool=false):
+    if not e.alive:return
+    if not already_applied:rules.actions.damage(e,amount)
     e.hurt = 0.18
     e.provoked = true
     floating_text.append({"x":e.x,"y":e.y,"text":str(amount),"time":0.0,"color":Color(1,0.8,0.4)})
@@ -410,16 +456,19 @@ func hit_monster(e: Dictionary, amount: int, source: String,skill_name: String =
             play_sound("level")
 
 func hurt_player(amount: int, attacker: String):
-    player.hp=maxi(0,int(player.hp)-amount)
+    rules.actions.damage(player,amount)
     hurt_time=0.18
     play_sound("hit")
     event("player_hit",{"damage":amount,"hp":player.hp,"attacker":attacker})
     if player.hp==0:
-        event("player_died")
-        var home=world.get("home",{"map":"village","entry":[12,12]})
-        transition(home.map,home.entry)
-        player.buffs.erase("독")
-        notice("혼령이 되었습니다. 성황에게 Enter로 부활하세요.")
+        on_player_death()
+
+func on_player_death():
+    event("player_died")
+    var home=world.get("home",{"map":"village","entry":[12,12]})
+    transition(home.map,home.entry)
+    player.buffs.erase("독");player.statuses.clear()
+    notice("혼령이 되었습니다. 성황에게 Enter로 부활하세요.")
 
 func update_monsters(delta: float):
     for id in entities:
@@ -433,7 +482,7 @@ func update_monsters(delta: float):
         if e.map!=player.map:continue
         e.move_timer-=delta;e.attack_timer-=delta
         var distance=Vector2i(e.x,e.y).distance_to(cell())
-        var hidden=player.buffs.get("무영보법",0)>0 or player.buffs.get("금수",0)>0 or player.buffs.get("경수",0)>0
+        var hidden=player.buffs.get("무영보법",0)>0 or player.buffs.get("금수",0)>0 or player.buffs.get("경수",0)>0 or rules.actions.status_modifier(player,"hidden")!=0
         var aggressive=(e.kind not in ["rabbit","squirrel"] or e.provoked) and (not hidden or e.provoked)
         var elapsed=float(e.get("attack_elapsed",-1))
         if elapsed>=0:
@@ -446,14 +495,14 @@ func update_monsters(delta: float):
                     if e.kind=="snake" and player.hp>0 and rules.roll(0.15):
                         player.buffs["독"]=8.0
                         event("poison_applied",{"source":"snake","classification":"SINGLEPLAYER_ESTIMATE"})
-            var spec=assets.actor_data[e.kind]
+            var spec=assets.actor_data.get(visual_key(e.kind),{"attack":1,"delay_ms":100})
             if e.attack_elapsed>=maxf(0.28,int(spec.attack)*float(spec.delay_ms)/1000.0):e.attack_elapsed=-1.0
             continue
         if player.hp>0 and aggressive and distance<1.1 and e.attack_timer<=0:
             e.attack_timer=float(e.spec.values.attack_interval_ms)/1000.0
             e.direction=DIRECTIONS.find(cell()-Vector2i(e.x,e.y))
             e.attack_elapsed=0.0;e.attack_pending=true
-            event("monster_attack_started",{"id":id,"direction":e.direction,"impact_ms":160,"source_attack_frames":assets.actor_data[e.kind].attack})
+            event("monster_attack_started",{"id":id,"direction":e.direction,"impact_ms":160,"source_attack_frames":assets.actor_data.get(visual_key(e.kind),{}).get("attack",0)})
             continue
         if e.move_timer<=0:
             e.move_timer=float(e.spec.values.move_interval_ms)/1000.0
@@ -463,6 +512,10 @@ func update_monsters(delta: float):
                 d=3 if offset.x>0 else 1
                 if absi(offset.y)>absi(offset.x):d=2 if offset.y>0 else 0
             var next=Vector2i(e.x,e.y)+DIRECTIONS[d]
+            if aggressive and distance<12 and not free_cell(e.map,next,id,d):
+                var destination=cell()-DIRECTIONS[d]
+                var plan=Pathfinder.search(Vector2i(e.x,e.y),destination,func(p,dir):return p!=cell() and free_cell(e.map,p,id,dir) and p.distance_to(Vector2i(e.home_x,e.home_y))<=float(e.spec.values.leash_radius_tiles),128)
+                if plan.status=="FOUND" and not plan.path.is_empty():next=plan.path[0];d=DIRECTIONS.find(next-Vector2i(e.x,e.y))
             if next!=cell() and free_cell(e.map,next,id,d) and next.distance_to(Vector2i(e.home_x,e.home_y))<=float(e.spec.values.leash_radius_tiles):e.x=next.x;e.y=next.y;e.direction=d
 
 func pickup():
@@ -482,12 +535,16 @@ func cast_skill(slot: int):
     if int(player.hp)<=0 and title!="성황령":return
     var s=rules.skill(player,title)
     var profile=rules.skill_profile(player,title)
+    if profile.type=="work_effects":
+        var validated=Effects.validate(profile.effects)
+        if not validated.ok:
+            event("skill_blocked",{"skill":title,"error":validated});notice("기술 효과 연결 오류: "+validated.error);return
     if profile.type=="unresolved":
         event("skill_blocked",{"skill":title,"reason":"BEHAVIOR_SOURCE_UNRESOLVED"})
         notice(title+"의 효과 자료를 아직 연결하지 못했습니다.")
         return
     var target={}
-    if profile.type=="damage":
+    if profile.type=="damage" or profile.type=="work_effects" and profile.effects.any(func(e):return e.get("target","self")=="enemy"):
         if entities.has(selected_target) and entities[selected_target].alive and entities[selected_target].map==player.map:target=entities[selected_target]
         else:
             var distance=999.0
@@ -512,7 +569,21 @@ func resolve_spell(cast: Dictionary):
     var profile=cast.profile
     var kind=profile.type
     var at=cell()
-    if kind=="heal":rules.heal(player,int(rules.value_or(s,"heal_amount",0)))
+    if kind=="work_effects":
+        var target=[]
+        if entities.has(cast.target_id):
+            var e=entities[cast.target_id]
+            if e.alive and e.map==player.map and Vector2i(e.x,e.y).distance_to(cell())<=float(rules.value_or(s,"range_tiles",6)):target=[e]
+        var result=Effects.apply(rules.actions,player,target,profile.effects)
+        if not result.ok:event("skill_effect_error",{"skill":title,"result":result});notice("기술 적용 오류: "+result.error);return
+        for action in result.damage_events:
+            if entities.has(action.id):hit_monster(entities[action.id],int(action.damage),"skill",title,true)
+        for action in result.movement:
+            if maps.has(action.map):transition(action.map,action.entry)
+        var visual=content.definition(title).get("animation",{})
+        var effect_id=visual.get("effect_asset_id","")
+        if effect_id!="":effects.append({"work_asset":effect_id,"x":player.x,"y":player.y,"time":0.0,"lifetime_ms":int(visual.get("effect_duration_ms",2000))})
+    elif kind=="heal":rules.heal(player,int(rules.value_or(s,"heal_amount",0)))
     elif kind=="damage":
         if entities.has(cast.target_id):
             var target=entities[cast.target_id]
@@ -528,7 +599,7 @@ func resolve_spell(cast: Dictionary):
     elif kind in ["return","spirit_return"]:
         var home=world.get("home",{"map":"village","entry":[12,12]})
         transition(home.map,home.entry);at=cell()
-    elif kind=="charge":player.mp=mini(int(player.mp_max),int(player.mp)+maxi(30,int(player.mp_max)*3/4))
+    elif kind=="charge":rules.actions.recovery(player,0,maxi(30,int(player.mp_max)*3/4))
     elif kind in ["cure","cleanse"]:
         player.buffs.erase("독")
         if kind=="cleanse":player.buffs.erase("저주")
@@ -562,6 +633,12 @@ func interact():
         if Vector2i(n.x,n.y).distance_to(cell()) <= 1.5:
             npc = n
             selected = 0
+            rules.actions.quest_event(player,"talk",n.get("definition_id",n.id))
+            if n.role=="work_services":
+                menu="services";choices=n.get("services",[]).duplicate(true)
+                if choices.is_empty():menu="dialogue";choices=n.get("dialogue",["현재 이용 가능한 서비스가 없습니다."])
+                event("npc_dialogue",{"id":n.id,"definition_id":n.get("definition_id",""),"role":n.role})
+                return
             if n.role in ["shop","inn"]:
                 menu = "shop"
                 choices = n.get("shop_items",world.shop_items).duplicate()
@@ -580,17 +657,16 @@ func interact():
             elif n.role == "quest":
                 for quest in world.generated_quests:
                     if int(player.kills) >= int(quest.kills) and quest.id not in player.quests:
-                        player.quests.append(quest.id)
-                        var gains = rules.award_xp(player,float(quest.xp))
-                        player.gold += int(quest.gold)
+                        var result=rules.actions.legacy_quest(player,quest)
+                        if not result.ok:continue
+                        var gains=result.levels
                         event("quest_completed",{"id":quest.id,"xp":quest.xp,"levels":gains})
                         notice("사냥 의뢰 완료! 경험치 %d, 금전 %d" % [quest.xp,quest.gold])
                         return
                 menu = "dialogue"
                 choices = ["5마리와 25마리 사냥 의뢰를 맡깁니다.","남쪽 사냥터 → 쥐굴 → 숲 → 깊은 동굴 → 폐허", "레벨 5부터 직업별 성장이 적용됩니다."]
             elif n.role == "revive":
-                player.hp = player.hp_max
-                player.mp = player.mp_max
+                rules.actions.recovery(player,player.hp_max,player.mp_max)
                 event("revived")
                 notice("성황이 체력과 마력을 회복해 주었습니다.")
             event("npc_dialogue",{"id":n.id,"role":n.role})
@@ -603,6 +679,35 @@ func open_inventory():
     choices = player.inventory.keys().filter(func(k):return int(player.inventory[k]) > 0)
 
 func handle_menu_key(key: int):
+    if menu=="services" and key in [KEY_ENTER,KEY_F] and not choices.is_empty():
+        work_service(choices[selected]);return
+    if menu=="quests" and key in [KEY_ENTER,KEY_F] and not choices.is_empty():
+        var id=str(choices[selected]);var progress=player.quest_progress.get(id,{})
+        var result=rules.actions.claim_quest(player,id) if progress.get("state","")=="ACTIVE" else rules.actions.accept_quest(player,id,content.definition(id))
+        event("work_quest",{"id":id,"result":result});notice("의뢰 상태를 처리했습니다." if result.ok else "의뢰 조건: "+result.error);return
+    if menu=="advancement" and key in [KEY_ENTER,KEY_F] and not choices.is_empty():
+        var id=str(choices[selected]);var definition=content.definition(id).duplicate(true)
+        definition.job=content.class_title(definition.get("class_id",player.job),rules)
+        var result=rules.actions.advance(player,id,definition)
+        event("work_advancement",{"id":id,"result":result});notice("승급: "+definition.get("name",id) if result.ok else "승급 조건: "+result.error);return
+    if menu=="equipment" and key in [KEY_E,KEY_ENTER,KEY_X,KEY_N] and not choices.is_empty():
+        var id=str(choices[selected]);var gear=player.equipment_instances[id]
+        if key==KEY_X:
+            for slot in player.equipment_slots.keys():
+                if player.equipment_slots[slot]==id:rules.actions.unequip(player,slot)
+        elif key==KEY_N:
+            enhancement_instance=id;menu="enhancement";selected=0
+            choices=content.by_kind("enhancement").filter(func(rule):return gear.definition_id in content.definition(rule).get("applicable_item_ids",[]))
+            if choices.is_empty():notice("이 장비에 전달된 강화 규칙이 없습니다.")
+        else:
+            var result=rules.actions.equip_instance(player,id)
+            event("equipment_instance_selected",{"instance_id":id,"result":result})
+        return
+    if menu=="enhancement" and key in [KEY_ENTER,KEY_N] and not choices.is_empty():
+        var id=str(choices[selected]);var definition=content.definition(id).duplicate(true);definition.id=id
+        var result=rules.actions.enhance(player,enhancement_instance,definition)
+        event("work_enhancement",{"rule_id":id,"instance_id":enhancement_instance,"result":result})
+        notice("강화 결과: "+result.get("outcome","") if result.ok else "강화 조건: "+result.error);return
     if menu=="compass" and key in [KEY_ENTER,KEY_F]:
         var town=maps.village
         var desired=[Vector2i(int(town.width)-3,int(town.height)/2),Vector2i(2,int(town.height)/2),Vector2i(int(town.width)/2,int(town.height)-3),Vector2i(int(town.width)/2,2)][selected]
@@ -635,6 +740,9 @@ func handle_menu_key(key: int):
         if key in [KEY_ENTER,KEY_B,KEY_V]:
             var buy = key != KEY_V
             var price = int(rules.value_or(rules.item(title),"vendor_buy_price" if buy else "vendor_sell_price",5 if buy else 1))
+            for offer in npc.get("work_offers",[]):
+                if offer.get("item_id","")==title:
+                    price=int(offer.get("buy_price",offer.get("price",price))) if buy else int(offer.get("sell_price",price))
             var success = rules.trade(player,title,1,price,buy)
             notice(("구매: " if buy else "판매: ")+title if success else "금전·수량·가방 조건을 확인하세요.")
             event("trade",{"item":title,"buy":buy,"success":success,"gold":player.gold})
@@ -647,10 +755,7 @@ func handle_menu_key(key: int):
             notice("토끼고기 요리 완료" if success else "토끼고기 1개와 금전 1전이 필요합니다.")
             event("crafted",{"success":success})
         elif key == KEY_H and npc.role == "inn":
-            if player.gold >= 5:
-                player.gold -= 5
-                player.hp = player.hp_max
-                player.mp = player.mp_max
+            if rules.actions.rest(player,5).ok:
                 notice("주막에서 쉬었습니다.")
                 event("rested")
     elif menu == "inventory" and choices.size() > 0:
@@ -686,11 +791,12 @@ func play_sound(kind: String):
 func snapshot() -> Dictionary:
     player.rng_state = str(rules.rng.state)
     return {"player":player.duplicate(true),"world":entities.duplicate(true),"loot":loot.duplicate(true),
-            "rng_state":str(rules.rng.state)}
+            "rng_state":str(rules.rng.state),"content_version":content.version,"game_build":"codex-core-1","save_format_version":Store.VERSION}
 
 func restore(state: Dictionary):
     var fresh_entities=entities.duplicate(true)
     player = state.player
+    rules.actions.ensure(player)
     if not player.has("visited"):player.visited=[player.map,"village"]
     entities = state.world
     if player.get("world_revision","authored-1")!=world.get("revision","authored-1"):
@@ -718,10 +824,19 @@ func restore(state: Dictionary):
     # Migrate our earlier generated spawn layout that overlapped a doorway.
     for id in entities:
         var e=entities[id]
+        if not maps.has(e.map):e.retired=true;continue
         for portal in maps[e.map].portals:
             if Vector2i(e.home_x,e.home_y)==Vector2i(portal.x,portal.y):e.home_y+=2
             if Vector2i(e.x,e.y)==Vector2i(portal.x,portal.y):e.y+=2
     loot = state.get("loot",[])
+    if not maps.has(player.map):
+        var home=world.get("home",{"map":"village","entry":maps.village.entry})
+        player.map=home.map;player.x=home.entry[0];player.y=home.entry[1]
+        event("safe_position_restored",{"reason":"MAP_UNAVAILABLE","progress_preserved":true})
+    var current=maps[player.map]
+    if player.x<0 or player.y<0 or player.x>=int(current.width) or player.y>=int(current.height) or current.blocked[int(player.y)][int(player.x)]:
+        player.x=int(current.entry[0]);player.y=int(current.entry[1])
+        event("safe_position_restored",{"reason":"MAP_BOUNDS_OR_COLLISION_CHANGED","progress_preserved":true})
     rules.rng.state = int(state.rng_state)
     step_progress = 1.0
     selected_target = ""
@@ -746,6 +861,17 @@ func save_game() -> bool:
     event("save_written",{"success":success,"sha256":FileAccess.get_sha256(save_path) if success else ""})
     return success
 
+func write_diagnostic(code: String):
+    var path=save_path.get_base_dir().path_join("diagnostics/latest.json")
+    DirAccess.make_dir_recursive_absolute(path.get_base_dir())
+    var f=FileAccess.open(path,FileAccess.WRITE)
+    if f==null:return
+    # One bounded local file; no full user save or secret is uploaded/packaged.
+    f.store_string(JSON.stringify({"code":code,"build":"codex-core-1","content_version":content.version,
+        "map_id":player.get("map",""),"rng_state":str(rules.rng.state),"recent_events":event_log.slice(maxi(0,event_log.size()-32)),
+        "rules_error":rules.actions.last_error,"save_error":store.last_error},"  "))
+    f.close();notice("오류 재현 기록을 개인 저장 폴더에 남겼습니다.")
+
 func label(text: String, pos: Vector2, size: int = 16, color: Color = Color(0.91,0.86,0.7)):
     draw_string(font,pos,text,HORIZONTAL_ALIGNMENT_LEFT,-1,size,color)
 
@@ -766,6 +892,10 @@ func box(rect: Rect2, color: Color = Color(0.13,0.12,0.1)):
     draw_rect(rect.grow(-4),Color(0.29,0.26,0.18),false,1)
 
 func draw_actor(key: String, frame: int, feet: Vector2, opacity: float = 1.0):
+    if content.records.has(key) and content.records[key].kind=="asset":
+        var meta=content.definition(key).get("metadata",{})
+        work_assets.draw_frame(self,key,int(meta.get("starting_frame",0))+frame,feet,opacity)
+        return
     var texture = assets.textures.get(key)
     if texture == null:
         return
@@ -807,10 +937,13 @@ func _draw():
     for drop in loot:
         if drop.map == map_id and Rect2(cam,Vector2(16,10)).has_point(Vector2(drop.x,drop.y)):
             icon(drop.item,screen_point(drop.x,drop.y))
+    for fx in effects:
+        if fx.has("work_asset"):work_assets.draw_effect(self,fx.work_asset,"back",int(fx.time*1000),screen_point(fx.x,fx.y),int(fx.lifetime_ms))
     var visible = []
-    for d in m.decorations:
-        if Rect2(cam,Vector2(16,10)).has_point(Vector2(d.x,d.y)):
-            visible.append({"type":"decoration","y":d.get("anchor_y",d.y),"data":d})
+    for row in range(int(cam.y),mini(int(m.height),int(cam.y)+10)):
+        for d in decoration_rows.get(map_id,{}).get(row,[]):
+            if Rect2(cam,Vector2(16,10)).has_point(Vector2(d.x,d.y)):
+                visible.append({"type":"decoration","y":d.get("anchor_y",d.y),"data":d})
     for n in m.npcs:
         visible.append({"type":"npc","y":n.y,"data":n})
     for id in entities:
@@ -834,20 +967,24 @@ func _draw():
             draw_player(pos)
             label(player.name,pos-Vector2(34,93),13,Color(1,0.95,0.75))
         else:
-            var key = str(e.kind)
-            var spec = assets.actor_data[key]
+            var key = visual_key(str(e.kind))
+            var spec = assets.actor_data.get(key,{"walk":3,"attack":2,"delay_ms":100})
             var direction = int(e.get("direction",2))
             var frame = direction*int(spec.walk)+int(clock*6)%int(spec.walk)
             if v.type=="monster" and float(e.get("attack_elapsed",-1))>=0 and int(spec.attack)>0:
                 frame=4*int(spec.walk)+direction*int(spec.attack)+mini(int(spec.attack)-1,int(float(e.attack_elapsed)*1000/maxi(1,int(spec.delay_ms))))
             var opacity = 0.7 if float(e.get("hurt",0)) > 0 else 1.0
-            draw_actor(key,frame,pos,opacity)
+            if content.records.has(key):work_assets.draw_animation(self,key,"attack" if float(e.get("attack_elapsed",-1))>=0 else "walk",direction,int((e.get("attack_elapsed",clock))*1000),pos,opacity)
+            else:draw_actor(key,frame,pos,opacity)
             var title = e.name if v.type == "npc" else e.spec.name
             label(title,pos-Vector2(28,90),13,Color(0.9,0.9,0.65))
             if v.type == "monster" and (e.provoked or selected_target == e.id):
                 draw_rect(Rect2(pos-Vector2(16,85),Vector2(32,3)),Color(0.15,0.1,0.1))
                 draw_rect(Rect2(pos-Vector2(16,85),Vector2(32*maxf(0,float(e.hp)/float(e.spec.values.hp)),3)),Color(0.75,0.25,0.15))
     for fx in effects:
+        if fx.has("work_asset"):
+            work_assets.draw_effect(self,fx.work_asset,"front",int(fx.time*1000),screen_point(fx.x,fx.y),int(fx.lifetime_ms))
+            continue
         var spec=assets.actor_data.get(fx.key,{})
         var durations=spec.get("delays_ms",[])
         var elapsed=fx.time*1000;var frame=0
@@ -897,7 +1034,7 @@ func draw_player(pos: Vector2):
         var spec=assets.actor_data.innkeeper
         draw_actor("innkeeper",direction*int(spec.walk)+int(clock*6)%int(spec.walk),pos)
         return
-    var binding=assets.actor_data.get("equipment_bindings",{}).get(player.equipped,{"sprite":"wood_weapon","motion":"sword"})
+    var binding=rules.visual_bindings.get(player.equipped,assets.actor_data.get("equipment_bindings",{}).get(player.equipped,{"sprite":"wood_weapon","motion":"sword"}))
     var motion=assets.actor_data.get("motion_bindings",{})
     var body_frame = direction*3+(int(clock*10)%3 if step_progress < 1 else 1)
     var weapon_frame = body_frame
@@ -911,8 +1048,9 @@ func draw_player(pos: Vector2):
     var opacity = 0.72 if hurt_time > 0 else 1.0
     if player.buffs.get("무영보법",0)>0:opacity*=0.35
     var body_key="body_"+str(job)
-    var worn=assets.actor_data.get("equipment_bindings",{}).get(player.get("armor_equipped",""),{})
+    var worn=rules.visual_bindings.get(player.get("armor_equipped",""),assets.actor_data.get("equipment_bindings",{}).get(player.get("armor_equipped",""),{}))
     if worn.has("sprites"):body_key=worn.sprites[job]
+    elif worn.has("sprite"):body_key=worn.sprite
     for layer in order:
         if layer == "b":
             draw_actor(body_key,body_frame,pos,opacity)
@@ -954,7 +1092,7 @@ func draw_hud():
 
 func draw_menu():
     box(Rect2(164,106,536,398),Color(0.12,0.13,0.11))
-    var heading = {"shop":"물품 거래","trainer":"기술 수련","inventory":"보유 물품","dialogue":"안내","pause":"여정 저장","travel":"길 안내","map":"지역 목록","compass":"비영사천문","skills":"배운 기술"}.get(menu,menu)
+    var heading = {"shop":"물품 거래","trainer":"기술 수련","inventory":"보유 물품","dialogue":"안내","pause":"여정 저장","travel":"길 안내","map":"지역 목록","compass":"비영사천문","skills":"배운 기술","equipment":"개별 장비 · E 장착 / X 해제 / N 강화","enhancement":"개인용 확장 강화 규칙","services":"NPC 서비스","quests":"의뢰 시작 · 조건 완료 후 보상","advancement":"승급 조건 확인","save_error":"저장 오류 · 원본 보존 · Q 종료"}.get(menu,menu)
     label(heading,Vector2(191,144),22,Color(1,0.88,0.5))
     if menu == "pause":
         label("Enter: 계속하기 · Q: 게임 종료",Vector2(194,205),18)
@@ -962,7 +1100,11 @@ func draw_menu():
     var start = maxi(0,selected-4)
     for j in range(start,mini(choices.size(),start+8)):
         var y = 184+(j-start)*31
-        var title = str(choices[j])
+        var title = rules.display_name(str(choices[j]))
+        if menu=="services":title=choices[j].get("name",choices[j].get("type","서비스"))
+        if menu=="equipment":
+            var gear=player.equipment_instances[choices[j]]
+            title=rules.display_name(gear.definition_id)+" +"+str(int(gear.enhancement_level))+" ["+str(gear.id)+"]"
         if menu=="travel":title=maps[title].name
         if j == selected:
             draw_rect(Rect2(184,y-21,496,29),Color(0.32,0.29,0.16))
@@ -991,3 +1133,29 @@ func start_exercise():
     var runner = load("res://exercise.gd").new()
     add_child(runner)
     await runner.run(self,test_mode,test_root)
+
+func visual_key(id: String) -> String:
+    var definition=rules.runtime_definitions.get(id,{}).get("data",{})
+    return definition.get("visual",{}).get("asset_id",definition.get("visual",{}).get("legacy_sprite",id))
+
+func work_service(service):
+    if typeof(service)!=TYPE_DICTIONARY:
+        notice("서비스 정의가 구조화되지 않았습니다.");event("service_error",{"code":"SERVICE_FORMAT"});return
+    var kind=service.get("type","")
+    selected=0
+    if kind=="shop":
+        var shop=content.definition(service.get("shop_id",""))
+        if shop.get("currency","gold")!="gold":notice("미지원 통화: "+str(shop.currency));return
+        npc.work_offers=shop.get("offers",[]);menu="shop";choices=npc.work_offers.map(func(o):return o.item_id)
+    elif kind in ["quest","quests"]:menu="quests";choices=service.get("quest_ids",[]).duplicate()
+    elif kind in ["trainer","skill","skills"]:menu="trainer";choices=service.get("skill_ids",[]).duplicate()
+    elif kind=="advancement":menu="advancement";choices=service.get("advancement_ids",[]).duplicate()
+    elif kind in ["travel","teleport"]:menu="travel";choices=service.get("map_ids",[]).duplicate()
+    elif kind=="enhancement":menu="equipment";choices=player.equipment_instances.keys().filter(func(id):return not player.equipment_instances[id].destroyed)
+    elif kind in ["heal","revive","rest"]:
+        var result=rules.actions.rest(player,int(service.get("gold_cost",0)))
+        event("work_rest",{"result":result});notice("체력과 마력을 회복했습니다." if result.ok else result.error);menu=""
+    elif kind=="dialogue":menu="dialogue";choices=service.get("lines",[]).duplicate()
+    else:
+        event("service_error",{"code":"UNKNOWN_SERVICE","type":kind,"npc_id":npc.get("definition_id",npc.id)})
+        notice("아직 연결되지 않은 서비스: "+kind)

@@ -69,6 +69,9 @@ def execute(args):
                     subprocess.run(["git", "fetch", "origin", source], cwd=repository, check=True)
                 destination = Path(temp) / sha((source + path).encode())
                 package, schema_root = snapshot_package(repository, source, path, destination)
+                if entry.get('manifest_sha256')!=sha((package/'manifest.json').read_bytes()):
+                    raise IntakeError('CONFLICT','HANDOFF_MANIFEST_HASH','Index pin and fixed package manifest disagree',file=path,
+                                      expected=entry.get('manifest_sha256'),current=sha((package/'manifest.json').read_bytes()))
                 receipt = store.import_package(package, source, game_commit, schema_root=schema_root)
                 receipt.update(work_head=commit, handoff_index_sha256=sha(index_data), protocol_document_sha256=sha(protocol))
             except IntakeError as error:
