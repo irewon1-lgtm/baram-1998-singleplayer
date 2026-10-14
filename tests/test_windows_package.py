@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 import struct
 import tempfile
+from types import SimpleNamespace
 import unittest
 import zipfile
 
@@ -114,6 +115,42 @@ class WindowsPackagingTests(unittest.TestCase):
         path.write_bytes(raw)
         with self.assertRaisesRegex(ValueError,"AMD64"):
             package.pe_info(path)
+
+    def finalization_fixture(self, report_status, game_build="fixed-code"):
+        source=self.root/"initial"
+        source.mkdir()
+        (source/"payload").write_bytes(b"immutable")
+        manifest=dict(build=dict(commit="fixed-code",content_version="fixed-content"),
+                      files=[dict(path="payload",bytes=9,sha256=package.sha256(source/"payload"))])
+        package.json_write(source/"PACKAGE_MANIFEST.json",manifest)
+        initial=self.root/"initial.zip"
+        with zipfile.ZipFile(initial,"w") as z:
+            z.write(source/"payload","payload")
+        package.json_write(self.root/"build.json",dict(stage=str(source),archive=str(initial),sha256=package.sha256(initial)))
+        package.json_write(self.root/"game.json",dict(status="PASS_EXECUTED_SCREEN_INPUT",game_build=game_build,
+                                                     content_version="fixed-content",checks=[dict(status="PASS",name="input")]))
+        run=dict(exit_code=0,game_report=str(self.root/"game.json"),mode="work-core",x11_captures=[dict(status="PASS")],audio_mix=dict(status="PASS_PCM_SIGNAL"))
+        package.json_write(self.root/"evidence.json",dict(status=report_status,runs=[run]))
+        return SimpleNamespace(build_report=str(self.root/"build.json"),evidence_report=[str(self.root/"evidence.json")],
+                               out=str(self.root/"final"),report=str(self.root/"final-report.json"))
+
+    def test_finalization_refuses_unexecuted_or_generic_pass(self):
+        args=self.finalization_fixture("PASS")
+        with self.assertRaisesRegex(ValueError,"actually executed"):
+            package.finalize(args)
+        self.assertFalse((self.root/"final").exists())
+
+    def test_finalization_refuses_evidence_from_other_game_build(self):
+        args=self.finalization_fixture("PASS_EXECUTED_SCREEN_INPUT_AND_RESTART",game_build="other-code")
+        with self.assertRaisesRegex(ValueError,"does not match frozen game"):
+            package.finalize(args)
+        self.assertFalse((self.root/"final").exists())
+
+    def test_finalization_requires_actual_pickup_and_restart_modes(self):
+        args=self.finalization_fixture("PASS_EXECUTED_SCREEN_INPUT_AND_RESTART")
+        with self.assertRaisesRegex(ValueError,"actual pickup"):
+            package.finalize(args)
+        self.assertFalse((self.root/"final").exists())
 
 
 if __name__ == "__main__":

@@ -157,6 +157,83 @@ def json_write(path, value):
     Path(path).write_text(json.dumps(value, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
 
 
+def write_archive(stage, archive):
+    with zipfile.ZipFile(archive, "x", zipfile.ZIP_DEFLATED, compresslevel=6) as z:
+        for path in sorted(stage.rglob("*")):
+            if path.is_file():
+                z.write(path, PACKAGE_NAME+"/"+str(path.relative_to(stage)))
+    with zipfile.ZipFile(archive) as z:
+        if z.testzip():
+            raise ValueError("Windows ZIP CRC failed")
+
+
+def finalize(args):
+    """Create a fresh delivery copy after executed checks; never invent a native PASS."""
+    original = json.loads(Path(args.build_report).read_text(encoding="utf-8"))
+    archive = Path(original["archive"])
+    source = Path(original["stage"])
+    if sha256(archive) != original["sha256"]:
+        raise ValueError("Initial Windows ZIP changed")
+    manifest = json.loads((source/"PACKAGE_MANIFEST.json").read_text(encoding="utf-8"))
+    for row in manifest["files"]:
+        member = source/str(safe_path(row["path"]))
+        if member.stat().st_size != row["bytes"] or sha256(member) != row["sha256"]:
+            raise ValueError("Initial player files changed: "+row["path"])
+    evidence = []
+    modes = set()
+    for report_path in args.evidence_report:
+        report = json.loads(Path(report_path).read_text(encoding="utf-8"))
+        if report.get("status") != "PASS_EXECUTED_SCREEN_INPUT_AND_RESTART":
+            raise ValueError("Requires actually executed GUI checks and fresh-process restart")
+        runs = []
+        for run in report["runs"]:
+            game = json.loads(Path(run["game_report"]).read_text(encoding="utf-8"))
+            if (run["exit_code"] != 0 or game["status"] != "PASS_EXECUTED_SCREEN_INPUT"
+                    or game["game_build"] != manifest["build"]["commit"]
+                    or game["content_version"] != manifest["build"]["content_version"]
+                    or any(c["status"] != "PASS" for c in game["checks"])
+                    or not run["x11_captures"]
+                    or any(c["status"] != "PASS" for c in run["x11_captures"])):
+                raise ValueError("Evidence does not match frozen game or contains failure")
+            modes.add(run["mode"])
+            runs.append(dict(mode=run["mode"], checks=len(game["checks"]),
+                             check_names=[c["name"] for c in game["checks"]],
+                             report_sha256=sha256(run["game_report"]),
+                             screen_checks=len(run["x11_captures"]),
+                             audio_mix=run["audio_mix"]["status"]))
+        evidence.append(dict(file=Path(report_path).name, sha256=sha256(report_path),
+                             status=report["status"], platform="LINUX_GODOT_READS_EMBEDDED_PCK_NOT_WINDOWS_PE_EXECUTION", runs=runs))
+    if not {"work-core", "work-restart", "windows-loot", "windows-loot-restart"} <= modes:
+        raise ValueError("Missing baseline input, actual pickup, or restart evidence")
+    output = Path(args.out).resolve()
+    output.mkdir(parents=True, exist_ok=True)
+    stage = output/PACKAGE_NAME
+    if stage.exists():
+        raise ValueError("Preserve prior player package; choose fresh output")
+    shutil.copytree(source, stage)
+    checks = json.loads((stage/"실행검증.json").read_text(encoding="utf-8"))
+    checks.update(linux_exported_pck_execution="PASS", windows_native_execution="NOT_RUN",
+                  controls_combat_npc_loot_restart="PASS_LINUX_EMBEDDED_PCK_ONLY",
+                  tested_exe_sha256=sha256(stage/PLAYER_NAME), evidence=evidence)
+    json_write(stage/"실행검증.json", checks)
+    manifest.update(windows_native_execution="NOT_RUN", linux_embedded_pck_checks="PASS",
+                    finalization_commit=subprocess.check_output(["git","rev-parse","HEAD"],cwd=ROOT,text=True).strip(),
+                    delivery="NOT_DELIVERED", evidence=evidence,
+                    files=[dict(path=str(p.relative_to(stage)), bytes=p.stat().st_size, sha256=sha256(p))
+                           for p in sorted(stage.rglob("*")) if p.is_file() and p != stage/"PACKAGE_MANIFEST.json"])
+    json_write(stage/"PACKAGE_MANIFEST.json",manifest)
+    target=output/(PACKAGE_NAME+".zip")
+    write_archive(stage,target)
+    result=dict(status="PASS_PACKAGING_AND_LINUX_EMBEDDED_PCK_CHECKS", archive=str(target),
+                bytes=target.stat().st_size, sha256=sha256(target), stage=str(stage),
+                build=manifest["build"], packager_commit=manifest["packager_commit"],
+                finalization_commit=manifest["finalization_commit"],
+                private_equivalence=manifest["private_equivalence"],
+                windows_native_execution="NOT_RUN", delivery="NOT_DELIVERED", evidence=evidence)
+    json_write(args.report,result)
+    print(json.dumps(result,ensure_ascii=False))
+
+
 def build(args):
     branch = subprocess.check_output(["git", "branch", "--show-current"], cwd=ROOT, text=True).strip()
     commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
@@ -248,13 +325,7 @@ texture_format/etc2_astc=false
                            for p in sorted(stage.rglob("*")) if p.is_file()])
     json_write(stage/"PACKAGE_MANIFEST.json", manifest)
     archive = output/(PACKAGE_NAME+".zip")
-    with zipfile.ZipFile(archive, "x", zipfile.ZIP_DEFLATED, compresslevel=6) as z:
-        for path in sorted(stage.rglob("*")):
-            if path.is_file():
-                z.write(path, PACKAGE_NAME+"/"+str(path.relative_to(stage)))
-    with zipfile.ZipFile(archive) as z:
-        if z.testzip():
-            raise ValueError("Windows ZIP CRC failed")
+    write_archive(stage, archive)
     report = dict(status="PASS_WINDOWS_X64_EXPORT_NOT_NATIVE_EXECUTION", archive=str(archive),
                   bytes=archive.stat().st_size, sha256=sha256(archive), stage=str(stage),
                   project=str(project), verification_pck=str(output/"verification-only.pck"),
@@ -266,7 +337,18 @@ texture_format/etc2_astc=false
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--finalize", action="store_true", help="Repackage only after executed embedded-PCK GUI reports")
+    parser.add_argument("--build-report")
+    parser.add_argument("--evidence-report", action="append", default=[])
     for option in ("source", "source-sha256", "template", "template-sha256", "out", "report"):
-        parser.add_argument("--"+option, required=True)
+        parser.add_argument("--"+option, required=option in ("out","report"))
     parser.add_argument("--godot", default="/usr/local/bin/godot")
-    build(parser.parse_args())
+    options=parser.parse_args()
+    if options.finalize:
+        if not options.build_report or not options.evidence_report:
+            parser.error("Finalization requires --build-report and --evidence-report")
+        finalize(options)
+    else:
+        if any(not getattr(options,key) for key in ("source","source_sha256","template","template_sha256")):
+            parser.error("Build requires SHA-pinned --source and --template")
+        build(options)
