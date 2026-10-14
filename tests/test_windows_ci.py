@@ -4,6 +4,8 @@ import json
 import os
 import sys
 import tempfile
+import subprocess
+import time
 from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
@@ -32,8 +34,17 @@ class WindowsCIGates(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'Public repository'):windows_ci.archive(self.args)
     def test_unknown_files_and_saves_cannot_enter_runtime(self):
         for name in ['private_assets','private_content','licenses']:(self.out/name).mkdir()
-        windows_ci.write_json(self.out/'PACKAGE_MANIFEST.json',{'files':[]})
+        windows_ci.write_json(self.out/'PACKAGE_MANIFEST.json',{'files':[],'private_only':True,'contains_user_saves':False})
         (self.out/'private_assets/unknown.png').write_bytes(b'new')
         with self.assertRaisesRegex(ValueError,'membership'):windows_ci.validate_runtime(self.out)
+    @unittest.skipUnless(os.name=='nt','Windows process memory API')
+    def test_windows_memory_monitor_observes_a_real_child(self):
+        child=subprocess.Popen([sys.executable,'-c','import time; time.sleep(2)'])
+        try:
+            samples=[]
+            for _ in range(10):
+                samples.append(windows_ci.process_rss(child.pid));time.sleep(.05)
+            self.assertGreater(max(samples),1024*1024)
+        finally:child.terminate();child.wait()
 
 if __name__=='__main__':unittest.main()

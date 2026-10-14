@@ -41,6 +41,8 @@ def command(args, log, timeout=300):
 
 def validate_runtime(runtime):
     metadata = json.loads((runtime/'PACKAGE_MANIFEST.json').read_text(encoding='utf-8'))
+    if metadata.get('private_only') is not True or metadata.get('contains_user_saves') is not False:
+        raise ValueError('Runtime must be private and contain no user saves')
     rows = [x for x in metadata['files'] if x['path'].startswith(('private_assets/', 'private_content/', 'licenses/'))]
     expected = {x['path'] for x in rows}
     actual = {p.relative_to(runtime).as_posix() for f in ['private_assets','private_content','licenses']
@@ -160,7 +162,10 @@ def run_probe(args, stage, mode, evidence, save):
     report=json.loads((evidence/(mode+'-report.json')).read_text(encoding='utf-8'))
     if report['status']!='PASS' or any(c['status']!='PASS' for c in report['checks']):raise RuntimeError('Game checks failed')
     if ready is None or ready['elapsed_ms']>60000:raise RuntimeError('Missing/tardy ready marker')
-    return {'mode':mode,'status':'PASS','platform':report['platform'],'peak_rss_bytes':peak,
+    if os.name=='nt' and peak==0:raise RuntimeError('Windows memory monitor returned no evidence')
+    return {'mode':mode,'status':'PASS','platform':report['platform'],'peak_rss_bytes':peak if peak else None,
+            'rss_monitoring':'PASS' if peak else 'BLOCKED_LINUX_PID_NAMESPACE',
+            'engine_static_memory_bytes':ready['static_memory'],
             'wall_seconds':round(time.monotonic()-start,3),'startup':ready,
             'checks':[c['name'] for c in report['checks']],'game_build':report['game_build']}
 
