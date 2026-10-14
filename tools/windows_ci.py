@@ -133,7 +133,10 @@ texture_format/etc2_astc=false
 def run_probe(args, stage, mode, evidence, save, windowed=False):
     exe = stage/EXE
     if os.name=='nt':
-        cmd=[str(exe)] if windowed else [str(exe),'--headless']
+        # Hosted runners have no WASAPI output device. Select Dummy explicitly
+        # for this automated process; the shipped EXE keeps its normal driver.
+        cmd=[str(exe),'--audio-driver','Dummy']
+        if not windowed:cmd.append('--headless')
     else:
         if not args.godot:raise ValueError('Linux verification requires --godot')
         cmd=[args.godot,'--headless','--main-pack',str(exe)]
@@ -167,8 +170,10 @@ def run_probe(args, stage, mode, evidence, save, windowed=False):
         raise RuntimeError('Normal Windows EXE did not prove a rendered game frame')
     return {'mode':mode,'status':'PASS','platform':report['platform'],'peak_rss_bytes':peak if peak else None,
             'execution_mode':'WINDOWED_EXE' if windowed else 'HEADLESS_EXE',
+            'audio_output':'NOT_TESTED_CI_DUMMY_NO_AUDIO_DEVICE',
             'rss_monitoring':'PASS' if peak else 'BLOCKED_LINUX_PID_NAMESPACE',
-            'engine_static_memory_bytes':ready['static_memory'],
+            'engine_static_memory_bytes':ready['static_memory'] or None,
+            'engine_static_memory_monitoring':'OBSERVED' if ready['static_memory'] else 'UNAVAILABLE_ENGINE_BUILD',
             'wall_seconds':round(time.monotonic()-start,3),'startup':ready,
             'checks':[c['name'] for c in report['checks']],'game_build':report['game_build']}
 
