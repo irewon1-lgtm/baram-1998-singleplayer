@@ -1,0 +1,37 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"urn:baram:content:1",
+  "title":"BARAM_CONTENT_PACKAGE schema 1 record",
+  "type":"object",
+  "required":["id","kind","operation","data","references","provenance_refs","source_mode"],
+  "properties":{
+    "id":{"type":"string","pattern":"^wk\\.[a-z_]+\\.[a-zA-Z0-9_.-]+$"},
+    "kind":{"enum":["asset","item","monster","map","npc","shop","skill","quest","growth","class","advancement","drop_group","enhancement","recipe","economy"]},
+    "operation":{"enum":["add","propose_patch"]},
+    "source_mode":{"enum":["ORIGINAL","AVERAGED","INFERRED","DERIVED"]},
+    "data":{"type":"object"},
+    "references":{"type":"array","items":{"type":"object","required":["role","id"],"properties":{"role":{"type":"string"},"id":{"type":"string"},"selector":{"type":"object"}}}},
+    "provenance_refs":{"type":"array","minItems":1,"items":{"type":"string"}},
+    "target_id":{"type":"string"},
+    "base_game_commit":{"type":"string","pattern":"^[0-9a-f]{40}$"},
+    "changes":{"type":"array","minItems":1,"items":{"type":"object","required":["path","before","after","reason","provenance_ref"],"properties":{"path":{"type":"string"},"before":{"type":"object","required":["exists"],"properties":{"exists":{"type":"boolean"},"value":{}}},"after":{},"reason":{"type":"string"},"provenance_ref":{"type":"string"}}}},
+    "field_provenance":{"type":"object"}
+  },
+  "kind_required_data":{
+    "asset":["name","asset_type","acquisition","frame_count","metadata","semantic_status"],
+    "item":["name","item_type","slot","requirements","stats","stack_limit","prices","flags","use_effects","visual","acquisition"],
+    "monster":["name","level","hp","mp","attack","armor_class","experience","gold","behavior","visual","drop_group_id","spawn_rules"],
+    "map":["name","width","height","tile_size_px","coordinate_system","layers","collision","entry","portals","spawns","npc_placements","recommended_level","layout_acquisition"],
+    "npc":["name","visual","dialogue","services","placements","interaction_range_tiles"],
+    "shop":["name","npc_id","offers","currency","sell_policy"],
+    "skill":["name","class_ids","learn","target","range_tiles","aoe_radius_tiles","effects","cost","cooldown_ms","duration_ms","success_ratio","animation","historical_status"],
+    "quest":["name","start_npc_id","complete_npc_id","requirements","prerequisites","objectives","consume","rewards","repeat","completion_key"],
+    "growth":["name","class_id","level","terminal","exp_to_next","cumulative_exp","hp_gain","mp_gain","base_armor_class"],
+    "class":["name","starter","growth_ids","skill_ids","advancement_ids","visual"],
+    "advancement":["name","class_id","rank","conditions","npc_id","quest_id","granted_skill_ids","next_rank_id"],
+    "drop_group":["name","mode","rolls"],
+    "enhancement":["name","extension","default_enabled","applicable_item_ids","stages"],
+    "recipe":["name","npc_id","consume","outputs","gold_cost","success_ratio"],
+    "economy":["name","currency","vendor_rules","experience_exchange"]
+  }
+}
