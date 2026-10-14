@@ -1,0 +1,3844 @@
+{
+  "audio_events": [
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 5.264591,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "playing": true,
+      "time": 5.510306,
+      "voice": "attack"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 5.510306,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 6.26039199999999,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "playing": true,
+      "time": 6.27566977777777,
+      "voice": "attack"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 6.27566977777777,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 8.53876477777778,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 8.53876477777778,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "playing": true,
+      "time": 8.78721000000001,
+      "voice": "attack"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 8.78721000000001,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 9.53472222222224,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "playing": true,
+      "time": 9.5527777777778,
+      "voice": "attack"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 9.5527777777778,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "playing": true,
+      "time": 10.361574,
+      "voice": "attack"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 10.361574,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 10.5387160952381,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 10.5387160952381,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "playing": true,
+      "time": 11.1319444444445,
+      "voice": "attack"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 11.1319444444445,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 11.5547613333334,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 11.5547613333334,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "playing": true,
+      "time": 11.9403703703704,
+      "voice": "attack"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 11.9403703703704,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 12.5672323333334,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 12.5672323333334,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "playing": true,
+      "time": 12.7020103333334,
+      "voice": "attack"
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "playing": true,
+      "time": 13.489273,
+      "voice": "attack"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 13.489273,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 13.5694083333334,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 13.5694083333334,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "playing": true,
+      "time": 14.2707980000001,
+      "voice": "attack"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 14.2707980000001,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 14.588069888889,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 15.7577363333334,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 16.4750000000001,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 19.2940663333336,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 19.4842730000003,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "playing": true,
+      "time": 19.5583920000003,
+      "voice": "attack"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 19.5583920000003,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 20.3094220000003,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "playing": true,
+      "time": 20.3439690000003,
+      "voice": "attack"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 20.3439690000003,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 20.486666666667,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 20.6907568787882,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 27.7756760000006,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "playing": true,
+      "time": 28.047621333334,
+      "voice": "attack"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 28.774386333334,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "playing": true,
+      "time": 28.811886333334,
+      "voice": "attack"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 28.811886333334,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "playing": true,
+      "time": 29.5782270000007,
+      "voice": "attack"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 29.5782270000007,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 30.3708950000006,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 34.6411393333338,
+      "voice": "hit"
+    }
+  ],
+  "checks": [
+    {
+      "name": "tour_reuses_labeled_saved_fixture",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "tour_resume_return_home",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "tour_resume_field",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "cleared_walk_source_region_cave",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_tour-cave",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "cleared_walk_source_region_bat_den",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_tour-bat_den",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "cleared_walk_source_region_cave",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_tour-cave",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "cleared_walk_source_region_field",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_tour-field",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "cleared_walk_source_region_forest",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_tour-forest",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "cleared_walk_source_region_deep",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_tour-deep",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "cleared_walk_source_region_ruins",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_tour-ruins",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "actual_dungeon_combat_clears_path",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "source_monster_attack_motion_triggered",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_content-saved",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "engine_audio_mix_recorded",
+      "observed": {
+
+      },
+      "status": "PASS"
+    }
+  ],
+  "elapsed_ms": 36113,
+  "events": [
+    {
+      "details": {
+        "equipped": "철검",
+        "level": 30,
+        "map": "foraged"
+      },
+      "event": "save_restored",
+      "time": 0.0
+    },
+    {
+      "details": {
+        "loaded_save": true,
+        "registered_tiles": 50104,
+        "renderer": "gl_compatibility"
+      },
+      "event": "ready",
+      "time": 0.0
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 0.147
+    },
+    {
+      "details": {
+        "id": "foraged-travel-0",
+        "role": "travel"
+      },
+      "event": "npc_dialogue",
+      "time": 0.147
+    },
+    {
+      "details": {
+        "map": "village",
+        "x": 59,
+        "y": 152
+      },
+      "event": "map_changed",
+      "time": 0.274
+    },
+    {
+      "details": {
+        "classification": "SINGLEPLAYER_COMPLETION",
+        "destination": "village"
+      },
+      "event": "guide_travel",
+      "time": 0.274
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 59,
+        "y": 153
+      },
+      "event": "moved",
+      "time": 0.357
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 59,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 0.591
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 60,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 0.83
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 61,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 1.063
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 62,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 1.294
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 63,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 1.551
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 64,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 1.782
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 65,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 2.019
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 66,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 2.257
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 67,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 2.492
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 2.724
+    },
+    {
+      "details": {
+        "id": "village-travel-3",
+        "role": "travel"
+      },
+      "event": "npc_dialogue",
+      "time": 2.757
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 30,
+        "y": 56
+      },
+      "event": "map_changed",
+      "time": 2.846
+    },
+    {
+      "details": {
+        "classification": "SINGLEPLAYER_COMPLETION",
+        "destination": "field"
+      },
+      "event": "guide_travel",
+      "time": 2.846
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "field",
+        "x": 30,
+        "y": 57
+      },
+      "event": "moved",
+      "time": 2.914
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 31,
+        "y": 57
+      },
+      "event": "moved",
+      "time": 3.146
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 32,
+        "y": 57
+      },
+      "event": "moved",
+      "time": 3.382
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 33,
+        "y": 57
+      },
+      "event": "moved",
+      "time": 3.627
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 34,
+        "y": 57
+      },
+      "event": "moved",
+      "time": 3.861
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "field",
+        "x": 34,
+        "y": 56
+      },
+      "event": "moved",
+      "time": 4.101
+    },
+    {
+      "details": {
+        "map": "cave",
+        "x": 10,
+        "y": 16
+      },
+      "event": "map_changed",
+      "time": 4.101
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "cave",
+        "x": 10,
+        "y": 17
+      },
+      "event": "moved",
+      "time": 4.603
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "cave",
+        "x": 10,
+        "y": 18
+      },
+      "event": "moved",
+      "time": 4.842
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 11,
+        "y": 18
+      },
+      "event": "moved",
+      "time": 5.081
+    },
+    {
+      "details": {
+        "direction": 1,
+        "id": "cave-5",
+        "impact_ms": 160,
+        "source_attack_frames": 1.0
+      },
+      "event": "monster_attack_started",
+      "time": 5.096
+    },
+    {
+      "details": {
+        "attacker": "cave-5",
+        "damage": 11,
+        "hp": 1256
+      },
+      "event": "player_hit",
+      "time": 5.265
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "turned",
+      "time": 5.316
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "cave-5"
+      },
+      "event": "attack_started",
+      "time": 5.347
+    },
+    {
+      "details": {
+        "damage": 58,
+        "hp": 16.0,
+        "impact_time": 0.163428333333333,
+        "skill": "",
+        "source": "melee",
+        "target": "cave-5"
+      },
+      "event": "damage_applied",
+      "time": 5.51
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "turned",
+      "time": 6.082
+    },
+    {
+      "details": {
+        "direction": 1,
+        "id": "cave-5",
+        "impact_ms": 160,
+        "source_attack_frames": 1.0
+      },
+      "event": "monster_attack_started",
+      "time": 6.097
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "cave-5"
+      },
+      "event": "attack_started",
+      "time": 6.114
+    },
+    {
+      "details": {
+        "attacker": "cave-5",
+        "damage": 14,
+        "hp": 1242
+      },
+      "event": "player_hit",
+      "time": 6.26
+    },
+    {
+      "details": {
+        "damage": 73,
+        "hp": -57.0,
+        "impact_time": 0.161780888888889,
+        "skill": "",
+        "source": "melee",
+        "target": "cave-5"
+      },
+      "event": "damage_applied",
+      "time": 6.276
+    },
+    {
+      "details": {
+        "drops": [],
+        "gold": 20,
+        "id": "cave-5",
+        "level": 30,
+        "xp": 250.0
+      },
+      "event": "monster_killed",
+      "time": 6.276
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 12,
+        "y": 18
+      },
+      "event": "moved",
+      "time": 6.886
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 13,
+        "y": 18
+      },
+      "event": "moved",
+      "time": 7.124
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 14,
+        "y": 18
+      },
+      "event": "moved",
+      "time": 7.364
+    },
+    {
+      "details": {
+        "map": "bat_den",
+        "x": 10,
+        "y": 16
+      },
+      "event": "map_changed",
+      "time": 7.364
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "bat_den",
+        "x": 9,
+        "y": 16
+      },
+      "event": "moved",
+      "time": 7.865
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "bat_den",
+        "x": 9,
+        "y": 15
+      },
+      "event": "moved",
+      "time": 8.106
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "bat_den",
+        "x": 8,
+        "y": 15
+      },
+      "event": "moved",
+      "time": 8.343
+    },
+    {
+      "details": {
+        "direction": 3,
+        "id": "bat_den-1",
+        "impact_ms": 160,
+        "source_attack_frames": 0.0
+      },
+      "event": "monster_attack_started",
+      "time": 8.363
+    },
+    {
+      "details": {
+        "direction": 2,
+        "id": "bat_den-2",
+        "impact_ms": 160,
+        "source_attack_frames": 0.0
+      },
+      "event": "monster_attack_started",
+      "time": 8.363
+    },
+    {
+      "details": {
+        "attacker": "bat_den-1",
+        "damage": 9,
+        "hp": 1233
+      },
+      "event": "player_hit",
+      "time": 8.539
+    },
+    {
+      "details": {
+        "attacker": "bat_den-2",
+        "damage": 8,
+        "hp": 1225
+      },
+      "event": "player_hit",
+      "time": 8.539
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 8.578
+    },
+    {
+      "details": {
+        "direction": 0,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "bat_den-2"
+      },
+      "event": "attack_started",
+      "time": 8.617
+    },
+    {
+      "details": {
+        "damage": 102,
+        "hp": 648.0,
+        "impact_time": 0.170667444444444,
+        "skill": "",
+        "source": "melee",
+        "target": "bat_den-2"
+      },
+      "event": "damage_applied",
+      "time": 8.787
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 9.355
+    },
+    {
+      "details": {
+        "direction": 3,
+        "id": "bat_den-1",
+        "impact_ms": 160,
+        "source_attack_frames": 0.0
+      },
+      "event": "monster_attack_started",
+      "time": 9.373
+    },
+    {
+      "details": {
+        "direction": 2,
+        "id": "bat_den-2",
+        "impact_ms": 160,
+        "source_attack_frames": 0.0
+      },
+      "event": "monster_attack_started",
+      "time": 9.373
+    },
+    {
+      "details": {
+        "direction": 0,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "bat_den-2"
+      },
+      "event": "attack_started",
+      "time": 9.392
+    },
+    {
+      "details": {
+        "attacker": "bat_den-1",
+        "damage": 8,
+        "hp": 1217
+      },
+      "event": "player_hit",
+      "time": 9.535
+    },
+    {
+      "details": {
+        "damage": 141,
+        "hp": 507.0,
+        "impact_time": 0.161243888888888,
+        "skill": "",
+        "source": "melee",
+        "target": "bat_den-2"
+      },
+      "event": "damage_applied",
+      "time": 9.553
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 10.142
+    },
+    {
+      "details": {
+        "direction": 0,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "bat_den-2"
+      },
+      "event": "attack_started",
+      "time": 10.187
+    },
+    {
+      "details": {
+        "damage": 107,
+        "hp": 400.0,
+        "impact_time": 0.174907333333334,
+        "skill": "",
+        "source": "melee",
+        "target": "bat_den-2"
+      },
+      "event": "damage_applied",
+      "time": 10.362
+    },
+    {
+      "details": {
+        "direction": 3,
+        "id": "bat_den-1",
+        "impact_ms": 160,
+        "source_attack_frames": 0.0
+      },
+      "event": "monster_attack_started",
+      "time": 10.375
+    },
+    {
+      "details": {
+        "direction": 2,
+        "id": "bat_den-2",
+        "impact_ms": 160,
+        "source_attack_frames": 0.0
+      },
+      "event": "monster_attack_started",
+      "time": 10.375
+    },
+    {
+      "details": {
+        "attacker": "bat_den-1",
+        "damage": 11,
+        "hp": 1206
+      },
+      "event": "player_hit",
+      "time": 10.539
+    },
+    {
+      "details": {
+        "attacker": "bat_den-2",
+        "damage": 8,
+        "hp": 1198
+      },
+      "event": "player_hit",
+      "time": 10.539
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 10.928
+    },
+    {
+      "details": {
+        "direction": 0,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "bat_den-2"
+      },
+      "event": "attack_started",
+      "time": 10.966
+    },
+    {
+      "details": {
+        "damage": 122,
+        "hp": 278.0,
+        "impact_time": 0.166294111111111,
+        "skill": "",
+        "source": "melee",
+        "target": "bat_den-2"
+      },
+      "event": "damage_applied",
+      "time": 11.132
+    },
+    {
+      "details": {
+        "direction": 3,
+        "id": "bat_den-1",
+        "impact_ms": 160,
+        "source_attack_frames": 0.0
+      },
+      "event": "monster_attack_started",
+      "time": 11.385
+    },
+    {
+      "details": {
+        "direction": 2,
+        "id": "bat_den-2",
+        "impact_ms": 160,
+        "source_attack_frames": 0.0
+      },
+      "event": "monster_attack_started",
+      "time": 11.385
+    },
+    {
+      "details": {
+        "attacker": "bat_den-1",
+        "damage": 11,
+        "hp": 1187
+      },
+      "event": "player_hit",
+      "time": 11.555
+    },
+    {
+      "details": {
+        "attacker": "bat_den-2",
+        "damage": 13,
+        "hp": 1174
+      },
+      "event": "player_hit",
+      "time": 11.555
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 11.72
+    },
+    {
+      "details": {
+        "direction": 0,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "bat_den-2"
+      },
+      "event": "attack_started",
+      "time": 11.761
+    },
+    {
+      "details": {
+        "damage": 135,
+        "hp": 143.0,
+        "impact_time": 0.179697962962963,
+        "skill": "",
+        "source": "melee",
+        "target": "bat_den-2"
+      },
+      "event": "damage_applied",
+      "time": 11.94
+    },
+    {
+      "details": {
+        "direction": 3,
+        "id": "bat_den-1",
+        "impact_ms": 160,
+        "source_attack_frames": 0.0
+      },
+      "event": "monster_attack_started",
+      "time": 12.393
+    },
+    {
+      "details": {
+        "direction": 2,
+        "id": "bat_den-2",
+        "impact_ms": 160,
+        "source_attack_frames": 0.0
+      },
+      "event": "monster_attack_started",
+      "time": 12.393
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 12.501
+    },
+    {
+      "details": {
+        "direction": 0,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "bat_den-2"
+      },
+      "event": "attack_started",
+      "time": 12.534
+    },
+    {
+      "details": {
+        "attacker": "bat_den-1",
+        "damage": 13,
+        "hp": 1161
+      },
+      "event": "player_hit",
+      "time": 12.567
+    },
+    {
+      "details": {
+        "attacker": "bat_den-2",
+        "damage": 13,
+        "hp": 1148
+      },
+      "event": "player_hit",
+      "time": 12.567
+    },
+    {
+      "details": {
+
+      },
+      "event": "attack_missed_probability",
+      "time": 12.702
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 13.287
+    },
+    {
+      "details": {
+        "direction": 0,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "bat_den-2"
+      },
+      "event": "attack_started",
+      "time": 13.327
+    },
+    {
+      "details": {
+        "direction": 3,
+        "id": "bat_den-1",
+        "impact_ms": 160,
+        "source_attack_frames": 0.0
+      },
+      "event": "monster_attack_started",
+      "time": 13.398
+    },
+    {
+      "details": {
+        "direction": 2,
+        "id": "bat_den-2",
+        "impact_ms": 160,
+        "source_attack_frames": 0.0
+      },
+      "event": "monster_attack_started",
+      "time": 13.398
+    },
+    {
+      "details": {
+        "damage": 102,
+        "hp": 41.0,
+        "impact_time": 0.162000272727273,
+        "skill": "",
+        "source": "melee",
+        "target": "bat_den-2"
+      },
+      "event": "damage_applied",
+      "time": 13.489
+    },
+    {
+      "details": {
+        "attacker": "bat_den-1",
+        "damage": 13,
+        "hp": 1135
+      },
+      "event": "player_hit",
+      "time": 13.569
+    },
+    {
+      "details": {
+        "attacker": "bat_den-2",
+        "damage": 13,
+        "hp": 1122
+      },
+      "event": "player_hit",
+      "time": 13.569
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 14.071
+    },
+    {
+      "details": {
+        "direction": 0,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "bat_den-2"
+      },
+      "event": "attack_started",
+      "time": 14.105
+    },
+    {
+      "details": {
+        "damage": 117,
+        "hp": -76.0,
+        "impact_time": 0.166120222222222,
+        "skill": "",
+        "source": "melee",
+        "target": "bat_den-2"
+      },
+      "event": "damage_applied",
+      "time": 14.271
+    },
+    {
+      "details": {
+        "drops": [
+          {
+            "item": "쥐고기",
+            "quantity": 1
+          }
+        ],
+        "gold": 20,
+        "id": "bat_den-2",
+        "level": 30,
+        "xp": 150.0
+      },
+      "event": "monster_killed",
+      "time": 14.271
+    },
+    {
+      "details": {
+        "direction": 3,
+        "id": "bat_den-1",
+        "impact_ms": 160,
+        "source_attack_frames": 0.0
+      },
+      "event": "monster_attack_started",
+      "time": 14.412
+    },
+    {
+      "details": {
+        "attacker": "bat_den-1",
+        "damage": 13,
+        "hp": 1109
+      },
+      "event": "player_hit",
+      "time": 14.588
+    },
+    {
+      "details": {
+        "item": "쥐고기",
+        "map": "bat_den",
+        "quantity": 1,
+        "x": 8.0,
+        "y": 14.0
+      },
+      "event": "item_picked_up",
+      "time": 14.809
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "bat_den",
+        "x": 8,
+        "y": 14
+      },
+      "event": "moved",
+      "time": 14.876
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "bat_den",
+        "x": 9,
+        "y": 14
+      },
+      "event": "moved",
+      "time": 15.107
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "bat_den",
+        "x": 10,
+        "y": 14
+      },
+      "event": "moved",
+      "time": 15.348
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "bat_den",
+        "x": 11,
+        "y": 14
+      },
+      "event": "moved",
+      "time": 15.579
+    },
+    {
+      "details": {
+        "direction": 2,
+        "id": "bat_den-4",
+        "impact_ms": 160,
+        "source_attack_frames": 0.0
+      },
+      "event": "monster_attack_started",
+      "time": 15.589
+    },
+    {
+      "details": {
+        "attacker": "bat_den-4",
+        "damage": 13,
+        "hp": 1096
+      },
+      "event": "player_hit",
+      "time": 15.758
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "bat_den",
+        "x": 11,
+        "y": 15
+      },
+      "event": "moved",
+      "time": 15.828
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "bat_den",
+        "x": 11,
+        "y": 16
+      },
+      "event": "moved",
+      "time": 16.064
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "bat_den",
+        "x": 11,
+        "y": 17
+      },
+      "event": "moved",
+      "time": 16.298
+    },
+    {
+      "details": {
+        "direction": 3,
+        "id": "bat_den-5",
+        "impact_ms": 160,
+        "source_attack_frames": 0.0
+      },
+      "event": "monster_attack_started",
+      "time": 16.31
+    },
+    {
+      "details": {
+        "attacker": "bat_den-5",
+        "damage": 9,
+        "hp": 1087
+      },
+      "event": "player_hit",
+      "time": 16.475
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "bat_den",
+        "x": 11,
+        "y": 18
+      },
+      "event": "moved",
+      "time": 16.534
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "bat_den",
+        "x": 11,
+        "y": 19
+      },
+      "event": "moved",
+      "time": 16.765
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "bat_den",
+        "x": 12,
+        "y": 19
+      },
+      "event": "moved",
+      "time": 17.004
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "bat_den",
+        "x": 13,
+        "y": 19
+      },
+      "event": "moved",
+      "time": 17.242
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "bat_den",
+        "x": 14,
+        "y": 19
+      },
+      "event": "moved",
+      "time": 17.473
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "bat_den",
+        "x": 14,
+        "y": 18
+      },
+      "event": "moved",
+      "time": 17.705
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "bat_den",
+        "x": 14,
+        "y": 17
+      },
+      "event": "moved",
+      "time": 17.938
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "bat_den",
+        "x": 14,
+        "y": 16
+      },
+      "event": "moved",
+      "time": 18.173
+    },
+    {
+      "details": {
+        "map": "cave",
+        "x": 10,
+        "y": 16
+      },
+      "event": "map_changed",
+      "time": 18.173
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "cave",
+        "x": 9,
+        "y": 16
+      },
+      "event": "moved",
+      "time": 18.656
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "cave",
+        "x": 9,
+        "y": 15
+      },
+      "event": "moved",
+      "time": 18.888
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "cave",
+        "x": 9,
+        "y": 14
+      },
+      "event": "moved",
+      "time": 19.124
+    },
+    {
+      "details": {
+        "direction": 1,
+        "id": "cave-2",
+        "impact_ms": 160,
+        "source_attack_frames": 1.0
+      },
+      "event": "monster_attack_started",
+      "time": 19.134
+    },
+    {
+      "details": {
+        "attacker": "cave-2",
+        "damage": 13,
+        "hp": 1074
+      },
+      "event": "player_hit",
+      "time": 19.294
+    },
+    {
+      "details": {
+        "direction": 2,
+        "id": "cave-3",
+        "impact_ms": 160,
+        "source_attack_frames": 1.0
+      },
+      "event": "monster_attack_started",
+      "time": 19.319
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "turned",
+      "time": 19.364
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "cave-2"
+      },
+      "event": "attack_started",
+      "time": 19.397
+    },
+    {
+      "details": {
+        "attacker": "cave-3",
+        "damage": 17,
+        "hp": 1057
+      },
+      "event": "player_hit",
+      "time": 19.484
+    },
+    {
+      "details": {
+        "damage": 58,
+        "hp": 16.0,
+        "impact_time": 0.160933,
+        "skill": "",
+        "source": "melee",
+        "target": "cave-2"
+      },
+      "event": "damage_applied",
+      "time": 19.558
+    },
+    {
+      "details": {
+        "direction": 1,
+        "id": "cave-2",
+        "impact_ms": 160,
+        "source_attack_frames": 1.0
+      },
+      "event": "monster_attack_started",
+      "time": 20.141
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "turned",
+      "time": 20.141
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "cave-2"
+      },
+      "event": "attack_started",
+      "time": 20.175
+    },
+    {
+      "details": {
+        "attacker": "cave-2",
+        "damage": 16,
+        "hp": 1041
+      },
+      "event": "player_hit",
+      "time": 20.309
+    },
+    {
+      "details": {
+        "direction": 2,
+        "id": "cave-3",
+        "impact_ms": 160,
+        "source_attack_frames": 1.0
+      },
+      "event": "monster_attack_started",
+      "time": 20.322
+    },
+    {
+      "details": {
+        "damage": 61,
+        "hp": -45.0,
+        "impact_time": 0.169084777777778,
+        "skill": "",
+        "source": "melee",
+        "target": "cave-2"
+      },
+      "event": "damage_applied",
+      "time": 20.344
+    },
+    {
+      "details": {
+        "drops": [
+          {
+            "item": "쥐고기",
+            "quantity": 1
+          }
+        ],
+        "gold": 20,
+        "id": "cave-2",
+        "level": 30,
+        "xp": 250.0
+      },
+      "event": "monster_killed",
+      "time": 20.344
+    },
+    {
+      "details": {
+        "attacker": "cave-3",
+        "damage": 13,
+        "hp": 1028
+      },
+      "event": "player_hit",
+      "time": 20.487
+    },
+    {
+      "details": {
+        "direction": 0,
+        "id": "cave-1",
+        "impact_ms": 160,
+        "source_attack_frames": 1.0
+      },
+      "event": "monster_attack_started",
+      "time": 20.527
+    },
+    {
+      "details": {
+        "attacker": "cave-1",
+        "damage": 14,
+        "hp": 1014
+      },
+      "event": "player_hit",
+      "time": 20.691
+    },
+    {
+      "details": {
+        "item": "쥐고기",
+        "map": "cave",
+        "quantity": 1,
+        "x": 10,
+        "y": 14
+      },
+      "event": "item_picked_up",
+      "time": 20.883
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 10,
+        "y": 14
+      },
+      "event": "moved",
+      "time": 20.945
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "cave",
+        "x": 10,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 21.176
+    },
+    {
+      "details": {
+        "direction": 3,
+        "id": "cave-3",
+        "impact_ms": 160,
+        "source_attack_frames": 1.0
+      },
+      "event": "monster_attack_started",
+      "time": 21.327
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "cave",
+        "x": 10,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 21.409
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 11,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 21.647
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 12,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 21.882
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 13,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 22.116
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 14,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 22.348
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 15,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 22.579
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 16,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 22.819
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "cave",
+        "x": 16,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 23.056
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "cave",
+        "x": 16,
+        "y": 14
+      },
+      "event": "moved",
+      "time": 23.293
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "cave",
+        "x": 16,
+        "y": 15
+      },
+      "event": "moved",
+      "time": 23.533
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "cave",
+        "x": 16,
+        "y": 16
+      },
+      "event": "moved",
+      "time": 23.772
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 30,
+        "y": 56
+      },
+      "event": "map_changed",
+      "time": 23.772
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 31,
+        "y": 56
+      },
+      "event": "moved",
+      "time": 24.265
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "field",
+        "x": 31,
+        "y": 55
+      },
+      "event": "moved",
+      "time": 24.507
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 32,
+        "y": 55
+      },
+      "event": "moved",
+      "time": 24.743
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 33,
+        "y": 55
+      },
+      "event": "moved",
+      "time": 24.978
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 34,
+        "y": 55
+      },
+      "event": "moved",
+      "time": 25.212
+    },
+    {
+      "details": {
+        "map": "forest",
+        "x": 15,
+        "y": 22
+      },
+      "event": "map_changed",
+      "time": 25.212
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "forest",
+        "x": 15,
+        "y": 23
+      },
+      "event": "moved",
+      "time": 25.7
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "forest",
+        "x": 16,
+        "y": 23
+      },
+      "event": "moved",
+      "time": 25.931
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "forest",
+        "x": 17,
+        "y": 23
+      },
+      "event": "moved",
+      "time": 26.165
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "forest",
+        "x": 18,
+        "y": 23
+      },
+      "event": "moved",
+      "time": 26.4
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "forest",
+        "x": 19,
+        "y": 23
+      },
+      "event": "moved",
+      "time": 26.639
+    },
+    {
+      "details": {
+        "map": "deep",
+        "x": 13,
+        "y": 23
+      },
+      "event": "map_changed",
+      "time": 26.639
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "deep",
+        "x": 13,
+        "y": 22
+      },
+      "event": "moved",
+      "time": 27.127
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "deep",
+        "x": 12,
+        "y": 22
+      },
+      "event": "moved",
+      "time": 27.363
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "deep",
+        "x": 11,
+        "y": 22
+      },
+      "event": "moved",
+      "time": 27.595
+    },
+    {
+      "details": {
+        "direction": 3,
+        "id": "deep-1",
+        "impact_ms": 160,
+        "source_attack_frames": 2.0
+      },
+      "event": "monster_attack_started",
+      "time": 27.609
+    },
+    {
+      "details": {
+        "attacker": "deep-1",
+        "damage": 26,
+        "hp": 988
+      },
+      "event": "player_hit",
+      "time": 27.776
+    },
+    {
+      "details": {
+        "direction": 1
+      },
+      "event": "turned",
+      "time": 27.835
+    },
+    {
+      "details": {
+        "direction": 1,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "deep-1"
+      },
+      "event": "attack_started",
+      "time": 27.873
+    },
+    {
+      "details": {
+
+      },
+      "event": "attack_missed_probability",
+      "time": 28.048
+    },
+    {
+      "details": {
+        "direction": 3,
+        "id": "deep-1",
+        "impact_ms": 160,
+        "source_attack_frames": 2.0
+      },
+      "event": "monster_attack_started",
+      "time": 28.61
+    },
+    {
+      "details": {
+        "direction": 1
+      },
+      "event": "turned",
+      "time": 28.61
+    },
+    {
+      "details": {
+        "direction": 1,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "deep-1"
+      },
+      "event": "attack_started",
+      "time": 28.647
+    },
+    {
+      "details": {
+        "attacker": "deep-1",
+        "damage": 26,
+        "hp": 962
+      },
+      "event": "player_hit",
+      "time": 28.774
+    },
+    {
+      "details": {
+        "damage": 89,
+        "hp": 48.0,
+        "impact_time": 0.165186696969697,
+        "skill": "",
+        "source": "melee",
+        "target": "deep-1"
+      },
+      "event": "damage_applied",
+      "time": 28.812
+    },
+    {
+      "details": {
+        "direction": 1
+      },
+      "event": "turned",
+      "time": 29.381
+    },
+    {
+      "details": {
+        "direction": 1,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "deep-1"
+      },
+      "event": "attack_started",
+      "time": 29.417
+    },
+    {
+      "details": {
+        "damage": 83,
+        "hp": -35.0,
+        "impact_time": 0.161560333333334,
+        "skill": "",
+        "source": "melee",
+        "target": "deep-1"
+      },
+      "event": "damage_applied",
+      "time": 29.578
+    },
+    {
+      "details": {
+        "drops": [
+          {
+            "item": "웅담",
+            "quantity": 1
+          }
+        ],
+        "gold": 20,
+        "id": "deep-1",
+        "level": 30,
+        "xp": 1000.0
+      },
+      "event": "monster_killed",
+      "time": 29.578
+    },
+    {
+      "details": {
+        "item": "웅담",
+        "map": "deep",
+        "quantity": 1,
+        "x": 10.0,
+        "y": 22.0
+      },
+      "event": "item_picked_up",
+      "time": 30.127
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "deep",
+        "x": 10,
+        "y": 22
+      },
+      "event": "moved",
+      "time": 30.19
+    },
+    {
+      "details": {
+        "direction": 0,
+        "id": "deep-0",
+        "impact_ms": 160,
+        "source_attack_frames": 2.0
+      },
+      "event": "monster_attack_started",
+      "time": 30.206
+    },
+    {
+      "details": {
+        "attacker": "deep-0",
+        "damage": 14,
+        "hp": 948
+      },
+      "event": "player_hit",
+      "time": 30.371
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "deep",
+        "x": 10,
+        "y": 21
+      },
+      "event": "moved",
+      "time": 30.428
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "deep",
+        "x": 10,
+        "y": 20
+      },
+      "event": "moved",
+      "time": 30.667
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "deep",
+        "x": 10,
+        "y": 19
+      },
+      "event": "moved",
+      "time": 30.898
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "deep",
+        "x": 10,
+        "y": 18
+      },
+      "event": "moved",
+      "time": 31.137
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "deep",
+        "x": 10,
+        "y": 17
+      },
+      "event": "moved",
+      "time": 31.376
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "deep",
+        "x": 10,
+        "y": 16
+      },
+      "event": "moved",
+      "time": 31.616
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "deep",
+        "x": 10,
+        "y": 15
+      },
+      "event": "moved",
+      "time": 31.851
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "deep",
+        "x": 11,
+        "y": 15
+      },
+      "event": "moved",
+      "time": 32.091
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "deep",
+        "x": 12,
+        "y": 15
+      },
+      "event": "moved",
+      "time": 32.328
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "deep",
+        "x": 13,
+        "y": 15
+      },
+      "event": "moved",
+      "time": 32.566
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "deep",
+        "x": 14,
+        "y": 15
+      },
+      "event": "moved",
+      "time": 32.8
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "deep",
+        "x": 14,
+        "y": 16
+      },
+      "event": "moved",
+      "time": 33.038
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "deep",
+        "x": 15,
+        "y": 16
+      },
+      "event": "moved",
+      "time": 33.275
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "deep",
+        "x": 16,
+        "y": 16
+      },
+      "event": "moved",
+      "time": 33.515
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "deep",
+        "x": 16,
+        "y": 17
+      },
+      "event": "moved",
+      "time": 33.746
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "deep",
+        "x": 16,
+        "y": 18
+      },
+      "event": "moved",
+      "time": 33.979
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "deep",
+        "x": 16,
+        "y": 19
+      },
+      "event": "moved",
+      "time": 34.213
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "deep",
+        "x": 16,
+        "y": 20
+      },
+      "event": "moved",
+      "time": 34.45
+    },
+    {
+      "details": {
+        "direction": 0,
+        "id": "deep-3",
+        "impact_ms": 160,
+        "source_attack_frames": 2.0
+      },
+      "event": "monster_attack_started",
+      "time": 34.472
+    },
+    {
+      "details": {
+        "attacker": "deep-3",
+        "damage": 26,
+        "hp": 922
+      },
+      "event": "player_hit",
+      "time": 34.641
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "deep",
+        "x": 17,
+        "y": 20
+      },
+      "event": "moved",
+      "time": 34.706
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "deep",
+        "x": 17,
+        "y": 21
+      },
+      "event": "moved",
+      "time": 34.944
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "deep",
+        "x": 17,
+        "y": 22
+      },
+      "event": "moved",
+      "time": 35.187
+    },
+    {
+      "details": {
+        "map": "ruins",
+        "x": 16,
+        "y": 28
+      },
+      "event": "map_changed",
+      "time": 35.187
+    },
+    {
+      "details": {
+        "sha256": "59a0e13760c3a4af211689a94170c090e6306b12ac2906b0b6ad1391a51127a5",
+        "success": true
+      },
+      "event": "save_written",
+      "time": 35.67
+    }
+  ],
+  "player": {
+    "armor_equipped": "연두색 남자도복",
+    "buffs": {
+      "신의축복": 0.0,
+      "이중공격": 0.0,
+      "측면공격": 0.0,
+      "후면공격": 0.0
+    },
+    "cooldowns": {
+      "누리의기원": 0.0,
+      "대지의기원": 0.0,
+      "신의축복": 0.0,
+      "이중공격": 0.0,
+      "측면공격": 0.0,
+      "후면공격": 0.0
+    },
+    "direction": 2,
+    "durability": {
+      "목도": 1000,
+      "철검": 2987
+    },
+    "equipped": "철검",
+    "gold": 997571,
+    "growth_log": [
+      {
+        "from": 1,
+        "hp_gain": 53,
+        "job": "평민",
+        "mp_gain": 34
+      },
+      {
+        "from": 2,
+        "hp_gain": 49,
+        "job": "평민",
+        "mp_gain": 36
+      },
+      {
+        "from": 3,
+        "hp_gain": 49,
+        "job": "평민",
+        "mp_gain": 33
+      },
+      {
+        "from": 4,
+        "hp_gain": 46,
+        "job": "평민",
+        "mp_gain": 36
+      },
+      {
+        "from": 5,
+        "hp_gain": 81,
+        "job": "전사",
+        "mp_gain": 9
+      },
+      {
+        "from": 6,
+        "hp_gain": 72,
+        "job": "전사",
+        "mp_gain": 9
+      },
+      {
+        "from": 7,
+        "hp_gain": 75,
+        "job": "전사",
+        "mp_gain": 9
+      },
+      {
+        "from": 8,
+        "hp_gain": 81,
+        "job": "전사",
+        "mp_gain": 8
+      },
+      {
+        "from": 9,
+        "hp_gain": 76,
+        "job": "전사",
+        "mp_gain": 8
+      },
+      {
+        "from": 10,
+        "hp_gain": 73,
+        "job": "전사",
+        "mp_gain": 9
+      },
+      {
+        "from": 11,
+        "hp_gain": 78,
+        "job": "전사",
+        "mp_gain": 8
+      },
+      {
+        "from": 12,
+        "hp_gain": 72,
+        "job": "전사",
+        "mp_gain": 9
+      },
+      {
+        "from": 13,
+        "hp_gain": 77,
+        "job": "전사",
+        "mp_gain": 9
+      },
+      {
+        "from": 14,
+        "hp_gain": 73,
+        "job": "전사",
+        "mp_gain": 8
+      },
+      {
+        "from": 15,
+        "hp_gain": 74,
+        "job": "전사",
+        "mp_gain": 9
+      },
+      {
+        "from": 16,
+        "hp_gain": 81,
+        "job": "전사",
+        "mp_gain": 9
+      },
+      {
+        "from": 17,
+        "hp_gain": 76,
+        "job": "전사",
+        "mp_gain": 9
+      },
+      {
+        "from": 18,
+        "hp_gain": 73,
+        "job": "전사",
+        "mp_gain": 9
+      },
+      {
+        "from": 19,
+        "hp_gain": 79,
+        "job": "전사",
+        "mp_gain": 9
+      },
+      {
+        "from": 20,
+        "hp_gain": 81,
+        "job": "전사",
+        "mp_gain": 8
+      },
+      {
+        "from": 21,
+        "hp_gain": 78,
+        "job": "전사",
+        "mp_gain": 8
+      },
+      {
+        "from": 22,
+        "hp_gain": 73,
+        "job": "전사",
+        "mp_gain": 9
+      },
+      {
+        "from": 23,
+        "hp_gain": 72,
+        "job": "전사",
+        "mp_gain": 9
+      },
+      {
+        "from": 24,
+        "hp_gain": 72,
+        "job": "전사",
+        "mp_gain": 9
+      },
+      {
+        "from": 25,
+        "hp_gain": 75,
+        "job": "전사",
+        "mp_gain": 8
+      },
+      {
+        "from": 26,
+        "hp_gain": 72,
+        "job": "전사",
+        "mp_gain": 8
+      },
+      {
+        "from": 27,
+        "hp_gain": 79,
+        "job": "전사",
+        "mp_gain": 9
+      },
+      {
+        "from": 28,
+        "hp_gain": 72,
+        "job": "전사",
+        "mp_gain": 9
+      },
+      {
+        "from": 29,
+        "hp_gain": 72,
+        "job": "전사",
+        "mp_gain": 9
+      }
+    ],
+    "hotbar": [
+      "측면공격",
+      "비영사천문",
+      "물품감정"
+    ],
+    "hp": 922,
+    "hp_max": 2134,
+    "inventory": {
+      "도토리": 0,
+      "목도": 1,
+      "뱀고기": 0,
+      "연두색 남자도복": 1,
+      "웅담": 1,
+      "쥐고기": 2,
+      "철검": 1
+    },
+    "job": "전사",
+    "kills": 4,
+    "level": 30,
+    "map": "ruins",
+    "mp": 329,
+    "mp_max": 391,
+    "name": "자료통합검증",
+    "quests": [],
+    "rank": 0,
+    "rng_state": "-3418468625556760422",
+    "skill_page": 0,
+    "skills": [
+      "기초 회복",
+      "비영사천문",
+      "성황령",
+      "물품감정",
+      "누리의기원",
+      "대지의기원",
+      "이중공격",
+      "신의축복",
+      "후면공격",
+      "측면공격"
+    ],
+    "strength": 34,
+    "validation_fixture": "CONTROLLED_LEVEL30_NOT_NATURAL_PLAYTHROUGH",
+    "visited": [
+      "village",
+      "village",
+      "guild",
+      "field",
+      "inn",
+      "source_smith",
+      "rogue_guild",
+      "mage_guild",
+      "poet_guild",
+      "cave",
+      "rabbit_depth",
+      "foraged",
+      "bat_den",
+      "forest",
+      "deep",
+      "ruins"
+    ],
+    "world_revision": "source-maps-2",
+    "x": 16,
+    "xp2": 1844100,
+    "y": 28
+  },
+  "registered_tile_sources": 6,
+  "registered_tiles": 50104,
+  "rendered_actor_frames": [
+    "squirrel:6",
+    "spider:6",
+    "teacher:6",
+    "iron_weapon:10",
+    "cloth_0:22",
+    "head_0:22",
+    "ui_border:0",
+    "ui_border:1",
+    "ui_border:2",
+    "ui_border:3",
+    "ui_border:4",
+    "ui_border:5",
+    "ui_border:6",
+    "ui_border:7",
+    "ui_bars:0",
+    "ui_bars:1",
+    "iron_weapon:1",
+    "cloth_0:13",
+    "head_0:13",
+    "squirrel:7",
+    "spider:7",
+    "teacher:7",
+    "merchant:7",
+    "priest:7",
+    "merchant:8",
+    "teacher:8",
+    "priest:8",
+    "cloth_0:18",
+    "head_0:18",
+    "iron_weapon:6",
+    "cloth_0:19",
+    "head_0:19",
+    "iron_weapon:7",
+    "merchant:6",
+    "priest:6",
+    "cloth_0:20",
+    "head_0:20",
+    "iron_weapon:8",
+    "iron_weapon:11",
+    "cloth_0:23",
+    "head_0:23",
+    "iron_weapon:9",
+    "cloth_0:21",
+    "head_0:21",
+    "squirrel:5",
+    "rabbit:2",
+    "rabbit:11",
+    "squirrel:11",
+    "squirrel:2",
+    "rabbit:8",
+    "rabbit:0",
+    "squirrel:3",
+    "squirrel:0",
+    "rabbit:6",
+    "rabbit:1",
+    "squirrel:4",
+    "squirrel:1",
+    "rabbit:7",
+    "rat:6",
+    "rat:7",
+    "rat:8",
+    "rat:13",
+    "iron_weapon:18",
+    "cloth_0:30",
+    "head_0:30",
+    "rat:5",
+    "rat:3",
+    "cloth_0:31",
+    "iron_weapon:19",
+    "head_0:31",
+    "rat:4",
+    "cloth_0:79",
+    "head_0:79",
+    "rat:9",
+    "rat:0",
+    "rat:10",
+    "rat:1",
+    "rat:11",
+    "rat:2",
+    "bat:8",
+    "bat:6",
+    "bat:7",
+    "cloth_0:15",
+    "head_0:15",
+    "iron_weapon:3",
+    "cloth_0:16",
+    "head_0:16",
+    "iron_weapon:4",
+    "cloth_0:17",
+    "head_0:17",
+    "iron_weapon:5",
+    "iron_weapon:0",
+    "cloth_0:12",
+    "head_0:12",
+    "bat:11",
+    "bat:9",
+    "cloth_0:24",
+    "head_0:24",
+    "iron_weapon:12",
+    "bat:10",
+    "iron_weapon:13",
+    "cloth_0:25",
+    "head_0:25",
+    "cloth_0:76",
+    "head_0:76",
+    "bat:2",
+    "bat:0",
+    "bat:1",
+    "bat:5",
+    "bat:3",
+    "bat:4",
+    "icons:0",
+    "iron_weapon:2",
+    "cloth_0:14",
+    "head_0:14",
+    "rat:14",
+    "rat:12",
+    "rat:15",
+    "snake:11",
+    "snake:8",
+    "snake:9",
+    "snake:10",
+    "boar:6",
+    "boar:7",
+    "boar:8",
+    "boar:18",
+    "boar:19",
+    "cloth_0:26",
+    "head_0:26",
+    "iron_weapon:14",
+    "boar:11",
+    "boar:9",
+    "iron_weapon:15",
+    "cloth_0:27",
+    "head_0:27",
+    "boar:10",
+    "cloth_0:77",
+    "head_0:77",
+    "boar:0",
+    "boar:1",
+    "boar:2",
+    "boar:12",
+    "boar:13",
+    "boar:5",
+    "boar:3",
+    "boar:4",
+    "skeleton:7",
+    "skeleton:8",
+    "skeleton:6"
+  ],
+  "rendered_tile_ids": [
+    "KR491/B:2125",
+    "A:2332",
+    "A:2378",
+    "B:2125",
+    "KR491/A:2400",
+    "A:2400",
+    "KR491/A:2401",
+    "A:2401",
+    "KR491/A:2383",
+    "A:2383",
+    "KR491/A:2378",
+    "KR491/A:2384",
+    "A:2384",
+    "KR491/A:2333",
+    "A:2333",
+    "KR491/A:2392",
+    "A:2392",
+    "KR491/A:2336",
+    "A:2336",
+    "KR491/A:2335",
+    "A:2335",
+    "KR491/A:2334",
+    "A:2334",
+    "KR491/A:2396",
+    "A:2396",
+    "KR491/A:2379",
+    "A:2379",
+    "KR491/A:2391",
+    "A:2391",
+    "KR491/A:2382",
+    "A:2382",
+    "KR491/C:3991",
+    "KR491/C:3983",
+    "KR491/C:3985",
+    "KR491/C:3993",
+    "C:3993",
+    "KR491/C:3995",
+    "KR491/C:3992",
+    "C:3992",
+    "KR491/C:3994",
+    "KR491/C:4035",
+    "C:4035",
+    "KR491/C:3998",
+    "KR491/C:4034",
+    "C:4034",
+    "KR491/C:3999",
+    "KR491/C:2666",
+    "KR491/C:2667",
+    "KR491/C:2647",
+    "KR491/C:2648",
+    "KR491/C:2649",
+    "KR491/C:2651",
+    "KR491/C:4032",
+    "C:4032",
+    "KR491/C:4008",
+    "C:4008",
+    "KR491/C:4009",
+    "C:4009",
+    "KR491/A:198",
+    "A:198",
+    "KR491/B:213",
+    "A:426",
+    "B:213",
+    "KR491/A:129",
+    "A:129",
+    "KR491/A:176",
+    "A:176",
+    "KR491/A:132",
+    "A:132",
+    "KR491/A:133",
+    "A:133",
+    "KR491/A:128",
+    "A:128",
+    "KR491/A:140",
+    "A:140",
+    "KR491/A:131",
+    "A:131",
+    "KR491/C:759",
+    "C:759",
+    "KR491/C:769",
+    "C:769",
+    "KR491/C:796",
+    "KR491/C:1657",
+    "KR491/C:1659",
+    "KR491/C:1656",
+    "KR491/C:1658",
+    "KR491/C:777",
+    "C:777",
+    "KR491/C:795",
+    "KR491/C:758",
+    "C:758",
+    "KR491/C:768",
+    "C:768",
+    "KR491/C:794",
+    "KR491/C:812",
+    "C:812",
+    "KR491/C:814",
+    "C:814",
+    "KR491/C:816",
+    "KR491/C:962",
+    "C:962",
+    "KR491/C:961",
+    "C:961",
+    "KR491/C:960",
+    "C:960",
+    "KR491/C:959",
+    "KR491/C:958",
+    "KR491/C:851",
+    "KR491/C:848",
+    "C:848",
+    "KR491/C:763",
+    "C:763",
+    "KR491/C:852",
+    "KR491/C:781",
+    "C:781",
+    "KR491/C:764",
+    "C:764",
+    "KR491/C:853",
+    "KR491/C:865",
+    "KR491/C:863",
+    "KR491/C:861",
+    "KR491/C:2058",
+    "KR491/C:2054",
+    "KR491/C:2062",
+    "KR491/C:2059",
+    "KR491/C:2055",
+    "KR491/C:2063",
+    "KR491/C:2060",
+    "KR491/C:860",
+    "C:860",
+    "KR491/C:862",
+    "C:862",
+    "KR491/C:864",
+    "KR491/C:2056",
+    "KR491/C:2064",
+    "KR491/C:2057",
+    "KR491/C:2061",
+    "KR491/C:1038",
+    "C:1038",
+    "KR491/C:1033",
+    "C:1033",
+    "KR491/C:1029",
+    "C:1029",
+    "KR491/C:1018",
+    "C:1018",
+    "KR491/C:1039",
+    "C:1039",
+    "KR491/C:1034",
+    "C:1034",
+    "KR491/C:1030",
+    "C:1030",
+    "KR491/C:1019",
+    "C:1019",
+    "KR491/C:1040",
+    "KR491/C:1035",
+    "C:1035",
+    "KR491/C:1027",
+    "C:1027",
+    "KR491/C:1047",
+    "KR491/C:1044",
+    "C:1044",
+    "KR491/C:1041",
+    "KR491/C:1048",
+    "KR491/C:1045",
+    "C:1045",
+    "KR491/C:1042",
+    "KR491/C:1049",
+    "KR491/C:1046",
+    "KR491/C:1017",
+    "C:1017",
+    "KR491/C:1028",
+    "C:1028",
+    "KR491/C:1032",
+    "C:1032",
+    "KR491/C:1037",
+    "C:1037",
+    "KR491/C:1025",
+    "C:1025",
+    "KR491/C:1043",
+    "KR491/C:1036",
+    "KR491/C:1031",
+    "C:1031",
+    "KR491/C:1053",
+    "KR491/C:1050",
+    "KR491/C:1060",
+    "KR491/C:1057",
+    "C:1057",
+    "KR491/C:1054",
+    "KR491/C:1051",
+    "KR491/C:1052",
+    "KR491/C:1055",
+    "KR491/C:2042",
+    "KR491/C:2045",
+    "KR491/C:2041",
+    "KR491/C:2044",
+    "C:2044",
+    "KR491/C:2040",
+    "KR491/C:2043",
+    "KR491/C:953",
+    "C:953",
+    "KR491/C:945",
+    "C:945",
+    "KR491/C:954",
+    "C:954",
+    "KR491/C:946",
+    "C:946",
+    "KR491/C:955",
+    "C:955",
+    "KR491/C:947",
+    "KR491/C:956",
+    "C:956",
+    "KR491/C:948",
+    "KR491/C:957",
+    "KR491/C:949",
+    "KR491/A:130",
+    "A:130",
+    "KR491/A:145",
+    "A:145",
+    "KR491/C:2049",
+    "KR491/C:1058",
+    "KR491/C:2048",
+    "KR491/C:2047",
+    "KR491/C:811",
+    "KR491/C:804",
+    "KR491/C:965",
+    "KR491/C:964",
+    "KR491/C:963",
+    "C:963",
+    "KR491/C:1061",
+    "KR491/C:2052",
+    "KR491/C:2051",
+    "KR491/C:813",
+    "KR491/C:807",
+    "KR491/C:1062",
+    "KR491/A:138",
+    "A:138",
+    "KR491/C:252",
+    "KR491/C:271",
+    "KR491/C:280",
+    "KR491/C:2046",
+    "KR491/C:2050",
+    "KR491/C:2053",
+    "KR491/C:1063",
+    "KR491/A:157",
+    "A:157",
+    "KR491/C:1081",
+    "KR491/C:1093",
+    "KR491/C:1083",
+    "KR491/A:21",
+    "A:21",
+    "KR491/C:1849",
+    "KR491/C:1847",
+    "KR491/C:1843",
+    "KR491/A:99",
+    "A:99",
+    "KR491/A:106",
+    "A:106",
+    "KR491/A:41",
+    "A:41",
+    "B:207",
+    "KR491/A:101",
+    "A:101",
+    "KR491/C:1850",
+    "KR491/C:1848",
+    "KR491/C:1844",
+    "KR491/A:63",
+    "A:63",
+    "B:206",
+    "KR491/A:97",
+    "A:97",
+    "KR491/A:105",
+    "A:105",
+    "KR491/A:100",
+    "A:100",
+    "KR491/A:53",
+    "A:53",
+    "KR491/A:46",
+    "A:46",
+    "KR491/A:52",
+    "A:52",
+    "KR491/A:65",
+    "A:65",
+    "KR491/A:42",
+    "A:42",
+    "A:177",
+    "B:204",
+    "C:3973",
+    "KR491/B:255",
+    "B:255",
+    "KR491/A:8",
+    "A:8",
+    "KR491/B:273",
+    "B:273",
+    "KR491/A:273",
+    "A:273",
+    "KR491/B:274",
+    "B:274",
+    "KR491/B:288",
+    "B:288",
+    "KR491/B:121",
+    "B:121",
+    "KR491/B:267",
+    "B:267",
+    "KR491/A:269",
+    "A:269",
+    "KR491/B:270",
+    "B:270",
+    "KR491/B:124",
+    "KR491/B:128",
+    "B:128",
+    "KR491/A:17",
+    "A:17",
+    "KR491/A:64",
+    "A:64",
+    "KR491/A:16",
+    "A:16",
+    "KR491/B:271",
+    "B:271",
+    "KR491/A:271",
+    "A:271",
+    "KR491/B:272",
+    "B:272",
+    "KR491/A:20",
+    "A:20",
+    "B:205",
+    "KR491/A:9",
+    "A:9",
+    "KR491/B:296",
+    "B:296",
+    "KR491/B:301",
+    "B:301",
+    "KR491/C:1995",
+    "KR491/C:1996",
+    "KR491/C:1997",
+    "KR491/C:2071",
+    "KR491/C:2065",
+    "KR491/C:2068",
+    "KR491/C:2069",
+    "KR491/C:2082",
+    "KR491/C:2084",
+    "KR491/C:2081",
+    "KR491/C:2083",
+    "KR491/B:120",
+    "B:120",
+    "KR491/A:2272",
+    "A:2272",
+    "B:2014",
+    "KR491/A:1819",
+    "A:1819",
+    "KR491/A:1408",
+    "A:1408",
+    "KR491/C:1998",
+    "KR491/C:1744",
+    "KR491/C:1749",
+    "KR491/A:1386",
+    "A:1386",
+    "KR491/A:18",
+    "A:18",
+    "KR491/A:19",
+    "A:19",
+    "KR491/C:1745",
+    "KR491/C:1750",
+    "KR491/C:1753",
+    "KR491/C:1755",
+    "KR491/C:1748",
+    "KR491/C:1752",
+    "C:1752",
+    "KR491/C:1754",
+    "KR491/C:1746",
+    "KR491/C:1751",
+    "KR491/C:1756",
+    "KR491/A:12",
+    "A:12",
+    "KR491/A:13",
+    "A:13",
+    "KR491/A:1438",
+    "A:1438",
+    "KR491/A:1462",
+    "A:1462",
+    "KR491/B:682",
+    "B:682",
+    "KR491/B:695",
+    "B:695",
+    "KR491/B:667",
+    "B:667",
+    "KR491/B:698",
+    "B:698",
+    "KR491/A:1446",
+    "A:1446",
+    "KR491/B:699",
+    "B:699",
+    "KR491/B:655",
+    "B:655",
+    "KR491/A:1440",
+    "A:1440",
+    "KR491/B:658",
+    "B:658",
+    "KR491/B:692",
+    "B:692",
+    "KR491/B:661",
+    "B:661",
+    "KR491/B:690",
+    "B:690",
+    "KR491/B:685",
+    "B:685",
+    "KR491/B:671",
+    "B:671",
+    "KR491/B:672",
+    "B:672",
+    "KR491/B:693",
+    "B:693",
+    "KR491/B:664",
+    "B:664",
+    "KR491/B:691",
+    "B:691",
+    "KR491/B:696",
+    "B:696",
+    "KR491/B:697",
+    "B:697",
+    "KR491/B:684",
+    "B:684",
+    "KR491/B:668",
+    "B:668",
+    "KR491/A:1448",
+    "A:1448",
+    "KR491/B:694",
+    "B:694",
+    "B:1962",
+    "B:2077",
+    "B:2257",
+    "C:4484",
+    "KR491/B:670",
+    "B:670",
+    "KR491/A:1463",
+    "A:1463",
+    "KR491/A:1461",
+    "A:1461",
+    "KR491/A:1464",
+    "A:1464",
+    "KR491/A:1450",
+    "A:1450",
+    "KR491/B:714",
+    "B:714",
+    "KR491/A:1451",
+    "A:1451",
+    "A:1453",
+    "KR491/A:1452",
+    "A:1452",
+    "KR491/A:1455",
+    "A:1455",
+    "KR491/B:713",
+    "B:713",
+    "KR491/A:1466",
+    "A:1466",
+    "KR491/A:1467",
+    "A:1467",
+    "KR491/A:1453",
+    "KR491/B:660",
+    "B:660",
+    "KR491/B:662",
+    "B:662",
+    "KR491/B:663",
+    "B:663",
+    "KR491/B:665",
+    "B:665",
+    "KR491/A:1447",
+    "A:1447",
+    "KR491/A:1790",
+    "A:1790",
+    "KR491/A:1458",
+    "A:1458",
+    "KR491/B:686",
+    "B:686",
+    "KR491/B:944",
+    "B:944",
+    "KR491/A:1439",
+    "A:1439",
+    "KR491/B:656",
+    "B:656",
+    "KR491/B:678",
+    "B:678",
+    "KR491/A:1465",
+    "A:1465",
+    "KR491/B:666",
+    "B:666",
+    "KR491/A:1443",
+    "A:1443",
+    "KR491/B:683",
+    "B:683",
+    "KR491/B:677",
+    "B:677",
+    "KR491/B:680",
+    "B:680",
+    "KR491/B:681",
+    "B:681",
+    "KR491/B:652",
+    "B:652",
+    "KR491/A:1441",
+    "A:1441",
+    "KR491/A:1460",
+    "A:1460",
+    "KR491/A:1459",
+    "A:1459",
+    "KR491/B:715",
+    "B:715",
+    "KR491/A:1585",
+    "A:1585",
+    "KR491/A:1588",
+    "A:1588",
+    "KR491/B:945",
+    "B:945",
+    "KR491/B:946",
+    "B:946",
+    "KR491/B:947",
+    "B:947",
+    "KR491/B:948",
+    "B:948",
+    "KR491/B:988",
+    "B:988",
+    "KR491/B:989",
+    "B:989",
+    "KR491/B:949",
+    "B:949",
+    "KR491/B:950",
+    "B:950",
+    "KR491/B:951",
+    "B:951",
+    "KR491/B:952",
+    "B:952",
+    "KR491/B:953",
+    "B:953",
+    "KR491/B:955",
+    "B:955",
+    "KR491/B:956",
+    "B:956",
+    "KR491/B:957",
+    "B:957",
+    "KR491/B:958",
+    "B:958",
+    "KR491/B:959",
+    "B:959",
+    "KR491/B:961",
+    "B:961",
+    "KR491/B:962",
+    "B:962",
+    "KR491/B:963",
+    "B:963",
+    "KR491/B:964",
+    "B:964",
+    "KR491/B:965",
+    "B:965",
+    "KR491/B:967",
+    "B:967",
+    "KR491/B:968",
+    "B:968",
+    "KR491/B:969",
+    "B:969",
+    "KR491/B:970",
+    "B:970",
+    "KR491/B:971",
+    "B:971",
+    "KR491/B:973",
+    "B:973",
+    "KR491/B:974",
+    "B:974",
+    "KR491/B:975",
+    "B:975",
+    "KR491/B:976",
+    "B:976",
+    "KR491/B:983",
+    "B:983",
+    "KR491/B:984",
+    "B:984",
+    "KR491/B:985",
+    "B:985",
+    "KR491/B:986",
+    "B:986",
+    "KR491/B:987",
+    "B:987",
+    "KR491/B:982",
+    "B:982",
+    "KR491/B:981",
+    "B:981",
+    "KR491/C:3845",
+    "KR491/C:3843",
+    "KR491/C:2964",
+    "KR491/C:2966",
+    "KR491/B:954",
+    "B:954",
+    "KR491/B:960",
+    "B:960",
+    "KR491/B:966",
+    "B:966",
+    "KR491/B:972",
+    "B:972",
+    "KR491/B:995",
+    "B:995",
+    "KR491/B:990",
+    "B:990",
+    "KR491/B:1010",
+    "B:1010",
+    "KR491/B:1011",
+    "B:1011",
+    "KR491/C:2967",
+    "KR491/C:2965",
+    "KR491/B:1607",
+    "B:725",
+    "B:892",
+    "B:1198",
+    "B:1300",
+    "B:1453",
+    "B:1607",
+    "KR491/A:1576",
+    "A:1576",
+    "KR491/B:914",
+    "B:914",
+    "KR491/B:905",
+    "B:905",
+    "KR491/B:900",
+    "B:900",
+    "KR491/B:891",
+    "B:891",
+    "KR491/B:910",
+    "B:910",
+    "KR491/B:911",
+    "B:911",
+    "KR491/B:909",
+    "B:909",
+    "KR491/B:899",
+    "B:732",
+    "B:899",
+    "B:1205",
+    "B:1307",
+    "B:1460",
+    "B:1614",
+    "KR491/C:3880",
+    "KR491/C:3507",
+    "KR491/C:3517",
+    "KR491/C:3537",
+    "C:3537",
+    "KR491/C:3538",
+    "C:3538",
+    "KR491/C:3515",
+    "KR491/C:3516",
+    "KR491/C:3476",
+    "C:3476",
+    "KR491/C:3477",
+    "C:3477",
+    "KR491/C:3478",
+    "KR491/C:3485",
+    "C:3485",
+    "KR491/C:3486",
+    "C:3486",
+    "KR491/C:3487",
+    "KR491/C:3523",
+    "KR491/C:3522",
+    "C:3522",
+    "KR491/C:3524",
+    "KR491/C:3550",
+    "B:942",
+    "C:3346",
+    "C:3550",
+    "KR491/C:3521",
+    "C:3521",
+    "KR491/C:3544",
+    "C:3544",
+    "KR491/C:3464",
+    "KR491/C:3463",
+    "C:3463",
+    "KR491/C:3506",
+    "KR491/C:3545",
+    "C:3545",
+    "KR491/C:3505",
+    "KR491/B:896",
+    "B:896",
+    "KR491/B:894",
+    "B:894",
+    "KR491/B:895",
+    "B:895",
+    "KR491/C:3533",
+    "KR491/C:3532",
+    "KR491/C:3536",
+    "C:3536",
+    "KR491/C:3534",
+    "KR491/C:3874",
+    "KR491/C:3877",
+    "KR491/B:897",
+    "B:897",
+    "KR491/C:3872",
+    "KR491/C:3875",
+    "C:3875",
+    "KR491/C:3878",
+    "KR491/A:1829",
+    "A:1829",
+    "A:1830",
+    "KR491/B:2224",
+    "A:1569",
+    "B:2224",
+    "KR491/A:1568",
+    "A:1568",
+    "KR491/B:2001",
+    "B:2001",
+    "KR491/A:1822",
+    "A:1822",
+    "KR491/A:1823",
+    "A:1823",
+    "KR491/A:1824",
+    "A:1824",
+    "KR491/A:1825",
+    "A:1825",
+    "KR491/C:3729",
+    "KR491/C:3731",
+    "KR491/C:3718",
+    "C:3718",
+    "KR491/C:3741",
+    "KR491/C:1936",
+    "KR491/C:1938",
+    "KR491/C:1930",
+    "KR491/C:1927",
+    "KR491/C:1931",
+    "KR491/C:1928",
+    "KR491/C:1932",
+    "KR491/C:1929",
+    "KR491/C:3755",
+    "KR491/C:1934",
+    "KR491/C:1937",
+    "KR491/C:1933",
+    "KR491/C:3717",
+    "C:3717",
+    "KR491/C:3721",
+    "KR491/C:3723",
+    "KR491/C:3724",
+    "KR491/C:3725",
+    "C:3725",
+    "KR491/C:3726",
+    "KR491/C:1926",
+    "KR491/C:1925",
+    "KR491/C:1924",
+    "KR491/C:3728",
+    "KR491/C:3727",
+    "C:3727",
+    "KR491/C:3730",
+    "C:3730",
+    "KR491/C:3733",
+    "KR491/C:3732",
+    "C:3732",
+    "KR491/C:3736",
+    "KR491/C:3735",
+    "KR491/C:3734",
+    "C:3734",
+    "KR491/C:3758",
+    "KR491/C:3756",
+    "KR491/C:3757",
+    "KR491/C:3759",
+    "C:3759"
+  ],
+  "save_loaded": true,
+  "scope": "REAL_X11_GODOT_VIEWPORT_WITH_INPUT_EVENTS_NOT_FULL_1_TO_99_PLAYTHROUGH",
+  "screenshots": [
+    {
+      "height": 640,
+      "name": "tour-cave",
+      "path": "/workspace/baram-private/content-screen-fixed-1/tour-resume/tour-cave.png",
+      "sha256": "7fea135fba4682eec63bdeca9157061d9a05a7c0e5ce2442110e9e3ffb505ef9",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "tour-bat_den",
+      "path": "/workspace/baram-private/content-screen-fixed-1/tour-resume/tour-bat_den.png",
+      "sha256": "00b3bdbcbcaf4e1a15c5c7aa3595c2fb25de81b643e18ce5cca196f7986d2244",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "tour-cave",
+      "path": "/workspace/baram-private/content-screen-fixed-1/tour-resume/tour-cave.png",
+      "sha256": "b3edff8fe516a776e3af34d0c3126c459dafbf3c959ce2bb93e65dbdfbae25f1",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "tour-field",
+      "path": "/workspace/baram-private/content-screen-fixed-1/tour-resume/tour-field.png",
+      "sha256": "999b084dcc267071a03fd570a43544c474933ce17a242246f8d9549d6e0e509d",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "tour-forest",
+      "path": "/workspace/baram-private/content-screen-fixed-1/tour-resume/tour-forest.png",
+      "sha256": "c0bbfbec1612929d6d44101c9c5a9f6969adca417da868fc1cbfab75c03700c6",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "tour-deep",
+      "path": "/workspace/baram-private/content-screen-fixed-1/tour-resume/tour-deep.png",
+      "sha256": "a1acac95d5c19eee47cfd9f389b6dc1214d42dc64f76bd5cc95650ada8279e1f",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "tour-ruins",
+      "path": "/workspace/baram-private/content-screen-fixed-1/tour-resume/tour-ruins.png",
+      "sha256": "643658547ba8480baa1580601ca6e081927889c8a9722f9b7b8368c17b7511aa",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "content-saved",
+      "path": "/workspace/baram-private/content-screen-fixed-1/tour-resume/content-saved.png",
+      "sha256": "eac1628863d5fa283995e4ae905f764fcaa27a0519f31ee3a7ce860258a7648d",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    }
+  ],
+  "status": "PASS_EXECUTED_SCREEN_INPUT"
+}

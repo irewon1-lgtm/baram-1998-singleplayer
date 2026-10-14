@@ -4,7 +4,7 @@
   "research_base_sha": "2775b1166a760b6a1757f09f2faf1e799d3fd59e",
   "development_branch": "dev/codex-asset-runtime-20261014",
   "workflow_lock": "docs/RESTORATION_WORKFLOW_LOCK.md",
-  "overall": "WIP_SOURCE_MAPS_LIVE_CORE_PASS_CONTENT_EXTENSION_IN_PROGRESS",
+  "overall": "WIP_SOURCE_MAP_EXPANSION_AND_SKILLS_EXECUTED_FINAL_PACKAGING_PENDING",
   "research_1_3": "PRESERVED_UNCHANGED_RESEARCH_ONLY",
   "stage_4": {
     "status": "PASS_AVAILABLE_INPUT_DECODING_AND_LIVE_USE_WITH_REPLACEMENT_BINDINGS",
@@ -295,7 +295,8 @@
     "contact_sheet_frames": 14835,
     "semantic_classification_ids": 149,
     "source_tiles_added": 35269,
-    "original_maps_structure_checked": 1738
+    "original_maps_structure_checked": 1738,
+    "available_current_actor_frames": 1849
   },
   "stage_5": {
     "status": "GODOT_SELECTED_AFTER_REAL_SCREEN_RUNTIME",
@@ -342,7 +343,12 @@
       "runs/20261014-assets/asset-game-summary.json"
     ],
     "actual_node_state_after_restart": "PASS_ACTUAL_PLAYER_ENTITIES_LOOT_RNG_BEFORE_FIRST_TICK",
-    "source_map_core_and_restart": "PASS_25_PLUS_6_REAL_INPUT_CHECKS"
+    "source_map_core_and_restart": "PASS_25_PLUS_6_REAL_INPUT_CHECKS",
+    "current_maps_connected": 38,
+    "job_source_skill_casts": "PASS_66_JOB_LEVEL30_SPELLS_CONTROLLED_FIXTURES",
+    "common_spell_actions": "PASS_COMPASS_SPIRIT_RETURN_ITEM_INSPECT_REAL_INPUT",
+    "light_and_poison": "PASS_SAME_POSITION_SCREEN_LIGHT_ACTIVE_POISON_CURED",
+    "inflight_action_save_and_restart": "PASS_QUEUED_SAVE_AND_NEW_PROCESS_PLAYER_WORLD_LOOT_RNG"
   },
   "stage_7": {
     "status": "PASS_37_SAME_CODE_CALCULATION_SIMULATIONS",
@@ -356,9 +362,9 @@
     "status": "PARTIAL",
     "four_jobs_level_1_30_numeric_and_economy": "PASS_SIMULATION",
     "four_job_basic_screen_combat": "PASS",
-    "four_job_full_level30_screen_playthrough": "NOT_RUN",
+    "four_job_full_level30_screen_playthrough": "NOT_RUN_NATURAL_LEVEL30_FIXTURES_SEPARATE",
     "available_authored_maps": 8,
-    "unimplemented_source_skill_effects": "BLOCKED_PER_SKILL_WITH_VISIBLE_MESSAGE"
+    "unimplemented_source_skill_effects": "Level1-30 profiles connected with explicit inferred/offline substitutions; upper positive-damage/heal supported, other upper behaviors unresolved"
   },
   "stage_9": {
     "status": "NOT_COMPLETE",
@@ -366,7 +372,7 @@
     "level31_99_regions_advancement": "NOT_IMPLEMENTED",
     "entire_game_finish_playthrough": "NOT_RUN"
   },
-  "next_action": "Continue this source-map unit with data-driven wear, casting/monster attacks and four-job source skills; then extend actual 15-map traversal and unused cause resolution. Historical 37 calculations remain reusable until Rules changes.",
+  "next_action": "Finish current town-all live room/service test, join counts into existing ledgers, package private native-map resources and verify unpacked launch/restart. Reuse passed four-job skill tests; original four-job natural level30 and 31-99/advancement remain incomplete.",
   "resume_command": "python3 tools/recover_runtime_inputs.py --private-dir /workspace/baram-private --only archives --report /workspace/baram-private/asset-recovery-resume.json",
   "network_domains_requested": [
     "archive.org",

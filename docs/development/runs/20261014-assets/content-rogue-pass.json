@@ -1,0 +1,4478 @@
+{
+  "audio_events": [
+    {
+      "file_sha256": "bb129e81fea6134daba37fbf5aabc96df4a9f9be90ebdc027e7924ecf882591c",
+      "kind": "skill",
+      "playing": true,
+      "time": 36.8119437142857,
+      "voice": "skill"
+    },
+    {
+      "file_sha256": "bb129e81fea6134daba37fbf5aabc96df4a9f9be90ebdc027e7924ecf882591c",
+      "kind": "skill",
+      "playing": true,
+      "time": 37.7248326666666,
+      "voice": "skill"
+    },
+    {
+      "file_sha256": "bb129e81fea6134daba37fbf5aabc96df4a9f9be90ebdc027e7924ecf882591c",
+      "kind": "skill",
+      "playing": true,
+      "time": 38.4149408787879,
+      "voice": "skill"
+    },
+    {
+      "file_sha256": "bb129e81fea6134daba37fbf5aabc96df4a9f9be90ebdc027e7924ecf882591c",
+      "kind": "skill",
+      "playing": true,
+      "time": 39.1127869999999,
+      "voice": "skill"
+    },
+    {
+      "file_sha256": "bb129e81fea6134daba37fbf5aabc96df4a9f9be90ebdc027e7924ecf882591c",
+      "kind": "skill",
+      "playing": true,
+      "time": 40.0792429090909,
+      "voice": "skill"
+    },
+    {
+      "file_sha256": "bb129e81fea6134daba37fbf5aabc96df4a9f9be90ebdc027e7924ecf882591c",
+      "kind": "skill",
+      "playing": true,
+      "time": 40.7950637619046,
+      "voice": "skill"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 41.5280316666665,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bb129e81fea6134daba37fbf5aabc96df4a9f9be90ebdc027e7924ecf882591c",
+      "kind": "skill",
+      "playing": true,
+      "time": 41.5280316666665,
+      "voice": "skill"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 42.5165756666665,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bb129e81fea6134daba37fbf5aabc96df4a9f9be90ebdc027e7924ecf882591c",
+      "kind": "skill",
+      "playing": true,
+      "time": 42.5165756666665,
+      "voice": "skill"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 43.5476190476188,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bb129e81fea6134daba37fbf5aabc96df4a9f9be90ebdc027e7924ecf882591c",
+      "kind": "skill",
+      "playing": true,
+      "time": 43.5476190476188,
+      "voice": "skill"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 44.5818706666664,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bb129e81fea6134daba37fbf5aabc96df4a9f9be90ebdc027e7924ecf882591c",
+      "kind": "skill",
+      "playing": true,
+      "time": 44.5818706666664,
+      "voice": "skill"
+    },
+    {
+      "file_sha256": "bb129e81fea6134daba37fbf5aabc96df4a9f9be90ebdc027e7924ecf882591c",
+      "kind": "skill",
+      "playing": true,
+      "time": 45.6200571818178,
+      "voice": "skill"
+    },
+    {
+      "file_sha256": "bb129e81fea6134daba37fbf5aabc96df4a9f9be90ebdc027e7924ecf882591c",
+      "kind": "skill",
+      "playing": true,
+      "time": 46.3877083333329,
+      "voice": "skill"
+    },
+    {
+      "file_sha256": "bb129e81fea6134daba37fbf5aabc96df4a9f9be90ebdc027e7924ecf882591c",
+      "kind": "skill",
+      "playing": true,
+      "time": 47.4314129999996,
+      "voice": "skill"
+    },
+    {
+      "file_sha256": "bb129e81fea6134daba37fbf5aabc96df4a9f9be90ebdc027e7924ecf882591c",
+      "kind": "skill",
+      "playing": true,
+      "time": 48.5196969696966,
+      "voice": "skill"
+    },
+    {
+      "file_sha256": "bb129e81fea6134daba37fbf5aabc96df4a9f9be90ebdc027e7924ecf882591c",
+      "kind": "skill",
+      "playing": true,
+      "time": 49.3365223333329,
+      "voice": "skill"
+    }
+  ],
+  "checks": [
+    {
+      "name": "labeled_fixture_not_natural_progress",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "controlled_job_level30",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_outfit-before",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "source_shop_reachable",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "shop_contains_연두색 남자도복",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "actual_purchase_연두색 남자도복",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "shop_contains_철검",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "actual_purchase_철검",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "actual_armor_equipped",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "actual_iron_weapon_equipped",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_outfit-after",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "own_source_guild_reached",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "own_class_trainer_dialogue",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "select_source_skill_누리의기원",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "npc_learned_누리의기원",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "select_source_skill_대지의기원",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "npc_learned_대지의기원",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "select_source_skill_누리의빛",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "npc_learned_누리의빛",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "select_source_skill_금수",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "npc_learned_금수",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "select_source_skill_누리의힘",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "npc_learned_누리의힘",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "select_source_skill_대지의빛",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "npc_learned_대지의빛",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "select_source_skill_뢰진주(풍뢰)",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "npc_learned_뢰진주(풍뢰)",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "select_source_skill_화염주(화)",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "npc_learned_화염주(화)",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "select_source_skill_자무주(수)",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "npc_learned_자무주(수)",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "select_source_skill_백열주(지)",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "npc_learned_백열주(지)",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "select_source_skill_동해의기원",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "npc_learned_동해의기원",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "select_source_skill_무영보법",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "npc_learned_무영보법",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "select_source_skill_경수",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "npc_learned_경수",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "select_source_skill_바다의 빛",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "npc_learned_바다의 빛",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "select_source_skill_이중공격",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "npc_learned_이중공격",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_source-class-training",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "source_class_guild_door_exit",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "source_class_hunting_field",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "hotbar_누리의기원",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_cast-0",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "source_skill_resolves_누리의기원",
+      "observed": {
+        "behavior": "heal",
+        "hp_after": 911,
+        "hp_before": 861,
+        "mp_after": 804,
+        "mp_before": 808
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "hotbar_대지의기원",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "source_skill_resolves_대지의기원",
+      "observed": {
+        "behavior": "heal",
+        "hp_after": 1031,
+        "hp_before": 911,
+        "mp_after": 798,
+        "mp_before": 804
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "hotbar_누리의빛",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "source_skill_resolves_누리의빛",
+      "observed": {
+        "behavior": "light",
+        "hp_after": 1031,
+        "hp_before": 1031,
+        "mp_after": 792,
+        "mp_before": 798
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "active_state_누리의빛",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "hotbar_금수",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_cast-3",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "source_skill_resolves_금수",
+      "observed": {
+        "behavior": "animal",
+        "hp_after": 1031,
+        "hp_before": 1031,
+        "mp_after": 785,
+        "mp_before": 792
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "active_state_금수",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "hotbar_누리의힘",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "source_skill_resolves_누리의힘",
+      "observed": {
+        "behavior": "buff",
+        "hp_after": 1031,
+        "hp_before": 1031,
+        "mp_after": 777,
+        "mp_before": 785
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "active_state_누리의힘",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "hotbar_대지의빛",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "source_skill_resolves_대지의빛",
+      "observed": {
+        "behavior": "light",
+        "hp_after": 1031,
+        "hp_before": 1031,
+        "mp_after": 768,
+        "mp_before": 777
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "active_state_대지의빛",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "hotbar_뢰진주(풍뢰)",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_cast-6",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "source_skill_resolves_뢰진주(풍뢰)",
+      "observed": {
+        "behavior": "damage",
+        "hp_after": 1031,
+        "hp_before": 1031,
+        "mp_after": 759,
+        "mp_before": 768
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "live_spell_damage_뢰진주(풍뢰)",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "hotbar_화염주(화)",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_cast-7",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "source_skill_resolves_화염주(화)",
+      "observed": {
+        "behavior": "damage",
+        "hp_after": 1031,
+        "hp_before": 1031,
+        "mp_after": 750,
+        "mp_before": 759
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "live_spell_damage_화염주(화)",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "hotbar_자무주(수)",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_cast-8",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "source_skill_resolves_자무주(수)",
+      "observed": {
+        "behavior": "damage",
+        "hp_after": 1031,
+        "hp_before": 1031,
+        "mp_after": 741,
+        "mp_before": 750
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "live_spell_damage_자무주(수)",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "hotbar_백열주(지)",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_cast-9",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "source_skill_resolves_백열주(지)",
+      "observed": {
+        "behavior": "damage",
+        "hp_after": 1031,
+        "hp_before": 1031,
+        "mp_after": 732,
+        "mp_before": 741
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "live_spell_damage_백열주(지)",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "hotbar_동해의기원",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "source_skill_resolves_동해의기원",
+      "observed": {
+        "behavior": "heal",
+        "hp_after": 1131,
+        "hp_before": 1031,
+        "mp_after": 722,
+        "mp_before": 732
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "hotbar_무영보법",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_cast-11",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "source_skill_resolves_무영보법",
+      "observed": {
+        "behavior": "stealth",
+        "hp_after": 1131,
+        "hp_before": 1131,
+        "mp_after": 710,
+        "mp_before": 722
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "active_state_무영보법",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "hotbar_경수",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_cast-12",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "source_skill_resolves_경수",
+      "observed": {
+        "behavior": "disguise",
+        "hp_after": 1131,
+        "hp_before": 1131,
+        "mp_after": 697,
+        "mp_before": 710
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "active_state_경수",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "hotbar_바다의 빛",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "source_skill_resolves_바다의 빛",
+      "observed": {
+        "behavior": "light",
+        "hp_after": 1131,
+        "hp_before": 1131,
+        "mp_after": 683,
+        "mp_before": 697
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "active_state_바다의 빛",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "hotbar_이중공격",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "source_skill_resolves_이중공격",
+      "observed": {
+        "behavior": "buff",
+        "hp_after": 1131,
+        "hp_before": 1131,
+        "mp_after": 668,
+        "mp_before": 683
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "active_state_이중공격",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_content-saved",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "engine_audio_mix_recorded",
+      "observed": {
+
+      },
+      "status": "PASS"
+    }
+  ],
+  "elapsed_ms": 50048,
+  "events": [
+    {
+      "details": {
+        "progress_preserved": true,
+        "revision": "source-maps-2"
+      },
+      "event": "layout_migrated",
+      "time": 0.0
+    },
+    {
+      "details": {
+        "equipped": "",
+        "level": 30,
+        "map": "village"
+      },
+      "event": "save_restored",
+      "time": 0.0
+    },
+    {
+      "details": {
+        "loaded_save": true,
+        "registered_tiles": 50104,
+        "renderer": "gl_compatibility"
+      },
+      "event": "ready",
+      "time": 0.0
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 59,
+        "y": 153
+      },
+      "event": "moved",
+      "time": 0.4
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 59,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 0.654
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 60,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 0.892
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 61,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 1.138
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 1.375
+    },
+    {
+      "details": {
+        "id": "village-shop-0",
+        "role": "shop"
+      },
+      "event": "npc_dialogue",
+      "time": 1.439
+    },
+    {
+      "details": {
+        "buy": true,
+        "gold": 999991,
+        "item": "연두색 남자도복",
+        "success": true
+      },
+      "event": "trade",
+      "time": 1.955
+    },
+    {
+      "details": {
+        "buy": true,
+        "gold": 997991,
+        "item": "철검",
+        "success": true
+      },
+      "event": "trade",
+      "time": 2.264
+    },
+    {
+      "details": {
+        "item": "연두색 남자도복",
+        "success": true
+      },
+      "event": "equipped",
+      "time": 2.517
+    },
+    {
+      "details": {
+        "item": "철검",
+        "success": true
+      },
+      "event": "equipped",
+      "time": 2.807
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 62,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 3.12
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 63,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 3.356
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 64,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 3.597
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 65,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 3.849
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 66,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 4.094
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 67,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 4.339
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 4.589
+    },
+    {
+      "details": {
+        "id": "village-travel-3",
+        "role": "travel"
+      },
+      "event": "npc_dialogue",
+      "time": 4.65
+    },
+    {
+      "details": {
+        "map": "rogue_guild",
+        "x": 9,
+        "y": 21
+      },
+      "event": "map_changed",
+      "time": 4.86
+    },
+    {
+      "details": {
+        "classification": "SINGLEPLAYER_COMPLETION",
+        "destination": "rogue_guild"
+      },
+      "event": "guide_travel",
+      "time": 4.86
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "rogue_guild",
+        "x": 9,
+        "y": 20
+      },
+      "event": "moved",
+      "time": 4.922
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "rogue_guild",
+        "x": 9,
+        "y": 19
+      },
+      "event": "moved",
+      "time": 5.155
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "rogue_guild",
+        "x": 9,
+        "y": 18
+      },
+      "event": "moved",
+      "time": 5.388
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "rogue_guild",
+        "x": 9,
+        "y": 17
+      },
+      "event": "moved",
+      "time": 5.624
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "rogue_guild",
+        "x": 9,
+        "y": 16
+      },
+      "event": "moved",
+      "time": 5.859
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "rogue_guild",
+        "x": 9,
+        "y": 15
+      },
+      "event": "moved",
+      "time": 6.1
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "rogue_guild",
+        "x": 9,
+        "y": 14
+      },
+      "event": "moved",
+      "time": 6.342
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "rogue_guild",
+        "x": 9,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 6.574
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "rogue_guild",
+        "x": 9,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 6.807
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "rogue_guild",
+        "x": 9,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 7.043
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "rogue_guild",
+        "x": 9,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 7.273
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "rogue_guild",
+        "x": 9,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 7.508
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "rogue_guild",
+        "x": 9,
+        "y": 8
+      },
+      "event": "moved",
+      "time": 7.746
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 7.981
+    },
+    {
+      "details": {
+        "id": "rogue_guild-trainer-0",
+        "role": "trainer"
+      },
+      "event": "npc_dialogue",
+      "time": 8.018
+    },
+    {
+      "details": {
+        "skill": "누리의기원",
+        "success": true
+      },
+      "event": "skill_learned",
+      "time": 8.161
+    },
+    {
+      "details": {
+        "skill": "대지의기원",
+        "success": true
+      },
+      "event": "skill_learned",
+      "time": 8.2
+    },
+    {
+      "details": {
+        "skill": "누리의빛",
+        "success": true
+      },
+      "event": "skill_learned",
+      "time": 8.257
+    },
+    {
+      "details": {
+        "skill": "금수",
+        "success": true
+      },
+      "event": "skill_learned",
+      "time": 8.304
+    },
+    {
+      "details": {
+        "skill": "누리의힘",
+        "success": true
+      },
+      "event": "skill_learned",
+      "time": 8.35
+    },
+    {
+      "details": {
+        "skill": "대지의빛",
+        "success": true
+      },
+      "event": "skill_learned",
+      "time": 8.397
+    },
+    {
+      "details": {
+        "skill": "뢰진주(풍뢰)",
+        "success": true
+      },
+      "event": "skill_learned",
+      "time": 8.443
+    },
+    {
+      "details": {
+        "skill": "화염주(화)",
+        "success": true
+      },
+      "event": "skill_learned",
+      "time": 8.492
+    },
+    {
+      "details": {
+        "skill": "자무주(수)",
+        "success": true
+      },
+      "event": "skill_learned",
+      "time": 8.542
+    },
+    {
+      "details": {
+        "skill": "백열주(지)",
+        "success": true
+      },
+      "event": "skill_learned",
+      "time": 8.588
+    },
+    {
+      "details": {
+        "skill": "동해의기원",
+        "success": true
+      },
+      "event": "skill_learned",
+      "time": 8.633
+    },
+    {
+      "details": {
+        "skill": "무영보법",
+        "success": true
+      },
+      "event": "skill_learned",
+      "time": 8.683
+    },
+    {
+      "details": {
+        "skill": "경수",
+        "success": true
+      },
+      "event": "skill_learned",
+      "time": 8.733
+    },
+    {
+      "details": {
+        "skill": "바다의 빛",
+        "success": true
+      },
+      "event": "skill_learned",
+      "time": 8.782
+    },
+    {
+      "details": {
+        "skill": "이중공격",
+        "success": true
+      },
+      "event": "skill_learned",
+      "time": 8.829
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "rogue_guild",
+        "x": 8,
+        "y": 8
+      },
+      "event": "moved",
+      "time": 9.124
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "rogue_guild",
+        "x": 8,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 9.365
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "rogue_guild",
+        "x": 8,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 9.603
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "rogue_guild",
+        "x": 8,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 9.836
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "rogue_guild",
+        "x": 8,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 10.072
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "rogue_guild",
+        "x": 8,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 10.313
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "rogue_guild",
+        "x": 8,
+        "y": 14
+      },
+      "event": "moved",
+      "time": 10.546
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "rogue_guild",
+        "x": 8,
+        "y": 15
+      },
+      "event": "moved",
+      "time": 10.795
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "rogue_guild",
+        "x": 8,
+        "y": 16
+      },
+      "event": "moved",
+      "time": 11.025
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "rogue_guild",
+        "x": 8,
+        "y": 17
+      },
+      "event": "moved",
+      "time": 11.264
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "rogue_guild",
+        "x": 8,
+        "y": 18
+      },
+      "event": "moved",
+      "time": 11.503
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "rogue_guild",
+        "x": 8,
+        "y": 19
+      },
+      "event": "moved",
+      "time": 11.733
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "rogue_guild",
+        "x": 8,
+        "y": 20
+      },
+      "event": "moved",
+      "time": 11.966
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "rogue_guild",
+        "x": 8,
+        "y": 21
+      },
+      "event": "moved",
+      "time": 12.206
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "rogue_guild",
+        "x": 8,
+        "y": 22
+      },
+      "event": "moved",
+      "time": 12.438
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "rogue_guild",
+        "x": 8,
+        "y": 23
+      },
+      "event": "moved",
+      "time": 12.67
+    },
+    {
+      "details": {
+        "map": "village",
+        "x": 21,
+        "y": 186
+      },
+      "event": "map_changed",
+      "time": 12.67
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 21,
+        "y": 187
+      },
+      "event": "moved",
+      "time": 12.923
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 21,
+        "y": 188
+      },
+      "event": "moved",
+      "time": 13.163
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 21,
+        "y": 189
+      },
+      "event": "moved",
+      "time": 13.408
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 21,
+        "y": 190
+      },
+      "event": "moved",
+      "time": 13.639
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 21,
+        "y": 191
+      },
+      "event": "moved",
+      "time": 13.887
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 21,
+        "y": 192
+      },
+      "event": "moved",
+      "time": 14.127
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 21,
+        "y": 193
+      },
+      "event": "moved",
+      "time": 14.375
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 21,
+        "y": 194
+      },
+      "event": "moved",
+      "time": 14.633
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 21,
+        "y": 195
+      },
+      "event": "moved",
+      "time": 14.878
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 22,
+        "y": 195
+      },
+      "event": "moved",
+      "time": 15.117
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 23,
+        "y": 195
+      },
+      "event": "moved",
+      "time": 15.372
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 24,
+        "y": 195
+      },
+      "event": "moved",
+      "time": 15.611
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 25,
+        "y": 195
+      },
+      "event": "moved",
+      "time": 15.873
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 26,
+        "y": 195
+      },
+      "event": "moved",
+      "time": 16.12
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 27,
+        "y": 195
+      },
+      "event": "moved",
+      "time": 16.373
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 28,
+        "y": 195
+      },
+      "event": "moved",
+      "time": 16.616
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 29,
+        "y": 195
+      },
+      "event": "moved",
+      "time": 16.848
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 29,
+        "y": 194
+      },
+      "event": "moved",
+      "time": 17.086
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 29,
+        "y": 193
+      },
+      "event": "moved",
+      "time": 17.317
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 29,
+        "y": 192
+      },
+      "event": "moved",
+      "time": 17.571
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 30,
+        "y": 192
+      },
+      "event": "moved",
+      "time": 17.817
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 31,
+        "y": 192
+      },
+      "event": "moved",
+      "time": 18.051
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 32,
+        "y": 192
+      },
+      "event": "moved",
+      "time": 18.299
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 33,
+        "y": 192
+      },
+      "event": "moved",
+      "time": 18.537
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 34,
+        "y": 192
+      },
+      "event": "moved",
+      "time": 18.793
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 35,
+        "y": 192
+      },
+      "event": "moved",
+      "time": 19.033
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 36,
+        "y": 192
+      },
+      "event": "moved",
+      "time": 19.283
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 37,
+        "y": 192
+      },
+      "event": "moved",
+      "time": 19.533
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 38,
+        "y": 192
+      },
+      "event": "moved",
+      "time": 19.779
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 39,
+        "y": 192
+      },
+      "event": "moved",
+      "time": 20.035
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 40,
+        "y": 192
+      },
+      "event": "moved",
+      "time": 20.286
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 41,
+        "y": 192
+      },
+      "event": "moved",
+      "time": 20.54
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 42,
+        "y": 192
+      },
+      "event": "moved",
+      "time": 20.804
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 43,
+        "y": 192
+      },
+      "event": "moved",
+      "time": 21.042
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 44,
+        "y": 192
+      },
+      "event": "moved",
+      "time": 21.283
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 45,
+        "y": 192
+      },
+      "event": "moved",
+      "time": 21.524
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 46,
+        "y": 192
+      },
+      "event": "moved",
+      "time": 21.775
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 46,
+        "y": 191
+      },
+      "event": "moved",
+      "time": 22.033
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 47,
+        "y": 191
+      },
+      "event": "moved",
+      "time": 22.267
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 48,
+        "y": 191
+      },
+      "event": "moved",
+      "time": 22.508
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 48,
+        "y": 190
+      },
+      "event": "moved",
+      "time": 22.752
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 48,
+        "y": 189
+      },
+      "event": "moved",
+      "time": 22.997
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 48,
+        "y": 188
+      },
+      "event": "moved",
+      "time": 23.241
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 48,
+        "y": 187
+      },
+      "event": "moved",
+      "time": 23.5
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 49,
+        "y": 187
+      },
+      "event": "moved",
+      "time": 23.764
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 49,
+        "y": 186
+      },
+      "event": "moved",
+      "time": 24.019
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 49,
+        "y": 185
+      },
+      "event": "moved",
+      "time": 24.25
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 50,
+        "y": 185
+      },
+      "event": "moved",
+      "time": 24.487
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 51,
+        "y": 185
+      },
+      "event": "moved",
+      "time": 24.736
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 52,
+        "y": 185
+      },
+      "event": "moved",
+      "time": 24.967
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 52,
+        "y": 184
+      },
+      "event": "moved",
+      "time": 25.201
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 53,
+        "y": 184
+      },
+      "event": "moved",
+      "time": 25.452
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 53,
+        "y": 183
+      },
+      "event": "moved",
+      "time": 25.699
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 54,
+        "y": 183
+      },
+      "event": "moved",
+      "time": 25.937
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 55,
+        "y": 183
+      },
+      "event": "moved",
+      "time": 26.179
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 56,
+        "y": 183
+      },
+      "event": "moved",
+      "time": 26.422
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 57,
+        "y": 183
+      },
+      "event": "moved",
+      "time": 26.666
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 58,
+        "y": 183
+      },
+      "event": "moved",
+      "time": 26.91
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 59,
+        "y": 183
+      },
+      "event": "moved",
+      "time": 27.148
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 60,
+        "y": 183
+      },
+      "event": "moved",
+      "time": 27.382
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 61,
+        "y": 183
+      },
+      "event": "moved",
+      "time": 27.623
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 61,
+        "y": 182
+      },
+      "event": "moved",
+      "time": 27.873
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 61,
+        "y": 181
+      },
+      "event": "moved",
+      "time": 28.113
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 61,
+        "y": 180
+      },
+      "event": "moved",
+      "time": 28.365
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 61,
+        "y": 179
+      },
+      "event": "moved",
+      "time": 28.614
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 61,
+        "y": 178
+      },
+      "event": "moved",
+      "time": 28.856
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 61,
+        "y": 177
+      },
+      "event": "moved",
+      "time": 29.087
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 61,
+        "y": 176
+      },
+      "event": "moved",
+      "time": 29.327
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 61,
+        "y": 175
+      },
+      "event": "moved",
+      "time": 29.578
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 61,
+        "y": 174
+      },
+      "event": "moved",
+      "time": 29.819
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 61,
+        "y": 173
+      },
+      "event": "moved",
+      "time": 30.068
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 61,
+        "y": 172
+      },
+      "event": "moved",
+      "time": 30.304
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 61,
+        "y": 171
+      },
+      "event": "moved",
+      "time": 30.55
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 61,
+        "y": 170
+      },
+      "event": "moved",
+      "time": 30.797
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 62,
+        "y": 170
+      },
+      "event": "moved",
+      "time": 31.047
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 62,
+        "y": 169
+      },
+      "event": "moved",
+      "time": 31.279
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 62,
+        "y": 168
+      },
+      "event": "moved",
+      "time": 31.52
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 62,
+        "y": 167
+      },
+      "event": "moved",
+      "time": 31.753
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 62,
+        "y": 166
+      },
+      "event": "moved",
+      "time": 31.992
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 62,
+        "y": 165
+      },
+      "event": "moved",
+      "time": 32.226
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 62,
+        "y": 164
+      },
+      "event": "moved",
+      "time": 32.48
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 62,
+        "y": 163
+      },
+      "event": "moved",
+      "time": 32.731
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 62,
+        "y": 162
+      },
+      "event": "moved",
+      "time": 32.98
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 62,
+        "y": 161
+      },
+      "event": "moved",
+      "time": 33.218
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 62,
+        "y": 160
+      },
+      "event": "moved",
+      "time": 33.468
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 62,
+        "y": 159
+      },
+      "event": "moved",
+      "time": 33.705
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 63,
+        "y": 159
+      },
+      "event": "moved",
+      "time": 33.957
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 63,
+        "y": 158
+      },
+      "event": "moved",
+      "time": 34.194
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 63,
+        "y": 157
+      },
+      "event": "moved",
+      "time": 34.436
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 63,
+        "y": 156
+      },
+      "event": "moved",
+      "time": 34.677
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 63,
+        "y": 155
+      },
+      "event": "moved",
+      "time": 34.91
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 63,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 35.143
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 64,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 35.39
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 65,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 35.625
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 66,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 35.867
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 67,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 36.105
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 36.356
+    },
+    {
+      "details": {
+        "id": "village-travel-3",
+        "role": "travel"
+      },
+      "event": "npc_dialogue",
+      "time": 36.411
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 30,
+        "y": 56
+      },
+      "event": "map_changed",
+      "time": 36.473
+    },
+    {
+      "details": {
+        "classification": "SINGLEPLAYER_COMPLETION",
+        "destination": "field"
+      },
+      "event": "guide_travel",
+      "time": 36.473
+    },
+    {
+      "details": {
+        "skill": "누리의기원",
+        "slot": 0
+      },
+      "event": "hotbar_assigned",
+      "time": 36.594
+    },
+    {
+      "details": {
+        "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+        "impact_ms": 180,
+        "skill": "누리의기원",
+        "slot": 0
+      },
+      "event": "skill_started",
+      "time": 36.618
+    },
+    {
+      "details": {
+        "behavior": "heal",
+        "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+        "hp": 911,
+        "mp": 804,
+        "skill": "누리의기원",
+        "slot": 0
+      },
+      "event": "skill_cast",
+      "time": 36.812
+    },
+    {
+      "details": {
+        "skill": "대지의기원",
+        "slot": 0
+      },
+      "event": "hotbar_assigned",
+      "time": 37.518
+    },
+    {
+      "details": {
+        "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+        "impact_ms": 180,
+        "skill": "대지의기원",
+        "slot": 0
+      },
+      "event": "skill_started",
+      "time": 37.544
+    },
+    {
+      "details": {
+        "behavior": "heal",
+        "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+        "hp": 1031,
+        "mp": 798,
+        "skill": "대지의기원",
+        "slot": 0
+      },
+      "event": "skill_cast",
+      "time": 37.725
+    },
+    {
+      "details": {
+        "skill": "누리의빛",
+        "slot": 0
+      },
+      "event": "hotbar_assigned",
+      "time": 38.206
+    },
+    {
+      "details": {
+        "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+        "impact_ms": 180,
+        "skill": "누리의빛",
+        "slot": 0
+      },
+      "event": "skill_started",
+      "time": 38.231
+    },
+    {
+      "details": {
+        "behavior": "light",
+        "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+        "hp": 1031,
+        "mp": 792,
+        "skill": "누리의빛",
+        "slot": 0
+      },
+      "event": "skill_cast",
+      "time": 38.415
+    },
+    {
+      "details": {
+        "skill": "금수",
+        "slot": 0
+      },
+      "event": "hotbar_assigned",
+      "time": 38.895
+    },
+    {
+      "details": {
+        "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+        "impact_ms": 180,
+        "skill": "금수",
+        "slot": 0
+      },
+      "event": "skill_started",
+      "time": 38.919
+    },
+    {
+      "details": {
+        "behavior": "animal",
+        "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+        "hp": 1031,
+        "mp": 785,
+        "skill": "금수",
+        "slot": 0
+      },
+      "event": "skill_cast",
+      "time": 39.113
+    },
+    {
+      "details": {
+        "skill": "누리의힘",
+        "slot": 0
+      },
+      "event": "hotbar_assigned",
+      "time": 39.862
+    },
+    {
+      "details": {
+        "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+        "impact_ms": 180,
+        "skill": "누리의힘",
+        "slot": 0
+      },
+      "event": "skill_started",
+      "time": 39.895
+    },
+    {
+      "details": {
+        "behavior": "buff",
+        "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+        "hp": 1031,
+        "mp": 777,
+        "skill": "누리의힘",
+        "slot": 0
+      },
+      "event": "skill_cast",
+      "time": 40.079
+    },
+    {
+      "details": {
+        "skill": "대지의빛",
+        "slot": 0
+      },
+      "event": "hotbar_assigned",
+      "time": 40.583
+    },
+    {
+      "details": {
+        "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+        "impact_ms": 180,
+        "skill": "대지의빛",
+        "slot": 0
+      },
+      "event": "skill_started",
+      "time": 40.605
+    },
+    {
+      "details": {
+        "behavior": "light",
+        "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+        "hp": 1031,
+        "mp": 768,
+        "skill": "대지의빛",
+        "slot": 0
+      },
+      "event": "skill_cast",
+      "time": 40.795
+    },
+    {
+      "details": {
+        "skill": "뢰진주(풍뢰)",
+        "slot": 0
+      },
+      "event": "hotbar_assigned",
+      "time": 41.318
+    },
+    {
+      "details": {
+        "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+        "impact_ms": 180,
+        "skill": "뢰진주(풍뢰)",
+        "slot": 0
+      },
+      "event": "skill_started",
+      "time": 41.341
+    },
+    {
+      "details": {
+        "damage": 92,
+        "hp": -82,
+        "impact_time": 0.187087666666667,
+        "skill": "뢰진주(풍뢰)",
+        "source": "skill",
+        "target": "field-2"
+      },
+      "event": "damage_applied",
+      "time": 41.528
+    },
+    {
+      "details": {
+        "drops": [],
+        "gold": 1,
+        "id": "field-2",
+        "level": 30,
+        "xp": 5.0
+      },
+      "event": "monster_killed",
+      "time": 41.528
+    },
+    {
+      "details": {
+        "behavior": "damage",
+        "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+        "hp": 1031,
+        "mp": 759,
+        "skill": "뢰진주(풍뢰)",
+        "slot": 0
+      },
+      "event": "skill_cast",
+      "time": 41.528
+    },
+    {
+      "details": {
+        "skill": "화염주(화)",
+        "slot": 0
+      },
+      "event": "hotbar_assigned",
+      "time": 42.303
+    },
+    {
+      "details": {
+        "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+        "impact_ms": 180,
+        "skill": "화염주(화)",
+        "slot": 0
+      },
+      "event": "skill_started",
+      "time": 42.325
+    },
+    {
+      "details": {
+        "damage": 92,
+        "hp": -74,
+        "impact_time": 0.191579444444444,
+        "skill": "화염주(화)",
+        "source": "skill",
+        "target": "field-3"
+      },
+      "event": "damage_applied",
+      "time": 42.517
+    },
+    {
+      "details": {
+        "drops": [
+          {
+            "item": "도토리",
+            "quantity": 1
+          }
+        ],
+        "gold": 1,
+        "id": "field-3",
+        "level": 30,
+        "xp": 7.5
+      },
+      "event": "monster_killed",
+      "time": 42.517
+    },
+    {
+      "details": {
+        "behavior": "damage",
+        "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+        "hp": 1031,
+        "mp": 750,
+        "skill": "화염주(화)",
+        "slot": 0
+      },
+      "event": "skill_cast",
+      "time": 42.517
+    },
+    {
+      "details": {
+        "skill": "자무주(수)",
+        "slot": 0
+      },
+      "event": "hotbar_assigned",
+      "time": 43.346
+    },
+    {
+      "details": {
+        "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+        "impact_ms": 180,
+        "skill": "자무주(수)",
+        "slot": 0
+      },
+      "event": "skill_started",
+      "time": 43.367
+    },
+    {
+      "details": {
+        "damage": 92,
+        "hp": -82,
+        "impact_time": 0.18103338095238,
+        "skill": "자무주(수)",
+        "source": "skill",
+        "target": "field-6"
+      },
+      "event": "damage_applied",
+      "time": 43.548
+    },
+    {
+      "details": {
+        "drops": [],
+        "gold": 1,
+        "id": "field-6",
+        "level": 30,
+        "xp": 5.0
+      },
+      "event": "monster_killed",
+      "time": 43.548
+    },
+    {
+      "details": {
+        "behavior": "damage",
+        "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+        "hp": 1031,
+        "mp": 741,
+        "skill": "자무주(수)",
+        "slot": 0
+      },
+      "event": "skill_cast",
+      "time": 43.548
+    },
+    {
+      "details": {
+        "skill": "백열주(지)",
+        "slot": 0
+      },
+      "event": "hotbar_assigned",
+      "time": 44.372
+    },
+    {
+      "details": {
+        "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+        "impact_ms": 180,
+        "skill": "백열주(지)",
+        "slot": 0
+      },
+      "event": "skill_started",
+      "time": 44.395
+    },
+    {
+      "details": {
+        "damage": 92,
+        "hp": -74,
+        "impact_time": 0.186632571428572,
+        "skill": "백열주(지)",
+        "source": "skill",
+        "target": "field-7"
+      },
+      "event": "damage_applied",
+      "time": 44.582
+    },
+    {
+      "details": {
+        "drops": [
+          {
+            "item": "도토리",
+            "quantity": 1
+          }
+        ],
+        "gold": 1,
+        "id": "field-7",
+        "level": 30,
+        "xp": 7.5
+      },
+      "event": "monster_killed",
+      "time": 44.582
+    },
+    {
+      "details": {
+        "behavior": "damage",
+        "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+        "hp": 1031,
+        "mp": 732,
+        "skill": "백열주(지)",
+        "slot": 0
+      },
+      "event": "skill_cast",
+      "time": 44.582
+    },
+    {
+      "details": {
+        "skill": "동해의기원",
+        "slot": 0
+      },
+      "event": "hotbar_assigned",
+      "time": 45.414
+    },
+    {
+      "details": {
+        "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+        "impact_ms": 180,
+        "skill": "동해의기원",
+        "slot": 0
+      },
+      "event": "skill_started",
+      "time": 45.436
+    },
+    {
+      "details": {
+        "behavior": "heal",
+        "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+        "hp": 1131,
+        "mp": 722,
+        "skill": "동해의기원",
+        "slot": 0
+      },
+      "event": "skill_cast",
+      "time": 45.62
+    },
+    {
+      "details": {
+        "skill": "무영보법",
+        "slot": 0
+      },
+      "event": "hotbar_assigned",
+      "time": 46.179
+    },
+    {
+      "details": {
+        "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+        "impact_ms": 180,
+        "skill": "무영보법",
+        "slot": 0
+      },
+      "event": "skill_started",
+      "time": 46.205
+    },
+    {
+      "details": {
+        "behavior": "stealth",
+        "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+        "hp": 1131,
+        "mp": 710,
+        "skill": "무영보법",
+        "slot": 0
+      },
+      "event": "skill_cast",
+      "time": 46.388
+    },
+    {
+      "details": {
+        "skill": "경수",
+        "slot": 0
+      },
+      "event": "hotbar_assigned",
+      "time": 47.219
+    },
+    {
+      "details": {
+        "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+        "impact_ms": 180,
+        "skill": "경수",
+        "slot": 0
+      },
+      "event": "skill_started",
+      "time": 47.249
+    },
+    {
+      "details": {
+        "behavior": "disguise",
+        "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+        "hp": 1131,
+        "mp": 697,
+        "skill": "경수",
+        "slot": 0
+      },
+      "event": "skill_cast",
+      "time": 47.431
+    },
+    {
+      "details": {
+        "skill": "바다의 빛",
+        "slot": 0
+      },
+      "event": "hotbar_assigned",
+      "time": 48.312
+    },
+    {
+      "details": {
+        "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+        "impact_ms": 180,
+        "skill": "바다의 빛",
+        "slot": 0
+      },
+      "event": "skill_started",
+      "time": 48.337
+    },
+    {
+      "details": {
+        "behavior": "light",
+        "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+        "hp": 1131,
+        "mp": 683,
+        "skill": "바다의 빛",
+        "slot": 0
+      },
+      "event": "skill_cast",
+      "time": 48.52
+    },
+    {
+      "details": {
+        "skill": "이중공격",
+        "slot": 0
+      },
+      "event": "hotbar_assigned",
+      "time": 49.132
+    },
+    {
+      "details": {
+        "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+        "impact_ms": 180,
+        "skill": "이중공격",
+        "slot": 0
+      },
+      "event": "skill_started",
+      "time": 49.154
+    },
+    {
+      "details": {
+        "behavior": "buff",
+        "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+        "hp": 1131,
+        "mp": 668,
+        "skill": "이중공격",
+        "slot": 0
+      },
+      "event": "skill_cast",
+      "time": 49.337
+    },
+    {
+      "details": {
+        "sha256": "fd6aa1eefe58b92adba5a69d12f94bece9bfa09fe75ebe3e062704ceeb392aeb",
+        "success": true
+      },
+      "event": "save_written",
+      "time": 49.729
+    }
+  ],
+  "player": {
+    "armor_equipped": "연두색 남자도복",
+    "buffs": {
+      "경수": 27.3864129999999,
+      "누리의빛": 18.3699408787875,
+      "누리의힘": 20.0342429090905,
+      "대지의빛": 20.7500637619045,
+      "무영보법": 26.3427083333332,
+      "바다의 빛": 28.4746969696969,
+      "이중공격": 29.2915223333333
+    },
+    "cooldowns": {
+      "경수": 0.0,
+      "금수": 0.0,
+      "누리의기원": 0.0,
+      "누리의빛": 0.0,
+      "누리의힘": 0.0,
+      "대지의기원": 0.0,
+      "대지의빛": 0.0,
+      "동해의기원": 0.0,
+      "뢰진주(풍뢰)": 0.0,
+      "무영보법": 0.0,
+      "바다의 빛": 0.0,
+      "백열주(지)": 0.0,
+      "이중공격": 0.108961666666668,
+      "자무주(수)": 0.0,
+      "화염주(화)": 0.0
+    },
+    "direction": 3,
+    "durability": {
+      "목도": 1000,
+      "철검": 3000
+    },
+    "equipped": "철검",
+    "gold": 995825,
+    "growth_log": [
+      {
+        "from": 1,
+        "hp_gain": 48,
+        "job": "평민",
+        "mp_gain": 36
+      },
+      {
+        "from": 2,
+        "hp_gain": 49,
+        "job": "평민",
+        "mp_gain": 33
+      },
+      {
+        "from": 3,
+        "hp_gain": 53,
+        "job": "평민",
+        "mp_gain": 32
+      },
+      {
+        "from": 4,
+        "hp_gain": 46,
+        "job": "평민",
+        "mp_gain": 36
+      },
+      {
+        "from": 5,
+        "hp_gain": 56,
+        "job": "도적",
+        "mp_gain": 24
+      },
+      {
+        "from": 6,
+        "hp_gain": 58,
+        "job": "도적",
+        "mp_gain": 24
+      },
+      {
+        "from": 7,
+        "hp_gain": 60,
+        "job": "도적",
+        "mp_gain": 25
+      },
+      {
+        "from": 8,
+        "hp_gain": 61,
+        "job": "도적",
+        "mp_gain": 24
+      },
+      {
+        "from": 9,
+        "hp_gain": 56,
+        "job": "도적",
+        "mp_gain": 24
+      },
+      {
+        "from": 10,
+        "hp_gain": 56,
+        "job": "도적",
+        "mp_gain": 26
+      },
+      {
+        "from": 11,
+        "hp_gain": 62,
+        "job": "도적",
+        "mp_gain": 27
+      },
+      {
+        "from": 12,
+        "hp_gain": 56,
+        "job": "도적",
+        "mp_gain": 25
+      },
+      {
+        "from": 13,
+        "hp_gain": 63,
+        "job": "도적",
+        "mp_gain": 26
+      },
+      {
+        "from": 14,
+        "hp_gain": 63,
+        "job": "도적",
+        "mp_gain": 26
+      },
+      {
+        "from": 15,
+        "hp_gain": 56,
+        "job": "도적",
+        "mp_gain": 27
+      },
+      {
+        "from": 16,
+        "hp_gain": 57,
+        "job": "도적",
+        "mp_gain": 25
+      },
+      {
+        "from": 17,
+        "hp_gain": 62,
+        "job": "도적",
+        "mp_gain": 26
+      },
+      {
+        "from": 18,
+        "hp_gain": 57,
+        "job": "도적",
+        "mp_gain": 25
+      },
+      {
+        "from": 19,
+        "hp_gain": 57,
+        "job": "도적",
+        "mp_gain": 26
+      },
+      {
+        "from": 20,
+        "hp_gain": 58,
+        "job": "도적",
+        "mp_gain": 27
+      },
+      {
+        "from": 21,
+        "hp_gain": 61,
+        "job": "도적",
+        "mp_gain": 25
+      },
+      {
+        "from": 22,
+        "hp_gain": 61,
+        "job": "도적",
+        "mp_gain": 25
+      },
+      {
+        "from": 23,
+        "hp_gain": 63,
+        "job": "도적",
+        "mp_gain": 24
+      },
+      {
+        "from": 24,
+        "hp_gain": 61,
+        "job": "도적",
+        "mp_gain": 26
+      },
+      {
+        "from": 25,
+        "hp_gain": 59,
+        "job": "도적",
+        "mp_gain": 27
+      },
+      {
+        "from": 26,
+        "hp_gain": 60,
+        "job": "도적",
+        "mp_gain": 24
+      },
+      {
+        "from": 27,
+        "hp_gain": 56,
+        "job": "도적",
+        "mp_gain": 26
+      },
+      {
+        "from": 28,
+        "hp_gain": 59,
+        "job": "도적",
+        "mp_gain": 25
+      },
+      {
+        "from": 29,
+        "hp_gain": 59,
+        "job": "도적",
+        "mp_gain": 27
+      }
+    ],
+    "hotbar": [
+      "이중공격",
+      "비영사천문",
+      "물품감정"
+    ],
+    "hp": 1131,
+    "hp_max": 1723,
+    "inventory": {
+      "도토리": 0,
+      "목도": 1,
+      "뱀고기": 0,
+      "연두색 남자도복": 1,
+      "철검": 1,
+      "토끼고기": 0,
+      "호랑이고기": 0
+    },
+    "job": "도적",
+    "kills": 4,
+    "level": 30,
+    "map": "field",
+    "mp": 668,
+    "mp_max": 808,
+    "name": "자료통합검증",
+    "quests": [],
+    "rank": 0,
+    "rng_state": "2863956168763118686",
+    "skill_page": 0,
+    "skills": [
+      "기초 회복",
+      "비영사천문",
+      "성황령",
+      "물품감정",
+      "누리의기원",
+      "대지의기원",
+      "누리의빛",
+      "금수",
+      "누리의힘",
+      "대지의빛",
+      "뢰진주(풍뢰)",
+      "화염주(화)",
+      "자무주(수)",
+      "백열주(지)",
+      "동해의기원",
+      "무영보법",
+      "경수",
+      "바다의 빛",
+      "이중공격"
+    ],
+    "strength": 34,
+    "validation_fixture": "CONTROLLED_LEVEL30_NOT_NATURAL_PLAYTHROUGH",
+    "visited": [
+      "village",
+      "village",
+      "rogue_guild",
+      "field"
+    ],
+    "world_revision": "source-maps-2",
+    "x": 30,
+    "xp2": 1472690,
+    "y": 56
+  },
+  "registered_tile_sources": 6,
+  "registered_tiles": 50104,
+  "rendered_actor_frames": [
+    "body_1:7",
+    "head_1:7",
+    "merchant:6",
+    "teacher:6",
+    "priest:6",
+    "ui_border:0",
+    "ui_border:1",
+    "ui_border:2",
+    "ui_border:3",
+    "ui_border:4",
+    "ui_border:5",
+    "ui_border:6",
+    "ui_border:7",
+    "ui_bars:0",
+    "ui_bars:1",
+    "merchant:7",
+    "teacher:7",
+    "priest:7",
+    "merchant:8",
+    "teacher:8",
+    "priest:8",
+    "body_1:6",
+    "head_1:6",
+    "body_1:8",
+    "head_1:8",
+    "body_1:11",
+    "head_1:11",
+    "body_1:9",
+    "head_1:9",
+    "body_1:10",
+    "head_1:10",
+    "body_1:1",
+    "head_1:1",
+    "icons:0",
+    "icons:1",
+    "icons:5",
+    "icons:4",
+    "icons:2",
+    "icons:3",
+    "icons:6",
+    "icons:9",
+    "icons:10",
+    "icons:11",
+    "icons:12",
+    "cloth_1:1",
+    "iron_weapon:1",
+    "cloth_1:13",
+    "head_1:13",
+    "iron_weapon:10",
+    "cloth_1:22",
+    "head_1:22",
+    "iron_weapon:11",
+    "cloth_1:23",
+    "head_1:23",
+    "iron_weapon:9",
+    "cloth_1:21",
+    "head_1:21",
+    "iron_weapon:2",
+    "cloth_1:14",
+    "head_1:14",
+    "iron_weapon:0",
+    "cloth_1:12",
+    "head_1:12",
+    "cloth_1:16",
+    "head_1:16",
+    "iron_weapon:4",
+    "cloth_1:17",
+    "head_1:17",
+    "iron_weapon:5",
+    "cloth_1:18",
+    "head_1:18",
+    "iron_weapon:6",
+    "cloth_1:19",
+    "head_1:19",
+    "iron_weapon:7",
+    "cloth_1:20",
+    "head_1:20",
+    "iron_weapon:8",
+    "squirrel:8",
+    "rabbit:8",
+    "squirrel:6",
+    "rabbit:6",
+    "cloth_1:72",
+    "head_1:72",
+    "squirrel:7",
+    "rabbit:7",
+    "fx_heal:0",
+    "fx_heal:1",
+    "fx_heal:2",
+    "fx_heal:3",
+    "fx_heal:4",
+    "fx_heal:5",
+    "fx_heal:6",
+    "fx_heal:7",
+    "fx_buff:0",
+    "fx_buff:1",
+    "fx_buff:2",
+    "fx_buff:3",
+    "fx_buff:4",
+    "fx_buff:5",
+    "fx_buff:6",
+    "rabbit:0",
+    "rabbit:1",
+    "rabbit:2",
+    "squirrel:2",
+    "rabbit:11",
+    "squirrel:11",
+    "squirrel:0",
+    "rabbit:9",
+    "squirrel:9",
+    "squirrel:1",
+    "rabbit:10",
+    "squirrel:10",
+    "rabbit:5",
+    "rabbit:3",
+    "cloth_1:73",
+    "head_1:73",
+    "fx_lightning:0",
+    "fx_lightning:1",
+    "fx_lightning:2",
+    "fx_lightning:3",
+    "fx_lightning:4",
+    "fx_lightning:5",
+    "fx_lightning:6",
+    "fx_lightning:7",
+    "fx_lightning:8",
+    "fx_lightning:9",
+    "fx_fire:0",
+    "fx_fire:1",
+    "fx_fire:2",
+    "fx_fire:3",
+    "fx_fire:4",
+    "fx_fire:5",
+    "fx_fire:6",
+    "fx_fire:7",
+    "fx_fire:8",
+    "cloth_1:75",
+    "head_1:75",
+    "fx_fire:9",
+    "fx_fire:10",
+    "fx_damage:0",
+    "squirrel:3",
+    "fx_fire:11",
+    "fx_damage:1",
+    "squirrel:4",
+    "rabbit:4",
+    "fx_fire:12",
+    "fx_damage:2",
+    "squirrel:5",
+    "fx_damage:3",
+    "fx_damage:4",
+    "fx_damage:5",
+    "fx_damage:6",
+    "fx_damage:7",
+    "fx_damage:8",
+    "fx_damage:9",
+    "fx_damage:10",
+    "fx_damage:11",
+    "innkeeper:11",
+    "innkeeper:9",
+    "innkeeper:10"
+  ],
+  "rendered_tile_ids": [
+    "KR491/A:198",
+    "A:198",
+    "KR491/B:213",
+    "A:426",
+    "B:213",
+    "KR491/A:129",
+    "A:129",
+    "KR491/A:176",
+    "A:176",
+    "KR491/A:132",
+    "A:132",
+    "KR491/A:133",
+    "A:133",
+    "KR491/A:128",
+    "A:128",
+    "KR491/A:140",
+    "A:140",
+    "KR491/A:131",
+    "A:131",
+    "KR491/C:759",
+    "C:759",
+    "KR491/C:769",
+    "C:769",
+    "KR491/C:796",
+    "KR491/C:1657",
+    "KR491/C:1659",
+    "KR491/C:1656",
+    "KR491/C:1658",
+    "KR491/C:777",
+    "C:777",
+    "KR491/C:795",
+    "KR491/C:758",
+    "C:758",
+    "KR491/C:768",
+    "C:768",
+    "KR491/C:794",
+    "KR491/C:812",
+    "C:812",
+    "KR491/C:814",
+    "C:814",
+    "KR491/C:816",
+    "KR491/C:962",
+    "C:962",
+    "KR491/C:961",
+    "C:961",
+    "KR491/C:960",
+    "C:960",
+    "KR491/C:959",
+    "KR491/C:958",
+    "KR491/C:851",
+    "KR491/C:848",
+    "C:848",
+    "KR491/C:763",
+    "C:763",
+    "KR491/C:852",
+    "KR491/C:781",
+    "C:781",
+    "KR491/C:764",
+    "C:764",
+    "KR491/C:853",
+    "KR491/C:865",
+    "KR491/C:863",
+    "KR491/C:861",
+    "KR491/C:2058",
+    "KR491/C:2054",
+    "KR491/C:2062",
+    "KR491/C:2059",
+    "KR491/C:2055",
+    "KR491/C:2063",
+    "KR491/C:2060",
+    "KR491/C:860",
+    "C:860",
+    "KR491/C:862",
+    "C:862",
+    "KR491/C:864",
+    "KR491/C:2056",
+    "KR491/C:2064",
+    "KR491/C:2057",
+    "KR491/C:2061",
+    "KR491/C:1038",
+    "C:1038",
+    "KR491/C:1033",
+    "C:1033",
+    "KR491/C:1029",
+    "C:1029",
+    "KR491/C:1018",
+    "C:1018",
+    "KR491/C:1039",
+    "C:1039",
+    "KR491/C:1034",
+    "C:1034",
+    "KR491/C:1030",
+    "C:1030",
+    "KR491/C:1019",
+    "C:1019",
+    "KR491/C:1040",
+    "KR491/C:1035",
+    "C:1035",
+    "KR491/C:1027",
+    "C:1027",
+    "KR491/C:1047",
+    "KR491/C:1044",
+    "C:1044",
+    "KR491/C:1041",
+    "KR491/C:1048",
+    "KR491/C:1045",
+    "C:1045",
+    "KR491/C:1042",
+    "KR491/C:1049",
+    "KR491/C:1046",
+    "KR491/C:1017",
+    "C:1017",
+    "KR491/C:1028",
+    "C:1028",
+    "KR491/C:1032",
+    "C:1032",
+    "KR491/C:1037",
+    "C:1037",
+    "KR491/C:1025",
+    "C:1025",
+    "KR491/C:1043",
+    "KR491/C:1036",
+    "KR491/C:1031",
+    "C:1031",
+    "KR491/C:1053",
+    "KR491/C:1050",
+    "KR491/C:1060",
+    "KR491/C:1057",
+    "C:1057",
+    "KR491/C:1054",
+    "KR491/C:1051",
+    "KR491/C:1052",
+    "KR491/C:1055",
+    "KR491/C:2042",
+    "KR491/C:2045",
+    "KR491/C:2041",
+    "KR491/C:2044",
+    "C:2044",
+    "KR491/C:2040",
+    "KR491/C:2043",
+    "KR491/C:953",
+    "C:953",
+    "KR491/C:945",
+    "C:945",
+    "KR491/C:954",
+    "C:954",
+    "KR491/C:946",
+    "C:946",
+    "KR491/C:955",
+    "C:955",
+    "KR491/C:947",
+    "KR491/C:956",
+    "C:956",
+    "KR491/C:948",
+    "KR491/C:957",
+    "KR491/C:949",
+    "KR491/A:130",
+    "A:130",
+    "KR491/A:145",
+    "A:145",
+    "KR491/C:2049",
+    "KR491/C:1058",
+    "KR491/C:2048",
+    "KR491/C:2047",
+    "KR491/C:811",
+    "KR491/C:804",
+    "KR491/C:965",
+    "KR491/C:964",
+    "KR491/C:963",
+    "C:963",
+    "KR491/C:1061",
+    "KR491/C:2052",
+    "KR491/C:2051",
+    "KR491/C:813",
+    "KR491/C:807",
+    "KR491/C:1062",
+    "KR491/A:138",
+    "A:138",
+    "KR491/C:252",
+    "KR491/C:271",
+    "KR491/C:280",
+    "KR491/C:2046",
+    "KR491/C:2050",
+    "KR491/C:2053",
+    "KR491/C:1063",
+    "KR491/A:157",
+    "A:157",
+    "KR491/C:1081",
+    "KR491/C:1093",
+    "KR491/C:1083",
+    "KR491/A:21",
+    "A:21",
+    "KR491/C:1849",
+    "KR491/C:1847",
+    "KR491/C:1843",
+    "KR491/A:99",
+    "A:99",
+    "KR491/A:106",
+    "A:106",
+    "KR491/A:41",
+    "A:41",
+    "B:207",
+    "KR491/A:101",
+    "A:101",
+    "KR491/C:1850",
+    "KR491/C:1848",
+    "KR491/C:1844",
+    "KR491/A:63",
+    "A:63",
+    "B:206",
+    "KR491/A:97",
+    "A:97",
+    "KR491/A:105",
+    "A:105",
+    "KR491/A:100",
+    "A:100",
+    "KR491/A:595",
+    "A:595",
+    "KR491/A:492",
+    "A:492",
+    "KR491/A:493",
+    "A:493",
+    "KR491/A:494",
+    "A:494",
+    "KR491/A:495",
+    "A:495",
+    "KR491/A:496",
+    "A:496",
+    "KR491/A:497",
+    "A:497",
+    "KR491/A:599",
+    "A:599",
+    "KR491/A:596",
+    "A:596",
+    "KR491/A:498",
+    "A:498",
+    "KR491/A:499",
+    "A:499",
+    "KR491/A:500",
+    "A:500",
+    "KR491/A:501",
+    "A:501",
+    "KR491/A:502",
+    "A:502",
+    "KR491/A:503",
+    "A:503",
+    "KR491/A:504",
+    "A:504",
+    "KR491/A:505",
+    "A:505",
+    "KR491/A:506",
+    "A:506",
+    "KR491/A:507",
+    "A:507",
+    "KR491/A:508",
+    "A:508",
+    "KR491/A:509",
+    "A:509",
+    "KR491/A:510",
+    "A:510",
+    "KR491/A:511",
+    "A:511",
+    "KR491/A:512",
+    "A:512",
+    "KR491/A:513",
+    "A:513",
+    "KR491/A:514",
+    "A:514",
+    "KR491/A:515",
+    "A:515",
+    "KR491/A:593",
+    "A:593",
+    "KR491/A:598",
+    "A:598",
+    "KR491/A:594",
+    "A:594",
+    "KR491/A:449",
+    "A:449",
+    "B:216",
+    "KR491/A:434",
+    "A:434",
+    "KR491/C:1191",
+    "KR491/C:1192",
+    "KR491/C:1245",
+    "KR491/C:1254",
+    "KR491/C:1244",
+    "KR491/C:1253",
+    "KR491/C:1259",
+    "KR491/C:1293",
+    "KR491/C:1299",
+    "KR491/C:1301",
+    "KR491/C:1292",
+    "KR491/C:1298",
+    "KR491/C:1291",
+    "KR491/C:1297",
+    "KR491/C:1290",
+    "KR491/C:1296",
+    "KR491/C:1289",
+    "KR491/C:1295",
+    "KR491/C:1288",
+    "KR491/C:1294",
+    "KR491/C:1300",
+    "KR491/C:1237",
+    "KR491/C:1246",
+    "C:1246",
+    "KR491/C:1255",
+    "C:1255",
+    "KR491/C:1188",
+    "KR491/C:1189",
+    "KR491/C:1190",
+    "KR491/C:1224",
+    "KR491/C:1228",
+    "KR491/C:1223",
+    "KR491/C:1227",
+    "KR491/C:1222",
+    "KR491/C:1226",
+    "KR491/C:1221",
+    "KR491/C:1225",
+    "KR491/C:3869",
+    "C:3869",
+    "KR491/C:3867",
+    "C:3867",
+    "KR491/C:3865",
+    "C:3865",
+    "KR491/C:1410",
+    "C:1410",
+    "KR491/C:1419",
+    "C:1419",
+    "KR491/C:1429",
+    "C:1429",
+    "KR491/C:1431",
+    "C:1431",
+    "KR491/C:1428",
+    "C:1428",
+    "KR491/C:1430",
+    "C:1430",
+    "KR491/A:591",
+    "A:591",
+    "KR491/A:597",
+    "A:597",
+    "KR491/A:592",
+    "A:592",
+    "KR491/C:3866",
+    "C:3866",
+    "KR491/C:3868",
+    "C:3868",
+    "KR491/C:1414",
+    "C:1414",
+    "KR491/C:1423",
+    "C:1423",
+    "KR491/A:115",
+    "A:115",
+    "KR491/B:206",
+    "KR491/B:216",
+    "KR491/A:104",
+    "A:104",
+    "KR491/A:334",
+    "A:334",
+    "KR491/A:335",
+    "A:335",
+    "KR491/A:103",
+    "A:103",
+    "KR491/A:109",
+    "A:109",
+    "KR491/A:102",
+    "A:102",
+    "KR491/C:193",
+    "KR491/C:187",
+    "KR491/C:188",
+    "KR491/C:1133",
+    "C:1133",
+    "KR491/C:1118",
+    "C:1118",
+    "KR491/C:153",
+    "KR491/C:154",
+    "KR491/C:1612",
+    "KR491/C:1610",
+    "KR491/C:698",
+    "C:698",
+    "KR491/C:1611",
+    "KR491/C:1609",
+    "KR491/C:726",
+    "C:726",
+    "KR491/C:712",
+    "KR491/C:709",
+    "C:709",
+    "KR491/C:722",
+    "C:722",
+    "KR491/C:730",
+    "C:730",
+    "KR491/C:714",
+    "KR491/C:711",
+    "C:711",
+    "KR491/C:724",
+    "C:724",
+    "KR491/C:728",
+    "KR491/C:725",
+    "KR491/C:729",
+    "C:729",
+    "KR491/C:713",
+    "KR491/C:710",
+    "C:710",
+    "KR491/C:723",
+    "C:723",
+    "KR491/C:637",
+    "KR491/C:629",
+    "C:629",
+    "KR491/C:619",
+    "C:619",
+    "KR491/C:621",
+    "C:621",
+    "KR491/C:622",
+    "C:622",
+    "KR491/C:639",
+    "KR491/C:630",
+    "C:630",
+    "KR491/C:623",
+    "C:623",
+    "KR491/C:640",
+    "KR491/C:631",
+    "C:631",
+    "KR491/C:624",
+    "C:624",
+    "KR491/C:641",
+    "KR491/C:632",
+    "KR491/C:625",
+    "KR491/C:618",
+    "C:618",
+    "KR491/C:636",
+    "KR491/C:617",
+    "C:617",
+    "KR491/C:628",
+    "C:628",
+    "KR491/C:635",
+    "KR491/C:633",
+    "KR491/C:626",
+    "KR491/C:615",
+    "KR491/C:634",
+    "KR491/C:627",
+    "C:627",
+    "KR491/C:616",
+    "C:616",
+    "KR491/C:1119",
+    "KR491/C:1114",
+    "C:1114",
+    "KR491/C:1124",
+    "C:1124",
+    "KR491/C:1125",
+    "C:1125",
+    "KR491/C:1117",
+    "KR491/C:1132",
+    "KR491/C:1116",
+    "KR491/C:1134",
+    "KR491/C:1131",
+    "KR491/C:1129",
+    "C:1129",
+    "KR491/C:1110",
+    "C:1110",
+    "KR491/C:1067",
+    "KR491/C:1066",
+    "KR491/C:1130",
+    "C:1130",
+    "KR491/C:1128",
+    "C:1128",
+    "KR491/C:1070",
+    "KR491/C:1069",
+    "KR491/C:1112",
+    "KR491/C:1111",
+    "KR491/C:1127",
+    "KR491/C:1126",
+    "KR491/C:1809",
+    "KR491/C:1810",
+    "KR491/C:1808",
+    "KR491/C:1813",
+    "KR491/C:1814",
+    "KR491/C:1811",
+    "KR491/C:1812",
+    "KR491/C:1815",
+    "KR491/C:1817",
+    "KR491/C:1816",
+    "KR491/C:1818",
+    "KR491/C:1822",
+    "KR491/C:1819",
+    "KR491/C:1821",
+    "KR491/C:1820",
+    "KR491/A:51",
+    "A:51",
+    "KR491/A:44",
+    "A:44",
+    "KR491/A:49",
+    "A:49",
+    "KR491/A:46",
+    "A:46",
+    "KR491/A:42",
+    "A:42",
+    "A:177",
+    "B:204",
+    "C:3973",
+    "KR491/A:45",
+    "A:45",
+    "KR491/A:64",
+    "A:64",
+    "KR491/A:66",
+    "A:66",
+    "KR491/A:56",
+    "A:56",
+    "KR491/A:58",
+    "A:58",
+    "KR491/A:241",
+    "A:241",
+    "KR491/A:243",
+    "A:243",
+    "KR491/A:245",
+    "A:245",
+    "KR491/C:1144",
+    "KR491/C:645",
+    "KR491/B:72",
+    "B:72",
+    "KR491/B:64",
+    "B:64",
+    "KR491/A:228",
+    "A:228",
+    "KR491/A:229",
+    "A:229",
+    "KR491/A:230",
+    "A:230",
+    "KR491/B:12",
+    "B:12",
+    "KR491/B:19",
+    "B:19",
+    "KR491/C:1142",
+    "KR491/B:73",
+    "B:73",
+    "KR491/B:65",
+    "B:65",
+    "KR491/B:13",
+    "B:13",
+    "KR491/B:20",
+    "B:20",
+    "KR491/B:86",
+    "B:86",
+    "KR491/B:118",
+    "B:0",
+    "B:118",
+    "KR491/B:14",
+    "B:14",
+    "KR491/B:21",
+    "B:21",
+    "KR491/B:15",
+    "B:15",
+    "KR491/B:22",
+    "B:22",
+    "KR491/B:28",
+    "B:28",
+    "KR491/B:81",
+    "B:81",
+    "KR491/B:75",
+    "B:75",
+    "B:111",
+    "KR491/B:16",
+    "B:16",
+    "KR491/B:23",
+    "B:23",
+    "KR491/B:29",
+    "B:29",
+    "KR491/B:76",
+    "B:76",
+    "KR491/B:70",
+    "B:70",
+    "KR491/B:17",
+    "B:17",
+    "KR491/B:24",
+    "B:24",
+    "KR491/B:30",
+    "B:30",
+    "KR491/B:77",
+    "B:77",
+    "KR491/B:71",
+    "B:71",
+    "KR491/B:18",
+    "B:18",
+    "KR491/B:25",
+    "B:25",
+    "KR491/B:116",
+    "B:116",
+    "KR491/A:240",
+    "A:240",
+    "KR491/A:242",
+    "A:242",
+    "KR491/A:244",
+    "A:244",
+    "KR491/C:3955",
+    "KR491/C:3953",
+    "KR491/C:1143",
+    "KR491/B:117",
+    "B:117",
+    "KR491/A:55",
+    "A:55",
+    "KR491/A:43",
+    "A:43",
+    "KR491/A:57",
+    "A:57",
+    "KR491/C:3956",
+    "KR491/C:3954",
+    "KR491/A:61",
+    "A:61",
+    "KR491/A:50",
+    "A:50",
+    "KR491/A:52",
+    "A:52",
+    "KR491/B:48",
+    "B:48",
+    "KR491/B:56",
+    "B:56",
+    "KR491/B:42",
+    "KR491/B:49",
+    "B:49",
+    "KR491/B:57",
+    "B:57",
+    "KR491/B:45",
+    "B:45",
+    "KR491/B:50",
+    "B:50",
+    "KR491/B:58",
+    "B:58",
+    "KR491/B:66",
+    "B:66",
+    "KR491/B:111",
+    "KR491/B:112",
+    "B:112",
+    "KR491/B:113",
+    "B:113",
+    "KR491/B:78",
+    "B:78",
+    "KR491/B:84",
+    "B:84",
+    "KR491/B:90",
+    "B:90",
+    "KR491/B:79",
+    "B:79",
+    "KR491/B:85",
+    "B:85",
+    "KR491/B:91",
+    "B:91",
+    "KR491/A:62",
+    "A:62",
+    "KR491/B:32",
+    "B:32",
+    "KR491/B:98",
+    "B:98",
+    "KR491/B:99",
+    "B:99",
+    "KR491/B:68",
+    "B:68",
+    "KR491/B:67",
+    "B:67",
+    "KR491/B:47",
+    "B:47",
+    "KR491/B:54",
+    "B:54",
+    "KR491/A:54",
+    "A:54",
+    "KR491/A:53",
+    "A:53",
+    "KR491/B:55",
+    "B:55",
+    "KR491/B:61",
+    "B:61",
+    "KR491/B:59",
+    "B:59",
+    "KR491/B:60",
+    "B:60",
+    "KR491/B:36",
+    "B:36",
+    "KR491/B:51",
+    "B:51",
+    "KR491/B:52",
+    "B:52",
+    "KR491/A:224",
+    "A:224",
+    "KR491/A:226",
+    "A:226",
+    "KR491/A:225",
+    "A:225",
+    "KR491/A:227",
+    "A:227",
+    "KR491/B:38",
+    "B:38",
+    "KR491/B:39",
+    "B:39",
+    "KR491/B:41",
+    "B:41",
+    "KR491/B:37",
+    "B:37",
+    "KR491/C:1856",
+    "KR491/C:1853",
+    "KR491/C:1859",
+    "KR491/C:1857",
+    "KR491/C:1854",
+    "KR491/C:1851",
+    "KR491/A:108",
+    "A:108",
+    "KR491/C:1860",
+    "KR491/C:1858",
+    "KR491/C:1855",
+    "KR491/C:1852",
+    "KR491/B:43",
+    "B:43",
+    "KR491/B:44",
+    "B:44",
+    "KR491/B:26",
+    "B:26",
+    "KR491/B:27",
+    "B:27",
+    "KR491/A:65",
+    "A:65",
+    "KR491/A:222",
+    "A:222",
+    "KR491/A:223",
+    "A:223",
+    "KR491/C:1841",
+    "KR491/C:1842",
+    "KR491/A:47",
+    "A:47",
+    "KR491/A:48",
+    "A:48",
+    "KR491/C:1839",
+    "KR491/C:1840",
+    "KR491/A:110",
+    "A:110",
+    "KR491/A:98",
+    "A:98",
+    "KR491/C:1846",
+    "KR491/C:1845",
+    "KR491/C:1838",
+    "KR491/C:1837",
+    "KR491/C:1836",
+    "KR491/C:1835",
+    "KR491/A:23",
+    "A:23",
+    "KR491/A:28",
+    "A:28",
+    "KR491/A:27",
+    "A:27",
+    "KR491/A:20",
+    "A:20",
+    "B:205",
+    "KR491/A:33",
+    "A:33",
+    "KR491/A:34",
+    "A:34",
+    "KR491/C:1088",
+    "C:1088",
+    "KR491/C:1089",
+    "C:1089",
+    "KR491/C:1084",
+    "KR491/C:1090",
+    "C:1090",
+    "KR491/C:1085",
+    "KR491/C:1087",
+    "C:1087",
+    "KR491/A:159",
+    "A:159",
+    "KR491/A:171",
+    "A:171",
+    "KR491/C:2023",
+    "KR491/C:2022",
+    "KR491/C:2021",
+    "KR491/C:2020",
+    "KR491/C:2019",
+    "KR491/C:2018",
+    "KR491/C:2017",
+    "KR491/C:1073",
+    "KR491/C:1072",
+    "KR491/C:1077",
+    "KR491/C:1076",
+    "KR491/C:1078",
+    "KR491/C:1075",
+    "KR491/A:146",
+    "A:146",
+    "KR491/C:2039",
+    "KR491/C:2033",
+    "KR491/C:2034",
+    "KR491/C:2038",
+    "KR491/C:2037",
+    "KR491/C:2035",
+    "C:2035",
+    "KR491/C:2036",
+    "KR491/A:135",
+    "A:135",
+    "KR491/C:2031",
+    "KR491/C:2032",
+    "KR491/C:2026",
+    "KR491/C:2027",
+    "KR491/C:2028",
+    "KR491/C:2029",
+    "KR491/C:2030",
+    "KR491/C:2025",
+    "KR491/C:2001",
+    "KR491/C:2024",
+    "KR491/C:1999",
+    "KR491/C:1065",
+    "KR491/C:1064",
+    "KR491/C:810",
+    "KR491/C:815",
+    "KR491/B:255",
+    "B:255",
+    "KR491/A:8",
+    "A:8",
+    "KR491/B:273",
+    "B:273",
+    "KR491/A:273",
+    "A:273",
+    "KR491/B:274",
+    "B:274",
+    "KR491/B:288",
+    "B:288",
+    "KR491/B:121",
+    "B:121",
+    "KR491/B:267",
+    "B:267",
+    "KR491/A:269",
+    "A:269",
+    "KR491/B:270",
+    "B:270",
+    "KR491/B:124",
+    "KR491/B:128",
+    "B:128",
+    "KR491/A:17",
+    "A:17",
+    "KR491/A:16",
+    "A:16",
+    "KR491/B:271",
+    "B:271",
+    "KR491/A:271",
+    "A:271",
+    "KR491/B:272",
+    "B:272",
+    "KR491/A:9",
+    "A:9",
+    "KR491/B:296",
+    "B:296",
+    "KR491/B:301",
+    "B:301",
+    "KR491/C:1995",
+    "KR491/C:1996",
+    "KR491/C:1997",
+    "KR491/C:2071",
+    "KR491/C:2065",
+    "KR491/C:2068",
+    "KR491/C:2069",
+    "KR491/C:2082",
+    "KR491/C:2084",
+    "KR491/C:2081",
+    "KR491/C:2083"
+  ],
+  "save_loaded": true,
+  "scope": "REAL_X11_GODOT_VIEWPORT_WITH_INPUT_EVENTS_NOT_FULL_1_TO_99_PLAYTHROUGH",
+  "screenshots": [
+    {
+      "height": 640,
+      "name": "outfit-before",
+      "path": "/workspace/baram-private/content-screen-fixed-1/skills-1/outfit-before.png",
+      "sha256": "0588112c6acc6e085e410a9c2a02330820efa6d64676600b55f207a45277a590",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "outfit-after",
+      "path": "/workspace/baram-private/content-screen-fixed-1/skills-1/outfit-after.png",
+      "sha256": "a9de3f0dce135b12a50f202bec6f267cab0cb3f4d72f8feeb6fb0e2bc6b68f91",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "source-class-training",
+      "path": "/workspace/baram-private/content-screen-fixed-1/skills-1/source-class-training.png",
+      "sha256": "487ba79eb39f1a7d4b582bbb06ded50c5b0681661c013cfd221295471e447ff2",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "cast-0",
+      "path": "/workspace/baram-private/content-screen-fixed-1/skills-1/cast-0.png",
+      "sha256": "5387c06762db92ebf58eeaa3e393f4014328fc57da1200d9682755fd7bc33333",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "cast-3",
+      "path": "/workspace/baram-private/content-screen-fixed-1/skills-1/cast-3.png",
+      "sha256": "c9412a0a8aac84931864561c5eb1aaf0aa36de897b18537a9f0665f919177029",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "cast-6",
+      "path": "/workspace/baram-private/content-screen-fixed-1/skills-1/cast-6.png",
+      "sha256": "f81892d4a7ae12fa2cb4948cfcba3cfd913404e7bade4065e20169a37b5a6c15",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "cast-7",
+      "path": "/workspace/baram-private/content-screen-fixed-1/skills-1/cast-7.png",
+      "sha256": "bbe8d81fdd9672165cbc4b44fc6356191a0e9dfb40da209340cf221fb06d6d68",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "cast-8",
+      "path": "/workspace/baram-private/content-screen-fixed-1/skills-1/cast-8.png",
+      "sha256": "b87c661613ddfd8c14645853e96d47702929a023ecd06a9cd9e7a0b2c4f83fe4",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "cast-9",
+      "path": "/workspace/baram-private/content-screen-fixed-1/skills-1/cast-9.png",
+      "sha256": "14f83ca3d788beca55f4c73c525ff00ccbd638c4073c4e6511966b2a19019874",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "cast-11",
+      "path": "/workspace/baram-private/content-screen-fixed-1/skills-1/cast-11.png",
+      "sha256": "8b319c6b31eb10f376d4e2450b5a9c737356b40c32993e3f2492056a8587a711",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "cast-12",
+      "path": "/workspace/baram-private/content-screen-fixed-1/skills-1/cast-12.png",
+      "sha256": "64cc83b4970be5f0d0d5431a4ef219e020668304ec733844f863ac6efb5c2ae3",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "content-saved",
+      "path": "/workspace/baram-private/content-screen-fixed-1/skills-1/content-saved.png",
+      "sha256": "7b1e191121d85340e2e0b34339a57e08ae6a861f5b20cab8702183fa802aa61c",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    }
+  ],
+  "status": "PASS_EXECUTED_SCREEN_INPUT"
+}

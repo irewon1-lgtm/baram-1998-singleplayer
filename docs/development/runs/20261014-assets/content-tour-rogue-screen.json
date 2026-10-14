@@ -1,0 +1,221 @@
+{
+  "started_at": "2026-10-14T05:43:46.507643+00:00",
+  "scope": "REAL_GAME_X11_WINDOW_AND_GODOT_INPUT_EVENTS",
+  "runs": [
+    {
+      "mode": "tour-resume",
+      "exit_code": 0,
+      "game_report": "/workspace/baram-private/content-screen-fixed-1/tour-resume/tour-resume-report.json",
+      "game_status": "PASS_EXECUTED_SCREEN_INPUT",
+      "x11_captures": [
+        {
+          "name": "tour-cave",
+          "sha256": "38ae0ff12bb04c5915123bd978f0617c1a1886db5b213d0ab6a5f57defd77fbe",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 122,
+          "status": "PASS"
+        },
+        {
+          "name": "tour-bat_den",
+          "sha256": "1cbe0637eb8e6757a0d96dcb4768c714fb05f784be1191c486f3ce8807c1b33d",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 138,
+          "status": "PASS"
+        },
+        {
+          "name": "tour-cave",
+          "sha256": "deae442ae5ed8639a33392e8317ccf74b6da5d8fb7f14e2a380a9d1a47b58772",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 122,
+          "status": "PASS"
+        },
+        {
+          "name": "tour-field",
+          "sha256": "fea24014ebe8946b655ea7c4907679efe1804984938102c2893961c9a1a7b5a6",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 165,
+          "status": "PASS"
+        },
+        {
+          "name": "tour-forest",
+          "sha256": "0473ea68222f959975a1549c39c23a830f0d409018c61f5790bf4c6b606cd0bc",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 128,
+          "status": "PASS"
+        },
+        {
+          "name": "tour-deep",
+          "sha256": "6e6aca0bcbc8e376dfc835df7f2f4649fc01e596a9616a0966aa0a21a5efac60",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 124,
+          "status": "PASS"
+        },
+        {
+          "name": "tour-ruins",
+          "sha256": "be1095e07b844d8c64a184cc49d92dec5a840c77b7de62cecfa71538259002f8",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 113,
+          "status": "PASS"
+        },
+        {
+          "name": "content-saved",
+          "sha256": "31d69e934aea199ab974fa954a46243646450b15f5e0f547a6985acb8e77c5eb",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 113,
+          "status": "PASS"
+        }
+      ],
+      "audio_mix": {
+        "status": "PASS_PCM_SIGNAL",
+        "samples": 3178496,
+        "rms": 5233.271664279204,
+        "driver": "Dummy",
+        "audible_human_review": "NOT_RUN"
+      },
+      "argv": [
+        "godot",
+        "--path",
+        "/workspace/baram-1998-singleplayer/game",
+        "--display-driver",
+        "x11",
+        "--rendering-method",
+        "gl_compatibility",
+        "--audio-driver",
+        "Dummy",
+        "--",
+        "--assets=/workspace/baram-private/game-assets",
+        "--save=/workspace/baram-private/content-screen-fixed-1/tour-resume/character.json",
+        "--exercise=tour-resume",
+        "--evidence=/workspace/baram-private/content-screen-fixed-1/tour-resume"
+      ],
+      "registered_tiles": 50104,
+      "checks": 21
+    },
+    {
+      "mode": "skills-1",
+      "exit_code": 0,
+      "game_report": "/workspace/baram-private/content-screen-fixed-1/skills-1/skills-1-report.json",
+      "game_status": "PASS_EXECUTED_SCREEN_INPUT",
+      "x11_captures": [
+        {
+          "name": "outfit-before",
+          "sha256": "e168798af539a57b36b70ae62528f2468bb5cc31efc6893798ce7383aebdaad1",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 177,
+          "status": "PASS"
+        },
+        {
+          "name": "outfit-after",
+          "sha256": "df96ae4cb45020fe076298209aea038eb6f3d728577b673b118044353c921fd9",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 173,
+          "status": "PASS"
+        },
+        {
+          "name": "source-class-training",
+          "sha256": "f07d102f814fc54e20cab5cb8aa1825cad4a95f924582f25f67c935b6036ada6",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 157,
+          "status": "PASS"
+        },
+        {
+          "name": "cast-0",
+          "sha256": "d70b228d5ba6ae82cc356ed4b5f08106ba33d97638c5b2f7a9daa5b49ad86c0d",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 163,
+          "status": "PASS"
+        },
+        {
+          "name": "cast-3",
+          "sha256": "0bf864fcde10ee7f60f30c9c68b5cee0a4bc61db3f827165d8ef913a959e79d2",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 180,
+          "status": "PASS"
+        },
+        {
+          "name": "cast-6",
+          "sha256": "a8348da94170c7a0a44538d6662ba79099b2ba57dc1af2c9b47ca135ba49109e",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 173,
+          "status": "PASS"
+        },
+        {
+          "name": "cast-7",
+          "sha256": "adc163eac89768cddb346f5a62bec1ef682cd3f5f51de6d7f9e020a85ab73529",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 164,
+          "status": "PASS"
+        },
+        {
+          "name": "cast-8",
+          "sha256": "bbc9390229a9cf5bca6e6650243215575d9603a2d66a8d3ebed5c01fb939297f",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 165,
+          "status": "PASS"
+        },
+        {
+          "name": "cast-9",
+          "sha256": "facdbf1944e7e754ab36747f835b3aeaca2abebcb88ef16b513f59043d61348c",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 165,
+          "status": "PASS"
+        },
+        {
+          "name": "cast-11",
+          "sha256": "e43dbd49eb0bd26fb5dab39c30729dcbb3492ba2186f03700c16128fb106a194",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 174,
+          "status": "PASS"
+        },
+        {
+          "name": "cast-12",
+          "sha256": "2789539b4b38090c2dfcb4b275ff07b2855f8730f4fe8b1ce69ce1b7e1432d62",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 280,
+          "status": "PASS"
+        },
+        {
+          "name": "content-saved",
+          "sha256": "6fc7471d355c8d83d029b8a3bdff1a067b9b8e37c200db5c7773daa6ff2ae4c3",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 171,
+          "status": "PASS"
+        }
+      ],
+      "audio_mix": {
+        "status": "PASS_PCM_SIGNAL",
+        "samples": 4407296,
+        "rms": 3586.7050824281696,
+        "driver": "Dummy",
+        "audible_human_review": "NOT_RUN"
+      },
+      "argv": [
+        "godot",
+        "--path",
+        "/workspace/baram-1998-singleplayer/game",
+        "--display-driver",
+        "x11",
+        "--rendering-method",
+        "gl_compatibility",
+        "--audio-driver",
+        "Dummy",
+        "--",
+        "--assets=/workspace/baram-private/game-assets",
+        "--save=/workspace/baram-private/content-screen-fixed-1/skills-1/character.json",
+        "--exercise=skills-1",
+        "--evidence=/workspace/baram-private/content-screen-fixed-1/skills-1"
+      ],
+      "registered_tiles": 50104,
+      "checks": 98
+    }
+  ],
+  "status": "PASS_EXECUTED_SCREEN_INPUT",
+  "finished_at": "2026-10-14T05:45:57.554098+00:00",
+  "source_sha256": {
+    "game/main.gd": "83bd67821759b1085f5e6f130c2a4ab583916eee88976be0839132093a6b5178",
+    "game/exercise.gd": "cfca57523bca63e6604d9576279256e5ca173bf9e04c07093cb9c639c879820e",
+    "game/rules.gd": "58b05bf12277ce870259d6d732d40c0a8e6b7bc63ceea083171a84b02396bbdc",
+    "game/save_store.gd": "0f1c8b9fea8baf986a750afaf2636dee6925b97442724226a098cbc9937460ac",
+    "tests/run_playable_screen.py": "f8571c346242e26bf4ff1a5bc29bd8734ac178c6ea6596169ee2ac826f3a5e25"
+  }
+}

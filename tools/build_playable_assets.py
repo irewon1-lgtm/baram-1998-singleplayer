@@ -6,17 +6,13 @@ import json
 import re
 import shutil
 import wave
+import struct
 from pathlib import Path
 from PIL import Image
 from legacy_assets import Epf, dat_entries, read_palettes, private_path
 
 ROOT = Path(__file__).resolve().parents[1]
 KR_SHA = 'f8271a52d8dbde5601a0c7bf7460052376b2651930b6bc004eeb1ed20357bfc7'
-MODELS = {'rabbit': (125, 11), 'squirrel': (25, 9), 'rat': (90, 9), 'bat': (58, 0),
-          'snake': (26, 9), 'boar': (19, 9), 'spider': (97, 9), 'skeleton': (30, 0),
-          'innkeeper': (51, 0), 'merchant': (67, 0), 'teacher': (68, 0), 'priest': (41, 0)}
-ICON_FRAMES = {'목도': 2, '목검': 2, '도토리': 214, '토끼고기': 217,
-               '철검': 17, '철단도': 12, '산삼': 229, '붉은시약': 165, '푸른시약': 166}
 
 
 def sha(data):
@@ -29,18 +25,20 @@ def export(data, out):
     if sha(original) != KR_SHA:
         raise ValueError('KR original DAT mismatch')
     entries = dat_entries(original)
+    bindings=json.loads((ROOT/'game/data/runtime_bindings.json').read_text())
     sheets = {}
     ledger = []
 
-    def sheet(name, epf_name, indices, color=0, palette_index=0, cell=(128, 128)):
+    def sheet(name, epf_name, indices, color=0, palette_index=0, cell=(128, 128),pal_name=None,origin=(64,80),frame_palettes=None):
         epf = Epf(entries[epf_name + '.epf'][2])
-        palette = read_palettes(entries[epf_name + '.pal'][2])[palette_index]
+        all_palettes = read_palettes(entries[(pal_name or epf_name) + '.pal'][2])
         image = Image.new('RGBA', (16 * cell[0], ((len(indices) + 15) // 16) * cell[1]))
         frames = []
         for j, i in enumerate(indices):
             f = epf.frame(i)
+            selected_palette=frame_palettes[j] if frame_palettes is not None else palette_index
+            palette=all_palettes[selected_palette]
             # Preserve original EPF canvas pivots in every animation layer.
-            origin = (64, 80)
             if f.left + origin[0] < 0 or f.top + origin[1] < 0 or f.left + f.width + origin[0] > cell[0] or f.top + f.height + origin[1] > cell[1]:
                 raise ValueError(f'Frame exceeds declared canvas: {name}:{i}')
             raw = f.rgba(palette, color)
@@ -49,40 +47,68 @@ def export(data, out):
                 image.paste(sprite, (j % 16 * cell[0] + origin[0] + f.left, j // 16 * cell[1] + origin[1] + f.top))
             frames.append(dict(frame=i, region=[j % 16 * cell[0], j // 16 * cell[1], *cell],
                                left=f.left, top=f.top, width=f.width, height=f.height,
-                               rgba_sha256=sha(raw), opaque=sum(a != 0 for a in f.alpha)))
+                               rgba_sha256=sha(raw), opaque=sum(a != 0 for a in f.alpha),palette_index=selected_palette))
         target = out / 'sprites' / (name + '.png')
         target.parent.mkdir(parents=True, exist_ok=True)
         image.save(target)
-        spec = dict(path='sprites/' + target.name, frames=frames, canvas=list(cell), origin=[64, 80],
+        spec = dict(path='sprites/' + target.name, frames=frames, canvas=list(cell), origin=list(origin),
                     sha256=sha(target.read_bytes()), epf=epf_name, palette_index=palette_index,
                     recolor_byte=color, source_kind='ORIGINAL_KR491',
                     motion_binding='INFERRED_FROM_TBL_AND_VISUAL_POSE', historical_match='UNVERIFIED')
         sheets[name] = spec
         ledger.append(dict(asset_id=name, **{k: v for k, v in spec.items() if k != 'frames'}, frames=len(frames)))
 
-    for job, (body, head, tint) in enumerate([(2, 0, 2), (19, 33, 0), (6, 52, 2), (18, 63, 1)]):
+    for job, (body, head, tint) in enumerate(bindings['players']):
         sheet(f'body_{job}', 'body', list(range(body * 104, (body + 1) * 104)), tint)
         sheet(f'head_{job}', 'head', list(range(head * 100, (head + 1) * 100)))
-    sheet('wood_weapon', 'sword', list(range(20, 40)))
-    sheet('iron_weapon', 'sword', list(range(40, 60)))
+    for key,(model,tint) in bindings['outfits'].items():
+        sheet(key,'body',list(range(model*104,(model+1)*104)),tint)
+    for key,(epf,model,tint) in bindings['weapons'].items():
+        sheet(key,epf,list(range(model*20,(model+1)*20)),tint)
     sheet('ghost', 'ghost', list(range(Epf(entries['ghost.epf'][2]).count)))
     table = {int(v[0]): tuple(map(int, v[1:])) for v in re.findall(
         r'ID (\d+), Palette (\d+), Starting (\d+), Walk (\d+), Attack (\d+), Delay (\d+), Shadow (\d+)',
         entries['monster.tbl'][2].decode('ascii'))}
-    for name, (model, tint) in MODELS.items():
+    for name, (model, tint) in bindings['monsters'].items():
         pal, start, walk, attack, delay, shadow = table[model]
         sheet(name, 'monster', list(range(start, start + 4 * (walk + attack))), tint, pal)
         sheets[name].update(model=model, walk=walk, attack=attack, delay_ms=delay,
                             semantic_binding='REFERENCE_OR_VISUAL_INFERENCE_REPLACEABLE')
-    sheet('icons', 'item', list(ICON_FRAMES.values()))
+    item_pal={int(i):int(p) for i,p in re.findall(r'ID (\d+), Palette (\d+)',entries['item.tbl'][2].decode('ascii'))}
+    icon_indices=list(bindings['icons'].values())
+    sheet('icons','item',icon_indices,frame_palettes=[item_pal[i] for i in icon_indices])
     # Original effect animation; assignment to heal/damage is a labeled replacement.
     sheet('effect_heal', 'effect', list(range(35, 43)))
     sheet('effect_damage', 'effect', list(range(85, 93)))
     sheets['effect_heal']['source_kind'] = 'ORIGINAL_KR491_REPLACEMENT_SKILL_BINDING'
     sheets['effect_damage']['source_kind'] = 'ORIGINAL_KR491_REPLACEMENT_SKILL_BINDING'
+    # Resolve effect sequences and per-frame palettes from the actual paired tables.
+    effect_text=entries['effect.tbl'][2].decode('ascii')
+    frame_pal=entries['effect.frm'][2]
+    effect_count=struct.unpack_from('<I',frame_pal)[0]
+    if len(frame_pal)!=4+4*effect_count:raise ValueError('Effect FRM length mismatch')
+    effect_palettes=[struct.unpack_from('<I',frame_pal,4+4*i)[0] for i in range(effect_count)]
+    for role,effect_id in bindings['skill_effects'].items():
+        match=re.search(r'^ID '+str(effect_id)+r', (.*?)(?=^ID |\Z)',effect_text,re.M|re.S)
+        if not match:raise ValueError('Missing source effect record')
+        pairs=[(int(i),int(ms)) for i,ms in re.findall(r'Frame# (\d+), Delay (\d+)',match.group(0))]
+        fronts=int(re.search(r'NumFrontFrames (\d+)',match.group(0))[1]);pairs=pairs[:fronts]
+        if not pairs:raise ValueError('Selected effect has no front sequence')
+        indices=[i for i,ms in pairs]
+        # Some effects use different palettes within one sequence. Export each
+        # original frame with its own declared palette, keeping one actor sheet.
+        pal_indices=[effect_palettes[i] for i in indices]
+        name='fx_'+role
+        sheet(name,'effect',indices,frame_palettes=pal_indices)
+        sheets[name].update(source_effect_id=effect_id,delays_ms=[ms for i,ms in pairs],
+                            source_kind='ORIGINAL_SEQUENCE_REPLACEMENT_SEMANTIC_ROLE',lifetime_ms=sum(ms for i,ms in pairs))
+    sheet('ui_border','dlgframe',list(range(9)),cell=(16,16),pal_name='baram',origin=(0,0))
+    sheet('ui_bars','bar',list(range(3)),cell=(100,11),pal_name='baram',origin=(0,0))
     orders = entries['drworder.tbl'][2].decode('ascii').strip().split(';')
     sheets['draw_order'] = [o for o in orders if len(o) == 4]
-    sheets['icons']['names'] = list(ICON_FRAMES)
+    sheets['icons']['names'] = list(bindings['icons'])
+    sheets['equipment_bindings']=bindings['equipment']
+    sheets['motion_bindings']=bindings['motion']
     sound_path = Path(data).with_suffix('.snd')
     sounds = dat_entries(sound_path.read_bytes())
     audio = []

@@ -1,0 +1,168 @@
+{
+  "started_at": "2026-10-14T05:30:23.612663+00:00",
+  "scope": "REAL_GAME_X11_WINDOW_AND_GODOT_INPUT_EVENTS",
+  "runs": [
+    {
+      "mode": "skills-0",
+      "exit_code": 1,
+      "game_report": "/workspace/baram-private/content-screen-1/skills-0/skills-0-report.json",
+      "game_status": "FAIL",
+      "x11_captures": [
+        {
+          "name": "outfit-before",
+          "sha256": "19ff783aeadcbb226cff0bb6c130d0389b43c1901541c5bb78ee7e9cd03d8e59",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 169,
+          "status": "PASS"
+        },
+        {
+          "name": "outfit-after",
+          "sha256": "d6e265ff6b21137ca02182e996405e895adf2e42a5161386b49ee067ec8cc0fb",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 175,
+          "status": "PASS"
+        },
+        {
+          "name": "source-class-training",
+          "sha256": "301edcf6bab05669883de31122a4b449bec1677da666b6da05554aea90eca25a",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 155,
+          "status": "PASS"
+        },
+        {
+          "name": "cast-0",
+          "sha256": "35e4cb2ec38e1be839023a333eeea939e44fe9934ac3c1db9f5fed276fc39384",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 165,
+          "status": "PASS"
+        },
+        {
+          "name": "tour-village",
+          "sha256": "d25a294cf79b45309db6271e916fbca2a89dee5a645c617544f52a5e014e0b8b",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 173,
+          "status": "PASS"
+        },
+        {
+          "name": "tour-inn",
+          "sha256": "1f31d9a31d8a89b4970494cf4748a65bcd0e50f5c8bd88b6d653968f4f8b051f",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 153,
+          "status": "PASS"
+        },
+        {
+          "name": "tour-source_smith",
+          "sha256": "092fb0a0e26701eacd22a059ec73a284f8b48138c62562ca735d7b34bb32e2c8",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 141,
+          "status": "PASS"
+        },
+        {
+          "name": "tour-rogue_guild",
+          "sha256": "f4f5c019ce2348872219ff30c65e84cc701e428c1a36405a221136c81595c6ef",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 172,
+          "status": "PASS"
+        },
+        {
+          "name": "tour-mage_guild",
+          "sha256": "00d6f99f8dcd853658889945ddf07db3eebf07a1062387217f37324e169812c6",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 180,
+          "status": "PASS"
+        },
+        {
+          "name": "tour-poet_guild",
+          "sha256": "00775d7e4be13f87d28d7f04d1af86bc0d985be38aa5479768a536521caadc49",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 167,
+          "status": "PASS"
+        },
+        {
+          "name": "tour-field",
+          "sha256": "1162e0ad24667b87a6d5e44dd64c0d56827d663cdc64eaf70eda34742f96e751",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 165,
+          "status": "PASS"
+        },
+        {
+          "name": "tour-cave",
+          "sha256": "31b5550255df201974fa8a845cdf0152b427634fdb45eebbc64d43f3aac61c3e",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 123,
+          "status": "PASS"
+        },
+        {
+          "name": "tour-bat_den",
+          "sha256": "343155f29d127f9cbb9bf809f5ad8bb0cae03fdd5ee368c7c9e4bb6cbd7bef6d",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 123,
+          "status": "PASS"
+        },
+        {
+          "name": "tour-field",
+          "sha256": "31b5550255df201974fa8a845cdf0152b427634fdb45eebbc64d43f3aac61c3e",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 123,
+          "status": "PASS"
+        },
+        {
+          "name": "tour-rabbit_depth",
+          "sha256": "dcafdfbdaf43d8dd35516a07aa2080ae1a6e3fc24954637fe17b0a1f068df718",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 136,
+          "status": "PASS"
+        },
+        {
+          "name": "tour-foraged",
+          "sha256": "d2551071a2420e52eda627611e3ce1b9c6ae645e0eedd7bf7c36c225806ba16a",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 127,
+          "status": "PASS"
+        },
+        {
+          "name": "content-saved",
+          "sha256": "4ac0078d20603224eac93e843ea10664cad4c256f035e0f9c4c88ee87e7a99ac",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 127,
+          "status": "PASS"
+        }
+      ],
+      "audio_mix": {
+        "status": "PASS_PCM_SIGNAL",
+        "samples": 22331392,
+        "rms": 847.5588893832964,
+        "driver": "Dummy",
+        "audible_human_review": "NOT_RUN"
+      },
+      "argv": [
+        "godot",
+        "--path",
+        "/workspace/baram-1998-singleplayer/game",
+        "--display-driver",
+        "x11",
+        "--rendering-method",
+        "gl_compatibility",
+        "--audio-driver",
+        "Dummy",
+        "--",
+        "--assets=/workspace/baram-private/game-assets",
+        "--save=/workspace/baram-private/content-screen-1/skills-0/character.json",
+        "--exercise=skills-0",
+        "--evidence=/workspace/baram-private/content-screen-1/skills-0"
+      ],
+      "registered_tiles": 50104,
+      "checks": 82
+    }
+  ],
+  "status": "FAIL",
+  "error": "Executed game check failed; inspect preserved skills-0 evidence",
+  "finished_at": "2026-10-14T05:35:02.938602+00:00",
+  "source_sha256": {
+    "game/main.gd": "c526fa30aec5e5ae86fb32d5e80e9901b6d8e3326ec9e09e777032390f2f6a19",
+    "game/exercise.gd": "bca72a2e61b656aea887fac09bc54f04d01010480d20ebcbedc584566bd4b933",
+    "game/rules.gd": "135a000fb505e6ac33b50aeee6c142b938f0afb8b5ca9cba8377163adbf84d03",
+    "game/save_store.gd": "0f1c8b9fea8baf986a750afaf2636dee6925b97442724226a098cbc9937460ac",
+    "tests/run_playable_screen.py": "af0cb26f1a122776a13fb546ddcfbdb889a6c1737ca3adc93a3df1f1dce1be3d"
+  }
+}

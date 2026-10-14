@@ -1,0 +1,111 @@
+{
+  "started_at": "2026-10-14T05:43:48.000036+00:00",
+  "scope": "REAL_GAME_X11_WINDOW_AND_GODOT_INPUT_EVENTS",
+  "runs": [
+    {
+      "mode": "skills-3",
+      "exit_code": 0,
+      "game_report": "/workspace/baram-private/content-screen-fixed-2/skills-3/skills-3-report.json",
+      "game_status": "PASS_EXECUTED_SCREEN_INPUT",
+      "x11_captures": [
+        {
+          "name": "outfit-before",
+          "sha256": "2f3a47b37bb78e5b64956db356efb2ac3cba8a22cbc0f8c4b2c3f650035575c3",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 174,
+          "status": "PASS"
+        },
+        {
+          "name": "outfit-after",
+          "sha256": "fa6a35596c2424f79f29c37a976107ed3ff390b29754ec6114faa11cf8fad68a",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 174,
+          "status": "PASS"
+        },
+        {
+          "name": "source-class-training",
+          "sha256": "e4fab045a717d148a46edcd7599b6f4f9ee76438ef7d99b686f70d62fac8dd36",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 155,
+          "status": "PASS"
+        },
+        {
+          "name": "cast-0",
+          "sha256": "b56cdfc4d3adf4e0d3d92b6db6853a9750b3d24222d1f6f402fc0603488f8e00",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 166,
+          "status": "PASS"
+        },
+        {
+          "name": "cast-2",
+          "sha256": "0fc60818418246ebe2c2462261ab7e7801078f5635eab8ac60f1c80d992a9198",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 179,
+          "status": "PASS"
+        },
+        {
+          "name": "cast-3",
+          "sha256": "961b18c91f9697e1b15c020684ceeffd4c41660ae433f68d4145b6982e4769a3",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 170,
+          "status": "PASS"
+        },
+        {
+          "name": "cast-4",
+          "sha256": "809074e6155e4e018768fe7ef760a2d1e521744e9d462f639b998650964a7993",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 169,
+          "status": "PASS"
+        },
+        {
+          "name": "cast-5",
+          "sha256": "37d999ec69cc1cd44ead1f4cb4315f42e1b46b1566f8bf177928ed869a37f5e7",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 168,
+          "status": "PASS"
+        },
+        {
+          "name": "content-saved",
+          "sha256": "3107c06196da02c7cd4cdd793c9a6251b28d36c295673efbbabd24662bc7c563",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 174,
+          "status": "PASS"
+        }
+      ],
+      "audio_mix": {
+        "status": "PASS_PCM_SIGNAL",
+        "samples": 7168000,
+        "rms": 2869.3415758201722,
+        "driver": "Dummy",
+        "audible_human_review": "NOT_RUN"
+      },
+      "argv": [
+        "godot",
+        "--path",
+        "/workspace/baram-1998-singleplayer/game",
+        "--display-driver",
+        "x11",
+        "--rendering-method",
+        "gl_compatibility",
+        "--audio-driver",
+        "Dummy",
+        "--",
+        "--assets=/workspace/baram-private/game-assets",
+        "--save=/workspace/baram-private/content-screen-fixed-2/skills-3/character.json",
+        "--exercise=skills-3",
+        "--evidence=/workspace/baram-private/content-screen-fixed-2/skills-3"
+      ],
+      "registered_tiles": 50104,
+      "checks": 94
+    }
+  ],
+  "status": "PASS_EXECUTED_SCREEN_INPUT",
+  "finished_at": "2026-10-14T05:45:32.665739+00:00",
+  "source_sha256": {
+    "game/main.gd": "83bd67821759b1085f5e6f130c2a4ab583916eee88976be0839132093a6b5178",
+    "game/exercise.gd": "cfca57523bca63e6604d9576279256e5ca173bf9e04c07093cb9c639c879820e",
+    "game/rules.gd": "58b05bf12277ce870259d6d732d40c0a8e6b7bc63ceea083171a84b02396bbdc",
+    "game/save_store.gd": "0f1c8b9fea8baf986a750afaf2636dee6925b97442724226a098cbc9937460ac",
+    "tests/run_playable_screen.py": "f8571c346242e26bf4ff1a5bc29bd8734ac178c6ea6596169ee2ac826f3a5e25"
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "started_at": "2026-10-14T05:30:25.091463+00:00",
+  "scope": "REAL_GAME_X11_WINDOW_AND_GODOT_INPUT_EVENTS",
+  "runs": [
+    {
+      "mode": "skills-2",
+      "exit_code": 0,
+      "game_report": "/workspace/baram-private/content-screen-2/skills-2/skills-2-report.json",
+      "game_status": "PASS_EXECUTED_SCREEN_INPUT",
+      "x11_captures": [
+        {
+          "name": "outfit-before",
+          "sha256": "a7d872bbc6750cabb738497cf9b3a6f7a25bf6060737ae8276b98f515247f182",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 172,
+          "status": "PASS"
+        },
+        {
+          "name": "outfit-after",
+          "sha256": "82a1ebe35ea8da53f23e10e0ca61f6535b74bef988c666e3249e65d92f90c9ff",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 176,
+          "status": "PASS"
+        },
+        {
+          "name": "source-class-training",
+          "sha256": "2b1e333a21ae385412a8e0055f8e39a7454f1e9e50e3820b236be3258d33c555",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 185,
+          "status": "PASS"
+        },
+        {
+          "name": "cast-0",
+          "sha256": "a9178da20a0bcae5d296724012ba7c4d908c96c2000fe75a300704b88361fc12",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 169,
+          "status": "PASS"
+        },
+        {
+          "name": "cast-1",
+          "sha256": "0a5376f4ce06077bab507357e12bc90c3bc8d35c796d47a506394d0fb40ab0bb",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 166,
+          "status": "PASS"
+        },
+        {
+          "name": "cast-2",
+          "sha256": "137db85a8be5dc4039c09e3d7fe36a5dbc1fe906255fbb2fbec0b16afef64755",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 169,
+          "status": "PASS"
+        },
+        {
+          "name": "cast-3",
+          "sha256": "29431c7ed0c9f462df4530656977c3f2072b6239d294128659f9a320a89a19b9",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 173,
+          "status": "PASS"
+        },
+        {
+          "name": "cast-4",
+          "sha256": "cb272f77b93c27ac7cc3aa31ee5029b01fd2eea108b33409a00fd86ce1d6e76c",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 173,
+          "status": "PASS"
+        },
+        {
+          "name": "cast-8",
+          "sha256": "7182efc6c36d4208266359ef9022b3911aa2d36412cc3ff80297e468835ddf5b",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 167,
+          "status": "PASS"
+        },
+        {
+          "name": "cast-9",
+          "sha256": "c81cfdc13971d4924b147a8fe5adc9f88d0fc86312755bb7dffaa8d973bfd21f",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 169,
+          "status": "PASS"
+        },
+        {
+          "name": "cast-10",
+          "sha256": "cb29a0559286ec1769eab6bd0f3996fa6c61434c9c3daa4cb85f311f581aac14",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 173,
+          "status": "PASS"
+        },
+        {
+          "name": "cast-11",
+          "sha256": "121eb9ea138b463157035459036202b773cd1b5f4794d852f8c77253fb35ef8b",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 162,
+          "status": "PASS"
+        },
+        {
+          "name": "cast-13",
+          "sha256": "dd06b31a7a873adc64c388352bd8db22cedfb6bf1657b473cbe180f63b3093b0",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 176,
+          "status": "PASS"
+        },
+        {
+          "name": "cast-14",
+          "sha256": "4d2d6cb9138378bbc02cda6ee40a4bee62aaf7a836e9bafde67e5dfd9383ba3f",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 172,
+          "status": "PASS"
+        },
+        {
+          "name": "cast-15",
+          "sha256": "b8e500308f749bf4139ddcb984cd98584d1bdd315b7244ece84715cc0b83a49a",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 166,
+          "status": "PASS"
+        },
+        {
+          "name": "cast-16",
+          "sha256": "6a89d806f3fd6c410e6fa3aec5c17318195fa03000074d8d5a933c7e834a6202",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 167,
+          "status": "PASS"
+        },
+        {
+          "name": "cast-22",
+          "sha256": "f20964b04a0ccbf61feac5bba78f91af04c823434547d4102195fbd76ac74233",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 170,
+          "status": "PASS"
+        },
+        {
+          "name": "cast-23",
+          "sha256": "a06164bcc5735991d64cf497b930853331dbc4cbb797553c16ba1575554a19a7",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 167,
+          "status": "PASS"
+        },
+        {
+          "name": "cast-24",
+          "sha256": "8935be63599734cc1a62fc477b5f2191616de48cb93aa51f8d953ec71208b4ca",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 168,
+          "status": "PASS"
+        },
+        {
+          "name": "cast-25",
+          "sha256": "55d7148d173b98d3e9e3f96afce76b1886708f328417f3db7b8dc5ad679b0bbc",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 162,
+          "status": "PASS"
+        },
+        {
+          "name": "content-saved",
+          "sha256": "73ed96b2790c26f1f3e951d52503a9a9c3814e88af13f298611997774fd27305",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 176,
+          "status": "PASS"
+        }
+      ],
+      "audio_mix": {
+        "status": "PASS_PCM_SIGNAL",
+        "samples": 11976704,
+        "rms": 3479.342626575804,
+        "driver": "Dummy",
+        "audible_human_review": "NOT_RUN"
+      },
+      "argv": [
+        "godot",
+        "--path",
+        "/workspace/baram-1998-singleplayer/game",
+        "--display-driver",
+        "x11",
+        "--rendering-method",
+        "gl_compatibility",
+        "--audio-driver",
+        "Dummy",
+        "--",
+        "--assets=/workspace/baram-private/game-assets",
+        "--save=/workspace/baram-private/content-screen-2/skills-2/character.json",
+        "--exercise=skills-2",
+        "--evidence=/workspace/baram-private/content-screen-2/skills-2"
+      ],
+      "registered_tiles": 50104,
+      "checks": 171
+    }
+  ],
+  "status": "FAIL",
+  "error": "Runtime error: SCRIPT ERROR: Invalid call. Nonexistent 'int' constructor.",
+  "finished_at": "2026-10-14T05:33:39.814259+00:00",
+  "source_sha256": {
+    "game/main.gd": "c526fa30aec5e5ae86fb32d5e80e9901b6d8e3326ec9e09e777032390f2f6a19",
+    "game/exercise.gd": "bca72a2e61b656aea887fac09bc54f04d01010480d20ebcbedc584566bd4b933",
+    "game/rules.gd": "135a000fb505e6ac33b50aeee6c142b938f0afb8b5ca9cba8377163adbf84d03",
+    "game/save_store.gd": "0f1c8b9fea8baf986a750afaf2636dee6925b97442724226a098cbc9937460ac",
+    "tests/run_playable_screen.py": "af0cb26f1a122776a13fb546ddcfbdb889a6c1737ca3adc93a3df1f1dce1be3d"
+  }
+}

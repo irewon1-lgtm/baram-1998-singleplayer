@@ -1,0 +1,658 @@
+{
+  "주술사:백령주(지)": {
+    "type": "damage",
+    "effect": "damage",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Missing original magnitude; production fallback from same-tier elemental spell.",
+    "source_content_id": "kr.spell.00ab334b664d",
+    "source_numeric_unchanged": true,
+    "level_limit": 30,
+    "damage_fallback": 42,
+    "parent_numeric_content": "same-class source elemental spell at tier 16/24"
+  },
+  "주술사:자무주첨(수)": {
+    "type": "damage",
+    "effect": "damage",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source damage, resources, range; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.01b7f2842bf3",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "주술사:자영무주(수)": {
+    "type": "damage",
+    "effect": "damage",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source damage, resources, range; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.020377d1baa3",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "공통:물품감정": {
+    "type": "inspect",
+    "effect": "buff",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Explicit replacement behavior; source numeric fields preserved.",
+    "source_content_id": "kr.spell.07a6cdd8fa74",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "도사:바다의기원": {
+    "type": "heal",
+    "effect": "heal",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source heal/resources; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.08888412971d",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "주술사:천공의기원": {
+    "type": "heal",
+    "effect": "heal",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source heal/resources; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.0ba1a955ec0a",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "도사:차폐": {
+    "type": "buff",
+    "effect": "buff",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Explicit replacement behavior; source numeric fields preserved.",
+    "source_content_id": "kr.spell.0c6eb72976bd",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "도적:뢰진주(풍뢰)": {
+    "type": "damage",
+    "effect": "lightning",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source damage, resources, range; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.0eb683dd0511",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "주술사:귀환": {
+    "type": "return",
+    "effect": "buff",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Explicit replacement behavior; source numeric fields preserved.",
+    "source_content_id": "kr.spell.10f8b7cc5d77",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "전직업 공통:비영사천문": {
+    "type": "compass",
+    "effect": "buff",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Explicit replacement behavior; source numeric fields preserved.",
+    "source_content_id": "kr.spell.16aa9d623635",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "전사:대지의기원": {
+    "type": "heal",
+    "effect": "heal",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source heal/resources; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.1e93ed1d3e72",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "주술사:동해의기원": {
+    "type": "heal",
+    "effect": "heal",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source heal/resources; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.1fabac3a6196",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "도사:누리의기원": {
+    "type": "heal",
+    "effect": "heal",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source heal/resources; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.2371e7e69706",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "도적:대지의빛": {
+    "type": "light",
+    "effect": "buff",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Explicit replacement behavior; source numeric fields preserved.",
+    "source_content_id": "kr.spell.23b1a867d144",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "도사:화염주(화)": {
+    "type": "damage",
+    "effect": "fire",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source damage, resources, range; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.2c1b1eb33e92",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "도적:화염주(화)": {
+    "type": "damage",
+    "effect": "fire",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source damage, resources, range; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.2cf568ca1bd3",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "주술사:하늘의기원": {
+    "type": "heal",
+    "effect": "heal",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source heal/resources; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.2eab584b79d0",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "도적:누리의기원": {
+    "type": "heal",
+    "effect": "heal",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source heal/resources; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.2ee818d575d8",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "주술사:누리의힘": {
+    "type": "buff",
+    "effect": "buff",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Explicit replacement behavior; source numeric fields preserved.",
+    "source_content_id": "kr.spell.34ee399f8abb",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "전사:이중공격": {
+    "type": "buff",
+    "effect": "buff",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Explicit replacement behavior; source numeric fields preserved.",
+    "source_content_id": "kr.spell.36b04cadd9f7",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "도적:대지의기원": {
+    "type": "heal",
+    "effect": "heal",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source heal/resources; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.42838e309e74",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "주술사:출두": {
+    "type": "travel",
+    "effect": "buff",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Explicit replacement behavior; source numeric fields preserved.",
+    "source_content_id": "kr.spell.47defd497c1f",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "도사:퇴마주": {
+    "type": "cleanse",
+    "effect": "heal",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Explicit replacement behavior; source numeric fields preserved.",
+    "source_content_id": "kr.spell.48b9aeff6b36",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "도적:누리의빛": {
+    "type": "light",
+    "effect": "buff",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Explicit replacement behavior; source numeric fields preserved.",
+    "source_content_id": "kr.spell.4b0ff28134fd",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "주술사:무장": {
+    "type": "buff",
+    "effect": "buff",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Explicit replacement behavior; source numeric fields preserved.",
+    "source_content_id": "kr.spell.4c0651ca00c5",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "전사:후면공격": {
+    "type": "buff",
+    "effect": "buff",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Explicit replacement behavior; source numeric fields preserved.",
+    "source_content_id": "kr.spell.4e7c6a06f291",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "주술사:해독": {
+    "type": "cure",
+    "effect": "heal",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Explicit replacement behavior; source numeric fields preserved.",
+    "source_content_id": "kr.spell.4f54a0580c86",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "주술사:뢰진주 (풍뢰)": {
+    "type": "damage",
+    "effect": "lightning",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source damage, resources, range; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.530a34ecfe9f",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "전직업 공통:성황령": {
+    "type": "spirit_return",
+    "effect": "buff",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Explicit replacement behavior; source numeric fields preserved.",
+    "source_content_id": "kr.spell.5727fa94fd7c",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "주술사:소환": {
+    "type": "summon",
+    "effect": "buff",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Explicit replacement behavior; source numeric fields preserved.",
+    "source_content_id": "kr.spell.5c9842b86036",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "주술사:바다의기원": {
+    "type": "heal",
+    "effect": "heal",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source heal/resources; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.5cb16a40c485",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "주술사:화영열주(화)": {
+    "type": "damage",
+    "effect": "fire",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source damage, resources, range; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.5fb26430108d",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "도사:자무주(수)": {
+    "type": "damage",
+    "effect": "damage",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source damage, resources, range; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.621bb7958bba",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "주술사:백열주(지)": {
+    "type": "damage",
+    "effect": "damage",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source damage, resources, range; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.642becfa74ff",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "도사:무장": {
+    "type": "buff",
+    "effect": "buff",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Explicit replacement behavior; source numeric fields preserved.",
+    "source_content_id": "kr.spell.71658e8677ea",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "주술사:뢰격주 (풍뢰)": {
+    "type": "damage",
+    "effect": "lightning",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Missing original magnitude; production fallback from same-tier elemental spell.",
+    "source_content_id": "kr.spell.7984ae09154e",
+    "source_numeric_unchanged": true,
+    "level_limit": 30,
+    "damage_fallback": 42,
+    "parent_numeric_content": "same-class source elemental spell at tier 16/24"
+  },
+  "주술사:뢰격주첨 (풍뢰)": {
+    "type": "damage",
+    "effect": "lightning",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Missing original magnitude; production fallback from same-tier elemental spell.",
+    "source_content_id": "kr.spell.7af1bf180dea",
+    "source_numeric_unchanged": true,
+    "level_limit": 30,
+    "damage_fallback": 58,
+    "parent_numeric_content": "same-class source elemental spell at tier 16/24"
+  },
+  "공통:성황령": {
+    "type": "spirit_return",
+    "effect": "buff",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Explicit replacement behavior; source numeric fields preserved.",
+    "source_content_id": "kr.spell.85c4463d699c",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "주술사:뢰진주첨 (풍뢰)": {
+    "type": "damage",
+    "effect": "lightning",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source damage, resources, range; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.887dbee91da0",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "도적:누리의힘": {
+    "type": "buff",
+    "effect": "buff",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Explicit replacement behavior; source numeric fields preserved.",
+    "source_content_id": "kr.spell.8f002cbfd00c",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "주술사:대지의기원": {
+    "type": "heal",
+    "effect": "heal",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source heal/resources; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.907a1a0ff654",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "공통:비영사천문": {
+    "type": "compass",
+    "effect": "buff",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Explicit replacement behavior; source numeric fields preserved.",
+    "source_content_id": "kr.spell.914bee820a84",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "전사:신의축복": {
+    "type": "buff",
+    "effect": "buff",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Explicit replacement behavior; source numeric fields preserved.",
+    "source_content_id": "kr.spell.984de2163b25",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "주술사:자무주(수)": {
+    "type": "damage",
+    "effect": "damage",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source damage, resources, range; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.989b036c3e11",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "주술사:누리의기원": {
+    "type": "heal",
+    "effect": "heal",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source heal/resources; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.9b1da023e957",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "주술사:대지의힘": {
+    "type": "buff",
+    "effect": "buff",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Explicit replacement behavior; source numeric fields preserved.",
+    "source_content_id": "kr.spell.9d17948b0d62",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "주술사:화염주첨(화)": {
+    "type": "damage",
+    "effect": "fire",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source damage, resources, range; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.a3c0a4e55b95",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "도적:바다의 빛": {
+    "type": "light",
+    "effect": "buff",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Explicit replacement behavior; source numeric fields preserved.",
+    "source_content_id": "kr.spell.aadf73b8c797",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "도사:천공의기원": {
+    "type": "heal",
+    "effect": "heal",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source heal/resources; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.ac4bf4ad775b",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "주술사:백열주첨(지)": {
+    "type": "damage",
+    "effect": "damage",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source damage, resources, range; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.ae19e8629994",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "도사:뢰진주(풍뢰)": {
+    "type": "damage",
+    "effect": "lightning",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source damage, resources, range; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.b5e883dda1ac",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "도사:해독": {
+    "type": "cure",
+    "effect": "heal",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Explicit replacement behavior; source numeric fields preserved.",
+    "source_content_id": "kr.spell.ba581e7e2400",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "전직업 공통:물품감정": {
+    "type": "inspect",
+    "effect": "buff",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Explicit replacement behavior; source numeric fields preserved.",
+    "source_content_id": "kr.spell.bb482f4c0a60",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "도적:금수": {
+    "type": "animal",
+    "effect": "buff",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Explicit replacement behavior; source numeric fields preserved.",
+    "source_content_id": "kr.spell.bf32c9399488",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "도사:백열주(지)": {
+    "type": "damage",
+    "effect": "damage",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source damage, resources, range; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.c8700afaa30b",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "도적:자무주(수)": {
+    "type": "damage",
+    "effect": "damage",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source damage, resources, range; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.cbc576cc7d5b",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "도적:무영보법": {
+    "type": "stealth",
+    "effect": "buff",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Explicit replacement behavior; source numeric fields preserved.",
+    "source_content_id": "kr.spell.cd12db9a44f2",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "주술사:백령주첨(지)": {
+    "type": "damage",
+    "effect": "damage",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Missing original magnitude; production fallback from same-tier elemental spell.",
+    "source_content_id": "kr.spell.cd3d6c306e07",
+    "source_numeric_unchanged": true,
+    "level_limit": 30,
+    "damage_fallback": 58,
+    "parent_numeric_content": "same-class source elemental spell at tier 16/24"
+  },
+  "주술사:화염주(화)": {
+    "type": "damage",
+    "effect": "fire",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source damage, resources, range; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.cdc9baba76f2",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "도사:보호": {
+    "type": "buff",
+    "effect": "buff",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Explicit replacement behavior; source numeric fields preserved.",
+    "source_content_id": "kr.spell.d0393f80c6b7",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "도적:이중공격": {
+    "type": "buff",
+    "effect": "buff",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Explicit replacement behavior; source numeric fields preserved.",
+    "source_content_id": "kr.spell.d0c19c3f4bd7",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "전사:측면공격": {
+    "type": "buff",
+    "effect": "buff",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Explicit replacement behavior; source numeric fields preserved.",
+    "source_content_id": "kr.spell.dfa7de0c7baa",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "도사:공력증강": {
+    "type": "charge",
+    "effect": "heal",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Explicit replacement behavior; source numeric fields preserved.",
+    "source_content_id": "kr.spell.e343a629c548",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "도사:출두": {
+    "type": "travel",
+    "effect": "buff",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Explicit replacement behavior; source numeric fields preserved.",
+    "source_content_id": "kr.spell.e6fef3822fae",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "도사:동해의희원": {
+    "type": "heal",
+    "effect": "heal",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source heal/resources; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.e782b97ec348",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "주술사:화영열주첨(화)": {
+    "type": "damage",
+    "effect": "fire",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source damage, resources, range; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.ecb7c9dcee10",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "도적:경수": {
+    "type": "disguise",
+    "effect": "buff",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Explicit replacement behavior; source numeric fields preserved.",
+    "source_content_id": "kr.spell.ed1ceb68c0f9",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "도사:구름의기원": {
+    "type": "heal",
+    "effect": "heal",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source heal/resources; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.f062c4b2b1ca",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "도적:백열주(지)": {
+    "type": "damage",
+    "effect": "damage",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source damage, resources, range; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.f4d97c5d3331",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "전사:누리의기원": {
+    "type": "heal",
+    "effect": "heal",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source heal/resources; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.f4dece63378d",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "주술사:자영무주첨(수)": {
+    "type": "damage",
+    "effect": "damage",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source damage, resources, range; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.f9bd20109e9d",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  },
+  "도적:동해의기원": {
+    "type": "heal",
+    "effect": "heal",
+    "classification": "SOURCE_NUMERIC_WITH_INFERRED_OR_SINGLEPLAYER_EFFECT",
+    "basis": "Source heal/resources; original sequence with replacement semantic binding.",
+    "source_content_id": "kr.spell.fe545e775ef3",
+    "source_numeric_unchanged": true,
+    "level_limit": 30
+  }
+}

@@ -41,11 +41,16 @@ def execute(args):
         environment['DISPLAY'] = ':' + display
         modes = args.modes.split(',')
         for mode in modes:
-            folder = directory / ('source-core' if mode=='source-restart' else 'primary' if mode in ('primary','resume','restart') else mode)
+            folder = directory / ('content-actions' if mode=='actions-restart' else 'source-core' if mode=='source-restart' else 'primary' if mode in ('primary','resume','restart') else mode)
             folder.mkdir(exist_ok=True)
             save = folder / 'character.json'
-            if mode not in ('restart','resume','source-restart') and save.exists():
+            if mode not in ('restart','resume','source-restart','actions-restart') and save.exists():
                 raise RuntimeError('Use a fresh evidence directory; existing saves are preserved')
+            if mode.startswith('skills-') or mode in ['tour-resume','content-actions','cure-actions','town-all']:
+                if not args.fixtures:raise RuntimeError('Controlled skills checks require labeled --fixtures')
+                fixture=Path(args.fixtures)/(mode+'.json')
+                if not fixture.is_file():raise RuntimeError('Missing controlled skill fixture')
+                save.write_bytes(fixture.read_bytes())
             command = [args.godot,'--path',str(ROOT/'game'),'--display-driver','x11','--rendering-method','gl_compatibility',
                 '--audio-driver','Dummy','--','--assets='+str(Path(args.assets).resolve()),'--save='+str(save),
                 '--exercise='+mode,'--evidence='+str(folder)]
@@ -142,4 +147,5 @@ if __name__=='__main__':
     p.add_argument('--xvfb',default='/workspace/baram-private/setup/x11/usr/bin/Xvfb')
     p.add_argument('--timeout',type=int,default=300)
     p.add_argument('--launcher',help='Execute the packaged launcher instead of the workspace Godot project')
+    p.add_argument('--fixtures',help='Labeled controlled skill states; never a natural level-30 playthrough')
     raise SystemExit(execute(p.parse_args()))

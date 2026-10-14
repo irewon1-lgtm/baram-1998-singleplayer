@@ -23,6 +23,10 @@ var from_position = Vector2.ZERO
 var step_progress = 1.0
 var attack_wait = 0.0
 var attack_elapsed = -1.0
+var cast_elapsed = -1.0
+var pickup_elapsed = -1.0
+var pending_spell = {}
+var poison_clock = 0.0
 var impact_done = false
 var attack_target = ""
 var selected_target = ""
@@ -48,6 +52,7 @@ var test_root = ""
 var exercise_started = false
 var options = {}
 var save_loaded = false
+var save_queued = false
 var loaded_snapshot = {}
 
 func _ready():
@@ -189,6 +194,8 @@ func _input(input):
         return
     if key == KEY_I:
         open_inventory()
+    elif key==KEY_K:
+        menu="skills";selected=0;choices=player.skills.duplicate()
     elif key == KEY_E:
         var title = player.equipped if player.equipped != "" else "목도"
         if rules.equip(player,title):
@@ -212,7 +219,7 @@ func _input(input):
     elif key in [KEY_UP,KEY_LEFT,KEY_DOWN,KEY_RIGHT,KEY_W,KEY_A,KEY_S,KEY_D]:
         var d = {KEY_UP:0,KEY_LEFT:1,KEY_DOWN:2,KEY_RIGHT:3,KEY_W:0,KEY_A:1,KEY_S:2,KEY_D:3}[key]
         if input.shift_pressed:
-            if attack_elapsed >= 0:return
+            if attack_elapsed >= 0 or cast_elapsed>=0:return
             player.direction = d
             move_wait = 0.18
             event("turned",{"direction":d})
@@ -226,10 +233,23 @@ func _process(delta: float):
         queue_redraw()
         return
     rules.tick(player,delta)
+    if player.buffs.get("독",0)>0 and player.hp>0:
+        poison_clock+=delta
+        if poison_clock>=1.0:poison_clock-=1.0;hurt_player(2,"poison")
+    else:poison_clock=0.0
     move_wait = maxf(0,move_wait-delta)
     attack_wait = maxf(0,attack_wait-delta)
     hurt_time = maxf(0,hurt_time-delta)
     step_progress = minf(1,step_progress + delta/0.18)
+    if cast_elapsed>=0:
+        cast_elapsed+=delta
+        if cast_elapsed>=0.18 and not pending_spell.is_empty():
+            resolve_spell(pending_spell)
+            pending_spell={}
+        if cast_elapsed>=0.42:cast_elapsed=-1.0
+    if pickup_elapsed>=0:
+        pickup_elapsed+=delta
+        if pickup_elapsed>=0.22:pickup_elapsed=-1.0
     if attack_elapsed >= 0:
         attack_elapsed += delta
         if not impact_done and attack_elapsed >= 0.16:
@@ -247,10 +267,13 @@ func _process(delta: float):
         update_monsters(delta)
     for fx in effects:
         fx.time += delta
-    effects = effects.filter(func(fx):return fx.time < 0.8)
+    effects = effects.filter(func(fx):return fx.time < float(assets.actor_data.get(fx.key,{}).get("lifetime_ms",800))/1000.0)
     for text in floating_text:
         text.time += delta
     floating_text = floating_text.filter(func(t):return t.time < 0.9)
+    if save_queued and attack_elapsed<0 and cast_elapsed<0:
+        save_queued=false
+        save_game()
     queue_redraw()
 
 func cell() -> Vector2i:
@@ -277,10 +300,12 @@ func free_cell(map_id: String, pos: Vector2i, actor_id: String = "",direction: i
         var e = entities[id]
         if id != actor_id and e.alive and e.map == map_id and Vector2i(e.x,e.y) == pos:
             return false
+    for n in m.npcs:
+        if Vector2i(n.x,n.y)==pos:return false
     return true
 
 func move_player(direction: int):
-    if move_wait > 0 or attack_elapsed >= 0 or menu != "":
+    if move_wait > 0 or attack_elapsed >= 0 or cast_elapsed>=0 or menu != "":
         return
     player.direction = direction
     var next = cell() + DIRECTIONS[direction]
@@ -302,6 +327,8 @@ func transition(map_id: String, entry: Array):
     player.map = map_id
     player.x = int(entry[0])
     player.y = int(entry[1])
+    if not player.has("visited"):player.visited=[]
+    if map_id not in player.visited:player.visited.append(map_id)
     step_progress = 1.0
     selected_target = ""
     event("map_changed",{"map":map_id,"x":player.x,"y":player.y})
@@ -319,7 +346,7 @@ func cycle_target():
         selected_target = available[(available.find(selected_target)+1)%available.size()]
 
 func begin_attack():
-    if attack_wait > 0 or int(player.hp) <= 0 or menu != "":
+    if attack_wait > 0 or cast_elapsed>=0 or int(player.hp) <= 0 or menu != "":
         return
     attack_wait = 0.6
     attack_elapsed = 0.0
@@ -342,24 +369,31 @@ func apply_attack():
     if e.map != player.map or Vector2i(e.x,e.y) != cell()+DIRECTIONS[int(player.direction)]:
         event("attack_missed_moved_target")
         return
-    if not rules.roll(0.9):
+    if not rules.roll(0.99 if player.buffs.get("신의축복",0)>0 else 0.9):
         event("attack_missed_probability")
         return
     var amount = rules.damage(rules.weapon_damage(player),int(e.spec.values.armor_class))
+    player.buffs.erase("무영보법");player.buffs.erase("금수");player.buffs.erase("경수")
     hit_monster(e,amount,"melee")
+    for offset in [2,1,3]:
+        var enabled=player.buffs.get("후면공격",0)>0 if offset==2 else player.buffs.get("측면공격",0)>0
+        if not enabled:continue
+        var d=(int(player.direction)+offset)%4
+        for other in entities.values():
+            if other.alive and other.map==player.map and Vector2i(other.x,other.y)==cell()+DIRECTIONS[d]:hit_monster(other,amount,"directional_buff")
     if player.equipped != "":
         player.durability[player.equipped] = maxi(0,int(player.durability[player.equipped])-1)
         if player.durability[player.equipped] == 0:
             player.equipped = ""
             notice("무기가 파손되었습니다. 장비상에게 수리하세요.")
 
-func hit_monster(e: Dictionary, amount: int, source: String):
+func hit_monster(e: Dictionary, amount: int, source: String,skill_name: String = ""):
     e.hp -= amount
     e.hurt = 0.18
     e.provoked = true
     floating_text.append({"x":e.x,"y":e.y,"text":str(amount),"time":0.0,"color":Color(1,0.8,0.4)})
     play_sound("hit")
-    event("damage_applied",{"target":e.id,"damage":amount,"hp":e.hp,"source":source,"impact_time":attack_elapsed})
+    event("damage_applied",{"target":e.id,"damage":amount,"hp":e.hp,"source":source,"skill":skill_name,"impact_time":cast_elapsed if source=="skill" else attack_elapsed})
     if e.hp <= 0:
         e.alive = false
         e.respawn = float(e.spec.values.respawn_interval_ms)/1000.0
@@ -375,53 +409,64 @@ func hit_monster(e: Dictionary, amount: int, source: String):
             notice("레벨 %d! 체력과 마력이 회복되었습니다." % player.level)
             play_sound("level")
 
+func hurt_player(amount: int, attacker: String):
+    player.hp=maxi(0,int(player.hp)-amount)
+    hurt_time=0.18
+    play_sound("hit")
+    event("player_hit",{"damage":amount,"hp":player.hp,"attacker":attacker})
+    if player.hp==0:
+        event("player_died")
+        var home=world.get("home",{"map":"village","entry":[12,12]})
+        transition(home.map,home.entry)
+        player.buffs.erase("독")
+        notice("혼령이 되었습니다. 성황에게 Enter로 부활하세요.")
+
 func update_monsters(delta: float):
     for id in entities:
-        var e = entities[id]
-        e.hurt = maxf(0,float(e.hurt)-delta)
+        var e=entities[id]
+        e.hurt=maxf(0,float(e.hurt)-delta)
         if not e.alive:
-            e.respawn -= delta
-            if e.respawn <= 0:
-                e.alive = true
-                e.hp = int(e.spec.values.hp)
-                e.x = e.home_x
-                e.y = e.home_y
-                e.provoked = false
+            e.respawn-=delta
+            if e.respawn<=0:
+                e.alive=true;e.hp=int(e.spec.values.hp);e.x=e.home_x;e.y=e.home_y;e.provoked=false;e.attack_elapsed=-1.0
             continue
-        if e.map != player.map:
+        if e.map!=player.map:continue
+        e.move_timer-=delta;e.attack_timer-=delta
+        var distance=Vector2i(e.x,e.y).distance_to(cell())
+        var hidden=player.buffs.get("무영보법",0)>0 or player.buffs.get("금수",0)>0 or player.buffs.get("경수",0)>0
+        var aggressive=(e.kind not in ["rabbit","squirrel"] or e.provoked) and (not hidden or e.provoked)
+        var elapsed=float(e.get("attack_elapsed",-1))
+        if elapsed>=0:
+            e.attack_elapsed=elapsed+delta
+            if e.get("attack_pending",false) and e.attack_elapsed>=0.16:
+                e.attack_pending=false
+                if player.hp>0 and cell()==Vector2i(e.x,e.y)+DIRECTIONS[int(e.direction)] and rules.roll(float(e.spec.values.hit_probability)):
+                    var attack=rules.rng.randi_range(int(e.spec.values.attack_min),int(e.spec.values.attack_max))
+                    hurt_player(rules.incoming_damage(player,attack),id)
+                    if e.kind=="snake" and player.hp>0 and rules.roll(0.15):
+                        player.buffs["독"]=8.0
+                        event("poison_applied",{"source":"snake","classification":"SINGLEPLAYER_ESTIMATE"})
+            var spec=assets.actor_data[e.kind]
+            if e.attack_elapsed>=maxf(0.28,int(spec.attack)*float(spec.delay_ms)/1000.0):e.attack_elapsed=-1.0
             continue
-        e.move_timer -= delta
-        e.attack_timer -= delta
-        var distance = Vector2i(e.x,e.y).distance_to(cell())
-        var aggressive = e.kind not in ["rabbit","squirrel"] or e.provoked
-        if int(player.hp) > 0 and aggressive and distance < 1.1 and e.attack_timer <= 0:
-            e.attack_timer = float(e.spec.values.attack_interval_ms)/1000.0
-            var attack = rules.rng.randi_range(int(e.spec.values.attack_min),int(e.spec.values.attack_max))
-            if rules.roll(float(e.spec.values.hit_probability)):
-                var amount = rules.damage(attack,rules.armor(player))
-                player.hp = maxi(0,int(player.hp)-amount)
-                hurt_time = 0.18
-                play_sound("hit")
-                event("player_hit",{"damage":amount,"hp":player.hp,"attacker":id})
-                if player.hp == 0:
-                    event("player_died")
-                    transition("village",[17,12])
-                    notice("혼령이 되었습니다. 성황 옆에서 Enter로 부활하세요.")
-                    return
-        if e.move_timer <= 0:
-            e.move_timer = float(e.spec.values.move_interval_ms)/1000.0
-            var d = rules.rng.randi_range(0,3)
-            if aggressive and distance <= float(e.spec.values.aggro_radius_tiles) and int(player.hp) > 0:
-                var offset = cell()-Vector2i(e.x,e.y)
-                d = 3 if offset.x > 0 else 1
-                if absi(offset.y) > absi(offset.x): d = 2 if offset.y > 0 else 0
-            var next = Vector2i(e.x,e.y)+DIRECTIONS[d]
-            if next != cell() and free_cell(e.map,next,id) and next.distance_to(Vector2i(e.home_x,e.home_y)) <= float(e.spec.values.leash_radius_tiles):
-                e.x = next.x
-                e.y = next.y
-                e.direction = d
+        if player.hp>0 and aggressive and distance<1.1 and e.attack_timer<=0:
+            e.attack_timer=float(e.spec.values.attack_interval_ms)/1000.0
+            e.direction=DIRECTIONS.find(cell()-Vector2i(e.x,e.y))
+            e.attack_elapsed=0.0;e.attack_pending=true
+            event("monster_attack_started",{"id":id,"direction":e.direction,"impact_ms":160,"source_attack_frames":assets.actor_data[e.kind].attack})
+            continue
+        if e.move_timer<=0:
+            e.move_timer=float(e.spec.values.move_interval_ms)/1000.0
+            var d=rules.rng.randi_range(0,3)
+            if aggressive and distance<=float(e.spec.values.aggro_radius_tiles) and player.hp>0:
+                var offset=cell()-Vector2i(e.x,e.y)
+                d=3 if offset.x>0 else 1
+                if absi(offset.y)>absi(offset.x):d=2 if offset.y>0 else 0
+            var next=Vector2i(e.x,e.y)+DIRECTIONS[d]
+            if next!=cell() and free_cell(e.map,next,id,d) and next.distance_to(Vector2i(e.home_x,e.home_y))<=float(e.spec.values.leash_radius_tiles):e.x=next.x;e.y=next.y;e.direction=d
 
 func pickup():
+    pickup_elapsed=0.0
     var remaining = []
     for drop in loot:
         if drop.map == player.map and Vector2i(drop.x,drop.y).distance_to(cell()) <= 1.1 and rules.add_item(player,drop.item,int(drop.quantity)):
@@ -432,59 +477,79 @@ func pickup():
     loot = remaining
 
 func cast_skill(slot: int):
-    if int(player.hp) <= 0 or slot >= player.hotbar.size() or player.hotbar[slot] == "":
+    if slot>=player.hotbar.size() or player.hotbar[slot]=="" or cast_elapsed>=0 or attack_elapsed>=0:return
+    var title=str(player.hotbar[slot])
+    if int(player.hp)<=0 and title!="성황령":return
+    var s=rules.skill(player,title)
+    var profile=rules.skill_profile(player,title)
+    if profile.type=="unresolved":
+        event("skill_blocked",{"skill":title,"reason":"BEHAVIOR_SOURCE_UNRESOLVED"})
+        notice(title+"의 효과 자료를 아직 연결하지 못했습니다.")
         return
-    var title = str(player.hotbar[slot])
-    var s = rules.skill(player,title)
-    var damage = int(rules.value_or(s,"base_damage",0))
-    var heal = int(rules.value_or(s,"heal_amount",0))
-    var target = {}
-    if damage > 0:
-        if entities.has(selected_target) and entities[selected_target].alive and entities[selected_target].map == player.map:
-            target = entities[selected_target]
+    var target={}
+    if profile.type=="damage":
+        if entities.has(selected_target) and entities[selected_target].alive and entities[selected_target].map==player.map:target=entities[selected_target]
         else:
-            var nearest = 999.0
-            for id in entities:
-                var e = entities[id]
-                var dist = Vector2i(e.x,e.y).distance_to(cell())
-                if e.alive and e.map == player.map and dist < nearest:
-                    target = e
-                    nearest = dist
-        if target.is_empty() or Vector2i(target.x,target.y).distance_to(cell()) > float(rules.value_or(s,"range_tiles",4)):
-            notice("기술 사거리 안에 대상이 없습니다.")
-            return
-    var supported = damage > 0 or heal > 0 or title in ["무장","보호","이중공격","누리의힘","대지의힘","귀환","공력증강","해독"]
-    if not supported:
-        notice(title + "의 효과 연결은 아직 미완료입니다.")
-        event("skill_blocked",{"skill":title,"reason":"UNIMPLEMENTED_EFFECT"})
-        return
-    var hp_cost = int(rules.value_or(s,"cast_hp",0)) + floori(float(player.hp)*float(rules.value_or(s,"cast_hp_fraction",0)))
-    if not rules.cast_resources(player,int(rules.value_or(s,"cast_mp",0)),hp_cost,float(rules.value_or(s,"cooldown_ms",1000))/1000.0,title):
+            var distance=999.0
+            for candidate in entities.values():
+                var d=Vector2i(candidate.x,candidate.y).distance_to(cell())
+                if candidate.alive and candidate.map==player.map and d<distance:target=candidate;distance=d
+        if target.is_empty() or Vector2i(target.x,target.y).distance_to(cell())>float(rules.value_or(s,"range_tiles",6)):
+            notice("기술 사거리 안에 대상이 없습니다.");return
+        var delta=Vector2i(target.x,target.y)-cell()
+        player.direction=(3 if delta.x>0 else 1) if absi(delta.x)>absi(delta.y) else (2 if delta.y>0 else 0)
+    var hp_cost=int(rules.value_or(s,"cast_hp",0))+floori(float(player.hp)*float(rules.value_or(s,"cast_hp_fraction",0)))
+    if player.hp>0 and not rules.cast_resources(player,int(rules.value_or(s,"cast_mp",0)),hp_cost,float(rules.value_or(s,"cooldown_ms",1000))/1000.0,title):
         notice("마력·체력이 부족하거나 기술 준비 중입니다.")
-        event("skill_rejected_resources",{"skill":title})
-        return
-    var fx = {"key":"effect_heal","x":player.x,"y":player.y,"time":0.0}
-    if heal > 0:
-        rules.heal(player,heal)
-    elif damage > 0:
-        hit_monster(target,rules.damage(damage,int(target.spec.values.armor_class)),"skill")
-        fx.key = "effect_damage"
-        fx.x = target.x
-        fx.y = target.y
-    elif title == "귀환":
-        transition("village",[12,12])
-    elif title == "공력증강":
-        player.mp = mini(int(player.mp_max),int(player.mp)+30) # DEV replacement magnitude.
-    elif title == "해독":
+        event("skill_rejected_resources",{"skill":title});return
+    cast_elapsed=0.0
+    pending_spell={"title":title,"values":s,"profile":profile,"target_id":target.get("id",""),"slot":slot}
+    event("skill_started",{"skill":title,"slot":slot,"impact_ms":180,"classification":profile.get("classification","")})
+
+func resolve_spell(cast: Dictionary):
+    var title=cast.title
+    var s=cast.values
+    var profile=cast.profile
+    var kind=profile.type
+    var at=cell()
+    if kind=="heal":rules.heal(player,int(rules.value_or(s,"heal_amount",0)))
+    elif kind=="damage":
+        if entities.has(cast.target_id):
+            var target=entities[cast.target_id]
+            if target.alive and target.map==player.map and Vector2i(target.x,target.y).distance_to(cell())<=float(rules.value_or(s,"range_tiles",6)):
+                at=Vector2i(target.x,target.y)
+                var raw=int(rules.value_or(s,"base_damage",0))
+                if raw<=0:raw=int(profile.get("damage_fallback",0))
+                var radius=float(rules.value_or(s,"aoe_radius_tiles",0))
+                for other in entities.values():
+                    if other.alive and other.map==player.map and Vector2i(other.x,other.y).distance_to(at)<=radius:
+                        hit_monster(other,rules.damage(raw,int(other.spec.values.armor_class)),"skill",title)
+                player.buffs.erase("무영보법");player.buffs.erase("금수");player.buffs.erase("경수")
+    elif kind in ["return","spirit_return"]:
+        var home=world.get("home",{"map":"village","entry":[12,12]})
+        transition(home.map,home.entry);at=cell()
+    elif kind=="charge":player.mp=mini(int(player.mp_max),int(player.mp)+maxi(30,int(player.mp_max)*3/4))
+    elif kind in ["cure","cleanse"]:
         player.buffs.erase("독")
-    else:
-        player.buffs[title] = float(rules.value_or(s,"duration_ms",30000))/1000.0
-    effects.append(fx)
+        if kind=="cleanse":player.buffs.erase("저주")
+    elif kind=="inspect":open_inventory()
+    elif kind=="compass":
+        menu="compass";selected=0;choices=["동쪽","서쪽","남쪽","북쪽"]
+    elif kind=="travel":
+        menu="travel";selected=0;choices=player.get("visited",["village"]).duplicate()
+        if "village" not in choices:choices.append("village")
+    elif kind=="summon":
+        var m=maps[player.map]
+        for d in range(4):
+            var p=cell()+DIRECTIONS[d]
+            if free_cell(player.map,p):
+                var guide={"id":"summoned-guide","kind":"teacher","x":p.x,"y":p.y,"name":"소환된 길잡이","role":"travel","destinations":["village"],"map":player.map}
+                m.npcs=m.npcs.filter(func(n):return n.id!="summoned-guide")
+                m.npcs.append(guide);player.summoned_guide=guide;break
+    else:player.buffs[title]=float(rules.value_or(s,"duration_ms",30000))/1000.0
+    effects.append({"key":"fx_"+str(profile.effect),"x":at.x,"y":at.y,"time":0.0})
     play_sound("skill")
-    attack_elapsed = 0.24
-    impact_done = true
-    attack_wait = maxf(attack_wait,0.6)
-    event("skill_cast",{"skill":title,"mp":player.mp,"hp":player.hp,"slot":slot})
+    event("skill_cast",{"skill":title,"mp":player.mp,"hp":player.hp,"slot":cast.slot,"behavior":kind,"classification":profile.get("classification","")})
 
 func interact():
     var nearby = maps[player.map].npcs.duplicate()
@@ -499,7 +564,7 @@ func interact():
             selected = 0
             if n.role in ["shop","inn"]:
                 menu = "shop"
-                choices = world.shop_items.duplicate()
+                choices = n.get("shop_items",world.shop_items).duplicate()
                 choices.append_array(["초보 회복약","초보 마력약","구운토끼고기"])
             elif n.role == "trainer":
                 menu = "trainer"
@@ -538,6 +603,16 @@ func open_inventory():
     choices = player.inventory.keys().filter(func(k):return int(player.inventory[k]) > 0)
 
 func handle_menu_key(key: int):
+    if menu=="compass" and key in [KEY_ENTER,KEY_F]:
+        var town=maps.village
+        var desired=[Vector2i(int(town.width)-3,int(town.height)/2),Vector2i(2,int(town.height)/2),Vector2i(int(town.width)/2,int(town.height)-3),Vector2i(int(town.width)/2,2)][selected]
+        var candidate=Vector2i(town.entry[0],town.entry[1]);var best=99999
+        for y in range(int(town.height)):
+            for x in range(int(town.width)):
+                if free_cell("village",Vector2i(x,y)):
+                    var distance=absi(x-desired.x)+absi(y-desired.y)
+                    if distance<best:best=distance;candidate=Vector2i(x,y)
+        menu="";transition("village",[candidate.x,candidate.y]);return
     if menu=="travel" and key in [KEY_ENTER,KEY_F] and not choices.is_empty():
         var destination=str(choices[selected])
         menu=""
@@ -593,7 +668,7 @@ func handle_menu_key(key: int):
         var success = rules.learn(player,title)
         event("skill_learned",{"skill":title,"success":success})
         notice(title+" 습득" if success else "레벨·금전·제물을 확인하세요.")
-    elif menu == "trainer" and key in [KEY_1,KEY_2,KEY_3] and choices.size() > 0:
+    elif menu in ["trainer","skills"] and key in [KEY_1,KEY_2,KEY_3] and choices.size() > 0:
         var title = str(choices[selected])
         if title in player.skills:
             player.hotbar[key-KEY_1] = title
@@ -616,6 +691,7 @@ func snapshot() -> Dictionary:
 func restore(state: Dictionary):
     var fresh_entities=entities.duplicate(true)
     player = state.player
+    if not player.has("visited"):player.visited=[player.map,"village"]
     entities = state.world
     if player.get("world_revision","authored-1")!=world.get("revision","authored-1"):
         # Preserve progress/inventory/loot; migrate only changed layout positions.
@@ -637,6 +713,8 @@ func restore(state: Dictionary):
                 drop.x=int(at[0]);drop.y=int(at[1])
         player.world_revision=world.get("revision","authored-1")
         event("layout_migrated",{"revision":player.world_revision,"progress_preserved":true})
+    for id in fresh_entities:
+        if not entities.has(id):entities[id]=fresh_entities[id]
     # Migrate our earlier generated spawn layout that overlapped a doorway.
     for id in entities:
         var e=entities[id]
@@ -648,10 +726,21 @@ func restore(state: Dictionary):
     step_progress = 1.0
     selected_target = ""
     attack_elapsed = -1.0
+    cast_elapsed=-1.0;pending_spell={}
+    if player.has("summoned_guide") and maps.has(player.summoned_guide.map):
+        var guide=player.summoned_guide
+        var m=maps[guide.map]
+        m.npcs=m.npcs.filter(func(n):return n.id!="summoned-guide")
+        m.npcs.append(guide)
     menu = ""
     event("save_restored",{"map":player.map,"level":player.level,"equipped":player.equipped})
 
 func save_game() -> bool:
+    if attack_elapsed>=0 or cast_elapsed>=0:
+        save_queued=true
+        notice("동작이 끝나면 저장합니다.")
+        event("save_queued_until_action_resolves")
+        return false
     var success = store.write_state(save_path,snapshot())
     notice("저장 완료 · 재실행하면 이어집니다." if success else "저장 실패: 저장 폴더를 확인하세요.")
     event("save_written",{"success":success,"sha256":FileAccess.get_sha256(save_path) if success else ""})
@@ -662,6 +751,17 @@ func label(text: String, pos: Vector2, size: int = 16, color: Color = Color(0.91
 
 func box(rect: Rect2, color: Color = Color(0.13,0.12,0.1)):
     draw_rect(rect,color)
+    if assets.textures.has("ui_border"):
+        var side=16.0
+        var xx=[rect.position.x,rect.position.x+side,rect.end.x-side]
+        var yy=[rect.position.y,rect.position.y+side,rect.end.y-side]
+        var ww=[side,maxf(0,rect.size.x-side*2),side]
+        var hh=[side,maxf(0,rect.size.y-side*2),side]
+        for y in range(3):
+            for x in range(3):
+                if x==1 and y==1:continue
+                draw_texture_rect_region(assets.textures.ui_border,Rect2(xx[x],yy[y],ww[x],hh[y]),assets.actor_region("ui_border",[[0,1,2],[3,8,4],[5,6,7]][y][x]))
+        return
     draw_rect(rect,Color(0.52,0.43,0.28),false,2)
     draw_rect(rect.grow(-4),Color(0.29,0.26,0.18),false,1)
 
@@ -672,14 +772,21 @@ func draw_actor(key: String, frame: int, feet: Vector2, opacity: float = 1.0):
     var region = assets.actor_region(key,frame)
     if region.size == Vector2.ZERO:
         return
-    draw_texture_rect_region(texture,Rect2(feet-Vector2(128,160),Vector2(256,256)),region,Color(1,1,1,opacity))
+    var spec=assets.actor_data[key]
+    draw_texture_rect_region(texture,Rect2(feet-Vector2(spec.origin[0],spec.origin[1])*2,Vector2(spec.canvas[0],spec.canvas[1])*2),region,Color(1,1,1,opacity))
 
 func icon(title: String, at: Vector2):
     var names = assets.actor_data.icons.names
     var index = names.find(title)
     if index < 0:
         index = names.find("토끼고기") if title == "구운토끼고기" else names.find("산삼") if title.ends_with("약") else 0
-    draw_actor("icons",index,at)
+    var spec=assets.actor_data.icons
+    var f=spec.frames[index]
+    var r=assets.actor_region("icons",index)
+    # Item EPF pivots are positive; icons center their actual opaque rectangle.
+    var crop=Rect2(r.position+Vector2(spec.origin[0]+f.left,spec.origin[1]+f.top),Vector2(f.width,f.height))
+    var size=Vector2(f.width,f.height)*2
+    draw_texture_rect_region(assets.textures.icons,Rect2(at-size/2,crop.size*2),crop)
 
 func _draw():
     if assets.tiles.is_empty() or font.data.is_empty():
@@ -696,7 +803,7 @@ func _draw():
         if Rect2(cam,Vector2(16,10)).has_point(Vector2(portal.x,portal.y)):
             var p = screen_point(portal.x,portal.y)
             draw_rect(Rect2(p-Vector2(22,44),Vector2(44,42)),Color(0.8,0.7,0.3,0.3))
-            label(portal.label,p-Vector2(38,5),12,Color(1,0.95,0.5))
+            if not player.is_empty() and Vector2i(portal.x,portal.y).distance_to(cell())<2:label(portal.label,p-Vector2(38,5),12,Color(1,0.95,0.5))
     for drop in loot:
         if drop.map == map_id and Rect2(cam,Vector2(16,10)).has_point(Vector2(drop.x,drop.y)):
             icon(drop.item,screen_point(drop.x,drop.y))
@@ -731,6 +838,8 @@ func _draw():
             var spec = assets.actor_data[key]
             var direction = int(e.get("direction",2))
             var frame = direction*int(spec.walk)+int(clock*6)%int(spec.walk)
+            if v.type=="monster" and float(e.get("attack_elapsed",-1))>=0 and int(spec.attack)>0:
+                frame=4*int(spec.walk)+direction*int(spec.attack)+mini(int(spec.attack)-1,int(float(e.attack_elapsed)*1000/maxi(1,int(spec.delay_ms))))
             var opacity = 0.7 if float(e.get("hurt",0)) > 0 else 1.0
             draw_actor(key,frame,pos,opacity)
             var title = e.name if v.type == "npc" else e.spec.name
@@ -739,9 +848,22 @@ func _draw():
                 draw_rect(Rect2(pos-Vector2(16,85),Vector2(32,3)),Color(0.15,0.1,0.1))
                 draw_rect(Rect2(pos-Vector2(16,85),Vector2(32*maxf(0,float(e.hp)/float(e.spec.values.hp)),3)),Color(0.75,0.25,0.15))
     for fx in effects:
-        draw_actor(fx.key,mini(7,int(fx.time*10)),screen_point(fx.x,fx.y))
+        var spec=assets.actor_data.get(fx.key,{})
+        var durations=spec.get("delays_ms",[])
+        var elapsed=fx.time*1000;var frame=0
+        if durations.is_empty():frame=mini(7,int(fx.time*10))
+        else:
+            while frame<durations.size()-1 and elapsed>=float(durations[frame]):elapsed-=float(durations[frame]);frame+=1
+        draw_actor(fx.key,frame,screen_point(fx.x,fx.y))
     for t in floating_text:
         label(t.text,screen_point(t.x,t.y)-Vector2(8,90+t.time*35),18,t.color)
+    if m.kind=="dungeon" and not player.is_empty():
+        var lit=player.buffs.get("누리의빛",0)>0 or player.buffs.get("대지의빛",0)>0 or player.buffs.get("바다의 빛",0)>0
+        var radius=8.0 if lit else 3.0
+        for y in range(10):
+            for x in range(16):
+                if (Vector2(x,y)+cam-Vector2(player.x,player.y)).length()>radius:
+                    draw_rect(Rect2(VIEW.position+Vector2(x,y)*STEP,Vector2(STEP,STEP)),Color(0,0,0,0.30))
     box(Rect2(0,0,960,48))
     label("바람의나라",Vector2(18,32),23,Color(0.96,0.82,0.43))
     label(m.name,Vector2(212,31),17)
@@ -767,21 +889,37 @@ func draw_player(pos: Vector2):
         draw_actor("ghost",int(player.direction)*3+int(clock*6)%3,pos)
         return
     var direction = int(player.direction)
+    if player.buffs.get("금수",0)>0:
+        var spec=assets.actor_data.rabbit
+        draw_actor("rabbit",direction*int(spec.walk)+int(clock*6)%int(spec.walk),pos)
+        return
+    if player.buffs.get("경수",0)>0:
+        var spec=assets.actor_data.innkeeper
+        draw_actor("innkeeper",direction*int(spec.walk)+int(clock*6)%int(spec.walk),pos)
+        return
+    var binding=assets.actor_data.get("equipment_bindings",{}).get(player.equipped,{"sprite":"wood_weapon","motion":"sword"})
+    var motion=assets.actor_data.get("motion_bindings",{})
     var body_frame = direction*3+(int(clock*10)%3 if step_progress < 1 else 1)
     var weapon_frame = body_frame
-    if player.equipped != "": body_frame += 12
+    if player.equipped != "": body_frame += int(motion.get("walk_"+str(binding.motion),12))
     if attack_elapsed >= 0:
-        body_frame = 24+direction*2+mini(1,int(attack_elapsed*5))
+        body_frame = int(motion.get("attack_"+str(binding.motion),24))+direction*2+mini(1,int(attack_elapsed*5))
         weapon_frame = 12+direction*2+mini(1,int(attack_elapsed*5))
+    elif cast_elapsed>=0:body_frame=int(motion.get("cast",72))+direction
+    elif pickup_elapsed>=0:body_frame=int(motion.get("pickup",76))+direction
     var order = str(assets.actor_data.draw_order[body_frame])
     var opacity = 0.72 if hurt_time > 0 else 1.0
+    if player.buffs.get("무영보법",0)>0:opacity*=0.35
+    var body_key="body_"+str(job)
+    var worn=assets.actor_data.get("equipment_bindings",{}).get(player.get("armor_equipped",""),{})
+    if worn.has("sprites"):body_key=worn.sprites[job]
     for layer in order:
         if layer == "b":
-            draw_actor("body_"+str(job),body_frame,pos,opacity)
+            draw_actor(body_key,body_frame,pos,opacity)
         elif layer == "h":
             draw_actor("head_"+str(job),mini(body_frame,99),pos,opacity)
         elif layer == "w" and player.equipped != "":
-            draw_actor("wood_weapon" if player.equipped in ["목도","목검"] else "iron_weapon",weapon_frame,pos,opacity)
+            draw_actor(binding.sprite,weapon_frame,pos,opacity)
 
 func draw_hud():
     label(player.name,Vector2(784,78),18,Color(1,0.91,0.66))
@@ -789,15 +927,24 @@ func draw_hud():
     label("체력 %d / %d" % [player.hp,player.hp_max],Vector2(784,134),14)
     draw_rect(Rect2(784,143,158,12),Color(0.2,0.08,0.06))
     draw_rect(Rect2(784,143,158*float(player.hp)/float(player.hp_max),12),Color(0.65,0.16,0.1))
+    if assets.textures.has("ui_bars"):
+        var r=assets.actor_region("ui_bars",0)
+        r.size.x*=float(player.hp)/float(player.hp_max)
+        if r.size.x>0:draw_texture_rect_region(assets.textures.ui_bars,Rect2(784,143,158*float(player.hp)/float(player.hp_max),12),r)
     label("마력 %d / %d" % [player.mp,player.mp_max],Vector2(784,179),14)
     draw_rect(Rect2(784,188,158,12),Color(0.07,0.1,0.22))
     draw_rect(Rect2(784,188,158*float(player.mp)/float(player.mp_max),12),Color(0.18,0.33,0.7))
+    if assets.textures.has("ui_bars"):
+        var r=assets.actor_region("ui_bars",1)
+        r.size.x*=float(player.mp)/float(player.mp_max)
+        if r.size.x>0:draw_texture_rect_region(assets.textures.ui_bars,Rect2(784,188,158*float(player.mp)/float(player.mp_max),12),r)
     label("경험치 %s" % str(float(player.xp2)/2.0),Vector2(784,224),14)
     label("금전 %d전" % player.gold,Vector2(784,248),15)
     label("힘 %d · 사냥 %d" % [player.strength,player.kills],Vector2(784,273),14)
     label("무기: "+(player.equipped if player.equipped!="" else "맨손"),Vector2(784,302),15)
     if player.equipped != "":
         label("내구 %d" % int(player.durability[player.equipped]),Vector2(784,325),13)
+    if player.get("armor_equipped","")!="":label("옷: "+player.armor_equipped,Vector2(784,342),11)
     for i in range(3):
         box(Rect2(782,346+i*39,166,34))
         label(str(i+1)+"  "+str(player.hotbar[i]),Vector2(790,368+i*39),13)
@@ -807,7 +954,7 @@ func draw_hud():
 
 func draw_menu():
     box(Rect2(164,106,536,398),Color(0.12,0.13,0.11))
-    var heading = {"shop":"물품 거래","trainer":"기술 수련","inventory":"보유 물품","dialogue":"안내","pause":"여정 저장","travel":"길 안내","map":"지역 목록"}.get(menu,menu)
+    var heading = {"shop":"물품 거래","trainer":"기술 수련","inventory":"보유 물품","dialogue":"안내","pause":"여정 저장","travel":"길 안내","map":"지역 목록","compass":"비영사천문","skills":"배운 기술"}.get(menu,menu)
     label(heading,Vector2(191,144),22,Color(1,0.88,0.5))
     if menu == "pause":
         label("Enter: 계속하기 · Q: 게임 종료",Vector2(194,205),18)
@@ -821,17 +968,23 @@ func draw_menu():
             draw_rect(Rect2(184,y-21,496,29),Color(0.32,0.29,0.16))
         label(title,Vector2(198,y),15)
         if menu == "shop":
+            icon(title,Vector2(445,y-8))
             label("%d전  보유 %d" % [int(rules.value_or(rules.item(title),"vendor_buy_price",5)),int(player.inventory.get(title,0))],Vector2(478,y),14)
         elif menu == "inventory":
+            icon(title,Vector2(559,y-8))
             label("%d개" % int(player.inventory[title]),Vector2(596,y),14)
         elif menu == "trainer":
             var s = rules.skill(player,title)
-            label("Lv.%d / %d전 %s" % [int(s.learn_level),int(s.learn_money),"습득" if title in player.skills else ""],Vector2(467,y),13)
+            var cost="미확정" if s.get("learn_money")==null else str(int(s.learn_money))+"전"
+            label("Lv.%d / %s %s" % [int(s.learn_level),cost,"습득" if title in player.skills else ""],Vector2(467,y),13)
     var hint = {"shop":"↑↓ 선택 · B 구매 · V 판매 · R 수리 · C 요리 · Esc 닫기",
         "inventory":"↑↓ 선택 · E 장착 · U 사용 · Esc 닫기",
         "trainer":"Enter 습득 · 1~3 단축키 지정 · Esc 닫기",
-        "dialogue":"Esc 닫기"}.get(menu,"")
+        "dialogue":"Esc 닫기","skills":"↑↓ 선택 · 1~3 단축키 지정 · Esc 닫기","travel":"↑↓ 선택 · Enter 이동 · Esc 닫기"}.get(menu,"")
     label(hint,Vector2(190,485),13)
+    if menu=="inventory" and not choices.is_empty():
+        var it=rules.item(str(choices[selected]))
+        label("공격 %d~%d · 방어 %d · 필요 힘 %d" % [int(rules.value_or(it,"damage_min",0)),int(rules.value_or(it,"damage_max",0)),int(rules.value_or(it,"armor_class",0)),int(rules.value_or(it,"strength_required",0))],Vector2(194,459),13)
 
 func start_exercise():
     # Implemented in a separate script so validation calls the actual event handlers.

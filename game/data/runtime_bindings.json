@@ -1,0 +1,30 @@
+{
+  "classification": "REPLACEABLE_VISUAL_BINDINGS_NOT_VERIFIED_KR1998_ITEM_OR_SPELL_IDENTITIES",
+  "players": [[2, 0, 2], [19, 33, 0], [6, 52, 2], [18, 63, 1]],
+  "monsters": {
+    "rabbit": [125, 11], "squirrel": [25, 9], "rat": [90, 9], "bat": [58, 0],
+    "snake": [26, 9], "boar": [127, 9], "spider": [90, 9], "skeleton": [58, 2],
+    "innkeeper": [51, 0], "merchant": [67, 0], "teacher": [68, 0], "priest": [41, 0]
+  },
+  "monster_resolution": {
+    "boar": "OLD_PIG_LOOK_FOR_BEAR_REPLACED_BY_VISUALLY_REVIEWED_BEAR_MODEL_127",
+    "spider": "OLD_LARGE_SPIDER_LOOK_FOR_SEOSAENGWON_REPLACED_BY_MOUSE_MODEL_90",
+    "skeleton": "OLD_SKELETON_LOOK_FOR_PURPLE_BAT_REPLACED_BY_BAT_MODEL_58"
+  },
+  "outfits": {"cloth_0": [7, 6], "cloth_1": [24, 6], "cloth_2": [20, 6], "cloth_3": [21, 6], "robe": [18, 6], "mail": [19, 11]},
+  "equipment": {
+    "목도": {"slot": "weapon", "sprite": "wood_weapon", "motion": "sword"},
+    "목검": {"slot": "weapon", "sprite": "wood_weapon", "motion": "sword"},
+    "철단도": {"slot": "weapon", "sprite": "iron_weapon", "motion": "sword"},
+    "철검": {"slot": "weapon", "sprite": "iron_weapon", "motion": "sword"},
+    "장창": {"slot": "weapon", "sprite": "spear_weapon", "motion": "spear"},
+    "연두색 남자도복": {"slot": "body", "sprites": ["cloth_0", "cloth_1", "cloth_2", "cloth_3"], "source_kind": "SOURCE_ITEM_STATS_WITH_REPLACEMENT_BODY_LOOK"},
+    "초록색 도포": {"slot": "body", "sprites": ["robe", "robe", "robe", "robe"], "source_kind": "SOURCE_ITEM_STATS_WITH_REPLACEMENT_BODY_LOOK"},
+    "보라 남자갑옷": {"slot": "body", "sprites": ["mail", "mail", "mail", "mail"], "source_kind": "SOURCE_ITEM_STATS_WITH_REPLACEMENT_BODY_LOOK"}
+  },
+  "weapons": {"wood_weapon": ["sword", 1, 0], "iron_weapon": ["sword", 2, 0], "spear_weapon": ["spear", 1, 0]},
+  "icons": {"목도": 2, "목검": 2, "도토리": 214, "토끼고기": 217, "철검": 17, "철단도": 12, "산삼": 229, "붉은시약": 165, "푸른시약": 166, "연두색 남자도복": 36, "초록색 도포": 40, "보라 남자갑옷": 44, "장창": 22},
+  "skill_effects": {"heal": 3, "damage": 0, "fire": 1, "lightning": 2, "buff": 5, "poison": 7},
+  "motion": {"walk_unarmed": 0, "walk_sword": 12, "attack_sword": 24, "walk_spear": 32, "attack_spear": 44, "walk_bow": 52, "attack_bow": 64, "cast": 72, "pickup": 76},
+  "missing": {"bow_overlay": "BOW_EPF_HAS_ZERO_FRAMES_IN_KR491; BODY_MOTION_EXISTS; NOT_CONNECTED_YET", "exact_weapon_item_look": "ORIGINAL_SEMANTIC_LOOK_TABLE_MISSING; CURRENT_BINDINGS_ARE_REPLACEMENTS"}
+}

@@ -31,15 +31,18 @@ Linux x86_64 그래픽 화면에서 압축을 풀고 `chmod +x launch-linux.sh e
 OpenGL/X11이 있는 데스크톱 환경을 사용한다. Windows 실행 파일은 제공·검증하지 않았다.
 
 화살표/WASD 이동, Shift+화살표 제자리 방향, Space 공격, Enter NPC 대화,
-G/쉼표 줍기, I 물품, E 장착, U 사용, 1~3 기술, F5 저장, F6 복구.
+G/쉼표 줍기, I 물품, K 배운 기술, E 장착, U 사용, 1~3 기술, F5 저장, F6 복구.
 Esc로 창을 닫거나 저장 후 정지하고 Q로 종료한다. 상점은 B 구매·V 판매·R 수리·C 요리.
 
-8개 새 배치 맵과 4직업 초반 플레이를 포함한다. 초보 안내인에게 5/25마리 의뢰 보상을
-받고 주막·수련원·동굴·숲을 탐험한다. 수련원에서 기술을 배우고 1~3에 지정한다.
+원본 북미 4.95 지형 38개와 한국 4.91 공유 그림을 사용한다. 옛 8개 제작 맵은 소스에
+보존했다. 마을의 길잡이가 주막·대장간·네 직업 수련원·상점 이동을 돕고, 들판에서
+쥐굴·뱀굴·곰굴·감옥·토끼굴로 이동한다. 원본 마을 문으로 들어가고 나올 수도 있다.
+수련원에서 기술을 배우고 K에서 1~3에 지정한다. 옷/무기 장착은 실제 모습과 계산에 반영된다.
 1~30 수치와 99레벨 경험치 계산은 보존되어 있으나 네 직업 30/99 완주와 승급은 미검증이다.
 몬스터 일부·기술 효과·음원 역할은 대체 연결이며 원작 동일성이 확인되지 않았다.
 
-모든 타일 14,835개를 등록했다. 자동 검사·시각 검토·맵 배치·실제 렌더링 수는
+첨부 타일 14,835개와 추가 원본 타일 35,269개를 별도 ID로 등록했다. 중복 그림은
+원장에서 연결하며 두 ID를 두 고유 그림으로 세지 않는다. 실제 활용·미활용 해결 내역은
 docs/development/runs/20261014-assets/asset-game-summary.json와 tile-status-current.json을 읽는다.
 원본 5개와 첨부 ZIP은 original_archives에 보존한다. 수치·연구 원본은 Git bundle에도 있다.
 다음 개발에서 `git clone -b dev/codex-asset-runtime-20261014 development.bundle recovered-code`로 복구한다.
@@ -88,7 +91,7 @@ def build(a):
     if sha(handoff)!='f36929c43d775058678a708a1da7a140ea13e0e9243d5f4fc2b5e304fa54500b':raise ValueError('Handoff SHA mismatch')
     shutil.copy2(handoff,originals/'baram_Codex_tile_handoff_PRIVATE.zip')
     evidence=staging/'private_evidence';evidence.mkdir(exist_ok=True)
-    for name in ['game-screen-run2','game-screen-run3','game-screen-run4','game-screen-run5','game-screen-resume6','game-screen-classes','game-screen-classes2','review']:
+    for name in ['game-screen-run2','game-screen-run3','game-screen-run4','game-screen-run5','game-screen-resume6','game-screen-classes','game-screen-classes2','review','source-screen-1','content-screen-1','content-screen-2','content-screen-fixed-1','content-screen-fixed-2','content-actions-screen','cure-actions-screen','town-all-screen']:
         source=private/name
         if source.exists():shutil.copytree(source,evidence/name,dirs_exist_ok=True,ignore=shutil.ignore_patterns('data','cache','config'))
     (staging/'launch-linux.sh').write_text(LAUNCH);(staging/'launch-linux.sh').chmod(0o755)
@@ -100,7 +103,8 @@ def build(a):
     manifest={'source_branch':branch,'source_commit':commit,'private_only':True,'remote_publication':checkpoint.get('remote_status','PENDING_READBACK'),
               'files':[{'path':str(p.relative_to(staging)),'bytes':p.stat().st_size,'sha256':sha(p)} for p in sorted(staging.rglob('*')) if p.is_file() and p.name!='PACKAGE_MANIFEST.json'],
               'git_bundle_verification':verification.stdout+verification.stderr,
-              'original_archive_pins':pins,'core_generated_content':{'maps':8,'items':3,'training_skills':1,'quests':2,'new_bitmaps':0}}
+              'original_archive_pins':pins,'core_generated_content':{'native_layouts':38,'legacy_authored_layouts_preserved':8,'items':3,'training_skills':1,'quests':2,'outfit_color_parameters':6,'new_independent_bitmaps':0},
+              'level30_validation':'CONTROLLED_SKILL_EQUIPMENT_FIXTURES_NOT_NATURAL_FOUR_JOB_PLAYTHROUGH'}
     (staging/'PACKAGE_MANIFEST.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
     packages=[]
     for name,full in [('baram_playable_PRIVATE_20261014.zip',True),('baram_assets_resume_PRIVATE_20261014.zip',False)]:

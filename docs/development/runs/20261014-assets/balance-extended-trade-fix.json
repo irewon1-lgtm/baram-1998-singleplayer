@@ -1,0 +1,37 @@
+{
+  "executed": 1,
+  "fail": 0,
+  "pass": 1,
+  "results": [
+    {
+      "checks": [
+        {
+          "condition": "Single-slot item stack limit is enforced",
+          "result": "PASS"
+        },
+        {
+          "condition": "Buy three at 20",
+          "result": "PASS"
+        },
+        {
+          "condition": "Sell three at 10",
+          "result": "PASS"
+        },
+        {
+          "condition": "Insufficient funds preserve entire state",
+          "result": "PASS"
+        }
+      ],
+      "observed": {
+
+      },
+      "status": "PASS",
+      "test_id": "TRADE-ROUNDTRIP"
+    }
+  ],
+  "rules_sha256": "135a000fb505e6ac33b50aeee6c142b938f0afb8b5ca9cba8377163adbf84d03",
+  "save_module_sha256": "0f1c8b9fea8baf986a750afaf2636dee6925b97442724226a098cbc9937460ac",
+  "scope": "SAME_INTERACTIVE_GAME_RULES_NOT_37_MANUAL_SCREEN_PLAYTHROUGHS",
+  "status": "PASS_CALCULATION_SIMULATION",
+  "world_sha256": "75e96433b60a5ab928e52ad38952dab84302e87af80e57caa1b42a95ca8bcb9a"
+}

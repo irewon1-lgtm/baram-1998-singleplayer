@@ -1,8 +1,7 @@
 {
-  "status": "PASS_CALCULATION_SIMULATION",
-  "executed_definitions": 37,
-  "pass": 37,
+  "executed": 37,
   "fail": 0,
+  "pass": 37,
   "results": [
     {
       "checks": [
@@ -2626,13 +2625,10 @@
       "test_id": "PROGRESSION-RESOURCES"
     }
   ],
-  "evidence_sources": [
-    "balance-1.json",
-    "balance-affected-2.json",
-    "balance-growth-4.json"
-  ],
-  "not_repeated": "Unchanged arithmetic, drop and trade tests preserved; affected growth/save and economy re-executed",
-  "scope": "Same game rules calculation and economy simulations, not four full manual playthroughs",
-  "rules_sha256": "d65d7872d675e5652a251396233297970cfe885ece9c72c86679df088bebdd95",
-  "save_store_sha256": "0f1c8b9fea8baf986a750afaf2636dee6925b97442724226a098cbc9937460ac"
+  "rules_sha256": "58b05bf12277ce870259d6d732d40c0a8e6b7bc63ceea083171a84b02396bbdc",
+  "save_module_sha256": "0f1c8b9fea8baf986a750afaf2636dee6925b97442724226a098cbc9937460ac",
+  "scope": "SAME_INTERACTIVE_GAME_RULES_NOT_37_MANUAL_SCREEN_PLAYTHROUGHS",
+  "status": "PASS",
+  "world_sha256": "75e96433b60a5ab928e52ad38952dab84302e87af80e57caa1b42a95ca8bcb9a",
+  "reuse_evidence": "36 executed checks unaffected by single-slot fix; trade case rerun with original expectation. Failed run preserved."
 }

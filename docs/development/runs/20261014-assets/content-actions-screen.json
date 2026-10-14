@@ -1,0 +1,104 @@
+{
+  "started_at": "2026-10-14T06:08:45.458788+00:00",
+  "scope": "REAL_GAME_X11_WINDOW_AND_GODOT_INPUT_EVENTS",
+  "runs": [
+    {
+      "mode": "content-actions",
+      "exit_code": 0,
+      "game_report": "/workspace/baram-private/content-actions-screen/content-actions/content-actions-report.json",
+      "game_status": "PASS_EXECUTED_SCREEN_INPUT",
+      "x11_captures": [
+        {
+          "name": "native-town-room-5",
+          "sha256": "b6e2c495554f8d6929ad1280b0f49fceebdd699e88b87f77c8565902c914a550",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 158,
+          "status": "PASS"
+        },
+        {
+          "name": "native-town-room-43",
+          "sha256": "3e365f61a9a1d1d88f5a4c354a6bd856ab2e54f734cf8ad9a8b595da8d98c362",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 153,
+          "status": "PASS"
+        },
+        {
+          "name": "native-town-room-10",
+          "sha256": "65348d312027d48b65bc402623189d59881070dd0d16192185e2b9ec3dfc8baf",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 163,
+          "status": "PASS"
+        },
+        {
+          "name": "original-city-south",
+          "sha256": "f529c2726c89d565270d89aa8157b19d76958597f807aa4abfabdc53562cf034",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 170,
+          "status": "PASS"
+        },
+        {
+          "name": "light-before",
+          "sha256": "a2f500bea0b85b957a2ba3541d697cb32256d1cf0ea84ff4616cc613f7e9a1e0",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 174,
+          "status": "PASS"
+        },
+        {
+          "name": "light-after",
+          "sha256": "5d7f78c1d3cd01e10df52071a6fad68d01f685f8e6d1162f78ac5f95a91d4720",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 182,
+          "status": "PASS"
+        },
+        {
+          "name": "item-inspection",
+          "sha256": "06715643bde33183bc440c59b8d964a0fd8462bd04e56fe7d94ece1c3352e649",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 170,
+          "status": "PASS"
+        },
+        {
+          "name": "action-saved",
+          "sha256": "89b174741dccc4188106be4dc36366542d2e04ae101af72de4a2839290367baf",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 177,
+          "status": "PASS"
+        }
+      ],
+      "audio_mix": {
+        "status": "PASS_PCM_SIGNAL",
+        "samples": 3661824,
+        "rms": 2210.275841101239,
+        "driver": "Dummy",
+        "audible_human_review": "NOT_RUN"
+      },
+      "argv": [
+        "godot",
+        "--path",
+        "/workspace/baram-1998-singleplayer/game",
+        "--display-driver",
+        "x11",
+        "--rendering-method",
+        "gl_compatibility",
+        "--audio-driver",
+        "Dummy",
+        "--",
+        "--assets=/workspace/baram-private/game-assets",
+        "--save=/workspace/baram-private/content-actions-screen/content-actions/character.json",
+        "--exercise=content-actions",
+        "--evidence=/workspace/baram-private/content-actions-screen/content-actions"
+      ],
+      "registered_tiles": 50104,
+      "checks": 37
+    }
+  ],
+  "status": "PASS_EXECUTED_SCREEN_INPUT",
+  "finished_at": "2026-10-14T06:09:54.745342+00:00",
+  "source_sha256": {
+    "game/main.gd": "f4918c96ea2014a966921669c9c79ed0b2ed9143d0807b0a11a44f54de94073f",
+    "game/exercise.gd": "960fdc707a000eca2e0da706b26c1d9cf68a5d79fff08a69ddbb20a887eecb09",
+    "game/rules.gd": "58b05bf12277ce870259d6d732d40c0a8e6b7bc63ceea083171a84b02396bbdc",
+    "game/save_store.gd": "0f1c8b9fea8baf986a750afaf2636dee6925b97442724226a098cbc9937460ac",
+    "tests/run_playable_screen.py": "ab3d649e5bf6ddba452422fd943fe63aed6a8f401a1e73e781d6145c4d8d7b57"
+  }
+}
