@@ -138,16 +138,13 @@ def run_probe(args, stage, mode, evidence, save):
     cmd+=['--','--package-root='+str(stage),'--save='+str(save),
           '--exercise='+mode,'--evidence='+str(evidence)]
     evidence.mkdir(parents=True,exist_ok=True)
-    import psutil
     log_path=evidence/(mode+'.log')
     start=time.monotonic();peak=0;ready=None;last_stage='engine initialization'
     with log_path.open('w',encoding='utf-8') as log:
         process=subprocess.Popen(cmd,stdout=log,stderr=subprocess.STDOUT)
-        monitor=psutil.Process(process.pid)
         try:
             while process.poll() is None:
-                try:peak=max(peak,monitor.memory_info().rss)
-                except psutil.NoSuchProcess:pass
+                peak=max(peak,process_rss(process.pid))
                 raw=log_path.read_text(encoding='utf-8',errors='replace')
                 for line in raw.splitlines():
                     if line.startswith('BARAM_STARTUP '):last_stage=json.loads(line.split(' ',1)[1])['stage']
@@ -188,7 +185,7 @@ def archive(args):
     out=Path(args.out).resolve();result=json.loads((out/'verification.json').read_text())
     if result['status']!='PASS' or result['game_function_automation']!='PASS':raise ValueError('Verification gate failed')
     if args.require_windows and result['windows_native_execution']!='PASS':raise ValueError('Windows-native evidence is required')
-    if os.environ.get('GITHUB_ACTIONS')=='true' and os.environ.get('BARAM_PRIVATE_REPOSITORY')!='true':
+    if os.environ.get('GITHUB_ACTIONS')=='true' and os.environ.get('BARAM_PRIVATE_REPOSITORY')!='true' and os.environ.get('BARAM_PRIVATE_DELIVERY_VERIFIED')!='true':
         raise ValueError('Public repository may not create/publish a plaintext private game ZIP')
     stage=Path(json.loads((out/'build.json').read_text())['stage'])
     manifest=json.loads((stage/'PACKAGE_MANIFEST.json').read_text())
@@ -205,6 +202,36 @@ def archive(args):
     write_json(out/'delivery.json',{'file':str(target),'bytes':target.stat().st_size,'sha256':sha256(target),
                                   'verification':result})
     print('ZIP_READY '+str(target))
+
+
+def process_rss(pid):
+    if os.name!='nt':
+        try:
+            for line in Path(f'/proc/{pid}/status').read_text().splitlines():
+                if line.startswith('VmRSS:'):return int(line.split()[1])*1024
+        except (FileNotFoundError,ProcessLookupError):pass
+        return 0
+    import ctypes
+    from ctypes import wintypes
+    class Counters(ctypes.Structure):
+        _fields_=[('cb',wintypes.DWORD),('PageFaultCount',wintypes.DWORD),
+                  ('PeakWorkingSetSize',ctypes.c_size_t),('WorkingSetSize',ctypes.c_size_t),
+                  ('QuotaPeakPagedPoolUsage',ctypes.c_size_t),('QuotaPagedPoolUsage',ctypes.c_size_t),
+                  ('QuotaPeakNonPagedPoolUsage',ctypes.c_size_t),('QuotaNonPagedPoolUsage',ctypes.c_size_t),
+                  ('PagefileUsage',ctypes.c_size_t),('PeakPagefileUsage',ctypes.c_size_t)]
+    kernel=ctypes.WinDLL('kernel32',use_last_error=True)
+    kernel.OpenProcess.argtypes=[wintypes.DWORD,wintypes.BOOL,wintypes.DWORD]
+    kernel.OpenProcess.restype=wintypes.HANDLE
+    kernel.CloseHandle.argtypes=[wintypes.HANDLE]
+    handle=kernel.OpenProcess(0x410,False,pid)
+    if not handle:return 0
+    try:
+        counter=Counters();counter.cb=ctypes.sizeof(counter)
+        psapi=ctypes.WinDLL('psapi',use_last_error=True)
+        psapi.GetProcessMemoryInfo.argtypes=[wintypes.HANDLE,ctypes.POINTER(Counters),wintypes.DWORD]
+        if not psapi.GetProcessMemoryInfo(handle,ctypes.byref(counter),counter.cb):return 0
+        return int(counter.WorkingSetSize)
+    finally:kernel.CloseHandle(handle)
 
 
 if __name__=='__main__':

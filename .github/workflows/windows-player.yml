@@ -1,0 +1,81 @@
+name: Windows x64 private player delivery
+on:
+  push:
+    branches: [codex/game-core, 'work/windows-startup-recovery-*']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: windows-player-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  player:
+    # Standard hosted runners on this public source repo. Assets and releases
+    # are supplied/stored only in the separately verified PRIVATE vault repo.
+    runs-on: windows-latest
+    timeout-minutes: 25
+    environment: baram-windows-private
+    env:
+      PRIVATE_REPO: ${{ vars.BARAM_PRIVATE_REPOSITORY || 'irewon1-lgtm/baram-windows-private' }}
+      GH_TOKEN: ${{ secrets.BARAM_PRIVATE_REPO_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Require an authenticated PRIVATE input/delivery destination
+        shell: pwsh
+        run: |
+          if (-not $env:GH_TOKEN) { throw 'BLOCKED: one-time private runtime/delivery connection is not configured. No player ZIP will be published.' }
+          $repo = gh api "repos/$env:PRIVATE_REPO" | ConvertFrom-Json
+          if (-not $repo.private) { throw 'Refuse original assets or ZIPs in a public repository' }
+          'BARAM_PRIVATE_DELIVERY_VERIFIED=true' >> $env:GITHUB_ENV
+      - name: Read hash-pinned runtime from the private vault
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.PRIVATE_REPO }}
+          token: ${{ secrets.BARAM_PRIVATE_REPO_TOKEN }}
+          path: vault
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install build dependencies and pinned official editor
+        shell: pwsh
+        run: |
+          python -m pip install Pillow==11.3.0
+          Invoke-WebRequest 'https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_win64.exe.zip' -OutFile editor.zip
+          if ((Get-FileHash editor.zip -Algorithm SHA256).Hash.ToLower() -ne 'e39986a178d585ce7ac198fb8de6ea436366dc0cc00e594810c2e3e104c04b90') { throw 'Editor digest mismatch' }
+          Expand-Archive editor.zip editor
+          $godot = (Get-ChildItem editor -Filter '*.exe' | Where-Object { $_.Name -notmatch 'console' } | Select-Object -First 1).FullName
+          "GODOT=$godot" >> $env:GITHUB_ENV
+      - name: Preserve input bytes and build Windows x64 EXE
+        shell: pwsh
+        run: |
+          python -m unittest discover -s tests -p 'test_windows*.py' -v
+          if ($LASTEXITCODE) { throw 'Packaging gate failed' }
+          python tools/windows_ci.py build --runtime vault/runtime --template vault/runtime/template-win64.exe --godot "$env:GODOT" --out player-build
+          if ($LASTEXITCODE) { throw 'Build/export failed' }
+      - name: Actual Windows EXE startup and live input/save/restart regression
+        shell: pwsh
+        run: |
+          python tools/windows_ci.py verify --out player-build
+          if ($LASTEXITCODE) { throw 'Native game regression failed; delivery blocked' }
+      - name: Verified player ZIP
+        shell: pwsh
+        run: |
+          python tools/windows_ci.py archive --out player-build --require-windows
+          if ($LASTEXITCODE) { throw 'ZIP release gate failed' }
+      - name: Publish authenticated download in the private vault only
+        shell: pwsh
+        run: |
+          python tools/publish_private_windows.py --repo "$env:PRIVATE_REPO" --out player-build
+          if ($LASTEXITCODE) { throw 'Private delivery failed' }
+      - name: Keep failure logs inside the private vault
+        if: failure() && env.BARAM_PRIVATE_DELIVERY_VERIFIED == 'true'
+        shell: pwsh
+        run: python tools/publish_private_windows.py --repo "$env:PRIVATE_REPO" --out player-build --diagnostics-only
+      - name: Verification scope
+        if: always()
+        shell: pwsh
+        run: |
+          'A player ZIP is released only after native EXE and live game regressions pass.' >> $env:GITHUB_STEP_SUMMARY
+          'Original assets and player ZIPs are never uploaded to public Actions artifacts.' >> $env:GITHUB_STEP_SUMMARY
+          'Operator Windows GUI/audio remains separately BLOCKED until observed.' >> $env:GITHUB_STEP_SUMMARY

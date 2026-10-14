@@ -139,7 +139,7 @@ def extract_source(archive, expected, destination):
 def verify_private_equivalence(source, stage):
     rows = [r for r in source["files"] if r["path"].startswith(("private_assets/", "private_content/"))]
     expected = {r["path"] for r in rows}
-    present = {str(p.relative_to(stage)) for folder in ("private_assets", "private_content")
+    present = {p.relative_to(stage).as_posix() for folder in ("private_assets", "private_content")
                for p in (stage/folder).rglob("*") if p.is_file()}
     if expected != present:
         raise ValueError("Private asset/content membership changed")
@@ -161,7 +161,7 @@ def write_archive(stage, archive):
     with zipfile.ZipFile(archive, "x", zipfile.ZIP_DEFLATED, compresslevel=6) as z:
         for path in sorted(stage.rglob("*")):
             if path.is_file():
-                z.write(path, PACKAGE_NAME+"/"+str(path.relative_to(stage)))
+                z.write(path, PACKAGE_NAME+"/"+path.relative_to(stage).as_posix())
     with zipfile.ZipFile(archive) as z:
         if z.testzip():
             raise ValueError("Windows ZIP CRC failed")
