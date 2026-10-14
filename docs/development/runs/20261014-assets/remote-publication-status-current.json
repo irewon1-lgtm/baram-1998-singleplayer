@@ -1,11 +1,12 @@
 {
-  "status": "RESOLVED_GIT_ACCESS_AND_BASE_READ",
-  "latest_requested_base_sha": "80d3da1baf14afe689acd80d7b64edb5bfed143b",
-  "execution_spec_full_read": true,
-  "required_handoff_files_full_read": true,
-  "forward_merge_commit": "d5255cb57dda39e161059209d6e7892e5156fcdc",
-  "last_confirmed_remote_runtime_sha": "0b87d15aa7d7e7e1b8db18315b1124058d8ae89d",
-  "main_remote_sha": "443b49abe97948f59893d3e23f667b0e2eb5e8ff",
-  "further_updates": "PENDING_PUSH_READBACK",
-  "historical_proxy403_preserved": true
+  "status": "PASS_PUSH_AND_EXACT_READBACK",
+  "recorded_at_utc": "2026-10-14T08:03:14.364580+00:00",
+  "verified_commit": "8852ab6f89909612676be4b00263f43857f00e0f",
+  "refs": {
+    "refs/heads/dev/codex-asset-runtime-20261014": "8852ab6f89909612676be4b00263f43857f00e0f",
+    "refs/heads/main": "443b49abe97948f59893d3e23f667b0e2eb5e8ff",
+    "refs/heads/research/restoration-integrated-20261013": "2775b1166a760b6a1757f09f2faf1e799d3fd59e"
+  },
+  "public_original_graphics": false,
+  "main_merge": false
 }

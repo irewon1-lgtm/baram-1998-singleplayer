@@ -253,12 +253,12 @@
   "user_latest_policy": "Other eras, replaceable assets and generated completion content authorized; no public original graphics, no paid actions/deployment/main merge",
   "package_state": "PASS_FINAL_PRIVATE_ZIPS_CRC_MANIFEST_AND_BYTE_IDENTICAL_UNPACKED_RUNTIME",
   "remote_saved": true,
-  "remote_status": "PASS_PUSH_AND_READBACK_a488b40_CONTENT_CODE_WITH_FINAL_ATTESTATION_PENDING",
+  "remote_status": "PASS_CONTENT_AND_ATTESTATION_PUSH_EXACT_READBACK",
   "requested_remote_base_sha": "80d3da1baf14afe689acd80d7b64edb5bfed143b",
   "specification_full_read": true,
   "asset_source_namespace": "uploaded-editor-undated/palette0/group/index",
   "input_boundary_checks": "PASS_8_ACTUAL_CASES",
-  "last_verified_remote_code_commit": "a488b40a49938e554d3e18740cea15869674c94f",
+  "last_verified_remote_code_commit": "8852ab6f89909612676be4b00263f43857f00e0f",
   "baseline_report_commit": "afe0252135f0e9214fe096413deaf6720cde35a6",
   "baseline_counts_evidence": "runs/20261014-assets/asset-game-summary.json/before",
   "next_asset_ids": {
@@ -309,5 +309,6 @@
   "package_source_commit": "a488b40a49938e554d3e18740cea15869674c94f",
   "package_runtime_source_commit_under_test": "98d3260d3f04314245854a965d610ff8191f5d4f",
   "runtime_payload_sha256": "4395a281223286f8fb31dab70e291467a29d8336e3dab2fbb8b53e85711986e6",
-  "package_receipt": "runs/20261014-assets/package-expansion-final-artifacts.json"
+  "package_receipt": "runs/20261014-assets/package-expansion-final-artifacts.json",
+  "final_readback_receipt_private": "/workspace/baram-private/results-expansion-20261014/FINAL_HANDOFF.json"
 }
