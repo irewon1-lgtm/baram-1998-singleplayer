@@ -1,0 +1,32 @@
+{
+  "status": "PASS_FINAL_ZIPS_CRC_HASHES_AND_BYTE_IDENTICAL_UNPACKED_TESTED_RUNTIME",
+  "source_commit": "a488b40a49938e554d3e18740cea15869674c94f",
+  "branch": "dev/codex-asset-runtime-20261014",
+  "packages": [
+    {
+      "path": "/workspace/baram-private/results-expansion-20261014/baram_playable_PRIVATE_20261014.zip",
+      "bytes": 314517230,
+      "sha256": "26bda4d0d8cc64db3434fd6c8ee025e037c9bc37a5b79c1313961acf26871c07",
+      "zip_crc": "PASS_FINAL_FULL_MEMBER_READ_NO_DUPLICATES",
+      "contains_engine_and_original_archives": true,
+      "files": 1211,
+      "runtime_unpacked_test": "PASS_SAME_RUNTIME_PAYLOAD_AFTER_METADATA_ONLY_REFRESH"
+    },
+    {
+      "path": "/workspace/baram-private/results-expansion-20261014/baram_assets_resume_PRIVATE_20261014.zip",
+      "bytes": 76632050,
+      "sha256": "8b64800630de7f24d286120a4135aa643ae9b829dd4dcb62caad5763bbc807f0",
+      "zip_crc": "PASS_FINAL_FULL_MEMBER_READ_NO_DUPLICATES",
+      "contains_engine_and_original_archives": false,
+      "files": 505,
+      "runtime_unpacked_test": "PASS_SAME_RUNTIME_PAYLOAD_AFTER_METADATA_ONLY_REFRESH"
+    }
+  ],
+  "staging": "/workspace/baram-private/results-expansion-20261014/baram_playable_PRIVATE_20261014",
+  "remote_publication": "PASS_PUSH_AND_READBACK",
+  "runtime_payload_sha256": "4395a281223286f8fb31dab70e291467a29d8336e3dab2fbb8b53e85711986e6",
+  "at_utc": "2026-10-14T07:58:01.732728+00:00",
+  "unpacked_evidence": "runs/20261014-assets/package-expansion-final-proof.json",
+  "runtime_source_commit_under_test": "98d3260d3f04314245854a965d610ff8191f5d4f",
+  "metadata_only_refresh_after_test": true
+}

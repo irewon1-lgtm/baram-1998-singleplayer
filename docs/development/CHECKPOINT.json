@@ -1,10 +1,10 @@
 {
-  "recorded_at_utc": "2026-10-14T07:54:16.458170+00:00",
+  "recorded_at_utc": "2026-10-14T08:01:04.980133+00:00",
   "user_timezone": "Asia/Seoul",
   "research_base_sha": "2775b1166a760b6a1757f09f2faf1e799d3fd59e",
   "development_branch": "dev/codex-asset-runtime-20261014",
   "workflow_lock": "docs/RESTORATION_WORKFLOW_LOCK.md",
-  "overall": "WIP_CURRENT_NATIVE_CONTENT_TESTED_PRIVATE_PACKAGE_FINAL_RECEIPTS_PENDING",
+  "overall": "WIP_NATIVE_CONTENT_EXPANSION_SAVED_AND_PRIVATE_PACKAGE_VERIFIED",
   "research_1_3": "PRESERVED_UNCHANGED_RESEARCH_ONLY",
   "stage_4": {
     "status": "PASS_AVAILABLE_INPUT_DECODING_AND_LIVE_USE_WITH_REPLACEMENT_BINDINGS",
@@ -201,7 +201,7 @@
     "level31_99_regions_advancement": "NOT_IMPLEMENTED",
     "entire_game_finish_playthrough": "NOT_RUN"
   },
-  "next_action": "After private package verification, continue native outdoor map59 role/progression using preserved source inventory and recipe. Then natural four-job 6..30 leveling with real saves; do not rerun completed source downloads, contact pages, 37 unchanged math checks or 66 fixture casts.",
+  "next_action": "Continue existing source-map recipe with NA-4.95/maps/59 outdoor role, connected native tiles not yet shown, and natural level6 save. Preserve current 38 source scenes and tested math/66 spells. Four-job natural level30, 31..99 and advancement remain incomplete.",
   "resume_command": "python tools/connect_town_doors.py --help  # continue existing recipe; native city outdoor map59 needs ecology/door placement and live verification",
   "network_domains_requested": [
     "archive.org",
@@ -251,14 +251,14 @@
   "requested_execution_spec": "docs/development/CODEX_ASSET_EXECUTION_SPEC.md",
   "remote_base_and_spec": "READ_FULL_SPEC_80d3da1_AND_MERGED_FORWARD",
   "user_latest_policy": "Other eras, replaceable assets and generated completion content authorized; no public original graphics, no paid actions/deployment/main merge",
-  "package_state": "PASS_CURRENT_UNPACKED_RUNTIME_AND_RESTART_FINAL_ZIP_RECEIPTS_PENDING",
+  "package_state": "PASS_FINAL_PRIVATE_ZIPS_CRC_MANIFEST_AND_BYTE_IDENTICAL_UNPACKED_RUNTIME",
   "remote_saved": true,
-  "remote_status": "PASS_PUSH_AND_READBACK",
+  "remote_status": "PASS_PUSH_AND_READBACK_a488b40_CONTENT_CODE_WITH_FINAL_ATTESTATION_PENDING",
   "requested_remote_base_sha": "80d3da1baf14afe689acd80d7b64edb5bfed143b",
   "specification_full_read": true,
   "asset_source_namespace": "uploaded-editor-undated/palette0/group/index",
   "input_boundary_checks": "PASS_8_ACTUAL_CASES",
-  "last_verified_remote_code_commit": "98d3260d3f04314245854a965d610ff8191f5d4f",
+  "last_verified_remote_code_commit": "a488b40a49938e554d3e18740cea15869674c94f",
   "baseline_report_commit": "afe0252135f0e9214fe096413deaf6720cde35a6",
   "baseline_counts_evidence": "runs/20261014-assets/asset-game-summary.json/before",
   "next_asset_ids": {
@@ -285,6 +285,29 @@
     }
   ],
   "previous_package_source_commit": "4959cc36456b21373157479b73058ff391da86a8",
-  "packages": [],
-  "package_runtime_evidence": "runs/20261014-assets/package-expansion-final-proof.json"
+  "packages": [
+    {
+      "path": "/workspace/baram-private/results-expansion-20261014/baram_playable_PRIVATE_20261014.zip",
+      "bytes": 314517230,
+      "sha256": "26bda4d0d8cc64db3434fd6c8ee025e037c9bc37a5b79c1313961acf26871c07",
+      "zip_crc": "PASS_FINAL_FULL_MEMBER_READ_NO_DUPLICATES",
+      "contains_engine_and_original_archives": true,
+      "files": 1211,
+      "runtime_unpacked_test": "PASS_SAME_RUNTIME_PAYLOAD_AFTER_METADATA_ONLY_REFRESH"
+    },
+    {
+      "path": "/workspace/baram-private/results-expansion-20261014/baram_assets_resume_PRIVATE_20261014.zip",
+      "bytes": 76632050,
+      "sha256": "8b64800630de7f24d286120a4135aa643ae9b829dd4dcb62caad5763bbc807f0",
+      "zip_crc": "PASS_FINAL_FULL_MEMBER_READ_NO_DUPLICATES",
+      "contains_engine_and_original_archives": false,
+      "files": 505,
+      "runtime_unpacked_test": "PASS_SAME_RUNTIME_PAYLOAD_AFTER_METADATA_ONLY_REFRESH"
+    }
+  ],
+  "package_runtime_evidence": "runs/20261014-assets/package-expansion-final-proof.json",
+  "package_source_commit": "a488b40a49938e554d3e18740cea15869674c94f",
+  "package_runtime_source_commit_under_test": "98d3260d3f04314245854a965d610ff8191f5d4f",
+  "runtime_payload_sha256": "4395a281223286f8fb31dab70e291467a29d8336e3dab2fbb8b53e85711986e6",
+  "package_receipt": "runs/20261014-assets/package-expansion-final-artifacts.json"
 }
