@@ -365,12 +365,12 @@
   ],
   "private_dir": "/workspace/baram-private",
   "source_sha256": {
-    "game/main.gd": "8e103ff7120384c9cd79053278e37142bd7ce3b352602a8fef77ca35b39b2b16",
+    "game/main.gd": "57d85682f785fdfa38b44d92e8aa70db4cd39fd2268acffdb59675f948a54bd2",
     "game/rules.gd": "d65d7872d675e5652a251396233297970cfe885ece9c72c86679df088bebdd95",
     "game/save_store.gd": "0f1c8b9fea8baf986a750afaf2636dee6925b97442724226a098cbc9937460ac",
     "game/assets.gd": "3d164781b0c36f390156153c06c59c89bfa126bc21a7da3b2a416ef3648e1c16",
     "game/data/world.json": "75e96433b60a5ab928e52ad38952dab84302e87af80e57caa1b42a95ca8bcb9a",
-    "tools/package_private_game.py": "9c3cef5c6c6af34c3e4d5e22ac418f3d855dde3ab425d904c39c10c80776cdb9"
+    "tools/package_private_game.py": "8938d3dd6bb27facce940f6b3873bed46295fc196659e6ecc5e60ef727b0f62b"
   },
   "main_merge": false,
   "operating_deployment": false,

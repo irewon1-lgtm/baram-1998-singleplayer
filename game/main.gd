@@ -37,7 +37,6 @@ var npc = {}
 var creation_job = 0
 var name_edit: LineEdit
 var creation_controls: Control
-var audio = AudioStreamPlayer.new()
 var audio_voices = {}
 var recorder = AudioEffectRecord.new()
 var audio_events = []

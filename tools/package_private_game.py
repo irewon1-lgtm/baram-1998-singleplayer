@@ -58,8 +58,8 @@ def build(a):
     output=private_path(a.out)
     output.mkdir(parents=True,exist_ok=True)
     staging=output/'baram_playable_PRIVATE_20261014'
-    if staging.exists():raise ValueError('Existing result directory is preserved; choose a fresh output')
-    staging.mkdir()
+    if staging.exists() and not a.refresh_existing:raise ValueError('Existing result directory is preserved; choose a fresh output')
+    staging.mkdir(exist_ok=True)
     branch=subprocess.check_output(['git','branch','--show-current'],cwd=ROOT,text=True).strip()
     commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
     if branch!=a.branch:raise ValueError('Unexpected development branch')
@@ -68,11 +68,11 @@ def build(a):
         p=Path(name)
         if p.parts[0] in ['game','tools','tests'] or name.startswith('docs/development/'):
             dest=staging/p;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(ROOT/p,dest)
-    shutil.copytree(private/'game-assets',staging/'private_assets')
-    shutil.copytree(private/'game-licenses',staging/'licenses')
-    (staging/'engine').mkdir()
+    shutil.copytree(private/'game-assets',staging/'private_assets',dirs_exist_ok=True)
+    shutil.copytree(private/'game-licenses',staging/'licenses',dirs_exist_ok=True)
+    (staging/'engine').mkdir(exist_ok=True)
     shutil.copy2(a.godot,staging/'engine/godot')
-    originals=staging/'original_archives';originals.mkdir()
+    originals=staging/'original_archives';originals.mkdir(exist_ok=True)
     recovery=json.loads((ROOT/'docs/development/runs/20261014-resume/input-recovery.json').read_text())
     # Use the already pinned archive ledger, rejecting changed files during packaging.
     pins={'491v.zip':'f11e448db6478b1aca3a7dd47403bdef00cf873b203b14629b0215632190532f',
@@ -87,17 +87,17 @@ def build(a):
     handoff=Path(a.handoff)
     if sha(handoff)!='f36929c43d775058678a708a1da7a140ea13e0e9243d5f4fc2b5e304fa54500b':raise ValueError('Handoff SHA mismatch')
     shutil.copy2(handoff,originals/'baram_Codex_tile_handoff_PRIVATE.zip')
-    evidence=staging/'private_evidence';evidence.mkdir()
+    evidence=staging/'private_evidence';evidence.mkdir(exist_ok=True)
     for name in ['game-screen-run2','game-screen-run3','game-screen-run4','game-screen-run5','game-screen-resume6','game-screen-classes','game-screen-classes2','review']:
         source=private/name
-        if source.exists():shutil.copytree(source,evidence/name,ignore=shutil.ignore_patterns('data','cache','config'))
+        if source.exists():shutil.copytree(source,evidence/name,dirs_exist_ok=True,ignore=shutil.ignore_patterns('data','cache','config'))
     (staging/'launch-linux.sh').write_text(LAUNCH);(staging/'launch-linux.sh').chmod(0o755)
     (staging/'READ_ME.md').write_text(README)
     bundle=staging/'development.bundle'
     subprocess.run(['git','bundle','create',str(bundle),branch],cwd=ROOT,check=True,capture_output=True)
     verification=subprocess.run(['git','bundle','verify',str(bundle)],cwd=ROOT,check=True,capture_output=True,text=True)
     manifest={'source_branch':branch,'source_commit':commit,'private_only':True,'remote_publication':'BLOCKED_GITHUB_PROXY403',
-              'files':[{'path':str(p.relative_to(staging)),'bytes':p.stat().st_size,'sha256':sha(p)} for p in sorted(staging.rglob('*')) if p.is_file()],
+              'files':[{'path':str(p.relative_to(staging)),'bytes':p.stat().st_size,'sha256':sha(p)} for p in sorted(staging.rglob('*')) if p.is_file() and p.name!='PACKAGE_MANIFEST.json'],
               'git_bundle_verification':verification.stdout+verification.stderr,
               'original_archive_pins':pins,'core_generated_content':{'maps':8,'items':3,'training_skills':1,'quests':2,'new_bitmaps':0}}
     (staging/'PACKAGE_MANIFEST.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
@@ -108,7 +108,10 @@ def build(a):
             for p in sorted(staging.rglob('*')):
                 if not p.is_file():continue
                 rel=p.relative_to(staging)
-                if not full and (rel.parts[0] in ['engine','original_archives','private_evidence']):continue
+                if not full and (rel.parts[0] in ['engine','original_archives','private_evidence'] or rel.name in ['development.bundle','launch-linux.sh']):continue
+                if not full and rel.name=='READ_ME.md':
+                    z.writestr(str(Path(staging.name)/rel), '다음 작업용 자산·코드 ZIP입니다. 엔진·원본 압축·Git 전체 이력은 큰 실행 ZIP에 있습니다. Godot 4.6.3이 이미 설치되어 있으면 압축 폴더에서 `godot --path game -- --assets="$(pwd)/private_assets"`로 실행하세요.\n\n'+README)
+                    continue
                 z.write(p,str(Path(staging.name)/rel))
         with ZipFile(dest) as z:
             bad=z.testzip()
@@ -129,4 +132,5 @@ if __name__=='__main__':
     p.add_argument('--branch',default='dev/codex-asset-runtime-20261014')
     p.add_argument('--godot',default='/usr/local/bin/godot')
     p.add_argument('--report',required=True)
+    p.add_argument('--refresh-existing',action='store_true',help='Refresh this task’s own unpublished package after source changes')
     build(p.parse_args())
