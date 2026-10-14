@@ -1,16 +1,15 @@
 # Work state
 
 Branch `work/content-import`; base game `dea6574c9a69ebb04432d10fc32951aacd8b66cb`.
-Separate checkout; main, game code, canonical game data and integration untouched.
-Stage: source acquisition complete, schema/tools and first shared asset package
-in progress. Package states and fixed commits: `HANDOFF_INDEX.json`.
+First fixed package: `WK-ASSETS-001` at `1800a3a0d7ffdb4b27212c6dfdd2539a93212d6b`.
+Remote manifest readback matched; indexed READY_FOR_CODEX means data only.
 
-Checks planned before READY: schema/unique IDs; two-pass references; field
-guards; probability/quantity/unit bounds; frames/palettes/files; map bounds,
-collision and exit reachability; required quest cycles; complete 1–99 growth;
-same-input reproducibility; manifests and remote readback. Work does no gameplay.
+992 asset definitions; 74,079 original frame indices including reused v125 sheets.
+250 PNG files, 66,049 KR491 frame rectangles and 736 references checked.
+9 corrupt PNG pages rebuilt from unchanged source RGBA; empty effect 72 quarantined.
+49 EPF/source-effect issues remain cataloged; no gameplay or recipient acquisition run.
+Private bundle: see package acquisition.json (Library version 2, size/SHA pinned).
 
-Available inputs were materialized by hash. Original maps/sprites remain private.
-Recipient access: NOT_RUN. Source identity is independent of historical role.
-Next: finish assets, validate and publish first package, then enrich existing
-Korean item/monster/skill/growth/NPC/map IDs and connect declarative content.
+Current: item/monster/skill/growth/map/NPC completion using guarded patches.
+Next: connected 1–99 Korean content package, source layout overlays, quests and economy.
+Main, game code, canonical data and Codex integration remain untouched.
