@@ -1,0 +1,9 @@
+{
+  "status": "PASS_PUSH_AND_REMOTE_SHA_READBACK",
+  "branch": "dev/codex-asset-runtime-20261014",
+  "verified_sha": "16f5d95566090c3c25a07519683133ea00d42eb7",
+  "requested_base_sha": "80d3da1baf14afe689acd80d7b64edb5bfed143b",
+  "source_base_full_read_and_ancestor": true,
+  "main_preserved": true,
+  "original_or_derived_binary_assets_published": false
+}

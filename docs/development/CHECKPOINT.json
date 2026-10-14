@@ -411,26 +411,27 @@
   "packages": [
     {
       "path": "/workspace/baram-private/results/baram_playable_PRIVATE_20261014.zip",
-      "bytes": 218035120,
-      "sha256": "64da0e76e24d65e03ae12330209b8d607d7b979be3b9e0260fa012035273096f",
+      "bytes": 218035581,
+      "sha256": "4aabf2afdccf712941a1bd7db08f49e536732b9d25ec468fa99e5b1b99961ab1",
       "zip_crc": "PASS_FINAL_FULL_MEMBER_READ_NO_DUPLICATES",
       "contains_engine_and_original_archives": true,
-      "files": 607
+      "files": 641
     },
     {
       "path": "/workspace/baram-private/results/baram_assets_resume_PRIVATE_20261014.zip",
-      "bytes": 31621343,
-      "sha256": "099a9b71b6b2e6886ec5eec15b55b919f8d95a1b6fcd870e75a62c40f4785e28",
+      "bytes": 31621804,
+      "sha256": "b98ae6e98ac547134a1d2a402471aa1d5a407d660d53d58da5ff77996497eb78",
       "zip_crc": "PASS_FINAL_FULL_MEMBER_READ_NO_DUPLICATES",
       "contains_engine_and_original_archives": false,
-      "files": 366
+      "files": 400
     }
   ],
   "package_source_commit": "4959cc36456b21373157479b73058ff391da86a8",
   "remote_saved": true,
-  "remote_status": "PUSH_0b87d15_CONFIRMED_FURTHER_UPDATES_PENDING",
+  "remote_status": "PASS_PUSH_AND_READBACK",
   "requested_remote_base_sha": "80d3da1baf14afe689acd80d7b64edb5bfed143b",
   "specification_full_read": true,
   "asset_source_namespace": "uploaded-editor-undated/palette0/group/index",
-  "input_boundary_checks": "PASS_8_ACTUAL_CASES"
+  "input_boundary_checks": "PASS_8_ACTUAL_CASES",
+  "last_verified_remote_code_commit": "16f5d95566090c3c25a07519683133ea00d42eb7"
 }
