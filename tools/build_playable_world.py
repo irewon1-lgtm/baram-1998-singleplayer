@@ -97,6 +97,10 @@ def build():
     inn['npcs']=[dict(id='innkeeper',kind='innkeeper',x=12,y=10,name='주모',role='inn')]
     guild['npcs']=[dict(id='trainer',kind='teacher',x=12,y=10,name='직업 사범',role='trainer')]
     for m in maps:
+        portal_cells={(p['x'],p['y']) for p in m['portals']}
+        for spawn in m['spawns']:
+            if (spawn['x'],spawn['y']) in portal_cells:
+                spawn['y']+=2
         for row in m['ground']:
             for tile in row:used[tile]=used.get(tile,0)+1
         for d in m['decorations']:used[d['tile']]=used.get(d['tile'],0)+1

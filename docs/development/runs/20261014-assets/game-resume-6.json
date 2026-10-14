@@ -1,0 +1,123 @@
+{
+  "started_at": "2026-10-14T01:58:05.011047+00:00",
+  "scope": "REAL_GAME_X11_WINDOW_AND_GODOT_INPUT_EVENTS",
+  "runs": [
+    {
+      "mode": "resume",
+      "exit_code": 0,
+      "game_report": "/workspace/baram-private/game-screen-resume6/primary/resume-report.json",
+      "game_status": "PASS_EXECUTED_SCREEN_INPUT",
+      "x11_captures": [
+        {
+          "name": "cave",
+          "sha256": "e4acd3cae4c6e32f008c5b4dad003454e15e07f75fab5e9b5fd999a57102d08d",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 103,
+          "status": "PASS"
+        },
+        {
+          "name": "deep",
+          "sha256": "a17aee28ee474ce2ab90b0ef4baa27284d8c1b456a2dd0a106465f2d2106d4e7",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 105,
+          "status": "PASS"
+        },
+        {
+          "name": "ruins",
+          "sha256": "2263cd2b5b569eef7bf1d6873c59e2cfa4d1044571b18d3ef98b0f01406d0551",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 116,
+          "status": "PASS"
+        },
+        {
+          "name": "forest",
+          "sha256": "e74a239fb5f92ca217753ef99cb6f1b873ee6c10188412a070660f21f4297d52",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 90,
+          "status": "PASS"
+        },
+        {
+          "name": "saved-forest",
+          "sha256": "4d364c17428b14a04332f41adccae940fcb593efcd64efcfb8aab97bf18e4cf2",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 90,
+          "status": "PASS"
+        }
+      ],
+      "audio_mix": {
+        "status": "PASS_PCM_SIGNAL",
+        "samples": 4153344,
+        "rms": 4059.5714167911697,
+        "driver": "Dummy",
+        "audible_human_review": "NOT_RUN"
+      },
+      "argv": [
+        "godot",
+        "--path",
+        "/workspace/baram-1998-singleplayer/game",
+        "--display-driver",
+        "x11",
+        "--rendering-method",
+        "gl_compatibility",
+        "--audio-driver",
+        "Dummy",
+        "--",
+        "--assets=/workspace/baram-private/game-assets",
+        "--save=/workspace/baram-private/game-screen-resume6/primary/character.json",
+        "--exercise=resume",
+        "--evidence=/workspace/baram-private/game-screen-resume6/primary"
+      ],
+      "registered_tiles": 14835,
+      "checks": 19
+    },
+    {
+      "mode": "restart",
+      "exit_code": 0,
+      "game_report": "/workspace/baram-private/game-screen-resume6/primary/restart-report.json",
+      "game_status": "PASS_EXECUTED_SCREEN_INPUT",
+      "x11_captures": [
+        {
+          "name": "restart",
+          "sha256": "75687ca5486ab56060d51ef17c7876e62f2db70dd5cdea4115278c24d23be18a",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 89,
+          "status": "PASS"
+        }
+      ],
+      "audio_mix": {
+        "status": "FAIL",
+        "samples": 24576,
+        "rms": 0.0,
+        "driver": "Dummy",
+        "audible_human_review": "NOT_RUN"
+      },
+      "argv": [
+        "godot",
+        "--path",
+        "/workspace/baram-1998-singleplayer/game",
+        "--display-driver",
+        "x11",
+        "--rendering-method",
+        "gl_compatibility",
+        "--audio-driver",
+        "Dummy",
+        "--",
+        "--assets=/workspace/baram-private/game-assets",
+        "--save=/workspace/baram-private/game-screen-resume6/primary/character.json",
+        "--exercise=restart",
+        "--evidence=/workspace/baram-private/game-screen-resume6/primary"
+      ],
+      "registered_tiles": 14835,
+      "checks": 6
+    }
+  ],
+  "status": "PASS_EXECUTED_SCREEN_INPUT_AND_RESTART",
+  "finished_at": "2026-10-14T01:59:19.361116+00:00",
+  "source_sha256": {
+    "game/main.gd": "d07625214d3cf946e499072b4c55082f13b48545570bedfed8e703b9b2975d00",
+    "game/exercise.gd": "d84acc55f7889008bb0a94600c4ced1593b3b37d9e0371e88a958bbfb3f0079f",
+    "game/rules.gd": "d65d7872d675e5652a251396233297970cfe885ece9c72c86679df088bebdd95",
+    "game/save_store.gd": "0f1c8b9fea8baf986a750afaf2636dee6925b97442724226a098cbc9937460ac",
+    "tests/run_playable_screen.py": "14c128d0ede4b2646d399614bd083054b82ce3b47f2584412b138385b1207e48"
+  }
+}

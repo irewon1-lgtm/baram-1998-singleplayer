@@ -1,0 +1,2934 @@
+{
+  "audio_events": [
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 8.09545454545459
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 8.52041333333336
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 8.52041333333336
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 9.09636622222225
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 9.28542133333336
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 9.28542133333336
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 10.2421843333334
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 10.2543633333334
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 11.0149785238096
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 11.0149785238096
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 11.2580616666667
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 11.7874600000001
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 11.7874600000001
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 12.2648611212122
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 12.5553363333334
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 12.5553363333334
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 13.2666666666667
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 13.3269360269361
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 13.3269360269361
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 13.653279
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 14.9836244444445
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 15.0046561904763
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 16.342890920635
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 20.0833333333334
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 25.2486246666667
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 28.3533670033671
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 33.5313983333335
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 34.6027645151516
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 35.9400616666669
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 38.0332036666671
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 39.6670900000004
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 40.3058236666671
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 40.5358628787883
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 41.4719984242428
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 42.0969003333337
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 46.3012386666672
+    }
+  ],
+  "checks": [
+    {
+      "name": "resume_verified_25_kill_checkpoint",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "reenter_field",
+      "observed": {
+        "actual_map": "field",
+        "target": "field"
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "field_to_dungeon_by_walking",
+      "observed": {
+        "actual_map": "cave",
+        "target": "cave"
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "dungeon_combat",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_cave",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "deep_dungeon_transition",
+      "observed": {
+        "actual_map": "deep",
+        "target": "deep"
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_deep",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "ruins_transition",
+      "observed": {
+        "actual_map": "ruins",
+        "target": "ruins"
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_ruins",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "ruins_return",
+      "observed": {
+        "actual_map": "deep",
+        "target": "deep"
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "deep_return",
+      "observed": {
+        "actual_map": "cave",
+        "target": "cave"
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "cave_return",
+      "observed": {
+        "actual_map": "field",
+        "target": "field"
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "forest_transition",
+      "observed": {
+        "actual_map": "forest",
+        "target": "forest"
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_forest",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "damage_occurs_after_animation_impact_time",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "original_wav_events_played",
+      "observed": {
+        "events": 36
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "save_via_f5_input",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_saved-forest",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "engine_audio_mix_recorded",
+      "observed": {
+
+      },
+      "status": "PASS"
+    }
+  ],
+  "elapsed_ms": 47373,
+  "events": [
+    {
+      "details": {
+        "equipped": "목검",
+        "level": 5,
+        "map": "village"
+      },
+      "event": "save_restored",
+      "time": 0.0
+    },
+    {
+      "details": {
+        "loaded_save": true,
+        "registered_tiles": 14835,
+        "renderer": "gl_compatibility"
+      },
+      "event": "ready",
+      "time": 0.0
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 35,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 0.147
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 34,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 0.511
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 33,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 0.756
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 32,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 0.993
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 31,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 1.226
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 30,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 1.463
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 29,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 1.7
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 28,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 1.941
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 27,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 2.174
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 26,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 2.412
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 25,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 2.646
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 24,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 2.877
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 23,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 3.118
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 22,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 3.36
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 21,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 3.604
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 20,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 3.837
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 19,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 4.075
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 18,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 4.312
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 17,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 4.546
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 16,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 4.778
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 15,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 5.008
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 15,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 5.249
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 12,
+        "y": 12
+      },
+      "event": "map_changed",
+      "time": 5.249
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "field",
+        "x": 12,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 5.488
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 13,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 5.722
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 14,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 5.968
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "field",
+        "x": 14,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 6.203
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 15,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 6.443
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 16,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 6.676
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 17,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 6.912
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 18,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 7.143
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 19,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 7.379
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 20,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 7.617
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 21,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 7.852
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 22,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 8.086
+    },
+    {
+      "details": {
+        "map": "cave",
+        "x": 12,
+        "y": 12
+      },
+      "event": "map_changed",
+      "time": 8.086
+    },
+    {
+      "details": {
+        "attacker": "cave-0",
+        "damage": 21,
+        "hp": 136
+      },
+      "event": "player_hit",
+      "time": 8.095
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "turned",
+      "time": 8.323
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "cave-0"
+      },
+      "event": "attack_started",
+      "time": 8.355
+    },
+    {
+      "details": {
+        "damage": 15,
+        "hp": 59.0,
+        "impact_time": 0.165276,
+        "source": "melee",
+        "target": "cave-0"
+      },
+      "event": "damage_applied",
+      "time": 8.52
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "turned",
+      "time": 9.091
+    },
+    {
+      "details": {
+        "attacker": "cave-0",
+        "damage": 17,
+        "hp": 119
+      },
+      "event": "player_hit",
+      "time": 9.096
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "cave-0"
+      },
+      "event": "attack_started",
+      "time": 9.125
+    },
+    {
+      "details": {
+        "damage": 11,
+        "hp": 48.0,
+        "impact_time": 0.160332666666667,
+        "source": "melee",
+        "target": "cave-0"
+      },
+      "event": "damage_applied",
+      "time": 9.285
+    },
+    {
+      "details": {
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "consumed",
+      "time": 9.991
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "turned",
+      "time": 10.044
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "cave-0"
+      },
+      "event": "attack_started",
+      "time": 10.078
+    },
+    {
+      "details": {
+
+      },
+      "event": "attack_missed_probability",
+      "time": 10.242
+    },
+    {
+      "details": {
+        "attacker": "cave-0",
+        "damage": 11,
+        "hp": 158
+      },
+      "event": "player_hit",
+      "time": 10.254
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "turned",
+      "time": 10.817
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "cave-0"
+      },
+      "event": "attack_started",
+      "time": 10.853
+    },
+    {
+      "details": {
+        "damage": 15,
+        "hp": 33.0,
+        "impact_time": 0.161904761904762,
+        "source": "melee",
+        "target": "cave-0"
+      },
+      "event": "damage_applied",
+      "time": 11.015
+    },
+    {
+      "details": {
+        "attacker": "cave-0",
+        "damage": 23,
+        "hp": 135
+      },
+      "event": "player_hit",
+      "time": 11.258
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "turned",
+      "time": 11.589
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "cave-0"
+      },
+      "event": "attack_started",
+      "time": 11.622
+    },
+    {
+      "details": {
+        "damage": 11,
+        "hp": 22.0,
+        "impact_time": 0.165136333333333,
+        "source": "melee",
+        "target": "cave-0"
+      },
+      "event": "damage_applied",
+      "time": 11.787
+    },
+    {
+      "details": {
+        "attacker": "cave-0",
+        "damage": 11,
+        "hp": 124
+      },
+      "event": "player_hit",
+      "time": 12.265
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "turned",
+      "time": 12.36
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "cave-0"
+      },
+      "event": "attack_started",
+      "time": 12.393
+    },
+    {
+      "details": {
+        "damage": 14,
+        "hp": 8.0,
+        "impact_time": 0.162359242424242,
+        "source": "melee",
+        "target": "cave-0"
+      },
+      "event": "damage_applied",
+      "time": 12.555
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "turned",
+      "time": 13.129
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "cave-0"
+      },
+      "event": "attack_started",
+      "time": 13.16
+    },
+    {
+      "details": {
+        "attacker": "cave-0",
+        "damage": 13,
+        "hp": 111
+      },
+      "event": "player_hit",
+      "time": 13.267
+    },
+    {
+      "details": {
+        "damage": 10,
+        "hp": -2.0,
+        "impact_time": 0.16731636026936,
+        "source": "melee",
+        "target": "cave-0"
+      },
+      "event": "damage_applied",
+      "time": 13.327
+    },
+    {
+      "details": {
+        "drops": [
+          {
+            "item": "쥐고기",
+            "quantity": 1
+          }
+        ],
+        "gold": 20,
+        "id": "cave-0",
+        "level": 5,
+        "xp": 250.0
+      },
+      "event": "monster_killed",
+      "time": 13.327
+    },
+    {
+      "details": {
+        "attacker": "cave-1",
+        "damage": 23,
+        "hp": 88
+      },
+      "event": "player_hit",
+      "time": 13.653
+    },
+    {
+      "details": {
+        "item": "쥐고기",
+        "map": "cave",
+        "quantity": 1,
+        "x": 13.0,
+        "y": 12.0
+      },
+      "event": "item_picked_up",
+      "time": 13.86
+    },
+    {
+      "details": {
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "consumed",
+      "time": 14.26
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "cave",
+        "x": 12,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 14.303
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 13,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 14.534
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 14,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 14.764
+    },
+    {
+      "details": {
+        "attacker": "cave-1",
+        "damage": 11,
+        "hp": 127
+      },
+      "event": "player_hit",
+      "time": 14.984
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 15,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 14.998
+    },
+    {
+      "details": {
+        "attacker": "cave-2",
+        "damage": 17,
+        "hp": 110
+      },
+      "event": "player_hit",
+      "time": 15.005
+    },
+    {
+      "details": {
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "consumed",
+      "time": 15.342
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "cave",
+        "x": 15,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 15.393
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 16,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 15.626
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 17,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 15.857
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 18,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 16.095
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 19,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 16.333
+    },
+    {
+      "details": {
+        "attacker": "cave-3",
+        "damage": 13,
+        "hp": 147
+      },
+      "event": "player_hit",
+      "time": 16.343
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 20,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 16.564
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 21,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 16.794
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 22,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 17.029
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 23,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 17.26
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 24,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 17.495
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 25,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 17.728
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 26,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 17.965
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 27,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 18.199
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 28,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 18.43
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 29,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 18.665
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 30,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 18.901
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 31,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 19.137
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 32,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 19.368
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 33,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 19.602
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 34,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 19.839
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 35,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 20.075
+    },
+    {
+      "details": {
+        "map": "deep",
+        "x": 12,
+        "y": 12
+      },
+      "event": "map_changed",
+      "time": 20.075
+    },
+    {
+      "details": {
+        "attacker": "deep-0",
+        "damage": 27,
+        "hp": 120
+      },
+      "event": "player_hit",
+      "time": 20.083
+    },
+    {
+      "details": {
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "consumed",
+      "time": 20.683
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "deep",
+        "x": 12,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 20.731
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "deep",
+        "x": 12,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 20.962
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "deep",
+        "x": 12,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 21.193
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "deep",
+        "x": 12,
+        "y": 8
+      },
+      "event": "moved",
+      "time": 21.424
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "deep",
+        "x": 12,
+        "y": 7
+      },
+      "event": "moved",
+      "time": 21.658
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "deep",
+        "x": 13,
+        "y": 7
+      },
+      "event": "moved",
+      "time": 21.894
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "deep",
+        "x": 14,
+        "y": 7
+      },
+      "event": "moved",
+      "time": 22.127
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "deep",
+        "x": 15,
+        "y": 7
+      },
+      "event": "moved",
+      "time": 22.37
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "deep",
+        "x": 16,
+        "y": 7
+      },
+      "event": "moved",
+      "time": 22.612
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "deep",
+        "x": 17,
+        "y": 7
+      },
+      "event": "moved",
+      "time": 22.848
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "deep",
+        "x": 18,
+        "y": 7
+      },
+      "event": "moved",
+      "time": 23.078
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "deep",
+        "x": 19,
+        "y": 7
+      },
+      "event": "moved",
+      "time": 23.319
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "deep",
+        "x": 20,
+        "y": 7
+      },
+      "event": "moved",
+      "time": 23.562
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "deep",
+        "x": 21,
+        "y": 7
+      },
+      "event": "moved",
+      "time": 23.801
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "deep",
+        "x": 22,
+        "y": 7
+      },
+      "event": "moved",
+      "time": 24.05
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "deep",
+        "x": 23,
+        "y": 7
+      },
+      "event": "moved",
+      "time": 24.291
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "deep",
+        "x": 23,
+        "y": 8
+      },
+      "event": "moved",
+      "time": 24.53
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "deep",
+        "x": 23,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 24.763
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "deep",
+        "x": 23,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 24.998
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "deep",
+        "x": 24,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 25.238
+    },
+    {
+      "details": {
+        "attacker": "deep-4",
+        "damage": 29,
+        "hp": 141
+      },
+      "event": "player_hit",
+      "time": 25.249
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "deep",
+        "x": 24,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 25.485
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "deep",
+        "x": 24,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 25.723
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "deep",
+        "x": 25,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 25.954
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "deep",
+        "x": 26,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 26.189
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "deep",
+        "x": 27,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 26.425
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "deep",
+        "x": 28,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 26.665
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "deep",
+        "x": 29,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 26.903
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "deep",
+        "x": 30,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 27.146
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "deep",
+        "x": 31,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 27.389
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "deep",
+        "x": 32,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 27.622
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "deep",
+        "x": 33,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 27.873
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "deep",
+        "x": 34,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 28.113
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "deep",
+        "x": 35,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 28.344
+    },
+    {
+      "details": {
+        "map": "ruins",
+        "x": 12,
+        "y": 12
+      },
+      "event": "map_changed",
+      "time": 28.344
+    },
+    {
+      "details": {
+        "attacker": "ruins-0",
+        "damage": 27,
+        "hp": 114
+      },
+      "event": "player_hit",
+      "time": 28.353
+    },
+    {
+      "details": {
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "consumed",
+      "time": 28.951
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "ruins",
+        "x": 11,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 28.999
+    },
+    {
+      "details": {
+        "map": "deep",
+        "x": 34,
+        "y": 12
+      },
+      "event": "map_changed",
+      "time": 28.999
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "deep",
+        "x": 34,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 29.231
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "deep",
+        "x": 34,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 29.466
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "deep",
+        "x": 34,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 29.7
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "deep",
+        "x": 33,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 29.933
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "deep",
+        "x": 32,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 30.167
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "deep",
+        "x": 32,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 30.401
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "deep",
+        "x": 32,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 30.637
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "deep",
+        "x": 32,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 30.872
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "deep",
+        "x": 31,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 31.106
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "deep",
+        "x": 30,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 31.337
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "deep",
+        "x": 29,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 31.567
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "deep",
+        "x": 28,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 31.797
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "deep",
+        "x": 27,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 32.03
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "deep",
+        "x": 26,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 32.263
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "deep",
+        "x": 25,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 32.497
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "deep",
+        "x": 24,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 32.728
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "deep",
+        "x": 23,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 32.962
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "deep",
+        "x": 22,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 33.195
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "deep",
+        "x": 21,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 33.425
+    },
+    {
+      "details": {
+        "attacker": "deep-2",
+        "damage": 19,
+        "hp": 145
+      },
+      "event": "player_hit",
+      "time": 33.531
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "deep",
+        "x": 20,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 33.659
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "deep",
+        "x": 20,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 33.894
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "deep",
+        "x": 19,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 34.126
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "deep",
+        "x": 18,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 34.361
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "deep",
+        "x": 17,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 34.594
+    },
+    {
+      "details": {
+        "attacker": "deep-1",
+        "damage": 17,
+        "hp": 128
+      },
+      "event": "player_hit",
+      "time": 34.603
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "deep",
+        "x": 16,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 34.827
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "deep",
+        "x": 15,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 35.062
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "deep",
+        "x": 14,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 35.297
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "deep",
+        "x": 13,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 35.532
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "deep",
+        "x": 12,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 35.767
+    },
+    {
+      "details": {
+        "attacker": "deep-0",
+        "damage": 33,
+        "hp": 95
+      },
+      "event": "player_hit",
+      "time": 35.94
+    },
+    {
+      "details": {
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "consumed",
+      "time": 36.112
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "deep",
+        "x": 11,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 36.162
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "deep",
+        "x": 11,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 36.394
+    },
+    {
+      "details": {
+        "map": "cave",
+        "x": 34,
+        "y": 12
+      },
+      "event": "map_changed",
+      "time": 36.394
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "cave",
+        "x": 33,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 36.626
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "cave",
+        "x": 32,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 36.859
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "cave",
+        "x": 31,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 37.092
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "cave",
+        "x": 30,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 37.323
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "cave",
+        "x": 29,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 37.558
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "cave",
+        "x": 28,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 37.789
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "cave",
+        "x": 27,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 38.022
+    },
+    {
+      "details": {
+        "attacker": "cave-4",
+        "damage": 19,
+        "hp": 126
+      },
+      "event": "player_hit",
+      "time": 38.033
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "cave",
+        "x": 26,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 38.253
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "cave",
+        "x": 25,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 38.484
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "cave",
+        "x": 24,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 38.717
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "cave",
+        "x": 23,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 38.953
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "cave",
+        "x": 22,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 39.184
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "cave",
+        "x": 21,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 39.42
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "cave",
+        "x": 20,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 39.659
+    },
+    {
+      "details": {
+        "attacker": "cave-3",
+        "damage": 15,
+        "hp": 111
+      },
+      "event": "player_hit",
+      "time": 39.667
+    },
+    {
+      "details": {
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "consumed",
+      "time": 40.009
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "cave",
+        "x": 19,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 40.059
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "cave",
+        "x": 18,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 40.294
+    },
+    {
+      "details": {
+        "attacker": "cave-5",
+        "damage": 21,
+        "hp": 140
+      },
+      "event": "player_hit",
+      "time": 40.306
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "cave",
+        "x": 18,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 40.528
+    },
+    {
+      "details": {
+        "attacker": "cave-1",
+        "damage": 13,
+        "hp": 127
+      },
+      "event": "player_hit",
+      "time": 40.536
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "cave",
+        "x": 17,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 40.764
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "cave",
+        "x": 16,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 40.994
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "cave",
+        "x": 15,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 41.232
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "cave",
+        "x": 15,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 41.464
+    },
+    {
+      "details": {
+        "attacker": "cave-5",
+        "damage": 17,
+        "hp": 110
+      },
+      "event": "player_hit",
+      "time": 41.472
+    },
+    {
+      "details": {
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "consumed",
+      "time": 41.812
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "cave",
+        "x": 14,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 41.858
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "cave",
+        "x": 13,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 42.09
+    },
+    {
+      "details": {
+        "attacker": "cave-0",
+        "damage": 23,
+        "hp": 137
+      },
+      "event": "player_hit",
+      "time": 42.097
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "cave",
+        "x": 12,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 42.32
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "cave",
+        "x": 11,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 42.556
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 21,
+        "y": 12
+      },
+      "event": "map_changed",
+      "time": 42.556
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "field",
+        "x": 21,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 42.792
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 22,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 43.022
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 23,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 43.256
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 24,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 43.493
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 25,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 43.726
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "field",
+        "x": 25,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 43.961
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 26,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 44.193
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 27,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 44.428
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 28,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 44.662
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 29,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 44.897
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 30,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 45.131
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 31,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 45.364
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 32,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 45.594
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 33,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 45.824
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 34,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 46.055
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 35,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 46.292
+    },
+    {
+      "details": {
+        "map": "forest",
+        "x": 12,
+        "y": 12
+      },
+      "event": "map_changed",
+      "time": 46.292
+    },
+    {
+      "details": {
+        "attacker": "forest-6",
+        "damage": 25,
+        "hp": 112
+      },
+      "event": "player_hit",
+      "time": 46.301
+    },
+    {
+      "details": {
+        "sha256": "2699edfcbb84d020e4b0f33771c17f2a76a9eb06a5c7e965627c49777f7fd500",
+        "success": true
+      },
+      "event": "save_written",
+      "time": 46.779
+    }
+  ],
+  "player": {
+    "buffs": {
+
+    },
+    "cooldowns": {
+      "기초 회복": 0.0
+    },
+    "direction": 3,
+    "durability": {
+      "목검": 3994,
+      "목도": 1000
+    },
+    "equipped": "목검",
+    "gold": 103,
+    "growth_log": [
+      {
+        "from": 1,
+        "hp_gain": 45,
+        "job": "평민",
+        "mp_gain": 32
+      },
+      {
+        "from": 2,
+        "hp_gain": 46,
+        "job": "평민",
+        "mp_gain": 33
+      },
+      {
+        "from": 3,
+        "hp_gain": 55,
+        "job": "평민",
+        "mp_gain": 32
+      },
+      {
+        "from": 4,
+        "hp_gain": 48,
+        "job": "평민",
+        "mp_gain": 33
+      }
+    ],
+    "hotbar": [
+      "기초 회복",
+      "",
+      ""
+    ],
+    "hp": 112,
+    "hp_max": 244,
+    "inventory": {
+      "구운토끼고기": 1,
+      "도토리": 9,
+      "목검": 1,
+      "목도": 1,
+      "쥐고기": 1,
+      "초보 회복약": 0,
+      "토끼고기": 3
+    },
+    "job": "전사",
+    "kills": 26,
+    "level": 5,
+    "map": "forest",
+    "mp": 165,
+    "mp_max": 165,
+    "name": "바람여행자",
+    "quests": [
+      "first_steps",
+      "hunter"
+    ],
+    "rank": 0,
+    "rng_state": "-2680103407277200401",
+    "skill_page": 0,
+    "skills": [
+      "기초 회복"
+    ],
+    "strength": 9,
+    "x": 12,
+    "xp2": 3810,
+    "y": 12
+  },
+  "registered_tile_sources": 3,
+  "registered_tiles": 14835,
+  "rendered_actor_frames": [
+    "wood_weapon:10",
+    "body_0:22",
+    "head_0:22",
+    "wood_weapon:1",
+    "body_0:13",
+    "head_0:13",
+    "wood_weapon:2",
+    "body_0:14",
+    "head_0:14",
+    "wood_weapon:0",
+    "body_0:12",
+    "head_0:12",
+    "body_0:17",
+    "head_0:17",
+    "wood_weapon:5",
+    "body_0:15",
+    "head_0:15",
+    "wood_weapon:3",
+    "body_0:16",
+    "head_0:16",
+    "wood_weapon:4",
+    "priest:7",
+    "priest:8",
+    "priest:6",
+    "teacher:6",
+    "merchant:6",
+    "teacher:7",
+    "merchant:7",
+    "teacher:8",
+    "merchant:8",
+    "rabbit:1",
+    "rabbit:4",
+    "body_0:19",
+    "head_0:19",
+    "wood_weapon:7",
+    "squirrel:10",
+    "rabbit:2",
+    "rabbit:5",
+    "squirrel:11",
+    "rabbit:0",
+    "rabbit:3",
+    "squirrel:9",
+    "wood_weapon:9",
+    "body_0:21",
+    "head_0:21",
+    "squirrel:7",
+    "squirrel:8",
+    "wood_weapon:11",
+    "body_0:23",
+    "head_0:23",
+    "squirrel:6",
+    "rabbit:9",
+    "rabbit:10",
+    "body_0:20",
+    "head_0:20",
+    "wood_weapon:8",
+    "body_0:18",
+    "head_0:18",
+    "wood_weapon:6",
+    "rabbit:11",
+    "squirrel:2",
+    "squirrel:0",
+    "squirrel:1",
+    "rabbit:8",
+    "rabbit:6",
+    "rabbit:7",
+    "squirrel:4",
+    "squirrel:5",
+    "squirrel:3",
+    "rat:6",
+    "bat:6",
+    "rat:7",
+    "bat:7",
+    "rat:8",
+    "bat:8",
+    "wood_weapon:18",
+    "body_0:30",
+    "head_0:30",
+    "body_0:31",
+    "wood_weapon:19",
+    "head_0:31",
+    "rat:1",
+    "rat:4",
+    "bat:10",
+    "rat:2",
+    "rat:5",
+    "bat:11",
+    "rat:0",
+    "rat:3",
+    "bat:9",
+    "bat:1",
+    "bat:4",
+    "icons:0",
+    "bat:2",
+    "bat:5",
+    "bat:0",
+    "bat:3",
+    "rat:11",
+    "rat:9",
+    "rat:10",
+    "spider:6",
+    "skeleton:6",
+    "spider:7",
+    "skeleton:7",
+    "spider:8",
+    "skeleton:8",
+    "skeleton:1",
+    "spider:4",
+    "spider:10",
+    "skeleton:2",
+    "spider:5",
+    "spider:11",
+    "skeleton:0",
+    "spider:3",
+    "spider:9",
+    "spider:2",
+    "spider:0",
+    "spider:1",
+    "skeleton:5",
+    "skeleton:3",
+    "skeleton:9",
+    "skeleton:4",
+    "skeleton:10",
+    "skeleton:11",
+    "snake:5",
+    "boar:1",
+    "boar:7",
+    "snake:6",
+    "boar:2",
+    "boar:8",
+    "snake:7",
+    "boar:0",
+    "boar:6",
+    "snake:4",
+    "snake:11"
+  ],
+  "rendered_tile_ids": [
+    "A:17",
+    "A:19",
+    "A:18",
+    "A:16",
+    "A:80",
+    "A:268",
+    "A:20",
+    "A:97",
+    "A:98",
+    "A:99",
+    "C:52",
+    "C:53",
+    "C:89",
+    "C:90",
+    "C:91",
+    "C:32",
+    "C:33",
+    "C:34",
+    "C:35",
+    "C:31",
+    "C:88",
+    "C:30",
+    "C:29",
+    "C:28",
+    "C:51",
+    "A:8",
+    "A:6",
+    "A:1",
+    "A:10",
+    "A:4",
+    "A:7",
+    "A:5",
+    "A:11",
+    "A:15",
+    "A:3",
+    "A:2",
+    "A:14",
+    "A:12",
+    "A:0",
+    "A:13",
+    "A:9",
+    "C:105",
+    "A:269",
+    "B:98",
+    "B:96",
+    "B:97",
+    "B:624",
+    "B:635",
+    "B:633",
+    "B:625",
+    "B:631",
+    "B:632",
+    "B:628",
+    "B:626",
+    "B:629",
+    "B:634",
+    "B:630",
+    "B:651",
+    "B:652",
+    "B:650",
+    "B:627",
+    "C:106",
+    "B:720",
+    "A:434",
+    "A:427",
+    "A:432",
+    "A:435",
+    "A:424",
+    "A:426",
+    "A:429",
+    "A:430",
+    "A:433",
+    "A:425",
+    "A:431",
+    "A:428",
+    "C:107",
+    "A:317",
+    "A:316",
+    "A:312",
+    "A:330",
+    "A:326",
+    "A:331",
+    "A:327",
+    "A:323",
+    "A:329",
+    "A:325",
+    "A:328",
+    "A:320",
+    "A:319",
+    "A:318",
+    "A:324",
+    "A:322",
+    "A:314",
+    "A:313",
+    "A:321",
+    "A:315",
+    "A:175",
+    "A:178",
+    "A:177",
+    "A:179",
+    "A:174",
+    "A:176"
+  ],
+  "save_loaded": true,
+  "scope": "REAL_X11_GODOT_VIEWPORT_WITH_INPUT_EVENTS_NOT_FULL_1_TO_99_PLAYTHROUGH",
+  "screenshots": [
+    {
+      "height": 640,
+      "name": "cave",
+      "path": "/workspace/baram-private/game-screen-resume6/primary/cave.png",
+      "sha256": "f864e00d9423927d1c58fae8cd1b71c86458ad2bd959f02bd1c6964208c765e9",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "deep",
+      "path": "/workspace/baram-private/game-screen-resume6/primary/deep.png",
+      "sha256": "59b27b0e432414a5f6b8b9054301af8172c32a2392f9eec77f8e5e80f502b5a2",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "ruins",
+      "path": "/workspace/baram-private/game-screen-resume6/primary/ruins.png",
+      "sha256": "2d7787ced6127b4641b601ec90d345336ac6755152e7686a871731aa741f38fb",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "forest",
+      "path": "/workspace/baram-private/game-screen-resume6/primary/forest.png",
+      "sha256": "0274100e47fc9ec2df0ec919e68db1290c2b8be4a17304d30a562f74dd0f6709",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "saved-forest",
+      "path": "/workspace/baram-private/game-screen-resume6/primary/saved-forest.png",
+      "sha256": "0c839804a30ae8b06fc6a8cae6e510c36dba8dd447fcbe1a150b8fb2544e8b22",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    }
+  ],
+  "status": "PASS_EXECUTED_SCREEN_INPUT"
+}

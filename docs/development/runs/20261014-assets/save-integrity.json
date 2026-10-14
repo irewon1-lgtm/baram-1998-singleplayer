@@ -1,0 +1,22 @@
+{
+  "results": [
+    {
+      "name": "atomic_replace_and_read",
+      "status": "PASS"
+    },
+    {
+      "name": "unfinished_pending_does_not_replace_valid_save",
+      "status": "PASS"
+    },
+    {
+      "name": "corrupt_primary_restores_previous_backup",
+      "status": "PASS"
+    },
+    {
+      "name": "corrupt_primary_and_backup_rejected",
+      "status": "PASS"
+    }
+  ],
+  "save_module_sha256": "0f1c8b9fea8baf986a750afaf2636dee6925b97442724226a098cbc9937460ac",
+  "status": "PASS_EXECUTED_SAVE_INTEGRITY"
+}

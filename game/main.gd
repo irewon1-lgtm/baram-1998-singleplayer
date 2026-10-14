@@ -38,6 +38,7 @@ var creation_job = 0
 var name_edit: LineEdit
 var creation_controls: Control
 var audio = AudioStreamPlayer.new()
+var audio_voices = {}
 var recorder = AudioEffectRecord.new()
 var audio_events = []
 var event_log = []
@@ -76,7 +77,10 @@ func _ready():
                 "home_x":spawn.x,"home_y":spawn.y,"direction":2,"hp":int(spec.values.hp),"alive":true,
                 "respawn":0.0,"move_timer":3.0,"attack_timer":0.0,"provoked":false,"hurt":0.0,
                 "spec":spec}
-    add_child(audio)
+    for kind in ["attack","hit","skill","level"]:
+        var voice = AudioStreamPlayer.new()
+        add_child(voice)
+        audio_voices[kind] = voice
     if test_mode != "":
         AudioServer.add_bus_effect(0,recorder)
         recorder.set_recording_active(true)
@@ -261,6 +265,9 @@ func free_cell(map_id: String, pos: Vector2i, actor_id: String = "") -> bool:
     var m = maps[map_id]
     if pos.x < 0 or pos.y < 0 or pos.x >= int(m.width) or pos.y >= int(m.height) or m.blocked[pos.y][pos.x]:
         return false
+    if actor_id != "":
+        for portal in m.portals:
+            if pos==Vector2i(portal.x,portal.y):return false
     for id in entities:
         var e = entities[id]
         if id != actor_id and e.alive and e.map == map_id and Vector2i(e.x,e.y) == pos:
@@ -581,9 +588,10 @@ func play_sound(kind: String):
     var path = assets.folder.path_join(assets.actor_data.sound_bindings[kind])
     var stream = AudioStreamWAV.load_from_file(path)
     if stream != null:
-        audio.stream = stream
-        audio.play()
-        audio_events.append({"time":clock,"kind":kind,"file_sha256":FileAccess.get_sha256(path)})
+        var voice = audio_voices[kind]
+        voice.stream = stream
+        voice.play()
+        audio_events.append({"time":clock,"kind":kind,"voice":kind,"playing":voice.is_playing(),"file_sha256":FileAccess.get_sha256(path)})
 
 func snapshot() -> Dictionary:
     player.rng_state = str(rules.rng.state)
@@ -593,6 +601,12 @@ func snapshot() -> Dictionary:
 func restore(state: Dictionary):
     player = state.player
     entities = state.world
+    # Migrate our earlier generated spawn layout that overlapped a doorway.
+    for id in entities:
+        var e=entities[id]
+        for portal in maps[e.map].portals:
+            if Vector2i(e.home_x,e.home_y)==Vector2i(portal.x,portal.y):e.home_y+=2
+            if Vector2i(e.x,e.y)==Vector2i(portal.x,portal.y):e.y+=2
     loot = state.get("loot",[])
     rules.rng.state = int(state.rng_state)
     step_progress = 1.0

@@ -41,14 +41,17 @@ def execute(args):
         environment['DISPLAY'] = ':' + display
         modes = args.modes.split(',')
         for mode in modes:
-            folder = directory / ('primary' if mode in ('primary','restart') else mode)
+            folder = directory / ('primary' if mode in ('primary','resume','restart') else mode)
             folder.mkdir(exist_ok=True)
             save = folder / 'character.json'
-            if mode != 'restart' and save.exists():
+            if mode not in ('restart','resume') and save.exists():
                 raise RuntimeError('Use a fresh evidence directory; existing saves are preserved')
             command = [args.godot,'--path',str(ROOT/'game'),'--display-driver','x11','--rendering-method','gl_compatibility',
                 '--audio-driver','Dummy','--','--assets='+str(Path(args.assets).resolve()),'--save='+str(save),
                 '--exercise='+mode,'--evidence='+str(folder)]
+            if args.launcher:
+                environment['BARAM_AUDIO_DRIVER']='Dummy'
+                command=[str(Path(args.launcher).resolve()),'--save='+str(save),'--exercise='+mode,'--evidence='+str(folder)]
             log = (folder / (mode+'.log')).open('w')
             process = subprocess.Popen(command,env=environment,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
             processes.append(process)
@@ -81,7 +84,7 @@ def execute(args):
                         colors = len(screen.getcolors(960*640) or [])
                         xchecks.append({'name':name,'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),
                                         'matching_screen_fraction':fraction,'distinct_colors':colors,
-                                        'status':'PASS' if fraction>.70 and colors>128 else 'FAIL'})
+                                        'status':'PASS' if fraction>.70 and colors>16 else 'FAIL'})
             remainder = (pending+process.stdout.read()).decode('utf-8',errors='replace')
             log.write(remainder);log.close()
             result_file = folder/(mode+'-report.json')
@@ -97,13 +100,13 @@ def execute(args):
                     samples = array.array('h',raw) if audio.getsampwidth()==2 else array.array('B',raw)
                     offset=0 if audio.getsampwidth()==2 else 128
                     rms=math.sqrt(sum((v-offset)**2 for v in samples)/max(1,len(samples)))
-                    audio_check={'status':'PASS_PCM_SIGNAL' if len(samples)>0 and rms>0 else 'FAIL',
+                    audio_check={'status':('PASS_PCM_SIGNAL' if len(samples)>0 and rms>0 else 'FAIL') if result['audio_events'] else 'NOT_APPLICABLE_NO_AUDIO_EVENTS',
                                  'samples':len(samples),'rms':rms,'driver':'Dummy','audible_human_review':'NOT_RUN'}
             entry={'mode':mode,'exit_code':process.returncode,'game_report':str(result_file),'game_status':result['status'],
                    'x11_captures':xchecks,'audio_mix':audio_check,'argv':command,
                    'registered_tiles':result['registered_tiles'],'checks':len(result['checks'])}
             report['runs'].append(entry)
-            if process.returncode or result['status']!='PASS_EXECUTED_SCREEN_INPUT' or not xchecks or any(c['status']!='PASS' for c in xchecks):
+            if process.returncode or result['status']!='PASS_EXECUTED_SCREEN_INPUT' or not xchecks or any(c['status']!='PASS' for c in xchecks) or audio_check['status']=='FAIL':
                 raise RuntimeError('Executed game check failed; inspect preserved '+mode+' evidence')
         report['status']='PASS_EXECUTED_SCREEN_INPUT_AND_RESTART' if 'restart' in modes else 'PASS_EXECUTED_SCREEN_INPUT'
     except (OSError,ValueError,RuntimeError,subprocess.SubprocessError,KeyboardInterrupt) as exc:
@@ -138,4 +141,5 @@ if __name__=='__main__':
     p.add_argument('--godot',default='godot')
     p.add_argument('--xvfb',default='/workspace/baram-private/setup/x11/usr/bin/Xvfb')
     p.add_argument('--timeout',type=int,default=300)
+    p.add_argument('--launcher',help='Execute the packaged launcher instead of the workspace Godot project')
     raise SystemExit(execute(p.parse_args()))

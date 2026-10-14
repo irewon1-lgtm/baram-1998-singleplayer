@@ -1,0 +1,5738 @@
+{
+  "audio_events": [
+    {
+      "file_sha256": "bb129e81fea6134daba37fbf5aabc96df4a9f9be90ebdc027e7924ecf882591c",
+      "kind": "skill",
+      "time": 3.49025862962963
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 5.326382
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 5.326382
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 7.06164203703706
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 7.06164203703706
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 8.76575811111119
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 8.76575811111119
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 9.77215154545462
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 9.77215154545462
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 11.786538848485
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 11.786538848485
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 15.131684888889
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 15.131684888889
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 16.6020202020205
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 16.6020202020205
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 17.838551666667
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 17.838551666667
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 22.1477919090913
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 22.1477919090913
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 23.8537878787884
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 23.8537878787884
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 25.0927536666672
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 25.0927536666672
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 26.8084890000006
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 26.8084890000006
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 28.5062500000007
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 28.5062500000007
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 32.4166666666679
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 32.4166666666679
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 34.3681818181829
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 34.3681818181829
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 35.8466118148159
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 35.8466118148159
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 38.4821721111122
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 38.4821721111122
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 40.2276656666678
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 40.2276656666678
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 41.9518730000012
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 41.9518730000012
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 43.1915876666678
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 43.1915876666678
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 45.3738095238108
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 45.3738095238108
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 49.7480546666681
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 50.7531920000016
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 50.7531920000016
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 52.2255446666682
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 52.2255446666682
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 54.0075423333349
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 54.0075423333349
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 55.9530451111126
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 56.9579313333349
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 56.9579313333349
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 81.2356060606052
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 82.6606849999991
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 83.3614509999991
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 84.0616827575751
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 84.5281129999994
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 90.8148148148136
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 92.6915173333316
+    }
+  ],
+  "checks": [
+    {
+      "name": "fresh_character_creation_screen",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_creation",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "character_created_via_input",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "npc_dialogue_via_input",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "shop_purchase_via_input",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_shop",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "inventory_weapon_equipped_via_input",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_village-equipped",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "collision_and_facing_direction",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "skill_hotkey_deducts_mp",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_skill-effect",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "village_to_field_by_walking",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "directional_animated_attack_kills_rabbit",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "combat_awards_actual_xp",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_field-combat",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "25_actual_input_driven_kills",
+      "observed": {
+        "kills": 25
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "actual_random_drop_pickup",
+      "observed": {
+        "pickups": 13
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "field_to_village_by_walking",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "walk_to_quest_npc",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "quest_xp_causes_real_levelups",
+      "observed": {
+        "level": 5
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_level-up",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "return_to_merchant",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "generated_potions_bought_through_actual_shop",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "village_to_interior_by_walking",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_inn",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "inn_exit_by_walking",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "enter_training_interior",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "actual_class_skill_catalogue",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_trainer",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "guild_exit_by_walking",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "reenter_field",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "field_to_dungeon_by_walking",
+      "observed": {
+
+      },
+      "status": "FAIL"
+    },
+    {
+      "name": "dungeon_combat",
+      "observed": {
+
+      },
+      "status": "FAIL"
+    },
+    {
+      "name": "rendered_cave",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "deep_dungeon_transition",
+      "observed": {
+
+      },
+      "status": "FAIL"
+    },
+    {
+      "name": "rendered_deep",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "ruins_transition",
+      "observed": {
+
+      },
+      "status": "FAIL"
+    },
+    {
+      "name": "rendered_ruins",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "ruins_return",
+      "observed": {
+
+      },
+      "status": "FAIL"
+    },
+    {
+      "name": "deep_return",
+      "observed": {
+
+      },
+      "status": "FAIL"
+    },
+    {
+      "name": "cave_return",
+      "observed": {
+
+      },
+      "status": "FAIL"
+    },
+    {
+      "name": "forest_transition",
+      "observed": {
+
+      },
+      "status": "FAIL"
+    },
+    {
+      "name": "rendered_forest",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "damage_occurs_after_animation_impact_time",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "original_wav_events_played",
+      "observed": {
+        "events": 60
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "save_via_f5_input",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_saved-forest",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "engine_audio_mix_recorded",
+      "observed": {
+
+      },
+      "status": "PASS"
+    }
+  ],
+  "elapsed_ms": 108334,
+  "events": [
+    {
+      "details": {
+        "loaded_save": false,
+        "registered_tiles": 14835,
+        "renderer": "gl_compatibility"
+      },
+      "event": "ready",
+      "time": 0.0
+    },
+    {
+      "details": {
+        "job": "전사",
+        "name": "바람여행자"
+      },
+      "event": "character_created",
+      "time": 0.636
+    },
+    {
+      "details": {
+        "id": "merchant",
+        "role": "shop"
+      },
+      "event": "npc_dialogue",
+      "time": 0.867
+    },
+    {
+      "details": {
+        "buy": true,
+        "gold": 10,
+        "item": "목검",
+        "success": true
+      },
+      "event": "trade",
+      "time": 1.339
+    },
+    {
+      "details": {
+        "item": "목검",
+        "success": true
+      },
+      "event": "equipped",
+      "time": 2.542
+    },
+    {
+      "details": {
+        "map": "village",
+        "x": 12,
+        "y": 11
+      },
+      "event": "collision",
+      "time": 3.256
+    },
+    {
+      "details": {
+        "map": "village",
+        "x": 12,
+        "y": 11
+      },
+      "event": "collision",
+      "time": 3.266
+    },
+    {
+      "details": {
+        "hp": 50,
+        "mp": 30,
+        "skill": "기초 회복",
+        "slot": 0
+      },
+      "event": "skill_cast",
+      "time": 3.49
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 13,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 4.43
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 14,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 4.665
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 15,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 4.898
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 12,
+        "y": 12
+      },
+      "event": "map_changed",
+      "time": 4.898
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "turned",
+      "time": 5.129
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-0"
+      },
+      "event": "attack_started",
+      "time": 5.165
+    },
+    {
+      "details": {
+        "damage": 22,
+        "hp": -12,
+        "impact_time": 0.161027636363636,
+        "source": "melee",
+        "target": "field-0"
+      },
+      "event": "damage_applied",
+      "time": 5.326
+    },
+    {
+      "details": {
+        "drops": [
+          {
+            "item": "토끼고기",
+            "quantity": 1
+          }
+        ],
+        "gold": 1,
+        "id": "field-0",
+        "level": 1,
+        "xp": 5.0
+      },
+      "event": "monster_killed",
+      "time": 5.326
+    },
+    {
+      "details": {
+        "item": "토끼고기",
+        "map": "field",
+        "quantity": 1,
+        "x": 13.0,
+        "y": 12.0
+      },
+      "event": "item_picked_up",
+      "time": 5.872
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 13,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 6.16
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 14,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 6.396
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 15,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 6.628
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "turned",
+      "time": 6.861
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-1"
+      },
+      "event": "attack_started",
+      "time": 6.897
+    },
+    {
+      "details": {
+        "damage": 30,
+        "hp": -20,
+        "impact_time": 0.16467234006734,
+        "source": "melee",
+        "target": "field-1"
+      },
+      "event": "damage_applied",
+      "time": 7.062
+    },
+    {
+      "details": {
+        "drops": [],
+        "gold": 1,
+        "id": "field-1",
+        "level": 1,
+        "xp": 5.0
+      },
+      "event": "monster_killed",
+      "time": 7.062
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 16,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 7.64
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 17,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 7.873
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 18,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 8.106
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 19,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 8.34
+    },
+    {
+      "details": {
+        "direction": 2
+      },
+      "event": "turned",
+      "time": 8.573
+    },
+    {
+      "details": {
+        "direction": 2,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-2"
+      },
+      "event": "attack_started",
+      "time": 8.603
+    },
+    {
+      "details": {
+        "damage": 26,
+        "hp": -8,
+        "impact_time": 0.162727808080808,
+        "source": "melee",
+        "target": "field-2"
+      },
+      "event": "damage_applied",
+      "time": 8.766
+    },
+    {
+      "details": {
+        "drops": [
+          {
+            "item": "도토리",
+            "quantity": 1
+          }
+        ],
+        "gold": 1,
+        "id": "field-2",
+        "level": 1,
+        "xp": 7.5
+      },
+      "event": "monster_killed",
+      "time": 8.766
+    },
+    {
+      "details": {
+        "item": "도토리",
+        "map": "field",
+        "quantity": 1,
+        "x": 19,
+        "y": 13
+      },
+      "event": "item_picked_up",
+      "time": 9.305
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 20,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 9.339
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "turned",
+      "time": 9.573
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-3"
+      },
+      "event": "attack_started",
+      "time": 9.609
+    },
+    {
+      "details": {
+        "damage": 30,
+        "hp": -12,
+        "impact_time": 0.163644545454545,
+        "source": "melee",
+        "target": "field-3"
+      },
+      "event": "damage_applied",
+      "time": 9.772
+    },
+    {
+      "details": {
+        "drops": [
+          {
+            "item": "도토리",
+            "quantity": 1
+          }
+        ],
+        "gold": 1,
+        "id": "field-3",
+        "level": 1,
+        "xp": 7.5
+      },
+      "event": "monster_killed",
+      "time": 9.772
+    },
+    {
+      "details": {
+        "item": "도토리",
+        "map": "field",
+        "quantity": 1,
+        "x": 21,
+        "y": 12
+      },
+      "event": "item_picked_up",
+      "time": 10.315
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "field",
+        "x": 20,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 10.35
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 21,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 10.582
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 22,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 10.815
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 23,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 11.35
+    },
+    {
+      "details": {
+        "direction": 2
+      },
+      "event": "turned",
+      "time": 11.585
+    },
+    {
+      "details": {
+        "direction": 2,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-4"
+      },
+      "event": "attack_started",
+      "time": 11.622
+    },
+    {
+      "details": {
+        "damage": 24,
+        "hp": -14,
+        "impact_time": 0.16420395959596,
+        "source": "melee",
+        "target": "field-4"
+      },
+      "event": "damage_applied",
+      "time": 11.787
+    },
+    {
+      "details": {
+        "drops": [
+          {
+            "item": "토끼고기",
+            "quantity": 1
+          }
+        ],
+        "gold": 1,
+        "id": "field-4",
+        "level": 1,
+        "xp": 5.0
+      },
+      "event": "monster_killed",
+      "time": 11.787
+    },
+    {
+      "details": {
+        "item": "토끼고기",
+        "map": "field",
+        "quantity": 1,
+        "x": 23,
+        "y": 12
+      },
+      "event": "item_picked_up",
+      "time": 12.323
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 22,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 12.354
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 21,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 12.586
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 20,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 12.82
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 19,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 13.053
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 18,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 13.288
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "field",
+        "x": 18,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 13.52
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "field",
+        "x": 18,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 13.757
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "field",
+        "x": 18,
+        "y": 14
+      },
+      "event": "moved",
+      "time": 13.994
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "field",
+        "x": 18,
+        "y": 15
+      },
+      "event": "moved",
+      "time": 14.23
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "field",
+        "x": 18,
+        "y": 16
+      },
+      "event": "moved",
+      "time": 14.465
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 19,
+        "y": 16
+      },
+      "event": "moved",
+      "time": 14.7
+    },
+    {
+      "details": {
+        "direction": 2
+      },
+      "event": "turned",
+      "time": 14.937
+    },
+    {
+      "details": {
+        "direction": 2,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-7"
+      },
+      "event": "attack_started",
+      "time": 14.971
+    },
+    {
+      "details": {
+        "damage": 24,
+        "hp": -6,
+        "impact_time": 0.160851555555556,
+        "source": "melee",
+        "target": "field-7"
+      },
+      "event": "damage_applied",
+      "time": 15.132
+    },
+    {
+      "details": {
+        "drops": [
+          {
+            "item": "도토리",
+            "quantity": 1
+          }
+        ],
+        "gold": 1,
+        "id": "field-7",
+        "level": 1,
+        "xp": 7.5
+      },
+      "event": "monster_killed",
+      "time": 15.132
+    },
+    {
+      "details": {
+        "item": "도토리",
+        "map": "field",
+        "quantity": 1,
+        "x": 19,
+        "y": 17
+      },
+      "event": "item_picked_up",
+      "time": 15.672
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 18,
+        "y": 16
+      },
+      "event": "moved",
+      "time": 15.706
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 17,
+        "y": 16
+      },
+      "event": "moved",
+      "time": 15.941
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "field",
+        "x": 17,
+        "y": 17
+      },
+      "event": "moved",
+      "time": 16.175
+    },
+    {
+      "details": {
+        "direction": 1
+      },
+      "event": "turned",
+      "time": 16.41
+    },
+    {
+      "details": {
+        "direction": 1,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-6"
+      },
+      "event": "attack_started",
+      "time": 16.442
+    },
+    {
+      "details": {
+        "damage": 26,
+        "hp": -16,
+        "impact_time": 0.160512868686868,
+        "source": "melee",
+        "target": "field-6"
+      },
+      "event": "damage_applied",
+      "time": 16.602
+    },
+    {
+      "details": {
+        "drops": [],
+        "gold": 1,
+        "id": "field-6",
+        "level": 1,
+        "xp": 5.0
+      },
+      "event": "monster_killed",
+      "time": 16.602
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "field",
+        "x": 17,
+        "y": 16
+      },
+      "event": "moved",
+      "time": 17.181
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 16,
+        "y": 16
+      },
+      "event": "moved",
+      "time": 17.415
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 17.646
+    },
+    {
+      "details": {
+        "direction": 0,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-5"
+      },
+      "event": "attack_started",
+      "time": 17.678
+    },
+    {
+      "details": {
+        "damage": 28,
+        "hp": -10,
+        "impact_time": 0.160196,
+        "source": "melee",
+        "target": "field-5"
+      },
+      "event": "damage_applied",
+      "time": 17.839
+    },
+    {
+      "details": {
+        "drops": [],
+        "gold": 1,
+        "id": "field-5",
+        "level": 1,
+        "xp": 7.5
+      },
+      "event": "monster_killed",
+      "time": 17.839
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "field",
+        "x": 16,
+        "y": 15
+      },
+      "event": "moved",
+      "time": 20.546
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "field",
+        "x": 16,
+        "y": 14
+      },
+      "event": "moved",
+      "time": 20.779
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "field",
+        "x": 16,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 21.014
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 15,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 21.244
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 14,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 21.479
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 13,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 21.714
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 21.945
+    },
+    {
+      "details": {
+        "direction": 0,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-0"
+      },
+      "event": "attack_started",
+      "time": 21.982
+    },
+    {
+      "details": {
+        "damage": 28,
+        "hp": -18,
+        "impact_time": 0.165786575757576,
+        "source": "melee",
+        "target": "field-0"
+      },
+      "event": "damage_applied",
+      "time": 22.148
+    },
+    {
+      "details": {
+        "drops": [],
+        "gold": 1,
+        "id": "field-0",
+        "level": 1,
+        "xp": 5.0
+      },
+      "event": "monster_killed",
+      "time": 22.148
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "field",
+        "x": 13,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 22.718
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 14,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 22.948
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 15,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 23.182
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 16,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 23.419
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "turned",
+      "time": 23.654
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-1"
+      },
+      "event": "attack_started",
+      "time": 23.686
+    },
+    {
+      "details": {
+        "damage": 26,
+        "hp": -16,
+        "impact_time": 0.168223878787878,
+        "source": "melee",
+        "target": "field-1"
+      },
+      "event": "damage_applied",
+      "time": 23.854
+    },
+    {
+      "details": {
+        "drops": [],
+        "gold": 1,
+        "id": "field-1",
+        "level": 1,
+        "xp": 5.0
+      },
+      "event": "monster_killed",
+      "time": 23.854
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 17,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 24.428
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 18,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 24.664
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "turned",
+      "time": 24.897
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-2"
+      },
+      "event": "attack_started",
+      "time": 24.932
+    },
+    {
+      "details": {
+        "damage": 20,
+        "hp": -2,
+        "impact_time": 0.160303,
+        "source": "melee",
+        "target": "field-2"
+      },
+      "event": "damage_applied",
+      "time": 25.093
+    },
+    {
+      "details": {
+        "drops": [
+          {
+            "item": "도토리",
+            "quantity": 1
+          }
+        ],
+        "gold": 1,
+        "id": "field-2",
+        "level": 1,
+        "xp": 7.5
+      },
+      "event": "monster_killed",
+      "time": 25.093
+    },
+    {
+      "details": {
+        "item": "도토리",
+        "map": "field",
+        "quantity": 1,
+        "x": 19.0,
+        "y": 12.0
+      },
+      "event": "item_picked_up",
+      "time": 25.639
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 19,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 25.679
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 20,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 25.91
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 21,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 26.146
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "field",
+        "x": 21,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 26.379
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "turned",
+      "time": 26.614
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-3"
+      },
+      "event": "attack_started",
+      "time": 26.644
+    },
+    {
+      "details": {
+        "damage": 28,
+        "hp": -10,
+        "impact_time": 0.164549606060607,
+        "source": "melee",
+        "target": "field-3"
+      },
+      "event": "damage_applied",
+      "time": 26.808
+    },
+    {
+      "details": {
+        "drops": [],
+        "gold": 1,
+        "id": "field-3",
+        "level": 1,
+        "xp": 7.5
+      },
+      "event": "monster_killed",
+      "time": 26.808
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 22,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 27.38
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 23,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 27.611
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "field",
+        "x": 23,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 27.847
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 24,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 28.081
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "turned",
+      "time": 28.312
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-4"
+      },
+      "event": "attack_started",
+      "time": 28.343
+    },
+    {
+      "details": {
+        "damage": 24,
+        "hp": -14,
+        "impact_time": 0.163068181818182,
+        "source": "melee",
+        "target": "field-4"
+      },
+      "event": "damage_applied",
+      "time": 28.506
+    },
+    {
+      "details": {
+        "drops": [
+          {
+            "item": "토끼고기",
+            "quantity": 1
+          }
+        ],
+        "gold": 1,
+        "id": "field-4",
+        "level": 1,
+        "xp": 5.0
+      },
+      "event": "monster_killed",
+      "time": 28.506
+    },
+    {
+      "details": {
+        "item": "토끼고기",
+        "map": "field",
+        "quantity": 1,
+        "x": 25.0,
+        "y": 12.0
+      },
+      "event": "item_picked_up",
+      "time": 29.048
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 23,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 30.292
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "field",
+        "x": 23,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 30.524
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 22,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 30.754
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 21,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 30.988
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 20,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 31.218
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "field",
+        "x": 20,
+        "y": 14
+      },
+      "event": "moved",
+      "time": 31.452
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "field",
+        "x": 20,
+        "y": 15
+      },
+      "event": "moved",
+      "time": 31.687
+    },
+    {
+      "details": {
+        "direction": 2
+      },
+      "event": "turned",
+      "time": 32.224
+    },
+    {
+      "details": {
+        "direction": 2,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-7"
+      },
+      "event": "attack_started",
+      "time": 32.256
+    },
+    {
+      "details": {
+        "damage": 20,
+        "hp": -2,
+        "impact_time": 0.160416666666667,
+        "source": "melee",
+        "target": "field-7"
+      },
+      "event": "damage_applied",
+      "time": 32.417
+    },
+    {
+      "details": {
+        "drops": [
+          {
+            "item": "도토리",
+            "quantity": 1
+          }
+        ],
+        "gold": 1,
+        "id": "field-7",
+        "level": 1,
+        "xp": 7.5
+      },
+      "event": "monster_killed",
+      "time": 32.417
+    },
+    {
+      "details": {
+        "item": "도토리",
+        "map": "field",
+        "quantity": 1,
+        "x": 20,
+        "y": 16
+      },
+      "event": "item_picked_up",
+      "time": 32.957
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 19,
+        "y": 15
+      },
+      "event": "moved",
+      "time": 32.988
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 18,
+        "y": 15
+      },
+      "event": "moved",
+      "time": 33.223
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 17,
+        "y": 15
+      },
+      "event": "moved",
+      "time": 33.458
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 16,
+        "y": 15
+      },
+      "event": "moved",
+      "time": 33.697
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "field",
+        "x": 16,
+        "y": 16
+      },
+      "event": "moved",
+      "time": 33.929
+    },
+    {
+      "details": {
+        "direction": 1
+      },
+      "event": "turned",
+      "time": 34.167
+    },
+    {
+      "details": {
+        "direction": 1,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-6"
+      },
+      "event": "attack_started",
+      "time": 34.201
+    },
+    {
+      "details": {
+        "damage": 20,
+        "hp": -10,
+        "impact_time": 0.166950818181817,
+        "source": "melee",
+        "target": "field-6"
+      },
+      "event": "damage_applied",
+      "time": 34.368
+    },
+    {
+      "details": {
+        "drops": [],
+        "gold": 1,
+        "id": "field-6",
+        "level": 1,
+        "xp": 5.0
+      },
+      "event": "monster_killed",
+      "time": 34.368
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 15,
+        "y": 16
+      },
+      "event": "moved",
+      "time": 34.937
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 14,
+        "y": 16
+      },
+      "event": "moved",
+      "time": 35.176
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 13,
+        "y": 16
+      },
+      "event": "moved",
+      "time": 35.417
+    },
+    {
+      "details": {
+        "direction": 1
+      },
+      "event": "turned",
+      "time": 35.65
+    },
+    {
+      "details": {
+        "direction": 1,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-5"
+      },
+      "event": "attack_started",
+      "time": 35.681
+    },
+    {
+      "details": {
+        "damage": 20,
+        "hp": -2,
+        "impact_time": 0.165772148148148,
+        "source": "melee",
+        "target": "field-5"
+      },
+      "event": "damage_applied",
+      "time": 35.847
+    },
+    {
+      "details": {
+        "drops": [
+          {
+            "item": "도토리",
+            "quantity": 1
+          }
+        ],
+        "gold": 1,
+        "id": "field-5",
+        "level": 1,
+        "xp": 7.5
+      },
+      "event": "monster_killed",
+      "time": 35.847
+    },
+    {
+      "details": {
+        "item": "도토리",
+        "map": "field",
+        "quantity": 1,
+        "x": 12,
+        "y": 16
+      },
+      "event": "item_picked_up",
+      "time": 36.383
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "field",
+        "x": 13,
+        "y": 15
+      },
+      "event": "moved",
+      "time": 37.339
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "field",
+        "x": 13,
+        "y": 14
+      },
+      "event": "moved",
+      "time": 37.574
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "field",
+        "x": 13,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 37.81
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 12,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 38.044
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 38.284
+    },
+    {
+      "details": {
+        "direction": 0,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-0"
+      },
+      "event": "attack_started",
+      "time": 38.317
+    },
+    {
+      "details": {
+        "damage": 26,
+        "hp": -16,
+        "impact_time": 0.164693444444444,
+        "source": "melee",
+        "target": "field-0"
+      },
+      "event": "damage_applied",
+      "time": 38.482
+    },
+    {
+      "details": {
+        "drops": [],
+        "gold": 1,
+        "id": "field-0",
+        "level": 1,
+        "xp": 5.0
+      },
+      "event": "monster_killed",
+      "time": 38.482
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "field",
+        "x": 12,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 39.063
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 13,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 39.304
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 14,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 39.539
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 15,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 39.772
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "turned",
+      "time": 40.008
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-1"
+      },
+      "event": "attack_started",
+      "time": 40.054
+    },
+    {
+      "details": {
+        "damage": 30,
+        "hp": -20,
+        "impact_time": 0.174148666666667,
+        "source": "melee",
+        "target": "field-1"
+      },
+      "event": "damage_applied",
+      "time": 40.228
+    },
+    {
+      "details": {
+        "drops": [],
+        "gold": 1,
+        "id": "field-1",
+        "level": 1,
+        "xp": 5.0
+      },
+      "event": "monster_killed",
+      "time": 40.228
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 16,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 40.792
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 17,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 41.025
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 18,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 41.265
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 19,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 41.498
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 41.744
+    },
+    {
+      "details": {
+        "direction": 0,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-2"
+      },
+      "event": "attack_started",
+      "time": 41.777
+    },
+    {
+      "details": {
+        "damage": 22,
+        "hp": -4,
+        "impact_time": 0.174387666666667,
+        "source": "melee",
+        "target": "field-2"
+      },
+      "event": "damage_applied",
+      "time": 41.952
+    },
+    {
+      "details": {
+        "drops": [
+          {
+            "item": "도토리",
+            "quantity": 1
+          }
+        ],
+        "gold": 1,
+        "id": "field-2",
+        "level": 1,
+        "xp": 7.5
+      },
+      "event": "monster_killed",
+      "time": 41.952
+    },
+    {
+      "details": {
+        "item": "도토리",
+        "map": "field",
+        "quantity": 1,
+        "x": 19,
+        "y": 11
+      },
+      "event": "item_picked_up",
+      "time": 42.486
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 20,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 42.517
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 21,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 42.752
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "turned",
+      "time": 42.993
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-3"
+      },
+      "event": "attack_started",
+      "time": 43.031
+    },
+    {
+      "details": {
+        "damage": 30,
+        "hp": -12,
+        "impact_time": 0.161032111111112,
+        "source": "melee",
+        "target": "field-3"
+      },
+      "event": "damage_applied",
+      "time": 43.192
+    },
+    {
+      "details": {
+        "drops": [
+          {
+            "item": "도토리",
+            "quantity": 1
+          }
+        ],
+        "gold": 1,
+        "id": "field-3",
+        "level": 1,
+        "xp": 7.5
+      },
+      "event": "monster_killed",
+      "time": 43.192
+    },
+    {
+      "details": {
+        "item": "도토리",
+        "map": "field",
+        "quantity": 1,
+        "x": 22.0,
+        "y": 12.0
+      },
+      "event": "item_picked_up",
+      "time": 43.739
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "field",
+        "x": 21,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 43.775
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 22,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 44.007
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 23,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 44.238
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "field",
+        "x": 23,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 44.473
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 24,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 44.704
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 25,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 44.938
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 45.172
+    },
+    {
+      "details": {
+        "direction": 0,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-4"
+      },
+      "event": "attack_started",
+      "time": 45.209
+    },
+    {
+      "details": {
+        "damage": 24,
+        "hp": -14,
+        "impact_time": 0.165021809523809,
+        "source": "melee",
+        "target": "field-4"
+      },
+      "event": "damage_applied",
+      "time": 45.374
+    },
+    {
+      "details": {
+        "drops": [],
+        "gold": 1,
+        "id": "field-4",
+        "level": 1,
+        "xp": 5.0
+      },
+      "event": "monster_killed",
+      "time": 45.374
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 24,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 47.45
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 23,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 47.684
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "field",
+        "x": 23,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 47.92
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 22,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 48.154
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 21,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 48.386
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 20,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 48.617
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "field",
+        "x": 20,
+        "y": 14
+      },
+      "event": "moved",
+      "time": 48.848
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "field",
+        "x": 20,
+        "y": 15
+      },
+      "event": "moved",
+      "time": 49.078
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "field",
+        "x": 20,
+        "y": 16
+      },
+      "event": "moved",
+      "time": 49.313
+    },
+    {
+      "details": {
+        "direction": 1
+      },
+      "event": "turned",
+      "time": 49.548
+    },
+    {
+      "details": {
+        "direction": 1,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-7"
+      },
+      "event": "attack_started",
+      "time": 49.581
+    },
+    {
+      "details": {
+
+      },
+      "event": "attack_missed_probability",
+      "time": 49.748
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 19,
+        "y": 16
+      },
+      "event": "moved",
+      "time": 50.317
+    },
+    {
+      "details": {
+        "direction": 1
+      },
+      "event": "turned",
+      "time": 50.554
+    },
+    {
+      "details": {
+        "direction": 1,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-7"
+      },
+      "event": "attack_started",
+      "time": 50.587
+    },
+    {
+      "details": {
+        "damage": 26,
+        "hp": -8,
+        "impact_time": 0.166000333333333,
+        "source": "melee",
+        "target": "field-7"
+      },
+      "event": "damage_applied",
+      "time": 50.753
+    },
+    {
+      "details": {
+        "drops": [
+          {
+            "item": "도토리",
+            "quantity": 1
+          }
+        ],
+        "gold": 1,
+        "id": "field-7",
+        "level": 1,
+        "xp": 7.5
+      },
+      "event": "monster_killed",
+      "time": 50.753
+    },
+    {
+      "details": {
+        "item": "도토리",
+        "map": "field",
+        "quantity": 1,
+        "x": 18,
+        "y": 16
+      },
+      "event": "item_picked_up",
+      "time": 51.295
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "field",
+        "x": 19,
+        "y": 15
+      },
+      "event": "moved",
+      "time": 51.326
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 18,
+        "y": 15
+      },
+      "event": "moved",
+      "time": 51.563
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 17,
+        "y": 15
+      },
+      "event": "moved",
+      "time": 51.796
+    },
+    {
+      "details": {
+        "direction": 1
+      },
+      "event": "turned",
+      "time": 52.031
+    },
+    {
+      "details": {
+        "direction": 1,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-6"
+      },
+      "event": "attack_started",
+      "time": 52.064
+    },
+    {
+      "details": {
+        "damage": 22,
+        "hp": -12,
+        "impact_time": 0.161489,
+        "source": "melee",
+        "target": "field-6"
+      },
+      "event": "damage_applied",
+      "time": 52.226
+    },
+    {
+      "details": {
+        "drops": [
+          {
+            "item": "토끼고기",
+            "quantity": 1
+          }
+        ],
+        "gold": 1,
+        "id": "field-6",
+        "level": 1,
+        "xp": 5.0
+      },
+      "event": "monster_killed",
+      "time": 52.226
+    },
+    {
+      "details": {
+        "item": "토끼고기",
+        "map": "field",
+        "quantity": 1,
+        "x": 16,
+        "y": 15
+      },
+      "event": "item_picked_up",
+      "time": 52.769
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 16,
+        "y": 15
+      },
+      "event": "moved",
+      "time": 52.804
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 15,
+        "y": 15
+      },
+      "event": "moved",
+      "time": 53.339
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "field",
+        "x": 15,
+        "y": 16
+      },
+      "event": "moved",
+      "time": 53.572
+    },
+    {
+      "details": {
+        "direction": 1
+      },
+      "event": "turned",
+      "time": 53.81
+    },
+    {
+      "details": {
+        "direction": 1,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-5"
+      },
+      "event": "attack_started",
+      "time": 53.845
+    },
+    {
+      "details": {
+        "damage": 26,
+        "hp": -8,
+        "impact_time": 0.162309428571429,
+        "source": "melee",
+        "target": "field-5"
+      },
+      "event": "damage_applied",
+      "time": 54.008
+    },
+    {
+      "details": {
+        "drops": [],
+        "gold": 1,
+        "id": "field-5",
+        "level": 1,
+        "xp": 7.5
+      },
+      "event": "monster_killed",
+      "time": 54.008
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "field",
+        "x": 15,
+        "y": 15
+      },
+      "event": "moved",
+      "time": 54.583
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "field",
+        "x": 15,
+        "y": 14
+      },
+      "event": "moved",
+      "time": 54.818
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "field",
+        "x": 15,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 55.054
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 14,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 55.287
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 13,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 55.524
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 55.759
+    },
+    {
+      "details": {
+        "direction": 0,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-0"
+      },
+      "event": "attack_started",
+      "time": 55.792
+    },
+    {
+      "details": {
+
+      },
+      "event": "attack_missed_moved_target",
+      "time": 55.953
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "field",
+        "x": 13,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 56.531
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 56.764
+    },
+    {
+      "details": {
+        "direction": 0,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-0"
+      },
+      "event": "attack_started",
+      "time": 56.795
+    },
+    {
+      "details": {
+        "damage": 22,
+        "hp": -12,
+        "impact_time": 0.1625,
+        "source": "melee",
+        "target": "field-0"
+      },
+      "event": "damage_applied",
+      "time": 56.958
+    },
+    {
+      "details": {
+        "drops": [],
+        "gold": 1,
+        "id": "field-0",
+        "level": 1,
+        "xp": 5.0
+      },
+      "event": "monster_killed",
+      "time": 56.958
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 12,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 57.528
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 11,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 57.761
+    },
+    {
+      "details": {
+        "map": "village",
+        "x": 14,
+        "y": 12
+      },
+      "event": "map_changed",
+      "time": 57.761
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 14,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 57.995
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 14,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 58.231
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 13,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 58.464
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 12,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 58.696
+    },
+    {
+      "details": {
+        "map": "village",
+        "x": 12,
+        "y": 9
+      },
+      "event": "collision",
+      "time": 58.932
+    },
+    {
+      "details": {
+        "map": "village",
+        "x": 12,
+        "y": 9
+      },
+      "event": "collision",
+      "time": 58.938
+    },
+    {
+      "details": {
+        "id": "first_steps",
+        "levels": [
+          2
+        ],
+        "xp": 300.0
+      },
+      "event": "quest_completed",
+      "time": 59.163
+    },
+    {
+      "details": {
+        "id": "hunter",
+        "levels": [
+          3,
+          4,
+          5
+        ],
+        "xp": 1200.0
+      },
+      "event": "quest_completed",
+      "time": 59.395
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 11,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 59.894
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 11,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 60.128
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 11,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 60.359
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 12,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 60.594
+    },
+    {
+      "details": {
+        "map": "village",
+        "x": 12,
+        "y": 11
+      },
+      "event": "collision",
+      "time": 60.825
+    },
+    {
+      "details": {
+        "map": "village",
+        "x": 12,
+        "y": 11
+      },
+      "event": "collision",
+      "time": 60.831
+    },
+    {
+      "details": {
+        "id": "merchant",
+        "role": "shop"
+      },
+      "event": "npc_dialogue",
+      "time": 61.057
+    },
+    {
+      "details": {
+        "buy": true,
+        "gold": 175,
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "trade",
+      "time": 61.781
+    },
+    {
+      "details": {
+        "buy": true,
+        "gold": 165,
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "trade",
+      "time": 61.815
+    },
+    {
+      "details": {
+        "buy": true,
+        "gold": 155,
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "trade",
+      "time": 61.849
+    },
+    {
+      "details": {
+        "buy": true,
+        "gold": 145,
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "trade",
+      "time": 61.882
+    },
+    {
+      "details": {
+        "buy": true,
+        "gold": 135,
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "trade",
+      "time": 61.918
+    },
+    {
+      "details": {
+        "buy": true,
+        "gold": 125,
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "trade",
+      "time": 61.955
+    },
+    {
+      "details": {
+        "buy": true,
+        "gold": 115,
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "trade",
+      "time": 61.991
+    },
+    {
+      "details": {
+        "buy": true,
+        "gold": 105,
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "trade",
+      "time": 62.027
+    },
+    {
+      "details": {
+        "buy": true,
+        "gold": 95,
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "trade",
+      "time": 62.058
+    },
+    {
+      "details": {
+        "buy": true,
+        "gold": 85,
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "trade",
+      "time": 62.097
+    },
+    {
+      "details": {
+        "success": true
+      },
+      "event": "repair",
+      "time": 62.135
+    },
+    {
+      "details": {
+        "success": true
+      },
+      "event": "crafted",
+      "time": 62.173
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 11,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 62.443
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 11,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 62.678
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 11,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 62.915
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 11,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 63.148
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 10,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 63.382
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 9,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 63.619
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 8,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 63.854
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 7,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 64.088
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 6,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 64.319
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 6,
+        "y": 8
+      },
+      "event": "moved",
+      "time": 64.553
+    },
+    {
+      "details": {
+        "map": "inn",
+        "x": 12,
+        "y": 12
+      },
+      "event": "map_changed",
+      "time": 64.553
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "inn",
+        "x": 12,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 64.786
+    },
+    {
+      "details": {
+        "id": "innkeeper",
+        "role": "inn"
+      },
+      "event": "npc_dialogue",
+      "time": 65.02
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "inn",
+        "x": 11,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 65.741
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "inn",
+        "x": 11,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 65.974
+    },
+    {
+      "details": {
+        "map": "village",
+        "x": 6,
+        "y": 9
+      },
+      "event": "map_changed",
+      "time": 65.974
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 6,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 66.209
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 7,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 66.445
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 8,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 66.678
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 9,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 66.913
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 10,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 67.148
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 11,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 67.384
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 12,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 67.617
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 13,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 67.852
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 13,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 68.087
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 14,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 68.323
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 15,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 68.555
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 16,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 68.785
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 17,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 69.019
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 18,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 69.251
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 19,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 69.485
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 20,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 69.715
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 21,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 69.951
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 22,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 70.184
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 23,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 70.414
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 24,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 70.651
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 24,
+        "y": 8
+      },
+      "event": "moved",
+      "time": 70.882
+    },
+    {
+      "details": {
+        "map": "guild",
+        "x": 12,
+        "y": 12
+      },
+      "event": "map_changed",
+      "time": 70.882
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "guild",
+        "x": 12,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 71.117
+    },
+    {
+      "details": {
+        "id": "trainer",
+        "role": "trainer"
+      },
+      "event": "npc_dialogue",
+      "time": 71.354
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "guild",
+        "x": 11,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 72.069
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "guild",
+        "x": 11,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 72.305
+    },
+    {
+      "details": {
+        "map": "village",
+        "x": 24,
+        "y": 9
+      },
+      "event": "map_changed",
+      "time": 72.305
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 23,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 72.535
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 22,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 72.768
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 21,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 73.006
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 20,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 73.239
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 19,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 73.476
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 18,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 73.708
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 17,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 73.946
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 16,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 74.176
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 15,
+        "y": 9
+      },
+      "event": "moved",
+      "time": 74.415
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 15,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 74.645
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 15,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 74.876
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 15,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 75.111
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 12,
+        "y": 12
+      },
+      "event": "map_changed",
+      "time": 75.111
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "field",
+        "x": 12,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 75.595
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 13,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 75.833
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 14,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 76.069
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 15,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 76.304
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 16,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 76.537
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 17,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 76.77
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 18,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 77.002
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 19,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 77.236
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 20,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 77.471
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 21,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 77.706
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 22,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 77.941
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 23,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 78.172
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 24,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 78.406
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "field",
+        "x": 24,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 78.644
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 25,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 78.883
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 26,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 79.116
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 27,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 79.354
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 28,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 79.591
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 29,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 79.826
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 30,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 80.06
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 31,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 80.296
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 32,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 80.526
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 33,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 80.76
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 34,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 80.995
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 35,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 81.228
+    },
+    {
+      "details": {
+        "map": "forest",
+        "x": 12,
+        "y": 12
+      },
+      "event": "map_changed",
+      "time": 81.228
+    },
+    {
+      "details": {
+        "attacker": "forest-0",
+        "damage": 25,
+        "hp": 219
+      },
+      "event": "player_hit",
+      "time": 81.236
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "forest",
+        "x": 12,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 81.718
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "forest",
+        "x": 13,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 81.95
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "forest",
+        "x": 14,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 82.186
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "forest",
+        "x": 15,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 82.416
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "forest",
+        "x": 16,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 82.652
+    },
+    {
+      "details": {
+        "attacker": "forest-1",
+        "damage": 25,
+        "hp": 194
+      },
+      "event": "player_hit",
+      "time": 82.661
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "forest",
+        "x": 17,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 82.888
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "forest",
+        "x": 18,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 83.12
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "forest",
+        "x": 19,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 83.352
+    },
+    {
+      "details": {
+        "attacker": "forest-2",
+        "damage": 29,
+        "hp": 165
+      },
+      "event": "player_hit",
+      "time": 83.361
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "forest",
+        "x": 20,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 83.589
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "forest",
+        "x": 21,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 83.823
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "forest",
+        "x": 22,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 84.053
+    },
+    {
+      "details": {
+        "attacker": "forest-3",
+        "damage": 29,
+        "hp": 136
+      },
+      "event": "player_hit",
+      "time": 84.062
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "forest",
+        "x": 23,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 84.287
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "forest",
+        "x": 24,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 84.52
+    },
+    {
+      "details": {
+        "attacker": "forest-4",
+        "damage": 19,
+        "hp": 117
+      },
+      "event": "player_hit",
+      "time": 84.528
+    },
+    {
+      "details": {
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "consumed",
+      "time": 84.89
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "forest",
+        "x": 25,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 84.94
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "forest",
+        "x": 25,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 85.171
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "forest",
+        "x": 26,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 85.409
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "forest",
+        "x": 27,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 85.644
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "forest",
+        "x": 28,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 85.875
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "forest",
+        "x": 29,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 86.111
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "forest",
+        "x": 30,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 86.344
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "forest",
+        "x": 31,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 86.581
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "forest",
+        "x": 32,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 86.817
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "forest",
+        "x": 33,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 87.048
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "forest",
+        "x": 34,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 87.284
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "forest",
+        "x": 35,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 87.519
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "forest",
+        "x": 35,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 88.007
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "forest",
+        "x": 34,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 88.243
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "forest",
+        "x": 33,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 88.474
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "forest",
+        "x": 32,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 88.71
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "forest",
+        "x": 31,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 88.943
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "forest",
+        "x": 30,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 89.178
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "forest",
+        "x": 30,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 89.409
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "forest",
+        "x": 29,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 89.641
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "forest",
+        "x": 28,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 89.876
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "forest",
+        "x": 27,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 90.111
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "forest",
+        "x": 26,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 90.341
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "forest",
+        "x": 25,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 90.576
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "forest",
+        "x": 24,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 90.807
+    },
+    {
+      "details": {
+        "attacker": "forest-3",
+        "damage": 31,
+        "hp": 136
+      },
+      "event": "player_hit",
+      "time": 90.815
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "forest",
+        "x": 23,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 91.041
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "forest",
+        "x": 22,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 91.278
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "forest",
+        "x": 21,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 91.51
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "forest",
+        "x": 20,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 91.742
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "forest",
+        "x": 19,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 91.979
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "forest",
+        "x": 18,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 92.215
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "forest",
+        "x": 17,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 92.453
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "forest",
+        "x": 16,
+        "y": 10
+      },
+      "event": "moved",
+      "time": 92.683
+    },
+    {
+      "details": {
+        "attacker": "forest-1",
+        "damage": 29,
+        "hp": 107
+      },
+      "event": "player_hit",
+      "time": 92.692
+    },
+    {
+      "details": {
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "consumed",
+      "time": 93.044
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "forest",
+        "x": 16,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 93.094
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "forest",
+        "x": 15,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 93.331
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "forest",
+        "x": 14,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 93.567
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "forest",
+        "x": 13,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 93.798
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "forest",
+        "x": 12,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 94.029
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "forest",
+        "x": 11,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 94.26
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "forest",
+        "x": 11,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 94.493
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 34,
+        "y": 12
+      },
+      "event": "map_changed",
+      "time": 94.493
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "field",
+        "x": 34,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 94.725
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 33,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 94.958
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 32,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 95.188
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 31,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 95.421
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 30,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 95.654
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 29,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 95.888
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 28,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 96.122
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 27,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 96.352
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 26,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 96.586
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 25,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 96.821
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 24,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 97.059
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 23,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 97.296
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 22,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 97.531
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 21,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 97.761
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 20,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 97.992
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 19,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 98.226
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 18,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 98.459
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 17,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 98.696
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 16,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 98.927
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 15,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 99.158
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 14,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 99.394
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 13,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 99.625
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 12,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 99.859
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 11,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 100.095
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "field",
+        "x": 11,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 100.33
+    },
+    {
+      "details": {
+        "map": "village",
+        "x": 14,
+        "y": 12
+      },
+      "event": "map_changed",
+      "time": 100.33
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 13,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 100.566
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 12,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 100.802
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "village",
+        "x": 11,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 101.037
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 11,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 101.272
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 12,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 101.503
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 13,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 101.739
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 14,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 101.971
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 15,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 102.202
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 16,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 102.434
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 17,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 102.667
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 18,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 102.898
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 19,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 103.135
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "village",
+        "x": 19,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 103.365
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 20,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 103.601
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 21,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 103.832
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 22,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 104.063
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 23,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 104.298
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 24,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 104.531
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 25,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 104.765
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 26,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 104.995
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 27,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 105.233
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 28,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 105.463
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 29,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 105.696
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 30,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 105.929
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 31,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 106.16
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 32,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 106.396
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 33,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 106.632
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 34,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 106.866
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 35,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 107.099
+    },
+    {
+      "details": {
+        "sha256": "6f53b28ef6df7e6b9a165affd33a129730bd6f3d4dd1a73dac95c9b7495f7c09",
+        "success": true
+      },
+      "event": "save_written",
+      "time": 107.589
+    }
+  ],
+  "player": {
+    "buffs": {
+
+    },
+    "cooldowns": {
+      "기초 회복": 0.0
+    },
+    "direction": 3,
+    "durability": {
+      "목검": 4000,
+      "목도": 1000
+    },
+    "equipped": "목검",
+    "gold": 83,
+    "growth_log": [
+      {
+        "from": 1,
+        "hp_gain": 45,
+        "job": "평민",
+        "mp_gain": 32
+      },
+      {
+        "from": 2,
+        "hp_gain": 46,
+        "job": "평민",
+        "mp_gain": 33
+      },
+      {
+        "from": 3,
+        "hp_gain": 55,
+        "job": "평민",
+        "mp_gain": 32
+      },
+      {
+        "from": 4,
+        "hp_gain": 48,
+        "job": "평민",
+        "mp_gain": 33
+      }
+    ],
+    "hotbar": [
+      "기초 회복",
+      "",
+      ""
+    ],
+    "hp": 157,
+    "hp_max": 244,
+    "inventory": {
+      "구운토끼고기": 1,
+      "도토리": 9,
+      "목검": 1,
+      "목도": 1,
+      "초보 회복약": 8,
+      "토끼고기": 3
+    },
+    "job": "전사",
+    "kills": 25,
+    "level": 5,
+    "map": "village",
+    "mp": 165,
+    "mp_max": 165,
+    "name": "바람여행자",
+    "quests": [
+      "first_steps",
+      "hunter"
+    ],
+    "rank": 0,
+    "rng_state": "-175321972932354832",
+    "skill_page": 0,
+    "skills": [
+      "기초 회복"
+    ],
+    "strength": 9,
+    "x": 35,
+    "xp2": 3310,
+    "y": 12
+  },
+  "registered_tile_sources": 3,
+  "registered_tiles": 14835,
+  "rendered_actor_frames": [
+    "teacher:6",
+    "merchant:6",
+    "priest:6",
+    "teacher:7",
+    "merchant:7",
+    "priest:7",
+    "teacher:8",
+    "merchant:8",
+    "priest:8",
+    "body_0:7",
+    "head_0:7",
+    "body_0:19",
+    "head_0:19",
+    "wood_weapon:7",
+    "wood_weapon:1",
+    "body_0:13",
+    "head_0:13",
+    "wood_weapon:13",
+    "body_0:25",
+    "head_0:25",
+    "effect_heal:0",
+    "effect_heal:1",
+    "effect_heal:2",
+    "effect_heal:3",
+    "effect_heal:4",
+    "effect_heal:5",
+    "effect_heal:6",
+    "effect_heal:7",
+    "wood_weapon:11",
+    "body_0:23",
+    "head_0:23",
+    "wood_weapon:9",
+    "body_0:21",
+    "head_0:21",
+    "wood_weapon:10",
+    "body_0:22",
+    "head_0:22",
+    "rabbit:8",
+    "squirrel:8",
+    "rabbit:6",
+    "squirrel:6",
+    "wood_weapon:18",
+    "body_0:30",
+    "head_0:30",
+    "rabbit:7",
+    "squirrel:7",
+    "icons:3",
+    "body_0:31",
+    "wood_weapon:19",
+    "head_0:31",
+    "squirrel:5",
+    "rabbit:5",
+    "squirrel:11",
+    "rabbit:11",
+    "squirrel:3",
+    "rabbit:3",
+    "squirrel:9",
+    "rabbit:9",
+    "squirrel:4",
+    "rabbit:4",
+    "squirrel:10",
+    "rabbit:10",
+    "wood_weapon:16",
+    "body_0:28",
+    "head_0:28",
+    "icons:2",
+    "body_0:29",
+    "head_0:29",
+    "wood_weapon:17",
+    "wood_weapon:2",
+    "body_0:14",
+    "head_0:14",
+    "wood_weapon:0",
+    "body_0:12",
+    "head_0:12",
+    "squirrel:2",
+    "squirrel:0",
+    "squirrel:1",
+    "body_0:15",
+    "head_0:15",
+    "wood_weapon:3",
+    "body_0:16",
+    "head_0:16",
+    "wood_weapon:4",
+    "body_0:17",
+    "head_0:17",
+    "wood_weapon:5",
+    "body_0:18",
+    "head_0:18",
+    "wood_weapon:6",
+    "body_0:20",
+    "head_0:20",
+    "wood_weapon:8",
+    "body_0:26",
+    "head_0:26",
+    "wood_weapon:14",
+    "wood_weapon:15",
+    "body_0:27",
+    "head_0:27",
+    "body_0:24",
+    "head_0:24",
+    "wood_weapon:12",
+    "rabbit:2",
+    "rabbit:0",
+    "rabbit:1",
+    "innkeeper:6",
+    "innkeeper:7",
+    "innkeeper:8",
+    "snake:11",
+    "boar:7",
+    "snake:8",
+    "boar:8",
+    "snake:9",
+    "boar:6",
+    "snake:10",
+    "snake:1",
+    "snake:13",
+    "boar:4",
+    "snake:2",
+    "snake:14",
+    "boar:5",
+    "snake:3",
+    "snake:15",
+    "boar:3",
+    "snake:0",
+    "snake:12",
+    "boar:9",
+    "boar:10",
+    "boar:11",
+    "boar:1",
+    "boar:2",
+    "boar:0",
+    "snake:4",
+    "snake:5",
+    "snake:6",
+    "snake:7"
+  ],
+  "rendered_tile_ids": [
+    "A:20",
+    "A:16",
+    "A:17",
+    "A:18",
+    "A:99",
+    "A:97",
+    "A:98",
+    "A:19",
+    "A:268",
+    "C:52",
+    "C:53",
+    "C:88",
+    "C:89",
+    "C:90",
+    "C:91",
+    "C:51",
+    "A:8",
+    "A:6",
+    "A:1",
+    "A:10",
+    "A:4",
+    "A:7",
+    "A:5",
+    "A:11",
+    "A:15",
+    "A:3",
+    "A:2",
+    "A:14",
+    "A:12",
+    "A:0",
+    "A:13",
+    "A:9",
+    "A:269",
+    "C:105",
+    "C:106",
+    "C:107",
+    "B:97",
+    "B:98",
+    "B:96",
+    "C:32",
+    "C:33",
+    "C:34",
+    "C:35",
+    "C:28",
+    "C:29",
+    "C:20",
+    "C:21",
+    "C:22",
+    "C:23",
+    "C:16",
+    "C:17",
+    "C:19",
+    "C:31",
+    "C:18",
+    "C:30",
+    "C:1",
+    "C:2",
+    "C:3",
+    "C:4",
+    "C:5",
+    "C:6",
+    "C:7",
+    "C:8",
+    "C:0",
+    "A:80",
+    "A:463",
+    "A:460",
+    "A:458",
+    "A:461",
+    "A:452",
+    "A:453",
+    "A:465",
+    "A:459",
+    "A:455",
+    "A:456",
+    "A:466",
+    "A:451",
+    "A:454",
+    "A:462",
+    "A:448",
+    "A:457",
+    "A:464",
+    "A:449",
+    "A:450",
+    "A:314",
+    "A:318",
+    "A:313",
+    "A:317",
+    "A:319",
+    "A:315",
+    "A:312",
+    "A:316",
+    "A:175",
+    "A:178",
+    "A:177",
+    "A:179",
+    "A:174",
+    "A:176"
+  ],
+  "save_loaded": false,
+  "scope": "REAL_X11_GODOT_VIEWPORT_WITH_INPUT_EVENTS_NOT_FULL_1_TO_99_PLAYTHROUGH",
+  "screenshots": [
+    {
+      "height": 640,
+      "name": "creation",
+      "path": "/workspace/baram-private/game-screen-run5/primary/creation.png",
+      "sha256": "14d12fbddbedb830468c5964cf73b4893caabfc83f8b3ef350eba44b87258e79",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "shop",
+      "path": "/workspace/baram-private/game-screen-run5/primary/shop.png",
+      "sha256": "9182814040c27a1408d1f9f5b5a4ea23030846428ec9ae1f50cffe1e0d2d5aa5",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "village-equipped",
+      "path": "/workspace/baram-private/game-screen-run5/primary/village-equipped.png",
+      "sha256": "de7cd346b8669874dc8739f99545dc83113d2d746c8d2c3bc7a83caf236a79bb",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "skill-effect",
+      "path": "/workspace/baram-private/game-screen-run5/primary/skill-effect.png",
+      "sha256": "853d411fe04a98b214fb0dc21e50b11fda6a0697ecba804169b95ae66128ae02",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "field-combat",
+      "path": "/workspace/baram-private/game-screen-run5/primary/field-combat.png",
+      "sha256": "be1a7582506116267745815dd696e904c8b807a71aa06401be19963e082f062c",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "level-up",
+      "path": "/workspace/baram-private/game-screen-run5/primary/level-up.png",
+      "sha256": "0ed0f57ec264b539b67c603f4797e5ae34820bb4199c2ba293bcde1031a87715",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "inn",
+      "path": "/workspace/baram-private/game-screen-run5/primary/inn.png",
+      "sha256": "7abc6ef272903c11cb9acc7d0b84abb56cf5a7b2255f079d7ad42c55cf15c3d9",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "trainer",
+      "path": "/workspace/baram-private/game-screen-run5/primary/trainer.png",
+      "sha256": "29835eee9c2be86549b9531a918f626a0db12c6c837d938e1f6900ee83e3a25d",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "cave",
+      "path": "/workspace/baram-private/game-screen-run5/primary/cave.png",
+      "sha256": "2048a772ee3c218437810453b240243c01e9e4622353cc3dce1d7edf9078dc8c",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "deep",
+      "path": "/workspace/baram-private/game-screen-run5/primary/deep.png",
+      "sha256": "7fb70f933823d57387fbeb1081516bba28b8d3125e99c2a42c4ce851ed5f745f",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "ruins",
+      "path": "/workspace/baram-private/game-screen-run5/primary/ruins.png",
+      "sha256": "4d0b262da8f2fee8566c79568f17a74262946893a10cf24281f6d9ca652da52a",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "forest",
+      "path": "/workspace/baram-private/game-screen-run5/primary/forest.png",
+      "sha256": "748c498d0c2be2fda03f6f923de12e2e399a391ba0ced582d0e286c80b52587d",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "saved-forest",
+      "path": "/workspace/baram-private/game-screen-run5/primary/saved-forest.png",
+      "sha256": "3914b1ff39b7bb4953fbe0217623c2096b84e904f41956605668474237c05d25",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    }
+  ],
+  "status": "FAIL"
+}

@@ -130,6 +130,10 @@ func run(g, mode: String, directory: String):
         await capture("restart")
         finish()
         return
+    if mode=="resume":
+        check(game.save_loaded and game.player.level>=5 and game.player.kills>=25,"resume_verified_25_kill_checkpoint")
+        await dungeon_tour()
+        return
     check(not game.save_loaded and game.menu=="creation","fresh_character_creation_screen")
     await capture("creation")
     var job_index=int(mode.trim_prefix("class-")) if mode.begins_with("class-") else 0
@@ -166,6 +170,7 @@ func run(g, mode: String, directory: String):
     if mode.begins_with("class-"):
         await key(KEY_F5)
         check(FileAccess.file_exists(game.save_path),"class_save_written")
+        game.store.write_state(root.path_join("expected-state.json"),game.store.read_state(game.save_path))
         finish()
         return
     var deadline=Time.get_ticks_msec()+160000
@@ -212,18 +217,28 @@ func run(g, mode: String, directory: String):
     await capture("trainer")
     await key(KEY_ESCAPE)
     check(await route(Vector2i(11,12)) and game.player.map=="village","guild_exit_by_walking")
-    check(await route(Vector2i(15,12)) and game.player.map=="field","reenter_field")
-    check(await route(Vector2i(22,12)) and game.player.map=="cave","field_to_dungeon_by_walking")
+    await dungeon_tour()
+
+func go_portal(target: Vector2i,destination: String,title: String) -> bool:
+    var ok=await route(target) and game.player.map==destination
+    check(ok,title,{"actual_map":game.player.map,"target":destination})
+    if not ok:
+        finish()
+    return ok
+
+func dungeon_tour():
+    if not await go_portal(Vector2i(15,12),"field","reenter_field"):return
+    if not await go_portal(Vector2i(22,12),"cave","field_to_dungeon_by_walking"):return
     check(await hunt_one("rat"),"dungeon_combat")
     await capture("cave")
-    check(await route(Vector2i(35,12)) and game.player.map=="deep","deep_dungeon_transition")
+    if not await go_portal(Vector2i(35,12),"deep","deep_dungeon_transition"):return
     await capture("deep")
-    check(await route(Vector2i(35,12)) and game.player.map=="ruins","ruins_transition")
+    if not await go_portal(Vector2i(35,12),"ruins","ruins_transition"):return
     await capture("ruins")
-    check(await route(Vector2i(11,12)) and game.player.map=="deep","ruins_return")
-    check(await route(Vector2i(11,12)) and game.player.map=="cave","deep_return")
-    check(await route(Vector2i(11,12)) and game.player.map=="field","cave_return")
-    check(await route(Vector2i(35,12)) and game.player.map=="forest","forest_transition")
+    if not await go_portal(Vector2i(11,12),"deep","ruins_return"):return
+    if not await go_portal(Vector2i(11,12),"cave","deep_return"):return
+    if not await go_portal(Vector2i(11,12),"field","cave_return"):return
+    if not await go_portal(Vector2i(35,12),"forest","forest_transition"):return
     await capture("forest")
     var impacts=game.event_log.filter(func(e):return e.event=="damage_applied" and e.details.source=="melee")
     check(impacts.size()>0 and impacts.all(func(e):return e.details.impact_time>=0.16),"damage_occurs_after_animation_impact_time")

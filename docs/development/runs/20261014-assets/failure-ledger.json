@@ -47,6 +47,34 @@
       "status": "BLOCKED",
       "observed": "Verified archive recovered; distinct InstallShield outer payload unsupported",
       "independent_progress": "KR491/NA403/NA495 extracted, KR491 actual game graphics used"
+    },
+    {
+      "id": "PORTAL-SPAWN-1",
+      "status": "RESOLVED",
+      "observed": "Authored squirrel spawn shared cave portal (22,12), blocking entry and misleading dependent route tests",
+      "fix": "Move home spawn, exclude portal cells from AI, migrate own old saves",
+      "evidence": "game-resume-6.json"
+    },
+    {
+      "id": "SCREEN-PALETTE-1",
+      "status": "RESOLVED_TEST_ASSUMPTION",
+      "observed": "Legitimate indexed-color screens contained fewer than 128 colors",
+      "fix": "Correct nonblank criterion to >16 colors plus independent >70 percent window/viewport match; reread actual preserved captures",
+      "evidence": "asset-game-summary.json"
+    },
+    {
+      "id": "NPC-NEARBY-2",
+      "status": "RESOLVED",
+      "observed": "Two nearby NPCs selected merchant over teacher",
+      "fix": "Face-target priority then nearest distance",
+      "evidence": "game-screen-run5-primary-report.json"
+    },
+    {
+      "id": "AUDIO-VOICE-1",
+      "status": "FIX_APPLIED_PACKAGE_RETEST_PENDING",
+      "observed": "Attack and hit playback on a single player could replace the first stream before mixing",
+      "fix": "Separate attack/hit/skill/level voices",
+      "evidence": "package-playtest.json"
     }
   ]
 }

@@ -1,0 +1,151 @@
+{
+  "started_at": "2026-10-14T01:58:05.032790+00:00",
+  "scope": "REAL_GAME_X11_WINDOW_AND_GODOT_INPUT_EVENTS",
+  "runs": [
+    {
+      "mode": "class-2",
+      "exit_code": 0,
+      "game_report": "/workspace/baram-private/game-screen-classes2/class-2/class-2-report.json",
+      "game_status": "PASS_EXECUTED_SCREEN_INPUT",
+      "x11_captures": [
+        {
+          "name": "creation",
+          "sha256": "a60b75c692afc22e81d61fdf1967212bfa057e5d34ad8c562c5cc0de5ae8d8d7",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 94,
+          "status": "PASS"
+        },
+        {
+          "name": "shop",
+          "sha256": "4269474dceaba8cb28fce6cd20392a88630b038f43b9f534f5eb8073ceeefb0d",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 93,
+          "status": "PASS"
+        },
+        {
+          "name": "village-equipped",
+          "sha256": "1d7c639ebb5dce2a46de99a1114b27bd909258129be8554708c787a76ec95904",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 123,
+          "status": "PASS"
+        },
+        {
+          "name": "skill-effect",
+          "sha256": "22cd60603e83c4223f3f2dd38d5a06c66a17bce411c35ef30a8c018d27c6e216",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 133,
+          "status": "PASS"
+        },
+        {
+          "name": "field-combat",
+          "sha256": "83f90478f70dc0b57f939dc7d235ff8bec8e4c74e981995e123425582e1da98a",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 83,
+          "status": "PASS"
+        }
+      ],
+      "audio_mix": {
+        "status": "PASS_PCM_SIGNAL",
+        "samples": 581632,
+        "rms": 3338.1040900227335,
+        "driver": "Dummy",
+        "audible_human_review": "NOT_RUN"
+      },
+      "argv": [
+        "godot",
+        "--path",
+        "/workspace/baram-1998-singleplayer/game",
+        "--display-driver",
+        "x11",
+        "--rendering-method",
+        "gl_compatibility",
+        "--audio-driver",
+        "Dummy",
+        "--",
+        "--assets=/workspace/baram-private/game-assets",
+        "--save=/workspace/baram-private/game-screen-classes2/class-2/character.json",
+        "--exercise=class-2",
+        "--evidence=/workspace/baram-private/game-screen-classes2/class-2"
+      ],
+      "registered_tiles": 14835,
+      "checks": 17
+    },
+    {
+      "mode": "class-3",
+      "exit_code": 0,
+      "game_report": "/workspace/baram-private/game-screen-classes2/class-3/class-3-report.json",
+      "game_status": "PASS_EXECUTED_SCREEN_INPUT",
+      "x11_captures": [
+        {
+          "name": "creation",
+          "sha256": "a60b75c692afc22e81d61fdf1967212bfa057e5d34ad8c562c5cc0de5ae8d8d7",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 94,
+          "status": "PASS"
+        },
+        {
+          "name": "shop",
+          "sha256": "0d355d7b7b43f6ec7e9250b369a2b5d65e2135e6779bca4670d73bb202a59cb7",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 93,
+          "status": "PASS"
+        },
+        {
+          "name": "village-equipped",
+          "sha256": "cea17fa29294ed12954805a2611edf8d74887489e70394775e93eafe698aea4c",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 123,
+          "status": "PASS"
+        },
+        {
+          "name": "skill-effect",
+          "sha256": "91586feab3a42a6c0e3ebfd7aabdd6ebbf2c0a38eb0b63a6d7f172bf1c00755e",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 133,
+          "status": "PASS"
+        },
+        {
+          "name": "field-combat",
+          "sha256": "4bf29d739ecd5a46338d41538135a09267a2072676080d5addbe12ca244847a3",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 72,
+          "status": "PASS"
+        }
+      ],
+      "audio_mix": {
+        "status": "PASS_PCM_SIGNAL",
+        "samples": 573440,
+        "rms": 3362.375325897177,
+        "driver": "Dummy",
+        "audible_human_review": "NOT_RUN"
+      },
+      "argv": [
+        "godot",
+        "--path",
+        "/workspace/baram-1998-singleplayer/game",
+        "--display-driver",
+        "x11",
+        "--rendering-method",
+        "gl_compatibility",
+        "--audio-driver",
+        "Dummy",
+        "--",
+        "--assets=/workspace/baram-private/game-assets",
+        "--save=/workspace/baram-private/game-screen-classes2/class-3/character.json",
+        "--exercise=class-3",
+        "--evidence=/workspace/baram-private/game-screen-classes2/class-3"
+      ],
+      "registered_tiles": 14835,
+      "checks": 17
+    }
+  ],
+  "status": "PASS_EXECUTED_SCREEN_INPUT",
+  "finished_at": "2026-10-14T01:58:45.316353+00:00",
+  "source_sha256": {
+    "game/main.gd": "d07625214d3cf946e499072b4c55082f13b48545570bedfed8e703b9b2975d00",
+    "game/exercise.gd": "d84acc55f7889008bb0a94600c4ced1593b3b37d9e0371e88a958bbfb3f0079f",
+    "game/rules.gd": "d65d7872d675e5652a251396233297970cfe885ece9c72c86679df088bebdd95",
+    "game/save_store.gd": "0f1c8b9fea8baf986a750afaf2636dee6925b97442724226a098cbc9937460ac",
+    "tests/run_playable_screen.py": "14c128d0ede4b2646d399614bd083054b82ce3b47f2584412b138385b1207e48"
+  }
+}
