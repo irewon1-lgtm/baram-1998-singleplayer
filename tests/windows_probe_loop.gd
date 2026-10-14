@@ -17,6 +17,9 @@ func start():
         quit(2)
         return
     var game = boot.get_child(0)
+    while not game.startup_ready and not game.startup_failed:
+        await process_frame
+    if game.startup_failed:quit(2);return
     game.test_mode = str(args.get("probe-mode",""))
     game.test_root = str(args.get("evidence",""))
     AudioServer.add_bus_effect(0,game.recorder)

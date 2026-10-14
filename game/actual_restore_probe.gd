@@ -14,6 +14,8 @@ func _initialize():
     root.add_child.call_deferred(game)
 
 func observe():
+    while not game.startup_ready and not game.startup_failed:await process_frame
+    if game.startup_failed:quit(2);return
     var expected=load("res://save_store.gd").new().read_state(save_path)
     var checks={"actual_player":game.player==expected.player,"actual_entities":game.entities==expected.world,
         "actual_loot":game.loot==expected.loot,"actual_rng":str(game.rules.rng.state)==str(expected.rng_state),
@@ -25,7 +27,9 @@ func observe():
         var count=game.assets.tile_set.get_source(id).get_tiles_count()
         source_counts[str(id)]=count
         total+=count
-    checks["actual_tileset_resource_count"]=total==14835
+    var expected_tiles=50104 if FileAccess.file_exists(game.asset_folder.path_join("source_tiles/registry.json")) else 14835
+    checks["complete_tile_catalog_registered"]=game.assets.tiles.size()==expected_tiles
+    checks["tileset_is_materialized_on_demand"]=total<=expected_tiles
     var passed=checks.values().all(func(v):return v)
     var file=FileAccess.open(output,FileAccess.WRITE)
     file.store_string(JSON.stringify({"status":"PASS_ACTUAL_MAIN_NODE_STATE" if passed else "FAIL",

@@ -2,6 +2,8 @@ config_version=5
 
 [application]
 config/name="바람의나라 · 개인용 오프라인 복원"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="BaramSinglePlayer"
 run/main_scene="res://main.tscn"
 
 [display]
@@ -19,3 +21,8 @@ textures/canvas_textures/default_texture_filter=0
 
 [audio]
 driver/enable_input=false
+
+[debug]
+file_logging/enable_file_logging=true
+file_logging/log_path="user://logs/godot.log"
+file_logging/max_log_files=5

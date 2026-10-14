@@ -50,6 +50,6 @@ func _ready():
 
 func stop(message):
     push_error("WINDOWS_PACKAGE_BOOTSTRAP: "+message)
-    if OS.get_name() == "Windows":
+    if OS.get_name() == "Windows" and DisplayServer.get_name() != "headless":
         OS.alert(message,"바람의나라 실행 오류")
     get_tree().quit(2)

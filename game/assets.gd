@@ -10,6 +10,8 @@ var used_tiles = {}
 var used_frames = {}
 var folder = ""
 var source_aliases = {}
+var tile_sources = {}
+var tile_cache = {}
 
 func load_directory(path: String) -> bool:
     folder = path
@@ -44,11 +46,9 @@ func load_directory(path: String) -> bool:
         for f in table.frames:
             if int(f.i)!=index or int(f.x)!=index%128*24 or int(f.y)!=int(index/128)*24:return false
             var coordinates = Vector2i(int(f.i)%128,int(f.i)/128)
-            source.create_tile(coordinates)
-            var region = AtlasTexture.new()
-            region.atlas = texture
-            region.region = Rect2(f.x,f.y,24,24)
-            tiles[g + ":" + str(int(f.i))] = region
+            var id = g + ":" + str(int(f.i))
+            tiles[id] = Rect2(f.x,f.y,24,24)
+            tile_sources[id] = source
             index+=1
         source_id += 1
     if not FileAccess.file_exists(folder.path_join("actors.json")):return false
@@ -93,20 +93,28 @@ func load_source_tiles() -> bool:
         if not originals.has(f.group) or int(f.index)!=indices[f.group]:return false
         var i=int(f.index)
         var source=originals[f.group]
-        source.create_tile(Vector2i(i%128,int(i/128)))
-        var region=AtlasTexture.new()
-        region.atlas=source.texture
-        region.region=Rect2(i%128*24,int(i/128)*24,24,24)
-        tiles[f.asset_id]=region
+        tiles[f.asset_id]=Rect2(i%128*24,int(i/128)*24,24,24)
+        tile_sources[f.asset_id]=source
         source_aliases[f.asset_id]=f.get("uploaded_equal_ids",[])
         indices[f.group]+=1
     return indices==counts
 
 func tile(id: String) -> Texture2D:
+    # Keep every original frame registered. Build TileSet entries when used;
+    # eager create_tile() repeatedly rebuilds atlas bookkeeping for 50k frames.
+    if tile_sources.has(id):
+        var source = tile_sources[id]
+        var coordinates = Vector2i(tiles[id].position/24)
+        if not source.has_tile(coordinates):source.create_tile(coordinates)
     used_tiles[id] = int(used_tiles.get(id,0)) + 1
     for alias in source_aliases.get(id,[]):
         used_tiles[alias]=int(used_tiles.get(alias,0))+1 # exact RGBA equivalence, not guessed index conversion
-    return tiles.get(id)
+    if not tiles.has(id):return null
+    if not tile_cache.has(id):
+        var region=AtlasTexture.new()
+        region.atlas=tile_sources[id].texture;region.region=tiles[id]
+        tile_cache[id]=region
+    return tile_cache[id]
 
 func actor_region(key: String, frame: int) -> Rect2:
     var spec = actor_data.get(key,{})

@@ -1,0 +1,60 @@
+name: Windows source regression (public fixtures only)
+on:
+  push:
+    branches: [codex/game-core, 'work/windows-startup-recovery-*']
+  pull_request:
+    branches: [codex/game-core]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: windows-source-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install test-only dependencies
+        run: python -m pip install Pillow==11.3.0 psutil==7.0.0
+      - name: Download pinned official editor and open font
+        shell: pwsh
+        run: |
+          Invoke-WebRequest 'https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_win64.exe.zip' -OutFile editor.zip
+          if ((Get-FileHash editor.zip -Algorithm SHA256).Hash.ToLower() -ne 'e39986a178d585ce7ac198fb8de6ea436366dc0cc00e594810c2e3e104c04b90') { throw 'Editor digest mismatch' }
+          Expand-Archive editor.zip editor
+          $godot = (Get-ChildItem editor -Filter '*.exe' | Where-Object { $_.Name -notmatch 'console' } | Select-Object -First 1).FullName
+          "GODOT=$godot" >> $env:GITHUB_ENV
+          Invoke-WebRequest 'https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/OTC/NotoSansCJK-Regular.ttc' -OutFile font.ttc
+      - name: Verify source, packaging gates and generated startup fixture
+        shell: pwsh
+        run: |
+          python -m unittest discover -s tests -p 'test_windows*.py' -v
+          if ($LASTEXITCODE) { throw 'Python regression failure' }
+          python tools/windows_fixture.py --out fixture --font font.ttc
+          & $env:GODOT --headless --path game --script build_world_cache.gd -- --assets="$pwd/fixture/private_assets" --content="$pwd/fixture/private_content" --out="$pwd/fixture/runtime_cache"
+          if ($LASTEXITCODE) { throw 'World cache compilation failure' }
+          New-Item -ItemType Directory -Force evidence | Out-Null
+          & $env:GODOT --headless --path game -- --assets="$pwd/fixture/private_assets" --content="$pwd/fixture/private_content" --save="$pwd/evidence/saves/v2/character.json" --exercise=native-smoke --evidence="$pwd/evidence" 2>&1 | Tee-Object evidence/startup.log
+          if ($LASTEXITCODE) { throw 'Windows source startup failure' }
+          $report = Get-Content evidence/native-smoke-report.json -Raw | ConvertFrom-Json
+          if ($report.status -ne 'PASS' -or $report.platform -ne 'Windows') { throw 'Missing native fixture proof' }
+      - name: Upload public fixture diagnostics only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-fixture-diagnostics-${{ github.sha }}
+          path: |
+            evidence/startup.log
+            evidence/native-smoke-report.json
+          if-no-files-found: ignore
+          retention-days: 14
+      - name: Full private game release status
+        shell: pwsh
+        run: |
+          'Source/fixture results do not certify the full private game or an operator GUI.' >> $env:GITHUB_STEP_SUMMARY
+          'The separate private Windows workflow supplies full-runtime native tests and gates the player ZIP.' >> $env:GITHUB_STEP_SUMMARY

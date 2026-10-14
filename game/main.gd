@@ -7,6 +7,7 @@ const Content = preload("res://content_registry.gd")
 const Effects = preload("res://effect_runtime.gd")
 const Pathfinder = preload("res://pathfinder.gd")
 const WorkAssets = preload("res://work_assets.gd")
+const Startup = preload("res://startup.gd")
 const STEP = 48
 const VIEW = Rect2(0,48,768,480)
 const DIRECTIONS = [Vector2i.UP,Vector2i.LEFT,Vector2i.DOWN,Vector2i.RIGHT]
@@ -64,8 +65,51 @@ var save_loaded = false
 var save_queued = false
 var loaded_snapshot = {}
 var service_definition = {}
+var startup_ready = false
+var startup_failed = false
+var startup_started = 0
+var startup_phases = []
+var loading_layer: CanvasLayer
+var loading_label: Label
+var loading_progress: ProgressBar
+var startup_log_path = ""
+
+func show_loading():
+    loading_layer=CanvasLayer.new();loading_layer.layer=100;add_child(loading_layer)
+    var panel=ColorRect.new();panel.color=Color(0.055,0.065,0.055)
+    panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);loading_layer.add_child(panel)
+    var system_font=SystemFont.new();system_font.font_names=PackedStringArray(["Malgun Gothic","맑은 고딕","Noto Sans CJK KR","Arial"])
+    loading_label=Label.new();loading_label.position=Vector2(100,250);loading_label.size=Vector2(760,100)
+    loading_label.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
+    loading_label.add_theme_font_override("font",system_font);loading_label.add_theme_font_size_override("font_size",24)
+    panel.add_child(loading_label)
+    loading_progress=ProgressBar.new();loading_progress.position=Vector2(160,370);loading_progress.size=Vector2(640,24)
+    panel.add_child(loading_progress)
+
+func startup_phase(name: String, progress: int):
+    loading_label.text=name+"\n잠시 기다려 주세요."
+    loading_progress.value=progress
+    var entry={"stage":name,"elapsed_ms":Time.get_ticks_msec()-startup_started,"static_memory":OS.get_static_memory_usage()}
+    startup_phases.append(entry);print("BARAM_STARTUP "+JSON.stringify(entry))
+    if startup_log_path!="":
+        DirAccess.make_dir_recursive_absolute(startup_log_path.get_base_dir())
+        var file=FileAccess.open(startup_log_path,FileAccess.WRITE)
+        if file!=null:file.store_string(JSON.stringify({"ready":false,"phases":startup_phases},"  "));file.close()
+    await get_tree().process_frame
+    await get_tree().process_frame
+
+func fail_startup(message: String):
+    startup_failed=true
+    loading_label.text="실행 오류\n"+message+"\n자동 오류 로그를 남겼습니다."
+    push_error("BARAM_STARTUP_FAILED: "+message)
+    if startup_log_path!="":
+        var file=FileAccess.open(startup_log_path,FileAccess.WRITE)
+        if file!=null:file.store_string(JSON.stringify({"ready":false,"error":message,"phases":startup_phases},"  "));file.close()
+    if DisplayServer.get_name()=="headless":get_tree().quit(2)
 
 func _ready():
+    startup_started=Time.get_ticks_msec()
+    show_loading()
     for arg in OS.get_cmdline_user_args():
         if arg.begins_with("--") and "=" in arg:
             var parts = arg.trim_prefix("--").split("=",true,1)
@@ -74,30 +118,38 @@ func _ready():
     if asset_folder == "":
         asset_folder = ProjectSettings.globalize_path("res://../private_assets")
     save_path = options.get("save",save_path)
+    startup_log_path=save_path.get_base_dir().get_base_dir().get_base_dir().path_join("logs/startup.json")
     content_folder=options.get("content",OS.get_environment("BARAM_PRIVATE_CONTENT"))
     if content_folder=="":content_folder=ProjectSettings.globalize_path("res://../private_content")
-    if not content.load_directory(content_folder):
-        push_error(JSON.stringify(content.last_error));get_tree().quit(2);return
+    await startup_phase("콘텐츠와 지도 준비",10)
+    var world_path=asset_folder.path_join("source_maps/world.json")
+    if not FileAccess.file_exists(world_path):world_path="res://data/world.json"
+    var startup=Startup.new()
+    var worker=Thread.new()
+    var task=worker.start(startup.prepare.bind(content,content_folder,world_path,asset_folder.get_base_dir().path_join("runtime_cache")))
+    if task!=OK:fail_startup("BACKGROUND_START");return
+    while worker.is_alive():
+        await get_tree().create_timer(0.016).timeout
+    worker.wait_to_finish()
+    if not startup.result.get("ok",false):fail_startup(JSON.stringify(startup.result.get("error",{})));return
+    world=startup.result.world
+    await startup_phase("게임 규칙 연결",35)
     content.apply_rules(rules)
     store.content_version=content.version
     var build_path="res://data/build_info.json"
     if FileAccess.file_exists(build_path):
         var build_info=JSON.parse_string(FileAccess.get_file_as_string(build_path))
         if typeof(build_info)!=TYPE_DICTIONARY or build_info.get("content_version","")!=content.version:
-            push_error("PACKAGE_CONTENT_VERSION: build_info.json and ACTIVE content disagree")
-            get_tree().quit(2);return
+            fail_startup("PACKAGE_CONTENT_VERSION: build_info.json and ACTIVE content disagree");return
         store.game_build=str(build_info.get("commit","unidentified-package"))
     test_mode = options.get("exercise","")
     test_root = options.get("evidence","")
-    if not assets.load_directory(asset_folder):
-        push_error("Private assets unavailable; run tools/intake_private_tiles.py and build_playable_assets.py")
-        get_tree().quit(2)
-        return
+    await startup_phase("그래픽 준비",50)
+    if not assets.load_directory(asset_folder):fail_startup("PRIVATE_ASSET_HASH_OR_FORMAT");return
+    await startup_phase("글꼴과 음향 준비",70)
     font.data = FileAccess.get_file_as_bytes(asset_folder.path_join("fonts/NotoSansCJK-Regular.ttc"))
     font.antialiasing = TextServer.FONT_ANTIALIASING_NONE
-    var world_path=asset_folder.path_join("source_maps/world.json")
-    world = JSON.parse_string(FileAccess.get_file_as_string(world_path if FileAccess.file_exists(world_path) else "res://data/world.json"))
-    world=content.merge_world(world)
+    await startup_phase("맵과 캐릭터 연결",80)
     for m in world.maps:
         maps[m.id] = m
         var rows={}
@@ -119,6 +171,7 @@ func _ready():
     if test_mode != "":
         AudioServer.add_bus_effect(0,recorder)
         recorder.set_recording_active(true)
+    await startup_phase("저장 파일 확인",95)
     var requested_save=save_path
     var migrated_path=save_path.get_base_dir().path_join("v2").path_join(save_path.get_file())
     if not save_path.get_base_dir().ends_with("/v2") and FileAccess.file_exists(migrated_path):save_path=migrated_path
@@ -138,6 +191,14 @@ func _ready():
     else:
         menu="save_error"
         notice("저장을 읽지 못했습니다: "+store.last_status+". 원본은 보존했습니다. Q: 종료")
+    startup_ready=true
+    loading_layer.queue_free()
+    var startup_report={"ready":true,"elapsed_ms":Time.get_ticks_msec()-startup_started,"phases":startup_phases,
+        "content_ms":startup.result.content_ms,"world_ms":startup.result.world_ms,"cache_used":startup.result.cache_used,
+        "registered_tiles":assets.tiles.size(),"maps":maps.size(),"static_memory":OS.get_static_memory_usage()}
+    print("BARAM_READY "+JSON.stringify(startup_report))
+    var startup_file=FileAccess.open(startup_log_path,FileAccess.WRITE)
+    if startup_file!=null:startup_file.store_string(JSON.stringify(startup_report,"  "));startup_file.close()
     event("ready",{"registered_tiles":assets.tiles.size(),"loaded_save":save_loaded,
                    "renderer":RenderingServer.get_current_rendering_method()})
     if test_mode != "":
@@ -197,6 +258,9 @@ func notice(message: String):
         log_lines.pop_front()
 
 func _input(input):
+    if not startup_ready:
+        if startup_failed and input is InputEventKey and input.pressed and input.keycode in [KEY_Q,KEY_ESCAPE]:get_tree().quit(2)
+        return
     if input is InputEventMouseButton and input.pressed and input.button_index == MOUSE_BUTTON_LEFT and menu == "":
         var at = (input.position - VIEW.position)/STEP + camera()
         for id in entities:
@@ -278,6 +342,7 @@ func _input(input):
     queue_redraw()
 
 func _process(delta: float):
+    if not startup_ready:return
     clock += delta
     if player.is_empty():
         queue_redraw()
@@ -1024,6 +1089,7 @@ func icon(title: String, at: Vector2):
     draw_texture_rect_region(assets.textures.icons,Rect2(at-size/2,crop.size*2),crop)
 
 func _draw():
+    if not startup_ready:return
     if assets.tiles.is_empty() or font.data.is_empty():
         return
     work_assets.begin_frame()
@@ -1251,7 +1317,8 @@ func draw_menu():
 
 func start_exercise():
     # Implemented in a separate script so validation calls the actual event handlers.
-    var runner = load("res://work_play_probe.gd" if test_mode.begins_with("work-") else "res://exercise.gd").new()
+    var script="res://native_regression.gd" if test_mode.begins_with("native-") else "res://work_play_probe.gd" if test_mode.begins_with("work-") else "res://exercise.gd"
+    var runner = load(script).new()
     add_child(runner)
     await runner.run(self,test_mode,test_root)
 
