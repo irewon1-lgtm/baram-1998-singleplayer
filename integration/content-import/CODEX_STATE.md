@@ -4,7 +4,7 @@
 
 - 개발: `codex/game-core`, 독립 worktree `/workspace/baram-codex-core`.
 - 최초 게임 기준: `dev/codex-asset-runtime-20261014`, `dea6574c9a69ebb04432d10fc32951aacd8b66cb`. 원래 폴더와 main·조사·수치 원문은 보존했다.
-- 마지막 확인된 원격 저장: `ae4fb282315955c566b6b08ebf210b2301a9597f`(실행 통합 코드 묶음). 이를 가리키는 고정 패키지 수신 기록을 후속 커밋으로 저장한다.
+- 마지막 확인된 원격 저장: `b5ef10646a2a41ff16ad575df47373c4b0399788`(확인된 실행본 빌드). 실행 통합 코드 묶음은 ae4fb282315955c566b6b08ebf210b2301a9597f이며 수신 기록은 후속 커밋에 연결돼 있다. 최종 원격 HEAD는 최신 문서/검증 후속 커밋을 포함하므로 git ls-remote로 확인한다.
 - Work 마지막 읽은 HEAD: `d4bd4b17a5307d5c882936c39547d698736d3733`. 이 목록의 확정 커밋만 읽었다. 브랜치 병합/루트 덮어쓰기/상류 파일 수정은 하지 않았다.
 - 엔진: 기존 Godot 4.6.3. Work schema 1은 그대로, Codex runtime envelope 2와 저장 schema 2를 사용한다. 이전 envelope 1 로드 경로도 유지한다.
 - 활성 콘텐츠: `9e30ec651489a4f5bdbf5c4e727a41a3c7a2b2825a373262056c1e896a82fb7c`.
@@ -53,6 +53,12 @@
 
 - 원래 정상 개발 커밋 dea6574와 기존 비공개 자산·원본·사용자 저장은 그대로 있다. 현재 활성 버전 전 immutable release와 ACTIVE.previous도 개발 vault에 보존한다.
 - 원복은 관련 코드/데이터/저장 호환성을 함께 확인한다. envelope2를 이해하지 못하는 옛 런타임에 현재 콘텐츠를 억지로 읽히지 않는다.
-- 다음: 고정 현재 빌드로 비공개 Linux ZIP 생성→CRC/manifest 전수 해시→해제된 launcher로 생성·이동·기술·저장·재시작 검증→결과 위치/SHA 후속 커밋. 이후 Work 수정 패키지 또는 사용자 재현 오류부터 처리한다.
+- 비공개 실행본: /workspace/baram-private/codex-core-20261014/results-release6/baram_codex_core_PRIVATE_20261014.zip (173436306bytes), SHA256 83ae609bc87b7031a35bf3af4a624922c7f4f3bc3c9bed25e90cc4cc3da0bd7a. 코드 b5ef106과 활성 콘텐츠9e30ec65.../envelope2/save2를 고정했다.
+- 별도 검증·화면 ZIP: 같은 폴더의 baram_codex_core_VERIFICATION_PRIVATE_20261014.zip. Gitbundle/원본용 intake 입력/현재 실행 픽셀은 실행 ZIP에 있다. 사용자 저장은 제외했다.
+- 실제 해제 후 1438 manifest 파일 크기/SHA 전수 일치, Linux launcher의 새 생성·장착·이동·Work 기술·저장9 검사와 별도 프로세스 재시작5 검사 PASS. 게임 빌드/콘텐츠 버전도 저장/실행 결과와 일치한다.
+- 현재 버전의 renderer draw telemetry: Work 시트91 프레임ID(타일55/기타36), 별도 기존 atlas19 프레임ID/타일280 ID. 겹친 픽셀까지 각 자산의 실제 시각 표시를 개별 판정한 수가 아니며, 두 네임스페이스를 원본 고유 그림 수로 합산하지 않는다.
+- 현재 Work 타일 정적 배치7392 고유ID/694853 배치와 실제 프레임 표시를 구분한다. 전체 맵을 정상 입력으로 모두 다니지는 않았다.
+- 다음: 사용자 재현 오류나 새 고정 Work 패키지부터 처리한다. 현재 데이터로는 초기 로딩(이 환경 소프트웨어 GL 약45–49초)과 모든 동적 출입구의 실제 통행을 우선 측정한다. `tests/run_playable_screen.py`의 route는 interact 출입구를 벽으로 취급하지 않도록 수정했다. 최신 전체 bridge tour의75초 시간초과는 FAIL을 보존했으며, 성공한 개별 복귀/지역 화면 결과와 구분한다.
+- Codex 후속 코드: `game/main.gd` dungeon 밝기 분기는 아직 legacy buff 이름을 읽고, Work `status.light`는 저장/만료 처리만 연결됐다. 기존 light 선언의 화면 밝기 연결과 비걷기 동작의 반복/종료 타이밍 대조를 다음 영향 검사 대상으로 남긴다. 모든 기술의 효과 완성을 주장하지 않는다.
 - v125 정확한 미확보 9개 ID는 content-summary와 WK-ASSETS-001 receipt에 있다. 다른 패키지 적용을 막지 않는다.
 - 실행본에 사용자 저장을 넣지 않는다. 최종 패키지 검사와 원격 검증 뒤 이 문서의 SHA/재개 상태를 갱신한다. 세션 종료 뒤 자동 감시하고 있다고 주장하지 않는다.

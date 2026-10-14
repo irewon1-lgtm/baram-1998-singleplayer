@@ -1,0 +1,189 @@
+{
+  "archive": {
+    "bytes": 173436306,
+    "path": "/workspace/baram-private/codex-core-20261014/results-release6/baram_codex_core_PRIVATE_20261014.zip",
+    "sha256": "83ae609bc87b7031a35bf3af4a624922c7f4f3bc3c9bed25e90cc4cc3da0bd7a"
+  },
+  "build": {
+    "branch": "codex/game-core",
+    "commit": "b5ef10646a2a41ff16ad575df47373c4b0399788",
+    "content_version": "9e30ec651489a4f5bdbf5c4e727a41a3c7a2b2825a373262056c1e896a82fb7c",
+    "runtime_envelope": 2,
+    "save_format": 2
+  },
+  "full_natural_four_job_1_to_99": "NOT_RUN",
+  "gui_runs": [
+    {
+      "audio_mix": {
+        "audible_human_review": "NOT_RUN",
+        "driver": "Dummy",
+        "rms": 3008.012594086848,
+        "samples": 417792,
+        "status": "PASS_PCM_SIGNAL"
+      },
+      "checks": [
+        {
+          "name": "rendered_Package-character-creation",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "Package_normal_character_creation",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "Package_starter_equipment",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "Package_normal_input_movement",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "Package_Work_skill_assets_and_action",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "rendered_Package-Work-skill",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "Package_save_written",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "rendered_Package-saved",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "engine_audio_mix_recorded",
+          "observed": {},
+          "status": "PASS"
+        }
+      ],
+      "content_version": "9e30ec651489a4f5bdbf5c4e727a41a3c7a2b2825a373262056c1e896a82fb7c",
+      "elapsed_ms": 4368,
+      "game_build": "b5ef10646a2a41ff16ad575df47373c4b0399788",
+      "mode": "work-package",
+      "result": "PASS_EXECUTED_SCREEN_INPUT",
+      "x11_captures": [
+        {
+          "distinct_colors": 118,
+          "matching_screen_fraction": 1.0,
+          "name": "Package-character-creation",
+          "sha256": "ad8647075a1dda72a6c4753dfd174381aee8c172de5dab00c46a163a3a54c923",
+          "status": "PASS"
+        },
+        {
+          "distinct_colors": 142,
+          "matching_screen_fraction": 1.0,
+          "name": "Package-Work-skill",
+          "sha256": "81237efc8a993aac033fe8ec83872759cc876756d2ebe11244c8477c1a945e40",
+          "status": "PASS"
+        },
+        {
+          "distinct_colors": 180,
+          "matching_screen_fraction": 1.0,
+          "name": "Package-saved",
+          "sha256": "2aaddf7b56a66a0d9e37e5e5796fa3bf0a3c72def4a8ca63518e8ad118595115",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "audio_mix": {
+        "audible_human_review": "NOT_RUN",
+        "driver": "Dummy",
+        "rms": 0.0,
+        "samples": 393216,
+        "status": "NOT_APPLICABLE_NO_AUDIO_EVENTS"
+      },
+      "checks": [
+        {
+          "name": "Work_fresh_process_loaded_save",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "Work_restart_preserves_entire_player",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "Work_restart_preserves_world_and_loot",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "rendered_Work-restart",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "engine_audio_mix_recorded",
+          "observed": {},
+          "status": "PASS"
+        }
+      ],
+      "content_version": "9e30ec651489a4f5bdbf5c4e727a41a3c7a2b2825a373262056c1e896a82fb7c",
+      "elapsed_ms": 589,
+      "game_build": "b5ef10646a2a41ff16ad575df47373c4b0399788",
+      "mode": "work-restart",
+      "result": "PASS_EXECUTED_SCREEN_INPUT",
+      "x11_captures": [
+        {
+          "distinct_colors": 167,
+          "matching_screen_fraction": 1.0,
+          "name": "Work-restart",
+          "sha256": "ad12f0966750752faa5519f1f7b14150a3af905781382eaae9fc16400ecf19a2",
+          "status": "PASS"
+        }
+      ]
+    }
+  ],
+  "initial_load_in_software_GL_environment_seconds": [
+    44.49,
+    48.01
+  ],
+  "long_run_stress": "NOT_RUN",
+  "manifest_verification": {
+    "archive_sha256": "83ae609bc87b7031a35bf3af4a624922c7f4f3bc3c9bed25e90cc4cc3da0bd7a",
+    "build": {
+      "branch": "codex/game-core",
+      "commit": "b5ef10646a2a41ff16ad575df47373c4b0399788",
+      "content_version": "9e30ec651489a4f5bdbf5c4e727a41a3c7a2b2825a373262056c1e896a82fb7c",
+      "runtime_envelope": 2,
+      "save_format": 2
+    },
+    "checked_manifest_files": 1438,
+    "safe_extraction": true,
+    "status": "PASS",
+    "unpacked": "/workspace/baram-private/codex-core-20261014/unpacked-release6/baram_codex_core_PRIVATE_20261014",
+    "user_save_files_in_archive": 0
+  },
+  "protocol_id": "BARAM_PARALLEL_V1",
+  "result": "PASS",
+  "scope": "UNPACKED_LINUX_LAUNCHER_GUI_INPUT_SAVE_AND_SEPARATE_PROCESS_RESTART_NOT_COMPLETE_GAME",
+  "tested_source_sha256": {
+    "game/content_registry.gd": "1bc747142f4f3c8eaeb6865b5ab04f04d6d54eef8cd59fb877ceb77e112a2df5",
+    "game/exercise.gd": "75e0bf15a6872617fd54749619b23a7840bb44437739726ebf584411189ef652",
+    "game/main.gd": "672d072d0c653163268beae351fbd7c54e71de0cb85fbfb956513c84bc99544b",
+    "game/rules.gd": "58b3dcc9457e3909aafa6543fd9921be1f1fb3d39629c9271f066f7c9021668b",
+    "game/save_store.gd": "57b0fc0aabbab3bd0ca7568d87ace999bc3daeef7255e502bd71d8d317e09bc9",
+    "game/work_assets.gd": "3e56b7a2a37013652a92e088a3e26ecf83591ba9a2b9f8c380b97d36b466a39f",
+    "game/work_play_probe.gd": "5125e1c08663525e766cd5f83e9f946e0984be8ab1b9e069111079ee74283d4a",
+    "tests/run_playable_screen.py": "3ffaf3a13886e90c8ee1d32e7fbda21b939180a6c51b795a9aba762a81c639c7"
+  },
+  "user_play": "NOT_RUN",
+  "windows": {
+    "engine": "BLOCKED_PROXY_403",
+    "execution": "NOT_RUN"
+  }
+}
