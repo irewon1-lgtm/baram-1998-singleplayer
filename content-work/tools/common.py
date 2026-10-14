@@ -4,13 +4,14 @@ import hashlib
 import json
 import re
 from decimal import Decimal, ROUND_HALF_UP
+from fractions import Fraction
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 WORK = ROOT / 'content-work'
 BASE = 'dea6574c9a69ebb04432d10fc32951aacd8b66cb'
 PROTOCOL = 'BARAM_PARALLEL_V1'
-VERSION = 'work-tools-1.0.0'
+VERSION = 'work-tools-1.1.0'
 
 def sha(data): return hashlib.sha256(data).hexdigest()
 def file_sha(path): return sha(Path(path).read_bytes())
@@ -22,7 +23,14 @@ def load(path): return json.loads(Path(path).read_text(encoding='utf-8'))
 def lines(path): return [json.loads(s) for s in Path(path).read_text(encoding='utf-8').splitlines() if s.strip()]
 def round_int(value): return int(Decimal(str(value)).quantize(Decimal(1), rounding=ROUND_HALF_UP))
 def ratio(value, denominator=1000000):
-    return {'numerator': round_int(Decimal(str(value))*denominator), 'denominator': denominator}
+    exact=Fraction(Decimal(str(value)))
+    if not 0<=exact<=1:raise ValueError('Probability outside 0..1')
+    if denominator % exact.denominator:denominator=math_lcm(denominator,exact.denominator)
+    if denominator>9007199254740991:raise ValueError('Ratio exceeds exact JSON integer range; use a documented decimal rational')
+    return {'numerator':exact.numerator*(denominator//exact.denominator),'denominator':denominator}
+def math_lcm(a,b):
+    from math import gcd
+    return a*b//gcd(a,b)
 def average(observations):
     unique = {o['origin_key']:o for o in observations}
     units = {o['unit'] for o in unique.values()}; conditions = {canonical(o['condition']) for o in unique.values()}

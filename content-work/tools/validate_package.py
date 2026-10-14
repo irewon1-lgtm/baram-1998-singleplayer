@@ -131,7 +131,7 @@ def validate(package, dependency_dirs=(), bundle=None, write_report=True, verify
     def embedded(v,r,path='data'):
         if isinstance(v,dict):
             for k,x in v.items():
-                if k.endswith(suffixes) and k not in ('bundle_id','source_id','rule_id','source_model_id','original_map_id','completion_key'):
+                if k.endswith(suffixes) and k not in ('bundle_id','source_id','rule_id','source_model_id','original_map_id','completion_key','placement_id'):
                     xs=x if k.endswith('_ids') and isinstance(x,list) else [x]
                     for ident in xs:
                         if ident is not None and isinstance(ident,str) and ident not in available:fail(r,path+'.'+k,ident,'resolvable embedded reference')
@@ -153,7 +153,7 @@ def validate(package, dependency_dirs=(), bundle=None, write_report=True, verify
     for _,_,r in own:
         if r['kind']=='class':
             growth=[effective[x]['data'] for x in r['data']['growth_ids'] if x in effective]
-            expected=set(range(r['data'].get('growth_start_level',1),100));levels={x['level'] for x in growth}
+            expected=set(range(r['data'].get('growth_start_level',1),r['data'].get('growth_end_level',99)+1));levels={x['level'] for x in growth}
             if levels!=expected:fail(r,'growth_ids',sorted(levels),'complete declared start..99 growth levels')
             last=-1
             for g in sorted(growth,key=lambda g:g['level']):
@@ -189,6 +189,39 @@ def validate(package, dependency_dirs=(), bundle=None, write_report=True, verify
                             x,y,w,h=f['region'];page=pages[f['path']]
                             if x<0 or y<0 or x+w>page['width'] or y+h>page['height']:fail(r,'frame.region',f,'frame within atlas')
                             checks['frame_rectangles']+=1
+            placement_ids=set()
+            for _,_,r in own:
+                if r['kind']!='map':continue
+                d=r['data'];ac=d['layout_acquisition'];raw=z.read(ac['member'])
+                if sha(raw)!=ac['sha256']:fail(r,'layout_acquisition',ac,'matching layout hash')
+                layout=load_json_bytes(raw);w,h=d['width'],d['height']
+                if (w,h)!=(layout['width'],layout['height']):fail(r,'dimensions',[w,h],'layout dimensions')
+                masks=layout['collision_masks']
+                if len(masks)!=w*h or len(layout['layers']['ground'])!=w*h or len(layout['layers']['objects'])!=w*h:fail(r,'layers',len(masks),'exact cell count')
+                def walkable(xy):return isinstance(xy,list) and len(xy)==2 and all(integer(v) for v in xy) and 0<=xy[0]<w and 0<=xy[1]<h and masks[xy[1]*w+xy[0]]!=15
+                if not walkable(d['entry']):fail(r,'entry',d['entry'],'walkable source entry');continue
+                component={tuple(d['entry'])};todo=collections.deque(component)
+                while todo:
+                    x,y=todo.popleft()
+                    for pos in [(x,y-1),(x-1,y),(x,y+1),(x+1,y)]:
+                        if pos not in component and walkable(list(pos)):component.add(pos);todo.append(pos)
+                checks['source_maps']+=1;checks['source_map_cells']+=w*h
+                for group in ['portals','spawns','npc_placements']:
+                    for pl in d[group]:
+                        at=[pl['x'],pl['y']];checks['placements']+=1
+                        if tuple(at) not in component:fail(r,group+'.position',at,'walkable reachable from entry under solid-mask interpretation')
+                        pid=pl['placement_id']
+                        if pid in placement_ids:fail(r,'placement_id',pid,'globally unique placement definition')
+                        placement_ids.add(pid)
+                        if group=='spawns' and (pl['max_live']<1 or any(tuple(p) not in component for p in pl['spawn_cells'])):fail(r,'spawn_cells',pl,'positive count and walkable spawn points')
+                        if group=='portals':
+                            dest=effective.get(pl['destination_map_id'])
+                            if not dest or dest['kind']!='map':fail(r,'portal.destination',pl,'known map');continue
+                            target=dest['data'];tx,ty=pl['destination_xy']
+                            if not 0<=tx<target['width'] or not 0<=ty<target['height']:fail(r,'portal.destination_xy',pl,'within target map')
+                            target_layout=load_json_bytes(z.read(target['layout_acquisition']['member']))
+                            if target_layout['collision_masks'][ty*target['width']+tx]==15:fail(r,'portal.destination_collision',pl,'walkable target')
+                if d.get('variant_active') is not False and not d['portals']:fail(r,'portals',[],'at least one reachable return route')
     if verify_manifest:
         m=load(package/'manifest.json')
         for f in m['files']:

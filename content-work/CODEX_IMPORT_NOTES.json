@@ -1,0 +1,22 @@
+{
+  "protocol_id":"BARAM_PARALLEL_V1",
+  "scope":"Importer adaptations in codex/game-core; Work packages are immutable",
+  "observed_importer_paths":["tools/baram_content.py","tools/import_work_content.py"],
+  "observed_tool_version":"codex-import-1",
+  "adapters_required":[
+    {"field":"manifest.files[].size_bytes","meaning":"Byte count; content package also supplies bytes alias. Asset package 001 uses size_bytes.","action":"Accept size_bytes, bytes or size without changing the Work package."},
+    {"field":"content-*.jsonl","meaning":"One record per UTF-8 JSONL line. All IDs must be collected before references.","action":"Parse manifest-pinned .jsonl; do not parse only .json."},
+    {"field":"manifest.schemas","meaning":"schema/content-v1.json is already listed and pinned inside the package.","action":"Use verified package-local schemas before trying content-work/schemas plus the path."},
+    {"field":"kind","meaning":"Declared schema includes class, shop, drop_group, enhancement, recipe, economy in addition to base kinds.","action":"Register explicit declarative handlers or return PENDING_CAPABILITY per package/record."},
+    {"field":"propose_patch","meaning":"record.data is the complete declarative definition; record.changes are the guarded updates. before.exists=false permits a new runtime_definition. Existing values have expected-value guards.","action":"Check each changes.before against the canonical record selected by target_id. Apply only named paths; reject a changed guard. Do not interpret every data key as a top-level patch."},
+    {"field":"asset.data.acquisition","meaning":"Private Library bundle ID, member path and verified SHA identify actual bytes. No original pixels in public GitHub.","action":"Acquire verified bundle from existing private assets or provided Library file; verify size/SHA and member pins. Never accept a local chat path as transfer. Do not require original pixels in a public manifest."},
+    {"field":"validation.result","meaning":"Work result is PASS/FAIL; scope is DATA_ONLY. Import/playback stay NOT_RUN.","action":"Honor result as well as status; retain validation scope."},
+    {"field":"shared/map-format.json","meaning":"Original tile TBL bases A=1, B=49152, C=1; original static object columns and 104 body draw-order entries. Map layout references this shared file once.","action":"Use raw ground word plus table base, object source frame indices, original masks and zero-based 24px coordinates."},
+    {"field":"source_variant_selection","meaning":"Existing same-name IDs are retained; inactive name/location aliases are not instantiated twice.","action":"Use identity variant activation and primary IDs; keep shared quest completion keys."},
+    {"field":"source_recolor_parameter","meaning":"Base model atlas is rendered at tint 0. Existing class tint is listed as an unrendered source parameter.","action":"Use a verified existing tinted sprite, or source-index remap from pinned KR491 DAT. Do not claim a tinted frame is already rendered."}
+  ],
+  "work_validation":"PASS_DATA_ONLY",
+  "recipient_acquisition":"NOT_RUN",
+  "imported":"NOT_RUN",
+  "play_verified":"NOT_RUN"
+}
