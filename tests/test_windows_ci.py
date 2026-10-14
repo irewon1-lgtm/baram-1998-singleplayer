@@ -34,7 +34,7 @@ class WindowsCIGates(unittest.TestCase):
         self.assertEqual(list(self.out.glob('*.zip')),[])
     def test_public_actions_cannot_archive_private_payload(self):
         self.report()
-        with patch.dict(os.environ,{'GITHUB_ACTIONS':'true','BARAM_PRIVATE_REPOSITORY':'false'}):
+        with patch.dict(os.environ,{'GITHUB_ACTIONS':'true','BARAM_PRIVATE_REPOSITORY':'false','BARAM_PRIVATE_DELIVERY_VERIFIED':'false'}):
             with self.assertRaisesRegex(ValueError,'Public repository'):windows_ci.archive(self.args)
     def test_unknown_files_and_saves_cannot_enter_runtime(self):
         for name in ['private_assets','private_content','licenses']:(self.out/name).mkdir()

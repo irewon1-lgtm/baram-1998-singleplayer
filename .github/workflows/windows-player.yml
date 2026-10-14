@@ -18,6 +18,7 @@ jobs:
     env:
       PRIVATE_REPO: ${{ vars.BARAM_PRIVATE_REPOSITORY || 'irewon1-lgtm/baram-windows-private' }}
       GH_TOKEN: ${{ secrets.BARAM_PRIVATE_REPO_TOKEN }}
+      PYTHONUTF8: '1'
     steps:
       - uses: actions/checkout@v4
       - name: Require an authenticated PRIVATE input/delivery destination
@@ -49,21 +50,22 @@ jobs:
       - name: Preserve input bytes and build Windows x64 EXE
         shell: pwsh
         run: |
-          python -m unittest discover -s tests -p 'test_windows*.py' -v
+          New-Item -ItemType Directory -Force player-build | Out-Null
+          python -m unittest discover -s tests -p 'test_windows*.py' -v 2>&1 | Tee-Object player-build/python-tests.log
           if ($LASTEXITCODE) { throw 'Packaging gate failed' }
-          python tools/restore_private_runtime.py --vault vault --out vault/runtime
+          python tools/restore_private_runtime.py --vault vault --out vault/runtime 2>&1 | Tee-Object player-build/input-restore.log
           if ($LASTEXITCODE) { throw 'Private input integrity/restore failed; delivery blocked' }
-          python tools/windows_ci.py build --runtime vault/runtime --template vault/runtime/template-win64.exe --godot "$env:GODOT" --out player-build
+          python tools/windows_ci.py build --runtime vault/runtime --template vault/runtime/template-win64.exe --godot "$env:GODOT" --out player-build 2>&1 | Tee-Object player-build/build-command.log
           if ($LASTEXITCODE) { throw 'Build/export failed' }
       - name: Actual Windows EXE startup and live input/save/restart regression
         shell: pwsh
         run: |
-          python tools/windows_ci.py verify --out player-build
+          python tools/windows_ci.py verify --out player-build 2>&1 | Tee-Object player-build/verify-command.log
           if ($LASTEXITCODE) { throw 'Native game regression failed; delivery blocked' }
       - name: Verified player ZIP
         shell: pwsh
         run: |
-          python tools/windows_ci.py archive --out player-build --require-windows
+          python tools/windows_ci.py archive --out player-build --require-windows 2>&1 | Tee-Object player-build/archive-command.log
           if ($LASTEXITCODE) { throw 'ZIP release gate failed' }
       - name: Publish authenticated download in the private vault only
         shell: pwsh

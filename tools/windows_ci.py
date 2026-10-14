@@ -71,10 +71,10 @@ def build(args):
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(runtime/path, target)
     shutil.copytree(ROOT/'game', project, ignore=shutil.ignore_patterns('.godot', '*.uid'))
-    content = json.loads((stage/'private_content/ACTIVE.json').read_text()) if (stage/'private_content/ACTIVE.json').exists() else {'release_id':'legacy-base'}
+    content = json.loads((stage/'private_content/ACTIVE.json').read_text(encoding='utf-8')) if (stage/'private_content/ACTIVE.json').exists() else {'release_id':'legacy-base'}
     commit = subprocess.check_output(['git','rev-parse','HEAD'], cwd=ROOT, text=True).strip()
     write_json(project/'data/build_info.json', {'commit':commit,'content_version':content['release_id']})
-    cfg = (project/'project.godot').read_text()
+    cfg = (project/'project.godot').read_text(encoding='utf-8')
     cfg = cfg.replace('run/main_scene="res://main.tscn"', 'run/main_scene="res://windows_bootstrap.tscn"')
     (project/'project.godot').write_text(cfg, encoding='utf-8')
     template = Path(args.template).resolve()
@@ -107,7 +107,7 @@ texture_format/etc2_astc=false
     cache=stage/'runtime_cache'
     if args.cache:
         shutil.copytree(Path(args.cache),cache)
-        manifest=json.loads((cache/'manifest.json').read_text())
+        manifest=json.loads((cache/'manifest.json').read_text(encoding='utf-8'))
         if manifest['source_world_sha256']!=sha256(stage/'private_assets/source_maps/world.json') or manifest['content_version']!=content['release_id'] or manifest['sha256']!=sha256(cache/'world.bin'):
             raise ValueError('Cached world does not match private runtime')
     else:
@@ -174,7 +174,7 @@ def run_probe(args, stage, mode, evidence, save, windowed=False):
 
 
 def verify(args):
-    out=Path(args.out).resolve();build_info=json.loads((out/'build.json').read_text())
+    out=Path(args.out).resolve();build_info=json.loads((out/'build.json').read_text(encoding='utf-8'))
     stage=Path(build_info['stage']);runs=[]
     if os.name=='nt':
         folder=out/'evidence'/'windowed'
@@ -182,7 +182,7 @@ def verify(args):
     for mode in ['native-smoke','native-core','native-restart']:
         folder=out/'evidence'/('smoke' if mode=='native-smoke' else 'core')
         runs.append(run_probe(args,stage,mode,folder,folder/'saves/v2/character.json'))
-    manifest=json.loads((stage/'PACKAGE_MANIFEST.json').read_text())
+    manifest=json.loads((stage/'PACKAGE_MANIFEST.json').read_text(encoding='utf-8'))
     if any(r['game_build']!=manifest['build']['commit'] for r in runs):raise ValueError('Evidence belongs to another build')
     result={'status':'PASS','windows_native_execution':'PASS' if os.name=='nt' else 'NOT_RUN_LINUX_EMBEDDED_PCK_ONLY',
             'windows_windowed_startup':'PASS' if os.name=='nt' else 'NOT_RUN_LINUX',
@@ -194,14 +194,14 @@ def verify(args):
 
 
 def archive(args):
-    out=Path(args.out).resolve();result=json.loads((out/'verification.json').read_text())
+    out=Path(args.out).resolve();result=json.loads((out/'verification.json').read_text(encoding='utf-8'))
     if result['status']!='PASS' or result['game_function_automation']!='PASS':raise ValueError('Verification gate failed')
     if args.require_windows and result['windows_native_execution']!='PASS':raise ValueError('Windows-native evidence is required')
     if args.require_windows and result.get('windows_windowed_startup')!='PASS':raise ValueError('Normal Windows EXE rendering evidence is required')
     if os.environ.get('GITHUB_ACTIONS')=='true' and os.environ.get('BARAM_PRIVATE_REPOSITORY')!='true' and os.environ.get('BARAM_PRIVATE_DELIVERY_VERIFIED')!='true':
         raise ValueError('Public repository may not create/publish a plaintext private game ZIP')
-    stage=Path(json.loads((out/'build.json').read_text())['stage'])
-    manifest=json.loads((stage/'PACKAGE_MANIFEST.json').read_text())
+    stage=Path(json.loads((out/'build.json').read_text(encoding='utf-8'))['stage'])
+    manifest=json.loads((stage/'PACKAGE_MANIFEST.json').read_text(encoding='utf-8'))
     manifest['files']=[{'path':p.relative_to(stage).as_posix(),'bytes':p.stat().st_size,'sha256':sha256(p)}
                        for p in sorted(stage.rglob('*')) if p.is_file() and p.name!='PACKAGE_MANIFEST.json']
     manifest['verification']=result
@@ -220,7 +220,7 @@ def archive(args):
 def process_rss(pid):
     if os.name!='nt':
         try:
-            for line in Path(f'/proc/{pid}/status').read_text().splitlines():
+            for line in Path(f'/proc/{pid}/status').read_text(encoding='utf-8').splitlines():
                 if line.startswith('VmRSS:'):return int(line.split()[1])*1024
         except (FileNotFoundError,ProcessLookupError):pass
         return 0
