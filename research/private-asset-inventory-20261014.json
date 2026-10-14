@@ -1,0 +1,134 @@
+{
+  "created_date": "2026-10-14",
+  "purpose": "Personal offline Baram restoration",
+  "count": 13,
+  "private_library_folder": "/Baram1998Assets/",
+  "public_github_repo": "irewon1-lgtm/baram-1998-singleplayer",
+  "github_branch": "dev/codex-asset-intake-20261014",
+  "original_or_derived_bytes_in_public_github": false,
+  "deduplicated_by_sha256": true,
+  "files": [
+    {
+      "library_name": "KR_1.25_winbaram.zip",
+      "source_upload_filename": "winbaram.zip",
+      "bytes": 2207781,
+      "sha256": "62642ca3ef492f58947abb2c17cbae5b5a60d5f96fd146704b7d99d1aad3bcef",
+      "role": "korean_client",
+      "visibility": "PRIVATE_LIBRARY_ONLY",
+      "codex_local_import": "NOT_YET_TRANSFERRED"
+    },
+    {
+      "library_name": "KR_4.91_491v.zip",
+      "source_upload_filename": "491v.zip",
+      "bytes": 26556803,
+      "sha256": "f11e448db6478b1aca3a7dd47403bdef00cf873b203b14629b0215632190532f",
+      "role": "korean_client",
+      "visibility": "PRIVATE_LIBRARY_ONLY",
+      "codex_local_import": "NOT_YET_TRANSFERRED"
+    },
+    {
+      "library_name": "NA_4.03_NexusTK.7z",
+      "source_upload_filename": "NexusTK v4.0.3.7z",
+      "bytes": 8517463,
+      "sha256": "db89e2b1ac3dfd3f5668fd7746478507b370ee627b4321d7dec441620ce96b53",
+      "role": "nexus_client",
+      "visibility": "PRIVATE_LIBRARY_ONLY",
+      "codex_local_import": "NOT_YET_TRANSFERRED"
+    },
+    {
+      "library_name": "NA_4.66_NexusTK.7z",
+      "source_upload_filename": "NexusTK V 4.66.7z",
+      "bytes": 11850016,
+      "sha256": "54ca6b8892a2b44ddfaadebc92e1886a770ac07a82b60ceacbfd3e2e44e5774a",
+      "role": "nexus_client",
+      "visibility": "PRIVATE_LIBRARY_ONLY",
+      "codex_local_import": "NOT_YET_TRANSFERRED"
+    },
+    {
+      "library_name": "NA_4.95_Nexus495.exe",
+      "source_upload_filename": "확인되지 않음 439277.crdownload",
+      "bytes": 24658356,
+      "sha256": "486f4684b76658d92eaf84aab77fe9be9489ea01de8264fe90d0040466620aaa",
+      "role": "nexus_client",
+      "visibility": "PRIVATE_LIBRARY_ONLY",
+      "codex_local_import": "NOT_YET_TRANSFERRED"
+    },
+    {
+      "library_name": "NA_5.0_or_older_clients_ALL.7z",
+      "source_upload_filename": "5.0 or Older Clients (All) (1).7z",
+      "bytes": 218174017,
+      "sha256": "d41b644303581f7dfc05ef627d99820f8ccce3152637c9be533f0465dbbcb885",
+      "role": "nexus_collection",
+      "visibility": "PRIVATE_LIBRARY_ONLY",
+      "codex_local_import": "NOT_YET_TRANSFERRED"
+    },
+    {
+      "library_name": "NA_4.03_french.exe",
+      "source_upload_filename": "확인되지 않음 879009.crdownload",
+      "bytes": 6617137,
+      "sha256": "c8820ac5af784fa6aadcdc86198c84f07ac4e73af1c74ece1152a1c9bd52cd4b",
+      "role": "regional_client",
+      "visibility": "PRIVATE_LIBRARY_ONLY",
+      "codex_local_import": "NOT_YET_TRANSFERRED"
+    },
+    {
+      "library_name": "Baram_Map_Editor.7z",
+      "source_upload_filename": "Baram Map Editor.7z",
+      "bytes": 1817308,
+      "sha256": "4b63aaff6aea18c7b038db715e753468f9a0202e0d3e692dfd7f0c3f341c6e5a",
+      "role": "map_tool_and_tiles",
+      "visibility": "PRIVATE_LIBRARY_ONLY",
+      "codex_local_import": "NOT_YET_TRANSFERRED"
+    },
+    {
+      "library_name": "Judge_Map_Editor.7z",
+      "source_upload_filename": "Judge Map Editor.7z",
+      "bytes": 2577176,
+      "sha256": "7df59393d9aa077c79e0d6f0b40b89d7b56f0ca7edf9f86f9823dc94aa630646",
+      "role": "map_tool",
+      "visibility": "PRIVATE_LIBRARY_ONLY",
+      "codex_local_import": "NOT_YET_TRANSFERRED"
+    },
+    {
+      "library_name": "mithiamapeditor-master.zip",
+      "source_upload_filename": "mithiamapeditor-master.zip",
+      "bytes": 119648,
+      "sha256": "d49ca6f1ee839d8bf3146b1455bbb07f9642fcc945c914d08106beea40bd54b1",
+      "role": "map_tool",
+      "visibility": "PRIVATE_LIBRARY_ONLY",
+      "codex_local_import": "NOT_YET_TRANSFERRED"
+    },
+    {
+      "library_name": "EPFTool.exe",
+      "source_upload_filename": "확인되지 않음 62852.crdownload",
+      "bytes": 385024,
+      "sha256": "d58303a3129547505daf7006e7dc58cc27bcfdad33ee5137c1350ef172a02221",
+      "role": "graphics_tool",
+      "visibility": "PRIVATE_LIBRARY_ONLY",
+      "codex_local_import": "NOT_YET_TRANSFERRED"
+    },
+    {
+      "library_name": "BARAM.PAL",
+      "source_upload_filename": "BARAM.PAL",
+      "bytes": 768,
+      "sha256": "34bee372e754fc423099193587ae265b731d7f7ff0f083a87cb564179aeb266a",
+      "role": "palette",
+      "visibility": "PRIVATE_LIBRARY_ONLY",
+      "codex_local_import": "NOT_YET_TRANSFERRED"
+    },
+    {
+      "library_name": "baram_tile_atlases_PRIVATE.zip",
+      "source_upload_filename": "baram_tile_atlases_PRIVATE.zip",
+      "bytes": 7008649,
+      "sha256": "18581f104aa725eb615a205d428a10b46bd670b956876b99fa92ce32ebdc1514",
+      "role": "rendered_tiles",
+      "visibility": "PRIVATE_LIBRARY_ONLY",
+      "codex_local_import": "NOT_YET_TRANSFERRED"
+    }
+  ],
+  "notes": [
+    "User-provided source files. No original/extracted graphic bytes committed to public GitHub.",
+    "A ChatGPT Library copy does not automatically grant Codex file access. Attach or copy asset ZIP into Codex private workspace.",
+    "Do not execute unknown legacy EXE files. Extract files statically and inspect."
+  ]
+}
