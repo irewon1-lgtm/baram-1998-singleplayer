@@ -29,15 +29,17 @@ WEAPONS=[
  ('spear',27,'달갈퀴 봉','poet',95,'water','intelligence'),
  ('spear',28,'푸른갈래 창','warrior',95,'fire','strength')]
 
-def build(batch,optional):
+def build(batch,optional,bows=False):
     idx=load(WORK/'HANDOFF_INDEX.json');assets={};defs={}
     for entry in idx['packages']:
+        if bows and entry['batch_id'] in ('WK-ASSETS-002','WK-ASSETS-003','WK-CONTENT-006','WK-CONTENT-008'):continue
         for p in sorted((WORK/'packages'/entry['batch_id']).glob('content-*.jsonl')):
             for r in lines(p):(assets if r['kind']=='asset' else defs)[r.get('target_id',r['id'])]=r
     ids=IDs();rs=[];updates={};summary=[]
     regions=load(WORK/'packages/WK-CONTENT-003/region-summary.json')['regions']
     specs=WEAPONS if not optional else [
        ('fan',0,'흰잎 여행선','poet',35,'forest','mp'),('fan',1,'푸른숲 보호선','poet',75,'water','hp'),('fan',2,'설빛 정화선','mage',95,'snow','intelligence')]
+    if bows:specs=[('sword',14,'초행 사냥활','warrior',15,'forest','dexterity'),('sword',15,'굽은 사구활','rogue',55,'dry','damage'),('sword',59,'푸른 귀환활','rogue',95,'water','dexterity')]
     if optional:
         names=['나무결 방패','작은 가죽방패','세칸 강철방패','나무살 원방패','뿔결 방패','청석 방패','설철 방패','보랏결 방패','석벽 방패','곡목 방패','격자 강철방패','풀결 방패','백철 방패']
         themes=['forest','forest','cave','dry','dry','water','snow','snow','cave','forest','fire','forest','snow']
@@ -46,7 +48,8 @@ def build(batch,optional):
             specs.append(('shield',model,name,'warrior' if model%3==0 else 'poet' if model%3==1 else 'rogue',lv,themes[model],'hp' if model%2==0 else 'mp'))
     for family,model,name,job,level,theme,focus in specs:
         aid=f'wk.asset.kr491.{family}.{model:03d}';assert aid in assets
-        iid=ids.get('item',f'exp3.source-{family}.{model}');rid=ids.get('recipe',f'exp3.source-{family}.{model}')
+        source_key=f'exp3.source-bow.{model}' if bows else f'exp3.source-{family}.{model}'
+        iid=ids.get('item',source_key);rid=ids.get('recipe',source_key)
         reg=min((r for r in regions if r['theme']==theme),key=lambda r:abs(sum(r['levels'])/2-level));npc=reg['smith_id'];cid='wk.class.'+job
         candidates=[r['data'] for r in defs.values() if r['kind']=='item' and r['data']['slot']=='weapon' and cid in r['data']['requirements']['class_ids'] and not r['data']['requirements'].get('advancement_rank')]
         base=min(candidates,key=lambda d:(abs(d['requirements']['level']-level),d['name']));d=copy.deepcopy(base)
@@ -64,6 +67,7 @@ def build(batch,optional):
         d['visual']={'icon_id':'wk.asset.kr491.sheet.item','icon_frame':12 if family=='shield' else 37 if family=='fan' else 6 if family=='spear' else 18 if model in [40,89] else 34 if job in ('mage','poet') else 0,
                      'equipment_asset_id':aid,'attachment':'ORIGINAL_FOOT_OVERLAY','motion':'spear' if family=='spear' else 'sword','identity':'REVIEWED_SOURCE_SHAPE_AUTHORED_ITEM_IDENTITY'}
         d['acquisition']=[{'kind':'recipe','recipe_id':rid,'source_mode':'INFERRED'}]
+        if bows:d['visual']['weapon_family']='bow'
         rec=record(iid,'item',d,['rule.exp3.remaining-gear']);rec['references']=data_refs(d,assets);rs.append(rec)
         material='wk.item.exp2.material.'+theme;cost=d['prices']['sell']+level*10+50
         rd={'name':name+' 제작','npc_id':npc,'consume':[{'item_id':material,'quantity':2+level//12}], 'outputs':[{'item_id':iid,'quantity':1}],'gold_cost':cost,'success_ratio':ratio(1),'extension':True}
@@ -74,7 +78,7 @@ def build(batch,optional):
     for target,(old,d) in updates.items():
         r=patch_record(ids,old,d,['services','dialogue'],'rule.exp3.remaining-gear','remaining-gear-'+batch.lower());r['references']=data_refs(d,assets);rs.append(r)
     bow_repairs=[]
-    if not optional:
+    if not optional and not bows:
         for target,old in defs.items():
             if old['kind']!='item' or old['data']['visual'].get('equipment_asset_id') not in ['wk.asset.kr491.sword.014','wk.asset.kr491.sword.015','wk.asset.kr491.sword.059']:continue
             d=copy.deepcopy(old['data']);d['visual']['equipment_asset_id']='wk.asset.kr491.sword.057' if 'wk.class.poet' in d['requirements']['class_ids'] else 'wk.asset.kr491.sword.073'
@@ -84,8 +88,14 @@ def build(batch,optional):
     (p/'schema').mkdir(parents=True);shutil.copy2(WORK/'schemas/content-v1.json',p/'schema/content-v1.json');shard(p,rs);ids.save()
     write(p/'provenance.json',[{'id':'rule.exp3.remaining-gear','source_mode':'INFERRED','basis':['remaining reviewed original sword/spear/fan/shield silhouettes','nearest level compatible-class non-advancement weapon definitions and existing regional crafters/materials'],
       'rules':{'identity':'authored distinct weapons/shields, not historical item-name proof','role':'class/level/region/focus/acquisition purpose retained; source variants not counted as new graphics','stats':'nearest compatible template scaled to authored level; distinct HP/MP/primary-stat or damage focus','craft':'existing material consumption and NPC recipe_book; fee exceeds output resale value','bow_reserve':'sword models14/15/59 are bows; existing model59 mismatch repaired with compatible caster staff, no numeric changes','optional':'fan and shield models require declared family attachment/offhand capabilities; optional packet does not block ordinary sword/spear packet'}}])
-    write(p/'gear-summary.json',{'scope':'DATA_ONLY','new_items':len(specs),'new_recipes':len(specs),'existing_npc_proposals':len(updates),'bow_repairs':bow_repairs,'optional_new_capabilities':optional,'definitions':summary,'game_import':'NOT_RUN','gameplay':'NOT_RUN'})
+    if bows:
+        write(p/'bow-consumer-requirements.json',{'scope':'RECEIVER_CAPABILITY_REQUIREMENTS_NOT_IMPLEMENTED_HERE','source_family':'Original Sword TBL models14/15/59 are bow silhouettes; retain their source frame/foot offset selections.',
+            'item_ids':[x['item_id'] for x in summary],'attack_purpose':'physical ranged weapon attack; do not activate as an ordinary melee weapon merely because its source table is named Sword',
+            'authored_range_tiles':6,'requirements':['verify source bow firing pose attachment in four directions','use existing physical damage/hostile target checks, range and source directional collision checks','one damage application per attack; no remote damage through a blocking wall','persist item ownership/equipment and reject unsupported optional packet'],
+            'projectile_graphic':'UNRESOLVED: original bow.epf contains zero frames. No new arrow pixels or claimed source arrow animation.',
+            'game_import':'NOT_RUN','gameplay':'NOT_RUN'})
+    write(p/'gear-summary.json',{'scope':'DATA_ONLY','new_items':len(specs),'new_recipes':len(specs),'existing_npc_proposals':len(updates),'bow_repairs':bow_repairs,'optional_new_capabilities':optional or bows,'bow_packet':bows,'definitions':summary,'game_import':'NOT_RUN','gameplay':'NOT_RUN'})
     print(batch,dict(collections.Counter(r['kind'] for r in rs)))
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--batch',required=True);p.add_argument('--optional',action='store_true');a=p.parse_args();build(a.batch,a.optional)
+    p=argparse.ArgumentParser();p.add_argument('--batch',required=True);m=p.add_mutually_exclusive_group();m.add_argument('--optional',action='store_true');m.add_argument('--bows',action='store_true');a=p.parse_args();build(a.batch,a.optional,a.bows)
