@@ -19,6 +19,15 @@ def digest(data):
     return hashlib.sha256(data).hexdigest()
 
 
+def store_preserving(path, data):
+    if path.exists():
+        if not path.is_file() or path.read_bytes() != data:
+            raise ValueError('Existing different file preserved: ' + str(path))
+        return
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(data)
+
+
 def intake(source, out, report):
     out = private_path(out)
     raw = Path(source).read_bytes()
@@ -39,7 +48,7 @@ def intake(source, out, report):
             if not name.endswith('.zip'):
                 dest = out / 'handoff' / path
                 dest.parent.mkdir(parents=True, exist_ok=True)
-                dest.write_bytes(data)
+                store_preserving(dest, data)
                 if path.suffix in ('.py', '.gd', '.md', '.json'):
                     data.decode('utf-8')
                 continue
@@ -55,7 +64,7 @@ def intake(source, out, report):
                 tile_dir = out / 'tiles'
                 tile_dir.mkdir(exist_ok=True)
                 for n, b in bundle.items():
-                    (tile_dir / n).write_bytes(b)
+                    store_preserving(tile_dir / n, b)
                     files.append(dict(name=name + '!' + n, bytes=len(b), sha256=digest(b),
                                       read_status='PASS_FULL_PNG_DECODE' if n.endswith('.png') else 'PASS_FULL_BYTES'))
                 for group in manifest['groups']:

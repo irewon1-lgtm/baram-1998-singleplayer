@@ -289,7 +289,10 @@
       "A": 4897,
       "B": 2973,
       "C": 6965
-    }
+    },
+    "contact_pages": 60,
+    "contact_sheet_pages": 60,
+    "contact_sheet_frames": 14835
   },
   "stage_5": {
     "status": "GODOT_SELECTED_AFTER_REAL_SCREEN_RUNTIME",
@@ -359,7 +362,7 @@
     "level31_99_regions_advancement": "NOT_IMPLEMENTED",
     "entire_game_finish_playthrough": "NOT_RUN"
   },
-  "next_action": "Read latest remote dev/codex-asset-intake-20261014 and its full execution spec when GitHub host is enabled; integrate these preserved development commits forward. Continue original skill effect binding and actual four-job level-30 playthrough before level31-99/advancement. Reuse both result ZIPs; do not redownload verified originals or repeat passed checks.",
+  "next_action": "Complete updated loader input boundary checks, rebuild private package after specification integration, verify its launcher, commit and push latest source then compare remote SHA. Preserve passed combat/math tests. Continue four-job full level30 playthrough and original skill bindings before stages31-99/advancement.",
   "resume_command": "python3 tools/recover_runtime_inputs.py --private-dir /workspace/baram-private --only archives --report /workspace/baram-private/asset-recovery-resume.json",
   "network_domains_requested": [
     "archive.org",
@@ -374,16 +377,17 @@
     "game/main.gd": "57d85682f785fdfa38b44d92e8aa70db4cd39fd2268acffdb59675f948a54bd2",
     "game/rules.gd": "d65d7872d675e5652a251396233297970cfe885ece9c72c86679df088bebdd95",
     "game/save_store.gd": "0f1c8b9fea8baf986a750afaf2636dee6925b97442724226a098cbc9937460ac",
-    "game/assets.gd": "3d164781b0c36f390156153c06c59c89bfa126bc21a7da3b2a416ef3648e1c16",
+    "game/assets.gd": "183cebad4e2429e9eda18d26bd9adedb22636ae4d8df2da74f66a1e9da533790",
     "game/data/world.json": "75e96433b60a5ab928e52ad38952dab84302e87af80e57caa1b42a95ca8bcb9a",
-    "tools/package_private_game.py": "8938d3dd6bb27facce940f6b3873bed46295fc196659e6ecc5e60ef727b0f62b"
+    "tools/package_private_game.py": "8938d3dd6bb27facce940f6b3873bed46295fc196659e6ecc5e60ef727b0f62b",
+    "tools/intake_private_tiles.py": "3dbdc67f74e9ae6c353d76621cb6d5a36c814405ef4f8d2c02611b2f50b25e43",
+    "tools/build_asset_review.py": "0fc141bdb56869740057e997c9ad34baa70e8183e7205a8a648a45db914c268b"
   },
   "main_merge": false,
   "operating_deployment": false,
   "paid_actions": false,
   "public_original_or_unlicensed_source_bytes_included": false,
   "known_failures": [
-    "GitHub host absent from published network policy; latest requested branch/spec and remote commit verification BLOCKED",
     "NA466 distinct SFX extraction BLOCKED",
     "Preserved external Project1998 GC test failure outside independent game scope"
   ],
@@ -391,7 +395,8 @@
     "Read-only home: configured writable XDG and DOTNET_CLI_HOME",
     "Viewer timeout: socket dir prepared and logs preserved; subsequent real screen PASS",
     "Server startup deadline: optional 45s then real protocol PASS; original 8s FAIL preserved",
-    "APT cached packages omitted URI plans: plan in fresh folder and verify cached package SHA256"
+    "APT cached packages omitted URI plans: plan in fresh folder and verify cached package SHA256",
+    "GitHub 403 later resolved: real push/fetch succeeded; latest execution spec 80d3da1 fully read and forward merged"
   ],
   "baseline_preservation_check": {
     "command": "git diff --name-only 2775b1166a760b6a1757f09f2faf1e799d3fd59e -- research data docs/RESTORATION_WORKFLOW_LOCK.md",
@@ -399,9 +404,9 @@
   },
   "requested_remote_base": "dev/codex-asset-intake-20261014",
   "requested_execution_spec": "docs/development/CODEX_ASSET_EXECUTION_SPEC.md",
-  "remote_base_and_spec": "BLOCKED_GITHUB_CONNECT403_NOT_READ_LATEST",
+  "remote_base_and_spec": "READ_FULL_SPEC_80d3da1_AND_MERGED_FORWARD",
   "user_latest_policy": "Other eras, replaceable assets and generated completion content authorized; no public original graphics, no paid actions/deployment/main merge",
-  "package_state": "SAVED_FINAL_ZIPS_UNPACKED_LAUNCH_RESTART_VERIFIED",
+  "package_state": "UPDATING_AFTER_SPECIFICATION_MERGE",
   "packages": [
     {
       "path": "/workspace/baram-private/results/baram_playable_PRIVATE_20261014.zip",
@@ -421,6 +426,10 @@
     }
   ],
   "package_source_commit": "848e0d6552f78192f7268c183985ac7421540681",
-  "remote_saved": false,
-  "remote_status": "BLOCKED_GITHUB_CONNECT403"
+  "remote_saved": true,
+  "remote_status": "PUSH_0b87d15_CONFIRMED_FURTHER_UPDATES_PENDING",
+  "requested_remote_base_sha": "80d3da1baf14afe689acd80d7b64edb5bfed143b",
+  "specification_full_read": true,
+  "asset_source_namespace": "uploaded-editor-undated/palette0/group/index",
+  "input_boundary_checks": "PASS_8_ACTUAL_CASES"
 }

@@ -33,14 +33,15 @@
     },
     {
       "id": "GITHUB-BRANCH-SPEC",
-      "status": "BLOCKED",
+      "status": "RESOLVED",
       "observed": "Proxy CONNECT 403 for github.com, not in published effective policy",
       "affected": [
         "dev/codex-asset-intake-20261014 latest remote read",
         "docs/development/CODEX_ASSET_EXECUTION_SPEC.md full read",
         "remote publication verification"
       ],
-      "fallback": "Attachment intake specification fully read; local development continuation preserved; no assumption of remote latest state"
+      "fallback": "Attachment intake specification fully read; local development continuation preserved; no assumption of remote latest state",
+      "resolution": "Actual git push/fetch now succeed; base 80d3da1 and full execution spec read; normal merge preserved runtime changes"
     },
     {
       "id": "NA466-SFX",

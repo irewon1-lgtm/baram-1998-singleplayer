@@ -1,0 +1,58 @@
+{
+  "status": "PASS_EXECUTED_INPUT_BOUNDARIES",
+  "results": [
+    {
+      "name": "repeat_pinned_import_reuses_same_bytes",
+      "status": "PASS"
+    },
+    {
+      "name": "different_existing_file_not_overwritten",
+      "status": "PASS"
+    },
+    {
+      "name": "reject_corrupt.zip",
+      "status": "PASS"
+    },
+    {
+      "name": "reject_unsafe-path.zip",
+      "status": "PASS"
+    },
+    {
+      "name": "engine_valid",
+      "status": "PASS",
+      "observed": {
+        "accepted": true,
+        "registered": 14835
+      },
+      "exit_code": 0
+    },
+    {
+      "name": "engine_missing_file",
+      "status": "PASS",
+      "observed": {
+        "accepted": false,
+        "registered": 0
+      },
+      "exit_code": 0
+    },
+    {
+      "name": "engine_wrong_hash",
+      "status": "PASS",
+      "observed": {
+        "accepted": false,
+        "registered": 0
+      },
+      "exit_code": 0
+    },
+    {
+      "name": "engine_wrong_tile_id",
+      "status": "PASS",
+      "observed": {
+        "accepted": false,
+        "registered": 0
+      },
+      "exit_code": 0
+    }
+  ],
+  "scope": "ACTUAL_IMPORTER_AND_ACTUAL_GAME_LOADER; PRIVATE_INPUTS_NEVER_MODIFIED"
+}

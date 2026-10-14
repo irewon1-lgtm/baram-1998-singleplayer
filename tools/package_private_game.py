@@ -44,9 +44,9 @@ docs/development/runs/20261014-assets/asset-game-summary.json와 tile-status-cur
 원본 5개와 첨부 ZIP은 original_archives에 보존한다. 수치·연구 원본은 Git bundle에도 있다.
 다음 개발에서 `git clone -b dev/codex-asset-runtime-20261014 development.bundle recovered-code`로 복구한다.
 
-요청한 원격 기준 브랜치와 CODEX_ASSET_EXECUTION_SPEC.md는 GitHub CONNECT 403으로 읽지 못했다.
-기존 작업을 보존한 별도 개발 브랜치 결과이며 원격 저장을 완료했다고 주장하지 않는다.
-네트워크가 복구되면 기준 브랜치를 읽고 이 개발 커밋을 앞으로 통합한다. main/reset/force push를 하지 않는다.
+최신 기준 브랜치 dev/codex-asset-intake-20261014의 80d3da1과 상세 기준서를 읽고
+현재 개발 계보에 앞으로 병합했다. 원격 SHA와 상태는 최신 CHECKPOINT와 재조회 기록을 읽는다.
+main/reset/force push를 하지 않는다. 전체 연락시트는 private_assets/review/index.html에서 찾는다.
 '''
 
 
@@ -96,7 +96,8 @@ def build(a):
     bundle=staging/'development.bundle'
     subprocess.run(['git','bundle','create',str(bundle),branch],cwd=ROOT,check=True,capture_output=True)
     verification=subprocess.run(['git','bundle','verify',str(bundle)],cwd=ROOT,check=True,capture_output=True,text=True)
-    manifest={'source_branch':branch,'source_commit':commit,'private_only':True,'remote_publication':'BLOCKED_GITHUB_PROXY403',
+    checkpoint=json.loads((ROOT/'docs/development/CHECKPOINT.json').read_text())
+    manifest={'source_branch':branch,'source_commit':commit,'private_only':True,'remote_publication':checkpoint.get('remote_status','PENDING_READBACK'),
               'files':[{'path':str(p.relative_to(staging)),'bytes':p.stat().st_size,'sha256':sha(p)} for p in sorted(staging.rglob('*')) if p.is_file() and p.name!='PACKAGE_MANIFEST.json'],
               'git_bundle_verification':verification.stdout+verification.stderr,
               'original_archive_pins':pins,'core_generated_content':{'maps':8,'items':3,'training_skills':1,'quests':2,'new_bitmaps':0}}
@@ -108,7 +109,7 @@ def build(a):
             for p in sorted(staging.rglob('*')):
                 if not p.is_file():continue
                 rel=p.relative_to(staging)
-                if not full and (rel.parts[0] in ['engine','original_archives','private_evidence'] or rel.name in ['development.bundle','launch-linux.sh']):continue
+                if not full and (rel.parts[0] in ['engine','original_archives','private_evidence'] or rel.name in ['development.bundle','launch-linux.sh'] or (rel.parts[:2]==('private_assets','review') and rel.suffix=='.png')):continue
                 if not full and rel.name=='READ_ME.md':
                     z.writestr(str(Path(staging.name)/rel), '다음 작업용 자산·코드 ZIP입니다. 엔진·원본 압축·Git 전체 이력은 큰 실행 ZIP에 있습니다. Godot 4.6.3이 이미 설치되어 있으면 압축 폴더에서 `godot --path game -- --assets="$(pwd)/private_assets"`로 실행하세요.\n\n'+README)
                     continue
@@ -119,7 +120,7 @@ def build(a):
         packages.append({'path':str(dest),'bytes':dest.stat().st_size,'sha256':sha(dest),'zip_crc':'PASS_FULL_MEMBER_READ',
                          'contains_engine_and_original_archives':full,'files':len(z.namelist())})
     report={'status':'PASS_PACKAGING_NOT_YET_UNPACKED_PLAYTEST','source_commit':commit,'branch':branch,
-            'packages':packages,'staging':str(staging),'remote_publication':'BLOCKED_GITHUB_PROXY403'}
+            'packages':packages,'staging':str(staging),'remote_publication':checkpoint.get('remote_status','PENDING_READBACK')}
     Path(a.report).write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps(report,ensure_ascii=False))
 

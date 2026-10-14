@@ -1,0 +1,98 @@
+{
+  "listed": 13,
+  "available": 6,
+  "missing": 7,
+  "files": [
+    {
+      "library_name": "KR_1.25_winbaram.zip",
+      "sha256": "62642ca3ef492f58947abb2c17cbae5b5a60d5f96fd146704b7d99d1aad3bcef",
+      "status": "NOT_ACCESSIBLE_NOT_IN_ATTACHED_ZIP",
+      "actual_path": null,
+      "reason": "ChatGPT Library inventory does not mount source bytes; current game continues with recovered originals and uploaded tiles"
+    },
+    {
+      "library_name": "KR_4.91_491v.zip",
+      "sha256": "f11e448db6478b1aca3a7dd47403bdef00cf873b203b14629b0215632190532f",
+      "status": "PASS_SHA256_AVAILABLE",
+      "actual_path": "/workspace/baram-private/archives/491v.zip",
+      "reason": null
+    },
+    {
+      "library_name": "NA_4.03_NexusTK.7z",
+      "sha256": "db89e2b1ac3dfd3f5668fd7746478507b370ee627b4321d7dec441620ce96b53",
+      "status": "PASS_SHA256_AVAILABLE",
+      "actual_path": "/workspace/baram-private/archives/NexusTK_v4.0.3.7z",
+      "reason": null
+    },
+    {
+      "library_name": "NA_4.66_NexusTK.7z",
+      "sha256": "54ca6b8892a2b44ddfaadebc92e1886a770ac07a82b60ceacbfd3e2e44e5774a",
+      "status": "PASS_SHA256_AVAILABLE",
+      "actual_path": "/workspace/baram-private/archives/NexusTK_V_4.66.7z",
+      "reason": null
+    },
+    {
+      "library_name": "NA_4.95_Nexus495.exe",
+      "sha256": "486f4684b76658d92eaf84aab77fe9be9489ea01de8264fe90d0040466620aaa",
+      "status": "PASS_SHA256_AVAILABLE",
+      "actual_path": "/workspace/baram-private/archives/nexus495.exe",
+      "reason": null
+    },
+    {
+      "library_name": "NA_5.0_or_older_clients_ALL.7z",
+      "sha256": "d41b644303581f7dfc05ef627d99820f8ccce3152637c9be533f0465dbbcb885",
+      "status": "NOT_ACCESSIBLE_NOT_IN_ATTACHED_ZIP",
+      "actual_path": null,
+      "reason": "ChatGPT Library inventory does not mount source bytes; current game continues with recovered originals and uploaded tiles"
+    },
+    {
+      "library_name": "NA_4.03_french.exe",
+      "sha256": "c8820ac5af784fa6aadcdc86198c84f07ac4e73af1c74ece1152a1c9bd52cd4b",
+      "status": "NOT_ACCESSIBLE_NOT_IN_ATTACHED_ZIP",
+      "actual_path": null,
+      "reason": "ChatGPT Library inventory does not mount source bytes; current game continues with recovered originals and uploaded tiles"
+    },
+    {
+      "library_name": "Baram_Map_Editor.7z",
+      "sha256": "4b63aaff6aea18c7b038db715e753468f9a0202e0d3e692dfd7f0c3f341c6e5a",
+      "status": "NOT_ACCESSIBLE_NOT_IN_ATTACHED_ZIP",
+      "actual_path": null,
+      "reason": "ChatGPT Library inventory does not mount source bytes; current game continues with recovered originals and uploaded tiles"
+    },
+    {
+      "library_name": "Judge_Map_Editor.7z",
+      "sha256": "7df59393d9aa077c79e0d6f0b40b89d7b56f0ca7edf9f86f9823dc94aa630646",
+      "status": "NOT_ACCESSIBLE_NOT_IN_ATTACHED_ZIP",
+      "actual_path": null,
+      "reason": "ChatGPT Library inventory does not mount source bytes; current game continues with recovered originals and uploaded tiles"
+    },
+    {
+      "library_name": "mithiamapeditor-master.zip",
+      "sha256": "d49ca6f1ee839d8bf3146b1455bbb07f9642fcc945c914d08106beea40bd54b1",
+      "status": "NOT_ACCESSIBLE_NOT_IN_ATTACHED_ZIP",
+      "actual_path": null,
+      "reason": "ChatGPT Library inventory does not mount source bytes; current game continues with recovered originals and uploaded tiles"
+    },
+    {
+      "library_name": "EPFTool.exe",
+      "sha256": "d58303a3129547505daf7006e7dc58cc27bcfdad33ee5137c1350ef172a02221",
+      "status": "NOT_ACCESSIBLE_NOT_IN_ATTACHED_ZIP",
+      "actual_path": null,
+      "reason": "ChatGPT Library inventory does not mount source bytes; current game continues with recovered originals and uploaded tiles"
+    },
+    {
+      "library_name": "BARAM.PAL",
+      "sha256": "34bee372e754fc423099193587ae265b731d7f7ff0f083a87cb564179aeb266a",
+      "status": "PASS_SHA256_AVAILABLE",
+      "actual_path": "/workspace/baram-private/archives/BARAM.PAL",
+      "reason": null
+    },
+    {
+      "library_name": "baram_tile_atlases_PRIVATE.zip",
+      "sha256": "18581f104aa725eb615a205d428a10b46bd670b956876b99fa92ce32ebdc1514",
+      "status": "PASS_SHA256_AVAILABLE",
+      "actual_path": "/workspace/baram-private/asset-handoff/baram_tile_atlases_PRIVATE.zip",
+      "reason": null
+    }
+  ]
+}
