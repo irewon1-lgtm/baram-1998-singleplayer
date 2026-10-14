@@ -2,7 +2,7 @@
 
 Work branch: `work/content-import` (separate workspace).
 Starting remote SHA: `71d6359f8652e10d055326267ffb4677eee0d5d9`.
-Last published/byte-verified package commit: `10b4dcfbf1d1c9fff89b36c71ca36429f12e7bda`.
+Last published/byte-verified package commit: `897495bfd15f9c35fd7d0d9da64c4009232ad33b`.
 The following index commit registers this package; its own SHA is read remotely.
 
 ## Current state
@@ -22,9 +22,16 @@ Last observed Codex: f0a00bb66163a5ad372a021d38e094592dc8b73e.
 Core systems/importer adaptations are in progress; original Work001 pixel acquisition unverified.
 No request to edit Work001 data. Do not wait for a new receipt.
 
+WK-CONTENT-003: 869 definitions/proposals; new physical maps322 across24 region groups,
+monster51 (boss8), item66, NPC96, shop24, quest62, recipe192; old map portal proposals5.
+Format/frame/private-member/static-coordinate checks PASS; connection/acquisition/defined cash
+transaction checks PASS. 322 private layouts474,654bytes saved and pinned in acquisition.json.
+Remote blob identities51 files, mismatches0. Recipient acquisition/import/playback NOT_RUN.
+
 ## Next action / remaining work
 
-Produce connected regional ecosystems from reviewed, compatible unselected terrain:
+Next: post-advancement equipment and skill/effect/teacher/quest paths, then bounded original decoder recovery.
+Completed regional production reuses original terrain:
 source layout + entry/return links + monsters/drops + equipment/material use + NPCs/quests.
 Use effective Work001+002 values for guards. Register every next batch independently.
 Uninterpreted49 EPF +9 source effects remain in asset-errors.json; repaired PNG9 is a different issue.
