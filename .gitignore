@@ -13,3 +13,9 @@ build/
 dist/
 *.exe
 *.pck
+
+# Local only: original assets and extracted user-provided resources
+private_assets/
+.private/
+baram_tile_atlases_PRIVATE.zip
+*.crdownload
