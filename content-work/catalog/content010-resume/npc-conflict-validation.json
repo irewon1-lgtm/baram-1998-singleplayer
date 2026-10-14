@@ -1,0 +1,71 @@
+{
+  "executed_at_utc": "2026-10-14T14:38:12.830891+00:00",
+  "command": "python content-work/tools/reconcile_content008_010.py",
+  "script_sha256": "e06689dac2ba6fbaca20b0929eacf9f1ac50b9196c91aaccf672a4dc6c3d7f89",
+  "source_packages": [
+    {
+      "batch_id": "WK-CONTENT-008",
+      "package_commit": "2935c1f7cebed5a673dca1660d6bb0fbff0ae35d",
+      "manifest_sha256": "d9f69210a63b0cdcd6013561cdbc83d2976bb9fcdcd65437f170bb40433dfa4b"
+    },
+    {
+      "batch_id": "WK-CONTENT-010",
+      "package_commit": "f7a85eee9615db2d2f977ae5796a867a096bce07",
+      "manifest_sha256": "59e352d2c2b34bdab160380e2dd00aade99c86b18cfe35ab3b3873f8aec1bb4f"
+    }
+  ],
+  "scope": "STATIC_DATA_RECONCILIATION_SIMULATION",
+  "conflict_detection": "PASS_CONFIRMED",
+  "unmodified_combined_import": "BLOCKED_GUARD_CONFLICT",
+  "proposal_checks": "PASS",
+  "checks": {
+    "npc_pairs": 2,
+    "original_guard_conflicts_each_order": 4,
+    "recognized_state_cases": 8,
+    "unexpected_state_rejections": 8,
+    "menu_service_pairs_preserved": 50
+  },
+  "npcs": [
+    {
+      "target_id": "wk.npc.exp2.dry.51.smith",
+      "conflicting_fields": [
+        "services",
+        "dialogue"
+      ],
+      "baseline_services": 11,
+      "content008_services": 12,
+      "content010_services": 12,
+      "merged_services": 13,
+      "bow_menu_index_changes": [
+        {
+          "label": "굽은 사구활 제작",
+          "old_index": 11,
+          "merged_index": 12,
+          "recipe_id": "wk.recipe.exp3.source-bow.15"
+        }
+      ]
+    },
+    {
+      "target_id": "wk.npc.exp2.forest.11.smith",
+      "conflicting_fields": [
+        "services",
+        "dialogue"
+      ],
+      "baseline_services": 12,
+      "content008_services": 13,
+      "content010_services": 13,
+      "merged_services": 14,
+      "bow_menu_index_changes": [
+        {
+          "label": "초행 사냥활 제작",
+          "old_index": 12,
+          "merged_index": 13,
+          "recipe_id": "wk.recipe.exp3.source-bow.14"
+        }
+      ]
+    }
+  ],
+  "game_import": "NOT_RUN",
+  "gameplay": "NOT_RUN",
+  "frozen_source_hashes_unchanged": true
+}

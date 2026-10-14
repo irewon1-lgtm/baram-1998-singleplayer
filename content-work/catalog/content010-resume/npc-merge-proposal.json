@@ -1,0 +1,1239 @@
+{
+  "schema_id": "WORK_NPC_RECONCILIATION_PROPOSAL_V1",
+  "scope": "DATA_ONLY_NOT_A_RUNTIME_PACKAGE",
+  "source_packages": [
+    {
+      "batch_id": "WK-CONTENT-008",
+      "package_commit": "2935c1f7cebed5a673dca1660d6bb0fbff0ae35d",
+      "manifest_sha256": "d9f69210a63b0cdcd6013561cdbc83d2976bb9fcdcd65437f170bb40433dfa4b"
+    },
+    {
+      "batch_id": "WK-CONTENT-010",
+      "package_commit": "f7a85eee9615db2d2f977ae5796a867a096bce07",
+      "manifest_sha256": "59e352d2c2b34bdab160380e2dd00aade99c86b18cfe35ab3b3873f8aec1bb4f"
+    }
+  ],
+  "consumer_status": "NOT_IMPLEMENTED_OR_EXECUTED_HERE",
+  "game_import": "NOT_RUN",
+  "gameplay": "NOT_RUN",
+  "requirements": [
+    "Verify both immutable source packages and all dependency pins before staging.",
+    "Require both optional equipment capabilities before activating both menu families.",
+    "This is an explicit per-target resolution, never disable generic field guards or overwrite changed Codex fields.",
+    "Stage both package definitions and these two field-pair resolutions in one atomic consumer transaction, or apply to a verified single-package state. Every unrelated original guard still applies.",
+    "Compare the complete services/dialogue pair with one accepted exact field set; reject unknown or mixed states. Preserve every other NPC field.",
+    "Preserve existing service order, append shield then bow, and reindex the bow choice to its corresponding recipe service.",
+    "Record both original proposals and this resolution provenance. Roll back the complete batch on error; do not falsely receipt the original failing patch as a plain success.",
+    "Already reconciled state must be idempotent. Produce real importer/runtime receipts before marking imported or played."
+  ],
+  "npc_resolutions": [
+    {
+      "target_id": "wk.npc.exp2.dry.51.smith",
+      "source_proposal_ids": [
+        "wk.npc.exp2.remaining-gear-wk-content-008.wk.npc.exp2.dry.51.smith",
+        "wk.npc.exp2.remaining-gear-wk-content-010.wk.npc.exp2.dry.51.smith"
+      ],
+      "field_paths": [
+        "services",
+        "dialogue"
+      ],
+      "accepted_exact_field_sets": {
+        "common_baseline": {
+          "services": [
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.0.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.0.body",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.1.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.1.body",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.2.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.2.body",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.3.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.3.body",
+              "type": "recipe_book"
+            },
+            {
+              "max_durability_field": "stats.durability",
+              "price_multiplier": 0.001,
+              "type": "repair"
+            },
+            {
+              "quest_ids": [
+                "wk.quest.exp2.dry.51.2"
+              ],
+              "type": "quests"
+            },
+            {
+              "recipe_id": "wk.recipe.exp3.source-sword.62",
+              "type": "recipe_book"
+            }
+          ],
+          "dialogue": [
+            {
+              "choices": [
+                {
+                  "label": "전사 수로 무기 제작",
+                  "service_index": 0
+                },
+                {
+                  "label": "전사 수로 도복 제작",
+                  "service_index": 1
+                },
+                {
+                  "label": "도적 수로 무기 제작",
+                  "service_index": 2
+                },
+                {
+                  "label": "도적 수로 도복 제작",
+                  "service_index": 3
+                },
+                {
+                  "label": "주술사 수로 무기 제작",
+                  "service_index": 4
+                },
+                {
+                  "label": "주술사 수로 도복 제작",
+                  "service_index": 5
+                },
+                {
+                  "label": "도사 수로 무기 제작",
+                  "service_index": 6
+                },
+                {
+                  "label": "도사 수로 도복 제작",
+                  "service_index": 7
+                },
+                {
+                  "label": "장비 수리",
+                  "service_index": 8
+                },
+                {
+                  "label": "수집 의뢰 제출",
+                  "service_index": 9
+                },
+                {
+                  "label": "굽은 사구 칼 제작",
+                  "service_index": 10
+                }
+              ],
+              "id": "greeting",
+              "text": "모래구릉 옛길 51–70구간에 오신 것을 환영합니다. 사구 유리돌를 모으면 직업에 맞는 장비를 만들 수 있습니다. 재료와 돈은 함께 소비됩니다."
+            }
+          ]
+        },
+        "content008_only": {
+          "services": [
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.0.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.0.body",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.1.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.1.body",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.2.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.2.body",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.3.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.3.body",
+              "type": "recipe_book"
+            },
+            {
+              "max_durability_field": "stats.durability",
+              "price_multiplier": 0.001,
+              "type": "repair"
+            },
+            {
+              "quest_ids": [
+                "wk.quest.exp2.dry.51.2"
+              ],
+              "type": "quests"
+            },
+            {
+              "recipe_id": "wk.recipe.exp3.source-sword.62",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp3.source-shield.4",
+              "type": "recipe_book"
+            }
+          ],
+          "dialogue": [
+            {
+              "choices": [
+                {
+                  "label": "전사 수로 무기 제작",
+                  "service_index": 0
+                },
+                {
+                  "label": "전사 수로 도복 제작",
+                  "service_index": 1
+                },
+                {
+                  "label": "도적 수로 무기 제작",
+                  "service_index": 2
+                },
+                {
+                  "label": "도적 수로 도복 제작",
+                  "service_index": 3
+                },
+                {
+                  "label": "주술사 수로 무기 제작",
+                  "service_index": 4
+                },
+                {
+                  "label": "주술사 수로 도복 제작",
+                  "service_index": 5
+                },
+                {
+                  "label": "도사 수로 무기 제작",
+                  "service_index": 6
+                },
+                {
+                  "label": "도사 수로 도복 제작",
+                  "service_index": 7
+                },
+                {
+                  "label": "장비 수리",
+                  "service_index": 8
+                },
+                {
+                  "label": "수집 의뢰 제출",
+                  "service_index": 9
+                },
+                {
+                  "label": "굽은 사구 칼 제작",
+                  "service_index": 10
+                },
+                {
+                  "label": "뿔결 방패 제작",
+                  "service_index": 11
+                }
+              ],
+              "id": "greeting",
+              "text": "모래구릉 옛길 51–70구간에 오신 것을 환영합니다. 사구 유리돌를 모으면 직업에 맞는 장비를 만들 수 있습니다. 재료와 돈은 함께 소비됩니다."
+            }
+          ]
+        },
+        "content010_only": {
+          "services": [
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.0.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.0.body",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.1.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.1.body",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.2.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.2.body",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.3.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.3.body",
+              "type": "recipe_book"
+            },
+            {
+              "max_durability_field": "stats.durability",
+              "price_multiplier": 0.001,
+              "type": "repair"
+            },
+            {
+              "quest_ids": [
+                "wk.quest.exp2.dry.51.2"
+              ],
+              "type": "quests"
+            },
+            {
+              "recipe_id": "wk.recipe.exp3.source-sword.62",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp3.source-bow.15",
+              "type": "recipe_book"
+            }
+          ],
+          "dialogue": [
+            {
+              "choices": [
+                {
+                  "label": "전사 수로 무기 제작",
+                  "service_index": 0
+                },
+                {
+                  "label": "전사 수로 도복 제작",
+                  "service_index": 1
+                },
+                {
+                  "label": "도적 수로 무기 제작",
+                  "service_index": 2
+                },
+                {
+                  "label": "도적 수로 도복 제작",
+                  "service_index": 3
+                },
+                {
+                  "label": "주술사 수로 무기 제작",
+                  "service_index": 4
+                },
+                {
+                  "label": "주술사 수로 도복 제작",
+                  "service_index": 5
+                },
+                {
+                  "label": "도사 수로 무기 제작",
+                  "service_index": 6
+                },
+                {
+                  "label": "도사 수로 도복 제작",
+                  "service_index": 7
+                },
+                {
+                  "label": "장비 수리",
+                  "service_index": 8
+                },
+                {
+                  "label": "수집 의뢰 제출",
+                  "service_index": 9
+                },
+                {
+                  "label": "굽은 사구 칼 제작",
+                  "service_index": 10
+                },
+                {
+                  "label": "굽은 사구활 제작",
+                  "service_index": 11
+                }
+              ],
+              "id": "greeting",
+              "text": "모래구릉 옛길 51–70구간에 오신 것을 환영합니다. 사구 유리돌를 모으면 직업에 맞는 장비를 만들 수 있습니다. 재료와 돈은 함께 소비됩니다."
+            }
+          ]
+        },
+        "already_reconciled": {
+          "services": [
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.0.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.0.body",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.1.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.1.body",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.2.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.2.body",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.3.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.3.body",
+              "type": "recipe_book"
+            },
+            {
+              "max_durability_field": "stats.durability",
+              "price_multiplier": 0.001,
+              "type": "repair"
+            },
+            {
+              "quest_ids": [
+                "wk.quest.exp2.dry.51.2"
+              ],
+              "type": "quests"
+            },
+            {
+              "recipe_id": "wk.recipe.exp3.source-sword.62",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp3.source-shield.4",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp3.source-bow.15",
+              "type": "recipe_book"
+            }
+          ],
+          "dialogue": [
+            {
+              "choices": [
+                {
+                  "label": "전사 수로 무기 제작",
+                  "service_index": 0
+                },
+                {
+                  "label": "전사 수로 도복 제작",
+                  "service_index": 1
+                },
+                {
+                  "label": "도적 수로 무기 제작",
+                  "service_index": 2
+                },
+                {
+                  "label": "도적 수로 도복 제작",
+                  "service_index": 3
+                },
+                {
+                  "label": "주술사 수로 무기 제작",
+                  "service_index": 4
+                },
+                {
+                  "label": "주술사 수로 도복 제작",
+                  "service_index": 5
+                },
+                {
+                  "label": "도사 수로 무기 제작",
+                  "service_index": 6
+                },
+                {
+                  "label": "도사 수로 도복 제작",
+                  "service_index": 7
+                },
+                {
+                  "label": "장비 수리",
+                  "service_index": 8
+                },
+                {
+                  "label": "수집 의뢰 제출",
+                  "service_index": 9
+                },
+                {
+                  "label": "굽은 사구 칼 제작",
+                  "service_index": 10
+                },
+                {
+                  "label": "뿔결 방패 제작",
+                  "service_index": 11
+                },
+                {
+                  "label": "굽은 사구활 제작",
+                  "service_index": 12
+                }
+              ],
+              "id": "greeting",
+              "text": "모래구릉 옛길 51–70구간에 오신 것을 환영합니다. 사구 유리돌를 모으면 직업에 맞는 장비를 만들 수 있습니다. 재료와 돈은 함께 소비됩니다."
+            }
+          ]
+        }
+      },
+      "merged_fields": {
+        "services": [
+          {
+            "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.0.weapon",
+            "type": "recipe_book"
+          },
+          {
+            "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.0.body",
+            "type": "recipe_book"
+          },
+          {
+            "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.1.weapon",
+            "type": "recipe_book"
+          },
+          {
+            "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.1.body",
+            "type": "recipe_book"
+          },
+          {
+            "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.2.weapon",
+            "type": "recipe_book"
+          },
+          {
+            "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.2.body",
+            "type": "recipe_book"
+          },
+          {
+            "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.3.weapon",
+            "type": "recipe_book"
+          },
+          {
+            "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.3.body",
+            "type": "recipe_book"
+          },
+          {
+            "max_durability_field": "stats.durability",
+            "price_multiplier": 0.001,
+            "type": "repair"
+          },
+          {
+            "quest_ids": [
+              "wk.quest.exp2.dry.51.2"
+            ],
+            "type": "quests"
+          },
+          {
+            "recipe_id": "wk.recipe.exp3.source-sword.62",
+            "type": "recipe_book"
+          },
+          {
+            "recipe_id": "wk.recipe.exp3.source-shield.4",
+            "type": "recipe_book"
+          },
+          {
+            "recipe_id": "wk.recipe.exp3.source-bow.15",
+            "type": "recipe_book"
+          }
+        ],
+        "dialogue": [
+          {
+            "choices": [
+              {
+                "label": "전사 수로 무기 제작",
+                "service_index": 0
+              },
+              {
+                "label": "전사 수로 도복 제작",
+                "service_index": 1
+              },
+              {
+                "label": "도적 수로 무기 제작",
+                "service_index": 2
+              },
+              {
+                "label": "도적 수로 도복 제작",
+                "service_index": 3
+              },
+              {
+                "label": "주술사 수로 무기 제작",
+                "service_index": 4
+              },
+              {
+                "label": "주술사 수로 도복 제작",
+                "service_index": 5
+              },
+              {
+                "label": "도사 수로 무기 제작",
+                "service_index": 6
+              },
+              {
+                "label": "도사 수로 도복 제작",
+                "service_index": 7
+              },
+              {
+                "label": "장비 수리",
+                "service_index": 8
+              },
+              {
+                "label": "수집 의뢰 제출",
+                "service_index": 9
+              },
+              {
+                "label": "굽은 사구 칼 제작",
+                "service_index": 10
+              },
+              {
+                "label": "뿔결 방패 제작",
+                "service_index": 11
+              },
+              {
+                "label": "굽은 사구활 제작",
+                "service_index": 12
+              }
+            ],
+            "id": "greeting",
+            "text": "모래구릉 옛길 51–70구간에 오신 것을 환영합니다. 사구 유리돌를 모으면 직업에 맞는 장비를 만들 수 있습니다. 재료와 돈은 함께 소비됩니다."
+          }
+        ]
+      },
+      "bow_menu_index_changes": [
+        {
+          "label": "굽은 사구활 제작",
+          "old_index": 11,
+          "merged_index": 12,
+          "recipe_id": "wk.recipe.exp3.source-bow.15"
+        }
+      ]
+    },
+    {
+      "target_id": "wk.npc.exp2.forest.11.smith",
+      "source_proposal_ids": [
+        "wk.npc.exp2.remaining-gear-wk-content-008.wk.npc.exp2.forest.11.smith",
+        "wk.npc.exp2.remaining-gear-wk-content-010.wk.npc.exp2.forest.11.smith"
+      ],
+      "field_paths": [
+        "services",
+        "dialogue"
+      ],
+      "accepted_exact_field_sets": {
+        "common_baseline": {
+          "services": [
+            {
+              "recipe_id": "wk.recipe.exp2.1.0.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.0.body",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.1.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.1.body",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.2.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.2.body",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.3.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.3.body",
+              "type": "recipe_book"
+            },
+            {
+              "max_durability_field": "stats.durability",
+              "price_multiplier": 0.001,
+              "type": "repair"
+            },
+            {
+              "quest_ids": [
+                "wk.quest.exp2.forest.11.2"
+              ],
+              "type": "quests"
+            },
+            {
+              "recipe_id": "wk.recipe.exp3.source-sword.85",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp3.source-sword.89",
+              "type": "recipe_book"
+            }
+          ],
+          "dialogue": [
+            {
+              "choices": [
+                {
+                  "label": "전사 광맥 무기 제작",
+                  "service_index": 0
+                },
+                {
+                  "label": "전사 광맥 도복 제작",
+                  "service_index": 1
+                },
+                {
+                  "label": "도적 광맥 무기 제작",
+                  "service_index": 2
+                },
+                {
+                  "label": "도적 광맥 도복 제작",
+                  "service_index": 3
+                },
+                {
+                  "label": "주술사 광맥 무기 제작",
+                  "service_index": 4
+                },
+                {
+                  "label": "주술사 광맥 도복 제작",
+                  "service_index": 5
+                },
+                {
+                  "label": "도사 광맥 무기 제작",
+                  "service_index": 6
+                },
+                {
+                  "label": "도사 광맥 도복 제작",
+                  "service_index": 7
+                },
+                {
+                  "label": "장비 수리",
+                  "service_index": 8
+                },
+                {
+                  "label": "수집 의뢰 제출",
+                  "service_index": 9
+                },
+                {
+                  "label": "초행 사냥칼 제작",
+                  "service_index": 10
+                },
+                {
+                  "label": "나무결 몽둥이 제작",
+                  "service_index": 11
+                }
+              ],
+              "id": "greeting",
+              "text": "산기슭 숲길 11–30구간에 오신 것을 환영합니다. 숲결 나뭇조각를 모으면 직업에 맞는 장비를 만들 수 있습니다. 재료와 돈은 함께 소비됩니다."
+            }
+          ]
+        },
+        "content008_only": {
+          "services": [
+            {
+              "recipe_id": "wk.recipe.exp2.1.0.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.0.body",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.1.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.1.body",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.2.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.2.body",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.3.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.3.body",
+              "type": "recipe_book"
+            },
+            {
+              "max_durability_field": "stats.durability",
+              "price_multiplier": 0.001,
+              "type": "repair"
+            },
+            {
+              "quest_ids": [
+                "wk.quest.exp2.forest.11.2"
+              ],
+              "type": "quests"
+            },
+            {
+              "recipe_id": "wk.recipe.exp3.source-sword.85",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp3.source-sword.89",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp3.source-shield.1",
+              "type": "recipe_book"
+            }
+          ],
+          "dialogue": [
+            {
+              "choices": [
+                {
+                  "label": "전사 광맥 무기 제작",
+                  "service_index": 0
+                },
+                {
+                  "label": "전사 광맥 도복 제작",
+                  "service_index": 1
+                },
+                {
+                  "label": "도적 광맥 무기 제작",
+                  "service_index": 2
+                },
+                {
+                  "label": "도적 광맥 도복 제작",
+                  "service_index": 3
+                },
+                {
+                  "label": "주술사 광맥 무기 제작",
+                  "service_index": 4
+                },
+                {
+                  "label": "주술사 광맥 도복 제작",
+                  "service_index": 5
+                },
+                {
+                  "label": "도사 광맥 무기 제작",
+                  "service_index": 6
+                },
+                {
+                  "label": "도사 광맥 도복 제작",
+                  "service_index": 7
+                },
+                {
+                  "label": "장비 수리",
+                  "service_index": 8
+                },
+                {
+                  "label": "수집 의뢰 제출",
+                  "service_index": 9
+                },
+                {
+                  "label": "초행 사냥칼 제작",
+                  "service_index": 10
+                },
+                {
+                  "label": "나무결 몽둥이 제작",
+                  "service_index": 11
+                },
+                {
+                  "label": "작은 가죽방패 제작",
+                  "service_index": 12
+                }
+              ],
+              "id": "greeting",
+              "text": "산기슭 숲길 11–30구간에 오신 것을 환영합니다. 숲결 나뭇조각를 모으면 직업에 맞는 장비를 만들 수 있습니다. 재료와 돈은 함께 소비됩니다."
+            }
+          ]
+        },
+        "content010_only": {
+          "services": [
+            {
+              "recipe_id": "wk.recipe.exp2.1.0.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.0.body",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.1.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.1.body",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.2.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.2.body",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.3.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.3.body",
+              "type": "recipe_book"
+            },
+            {
+              "max_durability_field": "stats.durability",
+              "price_multiplier": 0.001,
+              "type": "repair"
+            },
+            {
+              "quest_ids": [
+                "wk.quest.exp2.forest.11.2"
+              ],
+              "type": "quests"
+            },
+            {
+              "recipe_id": "wk.recipe.exp3.source-sword.85",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp3.source-sword.89",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp3.source-bow.14",
+              "type": "recipe_book"
+            }
+          ],
+          "dialogue": [
+            {
+              "choices": [
+                {
+                  "label": "전사 광맥 무기 제작",
+                  "service_index": 0
+                },
+                {
+                  "label": "전사 광맥 도복 제작",
+                  "service_index": 1
+                },
+                {
+                  "label": "도적 광맥 무기 제작",
+                  "service_index": 2
+                },
+                {
+                  "label": "도적 광맥 도복 제작",
+                  "service_index": 3
+                },
+                {
+                  "label": "주술사 광맥 무기 제작",
+                  "service_index": 4
+                },
+                {
+                  "label": "주술사 광맥 도복 제작",
+                  "service_index": 5
+                },
+                {
+                  "label": "도사 광맥 무기 제작",
+                  "service_index": 6
+                },
+                {
+                  "label": "도사 광맥 도복 제작",
+                  "service_index": 7
+                },
+                {
+                  "label": "장비 수리",
+                  "service_index": 8
+                },
+                {
+                  "label": "수집 의뢰 제출",
+                  "service_index": 9
+                },
+                {
+                  "label": "초행 사냥칼 제작",
+                  "service_index": 10
+                },
+                {
+                  "label": "나무결 몽둥이 제작",
+                  "service_index": 11
+                },
+                {
+                  "label": "초행 사냥활 제작",
+                  "service_index": 12
+                }
+              ],
+              "id": "greeting",
+              "text": "산기슭 숲길 11–30구간에 오신 것을 환영합니다. 숲결 나뭇조각를 모으면 직업에 맞는 장비를 만들 수 있습니다. 재료와 돈은 함께 소비됩니다."
+            }
+          ]
+        },
+        "already_reconciled": {
+          "services": [
+            {
+              "recipe_id": "wk.recipe.exp2.1.0.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.0.body",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.1.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.1.body",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.2.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.2.body",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.3.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.3.body",
+              "type": "recipe_book"
+            },
+            {
+              "max_durability_field": "stats.durability",
+              "price_multiplier": 0.001,
+              "type": "repair"
+            },
+            {
+              "quest_ids": [
+                "wk.quest.exp2.forest.11.2"
+              ],
+              "type": "quests"
+            },
+            {
+              "recipe_id": "wk.recipe.exp3.source-sword.85",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp3.source-sword.89",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp3.source-shield.1",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp3.source-bow.14",
+              "type": "recipe_book"
+            }
+          ],
+          "dialogue": [
+            {
+              "choices": [
+                {
+                  "label": "전사 광맥 무기 제작",
+                  "service_index": 0
+                },
+                {
+                  "label": "전사 광맥 도복 제작",
+                  "service_index": 1
+                },
+                {
+                  "label": "도적 광맥 무기 제작",
+                  "service_index": 2
+                },
+                {
+                  "label": "도적 광맥 도복 제작",
+                  "service_index": 3
+                },
+                {
+                  "label": "주술사 광맥 무기 제작",
+                  "service_index": 4
+                },
+                {
+                  "label": "주술사 광맥 도복 제작",
+                  "service_index": 5
+                },
+                {
+                  "label": "도사 광맥 무기 제작",
+                  "service_index": 6
+                },
+                {
+                  "label": "도사 광맥 도복 제작",
+                  "service_index": 7
+                },
+                {
+                  "label": "장비 수리",
+                  "service_index": 8
+                },
+                {
+                  "label": "수집 의뢰 제출",
+                  "service_index": 9
+                },
+                {
+                  "label": "초행 사냥칼 제작",
+                  "service_index": 10
+                },
+                {
+                  "label": "나무결 몽둥이 제작",
+                  "service_index": 11
+                },
+                {
+                  "label": "작은 가죽방패 제작",
+                  "service_index": 12
+                },
+                {
+                  "label": "초행 사냥활 제작",
+                  "service_index": 13
+                }
+              ],
+              "id": "greeting",
+              "text": "산기슭 숲길 11–30구간에 오신 것을 환영합니다. 숲결 나뭇조각를 모으면 직업에 맞는 장비를 만들 수 있습니다. 재료와 돈은 함께 소비됩니다."
+            }
+          ]
+        }
+      },
+      "merged_fields": {
+        "services": [
+          {
+            "recipe_id": "wk.recipe.exp2.1.0.weapon",
+            "type": "recipe_book"
+          },
+          {
+            "recipe_id": "wk.recipe.exp2.1.0.body",
+            "type": "recipe_book"
+          },
+          {
+            "recipe_id": "wk.recipe.exp2.1.1.weapon",
+            "type": "recipe_book"
+          },
+          {
+            "recipe_id": "wk.recipe.exp2.1.1.body",
+            "type": "recipe_book"
+          },
+          {
+            "recipe_id": "wk.recipe.exp2.1.2.weapon",
+            "type": "recipe_book"
+          },
+          {
+            "recipe_id": "wk.recipe.exp2.1.2.body",
+            "type": "recipe_book"
+          },
+          {
+            "recipe_id": "wk.recipe.exp2.1.3.weapon",
+            "type": "recipe_book"
+          },
+          {
+            "recipe_id": "wk.recipe.exp2.1.3.body",
+            "type": "recipe_book"
+          },
+          {
+            "max_durability_field": "stats.durability",
+            "price_multiplier": 0.001,
+            "type": "repair"
+          },
+          {
+            "quest_ids": [
+              "wk.quest.exp2.forest.11.2"
+            ],
+            "type": "quests"
+          },
+          {
+            "recipe_id": "wk.recipe.exp3.source-sword.85",
+            "type": "recipe_book"
+          },
+          {
+            "recipe_id": "wk.recipe.exp3.source-sword.89",
+            "type": "recipe_book"
+          },
+          {
+            "recipe_id": "wk.recipe.exp3.source-shield.1",
+            "type": "recipe_book"
+          },
+          {
+            "recipe_id": "wk.recipe.exp3.source-bow.14",
+            "type": "recipe_book"
+          }
+        ],
+        "dialogue": [
+          {
+            "choices": [
+              {
+                "label": "전사 광맥 무기 제작",
+                "service_index": 0
+              },
+              {
+                "label": "전사 광맥 도복 제작",
+                "service_index": 1
+              },
+              {
+                "label": "도적 광맥 무기 제작",
+                "service_index": 2
+              },
+              {
+                "label": "도적 광맥 도복 제작",
+                "service_index": 3
+              },
+              {
+                "label": "주술사 광맥 무기 제작",
+                "service_index": 4
+              },
+              {
+                "label": "주술사 광맥 도복 제작",
+                "service_index": 5
+              },
+              {
+                "label": "도사 광맥 무기 제작",
+                "service_index": 6
+              },
+              {
+                "label": "도사 광맥 도복 제작",
+                "service_index": 7
+              },
+              {
+                "label": "장비 수리",
+                "service_index": 8
+              },
+              {
+                "label": "수집 의뢰 제출",
+                "service_index": 9
+              },
+              {
+                "label": "초행 사냥칼 제작",
+                "service_index": 10
+              },
+              {
+                "label": "나무결 몽둥이 제작",
+                "service_index": 11
+              },
+              {
+                "label": "작은 가죽방패 제작",
+                "service_index": 12
+              },
+              {
+                "label": "초행 사냥활 제작",
+                "service_index": 13
+              }
+            ],
+            "id": "greeting",
+            "text": "산기슭 숲길 11–30구간에 오신 것을 환영합니다. 숲결 나뭇조각를 모으면 직업에 맞는 장비를 만들 수 있습니다. 재료와 돈은 함께 소비됩니다."
+          }
+        ]
+      },
+      "bow_menu_index_changes": [
+        {
+          "label": "초행 사냥활 제작",
+          "old_index": 12,
+          "merged_index": 13,
+          "recipe_id": "wk.recipe.exp3.source-bow.14"
+        }
+      ]
+    }
+  ]
+}

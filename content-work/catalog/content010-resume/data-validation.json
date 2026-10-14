@@ -1,0 +1,360 @@
+{
+  "declared_dependencies": {
+    "batch_id": "WK-CONTENT-010",
+    "base_game_commit": "dea6574c9a69ebb04432d10fc32951aacd8b66cb",
+    "started_at_utc": "2026-10-14T14:36:27.896447+00:00",
+    "command": "-",
+    "scope": "WORK_DATA_CHECKS_ONLY",
+    "result": "PASS",
+    "checks": {
+      "records": 9,
+      "references": 70,
+      "explicit_frame_selections": 96,
+      "numeric_values": 114,
+      "conditional_patches": 3,
+      "ratios": 3,
+      "quest_graph_nodes": 123,
+      "manifest_files": 12
+    },
+    "errors": [],
+    "input_content_sha256": {
+      "content-000.jsonl": "1c3ace41311ba125c4a4aed7545f689666d666845545f3134f9ccefcf2ea9b9b"
+    },
+    "private_bytes_check": "NOT_RUN",
+    "game_import": "NOT_RUN",
+    "gameplay": "NOT_RUN",
+    "physical_audio_listening": "NOT_RUN",
+    "invocation": {
+      "function": "validate",
+      "package": "content-work/packages/WK-CONTENT-010",
+      "dependency_dirs": [
+        "content-work/packages/WK-ASSETS-001",
+        "content-work/packages/WK-CONTENT-001",
+        "content-work/packages/WK-CONTENT-002",
+        "content-work/packages/WK-CONTENT-003",
+        "content-work/packages/WK-CONTENT-004",
+        "content-work/packages/WK-CONTENT-005",
+        "content-work/packages/WK-CONTENT-007",
+        "content-work/packages/WK-CONTENT-009"
+      ],
+      "write_report": false,
+      "verify_manifest": true
+    },
+    "validator_sha256": "4efc34a6b1b56b06f317079ca77de6260600581180043fbd444094cdbcb74b2f"
+  },
+  "with_content008_before_010": {
+    "batch_id": "WK-CONTENT-010",
+    "base_game_commit": "dea6574c9a69ebb04432d10fc32951aacd8b66cb",
+    "started_at_utc": "2026-10-14T14:36:29.119268+00:00",
+    "command": "-",
+    "scope": "WORK_DATA_CHECKS_ONLY",
+    "result": "FAIL",
+    "checks": {
+      "records": 9,
+      "references": 70,
+      "explicit_frame_selections": 96,
+      "numeric_values": 114,
+      "conditional_patches": 3,
+      "ratios": 3,
+      "quest_graph_nodes": 123,
+      "manifest_files": 12
+    },
+    "errors": [
+      {
+        "batch_id": "WK-CONTENT-010",
+        "content_id": "wk.npc.exp2.remaining-gear-wk-content-010.wk.npc.exp2.dry.51.smith",
+        "file": "",
+        "line": null,
+        "field": "changes.services",
+        "value": {
+          "exists": true,
+          "value": [
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.0.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.0.body",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.1.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.1.body",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.2.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.2.body",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.3.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.dry.51.wk.item.exp2.gear.3.3.body",
+              "type": "recipe_book"
+            },
+            {
+              "max_durability_field": "stats.durability",
+              "price_multiplier": 0.001,
+              "type": "repair"
+            },
+            {
+              "quest_ids": [
+                "wk.quest.exp2.dry.51.2"
+              ],
+              "type": "quests"
+            },
+            {
+              "recipe_id": "wk.recipe.exp3.source-sword.62",
+              "type": "recipe_book"
+            }
+          ]
+        },
+        "expected": "guard matches effective pinned dependencies",
+        "provenance_refs": [
+          "rule.exp3.remaining-gear"
+        ],
+        "reproduce": "python3 content-work/tools/validate_package.py content-work/packages/WK-CONTENT-010"
+      },
+      {
+        "batch_id": "WK-CONTENT-010",
+        "content_id": "wk.npc.exp2.remaining-gear-wk-content-010.wk.npc.exp2.dry.51.smith",
+        "file": "",
+        "line": null,
+        "field": "changes.dialogue",
+        "value": {
+          "exists": true,
+          "value": [
+            {
+              "choices": [
+                {
+                  "label": "전사 수로 무기 제작",
+                  "service_index": 0
+                },
+                {
+                  "label": "전사 수로 도복 제작",
+                  "service_index": 1
+                },
+                {
+                  "label": "도적 수로 무기 제작",
+                  "service_index": 2
+                },
+                {
+                  "label": "도적 수로 도복 제작",
+                  "service_index": 3
+                },
+                {
+                  "label": "주술사 수로 무기 제작",
+                  "service_index": 4
+                },
+                {
+                  "label": "주술사 수로 도복 제작",
+                  "service_index": 5
+                },
+                {
+                  "label": "도사 수로 무기 제작",
+                  "service_index": 6
+                },
+                {
+                  "label": "도사 수로 도복 제작",
+                  "service_index": 7
+                },
+                {
+                  "label": "장비 수리",
+                  "service_index": 8
+                },
+                {
+                  "label": "수집 의뢰 제출",
+                  "service_index": 9
+                },
+                {
+                  "label": "굽은 사구 칼 제작",
+                  "service_index": 10
+                }
+              ],
+              "id": "greeting",
+              "text": "모래구릉 옛길 51–70구간에 오신 것을 환영합니다. 사구 유리돌를 모으면 직업에 맞는 장비를 만들 수 있습니다. 재료와 돈은 함께 소비됩니다."
+            }
+          ]
+        },
+        "expected": "guard matches effective pinned dependencies",
+        "provenance_refs": [
+          "rule.exp3.remaining-gear"
+        ],
+        "reproduce": "python3 content-work/tools/validate_package.py content-work/packages/WK-CONTENT-010"
+      },
+      {
+        "batch_id": "WK-CONTENT-010",
+        "content_id": "wk.npc.exp2.remaining-gear-wk-content-010.wk.npc.exp2.forest.11.smith",
+        "file": "",
+        "line": null,
+        "field": "changes.services",
+        "value": {
+          "exists": true,
+          "value": [
+            {
+              "recipe_id": "wk.recipe.exp2.1.0.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.0.body",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.1.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.1.body",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.2.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.2.body",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.3.weapon",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp2.1.3.body",
+              "type": "recipe_book"
+            },
+            {
+              "max_durability_field": "stats.durability",
+              "price_multiplier": 0.001,
+              "type": "repair"
+            },
+            {
+              "quest_ids": [
+                "wk.quest.exp2.forest.11.2"
+              ],
+              "type": "quests"
+            },
+            {
+              "recipe_id": "wk.recipe.exp3.source-sword.85",
+              "type": "recipe_book"
+            },
+            {
+              "recipe_id": "wk.recipe.exp3.source-sword.89",
+              "type": "recipe_book"
+            }
+          ]
+        },
+        "expected": "guard matches effective pinned dependencies",
+        "provenance_refs": [
+          "rule.exp3.remaining-gear"
+        ],
+        "reproduce": "python3 content-work/tools/validate_package.py content-work/packages/WK-CONTENT-010"
+      },
+      {
+        "batch_id": "WK-CONTENT-010",
+        "content_id": "wk.npc.exp2.remaining-gear-wk-content-010.wk.npc.exp2.forest.11.smith",
+        "file": "",
+        "line": null,
+        "field": "changes.dialogue",
+        "value": {
+          "exists": true,
+          "value": [
+            {
+              "choices": [
+                {
+                  "label": "전사 광맥 무기 제작",
+                  "service_index": 0
+                },
+                {
+                  "label": "전사 광맥 도복 제작",
+                  "service_index": 1
+                },
+                {
+                  "label": "도적 광맥 무기 제작",
+                  "service_index": 2
+                },
+                {
+                  "label": "도적 광맥 도복 제작",
+                  "service_index": 3
+                },
+                {
+                  "label": "주술사 광맥 무기 제작",
+                  "service_index": 4
+                },
+                {
+                  "label": "주술사 광맥 도복 제작",
+                  "service_index": 5
+                },
+                {
+                  "label": "도사 광맥 무기 제작",
+                  "service_index": 6
+                },
+                {
+                  "label": "도사 광맥 도복 제작",
+                  "service_index": 7
+                },
+                {
+                  "label": "장비 수리",
+                  "service_index": 8
+                },
+                {
+                  "label": "수집 의뢰 제출",
+                  "service_index": 9
+                },
+                {
+                  "label": "초행 사냥칼 제작",
+                  "service_index": 10
+                },
+                {
+                  "label": "나무결 몽둥이 제작",
+                  "service_index": 11
+                }
+              ],
+              "id": "greeting",
+              "text": "산기슭 숲길 11–30구간에 오신 것을 환영합니다. 숲결 나뭇조각를 모으면 직업에 맞는 장비를 만들 수 있습니다. 재료와 돈은 함께 소비됩니다."
+            }
+          ]
+        },
+        "expected": "guard matches effective pinned dependencies",
+        "provenance_refs": [
+          "rule.exp3.remaining-gear"
+        ],
+        "reproduce": "python3 content-work/tools/validate_package.py content-work/packages/WK-CONTENT-010"
+      }
+    ],
+    "input_content_sha256": {
+      "content-000.jsonl": "1c3ace41311ba125c4a4aed7545f689666d666845545f3134f9ccefcf2ea9b9b"
+    },
+    "private_bytes_check": "NOT_RUN",
+    "game_import": "NOT_RUN",
+    "gameplay": "NOT_RUN",
+    "physical_audio_listening": "NOT_RUN",
+    "invocation": {
+      "function": "validate",
+      "package": "content-work/packages/WK-CONTENT-010",
+      "dependency_dirs": [
+        "content-work/packages/WK-ASSETS-001",
+        "content-work/packages/WK-CONTENT-001",
+        "content-work/packages/WK-CONTENT-002",
+        "content-work/packages/WK-CONTENT-003",
+        "content-work/packages/WK-CONTENT-004",
+        "content-work/packages/WK-CONTENT-005",
+        "content-work/packages/WK-CONTENT-007",
+        "content-work/packages/WK-CONTENT-008",
+        "content-work/packages/WK-CONTENT-009"
+      ],
+      "write_report": false,
+      "verify_manifest": true
+    },
+    "validator_sha256": "4efc34a6b1b56b06f317079ca77de6260600581180043fbd444094cdbcb74b2f"
+  }
+}

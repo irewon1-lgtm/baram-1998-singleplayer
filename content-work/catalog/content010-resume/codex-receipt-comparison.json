@@ -1,0 +1,150 @@
+{
+  "observed_at_utc": "2026-10-14T14:39:21.288483+00:00",
+  "receiver_branch": "codex/game-core",
+  "receiver_commit": "938443c538d2edf8db0a68302cc1fb1d48eb39c9",
+  "evidence_scope": "Published repository receipts only; unpushed work or another chat is not observable here",
+  "exact_pin_matches": [
+    {
+      "branch": "codex/game-core",
+      "observed_commit": "938443c538d2edf8db0a68302cc1fb1d48eb39c9",
+      "path": "integration/content-import/receipts/WK-ASSETS-001-4e5e6356f30f.json",
+      "blob_sha": "de24cb23a4ce094ae31c09039d0742e921ad97ed",
+      "batch_id": "WK-ASSETS-001",
+      "source_commit": "1800a3a0d7ffdb4b27212c6dfdd2539a93212d6b",
+      "manifest_sha256": "4e5e6356f30f798657109ff95f204fe5f38351a072b61a8b19e6828f40e23bab",
+      "import_status": "PARTIALLY_IMPORTED",
+      "applied_content_count": 983,
+      "playback_status": "NOT_RUN",
+      "gameplay_verification": "SCOPE_SPECIFIC_SEE_gui-integration.json_NOT_ALL_CONTENT_PLAYED",
+      "held_count": 9
+    },
+    {
+      "branch": "codex/game-core",
+      "observed_commit": "938443c538d2edf8db0a68302cc1fb1d48eb39c9",
+      "path": "integration/content-import/receipts/WK-ASSETS-002-e8535c430a1f.json",
+      "blob_sha": "51c46e730535aead8583e170b64d86f7ab052666",
+      "batch_id": "WK-ASSETS-002",
+      "source_commit": "174eb63dad76e36dee83551b02648f7da8f2dcc4",
+      "manifest_sha256": "e8535c430a1f90fb06a6559ad4c3904378a2b0f4a8bbecd37f58ecf976c15629",
+      "import_status": "IMPORTED",
+      "applied_content_count": 47,
+      "playback_status": "NOT_RUN",
+      "gameplay_verification": "SCOPE_SPECIFIC_SEE_gui-integration.json_NOT_ALL_CONTENT_PLAYED",
+      "held_count": 0
+    },
+    {
+      "branch": "codex/game-core",
+      "observed_commit": "938443c538d2edf8db0a68302cc1fb1d48eb39c9",
+      "path": "integration/content-import/receipts/WK-CONTENT-001-74b0bc2fd588.json",
+      "blob_sha": "4135a80892537c448f68b212f5ee9fcee08def8c",
+      "batch_id": "WK-CONTENT-001",
+      "source_commit": "d318098bce3c2923516a8b83ad5e2d1fe53d055e",
+      "manifest_sha256": "74b0bc2fd588ecb4036c6f691a6f2f77fda4f1f54bb01806d8489837a34aecf3",
+      "import_status": "IMPORTED",
+      "applied_content_count": 1887,
+      "playback_status": "NOT_RUN",
+      "gameplay_verification": "SCOPE_SPECIFIC_SEE_gui-integration.json_NOT_ALL_CONTENT_PLAYED",
+      "held_count": 0
+    },
+    {
+      "branch": "codex/game-core",
+      "observed_commit": "938443c538d2edf8db0a68302cc1fb1d48eb39c9",
+      "path": "integration/content-import/receipts/WK-CONTENT-002-0d33d0299975.json",
+      "blob_sha": "4c25d088c59fb9e3b2b6b85a9c35f1830188c6a1",
+      "batch_id": "WK-CONTENT-002",
+      "source_commit": "10b4dcfbf1d1c9fff89b36c71ca36429f12e7bda",
+      "manifest_sha256": "0d33d029997534123a94346530d8bbd9ad8ee11ea1bc08ecd600d1a1aac849ec",
+      "import_status": "IMPORTED",
+      "applied_content_count": 457,
+      "playback_status": "NOT_RUN",
+      "gameplay_verification": "SCOPE_SPECIFIC_SEE_gui-integration.json_NOT_ALL_CONTENT_PLAYED",
+      "held_count": 0
+    },
+    {
+      "branch": "codex/game-core",
+      "observed_commit": "938443c538d2edf8db0a68302cc1fb1d48eb39c9",
+      "path": "integration/content-import/receipts/WK-CONTENT-003-e20ab0ad6575.json",
+      "blob_sha": "10d9f4af76dda4dfde23ee01f69a6460f3dd599f",
+      "batch_id": "WK-CONTENT-003",
+      "source_commit": "897495bfd15f9c35fd7d0d9da64c4009232ad33b",
+      "manifest_sha256": "e20ab0ad657503f6972a57745ceabad1f76019c84b6492dd81472a9b8687ae1d",
+      "import_status": "IMPORTED",
+      "applied_content_count": 869,
+      "playback_status": "NOT_RUN",
+      "gameplay_verification": "SCOPE_SPECIFIC_SEE_gui-integration.json_NOT_ALL_CONTENT_PLAYED",
+      "held_count": 0
+    },
+    {
+      "branch": "codex/game-core",
+      "observed_commit": "938443c538d2edf8db0a68302cc1fb1d48eb39c9",
+      "path": "integration/content-import/receipts/WK-CONTENT-004-df5c6dcad9b7.json",
+      "blob_sha": "7a92074a3a30bb7a832efcd6ca49c1bbe71b3827",
+      "batch_id": "WK-CONTENT-004",
+      "source_commit": "da6679f563a55dd54cec719eb0903edd8745eca5",
+      "manifest_sha256": "df5c6dcad9b79ffa597fe72a3fed1ba36a396e87cb8416bf2820bac8c0c737a2",
+      "import_status": "IMPORTED",
+      "applied_content_count": 235,
+      "playback_status": "NOT_RUN",
+      "gameplay_verification": "SCOPE_SPECIFIC_SEE_gui-integration.json_NOT_ALL_CONTENT_PLAYED",
+      "held_count": 0
+    }
+  ],
+  "followup_pending": [
+    {
+      "batch_id": "WK-CONTENT-005",
+      "source_commit": "901a85be123ff0bf80beb09f30fa5ba35b08a276",
+      "manifest_sha256": "53af2b585050dfd21edd1b439442bd0afee545f33592f5c4909ea84765edeca6",
+      "import_status": "READY_NOT_RECEIVED",
+      "receiver_data_validation": "NOT_RUN"
+    },
+    {
+      "batch_id": "WK-ASSETS-003",
+      "source_commit": "7051fd1b2ce68fb62decf6094f8b2d78cf121662",
+      "manifest_sha256": "cb7e81e4047da7419c231d8031129272b28577ae99bdaf266ddca5b54c90c45f",
+      "import_status": "READY_NOT_RECEIVED",
+      "receiver_data_validation": "NOT_RUN"
+    },
+    {
+      "batch_id": "WK-CONTENT-006",
+      "source_commit": "d4bd4b17a5307d5c882936c39547d698736d3733",
+      "manifest_sha256": "29216fdd87f09a289a1fd3ad5205e5b2b3157245d1ea01f34776fab16137ef7e",
+      "import_status": "READY_NOT_RECEIVED",
+      "receiver_data_validation": "NOT_RUN"
+    },
+    {
+      "batch_id": "WK-CONTENT-007",
+      "source_commit": "381cfefad15a2fff6356f2e9a0bd3859af3fc703",
+      "manifest_sha256": "26d0a495104daedf461b6e41cd8b41bd8574bff09fa892a8c169a3f1aaf8316f",
+      "import_status": "READY_NOT_RECEIVED",
+      "receiver_data_validation": "NOT_RUN"
+    },
+    {
+      "batch_id": "WK-CONTENT-008",
+      "source_commit": "2935c1f7cebed5a673dca1660d6bb0fbff0ae35d",
+      "manifest_sha256": "d9f69210a63b0cdcd6013561cdbc83d2976bb9fcdcd65437f170bb40433dfa4b",
+      "import_status": "READY_NOT_RECEIVED",
+      "receiver_data_validation": "NOT_RUN"
+    }
+  ],
+  "no_matching_receipt_in_observed_tree": [
+    "WK-CONTENT-009",
+    "WK-CONTENT-010"
+  ],
+  "bow_capability_names_not_declared": [
+    "original_bow_firing_pose_attachment",
+    "ranged_physical_weapon_attack"
+  ],
+  "capability_note": "Missing names require implementation/semantic alias review, not proof that no equivalent code exists. monster.attack.ranged.v1 alone is not a player bow capability receipt.",
+  "new_game_import": "NOT_RUN",
+  "new_gameplay": "NOT_RUN",
+  "receiver_feedback_source": {
+    "path": "integration/content-import/receipts/work-feedback.json",
+    "blob_sha": "c95cc8dd3e574b4e4bbf1180716fdbabfed06890"
+  },
+  "receiver_feedback_still_open": [
+    "Work Goguryeo map role/native city layout selection",
+    "UI sheet role/event mapping",
+    "optional enhancement eligibility vs current wearable item definitions",
+    "damage_reduction/blind/light magnitude and stack units"
+  ]
+}

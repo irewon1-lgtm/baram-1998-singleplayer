@@ -1,0 +1,130 @@
+{
+  "verified_at_utc": "2026-10-14T14:39:21.268159+00:00",
+  "repository": "irewon1-lgtm/baram-1998-singleplayer",
+  "branch": "work/content-import",
+  "parent_sha": "199fdf5ae52142d0577f84a32981b1cd50bacc3c",
+  "base_tree_sha": "5898e00dd874e733fe752d191ddbf27e55fbdb8a",
+  "new_tree_sha": "fb4feb0d61a04d36007933299f7267b92be0d6c2",
+  "package_commit": "f7a85eee9615db2d2f977ae5796a867a096bce07",
+  "ref_update": {
+    "expected_sha": "199fdf5ae52142d0577f84a32981b1cd50bacc3c",
+    "force": false,
+    "success": true
+  },
+  "remote_blob_identity": "PASS",
+  "verified_files": [
+    {
+      "path": "content-work/catalog/permanent_ids.json",
+      "git_blob_sha": "7379ebd94d659ba19a5b30a496e436dc767b49a7",
+      "sha256": "2bea139afd03fcec39aa9f1e84c872c2a4384738940582ea8a19d824b44086b0",
+      "bytes": 609106
+    },
+    {
+      "path": "content-work/packages/WK-CONTENT-010/bow-consumer-requirements.json",
+      "git_blob_sha": "d94a4e5300a165e47ced1c0a6fcd95f858828242",
+      "sha256": "00af1815fcff6e3d91ec2c8508b588ef9c820b1d150c8d1a267e8b15289a230c",
+      "bytes": 960
+    },
+    {
+      "path": "content-work/packages/WK-CONTENT-010/connection-validation.json",
+      "git_blob_sha": "5aebcc6a1258ce9711f3fbe771c7d7a02054bc8b",
+      "sha256": "8d00cceb6b081ace916a30acb8aa58e6ec77fc1ad59f05c2fb785522616402a0",
+      "bytes": 567
+    },
+    {
+      "path": "content-work/packages/WK-CONTENT-010/content-000.jsonl",
+      "git_blob_sha": "00d2992f7c1a6772ba728153875521ace6aa69d2",
+      "sha256": "1c3ace41311ba125c4a4aed7545f689666d666845545f3134f9ccefcf2ea9b9b",
+      "bytes": 29549
+    },
+    {
+      "path": "content-work/packages/WK-CONTENT-010/gear-summary.json",
+      "git_blob_sha": "e0138d96667dc1c0667ca1b4cfd2d5955a455a30",
+      "sha256": "6fa7fd2f6accfd7f403794eb8e27c60fe5a9f67bb6953d7d6e9b2843653fabf0",
+      "bytes": 821
+    },
+    {
+      "path": "content-work/packages/WK-CONTENT-010/manifest.json",
+      "git_blob_sha": "c917e13defa1b356de6182aa490228e7acff3f79",
+      "sha256": "59e352d2c2b34bdab160380e2dd00aade99c86b18cfe35ab3b3873f8aec1bb4f",
+      "bytes": 5257
+    },
+    {
+      "path": "content-work/packages/WK-CONTENT-010/provenance.json",
+      "git_blob_sha": "a315a07978ceaa76763a93d06e73d1e7c7cacdc5",
+      "sha256": "68e6c5c0d6e825129a3ab9b3a2e70a0223954df00a5a74e8be1faa57ebebf25e",
+      "bytes": 925
+    },
+    {
+      "path": "content-work/packages/WK-CONTENT-010/schema/content-v1.json",
+      "git_blob_sha": "45b4675a85057274f7a6912fe65a41ea55f618ff",
+      "sha256": "c00679cc74b1fd39f0dcb390518ad806669b942ae39672e717e8ffcae30fd23d",
+      "bytes": 3061
+    },
+    {
+      "path": "content-work/packages/WK-CONTENT-010/tools/build_expansion_links.py",
+      "git_blob_sha": "e9de52a15f1b77102350fa32f0dc846e5b84c5f8",
+      "sha256": "ddff130e51e488a6c2c25b31620cc78c70fc6f4cdaaaecb66cf3de2a37e048ef",
+      "bytes": 13079
+    },
+    {
+      "path": "content-work/packages/WK-CONTENT-010/tools/build_remaining_gear.py",
+      "git_blob_sha": "9b543459306a371a8882acc2fc90bf782b71f0a5",
+      "sha256": "4d9afa4093bdbd40ec8f6b0c93decd4de858eed59cae8ad26868948bcda68248",
+      "bytes": 10541
+    },
+    {
+      "path": "content-work/packages/WK-CONTENT-010/tools/check_expansion_graph.py",
+      "git_blob_sha": "b8f63a21ea6cce58cf9679a980fde5cbb46c8b0c",
+      "sha256": "7f45d23f1f419cd8b250ff9eb568d3519bc4d2eb859ae6653f91e9cf65e02b2c",
+      "bytes": 9967
+    },
+    {
+      "path": "content-work/packages/WK-CONTENT-010/tools/common.py",
+      "git_blob_sha": "0a31e545266ac60359556518d5d5f43b59608ce6",
+      "sha256": "2edd82d1d812e487a2cf3e153ad6acd314a5272de39c94eb2ae3e37e5a8c8ebe",
+      "bytes": 5304
+    },
+    {
+      "path": "content-work/packages/WK-CONTENT-010/tools/validate_package.py",
+      "git_blob_sha": "a1488840e9a7132e2fafb28147093f229b386679",
+      "sha256": "4efc34a6b1b56b06f317079ca77de6260600581180043fbd444094cdbcb74b2f",
+      "bytes": 21974
+    },
+    {
+      "path": "content-work/packages/WK-CONTENT-010/validation.json",
+      "git_blob_sha": "2527405c2ad2315fe2596bc4019de18f8adea0a6",
+      "sha256": "65a2635969e10cd10ffc179f7805ddfc5001963d391d6bef5ec782a9540fadbd",
+      "bytes": 594
+    },
+    {
+      "path": "content-work/tools/build_remaining_gear.py",
+      "git_blob_sha": "9b543459306a371a8882acc2fc90bf782b71f0a5",
+      "sha256": "4d9afa4093bdbd40ec8f6b0c93decd4de858eed59cae8ad26868948bcda68248",
+      "bytes": 10541
+    }
+  ],
+  "changed_paths": [
+    "content-work/catalog/permanent_ids.json",
+    "content-work/packages/WK-CONTENT-010/bow-consumer-requirements.json",
+    "content-work/packages/WK-CONTENT-010/connection-validation.json",
+    "content-work/packages/WK-CONTENT-010/content-000.jsonl",
+    "content-work/packages/WK-CONTENT-010/gear-summary.json",
+    "content-work/packages/WK-CONTENT-010/manifest.json",
+    "content-work/packages/WK-CONTENT-010/provenance.json",
+    "content-work/packages/WK-CONTENT-010/schema/content-v1.json",
+    "content-work/packages/WK-CONTENT-010/tools/build_expansion_links.py",
+    "content-work/packages/WK-CONTENT-010/tools/build_remaining_gear.py",
+    "content-work/packages/WK-CONTENT-010/tools/check_expansion_graph.py",
+    "content-work/packages/WK-CONTENT-010/tools/common.py",
+    "content-work/packages/WK-CONTENT-010/tools/validate_package.py",
+    "content-work/packages/WK-CONTENT-010/validation.json",
+    "content-work/tools/build_remaining_gear.py"
+  ],
+  "outside_content_work_changed": [],
+  "previous_frozen_packages_changed": [],
+  "private_binary_files_added": [],
+  "data_validation_evidence": "content-work/catalog/content010-resume/data-validation.json",
+  "game_import": "NOT_RUN",
+  "gameplay": "NOT_RUN"
+}
