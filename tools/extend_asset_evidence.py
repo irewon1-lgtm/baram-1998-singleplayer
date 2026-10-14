@@ -22,7 +22,7 @@ def run(a):
     sources=json.loads((assets/'source_tiles/registry.json').read_text())
     reports=[];tiles=set();frames=set();entered=set();casts=set();sounds=set()
     tile_refs=collections.defaultdict(set);frame_refs=collections.defaultdict(set)
-    prefixes=['source-screen-1','content-screen-1','content-screen-2','content-screen-fixed-1','content-screen-fixed-2','content-actions-screen','cure-actions-screen','town-all-screen','town-all-screen-fixed','town-all-screen-resume','town-all-screen-resume2','town-all-screen-last-room','natural-progress-screen','gear-guide-screen','gear-guide-screen-fixed','expansion-unpacked-screen']
+    prefixes=['source-screen-1','content-screen-1','content-screen-2','content-screen-fixed-1','content-screen-fixed-2','content-actions-screen','cure-actions-screen','town-all-screen','town-all-screen-fixed','town-all-screen-resume','town-all-screen-resume2','town-all-screen-last-room','natural-progress-screen','gear-guide-screen','gear-guide-screen-fixed','expansion-unpacked-screen','expansion-unpacked-final']
     for folder in prefixes:
         candidates=sorted((private/folder).rglob('*-report.json'))+sorted((private/folder).rglob('partial-checks.json'))
         for p in candidates:
