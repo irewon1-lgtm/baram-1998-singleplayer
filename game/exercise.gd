@@ -42,7 +42,7 @@ func capture(title: String):
 
 func route(target: Vector2i) -> bool:
     # BFS plans keys around actual collision/spawn data. The game still decides every step.
-    for attempt in range(120):
+    for attempt in range(40):
         if game.player.hp<=0:return false
         if game.player.hp < game.player.hp_max*0.5 and int(game.player.inventory.get("초보 회복약",0))>0:
             await use_potion()
@@ -69,11 +69,20 @@ func route(target: Vector2i) -> bool:
                 directions[next]=d
                 queue.append(next)
         if not found:return false
+        var steps=[]
         var next=target
-        while parents[next]!=current:next=parents[next]
-        var expected_map=game.player.map
-        await key([KEY_UP,KEY_LEFT,KEY_DOWN,KEY_RIGHT][directions[next]])
-        if game.player.map!=expected_map:return true # portal completed by real movement
+        while next!=current:
+            steps.push_front(next)
+            next=parents[next]
+        for step in steps:
+            if game.player.hp<=0:return false
+            if game.player.hp<game.player.hp_max*0.5 and game.player.inventory.get("초보 회복약",0)>0:await use_potion()
+            var expected_map=game.player.map
+            if not game.free_cell(expected_map,step,"",directions[step]):break
+            await key([KEY_UP,KEY_LEFT,KEY_DOWN,KEY_RIGHT][directions[step]])
+            if game.player.map!=expected_map:return true
+            if game.cell()!=step:break
+        if game.cell()==target:return true
     return false
 
 func hunt_one(kind: String = "") -> bool:
@@ -135,6 +144,9 @@ func run(g, mode: String, directory: String):
         return
     if mode=="town-all":
         await town_all()
+        return
+    if mode=="natural-progress":
+        await natural_progress()
         return
     if mode in ["restart","source-restart","actions-restart"]:
         check(game.save_loaded,"fresh_process_loaded_save")
@@ -541,6 +553,7 @@ func town_all():
     check(await guided("village"),"town_room_start")
     for m in game.world.maps:
         if not str(m.id).begins_with("town-room-"):continue
+        if game.player.has("town_verified") and m.id in game.player.town_verified:continue
         check(await guided(m.id),"town_room_enter_"+m.id)
         if game.player.map!=m.id:break
         await capture("room-"+m.id)
@@ -561,9 +574,38 @@ func town_all():
         if game.menu!="":await key(KEY_ESCAPE,0.02)
         check(await clear_route(Vector2i(m.portals[0].x,m.portals[0].y)) and game.player.map=="village","town_room_exit_"+m.id)
         if game.player.map!="village":break
+        if not game.player.has("town_verified"):game.player.town_verified=[]
+        game.player.town_verified.append(m.id)
+        await key(KEY_F5,0.03)
+        var partial=FileAccess.open(root.path_join("partial-checks.json"),FileAccess.WRITE)
+        partial.store_string(JSON.stringify({"status":"PARTIAL_EXECUTED","checks":checks,"completed_rooms":game.player.town_verified}));partial.close()
     await key(KEY_F5,0.03)
     game.store.write_state(root.path_join("expected-state.json"),game.store.read_state(game.save_path))
     await capture("town-saved")
+    finish()
+
+func natural_progress():
+    check(game.save_loaded and not game.player.has("validation_fixture") and game.player.level==5 and game.player.kills>=25,"resume_previous_actual_level5_not_fixture")
+    var old_inventory=game.loaded_snapshot.player.inventory.duplicate(true)
+    check(game.player.inventory==old_inventory,"old_save_inventory_preserved_on_new_layout")
+    check(await guided("village"),"natural_return_home")
+    check(await approach("shop"),"natural_shop")
+    check(await choose_menu("초보 회복약"),"natural_potion_stock")
+    var budget=mini(15,int(game.player.gold)/10)
+    for i in range(budget):await key(KEY_B,0.02)
+    await key(KEY_ESCAPE,0.02)
+    check(await guided("field"),"natural_field")
+    var portal=game.maps.field.portals.filter(func(p):return p.target=="cave")[0]
+    check(await clear_route(Vector2i(portal.x,portal.y)) and game.player.map=="cave","natural_rat_cave")
+    var deadline=Time.get_ticks_msec()+360000
+    while game.player.level<10 and game.player.hp>0 and Time.get_ticks_msec()<deadline:
+        if game.player.hp<game.player.hp_max*0.60 and game.player.inventory.get("초보 회복약",0)>0:await use_potion()
+        if not await hunt_one("rat"):await pause(0.3)
+        if game.player.level>=6:break # Resume milestone; no fabricated level-30 completion.
+    check(game.player.level>=6,"natural_growth_beyond_old_level5",{"level":game.player.level,"kills":game.player.kills})
+    await capture("natural-level-progress")
+    await key(KEY_F5,0.04);await pause(0.5)
+    game.store.write_state(root.path_join("expected-state.json"),game.store.read_state(game.save_path))
     finish()
 
 func finish():

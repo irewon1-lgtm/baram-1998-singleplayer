@@ -1,0 +1,2053 @@
+{
+  "audio_events": [
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 6.69145933333333,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "playing": true,
+      "time": 6.94530303030303,
+      "voice": "attack"
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "playing": true,
+      "time": 7.74555725925926,
+      "voice": "attack"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 7.74555725925926,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "playing": true,
+      "time": 8.53333333333334,
+      "voice": "attack"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 8.53333333333334,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 8.7,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "playing": true,
+      "time": 9.30757575757576,
+      "voice": "attack"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 9.30757575757576,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 9.70717944444444,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "playing": true,
+      "time": 10.3209118484848,
+      "voice": "attack"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 10.3209118484848,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 10.9065973333333,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 10.9712121212121,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "playing": true,
+      "time": 11.0989578888889,
+      "voice": "attack"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 11.0989578888889,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "playing": true,
+      "time": 12.116079,
+      "voice": "attack"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 12.116079,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 12.1862623333333,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "playing": true,
+      "time": 12.9022222222222,
+      "voice": "attack"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 12.9022222222222,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "playing": true,
+      "time": 13.6920486666666,
+      "voice": "attack"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 13.6920486666666,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 14.1957482222222,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "playing": true,
+      "time": 14.4880952380952,
+      "voice": "attack"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 14.4880952380952,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 15.2217376666667,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "playing": true,
+      "time": 15.286839,
+      "voice": "attack"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 15.286839,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "playing": true,
+      "time": 16.2277777777778,
+      "voice": "attack"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 16.2277777777778,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "playing": true,
+      "time": 17.0345853333333,
+      "voice": "attack"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 17.0345853333333,
+      "voice": "hit"
+    },
+    {
+      "file_sha256": "e59de050331f64ebbae9803fd45a02331287914de210c1a9e4b4d09fd642df5f",
+      "kind": "level",
+      "playing": true,
+      "time": 17.0345853333333,
+      "voice": "level"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 17.8743729999999,
+      "voice": "hit"
+    }
+  ],
+  "checks": [
+    {
+      "name": "resume_previous_actual_level5_not_fixture",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "old_save_inventory_preserved_on_new_layout",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "natural_return_home",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "natural_shop",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "natural_potion_stock",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "natural_field",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "natural_rat_cave",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "natural_growth_beyond_old_level5",
+      "observed": {
+        "kills": 28,
+        "level": 6
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_natural-level-progress",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "engine_audio_mix_recorded",
+      "observed": {
+
+      },
+      "status": "PASS"
+    }
+  ],
+  "elapsed_ms": 18507,
+  "events": [
+    {
+      "details": {
+        "progress_preserved": true,
+        "revision": "source-maps-2"
+      },
+      "event": "layout_migrated",
+      "time": 0.0
+    },
+    {
+      "details": {
+        "equipped": "목검",
+        "level": 5,
+        "map": "forest"
+      },
+      "event": "save_restored",
+      "time": 0.0
+    },
+    {
+      "details": {
+        "loaded_save": true,
+        "registered_tiles": 50104,
+        "renderer": "gl_compatibility"
+      },
+      "event": "ready",
+      "time": 0.0
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 0.133
+    },
+    {
+      "details": {
+        "id": "forest-travel-0",
+        "role": "travel"
+      },
+      "event": "npc_dialogue",
+      "time": 0.133
+    },
+    {
+      "details": {
+        "map": "village",
+        "x": 59,
+        "y": 152
+      },
+      "event": "map_changed",
+      "time": 0.273
+    },
+    {
+      "details": {
+        "classification": "SINGLEPLAYER_COMPLETION",
+        "destination": "village"
+      },
+      "event": "guide_travel",
+      "time": 0.273
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 59,
+        "y": 153
+      },
+      "event": "moved",
+      "time": 0.34
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "village",
+        "x": 59,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 0.582
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 60,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 0.822
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 61,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 1.068
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 1.317
+    },
+    {
+      "details": {
+        "id": "village-shop-0",
+        "role": "shop"
+      },
+      "event": "npc_dialogue",
+      "time": 1.35
+    },
+    {
+      "details": {
+        "buy": true,
+        "gold": 93,
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "trade",
+      "time": 2.114
+    },
+    {
+      "details": {
+        "buy": true,
+        "gold": 83,
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "trade",
+      "time": 2.16
+    },
+    {
+      "details": {
+        "buy": true,
+        "gold": 73,
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "trade",
+      "time": 2.205
+    },
+    {
+      "details": {
+        "buy": true,
+        "gold": 63,
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "trade",
+      "time": 2.251
+    },
+    {
+      "details": {
+        "buy": true,
+        "gold": 53,
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "trade",
+      "time": 2.303
+    },
+    {
+      "details": {
+        "buy": true,
+        "gold": 43,
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "trade",
+      "time": 2.356
+    },
+    {
+      "details": {
+        "buy": true,
+        "gold": 33,
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "trade",
+      "time": 2.409
+    },
+    {
+      "details": {
+        "buy": true,
+        "gold": 23,
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "trade",
+      "time": 2.46
+    },
+    {
+      "details": {
+        "buy": true,
+        "gold": 13,
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "trade",
+      "time": 2.512
+    },
+    {
+      "details": {
+        "buy": true,
+        "gold": 3,
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "trade",
+      "time": 2.55
+    },
+    {
+      "details": {
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "consumed",
+      "time": 2.854
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 62,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 2.926
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 63,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 3.164
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 64,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 3.408
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 65,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 3.65
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 66,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 3.889
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 67,
+        "y": 154
+      },
+      "event": "moved",
+      "time": 4.122
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 4.386
+    },
+    {
+      "details": {
+        "id": "village-travel-3",
+        "role": "travel"
+      },
+      "event": "npc_dialogue",
+      "time": 4.421
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 30,
+        "y": 56
+      },
+      "event": "map_changed",
+      "time": 4.504
+    },
+    {
+      "details": {
+        "classification": "SINGLEPLAYER_COMPLETION",
+        "destination": "field"
+      },
+      "event": "guide_travel",
+      "time": 4.504
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "field",
+        "x": 30,
+        "y": 57
+      },
+      "event": "moved",
+      "time": 4.595
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 31,
+        "y": 57
+      },
+      "event": "moved",
+      "time": 4.835
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 32,
+        "y": 57
+      },
+      "event": "moved",
+      "time": 5.067
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 33,
+        "y": 57
+      },
+      "event": "moved",
+      "time": 5.311
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 34,
+        "y": 57
+      },
+      "event": "moved",
+      "time": 5.553
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "field",
+        "x": 34,
+        "y": 56
+      },
+      "event": "moved",
+      "time": 5.784
+    },
+    {
+      "details": {
+        "map": "cave",
+        "x": 10,
+        "y": 16
+      },
+      "event": "map_changed",
+      "time": 5.784
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "cave",
+        "x": 10,
+        "y": 17
+      },
+      "event": "moved",
+      "time": 6.022
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "cave",
+        "x": 10,
+        "y": 18
+      },
+      "event": "moved",
+      "time": 6.258
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 11,
+        "y": 18
+      },
+      "event": "moved",
+      "time": 6.505
+    },
+    {
+      "details": {
+        "direction": 1,
+        "id": "cave-5",
+        "impact_ms": 160,
+        "source_attack_frames": 1.0
+      },
+      "event": "monster_attack_started",
+      "time": 6.522
+    },
+    {
+      "details": {
+        "attacker": "cave-5",
+        "damage": 19,
+        "hp": 143
+      },
+      "event": "player_hit",
+      "time": 6.691
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "turned",
+      "time": 6.744
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "cave-5"
+      },
+      "event": "attack_started",
+      "time": 6.785
+    },
+    {
+      "details": {
+
+      },
+      "event": "attack_missed_probability",
+      "time": 6.945
+    },
+    {
+      "details": {
+        "direction": 1,
+        "id": "cave-5",
+        "impact_ms": 160,
+        "source_attack_frames": 1.0
+      },
+      "event": "monster_attack_started",
+      "time": 7.526
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "turned",
+      "time": 7.54
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "cave-5"
+      },
+      "event": "attack_started",
+      "time": 7.578
+    },
+    {
+      "details": {
+        "damage": 11,
+        "hp": 63.0,
+        "impact_time": 0.167720037037037,
+        "skill": "",
+        "source": "melee",
+        "target": "cave-5"
+      },
+      "event": "damage_applied",
+      "time": 7.746
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "turned",
+      "time": 8.321
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "cave-5"
+      },
+      "event": "attack_started",
+      "time": 8.364
+    },
+    {
+      "details": {
+        "damage": 11,
+        "hp": 52.0,
+        "impact_time": 0.169228666666668,
+        "skill": "",
+        "source": "melee",
+        "target": "cave-5"
+      },
+      "event": "damage_applied",
+      "time": 8.533
+    },
+    {
+      "details": {
+        "direction": 1,
+        "id": "cave-5",
+        "impact_ms": 160,
+        "source_attack_frames": 1.0
+      },
+      "event": "monster_attack_started",
+      "time": 8.533
+    },
+    {
+      "details": {
+        "attacker": "cave-5",
+        "damage": 11,
+        "hp": 132
+      },
+      "event": "player_hit",
+      "time": 8.7
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "turned",
+      "time": 9.103
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "cave-5"
+      },
+      "event": "attack_started",
+      "time": 9.144
+    },
+    {
+      "details": {
+        "damage": 12,
+        "hp": 40.0,
+        "impact_time": 0.163360424242426,
+        "skill": "",
+        "source": "melee",
+        "target": "cave-5"
+      },
+      "event": "damage_applied",
+      "time": 9.308
+    },
+    {
+      "details": {
+        "direction": 1,
+        "id": "cave-5",
+        "impact_ms": 160,
+        "source_attack_frames": 1.0
+      },
+      "event": "monster_attack_started",
+      "time": 9.541
+    },
+    {
+      "details": {
+        "attacker": "cave-5",
+        "damage": 23,
+        "hp": 109
+      },
+      "event": "player_hit",
+      "time": 9.707
+    },
+    {
+      "details": {
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "consumed",
+      "time": 10.054
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "turned",
+      "time": 10.105
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "cave-5"
+      },
+      "event": "attack_started",
+      "time": 10.148
+    },
+    {
+      "details": {
+        "damage": 13,
+        "hp": 27.0,
+        "impact_time": 0.172426999999999,
+        "skill": "",
+        "source": "melee",
+        "target": "cave-5"
+      },
+      "event": "damage_applied",
+      "time": 10.321
+    },
+    {
+      "details": {
+        "direction": 1,
+        "id": "cave-5",
+        "impact_ms": 160,
+        "source_attack_frames": 1.0
+      },
+      "event": "monster_attack_started",
+      "time": 10.741
+    },
+    {
+      "details": {
+        "direction": 2,
+        "id": "cave-4",
+        "impact_ms": 160,
+        "source_attack_frames": 1.0
+      },
+      "event": "monster_attack_started",
+      "time": 10.802
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "turned",
+      "time": 10.897
+    },
+    {
+      "details": {
+        "attacker": "cave-5",
+        "damage": 17,
+        "hp": 142
+      },
+      "event": "player_hit",
+      "time": 10.907
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "cave-5"
+      },
+      "event": "attack_started",
+      "time": 10.928
+    },
+    {
+      "details": {
+        "attacker": "cave-4",
+        "damage": 21,
+        "hp": 121
+      },
+      "event": "player_hit",
+      "time": 10.971
+    },
+    {
+      "details": {
+        "damage": 15,
+        "hp": 12.0,
+        "impact_time": 0.170643383838384,
+        "skill": "",
+        "source": "melee",
+        "target": "cave-5"
+      },
+      "event": "damage_applied",
+      "time": 11.099
+    },
+    {
+      "details": {
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "consumed",
+      "time": 11.856
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "turned",
+      "time": 11.92
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "cave-5"
+      },
+      "event": "attack_started",
+      "time": 11.953
+    },
+    {
+      "details": {
+        "direction": 1,
+        "id": "cave-5",
+        "impact_ms": 160,
+        "source_attack_frames": 1.0
+      },
+      "event": "monster_attack_started",
+      "time": 11.97
+    },
+    {
+      "details": {
+        "direction": 2,
+        "id": "cave-4",
+        "impact_ms": 160,
+        "source_attack_frames": 1.0
+      },
+      "event": "monster_attack_started",
+      "time": 12.022
+    },
+    {
+      "details": {
+        "damage": 14,
+        "hp": -2.0,
+        "impact_time": 0.162774555555556,
+        "skill": "",
+        "source": "melee",
+        "target": "cave-5"
+      },
+      "event": "damage_applied",
+      "time": 12.116
+    },
+    {
+      "details": {
+        "drops": [],
+        "gold": 20,
+        "id": "cave-5",
+        "level": 5,
+        "xp": 250.0
+      },
+      "event": "monster_killed",
+      "time": 12.116
+    },
+    {
+      "details": {
+        "attacker": "cave-4",
+        "damage": 13,
+        "hp": 158
+      },
+      "event": "player_hit",
+      "time": 12.186
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 12.696
+    },
+    {
+      "details": {
+        "direction": 0,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "cave-4"
+      },
+      "event": "attack_started",
+      "time": 12.733
+    },
+    {
+      "details": {
+        "damage": 14,
+        "hp": 60.0,
+        "impact_time": 0.168888888888889,
+        "skill": "",
+        "source": "melee",
+        "target": "cave-4"
+      },
+      "event": "damage_applied",
+      "time": 12.902
+    },
+    {
+      "details": {
+        "direction": 2,
+        "id": "cave-4",
+        "impact_ms": 160,
+        "source_attack_frames": 1.0
+      },
+      "event": "monster_attack_started",
+      "time": 13.027
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 13.487
+    },
+    {
+      "details": {
+        "direction": 0,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "cave-4"
+      },
+      "event": "attack_started",
+      "time": 13.518
+    },
+    {
+      "details": {
+        "damage": 12,
+        "hp": 48.0,
+        "impact_time": 0.174029666666667,
+        "skill": "",
+        "source": "melee",
+        "target": "cave-4"
+      },
+      "event": "damage_applied",
+      "time": 13.692
+    },
+    {
+      "details": {
+        "direction": 2,
+        "id": "cave-4",
+        "impact_ms": 160,
+        "source_attack_frames": 1.0
+      },
+      "event": "monster_attack_started",
+      "time": 14.035
+    },
+    {
+      "details": {
+        "attacker": "cave-4",
+        "damage": 15,
+        "hp": 143
+      },
+      "event": "player_hit",
+      "time": 14.196
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 14.273
+    },
+    {
+      "details": {
+        "direction": 0,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "cave-4"
+      },
+      "event": "attack_started",
+      "time": 14.314
+    },
+    {
+      "details": {
+        "damage": 14,
+        "hp": 34.0,
+        "impact_time": 0.174182571428573,
+        "skill": "",
+        "source": "melee",
+        "target": "cave-4"
+      },
+      "event": "damage_applied",
+      "time": 14.488
+    },
+    {
+      "details": {
+        "direction": 2,
+        "id": "cave-4",
+        "impact_ms": 160,
+        "source_attack_frames": 1.0
+      },
+      "event": "monster_attack_started",
+      "time": 15.046
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 15.064
+    },
+    {
+      "details": {
+        "direction": 0,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "cave-4"
+      },
+      "event": "attack_started",
+      "time": 15.108
+    },
+    {
+      "details": {
+        "attacker": "cave-4",
+        "damage": 23,
+        "hp": 120
+      },
+      "event": "player_hit",
+      "time": 15.222
+    },
+    {
+      "details": {
+        "damage": 13,
+        "hp": 21.0,
+        "impact_time": 0.178701333333333,
+        "skill": "",
+        "source": "melee",
+        "target": "cave-4"
+      },
+      "event": "damage_applied",
+      "time": 15.287
+    },
+    {
+      "details": {
+        "item": "초보 회복약",
+        "success": true
+      },
+      "event": "consumed",
+      "time": 15.985
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 16.027
+    },
+    {
+      "details": {
+        "direction": 0,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "cave-4"
+      },
+      "event": "attack_started",
+      "time": 16.067
+    },
+    {
+      "details": {
+        "direction": 2,
+        "id": "cave-4",
+        "impact_ms": 160,
+        "source_attack_frames": 1.0
+      },
+      "event": "monster_attack_started",
+      "time": 16.207
+    },
+    {
+      "details": {
+        "damage": 13,
+        "hp": 8.0,
+        "impact_time": 0.160781444444446,
+        "skill": "",
+        "source": "melee",
+        "target": "cave-4"
+      },
+      "event": "damage_applied",
+      "time": 16.228
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "turned",
+      "time": 16.83
+    },
+    {
+      "details": {
+        "direction": 0,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "cave-4"
+      },
+      "event": "attack_started",
+      "time": 16.872
+    },
+    {
+      "details": {
+        "damage": 10,
+        "hp": -2.0,
+        "impact_time": 0.162615636363635,
+        "skill": "",
+        "source": "melee",
+        "target": "cave-4"
+      },
+      "event": "damage_applied",
+      "time": 17.035
+    },
+    {
+      "details": {
+        "drops": [],
+        "gold": 20,
+        "id": "cave-4",
+        "level": 6,
+        "xp": 250.0
+      },
+      "event": "monster_killed",
+      "time": 17.035
+    },
+    {
+      "details": {
+        "levels": [
+          6
+        ]
+      },
+      "event": "level_up",
+      "time": 17.035
+    },
+    {
+      "details": {
+        "direction": 2,
+        "id": "cave-0",
+        "impact_ms": 160,
+        "source_attack_frames": 1.0
+      },
+      "event": "monster_attack_started",
+      "time": 17.708
+    },
+    {
+      "details": {
+        "attacker": "cave-0",
+        "damage": 15,
+        "hp": 310
+      },
+      "event": "player_hit",
+      "time": 17.874
+    },
+    {
+      "details": {
+        "sha256": "30f91bb59d6a292502a98aa974c952a238278ebd33342db0992c992fee32d819",
+        "success": true
+      },
+      "event": "save_written",
+      "time": 17.874
+    }
+  ],
+  "player": {
+    "buffs": {
+
+    },
+    "cooldowns": {
+      "기초 회복": 0.0
+    },
+    "direction": 0,
+    "durability": {
+      "목검": 3982,
+      "목도": 1000
+    },
+    "equipped": "목검",
+    "gold": 43,
+    "growth_log": [
+      {
+        "from": 1,
+        "hp_gain": 45,
+        "job": "평민",
+        "mp_gain": 32
+      },
+      {
+        "from": 2,
+        "hp_gain": 46,
+        "job": "평민",
+        "mp_gain": 33
+      },
+      {
+        "from": 3,
+        "hp_gain": 55,
+        "job": "평민",
+        "mp_gain": 32
+      },
+      {
+        "from": 4,
+        "hp_gain": 48,
+        "job": "평민",
+        "mp_gain": 33
+      },
+      {
+        "from": 5,
+        "hp_gain": 81,
+        "job": "전사",
+        "mp_gain": 9
+      }
+    ],
+    "hotbar": [
+      "기초 회복",
+      "",
+      ""
+    ],
+    "hp": 310,
+    "hp_max": 325,
+    "inventory": {
+      "구운토끼고기": 1,
+      "도토리": 9,
+      "목검": 1,
+      "목도": 1,
+      "쥐고기": 1,
+      "초보 회복약": 6,
+      "토끼고기": 3
+    },
+    "job": "전사",
+    "kills": 28,
+    "level": 6,
+    "map": "cave",
+    "mp": 174,
+    "mp_max": 174,
+    "name": "바람여행자",
+    "quests": [
+      "first_steps",
+      "hunter"
+    ],
+    "rank": 0,
+    "rng_state": "-9114486915289115260",
+    "skill_page": 0,
+    "skills": [
+      "기초 회복"
+    ],
+    "strength": 10,
+    "visited": [
+      "forest",
+      "village",
+      "field",
+      "cave"
+    ],
+    "world_revision": "source-maps-2",
+    "x": 11,
+    "xp2": 4810,
+    "y": 18
+  },
+  "registered_tile_sources": 6,
+  "registered_tiles": 50104,
+  "rendered_actor_frames": [
+    "snake:8",
+    "teacher:6",
+    "wood_weapon:10",
+    "body_0:22",
+    "head_0:22",
+    "ui_border:0",
+    "ui_border:1",
+    "ui_border:2",
+    "ui_border:3",
+    "ui_border:4",
+    "ui_border:5",
+    "ui_border:6",
+    "ui_border:7",
+    "ui_bars:0",
+    "ui_bars:1",
+    "wood_weapon:1",
+    "body_0:13",
+    "head_0:13",
+    "snake:9",
+    "teacher:7",
+    "merchant:7",
+    "priest:7",
+    "merchant:8",
+    "teacher:8",
+    "priest:8",
+    "body_0:18",
+    "head_0:18",
+    "wood_weapon:6",
+    "body_0:19",
+    "head_0:19",
+    "wood_weapon:7",
+    "merchant:6",
+    "priest:6",
+    "body_0:20",
+    "head_0:20",
+    "wood_weapon:8",
+    "wood_weapon:11",
+    "body_0:23",
+    "head_0:23",
+    "wood_weapon:9",
+    "body_0:21",
+    "head_0:21",
+    "icons:0",
+    "icons:1",
+    "icons:5",
+    "icons:4",
+    "icons:2",
+    "icons:3",
+    "icons:6",
+    "icons:9",
+    "icons:10",
+    "icons:11",
+    "icons:12",
+    "squirrel:6",
+    "rabbit:6",
+    "squirrel:7",
+    "rabbit:7",
+    "rabbit:10",
+    "squirrel:4",
+    "squirrel:8",
+    "rabbit:8",
+    "squirrel:5",
+    "rabbit:11",
+    "squirrel:3",
+    "rabbit:9",
+    "squirrel:9",
+    "squirrel:10",
+    "squirrel:11",
+    "rat:7",
+    "rat:8",
+    "rat:6",
+    "rat:10",
+    "rat:11",
+    "rat:9",
+    "rat:13",
+    "wood_weapon:18",
+    "body_0:30",
+    "head_0:30",
+    "rat:4",
+    "rat:5",
+    "body_0:31",
+    "wood_weapon:19",
+    "head_0:31",
+    "rat:3",
+    "body_0:79",
+    "head_0:79",
+    "rat:14",
+    "body_0:76",
+    "head_0:76",
+    "body_0:24",
+    "head_0:24",
+    "wood_weapon:12",
+    "wood_weapon:13",
+    "body_0:25",
+    "head_0:25"
+  ],
+  "rendered_tile_ids": [
+    "KR491/A:1585",
+    "A:1585",
+    "KR491/A:1588",
+    "A:1588",
+    "KR491/B:945",
+    "B:945",
+    "KR491/B:946",
+    "B:946",
+    "KR491/B:947",
+    "B:947",
+    "KR491/B:948",
+    "B:948",
+    "KR491/B:988",
+    "B:988",
+    "KR491/B:989",
+    "B:989",
+    "KR491/B:949",
+    "B:949",
+    "KR491/B:950",
+    "B:950",
+    "KR491/B:951",
+    "B:951",
+    "KR491/B:952",
+    "B:952",
+    "KR491/B:953",
+    "B:953",
+    "KR491/B:955",
+    "B:955",
+    "KR491/B:956",
+    "B:956",
+    "KR491/B:957",
+    "B:957",
+    "KR491/B:958",
+    "B:958",
+    "KR491/B:959",
+    "B:959",
+    "KR491/B:961",
+    "B:961",
+    "KR491/B:962",
+    "B:962",
+    "KR491/B:963",
+    "B:963",
+    "KR491/B:964",
+    "B:964",
+    "KR491/B:965",
+    "B:965",
+    "KR491/B:967",
+    "B:967",
+    "KR491/B:968",
+    "B:968",
+    "KR491/B:969",
+    "B:969",
+    "KR491/B:970",
+    "B:970",
+    "KR491/B:971",
+    "B:971",
+    "KR491/B:973",
+    "B:973",
+    "KR491/B:974",
+    "B:974",
+    "KR491/B:975",
+    "B:975",
+    "KR491/B:976",
+    "B:976",
+    "KR491/B:983",
+    "B:983",
+    "KR491/B:984",
+    "B:984",
+    "KR491/B:985",
+    "B:985",
+    "KR491/B:986",
+    "B:986",
+    "KR491/B:987",
+    "B:987",
+    "KR491/B:982",
+    "B:982",
+    "KR491/B:981",
+    "B:981",
+    "KR491/C:3845",
+    "KR491/C:3843",
+    "KR491/C:2964",
+    "KR491/C:2966",
+    "KR491/A:198",
+    "A:198",
+    "KR491/B:213",
+    "A:426",
+    "B:213",
+    "KR491/A:129",
+    "A:129",
+    "KR491/A:176",
+    "A:176",
+    "KR491/A:132",
+    "A:132",
+    "KR491/A:133",
+    "A:133",
+    "KR491/A:128",
+    "A:128",
+    "KR491/A:140",
+    "A:140",
+    "KR491/A:131",
+    "A:131",
+    "KR491/C:759",
+    "C:759",
+    "KR491/C:769",
+    "C:769",
+    "KR491/C:796",
+    "KR491/C:1657",
+    "KR491/C:1659",
+    "KR491/C:1656",
+    "KR491/C:1658",
+    "KR491/C:777",
+    "C:777",
+    "KR491/C:795",
+    "KR491/C:758",
+    "C:758",
+    "KR491/C:768",
+    "C:768",
+    "KR491/C:794",
+    "KR491/C:812",
+    "C:812",
+    "KR491/C:814",
+    "C:814",
+    "KR491/C:816",
+    "KR491/C:962",
+    "C:962",
+    "KR491/C:961",
+    "C:961",
+    "KR491/C:960",
+    "C:960",
+    "KR491/C:959",
+    "KR491/C:958",
+    "KR491/C:851",
+    "KR491/C:848",
+    "C:848",
+    "KR491/C:763",
+    "C:763",
+    "KR491/C:852",
+    "KR491/C:781",
+    "C:781",
+    "KR491/C:764",
+    "C:764",
+    "KR491/C:853",
+    "KR491/C:865",
+    "KR491/C:863",
+    "KR491/C:861",
+    "KR491/C:2058",
+    "KR491/C:2054",
+    "KR491/C:2062",
+    "KR491/C:2059",
+    "KR491/C:2055",
+    "KR491/C:2063",
+    "KR491/C:2060",
+    "KR491/C:860",
+    "C:860",
+    "KR491/C:862",
+    "C:862",
+    "KR491/C:864",
+    "KR491/C:2056",
+    "KR491/C:2064",
+    "KR491/C:2057",
+    "KR491/C:2061",
+    "KR491/C:1038",
+    "C:1038",
+    "KR491/C:1033",
+    "C:1033",
+    "KR491/C:1029",
+    "C:1029",
+    "KR491/C:1018",
+    "C:1018",
+    "KR491/C:1039",
+    "C:1039",
+    "KR491/C:1034",
+    "C:1034",
+    "KR491/C:1030",
+    "C:1030",
+    "KR491/C:1019",
+    "C:1019",
+    "KR491/C:1040",
+    "KR491/C:1035",
+    "C:1035",
+    "KR491/C:1027",
+    "C:1027",
+    "KR491/C:1047",
+    "KR491/C:1044",
+    "C:1044",
+    "KR491/C:1041",
+    "KR491/C:1048",
+    "KR491/C:1045",
+    "C:1045",
+    "KR491/C:1042",
+    "KR491/C:1049",
+    "KR491/C:1046",
+    "KR491/C:1017",
+    "C:1017",
+    "KR491/C:1028",
+    "C:1028",
+    "KR491/C:1032",
+    "C:1032",
+    "KR491/C:1037",
+    "C:1037",
+    "KR491/C:1025",
+    "C:1025",
+    "KR491/C:1043",
+    "KR491/C:1036",
+    "KR491/C:1031",
+    "C:1031",
+    "KR491/C:1053",
+    "KR491/C:1050",
+    "KR491/C:1060",
+    "KR491/C:1057",
+    "C:1057",
+    "KR491/C:1054",
+    "KR491/C:1051",
+    "KR491/C:1052",
+    "KR491/C:1055",
+    "KR491/C:2042",
+    "KR491/C:2045",
+    "KR491/C:2041",
+    "KR491/C:2044",
+    "C:2044",
+    "KR491/C:2040",
+    "KR491/C:2043",
+    "KR491/C:953",
+    "C:953",
+    "KR491/C:945",
+    "C:945",
+    "KR491/C:954",
+    "C:954",
+    "KR491/C:946",
+    "C:946",
+    "KR491/C:955",
+    "C:955",
+    "KR491/C:947",
+    "KR491/C:956",
+    "C:956",
+    "KR491/C:948",
+    "KR491/C:957",
+    "KR491/C:949",
+    "KR491/A:130",
+    "A:130",
+    "KR491/A:145",
+    "A:145",
+    "KR491/C:2049",
+    "KR491/C:1058",
+    "KR491/C:2048",
+    "KR491/C:2047",
+    "KR491/C:811",
+    "KR491/C:804",
+    "KR491/C:965",
+    "KR491/C:964",
+    "KR491/C:963",
+    "C:963",
+    "KR491/C:1061",
+    "KR491/C:2052",
+    "KR491/C:2051",
+    "KR491/C:813",
+    "KR491/C:807",
+    "KR491/C:1062",
+    "KR491/A:138",
+    "A:138",
+    "KR491/C:252",
+    "KR491/C:271",
+    "KR491/C:280",
+    "KR491/C:2046",
+    "KR491/C:2050",
+    "KR491/C:2053",
+    "KR491/C:1063",
+    "KR491/A:157",
+    "A:157",
+    "KR491/C:1081",
+    "KR491/C:1093",
+    "KR491/C:1083",
+    "KR491/A:21",
+    "A:21",
+    "KR491/C:1849",
+    "KR491/C:1847",
+    "KR491/C:1843",
+    "KR491/A:99",
+    "A:99",
+    "KR491/A:106",
+    "A:106",
+    "KR491/A:41",
+    "A:41",
+    "B:207",
+    "KR491/A:101",
+    "A:101",
+    "KR491/C:1850",
+    "KR491/C:1848",
+    "KR491/C:1844",
+    "KR491/A:63",
+    "A:63",
+    "B:206",
+    "KR491/A:97",
+    "A:97",
+    "KR491/A:105",
+    "A:105",
+    "KR491/A:100",
+    "A:100",
+    "KR491/A:53",
+    "A:53",
+    "KR491/A:46",
+    "A:46",
+    "KR491/A:52",
+    "A:52",
+    "KR491/A:65",
+    "A:65",
+    "KR491/A:42",
+    "A:42",
+    "A:177",
+    "B:204",
+    "C:3973",
+    "KR491/B:255",
+    "B:255",
+    "KR491/A:8",
+    "A:8",
+    "KR491/B:273",
+    "B:273",
+    "KR491/A:273",
+    "A:273",
+    "KR491/B:274",
+    "B:274",
+    "KR491/B:288",
+    "B:288",
+    "KR491/B:121",
+    "B:121",
+    "KR491/B:267",
+    "B:267",
+    "KR491/A:269",
+    "A:269",
+    "KR491/B:270",
+    "B:270",
+    "KR491/B:124",
+    "KR491/B:128",
+    "B:128",
+    "KR491/A:17",
+    "A:17",
+    "KR491/A:64",
+    "A:64",
+    "KR491/A:16",
+    "A:16",
+    "KR491/B:271",
+    "B:271",
+    "KR491/A:271",
+    "A:271",
+    "KR491/B:272",
+    "B:272",
+    "KR491/A:20",
+    "A:20",
+    "B:205",
+    "KR491/A:9",
+    "A:9",
+    "KR491/B:296",
+    "B:296",
+    "KR491/B:301",
+    "B:301",
+    "KR491/C:1995",
+    "KR491/C:1996",
+    "KR491/C:1997",
+    "KR491/C:2071",
+    "KR491/C:2065",
+    "KR491/C:2068",
+    "KR491/C:2069",
+    "KR491/C:2082",
+    "KR491/C:2084",
+    "KR491/C:2081",
+    "KR491/C:2083",
+    "KR491/B:120",
+    "B:120",
+    "KR491/A:2272",
+    "A:2272",
+    "B:2014",
+    "KR491/A:1819",
+    "A:1819",
+    "KR491/A:1408",
+    "A:1408",
+    "KR491/C:1998",
+    "KR491/C:1744",
+    "KR491/C:1749",
+    "KR491/A:1386",
+    "A:1386",
+    "KR491/A:18",
+    "A:18",
+    "KR491/A:19",
+    "A:19",
+    "KR491/C:1745",
+    "KR491/C:1750",
+    "KR491/C:1753",
+    "KR491/C:1755",
+    "KR491/C:1748",
+    "KR491/C:1752",
+    "C:1752",
+    "KR491/C:1754",
+    "KR491/C:1746",
+    "KR491/C:1751",
+    "KR491/C:1756",
+    "KR491/A:12",
+    "A:12",
+    "KR491/A:13",
+    "A:13",
+    "KR491/A:1438",
+    "A:1438",
+    "KR491/A:1462",
+    "A:1462",
+    "KR491/B:682",
+    "B:682",
+    "KR491/B:695",
+    "B:695",
+    "KR491/B:667",
+    "B:667",
+    "KR491/B:698",
+    "B:698",
+    "KR491/A:1446",
+    "A:1446",
+    "KR491/B:699",
+    "B:699",
+    "KR491/B:655",
+    "B:655",
+    "KR491/A:1440",
+    "A:1440",
+    "KR491/B:658",
+    "B:658",
+    "KR491/B:692",
+    "B:692",
+    "KR491/B:661",
+    "B:661",
+    "KR491/B:690",
+    "B:690",
+    "KR491/B:685",
+    "B:685",
+    "KR491/B:671",
+    "B:671",
+    "KR491/B:672",
+    "B:672",
+    "KR491/B:693",
+    "B:693",
+    "KR491/B:664",
+    "B:664",
+    "KR491/B:691",
+    "B:691",
+    "KR491/B:696",
+    "B:696",
+    "KR491/B:697",
+    "B:697",
+    "KR491/B:684",
+    "B:684",
+    "KR491/B:668",
+    "B:668",
+    "KR491/A:1448",
+    "A:1448",
+    "KR491/B:694",
+    "B:694",
+    "B:1962",
+    "B:2077",
+    "B:2257",
+    "C:4484",
+    "KR491/B:670",
+    "B:670",
+    "KR491/A:1463",
+    "A:1463",
+    "KR491/A:1461",
+    "A:1461",
+    "KR491/A:1464",
+    "A:1464",
+    "KR491/A:1450",
+    "A:1450"
+  ],
+  "save_loaded": true,
+  "scope": "REAL_X11_GODOT_VIEWPORT_WITH_INPUT_EVENTS_NOT_FULL_1_TO_99_PLAYTHROUGH",
+  "screenshots": [
+    {
+      "height": 640,
+      "name": "natural-level-progress",
+      "path": "/workspace/baram-private/natural-progress-screen/natural-progress/natural-level-progress.png",
+      "sha256": "74229f8bf1dd631b955caba9724e9d850b27877b49b895c2f862af942bf4b33e",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    }
+  ],
+  "status": "PASS_EXECUTED_SCREEN_INPUT"
+}

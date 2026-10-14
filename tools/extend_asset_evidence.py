@@ -21,7 +21,7 @@ def run(a):
     actors=json.loads((assets/'actors.json').read_text())
     sources=json.loads((assets/'source_tiles/registry.json').read_text())
     reports=[];tiles=set();frames=set();entered=set();casts=set();sounds=set()
-    prefixes=['source-screen-1','content-screen-1','content-screen-2','content-screen-fixed-1','content-screen-fixed-2','content-actions-screen','cure-actions-screen','town-all-screen']
+    prefixes=['source-screen-1','content-screen-1','content-screen-2','content-screen-fixed-1','content-screen-fixed-2','content-actions-screen','cure-actions-screen','town-all-screen','natural-progress-screen']
     for folder in prefixes:
         for p in sorted((private/folder).rglob('*-report.json')):
             r=json.loads(p.read_text());reports.append(dict(path=str(p.relative_to(private)),sha256=digest(p),status=r['status'],scope=r.get('scope'),checks=len(r['checks'])))

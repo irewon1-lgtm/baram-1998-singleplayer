@@ -46,7 +46,7 @@ def execute(args):
             save = folder / 'character.json'
             if mode not in ('restart','resume','source-restart','actions-restart') and save.exists():
                 raise RuntimeError('Use a fresh evidence directory; existing saves are preserved')
-            if mode.startswith('skills-') or mode in ['tour-resume','content-actions','cure-actions','town-all']:
+            if mode.startswith('skills-') or mode in ['tour-resume','content-actions','cure-actions','town-all','natural-progress']:
                 if not args.fixtures:raise RuntimeError('Controlled skills checks require labeled --fixtures')
                 fixture=Path(args.fixtures)/(mode+'.json')
                 if not fixture.is_file():raise RuntimeError('Missing controlled skill fixture')
