@@ -54,11 +54,11 @@
 - 원래 정상 개발 커밋 dea6574와 기존 비공개 자산·원본·사용자 저장은 그대로 있다. 현재 활성 버전 전 immutable release와 ACTIVE.previous도 개발 vault에 보존한다.
 - 원복은 관련 코드/데이터/저장 호환성을 함께 확인한다. envelope2를 이해하지 못하는 옛 런타임에 현재 콘텐츠를 억지로 읽히지 않는다.
 - 비공개 실행본: /workspace/baram-private/codex-core-20261014/results-release6/baram_codex_core_PRIVATE_20261014.zip (173436306bytes), SHA256 83ae609bc87b7031a35bf3af4a624922c7f4f3bc3c9bed25e90cc4cc3da0bd7a. 코드 b5ef106과 활성 콘텐츠9e30ec65.../envelope2/save2를 고정했다.
-- 별도 검증·화면 ZIP: 같은 폴더의 baram_codex_core_VERIFICATION_PRIVATE_20261014.zip. Gitbundle/원본용 intake 입력/현재 실행 픽셀은 실행 ZIP에 있다. 사용자 저장은 제외했다.
+- 별도 검증·화면 ZIP: 같은 폴더의 baram_codex_core_VERIFICATION_PRIVATE_20261014_v2.zip. Gitbundle/원본용 intake 입력/현재 실행 픽셀은 실행 ZIP에 있다. 사용자 저장은 제외했다.
 - 실제 해제 후 1438 manifest 파일 크기/SHA 전수 일치, Linux launcher의 새 생성·장착·이동·Work 기술·저장9 검사와 별도 프로세스 재시작5 검사 PASS. 게임 빌드/콘텐츠 버전도 저장/실행 결과와 일치한다.
 - 현재 버전의 renderer draw telemetry: Work 시트91 프레임ID(타일55/기타36), 별도 기존 atlas19 프레임ID/타일280 ID. 겹친 픽셀까지 각 자산의 실제 시각 표시를 개별 판정한 수가 아니며, 두 네임스페이스를 원본 고유 그림 수로 합산하지 않는다.
 - 현재 Work 타일 정적 배치7392 고유ID/694853 배치와 실제 프레임 표시를 구분한다. 전체 맵을 정상 입력으로 모두 다니지는 않았다.
 - 다음: 사용자 재현 오류나 새 고정 Work 패키지부터 처리한다. 현재 데이터로는 초기 로딩(이 환경 소프트웨어 GL 약45–49초)과 모든 동적 출입구의 실제 통행을 우선 측정한다. `tests/run_playable_screen.py`의 route는 interact 출입구를 벽으로 취급하지 않도록 수정했다. 최신 전체 bridge tour의75초 시간초과는 FAIL을 보존했으며, 성공한 개별 복귀/지역 화면 결과와 구분한다.
 - Codex 후속 코드: `game/main.gd` dungeon 밝기 분기는 아직 legacy buff 이름을 읽고, Work `status.light`는 저장/만료 처리만 연결됐다. 기존 light 선언의 화면 밝기 연결과 비걷기 동작의 반복/종료 타이밍 대조를 다음 영향 검사 대상으로 남긴다. 모든 기술의 효과 완성을 주장하지 않는다.
 - v125 정확한 미확보 9개 ID는 content-summary와 WK-ASSETS-001 receipt에 있다. 다른 패키지 적용을 막지 않는다.
-- 실행본에 사용자 저장을 넣지 않는다. 최종 패키지 검사와 원격 검증 뒤 이 문서의 SHA/재개 상태를 갱신한다. 세션 종료 뒤 자동 감시하고 있다고 주장하지 않는다.
+- 실행본에 사용자 저장을 넣지 않는다. 실행본 검증과 확인된 코드 원격 SHA를 이 문서에 기록했다. 세션 종료 뒤 자동 감시하고 있다고 주장하지 않는다.
