@@ -109,8 +109,21 @@ def check(package,deps,write_report=True):
             checks['skill_learn_paths']+=1
             for npc in d['learn']['teacher_npc_ids']:
                 if not npc_at[npc]:fail(r,'learn','Teacher not placed')
+                teacher=defs.get(npc,{}).get('data',{})
+                advertised={s for svc in teacher.get('services',[]) if svc.get('type')=='learn_skills' for s in svc.get('skill_ids',[])}
+                checks['skill_teacher_menu_links']+=1
+                if i not in advertised:fail(r,'learn.teacher_npc_ids','Declared teacher menu does not advertise skill')
             for o in d['learn']['consume']:
                 if not offers[o['item_id']] and not drops[o['item_id']] and not outputs[o['item_id']] and not rewards[o['item_id']]:fail(r,'learn.consume','Learning material unavailable')
+    # A trainer service proposal can repair inherited skills without repackaging
+    # or modifying their immutable definitions. Check this affected scope too.
+    changed_teachers={r.get('target_id',r['id']) for r in own if r['kind']=='npc' and any(s.get('type')=='learn_skills' for s in r['data']['services'])}
+    for i,r in defs.items():
+        if r['kind']!='skill' or r in own:continue
+        for teacher_id in set(r['data']['learn']['teacher_npc_ids'])&changed_teachers:
+            advertised={s for svc in defs[teacher_id]['data']['services'] if svc.get('type')=='learn_skills' for s in svc.get('skill_ids',[])}
+            checks['inherited_skill_teacher_menu_links']+=1
+            if i not in advertised:fail(r,'learn.teacher_npc_ids','Affected inherited skill missing from teacher menu')
     report={'scope':'DATA_ONLY','result':'FAIL' if errors else 'PASS','batch_id':package.name,'executed_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),
       'command':' '.join(sys.argv),'checks':dict(checks),'errors':errors,'input_content_sha256':{p.name:file_sha(p) for p in package.glob('content-*.jsonl')},
       'static_map_graph':'Directed declared portal graph only, not directional tile collision or real movement',
