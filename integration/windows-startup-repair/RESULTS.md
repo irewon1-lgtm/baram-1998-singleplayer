@@ -77,3 +77,21 @@ log folder; the user can return that folder as a ZIP. Native Windows entry,
 combat, save and restart must be observed before declaring the Windows repair
 complete. Four-job 1–99 playthrough and complete historical restoration were
 not part of this startup-repair verification.
+
+## Launcher hardening and source publication
+
+The final launcher source also probes log-file creation and falls back to
+LocalAppData when the player folder is not writable. Progress/READY can be
+read from captured child stdout if marker writes are restricted, so a played
+session is not stopped merely because a marker could not be created. This
+last change affects the launcher only; the final embedded game PCK tested
+above is unchanged. Native execution of these paths remains NOT_RUN.
+
+CLI Git push had no credential helper in this environment. The connected
+repository API published the isolated branch with exact blob readback for
+all 20 changed files. API-created commit identifiers differ from local build
+commit identifiers; exported local game and launcher commits are retained in
+the artifact manifest and FINAL_DELIVERY.json. The public branch contains the
+corresponding exact source bytes. Original `codex/game-core` and `main` were
+not modified. The ZIP contains 943 unchanged private asset/content files and
+no character saves. Final archive CRC plus all manifest member hashes passed.

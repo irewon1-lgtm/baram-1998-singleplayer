@@ -13,6 +13,7 @@
 #include <shlobj.h>
 #include <stdio.h>
 #include <wchar.h>
+#include <string.h>
 
 static void write_log(HANDLE f, const wchar_t *line) {
     char text[8192]; DWORD used;
@@ -25,6 +26,18 @@ static ULONGLONG file_size(const wchar_t *p) {
     WIN32_FILE_ATTRIBUTE_DATA a;
     if(!GetFileAttributesExW(p,GetFileExInfoStandard,&a))return 0;
     return ((ULONGLONG)a.nFileSizeHigh<<32)|a.nFileSizeLow;
+}
+static BOOL ready_in_output(const wchar_t *p) {
+    HANDLE f=CreateFileW(p,GENERIC_READ,FILE_SHARE_READ|FILE_SHARE_WRITE,NULL,OPEN_EXISTING,FILE_ATTRIBUTE_NORMAL,NULL);
+    if(f==INVALID_HANDLE_VALUE)return FALSE;
+    LARGE_INTEGER size,at;DWORD used=0;char tail[16385];BOOL found=FALSE;
+    if(GetFileSizeEx(f,&size)) {
+        at.QuadPart=size.QuadPart>16384?size.QuadPart-16384:0;
+        if(SetFilePointerEx(f,at,NULL,FILE_BEGIN) && ReadFile(f,tail,16384,&used,NULL)) {
+            tail[used]=0;found=strstr(tail,"BARAM_GAME_READY")!=NULL;
+        }
+    }
+    CloseHandle(f);return found;
 }
 int WINAPI wWinMain(HINSTANCE instance,HINSTANCE previous,LPWSTR args,int show) {
     (void)instance;(void)previous;(void)args;(void)show;
@@ -43,6 +56,19 @@ int WINAPI wWinMain(HINSTANCE instance,HINSTANCE previous,LPWSTR args,int show) 
     wchar_t stamp[128];_snwprintf(stamp,128,L"%04u%02u%02u-%02u%02u%02u-%lu",now.wYear,now.wMonth,now.wDay,now.wHour,now.wMinute,now.wSecond,GetCurrentProcessId());
     _snwprintf(log_path,32768,L"%ls\\%ls-launcher.log",folder,stamp);
     HANDLE log=CreateFileW(log_path,GENERIC_WRITE,FILE_SHARE_READ|FILE_SHARE_WRITE,NULL,CREATE_ALWAYS,FILE_ATTRIBUTE_NORMAL,NULL);
+    if(log==INVALID_HANDLE_VALUE) {
+        wchar_t local[32768];
+        if(GetEnvironmentVariableW(L"LOCALAPPDATA",local,32768)>0) {
+            _snwprintf(folder,32768,L"%ls\\BaramSinglePlayer\\logs",local);
+            SHCreateDirectoryExW(NULL,folder,NULL);
+            _snwprintf(log_path,32768,L"%ls\\%ls-launcher.log",folder,stamp);
+            log=CreateFileW(log_path,GENERIC_WRITE,FILE_SHARE_READ|FILE_SHARE_WRITE,NULL,CREATE_ALWAYS,FILE_ATTRIBUTE_NORMAL,NULL);
+        }
+    }
+    if(log==INVALID_HANDLE_VALUE) {
+        MessageBoxW(NULL,L"실행 기록을 저장할 폴더에 쓸 수 없습니다. ZIP을 다운로드 폴더에 모두 압축 해제한 뒤 다시 실행하세요.",L"바람의나라 실행 오류",MB_OK|MB_ICONERROR);
+        return 2;
+    }
     write_log(log,L"Baram Windows startup supervisor. Native execution status: user PC run.");
     if(GetFileAttributesW(engine)==INVALID_FILE_ATTRIBUTES) {
         write_log(log,L"ERROR: engine file is missing.");
@@ -86,10 +112,10 @@ int WINAPI wWinMain(HINSTANCE instance,HINSTANCE previous,LPWSTR args,int show) 
         if(out!=INVALID_HANDLE_VALUE)CloseHandle(out);
         BOOL playing=FALSE;ULONGLONG size=0;ULONGLONG changed=GetTickCount64();stalled=FALSE;
         while(WaitForSingleObject(child.hProcess,1000)==WAIT_TIMEOUT) {
-            if(!playing && GetFileAttributesW(ready)!=INVALID_FILE_ATTRIBUTES) {
+            if(!playing && (GetFileAttributesW(ready)!=INVALID_FILE_ATTRIBUTES || ready_in_output(output))) {
                 playing=TRUE;write_log(log,L"READY: character creation / saved journey is available.");
             }
-            ULONGLONG next=file_size(trace);
+            ULONGLONG next=file_size(trace)+file_size(output);
             if(next!=size){size=next;changed=GetTickCount64();}
             if(!playing && GetTickCount64()-changed>60000) {
                 write_log(log,L"STALLED: no startup progress for 60 seconds. Stopping only this launched engine.");
