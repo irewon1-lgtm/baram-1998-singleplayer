@@ -41,10 +41,10 @@ def execute(args):
         environment['DISPLAY'] = ':' + display
         modes = args.modes.split(',')
         for mode in modes:
-            folder = directory / ('work-core' if mode in ['work-package','work-restart','work-regions','work-visual'] else 'gear-guide' if mode=='gear-restart' else 'content-actions' if mode=='actions-restart' else 'source-core' if mode=='source-restart' else 'primary' if mode in ('primary','resume','restart') else mode)
+            folder = directory / ('windows-loot' if mode=='windows-loot-restart' else 'work-core' if mode in ['work-package','work-restart','work-regions','work-visual'] else 'gear-guide' if mode=='gear-restart' else 'content-actions' if mode=='actions-restart' else 'source-core' if mode=='source-restart' else 'primary' if mode in ('primary','resume','restart') else mode)
             folder.mkdir(exist_ok=True)
             save = folder / 'character.json'
-            if mode not in ('restart','resume','source-restart','actions-restart','gear-restart','work-restart','work-regions','work-visual') and save.exists():
+            if mode not in ('windows-loot','windows-loot-restart','restart','resume','source-restart','actions-restart','gear-restart','work-restart','work-regions','work-visual') and save.exists():
                 raise RuntimeError('Use a fresh evidence directory; existing saves are preserved')
             if mode.startswith('skills-') or mode in ['tour-resume','content-actions','cure-actions','town-all','natural-progress','gear-guide']:
                 if not args.fixtures:raise RuntimeError('Controlled skills checks require labeled --fixtures')
