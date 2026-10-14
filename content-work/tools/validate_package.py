@@ -6,6 +6,7 @@ same required envelope plus the content semantics without new dependencies.
 """
 import argparse
 import collections
+import copy
 import datetime
 import io
 import json
@@ -24,9 +25,10 @@ def validate(package, dependency_dirs=(), bundle=None, write_report=True, verify
     own=[]
     for p in sorted(package.glob('content-*.jsonl')):
         for n,r in enumerate(lines(p),1):own.append((p,n,r))
-    all_records=[r for _,_,r in own]
+    dependency_records=[]
     for d in dependency_dirs:
-        for p in sorted(Path(d).glob('content-*.jsonl')):all_records.extend(lines(p))
+        for p in sorted(Path(d).glob('content-*.jsonl')):dependency_records.extend(lines(p))
+    all_records=dependency_records+[r for _,_,r in own]
     base=load(ROOT/'game/data/numeric.json')['contents'];external={r['id']:r for r in base}
     external.update({m['id']:m for m in load(ROOT/'game/data/world.json')['maps']})
     byid={};effective={};errors=[];checks=collections.Counter();prov=set()
@@ -37,6 +39,28 @@ def validate(package, dependency_dirs=(), bundle=None, write_report=True, verify
         errors.append({'batch_id':package.name,'content_id':r.get('id'),'file':path,'line':line,'field':field,'value':value,
           'expected':expected,'provenance_refs':r.get('provenance_refs',[]),'reproduce':f'python3 content-work/tools/validate_package.py content-work/packages/{package.name}'})
     def integer(v):return type(v) is int
+    # Incremental batches guard the effective data after pinned dependencies.
+    # A KR numeric proposal owns runtime_definition; a new Work add owns data.
+    external=copy.deepcopy(external)
+    def apply_changes(node,r,check=False):
+        for c in r.get('changes',[]):
+            current=node;exists=True
+            for part in c['path'].split('.'):
+                if not isinstance(current,dict) or part not in current:exists=False;current=None;break
+                current=current[part]
+            guard=c.get('before',{})
+            if check and (guard.get('exists')!=exists or exists and guard.get('value')!=current):
+                fail(r,'changes.'+c['path'],guard,'guard matches effective pinned dependencies');continue
+            parent=node;parts=c['path'].split('.')
+            for part in parts[:-1]:
+                if part not in parent or not isinstance(parent[part],dict):
+                    fail(r,'changes.'+c['path'],part,'existing parent object');break
+                parent=parent[part]
+            else:parent[parts[-1]]=copy.deepcopy(c['after'])
+    for r in dependency_records:
+        if r['operation']=='add':external[r['id']]=copy.deepcopy(r['data'])
+        elif r.get('target_id') in external:apply_changes(external[r['target_id']],r,True)
+        else:fail(r,'target_id',r.get('target_id'),'dependency target exists')
     def valid_ratio(v,r,field):
         checks['ratios']+=1
         if not isinstance(v,dict) or not integer(v.get('numerator')) or not integer(v.get('denominator')) or not 0<=v['numerator']<=v['denominator'] or v['denominator']<=0:
@@ -60,8 +84,9 @@ def validate(package, dependency_dirs=(), bundle=None, write_report=True, verify
         if rid in byid:fail(r,'id',rid,'unique ID across package/dependencies')
         byid[rid]=r
         eid=r.get('target_id',rid)
-        if eid in effective:fail(r,'target_id',eid,'one definition per effective ID')
         effective[eid]=r
+    own_effective=[r.get('target_id',r['id']) for _,_,r in own]
+    if len(own_effective)!=len(set(own_effective)):fail({},'target_id',None,'one consolidated proposal per target in one batch')
     available=set(effective)|set(byid)|set(external)
     for p,n,r in own:
         checks['records']+=1
@@ -77,7 +102,7 @@ def validate(package, dependency_dirs=(), bundle=None, write_report=True, verify
         if r['operation']=='propose_patch':
             checks['conditional_patches']+=1
             target=external.get(r.get('target_id'))
-            if target is None or r.get('base_game_commit')!=BASE:fail(r,'target_id/base',r.get('target_id'),'target in pinned base');continue
+            if target is None or r.get('base_game_commit')!=BASE:fail(r,'target_id/base',r.get('target_id'),'target in effective pinned base/dependencies');continue
             if not r.get('changes'):fail(r,'changes',[],'explicit guarded fields')
             for c in r.get('changes',[]):
                 node=target;exists=True
@@ -85,7 +110,7 @@ def validate(package, dependency_dirs=(), bundle=None, write_report=True, verify
                     if not isinstance(node,dict) or part not in node:exists=False;node=None;break
                     node=node[part]
                 guard=c.get('before',{})
-                if guard.get('exists')!=exists or exists and guard.get('value')!=node:fail(r,'changes.'+c['path'],guard,'guard matches pinned base')
+                if guard.get('exists')!=exists or exists and guard.get('value')!=node:fail(r,'changes.'+c['path'],guard,'guard matches effective pinned dependencies')
                 if c.get('provenance_ref') not in prov:fail(r,'changes.provenance_ref',c.get('provenance_ref'),'known rule')
         for x in r['references']:
             checks['references']+=1
@@ -94,6 +119,10 @@ def validate(package, dependency_dirs=(), bundle=None, write_report=True, verify
             if 'frame' in selector:
                 a=byid.get(x['id']) or effective.get(x['id']);f=selector['frame']
                 if not a or a['kind']!='asset' or not integer(f) or not 0<=f<a['data']['frame_count']:fail(r,'references.selector',x,'valid frame in sheet')
+            if 'frames' in selector:
+                a=byid.get(x['id']) or effective.get(x['id']);fs=selector['frames'];checks['explicit_frame_selections']+=len(fs)
+                if not a or a['kind']!='asset' or not isinstance(fs,list) or len(fs)!=len(set(fs)) or any(not integer(f) or not 0<=f<a['data']['frame_count'] for f in fs):
+                    fail(r,'references.selector.frames',x,'unique bounded model-local frame selection')
         numeric_walk(r['data'],r)
         d=r['data'];kind=r['kind']
         if kind=='asset':
