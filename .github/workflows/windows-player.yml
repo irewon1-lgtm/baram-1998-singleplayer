@@ -10,6 +10,7 @@ concurrency:
   cancel-in-progress: true
 jobs:
   player:
+    if: "!contains(github.event.head_commit.message, '[windows-log-transfer]')"
     # Standard hosted runners on this public source repo. Assets and releases
     # are supplied/stored only in the separately verified PRIVATE vault repo.
     runs-on: windows-latest
@@ -83,3 +84,32 @@ jobs:
           'A player ZIP is released only after native EXE and live game regressions pass.' >> $env:GITHUB_STEP_SUMMARY
           'Original assets and player ZIPs are never uploaded to public Actions artifacts.' >> $env:GITHUB_STEP_SUMMARY
           'Operator Windows GUI/audio remains separately BLOCKED until observed.' >> $env:GITHUB_STEP_SUMMARY
+  recover-existing-diagnostic:
+    if: "contains(github.event.head_commit.message, '[windows-log-transfer]')"
+    runs-on: windows-latest
+    timeout-minutes: 5
+    environment: baram-windows-private
+    env:
+      GH_TOKEN: ${{ secrets.BARAM_PRIVATE_REPO_TOKEN }}
+    steps:
+      - name: Recover existing failure log without rerunning the game
+        shell: pwsh
+        run: |
+          $repo = 'irewon1-lgtm/baram-windows-private'
+          $metadata = gh api "repos/$repo" | ConvertFrom-Json
+          if (-not $metadata.private) { throw 'Private diagnostic destination required' }
+          gh release download 'diagnostics-38655218155-1' --repo $repo --pattern private-diagnostics.zip --dir recovered
+          if ($LASTEXITCODE) { throw 'Existing private diagnostic download failed' }
+          if ((Get-FileHash recovered/private-diagnostics.zip -Algorithm SHA256).Hash.ToLower() -ne '73bc82872d775d0c2826842402d2c1a013d6a3845da2f4b821fd9231f4e83d9c') { throw 'Diagnostic digest mismatch' }
+          Expand-Archive recovered/private-diagnostics.zip recovered/logs
+          $logs = @{}
+          Get-ChildItem recovered/logs -Recurse -File | ForEach-Object {
+            $path = [System.IO.Path]::GetRelativePath((Resolve-Path recovered/logs).Path, $_.FullName).Replace('\','/')
+            $logs[$path] = Get-Content $_.FullName -Raw -Encoding utf8
+          }
+          $content = @{source_run=38655218155; logs=$logs} | ConvertTo-Json -Depth 30
+          $body = @{message='Recover private logs from existing Windows failure'; content=[Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($content))} | ConvertTo-Json
+          [IO.File]::WriteAllText("$pwd/recovered/request.json",$body,[Text.UTF8Encoding]::new($false))
+          gh api --method PUT "repos/$repo/contents/diagnostics/recovered-38655218155.json" --input recovered/request.json | Out-Null
+          if ($LASTEXITCODE) { throw 'Private diagnostic preservation failed' }
+          'Existing Windows failure log recovered privately. No new game execution or player publication.' >> $env:GITHUB_STEP_SUMMARY

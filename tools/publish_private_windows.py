@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Release a validated ZIP to an authenticated private GitHub vault only."""
 import argparse
+import base64
 import json
 from pathlib import Path
 import re
@@ -27,6 +28,16 @@ def publish(args):
                 if p.is_file() and (p.suffix=='.log' or p.name.endswith('-report.json') or p.name=='verification.json'):
                     z.write(p,p.relative_to(out).as_posix())
         notes='Execution failed. Player ZIP publication was blocked. These diagnostics remain private.'
+        # Keep text diagnostics directly readable through the private repository
+        # API, including when this browser cannot download a draft release asset.
+        logs={p.relative_to(out).as_posix():p.read_text(encoding='utf-8',errors='replace')
+              for p in sorted(out.rglob('*')) if p.is_file() and
+              (p.suffix=='.log' or p.name.endswith('-report.json') or p.name=='verification.json')}
+        payload=json.dumps({'status':'FAILED_DELIVERY_BLOCKED','logs':logs},ensure_ascii=False).encode('utf-8')
+        request=out/'private-diagnostic-request.json'
+        request.write_text(json.dumps({'message':'Preserve private Windows failure diagnostics',
+            'content':base64.b64encode(payload).decode('ascii')}),encoding='utf-8')
+        gh('api','--method','PUT','repos/'+args.repo+'/contents/diagnostics/'+tag+'.json','--input',str(request))
     else:
         delivery=json.loads((out/'delivery.json').read_text())
         checks=delivery['verification']
