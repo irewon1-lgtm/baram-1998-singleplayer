@@ -19,9 +19,11 @@ BASE_FILES = ['tools/legacy_assets.py', 'tools/legacy_maps.py',
 def run(args):
     repo, package, sandbox = Path(args.repo), Path(args.package), Path(args.sandbox)
     acquisition = json.loads((package / 'acquisition.json').read_text())
-    converter_name = 'build_content.py' if args.na_maps else 'build_assets.py'
+    converter_name = 'build_recovered_ui_assets.py' if args.ui else 'build_content.py' if args.na_maps else 'build_assets.py'
     converter = package / 'toolchain' / converter_name
-    if sha(converter.read_bytes()) != acquisition['rebuild']['sha256']:
+    manifest=json.loads((package/'manifest.json').read_text())
+    expected=next(f['sha256'] for f in manifest['files'] if f['path']=='toolchain/'+converter_name)
+    if sha(converter.read_bytes()) != expected:
         raise ValueError('Fixed converter hash mismatch')
     if sandbox.exists() and not args.verify_existing:
         raise ValueError('Use an empty recipient sandbox; upstream is never overwritten')
@@ -35,10 +37,13 @@ def run(args):
         target = sandbox / name
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_bytes(subprocess.check_output(['git','show',BASE+':'+name], cwd=repo))
-    for name in [converter_name, 'common.py']:
+    for name in [converter_name, 'common.py']+(['probe_epf_clipping.py'] if args.ui else []):
+        source=package/'toolchain'/name
+        pin=next(f['sha256'] for f in manifest['files'] if f['path']=='toolchain/'+name)
+        if sha(source.read_bytes())!=pin:raise ValueError('Fixed tool hash mismatch: '+name)
         target = sandbox / 'content-work/tools' / name
         target.parent.mkdir(parents=True, exist_ok=True)
-        target.write_bytes((package / 'toolchain' / name).read_bytes())
+        target.write_bytes(source.read_bytes())
     target = sandbox / 'content-work/schemas/content-v1.json'
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_bytes((package / 'schema/content-v1.json').read_bytes())
@@ -47,7 +52,18 @@ def run(args):
                '--inputs', str(Path(args.inputs).resolve()), '--private-out', str(output),
                '--batch', 'RECIPIENT_REBUILD',
                '--bundle-id', acquisition['bundle_id'], '--bundle', str(sandbox/'recipient.zip')]
-    if args.na_maps:
+    if args.ui:
+        if not args.package_commit:raise ValueError('Fixed UI package commit required')
+        original=Path(args.inputs)/'KR-4.91/NWind.dat'
+        if sha(original.read_bytes())!=acquisition['rebuild']['source_dat_sha256']:raise ValueError('UI original DAT pin mismatch')
+        name='content-work/catalog/expansion-2/epf-clipping-probe.json'
+        raw=subprocess.check_output(['git','show',args.package_commit+':'+name],cwd=repo)
+        probe=json.loads(raw)
+        if probe['source_dat_sha256']!=acquisition['rebuild']['source_dat_sha256']:raise ValueError('Frozen UI probe DAT mismatch')
+        target=sandbox/name;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(raw)
+        output=sandbox/'content-work/drafts'/manifest['batch_id']
+        command=[sys.executable,str(sandbox/'content-work/tools'/converter_name),'--dat',str(original.resolve()),'--batch',manifest['batch_id'],'--bundle-name',acquisition['file_name']]
+    elif args.na_maps:
         command += ['--na-maps', str(Path(args.na_maps).resolve())]
         destination=sandbox/'content-work/packages/WK-ASSETS-001';destination.mkdir(parents=True,exist_ok=args.verify_existing)
         for source in Path(args.assets_package).glob('content-*.jsonl'):(destination/source.name).write_bytes(source.read_bytes())
@@ -83,7 +99,7 @@ def run(args):
                   verified_ids=verified, blocked=blocked,
                   verified_member_sha256={k:v for k,v in checked.items() if v is not None},
                   note='Partial member acquisition; neither complete Library ZIP acquisition nor gameplay verification.')
-    archive=sandbox/'recipient.zip'
+    archive=sandbox/'content-work/drafts'/acquisition['file_name'] if args.ui else sandbox/'recipient.zip'
     report['bundle_hash_matches']=archive.is_file() and sha(archive.read_bytes())==acquisition['sha256'] and archive.stat().st_size==acquisition['size_bytes']
     atomic_write(args.report, encode(report))
     print('Verified member definitions', len(verified), 'blocked', len(blocked), 'converter exit', exit_code, 'whole bundle matches',report['bundle_hash_matches'])
@@ -94,4 +110,5 @@ if __name__ == '__main__':
         p.add_argument('--'+key, required=True)
     p.add_argument('--v125',default='/tmp/baram-v125-not-received.zip');p.add_argument('--na-maps');p.add_argument('--assets-package')
     p.add_argument('--verify-existing',action='store_true')
+    p.add_argument('--ui',action='store_true');p.add_argument('--package-commit')
     run(p.parse_args())

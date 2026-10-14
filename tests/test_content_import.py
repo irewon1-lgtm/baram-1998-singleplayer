@@ -133,7 +133,7 @@ class IntakeTests(unittest.TestCase):
 
     def test_published_absence_guard_preserves_source_values(self):
         p=record('test.item.proposal');p.update(operation='propose_patch',target_id='legacy.item.sword',
-            data={'name':'runtime sword','stats':{'damage_max':8}},changes=[{'path':'runtime_definition','before':{'exists':False},'after':{'name':'runtime sword'},'reason':'test','provenance_ref':'test'}])
+            data={'name':'runtime sword','stats':{'damage_max':8}},changes=[{'path':'runtime_definition','before':{'exists':False},'after':{'name':'runtime sword','stats':{'damage_max':8}},'reason':'test','provenance_ref':'test'}])
         r=self.run_package([p]);self.assertEqual(r['import_status'],'IMPORTED')
         active=self.store.load()['records']['legacy.item.sword']
         self.assertEqual(active['data']['values']['damage_max'],5)
@@ -151,5 +151,17 @@ class IntakeTests(unittest.TestCase):
         (directory/'audio.bin').write_bytes(raw)
         r=self.store.import_package(p,COMMIT,GAME,fixture=True)
         self.assertEqual(r['import_status'],'IMPORTED');self.assertFalse(r['whole_private_zip_acquired'])
+
+    def test_published_partial_patch_never_replaces_unrelated_fields(self):
+        first=record('test.item.initial');first.update(operation='propose_patch',target_id='legacy.item.sword',data={'name':'old','stats':{'damage':5},'other':7},changes=[{'path':'runtime_definition','before':{'exists':False},'after':{'name':'old','stats':{'damage':5},'other':7}}])
+        self.assertEqual(self.run_package([first])['import_status'],'IMPORTED')
+        second=record('test.item.later');second.update(operation='propose_patch',target_id='legacy.item.sword',data={'name':'old','stats':{'damage':8},'other':99},changes=[{'path':'runtime_definition.stats.damage','before':{'exists':True,'value':5},'after':8}])
+        self.assertEqual(self.run_package([second],'later')['import_status'],'IMPORTED')
+        self.assertEqual(self.store.load()['records']['legacy.item.sword']['runtime_definition']['other'],7)
+
+    def test_dependency_package_commit_checked_even_when_manifest_matches(self):
+        initial=self.run_package()
+        receipt=self.run_package([record('test.item.next')],'next',dependencies=[{'batch_id':'synthetic-1','manifest_sha256':initial['manifest_sha256'],'package_commit':'f'*40}])
+        self.assertEqual(receipt['import_status'],'WAITING_DEPENDENCY')
 
 if __name__ == "__main__":unittest.main()

@@ -20,7 +20,7 @@ from fractions import Fraction
 from pathlib import Path, PurePosixPath
 
 PROTOCOL = "BARAM_PARALLEL_V1"
-TOOL_VERSION = "codex-import-1"
+TOOL_VERSION = "codex-import-2"
 MAX_FILE = 256 * 1024 * 1024
 MAX_TOTAL = 512 * 1024 * 1024
 MAX_JSON = 32 * 1024 * 1024
@@ -252,7 +252,7 @@ def set_field(data, field, value):
 
 
 def empty_release():
-    return dict(format="BARAM_RUNTIME_CONTENT", version=1, tool_version=TOOL_VERSION,
+    return dict(format="BARAM_RUNTIME_CONTENT", version=2, tool_version=TOOL_VERSION,
                 records={}, id_map={}, imports={}, assets={}, owned_fields={}, generation=0)
 
 
@@ -280,7 +280,7 @@ class PackageStore:
         if len(data) != pointer.get("bytes") or sha(data) != pointer.get("sha256") or sha(data) != release_id:
             fail("ACTIVE_INTEGRITY", "Active data and manifest disagree", status="CONFLICT")
         release = decode(data)
-        if release.get("format") != "BARAM_RUNTIME_CONTENT" or release.get("version") != 1:
+        if release.get("format") != "BARAM_RUNTIME_CONTENT" or release.get("version") not in (1,2):
             fail("RUNTIME_VERSION", "Unsupported runtime format", status="CONFLICT")
         checked=set()
         for item in release["assets"].values():
@@ -290,6 +290,18 @@ class PackageStore:
             if len(content) != item["bytes"] or sha(content) != item["sha256"]:
                 fail("ACTIVE_ASSET_INTEGRITY", "Active asset bytes changed", status="CONFLICT", file=item["stored_path"])
         return release
+
+    def upgrade_runtime_envelope(self):
+        release=self.load()
+        if release['version']==2:return self.pointer()
+        old=self.pointer();release['version']=2;release['tool_version']=TOOL_VERSION
+        release['generation']+=1
+        raw=encode(release);ident=sha(raw);directory=self.root/'releases'/ident
+        for item in {v['stored_path']:v for v in release['assets'].values()}.values():
+            atomic_write(directory/'files'/item['stored_path'],read_bounded(self.root,'releases/'+old['release_id']+'/files/'+item['stored_path']))
+        atomic_write(directory/'release.json',raw)
+        pointer=dict(format='BARAM_ACTIVE_CONTENT',version=1,release_id=ident,sha256=ident,bytes=len(raw),generation=release['generation'],previous={k:v for k,v in old.items() if k!='previous'})
+        atomic_write(self.root/'ACTIVE.json',encode(pointer));self.load();return pointer
 
     def recover_previous(self):
         pointer = self.pointer()
@@ -387,7 +399,7 @@ class PackageStore:
             if not isinstance(dependency, dict) or not dependency.get("batch_id"):
                 fail("DEPENDENCY_FORMAT", "Dependencies must identify a fixed batch/hash or commit")
             pin = dependency.get("manifest_sha256")
-            commit = dependency.get("source_commit", dependency.get("commit"))
+            commit = dependency.get("source_commit", dependency.get("package_commit",dependency.get("commit")))
             if not pin and not commit:
                 fail("DEPENDENCY_PIN", "Moving/unpinned dependency rejected")
             got = release["imports"].get(dependency["batch_id"])
@@ -481,6 +493,7 @@ class PackageStore:
         incoming=[(file,r) for file,r in all_incoming if r.get('target_id',r['id']) in wanted-old_applied]
         selected_ids={r.get('target_id',r['id']) for _,r in incoming}|{r['id'] for _,r in incoming}
         candidate = copy.deepcopy(release)
+        candidate['version']=2;candidate['tool_version']=TOOL_VERSION
         supersedes = manifest.get("supersedes", [])
         if isinstance(supersedes, str):
             supersedes = [supersedes]
@@ -541,11 +554,13 @@ class PackageStore:
                 if published_changes:
                     # Keep complete proposed runtime definition separate from
                     # original numeric values; never replace the base record.
-                    target_record['runtime_definition']=copy.deepcopy(record['data'])
+                    target_record['runtime_definition']=copy.deepcopy(target_record['data'].get('runtime_definition',target_record['data']))
                     target_record['runtime_source_mode']=record['source_mode']
                     target_record['runtime_provenance_refs']=record['provenance_refs']
                     target_record['runtime_source_commit']=source_commit
                 target_record["data"] = normalize_units(target_record["data"], target)
+                references=target_record.get('references',[])+record['references']
+                target_record['references']=list({encode(ref).decode():ref for ref in references}.values())
                 target_record.setdefault("patch_history", []).append(dict(batch_id=manifest["batch_id"], source_commit=source_commit,
                                                                             proposal_id=rid, provenance_refs=record["provenance_refs"], source_mode=record["source_mode"]))
                 target_record.setdefault("batch_id", manifest["batch_id"])
@@ -581,6 +596,7 @@ class PackageStore:
             path = data_definition.get("path")
             acquisition=data_definition.get('layout_acquisition',{}) if record['kind']=='map' else data_definition.get('acquisition',{})
             if record['kind']=='map' and not acquisition:continue
+            if rid in candidate['assets'] and candidate['assets'][rid]['sha256']==acquisition.get('sha256'):continue
             if not path and acquisition.get('bundle_id'):
                 bundle=acquisition['bundle_id'];member=acquisition.get('member')
                 if bundle not in bundle_inputs:
@@ -593,7 +609,14 @@ class PackageStore:
                     layout=decode(data,member)
                     if len(layout.get('layers',{}).get('ground',[]))!=int(data_definition['width'])*int(data_definition['height']):fail('LAYOUT_CELLS','Layout dimensions disagree',file=member,content_id=rid)
                     shared=layout.get('objects_member')
-                    if shared:members[shared]=read_bounded(bundle_inputs[bundle],shared)
+                    if shared:
+                        dependency=layout.get('objects_acquisition')
+                        if dependency:
+                            info=candidate['assets'].get('bundle_file:'+dependency['bundle_id']+':'+dependency['member'])
+                            if not info or info['sha256']!=dependency['sha256']:fail('SHARED_OBJECTS_DEPENDENCY','Pinned map object table not active','WAITING_DEPENDENCY',file=shared,content_id=rid)
+                            content=read_bounded(self.root,'releases/'+self.pointer()['release_id']+'/files/'+info['stored_path'])
+                            if sha(content)!=dependency['sha256']:fail('SHARED_OBJECTS_HASH','Dependency bytes changed',file=shared)
+                        else:members[shared]=read_bounded(bundle_inputs[bundle],shared)
                 elif data_definition.get('asset_type') in ('frame_sheet','tile_sheet') and meta.get('pages'):
                     table=decode(data,member);pages={p['path']:p for p in meta['pages']}
                     if len(table.get('frames',[]))!=data_definition.get('frame_count'):fail('FRAME_COUNT','Sheet count differs from definition',file=member,content_id=rid)
