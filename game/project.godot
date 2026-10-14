@@ -3,6 +3,7 @@ config_version=5
 [application]
 config/name="바람의나라 · 개인용 오프라인 복원"
 run/main_scene="res://main.tscn"
+run/flush_stdout_on_print=true
 
 [display]
 window/size/viewport_width=960
@@ -19,3 +20,8 @@ textures/canvas_textures/default_texture_filter=0
 
 [audio]
 driver/enable_input=false
+
+[debug]
+file_logging/enable_file_logging=true
+file_logging/enable_file_logging.pc=true
+file_logging/max_log_files=3

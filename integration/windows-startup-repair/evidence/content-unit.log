@@ -1,0 +1,36 @@
+test_after_activation_receipt_recovery (test_content_import.IntakeTests.test_after_activation_receipt_recovery) ... ok
+test_before_activation_failure_preserves_data_and_ledger (test_content_import.IntakeTests.test_before_activation_failure_preserves_data_and_ledger) ... ok
+test_current_manifest_corruption_detected_and_recovered (test_content_import.IntakeTests.test_current_manifest_corruption_detected_and_recovered) ... ok
+test_dependency_package_commit_checked_even_when_manifest_matches (test_content_import.IntakeTests.test_dependency_package_commit_checked_even_when_manifest_matches) ... ok
+test_deterministic_fresh_outputs (test_content_import.IntakeTests.test_deterministic_fresh_outputs) ... ok
+test_duplicate_id (test_content_import.IntakeTests.test_duplicate_id) ... ok
+test_exact_dependency_required (test_content_import.IntakeTests.test_exact_dependency_required) ... ok
+test_exact_rare_probability (test_content_import.IntakeTests.test_exact_rare_probability) ... ok
+test_forward_reference_file_order (test_content_import.IntakeTests.test_forward_reference_file_order) ... ok
+test_half_away_and_probability_bounds (test_content_import.IntakeTests.test_half_away_and_probability_bounds) ... ok
+test_hash_mismatch_never_applies (test_content_import.IntakeTests.test_hash_mismatch_never_applies) ... ok
+test_idempotent_and_active_ledger (test_content_import.IntakeTests.test_idempotent_and_active_ledger) ... ok
+test_json_duplicate_keys_rejected (test_content_import.IntakeTests.test_json_duplicate_keys_rejected) ... ok
+test_missing_reference (test_content_import.IntakeTests.test_missing_reference) ... ok
+test_negative_ac_is_allowed (test_content_import.IntakeTests.test_negative_ac_is_allowed) ... ok
+test_old_patch_cannot_overwrite (test_content_import.IntakeTests.test_old_patch_cannot_overwrite) ... ok
+test_partial_scope_does_not_resolve_unapplied_reference (test_content_import.IntakeTests.test_partial_scope_does_not_resolve_unapplied_reference) ... ok
+test_partial_scope_extends_without_duplicate_or_repatch (test_content_import.IntakeTests.test_partial_scope_extends_without_duplicate_or_repatch) ... ok
+test_patch_only_requested_field_and_stable_mapping (test_content_import.IntakeTests.test_patch_only_requested_field_and_stable_mapping) ... ok
+test_published_absence_guard_preserves_source_values (test_content_import.IntakeTests.test_published_absence_guard_preserves_source_values) ... ok
+test_published_partial_patch_never_replaces_unrelated_fields (test_content_import.IntakeTests.test_published_partial_patch_never_replaces_unrelated_fields) ... ok
+test_published_schema_hash_and_validation (test_content_import.IntakeTests.test_published_schema_hash_and_validation) ... ok
+test_rebuilt_members_require_exact_published_hash (test_content_import.IntakeTests.test_rebuilt_members_require_exact_published_hash) ... ok
+test_reimport_bad_transfer_is_not_already (test_content_import.IntakeTests.test_reimport_bad_transfer_is_not_already) ... ok
+test_same_batch_different_manifest_conflict (test_content_import.IntakeTests.test_same_batch_different_manifest_conflict) ... ok
+test_supersedes_keeps_id (test_content_import.IntakeTests.test_supersedes_keeps_id) ... ok
+test_time_not_rounded_to_zero (test_content_import.IntakeTests.test_time_not_rounded_to_zero) ... ok
+test_unknown_capability_is_pending (test_content_import.IntakeTests.test_unknown_capability_is_pending) ... ok
+test_unpinned_dependency_rejected (test_content_import.IntakeTests.test_unpinned_dependency_rejected) ... ok
+test_wrong_ms_precision (test_content_import.IntakeTests.test_wrong_ms_precision) ... ok
+test_zip_traversal_links_expansion (test_content_import.IntakeTests.test_zip_traversal_links_expansion) ... ok
+
+----------------------------------------------------------------------
+Ran 31 tests in 0.229s
+
+OK

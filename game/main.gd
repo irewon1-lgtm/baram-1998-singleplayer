@@ -7,6 +7,11 @@ const Content = preload("res://content_registry.gd")
 const Effects = preload("res://effect_runtime.gd")
 const Pathfinder = preload("res://pathfinder.gd")
 const WorkAssets = preload("res://work_assets.gd")
+const StartupJob = preload("res://startup_job.gd")
+signal startup_finished(success: bool)
+var startup_job
+var startup_thread
+var startup_complete=false
 const STEP = 48
 const VIEW = Rect2(0,48,768,480)
 const DIRECTIONS = [Vector2i.UP,Vector2i.LEFT,Vector2i.DOWN,Vector2i.RIGHT]
@@ -76,42 +81,46 @@ func _ready():
     save_path = options.get("save",save_path)
     content_folder=options.get("content",OS.get_environment("BARAM_PRIVATE_CONTENT"))
     if content_folder=="":content_folder=ProjectSettings.globalize_path("res://../private_content")
-    if not content.load_directory(content_folder):
-        push_error(JSON.stringify(content.last_error));get_tree().quit(2);return
-    content.apply_rules(rules)
+    var asynchronous=bool(options.get("async-startup",false))
+    var prepared={}
+    startup_job=StartupJob.new()
+    var trace=str(options.get("startup-log",OS.get_environment("BARAM_STARTUP_LOG")))
+    if trace=="":trace=save_path.get_base_dir().get_base_dir().get_base_dir().path_join("logs/startup.jsonl")
+    startup_job.configure(trace)
+    if asynchronous:
+        set_process(false);set_process_input(false);hide()
+        startup_thread=Thread.new()
+        if startup_thread.start(startup_job.prepare.bind(content,rules,asset_folder,content_folder))!=OK:
+            startup_failure("STARTUP_THREAD: 초기 로딩을 시작하지 못했습니다.");return
+        while startup_thread.is_alive():await get_tree().process_frame
+        prepared=startup_thread.wait_to_finish()
+    else:
+        prepared=startup_job.prepare(content,rules,asset_folder,content_folder)
+    if typeof(prepared)!=TYPE_DICTIONARY or prepared.has("error"):
+        startup_failure(JSON.stringify(prepared));return
+    world=prepared.world;maps=prepared.maps;decoration_rows=prepared.decorations;entities=prepared.entities
     store.content_version=content.version
     var build_path="res://data/build_info.json"
     if FileAccess.file_exists(build_path):
         var build_info=JSON.parse_string(FileAccess.get_file_as_string(build_path))
         if typeof(build_info)!=TYPE_DICTIONARY or build_info.get("content_version","")!=content.version:
-            push_error("PACKAGE_CONTENT_VERSION: build_info.json and ACTIVE content disagree")
-            get_tree().quit(2);return
+            startup_failure("PACKAGE_CONTENT_VERSION: build_info.json and ACTIVE content disagree");return
         store.game_build=str(build_info.get("commit","unidentified-package"))
     test_mode = options.get("exercise","")
     test_root = options.get("evidence","")
-    if not assets.load_directory(asset_folder):
-        push_error("Private assets unavailable; run tools/intake_private_tiles.py and build_playable_assets.py")
-        get_tree().quit(2)
-        return
+    startup_job.report("Preparing graphics")
+    if asynchronous:await get_tree().process_frame
+    var assets_ready=false
+    if asynchronous:assets_ready=await assets.load_directory_async(asset_folder,get_tree(),startup_job.report)
+    else:assets_ready=assets.load_directory(asset_folder)
+    if not assets_ready:
+        startup_failure("ASSET_VALIDATION: 게임 그래픽 파일이 없거나 손상되었습니다. "+assets.last_error);return
+    startup_job.report("Preparing text")
+    if asynchronous:await get_tree().process_frame
     font.data = FileAccess.get_file_as_bytes(asset_folder.path_join("fonts/NotoSansCJK-Regular.ttc"))
     font.antialiasing = TextServer.FONT_ANTIALIASING_NONE
-    var world_path=asset_folder.path_join("source_maps/world.json")
-    world = JSON.parse_string(FileAccess.get_file_as_string(world_path if FileAccess.file_exists(world_path) else "res://data/world.json"))
-    world=content.merge_world(world)
-    for m in world.maps:
-        maps[m.id] = m
-        var rows={}
-        for d in m.get("decorations",[]):
-            var y=int(d.y)
-            if not rows.has(y):rows[y]=[]
-            rows[y].append(d)
-        decoration_rows[m.id]=rows
-        for spawn in m.spawns:
-            var spec = rules.monster(spawn.kind,world.replacements)
-            entities[spawn.id] = {"id":spawn.id,"kind":spawn.kind,"map":m.id,"x":spawn.x,"y":spawn.y,
-                "home_x":spawn.x,"home_y":spawn.y,"direction":2,"hp":int(spec.values.hp),"alive":true,
-                "respawn":0.0,"move_timer":3.0,"attack_timer":0.0,"provoked":false,"hurt":0.0,
-                "hp_max":int(spec.values.hp),"mp":int(rules.value_or(spec.values,"mp",0)),"mp_max":int(rules.value_or(spec.values,"mp",0)),"statuses":{},"spec":spec}
+    startup_job.report("Reading saved journey")
+    if asynchronous:await get_tree().process_frame
     for kind in ["attack","hit","skill","level"]:
         var voice = AudioStreamPlayer.new()
         add_child(voice)
@@ -140,9 +149,25 @@ func _ready():
         notice("저장을 읽지 못했습니다: "+store.last_status+". 원본은 보존했습니다. Q: 종료")
     event("ready",{"registered_tiles":assets.tiles.size(),"loaded_save":save_loaded,
                    "renderer":RenderingServer.get_current_rendering_method()})
+    startup_complete=true
+    show();set_process(true);set_process_input(true)
+    startup_job.report("READY",assets.tiles.size(),maps.size())
+    startup_finished.emit(true)
     if test_mode != "":
         call_deferred("start_exercise")
     queue_redraw()
+
+func startup_failure(message: String):
+    if startup_job!=null:startup_job.report("ERROR: "+message)
+    push_error("BARAM_STARTUP: "+message)
+    startup_finished.emit(false)
+    if OS.get_name()=="Windows":OS.alert("게임을 시작하지 못했습니다.\n"+message+"\n\n실행 기록: "+startup_job.trace_path,"바람의나라 실행 오류")
+    get_tree().quit(2)
+
+func _exit_tree():
+    # A window closed during loading must also release the owned workers.
+    if startup_thread!=null and startup_thread.is_started():startup_thread.wait_to_finish()
+    if assets.loading_thread!=null and assets.loading_thread.is_started():assets.loading_thread.wait_to_finish()
 
 func setup_creation():
     creation_controls = Control.new()
@@ -1024,7 +1049,7 @@ func icon(title: String, at: Vector2):
     draw_texture_rect_region(assets.textures.icons,Rect2(at-size/2,crop.size*2),crop)
 
 func _draw():
-    if assets.tiles.is_empty() or font.data.is_empty():
+    if not startup_complete or assets.tiles.is_empty() or font.data.is_empty():
         return
     work_assets.begin_frame()
     draw_rect(Rect2(0,0,960,640),Color(0.055,0.065,0.055))

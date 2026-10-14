@@ -1,0 +1,120 @@
+{
+  "started_at": "2026-10-14T16:15:40.815627+00:00",
+  "scope": "REAL_GAME_X11_WINDOW_AND_GODOT_INPUT_EVENTS",
+  "runs": [
+    {
+      "mode": "work-core",
+      "exit_code": 0,
+      "game_report": "/workspace/scratch/ddd56268460f/evidence/final-embedded-gui/work-core/work-core-report.json",
+      "game_status": "PASS_EXECUTED_SCREEN_INPUT",
+      "x11_captures": [
+        {
+          "name": "Work-character-creation",
+          "sha256": "ad8647075a1dda72a6c4753dfd174381aee8c172de5dab00c46a163a3a54c923",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 118,
+          "status": "PASS"
+        },
+        {
+          "name": "Work-town-equipped",
+          "sha256": "56553bd46cbaed6a022c305e68c0386f022c44e101557db5a7b7fb70ac926cb3",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 166,
+          "status": "PASS"
+        },
+        {
+          "name": "Work-NPC-services",
+          "sha256": "1bf5c93859fa1e885724a26d5c28fe2f382bf3ce0c8c4b5c04acdf83bf2a193b",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 179,
+          "status": "PASS"
+        },
+        {
+          "name": "Work-beginner-field",
+          "sha256": "0aaa6a411dde823db7a5ebcce750aa6476f1be6ae72cea42bfaa0fb0ec1ba126",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 158,
+          "status": "PASS"
+        },
+        {
+          "name": "Work-combat-and-loot",
+          "sha256": "b942c4bfb872871a6d0ee2a04f21a5ba7655d6a2b6f805703882e194a4ccfe08",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 160,
+          "status": "PASS"
+        },
+        {
+          "name": "Work-original-skill-effect",
+          "sha256": "c25cb4d552ab572f495fe88b26a0d65b8cf195e94f2b1c906ef9933552fc0a04",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 143,
+          "status": "PASS"
+        },
+        {
+          "name": "Work-before-restart",
+          "sha256": "4c0b6e571adf2b599352ad4fbbdef8f43a84846fa5721bc6a2b4766720a2dea0",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 182,
+          "status": "PASS"
+        }
+      ],
+      "audio_mix": {
+        "status": "PASS_PCM_SIGNAL",
+        "samples": 1703936,
+        "rms": 2548.879364417131,
+        "driver": "Dummy",
+        "audible_human_review": "NOT_RUN"
+      },
+      "argv": [
+        "/workspace/scratch/ddd56268460f/evidence/final-harness/launch.sh",
+        "--save=/workspace/scratch/ddd56268460f/evidence/final-embedded-gui/work-core/character.json",
+        "--exercise=work-core",
+        "--evidence=/workspace/scratch/ddd56268460f/evidence/final-embedded-gui/work-core"
+      ],
+      "registered_tiles": 50104,
+      "checks": 20
+    },
+    {
+      "mode": "work-restart",
+      "exit_code": 0,
+      "game_report": "/workspace/scratch/ddd56268460f/evidence/final-embedded-gui/work-core/work-restart-report.json",
+      "game_status": "PASS_EXECUTED_SCREEN_INPUT",
+      "x11_captures": [
+        {
+          "name": "Work-restart",
+          "sha256": "6e94e8f4d81545048684af320e1a6b7a76604ebdec1bc75188cc8853e0c2af1a",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 162,
+          "status": "PASS"
+        }
+      ],
+      "audio_mix": {
+        "status": "NOT_APPLICABLE_NO_AUDIO_EVENTS",
+        "samples": 385024,
+        "rms": 0.0,
+        "driver": "Dummy",
+        "audible_human_review": "NOT_RUN"
+      },
+      "argv": [
+        "/workspace/scratch/ddd56268460f/evidence/final-harness/launch.sh",
+        "--save=/workspace/scratch/ddd56268460f/evidence/final-embedded-gui/work-core/character.json",
+        "--exercise=work-restart",
+        "--evidence=/workspace/scratch/ddd56268460f/evidence/final-embedded-gui/work-core"
+      ],
+      "registered_tiles": 50104,
+      "checks": 5
+    }
+  ],
+  "status": "PASS_EXECUTED_SCREEN_INPUT_AND_RESTART",
+  "finished_at": "2026-10-14T16:16:41.329034+00:00",
+  "source_sha256": {
+    "game/main.gd": "fcaec74eee269d208fa2b9870d6560b8b53b1c959bfd358cc6ee88ae2bcfeb10",
+    "game/exercise.gd": "75e0bf15a6872617fd54749619b23a7840bb44437739726ebf584411189ef652",
+    "game/rules.gd": "58b3dcc9457e3909aafa6543fd9921be1f1fb3d39629c9271f066f7c9021668b",
+    "game/save_store.gd": "57b0fc0aabbab3bd0ca7568d87ace999bc3daeef7255e502bd71d8d317e09bc9",
+    "game/work_assets.gd": "3e56b7a2a37013652a92e088a3e26ecf83591ba9a2b9f8c380b97d36b466a39f",
+    "game/work_play_probe.gd": "5125e1c08663525e766cd5f83e9f946e0984be8ab1b9e069111079ee74283d4a",
+    "game/content_registry.gd": "39907f5576c26ee7af6bc1c2967a5ef4425c51ce7dc302588c6f7c16ea5d0514",
+    "tests/run_playable_screen.py": "c04d5174a6f612b52f46e1255abce22383e63843a4ca9d00ca3a68a57054a958"
+  }
+}

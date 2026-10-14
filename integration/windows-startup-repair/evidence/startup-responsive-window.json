@@ -1,0 +1,19 @@
+{
+  "checks": {
+    "all_maps_preserved": true,
+    "all_tile_ids_preserved": true,
+    "flushed_startup_log": true,
+    "lazy_gpu_regions": true,
+    "no_five_second_ui_stall": true,
+    "ui_kept_processing": true
+  },
+  "display": "X11",
+  "elapsed_ms": 15808,
+  "frames": 555,
+  "maps": 423,
+  "max_frame_gap_ms": 379,
+  "memory_bytes": 589909383,
+  "scope": "LINUX_GODOT_ASYNC_WINDOWS_BOOTSTRAP_NOT_NATIVE_WINDOWS",
+  "status": "PASS",
+  "tile_ids": 50104
+}

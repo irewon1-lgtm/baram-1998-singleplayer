@@ -38,7 +38,7 @@ def execute(args):
         display = os.read(read_fd,32).decode().strip()
         if not display.isdecimal():
             raise RuntimeError('Invalid X11 display')
-        environment['DISPLAY'] = ':' + display
+        environment['DISPLAY'] = args.display_host + ':' + display
         modes = args.modes.split(',')
         for mode in modes:
             folder = directory / ('windows-loot' if mode=='windows-loot-restart' else 'work-core' if mode in ['work-package','work-restart','work-regions','work-visual'] else 'gear-guide' if mode=='gear-restart' else 'content-actions' if mode=='actions-restart' else 'source-core' if mode=='source-restart' else 'primary' if mode in ('primary','resume','restart') else mode)
@@ -152,6 +152,7 @@ if __name__=='__main__':
     p.add_argument('--modes',default='primary,restart,class-1,class-2,class-3')
     p.add_argument('--godot',default='godot')
     p.add_argument('--xvfb',default='/workspace/baram-private/setup/x11/usr/bin/Xvfb')
+    p.add_argument('--display-host',default='',help='Use explicit TCP display when the environment blocks /tmp X11 sockets')
     p.add_argument('--timeout',type=int,default=300)
     p.add_argument('--launcher',help='Execute the packaged launcher instead of the workspace Godot project')
     p.add_argument('--fixtures',help='Labeled controlled skill states; never a natural level-30 playthrough')

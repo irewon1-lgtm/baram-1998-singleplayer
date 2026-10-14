@@ -7,7 +7,7 @@ var release_root = ""
 var version = "legacy-base"
 var last_error = {}
 
-func load_directory(root: String) -> bool:
+func load_directory(root: String, progress: Callable = Callable()) -> bool:
     var path=root.path_join("ACTIVE.json")
     if not FileAccess.file_exists(path):return true
     var pointer=JSON.parse_string(FileAccess.get_file_as_string(path))
@@ -25,6 +25,7 @@ func load_directory(root: String) -> bool:
     for info in assets.values():
         if checked.has(info.stored_path):continue
         checked[info.stored_path]=true
+        if progress.is_valid() and checked.size()%32==0:progress.call("Checking game files",checked.size(),assets.size())
         var target=release_root.path_join("files").path_join(info.stored_path)
         if not FileAccess.file_exists(target) or FileAccess.get_sha256(target)!=info.sha256:
             last_error={"code":"CONTENT_ASSET_HASH","file":target};return false
@@ -111,9 +112,12 @@ func apply_rules(rules):
         else:rules.contents.append(current)
     rules.rebuild_indexes()
 
-func merge_world(world: Dictionary) -> Dictionary:
+func merge_world(world: Dictionary, progress: Callable = Callable()) -> Dictionary:
     var result=world.duplicate(true)
     var map_ids={}
+    var shared_formats={}
+    var tile_names={}
+    var processed=0
     for id in by_kind("map"):
         var definition_data=definition(id)
         if not definition_data.has("layout_acquisition"):continue
@@ -126,6 +130,8 @@ func merge_world(world: Dictionary) -> Dictionary:
     result["map_aliases"]=map_ids
     for id in by_kind("map"):
         var data=definition(id)
+        processed+=1
+        if progress.is_valid() and processed%16==0:progress.call("Preparing maps",processed,map_ids.size())
         if data.get("variant_active",true)==false:continue
         if not data.has_all(["width","height","layers","collision","entry"]):continue
         var layout={};var shared={}
@@ -137,7 +143,11 @@ func merge_world(world: Dictionary) -> Dictionary:
             var format_key="bundle_file:"+objects.bundle_id+":"+str(objects.member)
             info=assets.get(format_key,{})
             if info.is_empty():last_error={"code":"MAP_OBJECT_FORMAT_MISSING","content_id":id};continue
-            shared=JSON.parse_string(FileAccess.get_file_as_string(release_root.path_join("files").path_join(info.stored_path)))
+            # Hundreds of maps refer to the same object table. Parse the
+            # immutable table once per stored member rather than once per map.
+            if not shared_formats.has(info.stored_path):
+                shared_formats[info.stored_path]=JSON.parse_string(FileAccess.get_file_as_string(release_root.path_join("files").path_join(info.stored_path)))
+            shared=shared_formats[info.stored_path]
             result["work_draw_order"]=shared.draw_order
         var ground=[];var blocked=[];var collision=[];var decorations=[]
         if not layout.is_empty():
@@ -147,14 +157,14 @@ func merge_world(world: Dictionary) -> Dictionary:
                 for x in range(int(data.width)):
                     var index=y*int(data.width)+x;var word=int(layout.layers.ground[index]);var sheet=tables.B if word>=int(tables.B.base) else tables.A
                     var frame=word-int(sheet.base)
-                    row.append(str(sheet.sheet_asset_id)+"#"+str(frame) if frame>=0 and frame<int(sheet.count) else "")
+                    row.append(cached_tile_name(tile_names,str(sheet.sheet_asset_id),frame) if frame>=0 and frame<int(sheet.count) else "")
                     var mask=int(layout.collision_masks[index]);masks.append(mask);walls.append(mask==15)
                     var object_id=int(layout.layers.objects[index])
                     if object_id>0 and object_id<shared.objects.size():
                         var object=shared.objects[object_id]
                         for part in range(object.frames.size()):
                             if object.frames[part]==null:continue # original empty column segment; keep part offset
-                            decorations.append({"x":x,"y":y-part,"anchor_y":y,"tile":str(tables.C.sheet_asset_id)+"#"+str(int(object.frames[part])),"object_id":object_id,"column_part":part})
+                            decorations.append({"x":x,"y":y-part,"anchor_y":y,"tile":cached_tile_name(tile_names,str(tables.C.sheet_asset_id),int(object.frames[part])),"object_id":object_id,"column_part":part})
                 ground.append(row);blocked.append(walls);collision.append(masks)
         else:
             ground=data.layers.get("ground",[]);blocked=data.collision
@@ -202,6 +212,13 @@ func merge_world(world: Dictionary) -> Dictionary:
             origin.portals.append({"id":"codex.bridge.Work","x":from.x,"y":from.y,"target":target.id,"entry":target.entry,"label":"추가 지역 길목","trigger":"interact","source_kind":"CODEX_INTEGRATION_BRIDGE"})
             target.portals.append({"id":"codex.bridge.legacy","x":to.x,"y":to.y,"target":home.map,"entry":home.entry,"label":"기존 고구려 마을","trigger":"interact","source_kind":"CODEX_INTEGRATION_BRIDGE"})
     return result
+
+func cached_tile_name(cache: Dictionary, sheet: String, index: int) -> String:
+    # Equal immutable tile names can share their string storage across maps.
+    # Values/IDs remain exactly the same; no tile or cell is omitted.
+    if not cache.has(sheet):cache[sheet]={}
+    if not cache[sheet].has(index):cache[sheet][index]=sheet+"#"+str(index)
+    return cache[sheet][index]
 
 func bridge_cell(map: Dictionary, entry: Array) -> Vector2i:
     for radius in range(2,7):
