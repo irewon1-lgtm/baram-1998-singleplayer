@@ -1,0 +1,491 @@
+{
+  "protocol_id": "BARAM_PARALLEL_V1",
+  "receipt_type": "WINDOWS_PACKAGE_FROM_FIXED_VERIFIED_LINUX_RELEASE",
+  "status": "PARTIAL_PACKAGE_CREATED_DELIVERY_BLOCKED",
+  "recorded_at": "2026-10-14T14:50:47.669086+00:00",
+  "initial_branch": "codex/game-core",
+  "initial_commit": "a02a36639467e5ea4444b8d4f0959952d98bec7b",
+  "code_integration_commit": "623f4cfddd5bc84968da2fc5e8d910fc4d96b6c4",
+  "packager_commit": "938443c538d2edf8db0a68302cc1fb1d48eb39c9",
+  "build": {
+    "commit": "b5ef10646a2a41ff16ad575df47373c4b0399788",
+    "branch": "codex/game-core",
+    "content_version": "9e30ec651489a4f5bdbf5c4e727a41a3c7a2b2825a373262056c1e896a82fb7c",
+    "runtime_envelope": 2,
+    "save_format": 2
+  },
+  "new_work_imports": 0,
+  "new_content_ids": 0,
+  "archive": {
+    "private_only": true,
+    "path": "/workspace/baram-private/windows64-20261014/player-release/바람의나라_Windows64_개인용.zip",
+    "workspace_file_reference": "/workspace/output/바람의나라_Windows64_개인용.zip",
+    "bytes": 125493950,
+    "sha256": "7fe9b59e90410ec6af915797ccbb8e7630855574274c419d00fea0a32895baf2"
+  },
+  "original_linux_sha256": "83ae609bc87b7031a35bf3af4a624922c7f4f3bc3c9bed25e90cc4cc3da0bd7a",
+  "windows_engine_acquisition": {
+    "source": "https://ia600702.us.archive.org/27/items/godot-v-4.6.3-stable-export-templates-windows/4.6.3.stable.7z",
+    "mirror_metadata_verified": true,
+    "official_distribution_hash_comparison": "BLOCKED_OFFICIAL_HOST_PROXY403",
+    "archive_hashes": {
+      "md5": "580a5ead9f04a69999c228c76926ddcc",
+      "sha1": "bf716ddc101c1874164da8e39e60ca4da9ff8ac5",
+      "sha256": "830ee5c4b9d3c13d2504eea52ded17182c30a16f3163bb1c80b78f6bb5c62a18"
+    },
+    "archive_bytes": 132340536,
+    "members": [
+      {
+        "path": "version.txt",
+        "bytes": 13,
+        "sha256": "4855bd38072b77c73c45739cf6a6787d7df790a368b0a437102f352650e6186b"
+      },
+      {
+        "path": "windows_release_x86_64.exe",
+        "bytes": 104659456,
+        "sha256": "91724f15024a3a545e28ccd83134403d31ce2323a38e51c95e4dfa282f732ab6"
+      },
+      {
+        "path": "windows_release_x86_64_console.exe",
+        "bytes": 188928,
+        "sha256": "8c0d228f34db4d6a191b9a2247ec8cb595ac33357ac20c985484f21dc845f69c"
+      }
+    ],
+    "version_text": "4.6.3.stable\n"
+  },
+  "windows_exe_sha256": "a5974353e5c6903f34dab7aa02e8e2ec64ffdd566c49849cfb62ead1363a0466",
+  "private_equivalence": {
+    "status": "PASS_EXACT_VERIFIED_LINUX_PRIVATE_BYTES",
+    "files": 943,
+    "private_assets": 60,
+    "private_content": 883,
+    "bytes": 145473744
+  },
+  "final_archive_verification": {
+    "status": "PASS_FINAL_ZIP_UNPACKED_MANIFEST",
+    "zip_sha256": "7fe9b59e90410ec6af915797ccbb8e7630855574274c419d00fea0a32895baf2",
+    "zip_bytes": 125493950,
+    "files_verified": 949,
+    "total_zip_members": 950,
+    "user_saves_included": false,
+    "exe_sha256": "a5974353e5c6903f34dab7aa02e8e2ec64ffdd566c49849cfb62ead1363a0466",
+    "exe_and_private_bytes_equal_tested_copy": true,
+    "windows_native_execution": "NOT_RUN",
+    "delivery": "NOT_DELIVERED"
+  },
+  "active_work_definition_counts": {
+    "advancement": 12,
+    "growth": 401,
+    "item": 613,
+    "map": 386,
+    "monster": 320,
+    "npc": 155,
+    "skill": 211,
+    "asset": 1030,
+    "class": 5,
+    "drop_group": 320,
+    "economy": 1,
+    "enhancement": 1,
+    "quest": 99,
+    "recipe": 193,
+    "shop": 62
+  },
+  "definition_count_is_not_play_test_count": true,
+  "unit_checks": {
+    "command": "python -m unittest discover -s tests -p test_windows_package.py -v",
+    "status": "PASS",
+    "count": 11
+  },
+  "gui_scope": "LINUX_GODOT_READS_THE_EXACT_WINDOWS_EXE_EMBEDDED_PCK_WITH_X11_INPUT_NOT_WINDOWS_PE_EXECUTION",
+  "gui_runs": [
+    {
+      "mode": "work-core",
+      "status": "PASS_EXECUTED_SCREEN_INPUT",
+      "checks": [
+        {
+          "name": "rendered_Work-character-creation",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "Work_normal_level1_character_created",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "Work_existing_starter_equipment_is_migrated_and_equipped",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "rendered_Work-town-equipped",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "Work_directional_movement_runs",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "Work_normal_route_to_NPC",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "Work_NPC_dialogue_or_services_connected",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "rendered_Work-NPC-services",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "Work_existing_guide_reaches_beginner_original_map",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "rendered_Work-beginner-field",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "Work_actual_monster_spawn_connected",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "Work_real_attack_kill_and_reward",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "Work_kill_awards_experience",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "rendered_Work-combat-and-loot",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "Work_skill_hotkey_consumes_resource",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "Work_declarative_teleport_skill_opens_gate_selection",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "rendered_Work-original-skill-effect",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "Work_v2_save_written",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "rendered_Work-before-restart",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "engine_audio_mix_recorded",
+          "observed": {},
+          "status": "PASS"
+        }
+      ],
+      "audio_mix": {
+        "status": "PASS_PCM_SIGNAL",
+        "samples": 1351680,
+        "rms": 2721.5140774396805,
+        "driver": "Dummy",
+        "audible_human_review": "NOT_RUN"
+      },
+      "x11_captures": [
+        {
+          "name": "Work-character-creation",
+          "sha256": "ad8647075a1dda72a6c4753dfd174381aee8c172de5dab00c46a163a3a54c923",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 118,
+          "status": "PASS"
+        },
+        {
+          "name": "Work-town-equipped",
+          "sha256": "56553bd46cbaed6a022c305e68c0386f022c44e101557db5a7b7fb70ac926cb3",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 166,
+          "status": "PASS"
+        },
+        {
+          "name": "Work-NPC-services",
+          "sha256": "6396ed6c32bc8d79ef786b58485151a4f846641099778af046aa4fe321b3fd1a",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 179,
+          "status": "PASS"
+        },
+        {
+          "name": "Work-beginner-field",
+          "sha256": "f86114469ee046fc3643126c7084edf276a3be8b757899f4bfd5da84ffddeb4e",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 159,
+          "status": "PASS"
+        },
+        {
+          "name": "Work-combat-and-loot",
+          "sha256": "841583ba689f5e281a374c2b07fc78e5d71598e699baf4cbac3e3312801f2fce",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 161,
+          "status": "PASS"
+        },
+        {
+          "name": "Work-original-skill-effect",
+          "sha256": "c25cb4d552ab572f495fe88b26a0d65b8cf195e94f2b1c906ef9933552fc0a04",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 143,
+          "status": "PASS"
+        },
+        {
+          "name": "Work-before-restart",
+          "sha256": "a5a1b1d6145c5a0c2fcfb6f08b7821bb101ea79e4b1cf1e29cd93cd2528bc195",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 182,
+          "status": "PASS"
+        }
+      ],
+      "game_build": "b5ef10646a2a41ff16ad575df47373c4b0399788",
+      "content_version": "9e30ec651489a4f5bdbf5c4e727a41a3c7a2b2825a373262056c1e896a82fb7c",
+      "private_game_report_sha256": "59586eb49e29dca3e694cb741646cb6baab2a884d3db531850c7303bae447321"
+    },
+    {
+      "mode": "work-restart",
+      "status": "PASS_EXECUTED_SCREEN_INPUT",
+      "checks": [
+        {
+          "name": "Work_fresh_process_loaded_save",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "Work_restart_preserves_entire_player",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "Work_restart_preserves_world_and_loot",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "rendered_Work-restart",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "engine_audio_mix_recorded",
+          "observed": {},
+          "status": "PASS"
+        }
+      ],
+      "audio_mix": {
+        "status": "NOT_APPLICABLE_NO_AUDIO_EVENTS",
+        "samples": 163840,
+        "rms": 0.0,
+        "driver": "Dummy",
+        "audible_human_review": "NOT_RUN"
+      },
+      "x11_captures": [
+        {
+          "name": "Work-restart",
+          "sha256": "6e94e8f4d81545048684af320e1a6b7a76604ebdec1bc75188cc8853e0c2af1a",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 162,
+          "status": "PASS"
+        }
+      ],
+      "game_build": "b5ef10646a2a41ff16ad575df47373c4b0399788",
+      "content_version": "9e30ec651489a4f5bdbf5c4e727a41a3c7a2b2825a373262056c1e896a82fb7c",
+      "private_game_report_sha256": "eff7fa6bf9156a9937527cb678562d5e3cca0a89ac04f88b9435bf23c2f7ed2d"
+    },
+    {
+      "mode": "windows-loot",
+      "status": "PASS_EXECUTED_SCREEN_INPUT",
+      "checks": [
+        {
+          "name": "embedded_pack_loads_previous_normal_play_save",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "real_drop_and_normal_G_pickup",
+          "observed": {
+            "pickup_events": 1
+          },
+          "status": "PASS"
+        },
+        {
+          "name": "picked_item_quantity_increases_inventory",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "rendered_Windows-package-actual-pickup-Linux",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "picked_inventory_is_saved",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "engine_audio_mix_recorded",
+          "observed": {},
+          "status": "PASS"
+        }
+      ],
+      "audio_mix": {
+        "status": "PASS_PCM_SIGNAL",
+        "samples": 622592,
+        "rms": 2789.957449999644,
+        "driver": "Dummy",
+        "audible_human_review": "NOT_RUN"
+      },
+      "x11_captures": [
+        {
+          "name": "Windows-package-actual-pickup-Linux",
+          "sha256": "6cc3c3e22b01decb759395fca85692f0182d5a470c91b0a94b88dcb5c1774978",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 161,
+          "status": "PASS"
+        }
+      ],
+      "game_build": "b5ef10646a2a41ff16ad575df47373c4b0399788",
+      "content_version": "9e30ec651489a4f5bdbf5c4e727a41a3c7a2b2825a373262056c1e896a82fb7c",
+      "private_game_report_sha256": "bc5bd191f4b874c3be839acef00a9a26dbd0e85a77394d9eb32a3d6d76b771ea"
+    },
+    {
+      "mode": "windows-loot-restart",
+      "status": "PASS_EXECUTED_SCREEN_INPUT",
+      "checks": [
+        {
+          "name": "embedded_pack_loads_previous_normal_play_save",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "expected_post_pickup_save_is_readable",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "pickup_player_and_inventory_survive_fresh_process",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "pickup_world_and_ground_items_survive_fresh_process",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "rendered_Windows-package-pickup-restart-Linux",
+          "observed": {},
+          "status": "PASS"
+        },
+        {
+          "name": "engine_audio_mix_recorded",
+          "observed": {},
+          "status": "PASS"
+        }
+      ],
+      "audio_mix": {
+        "status": "NOT_APPLICABLE_NO_AUDIO_EVENTS",
+        "samples": 114688,
+        "rms": 0.0,
+        "driver": "Dummy",
+        "audible_human_review": "NOT_RUN"
+      },
+      "x11_captures": [
+        {
+          "name": "Windows-package-pickup-restart-Linux",
+          "sha256": "969febc0f7d74f336a25fd56c8714a49b165cf444b1bf1d7b86d38807a75af6f",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 160,
+          "status": "PASS"
+        }
+      ],
+      "game_build": "b5ef10646a2a41ff16ad575df47373c4b0399788",
+      "content_version": "9e30ec651489a4f5bdbf5c4e727a41a3c7a2b2825a373262056c1e896a82fb7c",
+      "private_game_report_sha256": "597337a4aaf94cf1dfaed3be2e793218c70f73e7f71b1e6a403eac3e72cc3d9e"
+    }
+  ],
+  "total_executed_checks": 37,
+  "actual_item_pickup": {
+    "status": "PASS_LINUX_EMBEDDED_PCK",
+    "id": "kr.item.1f5693995ced",
+    "quantity": 1,
+    "map": "field",
+    "saved_and_fresh_process_restored": true
+  },
+  "windows_native_execution": {
+    "status": "NOT_RUN",
+    "reason": "Environment is Linux; no native Windows runner or Wine available."
+  },
+  "delivery": {
+    "status": "BLOCKED",
+    "reason": "No callable file-upload or chat attachment output tool exists in this session. Workspace file links have not been verified as recipient downloads. User declined external repository setup; no public upload attempted.",
+    "actual_file_transferred_to_user": false
+  },
+  "saves": {
+    "schema": 2,
+    "location": "%LOCALAPPDATA%\\BaramSinglePlayer\\saves\\v2\\character.json",
+    "user_saves_in_zip": 0,
+    "existing_originals_unchanged": true,
+    "linux_test_saves": "isolated newly created saves and an exact copied normal-input save",
+    "native_windows_path_and_persistence": "NOT_RUN",
+    "schema_logic_unchanged_from_verified_b5ef106": true
+  },
+  "previous_attempts": [
+    {
+      "scope": "syntax check without writable XDG overrides",
+      "status": "FAIL",
+      "reason": "Godot could not write sandbox read-only /home/agent data directory; crashed before compilation.",
+      "correction": "Explicit writable XDG dirs under private task vault",
+      "retest": "PASS"
+    },
+    {
+      "scope": "first core rabbit pickup",
+      "status": "NOT_RUN_NO_ITEM_DROP",
+      "reason": "First rabbit produced no item; G input did not acquire an item.",
+      "correction": "Continue a copied normal-input save with bounded extra hunting",
+      "retest": "PASS_ACTUAL_PICKUP_AND_FRESH_PROCESS_RESTART"
+    }
+  ],
+  "unverified": [
+    "native Windows launch/input/audio/save path",
+    "four-job natural 1–99 and advancement completion",
+    "long-duration stress",
+    "full original fidelity",
+    "recipient download and user play"
+  ],
+  "preserved": [
+    "main",
+    "work/content-import",
+    "content-work/**",
+    "prior research/numeric facts",
+    "existing private asset originals",
+    "original Linux ZIP",
+    "user save files"
+  ],
+  "next_action": "Use actual attachment/download support to transfer the existing SHA-pinned ZIP without rebuilding or repeating these checks; run Windows-native smoke test when a real Windows runner is available.",
+  "known_game_issue": "Some loot notices show a persistent item ID instead of the localized display name. This was already present in the frozen game; item acquisition and persistence work."
+}

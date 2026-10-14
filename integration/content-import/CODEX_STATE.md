@@ -4,7 +4,7 @@
 
 - 개발: `codex/game-core`, 독립 worktree `/workspace/baram-codex-core`.
 - 최초 게임 기준: `dev/codex-asset-runtime-20261014`, `dea6574c9a69ebb04432d10fc32951aacd8b66cb`. 원래 폴더와 main·조사·수치 원문은 보존했다.
-- 마지막 확인된 원격 저장: `b5ef10646a2a41ff16ad575df47373c4b0399788`(확인된 실행본 빌드). 실행 통합 코드 묶음은 ae4fb282315955c566b6b08ebf210b2301a9597f이며 수신 기록은 후속 커밋에 연결돼 있다. 최종 원격 HEAD는 최신 문서/검증 후속 커밋을 포함하므로 git ls-remote로 확인한다.
+- 마지막 확인된 원격 코드 저장: `623f4cfddd5bc84968da2fc5e8d910fc4d96b6c4`(Windows 포장/검증 후속 코드). 고정 게임 빌드는 `b5ef10646a2a41ff16ad575df47373c4b0399788`이다. 이 인계와 수신 기록은 후속 커밋이며 최종 원격 HEAD는 `git ls-remote`로 확인한다. 최초 실행 통합 코드 묶음 ae4fb282315955c566b6b08ebf210b2301a9597f와 기존 수신 근거는 보존했다.
 - 실제 반영 목록 HEAD: `d4bd4b17a5307d5c882936c39547d698736d3733`. 최종 새 전달 목록은 `6bfa2687a996f3e80297df9e7a51e7e364a67b5a`에서 읽었다. 검증 실행본은 기존 확정 커밋들로 고정했다. 브랜치 병합/루트 덮어쓰기/상류 파일 수정은 하지 않았다.
 - 엔진: 기존 Godot 4.6.3. Work schema 1은 그대로, Codex runtime envelope 2와 저장 schema 2를 사용한다. 이전 envelope 1 로드 경로도 유지한다.
 - 활성 콘텐츠: `9e30ec651489a4f5bdbf5c4e727a41a3c7a2b2825a373262056c1e896a82fb7c`.
@@ -47,7 +47,7 @@
 - 전체 맵 정상 이동, 모든 기술의 GUI/조건 의미, 네 직업 자연 1–99 완주, 전체 승급 완주, 장시간 안정성, 사용자 플레이, 원작 동일성은 NOT_RUN/미확정이다.
 - Work 고구려 마을 역할은 북미 원본76의 바위/용암형 지형을 선택했다. 실제 옛 마을은 유지했다. 지형/역할 재선정은 Work 수정 요청이며 원작과 동일하다고 표시하지 않는다.
 - UI 47개는 취득·등록과 정상 게임 이벤트 연결을 구분한다. 역할 연결을 임의로 완료 처리하지 않는다.
-- Windows 엔진 다운로드: 프록시 CONNECT 403 BLOCKED. Linux 성공을 Windows 실행 PASS로 바꾸지 않는다.
+- Windows 공식 GitHub 다운로드는 프록시 CONNECT 403 BLOCKED 이력이 있으며, 2026-10-14 Windows 포장 작업에서는 허용된 Archive.org 보관본으로 Godot 4.6.3 x64 release template을 취득했다. 아래 Windows 포장 재개 항목을 따른다. Linux 성공을 Windows 실행 PASS로 바꾸지 않는다.
 
 ## 복구와 바로 다음 작업
 
@@ -68,3 +68,21 @@
 - WK-CONTENT-005/006/007/008와 WK-ASSETS-003의 고정 manifest와 index SHA는 실제 일치했다. 상세 데이터 검사/취득/반영/플레이는 NOT_RUN이며 READY_NOT_RECEIVED로 남긴다.
 - 다음 바로 시작할 파일: integration/content-import/receipts/followup-inputs.json. 각 source_commit/manifest_path에서 스냅샷을 읽고 PROTOCOL/schema 및 새로운 capability 이름의 실제 의미를 대조한다. 기능이 이미 있으면 명칭 차이로 반려하지 않는다.
 - 활성9e30ec65...와 실행 ZIP83ae609b...에 새 자료를 섞지 않았다. 새 버전은 별도 검증·커밋·ZIP으로 처리하고 현재 정상 실행/저장 복구 기준을 보존한다.
+
+## Windows 64비트 실행본 포장 — 2026-10-14
+
+- 이번 목적은 현재 검증된 게임을 사용자가 실행할 Windows ZIP으로 전달하는 것이다. Work 콘텐츠 제작이나 새 패키지 가져오기는 수행하지 않았다. 작업 시작 HEAD는 a02a36639467e5ea4444b8d4f0959952d98bec7b였다.
+- Linux 원본 ZIP83ae609b.../게임b5ef106/활성9e30ec65.../envelope2/save2를 고정했다. 기존 게임 스크립트·수치·정본·픽셀·음향은 바꾸지 않았다. Windows bootstrap과 전용 메인 씬만 추가하여 외부 비공개 자료 및 저장 경로를 연결했다. 엔진 설치나 Python은 사용자 실행본에 필요 없다.
+- Windows 템플릿은 https://ia600702.us.archive.org/27/items/godot-v-4.6.3-stable-export-templates-windows/4.6.3.stable.7z 에서 실제 취득했다. 보관본 MD5/SHA1/크기 일치, SHA256830ee5c4...를 기록했다. release x64 template SHA25691724f15...와 버전4.6.3/official7d41c59c.../AMD64 GUI PE 형식을 확인했다. 공식 배포 체크섬 대조는 공식 호스트 차단으로 BLOCKED이며, 이를 공식 SHA 검증으로 과장하지 않는다.
+- 포장 코드938443c538d2edf8db0a68302cc1fb1d48eb39c9, 별도 픽업/재시작 시험 코드a5cd8ce, 최종 포장 검증 코드623f4cfddd5bc84968da2fc5e8d910fc4d96b6c4를 커밋·push한 뒤 원격 SHA 일치를 확인했다. 이 기록은 후속 metadata 커밋이다.
+- 실제 결과 ZIP: `/workspace/baram-private/windows64-20261014/player-release/바람의나라_Windows64_개인용.zip`, 125493950bytes, SHA256 `7fe9b59e90410ec6af915797ccbb8e7630855574274c419d00fea0a32895baf2`. 작업공간 파일 참조 `/workspace/output/바람의나라_Windows64_개인용.zip`은 같은 바이트의 hardlink이며 외부 업로드 링크가 아니다.
+- ZIP 전체 해제 후 `바람의나라.exe`를 더블클릭하는 구조다. Windows AMD64 GUI release template에 게임 PCK를 내장했다. 실제 EXE SHA256 `a5974353e5c6903f34dab7aa02e8e2ec64ffdd566c49849cfb62ead1363a0466`.
+- 기존 비공개 실행 자산60파일 + 콘텐츠883파일 = 943파일/145473744bytes가 Linux 검증 ZIP과 모두 바이트 동일하다. 원본 설치압축·미리보기·개발 Linux 엔진·Gitbundle은 이전 비공개 ZIP에 보존하고 Windows 사용자 실행본에는 필요 없는 부분만 제외했다. 원본 자산이 없는 별도 체험판을 만들지 않았다.
+- 최종 ZIP950멤버/manifest949파일의 크기·SHA 전수검사와 CRC PASS. 사용자 저장 파일0개, 검사한 EXE/비공개 파일이 최종 ZIP과 동일하다. 바뀐 검증 JSON과 manifest만 갱신했으므로 동일 게임 플레이를 반복하지 않았다.
+- 자동 포장 보호11검사 PASS. 실제 ZIP에서 해제한 EXE의 embedded PCK를 Linux Godot/X11로 읽어 생성·이동·장비·NPC 거래창·사냥터 이동·공격·경험치·기술·저장·별도 프로세스 재시작25검사를 실행했다. 첫 토끼가 드롭0개였으므로 이 결과로 픽업을 PASS 처리하지 않았다.
+- 그 정상 입력 저장의 정확한 사본으로 제한된 추가 사냥을 실행해 `kr.item.1f5693995ced` 1개가 실제로 드롭/줍기/보유수량 증가/저장됐고, 별도 프로세스에서 player/inventory/world/loot가 유지되는 12검사 PASS. 상태나 레벨·드롭을 주입하지 않았다. 합계37검사는 화면·행동·저장 범위이며 Windows PE 프로세스 실행 시험이 아니다.
+- 비공개 화면·PCM 음향·원시 실행 로그: `/workspace/baram-private/windows64-20261014/gui-pck1`, `gui-loot1`. 공개 metadata는 `integration/content-import/receipts/windows64-package.json`에 있으며 픽셀/음향/저장 원문은 넣지 않았다.
+- Windows 기본 저장은 `%LOCALAPPDATA%\BaramSinglePlayer\saves\v2\character.json`으로 ZIP 외부에 고정했다. schema2의 검증/한 개 백업/안전교체/지원하지 않는 버전 거부 로직을 그대로 사용한다. 실제 Windows 경로 권한·GUI·음향·저장·더블클릭 실행은 **NOT_RUN**이다. Linux 환경이며 Windows runner/Wine가 없다.
+- 대화 파일 전달은 **BLOCKED**이다. 현재 callable 도구에 ZIP 업로드/채팅 첨부 기능이 없고 신뢰된 browser REPL도 없어 실제 사용자 전송은 수행하지 못했다. 파일 참조 링크의 사용자 다운로드도 확인하지 못했다. 사용자에게 별도 비공개 저장소를 만들도록 요구하지 않는다. 공개 업로드·새 과금·배포는 하지 않았다.
+- 기존 알려진 일부 습득 메시지의 내부 ID 표시, 미확보 v125 자산9개, 전체 맵 통행/네 직업 자연1–99/승급/장시간 안정성/원작 동일성은 기존 미완료로 보존한다. 이번에 새로 콘텐츠가 연결됐다고 집계하지 않는다.
+- 다음 즉시 작업: 첨부/다운로드 기능이 실제 제공되면 위 SHA ZIP을 재제작 없이 전달한다. 실제 Windows 환경이 있으면 더블클릭과 기본 저장 경로의 짧은 시험부터 한다. 이미 통과한37실행검사나 원본 자료 조사를 반복하지 않는다. 새 Work 통합은 기존 `followup-inputs.json`부터 별도 새 버전으로 시작한다.
