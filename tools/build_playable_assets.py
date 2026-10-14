@@ -65,6 +65,7 @@ def export(data, out):
         sheet(f'head_{job}', 'head', list(range(head * 100, (head + 1) * 100)))
     sheet('wood_weapon', 'sword', list(range(20, 40)))
     sheet('iron_weapon', 'sword', list(range(40, 60)))
+    sheet('ghost', 'ghost', list(range(Epf(entries['ghost.epf'][2]).count)))
     table = {int(v[0]): tuple(map(int, v[1:])) for v in re.findall(
         r'ID (\d+), Palette (\d+), Starting (\d+), Walk (\d+), Attack (\d+), Delay (\d+), Shadow (\d+)',
         entries['monster.tbl'][2].decode('ascii'))}

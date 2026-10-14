@@ -1,0 +1,439 @@
+{
+  "executed": 1,
+  "fail": 1,
+  "pass": 0,
+  "results": [
+    {
+      "checks": [
+        {
+          "condition": "29 actual level-up operations",
+          "result": "PASS"
+        },
+        {
+          "condition": "Inclusive bounds at level 1",
+          "result": "PASS"
+        },
+        {
+          "condition": "Peasant/job boundary at level 1",
+          "result": "PASS"
+        },
+        {
+          "condition": "Inclusive bounds at level 2",
+          "result": "PASS"
+        },
+        {
+          "condition": "Peasant/job boundary at level 2",
+          "result": "PASS"
+        },
+        {
+          "condition": "Inclusive bounds at level 3",
+          "result": "PASS"
+        },
+        {
+          "condition": "Peasant/job boundary at level 3",
+          "result": "PASS"
+        },
+        {
+          "condition": "Inclusive bounds at level 4",
+          "result": "PASS"
+        },
+        {
+          "condition": "Peasant/job boundary at level 4",
+          "result": "PASS"
+        },
+        {
+          "condition": "Inclusive bounds at level 5",
+          "result": "PASS"
+        },
+        {
+          "condition": "Peasant/job boundary at level 5",
+          "result": "PASS"
+        },
+        {
+          "condition": "Inclusive bounds at level 6",
+          "result": "PASS"
+        },
+        {
+          "condition": "Peasant/job boundary at level 6",
+          "result": "PASS"
+        },
+        {
+          "condition": "Inclusive bounds at level 7",
+          "result": "PASS"
+        },
+        {
+          "condition": "Peasant/job boundary at level 7",
+          "result": "PASS"
+        },
+        {
+          "condition": "Inclusive bounds at level 8",
+          "result": "PASS"
+        },
+        {
+          "condition": "Peasant/job boundary at level 8",
+          "result": "PASS"
+        },
+        {
+          "condition": "Inclusive bounds at level 9",
+          "result": "PASS"
+        },
+        {
+          "condition": "Peasant/job boundary at level 9",
+          "result": "PASS"
+        },
+        {
+          "condition": "Inclusive bounds at level 10",
+          "result": "PASS"
+        },
+        {
+          "condition": "Peasant/job boundary at level 10",
+          "result": "PASS"
+        },
+        {
+          "condition": "Inclusive bounds at level 11",
+          "result": "PASS"
+        },
+        {
+          "condition": "Peasant/job boundary at level 11",
+          "result": "PASS"
+        },
+        {
+          "condition": "Inclusive bounds at level 12",
+          "result": "PASS"
+        },
+        {
+          "condition": "Peasant/job boundary at level 12",
+          "result": "PASS"
+        },
+        {
+          "condition": "Inclusive bounds at level 13",
+          "result": "PASS"
+        },
+        {
+          "condition": "Peasant/job boundary at level 13",
+          "result": "PASS"
+        },
+        {
+          "condition": "Inclusive bounds at level 14",
+          "result": "PASS"
+        },
+        {
+          "condition": "Peasant/job boundary at level 14",
+          "result": "PASS"
+        },
+        {
+          "condition": "Inclusive bounds at level 15",
+          "result": "PASS"
+        },
+        {
+          "condition": "Peasant/job boundary at level 15",
+          "result": "PASS"
+        },
+        {
+          "condition": "Inclusive bounds at level 16",
+          "result": "PASS"
+        },
+        {
+          "condition": "Peasant/job boundary at level 16",
+          "result": "PASS"
+        },
+        {
+          "condition": "Inclusive bounds at level 17",
+          "result": "PASS"
+        },
+        {
+          "condition": "Peasant/job boundary at level 17",
+          "result": "PASS"
+        },
+        {
+          "condition": "Inclusive bounds at level 18",
+          "result": "PASS"
+        },
+        {
+          "condition": "Peasant/job boundary at level 18",
+          "result": "PASS"
+        },
+        {
+          "condition": "Inclusive bounds at level 19",
+          "result": "PASS"
+        },
+        {
+          "condition": "Peasant/job boundary at level 19",
+          "result": "PASS"
+        },
+        {
+          "condition": "Inclusive bounds at level 20",
+          "result": "PASS"
+        },
+        {
+          "condition": "Peasant/job boundary at level 20",
+          "result": "PASS"
+        },
+        {
+          "condition": "Inclusive bounds at level 21",
+          "result": "PASS"
+        },
+        {
+          "condition": "Peasant/job boundary at level 21",
+          "result": "PASS"
+        },
+        {
+          "condition": "Inclusive bounds at level 22",
+          "result": "PASS"
+        },
+        {
+          "condition": "Peasant/job boundary at level 22",
+          "result": "PASS"
+        },
+        {
+          "condition": "Inclusive bounds at level 23",
+          "result": "PASS"
+        },
+        {
+          "condition": "Peasant/job boundary at level 23",
+          "result": "PASS"
+        },
+        {
+          "condition": "Inclusive bounds at level 24",
+          "result": "PASS"
+        },
+        {
+          "condition": "Peasant/job boundary at level 24",
+          "result": "PASS"
+        },
+        {
+          "condition": "Inclusive bounds at level 25",
+          "result": "PASS"
+        },
+        {
+          "condition": "Peasant/job boundary at level 25",
+          "result": "PASS"
+        },
+        {
+          "condition": "Inclusive bounds at level 26",
+          "result": "PASS"
+        },
+        {
+          "condition": "Peasant/job boundary at level 26",
+          "result": "PASS"
+        },
+        {
+          "condition": "Inclusive bounds at level 27",
+          "result": "PASS"
+        },
+        {
+          "condition": "Peasant/job boundary at level 27",
+          "result": "PASS"
+        },
+        {
+          "condition": "Inclusive bounds at level 28",
+          "result": "PASS"
+        },
+        {
+          "condition": "Peasant/job boundary at level 28",
+          "result": "PASS"
+        },
+        {
+          "condition": "Inclusive bounds at level 29",
+          "result": "PASS"
+        },
+        {
+          "condition": "Peasant/job boundary at level 29",
+          "result": "PASS"
+        },
+        {
+          "condition": "Same save module preserves state on disk",
+          "result": "FAIL"
+        }
+      ],
+      "observed": {
+        "growth_log": [
+          {
+            "from": 1,
+            "hp_gain": 53,
+            "job": "평민",
+            "mp_gain": 34
+          },
+          {
+            "from": 2,
+            "hp_gain": 49,
+            "job": "평민",
+            "mp_gain": 36
+          },
+          {
+            "from": 3,
+            "hp_gain": 49,
+            "job": "평민",
+            "mp_gain": 33
+          },
+          {
+            "from": 4,
+            "hp_gain": 46,
+            "job": "평민",
+            "mp_gain": 36
+          },
+          {
+            "from": 5,
+            "hp_gain": 81,
+            "job": "전사",
+            "mp_gain": 9
+          },
+          {
+            "from": 6,
+            "hp_gain": 72,
+            "job": "전사",
+            "mp_gain": 9
+          },
+          {
+            "from": 7,
+            "hp_gain": 75,
+            "job": "전사",
+            "mp_gain": 9
+          },
+          {
+            "from": 8,
+            "hp_gain": 81,
+            "job": "전사",
+            "mp_gain": 8
+          },
+          {
+            "from": 9,
+            "hp_gain": 76,
+            "job": "전사",
+            "mp_gain": 8
+          },
+          {
+            "from": 10,
+            "hp_gain": 73,
+            "job": "전사",
+            "mp_gain": 9
+          },
+          {
+            "from": 11,
+            "hp_gain": 78,
+            "job": "전사",
+            "mp_gain": 8
+          },
+          {
+            "from": 12,
+            "hp_gain": 72,
+            "job": "전사",
+            "mp_gain": 9
+          },
+          {
+            "from": 13,
+            "hp_gain": 77,
+            "job": "전사",
+            "mp_gain": 9
+          },
+          {
+            "from": 14,
+            "hp_gain": 73,
+            "job": "전사",
+            "mp_gain": 8
+          },
+          {
+            "from": 15,
+            "hp_gain": 74,
+            "job": "전사",
+            "mp_gain": 9
+          },
+          {
+            "from": 16,
+            "hp_gain": 81,
+            "job": "전사",
+            "mp_gain": 9
+          },
+          {
+            "from": 17,
+            "hp_gain": 76,
+            "job": "전사",
+            "mp_gain": 9
+          },
+          {
+            "from": 18,
+            "hp_gain": 73,
+            "job": "전사",
+            "mp_gain": 9
+          },
+          {
+            "from": 19,
+            "hp_gain": 79,
+            "job": "전사",
+            "mp_gain": 9
+          },
+          {
+            "from": 20,
+            "hp_gain": 81,
+            "job": "전사",
+            "mp_gain": 8
+          },
+          {
+            "from": 21,
+            "hp_gain": 78,
+            "job": "전사",
+            "mp_gain": 8
+          },
+          {
+            "from": 22,
+            "hp_gain": 73,
+            "job": "전사",
+            "mp_gain": 9
+          },
+          {
+            "from": 23,
+            "hp_gain": 72,
+            "job": "전사",
+            "mp_gain": 9
+          },
+          {
+            "from": 24,
+            "hp_gain": 72,
+            "job": "전사",
+            "mp_gain": 9
+          },
+          {
+            "from": 25,
+            "hp_gain": 75,
+            "job": "전사",
+            "mp_gain": 8
+          },
+          {
+            "from": 26,
+            "hp_gain": 72,
+            "job": "전사",
+            "mp_gain": 8
+          },
+          {
+            "from": 27,
+            "hp_gain": 79,
+            "job": "전사",
+            "mp_gain": 9
+          },
+          {
+            "from": 28,
+            "hp_gain": 72,
+            "job": "전사",
+            "mp_gain": 9
+          },
+          {
+            "from": 29,
+            "hp_gain": 72,
+            "job": "전사",
+            "mp_gain": 9
+          }
+        ],
+        "hp": 2134,
+        "level": 30,
+        "mp": 391
+      },
+      "status": "FAIL",
+      "test_id": "GROWTH-1"
+    }
+  ],
+  "rules_sha256": "d65d7872d675e5652a251396233297970cfe885ece9c72c86679df088bebdd95",
+  "save_module_sha256": "21289a4ab2704b0c21435724e33c33be4cacdb280fda604b0a202611ab6f3a8b",
+  "scope": "SAME_INTERACTIVE_GAME_RULES_NOT_37_MANUAL_SCREEN_PLAYTHROUGHS",
+  "status": "FAIL",
+  "world_sha256": "e136bea84a5e5cc4eb34f575439fe029e36bc5d3f24de59bdd865df69773794a"
+}

@@ -103,7 +103,16 @@ def build():
         for n in m['npcs']:m['blocked'][n['y']][n['x']]=True
     output=ROOT/'game/data/world.json'
     output.parent.mkdir(parents=True,exist_ok=True)
-    output.write_text(json.dumps(dict(maps=maps,shop_items=['목도','목검','철단도','철검','도토리','토끼고기','산삼'],
+    numeric=json.loads((ROOT/'game/data/numeric.json').read_text())
+    materials=set()
+    for c in numeric['contents']:
+        if c['category']=='spell' and c['values'].get('learn_level') is not None and c['values']['learn_level']<=30:
+            for key,value in c['values'].items():
+                if key.startswith('learn_materials.') and value:materials.add(key.split('.')[1])
+    shops=['목도','목검','철단도','철검','도토리','토끼고기','산삼']
+    shops.extend(sorted(materials-set(shops)))
+    output.write_text(json.dumps(dict(maps=maps,shop_items=shops,
+        shop_inventory_classification='GENERATED_OFFLINE_COMPLETION_SOURCES_KNOWN_PRICES_PRESERVED',
         generated_map_count=len(maps), tile_placements=sum(used.values()),unique_tile_ids=len(used),
         replacements={'rat':'병든쥐','bat':'박쥐','snake':'독사','boar':'곰','spider':'서생원','skeleton':'보라박쥐'},
         generated_quests=[dict(id='first_steps',kills=5,xp=300,gold=50),dict(id='hunter',kills=25,xp=1200,gold=100)],

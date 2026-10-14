@@ -1,0 +1,84 @@
+{
+  "started_at": "2026-10-14T01:48:43.727235+00:00",
+  "scope": "REAL_GAME_X11_WINDOW_AND_GODOT_INPUT_EVENTS",
+  "runs": [
+    {
+      "mode": "primary",
+      "exit_code": 1,
+      "game_report": "/workspace/baram-private/game-screen-run4/primary/primary-report.json",
+      "game_status": "FAIL",
+      "x11_captures": [
+        {
+          "name": "creation",
+          "sha256": "a60b75c692afc22e81d61fdf1967212bfa057e5d34ad8c562c5cc0de5ae8d8d7",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 94,
+          "status": "FAIL"
+        },
+        {
+          "name": "shop",
+          "sha256": "33f2610675cce4e8d9640948e5c28e46daa9cc227de81e6887790ef56a05719d",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 93,
+          "status": "FAIL"
+        },
+        {
+          "name": "village-equipped",
+          "sha256": "ce16c307b0b6f09631d9aa0bbc9d9742030a1a6ca423490cb3ca76def3a8c0e7",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 121,
+          "status": "FAIL"
+        },
+        {
+          "name": "skill-effect",
+          "sha256": "252e0a51179e6a9d9013779223bea05798c5884322af404815313171d510d2b7",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 124,
+          "status": "FAIL"
+        },
+        {
+          "name": "field-combat",
+          "sha256": "0e3aba41f2bcbc0fdae59566c3ad0895f1ad61db5c5cc8c963b226586092d19a",
+          "matching_screen_fraction": 1.0,
+          "distinct_colors": 72,
+          "status": "FAIL"
+        }
+      ],
+      "audio_mix": {
+        "status": "PASS_PCM_SIGNAL",
+        "samples": 2596864,
+        "rms": 4151.543987776714,
+        "driver": "Dummy",
+        "audible_human_review": "NOT_RUN"
+      },
+      "argv": [
+        "godot",
+        "--path",
+        "/workspace/baram-1998-singleplayer/game",
+        "--display-driver",
+        "x11",
+        "--rendering-method",
+        "gl_compatibility",
+        "--audio-driver",
+        "Dummy",
+        "--",
+        "--assets=/workspace/baram-private/game-assets",
+        "--save=/workspace/baram-private/game-screen-run4/primary/character.json",
+        "--exercise=primary",
+        "--evidence=/workspace/baram-private/game-screen-run4/primary"
+      ],
+      "registered_tiles": 14835,
+      "checks": 17
+    }
+  ],
+  "status": "FAIL",
+  "error": "Executed game check failed; inspect preserved primary evidence",
+  "finished_at": "2026-10-14T01:49:25.418183+00:00",
+  "source_sha256": {
+    "game/main.gd": "053c1d2220ead3fb40415709d2d258aaa82490cacec911fae6ce85928c39b5d9",
+    "game/exercise.gd": "d678ba6805e322ebe7b4e4ec5348c730843a93a84f3c8b3afb48685c063318cc",
+    "game/rules.gd": "d65d7872d675e5652a251396233297970cfe885ece9c72c86679df088bebdd95",
+    "game/save_store.gd": "0f1c8b9fea8baf986a750afaf2636dee6925b97442724226a098cbc9937460ac",
+    "tests/run_playable_screen.py": "dc2dd512346a5d86836e4f0fba65df3610c0c22480e981822dbd1cb494b9b8e9"
+  }
+}

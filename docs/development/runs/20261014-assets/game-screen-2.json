@@ -1,0 +1,15 @@
+{
+  "started_at": "2026-10-14T01:38:42.326982+00:00",
+  "scope": "REAL_GAME_X11_WINDOW_AND_GODOT_INPUT_EVENTS",
+  "runs": [],
+  "status": "FAIL_ABORTED_AFTER_OBSERVED_FAILURES",
+  "finished_at": "2026-10-14T01:42:21.648424+00:00",
+  "source_sha256": {
+    "game/main.gd": "be23a909cc93753f323101d01a5453626d6295a4fba245252854646e5cfc0809",
+    "game/exercise.gd": "a01e9fa21b4c7dbbc1afba4f198e29acbd9b6448d040dd1fb65112ba14d7e50c",
+    "game/rules.gd": "d65d7872d675e5652a251396233297970cfe885ece9c72c86679df088bebdd95",
+    "game/save_store.gd": "21289a4ab2704b0c21435724e33c33be4cacdb280fda604b0a202611ab6f3a8b",
+    "tests/run_playable_screen.py": "bedcf8663891afa27ee8fe71468a658228d8525cb7b887639c73fcdcc0ee61df"
+  },
+  "error": "Input route crossed unintended portals during hunting; player died at 4 kills. TextIO read-ahead delayed external capture markers. Stopped owned process after failures; prior files preserved."
+}

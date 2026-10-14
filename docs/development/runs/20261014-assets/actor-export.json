@@ -203,6 +203,26 @@
       "frames": 20
     },
     {
+      "asset_id": "ghost",
+      "path": "sprites/ghost.png",
+      "canvas": [
+        128,
+        128
+      ],
+      "origin": [
+        64,
+        80
+      ],
+      "sha256": "808714b9c3548bbf7255ce40b18f114babd38da398bdbcc6613990f45a655b7a",
+      "epf": "ghost",
+      "palette_index": 0,
+      "recolor_byte": 0,
+      "source_kind": "ORIGINAL_KR491",
+      "motion_binding": "INFERRED_FROM_TBL_AND_VISUAL_POSE",
+      "historical_match": "UNVERIFIED",
+      "frames": 84
+    },
+    {
       "asset_id": "rabbit",
       "path": "sprites/rabbit.png",
       "canvas": [
@@ -503,7 +523,7 @@
       "frames": 8
     }
   ],
-  "registered_candidate_frames": 1053,
+  "registered_candidate_frames": 1137,
   "sounds": [
     {
       "path": "sounds/001.wav",

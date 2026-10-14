@@ -18,6 +18,15 @@ func _init():
         by_id[c.id] = c
         if c.category == "growth":
             grow[str(c.job) + ":" + str(int(c.level))] = c
+    for entry in [
+        {"name":"구운토끼고기","values":{"heal_amount":30,"restore_mp":0,"stack_limit":99,"vendor_buy_price":5,"vendor_sell_price":2}},
+        {"name":"초보 회복약","values":{"heal_amount":50,"restore_mp":0,"stack_limit":99,"vendor_buy_price":10,"vendor_sell_price":5}},
+        {"name":"초보 마력약","values":{"heal_amount":0,"restore_mp":30,"stack_limit":99,"vendor_buy_price":10,"vendor_sell_price":5}}]:
+        entry["id"] = "generated.item." + entry.name
+        entry["category"] = "item"
+        entry["job"] = null
+        entry["source_kind"] = "GENERATED_COMPLETION_DEV_ESTIMATE"
+        contents.append(entry)
 
 func find_content(category: String, title: String, job: String = "") -> Dictionary:
     for c in contents:
@@ -40,7 +49,7 @@ func new_player(job: String, title: String) -> Dictionary:
         "gold":30,"strength":5,"inventory":{"목도":1},"equipped":"","durability":{"목도":1000},
         "skills":["기초 회복"],"hotbar":["기초 회복","",""],"cooldowns":{},"buffs":{},
         "map":"village","x":12,"y":12,"direction":2,"kills":0,"quests":[],"rank":0,
-        "growth_log":[],"skill_page":0,"rng_state":rng.state}
+        "growth_log":[],"skill_page":0,"rng_state":str(rng.state)}
 
 func threshold(job: String, level: int) -> int:
     if level >= 99:
@@ -66,7 +75,7 @@ func award_xp(p: Dictionary, amount: float) -> Array:
         p.mp = p.mp_max
         p.strength = 5 + int(p.level) - 1 # DEV_ESTIMATE, original strength growth unavailable.
         gained.append(p.level)
-    p.rng_state = rng.state
+    p.rng_state = str(rng.state)
     return gained
 
 func integer_learn(average: float) -> int:
@@ -195,6 +204,15 @@ func craft(p: Dictionary, ingredients: Dictionary, gold: int, product: String) -
         p.inventory[k] -= ingredients[k]
     return true
 
+func consume(p: Dictionary, title: String) -> bool:
+    var it = item(title)
+    if int(p.inventory.get(title,0)) <= 0 or (int(value_or(it,"heal_amount",0)) <= 0 and int(value_or(it,"restore_mp",0)) <= 0):
+        return false
+    p.inventory[title] -= 1
+    heal(p,int(value_or(it,"heal_amount",0)))
+    p.mp = mini(int(p.mp_max),int(p.mp)+int(value_or(it,"restore_mp",0)))
+    return true
+
 func monster(kind: String, aliases: Dictionary) -> Dictionary:
     var name = {"rabbit":"토끼","squirrel":"다람쥐"}.get(kind,aliases.get(kind,"서생원"))
     var c = find_content("monster",name)
@@ -207,6 +225,14 @@ func monster_drops(p: Dictionary, monster_id: String) -> Array:
         if d.monster_content_id == monster_id and d.probability != null and roll(float(d.probability)):
             result.append({"item":d.item_name,"quantity":int(d.quantity)})
     return result
+
+func reward_kill(p: Dictionary, spec: Dictionary, kind: String) -> Dictionary:
+    p.kills += 1
+    var gains = award_xp(p,float(spec.values.experience))
+    var dropped = monster_drops(p,spec.content_id)
+    var gold = 1 if kind in ["rabbit","squirrel"] else 20 # explicit DEV estimate
+    p.gold += gold
+    return {"levels":gains,"drops":dropped,"gold":gold}
 
 func tick(p: Dictionary, delta: float):
     for k in p.cooldowns:

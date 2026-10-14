@@ -1,0 +1,52 @@
+{
+  "failures": [
+    {
+      "id": "ASSET-CANVAS-1",
+      "status": "RESOLVED",
+      "observed": "Negative original EPF pivots rejected by initial export",
+      "fix": "Preserved negative pivot with explicit shared 64,80 canvas origin",
+      "evidence": "actor-export.json"
+    },
+    {
+      "id": "SAVE-INTEGER-1",
+      "status": "RESOLVED",
+      "observed": "Nested inventory quantities differed as int versus Godot JSON float; four growth save checks failed",
+      "fix": "Restore schema integer fields after checksum validation",
+      "evidence": "balance-growth-4.json"
+    },
+    {
+      "id": "SCREEN-RUN-2",
+      "status": "FAIL_PRESERVED",
+      "observed": "19 or fewer kills; unintended portal traversal and death; delayed X11 capture marker from TextIO read-ahead",
+      "fix": "Block unrelated portals while planning input; consume raw stdout lines without read-ahead ambiguity",
+      "evidence": [
+        "game-screen-2.json",
+        "game-screen-3.json"
+      ]
+    },
+    {
+      "id": "NPC-NEARBY-1",
+      "status": "FIX_APPLIED_RETEST_PENDING",
+      "observed": "Merchant selected instead of quest NPC when both were in range",
+      "fix": "Prefer NPC on facing tile; then closest NPC",
+      "evidence": "game-screen-4.json"
+    },
+    {
+      "id": "GITHUB-BRANCH-SPEC",
+      "status": "BLOCKED",
+      "observed": "Proxy CONNECT 403 for github.com, not in published effective policy",
+      "affected": [
+        "dev/codex-asset-intake-20261014 latest remote read",
+        "docs/development/CODEX_ASSET_EXECUTION_SPEC.md full read",
+        "remote publication verification"
+      ],
+      "fallback": "Attachment intake specification fully read; local development continuation preserved; no assumption of remote latest state"
+    },
+    {
+      "id": "NA466-SFX",
+      "status": "BLOCKED",
+      "observed": "Verified archive recovered; distinct InstallShield outer payload unsupported",
+      "independent_progress": "KR491/NA403/NA495 extracted, KR491 actual game graphics used"
+    }
+  ]
+}

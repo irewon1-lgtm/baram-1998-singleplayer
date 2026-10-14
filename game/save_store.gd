@@ -27,6 +27,14 @@ func read_one(path: String) -> Dictionary:
     var state = JSON.parse_string(doc.payload)
     if typeof(state) != TYPE_DICTIONARY or not state.has_all(["player","world","rng_state"]):
         return {}
+    # JSON numbers are floats; restore integers defined by the save schema.
+    var p = state.player
+    for key in ["level","xp2","hp","hp_max","mp","mp_max","gold","strength","x","y","direction","kills","rank","skill_page"]:
+        if p.has(key):p[key] = int(p[key])
+    for key in ["inventory","durability"]:
+        for name in p.get(key,{}):p[key][name] = int(p[key][name])
+    for entry in p.get("growth_log",[]):
+        for key in ["from","hp_gain","mp_gain"]:entry[key] = int(entry[key])
     return state
 
 func read_state(path: String) -> Dictionary:

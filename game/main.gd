@@ -1,0 +1,786 @@
+extends Node2D
+
+const Rules = preload("res://rules.gd")
+const Store = preload("res://save_store.gd")
+const Assets = preload("res://assets.gd")
+const STEP = 48
+const VIEW = Rect2(0,48,768,480)
+const DIRECTIONS = [Vector2i.UP,Vector2i.LEFT,Vector2i.DOWN,Vector2i.RIGHT]
+var rules = Rules.new()
+var store = Store.new()
+var assets = Assets.new()
+var world = {}
+var maps = {}
+var entities = {}
+var loot = []
+var player = {}
+var save_path = "user://saves/character.json"
+var asset_folder = ""
+var font = FontFile.new()
+var clock = 0.0
+var move_wait = 0.0
+var from_position = Vector2.ZERO
+var step_progress = 1.0
+var attack_wait = 0.0
+var attack_elapsed = -1.0
+var impact_done = false
+var attack_target = ""
+var selected_target = ""
+var hurt_time = 0.0
+var effects = []
+var floating_text = []
+var log_lines = []
+var menu = "creation"
+var selected = 0
+var choices = []
+var npc = {}
+var creation_job = 0
+var name_edit: LineEdit
+var creation_controls: Control
+var audio = AudioStreamPlayer.new()
+var recorder = AudioEffectRecord.new()
+var audio_events = []
+var event_log = []
+var captures = []
+var exercise_path = ""
+var test_mode = ""
+var test_root = ""
+var exercise_started = false
+var options = {}
+var save_loaded = false
+var loaded_snapshot = {}
+
+func _ready():
+    for arg in OS.get_cmdline_user_args():
+        if arg.begins_with("--") and "=" in arg:
+            var parts = arg.trim_prefix("--").split("=",true,1)
+            options[parts[0]] = parts[1]
+    asset_folder = options.get("assets",OS.get_environment("BARAM_PRIVATE_ASSETS"))
+    if asset_folder == "":
+        asset_folder = ProjectSettings.globalize_path("res://../private_assets")
+    save_path = options.get("save",save_path)
+    test_mode = options.get("exercise","")
+    test_root = options.get("evidence","")
+    if not assets.load_directory(asset_folder):
+        push_error("Private assets unavailable; run tools/intake_private_tiles.py and build_playable_assets.py")
+        get_tree().quit(2)
+        return
+    font.data = FileAccess.get_file_as_bytes(asset_folder.path_join("fonts/NotoSansCJK-Regular.ttc"))
+    font.antialiasing = TextServer.FONT_ANTIALIASING_NONE
+    world = JSON.parse_string(FileAccess.get_file_as_string("res://data/world.json"))
+    for m in world.maps:
+        maps[m.id] = m
+        for spawn in m.spawns:
+            var spec = rules.monster(spawn.kind,world.replacements)
+            entities[spawn.id] = {"id":spawn.id,"kind":spawn.kind,"map":m.id,"x":spawn.x,"y":spawn.y,
+                "home_x":spawn.x,"home_y":spawn.y,"direction":2,"hp":int(spec.values.hp),"alive":true,
+                "respawn":0.0,"move_timer":3.0,"attack_timer":0.0,"provoked":false,"hurt":0.0,
+                "spec":spec}
+    add_child(audio)
+    if test_mode != "":
+        AudioServer.add_bus_effect(0,recorder)
+        recorder.set_recording_active(true)
+    var saved = store.read_state(save_path)
+    if not saved.is_empty():
+        loaded_snapshot = saved.duplicate(true)
+        restore(saved)
+        menu = ""
+        save_loaded = true
+        notice("저장한 여정을 이어갑니다.")
+    else:
+        setup_creation()
+    event("ready",{"registered_tiles":assets.tiles.size(),"loaded_save":save_loaded,
+                   "renderer":RenderingServer.get_current_rendering_method()})
+    if test_mode != "":
+        call_deferred("start_exercise")
+    queue_redraw()
+
+func setup_creation():
+    creation_controls = Control.new()
+    add_child(creation_controls)
+    name_edit = LineEdit.new()
+    name_edit.position = Vector2(354,243)
+    name_edit.size = Vector2(252,36)
+    name_edit.text = "바람여행자"
+    name_edit.max_length = 12
+    name_edit.add_theme_font_override("font",font)
+    name_edit.add_theme_font_size_override("font_size",18)
+    creation_controls.add_child(name_edit)
+    for i in range(4):
+        var button = Button.new()
+        button.text = Rules.JOBS[i]
+        button.position = Vector2(268+i*110,302)
+        button.size = Vector2(100,42)
+        button.add_theme_font_override("font",font)
+        button.pressed.connect(func():creation_job=i;queue_redraw())
+        creation_controls.add_child(button)
+    var start_button = Button.new()
+    start_button.text = "여정 시작"
+    start_button.position = Vector2(398,382)
+    start_button.size = Vector2(164,40)
+    start_button.add_theme_font_override("font",font)
+    start_button.pressed.connect(create_character)
+    creation_controls.add_child(start_button)
+
+func create_character():
+    if menu != "creation":
+        return
+    var title = name_edit.text.strip_edges()
+    if title == "":
+        title = "바람여행자"
+    player = rules.new_player(Rules.JOBS[creation_job],title)
+    creation_controls.queue_free()
+    menu = ""
+    event("character_created",{"job":player.job,"name":player.name})
+    notice("장비상에게 Enter로 대화하세요. I: 물품, E: 장착, Space: 공격")
+    queue_redraw()
+
+func event(kind: String, info: Dictionary = {}):
+    event_log.append({"time":snappedf(clock,0.001),"event":kind,"details":info.duplicate(true)})
+
+func notice(message: String):
+    log_lines.append(message)
+    while log_lines.size() > 4:
+        log_lines.pop_front()
+
+func _input(input):
+    if input is InputEventMouseButton and input.pressed and input.button_index == MOUSE_BUTTON_LEFT and menu == "":
+        var at = (input.position - VIEW.position)/STEP + camera()
+        for id in entities:
+            var e = entities[id]
+            if e.alive and e.map == player.map and Vector2(e.x,e.y).distance_to(at) < 1.0:
+                selected_target = id
+                notice(e.spec.name + " 선택")
+        return
+    if not input is InputEventKey or not input.pressed or input.echo:
+        return
+    var key = input.keycode
+    if menu == "creation":
+        if key == KEY_ENTER:
+            create_character()
+        elif key in [KEY_1,KEY_2,KEY_3,KEY_4]:
+            creation_job = int(key-KEY_1)
+        return
+    if key == KEY_F5:
+        save_game()
+        return
+    if key == KEY_F6:
+        var saved = store.read_state(save_path)
+        if not saved.is_empty():
+            restore(saved)
+            notice("저장 상태를 복구했습니다.")
+        return
+    if key == KEY_ESCAPE:
+        if menu != "":
+            menu = ""
+        else:
+            save_game()
+            menu = "pause"
+        return
+    if menu != "":
+        handle_menu_key(key)
+        return
+    if key == KEY_I:
+        open_inventory()
+    elif key == KEY_E:
+        var title = player.equipped if player.equipped != "" else "목도"
+        if rules.equip(player,title):
+            event("equipped",{"item":title})
+            notice(title + " 장착")
+    elif key == KEY_SPACE:
+        begin_attack()
+    elif key == KEY_ENTER or key == KEY_F:
+        interact()
+    elif key == KEY_G or key == KEY_COMMA:
+        pickup()
+    elif key in [KEY_1,KEY_2,KEY_3]:
+        cast_skill(int(key-KEY_1))
+    elif key == KEY_TAB:
+        cycle_target()
+    elif key == KEY_M:
+        menu = "map"
+        choices = []
+        for m in world.maps:
+            choices.append(m.name)
+    elif key in [KEY_UP,KEY_LEFT,KEY_DOWN,KEY_RIGHT,KEY_W,KEY_A,KEY_S,KEY_D]:
+        var d = {KEY_UP:0,KEY_LEFT:1,KEY_DOWN:2,KEY_RIGHT:3,KEY_W:0,KEY_A:1,KEY_S:2,KEY_D:3}[key]
+        if input.shift_pressed:
+            player.direction = d
+            move_wait = 0.18
+            event("turned",{"direction":d})
+        else:
+            move_player(d)
+    queue_redraw()
+
+func _process(delta: float):
+    clock += delta
+    if player.is_empty():
+        queue_redraw()
+        return
+    rules.tick(player,delta)
+    move_wait = maxf(0,move_wait-delta)
+    attack_wait = maxf(0,attack_wait-delta)
+    hurt_time = maxf(0,hurt_time-delta)
+    step_progress = minf(1,step_progress + delta/0.18)
+    if attack_elapsed >= 0:
+        attack_elapsed += delta
+        if not impact_done and attack_elapsed >= 0.16:
+            impact_done = true
+            apply_attack()
+        if attack_elapsed >= 0.4:
+            attack_elapsed = -1.0
+    if menu == "":
+        if Input.is_physical_key_pressed(KEY_SPACE):
+            begin_attack()
+        for k in [KEY_UP,KEY_LEFT,KEY_DOWN,KEY_RIGHT]:
+            if Input.is_physical_key_pressed(k):
+                move_player({KEY_UP:0,KEY_LEFT:1,KEY_DOWN:2,KEY_RIGHT:3}[k])
+                break
+        update_monsters(delta)
+    for fx in effects:
+        fx.time += delta
+    effects = effects.filter(func(fx):return fx.time < 0.8)
+    for text in floating_text:
+        text.time += delta
+    floating_text = floating_text.filter(func(t):return t.time < 0.9)
+    queue_redraw()
+
+func cell() -> Vector2i:
+    return Vector2i(int(player.x),int(player.y))
+
+func camera() -> Vector2:
+    if player.is_empty():
+        return Vector2(4,7)
+    var m = maps[player.map]
+    return Vector2(clampi(int(player.x)-8,0,int(m.width)-16),clampi(int(player.y)-5,0,int(m.height)-10))
+
+func screen_point(x: float,y: float) -> Vector2:
+    return VIEW.position + (Vector2(x,y)-camera())*STEP + Vector2(STEP/2,STEP)
+
+func free_cell(map_id: String, pos: Vector2i, actor_id: String = "") -> bool:
+    var m = maps[map_id]
+    if pos.x < 0 or pos.y < 0 or pos.x >= int(m.width) or pos.y >= int(m.height) or m.blocked[pos.y][pos.x]:
+        return false
+    for id in entities:
+        var e = entities[id]
+        if id != actor_id and e.alive and e.map == map_id and Vector2i(e.x,e.y) == pos:
+            return false
+    return true
+
+func move_player(direction: int):
+    if move_wait > 0 or attack_elapsed >= 0 or menu != "":
+        return
+    player.direction = direction
+    var next = cell() + DIRECTIONS[direction]
+    if not free_cell(player.map,next):
+        event("collision",{"map":player.map,"x":next.x,"y":next.y})
+        return
+    from_position = Vector2(player.x,player.y)
+    player.x = next.x
+    player.y = next.y
+    step_progress = 0.0
+    move_wait = 0.18
+    event("moved",{"map":player.map,"x":player.x,"y":player.y,"direction":direction})
+    for portal in maps[player.map].portals:
+        if next == Vector2i(portal.x,portal.y):
+            transition(portal.target,portal.entry)
+            break
+
+func transition(map_id: String, entry: Array):
+    player.map = map_id
+    player.x = int(entry[0])
+    player.y = int(entry[1])
+    step_progress = 1.0
+    selected_target = ""
+    event("map_changed",{"map":map_id,"x":player.x,"y":player.y})
+    notice(maps[map_id].name)
+
+func cycle_target():
+    var available = []
+    for id in entities:
+        var e = entities[id]
+        if e.map == player.map and e.alive and Vector2i(e.x,e.y).distance_to(cell()) < 7:
+            available.append(id)
+    if available.is_empty():
+        selected_target = ""
+    else:
+        selected_target = available[(available.find(selected_target)+1)%available.size()]
+
+func begin_attack():
+    if attack_wait > 0 or int(player.hp) <= 0 or menu != "":
+        return
+    attack_wait = 0.6
+    attack_elapsed = 0.0
+    impact_done = false
+    attack_target = ""
+    var target_cell = cell()+DIRECTIONS[int(player.direction)]
+    for id in entities:
+        var e = entities[id]
+        if e.map == player.map and e.alive and Vector2i(e.x,e.y) == target_cell:
+            attack_target = id
+            break
+    event("attack_started",{"target":attack_target,"direction":player.direction,"interval_ms":600,"impact_ms":160})
+
+func apply_attack():
+    play_sound("attack")
+    if attack_target == "" or not entities[attack_target].alive:
+        return
+    var e = entities[attack_target]
+    # A moving target must still occupy the facing tile at the impact instant.
+    if e.map != player.map or Vector2i(e.x,e.y) != cell()+DIRECTIONS[int(player.direction)]:
+        event("attack_missed_moved_target")
+        return
+    if not rules.roll(0.9):
+        event("attack_missed_probability")
+        return
+    var amount = rules.damage(rules.weapon_damage(player),int(e.spec.values.armor_class))
+    hit_monster(e,amount,"melee")
+    if player.equipped != "":
+        player.durability[player.equipped] = maxi(0,int(player.durability[player.equipped])-1)
+        if player.durability[player.equipped] == 0:
+            player.equipped = ""
+            notice("무기가 파손되었습니다. 장비상에게 수리하세요.")
+
+func hit_monster(e: Dictionary, amount: int, source: String):
+    e.hp -= amount
+    e.hurt = 0.18
+    e.provoked = true
+    floating_text.append({"x":e.x,"y":e.y,"text":str(amount),"time":0.0,"color":Color(1,0.8,0.4)})
+    play_sound("hit")
+    event("damage_applied",{"target":e.id,"damage":amount,"hp":e.hp,"source":source,"impact_time":attack_elapsed})
+    if e.hp <= 0:
+        e.alive = false
+        e.respawn = float(e.spec.values.respawn_interval_ms)/1000.0
+        var reward = rules.reward_kill(player,e.spec,e.kind)
+        var gains = reward.levels
+        var drop_items = reward.drops
+        for drop in drop_items:
+            loot.append({"map":player.map,"x":e.x,"y":e.y,"item":drop.item,"quantity":drop.quantity})
+        var gold = reward.gold
+        event("monster_killed",{"id":e.id,"xp":e.spec.values.experience,"level":player.level,"drops":drop_items,"gold":gold})
+        if gains.size() > 0:
+            event("level_up",{"levels":gains})
+            notice("레벨 %d! 체력과 마력이 회복되었습니다." % player.level)
+            play_sound("level")
+
+func update_monsters(delta: float):
+    for id in entities:
+        var e = entities[id]
+        e.hurt = maxf(0,float(e.hurt)-delta)
+        if not e.alive:
+            e.respawn -= delta
+            if e.respawn <= 0:
+                e.alive = true
+                e.hp = int(e.spec.values.hp)
+                e.x = e.home_x
+                e.y = e.home_y
+                e.provoked = false
+            continue
+        if e.map != player.map:
+            continue
+        e.move_timer -= delta
+        e.attack_timer -= delta
+        var distance = Vector2i(e.x,e.y).distance_to(cell())
+        var aggressive = e.kind not in ["rabbit","squirrel"] or e.provoked
+        if int(player.hp) > 0 and aggressive and distance < 1.1 and e.attack_timer <= 0:
+            e.attack_timer = float(e.spec.values.attack_interval_ms)/1000.0
+            var attack = rules.rng.randi_range(int(e.spec.values.attack_min),int(e.spec.values.attack_max))
+            if rules.roll(float(e.spec.values.hit_probability)):
+                var amount = rules.damage(attack,rules.armor(player))
+                player.hp = maxi(0,int(player.hp)-amount)
+                hurt_time = 0.18
+                play_sound("hit")
+                event("player_hit",{"damage":amount,"hp":player.hp,"attacker":id})
+                if player.hp == 0:
+                    event("player_died")
+                    transition("village",[17,12])
+                    notice("혼령이 되었습니다. 성황 옆에서 Enter로 부활하세요.")
+                    return
+        if e.move_timer <= 0:
+            e.move_timer = float(e.spec.values.move_interval_ms)/1000.0
+            var d = rules.rng.randi_range(0,3)
+            if aggressive and distance <= float(e.spec.values.aggro_radius_tiles) and int(player.hp) > 0:
+                var offset = cell()-Vector2i(e.x,e.y)
+                d = 3 if offset.x > 0 else 1
+                if absi(offset.y) > absi(offset.x): d = 2 if offset.y > 0 else 0
+            var next = Vector2i(e.x,e.y)+DIRECTIONS[d]
+            if next != cell() and free_cell(e.map,next,id) and next.distance_to(Vector2i(e.home_x,e.home_y)) <= float(e.spec.values.leash_radius_tiles):
+                e.x = next.x
+                e.y = next.y
+                e.direction = d
+
+func pickup():
+    var remaining = []
+    for drop in loot:
+        if drop.map == player.map and Vector2i(drop.x,drop.y).distance_to(cell()) <= 1.1 and rules.add_item(player,drop.item,int(drop.quantity)):
+            notice(drop.item + " 획득")
+            event("item_picked_up",drop)
+        else:
+            remaining.append(drop)
+    loot = remaining
+
+func cast_skill(slot: int):
+    if int(player.hp) <= 0 or slot >= player.hotbar.size() or player.hotbar[slot] == "":
+        return
+    var title = str(player.hotbar[slot])
+    var s = rules.skill(player,title)
+    var damage = int(rules.value_or(s,"base_damage",0))
+    var heal = int(rules.value_or(s,"heal_amount",0))
+    var target = {}
+    if damage > 0:
+        if entities.has(selected_target) and entities[selected_target].alive and entities[selected_target].map == player.map:
+            target = entities[selected_target]
+        else:
+            var nearest = 999.0
+            for id in entities:
+                var e = entities[id]
+                var dist = Vector2i(e.x,e.y).distance_to(cell())
+                if e.alive and e.map == player.map and dist < nearest:
+                    target = e
+                    nearest = dist
+        if target.is_empty() or Vector2i(target.x,target.y).distance_to(cell()) > float(rules.value_or(s,"range_tiles",4)):
+            notice("기술 사거리 안에 대상이 없습니다.")
+            return
+    var supported = damage > 0 or heal > 0 or title in ["무장","보호","이중공격","누리의힘","대지의힘","귀환","공력증강","해독"]
+    if not supported:
+        notice(title + "의 효과 연결은 아직 미완료입니다.")
+        event("skill_blocked",{"skill":title,"reason":"UNIMPLEMENTED_EFFECT"})
+        return
+    var hp_cost = int(rules.value_or(s,"cast_hp",0)) + floori(float(player.hp)*float(rules.value_or(s,"cast_hp_fraction",0)))
+    if not rules.cast_resources(player,int(rules.value_or(s,"cast_mp",0)),hp_cost,float(rules.value_or(s,"cooldown_ms",1000))/1000.0,title):
+        notice("마력·체력이 부족하거나 기술 준비 중입니다.")
+        event("skill_rejected_resources",{"skill":title})
+        return
+    var fx = {"key":"effect_heal","x":player.x,"y":player.y,"time":0.0}
+    if heal > 0:
+        rules.heal(player,heal)
+    elif damage > 0:
+        hit_monster(target,rules.damage(damage,int(target.spec.values.armor_class)),"skill")
+        fx.key = "effect_damage"
+        fx.x = target.x
+        fx.y = target.y
+    elif title == "귀환":
+        transition("village",[12,12])
+    elif title == "공력증강":
+        player.mp = mini(int(player.mp_max),int(player.mp)+30) # DEV replacement magnitude.
+    elif title == "해독":
+        player.buffs.erase("독")
+    else:
+        player.buffs[title] = float(rules.value_or(s,"duration_ms",30000))/1000.0
+    effects.append(fx)
+    play_sound("skill")
+    attack_elapsed = 0.24
+    impact_done = true
+    attack_wait = maxf(attack_wait,0.6)
+    event("skill_cast",{"skill":title,"mp":player.mp,"hp":player.hp,"slot":slot})
+
+func interact():
+    var nearby = maps[player.map].npcs.duplicate()
+    var facing = cell() + DIRECTIONS[int(player.direction)]
+    nearby.sort_custom(func(a,b):
+        var a_cost = -1.0 if Vector2i(a.x,a.y)==facing else Vector2i(a.x,a.y).distance_to(cell())
+        var b_cost = -1.0 if Vector2i(b.x,b.y)==facing else Vector2i(b.x,b.y).distance_to(cell())
+        return a_cost < b_cost)
+    for n in nearby:
+        if Vector2i(n.x,n.y).distance_to(cell()) <= 1.5:
+            npc = n
+            selected = 0
+            if n.role in ["shop","inn"]:
+                menu = "shop"
+                choices = world.shop_items.duplicate()
+                choices.append_array(["초보 회복약","초보 마력약","구운토끼고기"])
+            elif n.role == "trainer":
+                menu = "trainer"
+                choices = []
+                for c in rules.contents:
+                    if c.category == "spell" and str(c.job) == player.job and c.values.get("learn_level") != null and float(c.values.learn_level) <= 30:
+                        choices.append(c.name)
+                choices.sort_custom(func(a,b):return int(rules.skill(player,a).learn_level) < int(rules.skill(player,b).learn_level))
+            elif n.role == "quest":
+                for quest in world.generated_quests:
+                    if int(player.kills) >= int(quest.kills) and quest.id not in player.quests:
+                        player.quests.append(quest.id)
+                        var gains = rules.award_xp(player,float(quest.xp))
+                        player.gold += int(quest.gold)
+                        event("quest_completed",{"id":quest.id,"xp":quest.xp,"levels":gains})
+                        notice("사냥 의뢰 완료! 경험치 %d, 금전 %d" % [quest.xp,quest.gold])
+                        return
+                menu = "dialogue"
+                choices = ["5마리와 25마리 사냥 의뢰를 맡깁니다.","남쪽 사냥터 → 쥐굴 → 숲 → 깊은 동굴 → 폐허", "레벨 5부터 직업별 성장이 적용됩니다."]
+            elif n.role == "revive":
+                player.hp = player.hp_max
+                player.mp = player.mp_max
+                event("revived")
+                notice("성황이 체력과 마력을 회복해 주었습니다.")
+            event("npc_dialogue",{"id":n.id,"role":n.role})
+            return
+    pickup()
+
+func open_inventory():
+    menu = "inventory"
+    selected = 0
+    choices = player.inventory.keys().filter(func(k):return int(player.inventory[k]) > 0)
+
+func handle_menu_key(key: int):
+    if menu == "pause":
+        if key == KEY_ENTER:
+            menu = ""
+        elif key == KEY_Q:
+            get_tree().quit()
+        return
+    if choices.size() > 0:
+        if key == KEY_UP:
+            selected = (selected-1+choices.size())%choices.size()
+        elif key == KEY_DOWN:
+            selected = (selected+1)%choices.size()
+    if menu == "shop" and choices.size() > 0:
+        var title = str(choices[selected])
+        if key in [KEY_ENTER,KEY_B,KEY_V]:
+            var buy = key != KEY_V
+            var price = int(rules.value_or(rules.item(title),"vendor_buy_price" if buy else "vendor_sell_price",5 if buy else 1))
+            var success = rules.trade(player,title,1,price,buy)
+            notice(("구매: " if buy else "판매: ")+title if success else "금전·수량·가방 조건을 확인하세요.")
+            event("trade",{"item":title,"buy":buy,"success":success,"gold":player.gold})
+        elif key == KEY_R:
+            var success = rules.repair(player,player.equipped)
+            notice("수리 완료" if success else "수리할 장착 무기 또는 금전이 없습니다.")
+            event("repair",{"success":success})
+        elif key == KEY_C:
+            var success = rules.craft(player,{"토끼고기":1},1,"구운토끼고기")
+            notice("토끼고기 요리 완료" if success else "토끼고기 1개와 금전 1전이 필요합니다.")
+            event("crafted",{"success":success})
+        elif key == KEY_H and npc.role == "inn":
+            if player.gold >= 5:
+                player.gold -= 5
+                player.hp = player.hp_max
+                player.mp = player.mp_max
+                notice("주막에서 쉬었습니다.")
+                event("rested")
+    elif menu == "inventory" and choices.size() > 0:
+        var title = str(choices[selected])
+        if key in [KEY_E,KEY_ENTER]:
+            var success = rules.equip(player,title)
+            notice(title+" 장착" if success else "착용 조건 또는 무기 종류를 확인하세요.")
+            event("equipped",{"item":title,"success":success})
+        elif key == KEY_U:
+            var success = rules.consume(player,title)
+            notice(title+" 사용" if success else "사용할 수 없는 물품입니다.")
+            event("consumed",{"item":title,"success":success})
+    elif menu == "trainer" and choices.size() > 0 and key in [KEY_ENTER,KEY_L]:
+        var title = str(choices[selected])
+        var success = rules.learn(player,title)
+        event("skill_learned",{"skill":title,"success":success})
+        notice(title+" 습득" if success else "레벨·금전·제물을 확인하세요.")
+    elif menu == "trainer" and key in [KEY_1,KEY_2,KEY_3] and choices.size() > 0:
+        var title = str(choices[selected])
+        if title in player.skills:
+            player.hotbar[key-KEY_1] = title
+            event("hotbar_assigned",{"skill":title,"slot":key-KEY_1})
+
+func play_sound(kind: String):
+    var path = assets.folder.path_join(assets.actor_data.sound_bindings[kind])
+    var stream = AudioStreamWAV.load_from_file(path)
+    if stream != null:
+        audio.stream = stream
+        audio.play()
+        audio_events.append({"time":clock,"kind":kind,"file_sha256":FileAccess.get_sha256(path)})
+
+func snapshot() -> Dictionary:
+    player.rng_state = str(rules.rng.state)
+    return {"player":player.duplicate(true),"world":entities.duplicate(true),"loot":loot.duplicate(true),
+            "rng_state":str(rules.rng.state)}
+
+func restore(state: Dictionary):
+    player = state.player
+    entities = state.world
+    loot = state.get("loot",[])
+    rules.rng.state = int(state.rng_state)
+    step_progress = 1.0
+    selected_target = ""
+    attack_elapsed = -1.0
+    menu = ""
+    event("save_restored",{"map":player.map,"level":player.level,"equipped":player.equipped})
+
+func save_game() -> bool:
+    var success = store.write_state(save_path,snapshot())
+    notice("저장 완료 · 재실행하면 이어집니다." if success else "저장 실패: 저장 폴더를 확인하세요.")
+    event("save_written",{"success":success,"sha256":FileAccess.get_sha256(save_path) if success else ""})
+    return success
+
+func label(text: String, pos: Vector2, size: int = 16, color: Color = Color(0.91,0.86,0.7)):
+    draw_string(font,pos,text,HORIZONTAL_ALIGNMENT_LEFT,-1,size,color)
+
+func box(rect: Rect2, color: Color = Color(0.13,0.12,0.1)):
+    draw_rect(rect,color)
+    draw_rect(rect,Color(0.52,0.43,0.28),false,2)
+    draw_rect(rect.grow(-4),Color(0.29,0.26,0.18),false,1)
+
+func draw_actor(key: String, frame: int, feet: Vector2, opacity: float = 1.0):
+    var texture = assets.textures.get(key)
+    if texture == null:
+        return
+    var region = assets.actor_region(key,frame)
+    if region.size == Vector2.ZERO:
+        return
+    draw_texture_rect_region(texture,Rect2(feet-Vector2(128,160),Vector2(256,256)),region,Color(1,1,1,opacity))
+
+func icon(title: String, at: Vector2):
+    var names = assets.actor_data.icons.names
+    var index = names.find(title)
+    if index < 0:
+        index = names.find("토끼고기") if title == "구운토끼고기" else names.find("산삼") if title.ends_with("약") else 0
+    draw_actor("icons",index,at)
+
+func _draw():
+    if assets.tiles.is_empty() or font.data.is_empty():
+        return
+    draw_rect(Rect2(0,0,960,640),Color(0.055,0.065,0.055))
+    var map_id = "village" if player.is_empty() else player.map
+    var m = maps[map_id]
+    var cam = camera()
+    for y in range(int(cam.y),mini(int(m.height),int(cam.y)+10)):
+        for x in range(int(cam.x),mini(int(m.width),int(cam.x)+16)):
+            var tile = str(m.ground[y][x])
+            draw_texture_rect(assets.tile(tile),Rect2(VIEW.position+(Vector2(x,y)-cam)*STEP,Vector2(STEP,STEP)),false)
+    for d in m.decorations:
+        if Rect2(cam,Vector2(16,10)).has_point(Vector2(d.x,d.y)):
+            draw_texture_rect(assets.tile(d.tile),Rect2(VIEW.position+(Vector2(d.x,d.y)-cam)*STEP,Vector2(STEP,STEP)),false)
+    for portal in m.portals:
+        if Rect2(cam,Vector2(16,10)).has_point(Vector2(portal.x,portal.y)):
+            var p = screen_point(portal.x,portal.y)
+            draw_rect(Rect2(p-Vector2(22,44),Vector2(44,42)),Color(0.8,0.7,0.3,0.3))
+            label(portal.label,p-Vector2(38,5),12,Color(1,0.95,0.5))
+    for drop in loot:
+        if drop.map == map_id and Rect2(cam,Vector2(16,10)).has_point(Vector2(drop.x,drop.y)):
+            icon(drop.item,screen_point(drop.x,drop.y))
+    var visible = []
+    for n in m.npcs:
+        visible.append({"type":"npc","y":n.y,"data":n})
+    for id in entities:
+        var e = entities[id]
+        if e.map == map_id and e.alive:
+            visible.append({"type":"monster","y":e.y,"data":e})
+    if not player.is_empty():
+        visible.append({"type":"player","y":player.y,"data":player})
+    visible.sort_custom(func(a,b):return a.y < b.y)
+    for v in visible:
+        var e = v.data
+        if not Rect2(cam-Vector2(1,1),Vector2(18,12)).has_point(Vector2(e.x,e.y)):
+            continue
+        var pos = screen_point(e.x,e.y)
+        if v.type == "player":
+            if step_progress < 1:
+                pos = screen_point(lerpf(from_position.x,float(player.x),step_progress),lerpf(from_position.y,float(player.y),step_progress))
+            draw_player(pos)
+            label(player.name,pos-Vector2(34,93),13,Color(1,0.95,0.75))
+        else:
+            var key = str(e.kind)
+            var spec = assets.actor_data[key]
+            var direction = int(e.get("direction",2))
+            var frame = direction*int(spec.walk)+int(clock*6)%int(spec.walk)
+            var opacity = 0.7 if float(e.get("hurt",0)) > 0 else 1.0
+            draw_actor(key,frame,pos,opacity)
+            var title = e.name if v.type == "npc" else e.spec.name
+            label(title,pos-Vector2(28,90),13,Color(0.9,0.9,0.65))
+            if v.type == "monster" and (e.provoked or selected_target == e.id):
+                draw_rect(Rect2(pos-Vector2(16,85),Vector2(32,3)),Color(0.15,0.1,0.1))
+                draw_rect(Rect2(pos-Vector2(16,85),Vector2(32*maxf(0,float(e.hp)/float(e.spec.values.hp)),3)),Color(0.75,0.25,0.15))
+    for fx in effects:
+        draw_actor(fx.key,mini(7,int(fx.time*10)),screen_point(fx.x,fx.y))
+    for t in floating_text:
+        label(t.text,screen_point(t.x,t.y)-Vector2(8,90+t.time*35),18,t.color)
+    box(Rect2(0,0,960,48))
+    label("바람의나라",Vector2(18,32),23,Color(0.96,0.82,0.43))
+    label(m.name,Vector2(212,31),17)
+    label("개인용 · 오프라인",Vector2(790,30),15)
+    box(Rect2(768,48,192,480))
+    box(Rect2(0,528,960,112))
+    if not player.is_empty():
+        draw_hud()
+    for i in range(log_lines.size()):
+        label(log_lines[i],Vector2(16,552+i*20),14)
+    if menu == "creation":
+        box(Rect2(238,152,484,314),Color(0.12,0.14,0.12))
+        label("새로운 여정",Vector2(395,196),25,Color(1,0.86,0.47))
+        label("이름",Vector2(299,268),18)
+        label("선택 직업: "+Rules.JOBS[creation_job],Vector2(393,370),16)
+        label("레벨 5까지 평민 성장 · 이후 선택 직업 성장",Vector2(267,448),16)
+    elif menu != "":
+        draw_menu()
+
+func draw_player(pos: Vector2):
+    var job = Rules.JOBS.find(player.job)
+    if int(player.hp) == 0:
+        draw_actor("ghost",int(player.direction)*3+int(clock*6)%3,pos)
+        return
+    var direction = int(player.direction)
+    var body_frame = direction*3+(int(clock*10)%3 if step_progress < 1 else 1)
+    var weapon_frame = body_frame
+    if player.equipped != "": body_frame += 12
+    if attack_elapsed >= 0:
+        body_frame = 24+direction*2+mini(1,int(attack_elapsed*5))
+        weapon_frame = 12+direction*2+mini(1,int(attack_elapsed*5))
+    var order = str(assets.actor_data.draw_order[body_frame])
+    var opacity = 0.72 if hurt_time > 0 else 1.0
+    for layer in order:
+        if layer == "b":
+            draw_actor("body_"+str(job),body_frame,pos,opacity)
+        elif layer == "h":
+            draw_actor("head_"+str(job),mini(body_frame,99),pos,opacity)
+        elif layer == "w" and player.equipped != "":
+            draw_actor("wood_weapon" if player.equipped in ["목도","목검"] else "iron_weapon",weapon_frame,pos,opacity)
+
+func draw_hud():
+    label(player.name,Vector2(784,78),18,Color(1,0.91,0.66))
+    label("%s  레벨 %d" % [player.job,player.level],Vector2(784,103),17)
+    label("체력 %d / %d" % [player.hp,player.hp_max],Vector2(784,134),14)
+    draw_rect(Rect2(784,143,158,12),Color(0.2,0.08,0.06))
+    draw_rect(Rect2(784,143,158*float(player.hp)/float(player.hp_max),12),Color(0.65,0.16,0.1))
+    label("마력 %d / %d" % [player.mp,player.mp_max],Vector2(784,179),14)
+    draw_rect(Rect2(784,188,158,12),Color(0.07,0.1,0.22))
+    draw_rect(Rect2(784,188,158*float(player.mp)/float(player.mp_max),12),Color(0.18,0.33,0.7))
+    label("경험치 %s" % str(float(player.xp2)/2.0),Vector2(784,224),14)
+    label("금전 %d전" % player.gold,Vector2(784,248),15)
+    label("힘 %d · 사냥 %d" % [player.strength,player.kills],Vector2(784,273),14)
+    label("무기: "+(player.equipped if player.equipped!="" else "맨손"),Vector2(784,302),15)
+    if player.equipped != "":
+        label("내구 %d" % int(player.durability[player.equipped]),Vector2(784,325),13)
+    for i in range(3):
+        box(Rect2(782,346+i*39,166,34))
+        label(str(i+1)+"  "+str(player.hotbar[i]),Vector2(790,368+i*39),13)
+    label("화살표  이동",Vector2(784,478),13)
+    label("Space  공격 / G  줍기",Vector2(784,500),12)
+    label("Enter 대화 · I 물품 · F5 저장",Vector2(668,631),12)
+
+func draw_menu():
+    box(Rect2(164,106,536,398),Color(0.12,0.13,0.11))
+    var heading = {"shop":"물품 거래","trainer":"기술 수련","inventory":"보유 물품","dialogue":"안내","pause":"여정 저장"}.get(menu,menu)
+    label(heading,Vector2(191,144),22,Color(1,0.88,0.5))
+    if menu == "pause":
+        label("Enter: 계속하기 · Q: 게임 종료",Vector2(194,205),18)
+        return
+    var start = maxi(0,selected-4)
+    for j in range(start,mini(choices.size(),start+8)):
+        var y = 184+(j-start)*31
+        var title = str(choices[j])
+        if j == selected:
+            draw_rect(Rect2(184,y-21,496,29),Color(0.32,0.29,0.16))
+        label(title,Vector2(198,y),15)
+        if menu == "shop":
+            label("%d전  보유 %d" % [int(rules.value_or(rules.item(title),"vendor_buy_price",5)),int(player.inventory.get(title,0))],Vector2(478,y),14)
+        elif menu == "inventory":
+            label("%d개" % int(player.inventory[title]),Vector2(596,y),14)
+        elif menu == "trainer":
+            var s = rules.skill(player,title)
+            label("Lv.%d / %d전 %s" % [int(s.learn_level),int(s.learn_money),"습득" if title in player.skills else ""],Vector2(467,y),13)
+    var hint = {"shop":"↑↓ 선택 · B 구매 · V 판매 · R 수리 · C 요리 · Esc 닫기",
+        "inventory":"↑↓ 선택 · E 장착 · U 사용 · Esc 닫기",
+        "trainer":"Enter 습득 · 1~3 단축키 지정 · Esc 닫기",
+        "dialogue":"Esc 닫기"}.get(menu,"")
+    label(hint,Vector2(190,485),13)
+
+func start_exercise():
+    # Implemented in a separate script so validation calls the actual event handlers.
+    var runner = load("res://exercise.gd").new()
+    add_child(runner)
+    await runner.run(self,test_mode,test_root)

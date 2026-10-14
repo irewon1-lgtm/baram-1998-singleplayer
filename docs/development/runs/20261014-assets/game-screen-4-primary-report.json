@@ -1,0 +1,1825 @@
+{
+  "audio_events": [
+    {
+      "file_sha256": "bb129e81fea6134daba37fbf5aabc96df4a9f9be90ebdc027e7924ecf882591c",
+      "kind": "skill",
+      "time": 3.48004166666668
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 5.33955881481485
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 5.33955881481485
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 7.10000000000005
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 7.10000000000005
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 8.60425033333341
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 9.41271096296308
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 9.41271096296308
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 10.4473937777779
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 10.4473937777779
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 12.1812123333334
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 12.1812123333334
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 14.9394746666669
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 14.9394746666669
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 16.4446800000003
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 16.4446800000003
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 17.7058176666669
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 17.7058176666669
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 22.0397686666669
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 22.0397686666669
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 23.5471730000002
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 23.5471730000002
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 25.1069444444446
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 25.1069444444446
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 26.3976190476192
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "time": 26.6227272727274
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 26.6227272727274
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 27.4297690740742
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "time": 28.1305555555557
+    }
+  ],
+  "checks": [
+    {
+      "name": "fresh_character_creation_screen",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_creation",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "character_created_via_input",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "npc_dialogue_via_input",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "shop_purchase_via_input",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_shop",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "inventory_weapon_equipped_via_input",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_village-equipped",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "collision_and_facing_direction",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "skill_hotkey_deducts_mp",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_skill-effect",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "village_to_field_by_walking",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "directional_animated_attack_kills_rabbit",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "combat_awards_actual_xp",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_field-combat",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "25_actual_input_driven_kills",
+      "observed": {
+        "kills": 11
+      },
+      "status": "FAIL"
+    },
+    {
+      "name": "engine_audio_mix_recorded",
+      "observed": {
+
+      },
+      "status": "PASS"
+    }
+  ],
+  "elapsed_ms": 29588,
+  "events": [
+    {
+      "details": {
+        "loaded_save": false,
+        "registered_tiles": 14835,
+        "renderer": "gl_compatibility"
+      },
+      "event": "ready",
+      "time": 0.0
+    },
+    {
+      "details": {
+        "job": "전사",
+        "name": "바람여행자"
+      },
+      "event": "character_created",
+      "time": 0.636
+    },
+    {
+      "details": {
+        "id": "merchant",
+        "role": "shop"
+      },
+      "event": "npc_dialogue",
+      "time": 0.868
+    },
+    {
+      "details": {
+        "buy": true,
+        "gold": 10,
+        "item": "목검",
+        "success": true
+      },
+      "event": "trade",
+      "time": 1.331
+    },
+    {
+      "details": {
+        "item": "목검",
+        "success": true
+      },
+      "event": "equipped",
+      "time": 2.521
+    },
+    {
+      "details": {
+        "map": "village",
+        "x": 12,
+        "y": 11
+      },
+      "event": "collision",
+      "time": 3.244
+    },
+    {
+      "details": {
+        "map": "village",
+        "x": 12,
+        "y": 11
+      },
+      "event": "collision",
+      "time": 3.251
+    },
+    {
+      "details": {
+        "hp": 50,
+        "mp": 30,
+        "skill": "기초 회복",
+        "slot": 0
+      },
+      "event": "skill_cast",
+      "time": 3.48
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 13,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 4.423
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 14,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 4.656
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 15,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 4.886
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 12,
+        "y": 12
+      },
+      "event": "map_changed",
+      "time": 4.886
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 13,
+        "y": 12
+      },
+      "event": "collision",
+      "time": 5.119
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 13,
+        "y": 12
+      },
+      "event": "collision",
+      "time": 5.126
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-0"
+      },
+      "event": "attack_started",
+      "time": 5.179
+    },
+    {
+      "details": {
+        "damage": 22,
+        "hp": -12,
+        "impact_time": 0.160360481481481,
+        "source": "melee",
+        "target": "field-0"
+      },
+      "event": "damage_applied",
+      "time": 5.34
+    },
+    {
+      "details": {
+        "drops": [
+          {
+            "item": "토끼고기",
+            "quantity": 1
+          }
+        ],
+        "gold": 1,
+        "id": "field-0",
+        "level": 1,
+        "xp": 5.0
+      },
+      "event": "monster_killed",
+      "time": 5.34
+    },
+    {
+      "details": {
+        "item": "토끼고기",
+        "map": "field",
+        "quantity": 1,
+        "x": 13.0,
+        "y": 12.0
+      },
+      "event": "item_picked_up",
+      "time": 5.883
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 13,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 6.168
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 14,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 6.4
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 15,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 6.636
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 16,
+        "y": 12
+      },
+      "event": "collision",
+      "time": 6.869
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 16,
+        "y": 12
+      },
+      "event": "collision",
+      "time": 6.877
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-1"
+      },
+      "event": "attack_started",
+      "time": 6.936
+    },
+    {
+      "details": {
+        "damage": 30,
+        "hp": -20,
+        "impact_time": 0.164207666666667,
+        "source": "melee",
+        "target": "field-1"
+      },
+      "event": "damage_applied",
+      "time": 7.1
+    },
+    {
+      "details": {
+        "drops": [],
+        "gold": 1,
+        "id": "field-1",
+        "level": 1,
+        "xp": 5.0
+      },
+      "event": "monster_killed",
+      "time": 7.1
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 16,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 7.673
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 17,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 7.904
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 18,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 8.142
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 19,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 8.377
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": ""
+      },
+      "event": "attack_started",
+      "time": 8.444
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 19,
+        "y": 13
+      },
+      "event": "collision",
+      "time": 9.183
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 19,
+        "y": 13
+      },
+      "event": "collision",
+      "time": 9.191
+    },
+    {
+      "details": {
+        "direction": 2,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-2"
+      },
+      "event": "attack_started",
+      "time": 9.25
+    },
+    {
+      "details": {
+        "damage": 26,
+        "hp": -8,
+        "impact_time": 0.162710962962963,
+        "source": "melee",
+        "target": "field-2"
+      },
+      "event": "damage_applied",
+      "time": 9.413
+    },
+    {
+      "details": {
+        "drops": [
+          {
+            "item": "도토리",
+            "quantity": 1
+          }
+        ],
+        "gold": 1,
+        "id": "field-2",
+        "level": 1,
+        "xp": 7.5
+      },
+      "event": "monster_killed",
+      "time": 9.413
+    },
+    {
+      "details": {
+        "item": "도토리",
+        "map": "field",
+        "quantity": 1,
+        "x": 19,
+        "y": 13
+      },
+      "event": "item_picked_up",
+      "time": 9.953
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 20,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 9.987
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 21,
+        "y": 12
+      },
+      "event": "collision",
+      "time": 10.221
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 21,
+        "y": 12
+      },
+      "event": "collision",
+      "time": 10.229
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-3"
+      },
+      "event": "attack_started",
+      "time": 10.283
+    },
+    {
+      "details": {
+        "damage": 30,
+        "hp": -12,
+        "impact_time": 0.164060444444445,
+        "source": "melee",
+        "target": "field-3"
+      },
+      "event": "damage_applied",
+      "time": 10.447
+    },
+    {
+      "details": {
+        "drops": [
+          {
+            "item": "도토리",
+            "quantity": 1
+          }
+        ],
+        "gold": 1,
+        "id": "field-3",
+        "level": 1,
+        "xp": 7.5
+      },
+      "event": "monster_killed",
+      "time": 10.447
+    },
+    {
+      "details": {
+        "item": "도토리",
+        "map": "field",
+        "quantity": 1,
+        "x": 21,
+        "y": 12
+      },
+      "event": "item_picked_up",
+      "time": 10.99
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "field",
+        "x": 20,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 11.026
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 21,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 11.258
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 22,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 11.491
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 23,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 11.727
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 23,
+        "y": 12
+      },
+      "event": "collision",
+      "time": 11.958
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 23,
+        "y": 12
+      },
+      "event": "collision",
+      "time": 11.965
+    },
+    {
+      "details": {
+        "direction": 0,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-4"
+      },
+      "event": "attack_started",
+      "time": 12.021
+    },
+    {
+      "details": {
+        "damage": 24,
+        "hp": -14,
+        "impact_time": 0.160379,
+        "source": "melee",
+        "target": "field-4"
+      },
+      "event": "damage_applied",
+      "time": 12.181
+    },
+    {
+      "details": {
+        "drops": [
+          {
+            "item": "토끼고기",
+            "quantity": 1
+          }
+        ],
+        "gold": 1,
+        "id": "field-4",
+        "level": 1,
+        "xp": 5.0
+      },
+      "event": "monster_killed",
+      "time": 12.181
+    },
+    {
+      "details": {
+        "item": "토끼고기",
+        "map": "field",
+        "quantity": 1,
+        "x": 23,
+        "y": 12
+      },
+      "event": "item_picked_up",
+      "time": 12.728
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 22,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 12.764
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 21,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 13.0
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 20,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 13.238
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 19,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 13.471
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "field",
+        "x": 19,
+        "y": 14
+      },
+      "event": "moved",
+      "time": 13.708
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "field",
+        "x": 19,
+        "y": 15
+      },
+      "event": "moved",
+      "time": 14.248
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "field",
+        "x": 19,
+        "y": 16
+      },
+      "event": "moved",
+      "time": 14.479
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 19,
+        "y": 17
+      },
+      "event": "collision",
+      "time": 14.713
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 19,
+        "y": 17
+      },
+      "event": "collision",
+      "time": 14.72
+    },
+    {
+      "details": {
+        "direction": 2,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-7"
+      },
+      "event": "attack_started",
+      "time": 14.777
+    },
+    {
+      "details": {
+        "damage": 24,
+        "hp": -6,
+        "impact_time": 0.161979761904762,
+        "source": "melee",
+        "target": "field-7"
+      },
+      "event": "damage_applied",
+      "time": 14.939
+    },
+    {
+      "details": {
+        "drops": [
+          {
+            "item": "도토리",
+            "quantity": 1
+          }
+        ],
+        "gold": 1,
+        "id": "field-7",
+        "level": 1,
+        "xp": 7.5
+      },
+      "event": "monster_killed",
+      "time": 14.939
+    },
+    {
+      "details": {
+        "item": "도토리",
+        "map": "field",
+        "quantity": 1,
+        "x": 19,
+        "y": 17
+      },
+      "event": "item_picked_up",
+      "time": 15.478
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 18,
+        "y": 16
+      },
+      "event": "moved",
+      "time": 15.512
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 17,
+        "y": 16
+      },
+      "event": "moved",
+      "time": 15.747
+    },
+    {
+      "details": {
+        "direction": 2,
+        "map": "field",
+        "x": 17,
+        "y": 17
+      },
+      "event": "moved",
+      "time": 15.98
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 16,
+        "y": 17
+      },
+      "event": "collision",
+      "time": 16.215
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 16,
+        "y": 17
+      },
+      "event": "collision",
+      "time": 16.222
+    },
+    {
+      "details": {
+        "direction": 1,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-6"
+      },
+      "event": "attack_started",
+      "time": 16.279
+    },
+    {
+      "details": {
+        "damage": 26,
+        "hp": -16,
+        "impact_time": 0.165823,
+        "source": "melee",
+        "target": "field-6"
+      },
+      "event": "damage_applied",
+      "time": 16.445
+    },
+    {
+      "details": {
+        "drops": [],
+        "gold": 1,
+        "id": "field-6",
+        "level": 1,
+        "xp": 5.0
+      },
+      "event": "monster_killed",
+      "time": 16.445
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "field",
+        "x": 17,
+        "y": 16
+      },
+      "event": "moved",
+      "time": 17.016
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 16,
+        "y": 16
+      },
+      "event": "moved",
+      "time": 17.25
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 16,
+        "y": 15
+      },
+      "event": "collision",
+      "time": 17.481
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 16,
+        "y": 15
+      },
+      "event": "collision",
+      "time": 17.488
+    },
+    {
+      "details": {
+        "direction": 0,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-5"
+      },
+      "event": "attack_started",
+      "time": 17.544
+    },
+    {
+      "details": {
+        "damage": 28,
+        "hp": -10,
+        "impact_time": 0.162067666666667,
+        "source": "melee",
+        "target": "field-5"
+      },
+      "event": "damage_applied",
+      "time": 17.706
+    },
+    {
+      "details": {
+        "drops": [],
+        "gold": 1,
+        "id": "field-5",
+        "level": 1,
+        "xp": 7.5
+      },
+      "event": "monster_killed",
+      "time": 17.706
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "field",
+        "x": 16,
+        "y": 15
+      },
+      "event": "moved",
+      "time": 20.41
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "field",
+        "x": 16,
+        "y": 14
+      },
+      "event": "moved",
+      "time": 20.643
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "field",
+        "x": 16,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 20.874
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 15,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 21.111
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 14,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 21.344
+    },
+    {
+      "details": {
+        "direction": 1,
+        "map": "field",
+        "x": 13,
+        "y": 13
+      },
+      "event": "moved",
+      "time": 21.58
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 13,
+        "y": 12
+      },
+      "event": "collision",
+      "time": 21.812
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 13,
+        "y": 12
+      },
+      "event": "collision",
+      "time": 21.819
+    },
+    {
+      "details": {
+        "direction": 0,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-0"
+      },
+      "event": "attack_started",
+      "time": 21.876
+    },
+    {
+      "details": {
+        "damage": 28,
+        "hp": -18,
+        "impact_time": 0.163578190476191,
+        "source": "melee",
+        "target": "field-0"
+      },
+      "event": "damage_applied",
+      "time": 22.04
+    },
+    {
+      "details": {
+        "drops": [],
+        "gold": 1,
+        "id": "field-0",
+        "level": 1,
+        "xp": 5.0
+      },
+      "event": "monster_killed",
+      "time": 22.04
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "field",
+        "x": 13,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 22.621
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 14,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 22.853
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 15,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 23.083
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 16,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 23.316
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-1"
+      },
+      "event": "attack_started",
+      "time": 23.382
+    },
+    {
+      "details": {
+        "damage": 26,
+        "hp": -16,
+        "impact_time": 0.165612666666667,
+        "source": "melee",
+        "target": "field-1"
+      },
+      "event": "damage_applied",
+      "time": 23.547
+    },
+    {
+      "details": {
+        "drops": [],
+        "gold": 1,
+        "id": "field-1",
+        "level": 1,
+        "xp": 5.0
+      },
+      "event": "monster_killed",
+      "time": 23.547
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 17,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 24.422
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 18,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 24.653
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 19,
+        "y": 12
+      },
+      "event": "collision",
+      "time": 24.883
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 19,
+        "y": 12
+      },
+      "event": "collision",
+      "time": 24.89
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-2"
+      },
+      "event": "attack_started",
+      "time": 24.945
+    },
+    {
+      "details": {
+        "damage": 20,
+        "hp": -2,
+        "impact_time": 0.161871111111111,
+        "source": "melee",
+        "target": "field-2"
+      },
+      "event": "damage_applied",
+      "time": 25.107
+    },
+    {
+      "details": {
+        "drops": [
+          {
+            "item": "도토리",
+            "quantity": 1
+          }
+        ],
+        "gold": 1,
+        "id": "field-2",
+        "level": 1,
+        "xp": 7.5
+      },
+      "event": "monster_killed",
+      "time": 25.107
+    },
+    {
+      "details": {
+        "item": "도토리",
+        "map": "field",
+        "quantity": 1,
+        "x": 19.0,
+        "y": 12.0
+      },
+      "event": "item_picked_up",
+      "time": 25.65
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 19,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 25.683
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 20,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 25.916
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 21,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 26.154
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "field",
+        "x": 22,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 26.39
+    },
+    {
+      "details": {
+        "map": "cave",
+        "x": 12,
+        "y": 12
+      },
+      "event": "map_changed",
+      "time": 26.39
+    },
+    {
+      "details": {
+        "attacker": "cave-0",
+        "damage": 19,
+        "hp": 31
+      },
+      "event": "player_hit",
+      "time": 26.398
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "cave-0"
+      },
+      "event": "attack_started",
+      "time": 26.456
+    },
+    {
+      "details": {
+        "damage": 14,
+        "hp": 60,
+        "impact_time": 0.166670309764309,
+        "source": "melee",
+        "target": "cave-0"
+      },
+      "event": "damage_applied",
+      "time": 26.623
+    },
+    {
+      "details": {
+        "direction": 0,
+        "map": "cave",
+        "x": 12,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 27.19
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 13,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 27.422
+    },
+    {
+      "details": {
+        "attacker": "cave-0",
+        "damage": 19,
+        "hp": 12
+      },
+      "event": "player_hit",
+      "time": 27.43
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 14,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 27.654
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 15,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 27.887
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "cave",
+        "x": 16,
+        "y": 11
+      },
+      "event": "moved",
+      "time": 28.124
+    },
+    {
+      "details": {
+        "attacker": "cave-1",
+        "damage": 15,
+        "hp": 0
+      },
+      "event": "player_hit",
+      "time": 28.131
+    },
+    {
+      "details": {
+
+      },
+      "event": "player_died",
+      "time": 28.131
+    },
+    {
+      "details": {
+        "map": "village",
+        "x": 17,
+        "y": 12
+      },
+      "event": "map_changed",
+      "time": 28.131
+    },
+    {
+      "details": {
+        "map": "village",
+        "x": 18,
+        "y": 12
+      },
+      "event": "collision",
+      "time": 28.36
+    },
+    {
+      "details": {
+        "map": "village",
+        "x": 18,
+        "y": 12
+      },
+      "event": "collision",
+      "time": 28.367
+    }
+  ],
+  "player": {
+    "buffs": {
+
+    },
+    "cooldowns": {
+      "기초 회복": 0.0
+    },
+    "direction": 3,
+    "durability": {
+      "목검": 3988,
+      "목도": 1000
+    },
+    "equipped": "목검",
+    "gold": 21,
+    "growth_log": [],
+    "hotbar": [
+      "기초 회복",
+      "",
+      ""
+    ],
+    "hp": 0,
+    "hp_max": 50,
+    "inventory": {
+      "도토리": 4,
+      "목검": 1,
+      "목도": 1,
+      "토끼고기": 2
+    },
+    "job": "전사",
+    "kills": 11,
+    "level": 1,
+    "map": "village",
+    "mp": 30,
+    "mp_max": 35,
+    "name": "바람여행자",
+    "quests": [],
+    "rank": 0,
+    "rng_state": "4814453160988087379",
+    "skill_page": 0,
+    "skills": [
+      "기초 회복"
+    ],
+    "strength": 5,
+    "x": 17,
+    "xp2": 135,
+    "y": 12
+  },
+  "registered_tile_sources": 3,
+  "registered_tiles": 14835,
+  "rendered_actor_frames": [
+    "teacher:6",
+    "merchant:6",
+    "priest:6",
+    "teacher:7",
+    "merchant:7",
+    "priest:7",
+    "teacher:8",
+    "merchant:8",
+    "priest:8",
+    "body_0:7",
+    "head_0:7",
+    "body_0:19",
+    "head_0:19",
+    "wood_weapon:7",
+    "wood_weapon:1",
+    "body_0:13",
+    "head_0:13",
+    "wood_weapon:13",
+    "body_0:25",
+    "head_0:25",
+    "effect_heal:0",
+    "effect_heal:1",
+    "effect_heal:2",
+    "effect_heal:3",
+    "effect_heal:4",
+    "effect_heal:5",
+    "effect_heal:6",
+    "effect_heal:7",
+    "wood_weapon:11",
+    "body_0:23",
+    "head_0:23",
+    "wood_weapon:9",
+    "body_0:21",
+    "head_0:21",
+    "wood_weapon:10",
+    "body_0:22",
+    "head_0:22",
+    "rabbit:8",
+    "squirrel:8",
+    "rabbit:6",
+    "squirrel:6",
+    "rabbit:7",
+    "squirrel:7",
+    "wood_weapon:18",
+    "body_0:30",
+    "head_0:30",
+    "icons:3",
+    "body_0:31",
+    "wood_weapon:19",
+    "head_0:31",
+    "squirrel:5",
+    "rabbit:5",
+    "squirrel:11",
+    "rabbit:11",
+    "squirrel:3",
+    "rabbit:3",
+    "squirrel:9",
+    "rabbit:9",
+    "squirrel:4",
+    "rabbit:4",
+    "squirrel:10",
+    "rabbit:10",
+    "wood_weapon:16",
+    "body_0:28",
+    "head_0:28",
+    "icons:2",
+    "body_0:29",
+    "head_0:29",
+    "wood_weapon:17",
+    "squirrel:2",
+    "squirrel:0",
+    "body_0:20",
+    "head_0:20",
+    "wood_weapon:8",
+    "body_0:18",
+    "head_0:18",
+    "wood_weapon:6",
+    "squirrel:1",
+    "body_0:24",
+    "head_0:24",
+    "wood_weapon:12",
+    "body_0:16",
+    "head_0:16",
+    "wood_weapon:4",
+    "body_0:17",
+    "head_0:17",
+    "wood_weapon:5",
+    "body_0:15",
+    "head_0:15",
+    "wood_weapon:3",
+    "body_0:26",
+    "head_0:26",
+    "wood_weapon:14",
+    "wood_weapon:15",
+    "body_0:27",
+    "head_0:27",
+    "wood_weapon:2",
+    "body_0:14",
+    "head_0:14",
+    "wood_weapon:0",
+    "body_0:12",
+    "head_0:12",
+    "rat:8",
+    "bat:8",
+    "rat:6",
+    "bat:6",
+    "rat:7",
+    "bat:7",
+    "ghost:9",
+    "ghost:10",
+    "ghost:11"
+  ],
+  "rendered_tile_ids": [
+    "A:20",
+    "A:16",
+    "A:17",
+    "A:18",
+    "A:99",
+    "A:97",
+    "A:98",
+    "A:19",
+    "A:268",
+    "C:52",
+    "C:53",
+    "C:88",
+    "C:89",
+    "C:90",
+    "C:91",
+    "C:51",
+    "A:8",
+    "A:6",
+    "A:1",
+    "A:10",
+    "A:4",
+    "A:7",
+    "A:5",
+    "A:11",
+    "A:15",
+    "A:3",
+    "A:2",
+    "A:14",
+    "A:12",
+    "A:0",
+    "A:13",
+    "A:9",
+    "A:269",
+    "B:96",
+    "B:97",
+    "B:98",
+    "B:624",
+    "B:635",
+    "B:633",
+    "B:625",
+    "B:631",
+    "B:632",
+    "B:628",
+    "B:626",
+    "B:629",
+    "B:634",
+    "B:630",
+    "B:651",
+    "B:652",
+    "B:650",
+    "B:627",
+    "C:105",
+    "C:106",
+    "C:107"
+  ],
+  "save_loaded": false,
+  "scope": "REAL_X11_GODOT_VIEWPORT_WITH_INPUT_EVENTS_NOT_FULL_1_TO_99_PLAYTHROUGH",
+  "screenshots": [
+    {
+      "height": 640,
+      "name": "creation",
+      "path": "/workspace/baram-private/game-screen-run4/primary/creation.png",
+      "sha256": "14d12fbddbedb830468c5964cf73b4893caabfc83f8b3ef350eba44b87258e79",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "shop",
+      "path": "/workspace/baram-private/game-screen-run4/primary/shop.png",
+      "sha256": "9182814040c27a1408d1f9f5b5a4ea23030846428ec9ae1f50cffe1e0d2d5aa5",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "village-equipped",
+      "path": "/workspace/baram-private/game-screen-run4/primary/village-equipped.png",
+      "sha256": "4bc30aada37862023deeec64bd172f1aa12f568af490f1fbc5d9a0d57634ec33",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "skill-effect",
+      "path": "/workspace/baram-private/game-screen-run4/primary/skill-effect.png",
+      "sha256": "853d411fe04a98b214fb0dc21e50b11fda6a0697ecba804169b95ae66128ae02",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "field-combat",
+      "path": "/workspace/baram-private/game-screen-run4/primary/field-combat.png",
+      "sha256": "be1a7582506116267745815dd696e904c8b807a71aa06401be19963e082f062c",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    }
+  ],
+  "status": "FAIL"
+}
