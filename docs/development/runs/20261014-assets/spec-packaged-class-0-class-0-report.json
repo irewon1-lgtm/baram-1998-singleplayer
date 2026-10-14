@@ -1,0 +1,501 @@
+{
+  "audio_events": [
+    {
+      "file_sha256": "bb129e81fea6134daba37fbf5aabc96df4a9f9be90ebdc027e7924ecf882591c",
+      "kind": "skill",
+      "playing": true,
+      "time": 3.4909090909091,
+      "voice": "skill"
+    },
+    {
+      "file_sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "kind": "attack",
+      "playing": true,
+      "time": 5.32609427609428,
+      "voice": "attack"
+    },
+    {
+      "file_sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "kind": "hit",
+      "playing": true,
+      "time": 5.32609427609428,
+      "voice": "hit"
+    }
+  ],
+  "checks": [
+    {
+      "name": "fresh_character_creation_screen",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_creation",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "character_created_via_input",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "npc_dialogue_via_input",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "shop_purchase_via_input",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_shop",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "inventory_weapon_equipped_via_input",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_village-equipped",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "collision_and_facing_direction",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "skill_hotkey_deducts_mp",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_skill-effect",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "village_to_field_by_walking",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "directional_animated_attack_kills_rabbit",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "combat_awards_actual_xp",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "rendered_field-combat",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "class_save_written",
+      "observed": {
+
+      },
+      "status": "PASS"
+    },
+    {
+      "name": "engine_audio_mix_recorded",
+      "observed": {
+
+      },
+      "status": "PASS"
+    }
+  ],
+  "elapsed_ms": 6469,
+  "events": [
+    {
+      "details": {
+        "loaded_save": false,
+        "registered_tiles": 14835,
+        "renderer": "gl_compatibility"
+      },
+      "event": "ready",
+      "time": 0.0
+    },
+    {
+      "details": {
+        "job": "전사",
+        "name": "바람여행자"
+      },
+      "event": "character_created",
+      "time": 0.644
+    },
+    {
+      "details": {
+        "id": "merchant",
+        "role": "shop"
+      },
+      "event": "npc_dialogue",
+      "time": 0.877
+    },
+    {
+      "details": {
+        "buy": true,
+        "gold": 10,
+        "item": "목검",
+        "success": true
+      },
+      "event": "trade",
+      "time": 1.343
+    },
+    {
+      "details": {
+        "item": "목검",
+        "success": true
+      },
+      "event": "equipped",
+      "time": 2.531
+    },
+    {
+      "details": {
+        "map": "village",
+        "x": 12,
+        "y": 11
+      },
+      "event": "collision",
+      "time": 3.257
+    },
+    {
+      "details": {
+        "map": "village",
+        "x": 12,
+        "y": 11
+      },
+      "event": "collision",
+      "time": 3.266
+    },
+    {
+      "details": {
+        "hp": 50,
+        "mp": 30,
+        "skill": "기초 회복",
+        "slot": 0
+      },
+      "event": "skill_cast",
+      "time": 3.491
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 13,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 4.429
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 14,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 4.663
+    },
+    {
+      "details": {
+        "direction": 3,
+        "map": "village",
+        "x": 15,
+        "y": 12
+      },
+      "event": "moved",
+      "time": 4.896
+    },
+    {
+      "details": {
+        "map": "field",
+        "x": 12,
+        "y": 12
+      },
+      "event": "map_changed",
+      "time": 4.896
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "turned",
+      "time": 5.127
+    },
+    {
+      "details": {
+        "direction": 3,
+        "impact_ms": 160,
+        "interval_ms": 600,
+        "target": "field-0"
+      },
+      "event": "attack_started",
+      "time": 5.161
+    },
+    {
+      "details": {
+        "damage": 22,
+        "hp": -12,
+        "impact_time": 0.164671033670033,
+        "source": "melee",
+        "target": "field-0"
+      },
+      "event": "damage_applied",
+      "time": 5.326
+    },
+    {
+      "details": {
+        "drops": [
+          {
+            "item": "토끼고기",
+            "quantity": 1
+          }
+        ],
+        "gold": 1,
+        "id": "field-0",
+        "level": 1,
+        "xp": 5.0
+      },
+      "event": "monster_killed",
+      "time": 5.326
+    },
+    {
+      "details": {
+        "item": "토끼고기",
+        "map": "field",
+        "quantity": 1,
+        "x": 13.0,
+        "y": 12.0
+      },
+      "event": "item_picked_up",
+      "time": 5.866
+    },
+    {
+      "details": {
+        "sha256": "ce170788769364714c304ca5a0fb181424fe531d02f532bc0d526646046f0456",
+        "success": true
+      },
+      "event": "save_written",
+      "time": 6.151
+    }
+  ],
+  "player": {
+    "buffs": {
+
+    },
+    "cooldowns": {
+      "기초 회복": 0.0
+    },
+    "direction": 3,
+    "durability": {
+      "목검": 3999,
+      "목도": 1000
+    },
+    "equipped": "목검",
+    "gold": 11,
+    "growth_log": [],
+    "hotbar": [
+      "기초 회복",
+      "",
+      ""
+    ],
+    "hp": 50,
+    "hp_max": 50,
+    "inventory": {
+      "목검": 1,
+      "목도": 1,
+      "토끼고기": 1
+    },
+    "job": "전사",
+    "kills": 1,
+    "level": 1,
+    "map": "field",
+    "mp": 30,
+    "mp_max": 35,
+    "name": "바람여행자",
+    "quests": [],
+    "rank": 0,
+    "rng_state": "8970098769237327606",
+    "skill_page": 0,
+    "skills": [
+      "기초 회복"
+    ],
+    "strength": 5,
+    "x": 12,
+    "xp2": 10,
+    "y": 12
+  },
+  "registered_tile_sources": 3,
+  "registered_tiles": 14835,
+  "rendered_actor_frames": [
+    "teacher:6",
+    "merchant:6",
+    "priest:6",
+    "teacher:7",
+    "merchant:7",
+    "priest:7",
+    "teacher:8",
+    "merchant:8",
+    "priest:8",
+    "body_0:7",
+    "head_0:7",
+    "body_0:19",
+    "head_0:19",
+    "wood_weapon:7",
+    "wood_weapon:1",
+    "body_0:13",
+    "head_0:13",
+    "wood_weapon:13",
+    "body_0:25",
+    "head_0:25",
+    "effect_heal:0",
+    "effect_heal:1",
+    "effect_heal:2",
+    "effect_heal:3",
+    "effect_heal:4",
+    "effect_heal:5",
+    "effect_heal:6",
+    "effect_heal:7",
+    "wood_weapon:11",
+    "body_0:23",
+    "head_0:23",
+    "wood_weapon:9",
+    "body_0:21",
+    "head_0:21",
+    "wood_weapon:10",
+    "body_0:22",
+    "head_0:22",
+    "rabbit:8",
+    "squirrel:8",
+    "rabbit:6",
+    "squirrel:6",
+    "wood_weapon:18",
+    "body_0:30",
+    "head_0:30",
+    "rabbit:7",
+    "squirrel:7",
+    "icons:3",
+    "body_0:31",
+    "wood_weapon:19",
+    "head_0:31"
+  ],
+  "rendered_tile_ids": [
+    "A:20",
+    "A:16",
+    "A:17",
+    "A:18",
+    "A:99",
+    "A:97",
+    "A:98",
+    "A:19",
+    "A:268",
+    "C:52",
+    "C:53",
+    "C:88",
+    "C:89",
+    "C:90",
+    "C:91",
+    "C:51",
+    "A:8",
+    "A:6",
+    "A:1",
+    "A:10",
+    "A:4",
+    "A:7",
+    "A:5",
+    "A:11",
+    "A:15",
+    "A:3",
+    "A:2",
+    "A:14",
+    "A:12",
+    "A:0",
+    "A:13",
+    "A:9"
+  ],
+  "save_loaded": false,
+  "scope": "REAL_X11_GODOT_VIEWPORT_WITH_INPUT_EVENTS_NOT_FULL_1_TO_99_PLAYTHROUGH",
+  "screenshots": [
+    {
+      "height": 640,
+      "name": "creation",
+      "path": "/workspace/baram-private/spec-package-playtest/class-0/creation.png",
+      "sha256": "14d12fbddbedb830468c5964cf73b4893caabfc83f8b3ef350eba44b87258e79",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "shop",
+      "path": "/workspace/baram-private/spec-package-playtest/class-0/shop.png",
+      "sha256": "9182814040c27a1408d1f9f5b5a4ea23030846428ec9ae1f50cffe1e0d2d5aa5",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "village-equipped",
+      "path": "/workspace/baram-private/spec-package-playtest/class-0/village-equipped.png",
+      "sha256": "4bc30aada37862023deeec64bd172f1aa12f568af490f1fbc5d9a0d57634ec33",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "skill-effect",
+      "path": "/workspace/baram-private/spec-package-playtest/class-0/skill-effect.png",
+      "sha256": "853d411fe04a98b214fb0dc21e50b11fda6a0697ecba804169b95ae66128ae02",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "name": "field-combat",
+      "path": "/workspace/baram-private/spec-package-playtest/class-0/field-combat.png",
+      "sha256": "be1a7582506116267745815dd696e904c8b807a71aa06401be19963e082f062c",
+      "status": "PASS_CAPTURE_ONLY",
+      "width": 960
+    }
+  ],
+  "status": "PASS_EXECUTED_SCREEN_INPUT"
+}

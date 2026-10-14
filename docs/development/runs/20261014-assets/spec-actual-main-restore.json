@@ -1,0 +1,20 @@
+{
+  "actual_tileset_tiles": 14835,
+  "checks": {
+    "actual_entities": true,
+    "actual_loot": true,
+    "actual_player": true,
+    "actual_rng": true,
+    "actual_tileset_resource_count": true,
+    "loaded_from_disk": true
+  },
+  "main_sha256": "57d85682f785fdfa38b44d92e8aa70db4cd39fd2268acffdb59675f948a54bd2",
+  "save_sha256": "ce170788769364714c304ca5a0fb181424fe531d02f532bc0d526646046f0456",
+  "scope": "PACKAGED_MAIN_NODE_AFTER_READY_BEFORE_FIRST_TICK_NOT_CACHED_SAVE_PAYLOAD",
+  "status": "PASS_ACTUAL_MAIN_NODE_STATE",
+  "tileset_source_counts": {
+    "0": 4897,
+    "1": 2973,
+    "2": 6965
+  }
+}

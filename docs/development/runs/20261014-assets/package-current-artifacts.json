@@ -1,0 +1,25 @@
+{
+  "status": "PASS_SPECIFICATION_INTEGRATED_PRIVATE_PACKAGES_AND_ACTUAL_RESTART",
+  "source_commit": "4959cc36456b21373157479b73058ff391da86a8",
+  "branch": "dev/codex-asset-runtime-20261014",
+  "packages": [
+    {
+      "path": "/workspace/baram-private/results/baram_playable_PRIVATE_20261014.zip",
+      "bytes": 218035120,
+      "sha256": "64da0e76e24d65e03ae12330209b8d607d7b979be3b9e0260fa012035273096f",
+      "zip_crc": "PASS_FINAL_FULL_MEMBER_READ_NO_DUPLICATES",
+      "contains_engine_and_original_archives": true,
+      "files": 607
+    },
+    {
+      "path": "/workspace/baram-private/results/baram_assets_resume_PRIVATE_20261014.zip",
+      "bytes": 31621343,
+      "sha256": "099a9b71b6b2e6886ec5eec15b55b919f8d95a1b6fcd870e75a62c40f4785e28",
+      "zip_crc": "PASS_FINAL_FULL_MEMBER_READ_NO_DUPLICATES",
+      "contains_engine_and_original_archives": false,
+      "files": 366
+    }
+  ],
+  "staging": "/workspace/baram-private/results/baram_playable_PRIVATE_20261014",
+  "remote_publication": "PUSH_0b87d15_CONFIRMED_FURTHER_UPDATES_PENDING"
+}

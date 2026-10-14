@@ -1,0 +1,29 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:364)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+
+SCREEN_CHECK fresh_character_creation_screen PASS
+SCREEN_CHECK rendered_creation PASS
+SCREEN_CAPTURE_READY creation
+SCREEN_CHECK character_created_via_input PASS
+SCREEN_CHECK npc_dialogue_via_input PASS
+SCREEN_CHECK shop_purchase_via_input PASS
+SCREEN_CHECK rendered_shop PASS
+SCREEN_CAPTURE_READY shop
+SCREEN_CHECK inventory_weapon_equipped_via_input PASS
+SCREEN_CHECK rendered_village-equipped PASS
+SCREEN_CAPTURE_READY village-equipped
+SCREEN_CHECK collision_and_facing_direction PASS
+SCREEN_CHECK skill_hotkey_deducts_mp PASS
+SCREEN_CHECK rendered_skill-effect PASS
+SCREEN_CAPTURE_READY skill-effect
+SCREEN_CHECK village_to_field_by_walking PASS
+SCREEN_CHECK directional_animated_attack_kills_rabbit PASS
+SCREEN_CHECK combat_awards_actual_xp PASS
+SCREEN_CHECK rendered_field-combat PASS
+SCREEN_CAPTURE_READY field-combat
+SCREEN_CHECK class_save_written PASS
+SCREEN_CHECK engine_audio_mix_recorded PASS
+WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+   at: cleanup (core/object/object.cpp:2663)

@@ -4,7 +4,7 @@
   "research_base_sha": "2775b1166a760b6a1757f09f2faf1e799d3fd59e",
   "development_branch": "dev/codex-asset-runtime-20261014",
   "workflow_lock": "docs/RESTORATION_WORKFLOW_LOCK.md",
-  "overall": "PASS_EXECUTED_PLAYABLE_CORE_LOOP_WIP_FULL_RESTORATION",
+  "overall": "PASS_ASSET_INTEGRATION_ACCEPTANCE_WIP_FULL_GAME",
   "research_1_3": "PRESERVED_UNCHANGED_RESEARCH_ONLY",
   "stage_4": {
     "status": "PASS_AVAILABLE_INPUT_DECODING_AND_LIVE_USE_WITH_REPLACEMENT_BINDINGS",
@@ -292,7 +292,8 @@
     },
     "contact_pages": 60,
     "contact_sheet_pages": 60,
-    "contact_sheet_frames": 14835
+    "contact_sheet_frames": 14835,
+    "semantic_classification_ids": 149
   },
   "stage_5": {
     "status": "GODOT_SELECTED_AFTER_REAL_SCREEN_RUNTIME",
@@ -362,7 +363,7 @@
     "level31_99_regions_advancement": "NOT_IMPLEMENTED",
     "entire_game_finish_playthrough": "NOT_RUN"
   },
-  "next_action": "Complete updated loader input boundary checks, rebuild private package after specification integration, verify its launcher, commit and push latest source then compare remote SHA. Preserve passed combat/math tests. Continue four-job full level30 playthrough and original skill bindings before stages31-99/advancement.",
+  "next_action": "Continue original skill effect bindings and actual four-job level30 journeys; original/NA resource replacement remains explicit. Reuse private game ZIP, lightweight asset ZIP and final source bundle. All 60 contact pages exist; 54 remain unreviewed. Do not repeat passed recovery, combat, state, input boundary or 37 math checks.",
   "resume_command": "python3 tools/recover_runtime_inputs.py --private-dir /workspace/baram-private --only archives --report /workspace/baram-private/asset-recovery-resume.json",
   "network_domains_requested": [
     "archive.org",
@@ -406,26 +407,26 @@
   "requested_execution_spec": "docs/development/CODEX_ASSET_EXECUTION_SPEC.md",
   "remote_base_and_spec": "READ_FULL_SPEC_80d3da1_AND_MERGED_FORWARD",
   "user_latest_policy": "Other eras, replaceable assets and generated completion content authorized; no public original graphics, no paid actions/deployment/main merge",
-  "package_state": "UPDATING_AFTER_SPECIFICATION_MERGE",
+  "package_state": "SAVED_UPDATED_ZIPS_UNPACKED_LAUNCH_AND_RESTART_VERIFIED",
   "packages": [
     {
       "path": "/workspace/baram-private/results/baram_playable_PRIVATE_20261014.zip",
-      "bytes": 207633503,
-      "sha256": "faee6f474f7bc723c7a52f4028887f7d17a7b36d7d981e68337099d98a07bb2b",
-      "zip_crc": "PASS_FULL_FINAL_MEMBER_READ_NO_DUPLICATE_NAMES",
+      "bytes": 218035120,
+      "sha256": "64da0e76e24d65e03ae12330209b8d607d7b979be3b9e0260fa012035273096f",
+      "zip_crc": "PASS_FINAL_FULL_MEMBER_READ_NO_DUPLICATES",
       "contains_engine_and_original_archives": true,
-      "files": 514
+      "files": 607
     },
     {
       "path": "/workspace/baram-private/results/baram_assets_resume_PRIVATE_20261014.zip",
-      "bytes": 31125172,
-      "sha256": "cf1feca2e63cc8105060fa14ca57feeeedcb6af2eccb6cd6589453075099b9f3",
-      "zip_crc": "PASS_FULL_FINAL_MEMBER_READ_NO_DUPLICATE_NAMES",
+      "bytes": 31621343,
+      "sha256": "099a9b71b6b2e6886ec5eec15b55b919f8d95a1b6fcd870e75a62c40f4785e28",
+      "zip_crc": "PASS_FINAL_FULL_MEMBER_READ_NO_DUPLICATES",
       "contains_engine_and_original_archives": false,
-      "files": 333
+      "files": 366
     }
   ],
-  "package_source_commit": "848e0d6552f78192f7268c183985ac7421540681",
+  "package_source_commit": "4959cc36456b21373157479b73058ff391da86a8",
   "remote_saved": true,
   "remote_status": "PUSH_0b87d15_CONFIRMED_FURTHER_UPDATES_PENDING",
   "requested_remote_base_sha": "80d3da1baf14afe689acd80d7b64edb5bfed143b",
