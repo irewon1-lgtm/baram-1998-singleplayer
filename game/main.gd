@@ -83,6 +83,7 @@ var walk_clock=0.0
 var direct_direction=-1
 var last_menu_state="creation"
 var frame_times=PackedFloat64Array()
+var last_save_performance={}
 var last_frame_us=0
 var touch_controls
 
@@ -1089,7 +1090,12 @@ func save_game() -> bool:
         event("save_queued_until_action_resolves")
         return false
     if continuity!=null and not continuity.before_local_save():return false
-    var success = store.write_state(save_path,snapshot())
+    var save_started=Time.get_ticks_usec()
+    var state=snapshot()
+    var snapshot_us=Time.get_ticks_usec()-save_started
+    var success = store.write_state(save_path,state)
+    last_save_performance={"snapshot_ms":snapshot_us/1000.0,"total_ms":(Time.get_ticks_usec()-save_started)/1000.0,"success":success}
+    print("BARAM_SAVE_PROFILE "+JSON.stringify(last_save_performance))
     notice("저장 완료 · 재실행하면 이어집니다." if success else "저장 실패: 저장 폴더를 확인하세요.")
     event("save_written",{"success":success,"sha256":FileAccess.get_sha256(save_path) if success else ""})
     return success
@@ -1105,7 +1111,7 @@ func write_diagnostic(code: String):
     var performance={"samples":sorted.size(),"mean_ms":total/maxi(1,sorted.size()),"over_50_ms":over50,"over_100_ms":over100,"p99_ms":sorted[int(sorted.size()*.99)] if not sorted.is_empty() else 0}
     # One bounded local file; no full user save or secret is uploaded/packaged.
     f.store_string(JSON.stringify({"code":code,"build":store.game_build,"content_version":content.version,
-        "frame_performance":performance,"position":[player.get("x",0),player.get("y",0)],"menu":menu,"direction":player.get("direction",2),"navigation_generation":navigation.generation if navigation!=null else 0,"navigation_path":navigation.path if navigation!=null else [],"camera":[camera().x,camera().y],"viewport":[get_viewport_rect().size.x,get_viewport_rect().size.y],"map_id":player.get("map",""),"rng_state":str(rules.rng.state),"recent_events":event_log.slice(maxi(0,event_log.size()-32)),
+        "frame_performance":performance,"save_performance":last_save_performance,"process_ms":Performance.get_monitor(Performance.TIME_PROCESS)*1000,"position":[player.get("x",0),player.get("y",0)],"menu":menu,"direction":player.get("direction",2),"navigation_generation":navigation.generation if navigation!=null else 0,"navigation_path":navigation.path if navigation!=null else [],"camera":[camera().x,camera().y],"viewport":[get_viewport_rect().size.x,get_viewport_rect().size.y],"map_id":player.get("map",""),"rng_state":str(rules.rng.state),"recent_events":event_log.slice(maxi(0,event_log.size()-32)),
         "rules_error":rules.actions.last_error,"save_error":store.last_error},"  "))
     f.close();print("BARAM_DIAGNOSTIC "+JSON.stringify({"build":store.game_build,"frame_performance":performance,"map":player.get("map",""),"position":[player.get("x",0),player.get("y",0)],"menu":menu}))
     notice("오류 재현 기록을 개인 저장 폴더에 남겼습니다.")

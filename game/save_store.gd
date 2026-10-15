@@ -6,6 +6,8 @@ var last_status = "NOT_RUN"
 var last_error = {}
 var content_version = "legacy-base"
 var game_build = "codex-core-1"
+var last_read_text_sha256 = ""
+var last_read_schema = 0
 
 func normalize_numbers(value):
     if typeof(value)==TYPE_FLOAT and is_finite(value) and absf(value)<=9007199254740991 and value==float(int(value)):return int(value)
@@ -31,7 +33,7 @@ func validate(state: Dictionary) -> bool:
     if typeof(p.get("equipment_instances",{}))!=TYPE_DICTIONARY or typeof(p.get("quest_progress",{}))!=TYPE_DICTIONARY:return false
     return true
 
-func read_one(path: String) -> Dictionary:
+func read_one(path: String, normalize: bool = true) -> Dictionary:
     if not FileAccess.file_exists(path):return reject("MISSING",path)
     var f=FileAccess.open(path,FileAccess.READ)
     if f==null:return reject("READ_FAILED",path)
@@ -47,7 +49,10 @@ func read_one(path: String) -> Dictionary:
     if doc.payload.sha256_text()!=doc.get("sha256"):return reject("CHECKSUM_MISMATCH",path,"sha256")
     parser=JSON.new()
     if parser.parse(doc.payload)!=OK:return reject("CORRUPT",path,"payload")
-    var state=normalize_numbers(parser.data)
+    # Normalization is required for loaded gameplay state, not for verifying a
+    # prior file before an atomic replacement. Avoid walking every monster spec
+    # several times on the Android render thread during a save.
+    var state=normalize_numbers(parser.data) if normalize else parser.data
     if typeof(state)!=TYPE_DICTIONARY or not validate(state):return reject("INVALID_STATE",path,"payload")
     var p=state.player
     for key in ["level","xp2","hp","hp_max","mp","mp_max","gold","strength","x","y","direction","kills","rank","skill_page","next_equipment_serial","time_us","core_format"]:
@@ -65,6 +70,8 @@ func read_one(path: String) -> Dictionary:
     state.game_build=doc.get("game_build",state.get("game_build","legacy-schema1"))
     last_status="MIGRATED_V1_IN_MEMORY" if version==1 else "OK"
     last_error={}
+    last_read_text_sha256=text.sha256_text()
+    last_read_schema=version
     return state
 
 func read_state(path: String) -> Dictionary:
@@ -77,7 +84,8 @@ func read_state(path: String) -> Dictionary:
     return reject(initial,path)
 
 func document(state: Dictionary) -> String:
-    var copy=state.duplicate(true)
+    # Only envelope fields are changed; nested gameplay data is read-only here.
+    var copy=state.duplicate()
     copy.save_format_version=VERSION
     copy.content_version=state.get("content_version",content_version)
     copy.game_build=state.get("game_build",game_build)
@@ -90,17 +98,27 @@ func write_bytes(path: String, text: String) -> bool:
     f.store_string(text);f.flush();f.close()
     return true
 
+func verified_bytes(path: String, text: String) -> bool:
+    # The source state was validated before serialization. Exact UTF-8 checksum
+    # equality proves the flushed file is that same valid document, without
+    # parsing and normalizing its entire world a second time.
+    return FileAccess.get_sha256(path)==text.sha256_text()
+
 func write_state(path: String, state: Dictionary) -> bool:
     if not validate(state):reject("INVALID_STATE",path);return false
     var text=document(state)
     if text.to_utf8_buffer().size()>MAX_BYTES:reject("SAVE_SIZE_LIMIT",path);return false
     var previous={}
+    var previous_text=""
+    var previous_schema=0
     var repairing=false
     if FileAccess.file_exists(path):
-        previous=read_one(path)
+        previous=read_one(path,false)
+        var previous_source=path
         if previous.is_empty():
             if last_status not in ["CORRUPT","CHECKSUM_MISMATCH","INVALID_STATE"]:reject("EXISTING_SAVE_NOT_WRITABLE",path);return false
-            previous=read_one(path+".backup")
+            previous_source=path+".backup"
+            previous=read_one(previous_source,false)
             if previous.is_empty():reject("EXISTING_SAVE_NOT_WRITABLE",path);return false
             # Keep one bounded exact copy of the broken primary. Only a
             # validated backup permits repair; future-version saves never do.
@@ -109,15 +127,24 @@ func write_state(path: String, state: Dictionary) -> bool:
             broken.close()
             if DirAccess.copy_absolute(path,path+".corrupt-preserved")!=OK:return false
             repairing=true
+        var verified_hash=last_read_text_sha256
+        previous_schema=last_read_schema
+        previous_text=FileAccess.get_file_as_string(previous_source)
+        if previous_text.sha256_text()!=verified_hash:return false
+        # Keep the existing migration contract: an old reader must never fall
+        # back to a schema-1 backup after schema-2 has been written.
+        if previous_schema==1:
+            previous=read_one(previous_source)
+            if previous.is_empty():return false
+            previous_text=document(previous)
     if DirAccess.make_dir_recursive_absolute(path.get_base_dir())!=OK:return false
     if not write_bytes(path+".pending",text):return false
-    if read_one(path+".pending").is_empty():return false
+    if not verified_bytes(path+".pending",text):return false
     if not previous.is_empty():
-        var old={} if repairing else JSON.parse_string(FileAccess.get_file_as_string(path))
-        if not repairing and int(old.schema)==1 and not FileAccess.file_exists(path+".legacy-v1.backup"):
+        if not repairing and previous_schema==1 and not FileAccess.file_exists(path+".legacy-v1.backup"):
             if DirAccess.copy_absolute(path,path+".legacy-v1.backup")!=OK:return false
-        if not write_bytes(path+".backup.pending",document(previous)):return false
-        if read_one(path+".backup.pending").is_empty():return false
+        if not write_bytes(path+".backup.pending",previous_text):return false
+        if not verified_bytes(path+".backup.pending",previous_text):return false
         if DirAccess.rename_absolute(path+".backup.pending",path+".backup")!=OK:return false
     if DirAccess.rename_absolute(path+".pending",path)!=OK:return false
     last_status="SAVED_V2";last_error={}

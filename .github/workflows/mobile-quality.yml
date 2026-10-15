@@ -63,7 +63,17 @@ jobs:
       - name: Encrypt private artifacts
         if: always()
         working-directory: source
-        run: python tools/seal_quality_artifacts.py --signing ../vault/android/android-signing.json --source deliverable --output android-quality.sealed
+        run: |
+          python tools/seal_quality_artifacts.py --signing ../vault/android/android-signing.json --source deliverable --output android-quality.sealed
+          if [ -d deliverable/android-evidence ]; then
+            python tools/seal_quality_artifacts.py --signing ../vault/android/android-signing.json --source deliverable/android-evidence --output android-evidence.sealed
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: android-evidence-encrypted
+          path: source/android-evidence.sealed
+          retention-days: 3
       - uses: actions/upload-artifact@v4
         if: always()
         with:
