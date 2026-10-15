@@ -73,6 +73,8 @@ var loading_layer: CanvasLayer
 var loading_label: Label
 var loading_progress: ProgressBar
 var startup_log_path = ""
+var continuity
+var continuity_blocked=false
 
 func show_loading():
     loading_layer=CanvasLayer.new();loading_layer.layer=100;add_child(loading_layer)
@@ -116,11 +118,11 @@ func _ready():
             options[parts[0]] = parts[1]
     asset_folder = options.get("assets",OS.get_environment("BARAM_PRIVATE_ASSETS"))
     if asset_folder == "":
-        asset_folder = ProjectSettings.globalize_path("res://../private_assets")
+        asset_folder = "res://private_assets" if OS.get_name()=="Android" else ProjectSettings.globalize_path("res://../private_assets")
     save_path = options.get("save",save_path)
     startup_log_path=save_path.get_base_dir().get_base_dir().get_base_dir().path_join("logs/startup.json")
     content_folder=options.get("content",OS.get_environment("BARAM_PRIVATE_CONTENT"))
-    if content_folder=="":content_folder=ProjectSettings.globalize_path("res://../private_content")
+    if content_folder=="":content_folder="res://private_content" if OS.get_name()=="Android" else ProjectSettings.globalize_path("res://../private_content")
     await startup_phase("콘텐츠와 지도 준비",10)
     var world_path=asset_folder.path_join("source_maps/world.json")
     if not FileAccess.file_exists(world_path):world_path="res://data/world.json"
@@ -203,6 +205,10 @@ func _ready():
                    "renderer":RenderingServer.get_current_rendering_method()})
     if test_mode != "":
         call_deferred("start_exercise")
+    else:
+        continuity=load("res://continuity.gd").new();add_child(continuity)
+        await continuity.initialize(self)
+        var touch=load("res://touch_controls.gd").new();add_child(touch);touch.initialize(self)
     queue_redraw()
 
 func setup_creation():
@@ -258,6 +264,7 @@ func notice(message: String):
         log_lines.pop_front()
 
 func _input(input):
+    if continuity_blocked:return
     if not startup_ready:
         if startup_failed and input is InputEventKey and input.pressed and input.keycode in [KEY_Q,KEY_ESCAPE]:get_tree().quit(2)
         return
@@ -290,7 +297,7 @@ func _input(input):
     if key == KEY_F5:
         save_game()
         return
-    if key == KEY_F6:
+    if key == KEY_F6 and (continuity==null or not continuity.playing):
         var saved = store.read_state(save_path)
         if not saved.is_empty():
             restore(saved)
@@ -343,6 +350,7 @@ func _input(input):
 
 func _process(delta: float):
     if not startup_ready:return
+    if continuity_blocked and (continuity==null or not continuity.resolving):return
     clock += delta
     if player.is_empty():
         queue_redraw()
@@ -377,7 +385,7 @@ func _process(delta: float):
             apply_attack()
         if attack_elapsed >= 0.4:
             attack_elapsed = -1.0
-    if menu == "":
+    if menu == "" and not continuity_blocked:
         if Input.is_physical_key_pressed(KEY_SPACE):
             begin_attack()
         for k in [KEY_UP,KEY_LEFT,KEY_DOWN,KEY_RIGHT]:
@@ -870,7 +878,8 @@ func handle_menu_key(key: int):
         if key == KEY_ENTER:
             menu = ""
         elif key == KEY_Q:
-            get_tree().quit()
+            if continuity!=null:continuity.save_and_exit()
+            else:get_tree().quit()
         return
     if choices.size() > 0:
         if key == KEY_UP:
@@ -1014,11 +1023,13 @@ func restore(state: Dictionary):
     event("save_restored",{"map":player.map,"level":player.level,"equipped":player.equipped})
 
 func save_game() -> bool:
+    if player.is_empty():return false
     if attack_elapsed>=0 or cast_elapsed>=0:
         save_queued=true
         notice("동작이 끝나면 저장합니다.")
         event("save_queued_until_action_resolves")
         return false
+    if continuity!=null and not continuity.before_local_save():return false
     var success = store.write_state(save_path,snapshot())
     notice("저장 완료 · 재실행하면 이어집니다." if success else "저장 실패: 저장 폴더를 확인하세요.")
     event("save_written",{"success":success,"sha256":FileAccess.get_sha256(save_path) if success else ""})

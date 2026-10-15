@@ -1,0 +1,44 @@
+name: PC Android save safety
+on:
+  push:
+    branches: [codex/game-core, 'work/mobile-continuity-*']
+  pull_request:
+    branches: [codex/game-core]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  transactions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: continuity-ci-fixture-only
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd pg_isready --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      BARAM_TEST_DATABASE_URL: postgresql://postgres:continuity-ci-fixture-only@localhost:5432/postgres
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install 'psycopg[binary]==3.2.10'
+      - name: Actual PostgreSQL CAS, device locks, auth isolation and backup
+        run: python cloud/tests/test_transactions.py
+      - name: Install pinned official Godot
+        run: |
+          curl -fL https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_linux.x86_64.zip -o godot.zip
+          echo 'd0bc2113065e481c9c2c2b2c37daa4e8be3fe9e27f0ab9ab0b6096e9a37907f3  godot.zip' | sha256sum --check
+          unzip -q godot.zip -d editor
+          chmod +x editor/Godot_v4.6.3-stable_linux.x86_64
+      - name: Actual Godot local journal and client parse
+        run: |
+          set -o pipefail
+          editor/Godot_v4.6.3-stable_linux.x86_64 --headless --path game --script continuity_test_runner.gd 2>&1 | tee journal.log
+          if rg 'SCRIPT ERROR:|^ERROR:|FAIL ' journal.log; then exit 1; fi
+      - name: Scope
+        run: echo 'PostgreSQL + local journal are exercised; deployed account login, device roundtrip and Galaxy hardware are separate required checks.' >> "$GITHUB_STEP_SUMMARY"
