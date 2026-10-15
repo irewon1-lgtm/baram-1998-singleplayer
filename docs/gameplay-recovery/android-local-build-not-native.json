@@ -1,0 +1,101 @@
+{
+  "status": "BUILT_NOT_NATIVE_VERIFIED",
+  "scope": "Independent local Android build and bounded software-emulator attempt; no other task AVD/app/adb server used.",
+  "commit": "f0247ced8ed62313af5c6b506533d1295e497a52",
+  "source_inputs_sha256": "9c9457177be2df34730c3f6696556335d5045168c72eb9bafb3942c4b9d33d95",
+  "content_version": "e43e30ccea064113c22ae8a28a3675348a283b05b6775121df1ba5ebb901465b",
+  "player_apk": {
+    "path": "/workspace/scratch/3c696736f844/android-f024-player-build3/baram-Android-arm64.apk",
+    "sha256": "583f8fd6018aa1fc6ddcfdeb70fe76658060bcfd98239bc631bf31be618cbd67",
+    "bytes": 363688032,
+    "package": "org.irewon.baram.singleplayer",
+    "version_code": 1792063055,
+    "abis": [
+      "arm64-v8a",
+      "x86_64"
+    ],
+    "certificate_sha256": "f8cf43158c663e80b3e15aaa82681ea328be009ea900c7c5ea68e8a6ddec608a",
+    "signer_matches_delivered": true,
+    "runtime_pck_sha256": "3b68e511d421cf71d2ecf144dcecd031b37ad7d58a8206a0b1c731a16f2c6666",
+    "original_private_files": 2707,
+    "original_private_bytes_preserved": true
+  },
+  "emulator": {
+    "status": "BLOCKED_TCG_BOOT_TIMEOUT",
+    "elapsed_s": 247,
+    "boot_completed": false,
+    "scope": "No /dev/kvm; independent software emulator did not complete boot within first four minutes.",
+    "adb_port": 5049,
+    "console_port": 5582
+  },
+  "native_tests": {
+    "installation": "NOT_RUN",
+    "game_launch": "NOT_RUN",
+    "normal_gameplay": "NOT_RUN",
+    "multitouch": "NOT_RUN",
+    "save_reload": "NOT_RUN",
+    "actual_galaxy": "NOT_RUN"
+  },
+  "verification_apk": {
+    "status": "NOT_RUN_FROZEN_BY_PARENT",
+    "reason": "Root froze further local verification APK builds; Android OS boot did not complete and any further native verification will follow the separately approved CI path.",
+    "official_debug_template_provenance": {
+      "status": "OFFICIAL_PINNED_ARCHIVE_VERIFIED",
+      "archive": "/tmp/baram-templates.tpz",
+      "sha256": "3fbe2c0e2dec9d537ab9ec97bcf8da91dcf23357fc51f67092dd068d839290a8",
+      "version": "4.6.3.stable",
+      "extracted_member": "templates/android_debug.apk",
+      "member_sha256": "5cd4cfc1a8fc23ed45be5f0a36a6cc279d15b50a40c6ef69c89276895441cd1d",
+      "member_bytes": 124546428,
+      "scope": "Read existing official archive; only debug APK extracted under independent workspace; zero downloads."
+    }
+  },
+  "isolated_mutable_paths": {
+    "avd": "/workspace/scratch/3c696736f844/android-f024-local/avds",
+    "adb_server_port": 5049,
+    "emulator_ports": [
+      5582,
+      5583
+    ],
+    "godot_user_dirs": "/workspace/scratch/3c696736f844/android-f024-local",
+    "detached_build_checkout": "/workspace/scratch/3c696736f844/android-f024-source",
+    "runtime": "/workspace/scratch/3c696736f844/android-f024-runtime",
+    "fresh_matching_cache": "/workspace/scratch/3c696736f844/android-f024-fresh-cache"
+  },
+  "signing_material_in_artifact": false,
+  "new_download_bytes": 0,
+  "paid_service_calls": 0,
+  "source_modified": false,
+  "production_delivery": "BLOCKED_UNTIL_NATIVE_END_TO_END_PASS",
+  "release_template": {
+    "status": "PINNED_OFFICIAL_ARCHIVE_MEMBER_MATCH",
+    "version": "4.6.3.stable",
+    "sha256": "e91ef7e517e73aec1ddcc4c455c5fd53de1837c240a7c520ac438b73874b54c1"
+  },
+  "credential_cleanup": {
+    "temporary_keystore_removed": true,
+    "temporary_export_presets_removed": true,
+    "residual_plaintext_password": "NONE_IN_OWN_BUILD_AND_GODOT_USER_TEXT_FILES"
+  },
+  "cache_failures_preserved": [
+    {
+      "out": "android-f024-player-build",
+      "status": "FAIL_CACHE_CONTENT_MISMATCH",
+      "reason": "Old pilot cache had a different activated content release; compatibility gate preserved."
+    },
+    {
+      "out": "android-f024-player-build2",
+      "status": "FAIL_CACHE_CONTENT_MISMATCH",
+      "reason": "Copied runtime included an older cache; fresh cache built separately for successful build3."
+    }
+  ],
+  "local_execution_frozen": true,
+  "own_process_cleanup": {
+    "emulator": "STOPPED_AND_WAITED_BY_OWN_SESSION_FINALLY",
+    "emulator_shutdown_exit_code": -11,
+    "emulator_stop_reason": "Explicit termination after 247-second boot deadline; no boot-complete PASS.",
+    "own_adb_server": "TARGETED_KILL_SERVER_5049_EXECUTED_IN_SAME_SESSION",
+    "other_task_processes": "NO_CONTROL_COMMANDS_SENT",
+    "foreign_sdk_and_avd_access": "SDK/system-image/template/Godot/key paths read-only references; all mutable AVD, userdata, cache, configuration and APK outputs under this workspace."
+  }
+}

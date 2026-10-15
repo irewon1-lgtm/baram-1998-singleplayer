@@ -5,7 +5,7 @@
   "intentional_differences": {
     "game/main.gd": "Recovered from installed GDC; identical identifier/constants and token sequence, excluding line/column positions. Original source whitespace/comments not fully recovered.",
     "game/exercise.gd": "Test helper only; canonical potion name counter restored from exact externally verified helper.",
-    "game/recovery_play_probe.gd": "Original helper recovered, then minimum test-only item input, required offensive spell and restart guards added. Fresh gameplay execution required."
+    "game/recovery_play_probe.gd": "Original helper recovered, then minimum test-only item input, required offensive spell and restart guards added. Fresh gameplay execution required. After a preserved failing core run, the blocked cave return now uses the normally learned compass before actual trainer/spell input; earned-level6 resume5 and fresh restart4 passed on an unchanged player EXE under Linux."
   },
   "rows": [
     {
@@ -245,7 +245,7 @@
     {
       "path": "game/recovery_play_probe.gd",
       "historical_a6_source_sha256": "7a4f1fae1a38818ff8b4d4e1c021288ba4ef13d5d69f2d7d4a0856b4057d283b",
-      "current_source_sha256": "15b09c565a4dd6bf96703a12e5463a42afaa57b03f977a6be7f23605efe52fbc",
+      "current_source_sha256": "69655d19636834a6c87d37d01409da65976843f4a4031946ee7c6514e8e04bcc",
       "source_bytes_status": "DIFFERENT_TEXT"
     },
     {

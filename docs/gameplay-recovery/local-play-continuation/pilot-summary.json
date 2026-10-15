@@ -1,0 +1,41 @@
+{
+  "overall_status": "BLOCKED",
+  "overall_game_complete": false,
+  "scope": "INTERNAL_LOCAL_PILOT; ALL OS NATIVE CLAIMS REQUIRE SEPARATE EVIDENCE",
+  "source_lineage": "pilot-lineage.json",
+  "exported_exe_semantics": "exe-token-identity.json",
+  "first_core": {
+    "status": "FAIL",
+    "elapsed_ms": 451476,
+    "checks": {
+      "PASS": 39,
+      "FAIL": 3
+    },
+    "failed_names": [
+      "natural_level6_attack_spell_use",
+      "complete_playthrough_saved_to_normal_save_format",
+      "restart_expected_state_written_and_reread"
+    ],
+    "reason": "Test input route could not pass live rats on the cave return path; complete earned save was preserved."
+  },
+  "failure_step_retest": {
+    "status": "PASS",
+    "elapsed_ms": 83879,
+    "checks": 5,
+    "path": "/workspace/scratch/3c696736f844/pilot-windows-a0cc-continuation-20261015/evidence/recovery-attack-report.json",
+    "normal_compass_return": true,
+    "no_production_or_save_stat_edit": true
+  },
+  "fresh_process_restart": {
+    "status": "PASS",
+    "checks": 4,
+    "path": "/workspace/scratch/3c696736f844/pilot-windows-a0cc-continuation-20261015/evidence/recovery-restart-report.json"
+  },
+  "fresh_full_core_rerun": "NOT_RUN",
+  "windows_native_execution": "BLOCKED",
+  "github_native_workflow": {
+    "run_id": 38724985965,
+    "status": "BLOCKED",
+    "reason": "Protected environment does not allow the recovery branch; runner and steps did not start."
+  }
+}

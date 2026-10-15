@@ -230,6 +230,11 @@ func speak_npc(id: String) -> bool:
     return false
 
 func natural_attack_spell_extension():
+    if int(game.player.level) >= 6:
+        # Resume the failed trainer-return stage from an actually earned save.
+        # Do not replay material gathering or alter the preserved character.
+        await complete_attack_training()
+        return
     # Continue with actual level-appropriate source rats, never grant an early spell.
     var extension_deadline = deadline - 60000
     if extension_deadline <= Time.get_ticks_msec():
@@ -262,8 +267,14 @@ func natural_attack_spell_extension():
     if game.player.level < 6:
         optional_not_run("natural_level6_attack_spell_use", "Level6 was not naturally reached within the bounded extension.");return
     check(game.player.job == "주술사" and game.player.level >= 6, "normal_rat_rewards_reach_mage6", {"level":game.player.level,"kills":game.player.kills,"xp2":game.player.xp2})
-    if not await guided("village") or not await guided("mage_guild") or not await approach("trainer"):
+    await complete_attack_training()
+
+func complete_attack_training():
+    var returned = await guided("village")
+    if not returned:returned = await return_with_learned_compass()
+    if not returned or not await guided("mage_guild") or not await approach("trainer"):
         optional_not_run("natural_level6_attack_spell_use", "Actual mage trainer could not be reached after level6.");return
+    check(game.player.map == "mage_guild" and game.menu == "trainer", "actual_mage_trainer_reached_after_earned_level6")
     var spell = "kr.spell.cdc9baba76f2"
     var index = game.choices.find(spell)
     if game.menu != "trainer" or index < 0:
@@ -294,6 +305,23 @@ func natural_attack_spell_extension():
     if casted:check(hit and int(game.player.kills) > kills_before and int(game.player.xp2) > xp_before and int(game.player.mp) < mp_before, "natural_level6_attack_spell_use", {"spell":spell,"level":game.player.level,"skill_damage_events":game.event_log.filter(func(e):return e.event == "damage_applied" and e.get("details", {}).get("source", "") == "skill")})
     else:optional_not_run("natural_level6_attack_spell_use", "No visible live target was available for a legal spell cast.")
     await capture("recovery-legal-attack-spell")
+
+func return_with_learned_compass() -> bool:
+    var skill = "kr.spell.914bee820a84"
+    if not game.rules.knows_skill(game.player, skill):return false
+    var slot = game.player.hotbar.find(skill)
+    if slot < 0:return false
+    if game.menu != "":await key(KEY_ESCAPE, 0.03)
+    var mp_before = int(game.player.mp)
+    var cast_time = float(game.clock)
+    await key([KEY_1, KEY_2, KEY_3][slot], 0.7)
+    if game.menu != "compass":return false
+    await key(KEY_ENTER, 0.35)
+    var cast_event = game.event_log.any(func(e):return e.event == "skill_cast" and e.details.get("skill", "") == skill and float(e.time) >= cast_time)
+    var gate_event = game.event_log.any(func(e):return e.event == "compass_search" and float(e.time) >= cast_time)
+    var returned = game.player.map == "village" and int(game.player.mp) == mp_before - 3 and cast_event and gate_event
+    check(returned, "blocked_cave_return_uses_normally_learned_compass", {"skill":skill,"slot":slot,"mp_before":mp_before,"mp_after":game.player.mp,"map":game.player.map,"method":"normal_hotkey_then_gate_enter"})
+    return returned
 
 func optional_not_run(name_value: String, reason: String):
     check(false, name_value, {"reason":reason,"level":game.player.level,"kills":game.player.kills,"required_for_native_core":true})

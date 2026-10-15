@@ -1,0 +1,399 @@
+{
+  "checks": [
+    {
+      "elapsed_ms": 0,
+      "name": "fresh_creation_screen",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 362,
+      "name": "new_character_is_level1_commoner",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 362,
+      "name": "level1_has_no_unlearned_attack_or_teleport_skills",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 362,
+      "name": "new_character_starts_in_actual_village",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 557,
+      "name": "starter_weapon_equipped_by_normal_key",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 796,
+      "name": "normal_direction_key_moves_character",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 1024,
+      "name": "map_key_opens_actual_geometry_view",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 1141,
+      "name": "map_closes_without_consuming_movement",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 4162,
+      "name": "actual_village_guide_reaches_hunting_field",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 5650,
+      "name": "normal_animated_attack_kills_actual_monster",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 5650,
+      "name": "normal_kill_awards_experience",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 19381,
+      "name": "five_kill_quest_rewards_real_levelup",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 74959,
+      "name": "25_normal_input_monster_kills",
+      "observed": {
+        "hp": 67,
+        "kills": 25
+      },
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 74959,
+      "name": "actual_random_drop_picked_up_via_key",
+      "observed": {
+        "inventory": {
+          "kr.item.1f5693995ced": 4,
+          "kr.item.4ce656661a1f": 7,
+          "kr.item.71633c00192d": 1
+        }
+      },
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 77518,
+      "name": "hunt_quests_reach_commoner5_without_auto_job",
+      "observed": {
+        "job": "평민",
+        "level": 5,
+        "quests": [
+          "first_steps",
+          "hunter"
+        ],
+        "xp2": 2400
+      },
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 124992,
+      "name": "guide_reaches_actual_mage_training_map",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 128371,
+      "name": "commoner5_trainer_opens_explicit_job_choice",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 129253,
+      "name": "explicit_normal_NPC_choice_changes_job_at5",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 238804,
+      "name": "normal_random_drops_supply_real_skill_learning_cost",
+      "observed": {
+        "acorns": 13,
+        "kills": 47,
+        "rabbit_meat": 10
+      },
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 291165,
+      "name": "assigned_job_opens_actual_skill_catalogue",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 291165,
+      "name": "level5_compass_present_in_real_catalogue",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 291335,
+      "name": "compass_learned_with_exact_source_item_cost",
+      "observed": {
+        "materials_after": [
+          3,
+          0
+        ],
+        "materials_before": [
+          13,
+          10
+        ],
+        "skill": "kr.spell.914bee820a84"
+      },
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 292227,
+      "name": "normally_learned_skill_casts_and_spends_source_MP",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 292568,
+      "name": "compass_gate_selection_changes_actual_map",
+      "observed": {
+        "candidate_checks": 1,
+        "entity_visits": 0,
+        "microseconds": 20,
+        "path_searches": 0,
+        "radius": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 414664,
+      "name": "healing_supplies_bought_with_earned_hunting_gold",
+      "observed": {
+        "budget_limited": false,
+        "gold_after": 93,
+        "gold_before": 543,
+        "potions": 45,
+        "purchase_count": 45,
+        "unit_price": 10
+      },
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 414841,
+      "name": "normal_potion_consumption_1",
+      "observed": {
+        "count_after": 44,
+        "count_before": 45,
+        "hp_after": 251,
+        "hp_before": 205
+      },
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 424966,
+      "name": "normal_potion_consumption_2",
+      "observed": {
+        "count_after": 43,
+        "count_before": 44,
+        "hp_after": 161,
+        "hp_before": 111
+      },
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 429042,
+      "name": "normal_potion_consumption_3",
+      "observed": {
+        "count_after": 42,
+        "count_before": 43,
+        "hp_after": 140,
+        "hp_before": 90
+      },
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 429229,
+      "name": "normal_potion_consumption_4",
+      "observed": {
+        "count_after": 41,
+        "count_before": 42,
+        "hp_after": 190,
+        "hp_before": 140
+      },
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 429414,
+      "name": "normal_potion_consumption_5",
+      "observed": {
+        "count_after": 40,
+        "count_before": 41,
+        "hp_after": 240,
+        "hp_before": 190
+      },
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 433455,
+      "name": "normal_potion_consumption_6",
+      "observed": {
+        "count_after": 39,
+        "count_before": 40,
+        "hp_after": 170,
+        "hp_before": 120
+      },
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 435948,
+      "name": "normal_potion_consumption_7",
+      "observed": {
+        "count_after": 38,
+        "count_before": 39,
+        "hp_after": 171,
+        "hp_before": 121
+      },
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 439314,
+      "name": "normal_potion_consumption_8",
+      "observed": {
+        "count_after": 37,
+        "count_before": 38,
+        "hp_after": 170,
+        "hp_before": 120
+      },
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 439503,
+      "name": "normal_potion_consumption_9",
+      "observed": {
+        "count_after": 36,
+        "count_before": 37,
+        "hp_after": 220,
+        "hp_before": 170
+      },
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 442789,
+      "name": "normal_potion_consumption_10",
+      "observed": {
+        "count_after": 35,
+        "count_before": 36,
+        "hp_after": 156,
+        "hp_before": 106
+      },
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 444513,
+      "name": "normal_potion_consumption_11",
+      "observed": {
+        "count_after": 34,
+        "count_before": 35,
+        "hp_after": 162,
+        "hp_before": 112
+      },
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 446242,
+      "name": "normal_potion_consumption_12",
+      "observed": {
+        "count_after": 33,
+        "count_before": 34,
+        "hp_after": 171,
+        "hp_before": 121
+      },
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 447979,
+      "name": "normal_potion_consumption_13",
+      "observed": {
+        "count_after": 32,
+        "count_before": 33,
+        "hp_after": 143,
+        "hp_before": 93
+      },
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 449572,
+      "name": "normal_rat_rewards_reach_mage6",
+      "observed": {
+        "kills": 80,
+        "level": 6,
+        "xp2": 4594
+      },
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 449572,
+      "name": "natural_level6_attack_spell_use",
+      "observed": {
+        "kills": 80,
+        "level": 6,
+        "reason": "Actual mage trainer could not be reached after level6.",
+        "required_for_native_core": true
+      },
+      "status": "FAIL"
+    },
+    {
+      "elapsed_ms": 451476,
+      "name": "complete_playthrough_saved_to_normal_save_format",
+      "observed": {},
+      "status": "FAIL"
+    },
+    {
+      "elapsed_ms": 451476,
+      "name": "restart_expected_state_written_and_reread",
+      "observed": {
+        "reason": "Required natural level6 attack did not complete; expected state was not overwritten."
+      },
+      "status": "FAIL"
+    }
+  ],
+  "content_version": "3b5423ed7d65f951489361d202d5312adb136c8d7c0f21cc6f66441a46799234",
+  "display": "headless",
+  "elapsed_ms": 451476,
+  "game_build": "a0ccaa4b0e7bfc724d0d2fbf2ded91eb8c683a2d",
+  "harness_base_sha256": "7a4f1fae1a38818ff8b4d4e1c021288ba4ef13d5d69f2d7d4a0856b4057d283b",
+  "harness_patch_scope": "TEST_ONLY_NORMAL_ITEM_HEALING_AND_STRICT_REQUIRED_LEVEL6_ATTACK_AND_SAME_MODE_RESTART",
+  "platform": "Linux",
+  "production_source_modified_by_harness": false,
+  "save_loaded": false,
+  "scope": "ACTUAL_INPUT_NORMAL_TIMERS_NOVICE_JOB_LEARNED_SKILLS; inspect individual checks for level6 extension; NOT_FULL_CONTENT_NOT_LEVEL1_TO99",
+  "stage": "playthrough-complete",
+  "status": "FAIL",
+  "time_scale": 1.0,
+  "public_projection": {
+    "original_report_sha256": "2069595c9b517f1d58ecca789669d78dfe73c030bc1b5655f833a8acf9a146b4",
+    "omitted_keys": [
+      "player",
+      "events",
+      "screenshots"
+    ],
+    "checks_and_statuses_preserved": true,
+    "original_private_report_preserved": true
+  }
+}

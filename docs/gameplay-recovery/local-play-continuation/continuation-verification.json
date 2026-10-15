@@ -1,0 +1,152 @@
+{
+  "status": "PASS",
+  "scope": "LINUX_ACTUAL_EXPORTED_WINDOWS_EXE_EMBEDDED_PCK_WITH_TEST_ONLY_COMPASS_RETURN_FIX",
+  "windows_native_execution": "NOT_RUN",
+  "first_core_status": "FAIL_PRESERVED",
+  "source_pilot_sha": "a0ccaa4b0e7bfc724d0d2fbf2ded91eb8c683a2d",
+  "published_production_equivalent_sha": "f0247ced8ed62313af5c6b506533d1295e497a52",
+  "verification_helper_sha256": "69655d19636834a6c87d37d01409da65976843f4a4031946ee7c6514e8e04bcc",
+  "production_exe_sha256_before": "d4b31da9aa1dbadb1e280e087af78fde93cd649cdcfdc501100b4196551f6813",
+  "production_exe_sha256_after": "d4b31da9aa1dbadb1e280e087af78fde93cd649cdcfdc501100b4196551f6813",
+  "production_exe_unchanged": true,
+  "verification_pck_sha256": "e01033dee9c6cda02d919d5558fc9af5702b969cfeb4295daf81c131b463d2d7",
+  "runs": [
+    {
+      "mode": "recovery-attack",
+      "status": "PASS",
+      "platform": "Linux",
+      "peak_rss_bytes": 2117632,
+      "execution_mode": "HEADLESS_EXE",
+      "audio_output": "NOT_TESTED_CI_DUMMY_NO_AUDIO_DEVICE",
+      "windows_message_pump": "NOT_OBSERVED_HEADLESS",
+      "visible_window_samples": null,
+      "first_engine_output_seconds": 0.104,
+      "engine_and_bootstrap_seconds": 0.392,
+      "startup_wall_seconds": 5.442,
+      "timing_sample_interval_ms": 100,
+      "rss_monitoring": "PASS",
+      "engine_static_memory_bytes": 1219637557,
+      "engine_static_memory_monitoring": "OBSERVED",
+      "wall_seconds": 90.734,
+      "startup": {
+        "cache_used": true,
+        "content_ms": 958,
+        "elapsed_ms": 5114,
+        "maps": 423,
+        "phases": [
+          {
+            "elapsed_ms": 13,
+            "stage": "콘텐츠와 지도 준비",
+            "static_memory": 54927113
+          },
+          {
+            "elapsed_ms": 1991,
+            "stage": "게임 규칙 연결",
+            "static_memory": 696110149
+          },
+          {
+            "elapsed_ms": 2466,
+            "stage": "그래픽 준비",
+            "static_memory": 699121821
+          },
+          {
+            "elapsed_ms": 4131,
+            "stage": "글꼴과 음향 준비",
+            "static_memory": 979381885
+          },
+          {
+            "elapsed_ms": 4205,
+            "stage": "맵과 캐릭터 연결",
+            "static_memory": 1135598525
+          },
+          {
+            "elapsed_ms": 4463,
+            "stage": "저장 파일 확인",
+            "static_memory": 1160717625
+          }
+        ],
+        "ready": true,
+        "registered_tiles": 50104,
+        "static_memory": 1219637557,
+        "world_ms": 1006
+      },
+      "checks": [
+        "resume_previously_earned_mage_save_without_fixture",
+        "blocked_cave_return_uses_normally_learned_compass",
+        "actual_mage_trainer_reached_after_earned_level6",
+        "attack_spell_learned_at6_with_real_acorn_cost",
+        "natural_level6_attack_spell_use"
+      ],
+      "game_build": "a0ccaa4b0e7bfc724d0d2fbf2ded91eb8c683a2d"
+    },
+    {
+      "mode": "recovery-restart",
+      "status": "PASS",
+      "platform": "Linux",
+      "peak_rss_bytes": null,
+      "execution_mode": "HEADLESS_EXE",
+      "audio_output": "NOT_TESTED_CI_DUMMY_NO_AUDIO_DEVICE",
+      "windows_message_pump": "NOT_OBSERVED_HEADLESS",
+      "visible_window_samples": null,
+      "first_engine_output_seconds": 0.101,
+      "engine_and_bootstrap_seconds": 0.29,
+      "startup_wall_seconds": 5.12,
+      "timing_sample_interval_ms": 100,
+      "rss_monitoring": "BLOCKED_LINUX_PID_NAMESPACE",
+      "engine_static_memory_bytes": 1219638109,
+      "engine_static_memory_monitoring": "OBSERVED",
+      "wall_seconds": 7.429,
+      "startup": {
+        "cache_used": true,
+        "content_ms": 685,
+        "elapsed_ms": 4807,
+        "maps": 423,
+        "phases": [
+          {
+            "elapsed_ms": 12,
+            "stage": "콘텐츠와 지도 준비",
+            "static_memory": 54927125
+          },
+          {
+            "elapsed_ms": 1699,
+            "stage": "게임 규칙 연결",
+            "static_memory": 696110157
+          },
+          {
+            "elapsed_ms": 2118,
+            "stage": "그래픽 준비",
+            "static_memory": 699121829
+          },
+          {
+            "elapsed_ms": 3854,
+            "stage": "글꼴과 음향 준비",
+            "static_memory": 979381893
+          },
+          {
+            "elapsed_ms": 3929,
+            "stage": "맵과 캐릭터 연결",
+            "static_memory": 1135598533
+          },
+          {
+            "elapsed_ms": 4199,
+            "stage": "저장 파일 확인",
+            "static_memory": 1160717633
+          }
+        ],
+        "ready": true,
+        "registered_tiles": 50104,
+        "static_memory": 1219638109,
+        "world_ms": 992
+      },
+      "checks": [
+        "fresh_process_read_saved_character",
+        "fresh_process_preserves_entire_character",
+        "fresh_process_preserves_monsters_and_drops",
+        "fresh_process_preserves_rng"
+      ],
+      "game_build": "a0ccaa4b0e7bfc724d0d2fbf2ded91eb8c683a2d"
+    }
+  ],
+  "complete_original_core_rerun": "NOT_RUN",
+  "overall_game_complete": false
+}

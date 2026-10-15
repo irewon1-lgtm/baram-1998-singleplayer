@@ -1,0 +1,51 @@
+{
+  "checks": [
+    {
+      "elapsed_ms": 1,
+      "name": "fresh_process_read_saved_character",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 387,
+      "name": "fresh_process_preserves_entire_character",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 436,
+      "name": "fresh_process_preserves_monsters_and_drops",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 436,
+      "name": "fresh_process_preserves_rng",
+      "observed": {},
+      "status": "PASS"
+    }
+  ],
+  "content_version": "3b5423ed7d65f951489361d202d5312adb136c8d7c0f21cc6f66441a46799234",
+  "display": "headless",
+  "elapsed_ms": 436,
+  "game_build": "a0ccaa4b0e7bfc724d0d2fbf2ded91eb8c683a2d",
+  "harness_base_sha256": "7a4f1fae1a38818ff8b4d4e1c021288ba4ef13d5d69f2d7d4a0856b4057d283b",
+  "harness_patch_scope": "TEST_ONLY_NORMAL_ITEM_HEALING_AND_STRICT_REQUIRED_LEVEL6_ATTACK_AND_SAME_MODE_RESTART",
+  "platform": "Linux",
+  "production_source_modified_by_harness": false,
+  "save_loaded": true,
+  "scope": "ACTUAL_INPUT_NORMAL_TIMERS_NOVICE_JOB_LEARNED_SKILLS; inspect individual checks for level6 extension; NOT_FULL_CONTENT_NOT_LEVEL1_TO99",
+  "stage": "",
+  "status": "PASS",
+  "time_scale": 1.0,
+  "public_projection": {
+    "original_report_sha256": "a3f47cddddeafd20dc451b299b27510f9e88c20b3f835d5b02a88fbfe3310b4b",
+    "omitted_keys": [
+      "player",
+      "events",
+      "screenshots"
+    ],
+    "checks_and_statuses_preserved": true,
+    "original_private_report_preserved": true
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "checks": [
+    {
+      "elapsed_ms": 1,
+      "name": "resume_previously_earned_mage_save_without_fixture",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 1459,
+      "name": "blocked_cave_return_uses_normally_learned_compass",
+      "observed": {
+        "map": "village",
+        "method": "normal_hotkey_then_gate_enter",
+        "mp_after": 201,
+        "mp_before": 204,
+        "skill": "kr.spell.914bee820a84",
+        "slot": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 31817,
+      "name": "actual_mage_trainer_reached_after_earned_level6",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 32074,
+      "name": "attack_spell_learned_at6_with_real_acorn_cost",
+      "observed": {},
+      "status": "PASS"
+    },
+    {
+      "elapsed_ms": 81988,
+      "name": "natural_level6_attack_spell_use",
+      "observed": {
+        "level": 6,
+        "skill_damage_events": [
+          {
+            "details": {
+              "damage": 44,
+              "hp": 0,
+              "impact_time": 0.165747,
+              "skill": "kr.spell.cdc9baba76f2",
+              "source": "skill",
+              "target": "field-0"
+            },
+            "event": "damage_applied",
+            "time": 80.589
+          }
+        ],
+        "spell": "kr.spell.cdc9baba76f2"
+      },
+      "status": "PASS"
+    }
+  ],
+  "content_version": "3b5423ed7d65f951489361d202d5312adb136c8d7c0f21cc6f66441a46799234",
+  "display": "headless",
+  "elapsed_ms": 83879,
+  "game_build": "a0ccaa4b0e7bfc724d0d2fbf2ded91eb8c683a2d",
+  "harness_base_sha256": "7a4f1fae1a38818ff8b4d4e1c021288ba4ef13d5d69f2d7d4a0856b4057d283b",
+  "harness_patch_scope": "TEST_ONLY_NORMAL_ITEM_HEALING_AND_STRICT_REQUIRED_LEVEL6_ATTACK_AND_SAME_MODE_RESTART",
+  "platform": "Linux",
+  "production_source_modified_by_harness": false,
+  "save_loaded": true,
+  "scope": "ACTUAL_INPUT_NORMAL_TIMERS_NOVICE_JOB_LEARNED_SKILLS; inspect individual checks for level6 extension; NOT_FULL_CONTENT_NOT_LEVEL1_TO99",
+  "stage": "attack-extension-complete",
+  "status": "PASS",
+  "time_scale": 1.0,
+  "public_projection": {
+    "original_report_sha256": "dcd26bfc55379d0fb256d4cc48d5937e574a841646fbb756ae9e3de2c10f1f6a",
+    "omitted_keys": [
+      "player",
+      "events",
+      "screenshots"
+    ],
+    "checks_and_statuses_preserved": true,
+    "original_private_report_preserved": true
+  }
+}
