@@ -120,9 +120,19 @@ def check_format(data, fmt, columns=None):
     elif fmt == "exe":
         if len(data) < 64 or data[:2] != b"MZ":
             raise ValueError("Not an executable header")
-        off = struct.unpack_from("<I", data, 60)[0]
-        if off and (off + 2 > len(data) or data[off:off+2] not in (b"PE", b"NE", b"LE", b"LX")):
-            raise ValueError("Truncated/invalid executable image header")
+        tail, pages, relocations, paragraphs = struct.unpack_from("<HHHH", data, 2)
+        relocation_table = struct.unpack_from("<H", data, 24)[0]
+        declared = (pages - 1) * 512 + (tail or 512) if pages else 0
+        if not declared or declared > len(data) or paragraphs * 16 > len(data) or tail > 511:
+            raise ValueError("Truncated/invalid DOS image bounds")
+        if relocations and relocation_table + relocations * 4 > paragraphs * 16:
+            raise ValueError("DOS relocation table outside header")
+        # Offset 0x3c is an e_lfanew pointer only in the extended MZ header.
+        # Real DOS programs can use these bytes for relocation records.
+        if relocation_table >= 0x40:
+            off = struct.unpack_from("<I", data, 60)[0]
+            if off and (off + 2 > len(data) or data[off:off+2] not in (b"PE", b"NE", b"LE", b"LX")):
+                raise ValueError("Truncated/invalid executable image header")
     elif fmt == "png":
         if len(data) < 33 or data[:8] != b"\x89PNG\r\n\x1a\n" or data[12:16] != b"IHDR" or b"IEND" not in data[-12:]:
             raise ValueError("Invalid/truncated PNG")

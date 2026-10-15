@@ -1,0 +1,33 @@
+{
+  "result": "PASS",
+  "scope": "Metadata/source correction shape, preserving historical states and120original requirements/tests, 30 additions. Not original game accuracy/runtime.",
+  "command": "python inline assertions recorded in audit_notes generation turn",
+  "sources_expected": 197,
+  "sources_checked": 197,
+  "source_types_missing_before": 79,
+  "source_types_missing_after": 0,
+  "fact_use_test_sha_promotions": 0,
+  "original_requirements_expected": 120,
+  "original_requirements_preserved": 120,
+  "new_requirements": 30,
+  "total_requirements": 150,
+  "normal_failure_cancel_designs": 450,
+  "original_priority_after": {
+    "P1": 47,
+    "P0": 70,
+    "P2": 3
+  },
+  "new_game_tests": "NOT_RUN",
+  "input_fingerprints": {
+    "docs/rebuild/step01/sources.jsonl": "f8c0f6c2d0aec18275c71f42b1fb1194c125e878f709b92dc3e641b24e98ea51",
+    "docs/rebuild/step01/requirements.csv": "1aebe0f41f5ae2d699f01a71065ae1d8ae0ba719ef2355cc017673e53ef6a290"
+  },
+  "output_fingerprints": {
+    "docs/rebuild/p1_5/requirements_delta.csv": "42988e15a9e51aefb560baaacdd566356f6ed191162627dcc48b00e06a11fdaf",
+    "docs/rebuild/p1_5/sources_delta.jsonl": "92b7f99ff78a7f4c9f1c43a97f484ace95aba56debafae34089e704b231e37f1",
+    "docs/rebuild/p1_5/selected_content/save_contracts.json": "28b88bde1f543ef6a811d17af08427af94961c0ce88bd4b7a3f34ed8be05752c"
+  },
+  "save_source_reread_sha_size_matches": 5,
+  "save_contract_reference_patterns": 8,
+  "pending_integration": "PLAN-P1_5-INSTRUCTIONS source ID must be supplied by root merger; source_delta output hash will change when new sources appended."
+}

@@ -91,7 +91,8 @@
     "status": "P0P1_STATIC_ARTIFACTS_VALIDATED",
     "previous_remote_checkpoints": [
       "683cde8e23f7f4ae7d84eae63b7fa79e662b7a23",
-      "af5d2cd74e1638b82c579bf9794ca5f46324f062"
+      "af5d2cd74e1638b82c579bf9794ca5f46324f062",
+      "433e5db291bcc235709dcb04ee1dd8e90f4d2b29"
     ],
     "next_resume": {
       "owner": "Codex P2 technical integrator",
@@ -212,9 +213,18 @@
       "BARAM_P0P1_독립감사_20261016.md",
       "BARAM_P1_5_자료공백_보완계획_20261016.md"
     ],
-    "latest_checkpoint": "Original access and member byte reconciliation; historical manuals and full server/source extraction in parallel",
+    "latest_checkpoint": "42 originals and2204 members verified,2489full declared inputs matched;197source metadata corrections+150requirements;37526NA reference records private; official2000/2001guide rawpages newly recovered and being normalized",
     "runtime_tests": "NOT_RUN",
     "p2_executed": false,
-    "originals_preserved": true
+    "originals_preserved": true,
+    "current_byte_validation": "PASS_FOR_DECLARED_STATIC_BYTE_SCOPE",
+    "originals_checked": 42,
+    "members_checked": 2204,
+    "new_nested_records": 632,
+    "full_byte_inputs_checked": 2489,
+    "source_metadata_file": "docs/rebuild/p1_5/sources_delta.jsonl",
+    "requirement_delta_file": "docs/rebuild/p1_5/requirements_delta.csv",
+    "historical_result": "PARTIAL",
+    "next_resume": "Finish target-era official Korean guide extraction/attachments, then normalized import,32binding deltas,clean handoff and final artifacts"
   }
 }

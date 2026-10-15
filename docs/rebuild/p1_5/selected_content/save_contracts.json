@@ -1,0 +1,531 @@
+{
+  "schema": "baram.p1_5.save_reference_contracts/1",
+  "scope": "Read-only pinned old source inspection and P2 contract preparation; no game/server/auth execution",
+  "source_reuse_count": 5,
+  "new_original_game_fact_count": 0,
+  "new_save_schema_selected": false,
+  "runtime_test_status": "NOT_RUN",
+  "source_refs": {
+    "store": {
+      "source_id": "OLD-SAVE-STORE",
+      "path": "game/save_store.gd",
+      "commit": "ac08964cbbc2ae1a6499a760de7d6b81c45c3f27",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/ac08964cbbc2ae1a6499a760de7d6b81c45c3f27/game/save_store.gd",
+      "sha256": "57b0fc0aabbab3bd0ca7568d87ace999bc3daeef7255e502bd71d8d317e09bc9",
+      "size_bytes": 6807,
+      "locator": "game/save_store.gd L3–124",
+      "byte_check": "SIZE_SHA256_MATCH",
+      "read_scope": "Complete UTF-8 source re-fetched at pinned commit; named methods inspected statically",
+      "runtime_test": "NOT_RUN"
+    },
+    "journal": {
+      "source_id": "OLD-CONTINUITY-JOURNAL",
+      "path": "game/continuity_state.gd",
+      "commit": "2bb4ec55fa8ccb347b11d2bf2532ae4d4806b76a",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/2bb4ec55fa8ccb347b11d2bf2532ae4d4806b76a/game/continuity_state.gd",
+      "sha256": "064c6a1ce9b7654fd6900e870545dab736e96be96eddf3c7954a2a0e67367ec1",
+      "size_bytes": 6022,
+      "locator": "game/continuity_state.gd L18–112",
+      "byte_check": "SIZE_SHA256_MATCH",
+      "read_scope": "Complete UTF-8 source re-fetched at pinned commit; named methods inspected statically",
+      "runtime_test": "NOT_RUN"
+    },
+    "client": {
+      "source_id": "OLD-CONTINUITY-CLIENT",
+      "path": "game/continuity.gd",
+      "commit": "2bb4ec55fa8ccb347b11d2bf2532ae4d4806b76a",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/2bb4ec55fa8ccb347b11d2bf2532ae4d4806b76a/game/continuity.gd",
+      "sha256": "d70e8c314e162578235b3562d8dc713708dc5db96f3ee1f20b98790a268859bc",
+      "size_bytes": 11841,
+      "locator": "game/continuity.gd L19–198",
+      "byte_check": "SIZE_SHA256_MATCH",
+      "read_scope": "Complete UTF-8 source re-fetched at pinned commit; named methods inspected statically",
+      "runtime_test": "NOT_RUN"
+    },
+    "acceptance": {
+      "source_id": "OLD-CONTINUITY-ACCEPTANCE",
+      "path": "docs/development/MOBILE_CONTINUITY_ACCEPTANCE.md",
+      "commit": "2bb4ec55fa8ccb347b11d2bf2532ae4d4806b76a",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/2bb4ec55fa8ccb347b11d2bf2532ae4d4806b76a/docs/development/MOBILE_CONTINUITY_ACCEPTANCE.md",
+      "sha256": "6469ede589cb86abec3fbf85e1053f5155db966b670d46f83a45c8bf4bc26b3f",
+      "size_bytes": 2483,
+      "locator": "entire 28-line acceptance document; previous tests are claims, not rerun",
+      "byte_check": "SIZE_SHA256_MATCH",
+      "read_scope": "Complete UTF-8 source re-fetched at pinned commit; named methods inspected statically",
+      "runtime_test": "NOT_RUN"
+    },
+    "cloud": {
+      "source_id": "OLD-CLOUD-README",
+      "path": "cloud/README.md",
+      "commit": "2bb4ec55fa8ccb347b11d2bf2532ae4d4806b76a",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/2bb4ec55fa8ccb347b11d2bf2532ae4d4806b76a/cloud/README.md",
+      "sha256": "519f1f699851d843e2f06ce7a93bd0e8d011eb7b8ef330d26c94d796a5d3861c",
+      "size_bytes": 4530,
+      "locator": "cloud/README.md Protocol/Actual evidence; deployment remains documented pending",
+      "byte_check": "SIZE_SHA256_MATCH",
+      "read_scope": "Complete UTF-8 source re-fetched at pinned commit; named methods inspected statically",
+      "runtime_test": "NOT_RUN"
+    }
+  },
+  "contracts": [
+    {
+      "content_id": "SAVE-P15-ENVELOPE",
+      "record_type": "SAVE_REFERENCE_CONTRACT",
+      "title": "참고 저장 envelope·무결성 범위",
+      "requirement_ids": [
+        "RQ-098",
+        "RQ-103",
+        "RQ-139"
+      ],
+      "binding_id": "BND-026",
+      "source_ids": [
+        "OLD-SAVE-STORE"
+      ],
+      "source_locators": [
+        "game/save_store.gd L3–4,L23–32,L34–68,L79–85"
+      ],
+      "original_game_value": null,
+      "observed_source_value": {
+        "schema_version": 2,
+        "max_bytes": 16777216,
+        "envelope_fields": [
+          "schema",
+          "payload",
+          "sha256",
+          "content_version",
+          "game_build"
+        ],
+        "checksum_scope": "SHA-256 of exact JSON payload string, excluding outer metadata",
+        "supported_reader_schemas": [
+          1,
+          2
+        ],
+        "future_schema": "UNSUPPORTED_FUTURE without backup fallback"
+      },
+      "reconstructed_value": null,
+      "selection_state": "SELECTED_REFERENCE_PATTERN_NOT_NEW_SAVE_SCHEMA",
+      "selected_for_build": false,
+      "selected_for_p2_input": true,
+      "historical_fact_status": "UNKNOWN",
+      "fact_status": "UNKNOWN",
+      "use_status": "IDENTIFIED",
+      "new_runtime_bound": false,
+      "test_status": "NOT_RUN",
+      "limitations": [
+        "These constants belong to the old implementation, not a chosen new schema.",
+        "validate checks basic player ranges/dictionary presence; map IDs, coordinate validity, deep equipment/quest/world shape, owner identity and stable-ID referential integrity are not validated by this module.",
+        "Checksum is corruption detection, not a signature or authentication; outer metadata can differ from payload metadata."
+      ],
+      "required_implementation": "Choose stable account/character/content/map IDs, explicit schema/compatibility fields and deep semantic validation; do not copy permissive fallback as final schema.",
+      "normal_test": "Synthetic schema2 roundtrip retains exact character/world/RNG state under selected new schema.",
+      "failure_test": "Alter payload/outer content_version/owner/missing IDs independently; reject cases outside declared compatibility/ownership contract.",
+      "cancel_test": "Read/validation cancellation leaves primary and backups byte-identical."
+    },
+    {
+      "content_id": "SAVE-P15-ATOMIC",
+      "record_type": "SAVE_REFERENCE_CONTRACT",
+      "title": "임시 검증·직전 백업·교체 패턴",
+      "requirement_ids": [
+        "RQ-099",
+        "RQ-102",
+        "RQ-140"
+      ],
+      "binding_id": "BND-026",
+      "source_ids": [
+        "OLD-SAVE-STORE"
+      ],
+      "source_locators": [
+        "game/save_store.gd L87–124"
+      ],
+      "original_game_value": null,
+      "observed_source_value": {
+        "steps": [
+          "validate state",
+          "serialize bounded document",
+          "read existing primary or validated backup",
+          "preserve corrupt primary when repairing",
+          "write .pending and read_one validate",
+          "write .backup.pending and validate",
+          "rename backup.pending to backup",
+          "rename pending to primary"
+        ],
+        "legacy_byte_copy": ".legacy-v1.backup once before rewriting v1",
+        "corrupt_copy": ".corrupt-preserved",
+        "fs_calls": [
+          "FileAccess.flush",
+          "DirAccess.rename_absolute"
+        ]
+      },
+      "reconstructed_value": null,
+      "selection_state": "SELECTED_REFERENCE_PATTERN_NOT_NEW_SAVE_SCHEMA",
+      "selected_for_build": false,
+      "selected_for_p2_input": true,
+      "historical_fact_status": "UNKNOWN",
+      "fact_status": "UNKNOWN",
+      "use_status": "IDENTIFIED",
+      "new_runtime_bound": false,
+      "test_status": "NOT_RUN",
+      "limitations": [
+        "Source control flow is verified statically only.",
+        "Rename replacement behavior and power-loss durability differ by OS/filesystem and have not been executed here.",
+        "Backup normalizes/rewrites state; only explicit legacy/corrupt copies claim byte identity."
+      ],
+      "required_implementation": "Reuse narrow algorithm after OS-specific tests; avoid wholesale main.gd integration.",
+      "normal_test": "Execute isolated Windows/Android save+restart with same synthetic snapshot and verify previous backup.",
+      "failure_test": "Kill after each write/validation/rename boundary; simulate no space/read-only/future schema; preserve previous valid primary.",
+      "cancel_test": "Cancel before commit preserves prior primary; retain diagnostics/pending safely without presenting success."
+    },
+    {
+      "content_id": "SAVE-P15-RECOVERY",
+      "record_type": "SAVE_REFERENCE_CONTRACT",
+      "title": "손상 복구와 미래 버전 거부",
+      "requirement_ids": [
+        "RQ-099",
+        "RQ-103",
+        "RQ-104"
+      ],
+      "binding_id": "BND-026",
+      "source_ids": [
+        "OLD-SAVE-STORE"
+      ],
+      "source_locators": [
+        "game/save_store.gd L70–77,L99–111"
+      ],
+      "original_game_value": null,
+      "observed_source_value": {
+        "read_order": [
+          "primary",
+          "backup only except unsupported future/format/size limit"
+        ],
+        "repair_allowed_primary_errors": [
+          "CORRUPT",
+          "CHECKSUM_MISMATCH",
+          "INVALID_STATE"
+        ],
+        "repair_requires": "validated backup plus bounded corrupt-primary copy"
+      },
+      "reconstructed_value": null,
+      "selection_state": "SELECTED_REFERENCE_PATTERN_NOT_NEW_SAVE_SCHEMA",
+      "selected_for_build": false,
+      "selected_for_p2_input": true,
+      "historical_fact_status": "UNKNOWN",
+      "fact_status": "UNKNOWN",
+      "use_status": "IDENTIFIED",
+      "new_runtime_bound": false,
+      "test_status": "NOT_RUN",
+      "limitations": [
+        "Missing/read-failed primary may fall back in read_state; exact policy must be chosen for new schema.",
+        "No old user save was opened; backward compatibility with actual saves not demonstrated."
+      ],
+      "required_implementation": "Declare error class policy and migration registry; do not claim complete legacy compatibility from this source.",
+      "normal_test": "Synthetic corrupt primary+valid backup recovers expected state and preserves corrupt bytes.",
+      "failure_test": "Future schema or unsupported/oversized primary must not silently load older backup or overwrite.",
+      "cancel_test": "Aborted repair preserves all original files and never marks migration completed."
+    },
+    {
+      "content_id": "SAVE-P15-JOURNAL",
+      "record_type": "SAVE_REFERENCE_CONTRACT",
+      "title": "계정별 저널·dirty·compatibility·lease",
+      "requirement_ids": [
+        "RQ-107",
+        "RQ-108",
+        "RQ-140"
+      ],
+      "binding_id": "BND-028",
+      "source_ids": [
+        "OLD-CONTINUITY-JOURNAL"
+      ],
+      "source_locators": [
+        "game/continuity_state.gd L30–52,L95–112"
+      ],
+      "original_game_value": null,
+      "observed_source_value": {
+        "path_template": "user://continuity/<owner-uuid>/character.json",
+        "journal_fields": [
+          "version",
+          "dirty",
+          "leased",
+          "request",
+          "pending_sha",
+          "compatibility"
+        ],
+        "compatibility": "schema2:<content_version>",
+        "offline_write_requires": "leased and no conflict",
+        "upload_fields": [
+          "p_device",
+          "p_compatibility",
+          "p_base",
+          "p_request",
+          "p_document",
+          "p_release"
+        ]
+      },
+      "reconstructed_value": null,
+      "selection_state": "SELECTED_REFERENCE_PATTERN_NOT_NEW_SAVE_SCHEMA",
+      "selected_for_build": false,
+      "selected_for_p2_input": true,
+      "historical_fact_status": "UNKNOWN",
+      "fact_status": "UNKNOWN",
+      "use_status": "IDENTIFIED",
+      "new_runtime_bound": false,
+      "test_status": "NOT_RUN",
+      "limitations": [
+        "Journal fields are checked for presence, not deep scalar types/version ranges.",
+        "UUID validation is superficial and path separation alone does not authenticate a user.",
+        "Compatibility string checking is not a map-coordinate conversion or full content-ID validation."
+      ],
+      "required_implementation": "Separate local profile identity from authenticated user; choose versioned typed journal and explicit lease recovery policy.",
+      "normal_test": "Restore same owner/device journal and resume a permitted offline lease with same saved document.",
+      "failure_test": "Corrupt journal/absent journal with existing character/compatibility mismatch/no lease reject instead of overwriting.",
+      "cancel_test": "Cancel account open/upload retains dirty/request/base and local playable document."
+    },
+    {
+      "content_id": "SAVE-P15-CONFLICT",
+      "record_type": "SAVE_REFERENCE_CONTRACT",
+      "title": "응답 유실·CAS·충돌 양쪽 보존",
+      "requirement_ids": [
+        "RQ-107",
+        "RQ-108",
+        "RQ-109",
+        "RQ-140"
+      ],
+      "binding_id": "BND-028",
+      "source_ids": [
+        "OLD-CONTINUITY-JOURNAL",
+        "OLD-CLOUD-README"
+      ],
+      "source_locators": [
+        "game/continuity_state.gd L54–93,L95–112",
+        "cloud/README.md Protocol"
+      ],
+      "original_game_value": null,
+      "observed_source_value": {
+        "lost_ack_reconciliation": [
+          "last_request==meta.request",
+          "remote.sha256==pending_sha",
+          "local_file.sha256==pending_sha"
+        ],
+        "conflict_copy_template": "<account>/conflicts/<uuid>/local.json and server.json",
+        "conflict_state": "meta.conflict=true; play/upload blocked",
+        "successful_upload": "version updated, dirty/request/pending_sha cleared, leased=false"
+      },
+      "reconstructed_value": null,
+      "selection_state": "SELECTED_REFERENCE_PATTERN_NOT_NEW_SAVE_SCHEMA",
+      "selected_for_build": false,
+      "selected_for_p2_input": true,
+      "historical_fact_status": "UNKNOWN",
+      "fact_status": "UNKNOWN",
+      "use_status": "IDENTIFIED",
+      "new_runtime_bound": false,
+      "test_status": "NOT_RUN",
+      "limitations": [
+        "Client patterns and README-described server behavior are not an observed HTTPS Auth/RPC roundtrip.",
+        "README is a previous project document; current server deployment/schema/permissions unknown.",
+        "Client supplied RPC fields require server ownership and row locking checks; not established merely by this code."
+      ],
+      "required_implementation": "Reuse request identity/CAS pattern only with independently validated server contracts; no service provisioning is authorised in P1.5.",
+      "normal_test": "After actual authorised P2 setup, PC A→Android B→fresh PC B preserves identity and increments revision.",
+      "failure_test": "Drop ACK after accepted write then replay exact request; stale base or simultaneous device preserve both and block overwrite.",
+      "cancel_test": "Cancel upload preserves local/remote snapshots and does not release lease without server acknowledgement."
+    },
+    {
+      "content_id": "SAVE-P15-IMPORT",
+      "record_type": "SAVE_REFERENCE_CONTRACT",
+      "title": "다운로드·이전 시 원본 사본 보호",
+      "requirement_ids": [
+        "RQ-103",
+        "RQ-104",
+        "RQ-108"
+      ],
+      "binding_id": "BND-026",
+      "source_ids": [
+        "OLD-CONTINUITY-JOURNAL"
+      ],
+      "source_locators": [
+        "game/continuity_state.gd L74–93"
+      ],
+      "original_game_value": null,
+      "observed_source_value": {
+        "remote_import_steps": [
+          "persist lease journal",
+          "write separate .download",
+          "store.read_one validate",
+          "copy previous playable to .before-cloud.backup",
+          "atomic playable replacement"
+        ],
+        "legacy_import_steps": [
+          "read_one legacy",
+          "require exact content compatibility",
+          "copy exact legacy text to .original-pc",
+          "write new account save",
+          "mark dirty"
+        ]
+      },
+      "reconstructed_value": null,
+      "selection_state": "SELECTED_REFERENCE_PATTERN_NOT_NEW_SAVE_SCHEMA",
+      "selected_for_build": false,
+      "selected_for_p2_input": true,
+      "historical_fact_status": "UNKNOWN",
+      "fact_status": "UNKNOWN",
+      "use_status": "IDENTIFIED",
+      "new_runtime_bound": false,
+      "test_status": "NOT_RUN",
+      "limitations": [
+        "Exact old copy is preserved by source intent, but interrupted migration/exact byte behavior was not rerun.",
+        "No content/map-version coordinate conversion occurs here; exact compatibility mismatch is rejected."
+      ],
+      "required_implementation": "Choose explicit new-schema migration ID, atomic marker, source fingerprint and idempotent conversion; real user save stays untouched.",
+      "normal_test": "Synthetic legacy save imports once and retains source byte hash; repeat resume does not duplicate inventory.",
+      "failure_test": "Invalid remote/backup-copy failure/incompatible legacy must not replace playable local copy.",
+      "cancel_test": "Kill after lease journal/import stage and resume from original copy, not an untracked partial file."
+    },
+    {
+      "content_id": "SAVE-P15-LIFECYCLE",
+      "record_type": "SAVE_REFERENCE_CONTRACT",
+      "title": "로컬 autosave·배경·save-and-exit 경계",
+      "requirement_ids": [
+        "RQ-101",
+        "RQ-102",
+        "RQ-109",
+        "RQ-140"
+      ],
+      "binding_id": "BND-028",
+      "source_ids": [
+        "OLD-CONTINUITY-CLIENT",
+        "OLD-CONTINUITY-ACCEPTANCE"
+      ],
+      "source_locators": [
+        "game/continuity.gd L158–198",
+        "MOBILE_CONTINUITY_ACCEPTANCE.md required order 5–6"
+      ],
+      "original_game_value": null,
+      "observed_source_value": {
+        "local_autosave_seconds": 30,
+        "local_save_notifications": [
+          "APPLICATION_PAUSED",
+          "APPLICATION_FOCUS_OUT"
+        ],
+        "network_upload": "save_and_exit only plus open version check",
+        "exit_action_wait_limit_ms": 2000,
+        "api_timeout_seconds": 15,
+        "http_body_size_limit": 20000000
+      },
+      "reconstructed_value": null,
+      "selection_state": "SELECTED_REFERENCE_PATTERN_NOT_NEW_SAVE_SCHEMA",
+      "selected_for_build": false,
+      "selected_for_p2_input": true,
+      "historical_fact_status": "UNKNOWN",
+      "fact_status": "UNKNOWN",
+      "use_status": "IDENTIFIED",
+      "new_runtime_bound": false,
+      "test_status": "NOT_RUN",
+      "limitations": [
+        "30s/2000ms are old implementation values, not original game timing or selected new guarantees.",
+        "Asynchronous notification handling, process kill, blocked UI and OS storage behavior are NOT_RUN.",
+        "First-login fallback signup and email/password UI are previous design choices; Korean historic login/real mailbox ownership remain separate."
+      ],
+      "required_implementation": "Reuse narrow lifecycle events after P2 engine-specific tests; retain small offline-first UI without importing old CanvasLayer layout.",
+      "normal_test": "On actual Android pause/force-stop and fresh Windows process, same snapshot state survives.",
+      "failure_test": "Network failure on exit retains dirty local save, displays pending and does not imply cloud success.",
+      "cancel_test": "User exits without upload only after local save preserved; subsequent reopen reconciles exact revision."
+    },
+    {
+      "content_id": "SAVE-P15-MAP-MIGRATION",
+      "record_type": "SAVE_REFERENCE_CONTRACT",
+      "title": "맵 갱신·좌표·전리품 변환의 미해결 계약",
+      "requirement_ids": [
+        "RQ-105",
+        "RQ-106",
+        "RQ-138"
+      ],
+      "binding_id": "BND-027",
+      "source_ids": [
+        "OLD-SAVE-STORE",
+        "OLD-CONTINUITY-JOURNAL"
+      ],
+      "source_locators": [
+        "game/save_store.gd validate/read_one",
+        "game/continuity_state.gd compatible_document/accept_open"
+      ],
+      "original_game_value": null,
+      "observed_source_value": {
+        "actual_coordinate_transform_in_inspected_modules": null,
+        "observed_behavior": "Save modules retain player/world dictionaries; no map-cell validity or map-generation coordinate conversion routine found in these inspected modules."
+      },
+      "reconstructed_value": null,
+      "selection_state": "SELECTED_REFERENCE_PATTERN_NOT_NEW_SAVE_SCHEMA",
+      "selected_for_build": false,
+      "selected_for_p2_input": true,
+      "historical_fact_status": "UNKNOWN",
+      "fact_status": "UNKNOWN",
+      "use_status": "IDENTIFIED",
+      "new_runtime_bound": false,
+      "test_status": "NOT_RUN",
+      "limitations": [
+        "Absence applies only to these modules, not entire repository.",
+        "Source patterns do not solve old map version→entry reset defect.",
+        "Historical respawn/return behavior must not be substituted for update migration."
+      ],
+      "required_implementation": "Prepare transform manifest keyed by old/new map content fingerprints, source cell and reason; separate character and floor loot; never silently reset positions.",
+      "normal_test": "Unchanged valid coordinates persist across map generation bump; explicit mapped cell changes preserve exact NPC/loot identities.",
+      "failure_test": "Unknown map ID or blocked transform destination leaves original snapshot and migration pending; no bulk entrance placement.",
+      "cancel_test": "Interrupted conversion preserves original SHA and isolated converted candidate; repeat is idempotent."
+    }
+  ],
+  "environment_observations": {
+    "observed_host_os": "Linux",
+    "command_inventory_read_only": {
+      "adb": "NOT_ON_PATH",
+      "wine": "NOT_ON_PATH",
+      "godot": "NOT_ON_PATH",
+      "java": "/usr/bin/java"
+    },
+    "Windows_native": {
+      "access": "NOT_CONNECTED_IN_THIS_WORK_ENVIRONMENT",
+      "test": "NOT_RUN"
+    },
+    "Android_emulator": {
+      "access": "ADB_NOT_ON_PATH; no installation attempted",
+      "test": "NOT_RUN"
+    },
+    "Galaxy_phone_and_S10_FE": {
+      "access": "NOT_OBSERVED; no device/session access attempted",
+      "test": "NOT_RUN"
+    },
+    "signing_identity": {
+      "access": "NOT_READ; earlier private location documented only",
+      "test": "NOT_RUN"
+    },
+    "Supabase_auth_project": {
+      "access": "NO_LIVE_QUERY; old README documents deployment pending",
+      "account_or_permission_status": "UNKNOWN_NOT_PROBED",
+      "test": "NOT_RUN"
+    }
+  },
+  "p2_observation_cases": [
+    {
+      "id": "P2-SAVE-01",
+      "unit": "P2-05",
+      "input": "Synthetic character/map/loot state only; exact selected engine and export versions first",
+      "action": "Save/restart same snapshot on actual Windows and Android; terminate at each pending/backup/rename boundary",
+      "expected": "No lost/duplicated inventory or position, last valid save recoverable; per-OS evidence",
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "P2-SAVE-02",
+      "unit": "P2-05",
+      "input": "Synthetic old/new map generations plus explicit transform map",
+      "action": "Run unchanged-cell, changed-cell, blocked-cell, no-transform and cancelled conversion cases for player and floor loot",
+      "expected": "Valid old position retained; only explicit valid transform applied once; originals preserved on failure",
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "P2-SAVE-03",
+      "unit": "P2-06",
+      "input": "Existing authorised free project/config and isolated test account only after separate P2 authority; no user credentials in evidence",
+      "action": "Real HTTPS auth PC A→Android B→fresh PC B, stale revision, lost ACK, offline lease, incompatible version",
+      "expected": "Same account/character; no stale overwrite; both conflict snapshots preserved; exact replay acknowledged once",
+      "result": "NOT_RUN"
+    }
+  ]
+}

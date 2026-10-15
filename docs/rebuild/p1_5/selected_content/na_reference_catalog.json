@@ -1,0 +1,174 @@
+{
+  "catalog_id": "P15-NA-REFERENCE-CATALOG-001",
+  "purpose": "Private developer reference data; no KR gameplay selections",
+  "source_commits": {
+    "Project1998": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+    "RTK-Server": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6"
+  },
+  "full_source_sets": [
+    {
+      "repository": "Project1998",
+      "tree_manifest": "Project1998-tree.json",
+      "tree_manifest_sha256": "c9ab93042c2bd9fd0680bf4918ce32edb7d26a98467545dbf84943e3fc90042b",
+      "byte_manifest": "Project1998-files.json",
+      "byte_manifest_sha256": "6422aa047e924f0414d3d44781071efd6f855fad3bb515b22d136745904219c5",
+      "expected_files": 2770,
+      "files_read_and_git_blob_matched": 2770,
+      "bytes": 24219344,
+      "submodules": [],
+      "status": "STATIC_FULL_SOURCE_ACQUIRED",
+      "build_restore_run": "NOT_RUN"
+    },
+    {
+      "repository": "RTK-Server",
+      "tree_manifest": "RTK-Server-tree.json",
+      "tree_manifest_sha256": "7b0b6020c620ff490a489f8dd1b2065d95a3ce54f2e8e2e16b2489eb87c2b8b4",
+      "byte_manifest": "RTK-Server-files.json",
+      "byte_manifest_sha256": "e100c024eff2f276a30a6074e7265cdb66eea1c3eec6865031763e4b5ff2bbe4",
+      "expected_files": 8404,
+      "files_read_and_git_blob_matched": 8404,
+      "bytes": 137070633,
+      "submodules": [],
+      "status": "STATIC_FULL_SOURCE_ACQUIRED",
+      "build_restore_run": "NOT_RUN"
+    }
+  ],
+  "private_data_files": [
+    {
+      "path": "na_reference_craft_calls.jsonl",
+      "sha256": "4b4722aa836fcef52bd1ca76278e9f630362689f3e45e9009ad86a06850f1699",
+      "bytes": 195948,
+      "records": 16
+    },
+    {
+      "path": "na_reference_economy.jsonl",
+      "sha256": "a91fd02de9ac181f91d77736a306aad4f24d5bbd3bb3276dd2897da7df645f11",
+      "bytes": 3450872,
+      "records": 2834
+    },
+    {
+      "path": "na_reference_job_skill.jsonl",
+      "sha256": "11349e33321feee2591728f61f5aabe1f6dcdd6f62ba15ab93a4ec0d56ab71b5",
+      "bytes": 1773707,
+      "records": 2979
+    },
+    {
+      "path": "na_reference_map.jsonl",
+      "sha256": "a138414df3d09a6b42b31737e45c47a2d7f16c60ddd3f47a409d4d4fcf0071d8",
+      "bytes": 2521080,
+      "records": 4882
+    },
+    {
+      "path": "na_reference_monster.jsonl",
+      "sha256": "4ed8160ba7b281266c1034746a6463c2eb8c09de44af7b80db31dcd026df0a80",
+      "bytes": 2943719,
+      "records": 5354
+    },
+    {
+      "path": "na_reference_npc.jsonl",
+      "sha256": "157d5128f7fb55d8d3d2b70615c7a6772b9f6445ad7d2e027347f17e1111e640",
+      "bytes": 347082,
+      "records": 413
+    },
+    {
+      "path": "na_reference_npc_calls.jsonl",
+      "sha256": "98e472a061a238d8760984d740c9e72013ec30495d9b58fc3e58286b9b4c39b9",
+      "bytes": 922369,
+      "records": 163
+    },
+    {
+      "path": "na_reference_npc_dialogue.jsonl",
+      "sha256": "ee8a4adc8bff2505bf4b9812792ed7bf00de377ef77c711b854279d7af220923",
+      "bytes": 42933,
+      "records": 26
+    },
+    {
+      "path": "na_reference_rtk_drops.jsonl",
+      "sha256": "b6c1f70169b549318b812e59f5d8241979877f3d2c22e90ee49a906d7ebeaa66",
+      "bytes": 532043,
+      "records": 387
+    },
+    {
+      "path": "na_reference_rtk_sql.jsonl",
+      "sha256": "e46a8a3a2c2250127af5e7bab145bcd29645957e7e41e68f6453109aedbb8489",
+      "bytes": 19679550,
+      "records": 20078
+    },
+    {
+      "path": "na_reference_spell_calls.jsonl",
+      "sha256": "beb72070e7d00d6c90176010cabba82907b319c4dd27daf67ec25810523e71dd",
+      "bytes": 965239,
+      "records": 394
+    }
+  ],
+  "records_total": 37526,
+  "bytes_total": 33374542,
+  "source_files_in_semantic_catalog": 630,
+  "regions": [
+    "NA"
+  ],
+  "source_families": [
+    "PROJECT1998_DERIVED_RTK_MITHIA_CLASSICTK",
+    "RTK_MITHIA_CLASSICTK"
+  ],
+  "schema": {
+    "record_id": "globally unique source namespace and physical row/offset",
+    "kind": "source_row/sql_content:<whitelisted table>/literal_drop_table/static_script_index",
+    "source_id": "research_server.json.sources[].source_id",
+    "source_location": "1-based physical line start/end, SQL unicode codepoint offset+per-INSERT tuple index",
+    "source_shape_missing_columns": "original trailing missing CSV fields; absent, no defaults",
+    "original_value": "source-local NA data only",
+    "KR_selected_value": null,
+    "reconstructed_value": null,
+    "game_region": "NA",
+    "fact_status": "UNKNOWN",
+    "selected_for_build": false,
+    "new_runtime_binding": "NOT_STARTED",
+    "test_status": "NOT_RUN"
+  },
+  "static_validation": {
+    "integrity_result": "PASS",
+    "reference_graph_result": "PARTIAL",
+    "checks": {
+      "source_files_read": 630,
+      "normalized_files_read": 11,
+      "normalized_records_read": 37526
+    },
+    "links": {
+      "area_spawn_to_monster:resolved": 2592,
+      "area_spawn_to_monster:unresolved": 24,
+      "drop_to_item:resolved": 917,
+      "drop_to_item:sentinel": 75,
+      "drop_to_monster:resolved": 377,
+      "learn_cost_to_item:resolved": 1073,
+      "learn_cost_to_item:sentinel": 1291,
+      "learn_cost_to_path:resolved": 591,
+      "learn_cost_to_spell:resolved": 591,
+      "npc_equipment_to_npc:resolved": 1,
+      "shop_to_item:resolved": 944,
+      "shop_to_item:sentinel": 7,
+      "shop_to_npc:resolved": 95,
+      "spell_to_path:resolved": 809,
+      "spell_to_path:sentinel": 118,
+      "static_spawn_replacement_to_monster:resolved": 1,
+      "static_spawn_replacement_to_monster:sentinel": 1174,
+      "static_spawn_to_monster:resolved": 1175
+    },
+    "unresolved_source_reference_count": 24
+  },
+  "private_packaging": [
+    "na_reference_*.jsonl",
+    "Project1998-source/",
+    "RTK-Server-source/",
+    "Project1998-files.json",
+    "RTK-Server-files.json",
+    "Project1998-tree.json",
+    "RTK-Server-tree.json",
+    "na_static_validation.json"
+  ],
+  "public_contains_original_rows": false,
+  "sensitive_reference_SQL_tables_excluded_from_normalized_outputs": true,
+  "selected_KR_values": 0,
+  "runtime_execution": "NOT_RUN",
+  "Codex_G0_access": "NOT_RUN"
+}

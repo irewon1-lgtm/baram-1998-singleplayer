@@ -8,6 +8,7 @@ import io
 import json
 import os
 import shutil
+import struct
 import subprocess
 import sys
 import tempfile
@@ -79,7 +80,7 @@ def main():
     cases = []
     with tempfile.TemporaryDirectory(prefix="baram-validator-") as temp:
         work = Path(temp)
-        names = ["normal_complete", "zero_available", "missing_one", "byte_tamper", "truncated_zip", "html_saved_as_zip", "malformed_json", "malformed_csv", "duplicate_input_id", "missing_input_id", "wrong_client_version", "wrong_parser", "wrong_config_fingerprint", "wrong_validator_code_fingerprint", "required_unsupported_format", "scope_cannot_hide_missing", "empty_required_set", "archive_path_escape"]
+        names = ["normal_complete", "zero_available", "missing_one", "byte_tamper", "truncated_zip", "html_saved_as_zip", "malformed_json", "malformed_csv", "duplicate_input_id", "missing_input_id", "wrong_client_version", "wrong_parser", "wrong_config_fingerprint", "wrong_validator_code_fingerprint", "required_unsupported_format", "scope_cannot_hide_missing", "empty_required_set", "archive_path_escape", "valid_dos_mz", "truncated_exe"]
         for name in names:
             base = work / name
             contract = fixture(base)
@@ -119,6 +120,16 @@ def main():
             elif name == "archive_path_escape":
                 with zipfile.ZipFile(base / "source.zip", "w") as z: z.writestr("../escape.txt", "fixture")
                 refreshed(base, contract, "zip")
+            elif name in ("valid_dos_mz", "truncated_exe"):
+                data = bytearray(80)
+                data[:2] = b"MZ"
+                struct.pack_into("<HHHH", data, 2, 80, 1, 1, 4)
+                struct.pack_into("<H", data, 24, 60)
+                struct.pack_into("<I", data, 60, 65536)  # DOS relocation bytes, not e_lfanew
+                if name == "valid_dos_mz": expected = "PASS"
+                else: data = data[:70]
+                (base / "source.exe").write_bytes(data)
+                contract["inputs"].append({"input_id": "FIXTURE-EXE", "path": "source.exe", "sha256": gate.sha(data), "size_bytes": len(data), "format": "exe", "require_format_validation": True})
             write_json(base / "contract.json", contract)
             argv = ["--contract", str(base / "contract.json")]
             if expected_scope: argv += ["--scope-input", "FIXTURE-JSON"]

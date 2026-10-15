@@ -1,0 +1,191 @@
+{
+  "task_id": "BARAM_REBUILD_P1_5_001",
+  "review_type": "INDEPENDENT_AI_STATIC_SECURITY_REVIEW",
+  "reviewed_on": "2026-10-16 Asia/Seoul",
+  "status": "PARTIAL_WITH_DOCUMENTED_CONTROLS",
+  "scope": "Source preservation, static processing tools, credential/signing-key/save patterns and publication boundaries; no source runtime execution or malware verdict",
+  "tool_fingerprints": {
+    "tools/rebuild/p1_5/recheck_archives.py": "4440e3f3ccfa07312c7b0a15c71398e694365ad3c375c5f1a0c1f933e3b1c620",
+    "tools/rebuild/p1_5/extract_na_references.py": "223ca1336dfee89a4dc91a07e3571f7d6315fb61aabc3a34dc90d794f4dd224e",
+    "tools/rebuild/p1_5/validate_na_references.py": "55c387b38b9c7f50245a84a69bd89bb5126e04d6cd5d28ef19034ef87dbfb961",
+    "tools/rebuild/p1_5/import_dry_run.py": "da088a52f76ac9c92b24e5f1edfda10add187259df387392d3a29164f398bee8",
+    "tools/rebuild/p1_5/inspect_kr_tables.py": "8e5544d11e8739a6b7c9d5214cedadff26a4bed505ee0fd0d8493186d5c80049",
+    "tools/rebuild/p1_5/test_validator_regression.py": "7190b222529a2eb1f8d45363816c5db7b575506644298f4115438387d72de405",
+    "tools/rebuild/step01/validate_step01.py": "e10e1dd0840eab39c3757313b533e5e6e0d75d2f0b5ca3508aad44919bfe87eb",
+    "tools/rebuild/step01/inventory_archives.py": "d50c9e9393868d9bfa6fe991df7e6c829bcadd279a6baaca93f06625c9e79607"
+  },
+  "scan_summary": {
+    "text_files": 2040,
+    "text_bytes": 84095300,
+    "generic_assignment_candidates": 205,
+    "generic_assignment_false_positives": 201,
+    "strong_pattern_scan": {
+      "mapped_logical_ids": 2246,
+      "unique_paths_scanned": 1836,
+      "bytes_scanned": 1313265119,
+      "strong_pattern_counts": {},
+      "findings": [],
+      "values_printed": false,
+      "scope": "streaming exact mapped original/nested bytes for bounded credential markers only; not semantic source or malware detection"
+    },
+    "archive_member_names_scanned": 2204,
+    "signing_key_filename_candidates": 0,
+    "save_filename_candidates": 1,
+    "actual_user_save_from_candidate": 0,
+    "selected_sql_rows_checked": 20078,
+    "selected_sql_non_allowlisted_rows": 0,
+    "selected_sql_sensitive_field_name_rows": 0
+  },
+  "confirmed_findings": [
+    {
+      "id": "SEC-P15-01",
+      "type": "historical_false_pass_validator",
+      "location": "tools/rebuild/step01/validate_step01.py",
+      "status": "CORRECTED_WITH_REGRESSION_EVIDENCE",
+      "impact": "No-input or partial-input inspection could previously report a full byte PASS",
+      "evidence": "validator_regression.json and step01_validation.json own full validation results"
+    },
+    {
+      "id": "SEC-P15-02",
+      "type": "helper_integrity_not_checked_before_import",
+      "location": "tools/rebuild/p1_5/recheck_archives.py",
+      "status": "CORRECTED_AND_GUARD_EXERCISED",
+      "impact": "Changed helper code could execute before its fingerprint was recorded",
+      "correction": "Three helpers SHA256 checked against fixed original-source identities before import; KR table reader separately pinned",
+      "test": {
+        "case": "tampered_helper_rejected_before_import",
+        "exit_code": 1,
+        "pin_mismatch_reported": true,
+        "helper_body_executed": false,
+        "result": "PASS",
+        "tool_sha256": "4440e3f3ccfa07312c7b0a15c71398e694365ad3c375c5f1a0c1f933e3b1c620",
+        "scope": "synthetic helper integrity guard only"
+      }
+    },
+    {
+      "id": "SEC-P15-03",
+      "type": "foreign_reference_authentication_and_character_data",
+      "location": "RTK-Server-source/database/2020-09-02-21-55-01_RTK.sql.bak",
+      "rows": 8,
+      "fields": [
+        "ChaPassword",
+        "ChaLastIP",
+        "character/save fields"
+      ],
+      "status": "PRIVATE_SOURCE_ONLY_EXCLUDED_FROM_NORMALIZED_OUTPUT",
+      "impact": "Raw SQL contains third-party password/hash, IP and saved-character records; not the user current save",
+      "action": "Never execute dump; parse explicit content allowlist only; exclude entire raw dump from public Git and handoff; retain source identity/pin only",
+      "credential_validity": "NOT_TESTED"
+    },
+    {
+      "id": "SEC-P15-04",
+      "type": "temporary_transfer_capabilities",
+      "location": "private-intake/large-transfer.json",
+      "sensitive_fields": [
+        "completion_token",
+        "download_url"
+      ],
+      "count": 2,
+      "status": "PRIVATE_RECEIPT_EXCLUDED_FROM_DELIVERABLES",
+      "impact": "Receipt includes temporary transfer capability and signed URL",
+      "action": "Exclude entire private-intake from Git, reports and handoff; publish only stable file IDs/paths/hash",
+      "credential_validity": "NOT_TESTED"
+    },
+    {
+      "id": "SEC-P15-05",
+      "type": "reference_default_password_literals",
+      "locations": [
+        "RTK-Server-source/docker-compose.yml:24,26",
+        "RTK-Server-source/rtklua/Accepted/Tools/God_Tools.lua:78"
+      ],
+      "count": 3,
+      "status": "REFERENCE_ONLY_NOT_EXECUTED_EXCLUDED_FROM_HANDOFF",
+      "impact": "Foreign reference source contains database/default-password literals; no evidence that they belong to a user active account",
+      "action": "Do not run or deploy defaults; exclude these credential-bearing files from packaged source snapshots",
+      "credential_validity": "NOT_TESTED"
+    }
+  ],
+  "controls_reviewed": [
+    "Original archives only read/copied; no original install/runtime/server/SQL/Lua execution in tools reviewed",
+    "ZIP entry size and total declared bytes bounded; parent, absolute, drive-prefixed paths rejected; ZIP symlinks rejected",
+    "Nested source entries written only to SHA256-named private object pool, never to archive-selected filesystem paths",
+    "Depth capped at 6, individual file cap 512MiB, cumulative processed/new stored bytes capped at 2GiB",
+    "Existing cached objects rechecked by hash and length; decode errors affect overall exit status",
+    "Input helper SHA256 pins checked before Python module import",
+    "SQL parser uses explicit content table allowlist and never invokes database interpreter",
+    "Private selected resource/reference exports excluded from public Git; public catalogs retain counts, hashes and provenance"
+  ],
+  "runtime_library_versions": {
+    "python": "3.12.14",
+    "libarchive": "libarchive 3.7.2",
+    "zlib_runtime": "1.3.2",
+    "zlib_compile": "1.3.2",
+    "libarchive_distribution_package": "libarchive13t64 3.7.2-2ubuntu0.8"
+  },
+  "advisory_checks": [
+    {
+      "source": "https://ubuntu.com/security/CVE-2025-5915",
+      "checked": "2026-10-16",
+      "finding": "Ubuntu24.04 fix is3.7.2-2ubuntu0.5; installed package0.8 is later; upstream3.7.2 banner alone cannot establish unpatched status"
+    },
+    {
+      "source": "https://ubuntu.com/security/notices/USN-8292-1",
+      "checked": "2026-10-16",
+      "finding": "Ubuntu24.04 fixes in3.7.2-2ubuntu0.7; installed package0.8 is later for listed RAR/ISO issues"
+    },
+    {
+      "source": "https://github.com/libarchive/libarchive/security/advisories/GHSA-xgqq-r5j8-3mch",
+      "checked": "2026-10-16",
+      "finding": "Advisory index exposed newer record but direct page fetch blocked; applicability remainsUNKNOWN, no all-advisories-cleared claim"
+    }
+  ],
+  "residual_risks": [
+    {
+      "type": "malware",
+      "status": "UNKNOWN",
+      "detail": "No malware engine, sandbox detonation or executable runtime test performed; checksum identity and token-pattern absence do not establish malware absence"
+    },
+    {
+      "type": "native_parser_attack_surface",
+      "status": "PARTIAL",
+      "detail": "Static archive reading still uses native libarchive and decompression code; known notices checked only as listed, no comprehensive CVE/fuzz review"
+    },
+    {
+      "type": "resource_exhaustion",
+      "status": "PARTIAL",
+      "detail": "Byte/depth limits exist, but reader may materialize a whole container before outer cumulative check; no explicit per-process memory/CPU/wall-clock isolation verified"
+    },
+    {
+      "type": "scope_of_secret_scan",
+      "status": "PARTIAL",
+      "detail": "Generic text patterns and bounded strong markers are heuristic; binary-obfuscated secrets, inactive quoted credentials and all historic Git objects not exhaustively inspected"
+    },
+    {
+      "type": "final_delivery_snapshot",
+      "status": "NOT_RUN",
+      "detail": "Final Git tree and handoff archive did not yet exist at this review snapshot; integrator must inspect actual staged tree and ZIP entries against exclusions before publication"
+    }
+  ],
+  "required_exclusions": [
+    "private-intake/**",
+    "raw RTK SQL dumps",
+    "reference credential-bearing Docker/GodTools files",
+    ".git/**",
+    "__pycache__/**",
+    "original binary/resource/font assets from public Git",
+    "all full selected_content KR/NA JSONL values from public Git"
+  ],
+  "not_run": [
+    "original EXE/installer/runtime/reference server",
+    "SQL execution",
+    "API credential validity tests",
+    "account/key/signing-key rotation",
+    "history deletion",
+    "malware detonation",
+    "new game/P2/build/deployment",
+    "actual Windows/Galaxy/account synchronization"
+  ],
+  "secrets_printed": false,
+  "keys_rotated": false,
+  "originals_deleted_or_changed": false
+}

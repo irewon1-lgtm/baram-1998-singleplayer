@@ -1,13 +1,13 @@
 {
   "task_id": "BARAM_REBUILD_P1_5_001",
-  "executed_at_utc": "2026-10-15T22:44:13.869962+00:00",
+  "executed_at_utc": "2026-10-15T22:47:24.411458+00:00",
   "validator_version": "baram-static-validation/2.0",
-  "validator_sha256": "68c61c3b0f966ee2e89034ddb220fa2710415b5388ed39bb29ebd32653fc9acd",
-  "regression_tool_sha256": "994b98ffa5c835138a1ada3a7213fa990a7440195dc100dee55f876543d35ea5",
+  "validator_sha256": "e10e1dd0840eab39c3757313b533e5e6e0d75d2f0b5ca3508aad44919bfe87eb",
+  "regression_tool_sha256": "7190b222529a2eb1f8d45363816c5db7b575506644298f4115438387d72de405",
   "result": "PASS",
-  "cases_executed": 23,
+  "cases_executed": 25,
   "case_result_counts": {
-    "PASS": 23
+    "PASS": 25
   },
   "cases": [
     {
@@ -26,9 +26,9 @@
         "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
         "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/step01/validate_step01.py",
         "--contract",
-        "/tmp/baram-validator-rl252p2s/normal_complete/contract.json",
+        "/tmp/baram-validator-_tqu51yr/normal_complete/contract.json",
         "--output",
-        "/tmp/baram-validator-rl252p2s/normal_complete/result.json"
+        "/tmp/baram-validator-_tqu51yr/normal_complete/result.json"
       ],
       "summary_stdout": "{\"result\": \"PASS\", \"metadata_result\": \"NOT_RUN\", \"scoped_result\": \"NOT_RUN\", \"expected\": 3, \"checked\": 3, \"input_results\": {\"PASS\": 3}, \"check_results\": {\"PASS\": 6}, \"exit_code\": 0, \"runtime_tests_executed\": 0}",
       "stderr": "",
@@ -53,9 +53,9 @@
         "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
         "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/step01/validate_step01.py",
         "--contract",
-        "/tmp/baram-validator-rl252p2s/zero_available/contract.json",
+        "/tmp/baram-validator-_tqu51yr/zero_available/contract.json",
         "--output",
-        "/tmp/baram-validator-rl252p2s/zero_available/result.json"
+        "/tmp/baram-validator-_tqu51yr/zero_available/result.json"
       ],
       "summary_stdout": "{\"result\": \"BLOCKED\", \"metadata_result\": \"NOT_RUN\", \"scoped_result\": \"NOT_RUN\", \"expected\": 3, \"checked\": 0, \"input_results\": {\"BLOCKED\": 3}, \"check_results\": {\"PASS\": 5, \"BLOCKED\": 1}, \"exit_code\": 2, \"runtime_tests_executed\": 0}",
       "stderr": "",
@@ -82,9 +82,9 @@
         "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
         "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/step01/validate_step01.py",
         "--contract",
-        "/tmp/baram-validator-rl252p2s/missing_one/contract.json",
+        "/tmp/baram-validator-_tqu51yr/missing_one/contract.json",
         "--output",
-        "/tmp/baram-validator-rl252p2s/missing_one/result.json"
+        "/tmp/baram-validator-_tqu51yr/missing_one/result.json"
       ],
       "summary_stdout": "{\"result\": \"BLOCKED\", \"metadata_result\": \"NOT_RUN\", \"scoped_result\": \"NOT_RUN\", \"expected\": 3, \"checked\": 2, \"input_results\": {\"PASS\": 2, \"BLOCKED\": 1}, \"check_results\": {\"PASS\": 5, \"BLOCKED\": 1}, \"exit_code\": 2, \"runtime_tests_executed\": 0}",
       "stderr": "",
@@ -111,9 +111,9 @@
         "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
         "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/step01/validate_step01.py",
         "--contract",
-        "/tmp/baram-validator-rl252p2s/byte_tamper/contract.json",
+        "/tmp/baram-validator-_tqu51yr/byte_tamper/contract.json",
         "--output",
-        "/tmp/baram-validator-rl252p2s/byte_tamper/result.json"
+        "/tmp/baram-validator-_tqu51yr/byte_tamper/result.json"
       ],
       "summary_stdout": "{\"result\": \"FAIL\", \"metadata_result\": \"NOT_RUN\", \"scoped_result\": \"NOT_RUN\", \"expected\": 3, \"checked\": 3, \"input_results\": {\"FAIL\": 1, \"PASS\": 2}, \"check_results\": {\"PASS\": 5, \"FAIL\": 1}, \"exit_code\": 1, \"runtime_tests_executed\": 0}",
       "stderr": "",
@@ -149,9 +149,9 @@
         "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
         "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/step01/validate_step01.py",
         "--contract",
-        "/tmp/baram-validator-rl252p2s/truncated_zip/contract.json",
+        "/tmp/baram-validator-_tqu51yr/truncated_zip/contract.json",
         "--output",
-        "/tmp/baram-validator-rl252p2s/truncated_zip/result.json"
+        "/tmp/baram-validator-_tqu51yr/truncated_zip/result.json"
       ],
       "summary_stdout": "{\"result\": \"FAIL\", \"metadata_result\": \"NOT_RUN\", \"scoped_result\": \"NOT_RUN\", \"expected\": 3, \"checked\": 3, \"input_results\": {\"PASS\": 2, \"FAIL\": 1}, \"check_results\": {\"PASS\": 5, \"FAIL\": 1}, \"exit_code\": 1, \"runtime_tests_executed\": 0}",
       "stderr": "",
@@ -187,9 +187,9 @@
         "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
         "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/step01/validate_step01.py",
         "--contract",
-        "/tmp/baram-validator-rl252p2s/html_saved_as_zip/contract.json",
+        "/tmp/baram-validator-_tqu51yr/html_saved_as_zip/contract.json",
         "--output",
-        "/tmp/baram-validator-rl252p2s/html_saved_as_zip/result.json"
+        "/tmp/baram-validator-_tqu51yr/html_saved_as_zip/result.json"
       ],
       "summary_stdout": "{\"result\": \"FAIL\", \"metadata_result\": \"NOT_RUN\", \"scoped_result\": \"NOT_RUN\", \"expected\": 3, \"checked\": 3, \"input_results\": {\"PASS\": 2, \"FAIL\": 1}, \"check_results\": {\"PASS\": 5, \"FAIL\": 1}, \"exit_code\": 1, \"runtime_tests_executed\": 0}",
       "stderr": "",
@@ -225,9 +225,9 @@
         "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
         "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/step01/validate_step01.py",
         "--contract",
-        "/tmp/baram-validator-rl252p2s/malformed_json/contract.json",
+        "/tmp/baram-validator-_tqu51yr/malformed_json/contract.json",
         "--output",
-        "/tmp/baram-validator-rl252p2s/malformed_json/result.json"
+        "/tmp/baram-validator-_tqu51yr/malformed_json/result.json"
       ],
       "summary_stdout": "{\"result\": \"FAIL\", \"metadata_result\": \"NOT_RUN\", \"scoped_result\": \"NOT_RUN\", \"expected\": 3, \"checked\": 3, \"input_results\": {\"FAIL\": 1, \"PASS\": 2}, \"check_results\": {\"PASS\": 5, \"FAIL\": 1}, \"exit_code\": 1, \"runtime_tests_executed\": 0}",
       "stderr": "",
@@ -264,9 +264,9 @@
         "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
         "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/step01/validate_step01.py",
         "--contract",
-        "/tmp/baram-validator-rl252p2s/malformed_csv/contract.json",
+        "/tmp/baram-validator-_tqu51yr/malformed_csv/contract.json",
         "--output",
-        "/tmp/baram-validator-rl252p2s/malformed_csv/result.json"
+        "/tmp/baram-validator-_tqu51yr/malformed_csv/result.json"
       ],
       "summary_stdout": "{\"result\": \"FAIL\", \"metadata_result\": \"NOT_RUN\", \"scoped_result\": \"NOT_RUN\", \"expected\": 3, \"checked\": 3, \"input_results\": {\"PASS\": 2, \"FAIL\": 1}, \"check_results\": {\"PASS\": 5, \"FAIL\": 1}, \"exit_code\": 1, \"runtime_tests_executed\": 0}",
       "stderr": "",
@@ -302,9 +302,9 @@
         "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
         "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/step01/validate_step01.py",
         "--contract",
-        "/tmp/baram-validator-rl252p2s/duplicate_input_id/contract.json",
+        "/tmp/baram-validator-_tqu51yr/duplicate_input_id/contract.json",
         "--output",
-        "/tmp/baram-validator-rl252p2s/duplicate_input_id/result.json"
+        "/tmp/baram-validator-_tqu51yr/duplicate_input_id/result.json"
       ],
       "summary_stdout": "{\"result\": \"FAIL\", \"metadata_result\": \"NOT_RUN\", \"scoped_result\": \"NOT_RUN\", \"expected\": 4, \"checked\": 4, \"input_results\": {\"PASS\": 4}, \"check_results\": {\"PASS\": 5, \"FAIL\": 1}, \"exit_code\": 1, \"runtime_tests_executed\": 0}",
       "stderr": "",
@@ -331,9 +331,9 @@
         "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
         "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/step01/validate_step01.py",
         "--contract",
-        "/tmp/baram-validator-rl252p2s/missing_input_id/contract.json",
+        "/tmp/baram-validator-_tqu51yr/missing_input_id/contract.json",
         "--output",
-        "/tmp/baram-validator-rl252p2s/missing_input_id/result.json"
+        "/tmp/baram-validator-_tqu51yr/missing_input_id/result.json"
       ],
       "summary_stdout": "{\"result\": \"FAIL\", \"metadata_result\": \"NOT_RUN\", \"scoped_result\": \"NOT_RUN\", \"expected\": 2, \"checked\": 2, \"input_results\": {\"PASS\": 2}, \"check_results\": {\"PASS\": 5, \"FAIL\": 1}, \"exit_code\": 1, \"runtime_tests_executed\": 0}",
       "stderr": "",
@@ -360,9 +360,9 @@
         "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
         "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/step01/validate_step01.py",
         "--contract",
-        "/tmp/baram-validator-rl252p2s/wrong_client_version/contract.json",
+        "/tmp/baram-validator-_tqu51yr/wrong_client_version/contract.json",
         "--output",
-        "/tmp/baram-validator-rl252p2s/wrong_client_version/result.json"
+        "/tmp/baram-validator-_tqu51yr/wrong_client_version/result.json"
       ],
       "summary_stdout": "{\"result\": \"FAIL\", \"metadata_result\": \"NOT_RUN\", \"scoped_result\": \"NOT_RUN\", \"expected\": 3, \"checked\": 3, \"input_results\": {\"FAIL\": 1, \"PASS\": 2}, \"check_results\": {\"PASS\": 5, \"FAIL\": 1}, \"exit_code\": 1, \"runtime_tests_executed\": 0}",
       "stderr": "",
@@ -398,9 +398,9 @@
         "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
         "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/step01/validate_step01.py",
         "--contract",
-        "/tmp/baram-validator-rl252p2s/wrong_parser/contract.json",
+        "/tmp/baram-validator-_tqu51yr/wrong_parser/contract.json",
         "--output",
-        "/tmp/baram-validator-rl252p2s/wrong_parser/result.json"
+        "/tmp/baram-validator-_tqu51yr/wrong_parser/result.json"
       ],
       "summary_stdout": "{\"result\": \"FAIL\", \"metadata_result\": \"NOT_RUN\", \"scoped_result\": \"NOT_RUN\", \"expected\": 3, \"checked\": 3, \"input_results\": {\"PASS\": 3}, \"check_results\": {\"FAIL\": 1, \"PASS\": 5}, \"exit_code\": 1, \"runtime_tests_executed\": 0}",
       "stderr": "",
@@ -427,9 +427,9 @@
         "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
         "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/step01/validate_step01.py",
         "--contract",
-        "/tmp/baram-validator-rl252p2s/wrong_config_fingerprint/contract.json",
+        "/tmp/baram-validator-_tqu51yr/wrong_config_fingerprint/contract.json",
         "--output",
-        "/tmp/baram-validator-rl252p2s/wrong_config_fingerprint/result.json"
+        "/tmp/baram-validator-_tqu51yr/wrong_config_fingerprint/result.json"
       ],
       "summary_stdout": "{\"result\": \"FAIL\", \"metadata_result\": \"NOT_RUN\", \"scoped_result\": \"NOT_RUN\", \"expected\": 3, \"checked\": 3, \"input_results\": {\"PASS\": 3}, \"check_results\": {\"FAIL\": 1, \"PASS\": 5}, \"exit_code\": 1, \"runtime_tests_executed\": 0}",
       "stderr": "",
@@ -456,9 +456,9 @@
         "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
         "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/step01/validate_step01.py",
         "--contract",
-        "/tmp/baram-validator-rl252p2s/wrong_validator_code_fingerprint/contract.json",
+        "/tmp/baram-validator-_tqu51yr/wrong_validator_code_fingerprint/contract.json",
         "--output",
-        "/tmp/baram-validator-rl252p2s/wrong_validator_code_fingerprint/result.json"
+        "/tmp/baram-validator-_tqu51yr/wrong_validator_code_fingerprint/result.json"
       ],
       "summary_stdout": "{\"result\": \"FAIL\", \"metadata_result\": \"NOT_RUN\", \"scoped_result\": \"NOT_RUN\", \"expected\": 3, \"checked\": 3, \"input_results\": {\"PASS\": 3}, \"check_results\": {\"PASS\": 5, \"FAIL\": 1}, \"exit_code\": 1, \"runtime_tests_executed\": 0}",
       "stderr": "",
@@ -485,9 +485,9 @@
         "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
         "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/step01/validate_step01.py",
         "--contract",
-        "/tmp/baram-validator-rl252p2s/required_unsupported_format/contract.json",
+        "/tmp/baram-validator-_tqu51yr/required_unsupported_format/contract.json",
         "--output",
-        "/tmp/baram-validator-rl252p2s/required_unsupported_format/result.json"
+        "/tmp/baram-validator-_tqu51yr/required_unsupported_format/result.json"
       ],
       "summary_stdout": "{\"result\": \"NOT_RUN\", \"metadata_result\": \"NOT_RUN\", \"scoped_result\": \"NOT_RUN\", \"expected\": 3, \"checked\": 3, \"input_results\": {\"PASS\": 2, \"NOT_RUN\": 1}, \"check_results\": {\"PASS\": 5, \"NOT_RUN\": 1}, \"exit_code\": 3, \"runtime_tests_executed\": 0}",
       "stderr": "",
@@ -515,11 +515,11 @@
         "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
         "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/step01/validate_step01.py",
         "--contract",
-        "/tmp/baram-validator-rl252p2s/scope_cannot_hide_missing/contract.json",
+        "/tmp/baram-validator-_tqu51yr/scope_cannot_hide_missing/contract.json",
         "--scope-input",
         "FIXTURE-JSON",
         "--output",
-        "/tmp/baram-validator-rl252p2s/scope_cannot_hide_missing/result.json"
+        "/tmp/baram-validator-_tqu51yr/scope_cannot_hide_missing/result.json"
       ],
       "summary_stdout": "{\"result\": \"BLOCKED\", \"metadata_result\": \"NOT_RUN\", \"scoped_result\": \"PASS\", \"expected\": 3, \"checked\": 2, \"input_results\": {\"PASS\": 2, \"BLOCKED\": 1}, \"check_results\": {\"PASS\": 5, \"BLOCKED\": 1}, \"exit_code\": 2, \"runtime_tests_executed\": 0}",
       "stderr": "",
@@ -546,9 +546,9 @@
         "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
         "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/step01/validate_step01.py",
         "--contract",
-        "/tmp/baram-validator-rl252p2s/empty_required_set/contract.json",
+        "/tmp/baram-validator-_tqu51yr/empty_required_set/contract.json",
         "--output",
-        "/tmp/baram-validator-rl252p2s/empty_required_set/result.json"
+        "/tmp/baram-validator-_tqu51yr/empty_required_set/result.json"
       ],
       "summary_stdout": "{\"result\": \"FAIL\", \"metadata_result\": \"NOT_RUN\", \"scoped_result\": \"NOT_RUN\", \"expected\": 0, \"checked\": 0, \"input_results\": {}, \"check_results\": {\"PASS\": 4, \"FAIL\": 1, \"BLOCKED\": 1}, \"exit_code\": 1, \"runtime_tests_executed\": 0}",
       "stderr": "",
@@ -576,9 +576,9 @@
         "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
         "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/step01/validate_step01.py",
         "--contract",
-        "/tmp/baram-validator-rl252p2s/archive_path_escape/contract.json",
+        "/tmp/baram-validator-_tqu51yr/archive_path_escape/contract.json",
         "--output",
-        "/tmp/baram-validator-rl252p2s/archive_path_escape/result.json"
+        "/tmp/baram-validator-_tqu51yr/archive_path_escape/result.json"
       ],
       "summary_stdout": "{\"result\": \"FAIL\", \"metadata_result\": \"NOT_RUN\", \"scoped_result\": \"NOT_RUN\", \"expected\": 3, \"checked\": 3, \"input_results\": {\"PASS\": 2, \"FAIL\": 1}, \"check_results\": {\"PASS\": 5, \"FAIL\": 1}, \"exit_code\": 1, \"runtime_tests_executed\": 0}",
       "stderr": "",
@@ -590,6 +590,71 @@
       "failure_inputs": [
         {
           "input_id": "FIXTURE-ZIP",
+          "result": "FAIL",
+          "reasons": [
+            "FORMAT_MISMATCH_OR_TRUNCATION"
+          ],
+          "reason": null
+        }
+      ]
+    },
+    {
+      "case_id": "valid_dos_mz",
+      "input_origin": "SYNTHETIC_FIXTURE",
+      "expected": "PASS",
+      "observed": "PASS",
+      "exit_code": 0,
+      "assertions": {
+        "overall_status": true,
+        "exit_propagation": true,
+        "no_runtime_claim": true
+      },
+      "result": "PASS",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/step01/validate_step01.py",
+        "--contract",
+        "/tmp/baram-validator-_tqu51yr/valid_dos_mz/contract.json",
+        "--output",
+        "/tmp/baram-validator-_tqu51yr/valid_dos_mz/result.json"
+      ],
+      "summary_stdout": "{\"result\": \"PASS\", \"metadata_result\": \"NOT_RUN\", \"scoped_result\": \"NOT_RUN\", \"expected\": 4, \"checked\": 4, \"input_results\": {\"PASS\": 4}, \"check_results\": {\"PASS\": 6}, \"exit_code\": 0, \"runtime_tests_executed\": 0}",
+      "stderr": "",
+      "non_pass_checks": [],
+      "metadata_result": "NOT_RUN",
+      "checked": 4,
+      "failure_inputs": []
+    },
+    {
+      "case_id": "truncated_exe",
+      "input_origin": "SYNTHETIC_FIXTURE",
+      "expected": "FAIL",
+      "observed": "FAIL",
+      "exit_code": 1,
+      "assertions": {
+        "overall_status": true,
+        "exit_propagation": true,
+        "no_runtime_claim": true
+      },
+      "result": "PASS",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/step01/validate_step01.py",
+        "--contract",
+        "/tmp/baram-validator-_tqu51yr/truncated_exe/contract.json",
+        "--output",
+        "/tmp/baram-validator-_tqu51yr/truncated_exe/result.json"
+      ],
+      "summary_stdout": "{\"result\": \"FAIL\", \"metadata_result\": \"NOT_RUN\", \"scoped_result\": \"NOT_RUN\", \"expected\": 4, \"checked\": 4, \"input_results\": {\"PASS\": 3, \"FAIL\": 1}, \"check_results\": {\"PASS\": 5, \"FAIL\": 1}, \"exit_code\": 1, \"runtime_tests_executed\": 0}",
+      "stderr": "",
+      "non_pass_checks": [
+        "available_acquired_files_match_ledger"
+      ],
+      "metadata_result": "NOT_RUN",
+      "checked": 4,
+      "failure_inputs": [
+        {
+          "input_id": "FIXTURE-EXE",
           "result": "FAIL",
           "reasons": [
             "FORMAT_MISMATCH_OR_TRUNCATION"
@@ -615,11 +680,11 @@
         "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
         "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/step01/validate_step01.py",
         "--root",
-        "/tmp/baram-validator-rl252p2s/duplicate_requirement_id",
+        "/tmp/baram-validator-_tqu51yr/duplicate_requirement_id",
         "--input-map",
-        "/tmp/baram-validator-rl252p2s/duplicate_requirement_id/map.json",
+        "/tmp/baram-validator-_tqu51yr/duplicate_requirement_id/map.json",
         "--output",
-        "/tmp/baram-validator-rl252p2s/duplicate_requirement_id/result.json"
+        "/tmp/baram-validator-_tqu51yr/duplicate_requirement_id/result.json"
       ],
       "summary_stdout": "{\"result\": \"FAIL\", \"metadata_result\": \"FAIL\", \"scoped_result\": \"NOT_RUN\", \"expected\": 2489, \"checked\": 0, \"input_results\": {\"BLOCKED\": 2489}, \"check_results\": {\"PASS\": 20, \"FAIL\": 2, \"BLOCKED\": 1}, \"exit_code\": 1, \"runtime_tests_executed\": 0}",
       "stderr": "",
@@ -649,11 +714,11 @@
         "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
         "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/step01/validate_step01.py",
         "--root",
-        "/tmp/baram-validator-rl252p2s/broken_source_reference",
+        "/tmp/baram-validator-_tqu51yr/broken_source_reference",
         "--input-map",
-        "/tmp/baram-validator-rl252p2s/broken_source_reference/map.json",
+        "/tmp/baram-validator-_tqu51yr/broken_source_reference/map.json",
         "--output",
-        "/tmp/baram-validator-rl252p2s/broken_source_reference/result.json"
+        "/tmp/baram-validator-_tqu51yr/broken_source_reference/result.json"
       ],
       "summary_stdout": "{\"result\": \"FAIL\", \"metadata_result\": \"FAIL\", \"scoped_result\": \"NOT_RUN\", \"expected\": 2489, \"checked\": 0, \"input_results\": {\"BLOCKED\": 2489}, \"check_results\": {\"PASS\": 21, \"FAIL\": 1, \"BLOCKED\": 1}, \"exit_code\": 1, \"runtime_tests_executed\": 0}",
       "stderr": "",
@@ -681,9 +746,9 @@
         "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
         "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/step01/validate_step01.py",
         "--root",
-        "/tmp/baram-validator-rl252p2s/malformed_ledger_json",
+        "/tmp/baram-validator-_tqu51yr/malformed_ledger_json",
         "--output",
-        "/tmp/baram-validator-rl252p2s/malformed_ledger_json/result.json"
+        "/tmp/baram-validator-_tqu51yr/malformed_ledger_json/result.json"
       ],
       "summary_stdout": "{\"result\": \"FAIL\", \"metadata_result\": \"FAIL\", \"scoped_result\": \"NOT_RUN\", \"expected\": 0, \"checked\": 0, \"input_results\": {}, \"check_results\": {\"FAIL\": 2, \"PASS\": 3, \"NOT_RUN\": 1, \"BLOCKED\": 1}, \"exit_code\": 1, \"runtime_tests_executed\": 0}",
       "stderr": "",
@@ -714,11 +779,11 @@
         "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
         "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/step01/validate_step01.py",
         "--root",
-        "/tmp/baram-validator-rl252p2s/missing_required_metadata",
+        "/tmp/baram-validator-_tqu51yr/missing_required_metadata",
         "--input-map",
-        "/tmp/baram-validator-rl252p2s/missing_required_metadata/map.json",
+        "/tmp/baram-validator-_tqu51yr/missing_required_metadata/map.json",
         "--output",
-        "/tmp/baram-validator-rl252p2s/missing_required_metadata/result.json"
+        "/tmp/baram-validator-_tqu51yr/missing_required_metadata/result.json"
       ],
       "summary_stdout": "{\"result\": \"BLOCKED\", \"metadata_result\": \"BLOCKED\", \"scoped_result\": \"NOT_RUN\", \"expected\": 2489, \"checked\": 0, \"input_results\": {\"BLOCKED\": 2489}, \"check_results\": {\"PASS\": 4, \"BLOCKED\": 3, \"NOT_RUN\": 1}, \"exit_code\": 2, \"runtime_tests_executed\": 0}",
       "stderr": "",
@@ -749,9 +814,9 @@
         "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
         "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/step01/validate_step01.py",
         "--root",
-        "/tmp/baram-validator-rl252p2s/missing_sources_ledger",
+        "/tmp/baram-validator-_tqu51yr/missing_sources_ledger",
         "--output",
-        "/tmp/baram-validator-rl252p2s/missing_sources_ledger/result.json"
+        "/tmp/baram-validator-_tqu51yr/missing_sources_ledger/result.json"
       ],
       "summary_stdout": "{\"result\": \"BLOCKED\", \"metadata_result\": \"BLOCKED\", \"scoped_result\": \"NOT_RUN\", \"expected\": 0, \"checked\": 0, \"input_results\": {}, \"check_results\": {\"BLOCKED\": 4, \"NOT_RUN\": 1, \"PASS\": 2}, \"exit_code\": 2, \"runtime_tests_executed\": 0}",
       "stderr": "",
@@ -775,7 +840,7 @@
       "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
       "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/step01/validate_step01.py",
       "--output",
-      "/tmp/baram-validator-rl252p2s/actual_repo/result.json"
+      "/tmp/baram-validator-_tqu51yr/actual_repo/result.json"
     ],
     "exit_code": 1,
     "stdout": "{\"result\": \"FAIL\", \"metadata_result\": \"PASS\", \"scoped_result\": \"NOT_RUN\", \"expected\": 2489, \"checked\": 211, \"input_results\": {\"PASS\": 210, \"FAIL\": 1, \"BLOCKED\": 2278}, \"check_results\": {\"PASS\": 22, \"FAIL\": 1}, \"exit_code\": 1, \"runtime_tests_executed\": 0}",

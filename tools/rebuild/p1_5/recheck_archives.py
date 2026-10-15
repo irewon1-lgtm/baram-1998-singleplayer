@@ -20,14 +20,23 @@ def main():
     old=a.repo/'docs/rebuild/step01';out=a.repo/'docs/rebuild/p1_5'
     sources=lines(old/'archive_sources.jsonl'); members=lines(old/'archive_members.jsonl')
     expected={(r['source_id'],r['archive_member']):r for r in members}; found={};errors=[]; containers=[]
-    mapping={}; source_results=[]; total=0; cached={}; new=[]
+    mapping={}; source_results=[]; total=0; processed=0; new=[]
+    pins={a.repo/'tools/rebuild/step01/inventory_archives.py':'d50c9e9393868d9bfa6fe991df7e6c829bcadd279a6baaca93f06625c9e79607',
+          a.legacy_parser_dir/'legacy_assets.py':'f5152ae3473b3e2f2d120b8c1b8679529428d2bd09f9024528d71aa9a9be86e2',
+          a.legacy_parser_dir/'legacy_installers.py':'5dd1d31cd287a01a8da494c315df5479a032a0a18979a30901bee49b558fd382'}
+    for path,pin in pins.items():
+        if digest(path.read_bytes())!=pin:raise ValueError('Parser code fingerprint mismatch before import: '+path.name)
     inv=module('inventory_recheck',a.repo/'tools/rebuild/step01/inventory_archives.py')
     sys.path.insert(0,str(a.legacy_parser_dir)); import legacy_assets,legacy_installers
     la=inv.LibArchive()
 
     def inspect(sid,name,data,depth=0):
-        nonlocal total
+        nonlocal total,processed
+        processed+=len(data)
+        if len(data)>MAX_FILE or processed>MAX_TOTAL:raise ValueError('Processing byte budget exceeded')
         h=digest(data);r=expected.get((sid,name)); obj=pool/h
+        if obj.exists() and (obj.stat().st_size!=len(data) or digest(obj.read_bytes())!=h):
+            raise ValueError('Cached object byte identity mismatch: '+h)
         if not obj.exists():
             total+=len(data)
             if total>MAX_TOTAL:raise ValueError('Total object byte budget exceeded')
@@ -64,6 +73,8 @@ def main():
                 containers.append({'source_id':sid,'archive_member':name,'sha256':h,'reader':kind,'status':'DECODED','entries':len(entries)})
                 for n,b in entries:
                     if len(b)>MAX_FILE:raise ValueError('Decoded entry byte limit')
+                    pp=PurePosixPath(n.replace('\\','/'))
+                    if pp.is_absolute() or '..' in pp.parts or (pp.parts and ':' in pp.parts[0]):raise ValueError('Unsafe archive entry name')
                     inspect(sid,name+'!'+n,b,depth+1)
         except Exception as e:
             errors.append({'source_id':sid,'archive_member':name,'sha256':h,'reader':kind,'status':'UNDECODED','error':str(e)})
@@ -74,6 +85,7 @@ def main():
         rr={k:s[k] for k in ['source_id','library_file_id','library_path','sha256','size_bytes']}
         rr['previous_audit_unavailable']=s['source_id'] in {f'LIB-{i:03}' for i in range(29,36)}
         if not p.is_file():rr.update(status='BLOCKED',reason='No current byte path')
+        elif p.stat().st_size>MAX_FILE:rr.update(status='BLOCKED',reason='Source byte safety limit')
         else:
             b=p.read_bytes();h=digest(b)
             rr.update(status='MATCH' if h==s['sha256'] and len(b)==s['size_bytes'] else 'MISMATCH',actual_sha256=h,actual_size_bytes=len(b))
@@ -82,10 +94,11 @@ def main():
         source_results.append(rr)
         print(s['source_id'],rr['status'],flush=True)
     member_results=[found.get(r['member_id'],{'member_id':r['member_id'],'source_id':r['source_id'],'archive_member':r['archive_member'],'status':'BLOCKED','reason':'Exact bytes not reached by supported reader'}) for r in members]
-    report={'task_id':'BARAM_REBUILD_P1_5_001','parser_version':VERSION,'originals':source_results,'summary':{'original_expected':len(sources),'original_status':dict(collections.Counter(r['status'] for r in source_results)),'member_expected':len(members),'member_status':dict(collections.Counter(r['status'] for r in member_results)),'unique_expected_member_hashes':len({r['sha256'] for r in members}),'actual_unique_member_hashes':len({r['sha256'] for r in member_results if r['status']=='MATCH'}),'new_nested_records':len(new)},'members':member_results,'containers':containers,'decode_errors':errors,'new_members':new,'scope':'BYTE/CONTAINER CHECK ONLY; NOT HISTORICAL FACT, MALWARE OR GAMEPLAY PASS','runtime_tests':'NOT_RUN'}
+    helpers=[a.repo/'tools/rebuild/step01/inventory_archives.py',a.legacy_parser_dir/'legacy_assets.py',a.legacy_parser_dir/'legacy_installers.py',Path(__file__)]
+    report={'task_id':'BARAM_REBUILD_P1_5_001','parser_version':VERSION,'parser_fingerprints':{p.name:digest(p.read_bytes()) for p in helpers},'originals':source_results,'summary':{'original_expected':len(sources),'original_status':dict(collections.Counter(r['status'] for r in source_results)),'member_expected':len(members),'member_status':dict(collections.Counter(r['status'] for r in member_results)),'unique_expected_member_hashes':len({r['sha256'] for r in members}),'actual_unique_member_hashes':len({r['sha256'] for r in member_results if r['status']=='MATCH'}),'new_nested_records':len(new),'decode_result':'BLOCKED' if errors else 'PASS_FOR_SUPPORTED_CONTAINERS','processed_bytes':processed,'stored_new_bytes':total},'members':member_results,'containers':containers,'decode_errors':errors,'new_members':new,'scope':'BYTE/CONTAINER CHECK ONLY; NOT HISTORICAL FACT, MALWARE OR GAMEPLAY PASS','runtime_tests':'NOT_RUN'}
     (out/'source_access.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
     (work/'input_map.json').write_text(json.dumps(mapping,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps(report['summary']))
-    return 1 if any(r['status']=='MISMATCH' for r in source_results+member_results) else 2 if any(r['status']=='BLOCKED' for r in source_results+member_results) else 0
+    return 1 if any(r['status']=='MISMATCH' for r in source_results+member_results) else 2 if errors or any(r['status']=='BLOCKED' for r in source_results+member_results) else 0
 
 if __name__=='__main__':sys.exit(main())

@@ -1,6 +1,12 @@
 {
   "task_id": "BARAM_REBUILD_P1_5_001",
   "parser_version": "p1.5-source-recheck/1.0",
+  "parser_fingerprints": {
+    "inventory_archives.py": "d50c9e9393868d9bfa6fe991df7e6c829bcadd279a6baaca93f06625c9e79607",
+    "legacy_assets.py": "f5152ae3473b3e2f2d120b8c1b8679529428d2bd09f9024528d71aa9a9be86e2",
+    "legacy_installers.py": "5dd1d31cd287a01a8da494c315df5479a032a0a18979a30901bee49b558fd382",
+    "recheck_archives.py": "4440e3f3ccfa07312c7b0a15c71398e694365ad3c375c5f1a0c1f933e3b1c620"
+  },
   "originals": [
     {
       "source_id": "LIB-001",
@@ -476,7 +482,10 @@
     },
     "unique_expected_member_hashes": 1794,
     "actual_unique_member_hashes": 1794,
-    "new_nested_records": 632
+    "new_nested_records": 632,
+    "decode_result": "PASS_FOR_SUPPORTED_CONTAINERS",
+    "processed_bytes": 1047031801,
+    "stored_new_bytes": 0
   },
   "members": [
     {
