@@ -145,6 +145,7 @@ func open_account():
 func offline_pressed():
     if busy:return
     if config.is_empty():panel.hide();game.continuity_blocked=false;return
+    if state.meta.get("conflict",false):report("CONFLICT_PRESERVED");return
     # Never start an unleased/stale second device while the server is offline.
     if playing:panel.hide();game.continuity_blocked=false;return
     var id=str(session.get("user",{}).get("id",""))

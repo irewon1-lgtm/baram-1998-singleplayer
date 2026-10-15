@@ -75,6 +75,7 @@ var loading_progress: ProgressBar
 var startup_log_path = ""
 var continuity
 var continuity_blocked=false
+var touch_controls
 
 func show_loading():
     loading_layer=CanvasLayer.new();loading_layer.layer=100;add_child(loading_layer)
@@ -204,11 +205,14 @@ func _ready():
     event("ready",{"registered_tiles":assets.tiles.size(),"loaded_save":save_loaded,
                    "renderer":RenderingServer.get_current_rendering_method()})
     if test_mode != "":
+        if options.has("verification-pack") and not ProjectSettings.load_resource_pack(options["verification-pack"]):
+            fail_startup("VERIFICATION_PACK_MISSING");return
         call_deferred("start_exercise")
     else:
         continuity=load("res://continuity.gd").new();add_child(continuity)
         await continuity.initialize(self)
-        var touch=load("res://touch_controls.gd").new();add_child(touch);touch.initialize(self)
+    if OS.get_name()=="Android" or options.has("touch-test"):
+        touch_controls=load("res://touch_controls.gd").new();add_child(touch_controls);touch_controls.initialize(self)
     queue_redraw()
 
 func setup_creation():
@@ -251,6 +255,7 @@ func create_character():
     creation_controls.queue_free()
     menu = ""
     event("character_created",{"job":player.job,"name":player.name})
+    if continuity!=null:save_game()
     notice("장비상에게 Enter로 대화하세요. I: 물품, E: 장착, Space: 공격")
     queue_redraw()
 
@@ -355,7 +360,7 @@ func _process(delta: float):
     if player.is_empty():
         queue_redraw()
         return
-    if menu in ["pause","save_error"]:queue_redraw();return
+    if menu in ["pause","save_error"] and (continuity==null or not continuity.resolving):queue_redraw();return
     rules.tick(player,delta)
     var alive_before=player.hp>0
     Effects.tick(rules.actions,player,delta)
@@ -1328,7 +1333,7 @@ func draw_menu():
 
 func start_exercise():
     # Implemented in a separate script so validation calls the actual event handlers.
-    var script="res://native_regression.gd" if test_mode.begins_with("native-") else "res://work_play_probe.gd" if test_mode.begins_with("work-") else "res://exercise.gd"
+    var script="res://mobile_smoke_probe.gd" if test_mode.begins_with("mobile-") else "res://native_regression.gd" if test_mode.begins_with("native-") else "res://work_play_probe.gd" if test_mode.begins_with("work-") else "res://exercise.gd"
     var runner = load(script).new()
     add_child(runner)
     await runner.run(self,test_mode,test_root)

@@ -101,9 +101,13 @@ application/modify_resources=false
 texture_format/s3tc_bptc=true
 texture_format/etc2_astc=false
 '''
-    # work_play_probe is required by native_regression; explicitly include it.
-    presets=presets.replace('exclude_filter="build_world_cache.gd,*probe.gd,*runner.gd"', 'exclude_filter="build_world_cache.gd"')
+    presets=presets.replace('exclude_filter="build_world_cache.gd,*probe.gd,*runner.gd"',
+        'exclude_filter="build_world_cache.gd,*probe.gd,*runner.gd,native_regression.gd,exercise.gd,data/balance_tests.json"')
     (project/'export_presets.cfg').write_text(presets, encoding='utf-8')
+    write_json(out/'verification-members.json',['exercise.gd','work_play_probe.gd','native_regression.gd'])
+    command([args.godot,'--headless','--path',ROOT/'game','--script',ROOT/'tools/pack_runtime.gd','--',
+        '--root='+str(ROOT/'game'),'--manifest='+str(out/'verification-members.json'),
+        '--out='+str(out/'verification.pck')],out/'verification-pack.log')
     cache=stage/'runtime_cache'
     if args.cache:
         shutil.copytree(Path(args.cache),cache)
@@ -141,6 +145,7 @@ def run_probe(args, stage, mode, evidence, save, windowed=False):
         if not args.godot:raise ValueError('Linux verification requires --godot')
         cmd=[args.godot,'--headless','--main-pack',str(exe)]
     cmd+=['--','--package-root='+str(stage),'--save='+str(save),
+          '--verification-pack='+str(stage.parent/'verification.pck'),
           '--exercise='+mode,'--evidence='+str(evidence)]
     evidence.mkdir(parents=True,exist_ok=True)
     log_path=evidence/(mode+'.log')
