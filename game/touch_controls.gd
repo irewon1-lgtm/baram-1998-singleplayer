@@ -21,6 +21,9 @@ func initialize(g):
     game=g
     z_index=100
     get_tree().auto_accept_quit=false
+    # Android's Back default is independent of desktop close requests.
+    # main._notification owns modal dismissal / the pause menu.
+    get_tree().quit_on_go_back=false
     layout()
 
 func release_all():

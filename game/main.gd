@@ -1112,6 +1112,7 @@ func write_diagnostic(code: String):
     # One bounded local file; no full user save or secret is uploaded/packaged.
     f.store_string(JSON.stringify({"code":code,"build":store.game_build,"content_version":content.version,
         "frame_performance":performance,"save_performance":last_save_performance,"process_ms":Performance.get_monitor(Performance.TIME_PROCESS)*1000,"position":[player.get("x",0),player.get("y",0)],"menu":menu,"direction":player.get("direction",2),"navigation_generation":navigation.generation if navigation!=null else 0,"navigation_path":navigation.path if navigation!=null else [],"camera":[camera().x,camera().y],"viewport":[get_viewport_rect().size.x,get_viewport_rect().size.y],"map_id":player.get("map",""),"rng_state":str(rules.rng.state),"recent_events":event_log.slice(maxi(0,event_log.size()-32)),
+        "input":{"direct_direction":direct_direction,"pointer_count":touch_controls.pointers.size() if touch_controls!=null else 0,"joystick_id":touch_controls.joystick_id if touch_controls!=null else -1},
         "rules_error":rules.actions.last_error,"save_error":store.last_error},"  "))
     f.close();print("BARAM_DIAGNOSTIC "+JSON.stringify({"build":store.game_build,"frame_performance":performance,"map":player.get("map",""),"position":[player.get("x",0),player.get("y",0)],"menu":menu}))
     notice("오류 재현 기록을 개인 저장 폴더에 남겼습니다.")

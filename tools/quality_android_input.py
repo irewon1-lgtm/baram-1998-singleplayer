@@ -10,7 +10,7 @@ def adb(*args,check=True):
  return r.stdout
 
 def main(a):
- out=Path(a.out);out.mkdir(parents=True,exist_ok=True);checks=[]
+ out=Path(a.out);out.mkdir(parents=True,exist_ok=True);checks=[];log_segments=[];recording=None
  maps={m['id']:m for m in json.loads(Path(a.world).read_text())['maps']}
  def check(ok,name,**details):
   checks.append(dict(name=name,status='PASS' if ok else 'FAIL',details=details));print(name,checks[-1]['status'],flush=True)
@@ -157,13 +157,26 @@ def main(a):
   for code,name in [(19,'up'),(21,'left'),(20,'down'),(22,'right')]:
    key(code);shot('direction-'+name);key(62);time.sleep(.7)
   adventure()
-  # Floor taps and retargets; metadata confirms actual navigation dispatch.
+  # First measure coordinate conversion with a stationary camera. During a
+  # moving adb gesture, the camera can advance after our read-only snapshot;
+  # the game correctly uses the camera at touch-down, not the observer's age.
+  d=settled();fixed_goal=floor_goal(d,0);tap_cell(*fixed_goal);d=settled()
+  check(d['position']==list(fixed_goal),'stationary_OS_floor_coordinate_exact',expected=list(fixed_goal),observed=d['position'])
+  # Retarget arrival is checked against the final command accepted at touch
+  # time. Keep every command so failures cannot be hidden by a later success.
   before=diag();generation=before['navigation_generation']
+  commands=[]
   for i in range(24):
    latest=floor_goal(diag(),i);tap_cell(*latest)
+   accepted=diag();events=[e for e in accepted['recent_events'] if e['event']=='navigation_search']
+   if not events:raise RuntimeError('No navigation event after OS floor tap')
+   commands.append(events[-1]['details'])
+  (out/'retarget-commands.json').write_text(json.dumps(commands,ensure_ascii=False,indent=2))
+  latest=list(map(int,re.findall(r'-?\d+',str(commands[-1]['goal']))))
   d=settled()
   check(d['navigation_generation']>=generation+20,'OS_taps_dispatch_20plus_destination_commands',before=generation,after=d['navigation_generation'])
-  check(d['position']==list(latest) and not d['navigation_path'],'OS_24_retargets_finish_at_latest_floor_destination',expected=list(latest),observed=d['position'])
+  check(commands[-1]['status']=='FOUND' and d['position']==latest and not d['navigation_path'],'OS_24_retargets_finish_at_latest_floor_destination',expected=latest,observed=d['position'])
+  time.sleep(1);check(diag()['position']==d['position'],'cancelled_paths_do_not_restart')
   shot('03-destination-movement')
   tap(*ui_point('bag',d));d=diag();check(d['menu']=='inventory','one_tap_bag');shot('04-bag')
   position=d['position'];tap(640,270);time.sleep(.6);d2=diag();check(d2['position']==position and d2['navigation_path']==[],'modal_tap_no_field_movement')
@@ -174,10 +187,12 @@ def main(a):
   adb('shell','input','swipe',130,600,230,600,700);key(3);time.sleep(1);launch(resume=True);time.sleep(.8)
   before=diag()['position'];time.sleep(1);check(diag()['position']==before,'OS_background_return_no_stuck_movement')
   # Exactly the same signed APK can be installed over its own data without wiping.
-  key(135) # F5
+  key(135);d=diag() # F5, then wait for the commit before inspecting the file.
   names=adb('shell','find',f'/data/user/0/{P}/files','-name','character.json').decode().splitlines();assert len(names)==1
   saved=adb('exec-out','cat',names[0]);adb('shell','am','force-stop',P);adb('install','-r',a.apk)
   check(adb('exec-out','cat',names[0])==saved,'replace_install_preserves_save_bytes')
+  log_segments.append(adb('logcat','-d','-v','brief').decode(errors='replace'))
+  (out/'diagnostic-before-restart.json').write_text(json.dumps(d,ensure_ascii=False,indent=2))
   adb('logcat','-c');launch();time.sleep(1);shot('07-restarted')
   # Ten minutes of OS-driven movement / combat buttons / menus / saves.
   iteration=0
@@ -191,15 +206,20 @@ def main(a):
   d=diag();check(True,'600_seconds_OS_input_session',seconds=round(time.monotonic()-start,2),iterations=iteration)
   (out/'diagnostic-phone.json').write_text(json.dumps(d,ensure_ascii=False,indent=2))
   shot('09-phone-final')
-  adb('shell','am','force-stop',P);adb('shell','wm','size','1280x800');adb('logcat','-c');launch();time.sleep(1);shot('10-tablet-field')
-  key(138);key(4);shot('11-tablet-menu')
-  check(True,'tablet_ratio_rendered_NOT_GALAXY')
+  adb('shell','am','force-stop',P);adb('shell','wm','size','1280x800')
+  log_segments.append(adb('logcat','-d','-v','brief').decode(errors='replace'));adb('logcat','-c');launch();time.sleep(1);shot('10-tablet-field')
+  td=diag();check(td['viewport'][1]>0 and td['menu']=='','tablet_ratio_rendered_NOT_GALAXY')
+  key(4);check(diag()['menu']=='pause','tablet_Back_opens_menu');shot('11-tablet-menu');key(4)
  except Exception:
   failure=traceback.format_exc();(out/'failure.txt').write_text(failure);print(failure,flush=True);shot('failure')
   checks.append({'name':'complete_OS_flow','status':'FAIL'})
  finally:
-  raw=adb('logcat','-d','-v','brief').decode(errors='replace');(out/'android-logcat.log').write_text(raw)
-  errors=re.findall(r'(?:SCRIPT ERROR:|FATAL EXCEPTION|ERROR:)[^\n]*',raw)
+  if recording and recording.poll() is None:
+   adb('shell','pkill','-2','screenrecord',check=False);recording.wait(timeout=15)
+  adb('pull','/sdcard/baram-quality.mp4',out/'08-Android-exact-apk.mp4',check=False)
+  raw='\n'.join(log_segments+[adb('logcat','-d','-v','brief').decode(errors='replace')]);(out/'android-logcat.log').write_text(raw)
+  errors=[line for line in raw.splitlines() if 'FATAL EXCEPTION' in line or ('godot' in line.lower() and ('SCRIPT ERROR:' in line or 'ERROR:' in line))]
+  (out/'OS-renderer-messages.txt').write_text('\n'.join(line for line in raw.splitlines() if 'eglCodecCommon' in line and 'ERROR:' in line))
   check(not errors,'no_runtime_engine_errors',errors=errors[:10])
   report={'status':'PASS' if checks and all(c['status']=='PASS' for c in checks) else 'FAIL','checks':checks,'apk_sha256':hashlib.sha256(Path(a.apk).read_bytes()).hexdigest(),'package':P,'scope':'EXACT_RELEASE_APK_ANDROID_35_X86_64_OS_INPUT_NOT_GALAXY','ARM64_hardware':'NOT_RUN'}
   (out/'android-quality-report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2))
