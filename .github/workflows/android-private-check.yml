@@ -7,9 +7,12 @@ on:
     inputs:
       source_ref:
         description: Reviewed mobile source commit to verify; this diagnostic never publishes a cloud-ready player
-        default: 54f4d969971ac10c7e22b179cec2aa5545a6b5ff
+        default: 2bb4ec55fa8ccb347b11d2bf2532ae4d4806b76a
 permissions:
   contents: read
+concurrency:
+  group: android-private-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   original-android:
     runs-on: ubuntu-latest
@@ -18,7 +21,7 @@ jobs:
     env:
       PRIVATE_REPO: ${{ vars.BARAM_PRIVATE_REPOSITORY || 'irewon1-lgtm/baram-windows-private' }}
       GH_TOKEN: ${{ secrets.BARAM_PRIVATE_REPO_TOKEN }}
-      SOURCE_REF: ${{ inputs.source_ref || '54f4d969971ac10c7e22b179cec2aa5545a6b5ff' }}
+      SOURCE_REF: ${{ inputs.source_ref || '2bb4ec55fa8ccb347b11d2bf2532ae4d4806b76a' }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -52,6 +55,7 @@ jobs:
           python tools/restore_private_runtime.py --vault ../vault --out ../vault/runtime
           python tools/test_android_signing.py --out test-signing
           mkdir -p seed/saves/v2
+          editor/Godot_v4.6.3-stable_linux.x86_64 --headless --path game --script build_world_cache.gd -- --assets="$GITHUB_WORKSPACE/vault/runtime/private_assets" --content="$GITHUB_WORKSPACE/vault/runtime/private_content" --out="$GITHUB_WORKSPACE/vault/runtime/runtime_cache"
           editor/Godot_v4.6.3-stable_linux.x86_64 --headless --path game -- --assets="$GITHUB_WORKSPACE/vault/runtime/private_assets" --content="$GITHUB_WORKSPACE/vault/runtime/private_content" --save="$PWD/seed/saves/v2/character.json" --exercise=mobile-pc-seed --evidence="$PWD/seed"
           python tools/android_ci.py --runtime ../vault/runtime --godot "$PWD/editor/Godot_v4.6.3-stable_linux.x86_64" --template templates/android_debug.apk --sdk "$ANDROID_HOME" --signing test-signing/fixture.json --verification --probe-mode mobile-smoke --initial-save seed/saves/v2/character.json --out android-check
           python tools/android_ci.py --runtime ../vault/runtime --godot "$PWD/editor/Godot_v4.6.3-stable_linux.x86_64" --template templates/android_release.apk --sdk "$ANDROID_HOME" --signing ../vault/android/android-signing.json --out android-candidate
@@ -81,8 +85,14 @@ jobs:
           with zipfile.ZipFile('private-android-check.zip','w',zipfile.ZIP_DEFLATED) as z:
               for folder in ['seed','emulator-evidence','android-check','android-candidate']:
                   for p in Path(folder).rglob('*'):
-                      if p.is_file() and (p.suffix=='.log' or p.suffix=='.png' or p.name in ['android-build.json','android-metrics.json','mobile-report.json']):z.write(p,p.as_posix())
+                      if p.is_file() and (p.suffix=='.log' or p.suffix=='.png' or p.name in ['android-build.json','android-metrics.json','mobile-report.json','character.json']):z.write(p,p.as_posix())
           PY
+          python - <<'PYREQUEST'
+          from pathlib import Path
+          import os,json,base64
+          Path('private-diagnostic-request.json').write_text(json.dumps({'message':'Preserve private Android native evidence '+os.environ['GITHUB_RUN_ID'], 'content':base64.b64encode(Path('private-android-check.zip').read_bytes()).decode()}))
+          PYREQUEST
+          gh api "repos/$PRIVATE_REPO/contents/android-checks/$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT.zip" --method PUT --input private-diagnostic-request.json > /dev/null
           tag="android-check-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
           gh release create "$tag" --repo "$PRIVATE_REPO" --draft --title "Private Android native check; cloud release BLOCKED" --notes 'Original-content emulator/file-format evidence. Not a verified cloud-continuity release. Galaxy hardware and real account roundtrip remain unverified.'
           gh release upload "$tag" private-android-check.zip --repo "$PRIVATE_REPO"
