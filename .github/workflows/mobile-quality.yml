@@ -1,0 +1,128 @@
+name: Mobile control quality native packages
+on:
+  push:
+    branches: [work/mobile-controls-20261015]
+    paths: ['game/**', 'tools/**', '.github/workflows/mobile-quality.yml']
+permissions:
+  contents: read
+concurrency:
+  group: mobile-quality
+  cancel-in-progress: true
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    environment: baram-windows-private
+    env:
+      PRIVATE_REPO: ${{ vars.BARAM_PRIVATE_REPOSITORY || 'irewon1-lgtm/baram-windows-private' }}
+      GH_TOKEN: ${{ secrets.BARAM_PRIVATE_REPO_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: source
+          persist-credentials: false
+      - name: Check private vault
+        run: test "$(gh api repos/$PRIVATE_REPO --jq .private)" = true
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ env.PRIVATE_REPO }}
+          token: ${{ secrets.BARAM_PRIVATE_REPO_TOKEN }}
+          path: vault
+          persist-credentials: false
+      - name: Build exact signed universal player APK
+        working-directory: source
+        run: |
+          python -m pip install Pillow==11.3.0 cryptography
+          curl -fL https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_linux.x86_64.zip -o godot.zip
+          echo 'd0bc2113065e481c9c2c2b2c37daa4e8be3fe9e27f0ab9ab0b6096e9a37907f3  godot.zip' | sha256sum --check
+          unzip -q godot.zip -d editor
+          chmod +x editor/Godot_v4.6.3-stable_linux.x86_64
+          curl -fL https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_export_templates.tpz -o templates.tpz
+          echo '3fbe2c0e2dec9d537ab9ec97bcf8da91dcf23357fc51f67092dd068d839290a8  templates.tpz' | sha256sum --check
+          unzip -q templates.tpz templates/android_release.apk
+          python tools/restore_private_runtime.py --vault ../vault --out ../vault/runtime
+          python tools/android_ci.py --runtime ../vault/runtime --godot "$PWD/editor/Godot_v4.6.3-stable_linux.x86_64" --template templates/android_release.apk --sdk "$ANDROID_HOME" --signing ../vault/android/android-signing.json --universal --out android-build
+          mkdir -p deliverable
+          cp android-build/baram-Android-arm64.apk deliverable/baram-Android-update.apk
+          cp android-build/android-build.json android-build/signature.log deliverable/
+      - name: Enable emulator KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+      - name: Install final APK and exercise real Android input
+        uses: ReactiveCircus/android-emulator-runner@4c44018e59b437e86cdfc41da381398f93ed8808
+        with:
+          api-level: 35
+          arch: x86_64
+          target: google_apis
+          ram-size: 4096M
+          disable-animations: true
+          emulator-options: -no-window -gpu swangle -noaudio -no-boot-anim -camera-back none -memory 4096
+          script: python source/tools/quality_android_input.py --apk source/deliverable/baram-Android-update.apk --out source/deliverable/android-evidence
+      - name: Encrypt private artifacts
+        if: always()
+        working-directory: source
+        run: python tools/seal_quality_artifacts.py --signing ../vault/android/android-signing.json --source deliverable --output android-quality.sealed
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: android-quality-encrypted
+          path: source/android-quality.sealed
+          retention-days: 3
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 25
+    environment: baram-windows-private
+    env:
+      PRIVATE_REPO: ${{ vars.BARAM_PRIVATE_REPOSITORY || 'irewon1-lgtm/baram-windows-private' }}
+      GH_TOKEN: ${{ secrets.BARAM_PRIVATE_REPO_TOKEN }}
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: source
+          persist-credentials: false
+      - name: Check private vault
+        shell: pwsh
+        run: |
+          if (-not (gh api "repos/$env:PRIVATE_REPO" | ConvertFrom-Json).private) { throw 'Private vault required' }
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ env.PRIVATE_REPO }}
+          token: ${{ secrets.BARAM_PRIVATE_REPO_TOKEN }}
+          path: vault
+          persist-credentials: false
+      - name: Build and verify actual Windows EXE
+        shell: pwsh
+        working-directory: source
+        run: |
+          python -m pip install Pillow==11.3.0 cryptography
+          Invoke-WebRequest 'https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_win64.exe.zip' -OutFile editor.zip
+          if ((Get-FileHash editor.zip -Algorithm SHA256).Hash.ToLower() -ne 'e39986a178d585ce7ac198fb8de6ea436366dc0cc00e594810c2e3e104c04b90') { throw 'Editor digest mismatch' }
+          Expand-Archive editor.zip editor
+          $godot = (Get-ChildItem editor -Filter '*.exe' | Where-Object { $_.Name -notmatch 'console' } | Select-Object -First 1).FullName
+          python tools/restore_private_runtime.py --vault ../vault --out ../vault/runtime
+          if ($LASTEXITCODE) { throw 'Runtime failure' }
+          python tools/windows_ci.py build --runtime ../vault/runtime --template ../vault/runtime/template-win64.exe --godot "$godot" --out player-check
+          if ($LASTEXITCODE) { throw 'Build failure' }
+          python tools/windows_ci.py verify --out player-check
+          if ($LASTEXITCODE) { throw 'Windows native regression failed' }
+          New-Item -ItemType Directory deliverable -Force
+          Copy-Item player-check/*.zip deliverable/
+          Copy-Item player-check/build.json deliverable/
+          Copy-Item player-check/evidence deliverable/ -Recurse
+      - name: Seal private output
+        if: always()
+        shell: pwsh
+        working-directory: source
+        run: |
+          New-Item -ItemType Directory deliverable -Force
+          Copy-Item player-check/*.log deliverable/ -ErrorAction SilentlyContinue
+          python tools/seal_quality_artifacts.py --signing ../vault/android/android-signing.json --source deliverable --output windows-quality.sealed
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: windows-quality-encrypted
+          path: source/windows-quality.sealed
+          retention-days: 3

@@ -1,5 +1,7 @@
 extends Node2D
 
+const Facing = preload("res://facing.gd")
+const Navigation = preload("res://navigation.gd")
 const Rules = preload("res://rules.gd")
 const Store = preload("res://save_store.gd")
 const Assets = preload("res://assets.gd")
@@ -75,6 +77,13 @@ var loading_progress: ProgressBar
 var startup_log_path = ""
 var continuity
 var continuity_blocked=false
+var mobile=false
+var navigation
+var walk_clock=0.0
+var direct_direction=-1
+var last_menu_state="creation"
+var frame_times=PackedFloat64Array()
+var last_frame_us=0
 var touch_controls
 
 func show_loading():
@@ -117,6 +126,11 @@ func _ready():
         if arg.begins_with("--") and "=" in arg:
             var parts = arg.trim_prefix("--").split("=",true,1)
             options[parts[0]] = parts[1]
+    mobile=OS.get_name()=="Android" or options.has("touch-test")
+    navigation=Navigation.new(self)
+    if mobile:
+        get_viewport().content_scale_size=Vector2i(960,640)
+        get_viewport().content_scale_aspect=Window.CONTENT_SCALE_ASPECT_EXPAND
     asset_folder = options.get("assets",OS.get_environment("BARAM_PRIVATE_ASSETS"))
     if asset_folder == "":
         asset_folder = "res://private_assets" if OS.get_name()=="Android" else ProjectSettings.globalize_path("res://../private_assets")
@@ -254,6 +268,7 @@ func create_character():
     player.world_revision=world.get("revision","authored-1")
     creation_controls.queue_free()
     menu = ""
+    reset_motion()
     event("character_created",{"job":player.job,"name":player.name})
     if continuity!=null:save_game()
     notice("장비상에게 Enter로 대화하세요. I: 물품, E: 장착, Space: 공격")
@@ -273,14 +288,6 @@ func _input(input):
     if not startup_ready:
         if startup_failed and input is InputEventKey and input.pressed and input.keycode in [KEY_Q,KEY_ESCAPE]:get_tree().quit(2)
         return
-    if input is InputEventMouseButton and input.pressed and input.button_index == MOUSE_BUTTON_LEFT and menu == "":
-        var at = (input.position - VIEW.position)/STEP + camera()
-        for id in entities:
-            var e = entities[id]
-            if e.alive and e.map == player.map and Vector2(e.x,e.y).distance_to(at) < 1.0:
-                selected_target = id
-                notice(e.spec.name + " 선택")
-        return
     if not input is InputEventKey or not input.pressed or input.echo:
         return
     var key = input.keycode
@@ -290,6 +297,7 @@ func _input(input):
     if key==KEY_F8:
         write_diagnostic("USER_SNAPSHOT")
         return
+    if key in [KEY_UP,KEY_LEFT,KEY_DOWN,KEY_RIGHT,KEY_W,KEY_A,KEY_S,KEY_D] and menu=="":navigation.cancel()
     if key==KEY_O and menu=="":
         menu="equipment";selected=0;choices=player.get("equipment_instances",{}).keys().filter(func(id):return not player.equipment_instances[id].destroyed)
         return
@@ -311,7 +319,9 @@ func _input(input):
     if key == KEY_ESCAPE:
         if menu != "":
             menu = ""
+            clear_inputs()
         else:
+            clear_inputs()
             save_game()
             menu = "pause"
         return
@@ -328,7 +338,7 @@ func _input(input):
             event("equipped",{"item":title})
             notice(title + " 장착")
     elif key == KEY_SPACE:
-        begin_attack()
+        navigation.attack_selected()
     elif key == KEY_ENTER or key == KEY_F:
         interact()
     elif key == KEY_G or key == KEY_COMMA:
@@ -356,6 +366,11 @@ func _input(input):
 func _process(delta: float):
     if not startup_ready:return
     if continuity_blocked and (continuity==null or not continuity.resolving):return
+    var now_us=Time.get_ticks_usec()
+    if last_frame_us>0 and frame_times.size()<72000:frame_times.append((now_us-last_frame_us)/1000.0)
+    last_frame_us=now_us
+    if menu!=last_menu_state:
+        clear_inputs();last_menu_state=menu
     clock += delta
     if player.is_empty():
         queue_redraw()
@@ -369,8 +384,10 @@ func _process(delta: float):
         poison_clock+=delta
         if poison_clock>=1.0:poison_clock-=1.0;hurt_player(2,"poison")
     else:poison_clock=0.0
-    move_wait = maxf(0,move_wait-delta)
-    attack_wait = maxf(0,attack_wait-delta)
+    var was_moving=step_progress<1.0
+    move_wait = maxf(-0.1,move_wait-delta)
+    if was_moving:walk_clock+=delta
+    attack_wait = maxf(-0.1,attack_wait-delta)
     hurt_time = maxf(0,hurt_time-delta)
     step_progress = minf(1,step_progress + delta/0.18)
     if cast_elapsed>=0:
@@ -391,12 +408,15 @@ func _process(delta: float):
         if attack_elapsed >= 0.4:
             attack_elapsed = -1.0
     if menu == "" and not continuity_blocked:
-        if Input.is_physical_key_pressed(KEY_SPACE):
-            begin_attack()
-        for k in [KEY_UP,KEY_LEFT,KEY_DOWN,KEY_RIGHT]:
+        if Input.is_physical_key_pressed(KEY_SPACE):navigation.attack_selected()
+        var direction=direct_direction
+        for k in [KEY_UP,KEY_LEFT,KEY_DOWN,KEY_RIGHT,KEY_W,KEY_A,KEY_S,KEY_D]:
             if Input.is_physical_key_pressed(k):
-                move_player({KEY_UP:0,KEY_LEFT:1,KEY_DOWN:2,KEY_RIGHT:3}[k])
+                navigation.cancel()
+                direction={KEY_UP:0,KEY_LEFT:1,KEY_DOWN:2,KEY_RIGHT:3,KEY_W:0,KEY_A:1,KEY_S:2,KEY_D:3}[k]
                 break
+        if direction>=0:move_player(direction)
+        navigation.tick(delta)
         update_monsters(delta)
     for fx in effects:
         fx.time += delta
@@ -412,14 +432,43 @@ func _process(delta: float):
 func cell() -> Vector2i:
     return Vector2i(int(player.x),int(player.y))
 
+func field_rect() -> Rect2:
+    return Rect2(Vector2.ZERO,get_viewport_rect().size) if mobile else VIEW
+
+func visual_position() -> Vector2:
+    if player.is_empty():return Vector2(4,7)
+    return from_position.lerp(Vector2(player.x,player.y),step_progress) if step_progress<1 else Vector2(player.x,player.y)
+
 func camera() -> Vector2:
-    if player.is_empty():
-        return Vector2(4,7)
-    var m = maps[player.map]
-    return Vector2(clampi(int(player.x)-8,0,maxi(0,int(m.width)-16)),clampi(int(player.y)-5,0,maxi(0,int(m.height)-10)))
+    if player.is_empty():return Vector2(4,7)
+    var m=maps[player.map];var size=field_rect().size/STEP;var p=visual_position()
+    return Vector2(clampf(p.x-size.x/2,0,maxf(0,float(m.width)-size.x)),clampf(p.y-size.y/2,0,maxf(0,float(m.height)-size.y))).snapped(Vector2.ONE/STEP)
 
 func screen_point(x: float,y: float) -> Vector2:
-    return VIEW.position + (Vector2(x,y)-camera())*STEP + Vector2(STEP/2,STEP)
+    return (field_rect().position + (Vector2(x,y)-camera())*STEP + Vector2(STEP/2,STEP)).round()
+
+func reset_motion():
+    if not player.is_empty():from_position=Vector2(player.x,player.y)
+    step_progress=1.0;move_wait=0.0
+    if navigation!=null:navigation.cancel()
+
+func clear_inputs():
+    direct_direction=-1
+    if navigation!=null:navigation.cancel()
+    if touch_controls!=null:touch_controls.release_all()
+
+func _unhandled_input(input):
+    if not startup_ready or continuity_blocked or menu!="" or mobile:return
+    if input is InputEventMouseButton and input.pressed and input.button_index==MOUSE_BUTTON_LEFT and field_rect().has_point(input.position):navigation.tap(input.position)
+
+func _notification(what):
+    if what in [NOTIFICATION_APPLICATION_PAUSED,NOTIFICATION_APPLICATION_FOCUS_OUT]:clear_inputs()
+    if what==NOTIFICATION_WM_GO_BACK_REQUEST and mobile:
+        if continuity!=null and continuity.panel.visible:
+            if not continuity.busy:continuity.panel.hide();continuity_blocked=false
+        elif menu!="creation":
+            var e=InputEventKey.new();e.pressed=true;e.keycode=KEY_ESCAPE;_input(e)
+        clear_inputs()
 
 func free_cell(map_id: String, pos: Vector2i, actor_id: String = "",direction: int = -1) -> bool:
     var m = maps[map_id]
@@ -438,7 +487,7 @@ func free_cell(map_id: String, pos: Vector2i, actor_id: String = "",direction: i
     return true
 
 func move_player(direction: int):
-    if move_wait > 0 or attack_elapsed >= 0 or cast_elapsed>=0 or menu != "" or rules.actions.status_modifier(player,"stun")>0:
+    if move_wait > 0.000001 or attack_elapsed >= 0 or cast_elapsed>=0 or menu != "" or rules.actions.status_modifier(player,"stun")>0:
         return
     player.direction = direction
     var next = cell() + DIRECTIONS[direction]
@@ -448,8 +497,9 @@ func move_player(direction: int):
     from_position = Vector2(player.x,player.y)
     player.x = next.x
     player.y = next.y
-    step_progress = 0.0
-    move_wait = 0.18
+    var carry=maxf(0,-move_wait) if step_progress>=1 and move_wait> -0.09 else 0.0
+    step_progress = carry/0.18
+    move_wait = 0.18-carry
     event("moved",{"map":player.map,"x":player.x,"y":player.y,"direction":direction})
     for portal in maps[player.map].portals:
         if portal.get("trigger","walk")=="walk" and next == Vector2i(portal.x,portal.y):
@@ -465,7 +515,7 @@ func transition(map_id: String, entry: Array):
     player.y = int(entry[1])
     if not player.has("visited"):player.visited=[]
     if map_id not in player.visited:player.visited.append(map_id)
-    step_progress = 1.0
+    reset_motion()
     selected_target = ""
     attack_elapsed=-1.0;attack_target="";cast_elapsed=-1.0;pending_spell={};effects.clear()
     work_assets.tile_cache.clear()
@@ -484,9 +534,9 @@ func cycle_target():
         selected_target = available[(available.find(selected_target)+1)%available.size()]
 
 func begin_attack():
-    if attack_wait > 0 or cast_elapsed>=0 or int(player.hp) <= 0 or menu != "" or rules.actions.status_modifier(player,"stun")>0:
+    if attack_wait > 0.000001 or cast_elapsed>=0 or int(player.hp) <= 0 or menu != "" or rules.actions.status_modifier(player,"stun")>0:
         return
-    attack_wait = 0.6
+    attack_wait = 0.6+minf(0,attack_wait) if attack_wait> -0.09 else 0.6
     attack_elapsed = 0.0
     impact_done = false
     attack_target = ""
@@ -757,7 +807,7 @@ func resolve_spell(cast: Dictionary):
         play_sound("skill")
     event("skill_cast",{"skill":title,"mp":player.mp,"hp":player.hp,"slot":cast.slot,"behavior":kind,"classification":profile.get("classification","")})
 
-func interact():
+func interact(required_id: String=""):
     for portal in maps[player.map].portals:
         if portal.get("trigger","walk")=="interact" and Vector2i(portal.x,portal.y)==cell():
             transition(portal.target,portal.entry);return
@@ -768,6 +818,7 @@ func interact():
         var b_cost = -1.0 if Vector2i(b.x,b.y)==facing else Vector2i(b.x,b.y).distance_to(cell())
         return a_cost < b_cost)
     for n in nearby:
+        if required_id!="" and n.id!=required_id:continue
         if Vector2i(n.x,n.y).distance_to(cell()) <= 1.5:
             npc = n
             selected = 0
@@ -821,6 +872,7 @@ func interact():
     pickup()
 
 func open_inventory():
+    clear_inputs()
     menu = "inventory"
     selected = 0
     choices = player.inventory.keys().filter(func(k):return int(player.inventory[k]) > 0)
@@ -964,6 +1016,7 @@ func snapshot() -> Dictionary:
             "rng_state":str(rules.rng.state),"content_version":content.version,"game_build":store.game_build,"save_format_version":Store.VERSION}
 
 func restore(state: Dictionary):
+    clear_inputs()
     var fresh_entities=entities.duplicate(true)
     player = state.player
     rules.actions.ensure(player)
@@ -1026,6 +1079,7 @@ func restore(state: Dictionary):
         m.npcs.append(guide)
     menu = ""
     event("save_restored",{"map":player.map,"level":player.level,"equipped":player.equipped})
+    reset_motion()
 
 func save_game() -> bool:
     if player.is_empty():return false
@@ -1045,11 +1099,16 @@ func write_diagnostic(code: String):
     DirAccess.make_dir_recursive_absolute(path.get_base_dir())
     var f=FileAccess.open(path,FileAccess.WRITE)
     if f==null:return
+    var sorted=frame_times.duplicate();sorted.sort()
+    var total=0.0;var over50=0;var over100=0
+    for ms in sorted:total+=ms;over50+=int(ms>50);over100+=int(ms>100)
+    var performance={"samples":sorted.size(),"mean_ms":total/maxi(1,sorted.size()),"over_50_ms":over50,"over_100_ms":over100,"p99_ms":sorted[int(sorted.size()*.99)] if not sorted.is_empty() else 0}
     # One bounded local file; no full user save or secret is uploaded/packaged.
     f.store_string(JSON.stringify({"code":code,"build":store.game_build,"content_version":content.version,
-        "map_id":player.get("map",""),"rng_state":str(rules.rng.state),"recent_events":event_log.slice(maxi(0,event_log.size()-32)),
+        "frame_performance":performance,"position":[player.get("x",0),player.get("y",0)],"menu":menu,"direction":player.get("direction",2),"navigation_generation":navigation.generation if navigation!=null else 0,"navigation_path":navigation.path if navigation!=null else [],"camera":[camera().x,camera().y],"viewport":[get_viewport_rect().size.x,get_viewport_rect().size.y],"map_id":player.get("map",""),"rng_state":str(rules.rng.state),"recent_events":event_log.slice(maxi(0,event_log.size()-32)),
         "rules_error":rules.actions.last_error,"save_error":store.last_error},"  "))
-    f.close();notice("오류 재현 기록을 개인 저장 폴더에 남겼습니다.")
+    f.close();print("BARAM_DIAGNOSTIC "+JSON.stringify({"build":store.game_build,"frame_performance":performance,"map":player.get("map",""),"position":[player.get("x",0),player.get("y",0)],"menu":menu}))
+    notice("오류 재현 기록을 개인 저장 폴더에 남겼습니다.")
 
 func label(text: String, pos: Vector2, size: int = 16, color: Color = Color(0.91,0.86,0.7)):
     draw_string(font,pos,text,HORIZONTAL_ALIGNMENT_LEFT,-1,size,color)
@@ -1109,29 +1168,30 @@ func _draw():
     if assets.tiles.is_empty() or font.data.is_empty():
         return
     work_assets.begin_frame()
-    draw_rect(Rect2(0,0,960,640),Color(0.055,0.065,0.055))
+    draw_rect(Rect2(Vector2.ZERO,get_viewport_rect().size),Color(0.055,0.065,0.055))
     var map_id = "village" if player.is_empty() else player.map
     var m = maps[map_id]
     var cam = camera()
-    for y in range(int(cam.y),mini(int(m.height),int(cam.y)+10)):
-        for x in range(int(cam.x),mini(int(m.width),int(cam.x)+16)):
+    var field=field_rect();var span=field.size/STEP
+    for y in range(int(cam.y),mini(int(m.height),ceili(cam.y+span.y)+1)):
+        for x in range(int(cam.x),mini(int(m.width),ceili(cam.x+span.x)+1)):
             var tile = str(m.ground[y][x])
             var texture=tile_texture(tile)
-            if texture!=null:draw_texture_rect(texture,Rect2(VIEW.position+(Vector2(x,y)-cam)*STEP,Vector2(STEP,STEP)),false)
+            if texture!=null:draw_texture_rect(texture,Rect2(field.position+(Vector2(x,y)-cam)*STEP,Vector2(STEP,STEP)),false)
     for portal in m.portals:
-        if Rect2(cam,Vector2(16,10)).has_point(Vector2(portal.x,portal.y)):
+        if Rect2(cam,span+Vector2.ONE).has_point(Vector2(portal.x,portal.y)):
             var p = screen_point(portal.x,portal.y)
             draw_rect(Rect2(p-Vector2(22,44),Vector2(44,42)),Color(0.8,0.7,0.3,0.3))
             if not player.is_empty() and Vector2i(portal.x,portal.y).distance_to(cell())<2:label(portal.label,p-Vector2(38,5),12,Color(1,0.95,0.5))
     for drop in loot:
-        if drop.map == map_id and Rect2(cam,Vector2(16,10)).has_point(Vector2(drop.x,drop.y)):
+        if drop.map == map_id and Rect2(cam,span+Vector2.ONE).has_point(Vector2(drop.x,drop.y)):
             icon(drop.item,screen_point(drop.x,drop.y))
     for fx in effects:
         if fx.has("work_asset"):work_assets.draw_effect(self,fx.work_asset,"back",int(fx.time*1000),screen_point(fx.x,fx.y),int(fx.lifetime_ms))
     var visible = []
-    for row in range(int(cam.y),mini(int(m.height),int(cam.y)+10)):
+    for row in range(int(cam.y),mini(int(m.height),ceili(cam.y+span.y)+1)):
         for d in decoration_rows.get(map_id,{}).get(row,[]):
-            if Rect2(cam,Vector2(16,10)).has_point(Vector2(d.x,d.y)):
+            if Rect2(cam,span+Vector2.ONE).has_point(Vector2(d.x,d.y)):
                 visible.append({"type":"decoration","y":d.get("anchor_y",d.y),"data":d})
     for n in m.npcs:
         visible.append({"type":"npc","y":n.y,"data":n})
@@ -1146,9 +1206,9 @@ func _draw():
         var e = v.data
         if v.type=="decoration":
             var texture=tile_texture(e.tile)
-            if texture!=null:draw_texture_rect(texture,Rect2(VIEW.position+(Vector2(e.x,e.y)-cam)*STEP,Vector2(STEP,STEP)),false)
+            if texture!=null:draw_texture_rect(texture,Rect2(field.position+(Vector2(e.x,e.y)-cam)*STEP,Vector2(STEP,STEP)),false)
             continue
-        if not Rect2(cam-Vector2(1,1),Vector2(18,12)).has_point(Vector2(e.x,e.y)):
+        if not Rect2(cam-Vector2(1,1),span+Vector2(2,2)).has_point(Vector2(e.x,e.y)):
             continue
         var pos = screen_point(e.x,e.y)
         if v.type == "player":
@@ -1159,14 +1219,14 @@ func _draw():
         else:
             var key = visual_key(str(e.kind))
             var spec = assets.actor_data.get(key,{"walk":3,"attack":2,"delay_ms":100})
-            var direction = int(e.get("direction",2))
+            var direction = Facing.sprite(int(e.get("direction",2)))
             var frame = direction*int(spec.walk)+int(clock*6)%int(spec.walk)
             if v.type=="monster" and float(e.get("attack_elapsed",-1))>=0 and int(spec.attack)>0:
                 frame=4*int(spec.walk)+direction*int(spec.attack)+mini(int(spec.attack)-1,int(float(e.attack_elapsed)*1000/maxi(1,int(spec.delay_ms))))
             var opacity = 0.7 if float(e.get("hurt",0)) > 0 else 1.0
             if content.records.has(key):
                 var attacking=float(e.get("attack_elapsed",-1))>=0
-                work_assets.draw_animation(self,key,"attack" if attacking else "walk",direction,int((e.attack_elapsed if attacking else clock)*1000),pos,opacity)
+                work_assets.draw_animation(self,key,"attack" if attacking else "walk",int(e.get("direction",2)),int((e.attack_elapsed if attacking else clock)*1000),pos,opacity)
             else:draw_actor(key,frame,pos,opacity)
             var title = e.name if v.type == "npc" else e.spec.name
             label(title,pos-Vector2(28,90),13,Color(0.9,0.9,0.65))
@@ -1189,10 +1249,18 @@ func _draw():
     if m.kind=="dungeon" and not player.is_empty():
         var lit=player.buffs.get("누리의빛",0)>0 or player.buffs.get("대지의빛",0)>0 or player.buffs.get("바다의 빛",0)>0
         var radius=8.0 if lit else 3.0
-        for y in range(10):
-            for x in range(16):
+        for y in range(ceili(span.y)):
+            for x in range(ceili(span.x)):
                 if (Vector2(x,y)+cam-Vector2(player.x,player.y)).length()>radius:
-                    draw_rect(Rect2(VIEW.position+Vector2(x,y)*STEP,Vector2(STEP,STEP)),Color(0,0,0,0.30))
+                    draw_rect(Rect2(field.position+Vector2(x,y)*STEP,Vector2(STEP,STEP)),Color(0,0,0,0.30))
+    if navigation!=null and navigation.marker.x>=0:
+        var mark=screen_point(navigation.marker.x,navigation.marker.y)-Vector2(0,STEP/2)
+        draw_arc(mark,13,0,TAU,24,Color(1,.35,.3,.8) if navigation.marker_failed else Color(.95,.84,.45,.85),2)
+    if mobile:
+        if menu=="creation":
+            box(Rect2(238,152,484,314),Color(.12,.14,.12));label("새로운 여정",Vector2(395,196),25)
+            label("이름",Vector2(299,268),18)
+        return
     box(Rect2(0,0,960,48))
     label("바람의나라",Vector2(18,32),23,Color(0.96,0.82,0.43))
     label(m.name,Vector2(212,31),17)
@@ -1215,15 +1283,16 @@ func _draw():
 func draw_player(pos: Vector2):
     var job = Rules.JOBS.find(player.job)
     if int(player.hp) == 0:
-        draw_actor("ghost",int(player.direction)*3+int(clock*6)%3,pos)
+        draw_actor("ghost",Facing.sprite(int(player.direction))*3+int(clock*6)%3,pos)
         return
     var direction = int(player.direction)
     for status in player.statuses.values():
         var replacement=status.get("visual",{}).get("replacement_actor","")
         if replacement!="":
             var spec=assets.actor_data.get(replacement,{})
-            if not spec.is_empty():draw_actor(replacement,direction*int(spec.walk)+int(clock*6)%int(spec.walk),pos);return
+            if not spec.is_empty():draw_actor(replacement,Facing.sprite(direction)*int(spec.walk)+int(clock*6)%int(spec.walk),pos);return
     if draw_work_player(pos,direction):return
+    direction=Facing.sprite(direction)
     if player.buffs.get("금수",0)>0:
         var spec=assets.actor_data.rabbit
         draw_actor("rabbit",direction*int(spec.walk)+int(clock*6)%int(spec.walk),pos)
@@ -1234,7 +1303,7 @@ func draw_player(pos: Vector2):
         return
     var binding=rules.visual_bindings.get(player.equipped,assets.actor_data.get("equipment_bindings",{}).get(player.equipped,{"sprite":"wood_weapon","motion":"sword"}))
     var motion=assets.actor_data.get("motion_bindings",{})
-    var body_frame = direction*3+(int(clock*10)%3 if step_progress < 1 else 1)
+    var body_frame = direction*3+(int(walk_clock*10)%3 if step_progress < 1 else 1)
     var weapon_frame = body_frame
     if player.equipped != "": body_frame += int(motion.get("walk_"+str(binding.motion),12))
     if attack_elapsed >= 0:
@@ -1333,7 +1402,7 @@ func draw_menu():
 
 func start_exercise():
     # Implemented in a separate script so validation calls the actual event handlers.
-    var script="res://mobile_smoke_probe.gd" if test_mode.begins_with("mobile-") else "res://native_regression.gd" if test_mode.begins_with("native-") else "res://work_play_probe.gd" if test_mode.begins_with("work-") else "res://exercise.gd"
+    var script="res://quality_probe.gd" if test_mode.begins_with("quality-") else "res://mobile_smoke_probe.gd" if test_mode.begins_with("mobile-") else "res://native_regression.gd" if test_mode.begins_with("native-") else "res://work_play_probe.gd" if test_mode.begins_with("work-") else "res://exercise.gd"
     var runner = load(script).new()
     add_child(runner)
     await runner.run(self,test_mode,test_root)
@@ -1395,7 +1464,7 @@ func draw_work_player(pos: Vector2, direction: int) -> bool:
     var weapon=weapon_data.get("equipment_asset_id",weapon_data.get("asset_id",""))
     var motion=weapon_data.get("motion","sword")
     var action="walk_"+motion if weapon!="" else "walk_unarmed"
-    var elapsed=int(clock*1000) if step_progress<1 else 100
+    var elapsed=int(walk_clock*1000) if step_progress<1 else 100
     var weapon_action="walk"
     if attack_elapsed>=0:action="attack_"+motion;weapon_action="attack";elapsed=int(attack_elapsed*1000)
     elif cast_elapsed>=0:action="cast";elapsed=int(cast_elapsed*1000)

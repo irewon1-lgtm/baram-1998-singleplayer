@@ -35,6 +35,8 @@ func initialize(g):
     open.add_theme_font_override("font",game.font);open.pressed.connect(show_login);add_child(open)
     var exit=Button.new();exit.text="저장하고 나가기";exit.position=Vector2(790,598);exit.size=Vector2(160,36)
     exit.add_theme_font_override("font",game.font);exit.pressed.connect(save_and_exit);add_child(exit)
+    if game.mobile:
+        open.hide();exit.hide();badge.hide()
     make_login()
     get_tree().auto_accept_quit=false
     if not config.is_empty():
@@ -61,6 +63,7 @@ func make_login():
 
 func show_login():
     if busy:return
+    game.clear_inputs()
     panel.show();game.continuity_blocked=true
     message.text="같은 이메일과 비밀번호로 PC·폰·태블릿을 이어합니다.\n처음 로그인하면 계정이 만들어집니다. 캐릭터는 하나만 사용합니다."
     if config.is_empty():message.text="계정 저장 서비스 연결 대기입니다. 현재 기기 저장과 기존 파일은 그대로 사용할 수 있습니다."

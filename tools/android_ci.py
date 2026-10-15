@@ -94,9 +94,9 @@ command_line/extra_args="{'--audio-driver Dummy' if args.verification else ''}"
 architectures/armeabi-v7a=false
 architectures/arm64-v8a={str(not args.verification).lower()}
 architectures/x86=false
-architectures/x86_64={str(args.verification).lower()}
+architectures/x86_64={str(args.verification or args.universal).lower()}
 version/code={version}
-version/name="0.2.{commit[:8]}"
+version/name="0.3.{commit[:8]}"
 package/unique_name="org.irewon.baram.singleplayer{'.verification' if args.verification else ''}"
 package/name="바람의나라"
 package/signed=true
@@ -127,7 +127,7 @@ keystore/release_password={json.dumps(signing['password'])}
         if not args.verification and any(re.search(r'(?:probe|runner)\.gd(?:c|\.remap)?$|/native_regression\.gd|/exercise\.gd|initial_save\.json|mobile_probe\.json|verification\.pck',n) for n in z.namelist()):
             raise ValueError('Development files leaked into player APK')
         if not any('arm64-v8a/' in n for n in z.namelist()) and not args.verification:raise ValueError('ARM64 missing')
-        if any('x86_64/' in n for n in z.namelist()) and not args.verification:raise ValueError('Emulator ABI leaked into player APK')
+        if any('x86_64/' in n for n in z.namelist()) and not args.verification and not args.universal:raise ValueError('Unexpected emulator ABI in ARM-only APK')
         unpacked=sum(i.file_size for i in z.infolist())
     # Exact original source/pack membership is checked before packing, never
     # claim byte equivalence merely because the app contains some textures.
@@ -146,5 +146,6 @@ if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__)
     for key in ['runtime','godot','template','sdk','signing','out']:p.add_argument('--'+key,required=True)
     p.add_argument('--cloud');p.add_argument('--require-cloud',action='store_true');p.add_argument('--verification',action='store_true');p.add_argument('--editor-settings')
+    p.add_argument('--universal',action='store_true',help='One signed ARM64+x86_64 player APK for exact-artifact emulator testing')
     p.add_argument('--probe-mode',default='native-core');p.add_argument('--initial-save')
     build(p.parse_args())

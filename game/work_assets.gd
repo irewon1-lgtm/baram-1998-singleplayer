@@ -1,4 +1,5 @@
 extends RefCounted
+const Facing=preload("res://facing.gd")
 ## Work schema 1 renderer. Metadata stays separate; PNG pages load on demand.
 var content
 var metadata_cache={}
@@ -75,7 +76,7 @@ func frame_index(asset_id: String, action: String, direction: int, elapsed_ms: i
     if sequence.is_empty():return -1
     var count=int(sequence.get("frames_per_direction",0));var step=int(sequence.get("frame_ms",0))
     if count<=0 or step<=0 or direction<0 or direction>=int(sequence.get("directions",4)):return -1
-    return int(meta.get("starting_frame",0))+int(sequence.get("offset",0))+direction*count+(int(elapsed_ms/step)%count)
+    return int(meta.get("starting_frame",0))+int(sequence.get("offset",0))+Facing.sprite(direction)*count+(int(elapsed_ms/step)%count)
 
 func draw_frame(canvas, asset_id: String, index: int, feet: Vector2, opacity: float=1.0) -> bool:
     var data=content.definition(asset_id);var meta=data.get("metadata",{})
