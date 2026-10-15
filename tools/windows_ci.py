@@ -145,15 +145,25 @@ def run_probe(args, stage, mode, evidence, save, windowed=False):
     evidence.mkdir(parents=True,exist_ok=True)
     log_path=evidence/(mode+'.log')
     start=time.monotonic();peak=0;ready=None;last_stage='engine initialization'
+    first_output=None;engine_bootstrap=None;ready_wall=None;window_samples=0
     with log_path.open('w',encoding='utf-8') as log:
         process=subprocess.Popen(cmd,stdout=log,stderr=subprocess.STDOUT)
         try:
             while process.poll() is None:
                 peak=max(peak,process_rss(process.pid))
+                if windowed:
+                    state=windows_window_state(process.pid)
+                    window_samples+=state['visible_windows']>0
+                    if state['hung']:raise RuntimeError('Windows OS marked game window unresponsive during '+last_stage)
                 raw=log_path.read_text(encoding='utf-8',errors='replace')
+                if raw and first_output is None:first_output=time.monotonic()-start
                 for line in raw.splitlines():
-                    if line.startswith('BARAM_STARTUP '):last_stage=json.loads(line.split(' ',1)[1])['stage']
-                    if line.startswith('BARAM_READY '):ready=json.loads(line.split(' ',1)[1])
+                    if line.startswith('BARAM_STARTUP '):
+                        phase=json.loads(line.split(' ',1)[1]);last_stage=phase['stage']
+                        if engine_bootstrap is None:engine_bootstrap=max(0,time.monotonic()-start-phase['elapsed_ms']/1000)
+                    if line.startswith('BARAM_READY '):
+                        ready=json.loads(line.split(' ',1)[1])
+                        if ready_wall is None:ready_wall=time.monotonic()-start
                 if ready is None and time.monotonic()-start>60:raise TimeoutError('Startup timeout at '+last_stage)
                 if time.monotonic()-start>240:raise TimeoutError('Game regression timeout')
                 if peak>2*1024**3:raise MemoryError('Peak RSS exceeds 2 GiB')
@@ -166,11 +176,18 @@ def run_probe(args, stage, mode, evidence, save, windowed=False):
     if report['status']!='PASS' or any(c['status']!='PASS' for c in report['checks']):raise RuntimeError('Game checks failed')
     if ready is None or ready['elapsed_ms']>60000:raise RuntimeError('Missing/tardy ready marker')
     if os.name=='nt' and peak==0:raise RuntimeError('Windows memory monitor returned no evidence')
+    if windowed and window_samples==0:raise RuntimeError('No visible native Windows window was observed')
     if windowed and not any(c['name']=='windowed_game_frame_rendered' and c['status']=='PASS' for c in report['checks']):
         raise RuntimeError('Normal Windows EXE did not prove a rendered game frame')
     return {'mode':mode,'status':'PASS','platform':report['platform'],'peak_rss_bytes':peak if peak else None,
             'execution_mode':'WINDOWED_EXE' if windowed else 'HEADLESS_EXE',
             'audio_output':'NOT_TESTED_CI_DUMMY_NO_AUDIO_DEVICE',
+            'windows_message_pump':'PASS' if windowed else 'NOT_OBSERVED_HEADLESS',
+            'visible_window_samples':window_samples if windowed else None,
+            'first_engine_output_seconds':round(first_output,3) if first_output is not None else None,
+            'engine_and_bootstrap_seconds':round(engine_bootstrap,3) if engine_bootstrap is not None else None,
+            'startup_wall_seconds':round(ready_wall,3) if ready_wall is not None else None,
+            'timing_sample_interval_ms':100,
             'rss_monitoring':'PASS' if peak else 'BLOCKED_LINUX_PID_NAMESPACE',
             'engine_static_memory_bytes':ready['static_memory'] or None,
             'engine_static_memory_monitoring':'OBSERVED' if ready['static_memory'] else 'UNAVAILABLE_ENGINE_BUILD',
@@ -191,6 +208,7 @@ def verify(args):
     if any(r['game_build']!=manifest['build']['commit'] for r in runs):raise ValueError('Evidence belongs to another build')
     result={'status':'PASS','windows_native_execution':'PASS' if os.name=='nt' else 'NOT_RUN_LINUX_EMBEDDED_PCK_ONLY',
             'windows_windowed_startup':'PASS' if os.name=='nt' else 'NOT_RUN_LINUX',
+            'windows_message_pump':'PASS' if any(r['windows_message_pump']=='PASS' for r in runs) else 'NOT_RUN_LINUX',
             'game_function_automation':'PASS','actual_windows_gui':'BLOCKED_NO_OPERATOR_GUI_OBSERVATION',
             'runs':runs,'source_sha':manifest['build']['commit']}
     write_json(out/'verification.json',result)
@@ -203,6 +221,7 @@ def archive(args):
     if result['status']!='PASS' or result['game_function_automation']!='PASS':raise ValueError('Verification gate failed')
     if args.require_windows and result['windows_native_execution']!='PASS':raise ValueError('Windows-native evidence is required')
     if args.require_windows and result.get('windows_windowed_startup')!='PASS':raise ValueError('Normal Windows EXE rendering evidence is required')
+    if args.require_windows and result.get('windows_message_pump')!='PASS':raise ValueError('Windows message-pump evidence is required')
     if os.environ.get('GITHUB_ACTIONS')=='true' and os.environ.get('BARAM_PRIVATE_REPOSITORY')!='true' and os.environ.get('BARAM_PRIVATE_DELIVERY_VERIFIED')!='true':
         raise ValueError('Public repository may not create/publish a plaintext private game ZIP')
     stage=Path(json.loads((out/'build.json').read_text(encoding='utf-8'))['stage'])
@@ -220,6 +239,29 @@ def archive(args):
     write_json(out/'delivery.json',{'file':str(target),'bytes':target.stat().st_size,'sha256':sha256(target),
                                   'verification':result})
     print('ZIP_READY '+str(target))
+
+
+def windows_window_state(pid):
+    """Observe the game's actual native window, including Windows' hung flag."""
+    import ctypes
+    from ctypes import wintypes
+    user=ctypes.WinDLL('user32',use_last_error=True)
+    callback_type=ctypes.WINFUNCTYPE(wintypes.BOOL,wintypes.HWND,wintypes.LPARAM)
+    user.EnumWindows.argtypes=[callback_type,wintypes.LPARAM]
+    user.EnumWindows.restype=wintypes.BOOL
+    user.GetWindowThreadProcessId.argtypes=[wintypes.HWND,ctypes.POINTER(wintypes.DWORD)]
+    user.GetWindowThreadProcessId.restype=wintypes.DWORD
+    user.IsWindowVisible.argtypes=[wintypes.HWND];user.IsWindowVisible.restype=wintypes.BOOL
+    user.IsHungAppWindow.argtypes=[wintypes.HWND];user.IsHungAppWindow.restype=wintypes.BOOL
+    visible=[]
+    @callback_type
+    def inspect(hwnd,_parameter):
+        owner=wintypes.DWORD()
+        user.GetWindowThreadProcessId(hwnd,ctypes.byref(owner))
+        if owner.value==pid and user.IsWindowVisible(hwnd):visible.append(bool(user.IsHungAppWindow(hwnd)))
+        return True
+    if not user.EnumWindows(inspect,0):raise RuntimeError('Native Windows window observation failed')
+    return {'visible_windows':len(visible),'hung':any(visible)}
 
 
 def process_rss(pid):

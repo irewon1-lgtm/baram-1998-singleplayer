@@ -41,7 +41,7 @@ def publish(args):
     else:
         delivery=json.loads((out/'delivery.json').read_text())
         checks=delivery['verification']
-        if checks.get('status')!='PASS' or checks.get('windows_native_execution')!='PASS' or checks.get('windows_windowed_startup')!='PASS' or checks.get('game_function_automation')!='PASS':
+        if checks.get('status')!='PASS' or checks.get('windows_native_execution')!='PASS' or checks.get('windows_windowed_startup')!='PASS' or checks.get('windows_message_pump')!='PASS' or checks.get('game_function_automation')!='PASS':
             raise ValueError('Native verification gate failed')
         asset=Path(delivery['file'])
         if asset.stat().st_size!=delivery['bytes'] or sha256(asset)!=delivery['sha256']:raise ValueError('Player ZIP changed')
