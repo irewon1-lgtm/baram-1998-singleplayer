@@ -1,0 +1,131 @@
+name: Native UI and beginner route verification
+on:
+  push:
+    branches: [work/ui-hunting-repair-20261015]
+    paths: ['.github/workflows/ui-hunting-native.yml', 'tools/ui_native_ci.py', 'tools/ui_native_android_story.py']
+permissions:
+  contents: read
+concurrency:
+  group: ui-hunting-native
+  cancel-in-progress: false
+# Standard runners on this PUBLIC source repository are free. No larger runner,
+# paid server, Actions artifact storage, or LFS is used. Original bytes stay private.
+env:
+  PLAYER_SOURCE: 05bde481055ad1af3fc26ef56fecfecdd656425c
+  PRIVATE_REPO: irewon1-lgtm/baram-windows-private
+  INPUT_BRANCH: work/ui-hunt-input-05bde481
+jobs:
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 22
+    environment: baram-windows-private
+    env:
+      GH_TOKEN: ${{ secrets.BARAM_PRIVATE_REPO_TOKEN }}
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with: {path: ci, persist-credentials: false}
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.PLAYER_SOURCE }}
+          path: source
+          persist-credentials: false
+      - name: Require private input and delivery destination
+        shell: pwsh
+        run: |
+          if (-not (gh api "repos/$env:PRIVATE_REPO" | ConvertFrom-Json).private) { throw 'Private vault required' }
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ env.PRIVATE_REPO }}
+          ref: ${{ env.INPUT_BRANCH }}
+          token: ${{ secrets.BARAM_PRIVATE_REPO_TOKEN }}
+          path: vault
+          persist-credentials: false
+      - name: Restore pinned bytes and the EXACT locally built Windows EXE
+        shell: pwsh
+        run: |
+          python source/tools/restore_private_runtime.py --vault vault --out runtime
+          if ($LASTEXITCODE) { throw 'Runtime restore failed' }
+          python -c "import pathlib,json,hashlib; p=pathlib.Path('vault'); m=json.loads((p/'native-input.json').read_text()); d=b''.join((p/n).read_bytes() for n in m['parts']); assert len(d)==m['bytes'] and hashlib.sha256(d).hexdigest()==m['sha256']; (p/'native-runtime-update.zip').write_bytes(d)"
+          $digest = (Get-FileHash vault/native-runtime-update.zip -Algorithm SHA256).Hash.ToLower()
+          python ci/tools/ui_native_ci.py prepare --runtime runtime --patch vault/native-runtime-update.zip --patch-sha "$digest" --source source --out prepared
+          if ($LASTEXITCODE) { throw 'Exact input reconstruction failed' }
+      - name: Actual EXE, visible Windows window, normal play and keyboard
+        shell: pwsh
+        run: |
+          python ci/tools/ui_native_ci.py windows --runtime runtime --prepare prepared --source source --out evidence
+          if ($LASTEXITCODE) { throw 'Native Windows verification failed' }
+      - name: Preserve private native execution evidence
+        if: always()
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory evidence -Force | Out-Null
+          python ci/tools/ui_native_ci.py publish --out evidence --repo "$env:PRIVATE_REPO" --commit "$env:PLAYER_SOURCE" --platform windows --base-branch "$env:INPUT_BRANCH"
+          if ($LASTEXITCODE) { throw 'Private evidence storage failed' }
+  android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment: baram-windows-private
+    env:
+      GH_TOKEN: ${{ secrets.BARAM_PRIVATE_REPO_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {path: ci, persist-credentials: false}
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.PLAYER_SOURCE }}
+          path: source
+          persist-credentials: false
+      - name: Require private input and delivery destination
+        run: test "$(gh api repos/$PRIVATE_REPO --jq .private)" = true
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ env.PRIVATE_REPO }}
+          ref: ${{ env.INPUT_BRANCH }}
+          token: ${{ secrets.BARAM_PRIVATE_REPO_TOKEN }}
+          path: vault
+          persist-credentials: false
+      - name: Restore exact content, build and sign the universal release APK
+        run: |
+          python -m pip install Pillow==11.3.0
+          curl -fL https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_linux.x86_64.zip -o godot.zip
+          echo 'd0bc2113065e481c9c2c2b2c37daa4e8be3fe9e27f0ab9ab0b6096e9a37907f3  godot.zip' | sha256sum --check
+          unzip -q godot.zip -d editor
+          chmod +x editor/Godot_v4.6.3-stable_linux.x86_64
+          curl -fL https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_export_templates.tpz -o templates.tpz
+          echo '3fbe2c0e2dec9d537ab9ec97bcf8da91dcf23357fc51f67092dd068d839290a8  templates.tpz' | sha256sum --check
+          unzip -q templates.tpz templates/android_release.apk
+          python source/tools/restore_private_runtime.py --vault vault --out runtime
+          python -c "import pathlib,json,hashlib; p=pathlib.Path('vault'); m=json.loads((p/'native-input.json').read_text()); d=b''.join((p/n).read_bytes() for n in m['parts']); assert len(d)==m['bytes'] and hashlib.sha256(d).hexdigest()==m['sha256']; (p/'native-runtime-update.zip').write_bytes(d)"
+          digest="$(sha256sum vault/native-runtime-update.zip | cut -d' ' -f1)"
+          python ci/tools/ui_native_ci.py prepare --runtime runtime --patch vault/native-runtime-update.zip --patch-sha "$digest" --source source --godot "$PWD/editor/Godot_v4.6.3-stable_linux.x86_64" --out prepared
+          python source/tools/android_ci.py --runtime runtime --godot "$PWD/editor/Godot_v4.6.3-stable_linux.x86_64" --template templates/android_release.apk --sdk "$ANDROID_HOME" --signing vault/android/android-signing.json --cache runtime/runtime_cache --universal --out android-build
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" 'platforms;android-35' 'build-tools;35.0.1'
+          mkdir -p pointer-classes pointer-dex
+          javac -source 8 -target 8 -cp "$ANDROID_HOME/platforms/android-35/android.jar" -d pointer-classes source/qa/android/PointerDriver.java
+          "$ANDROID_HOME/build-tools/35.0.1/d8" --lib "$ANDROID_HOME/platforms/android-35/android.jar" --output pointer-dex pointer-classes/PointerDriver.class
+          (cd pointer-dex && zip ../baram-pointer.jar classes.dex)
+      - name: Enable the standard runner's Android hardware accelerator
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+      - name: Native Android OS input on the exact deliverable APK
+        uses: ReactiveCircus/android-emulator-runner@4c44018e59b437e86cdfc41da381398f93ed8808
+        with:
+          api-level: 35
+          arch: x86_64
+          target: google_apis
+          ram-size: 4096M
+          disable-animations: true
+          emulator-options: -no-window -gpu swangle -noaudio -no-boot-anim -camera-back none -memory 4096
+          script: adb install --no-incremental -r android-build/baram-Android-arm64.apk && python ci/tools/ui_native_android_story.py --apk android-build/baram-Android-arm64.apk --driver baram-pointer.jar --out evidence
+      - name: Preserve the tested APK and evidence privately
+        if: always()
+        run: |
+          mkdir -p evidence
+          if [ -f android-build/baram-Android-arm64.apk ]; then
+            python ci/tools/ui_native_ci.py publish --out evidence --repo "$PRIVATE_REPO" --commit "$PLAYER_SOURCE" --platform android --base-branch "$INPUT_BRANCH" --apk android-build/baram-Android-arm64.apk
+          else
+            python ci/tools/ui_native_ci.py publish --out evidence --repo "$PRIVATE_REPO" --commit "$PLAYER_SOURCE" --platform android --base-branch "$INPUT_BRANCH"
+          fi
