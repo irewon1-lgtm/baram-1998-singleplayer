@@ -1,6 +1,6 @@
 extends RefCounted
 ## Display names and scoped ecology repairs. Source names/IDs remain intact.
-const VERSION="ui-hunt-1"
+const VERSION="ui-hunt-2"
 const RABBIT="kr.monster.5ebc87d48996"
 const SQUIRREL="kr.monster.bc85d3766325"
 const BEGINNER=["field","kr.map.1f61da6322b5","kr.map.785a69f25595","wk.map.region.squirrel"]
@@ -19,7 +19,7 @@ const NAMES={
 static func open_cell(m: Dictionary, at: Vector2i) -> bool:
     return at.x>=0 and at.y>=0 and at.x<int(m.width) and at.y<int(m.height) and not m.blocked[at.y][at.x]
 
-static func cells_near(m: Dictionary, center: Vector2i, used: Dictionary, minimum: int=2, maximum: int=18) -> Array:
+static func cells_near(m: Dictionary, center: Vector2i, used: Dictionary, minimum: int=2, maximum: int=18, avoid_traversal: bool=false) -> Array:
     var cells=[];var seen={center:true};var queue=[center];var i=0
     while i<queue.size() and i<8192:
         var p:Vector2i=queue[i];i+=1
@@ -28,7 +28,7 @@ static func cells_near(m: Dictionary, center: Vector2i, used: Dictionary, minimu
         if distance>=maximum:continue
         for d in [Vector2i.UP,Vector2i.LEFT,Vector2i.DOWN,Vector2i.RIGHT]:
             var q=p+d
-            if not seen.has(q) and open_cell(m,q) and not used.has(q):seen[q]=true;queue.append(q)
+            if not seen.has(q) and open_cell(m,q) and (not avoid_traversal or not used.has(q)):seen[q]=true;queue.append(q)
     return cells
 
 static func apply(world: Dictionary) -> Dictionary:
@@ -46,6 +46,7 @@ static func apply(world: Dictionary) -> Dictionary:
         m.display_name_status="PROVISIONAL_TRANSLATION" if provisional else "EXISTING_KOREAN_LABEL"
         names[original]=m.display_name_ko
     for m in world.maps:
+        m.portals=m.portals.filter(func(p):return not str(p.get("id","")).begins_with("repair.portal."))
         for p in m.portals:
             if not p.has("source_label"):p.source_label=p.get("label","")
             var target=world.get("map_aliases",{}).get(p.target,p.target)
@@ -62,7 +63,7 @@ static func apply(world: Dictionary) -> Dictionary:
     if not veteran.is_empty():
         for s in veteran.spawns:veteran_used[Vector2i(s.x,s.y)]=true
         for p in veteran.portals:veteran_used[Vector2i(p.x,p.y)]=true
-    var veteran_cells=cells_near(veteran,Vector2i(veteran.entry[0],veteran.entry[1]),veteran_used,6,40) if not veteran.is_empty() else []
+    var veteran_cells=cells_near(veteran,Vector2i(veteran.entry[0],veteran.entry[1]),veteran_used,6,120) if not veteran.is_empty() else []
     for id in BEGINNER:
         if not maps.has(id):continue
         var m=maps[id];var keep=[]
@@ -90,7 +91,7 @@ static func apply(world: Dictionary) -> Dictionary:
         var start=Vector2i(world.start.entry[0],world.start.entry[1]);var town_used={}
         for n in town.npcs:town_used[Vector2i(n.x,n.y)]=true
         for p in town.portals:town_used[Vector2i(p.x,p.y)]=true
-        var doors=cells_near(town,start,town_used,4,8)
+        var doors=cells_near(town,start,town_used,4,8,true)
         if not doors.is_empty():
             var gate:Vector2i=doors[0]
             var field_used={}
@@ -103,5 +104,11 @@ static func apply(world: Dictionary) -> Dictionary:
                 town.portals.append({"id":"repair.portal.town.field","x":gate.x,"y":gate.y,"target":"field","entry":[back.x,back.y],"trigger":"interact","label":field.display_name_ko,"source_kind":"AUTHORED_BEGINNER_CONNECTION"})
                 field.portals.append({"id":"repair.portal.field.town","x":back.x,"y":back.y,"target":"village","entry":[start.x,start.y],"trigger":"interact","label":town.display_name_ko,"source_kind":"AUTHORED_BEGINNER_CONNECTION"})
                 world.beginner_gate={"map":"village","x":gate.x,"y":gate.y,"label":field.display_name_ko}
+    var unresolved=[]
+    for id in BEGINNER:
+        if not maps.has(id):continue
+        for spawn in maps[id].spawns:
+            if spawn.kind not in ["rabbit","squirrel",RABBIT,SQUIRREL]:unresolved.append({"map":id,"spawn":spawn.id,"kind":spawn.kind})
+    world.beginner_unresolved=unresolved
     world.repair_version=VERSION;world.beginner_relocations=moved
     return world

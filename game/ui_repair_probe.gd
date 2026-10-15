@@ -95,11 +95,19 @@ func hunt(kind: String):
 func run(g,mode: String,directory: String):
     game=g;root=directory;begin=Time.get_ticks_msec();DirAccess.make_dir_recursive_absolute(root)
     await wait(.35)
+    if mode.begins_with("repair-layout"):
+        var before=game.cell()
+        for i in range(4):
+            await panel("tab:"+str(i));await capture("tab-"+str(i))
+            check(game.right_panel.tab==i and game.cell()==before and game.field_rect().end.x<game.right_panel.bounds().position.x,"layout_tab_"+str(i),{"viewport":game.get_viewport_rect().size,"field":game.field_rect(),"panel":game.right_panel.bounds()})
+        await panel("fold");check(game.right_panel.folded and game.right_panel.bounds().size.x==52,"small_screen_fold_preserves_tabs")
+        await panel("tab:3");check(not game.right_panel.folded and game.right_panel.tab==3,"folded_tab_reopens_same_information")
+        await capture("expanded-again");get_tree().quit(0 if results.all(func(row):return row.status=="PASS") else 1);return
     if mode=="repair-skills":
         await skill_story();get_tree().quit(0 if results.all(func(row):return row.status=="PASS") else 1);return
     if mode=="repair-equipment":
         await equipment_story();get_tree().quit(0 if results.all(func(row):return row.status=="PASS") else 1);return
-    if mode=="repair-restore":
+    if mode.begins_with("repair-restore"):
         check(game.save_loaded,"saved_character_loaded_in_fresh_process",{"map":game.player.map,"level":game.player.level,"skills":game.player.skills,"inventory":game.player.inventory})
         await capture("restart");game.write_diagnostic("REPAIR_RESTART");get_tree().quit();return
     if game.menu=="creation":

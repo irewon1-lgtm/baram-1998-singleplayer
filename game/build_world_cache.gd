@@ -13,6 +13,7 @@ func _initialize():
     var world=content.merge_world(JSON.parse_string(FileAccess.get_file_as_string(source)))
     if not content.last_error.is_empty():push_error(JSON.stringify(content.last_error));quit(2);return
     world=preload("res://world_repairs.gd").apply(world)
+    if not world.get("beginner_unresolved",[]).is_empty():push_error("BEGINNER_PLACEMENT_UNRESOLVED");quit(2);return
     world=load("res://startup.gd").compact_world(world)
     DirAccess.make_dir_recursive_absolute(args.out)
     var target=args.out.path_join("world.bin")
