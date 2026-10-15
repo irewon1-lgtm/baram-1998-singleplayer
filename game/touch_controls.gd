@@ -45,14 +45,16 @@ func layout():
             safe=safe.intersection(Rect2(a,b-a)).grow(-8)
     targets=[]
     if game.menu!="" or game.continuity_blocked:return
-    add_target("status",Rect2(safe.position,Vector2(260,maxf(unit,82))))
+    safe=safe.intersection(game.field_rect())
+    unit=minf(unit,68.0)
     add_target("menu",Rect2(Vector2(safe.end.x-unit,safe.position.y),Vector2.ONE*unit))
-    add_target("bag",Rect2(Vector2(safe.end.x-unit*2-10,safe.position.y),Vector2.ONE*unit))
+
     var center=Vector2(safe.end.x-unit*.65,safe.end.y-unit*.65)
     add_target("attack",Rect2(center-Vector2.ONE*unit*.6,Vector2.ONE*unit*1.2))
-    add_target("skill0",Rect2(center+Vector2(-unit*1.72,-unit*.42),Vector2.ONE*unit))
-    add_target("skill1",Rect2(center+Vector2(-unit*1.65,-unit*1.65),Vector2.ONE*unit))
-    add_target("skill2",Rect2(center+Vector2(-unit*.45,-unit*2.15),Vector2.ONE*unit))
+    var slots=[Vector2(-unit*1.72,-unit*.42),Vector2(-unit*1.65,-unit*1.65),Vector2(-unit*.45,-unit*2.15)]
+    for i in range(3):
+        if i<game.player.get("hotbar",[]).size() and str(game.player.hotbar[i])!="" and game.player.hotbar[i] in game.player.skills:
+            add_target("skill"+str(i),Rect2(center+slots[i],Vector2.ONE*unit))
     if not game.player.is_empty():
         var context=context_action()
         if context!="":add_target(context,Rect2(Vector2(safe.end.x-unit*3.25,safe.end.y-unit*1.1),Vector2.ONE*unit))
@@ -60,6 +62,7 @@ func layout():
 func add_target(id: String, rect: Rect2):targets.append({"id":id,"rect":rect})
 
 func context_action() -> String:
+    if not game.near_portal().is_empty():return "portal"
     if game.maps[game.player.map].npcs.any(func(n):return Vector2i(n.x,n.y).distance_to(game.cell())<=1.5):return "talk"
     if game.loot.any(func(n):return n.map==game.player.map and Vector2i(n.x,n.y).distance_to(game.cell())<=1.1):return "loot"
     return ""
@@ -77,6 +80,9 @@ func activate(id: String):
         "skill0","skill1","skill2":
             var slot=int(id.right(1));game.navigation.cancel();game.cast_skill(slot)
             toast=game.rules.display_name(str(game.player.hotbar[slot]));toast_until=game.clock+1.5
+        "portal":
+            var portal=game.near_portal()
+            if not portal.is_empty():game.use_portal(portal)
         "talk":game.navigation.cancel();game.interact()
         "loot":game.navigation.cancel();game.pickup()
         "close":key(KEY_ESCAPE)
@@ -156,7 +162,7 @@ func pointer_up(id: int, at: Vector2, canceled: bool):
         if p.hit=="attack":return
         for target in targets:
             if target.id==p.hit and target.rect.has_point(at):activate(p.hit);return
-    elif game.menu=="" and p.map==game.player.map:game.navigation.tap(at+(p.camera-game.camera())*game.STEP)
+    elif game.menu=="" and p.map==game.player.map and game.field_rect().has_point(at):game.navigation.tap(at+(p.camera-game.camera())*game.STEP)
 
 func _process(_delta):
     if game==null:return
@@ -196,7 +202,7 @@ func glyph(id: String, at: Vector2, scale: float, color=Color(.94,.86,.63)):
         draw_polyline(points,color,3)
         if slot==1:draw_arc(at,w*1.3,0,TAU,24,color,2)
         elif slot==2:draw_line(at-Vector2(w*1.35,0),at+Vector2(w*1.35,0),color,3)
-    elif id=="talk":
+    elif id in ["talk","portal"]:
         draw_rect(Rect2(at-Vector2(w,w*.7),Vector2(w*2,w*1.4)),color,false,2);draw_line(at+Vector2(-w*.5,w*.7),at+Vector2(-w*.8,w*1.1),color,3)
     elif id=="loot":
         draw_arc(at,w*.7,0,TAU,16,color,3);draw_line(at+Vector2(0,-w*1.4),at,color,3)
@@ -236,8 +242,8 @@ func _draw():
         glyph(id,rect.get_center(),rect.size.x,color)
         if cooldown>0:
             draw_circle(rect.get_center(),rect.size.x*.44,Color(0,0,0,.42));text(str(snappedf(cooldown,.1)),rect.get_center()+Vector2(-15,7),20)
-    var location=game.maps[p.map].name
-    text(location,Vector2(get_viewport_rect().size.x*.5-game.font.get_string_size(location,HORIZONTAL_ALIGNMENT_LEFT,-1,19).x/2,safe.position.y+25),19)
+    var location=game.map_title(p.map)
+
     if game.selected_target!="" and game.entities.has(game.selected_target):
         var e=game.entities[game.selected_target]
         if e.alive and e.map==p.map:
@@ -247,11 +253,11 @@ func _draw():
         draw_circle(joystick_origin,unit*.74,Color(.12,.16,.14,.36));draw_arc(joystick_origin,unit*.74,0,TAU,32,Color(.85,.8,.6,.5),2)
         draw_circle(joystick_tip,unit*.3,Color(.75,.71,.54,.65))
     if game.clock<toast_until:text(toast,Vector2(safe.end.x-unit*3.3,safe.end.y-unit*2.3),18)
-    if not game.log_lines.is_empty():text(str(game.log_lines.back()),Vector2(safe.position.x+16,safe.end.y-unit*2.2),16,Color(.95,.91,.75,.9),get_viewport_rect().size.x*.52)
+
 
 func modal_rect() -> Rect2:
-    var size=get_viewport_rect().size
-    return Rect2(Vector2(maxf(safe.position.x,(size.x-760)/2),safe.position.y+8),Vector2(minf(760,safe.size.x),safe.size.y-16))
+    var field=game.field_rect()
+    return Rect2(field.position+Vector2(6,6),field.size-Vector2(12,12))
 
 func visible_rows() -> int:return maxi(2,int((modal_rect().size.y-210)/(maxf(52,unit*.65))))
 
@@ -291,7 +297,7 @@ func draw_modal():
     if game.menu=="pause":
         var entries=[["resume","계속하기"],["skills","기술"],["equipment","장비"],["save","저장"],["account","계정 이어하기"],["exit","저장하고 나가기"]]
         for i in range(entries.size()):
-            modal_button(entries[i][0],entries[i][1],Rect2(r.position+Vector2(28+(i%2)*330,96+int(i/2)*(unit+12)),Vector2(310,unit)))
+            modal_button(entries[i][0],entries[i][1],Rect2(r.position+Vector2(22+(i%2)*(r.size.x-44)/2,96+int(i/2)*(unit+12)),Vector2((r.size.x-56)/2,unit)))
         text("버전  "+game.store.game_build.left(12),Vector2(r.position.x+28,r.end.y-48),16)
         if game.continuity!=null:text(game.continuity.badge.text,Vector2(r.position.x+28,r.end.y-22),16)
         return
@@ -305,7 +311,7 @@ func draw_modal():
         var choice=game.choices[i];var id=str(choice);var title=game.rules.display_name(id)
         if game.menu=="services":title=choice.get("name",choice.get("type","서비스"))
         elif game.menu=="equipment":title=game.rules.display_name(game.player.equipment_instances[id].definition_id)+" +"+str(int(game.player.equipment_instances[id].enhancement_level))
-        elif game.menu=="travel":title=game.maps[game.world.get("map_aliases",{}).get(id,id)].name
+        elif game.menu in ["travel","map"]:title=game.map_title(game.world.get("map_aliases",{}).get(id,id))
         if game.menu=="inventory":title+="  ×"+str(game.player.inventory.get(id,0))
         elif game.menu=="quests":title+=" · "+{"ACTIVE":"진행 중","CLAIMED":"보상 받음"}.get(game.player.quest_progress.get(id,{}).get("state",""),"접수 가능")
         elif game.menu=="shop":

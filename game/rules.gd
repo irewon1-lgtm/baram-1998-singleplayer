@@ -77,10 +77,11 @@ func value_or(values: Dictionary, key: String, fallback):
 func new_player(job: String, title: String) -> Dictionary:
     var result={"name":title,"job":job,"level":1,"xp2":0,"hp":50,"hp_max":50,"mp":35,"mp_max":35,
         "gold":30,"strength":5,"inventory":{"목도":1},"equipped":"","durability":{"목도":1000},
-        "skills":["기초 회복","비영사천문","성황령","물품감정"],"hotbar":["기초 회복","비영사천문","물품감정"],"cooldowns":{},"buffs":{},
+        "skills":[],"hotbar":["","",""],"cooldowns":{},"buffs":{},
         "map":"village","x":12,"y":12,"direction":2,"kills":0,"quests":[],"rank":0,
         "growth_log":[],"skill_page":0,"rng_state":str(rng.state)}
     actions.ensure(result)
+    equip(result,"목도")
     return result
 
 func threshold(job: String, level: int) -> int:
@@ -120,13 +121,17 @@ func damage(raw: float, armor: int) -> int:
     # Explicit NA replacement formula, floor only after multiplication.
     return maxi(1, floori(raw * float(100 + maxi(-95, armor)) / 100.0))
 
-func weapon_damage(p: Dictionary) -> int:
-    var it = item(p.equipped)
-    var low = int(value_or(it,"damage_min",2))
-    var high = int(value_or(it,"damage_max",4))
+func combat_stats(p: Dictionary) -> Dictionary:
+    var it=item(p.equipped)
+    var low=int(value_or(it,"damage_min",2));var high=int(value_or(it,"damage_max",4))
     var bonus=(5 if p.buffs.get("누리의힘",0)>0 else 0)+(10 if p.buffs.get("대지의힘",0)>0 else 0)
-    var raw=rng.randi_range(low,high)+bonus+actions.equipped_bonus(p,"damage")+actions.status_modifier(p,"damage")+actions.status_modifier(p,"strength")
-    return raw*maxi(1,actions.status_modifier(p,"attack_multiplier"))*(2 if p.buffs.get("이중공격",0)>0 else 1)
+    bonus+=actions.equipped_bonus(p,"damage")+actions.status_modifier(p,"damage")+actions.status_modifier(p,"strength")
+    var multiplier=maxi(1,actions.status_modifier(p,"attack_multiplier"))*(2 if p.buffs.get("이중공격",0)>0 else 1)
+    return {"minimum":(low+bonus)*multiplier,"maximum":(high+bonus)*multiplier,"raw_min":low,"raw_max":high,"bonus":bonus,"multiplier":multiplier}
+
+func weapon_damage(p: Dictionary) -> int:
+    var stats=combat_stats(p)
+    return (rng.randi_range(stats.raw_min,stats.raw_max)+stats.bonus)*stats.multiplier
 
 func incoming_damage(p: Dictionary,raw: float) -> int:
     var amount=damage(raw,armor(p))

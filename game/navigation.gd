@@ -28,11 +28,15 @@ func route(goal: Vector2i, action: Dictionary={}) -> bool:
     if game.player.is_empty() or game.menu!="" or game.continuity_blocked:return false
     var begin=Time.get_ticks_usec()
     var m=game.maps[game.player.map];var blockers=occupied()
+    for portal in m.portals:
+        var at=Vector2i(portal.x,portal.y)
+        if portal.get("trigger","walk")=="walk" and not (action.get("kind","")=="portal" and at==goal):blockers[at]=true
     var candidates=[goal]
     if not action.is_empty():
         candidates=[]
         for d in game.DIRECTIONS:candidates.append(goal+d)
         if action.kind=="loot":candidates.append(goal)
+        if action.kind=="portal" and action.get("trigger","")=="walk":candidates=[goal]
     var passable=func(p,d):
         return p.x>=0 and p.y>=0 and p.x<int(m.width) and p.y<int(m.height) and not m.blocked[p.y][p.x] and not blockers.has(p) and (not m.has("collision_masks") or (int(m.collision_masks[p.y][p.x])&[1,8,2,4][d])==0)
     var result=game.Pathfinder.search_any(game.cell(),candidates,passable,4096)
@@ -52,6 +56,7 @@ func valid_target() -> bool:
             var e=game.entities.get(pending.id,{})
             return not e.is_empty() and e.alive and e.map==game.player.map and Vector2i(e.x,e.y)==pending.position
         "npc":return game.maps[game.player.map].npcs.any(func(n):return n.id==pending.id and Vector2i(n.x,n.y)==pending.position)
+        "portal":return game.maps[game.player.map].portals.any(func(p):return Vector2i(p.x,p.y)==pending.position and p.target==pending.target)
         "loot":return game.loot.any(func(n):return n.map==game.player.map and Vector2i(n.x,n.y)==pending.position and n.item==pending.item)
     return true
 
@@ -80,6 +85,9 @@ func tick(delta: float):
     if offset.length()>1.1:return
     if offset!=Vector2i.ZERO:game.player.direction=game.Facing.toward(offset)
     match action.kind:
+        "portal":
+            for portal in game.maps[game.player.map].portals:
+                if Vector2i(portal.x,portal.y)==action.position and portal.target==action.target:game.use_portal(portal);break
         "npc":game.interact(action.id)
         "loot":game.pickup()
         "monster":
@@ -87,9 +95,12 @@ func tick(delta: float):
 
 func tap(at: Vector2):
     if game.menu!="" or game.continuity_blocked or game.player.is_empty():return
+    if not game.field_rect().has_point(at):return
+    # Explicit exit marker has tile priority. NPC sprites retain their own hit area.
+    for portal in game.maps[game.player.map].portals:
+        if Rect2(game.screen_point(portal.x,portal.y)-Vector2(22,44),Vector2(44,44)).has_point(at):
+            game.selected_target="";route(Vector2i(portal.x,portal.y),{"kind":"portal","position":Vector2i(portal.x,portal.y),"target":portal.target,"trigger":portal.get("trigger","walk")});return
     # A sprite is above its foot tile; hit test rendered geometry first.
-    var own=game.screen_point(game.visual_position().x,game.visual_position().y)
-    if Rect2(own-Vector2(21,76),Vector2(42,76)).has_point(at):cancel();return
     for n in game.maps[game.player.map].npcs:
         if Rect2(game.screen_point(n.x,n.y)-Vector2(23,82),Vector2(46,82)).has_point(at):
             game.selected_target="";route(Vector2i(n.x,n.y),{"kind":"npc","id":n.id,"position":Vector2i(n.x,n.y)});return
@@ -99,6 +110,8 @@ func tap(at: Vector2):
     for drop in game.loot:
         if drop.map==game.player.map and Rect2(game.screen_point(drop.x,drop.y)-Vector2(22,35),Vector2(44,44)).has_point(at):
             game.selected_target="";route(Vector2i(drop.x,drop.y),{"kind":"loot","item":drop.item,"position":Vector2i(drop.x,drop.y)});return
+    var own=game.screen_point(game.visual_position().x,game.visual_position().y)
+    if Rect2(own-Vector2(21,76),Vector2(42,76)).has_point(at):cancel();return
     game.selected_target=""
     route(Vector2i(((at-game.field_rect().position)/game.STEP+game.camera()).floor()))
 

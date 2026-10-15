@@ -43,5 +43,6 @@ func prepare(content, content_folder: String, world_path: String, cache_root: St
         world = compact_world(content.merge_world(source))
     if typeof(world)!=TYPE_DICTIONARY or not world.has("maps") or world.maps.is_empty():
         result={"ok":false,"error":{"code":"WORLD_FORMAT"}};return
+    world=preload("res://world_repairs.gd").apply(world)
     result={"ok":true,"world":world,"content_ms":content_ms,
         "world_ms":Time.get_ticks_msec()-began-content_ms,"cache_used":cached}

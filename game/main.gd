@@ -86,6 +86,9 @@ var frame_times=PackedFloat64Array()
 var last_save_performance={}
 var last_frame_us=0
 var touch_controls
+var right_panel
+var portal_until=0.0
+var gate_cache={}
 
 func show_loading():
     loading_layer=CanvasLayer.new();loading_layer.layer=100;add_child(loading_layer)
@@ -228,6 +231,7 @@ func _ready():
         await continuity.initialize(self)
     if OS.get_name()=="Android" or options.has("touch-test"):
         touch_controls=load("res://touch_controls.gd").new();add_child(touch_controls);touch_controls.initialize(self)
+    right_panel=load("res://right_panel.gd").new();add_child(right_panel);right_panel.initialize(self)
     queue_redraw()
 
 func setup_creation():
@@ -299,9 +303,8 @@ func _input(input):
         write_diagnostic("USER_SNAPSHOT")
         return
     if key in [KEY_UP,KEY_LEFT,KEY_DOWN,KEY_RIGHT,KEY_W,KEY_A,KEY_S,KEY_D] and menu=="":navigation.cancel()
-    if key==KEY_O and menu=="":
-        menu="equipment";selected=0;choices=player.get("equipment_instances",{}).keys().filter(func(id):return not player.equipment_instances[id].destroyed)
-        return
+    if key==KEY_O and menu=="" and right_panel!=null:
+        right_panel.select_tab(2);return
     if menu == "creation":
         if key == KEY_ENTER:
             create_character()
@@ -332,7 +335,7 @@ func _input(input):
     if key == KEY_I:
         open_inventory()
     elif key==KEY_K:
-        menu="skills";selected=0;choices=player.skills.duplicate()
+        right_panel.select_tab(1)
     elif key == KEY_E:
         var title = player.equipped if player.equipped != "" else "목도"
         if rules.equip(player,title):
@@ -352,7 +355,7 @@ func _input(input):
         menu = "map"
         choices = []
         for m in world.maps:
-            choices.append(m.name)
+            choices.append(m.id)
     elif key in [KEY_UP,KEY_LEFT,KEY_DOWN,KEY_RIGHT,KEY_W,KEY_A,KEY_S,KEY_D]:
         var d = {KEY_UP:0,KEY_LEFT:1,KEY_DOWN:2,KEY_RIGHT:3,KEY_W:0,KEY_A:1,KEY_S:2,KEY_D:3}[key]
         if input.shift_pressed:
@@ -434,7 +437,9 @@ func cell() -> Vector2i:
     return Vector2i(int(player.x),int(player.y))
 
 func field_rect() -> Rect2:
-    return Rect2(Vector2.ZERO,get_viewport_rect().size) if mobile else VIEW
+    var size=get_viewport_rect().size
+    var width=right_panel.bounds().position.x if right_panel!=null else size.x-clampf(size.x*.315,284,344)
+    return Rect2(Vector2(8,40),Vector2(width-16,size.y-154))
 
 func visual_position() -> Vector2:
     if player.is_empty():return Vector2(4,7)
@@ -504,7 +509,7 @@ func move_player(direction: int):
     event("moved",{"map":player.map,"x":player.x,"y":player.y,"direction":direction})
     for portal in maps[player.map].portals:
         if portal.get("trigger","walk")=="walk" and next == Vector2i(portal.x,portal.y):
-            transition(portal.target,portal.entry)
+            if clock>=portal_until:use_portal(portal)
             break
 
 func transition(map_id: String, entry: Array):
@@ -516,12 +521,12 @@ func transition(map_id: String, entry: Array):
     player.y = int(entry[1])
     if not player.has("visited"):player.visited=[]
     if map_id not in player.visited:player.visited.append(map_id)
-    reset_motion()
+    clear_inputs();reset_motion();portal_until=clock+0.65
     selected_target = ""
     attack_elapsed=-1.0;attack_target="";cast_elapsed=-1.0;pending_spell={};effects.clear()
     work_assets.tile_cache.clear()
     event("map_changed",{"map":map_id,"x":player.x,"y":player.y})
-    notice(maps[map_id].name)
+    notice(map_title(map_id))
 
 func cycle_target():
     var available = []
@@ -704,8 +709,13 @@ func apply_monster_specials(e: Dictionary):
             event("monster_status_applied",{"monster_id":e.kind,"result":result,"status":"poison"})
 
 func cast_skill(slot: int):
-    if slot>=player.hotbar.size() or player.hotbar[slot]=="" or cast_elapsed>=0 or attack_elapsed>=0:return
-    var title=str(player.hotbar[slot])
+    if slot<0 or slot>=player.hotbar.size():return
+    cast_known_skill(str(player.hotbar[slot]),slot)
+
+func cast_known_skill(title: String, slot: int=-1):
+    if title=="" or cast_elapsed>=0 or attack_elapsed>=0:return
+    if title not in player.skills:
+        notice("배우지 않은 기술입니다.");return
     var s=rules.skill(player,title)
     var profile=rules.skill_profile(player,title)
     var ghost_allowed=title=="성황령" or profile.get("effects",[]).any(func(e):return e.get("requires_ghost",false) or e.get("type","")=="revive")
@@ -873,6 +883,8 @@ func interact(required_id: String=""):
     pickup()
 
 func open_inventory():
+    if right_panel!=null:
+        right_panel.select_tab(0);return
     clear_inputs()
     menu = "inventory"
     selected = 0
@@ -917,15 +929,8 @@ func handle_menu_key(key: int):
         event("work_enhancement",{"rule_id":id,"instance_id":enhancement_instance,"result":result})
         notice("강화 결과: "+result.get("outcome","") if result.ok else "강화 조건: "+result.error);return
     if menu=="compass" and key in [KEY_ENTER,KEY_F]:
-        var town=maps.village
-        var desired=[Vector2i(int(town.width)-3,int(town.height)/2),Vector2i(2,int(town.height)/2),Vector2i(int(town.width)/2,int(town.height)-3),Vector2i(int(town.width)/2,2)][selected]
-        var candidate=Vector2i(town.entry[0],town.entry[1]);var best=99999
-        for y in range(int(town.height)):
-            for x in range(int(town.width)):
-                if free_cell("village",Vector2i(x,y)):
-                    var distance=absi(x-desired.x)+absi(y-desired.y)
-                    if distance<best:best=distance;candidate=Vector2i(x,y)
-        menu="";transition("village",[candidate.x,candidate.y]);return
+        var destination=town_gate(selected)
+        menu="";transition("village",[destination.x,destination.y]);return
     if menu=="travel" and key in [KEY_ENTER,KEY_F] and not choices.is_empty():
         var destination=str(choices[selected])
         menu=""
@@ -1053,6 +1058,10 @@ func restore(state: Dictionary):
             # the monster definition after a guarded content update.
             var current_definition=fresh_entities[id]
             for field in ["kind","spec","hp_max","mp_max"]:e[field]=current_definition[field]
+            if e.map in preload("res://world_repairs.gd").BEGINNER and current_definition.map!=e.map:
+                var old_map=e.map
+                for field in ["map","home_x","home_y","x","y"]:e[field]=current_definition[field]
+                event("beginner_spawn_migrated",{"id":id,"from":old_map,"to":e.map,"progress_preserved":true})
             e.hp=clampi(int(e.hp),0,int(e.hp_max))
             e.mp=clampi(int(e.get("mp",0)),0,int(e.mp_max))
         if not maps.has(e.map):e.retired=true;continue
@@ -1121,7 +1130,10 @@ func label(text: String, pos: Vector2, size: int = 16, color: Color = Color(0.91
     draw_string(font,pos,text,HORIZONTAL_ALIGNMENT_LEFT,-1,size,color)
 
 func box(rect: Rect2, color: Color = Color(0.13,0.12,0.1)):
-    draw_rect(rect,color)
+    box_on(self,rect,color)
+
+func box_on(canvas,rect: Rect2, color: Color = Color(0.13,0.12,0.1)):
+    canvas.draw_rect(rect,color)
     if assets.textures.has("ui_border"):
         var side=16.0
         var xx=[rect.position.x,rect.position.x+side,rect.end.x-side]
@@ -1131,15 +1143,18 @@ func box(rect: Rect2, color: Color = Color(0.13,0.12,0.1)):
         for y in range(3):
             for x in range(3):
                 if x==1 and y==1:continue
-                draw_texture_rect_region(assets.textures.ui_border,Rect2(xx[x],yy[y],ww[x],hh[y]),assets.actor_region("ui_border",[[0,1,2],[3,8,4],[5,6,7]][y][x]))
+                canvas.draw_texture_rect_region(assets.textures.ui_border,Rect2(xx[x],yy[y],ww[x],hh[y]),assets.actor_region("ui_border",[[0,1,2],[3,8,4],[5,6,7]][y][x]))
         return
-    draw_rect(rect,Color(0.52,0.43,0.28),false,2)
-    draw_rect(rect.grow(-4),Color(0.29,0.26,0.18),false,1)
+    canvas.draw_rect(rect,Color(0.52,0.43,0.28),false,2)
+    canvas.draw_rect(rect.grow(-4),Color(0.29,0.26,0.18),false,1)
 
 func draw_actor(key: String, frame: int, feet: Vector2, opacity: float = 1.0):
+    draw_actor_on(self,key,frame,feet,opacity)
+
+func draw_actor_on(canvas,key: String,frame: int,feet: Vector2,opacity: float=1.0):
     if content.records.has(key) and content.records[key].kind=="asset":
         var meta=content.definition(key).get("metadata",{})
-        work_assets.draw_frame(self,key,int(meta.get("starting_frame",0))+frame,feet,opacity)
+        work_assets.draw_frame(canvas,key,int(meta.get("starting_frame",0))+frame,feet,opacity)
         return
     var texture = assets.textures.get(key)
     if texture == null:
@@ -1148,27 +1163,29 @@ func draw_actor(key: String, frame: int, feet: Vector2, opacity: float = 1.0):
     if region.size == Vector2.ZERO:
         return
     var spec=assets.actor_data[key]
-    draw_texture_rect_region(texture,Rect2(feet-Vector2(spec.origin[0],spec.origin[1])*2,Vector2(spec.canvas[0],spec.canvas[1])*2),region,Color(1,1,1,opacity))
+    canvas.draw_texture_rect_region(texture,Rect2(feet-Vector2(spec.origin[0],spec.origin[1])*2,Vector2(spec.canvas[0],spec.canvas[1])*2),region,Color(1,1,1,opacity))
 
 func icon(title: String, at: Vector2):
+    icon_on(self,title,at)
+
+func icon_on(canvas,title: String,at: Vector2,limit: float=40):
     var data=rules.runtime_definitions.get(rules.find_content("item",title).get("id",title),{}).get("data",{})
     var visual=data.get("visual",{})
     if visual.has("icon_id"):
         var texture=work_assets.icon(visual.icon_id,int(visual.get("icon_frame",0)))
         if texture!=null:
-            var size=texture.get_size()*minf(2,48.0/maxi(texture.get_width(),texture.get_height()))
-            draw_texture_rect(texture,Rect2(at-size/2,size),false);return
-    var names = assets.actor_data.icons.names
-    var index = names.find(title)
-    if index < 0:
-        index = names.find("토끼고기") if title == "구운토끼고기" else names.find("산삼") if title.ends_with("약") else 0
-    var spec=assets.actor_data.icons
-    var f=spec.frames[index]
-    var r=assets.actor_region("icons",index)
-    # Item EPF pivots are positive; icons center their actual opaque rectangle.
-    var crop=Rect2(r.position+Vector2(spec.origin[0]+f.left,spec.origin[1]+f.top),Vector2(f.width,f.height))
-    var size=Vector2(f.width,f.height)*2
-    draw_texture_rect_region(assets.textures.icons,Rect2(at-size/2,crop.size*2),crop)
+            var size=texture.get_size()*minf(2,limit/maxi(texture.get_width(),texture.get_height()))
+            canvas.draw_texture_rect(texture,Rect2(at-size/2,size),false);return
+    else:
+        var names=assets.actor_data.icons.names;var index=names.find(rules.display_name(title))
+        if index>=0:
+            var spec=assets.actor_data.icons;var f=spec.frames[index];var r=assets.actor_region("icons",index)
+            var crop=Rect2(r.position+Vector2(spec.origin[0]+f.left,spec.origin[1]+f.top),Vector2(f.width,f.height))
+            var size=crop.size*minf(2,limit/maxf(crop.size.x,crop.size.y))
+            canvas.draw_texture_rect_region(assets.textures.icons,Rect2(at-size/2,size),crop);return
+    canvas.draw_rect(Rect2(at-Vector2(13,13),Vector2(26,26)),Color(.38,.2,.1),false,1)
+    canvas.draw_string(font,at+Vector2(-6,7),"?",HORIZONTAL_ALIGNMENT_LEFT,-1,20,Color(.9,.3,.12))
+    if right_panel!=null:right_panel.missing_icons[title]={"reason":"ICON_REFERENCE_UNAVAILABLE" if visual.has("icon_id") else "ICON_NOT_IDENTIFIED","visual":visual}
 
 func _draw():
     if not startup_ready:return
@@ -1263,50 +1280,57 @@ func _draw():
     if navigation!=null and navigation.marker.x>=0:
         var mark=screen_point(navigation.marker.x,navigation.marker.y)-Vector2(0,STEP/2)
         draw_arc(mark,13,0,TAU,24,Color(1,.35,.3,.8) if navigation.marker_failed else Color(.95,.84,.45,.85),2)
-    if mobile:
-        if menu=="creation":
-            box(Rect2(238,152,484,314),Color(.12,.14,.12));label("새로운 여정",Vector2(395,196),25)
-            label("이름",Vector2(299,268),18)
-        return
-    box(Rect2(0,0,960,48))
-    label("바람의나라",Vector2(18,32),23,Color(0.96,0.82,0.43))
-    label(m.name,Vector2(212,31),17)
-    label("개인용 · 오프라인",Vector2(790,30),15)
-    box(Rect2(768,48,192,480))
-    box(Rect2(0,528,960,112))
-    if not player.is_empty():
-        draw_hud()
-    for i in range(log_lines.size()):
-        label(log_lines[i],Vector2(16,552+i*20),14)
+    # Exit markers remain above map decorations and do not rely on the guide.
+    for portal in m.portals:
+        var point=screen_point(portal.x,portal.y)-Vector2(0,STEP/2)
+        if not field.grow(-8).has_point(point):continue
+        draw_arc(point,17,0,TAU,24,Color(1,.88,.35),2)
+        var distance=Vector2i(portal.x,portal.y).distance_to(cell()) if not player.is_empty() else 999.0
+        if distance<=4.5 or str(portal.get("id","")).begins_with("repair.portal"):
+            var title=str(portal.label)
+            var width=font.get_string_size(title,HORIZONTAL_ALIGNMENT_LEFT,-1,12).x+12
+            draw_rect(Rect2(point-Vector2(width/2,37),Vector2(width,19)),Color(.16,.08,.025,.9))
+            label(title,point+Vector2(-width/2+6,-23),12,Color(1,.94,.64))
+    var whole=get_viewport_rect().size;var edge=field.end.x+8
+    box(Rect2(0,0,edge,40))
+    label(map_title(map_id),Vector2(18,28),19,Color(1,.91,.66))
+    box(Rect2(0,field.end.y+4,edge,whole.y-field.end.y-4))
+    for i in range(log_lines.size()):label(log_lines[i],Vector2(16,field.end.y+27+i*20),14)
+    if not player.is_empty() and world.has("beginner_gate") and player.map=="village":
+        var gate=world.beginner_gate
+        label("초보 사냥: 신수 들판 출구 (%d, %d)"%[gate.x,gate.y],Vector2(16,whole.y-10),13)
     if menu == "creation":
         box(Rect2(238,152,484,314),Color(0.12,0.14,0.12))
         label("새로운 여정",Vector2(395,196),25,Color(1,0.86,0.47))
         label("이름",Vector2(299,268),18)
         label("선택 직업: "+Rules.JOBS[creation_job],Vector2(393,370),16)
         label("레벨 5까지 평민 성장 · 이후 선택 직업 성장",Vector2(267,448),16)
-    elif menu != "":
+    elif menu != "" and not mobile:
         draw_menu()
 
 func draw_player(pos: Vector2):
+    draw_player_on(self,pos)
+
+func draw_player_on(canvas,pos: Vector2):
     var job = Rules.JOBS.find(player.job)
     if int(player.hp) == 0:
-        draw_actor("ghost",Facing.sprite(int(player.direction))*3+int(clock*6)%3,pos)
+        draw_actor_on(canvas,"ghost",Facing.sprite(int(player.direction))*3+int(clock*6)%3,pos)
         return
     var direction = int(player.direction)
     for status in player.statuses.values():
         var replacement=status.get("visual",{}).get("replacement_actor","")
         if replacement!="":
             var spec=assets.actor_data.get(replacement,{})
-            if not spec.is_empty():draw_actor(replacement,Facing.sprite(direction)*int(spec.walk)+int(clock*6)%int(spec.walk),pos);return
-    if draw_work_player(pos,direction):return
+            if not spec.is_empty():draw_actor_on(canvas,replacement,Facing.sprite(direction)*int(spec.walk)+int(clock*6)%int(spec.walk),pos);return
+    if draw_work_player_on(canvas,pos,direction):return
     direction=Facing.sprite(direction)
     if player.buffs.get("금수",0)>0:
         var spec=assets.actor_data.rabbit
-        draw_actor("rabbit",direction*int(spec.walk)+int(clock*6)%int(spec.walk),pos)
+        draw_actor_on(canvas,"rabbit",direction*int(spec.walk)+int(clock*6)%int(spec.walk),pos)
         return
     if player.buffs.get("경수",0)>0:
         var spec=assets.actor_data.innkeeper
-        draw_actor("innkeeper",direction*int(spec.walk)+int(clock*6)%int(spec.walk),pos)
+        draw_actor_on(canvas,"innkeeper",direction*int(spec.walk)+int(clock*6)%int(spec.walk),pos)
         return
     var binding=rules.visual_bindings.get(player.equipped,assets.actor_data.get("equipment_bindings",{}).get(player.equipped,{"sprite":"wood_weapon","motion":"sword"}))
     var motion=assets.actor_data.get("motion_bindings",{})
@@ -1327,11 +1351,11 @@ func draw_player(pos: Vector2):
     elif worn.has("sprite"):body_key=worn.sprite
     for layer in order:
         if layer == "b":
-            draw_actor(body_key,body_frame,pos,opacity)
+            draw_actor_on(canvas,body_key,body_frame,pos,opacity)
         elif layer == "h":
-            draw_actor("head_"+str(job),mini(body_frame,99),pos,opacity)
+            draw_actor_on(canvas,"head_"+str(job),mini(body_frame,99),pos,opacity)
         elif layer == "w" and player.equipped != "":
-            draw_actor(binding.sprite,weapon_frame,pos,opacity)
+            draw_actor_on(canvas,binding.sprite,weapon_frame,pos,opacity)
 
 func draw_hud():
     label(player.name,Vector2(784,78),18,Color(1,0.91,0.66))
@@ -1381,7 +1405,7 @@ func draw_menu():
         if menu=="equipment":
             var gear=player.equipment_instances[choices[j]]
             title=rules.display_name(gear.definition_id)+" +"+str(int(gear.enhancement_level))+" ("+str(gear.id).trim_prefix("gear.instance.")+")"
-        if menu=="travel":title=maps[world.get("map_aliases",{}).get(id,id)].name
+        if menu in ["travel","map"]:title=map_title(world.get("map_aliases",{}).get(id,id))
         if menu=="quests":title+=" · "+{"ACTIVE":"진행 중","CLAIMED":"보상 받음"}.get(player.quest_progress.get(id,{}).get("state",""),"접수 가능")
         if j == selected:
             draw_rect(Rect2(184,y-21,496,29),Color(0.32,0.29,0.16))
@@ -1409,7 +1433,7 @@ func draw_menu():
 
 func start_exercise():
     # Implemented in a separate script so validation calls the actual event handlers.
-    var script="res://quality_probe.gd" if test_mode.begins_with("quality-") else "res://mobile_smoke_probe.gd" if test_mode.begins_with("mobile-") else "res://native_regression.gd" if test_mode.begins_with("native-") else "res://work_play_probe.gd" if test_mode.begins_with("work-") else "res://exercise.gd"
+    var script="res://ui_repair_probe.gd" if test_mode.begins_with("repair-") else "res://quality_probe.gd" if test_mode.begins_with("quality-") else "res://mobile_smoke_probe.gd" if test_mode.begins_with("mobile-") else "res://native_regression.gd" if test_mode.begins_with("native-") else "res://work_play_probe.gd" if test_mode.begins_with("work-") else "res://exercise.gd"
     var runner = load(script).new()
     add_child(runner)
     await runner.run(self,test_mode,test_root)
@@ -1457,7 +1481,7 @@ func tile_texture(key: String) -> Texture2D:
         var parts=key.split("#");return work_assets.tile(parts[0],int(parts[1]))
     return assets.tile(key) if assets.tiles.has(key) else null
 
-func draw_work_player(pos: Vector2, direction: int) -> bool:
+func draw_work_player_on(canvas,pos: Vector2, direction: int) -> bool:
     var classes=content.by_kind("class").filter(func(id):return content.definition(id).get("name","")==player.job)
     if classes.is_empty():return false
     var visual=content.definition(classes[0]).get("visual",{})
@@ -1483,9 +1507,9 @@ func draw_work_player(pos: Vector2, direction: int) -> bool:
     var layers=str(order[relative]) if relative<order.size() else "bhw"
     var opacity=0.35 if rules.actions.status_modifier(player,"hidden")>0 else 0.72 if hurt_time>0 else 1.0
     for layer in layers:
-        if layer=="b":work_assets.draw_animation(self,body,action,direction,elapsed,pos,opacity)
-        elif layer=="h":work_assets.draw_animation(self,head,action,direction,elapsed,pos,opacity)
-        elif layer=="w" and weapon!="":work_assets.draw_animation(self,weapon,weapon_action,direction,elapsed,pos,opacity)
+        if layer=="b":work_assets.draw_animation(canvas,body,action,direction,elapsed,pos,opacity)
+        elif layer=="h":work_assets.draw_animation(canvas,head,action,direction,elapsed,pos,opacity)
+        elif layer=="w" and weapon!="":work_assets.draw_animation(canvas,weapon,weapon_action,direction,elapsed,pos,opacity)
     return true
 
 func apply_work_action(action: Dictionary):
@@ -1508,3 +1532,31 @@ func apply_work_action(action: Dictionary):
             var destination=Vector2i(e.x,e.y)+offset
             if free_cell(player.map,destination):transition(player.map,[destination.x,destination.y]);return
     if action.get("map","")!="":transition(action.map,action.entry)
+
+func map_title(id: String) -> String:
+    return maps.get(id,{}).get("display_name_ko","연결 확인 중")
+
+func use_portal(portal: Dictionary) -> bool:
+    if clock<portal_until:return false
+    if Vector2i(portal.x,portal.y).distance_to(cell())>1.5:return false
+    event("portal_used",{"id":portal.get("id",""),"map":player.map,"target":portal.target})
+    transition(portal.target,portal.entry);return true
+
+func near_portal() -> Dictionary:
+    var found={};var best=1.51
+    for portal in maps[player.map].portals:
+        var distance=Vector2i(portal.x,portal.y).distance_to(cell())
+        if distance<best:best=distance;found=portal
+    return found
+
+func town_gate(direction: int) -> Vector2i:
+    if gate_cache.has(direction):return gate_cache[direction]
+    var town=maps.village
+    var desired=[Vector2i(int(town.width)-3,int(town.height)/2),Vector2i(2,int(town.height)/2),Vector2i(int(town.width)/2,int(town.height)-3),Vector2i(int(town.width)/2,2)][direction]
+    var maximum=maxi(int(town.width),int(town.height))
+    for radius in range(maximum):
+        for offset in range(-radius,radius+1):
+            for pos in [desired+Vector2i(offset,-radius),desired+Vector2i(offset,radius),desired+Vector2i(-radius,offset),desired+Vector2i(radius,offset)]:
+                if free_cell("village",pos) and not town.portals.any(func(p):return Vector2i(p.x,p.y)==pos):
+                    gate_cache[direction]=pos;return pos
+    return Vector2i(town.entry[0],town.entry[1])
