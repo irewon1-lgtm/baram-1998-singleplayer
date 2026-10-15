@@ -17,3 +17,6 @@ Progression: broad source inventory and reconciliation → risk prototypes on bo
 
 Keep the five user questions and old failure cases in MASTER_PLAN visible. Update STATE with real evidence and next actions at meaningful checkpoints. Reuse prior results only when their input hashes, versions and validation scope still match. Do not promise asynchronous/background progress.
 
+
+## Current P1.5 execution (2026-10-16)
+User task `BARAM_REBUILD_P1_5_001` explicitly authorizes `STEP015_WORK_INSTRUCTIONS.md` sections 0–12. Continue from `docs/rebuild/p1_5/` and STATE; P0/P1 historical records stay unchanged. Static source processing, evidence selection, validator fixes and handoff only. Runtime/reference server/build/deploy/P2 remain unauthorized in this task.

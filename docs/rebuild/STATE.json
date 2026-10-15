@@ -9,7 +9,7 @@
   "master_plan_path": "docs/rebuild/MASTER_PLAN.md",
   "master_plan_commit": "3adf98171efc422efcf1db1d589b075d8acad65a",
   "entrypoint_path": "AGENTS.md",
-  "status": "P0P1_COMPLETED_WITH_DOCUMENTED_GAPS",
+  "status": "P1_5_IN_PROGRESS",
   "implementation_status": "NOT_STARTED",
   "user_decisions": {
     "clean_rebuild": "CONFIRMED",
@@ -78,10 +78,15 @@
       "date": "2026-10-15",
       "task_id": "BARAM_REBUILD_P0P1_001",
       "scope": "User explicitly authorized P0/P1 inventory, static source processing, evidence mapping and P2 handoff only. No runtime/reference execution/build/deployment."
+    },
+    {
+      "date": "2026-10-16",
+      "task_id": "BARAM_REBUILD_P1_5_001",
+      "scope": "Explicit user execution: source access/static decoding/evidence selection/validator repair/P2 input handoff only; no new or reference runtime/build/deployment."
     }
   ],
-  "current_task_id": "BARAM_REBUILD_P0P1_001",
-  "current_remote_input_sha": "6943669fe820f793b5455e063303a993a73d5d98",
+  "current_task_id": "BARAM_REBUILD_P1_5_001",
+  "current_remote_input_sha": "5d70e48e88a6a73553fee0f35c2c5812547d6dbf",
   "checkpoint": {
     "status": "P0P1_STATIC_ARTIFACTS_VALIDATED",
     "previous_remote_checkpoints": [
@@ -194,5 +199,22 @@
     "path": "docs/rebuild/step01/independent_review.md",
     "additional_blocking_artifact_defects": 0,
     "scope": "Independent AI review of deliverables, not historical gameplay or human acceptance"
+  },
+  "p1_5": {
+    "status": "IN_PROGRESS",
+    "read_intake": [
+      "AGENTS.md",
+      "MASTER_PLAN.md",
+      "STATE.json",
+      "STEP01_WORK_INSTRUCTIONS.md",
+      "STEP015_WORK_INSTRUCTIONS.md",
+      "step01 ledgers/report/profile/NEXT_P2",
+      "BARAM_P0P1_독립감사_20261016.md",
+      "BARAM_P1_5_자료공백_보완계획_20261016.md"
+    ],
+    "latest_checkpoint": "Original access and member byte reconciliation; historical manuals and full server/source extraction in parallel",
+    "runtime_tests": "NOT_RUN",
+    "p2_executed": false,
+    "originals_preserved": true
   }
 }
