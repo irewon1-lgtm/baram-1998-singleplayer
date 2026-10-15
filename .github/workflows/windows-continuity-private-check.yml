@@ -126,8 +126,9 @@ jobs:
           archive=out/'private-windows-continuity.zip'
           with zipfile.ZipFile(archive,'x',zipfile.ZIP_DEFLATED) as z:
               for p in out.rglob('*'):
-                  if p.is_file() and (p.suffix=='.log' or p.suffix=='.png' or p.name in ['verification.json','windows-resume-metrics.json'] or p.name.endswith('-report.json')):
+                  if p.is_file() and (p.suffix=='.log' or p.name=='windows-startup-frame.png' or p.name in ['verification.json','windows-resume-metrics.json'] or p.name.endswith('-report.json')):
                       z.write(p,p.relative_to(out).as_posix())
+          assert archive.stat().st_size < 8*1024**2, 'Diagnostic API payload unexpectedly large; no player assets may be bundled'
           request=out/'private-request.json'
           request.write_text(json.dumps({'message':'Preserve native Windows mobile-source diagnostic '+os.environ['GITHUB_RUN_ID'],'content':base64.b64encode(archive.read_bytes()).decode()}))
           path='windows-continuity-checks/'+os.environ['GITHUB_RUN_ID']+'-'+os.environ['GITHUB_RUN_ATTEMPT']+'.zip'
