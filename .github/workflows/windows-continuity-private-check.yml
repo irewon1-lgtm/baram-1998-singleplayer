@@ -1,0 +1,140 @@
+name: Windows mobile-source private diagnostic (cloud release blocked)
+on:
+  push:
+    branches: [codex/game-core]
+    paths: [.github/workflows/windows-continuity-private-check.yml]
+  workflow_dispatch:
+    inputs:
+      source_ref:
+        description: Reviewed mobile game source
+        default: 2bb4ec55fa8ccb347b11d2bf2532ae4d4806b76a
+      android_evidence_run:
+        description: Prior private original-content Android file-transport test
+        default: '38672966916'
+permissions:
+  contents: read
+concurrency:
+  group: windows-continuity-private-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  windows-original:
+    runs-on: windows-latest
+    timeout-minutes: 25
+    environment: baram-windows-private
+    env:
+      PRIVATE_REPO: ${{ vars.BARAM_PRIVATE_REPOSITORY || 'irewon1-lgtm/baram-windows-private' }}
+      GH_TOKEN: ${{ secrets.BARAM_PRIVATE_REPO_TOKEN }}
+      SOURCE_REF: ${{ inputs.source_ref || '2bb4ec55fa8ccb347b11d2bf2532ae4d4806b76a' }}
+      ANDROID_EVIDENCE_RUN: ${{ inputs.android_evidence_run || '38672966916' }}
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.SOURCE_REF }}
+          path: mobile-source
+          persist-credentials: false
+      - name: Verify private diagnostic destination
+        shell: pwsh
+        run: |
+          if (-not $env:GH_TOKEN) { throw 'Private diagnostic connection missing' }
+          if (-not (gh api "repos/$env:PRIVATE_REPO" | ConvertFrom-Json).private) { throw 'Private vault required' }
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ env.PRIVATE_REPO }}
+          token: ${{ secrets.BARAM_PRIVATE_REPO_TOKEN }}
+          path: vault
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Pinned engine, private runtime and mobile-source EXE
+        shell: pwsh
+        working-directory: mobile-source
+        run: |
+          python -m pip install Pillow==11.3.0
+          Invoke-WebRequest 'https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_win64.exe.zip' -OutFile editor.zip
+          if ((Get-FileHash editor.zip -Algorithm SHA256).Hash.ToLower() -ne 'e39986a178d585ce7ac198fb8de6ea436366dc0cc00e594810c2e3e104c04b90') { throw 'Editor digest mismatch' }
+          Expand-Archive editor.zip editor
+          $godot = (Get-ChildItem editor -Filter '*.exe' | Where-Object { $_.Name -notmatch 'console' } | Select-Object -First 1).FullName
+          "GODOT=$godot" >> $env:GITHUB_ENV
+          python tools/restore_private_runtime.py --vault ../vault --out ../vault/runtime
+          if ($LASTEXITCODE) { throw 'Private runtime integrity failure' }
+          python tools/windows_ci.py build --runtime ../vault/runtime --template ../vault/runtime/template-win64.exe --godot "$godot" --out player-check
+          if ($LASTEXITCODE) { throw 'Mobile-source Windows build failed' }
+      - name: Actual native Windows startup and full original game regression
+        shell: pwsh
+        working-directory: mobile-source
+        run: |
+          python tools/windows_ci.py verify --out player-check
+          if ($LASTEXITCODE) { throw 'Full original Windows regression failed' }
+      - name: Fresh Windows EXE restores Android changed save (file transport only)
+        shell: python
+        working-directory: mobile-source
+        run: |
+          import json,os,re,subprocess,time,zipfile,sys
+          from pathlib import Path
+          sys.path.insert(0,'tools')
+          import windows_ci as ci
+          run=os.environ['ANDROID_EVIDENCE_RUN']
+          assert re.fullmatch(r'[0-9]+',run)
+          source=Path('../vault/android-checks')/(run+'-1.zip')
+          target=Path('player-check/android-source').resolve()
+          with zipfile.ZipFile(source) as z:
+              for member in ['emulator-evidence/character.json','emulator-evidence/mobile-report.json','android-check/android-build.json']:
+                  p=target/Path(member).name;p.parent.mkdir(parents=True,exist_ok=True);p.write_bytes(z.read(member))
+          build=json.loads((target/'android-build.json').read_text())
+          report=json.loads((target/'mobile-report.json').read_text())
+          assert build['commit']==os.environ['SOURCE_REF'] and report['status']=='PASS'
+          assert report['platform']=='Android' and report['before']!=report['after']
+          out=Path('player-check').resolve()
+          members=out/'mobile-verification-members.json'
+          members.write_text(json.dumps(['mobile_smoke_probe.gd']))
+          pack=out/'mobile-verification.pck'
+          ci.command([os.environ['GODOT'],'--headless','--path','game','--script',Path('tools/pack_runtime.gd').resolve(),'--','--root='+str(Path('game').resolve()),'--manifest='+str(members),'--out='+str(pack)],out/'mobile-pack.log')
+          stage=Path(json.loads((out/'build.json').read_text())['stage'])
+          evidence=out/'evidence'/'android-resume';evidence.mkdir(parents=True,exist_ok=True)
+          log=evidence/'windows-android-resume.log';start=time.monotonic();peak=0
+          args=[str(stage/ci.EXE),'--headless','--audio-driver','Dummy','--','--save='+str(target/'character.json'),'--verification-pack='+str(pack),'--exercise=mobile-pc-resume','--expected='+str(target/'mobile-report.json'),'--evidence='+str(evidence)]
+          with log.open('w',encoding='utf-8') as stream:
+              process=subprocess.Popen(args,stdout=stream,stderr=subprocess.STDOUT)
+              try:
+                  while process.poll() is None:
+                      peak=max(peak,ci.process_rss(process.pid))
+                      if time.monotonic()-start>90:raise TimeoutError('Windows Android-save restore exceeded 90 seconds')
+                      if peak>2*1024**3:raise MemoryError('Windows restore exceeded 2 GiB')
+                      time.sleep(.1)
+              except BaseException:
+                  process.kill();process.wait();raise
+          text=log.read_text(encoding='utf-8')
+          print(text)
+          result=json.loads((evidence/'mobile-pc-resume-report.json').read_text())
+          assert process.returncode==0 and not re.search(r'(?m)^(SCRIPT ERROR:|ERROR:)',text)
+          assert result['status']=='PASS' and result['platform']=='Windows' and peak>0
+          ci.write_json(evidence/'windows-resume-metrics.json',{'status':'PASS','source_sha':os.environ['SOURCE_REF'],'android_source_run':run,'scope':'NATIVE_WINDOWS_ANDROID_SAVE_FILE_TRANSPORT_NOT_CLOUD_NOT_OPERATOR_GUI','wall_seconds':round(time.monotonic()-start,3),'peak_observed_rss_bytes':peak,'report':result})
+          print('ACTUAL_WINDOWS_ANDROID_SAVE_RESTORE_PASS; AUTH_HTTPS_AND_GALAXY_NOT_VERIFIED')
+      - name: Preserve diagnostic evidence privately (never publish player)
+        if: always()
+        shell: python
+        working-directory: mobile-source
+        run: |
+          import base64,json,os,subprocess,zipfile
+          from pathlib import Path
+          repo=os.environ['PRIVATE_REPO']
+          private=json.loads(subprocess.check_output(['gh','api','repos/'+repo],text=True))['private']
+          assert private is True
+          out=Path('player-check');out.mkdir(exist_ok=True)
+          archive=out/'private-windows-continuity.zip'
+          with zipfile.ZipFile(archive,'x',zipfile.ZIP_DEFLATED) as z:
+              for p in out.rglob('*'):
+                  if p.is_file() and (p.suffix=='.log' or p.suffix=='.png' or p.name in ['verification.json','windows-resume-metrics.json'] or p.name.endswith('-report.json')):
+                      z.write(p,p.relative_to(out).as_posix())
+          request=out/'private-request.json'
+          request.write_text(json.dumps({'message':'Preserve native Windows mobile-source diagnostic '+os.environ['GITHUB_RUN_ID'],'content':base64.b64encode(archive.read_bytes()).decode()}))
+          path='windows-continuity-checks/'+os.environ['GITHUB_RUN_ID']+'-'+os.environ['GITHUB_RUN_ATTEMPT']+'.zip'
+          subprocess.run(['gh','api','repos/'+repo+'/contents/'+path,'--method','PUT','--input',str(request)],check=True,stdout=subprocess.DEVNULL)
+      - name: Scope and release guard
+        if: always()
+        shell: pwsh
+        run: |
+          'Full original Windows mobile-source EXE regression and Android-save file restore only.' >> $env:GITHUB_STEP_SUMMARY
+          'Real account HTTPS Windows/Android/Windows, physical Galaxy and operator GUI remain unverified. No cloud-ready player was published.' >> $env:GITHUB_STEP_SUMMARY
