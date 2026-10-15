@@ -91,7 +91,8 @@
       "683cde8e23f7f4ae7d84eae63b7fa79e662b7a23",
       "af5d2cd74e1638b82c579bf9794ca5f46324f062",
       "433e5db291bcc235709dcb04ee1dd8e90f4d2b29",
-      "cfe79051e0f69b2b84185df63bad4f0503153d18"
+      "cfe79051e0f69b2b84185df63bad4f0503153d18",
+      "f54d6c1dbff853fabc9837a755eb5b4115364ea6"
     ],
     "next_resume": {
       "owner": "Codex P2 technical integrator after separate instruction",
@@ -245,7 +246,7 @@
       "docs/rebuild/p1_5/INPUT_MANIFEST.json"
     ],
     "clean_handoff": "PASS_REPRODUCTION_SCOPE; CodexG0 NOT_RUN",
-    "input_manifest_sha256": "556d0be5ec4632a5d85b618971045f0edb8f1a73148bb9c55a9663e396681c82"
+    "input_manifest_sha256": "679d5ced52dd6168c4c855e357825c7477e7137ba3bf0695108697083522d2ea"
   },
   "historical_p0p1_source_limitations": [
     "KR125 MAP218 present but target1998-2001 geometry correspondence not confirmed; inspectedKR491CAB/DAT contain noMAP",

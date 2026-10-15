@@ -2,7 +2,7 @@
   "schema": "baram.p1_5.clean_handoff_validation/1",
   "task_id": "BARAM_REBUILD_P1_5_001",
   "result": "PASS_REPRODUCTION_SCOPE",
-  "recorded_at_utc": "2026-10-15T23:39:49.778611+00:00",
+  "recorded_at_utc": "2026-10-15T23:44:40.796519+00:00",
   "scope": "Work separate-directory byte/path restoration and actual full import. Not Codex receiver G0.",
   "input_maps": {
     "full_import_ids": 3564,
@@ -52,7 +52,7 @@
     "semantic_readiness_result": "BLOCKED",
     "rows_read": 44796,
     "source_byte_hashes_read": 1241,
-    "detailed_result_sha256": "0c685459e8a1ef74dbea08a9ce2023850e1c62f4a4b74bb3d5446bf0c2f77bda",
+    "detailed_result_sha256": "1aefa44f1fcb392afc5a6869f7816fc217bbc70c2c3bd6ec9355e2b0226e8ff7",
     "same_failure_edges_as_original_run": 154
   },
   "scope_equivalence": {
@@ -60,7 +60,7 @@
     "sources_delta.jsonl": true,
     "selected_content/catalog.json": true
   },
-  "input_manifest_sha256": "556d0be5ec4632a5d85b618971045f0edb8f1a73148bb9c55a9663e396681c82",
+  "input_manifest_sha256": "679d5ced52dd6168c4c855e357825c7477e7137ba3bf0695108697083522d2ea",
   "normalized_catalog_sha256": "a6085079214dff200988201c95b75697b76e7a8f1651cd1841bc00b0e8580e49",
   "tool_sha256": "0e3ea1993af4995b0a6fa02017a1bab29f2f2e3fdc3e104bc02fb600f0cf57e1",
   "importer_sha256": "66a6b9286b824751e890376f87e8a908498a3a319f2e457e744de30350a8632f",
@@ -81,5 +81,6 @@
   "network_requests_during_copy_and_tests": 0,
   "runtime_tests": "NOT_RUN",
   "codex_receiver_G0": "NOT_RUN",
-  "p2_executed": false
+  "p2_executed": false,
+  "packaging_scope": "Full third-party article HTML omitted; original URLs/hashes retained for exact reacquisition. Historical visual tool sources and verified images remain included."
 }

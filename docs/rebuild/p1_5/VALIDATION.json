@@ -76,7 +76,8 @@
       "cases_executed": 9,
       "result": "PASS",
       "evidence": "package_security_validation.json",
-      "scope": "Isolated malicious/invalid archive cases; final outer inspection recorded separately"
+      "scope": "Isolated malicious/invalid archive cases; final outer inspection recorded separately",
+      "final_current_tool_and_zip_check": "Recorded in external package_security_delivery.json after final ZIP creation"
     }
   },
   "independent_comparison": {
@@ -150,7 +151,7 @@
     },
     {
       "path": "import_validation.json",
-      "sha256": "52a3442f6e166ffb145db8a62fb1313f4bcd99fe0f917f2ffd059f94265780d0",
+      "sha256": "72bf138774e58e0b3c4c4c0394a1fde89b15a81fc7a6004a471a9ebe053ddab5",
       "bytes": 58632
     },
     {
@@ -205,8 +206,8 @@
     },
     {
       "path": "clean_handoff_validation.json",
-      "sha256": "6b653e135633422c09a6b42d0574e7fd947512065e47ca7a3cd44b3ec019c79f",
-      "bytes": 3938
+      "sha256": "8a592ad0495f0c45472eed3ac6b058fe010b9292aa17d416c1d7441bde11bb6e",
+      "bytes": 4124
     },
     {
       "path": "handoff_input_contract.json",
@@ -215,5 +216,5 @@
     }
   ],
   "execution_evidence_policy": "Actual commands/config/parser/input fingerprints and per-case observed exits are in linked evidence; 450 requirement designs are not executed tests.",
-  "input_manifest_sha256": "556d0be5ec4632a5d85b618971045f0edb8f1a73148bb9c55a9663e396681c82"
+  "input_manifest_sha256": "679d5ced52dd6168c4c855e357825c7477e7137ba3bf0695108697083522d2ea"
 }
