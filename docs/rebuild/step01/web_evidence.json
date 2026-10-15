@@ -1,0 +1,80 @@
+{
+  "sources": [
+    {
+      "source_id": "WEB-KR-001",
+      "url": "https://www.baraminside.com/bbs/board.php?bo_table=memory&device=pc&page=46&sfl=wr_name2C1&sod=asc&sst=wr_hit&wr_id=976",
+      "title": "4.91 클라이언트 내부 가이드 파일",
+      "observed": "Search metadata reports a 2017-12-26 post about guides bundled in 4.91; full fetch 403. No attachment acquired and no factual game values adopted.",
+      "game_region": "KR",
+      "client_build": "4.91 claimed by title",
+      "content_era": "UNKNOWN",
+      "use_status": "DISCOVERED",
+      "read_status": "BLOCKED_403",
+      "sha256": null,
+      "missing_hash_reason": "Source bytes inaccessible; do not count snippet as full read",
+      "lineage": "Potential copy of KR4.91 bundled guide; not independent of Library archive"
+    },
+    {
+      "source_id": "WEB-KR-002",
+      "url": "https://web.archive.org/web/20020204024733fw_/http://baram.nexon.co.kr/guide/middle/zone/guild.html",
+      "title": "Archived Nexon guild guide candidate",
+      "observed": "Historical official URL discovered via contemporary link; archive capture timestamp20020204024733 is outside target end. Full fetch inaccessible. No guild values adopted.",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "content_era": "PROVISIONAL_2002_CAPTURE",
+      "use_status": "DISCOVERED",
+      "read_status": "BLOCKED_ACCESS",
+      "sha256": null,
+      "missing_hash_reason": "Archive bytes inaccessible",
+      "lineage": "Nexon official guide candidate; no independent copy acquired"
+    },
+    {
+      "source_id": "WEB-KR-003",
+      "url": "https://www.gubaram.gg/guide/maps/22",
+      "title": "Contemporary reconstructed 국내성 map candidate",
+      "observed": "Full extracted page read. Labels and portal list use different coordinates for building labels versus walk tiles. Treat as reconstruction candidate only; exact historical era and origin unknown. No coordinates adopted.",
+      "game_region": "KR_RECONSTRUCTION",
+      "client_build": "UNKNOWN",
+      "content_era": "UNKNOWN_MODERN_SITE",
+      "use_status": "IDENTIFIED",
+      "read_status": "EXTRACTED_TEXT_READ",
+      "sha256": null,
+      "missing_hash_reason": "Web extracted text observed; original HTML byte hash unavailable",
+      "lineage": "Current unofficial fan map; not dated 1998-2001 primary source"
+    },
+    {
+      "source_id": "WEB-ENG-001",
+      "url": "https://docs.godotengine.org/en/stable/tutorials/export/exporting_for_android.html",
+      "title": "Godot Android export requirements",
+      "observed": "Official documentation read: OpenJDK17, SDK/platform/build tools/export settings and signing requirements. Engine stable URL is mutable; freeze exact selected engine and templates in P2. No download/install/export executed.",
+      "game_region": "N/A",
+      "client_build": "Godot stable at retrieval",
+      "content_era": "N/A",
+      "use_status": "IDENTIFIED",
+      "read_status": "EXTRACTED_TEXT_READ",
+      "sha256": null,
+      "missing_hash_reason": "Web extracted text observed; original HTML byte hash unavailable",
+      "lineage": "Official Godot docs"
+    },
+    {
+      "source_id": "WEB-ENG-002",
+      "url": "https://docs.godotengine.org/en/stable/tutorials/audio/sync_with_audio.html",
+      "title": "Godot audio synchronization",
+      "observed": "Official documentation read. play() request differs from audible output; mix/output latency measurements needed. Page warns not updated for4.7. No audio test run.",
+      "game_region": "N/A",
+      "client_build": "Page warns Godot4.7 update incomplete",
+      "content_era": "N/A",
+      "use_status": "IDENTIFIED",
+      "read_status": "EXTRACTED_TEXT_READ",
+      "sha256": null,
+      "missing_hash_reason": "Web extracted text observed; original HTML byte hash unavailable",
+      "lineage": "Official Godot docs"
+    }
+  ],
+  "search_scope": {
+    "queries": 15,
+    "description": "Targeted Korean era manuals/maps/login/videos, archive and original-client guide searches, not exhaustive",
+    "video_result": "No stable target-era unedited video with build/FPS/speed/timecode verified. Do not infer hit timing from screenshots or search titles.",
+    "remaining": "Use internal Korean guides first; capture validated reference pair in P2; later acquire specifically dated KR video when available."
+  }
+}

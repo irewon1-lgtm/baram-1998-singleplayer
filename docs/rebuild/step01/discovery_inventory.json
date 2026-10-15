@@ -1,0 +1,731 @@
+{
+  "checked_at": "2026-10-15",
+  "listing_scope": "18 originals, 82 broad title matches, 3 UI files; discovery only unless archive_sources marks bytes read",
+  "assets": [
+    {
+      "path": "/Baram1998Assets/baram_Codex_tile_handoff_PRIVATE.zip",
+      "name": "baram_Codex_tile_handoff_PRIVATE.zip",
+      "library_file_id": "libfile_03062c0c1d808191bd8e03d73a9df68e",
+      "file_id": "file_00000000c238820dab7ad3448ce6b3e1",
+      "size_bytes": 7017376
+    },
+    {
+      "path": "/Baram1998Assets/PRIVATE_ASSET_INVENTORY_20261014.json",
+      "name": "PRIVATE_ASSET_INVENTORY_20261014.json",
+      "library_file_id": "libfile_0b1736e534948191b5cee32ceffb5b5c",
+      "file_id": "file_0000000085c4820681f3554abcc2c66c",
+      "size_bytes": 5258
+    },
+    {
+      "path": "/Baram1998Assets/godot_private_tile_atlas.gd",
+      "name": "godot_private_tile_atlas.gd",
+      "library_file_id": "libfile_de62e418824481919c06e57812591af7",
+      "file_id": "file_0000000047f08207bf3e584f6f60c9c9",
+      "size_bytes": 2889
+    },
+    {
+      "path": "/Baram1998Assets/CODEX_ASSET_INTAKE_20261014.md",
+      "name": "CODEX_ASSET_INTAKE_20261014.md",
+      "library_file_id": "libfile_6266ebd0a8d8819182b17729f14c8f8a",
+      "file_id": "file_00000000a574820698adb60398c14257",
+      "size_bytes": 6059
+    },
+    {
+      "path": "/Baram1998Assets/import_private_tile_atlases.py",
+      "name": "import_private_tile_atlases.py",
+      "library_file_id": "libfile_de86cb44b3508191b2e8df4db946613b",
+      "file_id": "file_00000000d4008207a9f6c7d60e768133",
+      "size_bytes": 5452
+    },
+    {
+      "path": "/Baram1998Assets/NA_4.03_french.exe",
+      "name": "NA_4.03_french.exe",
+      "library_file_id": "libfile_2574d6feb3b08191bd621361ed9d79d1",
+      "file_id": "file_00000000e6c882099726f745852c50fe",
+      "size_bytes": 6617137
+    },
+    {
+      "path": "/Baram1998Assets/EPFTool.exe",
+      "name": "EPFTool.exe",
+      "library_file_id": "libfile_f4a4ccbb5eec81919f96ecd4a2dac2a8",
+      "file_id": "file_000000000aa48206b49aa41b8edd2c0c",
+      "size_bytes": 385024
+    },
+    {
+      "path": "/Baram1998Assets/NA_5.0_or_older_clients_ALL.7z",
+      "name": "NA_5.0_or_older_clients_ALL.7z",
+      "library_file_id": "libfile_763dcd5bf7bc8191b8a7bf555403a1b4",
+      "file_id": "file_00000000ce088207a3ee654e96c14d1e",
+      "size_bytes": 218174017
+    },
+    {
+      "path": "/Baram1998Assets/Judge_Map_Editor.7z",
+      "name": "Judge_Map_Editor.7z",
+      "library_file_id": "libfile_5d426fbc78688191a0e20caafef79f36",
+      "file_id": "file_0000000029348206a4383df1242d929b",
+      "size_bytes": 2577176
+    },
+    {
+      "path": "/Baram1998Assets/Baram_Map_Editor.7z",
+      "name": "Baram_Map_Editor.7z",
+      "library_file_id": "libfile_8a6db54007508191b9f51717a0de566e",
+      "file_id": "file_00000000c3988206a3bec94765d0c84b",
+      "size_bytes": 1817308
+    },
+    {
+      "path": "/Baram1998Assets/mithiamapeditor-master.zip",
+      "name": "mithiamapeditor-master.zip",
+      "library_file_id": "libfile_fb88347ce2708191ab828bf3690ce11e",
+      "file_id": "file_000000000cf882098cf5ecee639739fa",
+      "size_bytes": 119648
+    },
+    {
+      "path": "/Baram1998Assets/NA_4.95_Nexus495.exe",
+      "name": "NA_4.95_Nexus495.exe",
+      "library_file_id": "libfile_0ef3b7e0828c8191a637c4061889b72d",
+      "file_id": "file_00000000c8648209b84157f5379f19e1",
+      "size_bytes": 24658356
+    },
+    {
+      "path": "/Baram1998Assets/BARAM.PAL",
+      "name": "BARAM.PAL",
+      "library_file_id": "libfile_e5e13eb7a9648191aac3e9a307883bae",
+      "file_id": "file_0000000069e48207a71a32c95c77ac24",
+      "size_bytes": 768
+    },
+    {
+      "path": "/Baram1998Assets/KR_4.91_491v.zip",
+      "name": "KR_4.91_491v.zip",
+      "library_file_id": "libfile_8c9b5125c46c8191b3e21428f6b2b1a4",
+      "file_id": "file_00000000493482068356f5b5691b7ec7",
+      "size_bytes": 26556803
+    },
+    {
+      "path": "/Baram1998Assets/NA_4.66_NexusTK.7z",
+      "name": "NA_4.66_NexusTK.7z",
+      "library_file_id": "libfile_9c0497c882988191b9e9bc4a6c9f0840",
+      "file_id": "file_00000000a500820992d05de4cbd21ef3",
+      "size_bytes": 11850016
+    },
+    {
+      "path": "/Baram1998Assets/NA_4.03_NexusTK.7z",
+      "name": "NA_4.03_NexusTK.7z",
+      "library_file_id": "libfile_8927e0894a5c8191aa95e91b57fed064",
+      "file_id": "file_000000006d648209b417819a8072a009",
+      "size_bytes": 8517463
+    },
+    {
+      "path": "/Baram1998Assets/KR_1.25_winbaram.zip",
+      "name": "KR_1.25_winbaram.zip",
+      "library_file_id": "libfile_135f7d90220c81919353822363ea2395",
+      "file_id": "file_000000001d048206980b12160a9e5ee1",
+      "size_bytes": 2207781
+    },
+    {
+      "path": "/Baram1998Assets/baram_tile_atlases_PRIVATE.zip",
+      "name": "baram_tile_atlases_PRIVATE.zip",
+      "library_file_id": "libfile_60297b3e1ec081918c1dd21d413fc316",
+      "file_id": "file_00000000e06882098526106313bf60a1",
+      "size_bytes": 7008649
+    }
+  ],
+  "other": [
+    {
+      "path": "/baram-Windows64-243448ac.zip",
+      "name": "baram-Windows64-243448ac.zip",
+      "library_file_id": "libfile_e6ffadc6d06481918cd1b7d1bd5d1998",
+      "file_id": "file_00000000c26c81faaf9fa93948ad34fd",
+      "size_bytes": 175904711
+    },
+    {
+      "path": "/baram-Android-243448ac.apk",
+      "name": "baram-Android-243448ac.apk",
+      "library_file_id": "libfile_596220c3ea5c81919bf63d188edc9ad9",
+      "file_id": "file_00000000a4a8820d9f0f6a3762f0e831",
+      "size_bytes": 283652192
+    },
+    {
+      "path": "/baram-evidence-05bde481.zip",
+      "name": "baram-evidence-05bde481.zip",
+      "library_file_id": "libfile_28226864442881919a7252aef418cfdb",
+      "file_id": "file_0000000047a481faa31356067e42b59a",
+      "size_bytes": 10584410
+    },
+    {
+      "path": "/baram-verification-05bde481.html",
+      "name": "baram-verification-05bde481.html",
+      "library_file_id": "libfile_a5311f82bbc481919ab6549f4a69f99e",
+      "file_id": "file_00000000452482109df3e05880d887bb",
+      "size_bytes": 3051580
+    },
+    {
+      "path": "/baram-Android-05bde481-candidate.apk",
+      "name": "baram-Android-05bde481-candidate.apk",
+      "library_file_id": "libfile_1ee9a3243cbc8191bc446cefda485deb",
+      "file_id": "file_00000000b404820d8aab4fd54edb3030",
+      "size_bytes": 283684954
+    },
+    {
+      "path": "/baram-Windows64-05bde481-candidate.zip",
+      "name": "baram-Windows64-05bde481-candidate.zip",
+      "library_file_id": "libfile_eb2e13e41d2c819180014213f7738c14",
+      "file_id": "file_00000000faac81fb942d2811fff3cef1",
+      "size_bytes": 175942336
+    },
+    {
+      "path": "/baram-checksums-05bde481.json",
+      "name": "baram-checksums-05bde481.json",
+      "library_file_id": "libfile_2f151520f2188191bee6c27168a647c9",
+      "file_id": "file_00000000cf8481f5b9a51e96c59b642d",
+      "size_bytes": 1487
+    },
+    {
+      "path": "/baram-work-fix-package-20261015.zip",
+      "name": "baram-work-fix-package-20261015.zip",
+      "library_file_id": "libfile_878b995aaef88191a87647cea02e04a8",
+      "file_id": "file_0000000090dc81f78a42827f81b097e5",
+      "size_bytes": 1017612
+    },
+    {
+      "path": "/어플/baram-work-fix-instructions-20261015.md",
+      "name": "baram-work-fix-instructions-20261015.md",
+      "library_file_id": "libfile_bb18c9ffce64819197dddb3ed015f9f6",
+      "file_id": "file_00000000e004823088637a7c9bd9b76e",
+      "size_bytes": 14532
+    },
+    {
+      "path": "/어플/baram-work-fix-package-20261015.zip",
+      "name": "baram-work-fix-package-20261015.zip",
+      "library_file_id": "libfile_8fd2b7a6177c8191b51ddcf9cfbda6dc",
+      "file_id": "file_0000000063fc82099816413941e691f2",
+      "size_bytes": 1017612
+    },
+    {
+      "path": "/어플/baram-ui-map-audit-20261015.json",
+      "name": "baram-ui-map-audit-20261015.json",
+      "library_file_id": "libfile_e7fde4f317dc81918d248e9fc8ca1d83",
+      "file_id": "file_00000000b3588230971deffe730c1bf7",
+      "size_bytes": 49869
+    },
+    {
+      "path": "/어플/baram-ui-map-audit-20261015.md",
+      "name": "baram-ui-map-audit-20261015.md",
+      "library_file_id": "libfile_87168d390ba88191bb248670c350123b",
+      "file_id": "file_00000000fda8820b8d27488fed46ce39",
+      "size_bytes": 13221
+    },
+    {
+      "path": "/baram-Android-a6ed23bf-local-candidate.apk",
+      "name": "baram-Android-a6ed23bf-local-candidate.apk",
+      "library_file_id": "libfile_e83451777c808191892a5154f033582a",
+      "file_id": "file_00000000e5988230bb0a15187477a1bb",
+      "size_bytes": 283652355
+    },
+    {
+      "path": "/baram-recovery-audit-a6ed23bf.html",
+      "name": "baram-recovery-audit-a6ed23bf.html",
+      "library_file_id": "libfile_d1f6c3ae01908191a240bf4524fdf1d1",
+      "file_id": "file_00000000758481fdad1beec505c95678",
+      "size_bytes": 460636
+    },
+    {
+      "path": "/baram-Windows64-a6ed23bf-local-candidate.zip",
+      "name": "baram-Windows64-a6ed23bf-local-candidate.zip",
+      "library_file_id": "libfile_38f9fe6281308191947892ef159e91c4",
+      "file_id": "file_00000000734481f988a22c1b6543a190",
+      "size_bytes": 175904683
+    },
+    {
+      "path": "/baram-recovery-evidence-a6ed23bf.zip",
+      "name": "baram-recovery-evidence-a6ed23bf.zip",
+      "library_file_id": "libfile_d78a1669a8888191aa0c6cd003e14112",
+      "file_id": "file_00000000d97481f6b16d65a72ffa4353",
+      "size_bytes": 117621
+    },
+    {
+      "path": "/baram-Android-demo-f248613d.mp4",
+      "name": "baram-Android-demo-f248613d.mp4",
+      "library_file_id": "libfile_c7af74490be48191b19274f6ccc20fba",
+      "file_id": "file_000000009f94821082f86f357df2a296",
+      "size_bytes": 28813287
+    },
+    {
+      "path": "/baram-evidence-f248613d.zip",
+      "name": "baram-evidence-f248613d.zip",
+      "library_file_id": "libfile_e814c3898fe08191a886e9ac4d13b977",
+      "file_id": "file_00000000f42c81f4a5b5409d14d15e88",
+      "size_bytes": 10417683
+    },
+    {
+      "path": "/baram-Android-f248613d.apk",
+      "name": "baram-Android-f248613d.apk",
+      "library_file_id": "libfile_7d46a4c3c0a4819187c8883f1f52a74d",
+      "file_id": "file_000000007f4881fd8a407a186b752f62",
+      "size_bytes": 203525948
+    },
+    {
+      "path": "/baram-Windows64-f248613d.zip",
+      "name": "baram-Windows64-f248613d.zip",
+      "library_file_id": "libfile_0bb3748266cc8191a22804f1284d1c45",
+      "file_id": "file_00000000df24820cb85879b82755a62d",
+      "size_bytes": 128490407
+    },
+    {
+      "path": "/baram-verification-f248613d.html",
+      "name": "baram-verification-f248613d.html",
+      "library_file_id": "libfile_0d66863561548191a9713141a51838cb",
+      "file_id": "file_000000007348820cbd9792e55a65b090",
+      "size_bytes": 936217
+    },
+    {
+      "path": "/baram-Android-play-f248613d.mp4",
+      "name": "baram-Android-play-f248613d.mp4",
+      "library_file_id": "libfile_db33a04f79748191b2caad821d579fa0",
+      "file_id": "file_000000005f7081f6ba69bcc31865927c",
+      "size_bytes": 42679838
+    },
+    {
+      "path": "/baram-Android-field-f248613d.png",
+      "name": "baram-Android-field-f248613d.png",
+      "library_file_id": "libfile_a2f908a27d808191871bddb48f1134c8",
+      "file_id": "file_00000000b954820ca9bdb609bb041ec2",
+      "size_bytes": 249728
+    },
+    {
+      "path": "/baram-Android-status-f248613d.png",
+      "name": "baram-Android-status-f248613d.png",
+      "library_file_id": "libfile_f8ea990dcbb08191b3b03f107c358a9c",
+      "file_id": "file_00000000cf2c81f6bb031282c49ac5d6",
+      "size_bytes": 144019
+    },
+    {
+      "path": "/baram-Android-bag-f248613d.png",
+      "name": "baram-Android-bag-f248613d.png",
+      "library_file_id": "libfile_ba275269a3408191b5681e28e9e25ffb",
+      "file_id": "file_00000000d54c81f78ca01da3ccc2f0ab",
+      "size_bytes": 139708
+    },
+    {
+      "path": "/baram-Android-tablet-f248613d.png",
+      "name": "baram-Android-tablet-f248613d.png",
+      "library_file_id": "libfile_70166119ed4481919b3bfbe06f3ddbc5",
+      "file_id": "file_00000000e5e881f594c9c17d707b0ce1",
+      "size_bytes": 161389
+    },
+    {
+      "path": "/baram-Android-two-fingers-f248613d.mp4",
+      "name": "baram-Android-two-fingers-f248613d.mp4",
+      "library_file_id": "libfile_888d780a991081918dbe938032b08aa2",
+      "file_id": "file_0000000012b481f583c8c4695529873e",
+      "size_bytes": 9837852
+    },
+    {
+      "path": "/baram-hashes-f248613d.json",
+      "name": "baram-hashes-f248613d.json",
+      "library_file_id": "libfile_fd9a7664f64881918dde1a9416a30014",
+      "file_id": "file_00000000c18081f58674dfc3dc112222",
+      "size_bytes": 2064
+    },
+    {
+      "path": "/baram-Linux-APK-replay-bb521327.mp4",
+      "name": "baram-Linux-APK-replay-bb521327.mp4",
+      "library_file_id": "libfile_dad690d86b8481918d7405ce85bc292b",
+      "file_id": "file_00000000fd1081f8be93fdd8bc7e2e0d",
+      "size_bytes": 12695005
+    },
+    {
+      "path": "/baram-mobile-status-Linux-bb521327.png",
+      "name": "baram-mobile-status-Linux-bb521327.png",
+      "library_file_id": "libfile_e35e65ff0c9c8191bc5ba4ca18bd8540",
+      "file_id": "file_00000000516881f8b46feae5af55110b",
+      "size_bytes": 174896
+    },
+    {
+      "path": "/baram-build-and-hashes-bb521327.json",
+      "name": "baram-build-and-hashes-bb521327.json",
+      "library_file_id": "libfile_a287c911c9c081919a5c112a19757c19",
+      "file_id": "file_00000000c8448230b69ce8df1029fcb3",
+      "size_bytes": 978
+    },
+    {
+      "path": "/baram-Windows64-bb521327-candidate.zip",
+      "name": "baram-Windows64-bb521327-candidate.zip",
+      "library_file_id": "libfile_9bb79a0ab4608191a688930020523fc4",
+      "file_id": "file_00000000e46081f5be9b62f56dbb0377",
+      "size_bytes": 128488635
+    },
+    {
+      "path": "/baram-mobile-bag-Linux-bb521327.png",
+      "name": "baram-mobile-bag-Linux-bb521327.png",
+      "library_file_id": "libfile_77493c4d7bf081919cab54a85fa16e68",
+      "file_id": "file_00000000a5d081f7acd628d327a14720",
+      "size_bytes": 164512
+    },
+    {
+      "path": "/baram-mobile-field-Linux-bb521327.png",
+      "name": "baram-mobile-field-Linux-bb521327.png",
+      "library_file_id": "libfile_0c421709a5908191bdd397a0f59428d7",
+      "file_id": "file_00000000290c820cb66c5da8a0a15f3b",
+      "size_bytes": 249499
+    },
+    {
+      "path": "/baram-evidence-bb521327.zip",
+      "name": "baram-evidence-bb521327.zip",
+      "library_file_id": "libfile_1c62d34344108191a3e6135be719852d",
+      "file_id": "file_0000000032e881f9bc2747f8b1e83d47",
+      "size_bytes": 14384710
+    },
+    {
+      "path": "/baram-Android-update-bb521327-candidate.apk",
+      "name": "baram-Android-update-bb521327-candidate.apk",
+      "library_file_id": "libfile_0e6d7593c1a08191a620cd052cc99b15",
+      "file_id": "file_00000000e2f4822f955a9de6d621505c",
+      "size_bytes": 203525948
+    },
+    {
+      "path": "/baram-mobile-verification-bb521327.html",
+      "name": "baram-mobile-verification-bb521327.html",
+      "library_file_id": "libfile_24faca4d181c81919396d66b3074e1a7",
+      "file_id": "file_0000000055f881f683589a012509bb0e",
+      "size_bytes": 1259083
+    },
+    {
+      "path": "/baram-Android-emulator-original-20261015.png",
+      "name": "baram-Android-emulator-original-20261015.png",
+      "library_file_id": "libfile_65f96830f1688191a037314ca7730051",
+      "file_id": "file_00000000fde08210b676bbd6bc75b09b",
+      "size_bytes": 47964
+    },
+    {
+      "path": "/baram-Android-arm64-development-2bb4ec55.apk",
+      "name": "baram-Android-arm64-development-2bb4ec55.apk",
+      "library_file_id": "libfile_5f111e64a9208191837d748722810a9b",
+      "file_id": "file_000000008d90820e8837fe84af2ad141",
+      "size_bytes": 178040217
+    },
+    {
+      "path": "/baram-PC-Android-progress-20261015.md",
+      "name": "baram-PC-Android-progress-20261015.md",
+      "library_file_id": "libfile_07228e0f7f8881918558230226058887",
+      "file_id": "file_00000000afac8230aa2935e3d0e55192",
+      "size_bytes": 15439
+    },
+    {
+      "path": "/baram-PC-Android-verification-20261015.zip",
+      "name": "baram-PC-Android-verification-20261015.zip",
+      "library_file_id": "libfile_7f742e767d2c819187760f572166c6e5",
+      "file_id": "file_00000000518c81f8adac19287727408e",
+      "size_bytes": 853212
+    },
+    {
+      "path": "/baram_windows_recovery_results_20261015.md",
+      "name": "baram_windows_recovery_results_20261015.md",
+      "library_file_id": "libfile_3943ff5574a88191ae019c710189fbed",
+      "file_id": "file_00000000edd8820c9f08b2c2d83d05a5",
+      "size_bytes": 10341
+    },
+    {
+      "path": "/baram-Windows64-recovery-48283d2dc2.zip",
+      "name": "baram-Windows64-recovery-48283d2dc2.zip",
+      "library_file_id": "libfile_c18e1dca095081918e98d05b9adfd102",
+      "file_id": "file_00000000e6fc822f8a6993e56ed9d4c8",
+      "size_bytes": 128516045
+    },
+    {
+      "path": "/baram-Windows64-verification-48283d2dc2.zip",
+      "name": "baram-Windows64-verification-48283d2dc2.zip",
+      "library_file_id": "libfile_6798de9dd0308191b4e0cd658678e907",
+      "file_id": "file_00000000563881f7b11798d7ad377634",
+      "size_bytes": 110212
+    },
+    {
+      "path": "/baram-Windows-startup-48283d2dc2.png",
+      "name": "baram-Windows-startup-48283d2dc2.png",
+      "library_file_id": "libfile_5dd3b6f20ba481918317edd277169e39",
+      "file_id": "file_00000000f194820c8cda26716886069a",
+      "size_bytes": 103555
+    },
+    {
+      "path": "/baram_windows_ci_inputs_PRIVATE_20261015.zip",
+      "name": "baram_windows_ci_inputs_PRIVATE_20261015.zip",
+      "library_file_id": "libfile_8fd8cdefe47c8191a539a52f883e0ef9",
+      "file_id": "file_00000000db90822f9fe6ab047550d58f",
+      "size_bytes": 124889042
+    },
+    {
+      "path": "/baram_windows_fixed_20261015.zip",
+      "name": "baram_windows_fixed_20261015.zip",
+      "library_file_id": "libfile_9ae40300ef988191ae965c9fad14ef5c",
+      "file_id": "file_000000004db8820cb5f3885d4e1a9650",
+      "size_bytes": 125482433
+    },
+    {
+      "path": "/어플/baram_Codex_tile_handoff_PRIVATE.zip",
+      "name": "baram_Codex_tile_handoff_PRIVATE.zip",
+      "library_file_id": "libfile_b960950d03f08191b38d4792c5535578",
+      "file_id": "file_00000000caf0820b9f70fb2c654ca010",
+      "size_bytes": 7017376
+    },
+    {
+      "path": "/Baram1998Assets/baram_Codex_tile_handoff_PRIVATE.zip",
+      "name": "baram_Codex_tile_handoff_PRIVATE.zip",
+      "library_file_id": "libfile_03062c0c1d808191bd8e03d73a9df68e",
+      "file_id": "file_00000000c238820dab7ad3448ce6b3e1",
+      "size_bytes": 7017376
+    },
+    {
+      "path": "/어플/baram_1997_resources_PRIVATE.zip",
+      "name": "baram_1997_resources_PRIVATE.zip",
+      "library_file_id": "libfile_59dedc86ce30819182c9f9b1a4c1a4c3",
+      "file_id": "file_00000000cdec8206b54e472bca1873f8",
+      "size_bytes": 1933116
+    },
+    {
+      "path": "/어플/baram_1997_sprite_atlases_PRIVATE.zip",
+      "name": "baram_1997_sprite_atlases_PRIVATE.zip",
+      "library_file_id": "libfile_9afa4d2c562c8191ad95a481b9ef7e87",
+      "file_id": "file_000000004c08820981f76e51a296d0bf",
+      "size_bytes": 2407678
+    },
+    {
+      "path": "/어플/baram_v125_MONSTER_sample(1).png",
+      "name": "baram_v125_MONSTER_sample(1).png",
+      "library_file_id": "libfile_34f3f86bc6a08191ba0a4621a3bc1a14",
+      "file_id": "file_00000000b6c88209ba19f5bd7d4aa1b6",
+      "size_bytes": 37506
+    },
+    {
+      "path": "/어플/Baram_TileC_first96(3).png",
+      "name": "Baram_TileC_first96(3).png",
+      "library_file_id": "libfile_e481ae25a1c08191b15a84e442203657",
+      "file_id": "file_0000000043308209b60836b92c87aee9",
+      "size_bytes": 91143
+    },
+    {
+      "path": "/어플/Baram_TileB_first96(3).png",
+      "name": "Baram_TileB_first96(3).png",
+      "library_file_id": "libfile_459250bd0cb8819191b6b9efd586788b",
+      "file_id": "file_000000009ea88207993b21e272714c50",
+      "size_bytes": 119932
+    },
+    {
+      "path": "/어플/Baram_TileA_first96(3).png",
+      "name": "Baram_TileA_first96(3).png",
+      "library_file_id": "libfile_150d09f598f88191ba9e981dc152137d",
+      "file_id": "file_0000000055848209a8532c4999521a0f",
+      "size_bytes": 103193
+    },
+    {
+      "path": "/어플/baram_tile_atlases_PRIVATE.zip",
+      "name": "baram_tile_atlases_PRIVATE.zip",
+      "library_file_id": "libfile_4f4117b75d608191aa2c6e1135123671",
+      "file_id": "file_000000000b0c82098eb9af378c3c8e9b",
+      "size_bytes": 7008649
+    },
+    {
+      "path": "/어플/baram_source_intake_20261014.md",
+      "name": "baram_source_intake_20261014.md",
+      "library_file_id": "libfile_67f86e2645788191901c3e04258e1f51",
+      "file_id": "file_000000000e4882099263480d08ad5e60",
+      "size_bytes": 5156
+    },
+    {
+      "path": "/어플/baram_restoration_ASSET_HANDOFF_PRIVATE.zip",
+      "name": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip",
+      "library_file_id": "libfile_322759c82b4c81919a11a960f427a30c",
+      "file_id": "file_00000000897c8209bd674c3867b1542d",
+      "size_bytes": 11687627
+    },
+    {
+      "path": "/어플/baram_v125_MONSTER_sample.png",
+      "name": "baram_v125_MONSTER_sample.png",
+      "library_file_id": "libfile_43039a582a8c8191b4bba43c31e417ca",
+      "file_id": "file_0000000010048206bf6c9fa2fd5beef1",
+      "size_bytes": 37506
+    },
+    {
+      "path": "/어플/Baram_TileC_first96(2).png",
+      "name": "Baram_TileC_first96(2).png",
+      "library_file_id": "libfile_dea11fba64748191b8ae5d3b04bf6d37",
+      "file_id": "file_00000000e2208206a4df0b80cd7b7745",
+      "size_bytes": 91143
+    },
+    {
+      "path": "/어플/Baram_TileB_first96(2).png",
+      "name": "Baram_TileB_first96(2).png",
+      "library_file_id": "libfile_1b4f255d56a481918ac80ec66e3da18b",
+      "file_id": "file_0000000022848206a22e771f37711f8b",
+      "size_bytes": 119932
+    },
+    {
+      "path": "/어플/Baram_TileA_first96(2).png",
+      "name": "Baram_TileA_first96(2).png",
+      "library_file_id": "libfile_e057701d11d481918c4a725a0be67708",
+      "file_id": "file_00000000453c82098ade4d9ae5eb3e11",
+      "size_bytes": 103193
+    },
+    {
+      "path": "/Baram1998Assets/Baram_Map_Editor.7z",
+      "name": "Baram_Map_Editor.7z",
+      "library_file_id": "libfile_8a6db54007508191b9f51717a0de566e",
+      "file_id": "file_00000000c3988206a3bec94765d0c84b",
+      "size_bytes": 1817308
+    },
+    {
+      "path": "/Baram1998Assets/BARAM.PAL",
+      "name": "BARAM.PAL",
+      "library_file_id": "libfile_e5e13eb7a9648191aac3e9a307883bae",
+      "file_id": "file_0000000069e48207a71a32c95c77ac24",
+      "size_bytes": 768
+    },
+    {
+      "path": "/Baram1998Assets/KR_1.25_winbaram.zip",
+      "name": "KR_1.25_winbaram.zip",
+      "library_file_id": "libfile_135f7d90220c81919353822363ea2395",
+      "file_id": "file_000000001d048206980b12160a9e5ee1",
+      "size_bytes": 2207781
+    },
+    {
+      "path": "/Baram1998Assets/baram_tile_atlases_PRIVATE.zip",
+      "name": "baram_tile_atlases_PRIVATE.zip",
+      "library_file_id": "libfile_60297b3e1ec081918c1dd21d413fc316",
+      "file_id": "file_00000000e06882098526106313bf60a1",
+      "size_bytes": 7008649
+    },
+    {
+      "path": "/어플/Baram_TileB_first96(1).png",
+      "name": "Baram_TileB_first96(1).png",
+      "library_file_id": "libfile_5a4e0abeccf08191bdaa7ba5dda69c93",
+      "file_id": "file_0000000049f4820687e7a9f465d2bbe3",
+      "size_bytes": 119932
+    },
+    {
+      "path": "/어플/Baram_TileA_first96(1).png",
+      "name": "Baram_TileA_first96(1).png",
+      "library_file_id": "libfile_7667920fe8e88191b17fb4bfde96f840",
+      "file_id": "file_00000000b4f882098f0535a3d8860e1f",
+      "size_bytes": 103193
+    },
+    {
+      "path": "/어플/Baram_TileC_first96(1).png",
+      "name": "Baram_TileC_first96(1).png",
+      "library_file_id": "libfile_8fcfbe0df1308191ad92e6f2babfbdd4",
+      "file_id": "file_00000000b8488209bd7dd83e66f18fa9",
+      "size_bytes": 91143
+    },
+    {
+      "path": "/어플/Baram_TileB_first96.png",
+      "name": "Baram_TileB_first96.png",
+      "library_file_id": "libfile_85679eacfcd881919d124f69b8ba1622",
+      "file_id": "file_00000000b8f882099c3113689023ddbe",
+      "size_bytes": 119932
+    },
+    {
+      "path": "/어플/Baram_TileA_first96.png",
+      "name": "Baram_TileA_first96.png",
+      "library_file_id": "libfile_a88ae348ea4c8191b1aad693329e6910",
+      "file_id": "file_0000000021f08209a0415f446859c4b1",
+      "size_bytes": 103193
+    },
+    {
+      "path": "/어플/Baram_TileC_first96.png",
+      "name": "Baram_TileC_first96.png",
+      "library_file_id": "libfile_cabde04006b88191aad622408f7a1b90",
+      "file_id": "file_00000000f7e48207ac0b4f5f37287b5b",
+      "size_bytes": 91143
+    },
+    {
+      "path": "/어플/Baram Map Editor(1).7z",
+      "name": "Baram Map Editor(1).7z",
+      "library_file_id": "libfile_d5f380e63a3c8191b60f2c1a8582879d",
+      "file_id": "file_00000000e8fc8209b4499e169b8a2289",
+      "size_bytes": 1817308
+    },
+    {
+      "path": "/어플/BARAM(1).PAL",
+      "name": "BARAM(1).PAL",
+      "library_file_id": "libfile_f6a5ef48e1c48191b5f7f6b2985e2052",
+      "file_id": "file_0000000049608209b443f99901be0831",
+      "size_bytes": 768
+    },
+    {
+      "path": "/어플/Baram Map Editor.7z",
+      "name": "Baram Map Editor.7z",
+      "library_file_id": "libfile_08a539405b2881918da8351bd0bc7729",
+      "file_id": "file_00000000fd8482068cfa827dc471fb15",
+      "size_bytes": 1817308
+    },
+    {
+      "path": "/어플/BARAM.PAL",
+      "name": "BARAM.PAL",
+      "library_file_id": "libfile_a8b7c91f01588191b94967093536f072",
+      "file_id": "file_000000006868820980c5d9134217251e",
+      "size_bytes": 768
+    },
+    {
+      "path": "/어플/winbaram.zip",
+      "name": "winbaram.zip",
+      "library_file_id": "libfile_a428a2455f08819199004ff96ff1b4a8",
+      "file_id": "file_0000000089388206bc562b38d2ea3296",
+      "size_bytes": 2207781
+    },
+    {
+      "path": "/baram-1998-github-ready.zip",
+      "name": "baram-1998-github-ready.zip",
+      "library_file_id": "libfile_4b9d859bc728819194cd995746777fbf",
+      "file_id": "file_00000000028c81fa9baa12861d3d0ca3",
+      "size_bytes": 37216
+    },
+    {
+      "path": "/baram_1998_4_0_research_v1.zip",
+      "name": "baram_1998_4_0_research_v1.zip",
+      "library_file_id": "libfile_e5d5799da018819188f03aa471d30b44",
+      "file_id": "file_0000000081e881fdac9b87e598bb51ab",
+      "size_bytes": 8616
+    },
+    {
+      "path": "/어플/work_assets_shared_PRIVATE_final_20261014.zip",
+      "name": "work_assets_shared_PRIVATE_final_20261014.zip",
+      "library_file_id": "libfile_e8323a0756908191a6b0862fab1291c7",
+      "file_id": "file_00000000c94882309e638f0795ebcfa6",
+      "size_bytes": 45747991
+    },
+    {
+      "path": "/어플/work_regions_PRIVATE_expansion_002_20261014.zip",
+      "name": "work_regions_PRIVATE_expansion_002_20261014.zip",
+      "library_file_id": "libfile_355d5fc3bc70819183e497df9f3e9f9b",
+      "file_id": "file_0000000075bc820683ad2eff4b61bfe2",
+      "size_bytes": 474654
+    },
+    {
+      "path": "/어플/work_regions_PRIVATE_final_20261014.zip",
+      "name": "work_regions_PRIVATE_final_20261014.zip",
+      "library_file_id": "libfile_12659d1a1ab08191bb34bb78ffe68a0d",
+      "file_id": "file_00000000adfc820c80fa07a1cf27d22c",
+      "size_bytes": 219203
+    }
+  ],
+  "ui": [
+    {
+      "path": "/7480.jpg",
+      "name": "7480.jpg",
+      "library_file_id": "libfile_d7369f0eaba08191aebce13d6d658af1",
+      "file_id": "file_000000004030820ea77d6aeda42dfb17",
+      "size_bytes": 298660
+    },
+    {
+      "path": "/7478.jpg",
+      "name": "7478.jpg",
+      "library_file_id": "libfile_fcc7a55c4fd8819182cd4dd9badea24f",
+      "file_id": "file_000000002770820e8160cb076cc1b986",
+      "size_bytes": 385438
+    },
+    {
+      "path": "/7476.jpg",
+      "name": "7476.jpg",
+      "library_file_id": "libfile_ffcf125d9e208191861c69d9171cc108",
+      "file_id": "file_00000000f02881f58de319e3d5dd4954",
+      "size_bytes": 341517
+    }
+  ]
+}

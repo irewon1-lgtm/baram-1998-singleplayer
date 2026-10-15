@@ -78,13 +78,22 @@
       "Read four required files at remote handoff HEAD",
       "Confirmed latest planning HEAD equals handoff; no step01 artifacts exist",
       "Listed 18 /Baram1998Assets files; byte materialization started",
-      "Parallel static server/tool/existing-branch investigation started"
+      "Parallel static server/tool/existing-branch investigation started",
+      "Materialized 38 selected Library artifacts; original-byte archive inventory underway",
+      "Found Korean bundled manuals in KR4.91; static content reading underway",
+      "Identified historical NA map substitutions and unsafe broad fallback policies in existing content generator",
+      "Isolated retry recovered NA collection to exact expected218174017 bytes and SHA; truncated first copy quarantined"
     ],
-    "next_resume": "Byte-level archive inventory and requirements mapping. Do not repeat intake.",
+    "next_resume": "Finish archive/internal-help findings and merge server/tool/existing-source ledgers with requirement rows, then static validation and P2 handoff.",
     "not_run": [
       "all new runtime tests",
       "P2 reference execution",
       "game changes and builds"
+    ],
+    "evidence": [
+      "docs/rebuild/step01/discovery_inventory.json",
+      "docs/rebuild/step01/ui_reference_observation.json",
+      "docs/rebuild/step01/web_evidence.json"
     ]
   }
 }

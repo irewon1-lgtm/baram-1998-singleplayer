@@ -1,0 +1,33 @@
+{
+  "source_id": "USER-UI-OBS",
+  "observation": "Three supplied photos were viewed locally in this run; visual layout requirement is authoritative, capture era unknown",
+  "photos": [
+    {
+      "filename": "7480.jpg",
+      "panel": "기술 목록"
+    },
+    {
+      "filename": "7478.jpg",
+      "panel": "물품 목록"
+    },
+    {
+      "filename": "7476.jpg",
+      "panel": "장비와 캐릭터 미리보기"
+    }
+  ],
+  "confirmed": [
+    "우측 상단 같은 영역에서 전환하는 패널",
+    "우측 하단 수치 상태창",
+    "하단 대화 영역",
+    "실제 아이콘/외형/한국어 표기의 사용자 지정"
+  ],
+  "not_confirmed": [
+    "촬영된 게임의 정확한 빌드/연도",
+    "기술 학습 레벨과 수치",
+    "지도 좌표/전투 공식/프레임 타이밍"
+  ],
+  "fact_status": "UNKNOWN",
+  "use_status": "IDENTIFIED",
+  "test_status": "NOT_RUN",
+  "new_runtime_exercised": false
+}
