@@ -9,7 +9,7 @@
   "master_plan_path": "docs/rebuild/MASTER_PLAN.md",
   "master_plan_commit": "3adf98171efc422efcf1db1d589b075d8acad65a",
   "entrypoint_path": "AGENTS.md",
-  "status": "PLAN_RECORDED",
+  "status": "P0P1_IN_PROGRESS",
   "implementation_status": "NOT_STARTED",
   "user_decisions": {
     "clean_rebuild": "CONFIRMED",
@@ -63,5 +63,28 @@
     "Change production game or deploy",
     "Republish original client/resource archives",
     "Incur new costs"
-  ]
+  ],
+  "authorization_history": [
+    {
+      "date": "2026-10-15",
+      "task_id": "BARAM_REBUILD_P0P1_001",
+      "scope": "User explicitly authorized P0/P1 inventory, static source processing, evidence mapping and P2 handoff only. No runtime/reference execution/build/deployment."
+    }
+  ],
+  "current_task_id": "BARAM_REBUILD_P0P1_001",
+  "current_remote_input_sha": "6943669fe820f793b5455e063303a993a73d5d98",
+  "checkpoint": {
+    "completed": [
+      "Read four required files at remote handoff HEAD",
+      "Confirmed latest planning HEAD equals handoff; no step01 artifacts exist",
+      "Listed 18 /Baram1998Assets files; byte materialization started",
+      "Parallel static server/tool/existing-branch investigation started"
+    ],
+    "next_resume": "Byte-level archive inventory and requirements mapping. Do not repeat intake.",
+    "not_run": [
+      "all new runtime tests",
+      "P2 reference execution",
+      "game changes and builds"
+    ]
+  }
 }
