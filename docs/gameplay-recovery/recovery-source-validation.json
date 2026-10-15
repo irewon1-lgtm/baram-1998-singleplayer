@@ -1,0 +1,29 @@
+{
+  "format": "BARAM_RECOVERY_VALIDATION_V1",
+  "result": "PASS",
+  "scope": "FRESH_RECOVERED_SOURCE_STATIC_WORLD_AND_CONTROLLED_CONTENT_INTERPRETER; NOT_NATIVE_OR_FULL_GAMEPLAY",
+  "content_version": "cd0c680ab5fc8fb223ef2d14ff0b991b18e3e100fecba693bd608040f8a66e57",
+  "historical_report_content_version": "cd0c680ab5fc8fb223ef2d14ff0b991b18e3e100fecba693bd608040f8a66e57",
+  "topology_matches_preserved_audit": true,
+  "content_links_match_preserved_audit": true,
+  "all_ten_package_pins_match": true,
+  "contract_result": "PASS",
+  "contract_groups": 7,
+  "runtime_input": "READ_ONLY_EXACT_WINDOWS_CANDIDATE_ASSETS_AND_CONTENT",
+  "source_git_identity": "b18e67f2dbde15ff7617b4e3d2d0f7a3768980c7+RECOVERED_WORKTREE",
+  "original_a6_git_blob_identity": "NOT_ASSERTED",
+  "registry_sha256": "426191a2ca59e6b126124fd0b51d0a9a3ced786f8c36cd86b38b2aba3fe60a22",
+  "world_repairs_sha256": "baf45ca871377bcd860a4d9568efdf4638eff4b5771b6f0439211afebd7d8441",
+  "contract_source_sha256": {
+    "content_registry.gd": "426191a2ca59e6b126124fd0b51d0a9a3ced786f8c36cd86b38b2aba3fe60a22",
+    "core_actions.gd": "bd341b184b569cdba5b353bc5b3a9ff30990bac28fc9e2cc5dac52cedd00fa17",
+    "effect_runtime.gd": "1adcfd2c9ea20b6f4384596b48ebcb115979fa7da6ec0d9b9df45518d2db935f",
+    "main.gd": "0eb6bc9479a9ab8b6a550a0229187fd645bb8e6a3c86291a313df94e80f7c49e",
+    "precision.gd": "d41d2558e28a3dbbab8155eba4fea35c48950fa75eea85a66c8ef094b7b56ee2",
+    "rules.gd": "80721bfd299f101360c1eb449652e78c551abe66a4ea599cb2e43c29bb231da9"
+  },
+  "reports": [
+    "recovery-source-static-audit.json",
+    "recovery-source-runtime-contract.json"
+  ]
+}

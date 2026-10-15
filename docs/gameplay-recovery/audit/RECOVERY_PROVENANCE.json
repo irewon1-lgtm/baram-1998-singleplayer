@@ -1,0 +1,118 @@
+{
+  "format": "BARAM_SOURCE_RECOVERY_PROVENANCE_V1",
+  "agent": "content_audit",
+  "method": "Replayed complete original creation text and retained follow-up patches from this agent conversation. No newly inferred implementation.",
+  "original_repository": "irewon1-lgtm/baram-1998-singleplayer",
+  "original_worktree": "/workspace/scratch/3c696736f844/baram-recovery",
+  "original_commit_reference": "a6ed23bf3467f5e96548ff231c151d4257985c1c",
+  "original_commit_availability": "REMOTE_NOT_FOUND_LOCAL_OBJECT_NOT_RECOVERED",
+  "game_source_modified": false,
+  "new_execution_tests": "NOT_RUN",
+  "python_syntax": "PASS_AST_PARSE_ONLY",
+  "files": [
+    {
+      "path": "docs/gameplay-recovery/audit/audit_runtime.py",
+      "bytes": 15434,
+      "sha256": "8a7d6db5b2f6a713a91aa14205bae157b0bc82afd1b66aec1ab52a8ffbe39b68",
+      "recovery_status": "RECOVERED_FROM_RETAINED_TOOL_CALL_TEXT",
+      "original_blob_hash_verification": "BLOCKED_ORIGINAL_GIT_OBJECT_UNAVAILABLE"
+    },
+    {
+      "path": "docs/gameplay-recovery/audit/export_runtime_world.gd",
+      "bytes": 1216,
+      "sha256": "4bef8c2e1f328f5d2cd2e4410f6c6d3275726e6cd6d1bc115df7859b4d570401",
+      "recovery_status": "RECOVERED_FROM_RETAINED_TOOL_CALL_TEXT",
+      "original_blob_hash_verification": "BLOCKED_ORIGINAL_GIT_OBJECT_UNAVAILABLE"
+    },
+    {
+      "path": "docs/gameplay-recovery/audit/runtime_contract_runner.gd",
+      "bytes": 8816,
+      "sha256": "898bc31483cc25d7f689b3f6724215154459cfb92212e27f87d7ff9e9b481c33",
+      "recovery_status": "RECOVERED_FROM_RETAINED_TOOL_CALL_TEXT",
+      "original_blob_hash_verification": "BLOCKED_ORIGINAL_GIT_OBJECT_UNAVAILABLE"
+    },
+    {
+      "path": "docs/gameplay-recovery/audit/restore_repair_runner.gd",
+      "bytes": 5624,
+      "sha256": "fb531085b8083c4966724caefeb3d156dd5fa996ce470575f23b73e4aea10470",
+      "recovery_status": "RECOVERED_FROM_RETAINED_TOOL_CALL_TEXT",
+      "original_blob_hash_verification": "BLOCKED_ORIGINAL_GIT_OBJECT_UNAVAILABLE"
+    }
+  ],
+  "note": "Recovered text is not labelled byte-identical to the lost Git blob because that blob/hash is unavailable. Earlier preserved execution reports are historical evidence and are not rerun PASS results.",
+  "reports": [
+    {
+      "path": "docs/gameplay-recovery/baseline-static-audit.json",
+      "recovery_status": "COPIED_VERBATIM_FROM_PRESERVED_EVIDENCE_ARCHIVE",
+      "archive": "baram-recovery-evidence-a6ed23bf.zip",
+      "member": "whole-content-audit/baseline-static-audit.json",
+      "bytes": 349309,
+      "sha256": "d2d0750b4b9258cc8a7aa7dc137f1f1a24823a605f8f4e6b26b72a109bf3a0ab",
+      "new_execution_result": "NOT_RUN_HISTORICAL_REPORT_ONLY"
+    },
+    {
+      "path": "docs/gameplay-recovery/recovered-static-audit.json",
+      "recovery_status": "COPIED_VERBATIM_FROM_PRESERVED_EVIDENCE_ARCHIVE",
+      "archive": "baram-recovery-evidence-a6ed23bf.zip",
+      "member": "whole-content-audit/recovered-static-audit.json",
+      "bytes": 343249,
+      "sha256": "5ab3e79a8e07a93ac3646fce169ac093f3960e6892d9006d1a302d33a3eea0f8",
+      "new_execution_result": "NOT_RUN_HISTORICAL_REPORT_ONLY"
+    },
+    {
+      "path": "docs/gameplay-recovery/runtime-contract-recovered.json",
+      "recovery_status": "COPIED_VERBATIM_FROM_PRESERVED_EVIDENCE_ARCHIVE",
+      "archive": "baram-recovery-evidence-a6ed23bf.zip",
+      "member": "whole-content-audit/runtime-contract-recovered.json",
+      "bytes": 3141,
+      "sha256": "1c0149402f9db57f9e2882fc8dc38fa0b0f8e1e492e9aff2b79e367db1979ec6",
+      "new_execution_result": "NOT_RUN_HISTORICAL_REPORT_ONLY"
+    },
+    {
+      "path": "docs/gameplay-recovery/restore-repair-recovered.json",
+      "recovery_status": "COPIED_VERBATIM_FROM_PRESERVED_EVIDENCE_ARCHIVE",
+      "archive": "baram-recovery-evidence-a6ed23bf.zip",
+      "member": "whole-content-audit/restore-repair-recovered.json",
+      "bytes": 1280,
+      "sha256": "ca2fc9ce57523f6a251bf9ceaa127a3a3fc0a4dd0b0568ce5b5db0eab0021e58",
+      "new_execution_result": "NOT_RUN_HISTORICAL_REPORT_ONLY"
+    },
+    {
+      "path": "docs/gameplay-recovery/BASELINE_AUDIT.md",
+      "recovery_status": "RECOVERED_FROM_RETAINED_CREATION_TEXT_AND_FINAL_PATCHES",
+      "bytes": 8166,
+      "sha256": "41e6fbcc6d8e265d555ba0f79188bcda7b36dcc7ba43381fe970265951d76b5c",
+      "original_blob_hash_verification": "BLOCKED_ORIGINAL_GIT_OBJECT_UNAVAILABLE",
+      "new_execution_result": "NOT_RUN_HISTORICAL_REPORT_ONLY"
+    },
+    {
+      "path": "docs/gameplay-recovery/RECOVERED_AUDIT.md",
+      "recovery_status": "RECOVERED_FROM_RETAINED_CREATION_TEXT_AND_FINAL_PATCHES",
+      "bytes": 4100,
+      "sha256": "f50de4f23de5821a694f20c93bec6eb07552648f5cdb951d74ff2470ea886e23",
+      "original_blob_hash_verification": "BLOCKED_ORIGINAL_GIT_OBJECT_UNAVAILABLE",
+      "new_execution_result": "NOT_RUN_HISTORICAL_REPORT_ONLY"
+    }
+  ],
+  "unavailable_reports": [
+    {
+      "path": "docs/gameplay-recovery/runtime-contract-baseline-content.json",
+      "status": "BLOCKED_NO_COMPLETE_RETAINED_TEXT_OR_ARCHIVE_MEMBER",
+      "action": "NOT_RECONSTRUCTED"
+    }
+  ],
+  "gdscript_syntax_checks": {
+    "engine": "Godot 4.6.3.stable.official.7d41c59c4",
+    "operation": "--headless --path game --script <recovered-audit-script> --check-only",
+    "result": "PASS",
+    "scripts": 3,
+    "gameplay_execution": "NOT_RUN"
+  },
+  "fresh_execution": {
+    "result": "PASS",
+    "scope": "FRESH_RECOVERED_SOURCE_STATIC_WORLD_AND_CONTROLLED_CONTENT_INTERPRETER; NOT_NATIVE_OR_FULL_GAMEPLAY",
+    "report": "docs/gameplay-recovery/recovery-source-validation.json",
+    "historical_reports_reused_as_execution_results": false,
+    "native_platform_execution": "NOT_RUN"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "source_manifest_commit": "a6ed23bf3467f5e96548ff231c151d4257985c1c",
+  "status": "PASS",
+  "files": [
+    {
+      "file": "compass_perf_probe.gd",
+      "sha256": "a3ffac7230cfe08ec6acf1db378395d0ba8dc411d87ef96c68b50d1b826cbdbb",
+      "original_sha256": "a3ffac7230cfe08ec6acf1db378395d0ba8dc411d87ef96c68b50d1b826cbdbb",
+      "status": "EXACT_SOURCE_SHA_MATCH"
+    },
+    {
+      "file": "effect_wait_probe.gd",
+      "sha256": "083c73bdc03a4f51d41d49d16c67b62d3331efe1ce92e398fd7ed37a5fa7cf66",
+      "original_sha256": "083c73bdc03a4f51d41d49d16c67b62d3331efe1ce92e398fd7ed37a5fa7cf66",
+      "status": "EXACT_SOURCE_SHA_MATCH"
+    },
+    {
+      "file": "entity_index_probe.gd",
+      "sha256": "d45584a77eb7e97a4ddb1008de1374134c1e3bffecbfda52e9df493511861368",
+      "original_sha256": "d45584a77eb7e97a4ddb1008de1374134c1e3bffecbfda52e9df493511861368",
+      "status": "EXACT_SOURCE_SHA_MATCH"
+    },
+    {
+      "file": "frame_cpu_probe.gd",
+      "sha256": "66a36985d2616fb393d6fab33f47051ee0001251953db267f6c1e45f19e47d14",
+      "original_sha256": "66a36985d2616fb393d6fab33f47051ee0001251953db267f6c1e45f19e47d14",
+      "status": "EXACT_SOURCE_SHA_MATCH"
+    },
+    {
+      "file": "navigation.gd",
+      "sha256": "e4d2bf0ac2698e6939617596dd07fc989c1d19cdcf50d710a87d9ff0ffc51598",
+      "original_sha256": "e4d2bf0ac2698e6939617596dd07fc989c1d19cdcf50d710a87d9ff0ffc51598",
+      "status": "EXACT_SOURCE_SHA_MATCH"
+    },
+    {
+      "file": "recovery_routes_probe.gd",
+      "sha256": "a12cecf9b02c526a2199e916c83b7f90d96913f933cc3a0a0808028b00dc6dfe",
+      "original_sha256": "a12cecf9b02c526a2199e916c83b7f90d96913f933cc3a0a0808028b00dc6dfe",
+      "status": "EXACT_SOURCE_SHA_MATCH"
+    }
+  ]
+}

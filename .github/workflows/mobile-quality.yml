@@ -1,17 +1,18 @@
-name: Mobile control quality native packages
+name: Gameplay recovery native packages
 on:
   push:
-    branches: [work/mobile-controls-20261015]
-    paths: ['game/**', 'tools/**', '.github/workflows/mobile-quality.yml']
+    branches: [work/mobile-controls-20261015, work/gameplay-recovery-20261015]
+    paths: ['game/**', 'tools/**', '.gitattributes', 'integration/content-import/capabilities.json', '.github/workflows/mobile-quality.yml']
 permissions:
   contents: read
 concurrency:
-  group: mobile-quality
+  group: gameplay-recovery-${{ github.ref }}
   cancel-in-progress: true
 jobs:
   android:
+    if: github.event.repository.private == false
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 55
     environment: baram-windows-private
     env:
       PRIVATE_REPO: ${{ vars.BARAM_PRIVATE_REPOSITORY || 'irewon1-lgtm/baram-windows-private' }}
@@ -32,17 +33,20 @@ jobs:
       - name: Build exact signed universal player APK
         working-directory: source
         run: |
-          python -m pip install Pillow==11.3.0 cryptography
+          python -m pip install Pillow==11.3.0 cryptography jsonschema==4.25.1
           curl -fL https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_linux.x86_64.zip -o godot.zip
           echo 'd0bc2113065e481c9c2c2b2c37daa4e8be3fe9e27f0ab9ab0b6096e9a37907f3  godot.zip' | sha256sum --check
           unzip -q godot.zip -d editor
           chmod +x editor/Godot_v4.6.3-stable_linux.x86_64
           curl -fL https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_export_templates.tpz -o templates.tpz
           echo '3fbe2c0e2dec9d537ab9ec97bcf8da91dcf23357fc51f67092dd068d839290a8  templates.tpz' | sha256sum --check
-          unzip -q templates.tpz templates/android_release.apk
+          unzip -q templates.tpz templates/android_release.apk templates/android_debug.apk
           python tools/restore_private_runtime.py --vault ../vault --out ../vault/runtime
-          python tools/android_ci.py --runtime ../vault/runtime --godot "$PWD/editor/Godot_v4.6.3-stable_linux.x86_64" --template templates/android_release.apk --sdk "$ANDROID_HOME" --signing ../vault/android/android-signing.json --universal --out android-build
+          python tools/prepare_recovery_content.py --runtime ../vault/runtime --output ../runtime-recovery --report recovery-content.json
+          python tools/android_ci.py --runtime ../runtime-recovery --godot "$PWD/editor/Godot_v4.6.3-stable_linux.x86_64" --template templates/android_release.apk --sdk "$ANDROID_HOME" --signing ../vault/android/android-signing.json --universal --out android-build
+          python tools/android_ci.py --runtime ../runtime-recovery --godot "$PWD/editor/Godot_v4.6.3-stable_linux.x86_64" --template templates/android_debug.apk --sdk "$ANDROID_HOME" --signing ../vault/android/android-signing.json --universal --verification --out android-recovery-check
           mkdir -p deliverable
+          cp recovery-content.json deliverable/
           cp android-build/baram-Android-arm64.apk deliverable/baram-Android-update.apk
           cp android-build/android-build.json android-build/signature.log deliverable/
       - name: Enable emulator KVM
@@ -59,7 +63,9 @@ jobs:
           ram-size: 4096M
           disable-animations: true
           emulator-options: -no-window -gpu swangle -noaudio -no-boot-anim -camera-back none -memory 4096
-          script: python source/tools/quality_android_input.py --apk source/deliverable/baram-Android-update.apk --out source/deliverable/android-evidence --world vault/runtime/private_assets/source_maps/world.json
+          script: |
+            python source/tools/quality_android_input.py --apk source/deliverable/baram-Android-update.apk --out source/deliverable/android-evidence --world runtime-recovery/private_assets/source_maps/world.json
+            python source/tools/quality_recovery_android.py --apk source/android-recovery-check/baram-Android-verification.apk --out source/deliverable/android-recovery-evidence --source-sha ${{ github.sha }}
       - name: Encrypt private artifacts
         if: always()
         working-directory: source
@@ -73,16 +79,17 @@ jobs:
         with:
           name: android-evidence-encrypted
           path: source/android-evidence.sealed
-          retention-days: 3
+          retention-days: 1
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: android-quality-encrypted
           path: source/android-quality.sealed
-          retention-days: 3
+          retention-days: 1
   windows:
+    if: github.event.repository.private == false
     runs-on: windows-latest
-    timeout-minutes: 25
+    timeout-minutes: 45
     environment: baram-windows-private
     env:
       PRIVATE_REPO: ${{ vars.BARAM_PRIVATE_REPOSITORY || 'irewon1-lgtm/baram-windows-private' }}
@@ -107,14 +114,21 @@ jobs:
         shell: pwsh
         working-directory: source
         run: |
-          python -m pip install Pillow==11.3.0 cryptography
+          python -m pip install Pillow==11.3.0 cryptography jsonschema==4.25.1
           Invoke-WebRequest 'https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_win64.exe.zip' -OutFile editor.zip
           if ((Get-FileHash editor.zip -Algorithm SHA256).Hash.ToLower() -ne 'e39986a178d585ce7ac198fb8de6ea436366dc0cc00e594810c2e3e104c04b90') { throw 'Editor digest mismatch' }
           Expand-Archive editor.zip editor
           $godot = (Get-ChildItem editor -Filter '*.exe' | Where-Object { $_.Name -notmatch 'console' } | Select-Object -First 1).FullName
           python tools/restore_private_runtime.py --vault ../vault --out ../vault/runtime
           if ($LASTEXITCODE) { throw 'Runtime failure' }
-          python tools/windows_ci.py build --runtime ../vault/runtime --template ../vault/runtime/template-win64.exe --godot "$godot" --out player-check
+          python tools/prepare_recovery_content.py --runtime ../vault/runtime --output ../runtime-recovery --report recovery-content.json
+          if ($LASTEXITCODE) { throw 'Content integration failure' }
+          Invoke-WebRequest 'https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_export_templates.tpz' -OutFile templates.tpz
+          if ((Get-FileHash templates.tpz -Algorithm SHA256).Hash.ToLower() -ne '3fbe2c0e2dec9d537ab9ec97bcf8da91dcf23357fc51f67092dd068d839290a8') { throw 'Template archive digest mismatch' }
+          python -c "import zipfile; zipfile.ZipFile('templates.tpz').extract('templates/windows_release_x86_64.exe')"
+          if ($LASTEXITCODE) { throw 'Template extraction failure' }
+          if ((Get-FileHash templates/windows_release_x86_64.exe -Algorithm SHA256).Hash.ToLower() -ne '91724f15024a3a545e28ccd83134403d31ce2323a38e51c95e4dfa282f732ab6') { throw 'Official Windows template digest mismatch' }
+          python tools/windows_ci.py build --runtime ../runtime-recovery --template templates/windows_release_x86_64.exe --godot "$godot" --out player-check
           if ($LASTEXITCODE) { throw 'Build failure' }
           python tools/windows_ci.py verify --out player-check
           if ($LASTEXITCODE) { throw 'Windows native regression failed' }
@@ -123,6 +137,7 @@ jobs:
           python tools/windows_ci.py archive --out player-check --require-windows
           if ($LASTEXITCODE) { throw 'Windows native archive gate failed' }
           New-Item -ItemType Directory deliverable -Force
+          Copy-Item recovery-content.json deliverable/
           Copy-Item player-check/*.zip deliverable/
           Copy-Item player-check/build.json deliverable/
           Copy-Item player-check/evidence deliverable/ -Recurse
@@ -139,7 +154,7 @@ jobs:
         with:
           name: windows-quality-encrypted
           path: source/windows-quality.sealed
-          retention-days: 3
+          retention-days: 1
   android_pointers:
     needs: android
     if: always() && needs.android.result != 'cancelled'
@@ -199,4 +214,4 @@ jobs:
         with:
           name: android-pointers-encrypted
           path: pointers.sealed
-          retention-days: 3
+          retention-days: 1

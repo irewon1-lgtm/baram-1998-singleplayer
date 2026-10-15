@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "source_commit": "a6ed23bf3467f5e96548ff231c151d4257985c1c",
+  "copied_android_project_vs_commit": "PASS_ALL_SOURCE_AND_PUBLIC_DATA",
+  "copied_windows_project_vs_commit": "PASS_ALL_SOURCE_AND_PUBLIC_DATA",
+  "generated_settings_excluded": [
+    "project.godot",
+    "data/build_info.json"
+  ],
+  "android_windows_source_inputs_sha256": "ddffd1595b84820cb486ca13aedde395a013b9a0d85cd626afb32248e88583f7",
+  "verification_pack_recovery_probe_sha256": "7a4f1fae1a38818ff8b4d4e1c021288ba4ef13d5d69f2d7d4a0856b4057d283b",
+  "verification_pack_probe_vs_commit": "PASS",
+  "android_report_correction": {
+    "status": "PASS",
+    "all_copied_source_files_match_commit": "a6ed23bf3467f5e96548ff231c151d4257985c1c",
+    "original_metadata_sha256": "375921256d1fd79c9ef1bf3112a5399967ba53f033ee8c8ab32f6c6514c5a907",
+    "correction": "Original fingerprint read mutable repository after export; copied project inspected byte-for-byte against commit and Windows identical copied source. Only external JSON fingerprint corrected; signed APK unchanged.",
+    "apk_sha256_before_and_after": "ef53fef3220dbaf5fc885f9388937e44420a2a48feb21d4f7ad063c2f0fd5166"
+  },
+  "native_platform_execution": "BLOCKED_PUBLICATION_REQUIRES_USER_APPROVAL"
+}

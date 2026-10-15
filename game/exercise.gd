@@ -44,7 +44,7 @@ func route(target: Vector2i) -> bool:
     # BFS plans keys around actual collision/spawn data. The game still decides every step.
     for attempt in range(40):
         if game.player.hp<=0:return false
-        if game.player.hp < game.player.hp_max*0.5 and int(game.player.inventory.get("초보 회복약",0))>0:
+        if game.player.hp < game.player.hp_max*0.5 and potion_count()>0:
             await use_potion()
         if game.cell()==target:return true
         var current = game.cell()
@@ -78,7 +78,7 @@ func route(target: Vector2i) -> bool:
             next=parents[next]
         for step in steps:
             if game.player.hp<=0:return false
-            if game.player.hp<game.player.hp_max*0.5 and game.player.inventory.get("초보 회복약",0)>0:await use_potion()
+            if game.player.hp<game.player.hp_max*0.5 and potion_count()>0:await use_potion()
             var expected_map=game.player.map
             if not game.free_cell(expected_map,step,"",directions[step]):break
             await key([KEY_UP,KEY_LEFT,KEY_DOWN,KEY_RIGHT][directions[step]])
@@ -671,3 +671,7 @@ func finish():
     file.store_string(JSON.stringify(report,"  "));file.close()
     print("SCREEN_STAGE quit elapsed_ms="+str(Time.get_ticks_msec()-started))
     game.get_tree().quit(0 if failures==0 else 1)
+
+func potion_count() -> int:
+    var id = game.rules.find_content("item", "초보 회복약").get("id", "초보 회복약")
+    return int(game.player.inventory.get(id, 0)) + (int(game.player.inventory.get("초보 회복약", 0)) if id != "초보 회복약" else 0)

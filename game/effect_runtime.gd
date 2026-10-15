@@ -19,7 +19,10 @@ static func compile_skill(definition: Dictionary) -> Array:
                 "attack_multiplier":effect.modifiers.attack_multiplier=amount
                 "damage_reduction":effect.modifiers.damage_reduction=amount
                 "invisibility":effect.modifiers.hidden=1
-                "stun":effect.modifiers.stun=1
+                "stun","paralyze":effect.modifiers.stun=1
+                # Authored extension has magnitude 25 with no percentage unit.
+                # Reuse the existing additive damage modifier explicitly.
+                "weaken":effect.modifiers.damage=-amount
                 "blind":effect.modifiers.blind=amount
                 "confuse":effect.modifiers.confuse=1
                 "poison":effect.tick_ms=1000

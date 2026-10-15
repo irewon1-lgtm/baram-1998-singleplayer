@@ -9,19 +9,44 @@ var marker_failed=false
 var generation=0
 var searches=0
 var last_search_us=0
+var last_compass={}
 
 func _init(owner):game=owner
 
 func cancel():
     generation+=1;path.clear();pending.clear();marker=Vector2i(-1,-1)
 
-func occupied() -> Dictionary:
+func occupied(map_id: String="") -> Dictionary:
+    if map_id=="":map_id=game.player.map
     var result={}
-    for e in game.entities.values():
-        if e.alive and e.map==game.player.map:result[Vector2i(e.x,e.y)]=true
-    for n in game.maps[game.player.map].npcs:
+    for e in game.entities_by_map.get(map_id,[]):
+        if e.alive and e.map==map_id:result[Vector2i(e.x,e.y)]=true
+    for n in game.maps[map_id].npcs:
         if n.get("blocking",true):result[Vector2i(n.x,n.y)]=true
     return result
+
+func compass_entry(direction: int) -> Vector2i:
+    # The old compass scanned every town cell and, per cell, every monster
+    # in the world. One occupancy snapshot plus nearest Manhattan rings
+    # gives the same result, including its original row-major tie-break.
+    var began=Time.get_ticks_usec()
+    var town=game.maps.village
+    var desired=[Vector2i(int(town.width)-3,int(town.height)/2),Vector2i(2,int(town.height)/2),Vector2i(int(town.width)/2,int(town.height)-3),Vector2i(int(town.width)/2,2)][clampi(direction,0,3)]
+    var blockers=occupied("village")
+    var checks=0
+    for radius in range(int(town.width)+int(town.height)):
+        for y in range(maxi(0,desired.y-radius),mini(int(town.height)-1,desired.y+radius)+1):
+            var dx=radius-absi(y-desired.y)
+            var xs=[desired.x-dx] if dx==0 else [desired.x-dx,desired.x+dx]
+            for x in xs:
+                if x<0 or x>=int(town.width):continue
+                checks+=1
+                var candidate=Vector2i(x,y)
+                if town.blocked[y][x] or blockers.has(candidate):continue
+                last_compass={"microseconds":Time.get_ticks_usec()-began,"entity_visits":game.entities_by_map.get("village",[]).size(),"candidate_checks":checks,"radius":radius,"path_searches":0}
+                return candidate
+    last_compass={"microseconds":Time.get_ticks_usec()-began,"entity_visits":game.entities_by_map.get("village",[]).size(),"candidate_checks":checks,"radius":-1,"path_searches":0}
+    return Vector2i(town.entry[0],town.entry[1])
 
 func route(goal: Vector2i, action: Dictionary={}) -> bool:
     cancel()
@@ -93,7 +118,7 @@ func tap(at: Vector2):
     for n in game.maps[game.player.map].npcs:
         if Rect2(game.screen_point(n.x,n.y)-Vector2(23,82),Vector2(46,82)).has_point(at):
             game.selected_target="";route(Vector2i(n.x,n.y),{"kind":"npc","id":n.id,"position":Vector2i(n.x,n.y)});return
-    for e in game.entities.values():
+    for e in game.entities_by_map.get(game.player.map,[]):
         if e.alive and e.map==game.player.map and Rect2(game.screen_point(e.x,e.y)-Vector2(24,75),Vector2(48,75)).has_point(at):
             cancel();game.selected_target=e.id;game.notice(e.spec.name+" 선택");return
     for drop in game.loot:
@@ -108,7 +133,10 @@ func attack_selected():
     if target.is_empty() or not target.alive or target.map!=game.player.map:
         game.selected_target="";game.begin_attack();return
     var offset=Vector2i(target.x,target.y)-game.cell()
-    if absi(offset.x)+absi(offset.y)==1:
+    var profile=game.rules.weapon_attack_profile(game.player)
+    if profile.get("kind","")=="ranged_physical" and offset.length()<=float(profile.get("range_tiles",1)) and game.line_of_sight(game.player.map,game.cell(),Vector2i(target.x,target.y)):
+        cancel();game.player.direction=game.Facing.toward(offset);game.begin_attack()
+    elif absi(offset.x)+absi(offset.y)==1:
         cancel();game.player.direction=game.Facing.toward(offset);game.begin_attack()
     elif game.direct_direction<0 and pending.get("id","")!=target.id:
         route(Vector2i(target.x,target.y),{"kind":"monster","id":target.id,"position":Vector2i(target.x,target.y)})

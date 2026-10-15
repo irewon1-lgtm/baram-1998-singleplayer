@@ -82,6 +82,7 @@ func activate(id: String):
         "close":key(KEY_ESCAPE)
         "skills":game.menu="";key(KEY_K)
         "equipment":game.menu="";key(KEY_O)
+        "map":game.world_map_view.open()
         "account":game.clear_inputs();game.continuity.show_login()
         "save":game.save_game()
         "exit":game.clear_inputs();game.continuity.save_and_exit()
@@ -99,6 +100,7 @@ func center_for(code: int) -> Vector2:
 
 func _input(event):
     if game==null or not game.startup_ready or game.menu=="creation" or game.continuity_blocked:return
+    if game.menu=="world_map":return # Native map controls own their touches and drags.
     if event is InputEventScreenTouch:
         get_viewport().set_input_as_handled()
         if event.pressed:pointer_down(event.index,event.position)
@@ -203,6 +205,7 @@ func glyph(id: String, at: Vector2, scale: float, color=Color(.94,.86,.63)):
 
 func _draw():
     if game==null or game.menu=="creation" or game.player.is_empty() or game.continuity_blocked:return
+    if game.menu=="world_map":return
     if game.menu!="":draw_modal();return
     var p=game.player
     for target in targets:
@@ -276,7 +279,7 @@ func draw_modal():
     targets=[]
     draw_rect(get_viewport_rect(),Color(0,0,0,.46))
     var r=modal_rect();panel(r,Color(.07,.09,.08,.97))
-    var headings={"status":"캐릭터 정보","inventory":"가방","pause":"메뉴","equipment":"장비","skills":"배운 기술","trainer":"기술 수련","shop":"물품 거래","dialogue":"대화","services":"NPC 서비스","travel":"길 안내","map":"지역 목록","compass":"비영사천문","quests":"의뢰와 보상","advancement":"승급","recipe":"재료 제작","experience_exchange":"경험치 교환","enhancement":"장비 강화","save_error":"저장 오류 · 원본 보존"}
+    var headings={"status":"캐릭터 정보","inventory":"가방","pause":"메뉴","equipment":"장비","skills":"배운 기술","trainer":"기술 수련","shop":"물품 거래","dialogue":"대화","services":"NPC 서비스","travel":"길 안내","map":"지도","world_map":"지도","job_selection":"직업 선택","compass":"비영사천문","quests":"의뢰와 보상","advancement":"승급","recipe":"재료 제작","experience_exchange":"경험치 교환","enhancement":"장비 강화","save_error":"저장 오류 · 원본 보존"}
     text(headings.get(game.menu,game.menu),r.position+Vector2(25,40),25)
     var close=Rect2(Vector2(r.end.x-unit-8,r.position.y+4),Vector2.ONE*unit)
     add_target("close",close);glyph("close",close.get_center(),unit)
@@ -289,9 +292,11 @@ func draw_modal():
         modal_button("skills","기술 보기",Rect2(Vector2(r.position.x+210,r.end.y-unit-20),Vector2(170,unit)))
         return
     if game.menu=="pause":
-        var entries=[["resume","계속하기"],["skills","기술"],["equipment","장비"],["save","저장"],["account","계정 이어하기"],["exit","저장하고 나가기"]]
+        var entries=[["resume","계속하기"],["map","지도"],["skills","기술"],["equipment","장비"],["save","저장"],["account","계정 이어하기"],["exit","저장하고 나가기"]]
+        var button_width=(r.size.x-68)/2
+        var button_height=minf(unit,maxf(48,(r.size.y-180)/4-10))
         for i in range(entries.size()):
-            modal_button(entries[i][0],entries[i][1],Rect2(r.position+Vector2(28+(i%2)*330,96+int(i/2)*(unit+12)),Vector2(310,unit)))
+            modal_button(entries[i][0],entries[i][1],Rect2(r.position+Vector2(28+(i%2)*(button_width+12),96+int(i/2)*(button_height+10)),Vector2(button_width,button_height)))
         text("버전  "+game.store.game_build.left(12),Vector2(r.position.x+28,r.end.y-48),16)
         if game.continuity!=null:text(game.continuity.badge.text,Vector2(r.position.x+28,r.end.y-22),16)
         return

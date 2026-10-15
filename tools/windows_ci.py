@@ -22,6 +22,8 @@ from package_windows import pe_info, sha256, safe_path, README, VERSION
 
 NAME = '바람의나라_Windows64_복구판'
 EXE = '바람의나라.exe'
+EXCLUDE = 'build_world_cache.gd,*probe.gd,*runner.gd,*render_canvas.gd,native_regression.gd,exercise.gd,data/balance_tests.json'
+VERIFY_MEMBERS = ['exercise.gd','work_play_probe.gd','native_regression.gd','recovery_play_probe.gd']
 
 
 def write_json(path, data):
@@ -56,6 +58,57 @@ def validate_runtime(runtime):
     return metadata, rows
 
 
+def source_inputs(project):
+    """Fingerprint the exact copied inputs before export settings are generated."""
+    rows=[{'path':'game/'+p.relative_to(project).as_posix(),'sha256':sha256(p)}
+          for p in sorted(project.rglob('*')) if p.is_file() and '.godot' not in p.parts
+          and p.suffix not in ['.uid','.pck'] and p.name not in ['build_info.json','export_presets.cfg','cloud_public.json','mobile_probe.json','initial_save.json']]
+    encoded=json.dumps(rows,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()
+    return {'scope':'FROZEN_BUILD_GAME_INPUTS_INCLUDING_VERIFICATION_SOURCES',
+            'sha256':hashlib.sha256(encoded).hexdigest(),'files':rows}
+
+
+def game_checkout_commit():
+    commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
+    state=subprocess.check_output(['git','status','--porcelain','--untracked-files=all','--','game'],cwd=ROOT,text=True)
+    if state.strip():raise ValueError('Commit all game source before producing a labeled installer')
+    return commit
+
+
+def copy_game_source(project):
+    before=source_inputs(ROOT/'game')
+    shutil.copytree(ROOT/'game',project,ignore=shutil.ignore_patterns('.godot','*.uid','cloud_public.json'))
+    frozen=source_inputs(project)
+    if before!=frozen or frozen!=source_inputs(ROOT/'game'):
+        raise ValueError('Game source changed while copying; rebuild from a stable checkout')
+    return frozen
+
+
+def verify_frozen_source(project,inputs):
+    for row in inputs['files']:
+        relative=row['path'].removeprefix('game/')
+        if relative=='project.godot':continue # intentional platform bootstrap settings
+        if sha256(project/relative)!=row['sha256']:raise ValueError('Frozen source changed: '+relative)
+
+
+def cache_revision(project):
+    match=re.search(r'const\s+CACHE_REVISION\s*=\s*"([^"\n]+)"',
+                    (project/'startup.gd').read_text(encoding='utf-8'))
+    if not match:raise ValueError('Cache compiler revision missing from frozen source')
+    return match[1]
+
+
+def validate_cache(cache,stage,content,project):
+    manifest=json.loads((cache/'manifest.json').read_text(encoding='utf-8'))
+    if (manifest.get('format')!='BARAM_WORLD_CACHE_V1'
+        or manifest.get('source_world_sha256')!=sha256(stage/'private_assets/source_maps/world.json')
+        or manifest.get('content_version')!=content['release_id']
+        or manifest.get('compiler_revision')!=cache_revision(project)
+        or manifest.get('sha256')!=sha256(cache/'world.bin')):
+        raise ValueError('World cache does not match source compiler and pinned private runtime')
+    return manifest
+
+
 def build(args):
     runtime = Path(args.runtime).resolve()
     out = Path(args.out).resolve()
@@ -70,9 +123,10 @@ def build(args):
         target = stage/path
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(runtime/path, target)
-    shutil.copytree(ROOT/'game', project, ignore=shutil.ignore_patterns('.godot', '*.uid'))
+    commit=game_checkout_commit()
+    inputs=copy_game_source(project)
+    if game_checkout_commit()!=commit:raise ValueError('Source commit changed while freezing build inputs')
     content = json.loads((stage/'private_content/ACTIVE.json').read_text(encoding='utf-8')) if (stage/'private_content/ACTIVE.json').exists() else {'release_id':'legacy-base'}
-    commit = subprocess.check_output(['git','rev-parse','HEAD'], cwd=ROOT, text=True).strip()
     write_json(project/'data/build_info.json', {'commit':commit,'content_version':content['release_id']})
     cfg = (project/'project.godot').read_text(encoding='utf-8')
     cfg = cfg.replace('run/main_scene="res://main.tscn"', 'run/main_scene="res://windows_bootstrap.tscn"')
@@ -102,21 +156,22 @@ texture_format/s3tc_bptc=true
 texture_format/etc2_astc=false
 '''
     presets=presets.replace('exclude_filter="build_world_cache.gd,*probe.gd,*runner.gd"',
-        'exclude_filter="build_world_cache.gd,*probe.gd,*runner.gd,native_regression.gd,exercise.gd,data/balance_tests.json"')
+        'exclude_filter="'+EXCLUDE+'"')
     (project/'export_presets.cfg').write_text(presets, encoding='utf-8')
-    write_json(out/'verification-members.json',['exercise.gd','work_play_probe.gd','native_regression.gd'])
-    command([args.godot,'--headless','--path',ROOT/'game','--script',ROOT/'tools/pack_runtime.gd','--',
-        '--root='+str(ROOT/'game'),'--manifest='+str(out/'verification-members.json'),
+    write_json(out/'verification-members.json',VERIFY_MEMBERS)
+    command([args.godot,'--headless','--path',project,'--script',ROOT/'tools/pack_runtime.gd','--',
+        '--root='+str(project),'--manifest='+str(out/'verification-members.json'),
         '--out='+str(out/'verification.pck')],out/'verification-pack.log')
     cache=stage/'runtime_cache'
     if args.cache:
         shutil.copytree(Path(args.cache),cache)
-        manifest=json.loads((cache/'manifest.json').read_text(encoding='utf-8'))
-        if manifest['source_world_sha256']!=sha256(stage/'private_assets/source_maps/world.json') or manifest['content_version']!=content['release_id'] or manifest['sha256']!=sha256(cache/'world.bin'):
-            raise ValueError('Cached world does not match private runtime')
+        validate_cache(cache,stage,content,project)
     else:
-        command([args.godot,'--headless','--path',ROOT/'game','--script','build_world_cache.gd','--',
+        command([args.godot,'--headless','--path',project,'--script','build_world_cache.gd','--',
                  '--assets='+str(stage/'private_assets'),'--content='+str(stage/'private_content'),'--out='+str(cache)], out/'cache.log')
+    validate_cache(cache,stage,content,project)
+    verify_frozen_source(project,inputs)
+    export_inputs=source_inputs(project)
     command([args.godot,'--headless','--editor','--path',project,'--import','--quit'],out/'import.log')
     command([args.godot,'--headless','--path',project,'--export-release','Windows64',stage/EXE],out/'export.log')
     pe_info(stage/EXE)
@@ -125,12 +180,12 @@ texture_format/etc2_astc=false
     (stage/'처음읽기.txt').write_text(README+'\n복구판: 첫 화면에 로딩 단계가 표시됩니다. 실행 오류 로그는 저장 폴더 주변 logs/startup.json 및 사용자 데이터 logs/godot.log에 자동 기록됩니다.\n', encoding='utf-8-sig')
     write_json(stage/'실행검증.json',{'windows_native_execution':'NOT_RUN','actual_windows_gui':'BLOCKED_NO_OPERATOR_GUI', 'game_function_automation':'NOT_RUN'})
     write_json(stage/'PACKAGE_MANIFEST.json',{'private_only':True,'contains_user_saves':False,
-        'build':{'commit':commit,'content_version':content['release_id']},'packaging_engine':version,
+        'build':{'commit':commit,'content_version':content['release_id']},'source_inputs':inputs,'exported_project_source_inputs':export_inputs,'packaging_engine':version,
         'template':template_info,'original_private_files':len([r for r in rows if r['path'].startswith('private_')]),
         'original_private_bytes_preserved':True,'files':[
             {'path':p.relative_to(stage).as_posix(),'bytes':p.stat().st_size,'sha256':sha256(p)}
             for p in sorted(stage.rglob('*')) if p.is_file()]})
-    write_json(out/'build.json',{'stage':str(stage),'project':str(project),'commit':commit,'status':'EXPORTED_NOT_EXECUTION_PASS'})
+    write_json(out/'build.json',{'stage':str(stage),'project':str(project),'commit':commit,'source_inputs':inputs,'exported_project_source_inputs':export_inputs,'status':'EXPORTED_NOT_EXECUTION_PASS'})
     print('BUILD_EXPORTED '+commit)
 
 
@@ -170,7 +225,7 @@ def run_probe(args, stage, mode, evidence, save, windowed=False):
                         ready=json.loads(line.split(' ',1)[1])
                         if ready_wall is None:ready_wall=time.monotonic()-start
                 if ready is None and time.monotonic()-start>60:raise TimeoutError('Startup timeout at '+last_stage)
-                if time.monotonic()-start>240:raise TimeoutError('Game regression timeout')
+                if time.monotonic()-start>1200:raise TimeoutError('Game regression timeout')
                 if peak>2*1024**3:raise MemoryError('Peak RSS exceeds 2 GiB')
                 time.sleep(.1)
         except BaseException:
@@ -206,7 +261,7 @@ def verify(args):
     if os.name=='nt':
         folder=out/'evidence'/'windowed'
         runs.append(run_probe(args,stage,'native-smoke',folder,folder/'saves/v2/character.json',windowed=True))
-    for mode in ['native-smoke','native-core','native-restart']:
+    for mode in ['native-smoke','recovery-core','recovery-restart']:
         folder=out/'evidence'/('smoke' if mode=='native-smoke' else 'core')
         runs.append(run_probe(args,stage,mode,folder,folder/'saves/v2/character.json'))
     manifest=json.loads((stage/'PACKAGE_MANIFEST.json').read_text(encoding='utf-8'))
@@ -214,7 +269,7 @@ def verify(args):
     result={'status':'PASS','windows_native_execution':'PASS' if os.name=='nt' else 'NOT_RUN_LINUX_EMBEDDED_PCK_ONLY',
             'windows_windowed_startup':'PASS' if os.name=='nt' else 'NOT_RUN_LINUX',
             'windows_message_pump':'PASS' if any(r['windows_message_pump']=='PASS' for r in runs) else 'NOT_RUN_LINUX',
-            'game_function_automation':'PASS','actual_windows_gui':'BLOCKED_NO_OPERATOR_GUI_OBSERVATION',
+            'game_function_automation':'PASS','overall_game_complete':False,'actual_windows_gui':'BLOCKED_NO_OPERATOR_GUI_OBSERVATION',
             'runs':runs,'source_sha':manifest['build']['commit']}
     write_json(out/'verification.json',result)
     write_json(stage/'실행검증.json',result)

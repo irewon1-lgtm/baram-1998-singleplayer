@@ -117,8 +117,9 @@ def main(a):
    if picked:shot('adventure-loot');break
   check(killed,'OS_selected_monster_attack_awards_real_experience')
   check(picked,'OS_real_drop_tap_approaches_and_increases_inventory')
-  d=diag();before=read_save()['player']['mp'];tap(*ui_point('skill0',d));time.sleep(.7)
-  check(read_save()['player']['mp']<before,'OS_skill_icon_uses_existing_hotbar')
+  d=diag();before=read_save()['player'];tap(*ui_point('skill0',d));time.sleep(.7)
+  after=read_save()['player']
+  check(before['job']=='평민' and not before['skills'] and not any(before['hotbar']) and after['mp']==before['mp'],'OS_novice_empty_skill_slot_does_not_cast_or_spend_mp',level=before['level'])
   guide=next(n for n in maps['field']['npcs'] if n.get('role')=='travel')
   tap_cell(guide['x'],guide['y'],42);d=settled()
   if d['menu']!='travel':raise RuntimeError('Return guide was not reached')
@@ -152,6 +153,8 @@ def main(a):
   adb('install','-r',a.apk);adb('logcat','-c');launch();shot('01-creation')
   key(66);time.sleep(1);key(33) # Existing equip key E.
   d=diag();check(d['menu']=='','normal_character_creation');shot('02-field-phone')
+  initial=read_save()['player']
+  check(initial['level']==1 and initial['job']=='평민' and not initial['skills'] and not any(initial['hotbar']),'OS_new_character_level1_commoner_no_unearned_skills',job=initial['job'],level=initial['level'])
   start=time.monotonic()
   recording=subprocess.Popen(['adb','shell','screenrecord','--time-limit','180','/sdcard/baram-quality.mp4'],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
   for code,name in [(19,'up'),(21,'left'),(20,'down'),(22,'right')]:
@@ -182,7 +185,13 @@ def main(a):
   position=d['position'];tap(640,270);time.sleep(.6);d2=diag();check(d2['position']==position and d2['navigation_path']==[],'modal_tap_no_field_movement')
   key(4);check(diag()['menu']=='','OS_Android_back_closes_bag')
   tap(80,45);check(diag()['menu']=='status','portrait_opens_status');shot('05-status');key(4)
-  d=diag();tap(*ui_point('menu',d));check(diag()['menu']=='pause','menu_icon');shot('06-menu');key(4)
+  d=diag();tap(*ui_point('menu',d));check(diag()['menu']=='pause','menu_icon');shot('06-menu')
+  # The existing touch menu exposes the same geometry map as the M key.
+  scale=720/d['viewport'][1];vw,vh=d['viewport'];width=min(760,vw-32);rx=max(16,(vw-760)/2);ry=20
+  bw=(width-68)/2;bh=min(72,max(48,(vh-56-180)/4-10))
+  tap((rx+28+bw+12+bw/2)*scale,(ry+96+bh/2)*scale)
+  check(diag()['menu']=='world_map','OS_touch_menu_opens_spatial_world_map');shot('06-spatial-map');key(4)
+  key(41);check(diag()['menu']=='world_map','OS_M_key_opens_same_spatial_map');key(4)
   # OS lifecycle + drag release; touch drag ownership tested separately by game event suite.
   adb('shell','input','swipe',130,600,230,600,700);key(3);time.sleep(1);launch(resume=True);time.sleep(.8)
   before=diag()['position'];time.sleep(1);check(diag()['position']==before,'OS_background_return_no_stuck_movement')

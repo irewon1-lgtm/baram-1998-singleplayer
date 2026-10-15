@@ -1,0 +1,59 @@
+{
+  "source": "Original tool-call source and the exact subsequent patches/transformations retained in map_view agent conversation; reconstructed verbatim, no new implementation and no decompiled fallback",
+  "results": [
+    {
+      "restored_path": "/workspace/scratch/3c696736f844/baram-recovery/game/world_map_view.gd",
+      "original_identity": "game/world_map_view.gd",
+      "sha256": "383db85f57c4764cc80f280fcb42eaaccb44f8ac3611140721b93636dbc8abeb",
+      "expected_sha256": "383db85f57c4764cc80f280fcb42eaaccb44f8ac3611140721b93636dbc8abeb",
+      "result": "PASS_EXACT_ORIGINAL_SOURCE"
+    },
+    {
+      "restored_path": "/workspace/scratch/3c696736f844/baram-recovery/game/world_map_runner.gd",
+      "original_identity": "game/world_map_runner.gd",
+      "sha256": "2885c76393b2ab7394886b6fb6748309ec401a5c136f14a0aa75919349cf8e27",
+      "expected_sha256": "2885c76393b2ab7394886b6fb6748309ec401a5c136f14a0aa75919349cf8e27",
+      "result": "PASS_EXACT_ORIGINAL_SOURCE"
+    },
+    {
+      "restored_path": "/workspace/scratch/3c696736f844/baram-recovery/game/touch_controls.gd",
+      "original_identity": "game/touch_controls.gd",
+      "sha256": "caf469047eb3283ffec83e4df1e6e8979d69cbc01cffaeac5ba9c9195accb162",
+      "expected_sha256": "caf469047eb3283ffec83e4df1e6e8979d69cbc01cffaeac5ba9c9195accb162",
+      "result": "PASS_EXACT_ORIGINAL_SOURCE"
+    },
+    {
+      "restored_path": "/workspace/scratch/3c696736f844/source-patches/recovery_play_probe-original.gd",
+      "original_identity": "a6 game/recovery_play_probe.gd",
+      "sha256": "7a4f1fae1a38818ff8b4d4e1c021288ba4ef13d5d69f2d7d4a0856b4057d283b",
+      "expected_sha256": "7a4f1fae1a38818ff8b4d4e1c021288ba4ef13d5d69f2d7d4a0856b4057d283b",
+      "result": "PASS_EXACT_ORIGINAL_SOURCE"
+    },
+    {
+      "restored_path": "/workspace/scratch/3c696736f844/source-patches/recovery_play_probe-external-original.gd",
+      "original_identity": "executed external recovery_play_probe.gd",
+      "sha256": "77a5fb622800474af22b4fb51502f5df13ed59d7731bdb550d118dce8427ab27",
+      "expected_sha256": "77a5fb622800474af22b4fb51502f5df13ed59d7731bdb550d118dce8427ab27",
+      "result": "PASS_EXACT_ORIGINAL_SOURCE"
+    },
+    {
+      "restored_path": "/workspace/scratch/3c696736f844/source-patches/exercise-external-original.gd",
+      "original_identity": "executed external exercise.gd",
+      "sha256": "082c72a150ca5327e991e287de918e9d1bd3b392965e6c2d46e522837a9122c4",
+      "expected_sha256": "082c72a150ca5327e991e287de918e9d1bd3b392965e6c2d46e522837a9122c4",
+      "result": "PASS_EXACT_ORIGINAL_SOURCE"
+    }
+  ],
+  "owned_runtime_files_changed": [
+    "game/world_map_view.gd",
+    "game/world_map_runner.gd",
+    "game/touch_controls.gd"
+  ],
+  "main_modified_by_this_agent": false,
+  "other_workspace_modified_by_this_agent": false,
+  "new_execution": {
+    "world_map_runner": "PASS16/16",
+    "scope": "fixture/static geometry+UI; no new claim of full-map natural gameplay",
+    "result_path": "/workspace/scratch/3c696736f844/recovery-evidence/source-recovered-world-map.json"
+  }
+}

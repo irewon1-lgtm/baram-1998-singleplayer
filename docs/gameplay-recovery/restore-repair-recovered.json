@@ -1,0 +1,59 @@
+{
+  "checks": [
+    {
+      "details": {
+
+      },
+      "id": "actual-active-content-load",
+      "result": "PASS"
+    },
+    {
+      "details": {
+
+      },
+      "id": "actual-repaired-world-load",
+      "result": "PASS"
+    },
+    {
+      "details": {
+        "between_map_moves": 9,
+        "repairs": 50
+      },
+      "id": "actual-baseline-placement-repairs-exercised",
+      "result": "PASS"
+    },
+    {
+      "details": {
+
+      },
+      "id": "existing-player-class-level-rank-skills-money-preserved",
+      "result": "PASS"
+    },
+    {
+      "details": {
+
+      },
+      "id": "existing-player-location-preserved",
+      "result": "PASS"
+    },
+    {
+      "details": {
+        "checked": 50,
+        "errors": []
+      },
+      "id": "old-baseline-spawns-relocate-and-retain-HP-alive-respawn-with-correct-index",
+      "result": "PASS"
+    },
+    {
+      "details": {
+
+      },
+      "id": "input-copied-old-snapshot-remains-unchanged",
+      "result": "PASS"
+    }
+  ],
+  "content_version": "cd0c680ab5fc8fb223ef2d14ff0b991b18e3e100fecba693bd608040f8a66e57",
+  "main_sha256": "952b11301a9e128fac669445ce1ff585575b1ec9d87115181b5c156c951328d1",
+  "result": "PASS",
+  "scope": "CONTROLLED_REAL_MAIN_RESTORE_OF_EXACT_BASELINE_PLACEMENT_SNAPSHOT_NOT_NATURAL_GAMEPLAY"
+}

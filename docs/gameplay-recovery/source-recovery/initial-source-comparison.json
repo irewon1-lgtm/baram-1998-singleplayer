@@ -1,0 +1,412 @@
+{
+  "delivered_commit": "a6ed23bf3467f5e96548ff231c151d4257985c1c",
+  "source_manifest_provenance": {
+    "status": "PASS",
+    "all_copied_source_files_match_commit": "a6ed23bf3467f5e96548ff231c151d4257985c1c",
+    "original_metadata_sha256": "375921256d1fd79c9ef1bf3112a5399967ba53f033ee8c8ab32f6c6514c5a907",
+    "correction": "Original fingerprint read mutable repository after export; copied project inspected byte-for-byte against commit and Windows identical copied source. Only external JSON fingerprint corrected; signed APK unchanged.",
+    "apk_sha256_before_and_after": "ef53fef3220dbaf5fc885f9388937e44420a2a48feb21d4f7ad063c2f0fd5166"
+  },
+  "checkout_commit": "b18e67f2dbde15ff7617b4e3d2d0f7a3768980c7",
+  "files": [
+    {
+      "path": "game/actual_restore_probe.gd",
+      "original_sha256": "20dda46def78c61ef15ee1ea395228e38bd6e387f9c4cd2af525179fe9b252cb",
+      "current_sha256": "20dda46def78c61ef15ee1ea395228e38bd6e387f9c4cd2af525179fe9b252cb",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/android_bootstrap.gd",
+      "original_sha256": "4a404b0b4bebd9027258e7a0562ba0ff955b9d3c059a6bc93227dea4bcb179f3",
+      "current_sha256": "4a404b0b4bebd9027258e7a0562ba0ff955b9d3c059a6bc93227dea4bcb179f3",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": true
+    },
+    {
+      "path": "game/android_bootstrap.tscn",
+      "original_sha256": "9fc80f5cfbed3ec0f44c65b81e2e50a108c7c3ec82070b3607c57be7c989fd43",
+      "current_sha256": "9fc80f5cfbed3ec0f44c65b81e2e50a108c7c3ec82070b3607c57be7c989fd43",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/android_icon.svg",
+      "original_sha256": "54eecc4c12423c80b6c3e6e3eb8ebc1e60ae0b45f35c588f1c2b59373c342b6b",
+      "current_sha256": "54eecc4c12423c80b6c3e6e3eb8ebc1e60ae0b45f35c588f1c2b59373c342b6b",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/asset_validation_probe.gd",
+      "original_sha256": "c82e4f16fb42198699d8302f835cd62e64e5417be204ed6e7ec69549408f4894",
+      "current_sha256": "c82e4f16fb42198699d8302f835cd62e64e5417be204ed6e7ec69549408f4894",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/assets.gd",
+      "original_sha256": "2d79db23a47bd75d7e5e493e7f5d255129015f8defdd06a45997e1cd788da3e1",
+      "current_sha256": "2d79db23a47bd75d7e5e493e7f5d255129015f8defdd06a45997e1cd788da3e1",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": true
+    },
+    {
+      "path": "game/balance_runner.gd",
+      "original_sha256": "643689938a76610e9024e0c8f911495fdf268f23597634fb66e3005680ddae66",
+      "current_sha256": "643689938a76610e9024e0c8f911495fdf268f23597634fb66e3005680ddae66",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/build_world_cache.gd",
+      "original_sha256": "76e23b77d4d1bc09c91c86bf2f8e7ffb26e23e43df1bb889d777addc4112dc7b",
+      "current_sha256": "324f0038c4cc6865958245e923af446c50228c96ff293447483ee0bd4162d411",
+      "status": "SOURCE_SHA_DIFFERS",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/compass_perf_probe.gd",
+      "original_sha256": "a3ffac7230cfe08ec6acf1db378395d0ba8dc411d87ef96c68b50d1b826cbdbb",
+      "current_sha256": null,
+      "status": "MISSING",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/content_fixture_runner.gd",
+      "original_sha256": "6dcb2f62ab02159c1e496f6daf5721c4471b203c50d894cfcd90e1f3f1ae2e3d",
+      "current_sha256": "6dcb2f62ab02159c1e496f6daf5721c4471b203c50d894cfcd90e1f3f1ae2e3d",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/content_registry.gd",
+      "original_sha256": "426191a2ca59e6b126124fd0b51d0a9a3ced786f8c36cd86b38b2aba3fe60a22",
+      "current_sha256": "1bc747142f4f3c8eaeb6865b5ab04f04d6d54eef8cd59fb877ceb77e112a2df5",
+      "status": "SOURCE_SHA_DIFFERS",
+      "in_delivered_pck": true
+    },
+    {
+      "path": "game/continuity.gd",
+      "original_sha256": "def798e3015d6e77690f69dfdfd8d77d2fb1c3ce5b8c0558a00388351121510e",
+      "current_sha256": "def798e3015d6e77690f69dfdfd8d77d2fb1c3ce5b8c0558a00388351121510e",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": true
+    },
+    {
+      "path": "game/continuity_state.gd",
+      "original_sha256": "064c6a1ce9b7654fd6900e870545dab736e96be96eddf3c7954a2a0e67367ec1",
+      "current_sha256": "064c6a1ce9b7654fd6900e870545dab736e96be96eddf3c7954a2a0e67367ec1",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": true
+    },
+    {
+      "path": "game/continuity_test_runner.gd",
+      "original_sha256": "5acb5745d13da309b1f7a348ba7e27d19bace1521bb29804f7faa6ee4f4a9c4e",
+      "current_sha256": "5acb5745d13da309b1f7a348ba7e27d19bace1521bb29804f7faa6ee4f4a9c4e",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/core_actions.gd",
+      "original_sha256": "bd341b184b569cdba5b353bc5b3a9ff30990bac28fc9e2cc5dac52cedd00fa17",
+      "current_sha256": "ba9ec5a9f89f8127e7918cf274d256cc6629a04edf2c2db5e488f47971641244",
+      "status": "SOURCE_SHA_DIFFERS",
+      "in_delivered_pck": true
+    },
+    {
+      "path": "game/core_runner.gd",
+      "original_sha256": "18efb32ea0a06cfc8ac26cf7494f25a7984758160d9733dd3a013e63ca3a7a7e",
+      "current_sha256": "18efb32ea0a06cfc8ac26cf7494f25a7984758160d9733dd3a013e63ca3a7a7e",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/data/balance_tests.json",
+      "original_sha256": "d7978f5a54b590c7e7fd2a4251b605574b9f1202a4e4b0a435af161b872162bf",
+      "current_sha256": "d7978f5a54b590c7e7fd2a4251b605574b9f1202a4e4b0a435af161b872162bf",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/data/numeric.json",
+      "original_sha256": "5e1ba24251541b57b62cf7aff15aed718ba013dd37453e983d3947eb9ebf0c42",
+      "current_sha256": "5e1ba24251541b57b62cf7aff15aed718ba013dd37453e983d3947eb9ebf0c42",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/data/runtime_bindings.json",
+      "original_sha256": "2f2bb0fccc1a8a6a5b4b1190ffa98465a914287aeb4ef0f380aca1061cd39f83",
+      "current_sha256": "2f2bb0fccc1a8a6a5b4b1190ffa98465a914287aeb4ef0f380aca1061cd39f83",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/data/skill_effects.json",
+      "original_sha256": "fc549bec6c47b08df98fa65f9e1c84023e3e95cbcb046099f611d84cfe4c957c",
+      "current_sha256": "fc549bec6c47b08df98fa65f9e1c84023e3e95cbcb046099f611d84cfe4c957c",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/data/world.json",
+      "original_sha256": "75e96433b60a5ab928e52ad38952dab84302e87af80e57caa1b42a95ca8bcb9a",
+      "current_sha256": "75e96433b60a5ab928e52ad38952dab84302e87af80e57caa1b42a95ca8bcb9a",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/effect_runtime.gd",
+      "original_sha256": "1adcfd2c9ea20b6f4384596b48ebcb115979fa7da6ec0d9b9df45518d2db935f",
+      "current_sha256": "f2bf48546135c68ed9b583672675358267049309bdec4e2a92b567f208db1faf",
+      "status": "SOURCE_SHA_DIFFERS",
+      "in_delivered_pck": true
+    },
+    {
+      "path": "game/effect_wait_probe.gd",
+      "original_sha256": "083c73bdc03a4f51d41d49d16c67b62d3331efe1ce92e398fd7ed37a5fa7cf66",
+      "current_sha256": null,
+      "status": "MISSING",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/entity_index_probe.gd",
+      "original_sha256": "d45584a77eb7e97a4ddb1008de1374134c1e3bffecbfda52e9df493511861368",
+      "current_sha256": null,
+      "status": "MISSING",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/exercise.gd",
+      "original_sha256": "75e0bf15a6872617fd54749619b23a7840bb44437739726ebf584411189ef652",
+      "current_sha256": "75e0bf15a6872617fd54749619b23a7840bb44437739726ebf584411189ef652",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/facing.gd",
+      "original_sha256": "63c72e7a0a794f00073a1cb0a70f5190ec9af157afea2138a340f28a814f9665",
+      "current_sha256": "63c72e7a0a794f00073a1cb0a70f5190ec9af157afea2138a340f28a814f9665",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": true
+    },
+    {
+      "path": "game/frame_cpu_probe.gd",
+      "original_sha256": "66a36985d2616fb393d6fab33f47051ee0001251953db267f6c1e45f19e47d14",
+      "current_sha256": null,
+      "status": "MISSING",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/license_export.gd",
+      "original_sha256": "ecbf629ce64ba265aa47ef64f92a4bfdc5206cc4a3a4bf4b6166a0ad05ff927f",
+      "current_sha256": "ecbf629ce64ba265aa47ef64f92a4bfdc5206cc4a3a4bf4b6166a0ad05ff927f",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": true
+    },
+    {
+      "path": "game/main.gd",
+      "original_sha256": "9704ee646087c47cd3361616dc9f62a3ad1d9bb6dcab6b2eb75341d81eeac1a7",
+      "current_sha256": "096855677d7ec0c5c5770a0cf4044d73c07a6dcc93a536c692f81f4b3a1aa3e3",
+      "status": "SOURCE_SHA_DIFFERS",
+      "in_delivered_pck": true
+    },
+    {
+      "path": "game/main.tscn",
+      "original_sha256": "b8fa756974dbd7d6a55f4d84ac32e1181771f8ea7b4dfa88f66a3701582cf516",
+      "current_sha256": "b8fa756974dbd7d6a55f4d84ac32e1181771f8ea7b4dfa88f66a3701582cf516",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/mobile_smoke_probe.gd",
+      "original_sha256": "1af701ba8541f3c443fb2f006f102ba834a327b68d43f826a100438429cd7312",
+      "current_sha256": "1af701ba8541f3c443fb2f006f102ba834a327b68d43f826a100438429cd7312",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/native_regression.gd",
+      "original_sha256": "eeb23f3001a11e07679dae7d6b9a90d6e36de6482015150e5f82644f4d3788d2",
+      "current_sha256": "eeb23f3001a11e07679dae7d6b9a90d6e36de6482015150e5f82644f4d3788d2",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/navigation.gd",
+      "original_sha256": "e4d2bf0ac2698e6939617596dd07fc989c1d19cdcf50d710a87d9ff0ffc51598",
+      "current_sha256": "e64c0808f9b17310d7fcc627a8d29f9f5cd78a1384ac57968c4e9e059ebb103d",
+      "status": "SOURCE_SHA_DIFFERS",
+      "in_delivered_pck": true
+    },
+    {
+      "path": "game/pathfinder.gd",
+      "original_sha256": "e0225840c089864663edd56e61286b19cd76ff75dc7759170ce1c4f22cc69bba",
+      "current_sha256": "e0225840c089864663edd56e61286b19cd76ff75dc7759170ce1c4f22cc69bba",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": true
+    },
+    {
+      "path": "game/precision.gd",
+      "original_sha256": "d41d2558e28a3dbbab8155eba4fea35c48950fa75eea85a66c8ef094b7b56ee2",
+      "current_sha256": "d41d2558e28a3dbbab8155eba4fea35c48950fa75eea85a66c8ef094b7b56ee2",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": true
+    },
+    {
+      "path": "game/progression_runner.gd",
+      "original_sha256": "9e9e7470f43795829285e47be940cb3d5c07cb2c6e9a7c4e3bd49c1305705dde",
+      "current_sha256": null,
+      "status": "MISSING",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/project.godot",
+      "original_sha256": "33c51cc652014f1d2dfb63871c05aa6056292af9cc64256e1c4515e8aaee2ee5",
+      "current_sha256": "33c51cc652014f1d2dfb63871c05aa6056292af9cc64256e1c4515e8aaee2ee5",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/quality_probe.gd",
+      "original_sha256": "e9816d7c2d563262ac922aeb09f35e3af84d1a842b392d4ec53c2c4f5b43f1b9",
+      "current_sha256": "e9816d7c2d563262ac922aeb09f35e3af84d1a842b392d4ec53c2c4f5b43f1b9",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/recovery_combat_runner.gd",
+      "original_sha256": "14ca4613b29e3e3ef2b8ec32c95d3da418e013e60e7a5711238217e510267897",
+      "current_sha256": null,
+      "status": "MISSING",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/recovery_play_probe.gd",
+      "original_sha256": "7a4f1fae1a38818ff8b4d4e1c021288ba4ef13d5d69f2d7d4a0856b4057d283b",
+      "current_sha256": null,
+      "status": "MISSING",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/recovery_render_canvas.gd",
+      "original_sha256": "b90eacfa905cce47387b74c06c403c6a2f52cc8bae6cdf7ca326ec09d9810873",
+      "current_sha256": null,
+      "status": "MISSING",
+      "in_delivered_pck": true
+    },
+    {
+      "path": "game/recovery_routes_probe.gd",
+      "original_sha256": "a12cecf9b02c526a2199e916c83b7f90d96913f933cc3a0a0808028b00dc6dfe",
+      "current_sha256": null,
+      "status": "MISSING",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/rules.gd",
+      "original_sha256": "80721bfd299f101360c1eb449652e78c551abe66a4ea599cb2e43c29bb231da9",
+      "current_sha256": "58b3dcc9457e3909aafa6543fd9921be1f1fb3d39629c9271f066f7c9021668b",
+      "status": "SOURCE_SHA_DIFFERS",
+      "in_delivered_pck": true
+    },
+    {
+      "path": "game/save_integrity_runner.gd",
+      "original_sha256": "a7fb447cadc4168fee9116d50da4ccc0231c05d5cde497f8e611518859885619",
+      "current_sha256": "a7fb447cadc4168fee9116d50da4ccc0231c05d5cde497f8e611518859885619",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/save_perf_probe.gd",
+      "original_sha256": "62cf3d88b6ea56293e39fd368d5a2d341d482acd06400bd9025a34a62f23d017",
+      "current_sha256": "62cf3d88b6ea56293e39fd368d5a2d341d482acd06400bd9025a34a62f23d017",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/save_store.gd",
+      "original_sha256": "dd77dc219ac5cc0a7063f9c8e3b28071078766388e21ed33897d3e097dafaa3b",
+      "current_sha256": "dd77dc219ac5cc0a7063f9c8e3b28071078766388e21ed33897d3e097dafaa3b",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": true
+    },
+    {
+      "path": "game/startup.gd",
+      "original_sha256": "709ff2a4c8ce220aee2582e0ee8be2d977db936cea9853427b52eedc73faad9c",
+      "current_sha256": "214d404632080d6645115ec2692bb85018dfb4d2b9b29b6b980fe3e52d1a3cc8",
+      "status": "SOURCE_SHA_DIFFERS",
+      "in_delivered_pck": true
+    },
+    {
+      "path": "game/touch_controls.gd",
+      "original_sha256": "caf469047eb3283ffec83e4df1e6e8979d69cbc01cffaeac5ba9c9195accb162",
+      "current_sha256": "90337d545646cb7de0eae658003bc2bdcd53744637cc5d313cdcd28cd9cdd53e",
+      "status": "SOURCE_SHA_DIFFERS",
+      "in_delivered_pck": true
+    },
+    {
+      "path": "game/windows_bootstrap.gd",
+      "original_sha256": "b8b6ce86c7066144bc6ca974dfa8b1185c76b5a47f43df7ce33cadc0b4badbff",
+      "current_sha256": "b8b6ce86c7066144bc6ca974dfa8b1185c76b5a47f43df7ce33cadc0b4badbff",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": true
+    },
+    {
+      "path": "game/windows_bootstrap.tscn",
+      "original_sha256": "091c74e20ab9c533a9d207a517633673b1f9a9568e26d5b3905aa798f3f1d713",
+      "current_sha256": "091c74e20ab9c533a9d207a517633673b1f9a9568e26d5b3905aa798f3f1d713",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/work_assets.gd",
+      "original_sha256": "fd2a7bb4481050914fb04f704bb1695c4dbb526b8a8cd479e44b837d392b91d0",
+      "current_sha256": "f6249b1d346ee4ecc788d39bb705614b73375a548eab0308588f0ff39c60a371",
+      "status": "SOURCE_SHA_DIFFERS",
+      "in_delivered_pck": true
+    },
+    {
+      "path": "game/work_integration_runner.gd",
+      "original_sha256": "53daa1c252e5ae72ab5a5c43572690b108f65355688895c2e9e6d26b8ac51ec2",
+      "current_sha256": "53daa1c252e5ae72ab5a5c43572690b108f65355688895c2e9e6d26b8ac51ec2",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/work_play_probe.gd",
+      "original_sha256": "5125e1c08663525e766cd5f83e9f946e0984be8ab1b9e069111079ee74283d4a",
+      "current_sha256": "5125e1c08663525e766cd5f83e9f946e0984be8ab1b9e069111079ee74283d4a",
+      "status": "EXACT_SOURCE_SHA_MATCH",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/world_map_runner.gd",
+      "original_sha256": "2885c76393b2ab7394886b6fb6748309ec401a5c136f14a0aa75919349cf8e27",
+      "current_sha256": null,
+      "status": "MISSING",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/world_map_view.gd",
+      "original_sha256": "383db85f57c4764cc80f280fcb42eaaccb44f8ac3611140721b93636dbc8abeb",
+      "current_sha256": null,
+      "status": "MISSING",
+      "in_delivered_pck": true
+    },
+    {
+      "path": "game/world_repair_probe.gd",
+      "original_sha256": "06da7e9f711a167f6c15dc9d0a5377aef59dbc3eb7117bb4ff21282f6c726775",
+      "current_sha256": null,
+      "status": "MISSING",
+      "in_delivered_pck": false
+    },
+    {
+      "path": "game/world_repairs.gd",
+      "original_sha256": "baf45ca871377bcd860a4d9568efdf4638eff4b5771b6f0439211afebd7d8441",
+      "current_sha256": null,
+      "status": "MISSING",
+      "in_delivered_pck": true
+    }
+  ]
+}

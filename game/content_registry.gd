@@ -38,6 +38,8 @@ func by_kind(kind: String) -> Array:
     return records.keys().filter(func(id):return records[id].kind==kind)
 
 func class_title(id: String, rules) -> String:
+    # The Work class is a phase descriptor; save/rule job identity is 평민.
+    if id=="wk.class.novice":return "평민"
     return definition(id).get("name",id if id in rules.JOBS else "")
 
 func apply_rules(rules):
@@ -65,6 +67,10 @@ func apply_rules(rules):
             values.strength_required=needs.get("strength_min",needs.get("strength",values.get("strength_required",0)))
             values.advancement_rank_required=int(needs.get("advancement_rank",0))
             values.allowed_jobs=data.get("class_ids",needs.get("class_ids",[])).map(func(c):return class_title(c,rules))
+            # Work's phase_only novice was omitted from all-job item lists.
+            # A novice must be able to equip the supplied wooden starter gear;
+            # the unchanged level/strength/rank requirements still apply.
+            if rules.JOBS.all(func(job):return job in values.allowed_jobs):values.allowed_jobs.append("평민")
             if data.has("prices"):
                 values.vendor_buy_price=data.prices.get("buy",values.get("vendor_buy_price"))
                 values.vendor_sell_price=data.prices.get("sell",values.get("vendor_sell_price"))
@@ -95,7 +101,8 @@ func apply_rules(rules):
             for field in ["range_tiles","aoe_radius_tiles","cooldown_ms","duration_ms"]:
                 if data.has(field):values[field]=data[field]
             var classes=data.get("class_ids",[])
-            if not classes.is_empty():current.job=class_title(classes[0],rules)
+            values.allowed_jobs=classes.map(func(c):return class_title(c,rules))
+            if not classes.is_empty():current.job="공통" if classes.size()>1 else class_title(classes[0],rules)
         elif category=="growth":
             current.job=class_title(data.get("class_id",str(current.job)),rules);current.level=int(data.get("level",current.level))
             for type in ["hp","mp"]:
@@ -201,7 +208,7 @@ func merge_world(world: Dictionary) -> Dictionary:
             var from=bridge_cell(origin,home.entry);var to=bridge_cell(target,target.entry)
             origin.portals.append({"id":"codex.bridge.Work","x":from.x,"y":from.y,"target":target.id,"entry":target.entry,"label":"추가 지역 길목","trigger":"interact","source_kind":"CODEX_INTEGRATION_BRIDGE"})
             target.portals.append({"id":"codex.bridge.legacy","x":to.x,"y":to.y,"target":home.map,"entry":home.entry,"label":"기존 고구려 마을","trigger":"interact","source_kind":"CODEX_INTEGRATION_BRIDGE"})
-    return result
+    return load("res://world_repairs.gd").apply(result,self)
 
 func bridge_cell(map: Dictionary, entry: Array) -> Vector2i:
     for radius in range(2,7):

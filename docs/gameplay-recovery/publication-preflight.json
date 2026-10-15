@@ -1,0 +1,793 @@
+{
+  "format": "BARAM_PUBLICATION_PREFLIGHT_V1",
+  "generated_at_utc": "2026-10-15T11:00:18.352328+00:00",
+  "result": "PASS",
+  "scope": "READ_ONLY_PUBLIC_SOURCE_PUBLICATION_SAFETY_PREFLIGHT_NOT_NATIVE_EXECUTION_OR_FULL_GAMEPLAY",
+  "repository": "irewon1-lgtm/baram-1998-singleplayer",
+  "git_head": "b18e67f2dbde15ff7617b4e3d2d0f7a3768980c7",
+  "user_authorization": "Root confirmed the user explicitly authorized free native GitHub publication and CI with 진행해; no repeat approval requested by this review.",
+  "reviewed_file_count": 68,
+  "tracked_change_count": 68,
+  "untracked_file_count": 0,
+  "reviewed_bytes": 1946549,
+  "allowed_paths": [
+    "docs/gameplay-recovery/**",
+    "game/*.gd",
+    "tools/*.py",
+    ".gitattributes",
+    ".github/workflows/mobile-quality.yml",
+    "qa/android/multitouch.py",
+    "integration/content-import/capabilities.json"
+  ],
+  "findings": [],
+  "raw_save_candidates": [],
+  "scan_results": {
+    "all_reviewed_paths_authorized": true,
+    "all_reviewed_files_utf8_text": true,
+    "prohibited_private_asset_binary_or_signing_key_files": 0,
+    "literal_secret_or_embedded_asset_matches": 0,
+    "raw_user_save_shapes": 0,
+    "known_signing_json_opened": false,
+    "credential_values_printed": false,
+    "credential_value_checks": [
+      "PRIVATE_KEY_PEM",
+      "GITHUB_CREDENTIAL_VALUE",
+      "OPENAI_CREDENTIAL_VALUE",
+      "AWS_ACCESS_KEY_VALUE",
+      "GOOGLE_API_KEY_VALUE",
+      "JWT_VALUE",
+      "EMBEDDED_IMAGE_FONT_DATA",
+      "LONG_BASE64_LITERAL",
+      "SIGNED_QUERY_VALUE"
+    ],
+    "method": "All changed/untracked allowed files read as UTF-8 and scanned for binary magic, concrete credential patterns, embedded base64 payloads, signed URLs and raw save envelopes; source key names and public certificate/hash values are allowed."
+  },
+  "workflow_review": {
+    "only_standard_hosted_runner_labels": true,
+    "observed_runner_labels": [
+      "ubuntu-latest",
+      "windows-latest",
+      "ubuntu-latest"
+    ],
+    "private_repository_gate_for_build_jobs": true,
+    "private_vault_visibility_check_present": true,
+    "public_uploaded_artifact_paths": [
+      "source/android-evidence.sealed",
+      "source/android-quality.sealed",
+      "source/windows-quality.sealed",
+      "pointers.sealed"
+    ],
+    "artifacts_are_encrypted_sealed_paths": true,
+    "raw_private_vault_or_signing_key_upload_path_present": false,
+    "repository_target": "Public game source repository; asset vault must remain private."
+  },
+  "metadata_review": {
+    "files_reviewed": [
+      "docs/gameplay-recovery/RESUME_NATIVE_CHECK.md",
+      "docs/gameplay-recovery/preflight-checks.json",
+      "docs/gameplay-recovery/PYTHON_CONTENT_RECOVERY.md",
+      "docs/gameplay-recovery/BASELINE_AUDIT.md",
+      "docs/gameplay-recovery/RECOVERED_AUDIT.md",
+      "docs/gameplay-recovery/audit/RECOVERY_PROVENANCE.json",
+      "docs/gameplay-recovery/recovery-source-validation.json",
+      "docs/gameplay-recovery/source-recovery/current-source-hash-comparison.json",
+      "docs/gameplay-recovery/source-recovery/current-source-token-equivalence.json",
+      "docs/gameplay-recovery/source-recovery/map-source-restoration.json"
+    ],
+    "native_completion_claim_found": false,
+    "whole_content_manual_play_completion_claim_found": false,
+    "native_android_current_state": "NOT_RUN",
+    "native_windows_current_state": "NOT_RUN",
+    "whole_content_manual_play_current_state": "NOT_RUN",
+    "historical_reports_distinguished_from_fresh_execution": true,
+    "notes": [
+      "RESUME_NATIVE_CHECK.md explicitly leaves overall improvement incomplete and native/current normal-input tests NOT_RUN.",
+      "preflight-checks.json records native_android/native_windows NOT_RUN and overall_improvement_complete=false.",
+      "RECOVERED_AUDIT.md limits PASS to static topology, controlled interpreter tests and historical save-copy tests; all-map and full1-to99 manual play remain NOT_RUN.",
+      "Source recovery documents distinguish token equivalence from original byte identity and reconstructed Python from retained original source.",
+      "Historical blocked-publication metadata remains historical evidence; current user authorization is recorded separately.",
+      "Final source hash comparison explicitly identifies 54/57 byte-exact historical files and three intentional differences, including two test-only helpers requiring fresh execution.",
+      "Map source restoration reports fixture/static geometry and UI tests only; it explicitly excludes full-map natural gameplay.",
+      "Final Android/Windows build code labels builds as BUILT_NOT_EXECUTION_PASS/EXPORTED_NOT_EXECUTION_PASS and leaves native execution NOT_RUN until platform tests execute."
+    ]
+  },
+  "files": [
+    {
+      "path": ".gitattributes",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 71,
+      "sha256": "e6eb08c750e404ec24dddfd654bada26937579570f9976b751cc36eb624c00b0",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": ".github/workflows/mobile-quality.yml",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 12338,
+      "sha256": "644c0adc7d7b03a60a97404039286f8a35b4233754bd86ce6ee437751e4c5bbe",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "docs/gameplay-recovery/BASELINE_AUDIT.md",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 8166,
+      "sha256": "41e6fbcc6d8e265d555ba0f79188bcda7b36dcc7ba43381fe970265951d76b5c",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "docs/gameplay-recovery/BUILD_VERIFICATION_RECOVERY.md",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 3289,
+      "sha256": "b80e28d5ba32eb64e1a3356f0e75d07fdf0321aded949de534a07f7eb0ddc7dc",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "docs/gameplay-recovery/PYTHON_CONTENT_RECOVERY.md",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 5324,
+      "sha256": "daf00c0763d218006290cb3dd914e63c6a77ca620bd8f678269e55e824c71bd2",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "docs/gameplay-recovery/RECOVERED_AUDIT.md",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 4100,
+      "sha256": "f50de4f23de5821a694f20c93bec6eb07552648f5cdb951d74ff2470ea886e23",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "docs/gameplay-recovery/RESUME_NATIVE_CHECK.md",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 4127,
+      "sha256": "787092016ede176b999b672a8eb3672f19ae8410a64c81fc2a27868517e7c416",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "docs/gameplay-recovery/audit/RECOVERY_PROVENANCE.json",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 5688,
+      "sha256": "d32c6b82a63adbb344b5dfaae03c22a2d310baa1af039d4b3a63a09fb477fbc4",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "docs/gameplay-recovery/audit/audit_runtime.py",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 15434,
+      "sha256": "8a7d6db5b2f6a713a91aa14205bae157b0bc82afd1b66aec1ab52a8ffbe39b68",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "docs/gameplay-recovery/audit/export_runtime_world.gd",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 1216,
+      "sha256": "4bef8c2e1f328f5d2cd2e4410f6c6d3275726e6cd6d1bc115df7859b4d570401",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "docs/gameplay-recovery/audit/restore_repair_runner.gd",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 5624,
+      "sha256": "fb531085b8083c4966724caefeb3d156dd5fa996ce470575f23b73e4aea10470",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "docs/gameplay-recovery/audit/runtime_contract_runner.gd",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 8816,
+      "sha256": "898bc31483cc25d7f689b3f6724215154459cfb92212e27f87d7ff9e9b481c33",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "docs/gameplay-recovery/baseline-static-audit.json",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 349309,
+      "sha256": "d2d0750b4b9258cc8a7aa7dc137f1f1a24823a605f8f4e6b26b72a109bf3a0ab",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "docs/gameplay-recovery/content-rebuilt-fresh.json",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 206104,
+      "sha256": "acbf1e7de3a9aaa355179202037f2063c02106ba7fdc05152173fcb5cd473afb",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "docs/gameplay-recovery/preflight-checks.json",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 568,
+      "sha256": "5bb61aada1c5b3e53341f84e7b8678de0ff42231a571e9e36ed0d9da7eaa2b2d",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "docs/gameplay-recovery/recovered-static-audit.json",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 343249,
+      "sha256": "5ab3e79a8e07a93ac3646fce169ac093f3960e6892d9006d1a302d33a3eea0f8",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "docs/gameplay-recovery/recovery-source-runtime-contract.json",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 3141,
+      "sha256": "da4e50e3e2ee6fc452b5d844b2dc1e6a07780a419dedddad70766a1bad0cf390",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "docs/gameplay-recovery/recovery-source-static-audit.json",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 343290,
+      "sha256": "2426bde4fa56fb23b95b3509f1acf2f1da0b5915288a7e00e0fa4a9a671d40de",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "docs/gameplay-recovery/recovery-source-validation.json",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 1629,
+      "sha256": "deaac5f6e6fa0e3f18c30e6c937f868f7d74ec4ed407b99aab90188f89190d7d",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "docs/gameplay-recovery/restore-repair-recovered.json",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 1280,
+      "sha256": "ca2fc9ce57523f6a251bf9ceaa127a3a3fc0a4dd0b0568ce5b5db0eab0021e58",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "docs/gameplay-recovery/runtime-contract-recovered.json",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 3141,
+      "sha256": "1c0149402f9db57f9e2882fc8dc38fa0b0f8e1e492e9aff2b79e367db1979ec6",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "docs/gameplay-recovery/source-recovery-map-runtime.json",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 4795,
+      "sha256": "bc99673648ba30678b85d11ae336584b41a73e80a395f32b22decb946687b01e",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "docs/gameplay-recovery/source-recovery-map-shas.json",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 1141,
+      "sha256": "b72621fb8f73a4f254e58e3a9d852e1f9d598b77266b7ba383d699fcde4f8743",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "docs/gameplay-recovery/source-recovery/current-source-hash-comparison.json",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 17473,
+      "sha256": "827f72c22a5a44ff180adf3e68197e2201ab58840df613fd3c51b8d369994708",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "docs/gameplay-recovery/source-recovery/current-source-token-equivalence.json",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 19274,
+      "sha256": "75db0bf5f07149ca9927dce9bdfcfdb4ca804684182fccf1a31937d2506fa342",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "docs/gameplay-recovery/source-recovery/historical-source-build-proof.json",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 1252,
+      "sha256": "57bbb3cf0433818078d7eda5aa684e2670f8144ef332d06483a7ffea030c38c7",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "docs/gameplay-recovery/source-recovery/initial-source-comparison.json",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 17512,
+      "sha256": "183b991991e50d01e729deb374fc612fd00f57752913d83fc48ae31afc8bcc5f",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "docs/gameplay-recovery/source-recovery/installed-pck-extraction.json",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 9704,
+      "sha256": "97f21ab8a92f31750c015e33834227727a2e4c99f10d2ad64054dfd3431663b1",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "docs/gameplay-recovery/source-recovery/installed-pck-token-equivalence.json",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 19274,
+      "sha256": "4248d6c18c7906bb4e77c1b144891216a66c206328c13e83ab20ccfef6e229ef",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "docs/gameplay-recovery/source-recovery/map-source-restoration.json",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 3074,
+      "sha256": "3b0bd19964371227708611438945f1a6cffaa83301f542c329864193590adc8b",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "docs/gameplay-recovery/source-recovery/original-text-godot463-byte-equivalence.json",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 4748,
+      "sha256": "95116228b60b877ac2bb038e583bdd6fc8aa6e560ddc9e61eab131f208ea44b5",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "docs/gameplay-recovery/source-recovery/performance-source-restoration.json",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 1723,
+      "sha256": "84bb6d79f1c0c769333f1d289c7129c6dc60b6fc7ec0d412103fe79e1212d8f1",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "docs/gameplay-recovery/source-recovery/progression-source-restoration.json",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 1190,
+      "sha256": "5b89b6b328cf6e5a3be3c5b57c31e5e6a44d3235aa5e3f86a0ba0fc69382e9e5",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "game/build_world_cache.gd",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 1744,
+      "sha256": "76e23b77d4d1bc09c91c86bf2f8e7ffb26e23e43df1bb889d777addc4112dc7b",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "game/compass_perf_probe.gd",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 8079,
+      "sha256": "a3ffac7230cfe08ec6acf1db378395d0ba8dc411d87ef96c68b50d1b826cbdbb",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "game/content_registry.gd",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 15831,
+      "sha256": "426191a2ca59e6b126124fd0b51d0a9a3ced786f8c36cd86b38b2aba3fe60a22",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "game/core_actions.gd",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 29332,
+      "sha256": "bd341b184b569cdba5b353bc5b3a9ff30990bac28fc9e2cc5dac52cedd00fa17",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "game/effect_runtime.gd",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 7054,
+      "sha256": "1adcfd2c9ea20b6f4384596b48ebcb115979fa7da6ec0d9b9df45518d2db935f",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "game/effect_wait_probe.gd",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 3252,
+      "sha256": "083c73bdc03a4f51d41d49d16c67b62d3331efe1ce92e398fd7ed37a5fa7cf66",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "game/entity_index_probe.gd",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 6108,
+      "sha256": "d45584a77eb7e97a4ddb1008de1374134c1e3bffecbfda52e9df493511861368",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "game/exercise.gd",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 36454,
+      "sha256": "bd97a61d72929d49f4abdaba6da6403761ee4b9df8faa82bc13ab0f77322c755",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "game/frame_cpu_probe.gd",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 3510,
+      "sha256": "66a36985d2616fb393d6fab33f47051ee0001251953db267f6c1e45f19e47d14",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "game/main.gd",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 96957,
+      "sha256": "0eb6bc9479a9ab8b6a550a0229187fd645bb8e6a3c86291a313df94e80f7c49e",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "game/navigation.gd",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 7821,
+      "sha256": "e4d2bf0ac2698e6939617596dd07fc989c1d19cdcf50d710a87d9ff0ffc51598",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "game/progression_runner.gd",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 6580,
+      "sha256": "9e9e7470f43795829285e47be940cb3d5c07cb2c6e9a7c4e3bd49c1305705dde",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "game/recovery_combat_runner.gd",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 20854,
+      "sha256": "14ca4613b29e3e3ef2b8ec32c95d3da418e013e60e7a5711238217e510267897",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "game/recovery_play_probe.gd",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 24134,
+      "sha256": "15b09c565a4dd6bf96703a12e5463a42afaa57b03f977a6be7f23605efe52fbc",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "game/recovery_render_canvas.gd",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 267,
+      "sha256": "b90eacfa905cce47387b74c06c403c6a2f52cc8bae6cdf7ca326ec09d9810873",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "game/recovery_routes_probe.gd",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 8524,
+      "sha256": "a12cecf9b02c526a2199e916c83b7f90d96913f933cc3a0a0808028b00dc6dfe",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "game/rules.gd",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 19033,
+      "sha256": "80721bfd299f101360c1eb449652e78c551abe66a4ea599cb2e43c29bb231da9",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "game/startup.gd",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 3057,
+      "sha256": "709ff2a4c8ce220aee2582e0ee8be2d977db936cea9853427b52eedc73faad9c",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "game/touch_controls.gd",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 20774,
+      "sha256": "caf469047eb3283ffec83e4df1e6e8979d69cbc01cffaeac5ba9c9195accb162",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "game/work_assets.gd",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 9295,
+      "sha256": "fd2a7bb4481050914fb04f704bb1695c4dbb526b8a8cd479e44b837d392b91d0",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "game/world_map_runner.gd",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 9225,
+      "sha256": "2885c76393b2ab7394886b6fb6748309ec401a5c136f14a0aa75919349cf8e27",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "game/world_map_view.gd",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 20294,
+      "sha256": "383db85f57c4764cc80f280fcb42eaaccb44f8ac3611140721b93636dbc8abeb",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "game/world_repair_probe.gd",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 3323,
+      "sha256": "06da7e9f711a167f6c15dc9d0a5377aef59dbc3eb7117bb4ff21282f6c726775",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "game/world_repairs.gd",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 8809,
+      "sha256": "baf45ca871377bcd860a4d9568efdf4638eff4b5771b6f0439211afebd7d8441",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "integration/content-import/capabilities.json",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 1994,
+      "sha256": "f190b7a3392f45508ef651ded4550756353829d3ab03692a37b6c289d5c4a93d",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "qa/android/multitouch.py",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 7197,
+      "sha256": "d071dc6d39e2b823c3eb3105c540b2fb80a82f7f055a21407db3355719fa14c3",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "tools/android_ci.py",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 11775,
+      "sha256": "fe6766fb7649290065ac98d645d2986835c2080477d4249975d453b41332ceee",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "tools/baram_content.py",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 52663,
+      "sha256": "478f1da0ddde5b5c6055fc186f858c9e20c6cf4028aa2b0d965c62545639de1c",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "tools/compare_gdc_tokens.py",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 2318,
+      "sha256": "6dc91003deb6d68e9fbc61f3262b10da4cbdeea134abd2307d34b7c3831dd0de",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "tools/import_work_content.py",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 7946,
+      "sha256": "a92cd3742b720e7569c20bcbf3a0afbff5b3482eb23c565171d066bac3870d4f",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "tools/prepare_recovery_content.py",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 14721,
+      "sha256": "8893f90d08fc71e96eead7e0181b8135b09a1fd315245b6b5e53bcac4f16338a",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "tools/quality_android_input.py",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 15487,
+      "sha256": "41161122364f61bd86d7140c306055d25455160e55edf56d7a6ee2d5d30a4def",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "tools/quality_recovery_android.py",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 6834,
+      "sha256": "fff608b9dadbda120987f7ce360b50a84bb58524b224facf491fdef8c83ea935",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "tools/test_prepare_recovery_content.py",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 6970,
+      "sha256": "fa0efd887c4709b2718d0a8ec1ee4cf560f2a8aa655d5664af290573cf28c0f4",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    },
+    {
+      "path": "tools/windows_ci.py",
+      "tracked_changed": true,
+      "untracked": false,
+      "bytes": 21269,
+      "sha256": "deffafd6fea57413689457c3229033d93eb63056df2035aa66ed4e0383468974",
+      "allowed_path": true,
+      "encoding": "UTF8_TEXT",
+      "findings": []
+    }
+  ],
+  "self_report": {
+    "path": "docs/gameplay-recovery/publication-preflight.json",
+    "excluded_from_input_snapshot": true,
+    "contains": "Only path/hash/count/scope summaries composed by this preflight; no credential values or private asset payloads."
+  },
+  "write_operations": [
+    "docs/gameplay-recovery/publication-preflight.json"
+  ],
+  "publication_actions_executed": false,
+  "native_execution_performed": false,
+  "post_scan_snapshot_check": {
+    "result": "PASS",
+    "changed_after_read": [],
+    "new_paths_after_read": [],
+    "removed_paths_after_read": [],
+    "head_unchanged": true
+  }
+}

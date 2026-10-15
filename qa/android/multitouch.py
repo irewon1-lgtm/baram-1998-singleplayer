@@ -21,6 +21,11 @@ def main(a):
                 except json.JSONDecodeError:pass
             time.sleep(.2)
         raise RuntimeError('Diagnostic unavailable')
+    def player():
+        key(135)
+        files=adb('shell','find',f'/data/user/0/{P}/files','-name','character.json').decode().splitlines()
+        if len(files)!=1:raise RuntimeError('Expected one normal save')
+        return json.loads(json.loads(adb('exec-out','cat',files[0]))['payload'])['player']
     def send(action,*points):
         driver.stdin.write(json.dumps({'action':action,'points':points})+'\n');driver.stdin.flush()
         if not select.select([driver.stdout],[],[],15)[0]:raise RuntimeError('OS pointer delivery timed out')
@@ -38,6 +43,7 @@ def main(a):
             time.sleep(1)
         else:raise RuntimeError('Startup timed out')
         key(66);key(33);d=diag();check(d['menu']=='','normal_player_creation')
+        novice=player();check(novice['level']==1 and novice['job']=='평민' and not novice['skills'] and not any(novice['hotbar']),'native_pointer_new_character_has_no_unearned_skills')
         recording=subprocess.Popen(['adb','shell','screenrecord','--time-limit','180','/sdcard/baram-pointers.mp4'],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
         adb('push',a.driver,'/data/local/tmp/baram-pointer.jar')
         driver=subprocess.Popen(['adb','shell','CLASSPATH=/data/local/tmp/baram-pointer.jar','app_process','/system/bin','PointerDriver'],stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=(out/'driver.log').open('w'),text=True)
@@ -50,7 +56,7 @@ def main(a):
         check(continuing['input']['direct_direction']==1 and continuing['input']['pointer_count']==1 and continuing['position'][0]<before['position'][0],'right_finger_release_keeps_joystick_active',before=before['position'],after=continuing['position'],input=continuing['input'])
         check(any(e['event']=='attack_started' for e in continuing['recent_events']),'OS_second_pointer_attacks_while_joystick_held')
         send(5|(1<<8),left,[7,1100,650]);send(6|(1<<8),left,[7,1100,650]);time.sleep(.8)
-        check(any(e['event']=='skill_started' for e in diag()['recent_events']),'OS_second_pointer_activates_skill')
+        check(not any(e['event']=='skill_started' for e in diag()['recent_events']) and player()['mp']==novice['mp'],'OS_second_pointer_respects_empty_novice_skill_slot')
         send(1,left);time.sleep(.5);stopped=diag();time.sleep(.7);check(diag()['position']==stopped['position'] and stopped['input']['direct_direction']==-1 and stopped['input']['pointer_count']==0,'all_released_no_stuck_movement')
         shot('two-finger-released')
         # Four native joystick directions, including visible idle and attacks.

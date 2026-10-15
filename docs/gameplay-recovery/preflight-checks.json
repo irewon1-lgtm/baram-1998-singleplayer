@@ -1,0 +1,26 @@
+{
+  "game_parser": {
+    "status": "PASS",
+    "engine": "Godot4.6.3",
+    "method": "main.gd --check-only includes production preloads"
+  },
+  "python_tests": {
+    "status": "PASS",
+    "executed": 71,
+    "passed": 70,
+    "skipped": 1
+  },
+  "content_recovery_safety_tests": {
+    "status": "PASS",
+    "executed": 6,
+    "passed": 6
+  },
+  "token_equivalence": {
+    "status": "PASS",
+    "files": 22,
+    "excluded": "source line/column positions only"
+  },
+  "native_android": "NOT_RUN",
+  "native_windows": "NOT_RUN",
+  "overall_improvement_complete": false
+}

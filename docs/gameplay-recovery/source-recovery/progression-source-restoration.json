@@ -1,0 +1,32 @@
+[
+  {
+    "path": "game/rules.gd",
+    "expected": "80721bfd299f101360c1eb449652e78c551abe66a4ea599cb2e43c29bb231da9",
+    "actual": "80721bfd299f101360c1eb449652e78c551abe66a4ea599cb2e43c29bb231da9",
+    "byte_identical": true
+  },
+  {
+    "path": "game/core_actions.gd",
+    "expected": "bd341b184b569cdba5b353bc5b3a9ff30990bac28fc9e2cc5dac52cedd00fa17",
+    "actual": "bd341b184b569cdba5b353bc5b3a9ff30990bac28fc9e2cc5dac52cedd00fa17",
+    "byte_identical": true
+  },
+  {
+    "path": "game/content_registry.gd",
+    "expected": "426191a2ca59e6b126124fd0b51d0a9a3ced786f8c36cd86b38b2aba3fe60a22",
+    "actual": "426191a2ca59e6b126124fd0b51d0a9a3ced786f8c36cd86b38b2aba3fe60a22",
+    "byte_identical": true
+  },
+  {
+    "path": "game/effect_runtime.gd",
+    "expected": "1adcfd2c9ea20b6f4384596b48ebcb115979fa7da6ec0d9b9df45518d2db935f",
+    "actual": "1adcfd2c9ea20b6f4384596b48ebcb115979fa7da6ec0d9b9df45518d2db935f",
+    "byte_identical": true
+  },
+  {
+    "path": "game/work_assets.gd",
+    "expected": "fd2a7bb4481050914fb04f704bb1695c4dbb526b8a8cd479e44b837d392b91d0",
+    "actual": "fd2a7bb4481050914fb04f704bb1695c4dbb526b8a8cd479e44b837d392b91d0",
+    "byte_identical": true
+  }
+]

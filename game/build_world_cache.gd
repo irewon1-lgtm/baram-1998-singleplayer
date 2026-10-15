@@ -20,7 +20,7 @@ func _initialize():
     file=FileAccess.open(target,FileAccess.READ)
     var roundtrip=file.get_var(false);file.close()
     if roundtrip!=world:push_error("CACHE_ROUNDTRIP");quit(2);return
-    var manifest={"format":"BARAM_WORLD_CACHE_V1","content_version":content.version,
+    var manifest={"format":"BARAM_WORLD_CACHE_V1","compiler_revision":load("res://startup.gd").CACHE_REVISION,"content_version":content.version,
         "source_world_sha256":FileAccess.get_sha256(source),"sha256":FileAccess.get_sha256(target),
         "maps":world.maps.size(),"compile_ms":Time.get_ticks_msec()-began,"bytes":FileAccess.get_file_as_bytes(target).size()}
     file=FileAccess.open(args.out.path_join("manifest.json"),FileAccess.WRITE)

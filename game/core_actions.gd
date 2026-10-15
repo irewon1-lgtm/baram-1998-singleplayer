@@ -406,10 +406,26 @@ func advance(p: Dictionary, id: String, definition: Dictionary, action_id: Strin
         if skill_id not in candidate.skills:candidate.skills.append(skill_id)
     return commit(p,candidate,action_id)
 
+func choose_job(p: Dictionary, job: String) -> Dictionary:
+    # Explicit NPC choice only. No load-time demotion or reassignment.
+    if p.get("job","")!="평민":return error("JOB_ALREADY_SELECTED")
+    if int(p.get("level",1))<5:return error("JOB_REQUIRES_LEVEL_5")
+    if job not in rules.JOBS:return error("JOB_UNKNOWN",job)
+    var candidate=begin(p)
+    candidate.job=job
+    candidate["job_selected_at_level"]=int(candidate.level)
+    # KR-1999-U025 says appraisal is automatic on initial job selection.
+    var appraisal=rules.spell_record(candidate,"물품감정")
+    var skill_id=appraisal.get("id","물품감정") if not rules.runtime_definitions.is_empty() else "물품감정"
+    if not rules.knows_skill(candidate,skill_id):candidate.skills.append(skill_id)
+    for i in range(candidate.hotbar.size()):
+        if candidate.hotbar[i]=="":candidate.hotbar[i]=skill_id;break
+    return commit(p,candidate)
+
 func learn_skill(p: Dictionary, id: String, definition: Dictionary) -> Dictionary:
     var candidate=begin(p)
     var learn=definition.get("learn",{})
-    if id in candidate.skills:return {"ok":true,"already_applied":true}
+    if rules.knows_skill(candidate,id):return {"ok":true,"already_applied":true}
     var needs={"level":learn.get("level",1),"class_ids":definition.get("class_ids",[])}
     if not requirements_met(candidate,needs) or int(candidate.rank)<int(learn.get("rank",0)):return error("LEARN_CONDITION",id)
     var gold=int(learn.get("money",learn.get("gold",0)));var xp=int(learn.get("experience_cost",0))

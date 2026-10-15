@@ -12,6 +12,19 @@ var used_frames={}
 var tile_cache={}
 var icon_cache={}
 var last_error={}
+var tile_map=""
+var tile_cache_resets=0
+var tile_cache_hits=0
+var tile_cache_builds=0
+var animation_fallbacks={}
+
+func enter_map(map_id: String):
+    # Compass moves within the same town share immutable tile frames.
+    # Release old map AtlasTextures only on a real map change so their PNG
+    # pages remain bounded by the existing per-map/cache lifetime.
+    if tile_map!="" and tile_map!=map_id:
+        tile_cache.clear();tile_cache_resets+=1
+    tile_map=map_id
 
 func _init(registry):content=registry
 
@@ -73,6 +86,11 @@ func frame_index(asset_id: String, action: String, direction: int, elapsed_ms: i
     var data=content.definition(asset_id)
     var meta=data.get("metadata",{})
     var sequence=meta.get("animations",{}).get(action,{})
+    if sequence.is_empty() and action=="attack" and meta.get("animations",{}).has("walk"):
+        # Some acquired original actors have no attack pixels. Keep the
+        # original walking figure visible; never invent/claim an attack pose.
+        sequence=meta.animations.walk
+        animation_fallbacks[asset_id+":attack"]={"asset_id":asset_id,"requested":"attack","used":"walk","classification":"SOURCE_ATTACK_UNAVAILABLE_WALK_FALLBACK"}
     if sequence.is_empty():return -1
     var count=int(sequence.get("frames_per_direction",0));var step=int(sequence.get("frame_ms",0))
     if count<=0 or step<=0 or direction<0 or direction>=int(sequence.get("directions",4)):return -1
@@ -118,6 +136,9 @@ func effect_frame(asset_id: String, layer: String, elapsed_ms: int, lifetime_ms:
 func draw_effect(canvas, asset_id: String, layer: String, elapsed_ms: int, feet: Vector2, lifetime_ms: int) -> bool:
     var frame=effect_frame(asset_id,layer,elapsed_ms,lifetime_ms)
     if frame.is_empty():return false
+    # Original effect tables use -1 for a timed blank, not a missing atlas
+    # region. effect_frame has already consumed its declared delay/repeats.
+    if int(frame.get("frame",-2))==-1:return true
     var sheet=content.definition(asset_id).get("metadata",{}).get("sheet_id","")
     # EPF stencil alpha remains in the PNG. Unknown original Alpha/Light
     # parameters remain metadata; they are not guessed to be opacity 0.
@@ -125,7 +146,7 @@ func draw_effect(canvas, asset_id: String, layer: String, elapsed_ms: int, feet:
 
 func tile(asset_id: String, index: int) -> Texture2D:
     var key=asset_id+":"+str(index)
-    if tile_cache.has(key):used_frames[key]=true;return tile_cache[key]
+    if tile_cache.has(key):used_frames[key]=true;tile_cache_hits+=1;return tile_cache[key]
     var table=metadata(asset_id);var frames=table.get("frames",[])
     if index<0 or index>=frames.size():return null
     var frame=frames[index];var page=texture(asset_id,frame.path)
@@ -134,6 +155,7 @@ func tile(asset_id: String, index: int) -> Texture2D:
     var r=frame.region;result.region=Rect2(r[0],r[1],r[2],r[3])
     used_frames[asset_id+":"+str(index)]=true
     tile_cache[key]=result
+    tile_cache_builds+=1
     return result
 
 func icon(asset_id: String, index: int) -> Texture2D:

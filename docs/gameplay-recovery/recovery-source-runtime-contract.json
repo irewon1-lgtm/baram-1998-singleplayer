@@ -1,0 +1,127 @@
+{
+  "checks": [
+    {
+      "details": {
+
+      },
+      "errors": [],
+      "id": "immutable-release-and-assets",
+      "result": "PASS",
+      "tested": 2305
+    },
+    {
+      "details": {
+
+      },
+      "errors": [],
+      "id": "all-skills-compile-and-validate",
+      "result": "PASS",
+      "tested": 227
+    },
+    {
+      "details": {
+        "defined_skills": 227,
+        "movement_modes": {
+          "adjacent_enemy": 1,
+          "directional_town_gate": 2,
+          "home_city": 4,
+          "inspect_item": 2,
+          "local_message": 5,
+          "revival_npc": 2,
+          "safe_region_entry": 6
+        },
+        "normal_cast_and_animation": "NOT_RUN"
+      },
+      "errors": [],
+      "id": "all-skills-controlled-effects-accepted",
+      "result": "PASS",
+      "tested": 227
+    },
+    {
+      "details": {
+        "service_types": {
+          "experience_exchange": 20,
+          "learn_skills": 20,
+          "quests": 123,
+          "recipe_book": 243,
+          "repair": 26,
+          "rest": 42,
+          "revive": 1,
+          "shop": 62
+        }
+      },
+      "errors": [],
+      "id": "all-NPC-services-and-dialogue-references",
+      "result": "PASS",
+      "tested": 259
+    },
+    {
+      "details": {
+
+      },
+      "errors": [],
+      "id": "all-monster-drop-groups-and-roll-references",
+      "result": "PASS",
+      "tested": 390
+    },
+    {
+      "details": {
+        "all_quest_playthrough": "NOT_RUN",
+        "objective_types": {
+          "collect": 82,
+          "kill": 62,
+          "talk": 173
+        },
+        "reward_types": {
+          "advancement": 12,
+          "experience": 98,
+          "gold": 99,
+          "item": 135
+        }
+      },
+      "errors": [],
+      "id": "all-quest-objective-events-and-reward-references",
+      "result": "PASS",
+      "tested": 123
+    },
+    {
+      "details": {
+
+      },
+      "errors": [],
+      "id": "all-recipe-input-output-references",
+      "result": "PASS",
+      "tested": 234
+    }
+  ],
+  "content_version": "cd0c680ab5fc8fb223ef2d14ff0b991b18e3e100fecba693bd608040f8a66e57",
+  "definition_counts": {
+    "advancement": 12,
+    "asset": 1038,
+    "class": 5,
+    "drop_group": 390,
+    "economy": 1,
+    "enhancement": 1,
+    "growth": 401,
+    "item": 678,
+    "map": 386,
+    "monster": 390,
+    "npc": 259,
+    "quest": 123,
+    "recipe": 234,
+    "shop": 62,
+    "skill": 227
+  },
+  "gameplay_result": "NOT_RUN",
+  "ran_at_utc": "2026-10-15T10:47:27",
+  "result": "PASS",
+  "scope": "READ_ONLY_CONTENT_LOAD_AND_CONTROLLED_EFFECT_INTERPRETER_NOT_GUI_GAMEPLAY",
+  "source_sha256": {
+    "content_registry.gd": "426191a2ca59e6b126124fd0b51d0a9a3ced786f8c36cd86b38b2aba3fe60a22",
+    "core_actions.gd": "bd341b184b569cdba5b353bc5b3a9ff30990bac28fc9e2cc5dac52cedd00fa17",
+    "effect_runtime.gd": "1adcfd2c9ea20b6f4384596b48ebcb115979fa7da6ec0d9b9df45518d2db935f",
+    "main.gd": "0eb6bc9479a9ab8b6a550a0229187fd645bb8e6a3c86291a313df94e80f7c49e",
+    "precision.gd": "d41d2558e28a3dbbab8155eba4fea35c48950fa75eea85a66c8ef094b7b56ee2",
+    "rules.gd": "80721bfd299f101360c1eb449652e78c551abe66a4ea599cb2e43c29bb231da9"
+  }
+}

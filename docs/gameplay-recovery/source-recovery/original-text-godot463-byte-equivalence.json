@@ -1,0 +1,105 @@
+{
+  "scope": "Godot4.6.3 actual WindowsDesktop export-pack script_export_mode=1, original unchanged source or original-SHA recoverednavigation; same uncompressedGDC101 compressionmode",
+  "status": "PASS",
+  "rows": [
+    {
+      "file": "android_bootstrap.gdc",
+      "exact_gdc_bytes": true,
+      "semantic_tokens_equal": true,
+      "original_gdc_sha256": "2efc6c99085b374153d7512435a55f5a162ad03f6f3014b52fe39cbfe97729eb",
+      "rebuilt_gdc_sha256": "2efc6c99085b374153d7512435a55f5a162ad03f6f3014b52fe39cbfe97729eb",
+      "original_header": "474453436500000000000000",
+      "rebuilt_header": "474453436500000000000000"
+    },
+    {
+      "file": "assets.gdc",
+      "exact_gdc_bytes": true,
+      "semantic_tokens_equal": true,
+      "original_gdc_sha256": "bb0fbe178bfcb2926d5135f66beb65111cd4557b319b1398ee24131630a509c0",
+      "rebuilt_gdc_sha256": "bb0fbe178bfcb2926d5135f66beb65111cd4557b319b1398ee24131630a509c0",
+      "original_header": "474453436500000000000000",
+      "rebuilt_header": "474453436500000000000000"
+    },
+    {
+      "file": "continuity.gdc",
+      "exact_gdc_bytes": true,
+      "semantic_tokens_equal": true,
+      "original_gdc_sha256": "8e721ef335e4ac165d74c653ef30c09bfccc0ab2d734d0d726b804d252f59055",
+      "rebuilt_gdc_sha256": "8e721ef335e4ac165d74c653ef30c09bfccc0ab2d734d0d726b804d252f59055",
+      "original_header": "474453436500000000000000",
+      "rebuilt_header": "474453436500000000000000"
+    },
+    {
+      "file": "continuity_state.gdc",
+      "exact_gdc_bytes": true,
+      "semantic_tokens_equal": true,
+      "original_gdc_sha256": "6a63e9801fbaa7766e4a9faeced2d3f3c5859b5ceda4a93d6293d7cc321b4ec6",
+      "rebuilt_gdc_sha256": "6a63e9801fbaa7766e4a9faeced2d3f3c5859b5ceda4a93d6293d7cc321b4ec6",
+      "original_header": "474453436500000000000000",
+      "rebuilt_header": "474453436500000000000000"
+    },
+    {
+      "file": "facing.gdc",
+      "exact_gdc_bytes": true,
+      "semantic_tokens_equal": true,
+      "original_gdc_sha256": "98b002538d05e50678e431a0582c3350277f4b5b1a1781dde03f7d4c692a10ed",
+      "rebuilt_gdc_sha256": "98b002538d05e50678e431a0582c3350277f4b5b1a1781dde03f7d4c692a10ed",
+      "original_header": "474453436500000000000000",
+      "rebuilt_header": "474453436500000000000000"
+    },
+    {
+      "file": "license_export.gdc",
+      "exact_gdc_bytes": true,
+      "semantic_tokens_equal": true,
+      "original_gdc_sha256": "0bc423cd81cf867c2b3dc92c0ca6b117a130d5f4cc6357aeb762326ed83407b8",
+      "rebuilt_gdc_sha256": "0bc423cd81cf867c2b3dc92c0ca6b117a130d5f4cc6357aeb762326ed83407b8",
+      "original_header": "474453436500000000000000",
+      "rebuilt_header": "474453436500000000000000"
+    },
+    {
+      "file": "navigation.gdc",
+      "exact_gdc_bytes": true,
+      "semantic_tokens_equal": true,
+      "original_gdc_sha256": "70322c6c43abe5e77964bf466f46b92cc2b4e4c9c5b8bcad1ecd9a2d4509c240",
+      "rebuilt_gdc_sha256": "70322c6c43abe5e77964bf466f46b92cc2b4e4c9c5b8bcad1ecd9a2d4509c240",
+      "original_header": "474453436500000000000000",
+      "rebuilt_header": "474453436500000000000000"
+    },
+    {
+      "file": "pathfinder.gdc",
+      "exact_gdc_bytes": true,
+      "semantic_tokens_equal": true,
+      "original_gdc_sha256": "f4a2fe821f6832f5fb70ce377747b2e90a147fbad30c4c0e019db7c2046461f5",
+      "rebuilt_gdc_sha256": "f4a2fe821f6832f5fb70ce377747b2e90a147fbad30c4c0e019db7c2046461f5",
+      "original_header": "474453436500000000000000",
+      "rebuilt_header": "474453436500000000000000"
+    },
+    {
+      "file": "precision.gdc",
+      "exact_gdc_bytes": true,
+      "semantic_tokens_equal": true,
+      "original_gdc_sha256": "f283115f06e47275baf582715e320f144dd6c11ec4d3f165dc626e6f7490c95a",
+      "rebuilt_gdc_sha256": "f283115f06e47275baf582715e320f144dd6c11ec4d3f165dc626e6f7490c95a",
+      "original_header": "474453436500000000000000",
+      "rebuilt_header": "474453436500000000000000"
+    },
+    {
+      "file": "save_store.gdc",
+      "exact_gdc_bytes": true,
+      "semantic_tokens_equal": true,
+      "original_gdc_sha256": "7ad7ae5e6a8d5ecc0a7c8baea215154319d2cbb699c28d664471d60e01f15a17",
+      "rebuilt_gdc_sha256": "7ad7ae5e6a8d5ecc0a7c8baea215154319d2cbb699c28d664471d60e01f15a17",
+      "original_header": "474453436500000000000000",
+      "rebuilt_header": "474453436500000000000000"
+    },
+    {
+      "file": "windows_bootstrap.gdc",
+      "exact_gdc_bytes": true,
+      "semantic_tokens_equal": true,
+      "original_gdc_sha256": "6d7ff9719de4a0c62c8b1e46ffba27b31938f942bfb5def67c3f8fa1f1425a5e",
+      "rebuilt_gdc_sha256": "6d7ff9719de4a0c62c8b1e46ffba27b31938f942bfb5def67c3f8fa1f1425a5e",
+      "original_header": "474453436500000000000000",
+      "rebuilt_header": "474453436500000000000000"
+    }
+  ]
+}

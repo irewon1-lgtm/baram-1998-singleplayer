@@ -75,6 +75,8 @@ func value_or(values: Dictionary, key: String, fallback):
     return fallback if v == null else v
 
 func new_player(job: String, title: String) -> Dictionary:
+    # Legacy construction is kept for existing fixtures/controlled actors.
+    # User-facing creation MUST use new_character(), never this preset.
     var result={"name":title,"job":job,"level":1,"xp2":0,"hp":50,"hp_max":50,"mp":35,"mp_max":35,
         "gold":30,"strength":5,"inventory":{"목도":1},"equipped":"","durability":{"목도":1000},
         "skills":["기초 회복","비영사천문","성황령","물품감정"],"hotbar":["기초 회복","비영사천문","물품감정"],"cooldowns":{},"buffs":{},
@@ -83,20 +85,39 @@ func new_player(job: String, title: String) -> Dictionary:
     actions.ensure(result)
     return result
 
+func new_character(title: String, preferred_job: String = "") -> Dictionary:
+    # KR-1999-U019 / KR-2001-0267: begin as a novice, choose a job at 5.
+    # Never apply this initialization to a loaded character.
+    var result=new_player("평민",title)
+    result.skills=[];result.hotbar=["","",""]
+    result.progression_version=2
+    if preferred_job in JOBS:result.preferred_job=preferred_job
+    return result
+
+func choose_job(p: Dictionary, job: String) -> Dictionary:
+    return actions.choose_job(p,job)
+
 func threshold(job: String, level: int) -> int:
     if level >= 99:
         return -1
+    if job=="평민" and level>=5:return -1
     return int(value_or(growth(job,level), "cumulative_exp_to_next", -1))
 
 func award_xp(p: Dictionary, amount: float) -> Array:
+    if amount<0:return []
+    var previous_xp=int(p.xp2)
     p.xp2 += roundi(amount * 2.0) # preserves 7.5 exactly; display divides by two.
+    # The historic novice phase stops at five until the player chooses a job.
+    # Cap new novice XP at the entry to five; existing assigned jobs are intact.
+    if p.job=="평민":p.xp2=maxi(previous_xp,mini(int(p.xp2),threshold("평민",4)*2))
     var gained = []
     while int(p.level) < 99:
         var limit = threshold(p.job, int(p.level))
         if limit < 0 or int(p.xp2) < limit * 2:
             break
-        var used_job = "평민" if int(p.level) < (6 if runtime_definitions.has("wk.class.novice") else 5) else p.job
+        var used_job = "평민" if p.job=="평민" or int(p.level) < (6 if runtime_definitions.has("wk.class.novice") else 5) else p.job
         var g = growth(used_job,int(p.level))
+        if g.is_empty():actions.error("GROWTH_NOT_CONNECTED",used_job,"level",p.level);break
         var hp_gain = rng.randi_range(int(g.hp_gain_min),int(g.hp_gain_max_inclusive))
         var mp_gain = rng.randi_range(int(g.mp_gain_min),int(g.mp_gain_max_inclusive))
         p.growth_log.append({"from":p.level,"job":used_job,"hp_gain":hp_gain,"mp_gain":mp_gain})
@@ -120,6 +141,22 @@ func damage(raw: float, armor: int) -> int:
     # Explicit NA replacement formula, floor only after multiplication.
     return maxi(1, floori(raw * float(100 + maxi(-95, armor)) / 100.0))
 
+func weapon_attack_profile(p: Dictionary) -> Dictionary:
+    var id=str(p.get("equipped",""))
+    var data=runtime_definitions.get(id,{}).get("data",{})
+    var visual=data.get("visual",{})
+    var family=str(visual.get("weapon_family",""))
+    # CONTENT010 bow-consumer-requirements.json authors a six-tile physical
+    # range. It supplies no ammunition item/consumption or historic min-range.
+    # Original table name/motion 'sword' does not make these bows melee.
+    var ranged=family=="bow"
+    var class_id={"전사":"wk.class.warrior","도적":"wk.class.rogue","주술사":"wk.class.mage","도사":"wk.class.poet","평민":"wk.class.novice"}.get(p.job,"")
+    var starter=runtime_definitions.get(class_id,{}).get("data",{}).get("starter",{})
+    var interval=int(starter.get("basic_attack_interval_ms",600))
+    return {"kind":"ranged_physical" if ranged else "melee","weapon_family":family,
+        "range_tiles":6 if ranged else 1,"min_range_tiles":1,"attack_interval_ms":maxi(1,interval),
+        "classification":"WORK_CONTENT010_AUTHORED_RANGE" if ranged else "EXISTING_MELEE_RULE"}
+
 func weapon_damage(p: Dictionary) -> int:
     var it = item(p.equipped)
     var low = int(value_or(it,"damage_min",2))
@@ -135,8 +172,11 @@ func incoming_damage(p: Dictionary,raw: float) -> int:
     amount=maxi(1,amount*(100-clampi(actions.status_modifier(p,"damage_reduction"),0,100))/100)
     return amount
 
+func modified_attack_damage(attacker: Dictionary, raw: int) -> int:
+    return maxi(1,raw+actions.status_modifier(attacker,"damage"))
+
 func skill_profile(p: Dictionary,title: String) -> Dictionary:
-    var record=find_content("spell",title,p.job)
+    var record=spell_record(p,title)
     var id=record.get("id",title)
     if runtime_definitions.has(id) and runtime_definitions[id].kind=="skill":
         var definition=runtime_definitions[id].data
@@ -170,16 +210,55 @@ func skill(p: Dictionary, title: String) -> Dictionary:
     if title == "기초 회복":
         return {"cast_mp":5,"cast_hp":0,"cooldown_ms":1000,"heal_amount":10,"base_damage":0,
                 "range_tiles":1,"duration_ms":0,"source_kind":"GENERATED_TRAINING_SKILL_DEV_ESTIMATE"}
-    var found=find_content("spell",title,p.job)
-    if found.is_empty() and title in ["비영사천문","성황령","물품감정"]:found=find_content("spell",title)
+    var found=spell_record(p,title)
     return found.get("values",{})
 
+func spell_record(p: Dictionary, title: String) -> Dictionary:
+    if by_id.has(title) and by_id[title].category=="spell":return by_id[title]
+    var compatible=[]
+    for record in name_index.get("spell:"+title,[]):
+        var allowed=record.values.get("allowed_jobs",[])
+        if not allowed.is_empty() and p.job not in allowed:continue
+        if allowed.is_empty() and str(record.job) not in [p.job,"공통","전직업 공통"]:continue
+        if runtime_definitions.has(record.id):
+            var variant=runtime_definitions[record.id].data.get("variant",{})
+            if variant.get("role","primary")!="primary":continue
+        compatible.append(record)
+    # Prefer the job's own row over common rows, retaining source identities.
+    for record in compatible:
+        if str(record.job)==p.job:return record
+    return compatible[0] if not compatible.is_empty() else {}
+
+func knows_skill(p: Dictionary, title: String) -> bool:
+    if title in p.get("skills",[]):return true
+    var record=spell_record(p,title)
+    if record.is_empty():return false
+    # Old saves use display names; Work learning uses immutable content IDs.
+    return record.id in p.get("skills",[]) or record.name in p.get("skills",[])
+
+func can_cast_skill(p: Dictionary, title: String) -> Dictionary:
+    if not knows_skill(p,title):return {"ok":false,"error":"SKILL_NOT_LEARNED"}
+    # Keep old training skill data usable only by players who already own it.
+    if title=="기초 회복":return {"ok":true,"error":""}
+    var record=spell_record(p,title)
+    if record.is_empty():return {"ok":false,"error":"SKILL_NOT_CONNECTED"}
+    var definition=runtime_definitions.get(record.id,{}).get("data",{})
+    var learn=definition.get("learn",{})
+    var classes=definition.get("class_ids",[])
+    if not classes.is_empty() and not actions.requirements_met(p,{"class_ids":classes}):return {"ok":false,"error":"SKILL_CLASS"}
+    if classes.is_empty() and str(record.job) not in [p.job,"공통","전직업 공통"]:return {"ok":false,"error":"SKILL_CLASS"}
+    if int(p.level)<integer_learn(float(learn.get("level",value_or(record.values,"learn_level",1)))):return {"ok":false,"error":"SKILL_LEVEL"}
+    if int(p.get("rank",0))<int(learn.get("rank",0)):return {"ok":false,"error":"SKILL_RANK"}
+    return {"ok":true,"error":""}
+
 func learn(p: Dictionary, title: String) -> bool:
-    var definition=find_content("spell",title,p.job)
+    var definition=spell_record(p,title)
+    if definition.is_empty():return false
     if runtime_definitions.has(definition.get("id","")):
         return actions.learn_skill(p,definition.id,runtime_definitions[definition.id].data).ok
+    if str(definition.job) not in [p.job,"공통","전직업 공통"]:return false
     var s = skill(p,title)
-    if s.is_empty() or title in p.skills or int(p.level) < integer_learn(float(value_or(s,"learn_level",1))) or int(p.gold) < int(value_or(s,"learn_money",0)):
+    if s.is_empty() or knows_skill(p,title) or int(p.level) < integer_learn(float(value_or(s,"learn_level",1))) or int(p.gold) < int(value_or(s,"learn_money",0)):
         return false
     for key in s:
         if key.begins_with("learn_materials."):

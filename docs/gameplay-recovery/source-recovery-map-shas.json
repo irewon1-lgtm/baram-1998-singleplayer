@@ -1,0 +1,23 @@
+[
+  {
+    "path": "game/touch_controls.gd",
+    "sha256": "caf469047eb3283ffec83e4df1e6e8979d69cbc01cffaeac5ba9c9195accb162",
+    "expected_sha256": "caf469047eb3283ffec83e4df1e6e8979d69cbc01cffaeac5ba9c9195accb162",
+    "result": "PASS_EXACT_ORIGINAL_SOURCE",
+    "source": "reconstructed verbatim from original tool-call source and subsequent exact patches; not decompiled"
+  },
+  {
+    "path": "game/world_map_runner.gd",
+    "sha256": "2885c76393b2ab7394886b6fb6748309ec401a5c136f14a0aa75919349cf8e27",
+    "expected_sha256": "2885c76393b2ab7394886b6fb6748309ec401a5c136f14a0aa75919349cf8e27",
+    "result": "PASS_EXACT_ORIGINAL_SOURCE",
+    "source": "reconstructed verbatim from original tool-call source and subsequent exact patches; not decompiled"
+  },
+  {
+    "path": "game/world_map_view.gd",
+    "sha256": "383db85f57c4764cc80f280fcb42eaaccb44f8ac3611140721b93636dbc8abeb",
+    "expected_sha256": "383db85f57c4764cc80f280fcb42eaaccb44f8ac3611140721b93636dbc8abeb",
+    "result": "PASS_EXACT_ORIGINAL_SOURCE",
+    "source": "reconstructed verbatim from original tool-call source and subsequent exact patches; not decompiled"
+  }
+]

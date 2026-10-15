@@ -37,7 +37,14 @@
     "monster.attack_hit.status.v1",
     "quests.ordered_and_map_objectives.v1",
     "skill_learn_rank_and_bound_materials",
-    "item_requirements_advancement_rank"
+    "item_requirements_advancement_rank",
+    "effect_blank_frame_wait",
+    "original_sword_spear_attachment",
+    "fan_weapon_animation_attachment",
+    "offhand_slot_and_shield_animation_attachment",
+    "source_actor_walk_attack_frames",
+    "original_bow_firing_pose_attachment",
+    "ranged_physical_weapon_attack"
   ],
   "note": "Work schema 1 adapters and runtime handlers implemented. Acquisition, data activation, short focused runtime checks, GUI checks and natural progression each have separate receipts. Code capability names do not assert gameplay completion."
 }

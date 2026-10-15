@@ -122,11 +122,14 @@ def atomic_write(path, data):
             stream.flush()
             os.fsync(stream.fileno())
         os.replace(name, path)
-        directory = os.open(path.parent, os.O_RDONLY | os.O_DIRECTORY)
-        try:
-            os.fsync(directory)
-        finally:
-            os.close(directory)
+        # Windows cannot open directory handles through os.open/O_DIRECTORY.
+        # The written file is flushed before replace on both platforms.
+        if os.name != 'nt':
+            directory = os.open(path.parent, os.O_RDONLY | os.O_DIRECTORY)
+            try:
+                os.fsync(directory)
+            finally:
+                os.close(directory)
     finally:
         if os.path.exists(name):
             os.unlink(name)
@@ -257,13 +260,60 @@ def empty_release():
 
 
 class PackageStore:
-    def __init__(self, root, baseline, capabilities=(), bundles=None, member_dirs=None, selection=None):
+    def __init__(self, root, baseline, capabilities=(), bundles=None, member_dirs=None, selection=None, npc_reconciliation=None):
         self.root = Path(root)
         self.baseline = copy.deepcopy(baseline)
         self.capabilities = set(capabilities)
         self.bundles = bundles or {}
         self.member_dirs = member_dirs or {}
         self.selection = selection or {}
+        self.npc_reconciliation = npc_reconciliation
+
+    def _reconcile_npc_fields(self, record, target_record, manifest, source_commit, release, changes, conditions, receipt):
+        """Reconstructed exact-pair adapter; ordinary patch guards still run."""
+        resolution = self.npc_reconciliation
+        if not resolution or manifest['batch_id'] != 'WK-CONTENT-010':
+            return changes, conditions, None
+        document = resolution['document']
+        item = next((r for r in document.get('npc_resolutions', [])
+                     if r['target_id'] == record.get('target_id') and record['id'] in r['source_proposal_ids']), None)
+        if item is None:
+            return changes, conditions, None
+        needed = {'fan_weapon_animation_attachment', 'offhand_slot_and_shield_animation_attachment',
+                  'original_bow_firing_pose_attachment', 'ranged_physical_weapon_attack'}
+        if not needed <= self.capabilities:
+            fail('NPC_RECONCILIATION_CAPABILITY', 'Both equipment menu families require runtime handlers',
+                 'PENDING_CAPABILITY', current=sorted(needed-self.capabilities))
+        packages = {p['batch_id']: p for p in document['source_packages']}
+        for batch, pin in packages.items():
+            if batch == manifest['batch_id']:
+                got = dict(manifest_sha256=receipt['manifest_sha256'], source_commit=source_commit)
+            else:
+                got = release['imports'].get(batch, {})
+                if got.get('status') != 'IMPORTED':
+                    fail('NPC_RECONCILIATION_DEPENDENCY', 'Import the exact 008 package before reconciling 010',
+                         'WAITING_DEPENDENCY', current=batch)
+            if got.get('manifest_sha256') != pin['manifest_sha256'] or got.get('source_commit') != pin['package_commit']:
+                fail('NPC_RECONCILIATION_PIN', 'Resolution applies only to both immutable source packages', 'CONFLICT', current=batch)
+        fields = item['field_paths']
+        if fields != ['services', 'dialogue'] or set(changes) != set(fields):
+            fail('NPC_RECONCILIATION_FIELDS', 'Resolution cannot change unrelated NPC fields', 'CONFLICT')
+        accepted = item['accepted_exact_field_sets']
+        original = {field: conditions.get(field, {}).get('value') for field in fields}
+        if native(original) != native(accepted['common_baseline']) or native(changes) != native(accepted['content010_only']):
+            fail('NPC_RECONCILIATION_PROPOSAL', 'Original proposal differs from published resolution', 'CONFLICT')
+        current = {field: get_field(target_record['data'], field) for field in fields}
+        if native(current) != native(accepted['content008_only']):
+            fail('NPC_RECONCILIATION_STATE', 'Complete services/dialogue pair is not the accepted 008-only state',
+                 'CONFLICT', content_id=item['target_id'])
+        merged = item['merged_fields']
+        if native(merged) != native(accepted['already_reconciled']):
+            fail('NPC_RECONCILIATION_RESULT', 'Published merged state is inconsistent', 'CONFLICT')
+        proof = dict(target_id=item['target_id'], source_proposal_ids=item['source_proposal_ids'],
+                     accepted_state='content008_only', resolution_sha256=resolution['sha256'],
+                     resolution_source_commit=resolution['source_commit'], resolution_path=resolution['path'])
+        receipt.setdefault('reconciliations', []).append(proof)
+        return copy.deepcopy(merged), {field: dict(exists=True, value=current[field]) for field in fields}, proof
 
     def pointer(self):
         path = self.root / "ACTIVE.json"
@@ -534,6 +584,10 @@ class PackageStore:
                 published_changes=record.get('changes')
                 changes = {c['path']:c['after'] for c in published_changes} if published_changes else record["data"]
                 conditions = {c['path']:c['before'] for c in published_changes} if published_changes else record.get("preconditions", record.get("expected_before"))
+                reconciliation = None
+                if published_changes:
+                    changes, conditions, reconciliation = self._reconcile_npc_fields(
+                        record, target_record, manifest, source_commit, release, changes, conditions, receipt)
                 expected_hash = record.get("expected_sha256")
                 if not conditions and not expected_hash:
                     fail("PATCH_PRECONDITION", "Patch requires expected fields or data hash", file=file, content_id=rid)
@@ -563,6 +617,8 @@ class PackageStore:
                 target_record['references']=list({encode(ref).decode():ref for ref in references}.values())
                 target_record.setdefault("patch_history", []).append(dict(batch_id=manifest["batch_id"], source_commit=source_commit,
                                                                             proposal_id=rid, provenance_refs=record["provenance_refs"], source_mode=record["source_mode"]))
+                if reconciliation:
+                    target_record['patch_history'][-1]['reconciliation'] = reconciliation
                 target_record.setdefault("batch_id", manifest["batch_id"])
                 candidate["records"][target] = target_record
                 candidate["id_map"][rid] = target
@@ -574,6 +630,19 @@ class PackageStore:
                     fail("ACTIVE_REFERENCE", "Candidate breaks previous active reference", content_id=rid, current=ref)
         asset_bytes = {}
         bundle_inputs={}
+        def acquired_member(bundle, member):
+            if bundle in bundle_inputs:
+                return read_bounded(bundle_inputs[bundle], member)
+            if bundle in self.member_dirs:
+                return read_bounded(self.member_dirs[bundle], member)
+            info = release['assets'].get('bundle_file:'+bundle+':'+member)
+            if not info:
+                fail('REQUIRED_ASSET_UNAVAILABLE', 'Pinned bundle member is not present in the verified active release',
+                     'WAITING_DEPENDENCY', file=member, current=bundle)
+            content = read_bounded(self.root, 'releases/'+self.pointer()['release_id']+'/files/'+info['stored_path'])
+            if len(content) != info['bytes'] or sha(content) != info['sha256']:
+                fail('ACTIVE_ASSET_INTEGRITY', 'Reused active member changed', 'CONFLICT', file=member)
+            return content
         if 'acquisition.json' in verified:
             acquisition=decode(verified['acquisition.json'][1],'acquisition.json')
             if acquisition.get('bundle_id'):
@@ -599,9 +668,7 @@ class PackageStore:
             if rid in candidate['assets'] and candidate['assets'][rid]['sha256']==acquisition.get('sha256'):continue
             if not path and acquisition.get('bundle_id'):
                 bundle=acquisition['bundle_id'];member=acquisition.get('member')
-                if bundle not in bundle_inputs:
-                    fail('REQUIRED_ASSET_UNAVAILABLE','Authenticated Library/bundle has not been materialized and hash verified by Codex','WAITING_DEPENDENCY',content_id=rid,file=member,current=acquisition)
-                data=read_bounded(bundle_inputs[bundle],member)
+                data=acquired_member(bundle,member)
                 if sha(data)!=acquisition.get('sha256'):fail('BUNDLE_MEMBER_HASH','Acquired member differs from asset definition',file=member,content_id=rid)
                 members={member: data}
                 meta=data_definition.get('metadata',{})
@@ -616,7 +683,7 @@ class PackageStore:
                             if not info or info['sha256']!=dependency['sha256']:fail('SHARED_OBJECTS_DEPENDENCY','Pinned map object table not active','WAITING_DEPENDENCY',file=shared,content_id=rid)
                             content=read_bounded(self.root,'releases/'+self.pointer()['release_id']+'/files/'+info['stored_path'])
                             if sha(content)!=dependency['sha256']:fail('SHARED_OBJECTS_HASH','Dependency bytes changed',file=shared)
-                        else:members[shared]=read_bounded(bundle_inputs[bundle],shared)
+                        else:members[shared]=acquired_member(bundle,shared)
                 elif data_definition.get('asset_type') in ('frame_sheet','tile_sheet') and meta.get('pages'):
                     table=decode(data,member);pages={p['path']:p for p in meta['pages']}
                     if len(table.get('frames',[]))!=data_definition.get('frame_count'):fail('FRAME_COUNT','Sheet count differs from definition',file=member,content_id=rid)
@@ -632,7 +699,7 @@ class PackageStore:
                             if [audio.getnchannels(),audio.getsampwidth(),audio.getframerate(),audio.getnframes()]!=[meta[k] for k in ('channels','sample_width','rate','samples')]:fail('AUDIO_METADATA','WAV dimensions differ',file=member,content_id=rid)
                     except (wave.Error,EOFError) as error:fail('AUDIO_DECODE',str(error),file=member,content_id=rid)
                 for page in meta.get('pages',[]):
-                    pixel=read_bounded(bundle_inputs[bundle],page['path'])
+                    pixel=acquired_member(bundle,page['path'])
                     if len(pixel)!=page.get('size_bytes') or sha(pixel)!=page['sha256']:fail('BUNDLE_PAGE_HASH','Pinned PNG differs',file=page['path'],content_id=rid)
                     from PIL import Image
                     import io
@@ -644,7 +711,7 @@ class PackageStore:
                     except (OSError,ValueError,SyntaxError) as error:fail('PAGE_DECODE',str(error),file=page['path'],content_id=rid)
                     members[page['path']]=pixel
                 if meta.get('atlas_member'):
-                    pixel=read_bounded(bundle_inputs[bundle],meta['atlas_member'])
+                    pixel=acquired_member(bundle,meta['atlas_member'])
                     if sha(pixel)!=meta.get('sha256'):fail('BUNDLE_PAGE_HASH','Pinned reused atlas differs',file=meta['atlas_member'],content_id=rid)
                     members[meta['atlas_member']]=pixel
                 for name,content in members.items():

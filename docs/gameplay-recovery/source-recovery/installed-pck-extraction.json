@@ -1,0 +1,308 @@
+{
+  "files": [
+    {
+      "bytes": 44,
+      "path": "android_bootstrap.gd.remap",
+      "sha256": "fc713e72f71d6141a100650e7d50bedb4ffda857022f537c039622651fed1021"
+    },
+    {
+      "bytes": 3680,
+      "path": "android_bootstrap.gdc",
+      "sha256": "2efc6c99085b374153d7512435a55f5a162ad03f6f3014b52fe39cbfe97729eb"
+    },
+    {
+      "bytes": 110,
+      "path": "android_bootstrap.tscn.remap",
+      "sha256": "c4b9acbb3d6d2d04a113b1a2650d027c2de0f213e33690a604e574ef44d4d582"
+    },
+    {
+      "bytes": 201,
+      "path": "android_icon.svg.import",
+      "sha256": "7296eca5b571621eb8510edb54aae0af4acddf7e24cd9986e28038b6a6fbbc7d"
+    },
+    {
+      "bytes": 33,
+      "path": "assets.gd.remap",
+      "sha256": "0185d405c5d5f17e2f3e1dbb547509f1048cd2945df459b110197f36f9103311"
+    },
+    {
+      "bytes": 17316,
+      "path": "assets.gdc",
+      "sha256": "bb0fbe178bfcb2926d5135f66beb65111cd4557b319b1398ee24131630a509c0"
+    },
+    {
+      "bytes": 43,
+      "path": "content_registry.gd.remap",
+      "sha256": "9621ede97de0f2cb0d99a577aacaf90351063cff4dba71020a0bb77a1b87edd3"
+    },
+    {
+      "bytes": 43844,
+      "path": "content_registry.gdc",
+      "sha256": "c6c5496d5011f295943f6494a1b354df4563a7c3b5663a98c5c55594493c096f"
+    },
+    {
+      "bytes": 37,
+      "path": "continuity.gd.remap",
+      "sha256": "7eeadfa0c945aaa367402835a676bcf8a9b493feac8dc8c23b8ee36a52a30042"
+    },
+    {
+      "bytes": 33360,
+      "path": "continuity.gdc",
+      "sha256": "8e721ef335e4ac165d74c653ef30c09bfccc0ab2d734d0d726b804d252f59055"
+    },
+    {
+      "bytes": 43,
+      "path": "continuity_state.gd.remap",
+      "sha256": "987a975657a211c589ff1b449567cf04ed37dc18d405d2bf91437a06ef09f823"
+    },
+    {
+      "bytes": 16748,
+      "path": "continuity_state.gdc",
+      "sha256": "6a63e9801fbaa7766e4a9faeced2d3f3c5859b5ceda4a93d6293d7cc321b4ec6"
+    },
+    {
+      "bytes": 39,
+      "path": "core_actions.gd.remap",
+      "sha256": "0b825d6ade01bfeefbeb6778672a48162ab6c250867750a99be8e4bea8cb845c"
+    },
+    {
+      "bytes": 76888,
+      "path": "core_actions.gdc",
+      "sha256": "723808fc9eb68de327b6865503e9b614a7135bc532d0bce17288caf47fbba2e3"
+    },
+    {
+      "bytes": 41,
+      "path": "effect_runtime.gd.remap",
+      "sha256": "271126f9ea7413c296d380a468d86ef5fb0867df5e288cd5619763adff06dbf7"
+    },
+    {
+      "bytes": 18376,
+      "path": "effect_runtime.gdc",
+      "sha256": "d10a545f4e6f9fdc4dbb7f9ba872a1b0206b5fb70d0ee8ed22eeb93c26c16bc7"
+    },
+    {
+      "bytes": 33,
+      "path": "facing.gd.remap",
+      "sha256": "6fdd81a3ad5ce90e6f20aecb6c75afbeed936534015964fe39caaaa7b0b77881"
+    },
+    {
+      "bytes": 1056,
+      "path": "facing.gdc",
+      "sha256": "98b002538d05e50678e431a0582c3350277f4b5b1a1781dde03f7d4c692a10ed"
+    },
+    {
+      "bytes": 41,
+      "path": "license_export.gd.remap",
+      "sha256": "ffb5b7c7e6fe767461ab993195d7aff15f6b2070c16fb6d7a550b2e08b5e2c66"
+    },
+    {
+      "bytes": 2380,
+      "path": "license_export.gdc",
+      "sha256": "0bc423cd81cf867c2b3dc92c0ca6b117a130d5f4cc6357aeb762326ed83407b8"
+    },
+    {
+      "bytes": 31,
+      "path": "main.gd.remap",
+      "sha256": "973e0aeab662d1689eadf1dcd3f73cbbb221874786663fb0100c3ad10fb9cd17"
+    },
+    {
+      "bytes": 250708,
+      "path": "main.gdc",
+      "sha256": "ad7d00931a9bb37387fa620055e6aabce5c480138b51a20543724422aa3a6625"
+    },
+    {
+      "bytes": 97,
+      "path": "main.tscn.remap",
+      "sha256": "d9c97331527c6a3b9104e4fa99f521a20116b428cb40fad052d76a8c7ffd0500"
+    },
+    {
+      "bytes": 37,
+      "path": "navigation.gd.remap",
+      "sha256": "dafdc85df409a5bf40b527bd41c671800925c1804ab7a6c3fc4b240c27d0edc3"
+    },
+    {
+      "bytes": 24264,
+      "path": "navigation.gdc",
+      "sha256": "70322c6c43abe5e77964bf466f46b92cc2b4e4c9c5b8bcad1ecd9a2d4509c240"
+    },
+    {
+      "bytes": 37,
+      "path": "pathfinder.gd.remap",
+      "sha256": "ee8dcc6867c31ce3494a5204633a190d904bbb885e93a271b453262a393ea75d"
+    },
+    {
+      "bytes": 4620,
+      "path": "pathfinder.gdc",
+      "sha256": "f4a2fe821f6832f5fb70ce377747b2e90a147fbad30c4c0e019db7c2046461f5"
+    },
+    {
+      "bytes": 36,
+      "path": "precision.gd.remap",
+      "sha256": "4b18da3d0a29a082017457ea03b09ccb907ad264cbaba730e9d2be5e3e240c64"
+    },
+    {
+      "bytes": 9396,
+      "path": "precision.gdc",
+      "sha256": "f283115f06e47275baf582715e320f144dd6c11ec4d3f165dc626e6f7490c95a"
+    },
+    {
+      "bytes": 884,
+      "path": "project.binary",
+      "sha256": "cf4c7ef5b12178ae41f911f163e7cd093fbb1b9d8035be8ab5aa46ab6c91801b"
+    },
+    {
+      "bytes": 49,
+      "path": "recovery_render_canvas.gd.remap",
+      "sha256": "ea2730ea4eebeb374348b74e85673a41910ff7e7489054d5733175b41f539d0d"
+    },
+    {
+      "bytes": 864,
+      "path": "recovery_render_canvas.gdc",
+      "sha256": "5a25833c56521e69470f294250a125c6498f87039677ff7ad934fea17fe62a4f"
+    },
+    {
+      "bytes": 32,
+      "path": "rules.gd.remap",
+      "sha256": "c8f43ece52786876a74763fbe48a2eddd03016a19b4ab05d69004081beca3f67"
+    },
+    {
+      "bytes": 52076,
+      "path": "rules.gdc",
+      "sha256": "2fb84b73f816af197f413f1b4b8d7d29c4dee08f45a0316beb7d330925b5564d"
+    },
+    {
+      "bytes": 37,
+      "path": "save_store.gd.remap",
+      "sha256": "6eeef8359a6b882da5464bc7e3b58ffed2a54c4fa9776cc3313f2398b0dcdcb1"
+    },
+    {
+      "bytes": 20436,
+      "path": "save_store.gdc",
+      "sha256": "7ad7ae5e6a8d5ecc0a7c8baea215154319d2cbb699c28d664471d60e01f15a17"
+    },
+    {
+      "bytes": 34,
+      "path": "startup.gd.remap",
+      "sha256": "f106b9722f058f91919babf81241c80ed2e69eaca8834ffda3aca22a6f758733"
+    },
+    {
+      "bytes": 8160,
+      "path": "startup.gdc",
+      "sha256": "e0d6123fcd223b000cf40cad66acccb4ea07b4beeb429211af00eb709032c00d"
+    },
+    {
+      "bytes": 41,
+      "path": "touch_controls.gd.remap",
+      "sha256": "6a8620ac03a5543d25095d23da5f8ca53372c906c993f70778789fa5354479d4"
+    },
+    {
+      "bytes": 68548,
+      "path": "touch_controls.gdc",
+      "sha256": "b606ee37c02b227bab2636165490aed9ab4147c275e95a40e493c578796e9133"
+    },
+    {
+      "bytes": 44,
+      "path": "windows_bootstrap.gd.remap",
+      "sha256": "4f27f49871041fe1111b3bf8402085b495c9336bb96f72cd51fd42bccdc6f1ca"
+    },
+    {
+      "bytes": 6284,
+      "path": "windows_bootstrap.gdc",
+      "sha256": "6d7ff9719de4a0c62c8b1e46ffba27b31938f942bfb5def67c3f8fa1f1425a5e"
+    },
+    {
+      "bytes": 110,
+      "path": "windows_bootstrap.tscn.remap",
+      "sha256": "451f274ec9bee0ad0a87a10cf6760cb32bd243884c3857ec2497c8ecb7eb0012"
+    },
+    {
+      "bytes": 38,
+      "path": "work_assets.gd.remap",
+      "sha256": "02bdab43e8031fbcfc344be3709bba78216856bd6b9c369977d497213291ec50"
+    },
+    {
+      "bytes": 23868,
+      "path": "work_assets.gdc",
+      "sha256": "88a093355df923ab7fedec053752b0295b489c5719d27b7b2a8a70071a34c7fd"
+    },
+    {
+      "bytes": 41,
+      "path": "world_map_view.gd.remap",
+      "sha256": "4f4e965127c71014eb50a749273e8e2a5a01768afaa882100a918aa70099611a"
+    },
+    {
+      "bytes": 56360,
+      "path": "world_map_view.gdc",
+      "sha256": "47d73f8f6133f2375676e39ff986cf66b0d92adbacad048c8e3881a87b90051c"
+    },
+    {
+      "bytes": 40,
+      "path": "world_repairs.gd.remap",
+      "sha256": "d6baff1fb7273ec21a77bf4769fdbe3e3f9ade10793af0b159d0f87572740976"
+    },
+    {
+      "bytes": 23384,
+      "path": "world_repairs.gdc",
+      "sha256": "1f9545d590d1d53b151eb45317926fd32eef9e00390cc61aaff60938bb7cfd44"
+    },
+    {
+      "bytes": 8,
+      "path": ".godot/global_script_class_cache.cfg",
+      "sha256": "f61aa7ad3097022d6a9d110ca3f73fa7bb348ec2cf9a6e7c9523574dc75f5a16"
+    },
+    {
+      "bytes": 1722,
+      "path": ".godot/uid_cache.bin",
+      "sha256": "0d7352b8486df719ac7aa22ee0aedd6e00348907d07e41cad8edb393a1a064ee"
+    },
+    {
+      "bytes": 677,
+      "path": ".godot/exported/133200997/export-3070c538c03ee49b7677ff960a3f5195-main.scn",
+      "sha256": "2e3dd5509b66ca1074a7f61219762a4b4f35f338c3cfa85c88530699dcb24a75"
+    },
+    {
+      "bytes": 690,
+      "path": ".godot/exported/133200997/export-40525ad796b4ae1d8d25dd98ef493e42-android_bootstrap.scn",
+      "sha256": "a5786146f08cfd9f17ac25d952b8a8d895e58efd6ab3fc1d3a080b5691bc527f"
+    },
+    {
+      "bytes": 690,
+      "path": ".godot/exported/133200997/export-9591098f315893b66ad25e1f677720f9-windows_bootstrap.scn",
+      "sha256": "c32f56650756a7406d5f00a665bfc2a6ad6c20ff64ad6bb28219ce434f784c1e"
+    },
+    {
+      "bytes": 3374,
+      "path": ".godot/imported/android_icon.svg-1ad8f5d65ae8bd7c2f49bd93f94b5184.ctex",
+      "sha256": "188e151af401deccc312dd980679e8d339bcb5eb3b09d90c3230d985fcb048f7"
+    },
+    {
+      "bytes": 148,
+      "path": "data/build_info.json",
+      "sha256": "f666b28eac6a46241efaa333609a496c2deaa01732eb018754995bef1817a5d1"
+    },
+    {
+      "bytes": 2308987,
+      "path": "data/numeric.json",
+      "sha256": "5e1ba24251541b57b62cf7aff15aed718ba013dd37453e983d3947eb9ebf0c42"
+    },
+    {
+      "bytes": 2557,
+      "path": "data/runtime_bindings.json",
+      "sha256": "2f2bb0fccc1a8a6a5b4b1190ffa98465a914287aeb4ef0f380aca1061cd39f83"
+    },
+    {
+      "bytes": 26037,
+      "path": "data/skill_effects.json",
+      "sha256": "fc549bec6c47b08df98fa65f9e1c84023e3e95cbcb046099f611d84cfe4c957c"
+    },
+    {
+      "bytes": 136228,
+      "path": "data/world.json",
+      "sha256": "75e96433b60a5ab928e52ad38952dab84302e87af80e57caa1b42a95ca8bcb9a"
+    }
+  ],
+  "scope": "READ_ONLY_PCK_EXTRACTION_NO_GAME_EXECUTION",
+  "source": "/workspace/scratch/cba709186ebd/runtime/바람의나라.exe",
+  "source_sha256": "85309c31ad9f924e5137679500cdb12a1f97a1103dd44e882aac66093c0c4b47",
+  "status": "PASS"
+}
