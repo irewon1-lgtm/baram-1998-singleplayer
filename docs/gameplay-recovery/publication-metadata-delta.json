@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "scope": "PUBLICATION_DELTA_REVIEW_ONLY_NOT_NATIVE_EXECUTION",
+  "reason": "Include verification APK build and signature attestations so final delivery can compare frozen game source, runtime, actual signer and artifact hash independently. Test APK is not a player deliverable.",
+  "file": ".github/workflows/mobile-quality.yml",
+  "previous_sha256": "644c0adc7d7b03a60a97404039286f8a35b4233754bd86ce6ee437751e4c5bbe",
+  "new_sha256": "9848d7cdea336316268e56380307b59e5193a4230ba3349f4c10af5c83f5ec61",
+  "private_asset_or_secret_bytes_added": false,
+  "production_game_code_changed": false,
+  "native_android": "NOT_RUN",
+  "native_windows": "NOT_RUN"
+}
