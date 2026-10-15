@@ -103,7 +103,16 @@ func perform(secondary: bool=false):
             var slot=selected%3;p.hotbar[slot]=id;game.notice("단축키 "+str(slot+1)+"에 지정했습니다.")
         else:game.cast_known_skill(id)
     elif tab==2:
-        if secondary:select_tab(0);return
+        if secondary:
+            var instance=p.equipment_slots.get(id,"")
+            if instance=="":game.notice("이 슬롯은 비어 있습니다.");return
+            var gear=p.equipment_instances[instance]
+            p.extensions["optional_enhancement"]=true;game.enhancement_instance=instance
+            game.menu="enhancement";game.selected=0
+            game.choices=game.content.by_kind("enhancement").filter(func(rule):return gear.definition_id in game.content.definition(rule).get("applicable_item_ids",[]))
+            game.event("extension_opt_in",{"extension":"optional_enhancement","original_rule":false})
+            if game.choices.is_empty():game.notice("이 장비에 전달된 강화 규칙이 없습니다.")
+            return
         if not p.equipment_slots.has(id):game.notice("이 슬롯은 비어 있습니다.");return
         var result=game.rules.actions.unequip(p,id)
         game.notice("장비를 해제했습니다." if result.ok else "이 슬롯은 비어 있습니다.")
@@ -148,7 +157,9 @@ func _input(event):
         if key==KEY_ESCAPE:focused=false;get_viewport().set_input_as_handled();return
         if key in [KEY_UP,KEY_DOWN]:
             selected=clampi(selected+(-1 if key==KEY_UP else 1),0,maxi(0,row_ids.size()-1));scroll=maxi(0,selected-2);layout()
-        elif key in [KEY_ENTER,KEY_E,KEY_U,KEY_X]:perform(key in [KEY_U,KEY_X])
+        elif key==KEY_N and tab==2:perform(true)
+        elif key==KEY_E and tab==2:game.notice("물품에서 장비를 선택한 뒤 E로 장착합니다. X: 해제, N: 강화")
+        elif key in [KEY_ENTER,KEY_E,KEY_U,KEY_X]:perform(key==KEY_U)
         elif tab==1 and key in [KEY_1,KEY_2,KEY_3] and not row_ids.is_empty():game.player.hotbar[key-KEY_1]=row_ids[selected]
         else:return
         get_viewport().set_input_as_handled()
@@ -190,7 +201,7 @@ func _draw():
         elif id=="fold":button(rect,"접기")
         elif id in ["up","down"]:button(rect,"이전" if id=="up" else "다음")
         elif id=="primary":button(rect,["장착·사용","사용","해제",""][tab])
-        elif id=="secondary":button(rect,["사용","단축키","물품",""][tab])
+        elif id=="secondary":button(rect,["사용","단축키","강화",""][tab])
 
         elif id.begins_with("row:"):
             var index=int(id.trim_prefix("row:"));var value=str(row_ids[index])
