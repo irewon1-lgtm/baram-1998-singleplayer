@@ -171,7 +171,7 @@ jobs:
           python -m pip install cryptography
           python source/tools/seal_quality_artifacts.py --signing vault/android/android-signing.json --decrypt sealed/android-quality.sealed --output player.zip
           unzip -j player.zip baram-Android-update.apk -d player
-          sdkmanager 'platforms;android-35' 'build-tools;35.0.1'
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" 'platforms;android-35' 'build-tools;35.0.1'
           mkdir -p pointer-classes pointer-dex
           javac -source 8 -target 8 -cp "$ANDROID_HOME/platforms/android-35/android.jar" -d pointer-classes source/qa/android/PointerDriver.java
           "$ANDROID_HOME/build-tools/35.0.1/d8" --lib "$ANDROID_HOME/platforms/android-35/android.jar" --output pointer-dex pointer-classes/PointerDriver.class

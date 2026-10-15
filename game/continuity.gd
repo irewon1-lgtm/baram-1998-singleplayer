@@ -197,6 +197,10 @@ func _process(delta):
 
 func _notification(what):
     if game==null or not game.startup_ready:return
-    if what==NOTIFICATION_WM_CLOSE_REQUEST or what==NOTIFICATION_WM_GO_BACK_REQUEST:save_and_exit()
+    # Mobile Back is owned by main.gd (dismiss modal or open pause).
+    # Notifications reach every node; saving/exiting here would also terminate
+    # the app after main has correctly dismissed the inventory.
+    if what==NOTIFICATION_WM_CLOSE_REQUEST:save_and_exit()
+    elif what==NOTIFICATION_WM_GO_BACK_REQUEST and not game.mobile:save_and_exit()
     elif what==NOTIFICATION_APPLICATION_PAUSED or what==NOTIFICATION_APPLICATION_FOCUS_OUT:
         if not game.player.is_empty() and not game.continuity_blocked:game.save_game()
