@@ -23,7 +23,7 @@ func _initialize():
     if roundtrip!=world:push_error("CACHE_ROUNDTRIP");quit(2);return
     var manifest={"format":"BARAM_WORLD_CACHE_V1","content_version":content.version,
         "source_world_sha256":FileAccess.get_sha256(source),"sha256":FileAccess.get_sha256(target),
-        "repair_version":world.get("repair_version",""),"maps":world.maps.size(),"compile_ms":Time.get_ticks_msec()-began,"bytes":FileAccess.get_file_as_bytes(target).size()}
+        "world_repairs_sha256":FileAccess.get_sha256("res://world_repairs.gd"),"repair_version":world.get("repair_version",""),"maps":world.maps.size(),"compile_ms":Time.get_ticks_msec()-began,"bytes":FileAccess.get_file_as_bytes(target).size()}
     file=FileAccess.open(args.out.path_join("manifest.json"),FileAccess.WRITE)
     file.store_string(JSON.stringify(manifest,"  "));file.close()
     print("WORLD_CACHE "+JSON.stringify(manifest));quit()

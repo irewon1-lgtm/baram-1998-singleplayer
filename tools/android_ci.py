@@ -39,16 +39,19 @@ def build(args):
     project=out/'project';shutil.copytree(ROOT/'game',project,ignore=shutil.ignore_patterns('.godot','*.uid','cloud_public.json'))
     active=json.loads((runtime/'private_content/ACTIVE.json').read_text(encoding='utf-8')) if (runtime/'private_content/ACTIVE.json').exists() else {'release_id':'legacy-base'}
     commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
-    write_json(project/'data/build_info.json',{'commit':commit,'content_version':active['release_id']})
+    write_json(project/'data/build_info.json',{'commit':commit,'content_version':active['release_id'],'source_tree':subprocess.check_output(['git','rev-parse','HEAD^{tree}'],cwd=ROOT,text=True).strip(),'world_repairs_sha256':sha256(ROOT/'game/world_repairs.gd'),'save_format_version':2})
     cloud=public_config(args.cloud)
     if args.require_cloud and not cloud:raise ValueError('Cloud connection missing; production delivery blocked')
     if cloud:write_json(project/'data/cloud_public.json',cloud)
-    cache=runtime/'runtime_cache'
-    if not cache.exists():
+    cache=Path(args.cache).resolve() if args.cache else runtime/'runtime_cache'
+    cm=json.loads((cache/'manifest.json').read_text(encoding='utf-8')) if (cache/'manifest.json').exists() else {}
+    valid=(cm.get('source_world_sha256')==sha256(runtime/'private_assets/source_maps/world.json') and cm.get('content_version')==active['release_id'] and cm.get('world_repairs_sha256')==sha256(ROOT/'game/world_repairs.gd') and (cache/'world.bin').exists() and cm.get('sha256')==sha256(cache/'world.bin'))
+    if not valid:
+        cache=out/'compiled-cache'
         command([args.godot,'--headless','--path',ROOT/'game','--script','build_world_cache.gd','--',
                  '--assets='+str(runtime/'private_assets'),'--content='+str(runtime/'private_content'),'--out='+str(cache)],out/'cache.log')
     cm=json.loads((cache/'manifest.json').read_text(encoding='utf-8'))
-    if cm['source_world_sha256']!=sha256(runtime/'private_assets/source_maps/world.json') or cm['content_version']!=active['release_id'] or cm['sha256']!=sha256(cache/'world.bin'):
+    if cm['source_world_sha256']!=sha256(runtime/'private_assets/source_maps/world.json') or cm['content_version']!=active['release_id'] or cm['world_repairs_sha256']!=sha256(ROOT/'game/world_repairs.gd') or cm['sha256']!=sha256(cache/'world.bin'):
         raise ValueError('World cache mismatch')
     small_cache=out/'android-cache'
     command([args.godot,'--headless','--path',ROOT/'game','--script',ROOT/'tools/compress_world_cache.gd','--',
@@ -145,7 +148,7 @@ keystore/release_password={json.dumps(signing['password'])}
 if __name__=='__main__':
     p=argparse.ArgumentParser(description=__doc__)
     for key in ['runtime','godot','template','sdk','signing','out']:p.add_argument('--'+key,required=True)
-    p.add_argument('--cloud');p.add_argument('--require-cloud',action='store_true');p.add_argument('--verification',action='store_true');p.add_argument('--editor-settings')
+    p.add_argument('--cache');p.add_argument('--cloud');p.add_argument('--require-cloud',action='store_true');p.add_argument('--verification',action='store_true');p.add_argument('--editor-settings')
     p.add_argument('--universal',action='store_true',help='One signed ARM64+x86_64 player APK for exact-artifact emulator testing')
     p.add_argument('--probe-mode',default='native-core');p.add_argument('--initial-save')
     build(p.parse_args())

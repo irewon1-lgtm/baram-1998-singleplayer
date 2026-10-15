@@ -222,6 +222,10 @@ func _draw():
         for i in range(lines.size()):text(lines[i],Vector2(r.position.x+30,139+i*26),17)
     elif row_ids.is_empty():text("배운 기술이 없습니다." if tab==1 else "보유 물품이 없습니다.",Vector2(r.position.x+28,155),17)
     if tab==0 and not row_ids.is_empty():
+        var visual=game.content.definition(str(row_ids[selected])).get("visual",{})
+        var identity=str(visual.get("identity",""))
+        if "INFERRED" in identity or "REPLACEMENT" in identity or "UNVERIFIED" in identity:
+            text("그림 연결: 추정 자료",Vector2(r.position.x+24,status_rect().position.y-86),12,Color(.49,.14,.05))
         var item=game.rules.item(str(row_ids[selected]));var y=status_rect().position.y-68
         text("공격 %d~%d · 방어 %d"%[int(game.rules.value_or(item,"damage_min",0)),int(game.rules.value_or(item,"damage_max",0)),int(game.rules.value_or(item,"armor_class",0))],Vector2(r.position.x+24,y),13)
     var status=status_rect();game.box_on(self,status,Color(.30,.17,.08))

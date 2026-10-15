@@ -101,15 +101,15 @@ func tap(at: Vector2):
         if Rect2(game.screen_point(portal.x,portal.y)-Vector2(22,44),Vector2(44,44)).has_point(at):
             game.selected_target="";route(Vector2i(portal.x,portal.y),{"kind":"portal","position":Vector2i(portal.x,portal.y),"target":portal.target,"trigger":portal.get("trigger","walk")});return
     # A sprite is above its foot tile; hit test rendered geometry first.
-    for n in game.maps[game.player.map].npcs:
-        if Rect2(game.screen_point(n.x,n.y)-Vector2(23,82),Vector2(46,82)).has_point(at):
-            game.selected_target="";route(Vector2i(n.x,n.y),{"kind":"npc","id":n.id,"position":Vector2i(n.x,n.y)});return
+    for drop in game.loot:
+        if drop.map==game.player.map and Rect2(game.screen_point(drop.x,drop.y)-Vector2(18,28),Vector2(36,35)).has_point(at):
+            game.selected_target="";route(Vector2i(drop.x,drop.y),{"kind":"loot","item":drop.item,"position":Vector2i(drop.x,drop.y)});return
     for e in game.entities.values():
         if e.alive and e.map==game.player.map and Rect2(game.screen_point(e.x,e.y)-Vector2(24,75),Vector2(48,75)).has_point(at):
             cancel();game.selected_target=e.id;game.notice(e.spec.name+" 선택");return
-    for drop in game.loot:
-        if drop.map==game.player.map and Rect2(game.screen_point(drop.x,drop.y)-Vector2(22,35),Vector2(44,44)).has_point(at):
-            game.selected_target="";route(Vector2i(drop.x,drop.y),{"kind":"loot","item":drop.item,"position":Vector2i(drop.x,drop.y)});return
+    for n in game.maps[game.player.map].npcs:
+        if Rect2(game.screen_point(n.x,n.y)-Vector2(23,82),Vector2(46,82)).has_point(at):
+            game.selected_target="";route(Vector2i(n.x,n.y),{"kind":"npc","id":n.id,"position":Vector2i(n.x,n.y)});return
     var own=game.screen_point(game.visual_position().x,game.visual_position().y)
     if Rect2(own-Vector2(21,76),Vector2(42,76)).has_point(at):cancel();return
     game.selected_target=""

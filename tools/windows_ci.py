@@ -73,7 +73,7 @@ def build(args):
     shutil.copytree(ROOT/'game', project, ignore=shutil.ignore_patterns('.godot', '*.uid'))
     content = json.loads((stage/'private_content/ACTIVE.json').read_text(encoding='utf-8')) if (stage/'private_content/ACTIVE.json').exists() else {'release_id':'legacy-base'}
     commit = subprocess.check_output(['git','rev-parse','HEAD'], cwd=ROOT, text=True).strip()
-    write_json(project/'data/build_info.json', {'commit':commit,'content_version':content['release_id']})
+    write_json(project/'data/build_info.json', {'commit':commit,'content_version':content['release_id'],'source_tree':subprocess.check_output(['git','rev-parse','HEAD^{tree}'],cwd=ROOT,text=True).strip(),'world_repairs_sha256':sha256(ROOT/'game/world_repairs.gd'),'save_format_version':2})
     cfg = (project/'project.godot').read_text(encoding='utf-8')
     cfg = cfg.replace('run/main_scene="res://main.tscn"', 'run/main_scene="res://windows_bootstrap.tscn"')
     (project/'project.godot').write_text(cfg, encoding='utf-8')
@@ -112,7 +112,7 @@ texture_format/etc2_astc=false
     if args.cache:
         shutil.copytree(Path(args.cache),cache)
         manifest=json.loads((cache/'manifest.json').read_text(encoding='utf-8'))
-        if manifest['source_world_sha256']!=sha256(stage/'private_assets/source_maps/world.json') or manifest['content_version']!=content['release_id'] or manifest['sha256']!=sha256(cache/'world.bin'):
+        if manifest.get('world_repairs_sha256')!=sha256(ROOT/'game/world_repairs.gd') or manifest['source_world_sha256']!=sha256(stage/'private_assets/source_maps/world.json') or manifest['content_version']!=content['release_id'] or manifest['sha256']!=sha256(cache/'world.bin'):
             raise ValueError('Cached world does not match private runtime')
     else:
         command([args.godot,'--headless','--path',ROOT/'game','--script','build_world_cache.gd','--',
@@ -125,7 +125,7 @@ texture_format/etc2_astc=false
     (stage/'처음읽기.txt').write_text(README+'\n복구판: 첫 화면에 로딩 단계가 표시됩니다. 실행 오류 로그는 저장 폴더 주변 logs/startup.json 및 사용자 데이터 logs/godot.log에 자동 기록됩니다.\n', encoding='utf-8-sig')
     write_json(stage/'실행검증.json',{'windows_native_execution':'NOT_RUN','actual_windows_gui':'BLOCKED_NO_OPERATOR_GUI', 'game_function_automation':'NOT_RUN'})
     write_json(stage/'PACKAGE_MANIFEST.json',{'private_only':True,'contains_user_saves':False,
-        'build':{'commit':commit,'content_version':content['release_id']},'packaging_engine':version,
+        'build':{'commit':commit,'content_version':content['release_id'],'source_tree':subprocess.check_output(['git','rev-parse','HEAD^{tree}'],cwd=ROOT,text=True).strip(),'world_repairs_sha256':sha256(ROOT/'game/world_repairs.gd'),'save_format_version':2},'packaging_engine':version,
         'template':template_info,'original_private_files':len([r for r in rows if r['path'].startswith('private_')]),
         'original_private_bytes_preserved':True,'files':[
             {'path':p.relative_to(stage).as_posix(),'bytes':p.stat().st_size,'sha256':sha256(p)}

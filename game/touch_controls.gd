@@ -53,7 +53,7 @@ func layout():
     add_target("attack",Rect2(center-Vector2.ONE*unit*.6,Vector2.ONE*unit*1.2))
     var slots=[Vector2(-unit*1.72,-unit*.42),Vector2(-unit*1.65,-unit*1.65),Vector2(-unit*.45,-unit*2.15)]
     for i in range(3):
-        if i<game.player.get("hotbar",[]).size() and str(game.player.hotbar[i])!="" and game.player.hotbar[i] in game.player.skills:
+        if i<game.player.get("hotbar",[]).size() and str(game.player.hotbar[i])!="" and game.rules.knows_skill(game.player,str(game.player.hotbar[i])):
             add_target("skill"+str(i),Rect2(center+slots[i],Vector2.ONE*unit))
     if not game.player.is_empty():
         var context=context_action()
@@ -233,7 +233,7 @@ func _draw():
         var color=Color(.95,.86,.60)
         var cooldown=0.0;var unavailable=false
         if id.begins_with("skill"):
-            var title=str(p.hotbar[int(id.right(1))]);cooldown=float(p.cooldowns.get(title,0))
+            var title=game.rules.skill_id(p,str(p.hotbar[int(id.right(1))]));cooldown=float(p.cooldowns.get(title,0))
             unavailable=title=="" or cooldown>0 or game.cast_elapsed>=0 or game.attack_elapsed>=0
             if title!="":unavailable=unavailable or int(p.mp)<int(game.rules.value_or(game.rules.skill(p,title),"cast_mp",0))
             if unavailable:color=Color(.55,.57,.54,.7)
@@ -301,6 +301,8 @@ func draw_modal():
         text("버전  "+game.store.game_build.left(12),Vector2(r.position.x+28,r.end.y-48),16)
         if game.continuity!=null:text(game.continuity.badge.text,Vector2(r.position.x+28,r.end.y-22),16)
         return
+    if game.menu=="map":
+        game.draw_map_on(self,r);modal_button("close","닫기",Rect2(r.end-Vector2(82,44),Vector2(72,36)));return
     if game.menu=="dialogue":
         var paragraphs=PackedStringArray()
         for line in game.choices.slice(scroll_origin):paragraphs.append(str(line))

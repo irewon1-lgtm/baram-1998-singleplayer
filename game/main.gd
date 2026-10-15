@@ -89,6 +89,7 @@ var touch_controls
 var right_panel
 var portal_until=0.0
 var gate_cache={}
+var map_textures={}
 
 func show_loading():
     loading_layer=CanvasLayer.new();loading_layer.layer=100;add_child(loading_layer)
@@ -684,7 +685,7 @@ func pickup():
     var remaining = []
     for drop in loot:
         if drop.map == player.map and Vector2i(drop.x,drop.y).distance_to(cell()) <= 1.1 and rules.add_item(player,drop.item,int(drop.quantity)):
-            notice(drop.item + " 획득")
+            notice(rules.display_name(drop.item) + " 획득")
             event("item_picked_up",drop)
         else:
             remaining.append(drop)
@@ -714,8 +715,9 @@ func cast_skill(slot: int):
 
 func cast_known_skill(title: String, slot: int=-1):
     if title=="" or cast_elapsed>=0 or attack_elapsed>=0:return
-    if title not in player.skills:
+    if not rules.knows_skill(player,title):
         notice("배우지 않은 기술입니다.");return
+    title=rules.skill_id(player,title)
     var s=rules.skill(player,title)
     var profile=rules.skill_profile(player,title)
     var ghost_allowed=title=="성황령" or profile.get("effects",[]).any(func(e):return e.get("requires_ghost",false) or e.get("type","")=="revive")
@@ -740,6 +742,7 @@ func cast_known_skill(title: String, slot: int=-1):
             notice("기술 사거리 안에 대상이 없습니다.");return
         var delta=Vector2i(target.x,target.y)-cell()
         player.direction=(3 if delta.x>0 else 1) if absi(delta.x)>absi(delta.y) else (2 if delta.y>0 else 0)
+    var mp_before=int(player.mp);var hp_before=int(player.hp)
     var hp_cost=int(rules.value_or(s,"cast_hp",0))+floori(float(player.hp)*float(rules.value_or(s,"cast_hp_fraction",0)))
     if profile.has("definition"):
         var ratio=profile.definition.cost.get("hp_fraction",{"numerator":0,"denominator":1})
@@ -748,7 +751,7 @@ func cast_known_skill(title: String, slot: int=-1):
         notice("마력·체력이 부족하거나 기술 준비 중입니다.")
         event("skill_rejected_resources",{"skill":title});return
     cast_elapsed=0.0
-    pending_spell={"title":title,"values":s,"profile":profile,"target_id":target.get("id",""),"slot":slot}
+    pending_spell={"title":title,"values":s,"profile":profile,"target_id":target.get("id",""),"slot":slot,"paid_mp":mp_before-int(player.mp),"paid_hp":hp_before-int(player.hp)}
     event("skill_started",{"skill":title,"slot":slot,"impact_ms":180,"classification":profile.get("classification","")})
 
 func resolve_spell(cast: Dictionary):
@@ -757,6 +760,13 @@ func resolve_spell(cast: Dictionary):
     var profile=cast.profile
     var kind=profile.type
     var at=cell()
+    var enemy_required=kind=="damage" or kind=="work_effects" and profile.effects.any(func(effect):return effect.get("target","self")=="enemy")
+    if enemy_required:
+        var entity=entities.get(cast.target_id,{})
+        if entity.is_empty() or not entity.alive or entity.map!=player.map or Vector2i(entity.x,entity.y).distance_to(cell())>float(rules.value_or(s,"range_tiles",6)):
+            rules.actions.recovery(player,int(cast.get("paid_hp",0)),int(cast.get("paid_mp",0)))
+            player.cooldowns.erase(title);notice("대상이 사라져 기술을 취소했습니다. 소모량은 돌려받았습니다.")
+            event("skill_cancelled_target",{"skill":title,"resources_refunded":true});return
     if kind=="work_effects":
         var target=[]
         if entities.has(cast.target_id):
@@ -821,7 +831,7 @@ func resolve_spell(cast: Dictionary):
 func interact(required_id: String=""):
     for portal in maps[player.map].portals:
         if portal.get("trigger","walk")=="interact" and Vector2i(portal.x,portal.y)==cell():
-            transition(portal.target,portal.entry);return
+            use_portal(portal);return
     var nearby = maps[player.map].npcs.duplicate()
     var facing = cell() + DIRECTIONS[int(player.direction)]
     nearby.sort_custom(func(a,b):
@@ -879,7 +889,7 @@ func interact(required_id: String=""):
             return
     for portal in maps[player.map].portals:
         if portal.get("trigger","walk")=="interact" and Vector2i(portal.x,portal.y).distance_to(cell())<=1.5:
-            transition(portal.target,portal.entry);return
+            use_portal(portal);return
     pickup()
 
 func open_inventory():
@@ -995,8 +1005,8 @@ func handle_menu_key(key: int):
         notice(title+" 습득" if success else "레벨·금전·제물을 확인하세요.")
     elif menu in ["trainer","skills"] and key in [KEY_1,KEY_2,KEY_3] and choices.size() > 0:
         var title = str(choices[selected])
-        if title in player.skills:
-            player.hotbar[key-KEY_1] = title
+        if rules.knows_skill(player,title):
+            player.hotbar[key-KEY_1] = rules.skill_id(player,title)
             event("hotbar_assigned",{"skill":title,"slot":key-KEY_1})
 
 func play_sound(kind: String):
@@ -1143,7 +1153,7 @@ func box_on(canvas,rect: Rect2, color: Color = Color(0.13,0.12,0.1)):
         for y in range(3):
             for x in range(3):
                 if x==1 and y==1:continue
-                canvas.draw_texture_rect_region(assets.textures.ui_border,Rect2(xx[x],yy[y],ww[x],hh[y]),assets.actor_region("ui_border",[[0,1,2],[3,8,4],[5,6,7]][y][x]))
+                canvas.draw_texture_rect_region(assets.textures.ui_border,Rect2(xx[x],yy[y],ww[x],hh[y]),assets.actor_region("ui_border",[[0,1,2],[3,8,4],[5,6,7]][y][x]),Color(.70,.46,.25))
         return
     canvas.draw_rect(rect,Color(0.52,0.43,0.28),false,2)
     canvas.draw_rect(rect.grow(-4),Color(0.29,0.26,0.18),false,1)
@@ -1389,6 +1399,8 @@ func draw_hud():
     label("Enter 대화 · I 물품 · F5 저장",Vector2(668,631),12)
 
 func draw_menu():
+    if menu=="map":
+        draw_map_on(self,Rect2(field_rect().position+Vector2(8,8),field_rect().size-Vector2(16,16)));return
     box(Rect2(164,106,536,398),Color(0.12,0.13,0.11))
     var heading = {"shop":"물품 거래","trainer":"기술 수련","inventory":"보유 물품","dialogue":"안내","pause":"여정 저장","travel":"길 안내","map":"지역 목록","compass":"비영사천문","skills":"배운 기술","equipment":"개별 장비 · E 장착 / X 해제 / N 강화","enhancement":"개인용 확장 강화 규칙","services":"NPC 서비스","quests":"의뢰 시작 · 조건 완료 후 보상","advancement":"승급 조건 확인","save_error":"저장 오류 · 원본 보존 · Q 종료"}.get(menu,menu)
     label(heading,Vector2(191,144),22,Color(1,0.88,0.5))
@@ -1419,7 +1431,7 @@ func draw_menu():
         elif menu == "trainer":
             var s = rules.skill(player,id)
             var cost="미확정" if s.get("learn_money")==null else str(int(s.learn_money))+"전"
-            label("Lv.%d / %s %s" % [int(s.learn_level),cost,"습득" if id in player.skills else ""],Vector2(467,y),13)
+            label("Lv.%d / %s %s" % [int(s.learn_level),cost,"습득" if rules.knows_skill(player,id) else ""],Vector2(467,y),13)
     var hint = {"shop":"↑↓ 선택 · B 구매 · V 판매 · R 수리 · C 요리 · Esc 닫기",
         "inventory":"↑↓ 선택 · E 장착 · U 사용 · Esc 닫기",
         "trainer":"Enter 습득 · 1~3 단축키 지정 · Esc 닫기",
@@ -1560,3 +1572,30 @@ func town_gate(direction: int) -> Vector2i:
                 if free_cell("village",pos) and not town.portals.any(func(p):return Vector2i(p.x,p.y)==pos):
                     gate_cache[direction]=pos;return pos
     return Vector2i(town.entry[0],town.entry[1])
+
+func draw_map_on(canvas,rect: Rect2):
+    box_on(canvas,rect,Color(.20,.12,.055))
+    canvas.draw_string(font,rect.position+Vector2(20,34),map_title(player.map)+" · 지도",HORIZONTAL_ALIGNMENT_LEFT,rect.size.x-40,22,Color(1,.93,.7))
+    var m=maps[player.map]
+    if not map_textures.has(player.map):
+        var pixels=PackedByteArray();pixels.resize(int(m.width)*int(m.height)*4)
+        for y in range(int(m.height)):
+            for x in range(int(m.width)):
+                var offset=(y*int(m.width)+x)*4;var wall=bool(m.blocked[y][x])
+                pixels[offset]=78 if wall else 177;pixels[offset+1]=58 if wall else 150;pixels[offset+2]=34 if wall else 94;pixels[offset+3]=255
+        map_textures[player.map]=ImageTexture.create_from_image(Image.create_from_data(int(m.width),int(m.height),false,Image.FORMAT_RGBA8,pixels))
+    var available=Vector2(rect.size.x*.58,rect.size.y-84)
+    var scale=minf(available.x/float(m.width),available.y/float(m.height))
+    var map_rect=Rect2(rect.position+Vector2(16,54),Vector2(m.width,m.height)*scale)
+    canvas.draw_texture_rect(map_textures[player.map],map_rect,false)
+    for portal in m.portals:canvas.draw_circle(map_rect.position+Vector2(portal.x+.5,portal.y+.5)*scale,3,Color(1,.82,.15))
+    canvas.draw_circle(map_rect.position+Vector2(player.x+.5,player.y+.5)*scale,4,Color(.18,.65,1))
+    var exits=m.portals.duplicate();exits.sort_custom(func(a,b):return Vector2(a.x,a.y).distance_to(Vector2(player.x,player.y))<Vector2(b.x,b.y).distance_to(Vector2(player.x,player.y)))
+    var titles=[];var y=rect.position.y+75
+    for portal in exits:
+        if portal.label in titles:continue
+        titles.append(portal.label)
+        if y>rect.end.y-50:break
+        canvas.draw_string(font,Vector2(rect.position.x+rect.size.x*.61,y),portal.label,HORIZONTAL_ALIGNMENT_LEFT,rect.size.x*.37,14,Color(1,.93,.7))
+        canvas.draw_string(font,Vector2(rect.position.x+rect.size.x*.61,y+18),"출구 (%d, %d)"%[portal.x,portal.y],HORIZONTAL_ALIGNMENT_LEFT,-1,12,Color(.85,.76,.56));y+=44
+    canvas.draw_string(font,rect.position+Vector2(20,rect.size.y-18),"파랑: 현재 위치 · 노랑: 출구",HORIZONTAL_ALIGNMENT_LEFT,-1,14,Color(1,.93,.7))

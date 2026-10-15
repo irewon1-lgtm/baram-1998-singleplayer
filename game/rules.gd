@@ -55,6 +55,9 @@ func find_content(category: String, title: String, job: String = "") -> Dictiona
     for c in name_index.get(category+":"+title,[]):
         if job == "" or str(c.job) == job:
             return c
+        if category=="spell":
+            var data=runtime_definitions.get(c.id,{}).get("data",{})
+            if data.get("class_ids",[]).any(func(id):return runtime_definitions.get(id,{}).get("data",{}).get("name","")==job):return c
     var id=legacy_aliases.get(category+":"+title,"")
     if id!="" and by_id.has(id):return by_id[id]
     return {}
@@ -286,3 +289,11 @@ func tick(p: Dictionary, delta: float):
         p.cooldowns[k] = maxf(0,float(p.cooldowns[k])-delta)
     for k in p.buffs:
         p.buffs[k] = maxf(0,float(p.buffs[k])-delta)
+
+func skill_id(p: Dictionary,title: String) -> String:
+    return str(find_content("spell",title,p.job).get("id",title))
+
+func knows_skill(p: Dictionary,title: String) -> bool:
+    if title in p.skills:return true
+    var canonical=skill_id(p,title)
+    return p.skills.any(func(id):return skill_id(p,str(id))==canonical)
