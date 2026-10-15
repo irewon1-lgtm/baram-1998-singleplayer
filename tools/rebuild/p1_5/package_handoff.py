@@ -49,8 +49,29 @@ def main():
         raise ValueError('Reference package does not match pinned manifest')
     add(args.reference_package, 'inputs/reference_sources.zip')
 
-    # Original article HTML is restored separately by registered URL/hash.
+    # Preserve acquired public-guide evidence privately by its registered hash.
     source_index = []
+    korean_root = (args.research_root / 'korean').resolve()
+    for line in (repo / 'docs/rebuild/p1_5/sources_delta.jsonl').read_text().splitlines():
+        if not line.strip():
+            continue
+        row = json.loads(line)
+        expected = row.get('sha256')
+        for key in ['local_private_path', 'local_path', 'path']:
+            value = row.get(key)
+            if not value or not expected:
+                continue
+            p = Path(value)
+            if not p.is_file() or p.is_symlink() or not p.resolve().is_relative_to(korean_root):
+                continue
+            raw = p.read_bytes()
+            if digest(raw) != expected:
+                raise ValueError('Registered Korean source hash mismatch: ' + row['source_id'])
+            name = 'evidence/source_bytes/' + expected + '.bin'
+            if name not in files:
+                add(p, name)
+            source_index.append({'source_id': row['source_id'], 'path': name, 'sha256': expected, 'bytes': len(raw)})
+            break
     # Historical visual-tool versions differ from the current reference snapshot.
     for line in (repo / 'docs/rebuild/step01/sources.jsonl').read_text().splitlines():
         row = json.loads(line)
@@ -113,7 +134,7 @@ def main():
                 'Read AGENTS.md, STATE.json, REPORT.md and NEXT_P2_DELTA.md. This package does not authorize P2 execution.\n'
                 'Source values are private. Do not publish selected_content JSONL or images.\n'
                 'Original 42 client/user archives remain at INPUT_MANIFEST Library IDs. Materialize exact hashes separately.\n'
-                'Use tools/rebuild/p1_5/prepare_handoff_inputs.py to restore current paths. Archived article HTML is not bundled; retrieve its recorded public URL and verify its registered hash. PRIVATE_SOURCE_INDEX contains only historical visual tool source files.\n'
+                'Use tools/rebuild/p1_5/prepare_handoff_inputs.py to restore current paths. Acquired Korean guide evidence and historical visual-tool sources are preserved privately by registered hash in PRIVATE_SOURCE_INDEX.json.\n'
                 'RTK raw database and credential-bearing settings, transfer receipts, .git and caches are intentionally excluded.\n'
                 'The source graph contains documented NA dangling references: importer overall FAIL must remain visible.\n'
                 'Runtime, devices, authentication and Codex receiver G0 are NOT_RUN.\n'
