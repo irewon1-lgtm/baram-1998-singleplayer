@@ -1,0 +1,994 @@
+{
+  "review_id": "P15-OFFICIAL-INDEPENDENT-001",
+  "task_id": "BARAM_REBUILD_P1_5_001",
+  "reviewer": "Independent AI subagent; not human gameplay validation",
+  "scoped_static_field_result": "PASS",
+  "overall_readiness": "PARTIAL",
+  "scope": "All928 normalized rows in kr_official_core.jsonl against25referenced raw official HTML sources; four starter job/common tables2000+2001 and promotion tables, all monster reward rows. Other creation/growth/item/NPC outputs not in this review.",
+  "input_fingerprints": {
+    "normalized_path": "docs/rebuild/p1_5/selected_content/kr_official_core.jsonl",
+    "normalized_sha256": "010bef4cff3aa21716ca63423eda0eb9f225c58cba0b6be79029c6ca954429dc",
+    "review_metadata_snapshot_sha256": "f30578c74d66479e62cd89bd949db05d96f56133633b133d2cab4bd1a7ca2e0f",
+    "independent_field_checker_sha256": "86977d35e2e9f48d3aebf0a754a4c471e2ef71751b6e0bd07ede244c835cb915",
+    "independent_completeness_checker_sha256": "f0ca9068f4f5148633c6cca89fa960ba38098b7bcf9f3f5a1ca1a8fbf4c56908"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "lxml": "6.1.1",
+    "decoder": "cp949 strict"
+  },
+  "method": [
+    "Did not import author normalization functions. Parsed actual raw bytes with independent lxml DOM.",
+    "Verified source fileSHA256; matched each selected row to active DOM tr by physical source line. HTMLcomment tr cannot match.",
+    "Checked 2000 four-column tables separately from2001 rowspan2 name/effect/description/material plus next-rowlevel; checked promotion class-name+99 row pairs.",
+    "Independently decoded money, complete quantity+개 material pairs, decimal/만/천 XP literals, percent in drop cell only, br/comma/또는 item partitions and currency separation.",
+    "Counted all active table rows with independent DOM selectors, then compared their line set to normalized row set.",
+    "Checked profile dispatch/global default boundaries and highrisk held-out group/numeric-source anomalies."
+  ],
+  "actual_counts": {
+    "source_bytes_sha_matched": 25,
+    "records_reviewed": 928,
+    "records_monster": 551,
+    "name_fields_checked": 928,
+    "monster_experience_fields_checked": 551,
+    "monster_none_fields_checked": 551,
+    "monster_reward_partitions_checked": 551,
+    "monster_item_name_parts_checked": 469,
+    "monster_currency_parts_checked": 15,
+    "monster_ambiguous_currency_parts_checked": 5,
+    "monster_explicit_probability_fields_checked": 551,
+    "monster_unknown_probability_model_fields_checked": 1653,
+    "records_skill": 377,
+    "skill_level_fields_checked": 377,
+    "base_skill_rows_checked": 329,
+    "skill_job_fields_checked": 377,
+    "skill_money_fields_checked": 377,
+    "skill_material_candidate_rows_checked": 377,
+    "skill_material_pairs_checked": 598,
+    "skill_effect_unknown_fields_checked": 2639,
+    "promotion_skill_rows_checked": 48
+  },
+  "completeness": {
+    "expected_active_rows": 928,
+    "normalized_rows": 928,
+    "missing": 0,
+    "extra": 0,
+    "source_details": [
+      {
+        "source_id": "P15-ARC-030e07a01431",
+        "kind": "skill",
+        "expected_active_data_rows": 3,
+        "actual_normalized_rows": 3,
+        "missing_rows": [],
+        "extra_rows": []
+      },
+      {
+        "source_id": "P15-ARC-06559eaf496d",
+        "kind": "skill",
+        "expected_active_data_rows": 42,
+        "actual_normalized_rows": 42,
+        "missing_rows": [],
+        "extra_rows": []
+      },
+      {
+        "source_id": "P15-ARC-0b7dcb5d2678",
+        "kind": "skill",
+        "expected_active_data_rows": 35,
+        "actual_normalized_rows": 35,
+        "missing_rows": [],
+        "extra_rows": []
+      },
+      {
+        "source_id": "P15-ARC-18b605403844",
+        "kind": "skill",
+        "expected_active_data_rows": 67,
+        "actual_normalized_rows": 67,
+        "missing_rows": [],
+        "extra_rows": []
+      },
+      {
+        "source_id": "P15-ARC-2f4f9dad4a94",
+        "kind": "monster",
+        "expected_active_data_rows": 106,
+        "actual_normalized_rows": 106,
+        "missing_rows": [],
+        "extra_rows": []
+      },
+      {
+        "source_id": "P15-ARC-359e01fbdeff",
+        "kind": "monster",
+        "expected_active_data_rows": 13,
+        "actual_normalized_rows": 13,
+        "missing_rows": [],
+        "extra_rows": []
+      },
+      {
+        "source_id": "P15-ARC-4facc5e91fe8",
+        "kind": "monster",
+        "expected_active_data_rows": 61,
+        "actual_normalized_rows": 61,
+        "missing_rows": [],
+        "extra_rows": []
+      },
+      {
+        "source_id": "P15-ARC-505599d12090",
+        "kind": "monster",
+        "expected_active_data_rows": 29,
+        "actual_normalized_rows": 29,
+        "missing_rows": [],
+        "extra_rows": []
+      },
+      {
+        "source_id": "P15-ARC-5652e61048d7",
+        "kind": "monster",
+        "expected_active_data_rows": 12,
+        "actual_normalized_rows": 12,
+        "missing_rows": [],
+        "extra_rows": []
+      },
+      {
+        "source_id": "P15-ARC-59eba4beca79",
+        "kind": "skill",
+        "expected_active_data_rows": 36,
+        "actual_normalized_rows": 36,
+        "missing_rows": [],
+        "extra_rows": []
+      },
+      {
+        "source_id": "P15-ARC-5d993de00892",
+        "kind": "monster",
+        "expected_active_data_rows": 13,
+        "actual_normalized_rows": 13,
+        "missing_rows": [],
+        "extra_rows": []
+      },
+      {
+        "source_id": "P15-ARC-85066ebecea9",
+        "kind": "skill",
+        "expected_active_data_rows": 42,
+        "actual_normalized_rows": 42,
+        "missing_rows": [],
+        "extra_rows": []
+      },
+      {
+        "source_id": "P15-ARC-85629cabe925",
+        "kind": "monster",
+        "expected_active_data_rows": 41,
+        "actual_normalized_rows": 41,
+        "missing_rows": [],
+        "extra_rows": []
+      },
+      {
+        "source_id": "P15-ARC-89c540cc9f59",
+        "kind": "skill",
+        "expected_active_data_rows": 3,
+        "actual_normalized_rows": 3,
+        "missing_rows": [],
+        "extra_rows": []
+      },
+      {
+        "source_id": "P15-ARC-8f636f3c673d",
+        "kind": "skill",
+        "expected_active_data_rows": 17,
+        "actual_normalized_rows": 17,
+        "missing_rows": [],
+        "extra_rows": []
+      },
+      {
+        "source_id": "P15-ARC-9a00c0c34b12",
+        "kind": "monster",
+        "expected_active_data_rows": 28,
+        "actual_normalized_rows": 28,
+        "missing_rows": [],
+        "extra_rows": []
+      },
+      {
+        "source_id": "P15-ARC-a9b2ef8a677b",
+        "kind": "monster",
+        "expected_active_data_rows": 40,
+        "actual_normalized_rows": 40,
+        "missing_rows": [],
+        "extra_rows": []
+      },
+      {
+        "source_id": "P15-ARC-acb545809cfd",
+        "kind": "monster",
+        "expected_active_data_rows": 12,
+        "actual_normalized_rows": 12,
+        "missing_rows": [],
+        "extra_rows": []
+      },
+      {
+        "source_id": "P15-ARC-b8758ccfdcc9",
+        "kind": "skill",
+        "expected_active_data_rows": 24,
+        "actual_normalized_rows": 24,
+        "missing_rows": [],
+        "extra_rows": []
+      },
+      {
+        "source_id": "P15-ARC-babe633c1d1f",
+        "kind": "monster",
+        "expected_active_data_rows": 70,
+        "actual_normalized_rows": 70,
+        "missing_rows": [],
+        "extra_rows": []
+      },
+      {
+        "source_id": "P15-ARC-bf707407790a",
+        "kind": "skill",
+        "expected_active_data_rows": 17,
+        "actual_normalized_rows": 17,
+        "missing_rows": [],
+        "extra_rows": []
+      },
+      {
+        "source_id": "P15-ARC-c139836fe487",
+        "kind": "skill",
+        "expected_active_data_rows": 24,
+        "actual_normalized_rows": 24,
+        "missing_rows": [],
+        "extra_rows": []
+      },
+      {
+        "source_id": "P15-ARC-cb5e34400c09",
+        "kind": "skill",
+        "expected_active_data_rows": 67,
+        "actual_normalized_rows": 67,
+        "missing_rows": [],
+        "extra_rows": []
+      },
+      {
+        "source_id": "P15-ARC-d9a991e9f11e",
+        "kind": "monster",
+        "expected_active_data_rows": 106,
+        "actual_normalized_rows": 106,
+        "missing_rows": [],
+        "extra_rows": []
+      },
+      {
+        "source_id": "P15-ARC-df2e454a3e69",
+        "kind": "monster",
+        "expected_active_data_rows": 20,
+        "actual_normalized_rows": 20,
+        "missing_rows": [],
+        "extra_rows": []
+      }
+    ]
+  },
+  "final_field_mismatches": [],
+  "closed_findings": [
+    {
+      "finding_id": "OFF-REV-001",
+      "severity": "HIGH",
+      "problem": "Inactive HTMLcomment Fireball rows had been selected as live skill entries",
+      "initial_examples": [
+        "KRO-87b1d9d9b21c",
+        "KRO-73cf82e8538b"
+      ],
+      "author_fix": "Newline-preserving HTMLcomment mask; inactive source spans retained in author evidence. Also excluded5commented monster rows.",
+      "retest": "All928 final rows match active lxmlDOM. Inactive2skill IDs absent.",
+      "status": "FIXED_RETESTED"
+    },
+    {
+      "finding_id": "OFF-REV-002",
+      "severity": "HIGH",
+      "problem": "Reward currency literals were treated as item names; br-separated names could collapse into one token",
+      "initial_examples": [
+        "KRO-6c93972c6d37",
+        "KRO-5495397675e7",
+        "KRO-5aa6f46304ca"
+      ],
+      "author_fix": "Separate currency15parts, ambiguous silver-money5parts and ordinary item469parts; preserve HTMLbr boundaries and alternative connector.",
+      "retest": "All551 monster reward partitions independently match source cells.",
+      "status": "FIXED_RETESTED"
+    },
+    {
+      "finding_id": "OFF-REV-003",
+      "severity": "HIGH",
+      "problem": "Ten colored-monster variants and ten colored-amber names collapsed into one named monster/item",
+      "initial_examples": [
+        "KRO-f49556b1f5cf"
+      ],
+      "author_fix": "Preserve10name/source-item parts; hold group with selected_for_buildfalse; no automatic positional pairing.",
+      "retest": "Held group fields match actual rowspan10/br source cell; no gameplay selection.",
+      "status": "FIXED_RETESTED"
+    },
+    {
+      "finding_id": "OFF-REV-004",
+      "severity": "HIGH",
+      "problem": "Regex missed active rows in malformed HTML, plus grouped/name and final monster rows",
+      "missing_rows_before_fix": [
+        {
+          "source_id": "P15-ARC-2f4f9dad4a94",
+          "lines": [
+            417,
+            424,
+            515,
+            1015,
+            1300
+          ]
+        },
+        {
+          "source_id": "P15-ARC-d9a991e9f11e",
+          "lines": [
+            1003,
+            1288
+          ]
+        }
+      ],
+      "author_fix": "Generic leaf-row/cell termination at next row/table boundaries, not name-specific patches.",
+      "retest": "Independent active DOM expected928 vs normalized928: missing0/extra0.",
+      "status": "FIXED_RETESTED"
+    },
+    {
+      "finding_id": "OFF-REV-005",
+      "severity": "HIGH",
+      "problem": "Year-specific conflicting published skill fields could be consumed together without a profile choice",
+      "author_fix": "Every928row now has a snapshot build_profile_id, require_profile_dispatch=true, global_default_selected=false, target_profile_resolution=UNRESOLVED and gameplay-binding decision flag.",
+      "retest": "All928row boundaries checked.15source-field conflicts remain explicitly unresolved.",
+      "status": "CONTAINED_PROFILE_DECISION_PENDING"
+    }
+  ],
+  "manual_highrisk_spot_checks": [
+    {
+      "entity": "범증",
+      "result": "Source2000 12_god heading호랑이왕 and row154–160 actually name범증 with300만 XP. Not a parsing typo.",
+      "status": "MATCH"
+    },
+    {
+      "entity": "백호왕/쥐 왕/최강다람쥐",
+      "result": "Published800/1000/100 values are literal source values but numerically suspicious; preserve original, exclude gameXP selection.",
+      "status": "SOURCE_OUTLIERS_HELD"
+    },
+    {
+      "entity": "서생원→산삼",
+      "result": "Both dated official pages explicitly publish10percent in rewardcell; normalized0.1 matches. Probabilitymodel/quantity/no-drop remainUNKNOWN/null.",
+      "status": "MATCH"
+    },
+    {
+      "entity": "장로원숭이/신로",
+      "result": "3만5천→35000 and7만5천→75000 independently decoded correctly.",
+      "status": "MATCH"
+    },
+    {
+      "entity": "전사대지의기원",
+      "result": "2000source lists80acorns,2001source70. Separate snapshot candidates retained; no averaging.",
+      "status": "CONFLICT_PRESERVED"
+    }
+  ],
+  "source_numeric_holds": [
+    {
+      "content_id": "KRO-a6f0f4c559d9",
+      "name": "백호왕",
+      "source_experience_value": 800,
+      "XP_selected": false
+    },
+    {
+      "content_id": "KRO-ea8cf2d4a4b7",
+      "name": "쥐 왕",
+      "source_experience_value": 1000,
+      "XP_selected": false
+    },
+    {
+      "content_id": "KRO-90feff8434d0",
+      "name": "최강다람쥐",
+      "source_experience_value": 100,
+      "XP_selected": false
+    },
+    {
+      "content_id": "KRO-12c02d0b82cf",
+      "name": "백호왕",
+      "source_experience_value": 800,
+      "XP_selected": false
+    },
+    {
+      "content_id": "KRO-caeccbe5fff4",
+      "name": "쥐 왕",
+      "source_experience_value": 1000,
+      "XP_selected": false
+    },
+    {
+      "content_id": "KRO-680c59f97991",
+      "name": "최강다람쥐",
+      "source_experience_value": 100,
+      "XP_selected": false
+    }
+  ],
+  "group_holds": [
+    {
+      "content_id": "KRO-95a8ab2844ff",
+      "name": "범형제",
+      "selection_state": "HOLD_GROUPED_VARIANT_ROWS",
+      "selected_for_build": false
+    },
+    {
+      "content_id": "KRO-f49556b1f5cf",
+      "name": "황충 적충 연녹충 청충 회충 갈충 연갈충 연자충 자충 연청충",
+      "selection_state": "HOLD_GROUPED_VARIANT_ROWS",
+      "selected_for_build": false
+    },
+    {
+      "content_id": "KRO-f99f6f30ddc8",
+      "name": "범형제",
+      "selection_state": "HOLD_GROUPED_VARIANT_ROWS",
+      "selected_for_build": false
+    }
+  ],
+  "cross_era_conflict_count": 15,
+  "cross_era_conflicts": [
+    {
+      "job": "도사",
+      "name_key": "소혼강신",
+      "field": "learn_money",
+      "candidates": [
+        {
+          "content_id": "KRO-a299d198bd41",
+          "source_capture": "20000619233353",
+          "value": {
+            "value": 500,
+            "unit": "전",
+            "source_says_no_money": false
+          }
+        },
+        {
+          "content_id": "KRO-92e8760e33c9",
+          "source_capture": "20010705222452",
+          "value": {
+            "value": 800,
+            "unit": "전",
+            "source_says_no_money": false
+          }
+        }
+      ],
+      "status": "UNRESOLVED_TARGET_PROFILE_SELECTION"
+    },
+    {
+      "job": "도사",
+      "name_key": "소혼강신",
+      "field": "ingredients",
+      "candidates": [
+        {
+          "content_id": "KRO-a299d198bd41",
+          "source_capture": "20000619233353",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 70,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "자호의가죽",
+              "quantity": 5,
+              "item_id": null
+            }
+          ]
+        },
+        {
+          "content_id": "KRO-92e8760e33c9",
+          "source_capture": "20010705222452",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 100,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "자호의가죽",
+              "quantity": 2,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "적호의 가죽",
+              "quantity": 1,
+              "item_id": null
+            }
+          ]
+        }
+      ],
+      "status": "UNRESOLVED_TARGET_PROFILE_SELECTION"
+    },
+    {
+      "job": "도사",
+      "name_key": "생명의기원",
+      "field": "ingredients",
+      "candidates": [
+        {
+          "content_id": "KRO-b38fe3be05ad",
+          "source_capture": "20000619233353",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 100,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "진호박",
+              "quantity": 20,
+              "item_id": null
+            }
+          ]
+        },
+        {
+          "content_id": "KRO-86fa389d2985",
+          "source_capture": "20010705222452",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 100,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "빨간시약",
+              "quantity": 1,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "진호박",
+              "quantity": 1,
+              "item_id": null
+            }
+          ]
+        }
+      ],
+      "status": "UNRESOLVED_TARGET_PROFILE_SELECTION"
+    },
+    {
+      "job": "전사",
+      "name_key": "대지의기원",
+      "field": "ingredients",
+      "candidates": [
+        {
+          "content_id": "KRO-a757e19a4082",
+          "source_capture": "20000511154844",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 80,
+              "item_id": null
+            }
+          ]
+        },
+        {
+          "content_id": "KRO-b263815ade47",
+          "source_capture": "20010705223439",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 70,
+              "item_id": null
+            }
+          ]
+        }
+      ],
+      "status": "UNRESOLVED_TARGET_PROFILE_SELECTION"
+    },
+    {
+      "job": "전사",
+      "name_key": "건곤대나이",
+      "field": "learn_money",
+      "candidates": [
+        {
+          "content_id": "KRO-548e3cfd0769",
+          "source_capture": "20000511154844",
+          "value": {
+            "value": 5000,
+            "unit": "전",
+            "source_says_no_money": false
+          }
+        },
+        {
+          "content_id": "KRO-e5c1e3e5f6c4",
+          "source_capture": "20010705223439",
+          "value": {
+            "value": 1500,
+            "unit": "전",
+            "source_says_no_money": false
+          }
+        }
+      ],
+      "status": "UNRESOLVED_TARGET_PROFILE_SELECTION"
+    },
+    {
+      "job": "전사",
+      "name_key": "검신검귀",
+      "field": "ingredients",
+      "candidates": [
+        {
+          "content_id": "KRO-f9fefb2b4e2d",
+          "source_capture": "20000511154844",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 80,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "현철 중검",
+              "quantity": 1,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "호박",
+              "quantity": 10,
+              "item_id": null
+            }
+          ]
+        },
+        {
+          "content_id": "KRO-f61c13102b19",
+          "source_capture": "20010705223439",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 80,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "철도",
+              "quantity": 1,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "자호의가죽",
+              "quantity": 20,
+              "item_id": null
+            }
+          ]
+        }
+      ],
+      "status": "UNRESOLVED_TARGET_PROFILE_SELECTION"
+    },
+    {
+      "job": "주술사",
+      "name_key": "화영열주(화)",
+      "field": "ingredients",
+      "candidates": [
+        {
+          "content_id": "KRO-cf1d3fd0b8e7",
+          "source_capture": "20000511120952",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 50,
+              "item_id": null
+            }
+          ]
+        },
+        {
+          "content_id": "KRO-c2825b2dab80",
+          "source_capture": "20010705225644",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 70,
+              "item_id": null
+            }
+          ]
+        }
+      ],
+      "status": "UNRESOLVED_TARGET_PROFILE_SELECTION"
+    },
+    {
+      "job": "주술사",
+      "name_key": "자영무주(수)",
+      "field": "ingredients",
+      "candidates": [
+        {
+          "content_id": "KRO-73fd0b46ed13",
+          "source_capture": "20000511120952",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 50,
+              "item_id": null
+            }
+          ]
+        },
+        {
+          "content_id": "KRO-24bed760289e",
+          "source_capture": "20010705225644",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 70,
+              "item_id": null
+            }
+          ]
+        }
+      ],
+      "status": "UNRESOLVED_TARGET_PROFILE_SELECTION"
+    },
+    {
+      "job": "주술사",
+      "name_key": "백령주(지)",
+      "field": "ingredients",
+      "candidates": [
+        {
+          "content_id": "KRO-31d214baee1c",
+          "source_capture": "20000511120952",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 50,
+              "item_id": null
+            }
+          ]
+        },
+        {
+          "content_id": "KRO-1802948bd89e",
+          "source_capture": "20010705225644",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 70,
+              "item_id": null
+            }
+          ]
+        }
+      ],
+      "status": "UNRESOLVED_TARGET_PROFILE_SELECTION"
+    },
+    {
+      "job": "주술사",
+      "name_key": "뢰격주(풍뢰)",
+      "field": "ingredients",
+      "candidates": [
+        {
+          "content_id": "KRO-7df4caa2d7c5",
+          "source_capture": "20000511120952",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 50,
+              "item_id": null
+            }
+          ]
+        },
+        {
+          "content_id": "KRO-e579012ca1e0",
+          "source_capture": "20010705225644",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 70,
+              "item_id": null
+            }
+          ]
+        }
+      ],
+      "status": "UNRESOLVED_TARGET_PROFILE_SELECTION"
+    },
+    {
+      "job": "주술사",
+      "name_key": "화영열주첨(화)",
+      "field": "ingredients",
+      "candidates": [
+        {
+          "content_id": "KRO-721ec79c5248",
+          "source_capture": "20000511120952",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 30,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "막걸리",
+              "quantity": 20,
+              "item_id": null
+            }
+          ]
+        },
+        {
+          "content_id": "KRO-244a416223d6",
+          "source_capture": "20010705225644",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 30,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "곰가죽",
+              "quantity": 10,
+              "item_id": null
+            }
+          ]
+        }
+      ],
+      "status": "UNRESOLVED_TARGET_PROFILE_SELECTION"
+    },
+    {
+      "job": "주술사",
+      "name_key": "자영무주첨(수)",
+      "field": "ingredients",
+      "candidates": [
+        {
+          "content_id": "KRO-8cb82b296ec7",
+          "source_capture": "20000511120952",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 30,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "막걸리",
+              "quantity": 20,
+              "item_id": null
+            }
+          ]
+        },
+        {
+          "content_id": "KRO-3e3c1d13ebb1",
+          "source_capture": "20010705225644",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 30,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "곰가죽",
+              "quantity": 10,
+              "item_id": null
+            }
+          ]
+        }
+      ],
+      "status": "UNRESOLVED_TARGET_PROFILE_SELECTION"
+    },
+    {
+      "job": "주술사",
+      "name_key": "백령주첨(지)",
+      "field": "ingredients",
+      "candidates": [
+        {
+          "content_id": "KRO-9c9e52c3a6ed",
+          "source_capture": "20000511120952",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 30,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "막걸리",
+              "quantity": 20,
+              "item_id": null
+            }
+          ]
+        },
+        {
+          "content_id": "KRO-9c56730ff85e",
+          "source_capture": "20010705225644",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 30,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "곰가죽",
+              "quantity": 10,
+              "item_id": null
+            }
+          ]
+        }
+      ],
+      "status": "UNRESOLVED_TARGET_PROFILE_SELECTION"
+    },
+    {
+      "job": "주술사",
+      "name_key": "뢰격주첨(풍뢰)",
+      "field": "ingredients",
+      "candidates": [
+        {
+          "content_id": "KRO-80eac5d19531",
+          "source_capture": "20000511120952",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 30,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "막걸리",
+              "quantity": 20,
+              "item_id": null
+            }
+          ]
+        },
+        {
+          "content_id": "KRO-f3a488297810",
+          "source_capture": "20010705225644",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 30,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "곰가죽",
+              "quantity": 10,
+              "item_id": null
+            }
+          ]
+        }
+      ],
+      "status": "UNRESOLVED_TARGET_PROFILE_SELECTION"
+    },
+    {
+      "job": "주술사",
+      "name_key": "혼돈",
+      "field": "ingredients",
+      "candidates": [
+        {
+          "content_id": "KRO-bb73b8e9c871",
+          "source_capture": "20000511120952",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 90,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "호박",
+              "quantity": 2,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "영혼 마령봉",
+              "quantity": 1,
+              "item_id": null
+            }
+          ]
+        },
+        {
+          "content_id": "KRO-0c9704f73c74",
+          "source_capture": "20010705225644",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 90,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "호박",
+              "quantity": 2,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "해골죽장",
+              "quantity": 1,
+              "item_id": null
+            }
+          ]
+        }
+      ],
+      "status": "UNRESOLVED_TARGET_PROFILE_SELECTION"
+    }
+  ],
+  "remaining_limitations": [
+    "No server mechanics or gameplay were independently measured. ORIGINAL_VERIFIED here is official published-field accuracy only.",
+    "15conflicting source fields require final target-profile decision before runtime binding. A snapshot profile is not a proven client version.",
+    "Two official source ingredient literals say토끼고리; preserve source spelling but native item alias remains unresolved.",
+    "551monster rows are documented table rows, including3held groups, not551independently identified native monsters.",
+    "Many effect descriptions contain useful targets/costs/heal/condition semantics but numeric effect IDs/audio/timing and stable native IDs remain unnormalized or unbound; source exists is not missing-source.",
+    "All skill effect IDs/sound/mana/duration/delay/probability/targetgeometry fields stayednull in this reviewed schema; this review does not certify their future implementation.",
+    "This review excludes newly added creation/growth files and all native device/authentication tests."
+  ],
+  "runtime_tests": "NOT_RUN",
+  "Codex_receiver_G0": "NOT_RUN",
+  "private_evidence": [
+    "research/server/official-review-input-001.jsonl",
+    "research/server/official-review-input-002.jsonl",
+    "research/server/official-review-input-003.jsonl",
+    "research/server/official-review-input-004.jsonl",
+    "research/server/official-review-input-004-review.json",
+    "research/server/official-review-input-004-completeness.json",
+    "research/server/independent_official_check.py",
+    "research/server/official_completeness_check.py"
+  ]
+}

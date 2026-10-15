@@ -1,0 +1,13 @@
+{
+  "source_id": "LIB-014",
+  "source_sha256": "486f4684b76658d92eaf84aab77fe9be9489ea01de8264fe90d0040466620aaa",
+  "method": "PE overlay unaligned metadata offsets; bounded candidate raw-DEFLATE + CRC32 test only",
+  "candidates_checked": 27,
+  "max_candidate_offset": 2000000,
+  "max_compressed_window": 262144,
+  "max_output": 131072,
+  "matches": [],
+  "result": "BLOCKED_UNIDENTIFIED_WISE_CHAIN_START",
+  "seconds": 0.01773028699972201,
+  "installer_execution": "NOT_RUN"
+}

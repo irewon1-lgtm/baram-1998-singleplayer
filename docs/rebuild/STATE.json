@@ -9,7 +9,7 @@
   "master_plan_path": "docs/rebuild/MASTER_PLAN.md",
   "master_plan_commit": "3adf98171efc422efcf1db1d589b075d8acad65a",
   "entrypoint_path": "AGENTS.md",
-  "status": "P1_5_IN_PROGRESS",
+  "status": "P1_5_PARTIAL_STATIC_HANDOFF_VALIDATED",
   "implementation_status": "NOT_STARTED",
   "user_decisions": {
     "clean_rebuild": "CONFIRMED",
@@ -46,25 +46,23 @@
     "P2, P3 or later execution; production deployment/merge/paid operations"
   ],
   "source_limitations": [
-    "KR125 MAP218 present but target1998-2001 geometry correspondence not confirmed; inspectedKR491CAB/DAT contain noMAP",
-    "BundledKR491 manuals mix eras/coordinates; exact document yearsunknown",
-    "KR491effectDelay/Alpha and spell/effect/sound semantics and actual hit/audio timing unresolved",
-    "Only selected P1998/RTK files acquired; full runnable checkouts,exact reference pair and linkedtestclient404 remain",
-    "ModernNexusDSC/DNA/Motion parser does not automatically support Korean491 textBody/DrwOrder/Effect formats",
-    "Private source paths are session-local copies; future Codex byte access must use knownLibraryIDs/hash or existing private handoff",
-    "NativeWindows/Galaxy and free authenticated service availability unverified; emulator/file transfer not substitutes",
-    "NA installerpayloads,5auxiliaryCAB and403/blockedweb sources remain uninspected/undecoded"
+    "한국 목표시기 전체 editable 지도/충돌/출구·사냥터 스폰 및 개별 NPC native look/대화 분기 미확정",
+    "공식2000/2001 서로다른프로필의15충돌; default profile null, 명시dispatch필수",
+    "한국491 모션 의미/Delay단위·음수이벤트/기술별소리·실제타격/재행동시점 미확정; UI mask2프레임 BLOCKED",
+    "NA 원천 참고 source graph dangling154edges FAIL 유지; 한국선정아님. 부여지도ZIP CRCFAIL 미채택",
+    "NA495Wise/NA403FrenchNSIS payload staticdecode 미지원; auxiliaryCAB는현재해독완료",
+    "정확한 referenceclient pair/testclient404 및 의존성설치/실행 미확보; 전체source 확보와별도",
+    "Windows/Android/Galaxy/nativeIME/실제세이브·인증왕복 NOT_RUN; Codex수신G0도NOT_RUN"
   ],
-  "next_action_after_user_instruction": "If a later instruction authorizes P2, read NEXT_P2 G0 and verify precise private input access/hashes. Begin independent map-format, character composition, effect/audio, creation/Hangul and native input/save proofs. Do not repeat P0/P1 or freeze Korean target maps from NA terrain.",
+  "next_action_after_user_instruction": "별도P2지시후 docs/rebuild/p1_5/NEXT_P2_DELTA.md G0에서 지속파일ID/SHA·최신브랜치를검사. 동결입력/파서/범위가같은조사는반복하지않음.",
   "unresolved_before_architecture_freeze": [
-    "KR125 MAP218 present but target1998-2001 geometry correspondence not confirmed; inspectedKR491CAB/DAT contain noMAP",
-    "BundledKR491 manuals mix eras/coordinates; exact document yearsunknown",
-    "KR491effectDelay/Alpha and spell/effect/sound semantics and actual hit/audio timing unresolved",
-    "Only selected P1998/RTK files acquired; full runnable checkouts,exact reference pair and linkedtestclient404 remain",
-    "ModernNexusDSC/DNA/Motion parser does not automatically support Korean491 textBody/DrwOrder/Effect formats",
-    "Private source paths are session-local copies; future Codex byte access must use knownLibraryIDs/hash or existing private handoff",
-    "NativeWindows/Galaxy and free authenticated service availability unverified; emulator/file transfer not substitutes",
-    "NA installerpayloads,5auxiliaryCAB and403/blockedweb sources remain uninspected/undecoded"
+    "한국 목표시기 전체 editable 지도/충돌/출구·사냥터 스폰 및 개별 NPC native look/대화 분기 미확정",
+    "공식2000/2001 서로다른프로필의15충돌; default profile null, 명시dispatch필수",
+    "한국491 모션 의미/Delay단위·음수이벤트/기술별소리·실제타격/재행동시점 미확정; UI mask2프레임 BLOCKED",
+    "NA 원천 참고 source graph dangling154edges FAIL 유지; 한국선정아님. 부여지도ZIP CRCFAIL 미채택",
+    "NA495Wise/NA403FrenchNSIS payload staticdecode 미지원; auxiliaryCAB는현재해독완료",
+    "정확한 referenceclient pair/testclient404 및 의존성설치/실행 미확보; 전체source 확보와별도",
+    "Windows/Android/Galaxy/nativeIME/실제세이브·인증왕복 NOT_RUN; Codex수신G0도NOT_RUN"
   ],
   "forbidden_without_later_authorization": [
     "Reset, force-push or overwrite existing branches",
@@ -88,28 +86,21 @@
   "current_task_id": "BARAM_REBUILD_P1_5_001",
   "current_remote_input_sha": "5d70e48e88a6a73553fee0f35c2c5812547d6dbf",
   "checkpoint": {
-    "status": "P0P1_STATIC_ARTIFACTS_VALIDATED",
+    "status": "P1_5_STATIC_RESEARCH_PARTIAL_HANDOFF_VALIDATED",
     "previous_remote_checkpoints": [
       "683cde8e23f7f4ae7d84eae63b7fa79e662b7a23",
       "af5d2cd74e1638b82c579bf9794ca5f46324f062",
-      "433e5db291bcc235709dcb04ee1dd8e90f4d2b29"
+      "433e5db291bcc235709dcb04ee1dd8e90f4d2b29",
+      "cfe79051e0f69b2b84185df63bad4f0503153d18"
     ],
     "next_resume": {
-      "owner": "Codex P2 technical integrator",
-      "entrypoint": "docs/rebuild/step01/NEXT_P2.md",
-      "step": "G0 input access/hash gate; then separately authorized P2-01..06",
-      "must_not_repeat": "42-file inventory and matching prior extractions unless input/parser/config/scope fingerprint changes",
-      "blocking_issues": [
-        "ISS-001",
-        "ISS-004",
-        "ISS-005",
-        "ISS-006",
-        "ISS-007",
-        "ISS-016",
-        "ISS-019",
-        "ISS-020"
-      ],
-      "game_tests": "NOT_RUN"
+      "owner": "Codex P2 technical integrator after separate instruction",
+      "entrypoint": "docs/rebuild/p1_5/NEXT_P2_DELTA.md",
+      "step": "G0 exact persistent input/hash gate; then P2-01..06 individually",
+      "must_not_repeat": "Matching prior byte/parser/config/scope results; P0/P1 inventory and completed P1.5 research",
+      "game_tests": "NOT_RUN",
+      "receiver_g0": "NOT_RUN",
+      "p2_authorized": false
     },
     "remote_publication": "Final result commit and remote tree comparison will be recorded in separate delivery receipt to avoid self-referential commit hash"
   },
@@ -143,21 +134,13 @@
   "p2_execution_authorized": false,
   "p2_readiness": "PARTIALLY_PREPARED",
   "next_resume": {
-    "owner": "Codex P2 technical integrator",
-    "entrypoint": "docs/rebuild/step01/NEXT_P2.md",
-    "step": "G0 input access/hash gate; then separately authorized P2-01..06",
-    "must_not_repeat": "42-file inventory and matching prior extractions unless input/parser/config/scope fingerprint changes",
-    "blocking_issues": [
-      "ISS-001",
-      "ISS-004",
-      "ISS-005",
-      "ISS-006",
-      "ISS-007",
-      "ISS-016",
-      "ISS-019",
-      "ISS-020"
-    ],
-    "game_tests": "NOT_RUN"
+    "owner": "Codex P2 technical integrator after separate instruction",
+    "entrypoint": "docs/rebuild/p1_5/NEXT_P2_DELTA.md",
+    "step": "G0 exact persistent input/hash gate; then P2-01..06 individually",
+    "must_not_repeat": "Matching prior byte/parser/config/scope results; P0/P1 inventory and completed P1.5 research",
+    "game_tests": "NOT_RUN",
+    "receiver_g0": "NOT_RUN",
+    "p2_authorized": false
   },
   "artifacts": {
     "required": [
@@ -202,7 +185,7 @@
     "scope": "Independent AI review of deliverables, not historical gameplay or human acceptance"
   },
   "p1_5": {
-    "status": "IN_PROGRESS",
+    "status": "PARTIAL_VALIDATED_PENDING_DELIVERY",
     "read_intake": [
       "AGENTS.md",
       "MASTER_PLAN.md",
@@ -213,7 +196,7 @@
       "BARAM_P0P1_독립감사_20261016.md",
       "BARAM_P1_5_자료공백_보완계획_20261016.md"
     ],
-    "latest_checkpoint": "42 originals and2204 members verified,2489full declared inputs matched;197source metadata corrections+150requirements;37526NA reference records private; official2000/2001guide rawpages newly recovered and being normalized",
+    "latest_checkpoint": "All10domains frozen, fullbyte2489PASS and clean44796rowimport integrityPASS/source154FAIL reproduced; safe ZIP/remote/persistent receipt next",
     "runtime_tests": "NOT_RUN",
     "p2_executed": false,
     "originals_preserved": true,
@@ -225,6 +208,53 @@
     "source_metadata_file": "docs/rebuild/p1_5/sources_delta.jsonl",
     "requirement_delta_file": "docs/rebuild/p1_5/requirements_delta.csv",
     "historical_result": "PARTIAL",
-    "next_resume": "Finish target-era official Korean guide extraction/attachments, then normalized import,32binding deltas,clean handoff and final artifacts"
-  }
+    "next_resume": "Save public findings with remote tree verification; build/audit/persist privatehandoff; record external receipt. P2 remains unexecuted.",
+    "normalized_row_count_working_snapshot": 44796,
+    "new_critical_source_byte_reads": 431,
+    "historical_default_profile": null,
+    "profile_dispatch_required": true,
+    "normalized_rows": 44796,
+    "normalized_files": 35,
+    "source_metadata_records": 1313,
+    "new_source_metadata_records": 1116,
+    "requirements": 150,
+    "field_binding_groups": 35,
+    "gap_fields": 137,
+    "full_byte_gate": "PASS 2489/2489",
+    "normalized_integrity": "PASS 44796rows/1241sourcehashes in original and independent clean sourcecache",
+    "source_reference_graph": "FAIL: 154knownNAdanglingedges preserved, import exit1",
+    "p2_readiness": {
+      "P2-01": "PARTIAL",
+      "P2-02": "PARTIAL",
+      "P2-03": "PARTIAL",
+      "P2-04": "PARTIAL",
+      "P2-05": "PARTIAL",
+      "P2-06": "BLOCKED_ENVIRONMENT"
+    },
+    "artifacts": [
+      "docs/rebuild/p1_5/REPORT.md",
+      "docs/rebuild/p1_5/gaps_by_feature.csv",
+      "docs/rebuild/p1_5/requirements_delta.csv",
+      "docs/rebuild/p1_5/sources_delta.jsonl",
+      "docs/rebuild/p1_5/field_bindings.jsonl",
+      "docs/rebuild/p1_5/selected_content/catalog.json",
+      "docs/rebuild/p1_5/source_access.json",
+      "docs/rebuild/p1_5/VALIDATION.json",
+      "docs/rebuild/p1_5/SECURITY.md",
+      "docs/rebuild/p1_5/NEXT_P2_DELTA.md",
+      "docs/rebuild/p1_5/INPUT_MANIFEST.json"
+    ],
+    "clean_handoff": "PASS_REPRODUCTION_SCOPE; CodexG0 NOT_RUN",
+    "input_manifest_sha256": "556d0be5ec4632a5d85b618971045f0edb8f1a73148bb9c55a9663e396681c82"
+  },
+  "historical_p0p1_source_limitations": [
+    "KR125 MAP218 present but target1998-2001 geometry correspondence not confirmed; inspectedKR491CAB/DAT contain noMAP",
+    "BundledKR491 manuals mix eras/coordinates; exact document yearsunknown",
+    "KR491effectDelay/Alpha and spell/effect/sound semantics and actual hit/audio timing unresolved",
+    "Only selected P1998/RTK files acquired; full runnable checkouts,exact reference pair and linkedtestclient404 remain",
+    "ModernNexusDSC/DNA/Motion parser does not automatically support Korean491 textBody/DrwOrder/Effect formats",
+    "Private source paths are session-local copies; future Codex byte access must use knownLibraryIDs/hash or existing private handoff",
+    "NativeWindows/Galaxy and free authenticated service availability unverified; emulator/file transfer not substitutes",
+    "NA installerpayloads,5auxiliaryCAB and403/blockedweb sources remain uninspected/undecoded"
+  ]
 }

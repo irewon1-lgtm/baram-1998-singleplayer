@@ -1,0 +1,433 @@
+{
+  "task_id": "BARAM_REBUILD_P1_5_001",
+  "tool_version": "p1.5-handoff-security/1.0",
+  "tool_sha256": "e67c68fccd3ff0d7aeb7671f81ec39f3139400c731b1443062d4b82d2d00c635",
+  "scope_result": "PARTIAL",
+  "public": {
+    "scope": "CURRENT_AUTHORIZED_PUBLIC_P1_5_FILE_SET",
+    "findings": [],
+    "errors": [],
+    "files": [
+      {
+        "path": "AGENTS.md",
+        "sha256": "37e322425f58d7a226f4a58ae6b2e0272dccecadd0d116fbff7813facf972ae2",
+        "bytes": 2877
+      },
+      {
+        "path": "docs/rebuild/STATE.json",
+        "sha256": "e98a342a5265682e6813985a339d92710f24f937b524e3cde12df503fe4f29e2",
+        "bytes": 12322
+      },
+      {
+        "path": "docs/rebuild/p1_5/INPUT_MANIFEST.json",
+        "sha256": "b889173e6e1ec44737863e19e85b2ac5210a369fa1c4871a79b8dc4ed4f594f0",
+        "bytes": 30644
+      },
+      {
+        "path": "docs/rebuild/p1_5/NEXT_P2_DELTA.md",
+        "sha256": "f7264000edfa93d80b0b4ad146e276d693fb7df432b0777852726b71247c5891",
+        "bytes": 10940
+      },
+      {
+        "path": "docs/rebuild/p1_5/REPORT.md",
+        "sha256": "65e837071b09cd220a26300a163c834ffc044eff014f06a0f12a94e0c25a7a0e",
+        "bytes": 14015
+      },
+      {
+        "path": "docs/rebuild/p1_5/SECURITY.md",
+        "sha256": "c1d4e4585ae8c1afde85a6d4ca0503f704fb677b46fcaf6aa65bddd42a287a25",
+        "bytes": 5697
+      },
+      {
+        "path": "docs/rebuild/p1_5/assets_notes.md",
+        "sha256": "875b717ab0056a6835d7a5b45acdf2fe3ccbaf10d580dcffc76d5876eec50c5c",
+        "bytes": 14282
+      },
+      {
+        "path": "docs/rebuild/p1_5/audit_metadata_validation.json",
+        "sha256": "a9cccf2f5a6fe9a8870e80ef43a34043bc78aa1f5a54060fc3eee15ec43620ec",
+        "bytes": 1597
+      },
+      {
+        "path": "docs/rebuild/p1_5/audit_notes.md",
+        "sha256": "1fa14f44938ee3cd2b6b098548ebb1fd7b3cd7eb461e18498075f57e3776dd69",
+        "bytes": 6349
+      },
+      {
+        "path": "docs/rebuild/p1_5/field_bindings.jsonl",
+        "sha256": "53901bafd40a2dece277a9fc3360d4ab7d28728fafacdb39cfa7e6adcda3ee3f",
+        "bytes": 127680
+      },
+      {
+        "path": "docs/rebuild/p1_5/gaps_by_feature.csv",
+        "sha256": "9da1f0ea115464023f28b5ff52acc22033f73746a2c37c9f5957ec1bb31b6328",
+        "bytes": 74387
+      },
+      {
+        "path": "docs/rebuild/p1_5/import_regression.json",
+        "sha256": "affc185fdd9142388e975ad9a02fb65bf0b7f060bc53efbba58cccd203101000",
+        "bytes": 21969
+      },
+      {
+        "path": "docs/rebuild/p1_5/import_validation.json",
+        "sha256": "996bc3441de246f66be7aa6fd58a4ca51dd41f817d24d9ea7a30ff8dc7e32c4c",
+        "bytes": 58685
+      },
+      {
+        "path": "docs/rebuild/p1_5/import_validation_initial.json",
+        "sha256": "85690aa45d0dd06c6f63f845cdebd188035daa6c606b11cb06c4fb430015b867",
+        "bytes": 49156
+      },
+      {
+        "path": "docs/rebuild/p1_5/installer_payload_attempts.json",
+        "sha256": "21a8aef9467515fe381be2383e16924f017411b6e1d03c04663e78da693ccfe0",
+        "bytes": 311
+      },
+      {
+        "path": "docs/rebuild/p1_5/integration_metadata_validation.json",
+        "sha256": "57abda7e7678eb2c2942e90b372bace3838d73e5a1b6f9fae206a437b9ed1f8b",
+        "bytes": 15202
+      },
+      {
+        "path": "docs/rebuild/p1_5/korean_notes.md",
+        "sha256": "f4b44dd7b59335b657152a5e562882d646e8ab715bb4d065ceeee73ef6222755",
+        "bytes": 8670
+      },
+      {
+        "path": "docs/rebuild/p1_5/official_independent_review.json",
+        "sha256": "535cdc8a776215120767cf6045d0b142cd6ed4f62a4c85bffd7ebbc22f4d3ef3",
+        "bytes": 29942
+      },
+      {
+        "path": "docs/rebuild/p1_5/package_security_validation.json",
+        "sha256": "342174ec35ac6d8a12dd2eff4572d8fec3cb31fac751e852b45884ecf24e3372",
+        "bytes": 25361
+      },
+      {
+        "path": "docs/rebuild/p1_5/reference_package_validation.json",
+        "sha256": "7c27d0bf54903f8ffee2d089529cc9189eb7bfa42010f5a0f5c1a17ea0a06249",
+        "bytes": 347
+      },
+      {
+        "path": "docs/rebuild/p1_5/requirements_delta.csv",
+        "sha256": "42988e15a9e51aefb560baaacdd566356f6ed191162627dcc48b00e06a11fdaf",
+        "bytes": 277510
+      },
+      {
+        "path": "docs/rebuild/p1_5/research_assets.json",
+        "sha256": "dbf0344381a9ed411bb031e8092b1aa28f2f8663e7db8e729dfd86fd562e8af1",
+        "bytes": 173870
+      },
+      {
+        "path": "docs/rebuild/p1_5/research_korean.json",
+        "sha256": "1ea4a4686144f5cad9a77b2fe7e6ea4cb38457755b445952d81abfdc1665286c",
+        "bytes": 68117
+      },
+      {
+        "path": "docs/rebuild/p1_5/research_official_core.json",
+        "sha256": "f30578c74d66479e62cd89bd949db05d96f56133633b133d2cab4bd1a7ca2e0f",
+        "bytes": 124151
+      },
+      {
+        "path": "docs/rebuild/p1_5/research_official_creation_visual.json",
+        "sha256": "c66fa54934ed2733ffaba9762f70220db856e564a9bd7e223f0e5f0e3e92d121",
+        "bytes": 1828
+      },
+      {
+        "path": "docs/rebuild/p1_5/research_official_flow.json",
+        "sha256": "fddef8c58c4c9e6a332b11a68ebdd021f0d6091202553ec555ae1c569a5dbe30",
+        "bytes": 6452
+      },
+      {
+        "path": "docs/rebuild/p1_5/research_official_images.json",
+        "sha256": "0cdf9be665da5643da86ca8af24f576a53e0fb87128c02a39666386516e46340",
+        "bytes": 209113
+      },
+      {
+        "path": "docs/rebuild/p1_5/research_official_skill_effects.json",
+        "sha256": "031cac045b9f973a642d07a06e836d5aa9f1e0dec9ef8fc09da126f9931c8f33",
+        "bytes": 7701
+      },
+      {
+        "path": "docs/rebuild/p1_5/research_official_zone_item.json",
+        "sha256": "0a97a0e227fda8e854ba0a32a66984c01e9c9bce8a807a7549e02b983a84db0e",
+        "bytes": 1227845
+      },
+      {
+        "path": "docs/rebuild/p1_5/research_server.json",
+        "sha256": "6552b6acec644689637fa49b944c34d2740b22802e8f955c90efd38420594a24",
+        "bytes": 730436
+      },
+      {
+        "path": "docs/rebuild/p1_5/security_review.json",
+        "sha256": "93b67e2b4f490667bbc07273f6488609974982a23a634cdeb70e8d22e67cebc0",
+        "bytes": 9226
+      },
+      {
+        "path": "docs/rebuild/p1_5/selected_content/.gitignore",
+        "sha256": "ce224837685aedbeeab5ad363e75f1550973f8d69079aae90cd86afe54f3af06",
+        "bytes": 100
+      },
+      {
+        "path": "docs/rebuild/p1_5/selected_content/README.md",
+        "sha256": "1cc6aaa4505e40d57fc5ec51f6c807b2ff40b57a62145b85fcb4314c38b75abe",
+        "bytes": 1392
+      },
+      {
+        "path": "docs/rebuild/p1_5/selected_content/catalog.json",
+        "sha256": "a6085079214dff200988201c95b75697b76e7a8f1651cd1841bc00b0e8580e49",
+        "bytes": 14388
+      },
+      {
+        "path": "docs/rebuild/p1_5/selected_content/na_reference_catalog.json",
+        "sha256": "e788f665d04c21894ec190748979c44eb08a30a58968cd531941cb2640abc84c",
+        "bytes": 5979
+      },
+      {
+        "path": "docs/rebuild/p1_5/selected_content/save_contracts.json",
+        "sha256": "28b88bde1f543ef6a811d17af08427af94961c0ce88bd4b7a3f34ed8be05752c",
+        "bytes": 23724
+      },
+      {
+        "path": "docs/rebuild/p1_5/server_notes.md",
+        "sha256": "246d45adb740c82b47d0127fc31f2177304c02159a7e395df6eb9e7b864d742a",
+        "bytes": 15278
+      },
+      {
+        "path": "docs/rebuild/p1_5/skill_effects_independent_review.json",
+        "sha256": "6a2aace3c784361cff5c28b3be34277b53f035bd2341a306c2a889ee3a19e4f0",
+        "bytes": 16646
+      },
+      {
+        "path": "docs/rebuild/p1_5/source_access.json",
+        "sha256": "d7ee575376e4f8ed15165ed7626bd488dd2657754248529f3638ae2bb17e2951",
+        "bytes": 970721
+      },
+      {
+        "path": "docs/rebuild/p1_5/sources_delta.jsonl",
+        "sha256": "14d70dfd8a33dc75da15a48312785d682d8ac9b827fead781f01b369585038cf",
+        "bytes": 1647827
+      },
+      {
+        "path": "docs/rebuild/p1_5/step01_validation.json",
+        "sha256": "97ac38f8253e99a495939b4037655bef2df948916060d38c617feee4da1be10d",
+        "bytes": 1200512
+      },
+      {
+        "path": "docs/rebuild/p1_5/validator_notes.md",
+        "sha256": "9ead83f86e273acdc9884a6610b89cfa70e2e6156b3a0878ee54eda4e1abfccf",
+        "bytes": 8356
+      },
+      {
+        "path": "docs/rebuild/p1_5/validator_regression.json",
+        "sha256": "6c89bdec625f53a42c133cb17740ecf5775648323482543c585b95929de3b636",
+        "bytes": 230567
+      },
+      {
+        "path": "docs/rebuild/p1_5/wise_payload_probe.json",
+        "sha256": "90ec4f1c6dd61473b6fd89d555c49978758b98be57d353bc17d8f1924def16e4",
+        "bytes": 480
+      },
+      {
+        "path": "tools/rebuild/p1_5/assemble_p15_metadata.py",
+        "sha256": "2037128c2832ef80dcd57a5c2df795009f416d11a38704c75e627de1e94fd33b",
+        "bytes": 16341
+      },
+      {
+        "path": "tools/rebuild/p1_5/audit_handoff_package.py",
+        "sha256": "e67c68fccd3ff0d7aeb7671f81ec39f3139400c731b1443062d4b82d2d00c635",
+        "bytes": 16623
+      },
+      {
+        "path": "tools/rebuild/p1_5/build_official_flow.py",
+        "sha256": "cddb260cacc86d03c8bc285b77d51c457b94e9ec277c4b5d7c2a310e2a3eeb63",
+        "bytes": 8661
+      },
+      {
+        "path": "tools/rebuild/p1_5/compare_guide_effects.py",
+        "sha256": "121b0d6fa94ff1b6f31620ef221b29ed394d07672b80fa5770300f8be37316b7",
+        "bytes": 9237
+      },
+      {
+        "path": "tools/rebuild/p1_5/extract_na_references.py",
+        "sha256": "970daf0f67d7929694fc437d1a0ab3b356fa49fb5c6b06b951f104f9cf892ec6",
+        "bytes": 24613
+      },
+      {
+        "path": "tools/rebuild/p1_5/extract_official_facility_craft.py",
+        "sha256": "7c54bf1e0bab39428fa9bfac31b938f8d5b3201f6beae7b20a44ccff1312e923",
+        "bytes": 13387
+      },
+      {
+        "path": "tools/rebuild/p1_5/extract_official_skill_effects.py",
+        "sha256": "d6b6b0e23b0451bff0de297fb115a00c48c72837d0fe05d730d7d5aa0f66c04a",
+        "bytes": 30774
+      },
+      {
+        "path": "tools/rebuild/p1_5/finalize_official_zone_item.py",
+        "sha256": "3440133b4be174720b1b92bc7226aede0c5aa0beeea19608d78a3a0fa319e61f",
+        "bytes": 22174
+      },
+      {
+        "path": "tools/rebuild/p1_5/import_dry_run.py",
+        "sha256": "7886a7ade6d80cb6755de570db83b175d2f1c46958b0a3754575472217e9210b",
+        "bytes": 46170
+      },
+      {
+        "path": "tools/rebuild/p1_5/inspect_kr_tables.py",
+        "sha256": "8e5544d11e8739a6b7c9d5214cedadff26a4bed505ee0fd0d8493186d5c80049",
+        "bytes": 23076
+      },
+      {
+        "path": "tools/rebuild/p1_5/normalize_official_zone_item.py",
+        "sha256": "83edb532eea67a3fedd09dda4b943dd60b029d98f5808178f8f96c5aff854349",
+        "bytes": 15361
+      },
+      {
+        "path": "tools/rebuild/p1_5/parse_official_core.py",
+        "sha256": "dbd77455273430e378e999a40ee267fea52cfb1e8f0f37243afc0620b984b1fc",
+        "bytes": 14678
+      },
+      {
+        "path": "tools/rebuild/p1_5/recheck_archives.py",
+        "sha256": "4440e3f3ccfa07312c7b0a15c71398e694365ad3c375c5f1a0c1f933e3b1c620",
+        "bytes": 8070
+      },
+      {
+        "path": "tools/rebuild/p1_5/test_import_dry_run.py",
+        "sha256": "7b71f663f3fb6e207cc184d48097f618fbca1cd6e677e42ebea91de6ad3645cd",
+        "bytes": 5756
+      },
+      {
+        "path": "tools/rebuild/p1_5/test_official_skill_effects.py",
+        "sha256": "5e9d886ae325a2449f1fd81539b9ac0ce0e414dae65f3a5dffa88f111ce15250",
+        "bytes": 8113
+      },
+      {
+        "path": "tools/rebuild/p1_5/test_validator_regression.py",
+        "sha256": "7190b222529a2eb1f8d45363816c5db7b575506644298f4115438387d72de405",
+        "bytes": 13358
+      },
+      {
+        "path": "tools/rebuild/p1_5/validate_na_references.py",
+        "sha256": "55c387b38b9c7f50245a84a69bd89bb5126e04d6cd5d28ef19034ef87dbfb961",
+        "bytes": 7659
+      },
+      {
+        "path": "tools/rebuild/step01/validate_step01.py",
+        "sha256": "e10e1dd0840eab39c3757313b533e5e6e0d75d2f0b5ca3508aad44919bfe87eb",
+        "bytes": 26907
+      }
+    ],
+    "secret_values_printed": false,
+    "files_checked": 62,
+    "result": "PASS"
+  },
+  "outer_package": {
+    "result": "NOT_RUN",
+    "reason": "FINAL_OUTER_PACKAGE_NOT_PROVIDED"
+  },
+  "standalone_reference": {
+    "result": "NOT_RUN",
+    "reason": "NO_STANDALONE_REFERENCE_ZIP_REQUESTED"
+  },
+  "guard_regression": {
+    "result": "PASS",
+    "scope": "nine synthetic adversarial ZIP fixtures; originals unchanged",
+    "cases": [
+      {
+        "case": "normal",
+        "expected": "PASS",
+        "actual": "PASS",
+        "result": "PASS",
+        "reported_types": []
+      },
+      {
+        "case": "empty",
+        "expected": "FAIL",
+        "actual": "FAIL",
+        "result": "PASS",
+        "reported_types": [
+          "ValueError"
+        ]
+      },
+      {
+        "case": "traversal",
+        "expected": "FAIL",
+        "actual": "FAIL",
+        "result": "PASS",
+        "reported_types": [
+          "REFERENCE_MANIFEST_MEMBER_SET_MISMATCH",
+          "UNSAFE_MEMBER_PATH"
+        ]
+      },
+      {
+        "case": "symlink",
+        "expected": "FAIL",
+        "actual": "FAIL",
+        "result": "PASS",
+        "reported_types": [
+          "ARCHIVE_SYMLINK",
+          "REFERENCE_MANIFEST_MEMBER_SET_MISMATCH"
+        ]
+      },
+      {
+        "case": "private_receipt",
+        "expected": "FAIL",
+        "actual": "FAIL",
+        "result": "PASS",
+        "reported_types": [
+          "EXCLUDED_INTERNAL_DIRECTORY",
+          "REFERENCE_MANIFEST_MEMBER_SET_MISMATCH"
+        ]
+      },
+      {
+        "case": "synthetic_token",
+        "expected": "FAIL",
+        "actual": "FAIL",
+        "result": "PASS",
+        "reported_types": [
+          "REFERENCE_MANIFEST_MEMBER_SET_MISMATCH",
+          "github_token"
+        ]
+      },
+      {
+        "case": "manifest_missing",
+        "expected": "FAIL",
+        "actual": "FAIL",
+        "result": "PASS",
+        "reported_types": [
+          "MISSING_REFERENCE_SOURCE_MANIFEST"
+        ]
+      },
+      {
+        "case": "manifest_mismatch",
+        "expected": "FAIL",
+        "actual": "FAIL",
+        "result": "PASS",
+        "reported_types": [
+          "REFERENCE_MANIFEST_BYTE_MISMATCH"
+        ]
+      },
+      {
+        "case": "crc_tamper",
+        "expected": "FAIL",
+        "actual": "FAIL",
+        "result": "PASS",
+        "reported_types": [
+          "BadZipFile"
+        ]
+      }
+    ]
+  },
+  "package_identity": null,
+  "source_executable_execution": "NOT_RUN",
+  "malware_absence": "UNKNOWN",
+  "historical_accuracy": "NOT_EVALUATED",
+  "secret_values_printed": false,
+  "limitations": [
+    "Pattern checks are heuristic; no comprehensive Git history or obfuscated-secret review",
+    "Archive identity and exclusions do not establish malware absence",
+    "Public file-set snapshot precedes creation of this result file; final commit and Library delivery are separate checks"
+  ]
+}

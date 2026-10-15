@@ -1,0 +1,430 @@
+{
+  "schema": "baram.p1_5.catalog/1",
+  "scope": "Exact required normalized file set, not game completion",
+  "normalized_catalogs": [
+    {
+      "path": "selected_content/kr_asset_draw_order.jsonl",
+      "sha256": "3f50128cb53d44d926362f09bc0c62324dfeccf0c1041d67b8b19ffce46f4fbb",
+      "bytes": 128968,
+      "records": 100,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "draw_order": 100
+      }
+    },
+    {
+      "path": "selected_content/kr_asset_effect_frame_palettes.jsonl",
+      "sha256": "b644c6def8fa486524b81ddc16fda6b5b8e48d3c0f20702e6705a54b5879c713",
+      "bytes": 2154832,
+      "records": 1611,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "effect_frame_palette": 1611
+      }
+    },
+    {
+      "path": "selected_content/kr_asset_effect_sequences.jsonl",
+      "sha256": "1a269e602493b04a4ae6b96160d480e16dad7e82ba98344e277396f692036961",
+      "bytes": 547576,
+      "records": 128,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "effect_sequence": 128
+      }
+    },
+    {
+      "path": "selected_content/kr_asset_guide_effects.jsonl",
+      "sha256": "63d8fb07e70a72ee3c1a94999c76aac5959edd67fef12d9e3adf99bd2efca7d7",
+      "bytes": 195091,
+      "records": 162,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "guide_effect_bitmap_binding": 162
+      }
+    },
+    {
+      "path": "selected_content/kr_asset_legacy_effect_tables.jsonl",
+      "sha256": "d200d09e47e0bda9646b69c96d651274b9ce70f04db70f629a79430b40ee8982",
+      "bytes": 227464,
+      "records": 168,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "legacy_effect_layer": 84,
+        "legacy_effect_range": 84
+      }
+    },
+    {
+      "path": "selected_content/kr_asset_monster_groups.jsonl",
+      "sha256": "91c911eece0ff1ac1b7342370c1ecc96eaf736ce43f572715c7ca1d4eb47b2b5",
+      "bytes": 265302,
+      "records": 225,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "monster_frame_group": 225
+      }
+    },
+    {
+      "path": "selected_content/kr_asset_parts.jsonl",
+      "sha256": "b1e5086da6ebad28ecc76e7ee387fc7077d5d6f5854f710638b951617c603726",
+      "bytes": 2884171,
+      "records": 1927,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "body": 66,
+        "head": 89,
+        "sword": 90,
+        "fan": 3,
+        "spear": 29,
+        "shield": 13,
+        "monster": 327,
+        "item": 1310
+      }
+    },
+    {
+      "path": "selected_content/kr_asset_sound_metadata.jsonl",
+      "sha256": "7009968509ca44eee06698c218a4da450158175e0e00560ffe507e30cb1a6d5c",
+      "bytes": 192911,
+      "records": 163,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "sound_metadata": 163
+      }
+    },
+    {
+      "path": "selected_content/kr_asset_sprite_frames.jsonl",
+      "sha256": "74416716dc20f3ceb3dd26828397069fd5c0efe5667e4b9fcadb8dad9a32dd7b",
+      "bytes": 548473,
+      "records": 9,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "sprite_family": 9
+      }
+    },
+    {
+      "path": "selected_content/kr_asset_ui_strings.jsonl",
+      "sha256": "83c211482f0e1785af628855d014d2d80fc9fd76104c3d780bd8af6399fe009c",
+      "bytes": 52726,
+      "records": 38,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "ui_string": 38
+      }
+    },
+    {
+      "path": "selected_content/kr_documented_fields.jsonl",
+      "sha256": "adf6e7b066ed3136861a8221100bd138a8e0d5f8ff88453f81563e4e4fb8238f",
+      "bytes": 567756,
+      "records": 303,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "skills": 79,
+        "map_locations": 43,
+        "items": 138,
+        "era": 2,
+        "quest": 1,
+        "repair": 1,
+        "dialogue": 2,
+        "jobs": 1,
+        "transport": 3,
+        "shop": 1,
+        "creation": 2,
+        "ui": 1,
+        "input": 1,
+        "dialogue_reconstruction": 4,
+        "map_reference": 2,
+        "dated_ui_reference": 1,
+        "effect_reference": 1,
+        "npc_dialogue_reference": 3,
+        "tutorial_reference": 6,
+        "monster_drop_reference": 11
+      }
+    },
+    {
+      "path": "selected_content/kr_official_core.jsonl",
+      "sha256": "010bef4cff3aa21716ca63423eda0eb9f225c58cba0b6be79029c6ca954429dc",
+      "bytes": 3192620,
+      "records": 928,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "monster": 551,
+        "skill": 377
+      }
+    },
+    {
+      "path": "selected_content/kr_official_crafting_facts.jsonl",
+      "sha256": "c631140d771439f23e8c6be93cd090e2e27c98efe9c4c305525c63b7644dabb1",
+      "bytes": 42194,
+      "records": 18,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "crafting_fact": 18
+      }
+    },
+    {
+      "path": "selected_content/kr_official_creation_visual.jsonl",
+      "sha256": "6fc273565ab672988fcb61d2f687f606202b2b270be4f0cad5412f309e1ad6c3",
+      "bytes": 2777,
+      "records": 1,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "creation": 1
+      }
+    },
+    {
+      "path": "selected_content/kr_official_facility_rules.jsonl",
+      "sha256": "3b49767055f6cb55bbe0334e43d1c035ab05dc71fa4530c8ef3d915df955a00f",
+      "bytes": 58341,
+      "records": 28,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "facility_rule": 28
+      }
+    },
+    {
+      "path": "selected_content/kr_official_flow.jsonl",
+      "sha256": "5b62f399506d2fa51f56c221b6b253b22f9e2db0ba267fd0ff562a12e621d980",
+      "bytes": 44075,
+      "records": 20,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "creation": 1,
+        "growth": 11,
+        "combat": 1,
+        "transport": 5,
+        "account": 2
+      }
+    },
+    {
+      "path": "selected_content/kr_official_full_maps.jsonl",
+      "sha256": "cdc09b76fbcf455d845a3553a5a6370d2eacb688e5493c0754b9c2857bffbf55",
+      "bytes": 5511,
+      "records": 2,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "official_full_map_image": 2
+      }
+    },
+    {
+      "path": "selected_content/kr_official_image_bindings.jsonl",
+      "sha256": "f5cfb6565437c20ac190c9775f17883d7893b9159e6d0c8073bb5039790d94b3",
+      "bytes": 258817,
+      "records": 105,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "item_icon": 105
+      }
+    },
+    {
+      "path": "selected_content/kr_official_items.jsonl",
+      "sha256": "fba69ec5c19236bbcf8615cea64753f1536832e8f994e41cac51337ff2440f15",
+      "bytes": 3473092,
+      "records": 771,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "item": 771
+      }
+    },
+    {
+      "path": "selected_content/kr_official_map_assets.jsonl",
+      "sha256": "ba92e06ab8a757671933224f6e3226f7a66c55e8c15ed453dcd4d5e386d262b4",
+      "bytes": 367714,
+      "records": 129,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "map_or_facility_image": 129
+      }
+    },
+    {
+      "path": "selected_content/kr_official_npc_appearance.jsonl",
+      "sha256": "7d1667c5e8d919ee9e5efc089317aba635a4fe522c24a228f216b9098cd22c49",
+      "bytes": 12894,
+      "records": 4,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "npc_appearance_reference": 4
+      }
+    },
+    {
+      "path": "selected_content/kr_official_services.jsonl",
+      "sha256": "a4363e3d38de491efc3cc9dc7f319823416caa6285d50b0e6b2c4e94662c64b0",
+      "bytes": 153545,
+      "records": 45,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "npc_service": 45
+      }
+    },
+    {
+      "path": "selected_content/kr_official_skill_effects.jsonl",
+      "sha256": "b8947b92e05d43994d3af3529ced87203daf9d3255132afe9b227ad818d30b1f",
+      "bytes": 1590584,
+      "records": 377,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "skill_effect": 377
+      }
+    },
+    {
+      "path": "selected_content/na_reference_craft_calls.jsonl",
+      "sha256": "4b4722aa836fcef52bd1ca76278e9f630362689f3e45e9009ad86a06850f1699",
+      "bytes": 195948,
+      "records": 16,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "static_script_index": 16
+      }
+    },
+    {
+      "path": "selected_content/na_reference_economy.jsonl",
+      "sha256": "a91fd02de9ac181f91d77736a306aad4f24d5bbd3bb3276dd2897da7df645f11",
+      "bytes": 3450872,
+      "records": 2834,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "source_row": 2834
+      }
+    },
+    {
+      "path": "selected_content/na_reference_job_skill.jsonl",
+      "sha256": "11349e33321feee2591728f61f5aabe1f6dcdd6f62ba15ab93a4ec0d56ab71b5",
+      "bytes": 1773707,
+      "records": 2979,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "source_row": 2979
+      }
+    },
+    {
+      "path": "selected_content/na_reference_map.jsonl",
+      "sha256": "a138414df3d09a6b42b31737e45c47a2d7f16c60ddd3f47a409d4d4fcf0071d8",
+      "bytes": 2521080,
+      "records": 4882,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "source_row": 4882
+      }
+    },
+    {
+      "path": "selected_content/na_reference_monster.jsonl",
+      "sha256": "4ed8160ba7b281266c1034746a6463c2eb8c09de44af7b80db31dcd026df0a80",
+      "bytes": 2943719,
+      "records": 5354,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "source_row": 5354
+      }
+    },
+    {
+      "path": "selected_content/na_reference_npc.jsonl",
+      "sha256": "157d5128f7fb55d8d3d2b70615c7a6772b9f6445ad7d2e027347f17e1111e640",
+      "bytes": 347082,
+      "records": 413,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "source_row": 413
+      }
+    },
+    {
+      "path": "selected_content/na_reference_npc_calls.jsonl",
+      "sha256": "98e472a061a238d8760984d740c9e72013ec30495d9b58fc3e58286b9b4c39b9",
+      "bytes": 922369,
+      "records": 163,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "static_script_index": 163
+      }
+    },
+    {
+      "path": "selected_content/na_reference_npc_dialogue.jsonl",
+      "sha256": "6a9bd19d14cbd70af356db57100112c93decab3778c6c18dc8cfadf4ba17f23e",
+      "bytes": 42933,
+      "records": 26,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "static_script_index": 26
+      }
+    },
+    {
+      "path": "selected_content/na_reference_rtk_drops.jsonl",
+      "sha256": "b6c1f70169b549318b812e59f5d8241979877f3d2c22e90ee49a906d7ebeaa66",
+      "bytes": 532043,
+      "records": 387,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "literal_drop_table": 387
+      }
+    },
+    {
+      "path": "selected_content/na_reference_rtk_sql.jsonl",
+      "sha256": "e46a8a3a2c2250127af5e7bab145bcd29645957e7e41e68f6453109aedbb8489",
+      "bytes": 19679550,
+      "records": 20078,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "sql_content:ItemSets": 1,
+        "sql_content:Items": 2545,
+        "sql_content:Maps": 9850,
+        "sql_content:Mobs": 716,
+        "sql_content:NPCEquipment0": 1,
+        "sql_content:NPCs0": 385,
+        "sql_content:Paths": 23,
+        "sql_content:Spawns0": 1175,
+        "sql_content:Spells": 906,
+        "sql_content:Warps": 4476
+      }
+    },
+    {
+      "path": "selected_content/na_reference_spell_calls.jsonl",
+      "sha256": "beb72070e7d00d6c90176010cabba82907b319c4dd27daf67ec25810523e71dd",
+      "bytes": 965239,
+      "records": 394,
+      "schema": "per-record provenance with source-qualified IDs",
+      "visibility": "PRIVATE_VALUE_EXPORT",
+      "record_types": {
+        "static_script_index": 394
+      }
+    },
+    {
+      "path": "selected_content/save_contracts.json",
+      "sha256": "28b88bde1f543ef6a811d17af08427af94961c0ce88bd4b7a3f34ed8be05752c",
+      "bytes": 23724,
+      "records": 8,
+      "visibility": "PUBLIC_STATIC_REFERENCE_CONTRACT"
+    }
+  ],
+  "default_build_profile_id": null,
+  "profile_dispatch_required": true
+}

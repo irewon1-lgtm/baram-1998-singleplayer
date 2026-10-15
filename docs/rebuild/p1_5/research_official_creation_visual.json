@@ -1,0 +1,44 @@
+{
+  "task_id": "BARAM_REBUILD_P1_5_001",
+  "status": "PARTIAL",
+  "sources": [
+    {
+      "source_id": "P15-ARIMG-a5a986f5e34a",
+      "source_type": "ARCHIVED_OFFICIAL_IMAGE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr/guide/begin/img/ba_09.gif",
+      "source_path_or_url": "https://web.archive.org/web/20000510231523id_/http://baram.nexon.co.kr/guide/begin/img/ba_09.gif",
+      "final_response_url": "https://web.archive.org/web/20010607234053id_/http://baram.nexon.co.kr/guide/begin/img/ba_09.gif",
+      "requested_archive_capture_at": "20000510231523",
+      "archive_capture_at": "20010607234053",
+      "source_authored_or_modified_at": null,
+      "client_build": "UNKNOWN",
+      "game_region": "KR",
+      "status": 200,
+      "sha256": "12e764a548cd32758e8e1ea80140763f943a2e720b6100f353b335ecabfa8e0d",
+      "byte_length": 60993,
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/creation_alternate.gif",
+      "read_status": "ACQUIRED_FORMAT_VERIFIED_VISUALLY_REVIEWED",
+      "format": "GIF",
+      "width": 415,
+      "height": 218,
+      "fact_scope": "Official illustrated character creation UI captured 2001-06-07; illustration annotations and visible viewport only"
+    }
+  ],
+  "records": 1,
+  "outputs": [
+    {
+      "path": "kr_official_creation_visual.jsonl",
+      "sha256": "6fc273565ab672988fcb61d2f687f606202b2b270be4f0cad5412f309e1ad6c3",
+      "bytes": 2777,
+      "records": 1
+    }
+  ],
+  "validation": {
+    "raw_sha256": "PASS",
+    "image_format": "PASS",
+    "visual_review": "PASS_SOURCE_SCOPE",
+    "runtime": "NOT_RUN"
+  },
+  "notes": "Separate sidecar preserves frozen core928 and flow20 hashes. Actualcapture2001 is inside provisional targetyear; selectedfields remain source-profile scoped."
+}

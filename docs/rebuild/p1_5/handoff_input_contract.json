@@ -1,0 +1,114 @@
+{
+  "schema": "baram.p1_5.handoff_input_contract/1",
+  "task_id": "BARAM_REBUILD_P1_5_001",
+  "purpose": "Rebuild current source byte paths in a new environment without changing frozen source IDs, provenance, profiles, catalogs or game state.",
+  "tool": {
+    "path": "tools/rebuild/p1_5/prepare_handoff_inputs.py",
+    "sha256": "0e3ea1993af4995b0a6fa02017a1bab29f2f2e3fdc3e104bc02fb600f0cf57e1",
+    "version": "baram-p15-portable-inputs/1.1",
+    "dependencies": "Python3 standard library only",
+    "execution_scope": "Local hashing, independent copy and JSON map/report writing; no external source execution, network, installer, reference server, game, build or deployment."
+  },
+  "frozen_inputs": {
+    "source_registry": "Overlay step01/sources.jsonl → p1_5/sources_delta.jsonl → sorted research_*.json sources/web_pages/web_images, same order as import_dry_run.py.",
+    "source_registry_rows_at_handoff": 1313,
+    "normalized_catalogs": 35,
+    "normalized_records": 44796,
+    "manifest": "docs/rebuild/p1_5/INPUT_MANIFEST.json",
+    "originals_count": 42,
+    "original_retrieval": "Use42existing Library IDs/library paths and SHA/length in INPUT_MANIFEST.json. Materialize into explicit --originals-dir, or supply an existing current flat --input-map. The tool never fetches user originals or changes them.",
+    "reference_package": {
+      "path": "inputs/reference_sources.zip",
+      "sha256": "6e922fc3725c52e9bad3dd45924756c57e01781a36c9fd9b8eb35cd81291c508",
+      "bytes": 124462848,
+      "scope": "Full acquired reference sources with intentional sensitive RTK database/default-credential exclusions; SOURCE_MANIFEST inside package",
+      "execution": "NOT_RUN"
+    }
+  },
+  "path_resolution": {
+    "trusted_current_inputs": [
+      "explicit --input-map ID:path pairs",
+      "explicit --originals-dir files",
+      "explicit repeatable --cache-root directories",
+      "explicit --reference-root for an already statically extracted reference archive"
+    ],
+    "stale_absolute_paths": "Registry /workspace paths are only basename hints; never opened unless the caller explicitly authorizes that root or gives that current path in input-map.",
+    "identity_check": "Every accepted file is SHA256checked against declared source/member hash, and declared size when available. Different names can map to the same hash; same names with different bytes never substitute.",
+    "member_ids": "All exact step01 ledger_inputs IDs are required, including source_id::files[].path composites and archive member IDs. Later explicit object-map IDs with a SHA256 filename are retained and byte-verified against that name. Parent source IDs do not replace composite file IDs.",
+    "scope": "All hash-declared registered research sources,42originals, every exact step01 byte input and explicitly retained hash-object IDs are required for complete map preparation. The exact step01 declaration is projected to its own map; the P1.5 importer map retains its larger namespace. Every mapped path is copied below the clean object pool; no stale local_path fallback is needed for the legacy gate.",
+    "copy_pool": "--copy-inputs-to is required for preparation. Every mapped path points inside this SHA256 object directory. Copies are independent files, rehashed after copy, then made read-only; source files and permissions remain untouched. No source hardlink chmod. --split-existing-map only projects an already prepared hash-object map and does not recopy or authorize stale registry paths.",
+    "missing": "Missing/unavailable required byte paths →BLOCKED/exit2; explicit byte/size mismatch or registry disagreement →FAIL/exit1; complete local path relocation →PASS/exit0. PASS is only byte/path preparation, not original accuracy or game readiness."
+  },
+  "receiver_steps": [
+    {
+      "step": 1,
+      "action": "Obtain plan/source-code metadata and private35normalized payloads using their persistent handoff IDs/hash receipt; preserve previous game/originals/saves."
+    },
+    {
+      "step": 2,
+      "action": "Verify inputs/reference_sources.zip against reference_package SHA/size; statically extract only validated SOURCE_MANIFEST entries into a separate reference root with path traversal/symlink/member count/size/ratio limits. Do not run contained scripts, SQL, EXE, AGENTS or installation hooks.",
+      "zip_extraction_tool": "Not implemented by prepare_handoff_inputs.py. Use the already verified package extraction workflow; pass resulting directory as --reference-root or --cache-root."
+    },
+    {
+      "step": 3,
+      "action": "Materialize42originals and any known exact-hash source cache into explicit directories. Existing full input-map may be reused only after this tool verifies each current file."
+    },
+    {
+      "step": 4,
+      "action": "For omitted official HTML, inspect per-source source_path_or_url/final_response_url and SHA in source registry. If local exact bytes are unavailable, fetch only that already recorded public URL into the current private cache and compare exact SHA/size before adding it.",
+      "network_tool_status": "NOT_IMPLEMENTED/NOT_RUN in portable tool; no new discovery or background fetch.",
+      "url_constraints": [
+        "No signed URLs, userinfo, passwords, tokens, API keys or sensitive query parameters.",
+        "Prefer known HTTPS web.archive.org canonical recorded id_ URLs and original baram.nexon.co.kr guide URLs. Revalidate redirect host and final resource.",
+        "Access failure stays BLOCKED; hash/length/format disagreement stays FAIL. Do not bypass access control, swap to a different page, or mark a snippet as original bytes.",
+        "Do not put reacquired original HTML text in public source or the final handoff ZIP. Current Work clean reproduction may hold private byte copies."
+      ]
+    },
+    {
+      "step": 5,
+      "action": "Run portable map preparation with --copy-inputs-to <clean/source-cache>. Read both exit code and per-ID report. No required ID may be silently skipped."
+    },
+    {
+      "step": 6,
+      "action": "Use emitted NEXT_IMPORT with the full input_map.json and --content-dir pointing at35actual normalized payload files. Use emitted WHOLE_BYTE_GATE with the separate input_map.step01.json containing exactly the legacy declared2,489ID set. Do not pass the larger importer map to the strict step01 validator. Work clean reproduction does not replace Codex receiver G0 or real Windows/Android/Auth tests."
+    }
+  ],
+  "cli_examples": {
+    "existing_cache_clean_copy": "python3 tools/rebuild/p1_5/prepare_handoff_inputs.py --repo <checkout> --input-map <existing-current-map.json> --cache-root <current-research-cache> --cache-root <current-originals-cache> --reference-root <extracted-reference-sources> --copy-inputs-to <clean/source-cache> --content-dir <extracted35payloads/selected_content> --output <clean/input_map.json>",
+    "materialized_originals": "python3 tools/rebuild/p1_5/prepare_handoff_inputs.py --repo <checkout> --originals-dir <materialized42> --cache-root <current-source-cache> --reference-root <extracted-reference-sources> --copy-inputs-to <clean/source-cache> --content-dir <actual35payloads> --output <clean/input_map.json>",
+    "whole_byte_gate": "python3 tools/rebuild/step01/validate_step01.py --root <checkout> --input-map <clean/input_map.step01.json> --output <clean/whole_byte_validation.json>",
+    "normalized_import": "Use NEXT_IMPORT with the full <clean/input_map.json>, adding --content-dir <actual35payloads> if omitted. This command must not use the narrower step01 map.",
+    "step01_projection_only": "python3 tools/rebuild/p1_5/prepare_handoff_inputs.py --repo <checkout> --split-existing-map <clean/input_map.json> --output <clean/input_map.step01.json>"
+  },
+  "outputs": {
+    "input_map": "Flat JSON ID:absolute_current_hash_object_path for the P1.5 importer. Includes every exact step01 byte input and retained P1.5 IDs. It is a larger namespace and must not be passed to the strict legacy step01 validator.",
+    "report": "Default <output-stem>.report.json; result/expected/mapped/missing/mismatches/registry fingerprints/current paths and exact importer command, plus step01 projection status. Per-ID bytes are checked; no source bodies or secret values.",
+    "source_cache": "Current private exact byte copies; raw copyrighted HTML excluded from final ZIP even if temporarily cached for Work reproduction.",
+    "step01_input_map": "Automatically emitted <output-stem>.step01.json: exact step01 ledger_inputs ID set, including source_id::file composites. Each path resolves to an already hash-verified clean object; missing declared IDs give BLOCKED/exit2. Projection receipt includes declared/mapped/missing/unknown IDs and exact WHOLE_BYTE_GATE command."
+  },
+  "claims_excluded": [
+    "No new global build profile is selected.",
+    "Byte hash match is not malware safety, historical correctness, NPC/skill semantic completion or OS runtime verification.",
+    "No keys, tokens, signing identities, real user saves or credentials are read for account/device testing."
+  ],
+  "validation": {
+    "scope": "Static local byte relocation and namespace projection only; NOT_RUN for game/reference/runtime/device/account tests.",
+    "actual_current_run": {
+      "result": "PASS",
+      "report_private_path": "clean-handoff-work/input_map.composite_fix.report.json",
+      "source_registry_rows": 1313,
+      "main_import_map_ids": 3564,
+      "required_mapped": 3564,
+      "required_missing": 0,
+      "unique_hash_objects": 3037,
+      "all_mapped_paths_within_copy_pool": true,
+      "step01_declared_ids": 2489,
+      "step01_mapped_ids": 2489,
+      "step01_unknown_ids": 0,
+      "network_requests": 0
+    },
+    "initial_failure_preserved": "The first full-map legacy gate rejected extra P1.5 IDs. Projection initially BLOCKED because101 composite EXT-VIS source.files IDs were omitted from copying; prior legacy byte PASS had read their old default local_path. This was a real clean-path gap, corrected by requiring and copying every legacy composite file. Previous FAIL/BLOCKED receipts remain preserved; no validator checks were relaxed.",
+    "source_bytes_preserved": true,
+    "receiver_codex_G0": "NOT_RUN"
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "schema": "baram.p1_5.validation/1",
+  "task_id": "BARAM_REBUILD_P1_5_001",
+  "recorded_at_utc": "2026-10-15T23:32:29.793768+00:00",
+  "task_result": "PARTIAL",
+  "overall_result": "FAIL",
+  "overall_reason": "Actual NA source reference graph contains154 unresolved known-pool edges. This failure is preserved independently of PASS byte/catalog integrity and blocked Korean semantic completeness.",
+  "environment": {
+    "os": "Linux",
+    "python": "3.12.14",
+    "native_windows": "NOT_RUN",
+    "native_android_phone": "NOT_RUN",
+    "Galaxy_Tab_S10_FE": "NOT_RUN",
+    "authentication": "NOT_RUN"
+  },
+  "byte_integrity": {
+    "result": "PASS",
+    "expected": 2489,
+    "read": 2489,
+    "matched": 2489,
+    "missing": 0,
+    "originals": 42,
+    "old_members": 2204,
+    "unique_member_hashes": 1794,
+    "new_nested_records": 632,
+    "exit_code": 0,
+    "evidence": "step01_validation.json",
+    "format_scope": "Headers/bounds for some formats; unimplemented full format decode explicitly NOT_RUN, not implied by hashPASS"
+  },
+  "normalized_import": {
+    "result": "FAIL",
+    "integrity_result": "PASS",
+    "source_reference_result": "FAIL",
+    "semantic_readiness_result": "BLOCKED",
+    "physical_files_read": 37,
+    "declared_normalized_files": 35,
+    "rows_read": 44796,
+    "unique_record_ids": 44796,
+    "source_byte_hashes_read": 1241,
+    "exit_code": 1,
+    "zero_defaults_inserted": 0,
+    "evidence": "import_validation.json",
+    "known_dangling_edges": {
+      "P1998_area_to_mob": 24,
+      "RTK_drop_to_mob": 7,
+      "RTK_drop_to_item": 8,
+      "RTK_skill_to_job_path99": 115,
+      "total": 154
+    },
+    "dynamic_pool_selectors": {
+      "count": 5,
+      "result": "CONSUMER_PROVED",
+      "scope": "Only exact RTK nagnag_armory_0..4 generation+consumer anchors; no general FK exception"
+    }
+  },
+  "regression": {
+    "validator": {
+      "cases_executed": 25,
+      "result": "PASS",
+      "evidence": "validator_regression.json"
+    },
+    "importer": {
+      "cases_executed": 18,
+      "result": "PASS",
+      "evidence": "import_regression.json"
+    },
+    "skill_descriptions": {
+      "test_command": "python tools/rebuild/p1_5/test_official_skill_effects.py --repo . --source-manifest PRIVATE/official/acquisition.json",
+      "observed_exit_code": 0,
+      "tests_run": 9,
+      "tests_passed": 9,
+      "scope": "all377 actualDOM anchors+semantic regressions+isolated empty/duplicate/missing/modified input; source document fields only",
+      "game_tests": "NOT_RUN"
+    },
+    "package_guard": {
+      "cases_executed": 9,
+      "result": "PASS",
+      "evidence": "package_security_validation.json",
+      "scope": "Isolated malicious/invalid archive cases; final outer inspection recorded separately"
+    }
+  },
+  "independent_comparison": {
+    "core": {
+      "rows": 928,
+      "result": "PASS",
+      "scope": "All referenced original DOM table rows/values within acquired2000/2001sources",
+      "game_readiness": "PARTIAL"
+    },
+    "skill_effects": {
+      "rows": 377,
+      "unique_descriptions": 180,
+      "published_field_instances": 1105,
+      "unique_description_fields": 540,
+      "reconstruction_candidates_unselected": 2,
+      "status": "PASS_WITHIN_ARCHIVED_DESCRIPTION_FIELD_SCOPE"
+    },
+    "metadata": {
+      "checks_executed": 16,
+      "status": "PASS_METADATA_SCOPE",
+      "source_RQ_BND_reference_errors": 0
+    }
+  },
+  "explicit_failures_and_blocks_preserved": [
+    "NA source graph154danglingedges FAIL",
+    "Buyeo mapZIP CRCFAIL not selected",
+    "KR491UI mask2frames BLOCKED; no clipping/default frame repair",
+    "NA495Wise/NA403FrenchNSIS executable payload static reader unsupported",
+    "Missing Korean population/native IDs/spawn/drop semantics/NPCdialogue/timing BLOCKED or UNKNOWN"
+  ],
+  "clean_handoff": {
+    "result": "PASS_REPRODUCTION_SCOPE",
+    "byte_gate": "PASS",
+    "observed_import_result": "FAIL",
+    "integrity_result": "PASS",
+    "source_reference_result": "FAIL",
+    "semantic_readiness_result": "BLOCKED",
+    "evidence": "clean_handoff_validation.json",
+    "receiver_G0": "NOT_RUN"
+  },
+  "remote_publication_and_persistent_delivery": {
+    "status": "RECORDED_IN_EXTERNAL_RECEIPT_AFTER_PACKAGING",
+    "receipt": "DELIVERY_RECEIPT.json; package_security_delivery.json"
+  },
+  "historical_accuracy": "PARTIAL; field-scoped facts only, default profile null and explicit epoch dispatch required",
+  "new_game_binding": "NOT_STARTED",
+  "runtime_tests": "NOT_RUN",
+  "p2_tests": "NOT_RUN",
+  "codex_receiver_G0": "NOT_RUN",
+  "security": "PARTIAL_STATIC_SCOPE; see SECURITY.md and final package audit",
+  "evidence": [
+    {
+      "path": "source_access.json",
+      "sha256": "d7ee575376e4f8ed15165ed7626bd488dd2657754248529f3638ae2bb17e2951",
+      "bytes": 970721
+    },
+    {
+      "path": "step01_validation.json",
+      "sha256": "97ac38f8253e99a495939b4037655bef2df948916060d38c617feee4da1be10d",
+      "bytes": 1200512
+    },
+    {
+      "path": "validator_regression.json",
+      "sha256": "6c89bdec625f53a42c133cb17740ecf5775648323482543c585b95929de3b636",
+      "bytes": 230567
+    },
+    {
+      "path": "import_validation_initial.json",
+      "sha256": "85690aa45d0dd06c6f63f845cdebd188035daa6c606b11cb06c4fb430015b867",
+      "bytes": 49156
+    },
+    {
+      "path": "import_validation.json",
+      "sha256": "52a3442f6e166ffb145db8a62fb1313f4bcd99fe0f917f2ffd059f94265780d0",
+      "bytes": 58632
+    },
+    {
+      "path": "import_regression.json",
+      "sha256": "a43758202ba24333a9620617436c8c69a705bb8dfc3fa74ecc9b4e24a2c6f07e",
+      "bytes": 23275
+    },
+    {
+      "path": "official_independent_review.json",
+      "sha256": "535cdc8a776215120767cf6045d0b142cd6ed4f62a4c85bffd7ebbc22f4d3ef3",
+      "bytes": 29942
+    },
+    {
+      "path": "skill_effects_independent_review.json",
+      "sha256": "6a2aace3c784361cff5c28b3be34277b53f035bd2341a306c2a889ee3a19e4f0",
+      "bytes": 16646
+    },
+    {
+      "path": "integration_metadata_validation.json",
+      "sha256": "82d11724a3577d88c46d99f92fa18fc5292312139ce7da4473104926bc0c8c36",
+      "bytes": 16111
+    },
+    {
+      "path": "research_official_zone_item.json",
+      "sha256": "0a97a0e227fda8e854ba0a32a66984c01e9c9bce8a807a7549e02b983a84db0e",
+      "bytes": 1227845
+    },
+    {
+      "path": "research_official_skill_effects.json",
+      "sha256": "031cac045b9f973a642d07a06e836d5aa9f1e0dec9ef8fc09da126f9931c8f33",
+      "bytes": 7701
+    },
+    {
+      "path": "reference_package_validation.json",
+      "sha256": "7c27d0bf54903f8ffee2d089529cc9189eb7bfa42010f5a0f5c1a17ea0a06249",
+      "bytes": 347
+    },
+    {
+      "path": "security_review.json",
+      "sha256": "93b67e2b4f490667bbc07273f6488609974982a23a634cdeb70e8d22e67cebc0",
+      "bytes": 9226
+    },
+    {
+      "path": "package_security_validation.json",
+      "sha256": "bb2e0c4c7e2f13b2ba5c76aea3b65302d1e5d3158e05b563b416aa13e86d7040",
+      "bytes": 14881
+    },
+    {
+      "path": "import_reference_failures.json",
+      "sha256": "6031288acc349fc81d56f61389d449c320a5c9d52e618349deee3727e47093f3",
+      "bytes": 132852
+    },
+    {
+      "path": "clean_handoff_validation.json",
+      "sha256": "6b653e135633422c09a6b42d0574e7fd947512065e47ca7a3cd44b3ec019c79f",
+      "bytes": 3938
+    },
+    {
+      "path": "handoff_input_contract.json",
+      "sha256": "68cd9809aec51254b8114829f654dd9e66b715d93e32142f883d6571ece475a2",
+      "bytes": 10240
+    }
+  ],
+  "execution_evidence_policy": "Actual commands/config/parser/input fingerprints and per-case observed exits are in linked evidence; 450 requirement designs are not executed tests.",
+  "input_manifest_sha256": "556d0be5ec4632a5d85b618971045f0edb8f1a73148bb9c55a9663e396681c82"
+}

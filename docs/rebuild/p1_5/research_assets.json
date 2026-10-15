@@ -1,0 +1,4328 @@
+{
+  "task_id": "BARAM_REBUILD_P1_5_001",
+  "scope": "full fixed-source selected KR491 text tables, Effect.frm, 163 WAV headers+PCM, all frames in 9 specified EPF families; static only",
+  "inputs": {
+    "NWind.dat": "f8271a52d8dbde5601a0c7bf7460052376b2651930b6bc004eeb1ed20357bfc7",
+    "NWind.snd": "003534e57b426971900f7ec39f5e65d3662fa5f32672cd0564d04680e31e300c",
+    "legacy_assets.py": "f5152ae3473b3e2f2d120b8c1b8679529428d2bd09f9024528d71aa9a9be86e2"
+  },
+  "parser_sha256": "8e5544d11e8739a6b7c9d5214cedadff26a4bed505ee0fd0d8493186d5c80049",
+  "counts": {
+    "parts": 1927,
+    "monster_group_ids": 225,
+    "draw_order_tokens": 100,
+    "effect_sequences": 128,
+    "effect_sequence_frames": 1788,
+    "effect_frame_palette_rows": 1611,
+    "legacy_effect_table_rows": 168,
+    "sound_ids": 163,
+    "unique_wav_hashes": 158,
+    "ui_selected_strings": 38,
+    "korean_resource_lines": 208,
+    "sprite_frames_decoded": 27622
+  },
+  "asset_tables": {
+    "Body": {
+      "rows": 66,
+      "epf_frames": 6864,
+      "palettes": 5
+    },
+    "Head": {
+      "rows": 89,
+      "epf_frames": 8900,
+      "palettes": 1
+    },
+    "Sword": {
+      "rows": 90,
+      "epf_frames": 1800,
+      "palettes": 7
+    },
+    "Bow": {
+      "rows": 0,
+      "epf_frames": 0,
+      "palettes": null
+    },
+    "Fan": {
+      "rows": 3,
+      "epf_frames": 60,
+      "palettes": 2
+    },
+    "Spear": {
+      "rows": 29,
+      "epf_frames": 580,
+      "palettes": 3
+    },
+    "Shield": {
+      "rows": 13,
+      "epf_frames": 260,
+      "palettes": 3
+    },
+    "Monster": {
+      "rows": 327,
+      "epf_frames": 7136,
+      "palettes": 20
+    },
+    "Item": {
+      "rows": 1310,
+      "epf_frames": 1310,
+      "palettes": 15
+    }
+  },
+  "effect_raw_delays": {
+    "40": 56,
+    "60": 25,
+    "100": 1206,
+    "120": 359,
+    "150": 36,
+    "160": 6,
+    "200": 44,
+    "250": 4,
+    "300": 2,
+    "400": 30,
+    "500": 1,
+    "580": 1,
+    "600": 3,
+    "700": 2,
+    "800": 6,
+    "840": 1,
+    "1000": 3,
+    "1300": 1,
+    "1500": 1,
+    "1600": 1
+  },
+  "effect_raw_alpha": {
+    "0.0": 1554,
+    "0.1": 8,
+    "0.2": 135,
+    "0.3": 11,
+    "0.4": 13,
+    "0.5": 19,
+    "0.6": 15,
+    "0.7": 9,
+    "0.8": 13,
+    "0.9": 10,
+    "1.0": 1
+  },
+  "ui_resource_index": {
+    "source": {
+      "source_id": "LIB-010",
+      "source_family": "KR491_CLIENT",
+      "source_type": "original_client_resource",
+      "container_sha256": "f8271a52d8dbde5601a0c7bf7460052376b2651930b6bc004eeb1ed20357bfc7",
+      "member": "Str_Kor.res",
+      "member_sha256": "22e4085c4c556a725b9ba1f650bc286eed56ec73906899c3aa92f60a0f2fa27c",
+      "member_byte_offset": 45461703,
+      "line": null,
+      "line_byte_offset": null,
+      "dat_byte_offset": 45461703,
+      "parser_sha256": "8e5544d11e8739a6b7c9d5214cedadff26a4bed505ee0fd0d8493186d5c80049",
+      "reader_sha256": "f5152ae3473b3e2f2d120b8c1b8679529428d2bd09f9024528d71aa9a9be86e2"
+    },
+    "encoding": "cp949 strict; no replacement characters",
+    "entries": [
+      {
+        "line": 1,
+        "byte_offset": 0,
+        "byte_length": 13,
+        "text_sha256": "c736fe9e9ffcde3c6e44e1529da0eb1fbb4eb427b68eb7bc595615c98ddf12eb"
+      },
+      {
+        "line": 2,
+        "byte_offset": 13,
+        "byte_length": 10,
+        "text_sha256": "8bb09677fdc2bc30ff81f7ffc2f59f19955cf677a743398038ae6ce5a37b8833"
+      },
+      {
+        "line": 3,
+        "byte_offset": 23,
+        "byte_length": 37,
+        "text_sha256": "ab950796c61d3b224851c25f1b5528eb6f478a7ac7f43c86304eed0c2ebea813"
+      },
+      {
+        "line": 4,
+        "byte_offset": 60,
+        "byte_length": 23,
+        "text_sha256": "ed6eb92754dfb0a39ad6047461a6b54be813eca0a6062375a70eac1b7d43ac0b"
+      },
+      {
+        "line": 5,
+        "byte_offset": 83,
+        "byte_length": 27,
+        "text_sha256": "9422f6a9a083db7d3c2fc7484c4ca27bfc7dee78d4c75370a78e730e52cc1301"
+      },
+      {
+        "line": 6,
+        "byte_offset": 110,
+        "byte_length": 22,
+        "text_sha256": "dcf60d7dfbd1d63befc025a2707e2b2f0c5b627fb2870de13fce6da18fee4dd3"
+      },
+      {
+        "line": 7,
+        "byte_offset": 132,
+        "byte_length": 20,
+        "text_sha256": "bc12a51f4e684dd15c4abcf69779ef2833df781796d91aba47a4c310dbb0efe9"
+      },
+      {
+        "line": 8,
+        "byte_offset": 152,
+        "byte_length": 20,
+        "text_sha256": "775a62b3e6c6e531f369326b6ada929d351be81c49fa7e8a32bcea5c4ad23b89"
+      },
+      {
+        "line": 9,
+        "byte_offset": 172,
+        "byte_length": 22,
+        "text_sha256": "c547f106ae9069d90e124ac4361205a8d47310c4f435e73c78ac38f3a1397baa"
+      },
+      {
+        "line": 10,
+        "byte_offset": 194,
+        "byte_length": 22,
+        "text_sha256": "8ec784754473b20240c2f59c3968a1f26e755ae1309d7602caf404fd10e55f49"
+      },
+      {
+        "line": 11,
+        "byte_offset": 216,
+        "byte_length": 22,
+        "text_sha256": "ca354a96d86fdd77727f30ec3dcb1e58c6b82438c16a3f0d951fa799753f1ef5"
+      },
+      {
+        "line": 12,
+        "byte_offset": 238,
+        "byte_length": 20,
+        "text_sha256": "233fcf96d1c8079ad4258a44c9fe0d6aca4c04fa7167758f336107197c714277"
+      },
+      {
+        "line": 13,
+        "byte_offset": 258,
+        "byte_length": 20,
+        "text_sha256": "1fa9fa3830874709e8af5c65d61708c558a4c865d63f9bc68e8d8b3faf4985a3"
+      },
+      {
+        "line": 14,
+        "byte_offset": 278,
+        "byte_length": 23,
+        "text_sha256": "828a1129b229bcce3bc4bdc562443b2043e031c1637044fa8429de222c21b6bb"
+      },
+      {
+        "line": 15,
+        "byte_offset": 301,
+        "byte_length": 30,
+        "text_sha256": "df82c210ce59b88e4ef8d083876fc6d94e6f378491fdd03b8f1661b5be2877c5"
+      },
+      {
+        "line": 16,
+        "byte_offset": 331,
+        "byte_length": 11,
+        "text_sha256": "dacae195d090de64c0c685a42914dbe72625a4890fa0e29dcc6c9bdb83c86b56"
+      },
+      {
+        "line": 17,
+        "byte_offset": 342,
+        "byte_length": 9,
+        "text_sha256": "842bb7cb1ec51be0062fd329ce74721408e14107212da9b96aff4a28b58f0046"
+      },
+      {
+        "line": 18,
+        "byte_offset": 351,
+        "byte_length": 10,
+        "text_sha256": "f9371ac11c8d7e041e605a1654dd91e53fa98be31d358571c76071d48a85f64b"
+      },
+      {
+        "line": 19,
+        "byte_offset": 361,
+        "byte_length": 9,
+        "text_sha256": "428164033090534c49d63d14303d9e66395aa0c2de1a272f2a0a957c5aede67d"
+      },
+      {
+        "line": 20,
+        "byte_offset": 370,
+        "byte_length": 9,
+        "text_sha256": "be91997a3464b93691a1427e0d906c23ed83c4bf9854f272acbdfa24f04b0759"
+      },
+      {
+        "line": 21,
+        "byte_offset": 379,
+        "byte_length": 9,
+        "text_sha256": "0bbc66984260d9a06b7d6965079a9b245be248e333809cc4c4330f86eae460be"
+      },
+      {
+        "line": 22,
+        "byte_offset": 388,
+        "byte_length": 10,
+        "text_sha256": "29b73e94cf7fa1dae8229a9a2cb31be277ca57e922ceda4f4efb7c4c413abfec"
+      },
+      {
+        "line": 23,
+        "byte_offset": 398,
+        "byte_length": 9,
+        "text_sha256": "98a27f0c8325bf95e6a46b111df0ccfc7b3cc94be9f6ec0f51eb7bc70f081d2f"
+      },
+      {
+        "line": 24,
+        "byte_offset": 407,
+        "byte_length": 9,
+        "text_sha256": "aab3d750063aacebe48948ebd99e16e83a70f825cd1e7dbe015d5cce36923e44"
+      },
+      {
+        "line": 25,
+        "byte_offset": 416,
+        "byte_length": 10,
+        "text_sha256": "f516e3ad95e24a864974612dd12c34df298f3ffca32ff1749865614235ca73da"
+      },
+      {
+        "line": 26,
+        "byte_offset": 426,
+        "byte_length": 8,
+        "text_sha256": "89e72eda32ca02faa55f190f3e0b348b3a1bfdb92feea51b198f79f380440ac7"
+      },
+      {
+        "line": 27,
+        "byte_offset": 434,
+        "byte_length": 11,
+        "text_sha256": "2619545384841048c510d4df76613496a5ef8dbeb5d3e55e740cc15d0d04d895"
+      },
+      {
+        "line": 28,
+        "byte_offset": 445,
+        "byte_length": 16,
+        "text_sha256": "bc9eb8d7122f3b7f8dbb378a30ade2eec37895d1e4e38a76dad020c75ad694d3"
+      },
+      {
+        "line": 29,
+        "byte_offset": 461,
+        "byte_length": 11,
+        "text_sha256": "804ce4d64eab98bb021bb328e033ff90cf27d81661adaf5b8682c9e27c5ffad1"
+      },
+      {
+        "line": 30,
+        "byte_offset": 472,
+        "byte_length": 11,
+        "text_sha256": "31cb318e058fb2a8d81c0385de975e47a30e1a994538aebb5db7ba54f3d816d2"
+      },
+      {
+        "line": 31,
+        "byte_offset": 483,
+        "byte_length": 10,
+        "text_sha256": "ce66d3d2aeffdc4c286fb9b3adc945d06677af34a96a6eed7b781733920e5b0e"
+      },
+      {
+        "line": 32,
+        "byte_offset": 493,
+        "byte_length": 22,
+        "text_sha256": "e742aff8b493e98a17d9d48466f99590d822b0ed3b65cd6bfad4160872ece3f1"
+      },
+      {
+        "line": 33,
+        "byte_offset": 515,
+        "byte_length": 24,
+        "text_sha256": "0f54015956c6902d91b6f1048413c5f0bd939a2c7122bd017da75287666f0a8f"
+      },
+      {
+        "line": 34,
+        "byte_offset": 539,
+        "byte_length": 20,
+        "text_sha256": "311d4678cc1814f0a884ba6bd33a3bd16a3851458025744f27ccd80fc1f93e32"
+      },
+      {
+        "line": 35,
+        "byte_offset": 559,
+        "byte_length": 28,
+        "text_sha256": "e777d4e95115676a922d17b291afaa5826906b6c8a953f3c3151f1a7d8db9097"
+      },
+      {
+        "line": 36,
+        "byte_offset": 587,
+        "byte_length": 23,
+        "text_sha256": "195f5744f7122ca83e50d6160b335260d65c92cba3f36048cba02c4d95f045fb"
+      },
+      {
+        "line": 37,
+        "byte_offset": 610,
+        "byte_length": 20,
+        "text_sha256": "5f8dce9cbf13ecd93640f3d241069a3a26bc5a054ebe850a2782c56fe6f6c164"
+      },
+      {
+        "line": 38,
+        "byte_offset": 630,
+        "byte_length": 22,
+        "text_sha256": "e6da7953bd1a346f7599b786908ebe4326bbcac102a8fc89004dd9e010a15294"
+      },
+      {
+        "line": 39,
+        "byte_offset": 652,
+        "byte_length": 39,
+        "text_sha256": "1354ea206a0293c06d80c3cfb074950f4957a904ddad9b6ce9b148df436a4a78"
+      },
+      {
+        "line": 40,
+        "byte_offset": 691,
+        "byte_length": 32,
+        "text_sha256": "9bd79fb1716d3a5bc5422ded7f94a65cb9f5edbed9cab883122b82dc329bee74"
+      },
+      {
+        "line": 41,
+        "byte_offset": 723,
+        "byte_length": 28,
+        "text_sha256": "2acdc23657a70be84ac3b7ea9a97c42df9a9d16946c91fb883da058b48988c8d"
+      },
+      {
+        "line": 42,
+        "byte_offset": 751,
+        "byte_length": 33,
+        "text_sha256": "9b23e57b3415b6734cbc1c7e11dee3b20f52e3fbb963c3ccd74fffe95eeb32b3"
+      },
+      {
+        "line": 43,
+        "byte_offset": 784,
+        "byte_length": 19,
+        "text_sha256": "a359900195534f0eb485435edf6e156fa905f60316d18060e0d39f6455762c86"
+      },
+      {
+        "line": 44,
+        "byte_offset": 803,
+        "byte_length": 20,
+        "text_sha256": "3e8d6a36d84e4b1f44d4ffc670668f9115a6edeec632bd5f36827989c5b261f7"
+      },
+      {
+        "line": 45,
+        "byte_offset": 823,
+        "byte_length": 20,
+        "text_sha256": "4bf8a28fd2849653e2833cb8ada6746c319912c24a694417fcff40d975bdd2c0"
+      },
+      {
+        "line": 46,
+        "byte_offset": 843,
+        "byte_length": 28,
+        "text_sha256": "99abc4fd7ab8290caaca3162348a85786bafd6ed68fcdf619c1e36a258a8ff09"
+      },
+      {
+        "line": 47,
+        "byte_offset": 871,
+        "byte_length": 30,
+        "text_sha256": "cdb651b5fbc68af1221709215b2864ad29b66507e68962c71fd7adaed366895c"
+      },
+      {
+        "line": 48,
+        "byte_offset": 901,
+        "byte_length": 30,
+        "text_sha256": "f2a02fb171039f5abccb0a99f64ee962f3f165f2534303c2e3c7cce1937b5ea2"
+      },
+      {
+        "line": 49,
+        "byte_offset": 931,
+        "byte_length": 8,
+        "text_sha256": "56187f4880f4334b8ef7bdf789ccf3cb685a083eb6da98636407fa4a9e3d4c0f"
+      },
+      {
+        "line": 50,
+        "byte_offset": 939,
+        "byte_length": 15,
+        "text_sha256": "2ec0678ff5e4481289090707522ece49937c6f18579ffb962472898b59adf62a"
+      },
+      {
+        "line": 51,
+        "byte_offset": 954,
+        "byte_length": 15,
+        "text_sha256": "880c8a418dd85d902ca45e2e4fc4bb528f4df2ff3a136e5278376a395cb395fb"
+      },
+      {
+        "line": 52,
+        "byte_offset": 969,
+        "byte_length": 18,
+        "text_sha256": "c379a76835595f6fd7cf5876794b66ec9088deee6968ce8d2607c7657f725aef"
+      },
+      {
+        "line": 53,
+        "byte_offset": 987,
+        "byte_length": 15,
+        "text_sha256": "98fd99678252f57fbd2cc6680ffc8d5f7048a0b58305c8332eeca34c06927174"
+      },
+      {
+        "line": 54,
+        "byte_offset": 1002,
+        "byte_length": 13,
+        "text_sha256": "d171e330d029e993de2bf087de0ae738d030c422d1f160c6c60a22e6bc8b0120"
+      },
+      {
+        "line": 55,
+        "byte_offset": 1015,
+        "byte_length": 16,
+        "text_sha256": "f9bf2abf958975abbceddd9f88fe8969be327e8ae3f47cbceb55977a2919d32d"
+      },
+      {
+        "line": 56,
+        "byte_offset": 1031,
+        "byte_length": 15,
+        "text_sha256": "d0fe602d42b59a493780198813915b48709a07ccf4073b05244d136adfdde99c"
+      },
+      {
+        "line": 57,
+        "byte_offset": 1046,
+        "byte_length": 22,
+        "text_sha256": "044210189a60ffe8072235d1b4a6c46f2f7a80c2519a15430af4006b8cbd7b45"
+      },
+      {
+        "line": 58,
+        "byte_offset": 1068,
+        "byte_length": 15,
+        "text_sha256": "9988de87bb1d372096c91fad9bf72a3b076c8094de820e5afb3c5d096f378e14"
+      },
+      {
+        "line": 59,
+        "byte_offset": 1083,
+        "byte_length": 15,
+        "text_sha256": "4b4eb6b474411b3c7322bb3492dbb45b588bb3863a045d5097268bfbadbc0cec"
+      },
+      {
+        "line": 60,
+        "byte_offset": 1098,
+        "byte_length": 15,
+        "text_sha256": "2c5e537556377e832191f379ae426181639c6dc66cd2a822c279fd96a70e864d"
+      },
+      {
+        "line": 61,
+        "byte_offset": 1113,
+        "byte_length": 17,
+        "text_sha256": "06e150e990bd5376e792c08e4d5d8f6f900f9c86cc83fe25546aef759fe292bf"
+      },
+      {
+        "line": 62,
+        "byte_offset": 1130,
+        "byte_length": 36,
+        "text_sha256": "992dbb67fc4e2c9ba62c448f7975599de2477cf9d1019df79d7227b3285ed221"
+      },
+      {
+        "line": 63,
+        "byte_offset": 1166,
+        "byte_length": 7,
+        "text_sha256": "6f5e1b92f540cab96bad60a7cefeadd3c78e84094398c918b596d0f2cdb7d63c"
+      },
+      {
+        "line": 64,
+        "byte_offset": 1173,
+        "byte_length": 7,
+        "text_sha256": "b3564b7d8d46c0c7b221f36549d425d11d4dc4f929abe5ee9a3af28602b5edce"
+      },
+      {
+        "line": 65,
+        "byte_offset": 1180,
+        "byte_length": 19,
+        "text_sha256": "cd760269688d69d26e260778ee1e3f59d698d1af753f87f756135ccabcc6a6cf"
+      },
+      {
+        "line": 66,
+        "byte_offset": 1199,
+        "byte_length": 24,
+        "text_sha256": "4a768b2273487237e22cbeced577fdf3ee1ff9eef6eecceff02246dc47da03f9"
+      },
+      {
+        "line": 67,
+        "byte_offset": 1223,
+        "byte_length": 26,
+        "text_sha256": "509f552d3bf0f9414de48119e7b5f45bdee8749182893cb205fa7c884f504b99"
+      },
+      {
+        "line": 68,
+        "byte_offset": 1249,
+        "byte_length": 39,
+        "text_sha256": "5c81b083b51dca4b3d87c074a8bc51d6802fbbcc148bb520ad28cee787c553fe"
+      },
+      {
+        "line": 69,
+        "byte_offset": 1288,
+        "byte_length": 13,
+        "text_sha256": "c6e957ae025ed2dd73f81b74a63eb7aa24dcd013f06a797be580c8585ed8111d"
+      },
+      {
+        "line": 70,
+        "byte_offset": 1301,
+        "byte_length": 12,
+        "text_sha256": "c23f01cd967c8dbd381ee8c488d025b7231cb7fbd1894c66c12ffe4e5fc3a92e"
+      },
+      {
+        "line": 71,
+        "byte_offset": 1313,
+        "byte_length": 18,
+        "text_sha256": "99d0fc4993e9cc09c9da01de1684123121f3c2dff7e31ba4538f398038505c8f"
+      },
+      {
+        "line": 72,
+        "byte_offset": 1331,
+        "byte_length": 12,
+        "text_sha256": "d3a2e930bee95e0a22b04aa03043a175b129373936d12d24c3fd95692ba46614"
+      },
+      {
+        "line": 73,
+        "byte_offset": 1343,
+        "byte_length": 10,
+        "text_sha256": "ff3e9b5d639b981b4d7274e81ea47751ac0c8e8b549c5dbb12ef7cb84ef00032"
+      },
+      {
+        "line": 74,
+        "byte_offset": 1353,
+        "byte_length": 10,
+        "text_sha256": "6c2f36bdad664da208af5a62de07c651cb6dd547ed487e6b800c93fb29fcc30b"
+      },
+      {
+        "line": 75,
+        "byte_offset": 1363,
+        "byte_length": 22,
+        "text_sha256": "8d4a92b3dcd911c474fbddcf4d776f697f7230cda04523396a4998912ec4a7ed"
+      },
+      {
+        "line": 76,
+        "byte_offset": 1385,
+        "byte_length": 14,
+        "text_sha256": "80517d9979dd04588c9556d30150899690e492e282a27ae6dfa23475a037e3f1"
+      },
+      {
+        "line": 77,
+        "byte_offset": 1399,
+        "byte_length": 21,
+        "text_sha256": "f18abcb38ccdc3fad4e5fb8dda361c39896fd1e1d72eafb370b8308bc188d2e1"
+      },
+      {
+        "line": 78,
+        "byte_offset": 1420,
+        "byte_length": 11,
+        "text_sha256": "6d0f88586de12ab329ea180cd67c03c3b420a214757355ac2715b03391432e06"
+      },
+      {
+        "line": 79,
+        "byte_offset": 1431,
+        "byte_length": 4,
+        "text_sha256": "051f63fb4295e8c098eba4fa5b9ee4496898a599a342bfc153796cda41a12d3f"
+      },
+      {
+        "line": 80,
+        "byte_offset": 1435,
+        "byte_length": 4,
+        "text_sha256": "2cde1ad6ae7d130450d033aa7ce90f8dd90c7526adff1f8ba0c1740edee32e74"
+      },
+      {
+        "line": 81,
+        "byte_offset": 1439,
+        "byte_length": 4,
+        "text_sha256": "f16b126d8834c6d0d52a2232c6e7c1bf8b37dbc972016997794e3d67e1ac39b0"
+      },
+      {
+        "line": 82,
+        "byte_offset": 1443,
+        "byte_length": 4,
+        "text_sha256": "d75db0d8ab0a105f8ad76a3a69023ac3cd37d3cd8c88854dd21e984f151086d9"
+      },
+      {
+        "line": 83,
+        "byte_offset": 1447,
+        "byte_length": 4,
+        "text_sha256": "80b63944b8ddfb6e5a434a9eb879e1120c258bcc476715114b553fcda1566bce"
+      },
+      {
+        "line": 84,
+        "byte_offset": 1451,
+        "byte_length": 4,
+        "text_sha256": "659969aed404781993b6dede453df20fa5b2b4faa129ac4b56333bbea236399a"
+      },
+      {
+        "line": 85,
+        "byte_offset": 1455,
+        "byte_length": 4,
+        "text_sha256": "a506ab2c2c754a4ec71c54ce0e6a2d9f202e18d039d44047cf3b33b246894fad"
+      },
+      {
+        "line": 86,
+        "byte_offset": 1459,
+        "byte_length": 6,
+        "text_sha256": "2ab427cc4284a549f1b401b425f8eeb2e1a2f05dd118410a9da7b0ee63344368"
+      },
+      {
+        "line": 87,
+        "byte_offset": 1465,
+        "byte_length": 6,
+        "text_sha256": "df782e40939a4f6f3f1053269171fc925c1fa93b0853ae83aecdbbe8b39a5317"
+      },
+      {
+        "line": 88,
+        "byte_offset": 1471,
+        "byte_length": 6,
+        "text_sha256": "30faf8ce4664c53d409dd5ff4c388fac3ff80a9d20e71293efaf8d92cbd85d91"
+      },
+      {
+        "line": 89,
+        "byte_offset": 1477,
+        "byte_length": 69,
+        "text_sha256": "34918e5ef44a499fb7f00a055c3e201c49a022eda12bae4a255a46a07378800f"
+      },
+      {
+        "line": 90,
+        "byte_offset": 1546,
+        "byte_length": 16,
+        "text_sha256": "50955c11c96c011a6aeaf6fd01f97606bb35c1714904fdeeba9a36ea31f25f62"
+      },
+      {
+        "line": 91,
+        "byte_offset": 1562,
+        "byte_length": 83,
+        "text_sha256": "2d816b1057bb11d3139f63bbb5d9994efe18ca5f77fb1f1d320b1a8e606fdd3d"
+      },
+      {
+        "line": 92,
+        "byte_offset": 1645,
+        "byte_length": 13,
+        "text_sha256": "0add4f0a8ecb01cc53e4923461f23ef04c28ab482e02e2942a9c4c451d0a5550"
+      },
+      {
+        "line": 93,
+        "byte_offset": 1658,
+        "byte_length": 13,
+        "text_sha256": "5e2e05d14821b5f3ad8a149f1d0c6dc49cb5fc618d58822acddae30985dc2e6a"
+      },
+      {
+        "line": 94,
+        "byte_offset": 1671,
+        "byte_length": 13,
+        "text_sha256": "74ef9b7d0e74e61795b1289b4e51faf7cb6ad3b8a10531640e73ce42bf8a3d67"
+      },
+      {
+        "line": 95,
+        "byte_offset": 1684,
+        "byte_length": 57,
+        "text_sha256": "f9da22f35d701e442411cdc8bfca085779ffd6c53350b8948a434585706c1832"
+      },
+      {
+        "line": 96,
+        "byte_offset": 1741,
+        "byte_length": 8,
+        "text_sha256": "279987ef424dcc31971c0ae66200d47c064b4fcd1a4bdf130dcb54a01d38a807"
+      },
+      {
+        "line": 97,
+        "byte_offset": 1749,
+        "byte_length": 4,
+        "text_sha256": "ce9c8eea9131da45eaa87806ace0d9d01f9e2efc283e6c95673157759cc81ac4"
+      },
+      {
+        "line": 98,
+        "byte_offset": 1753,
+        "byte_length": 26,
+        "text_sha256": "84859d9acc2b57cb7a0399422638dc8390b8b82a2648e1d04eb8d5f0745d83ff"
+      },
+      {
+        "line": 99,
+        "byte_offset": 1779,
+        "byte_length": 17,
+        "text_sha256": "796d94e850b8cd04704f4eb399b328351705978f1aa19bfe976a00217161663d"
+      },
+      {
+        "line": 100,
+        "byte_offset": 1796,
+        "byte_length": 19,
+        "text_sha256": "ece12eefd0855555065fde58fc027133f44de1906afcc9caddcea673cfae8079"
+      },
+      {
+        "line": 101,
+        "byte_offset": 1815,
+        "byte_length": 19,
+        "text_sha256": "94d737830744711f9fb4e77041e928939abb7a90ba09ab3981d5fdc1e5907db5"
+      },
+      {
+        "line": 102,
+        "byte_offset": 1834,
+        "byte_length": 17,
+        "text_sha256": "994c7ea3ea01ed172fb0c7d59e6783a7dfa42df99cc341c521ffa7c7fbc1d507"
+      },
+      {
+        "line": 103,
+        "byte_offset": 1851,
+        "byte_length": 20,
+        "text_sha256": "7e8e3204956ab3e8f2d14156f1b7011da87ce6c2f14f43daccfdd6a7b264be68"
+      },
+      {
+        "line": 104,
+        "byte_offset": 1871,
+        "byte_length": 22,
+        "text_sha256": "d7968096ae876f79243fa7b33bbcc3d29084b508af9819b1ad764dfc6f07e6d0"
+      },
+      {
+        "line": 105,
+        "byte_offset": 1893,
+        "byte_length": 17,
+        "text_sha256": "5eade8c45ed748518f7573d4a3d85d765c3b2f8e15ff4afc47b037626e044fc2"
+      },
+      {
+        "line": 106,
+        "byte_offset": 1910,
+        "byte_length": 23,
+        "text_sha256": "2391912fe9d696c6499144904121278e373706f2449f51f0f73c8742e905edb3"
+      },
+      {
+        "line": 107,
+        "byte_offset": 1933,
+        "byte_length": 20,
+        "text_sha256": "1da96315d54f68c011c24f8e5de9c921db744223b37959b1e5a5938203144186"
+      },
+      {
+        "line": 108,
+        "byte_offset": 1953,
+        "byte_length": 20,
+        "text_sha256": "771b4291dab768f5200350cfea8abff7f55b8f05e9629354647fd28d5d8f77a9"
+      },
+      {
+        "line": 109,
+        "byte_offset": 1973,
+        "byte_length": 23,
+        "text_sha256": "63433d113db7dd2d7a5abc280cba15cd4e6d5306d3a2f8e46eaac89bb4d99cb0"
+      },
+      {
+        "line": 110,
+        "byte_offset": 1996,
+        "byte_length": 19,
+        "text_sha256": "e49c6f9982ea4ec98d636db3acccf54324af4d42b24461cb1c8fe447ec6d2d97"
+      },
+      {
+        "line": 111,
+        "byte_offset": 2015,
+        "byte_length": 17,
+        "text_sha256": "5251a2abcbdf70f424a475dfa28b1e97854ac4960274cff1f33361ab0ef6404a"
+      },
+      {
+        "line": 112,
+        "byte_offset": 2032,
+        "byte_length": 24,
+        "text_sha256": "c75288d4a8f7190f7dce774d9c2f4238460b2a810a7816583218e03c95de0cdd"
+      },
+      {
+        "line": 113,
+        "byte_offset": 2056,
+        "byte_length": 22,
+        "text_sha256": "df9ee98f5f9e15dca82299f73f16640e1f3804d30e13e86fe6d846db2645003d"
+      },
+      {
+        "line": 114,
+        "byte_offset": 2078,
+        "byte_length": 15,
+        "text_sha256": "66b93d75529a2bb1721945bb55efb321b90d6f9da3a404aa53f2a7ddfaff1f72"
+      },
+      {
+        "line": 115,
+        "byte_offset": 2093,
+        "byte_length": 20,
+        "text_sha256": "1cc74aa33803e3c58df00bf481f0ba19cdd9a6b7018d5baa81fb3a7d5a9cf38c"
+      },
+      {
+        "line": 116,
+        "byte_offset": 2113,
+        "byte_length": 20,
+        "text_sha256": "dd4a27084d64c3c2692ca1d83c4483fc862fb2feaa50cb866428d5f5b53bb274"
+      },
+      {
+        "line": 117,
+        "byte_offset": 2133,
+        "byte_length": 24,
+        "text_sha256": "da8d38c726a24b6a05b2e6f5298a2ab1c98c668ca168df85cd45ac01eadc2c4b"
+      },
+      {
+        "line": 118,
+        "byte_offset": 2157,
+        "byte_length": 20,
+        "text_sha256": "c2839876eb3e95d0d9dc4156a9d78be6268e891f9ce8f609bb1491560e9d7ff9"
+      },
+      {
+        "line": 119,
+        "byte_offset": 2177,
+        "byte_length": 22,
+        "text_sha256": "7e3fec64ce250ee892381345a2178a2e9826652914d6f235241921e3bff37e8c"
+      },
+      {
+        "line": 120,
+        "byte_offset": 2199,
+        "byte_length": 24,
+        "text_sha256": "9c5ff35df6bad50a74806a94adb0f1674e2fa64e6bd582945b7753b43b37d3a1"
+      },
+      {
+        "line": 121,
+        "byte_offset": 2223,
+        "byte_length": 17,
+        "text_sha256": "536b88a1464dcdd30dac3ad964ea51139e92c3e030f08ee0b2a76a024f5efc61"
+      },
+      {
+        "line": 122,
+        "byte_offset": 2240,
+        "byte_length": 24,
+        "text_sha256": "efd36a0d582b1cd0614ca0f066c5a5fbaf0ca5c58b7f03d34a4eeda809bd26cc"
+      },
+      {
+        "line": 123,
+        "byte_offset": 2264,
+        "byte_length": 17,
+        "text_sha256": "aa0727aac4932b5d84263105f0d4154535d137710b4ea094e17dc6f8e480fbad"
+      },
+      {
+        "line": 124,
+        "byte_offset": 2281,
+        "byte_length": 19,
+        "text_sha256": "8e9b9d5e8c05896854b5890ac33797da45a1df27727c581e372e63559c725431"
+      },
+      {
+        "line": 125,
+        "byte_offset": 2300,
+        "byte_length": 19,
+        "text_sha256": "0a0f4b5514e83890d5a726b6efffd9b0d90cbcfde8afcfa7f7b20569af8fc41f"
+      },
+      {
+        "line": 126,
+        "byte_offset": 2319,
+        "byte_length": 19,
+        "text_sha256": "97d546ffe9403cc49467f64e5935f7d275242d899ffea57417380a2616a51518"
+      },
+      {
+        "line": 127,
+        "byte_offset": 2338,
+        "byte_length": 24,
+        "text_sha256": "da11670d32125793f1039f98193890428acdef10236cfcb690ab5779a9f086ae"
+      },
+      {
+        "line": 128,
+        "byte_offset": 2362,
+        "byte_length": 24,
+        "text_sha256": "a0a2b70d5a1ae67151b363128d654fef4aed1b4411f336278c320630eef8266f"
+      },
+      {
+        "line": 129,
+        "byte_offset": 2386,
+        "byte_length": 24,
+        "text_sha256": "d9bb66ac2ddfdcd37cf16bb8138cc21a2d27cc5d4d3cf9ad5bf4646eea8c5c17"
+      },
+      {
+        "line": 130,
+        "byte_offset": 2410,
+        "byte_length": 23,
+        "text_sha256": "7ad40cdd8edbcd2662cf840aeece8006027e0250ae96eb16ae7bb53a8087470c"
+      },
+      {
+        "line": 131,
+        "byte_offset": 2433,
+        "byte_length": 15,
+        "text_sha256": "266464453f09fd380808a2a8db37b0cb7f4277714d6950fa6648e4e1be8cc800"
+      },
+      {
+        "line": 132,
+        "byte_offset": 2448,
+        "byte_length": 15,
+        "text_sha256": "8505cbfb3fd2a7d88f2dbbb145460da1c2a79cbe8ae18e687e47b3361887cafb"
+      },
+      {
+        "line": 133,
+        "byte_offset": 2463,
+        "byte_length": 20,
+        "text_sha256": "4fa612dc498b5510424b993929c7932a1b4c349a001e0c7995673f35be7f1297"
+      },
+      {
+        "line": 134,
+        "byte_offset": 2483,
+        "byte_length": 17,
+        "text_sha256": "c72a8a37062f68addf73da859807d74e487678ad82a18c731cd5086c128746d1"
+      },
+      {
+        "line": 135,
+        "byte_offset": 2500,
+        "byte_length": 25,
+        "text_sha256": "127aaf02a96cc011694324bc87dacd01d20b09c6d5026f2a5cc0cf92e97a6368"
+      },
+      {
+        "line": 136,
+        "byte_offset": 2525,
+        "byte_length": 31,
+        "text_sha256": "19932e76261217f61126b5e6975f41822c04b19ca646cd1e1eb482e67bf14fb5"
+      },
+      {
+        "line": 137,
+        "byte_offset": 2556,
+        "byte_length": 29,
+        "text_sha256": "9f439929101ddb58989c1990ce401ff95b3037e7dc682bedc1b568a115e43871"
+      },
+      {
+        "line": 138,
+        "byte_offset": 2585,
+        "byte_length": 29,
+        "text_sha256": "5387966efc69ba8740127fba9070bfd8913288ec9aeefd9b8baeea850509907e"
+      },
+      {
+        "line": 139,
+        "byte_offset": 2614,
+        "byte_length": 24,
+        "text_sha256": "c16e8c0d8fe7bea8d1a8d7b19a978a49b32fae86978cb9efe6de52d33dbe83b9"
+      },
+      {
+        "line": 140,
+        "byte_offset": 2638,
+        "byte_length": 27,
+        "text_sha256": "c26624ecbc694207efa2ba03fa0d5387826fdaec7ba26ba0b2f9628b215615c4"
+      },
+      {
+        "line": 141,
+        "byte_offset": 2665,
+        "byte_length": 17,
+        "text_sha256": "9cc142d794c0ac03ede881da4fb3306ab8052a7bc6a5309cc0e7ae24e1b95cd2"
+      },
+      {
+        "line": 142,
+        "byte_offset": 2682,
+        "byte_length": 27,
+        "text_sha256": "64433bfea677f7baccffab64bf0f4f5a52a1ecded7e5c69d102c848021efd676"
+      },
+      {
+        "line": 143,
+        "byte_offset": 2709,
+        "byte_length": 27,
+        "text_sha256": "d4572b9ce173d922a0299c8371d5be605570b110f7e78ef925ab4e2052f414f8"
+      },
+      {
+        "line": 144,
+        "byte_offset": 2736,
+        "byte_length": 24,
+        "text_sha256": "5b72cf0efa989c84fd4e8ff23bea1d61acb3566fa5a797265fc97a505576a261"
+      },
+      {
+        "line": 145,
+        "byte_offset": 2760,
+        "byte_length": 24,
+        "text_sha256": "eadb6a2810640982eed9d7d6806ccff2500c8b89a5279bcd47c261e94f28fc91"
+      },
+      {
+        "line": 146,
+        "byte_offset": 2784,
+        "byte_length": 22,
+        "text_sha256": "db8dba844c4811f08a2e70047dd46fac4605dfa9652a4cd0b7d9611fce74068f"
+      },
+      {
+        "line": 147,
+        "byte_offset": 2806,
+        "byte_length": 19,
+        "text_sha256": "313a651dcdc93d6e91ffd4373e0eb1ca358c5cdd258ffa9612b32bb7130e4d5a"
+      },
+      {
+        "line": 148,
+        "byte_offset": 2825,
+        "byte_length": 75,
+        "text_sha256": "2cf1527f98b4dedea0eb14d7880853772033b787842a90367748e87535d7b341"
+      },
+      {
+        "line": 149,
+        "byte_offset": 2900,
+        "byte_length": 9,
+        "text_sha256": "6dd57c05bdc37c9d13bc5d6b4b282156c431dbbbe8dbb61a179acabc5b105947"
+      },
+      {
+        "line": 150,
+        "byte_offset": 2909,
+        "byte_length": 13,
+        "text_sha256": "4500242a59bfd1fde9a07436df30511251d5e96b64465f08c209afd1ac2919c7"
+      },
+      {
+        "line": 151,
+        "byte_offset": 2922,
+        "byte_length": 22,
+        "text_sha256": "e09a7138aae166ace656142b2d0fd45a23875756ec03a18454dde0f455a7f3e2"
+      },
+      {
+        "line": 152,
+        "byte_offset": 2944,
+        "byte_length": 28,
+        "text_sha256": "f7f1fae475a6d17a4631b48c804bc29cdb91d74180d402d15152d5688d24efdc"
+      },
+      {
+        "line": 153,
+        "byte_offset": 2972,
+        "byte_length": 79,
+        "text_sha256": "bffd23c50f0f958997863839f12ebfaa64b063fe9534a618dfbca241de46363b"
+      },
+      {
+        "line": 154,
+        "byte_offset": 3051,
+        "byte_length": 63,
+        "text_sha256": "e8e78649289b2eff0405912f96404d4c41479e6c0b520172e1686057276ee3ab"
+      },
+      {
+        "line": 155,
+        "byte_offset": 3114,
+        "byte_length": 58,
+        "text_sha256": "cb98c519073b57855e8c2c8e466f88386e31adb816e20fabd93dfcd76a8f8487"
+      },
+      {
+        "line": 156,
+        "byte_offset": 3172,
+        "byte_length": 23,
+        "text_sha256": "3ab7cb78292cf3eb286551e31f739f67d92a09e387b1025b74ef2973d8cac995"
+      },
+      {
+        "line": 157,
+        "byte_offset": 3195,
+        "byte_length": 75,
+        "text_sha256": "0b9cc268468819304414bfccf6628b44526bd3c8c2f9a6c8664401d1ab8820f2"
+      },
+      {
+        "line": 158,
+        "byte_offset": 3270,
+        "byte_length": 28,
+        "text_sha256": "a16a0e9f8003b8b4b94b58c64863c0e6dfae7d50fdf541fa9079733074b42ff7"
+      },
+      {
+        "line": 159,
+        "byte_offset": 3298,
+        "byte_length": 26,
+        "text_sha256": "044b992e756ae7d2ff913555f21e15fc9915370c643005716ede65d42c87786b"
+      },
+      {
+        "line": 160,
+        "byte_offset": 3324,
+        "byte_length": 10,
+        "text_sha256": "72881dd603ce7070eea4cbd67c0d69c4c4ae0e1c8940ab62147f1129523125f3"
+      },
+      {
+        "line": 161,
+        "byte_offset": 3334,
+        "byte_length": 8,
+        "text_sha256": "7103b3982a57ab90f5ef671ba1757b5ec8a9bcb50ecfce0056c1210616fcb8e1"
+      },
+      {
+        "line": 162,
+        "byte_offset": 3342,
+        "byte_length": 8,
+        "text_sha256": "51022f4a8e10f58dac9966513bce797b45b730657a9445ee1e93416b87e134a2"
+      },
+      {
+        "line": 163,
+        "byte_offset": 3350,
+        "byte_length": 42,
+        "text_sha256": "d2eaf2dcd2ab078f02b887ccdf4d681d96928a42706df09e66a77a4ace8b349f"
+      },
+      {
+        "line": 164,
+        "byte_offset": 3392,
+        "byte_length": 67,
+        "text_sha256": "fc2943b398999f0b485ff716b6a45b9b3964a70472b9254238e3577663e0cb8b"
+      },
+      {
+        "line": 165,
+        "byte_offset": 3459,
+        "byte_length": 60,
+        "text_sha256": "6019bce1ff5b563fd991a02a45a2dbdb00ef35b4547e19333d4dfb4b46b0e32d"
+      },
+      {
+        "line": 166,
+        "byte_offset": 3519,
+        "byte_length": 29,
+        "text_sha256": "67007ba48e5fc2b58ecc7fe75158b568d1b7cfa8677038bf91f22db5e76cc5fb"
+      },
+      {
+        "line": 167,
+        "byte_offset": 3548,
+        "byte_length": 10,
+        "text_sha256": "e3871b6dfb636ac304f98dd1c585526573bc5e888d4fcd30a341d62153e671b0"
+      },
+      {
+        "line": 168,
+        "byte_offset": 3558,
+        "byte_length": 15,
+        "text_sha256": "3981a2b9c1ef7fce8dbf5e3d44fefc58746dee11b3de35655e166c25142612ba"
+      },
+      {
+        "line": 169,
+        "byte_offset": 3573,
+        "byte_length": 16,
+        "text_sha256": "3c90a2f874abc46dddbd487691174fec60289df693affc67fd87dd52571a19e9"
+      },
+      {
+        "line": 170,
+        "byte_offset": 3589,
+        "byte_length": 11,
+        "text_sha256": "c417cb88e3fdd02c335b9b4a6b8a34268d5636e897f5436d5394ed79378a2fd1"
+      },
+      {
+        "line": 171,
+        "byte_offset": 3600,
+        "byte_length": 8,
+        "text_sha256": "49fcf2c78b506b3e32115f752124e4ee1b998f4f578cc2d35425e6ee3eb203a6"
+      },
+      {
+        "line": 172,
+        "byte_offset": 3608,
+        "byte_length": 15,
+        "text_sha256": "5cb0b42660589925c804543d433ba0764dab859487e5a9ed855481dcbfec1f06"
+      },
+      {
+        "line": 173,
+        "byte_offset": 3623,
+        "byte_length": 32,
+        "text_sha256": "a4eee14e7db41f90d7d6f56d46d767128f81315fd921052a574348e203cb8ece"
+      },
+      {
+        "line": 174,
+        "byte_offset": 3655,
+        "byte_length": 43,
+        "text_sha256": "b5280273a6be4268c847f94bd0e1b180ad18831fad8f3787fc2027b3c5078788"
+      },
+      {
+        "line": 175,
+        "byte_offset": 3698,
+        "byte_length": 46,
+        "text_sha256": "e5a96ba494e41c142c990b74fbca405247c3e364551300b8244054bb99fa4cee"
+      },
+      {
+        "line": 176,
+        "byte_offset": 3744,
+        "byte_length": 24,
+        "text_sha256": "09b0844e7e16283f09985526ef5bdfda3581cb0b38be1ca32f0e1a6c78e54467"
+      },
+      {
+        "line": 177,
+        "byte_offset": 3768,
+        "byte_length": 60,
+        "text_sha256": "6aed93807b0dba9e11973a25331c9b187172ddc7caaf6240048cd622afef3c16"
+      },
+      {
+        "line": 178,
+        "byte_offset": 3828,
+        "byte_length": 50,
+        "text_sha256": "7270beb94ebd85bdd31e36de0878fd85443fe7cde91ad428b730e29ec0b0779d"
+      },
+      {
+        "line": 179,
+        "byte_offset": 3878,
+        "byte_length": 56,
+        "text_sha256": "9b366c891bfc89d5c0244f04e2d61f5324b2ef6c94381fb9ee23630a56f3e3a5"
+      },
+      {
+        "line": 180,
+        "byte_offset": 3934,
+        "byte_length": 70,
+        "text_sha256": "fe8e77fcd5de052dd786fca2afa471a459bfc0374c6465118dd45aa1014dd087"
+      },
+      {
+        "line": 181,
+        "byte_offset": 4004,
+        "byte_length": 41,
+        "text_sha256": "031f652eb91d2950d6606f5a7cbe5190094f7b0a3bca6c597e7e36530c45b3c5"
+      },
+      {
+        "line": 182,
+        "byte_offset": 4045,
+        "byte_length": 76,
+        "text_sha256": "3d6faa16d576435fe47cc2f22cc1071e6bf823c98fd2e301024366bcc7f97da9"
+      },
+      {
+        "line": 183,
+        "byte_offset": 4121,
+        "byte_length": 67,
+        "text_sha256": "66105e0e16d5d6a96bd3820b17a019e69500a13bed00ff762b89008571fa43c1"
+      },
+      {
+        "line": 184,
+        "byte_offset": 4188,
+        "byte_length": 24,
+        "text_sha256": "697b4bdba6949a2b0edcb8dc99b036306b20565bbbab5cfadee5d45c1da80532"
+      },
+      {
+        "line": 185,
+        "byte_offset": 4212,
+        "byte_length": 20,
+        "text_sha256": "10dc4fd3b2fea42c699582e64362f45b7ce6acf4039d25cc39cf733b4101b6be"
+      },
+      {
+        "line": 186,
+        "byte_offset": 4232,
+        "byte_length": 20,
+        "text_sha256": "e7771256a6beb5ad81b9b91c651f196b2a0b1cb80126f0a2e55d77a505c2735e"
+      },
+      {
+        "line": 187,
+        "byte_offset": 4252,
+        "byte_length": 32,
+        "text_sha256": "d3467a0763f2280c26cde11979e001eb8b88d6a5d6517b124a8afe203fa745b0"
+      },
+      {
+        "line": 188,
+        "byte_offset": 4284,
+        "byte_length": 18,
+        "text_sha256": "37d909c229f792e8c4971a67e008dcf57faad8eef4deb8da35456fe321037136"
+      },
+      {
+        "line": 189,
+        "byte_offset": 4302,
+        "byte_length": 20,
+        "text_sha256": "dfccb7e0e195fbc3788e41023ad1f777f24ab7479b8aab8f1d8a9e5cdb7202bc"
+      },
+      {
+        "line": 190,
+        "byte_offset": 4322,
+        "byte_length": 20,
+        "text_sha256": "9f5bb3918e8bfccd7f28d27b65653b3fb571dff6cf33402b3425065349368b08"
+      },
+      {
+        "line": 191,
+        "byte_offset": 4342,
+        "byte_length": 25,
+        "text_sha256": "214ebbda860efbe31ad9c7e335a84cddefa7614607a8ed75be38d7467cd4ef17"
+      },
+      {
+        "line": 192,
+        "byte_offset": 4367,
+        "byte_length": 27,
+        "text_sha256": "82c4b420eeab372c00e2095d40c4fb862cf621d3a926dfc8d61cb9f6221db753"
+      },
+      {
+        "line": 193,
+        "byte_offset": 4394,
+        "byte_length": 29,
+        "text_sha256": "43380222999620c9bc353f606bef812a3e502582144d3d23a696ebc39c1baaa2"
+      },
+      {
+        "line": 194,
+        "byte_offset": 4423,
+        "byte_length": 25,
+        "text_sha256": "fa601ab4f6f35c68c95190e30b83fd4208c89fc1708390c6fee32a2f7dd93b9a"
+      },
+      {
+        "line": 195,
+        "byte_offset": 4448,
+        "byte_length": 31,
+        "text_sha256": "758c9527fb45a9b6b00c8f57e6659a20c05c18d74e6223adb3337b5a997bcb67"
+      },
+      {
+        "line": 196,
+        "byte_offset": 4479,
+        "byte_length": 50,
+        "text_sha256": "b854a9c161f17f0b0ad72db3ececffc899786b4eadc2f74e618b41f8799d062c"
+      },
+      {
+        "line": 197,
+        "byte_offset": 4529,
+        "byte_length": 50,
+        "text_sha256": "15849b1c916680a056e0ebb1620cc6bcf1c8b8e9553455987a71ef22e5138a13"
+      },
+      {
+        "line": 198,
+        "byte_offset": 4579,
+        "byte_length": 41,
+        "text_sha256": "e010e3a299705457ce9aa3baab7c94ddf2503cc73eef9487d657333f3e5e93c3"
+      },
+      {
+        "line": 199,
+        "byte_offset": 4620,
+        "byte_length": 30,
+        "text_sha256": "23b5500895b0088704151bd33226bd23f4effbef20cfb16de85f9c71ea21e516"
+      },
+      {
+        "line": 200,
+        "byte_offset": 4650,
+        "byte_length": 32,
+        "text_sha256": "b0311bb19f744a9c27bc4a2ff51c953b6d6c4f1082a1dcbdc379d1e720d1680f"
+      },
+      {
+        "line": 201,
+        "byte_offset": 4682,
+        "byte_length": 8,
+        "text_sha256": "7d548fb302dfdbcac25b7dc180e8443cfa7d7db955f33758510f6ecf7604a0b4"
+      },
+      {
+        "line": 202,
+        "byte_offset": 4690,
+        "byte_length": 6,
+        "text_sha256": "f66c5ed8764c5c639e195b6b2cd0ca80e30f701dcee8f9311abe9d71f3abb622"
+      },
+      {
+        "line": 203,
+        "byte_offset": 4696,
+        "byte_length": 6,
+        "text_sha256": "ce1abf15529a9c82fd8a5f6344dce0da0c701b7fcd2bbab77ce0c26bbeca659a"
+      },
+      {
+        "line": 204,
+        "byte_offset": 4702,
+        "byte_length": 11,
+        "text_sha256": "3d0c88091526bc7fb41a67eb41a2f86c43dfca84124802fd71fc252f4959336c"
+      },
+      {
+        "line": 205,
+        "byte_offset": 4713,
+        "byte_length": 8,
+        "text_sha256": "1acaa15d6990ee0219745487c6c0e4e1b4942e8431885ba9e948eb6559cd9aaa"
+      },
+      {
+        "line": 206,
+        "byte_offset": 4721,
+        "byte_length": 8,
+        "text_sha256": "c045f8f2471810f1cff70aa7ec681510820c79dec222c1223f3b3cd29cb941a5"
+      },
+      {
+        "line": 207,
+        "byte_offset": 4729,
+        "byte_length": 8,
+        "text_sha256": "d424cbaff5f47025eb402272b3a5cacf608de1bd72164d82cf64557b1b5dbf86"
+      },
+      {
+        "line": 208,
+        "byte_offset": 4737,
+        "byte_length": 6,
+        "text_sha256": "72d22c9167b7a44252e78837739a0340ae154682565f66f8ea2000cd52b4144c"
+      }
+    ]
+  },
+  "limitations": [
+    "Metadata decoding is not gameplay or target-era PASS",
+    "No skill-name to effect/sound binding established",
+    "Frame direction/action/timing/layer-token meanings remain observations needed",
+    "EffLayer/EffRange old IDs must not be directly joined to Effect.tbl",
+    "No independent KR client action-motion table found",
+    "Sound loop/volume/call timing unknown",
+    "Creation strings prove options' presence in this resource, not UI order, server policy or exact1998-2001 eligibility",
+    "No NPC name/look or Korean original dialogue binding from these graphics tables"
+  ],
+  "sprite_decode_errors": [
+    {
+      "member": "DLGLOGIN.epf",
+      "frame_index": 0,
+      "result": "BLOCKED",
+      "reason": "EPF stencil run is empty or exceeds row width",
+      "impact": "mask semantics/format unresolved; no clipping or blank replacement"
+    },
+    {
+      "member": "DLGNEW01.epf",
+      "frame_index": 0,
+      "result": "BLOCKED",
+      "reason": "EPF stencil run is empty or exceeds row width",
+      "impact": "mask semantics/format unresolved; no clipping or blank replacement"
+    }
+  ],
+  "status": "PARTIAL_UI_MASK_UNDECODED",
+  "game_tests": "NOT_RUN",
+  "effect_edge_cases": {
+    "minus_one_frame_entries": 17,
+    "mixed_repeat_sentinel_sequences": [
+      115,
+      118,
+      119,
+      120
+    ],
+    "disposition": "raw fields preserved; unknown behavior remains unsupported, no negative Python indexing or forced replacement"
+  },
+  "external_visual_sources": [
+    {
+      "repository": "DizzyThermal/TKViewer",
+      "ref": "2943507d0a8b91b990b94d2cc82c3f589343d3ec",
+      "source_family": "DizzyThermal_Nexus_tools_related_lineage",
+      "acquired_files": 62,
+      "total_tree_files": 64,
+      "tree_truncated": false,
+      "source_text_status": "ALL_TREE_TEXT_FILES_ACQUIRED_AND_BLOB_VERIFIED",
+      "runnable_status": "SOURCE_TREE_COMPLETE_DEPENDENCY_INSTALL_COMPATIBLE_CLIENT_PAIR_AND_EXECUTION_NOT_RUN",
+      "build_or_execute": "NOT_RUN",
+      "files": [
+        {
+          "path": ".gitignore",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "570fad59eed13ddcc8914bfbfe33f75f3b27abf2",
+          "size": 2586,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/570fad59eed13ddcc8914bfbfe33f75f3b27abf2",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "1648f7276060b5feb680741f7f97f046e684fb9ad5cdfe5f1362d68eacf3f4e4",
+          "git_blob_verified": true
+        },
+        {
+          "path": ".idea/vcs.xml",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "35eb1ddfbbc029bcab630581847471d7f238ec53",
+          "size": 167,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/35eb1ddfbbc029bcab630581847471d7f238ec53",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "6323e12648862a0a96fc0d7877672817d6cd91e2c2a3c3d78f1090db23c6e88e",
+          "git_blob_verified": true
+        },
+        {
+          "path": "README.md",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "ce1f173d1421d8e60ca1a63730664b3d73676af4",
+          "size": 15798,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/ce1f173d1421d8e60ca1a63730664b3d73676af4",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "308930ded5a9b835ba56728458cdec1e97d21d232ce5dd4f8e8985f32c2498f5",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/pom.xml",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "f8c7b9a59d9c18ce02f148b9e5661bd0cbafb5ec",
+          "size": 3312,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/f8c7b9a59d9c18ce02f148b9e5661bd0cbafb5ec",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "93d56e5bcc4afbd8ae7f3fad5f6ec20302b44cba367f56a878009fd716cbed13",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/TKDatViewer.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "462f57ec6e6fcdc73abd716cef7a3a40ea9ec76b",
+          "size": 5678,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/462f57ec6e6fcdc73abd716cef7a3a40ea9ec76b",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "9f160d76b4179666e04d1dfbea7f182389ea164aac46554ce48f792958ca23f6",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/TKDumper.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "902757db3d7e05125dc933f3df9044cc4d81f252",
+          "size": 7928,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/902757db3d7e05125dc933f3df9044cc4d81f252",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "a55c26fc7672d5184db47aecf5862e2c6dd2cd9db8eb8c39acf79cee349c391d",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/TKItems.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "c0948d0886007f928cb2e26d51722f7cd20980b2",
+          "size": 1446,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/c0948d0886007f928cb2e26d51722f7cd20980b2",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "59c3f3b738c81f9285cab927f1262e425dd1c157735f511ae3a6af2f333c2da0",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/file_handlers/CmpFileHandler.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "d6a5a892c95452d0a3cfa2609e28223b2e11d016",
+          "size": 1711,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/d6a5a892c95452d0a3cfa2609e28223b2e11d016",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "d56511ce975c6b4849a3220670e061c62895e36fbd9062163cfac6b73db8c831",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/file_handlers/DatFileHandler.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "e5120eac65cb5b01e26e59499a8a55ec984d07d0",
+          "size": 5982,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/e5120eac65cb5b01e26e59499a8a55ec984d07d0",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "b58098c90cbc1f030ab404b2f859a58c19cfba7ec7aba6fe4da1ffa765c59259",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/file_handlers/DnaFileHandler.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "71b39a435b835847b432ee588969e3102836979b",
+          "size": 3498,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/71b39a435b835847b432ee588969e3102836979b",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "f76a7d12518c79f2dc9dfa1018d91ec6de0f03410f442547e36df76e5f09cab0",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/file_handlers/DscFileHandler.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "ce98a1a1fe47b5a8dd8b3e3864530c8f010fae6b",
+          "size": 3909,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/ce98a1a1fe47b5a8dd8b3e3864530c8f010fae6b",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "cac1e504e21c36469d56f4510c7fd38aec2ac6450f33d295dd2c432cb981b223",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/file_handlers/EfxTblFileHandler.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "a1f5f7600e2ccd54ad37df118523e38f9848511a",
+          "size": 5011,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/a1f5f7600e2ccd54ad37df118523e38f9848511a",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "31b1fe79693acb7c1e98ce497c8b2d2ccda2129df355bc99e272b5d14fbab73e",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/file_handlers/EpfFileHandler.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "66f3edcc26fc9f8445999f82ecd35ad903de429e",
+          "size": 4802,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/66f3edcc26fc9f8445999f82ecd35ad903de429e",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "591d6fcc49e8f100bac2e8a0ea52d23d663d61c1ffafe4bdb8bc2a7db12a489e",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/file_handlers/FileHandler.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "04761431cdf144ea4b99884f6ef66dc58f9cfb69",
+          "size": 12740,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/04761431cdf144ea4b99884f6ef66dc58f9cfb69",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "424f2bccb63c550d6256e40b39efb93049fb08993fd8f59f984963cff7f045f4",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/file_handlers/FileWriter.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "71e1aac43666bcf04ec19c9233fcf3cc56a597b1",
+          "size": 1669,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/71e1aac43666bcf04ec19c9233fcf3cc56a597b1",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "12aa34e7c7c4db69314c9f4a52c962f6450c9653a884928b5fa37af8a0cdf0b1",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/file_handlers/FrmFileHandler.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "6c7fc751876546af7b2aead8fa308dd5438a2072",
+          "size": 1279,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/6c7fc751876546af7b2aead8fa308dd5438a2072",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "3aebfd3293dd7bd9bd5125e8d585d22a77c22e8ff29043322b968b56ef380ec0",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/file_handlers/MapFileHandler.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "773e8e7a9544e42fc85f833a664c1f0b474e8c04",
+          "size": 1467,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/773e8e7a9544e42fc85f833a664c1f0b474e8c04",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "2dadd371983d6d03a969af5ab3ba47e87546dbaddcead639f87b5b503cf2c4fd",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/file_handlers/MnmFileHandler.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "259437854d30a92d838020cc722afd0829a0b796",
+          "size": 1133,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/259437854d30a92d838020cc722afd0829a0b796",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "320ef73d1ea3cfcdcb2d1694e15f2e0c40ad5919085552375c28fa2cd918c804",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/file_handlers/PalFileHandler.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "1819ea3b3007d8a40b545eecbc263cf42c49740e",
+          "size": 4108,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/1819ea3b3007d8a40b545eecbc263cf42c49740e",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "8051b006f5bd9df702f752b5066aaf3829aaf9cd72b7121b267e8824c6def1d4",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/file_handlers/SObjTblFileHandler.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "e7d3cfc8e9d664514a0766746674a1088beb0c2a",
+          "size": 1496,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/e7d3cfc8e9d664514a0766746674a1088beb0c2a",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "c9ed1a9ca2b5b9cef34f9c8cafbd0c7df4acaf0a1125af84b1c63223395a23e2",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/file_handlers/TileTblFileHandler.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "59c1e0d6666c9275cf52cbc4c3e17ec8ed39fa3d",
+          "size": 7658,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/59c1e0d6666c9275cf52cbc4c3e17ec8ed39fa3d",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "c803aa799bc96d48beb75671d9de0f9169359eb42da7ee428da4995f36ee2674",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/gui/ViewFrame.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "60eb736a0c4278254087b751cc0bcc0ad0a04e8e",
+          "size": 23111,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/60eb736a0c4278254087b751cc0bcc0ad0a04e8e",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "86ceb8690f5f89823e76cb2ade0bb2107eeb9ab4c20705077e65118301562c32",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/render/EffectRenderer.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "74f0d4a6ef01d5d6e4e36c951ec926186466972f",
+          "size": 7840,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/74f0d4a6ef01d5d6e4e36c951ec926186466972f",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "c9d0b99295ac30e5dd7cd3089a6cf18dd0c89cac0de84f16ed6b91f25fcdb974",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/render/MapRenderer.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "550724956e93d406ab3094161769f36096bf2abf",
+          "size": 10550,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/550724956e93d406ab3094161769f36096bf2abf",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "f26b3ebe0d30e20c53afc322e4574d21290d7add4cca59af04b788a7ba9b860c",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/render/MobRenderer.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "cf6d8807469ab6c8ba24c2e317c882cb1c1a2f98",
+          "size": 9847,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/cf6d8807469ab6c8ba24c2e317c882cb1c1a2f98",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "2e5e404b2b4b39c72f09aa8316d4cf773c4840db95bfb633b93a5dcc2217efcc",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/render/PartRenderer.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "c429a550e941bada5479f7e3fccc2d6ed3ea9588",
+          "size": 17047,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/c429a550e941bada5479f7e3fccc2d6ed3ea9588",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "9b1be747a855743fc6c7cfb36a71d19f70994afd4088c47a560bfe286a51cb3d",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/render/Renderer.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "e57ff0fcf57a3a32b74e6d9ed71d79cf39f45956",
+          "size": 325,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/e57ff0fcf57a3a32b74e6d9ed71d79cf39f45956",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "1f4274d4b032139f7d20473fa838038f4771f550637892b21b784025f1e51ff2",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/render/SObjRenderer.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "1154edefebcf96d16dab177cc5f158141267492f",
+          "size": 2649,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/1154edefebcf96d16dab177cc5f158141267492f",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "144f6d652827bfcb135f05dfcadd40fa65ab410d2ad514d7ba2efc2befa9201e",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/render/TileRenderer.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "65b0124ffc68dbd9978908591c06921e44259399",
+          "size": 8821,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/65b0124ffc68dbd9978908591c06921e44259399",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "6622de848661776615e61fd2ddf838a9a0bfc2553c79f043b71a2cc466022968",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/resources/Resources.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "6fc84483d033ef61f0726aa2b820cbed5f98524b",
+          "size": 4265,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/6fc84483d033ef61f0726aa2b820cbed5f98524b",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "e439878afe0ec08907a445afc7ca3b2b6e75bb153092cbdb7099afc64ef1f5e9",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/resources/Stencil.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "b1b844d1c271863833a0c798e9d0922a2d493567",
+          "size": 2734,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/b1b844d1c271863833a0c798e9d0922a2d493567",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "1e1f5300c9aa5340e5fa53436c0bad95e5690931c3610d45c2ae4c76619f80f4",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/third_party/GifSequenceWriter.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "dfedb79f7ea1690d1b5174f9472b9a586ba932b6",
+          "size": 7343,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/dfedb79f7ea1690d1b5174f9472b9a586ba932b6",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "3376b57a1c51d3a3eb14d7687b9f25a5b2a34f0080829fcd31bbe6058c011a91",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/utilities/FileUtils.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "13e8f64b05f5edb7719eddd5502b3d1f937f0dfc",
+          "size": 14297,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/13e8f64b05f5edb7719eddd5502b3d1f937f0dfc",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "9527093d33a356b08bbe7f79d8a7e7a44b643b160f3ca2d75678799d92d9d01d",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/utilities/RenderUtils.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "cacac5648eb7331271b5bb6599efe26d33dbf8ef",
+          "size": 10261,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/cacac5648eb7331271b5bb6599efe26d33dbf8ef",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "be3d6306bc3900050041830eabd5c5528290770f5f1c467e5d6fd9cf9ab26ed1",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/utilities/Utils.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "b7d6a3b3569cb6234210dc3bd188b304aade3d32",
+          "size": 300,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/b7d6a3b3569cb6234210dc3bd188b304aade3d32",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "46171d569999dd5c1cb83d45610bc4cf375dcadb2a5b6296733e6cf09e22af27",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/kotlin/com/gamemode/tkviewer/Color.kt",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "eea0f2e4b70d39fd3b6b8aa70c4b20e55e4b239a",
+          "size": 403,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/eea0f2e4b70d39fd3b6b8aa70c4b20e55e4b239a",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "22749ed7887a69adf174698b4836c9ed280113bcef439af8965d4395e10c4823",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/kotlin/com/gamemode/tkviewer/Effect.kt",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "84ca4496e238ddae59838fd6306f7a35f26af020",
+          "size": 123,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/84ca4496e238ddae59838fd6306f7a35f26af020",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "5514277da0c640411f5d0f7fb2f032ffbd470f0fa7009b1619dd3dac95bdc52b",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/kotlin/com/gamemode/tkviewer/EffectFrame.kt",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "d41a17024657745a2c88649ee4424d0974a7cb13",
+          "size": 132,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/d41a17024657745a2c88649ee4424d0974a7cb13",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "452440f980d0106e8f9cc5f6422b8e2fac67ecf454323f804a15597cbb828ace",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/kotlin/com/gamemode/tkviewer/EffectImage.kt",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "67561e2a9f2af76510b58c993f13e22f6d433d15",
+          "size": 191,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/67561e2a9f2af76510b58c993f13e22f6d433d15",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "490892b72b87213b5a514d2f9af5a32f26b87e4fc481404669fa160e1d328355",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/kotlin/com/gamemode/tkviewer/Frame.kt",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "4385fca42b8476e80b9a864117102f2651d7ce98",
+          "size": 376,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/4385fca42b8476e80b9a864117102f2651d7ce98",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "3c2a95d40af56d5a0fbb2bf6a0fa103f9aeaf9ced1f5bd6253ad38b02bad839b",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/kotlin/com/gamemode/tkviewer/Mob.kt",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "17fbca13d068f3fa15727f884d731f31cffcd92c",
+          "size": 151,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/17fbca13d068f3fa15727f884d731f31cffcd92c",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "8e08d60916b76b0f98f8882a793cf03cc166fded2d711841ec419b2d10a77e67",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/kotlin/com/gamemode/tkviewer/MobBlock.kt",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "5ad9a4c5e7733f5898393a1625a90d18c9f030da",
+          "size": 172,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/5ad9a4c5e7733f5898393a1625a90d18c9f030da",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "ee2c77a206635c68d7fcc1d488e823f8e6ca1639fe1637accc2d96535634ed7f",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/kotlin/com/gamemode/tkviewer/MobChunk.kt",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "6d4eedeea703d2c595fb892bdd4104823572bec9",
+          "size": 94,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/6d4eedeea703d2c595fb892bdd4104823572bec9",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "c5ca47c74ab0f64e01a1c898a822c554d15040596be70163d264aeddce8cd5d9",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/kotlin/com/gamemode/tkviewer/Palette.kt",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "41128c3116ab4b6a317ca85695e43c0c31ac4859",
+          "size": 1379,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/41128c3116ab4b6a317ca85695e43c0c31ac4859",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "3dbd0955ef5796ccc5ab44f2bb90f6d29989df4be84f9152562ebb5a5b8b00fc",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/kotlin/com/gamemode/tkviewer/PaletteMetadata.kt",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "6e5749efcc49cfe22b8da38e6161c6956b4a7cd0",
+          "size": 162,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/6e5749efcc49cfe22b8da38e6161c6956b4a7cd0",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "315d4fc2b1d4d54ccbbb80a5892537b22f7ed6d8303ca9263eaaae7f28ec47ea",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/kotlin/com/gamemode/tkviewer/Part.kt",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "1d7998db5158d0a533f2c38fb78f0817ef726868",
+          "size": 192,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/1d7998db5158d0a533f2c38fb78f0817ef726868",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "90affe1802cf0e7df95c12f2b53d17592ed28e5140fc99dd6396b70daee963c9",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/kotlin/com/gamemode/tkviewer/PartBlock.kt",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "cb8f323041333dbe6a9e0b28784281d7adc6176a",
+          "size": 231,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/cb8f323041333dbe6a9e0b28784281d7adc6176a",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "1c5dc1987cd74cf1d54db3fb27e09ef5be591a939bbcaf04b1378a3779ed0e6c",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/kotlin/com/gamemode/tkviewer/PartChunk.kt",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "3c3c748d58a267fcb679e879fdff58341c50adb7",
+          "size": 117,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/3c3c748d58a267fcb679e879fdff58341c50adb7",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "a54a0631be9dc7a7d36fd147341d52ca86c8e2400b285d94e402bd2cee4e46da",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/kotlin/com/gamemode/tkviewer/PartInfo.kt",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "8c3fbe23f60e8a0e200182312e106dc1b8633179",
+          "size": 262,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/8c3fbe23f60e8a0e200182312e106dc1b8633179",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "e1fa56140b7709a369772b97adb451215477462fc323c3d3b9f889f8e878dceb",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/kotlin/com/gamemode/tkviewer/PartMetadata.kt",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "ed911372cb5b63395bfca5c1137dcf70d6d7da14",
+          "size": 229,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/ed911372cb5b63395bfca5c1137dcf70d6d7da14",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "9c89ee12f9d4f7bbd793aa93e48e881b8b944e9d162ff87d2f0dce5dcca647c6",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/kotlin/com/gamemode/tkviewer/PivotData.kt",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "6657ab9b660bae6acc9b3b07de5b24ea3ec1333b",
+          "size": 125,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/6657ab9b660bae6acc9b3b07de5b24ea3ec1333b",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "985bd460148cb6c6f26dd958fb5e1611fc857f1d8b72abbd8ca8560916830830",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/kotlin/com/gamemode/tkviewer/SObject.kt",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "aee3cab62217cc893da2cf0acebc4b9a04ae30cb",
+          "size": 400,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/aee3cab62217cc893da2cf0acebc4b9a04ae30cb",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "9c9619600a3fc7f9fc56fdc12e71cda388f753d6c16b4e9f3809a46b450e06cb",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/kotlin/com/gamemode/tkviewer/TblIndex.kt",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "fb05050df10dfa45468b410ff759af53e4ae8926",
+          "size": 90,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/fb05050df10dfa45468b410ff759af53e4ae8926",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "d8dd62f72a9be8f5e2b7bde1a302bd42e556470698a4041054cce4c9907012b6",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/kotlin/com/gamemode/tkviewer/Tile.kt",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "11308114a50da5ae58ce891d3679457d221428b0",
+          "size": 100,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/11308114a50da5ae58ce891d3679457d221428b0",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "e8eb2d2f78d914e0aa98cbada74fd5a473dc0d92b49837ab2c2092546809d6cd",
+          "git_blob_verified": true
+        },
+        {
+          "path": "common/src/main/resources/client_icon.png",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "2a42265a53e8e7fb0f72c81a896fdcf0efea60a9",
+          "size": 2377,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/2a42265a53e8e7fb0f72c81a896fdcf0efea60a9",
+          "acquisition_status": "BINARY_NOT_ACQUIRED",
+          "sha256": null,
+          "git_blob_verified": false
+        },
+        {
+          "path": "config.properties",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "163e43767c4cd4e628adc2196e77433a6cfe9265",
+          "size": 816,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/163e43767c4cd4e628adc2196e77433a6cfe9265",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "0a3f25d0d00d83296aa5a561bcc66c9d3e9856afccae2aeff388f4b73314bc73",
+          "git_blob_verified": true
+        },
+        {
+          "path": "pom.xml",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "57f5eac9d6345617a03c5ab560dbe78944017a7f",
+          "size": 2840,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/57f5eac9d6345617a03c5ab560dbe78944017a7f",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "ee97428961efff7a43c5fb3bf62a4b60c47b99d65f0afcaf2743340998bb08a5",
+          "git_blob_verified": true
+        },
+        {
+          "path": "tk-partpicker/pom.xml",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "f6f2edda4d106526bea4b15ddbeca090ea007815",
+          "size": 2563,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/f6f2edda4d106526bea4b15ddbeca090ea007815",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "8cb06e27caed86886f8dd7b122de6b667450d96d08bd3345b756ed4fdf3ea280",
+          "git_blob_verified": true
+        },
+        {
+          "path": "tk-partpicker/src/main/java/com/gamemode/tkviewer/TKPartPicker.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "81b814c79bdedbc23c5454a135a6f84104834303",
+          "size": 557,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/81b814c79bdedbc23c5454a135a6f84104834303",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "a727ee3330c38813f8c42b7aa47de57f77cc08f6fbf28ca8854bd2b29f87ec00",
+          "git_blob_verified": true
+        },
+        {
+          "path": "tk-partpicker/src/main/java/com/gamemode/tkviewer/gui/TKPartPickerGUI.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "0b6120b139c69ec165e777f56618ac4e783455f0",
+          "size": 16574,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/0b6120b139c69ec165e777f56618ac4e783455f0",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "8e9ea7963bf8de73294b80aa9f3b308dfb97e4f73614878696effeb8648736a8",
+          "git_blob_verified": true
+        },
+        {
+          "path": "tk-viewer/pom.xml",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "409aceb56673040a714654efe9c9da1161ada8a4",
+          "size": 2558,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/409aceb56673040a714654efe9c9da1161ada8a4",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "62767aba01d69924bdfb5f33d1c16dac5a5b9cbdbda8de836bc0bc9101a93de5",
+          "git_blob_verified": true
+        },
+        {
+          "path": "tk-viewer/src/main/java/com/gamemode/tkviewer/TKViewer.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "cf31bd2f9238ff45fff14452b81e6d1213005f01",
+          "size": 516,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/cf31bd2f9238ff45fff14452b81e6d1213005f01",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "e25f786435f546f6e44560b90fa4701a8aa1b9c6f399a80154cf096c1df8d352",
+          "git_blob_verified": true
+        },
+        {
+          "path": "tk-viewer/src/main/java/com/gamemode/tkviewer/gui/TKViewerGUI.java",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "171751d4217e069712523e4bcce721d93f0b4dca",
+          "size": 35997,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/171751d4217e069712523e4bcce721d93f0b4dca",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "c6477652ee658c15f11cbcf149df37adffe7e8647107f76bb6ae73136186bee6",
+          "git_blob_verified": true
+        },
+        {
+          "path": "tk-viewer/src/main/resources/client_icon.png",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "2a42265a53e8e7fb0f72c81a896fdcf0efea60a9",
+          "size": 2377,
+          "url": "https://api.github.com/repos/DizzyThermal/TKViewer/git/blobs/2a42265a53e8e7fb0f72c81a896fdcf0efea60a9",
+          "acquisition_status": "BINARY_NOT_ACQUIRED",
+          "sha256": null,
+          "git_blob_verified": false
+        }
+      ],
+      "full_tree_status": "COMPLETE_FIXED_SOURCE_TREE_BYTES",
+      "full_tree_files_acquired": 64,
+      "full_tree_files_matched": 64,
+      "full_tree_manifest_sha256": "2eb7fef480f3f907fcdc3662c39be4a5afb00cee33dbf957f2cf02f6171475cb",
+      "full_tree_manifest_path": "/workspace/scratch/8a697b0cae82/research/visual_full/TKViewer-FULL_MANIFEST.json",
+      "initial_text_only_scope": "Historical local text acquisition files remain183; additional28binary source-treefiles acquired separately without executing"
+    },
+    {
+      "repository": "DizzyThermal/EPFViewer",
+      "ref": "2bc585b3ae3310df5de46f7789eada92840fbd59",
+      "source_family": "DizzyThermal_Nexus_tools_related_lineage",
+      "acquired_files": 121,
+      "total_tree_files": 147,
+      "tree_truncated": false,
+      "source_text_status": "ALL_TREE_TEXT_FILES_ACQUIRED_AND_BLOB_VERIFIED",
+      "runnable_status": "SOURCE_TREE_COMPLETE_DEPENDENCY_INSTALL_COMPATIBLE_CLIENT_PAIR_AND_EXECUTION_NOT_RUN",
+      "build_or_execute": "NOT_RUN",
+      "files": [
+        {
+          "path": ".gitattributes",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "8ad74f78d9c9b9b8f3d68772c6d5aa0cb3fe47e9",
+          "size": 80,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/8ad74f78d9c9b9b8f3d68772c6d5aa0cb3fe47e9",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "21b01a606c9f85f18bb9230245f00ab104df7409cbb2fe9423f6751ca72ba754",
+          "git_blob_verified": true
+        },
+        {
+          "path": ".gitignore",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "5ba29a2ce6bab56e81be23c88c5a85d177f6f539",
+          "size": 219,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/5ba29a2ce6bab56e81be23c88c5a85d177f6f539",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "abe09b0f63b2a31039734254a28f32eab6dd08464fb3a90de6a319553921ba3a",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/DatFile.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "e73346a759e2ce0c74b37d339459024443a80cd1",
+          "size": 494,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/e73346a759e2ce0c74b37d339459024443a80cd1",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "2afdbd752c1b8bd2faf878ddf5f25667be7e7ead861074ec7a0311fa465771c4",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/DatFile.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "675ed5e97d7728138d2f2e536241cfb6c2ebddbd",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/675ed5e97d7728138d2f2e536241cfb6c2ebddbd",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "3c4ab47a926db9bb53958092853ed86d53b30ad6950902bf8788ca3f1a80b6cc",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/FrameSprite.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "f027b491a82fde25055e3cec72763b8f42161ce5",
+          "size": 2391,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/f027b491a82fde25055e3cec72763b8f42161ce5",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "12369a4a03a82e2e95f01d1860914e34904cfc7b452006f47c5bc76e42b16e1a",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/FrameSprite.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "f63d9aea69dc03cc53d78db370fd7df305b20992",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/f63d9aea69dc03cc53d78db370fd7df305b20992",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "01818d1de9d0d1a7eb401e56e43c24f851c70056f9a48d75a184a1cf788cd4b2",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/FrameTextureRect.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "0e26eb2545b5b13589bf464dfffd81efcf696911",
+          "size": 2340,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/0e26eb2545b5b13589bf464dfffd81efcf696911",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "8062ce5986d808cb346c41679e883a07b59b07a21092054547dec8f01b620903",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/FrameTextureRect.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "2932d1142ddd7db59bc63f02ab0c20654aea8c44",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/2932d1142ddd7db59bc63f02ab0c20654aea8c44",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "b64bfff4f7f63b19fe74080a593670d878cfd6fb6c52a91eb09c878c0e4cc0d0",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/Indices.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "cd655391ac13d19ca112a85b597d31bd73ade7c1",
+          "size": 406,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/cd655391ac13d19ca112a85b597d31bd73ade7c1",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "ad900b5b38f831304e598c9ede9017ac72e7091e792fa9a31ec2d4b365cf1e58",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/Indices.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "f73d3770e190e101a9e0f510df9cdc2b81c96aec",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/f73d3770e190e101a9e0f510df9cdc2b81c96aec",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "e022d05b9561a5d33e9ec6ab100345215cbad85abe9f10308b0e5bf1c4a14cbb",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/Mob.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "87443b77849f105aa45ba50db5b4a3363478d66f",
+          "size": 501,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/87443b77849f105aa45ba50db5b4a3363478d66f",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "9b84a5aa139bcb4be0431d673f6179bf904f9febf3496da869a1da62e6b8ff4b",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/Mob.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "78d68d09984a0f54ee9d9b7d03f91b8b722a771d",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/78d68d09984a0f54ee9d9b7d03f91b8b722a771d",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "abbe8dd62eb2d30fd90bff679e7821493d4092ecb7914c56a025bb1adf7befb1",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/MobAnimation.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "3bcbd8977beffdff37865c28c5be68cdc7888c98",
+          "size": 326,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/3bcbd8977beffdff37865c28c5be68cdc7888c98",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "9d7f0f92f746a37a12b9f9219ebc3a10dac0db087315c3b7b8810b4d8fe01267",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/MobAnimation.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "85329f43743ebb2f14e8d6c9f4e9a83b9f124ce1",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/85329f43743ebb2f14e8d6c9f4e9a83b9f124ce1",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "aa7fabac2082e6a421e9a6fb66e476451bb77e901d1ae680654483e3e35134a5",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/MobAnimationFrame.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "75b3c998be5ce9dc656adb5fd2c1166d854104b4",
+          "size": 507,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/75b3c998be5ce9dc656adb5fd2c1166d854104b4",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "19b49d7fde84ec6a3bb086faf8371c3def41fd8d4c6df99399c30498fe0d53eb",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/MobAnimationFrame.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "579b90eb9817c502706776acd76c41847f196ce3",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/579b90eb9817c502706776acd76c41847f196ce3",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "56094d578603cae26f6adca32339c9afc4cc7ee181d77b21c023f541fc515059",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/Motion.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "e46dc8c1d8956fc2c412a99dcf906e4193c58635",
+          "size": 457,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/e46dc8c1d8956fc2c412a99dcf906e4193c58635",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "f1c84b3afb4ce93f7c90d90805486a5eae4e7805fef574b315c06449a5828386",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/Motion.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "ca53a1aab5790ccc19ccf5fdabe8340ac8f30db2",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/ca53a1aab5790ccc19ccf5fdabe8340ac8f30db2",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "c06cf2edbd42e8ccb2c0ec94270d6972fc75132e5e1e54d8774888e077fae9bd",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/MotionFrame.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "34175070cd970db48773c68a40e3ccd27a0a9e98",
+          "size": 322,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/34175070cd970db48773c68a40e3ccd27a0a9e98",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "aea1996f869404ace6cdd8b95a634dbb949a99bb5af47f755c7b2a29948daec1",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/MotionFrame.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "b2aeee454b8400d6b8f24c3e223f582c5f77f2f6",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/b2aeee454b8400d6b8f24c3e223f582c5f77f2f6",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "08e74bb2c8f6c5140ab4758215bb173c008dfda13c524f4d723063a1323c575a",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/NTK_Effect.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "1bf89d4610c760cc1b17e1f549b7c07ce5164838",
+          "size": 355,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/1bf89d4610c760cc1b17e1f549b7c07ce5164838",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "f1187be8e69c331e131d469364d98ad26aad5f9509722204aef0051f92a4bb54",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/NTK_Effect.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "bc9479a691f14f5738d30da8f97928a1344baf2d",
+          "size": 19,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/bc9479a691f14f5738d30da8f97928a1344baf2d",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "ff59ffc3aff9a0346c6d067a62aa3e0732fa6c23f32c3cc2bfaf4ee3a701ad5e",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/NTK_EffectFrame.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "b533cff64c1c35ffd45bc37e30242c2e4648e235",
+          "size": 384,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/b533cff64c1c35ffd45bc37e30242c2e4648e235",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "e4250add3d23ca8279b737578032beeda5103a3f663aa59fca499c49c07e4942",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/NTK_EffectFrame.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "b6cca916f9cec9e4beaea49bb9fa49e541bf4629",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/b6cca916f9cec9e4beaea49bb9fa49e541bf4629",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "a4027f8b405bf5613ea7e2ecd1ceb41da6f8cd2d80e235b3564c294db734d4cf",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/NTK_Frame.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "d8fcb146b200423b6ce377cc80eb75d990f8ae3e",
+          "size": 859,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/d8fcb146b200423b6ce377cc80eb75d990f8ae3e",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "be4cdf4bc24a491d0e34e8c6a16c59731cac76778c6baf0640cf454d9b57fd54",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/NTK_Frame.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "b209f6ddaab77f1b290eb0d2c30fb416f016b956",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/b209f6ddaab77f1b290eb0d2c30fb416f016b956",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "d47f4ee64077b3a72c6eb5b490f1e0210e803e6df84e7935536adeb946f92460",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/NTK_Item.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "cdac6cbe42ad6c8a12b1afa236c10c89521b9541",
+          "size": 449,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/cdac6cbe42ad6c8a12b1afa236c10c89521b9541",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "3278713263a58d0bff7618dd418962e2d72236f5940314fc337b295178bde5a5",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/NTK_Item.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "edc994ccd3e1c1daa9065c4f5d41ae77dbc405fe",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/edc994ccd3e1c1daa9065c4f5d41ae77dbc405fe",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "a5838604ea88178c9c996a3a83a498743f33299a1e17365f8b04b242a78cca1c",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/NTK_Spritesheet.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "ed6f4cb9dfb11aff066bc94504483a85f07f95df",
+          "size": 341,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/ed6f4cb9dfb11aff066bc94504483a85f07f95df",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "d8b04627b72173cad73ea098788391034dc03e898fb719b3f5494ec0060c12c9",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/NTK_Spritesheet.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "f79c67527a1475043d50d40f380e69b64f210598",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/f79c67527a1475043d50d40f380e69b64f210598",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "46b7106452b1c80e5247f70e04726e314ba3f27e6e4f9f0dd938e999c072b7eb",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/NTK_TileInfo.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "83955b6e3389fd81979d0a40db8c5f6aea6a5caf",
+          "size": 223,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/83955b6e3389fd81979d0a40db8c5f6aea6a5caf",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "48f033dc24bc6dea94e847a083b44daac29d0f7b288e8dff0a56cbd4df36debd",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/NTK_TileInfo.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "42cc9d711df81cab5945413bc81fb30b7cbcbf18",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/42cc9d711df81cab5945413bc81fb30b7cbcbf18",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "dde2b7bf5124c35725a52546027b5bc26b817165314dba2891fd18a06a9d5712",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/NTK_TileSet.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "51c305a3238519de9226daca16f2f68659e7c75d",
+          "size": 280,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/51c305a3238519de9226daca16f2f68659e7c75d",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "4ba31359db29112ace4f22c3160b1fa9eed6a8b30d580040d12820c3b26d56bf",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/NTK_TileSet.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "d2baa4f78544c7d6fecc55211973b24b6a98fce4",
+          "size": 19,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/d2baa4f78544c7d6fecc55211973b24b6a98fce4",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "413921badb575104aa42892c76984cb71ba8b306bcdadaf6e509235658ae13b7",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/NTK_TileSetSource.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "755e86d30d4a129b788e3695ccd7d5df773f178e",
+          "size": 668,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/755e86d30d4a129b788e3695ccd7d5df773f178e",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "a760569ba617e7aa445e3c5e38fcc59e345037a9f8ef53c0bd1a30e5307f9152",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/NTK_TileSetSource.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "4d6baa84d4cc48cd30258969a24285f4ddc1cfc6",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/4d6baa84d4cc48cd30258969a24285f4ddc1cfc6",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "ac1b0b1b9405fb3c26e609d7d8e7db8706ef339df1c8e72c30b5d195fa4856b2",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/Palette.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "52ecdf7cccb545d8da2569de1a61b317536f2ad2",
+          "size": 1249,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/52ecdf7cccb545d8da2569de1a61b317536f2ad2",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "d40e765c8e6634259f58f6106d0a937d598afe779e3866e2fc3f57b6422bd542",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/Palette.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "98c80c501f5019eb4fa1dfd3436cbe70abd799ab",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/98c80c501f5019eb4fa1dfd3436cbe70abd799ab",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "972bf52dc53a80639970369aacbf19b0ff7f5b0c3d20b6c68a30b92efb0735d3",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/Part.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "562efe1ff757644610234e7b99b736ca91cebddd",
+          "size": 557,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/562efe1ff757644610234e7b99b736ca91cebddd",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "fe879991671cfa9b49eb7d4be4a12bea84f11d7bcbff6e7df93d9065560c7a66",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/Part.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "e50c57be49bf4e50b6471a5b26ab1aab510357bc",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/e50c57be49bf4e50b6471a5b26ab1aab510357bc",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "201e56c933b7f1e951e20815a4f4928ff149ffa0a8c5c315310a517b487fba8e",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/PartAnimation.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "b29c4c4253254fad23755a0d6f918580e345b183",
+          "size": 445,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/b29c4c4253254fad23755a0d6f918580e345b183",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "babb4ab7a76a39138589b3edd2bb1910fd7ee41f60dfd43d4fa2d324a487922b",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/PartAnimation.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "01c36c58fdaceee759213423235f00bbe739182f",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/01c36c58fdaceee759213423235f00bbe739182f",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "7c4fb2711dd914875e2b583eac56ee9ecf84b46531cc9a77925a73c781b0f9ec",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/PartAnimationFrame.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "f56adb31aeb0658d998809384feaeb0d24b3afd0",
+          "size": 280,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/f56adb31aeb0658d998809384feaeb0d24b3afd0",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "979f9fe8af649d64fa6a195051c47263862eb658b03f5c7aedcb69baf0bb18fe",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/PartAnimationFrame.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "8c2db685abbaff8935d9c5b6b7e5bea92079f3b2",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/8c2db685abbaff8935d9c5b6b7e5bea92079f3b2",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "9f0ae61cffeace8d3ccdf6ffb30d8d6341b1ab3cb17bbab5ec13fec8d9266237",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/Pivot.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "9c95ff2140b4f80f4dd89f18aff09a233f093309",
+          "size": 1118,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/9c95ff2140b4f80f4dd89f18aff09a233f093309",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "7ac31e3b339dee4c95f6ee97bf65648ec2e7ee2ef10b254b8c83297c28290330",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/Pivot.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "862095d8eb976c21342b717add375836910a9dc3",
+          "size": 19,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/862095d8eb976c21342b717add375836910a9dc3",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "452ccbd7a5604e373cd6d1e6dc6a38097a9f460af1be6c9892859884f5fcb228",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/SObj.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "808ab542898837867e4e18bf24da019a02756d8a",
+          "size": 282,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/808ab542898837867e4e18bf24da019a02756d8a",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "033946f98278b81879a115bc44ab2b1660c81e1eae5b53ba3ff5082ae1a2b09d",
+          "git_blob_verified": true
+        },
+        {
+          "path": "DataTypes/SObj.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "90c6e21cee844497a26c6aa46272374f7b75e4d2",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/90c6e21cee844497a26c6aa46272374f7b75e4d2",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "2603c1b7eb66cb9e303de2e784c000cba97af9411175bc1ede1844b8a4eae25f",
+          "git_blob_verified": true
+        },
+        {
+          "path": "EPFViewer.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "1ebdd6a12dc394fedd954b154dad0f1d1bdb9321",
+          "size": 32128,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/1ebdd6a12dc394fedd954b154dad0f1d1bdb9321",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "305f7ca274f0ba45f6a018fd0e11a0370e05ff891e2c9848f04b59d21f249b5e",
+          "git_blob_verified": true
+        },
+        {
+          "path": "EPFViewer.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "663f68d3613c22d51ffc6fc9bff7c036c02469ec",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/663f68d3613c22d51ffc6fc9bff7c036c02469ec",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "ac29ce45a3ce5ae9ab24c01fdb6bb2c7303db3ae73a37832c27d1777aab0f28c",
+          "git_blob_verified": true
+        },
+        {
+          "path": "EPFViewer.tscn",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "3842a96890d4ba0fd20a73ce03338fa5890d8130",
+          "size": 8497,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/3842a96890d4ba0fd20a73ce03338fa5890d8130",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "93ff424cdecb6061c066f4a940f364c21d3aac05b3bcebe6b5cb51e988c7e0e8",
+          "git_blob_verified": true
+        },
+        {
+          "path": "FileHandlers/DatFileHandler.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "e13f74f2a00c8b61b014b2bcf3844fa8f4fabccc",
+          "size": 1736,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/e13f74f2a00c8b61b014b2bcf3844fa8f4fabccc",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "aab8cae2b92633578aaddcf5bafbc3938f93d3d6c4dec868797be75a146ba806",
+          "git_blob_verified": true
+        },
+        {
+          "path": "FileHandlers/DatFileHandler.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "a0b8e2742072a5cf6ea320b90d124c05005f60d4",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/a0b8e2742072a5cf6ea320b90d124c05005f60d4",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "99f4ebbf0229d0fa6ff6bfb381f91430199c3a334a871c381295533181ec0c48",
+          "git_blob_verified": true
+        },
+        {
+          "path": "FileHandlers/DnaFileHandler.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "f67b8afd2a597b5a743897bdacd934ba4a8f02c0",
+          "size": 1777,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/f67b8afd2a597b5a743897bdacd934ba4a8f02c0",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "ba83d77f4e912225d7eefa778a19ab492295c6a2bb574252faea8759f6a47787",
+          "git_blob_verified": true
+        },
+        {
+          "path": "FileHandlers/DnaFileHandler.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "b564cba982204d48200d7b00690960109100be3f",
+          "size": 19,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/b564cba982204d48200d7b00690960109100be3f",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "7d5998f969608fff2218758142080df18f102f8521b3a38434ebf5800592793b",
+          "git_blob_verified": true
+        },
+        {
+          "path": "FileHandlers/DscFileHandler.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "93e65821f841567b904db459a39e7f2ebf0d73fc",
+          "size": 2750,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/93e65821f841567b904db459a39e7f2ebf0d73fc",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "a3de418c49d10afe363f750ccbbfdb12d0638c7ae1ceb2d2a2afdbf2b9baeb45",
+          "git_blob_verified": true
+        },
+        {
+          "path": "FileHandlers/DscFileHandler.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "123e4fdecc5a1d5197229a761e6fe698eebf2668",
+          "size": 19,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/123e4fdecc5a1d5197229a761e6fe698eebf2668",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "44567c9028778bfbff94142d6741f2834d8ac0ecb6c6f86343d2011a128b6978",
+          "git_blob_verified": true
+        },
+        {
+          "path": "FileHandlers/EfxTblFileHandler.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "db7c5d0b6786491cf7d7092910309f5f17a91182",
+          "size": 3127,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/db7c5d0b6786491cf7d7092910309f5f17a91182",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "898649abe545a9a76bad64d659bc722a32de589333d3c9377cad8364e3458cb5",
+          "git_blob_verified": true
+        },
+        {
+          "path": "FileHandlers/EfxTblFileHandler.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "40576f2e79a0b3cdfc5776f8adbe90b385a8e247",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/40576f2e79a0b3cdfc5776f8adbe90b385a8e247",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "0de76a0d005057e13439b10b0eb8ee180245acd7d5dc4c5392d37ac2930b8650",
+          "git_blob_verified": true
+        },
+        {
+          "path": "FileHandlers/EpfFileHandler.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "f71aedadcfd7d914003ed655c649f561dc6c918d",
+          "size": 4238,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/f71aedadcfd7d914003ed655c649f561dc6c918d",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "9ff0c15e15c862c5917957d68b1446468146af6696e0cae95825915c4f656316",
+          "git_blob_verified": true
+        },
+        {
+          "path": "FileHandlers/EpfFileHandler.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "10408cf4987c089a2dab3d8b9e011cecba220dce",
+          "size": 19,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/10408cf4987c089a2dab3d8b9e011cecba220dce",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "9e0ead6bc01fcc4771cd4ffd5051b0d303bdd7fb0a90b9e412f2b6fe0b064e56",
+          "git_blob_verified": true
+        },
+        {
+          "path": "FileHandlers/FrmFileHandler.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "605c33f18dfba89935ecb038437056cdce70f80a",
+          "size": 382,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/605c33f18dfba89935ecb038437056cdce70f80a",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "e7a66c3be627041c198e93ca5013d5dbaae52fa3e475ac1c3843bb8b23b1b430",
+          "git_blob_verified": true
+        },
+        {
+          "path": "FileHandlers/FrmFileHandler.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "049853315ec53cf67882205d76aac241e689a2dc",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/049853315ec53cf67882205d76aac241e689a2dc",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "4403f18ba9fff089f82e3e61f29580d456f74eb1373d41d309fab189b872a119",
+          "git_blob_verified": true
+        },
+        {
+          "path": "FileHandlers/ItemTblFileHandler.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "769a41fe61dac74e8c3576652b7b2ac959701fc2",
+          "size": 2021,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/769a41fe61dac74e8c3576652b7b2ac959701fc2",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "5ef1b077a32f8ad31369a91b5b9e435098aaa8217d3b9ad1986fa74abfb11c6c",
+          "git_blob_verified": true
+        },
+        {
+          "path": "FileHandlers/ItemTblFileHandler.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "148b529638fdc082f19d8f336a260c834d1a2fca",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/148b529638fdc082f19d8f336a260c834d1a2fca",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "53d1d0480d5c8f6a2ba02c648062cdbf23091225e84ec325520cfafadb738884",
+          "git_blob_verified": true
+        },
+        {
+          "path": "FileHandlers/MnmFileHandler.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "2389dec0e3b50128979a093d3f0d2ef376caaa74",
+          "size": 1891,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/2389dec0e3b50128979a093d3f0d2ef376caaa74",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "274ac27cc19af5ada639f0212a9563f0ed4054b51022d76bfab404acf2c35355",
+          "git_blob_verified": true
+        },
+        {
+          "path": "FileHandlers/MnmFileHandler.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "fd0ad2b3a9619a9011932a6ed055f3edf064d677",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/fd0ad2b3a9619a9011932a6ed055f3edf064d677",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "ecd6b7d60cebb2f68eb9026615710fa906c6f2e884600073275ada542cca873f",
+          "git_blob_verified": true
+        },
+        {
+          "path": "FileHandlers/MotionTblFileHandler.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "39ffa0af2cb2b418d241a3fe1248aa4d83105f0c",
+          "size": 2052,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/39ffa0af2cb2b418d241a3fe1248aa4d83105f0c",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "04183b81f0d14a9a30b069baedd9c9fe345864520e2e776d11105755b8d40b85",
+          "git_blob_verified": true
+        },
+        {
+          "path": "FileHandlers/MotionTblFileHandler.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "53745b150e6d6958b802987fa1feacf0d23dc332",
+          "size": 19,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/53745b150e6d6958b802987fa1feacf0d23dc332",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "15d93b2e570904f500efcf8624e6e73d995a9c266e45c1a0d04163b12d84184c",
+          "git_blob_verified": true
+        },
+        {
+          "path": "FileHandlers/NTK_FileHandler.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "6a2ab1b35b6084d374a5601ecd29ef966e82336a",
+          "size": 2212,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/6a2ab1b35b6084d374a5601ecd29ef966e82336a",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "b2c106edf9870df4ade9969d91797c434394aeaf234fe3f29f61da082f7362cf",
+          "git_blob_verified": true
+        },
+        {
+          "path": "FileHandlers/NTK_FileHandler.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "2cf172d6c4a610b55656f0f9664506d9506599f3",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/2cf172d6c4a610b55656f0f9664506d9506599f3",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "9cf3453bcb1aa80cfc83ff119e77afa3563da87ce169e4dd70de31e38f20c8b8",
+          "git_blob_verified": true
+        },
+        {
+          "path": "FileHandlers/PalFileHandler.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "95e1ee00bdf875a0800e93a1e168bedcdf3d6d20",
+          "size": 2003,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/95e1ee00bdf875a0800e93a1e168bedcdf3d6d20",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "df6fb121568d9633ea5671264c9222b27faeef2c495447210196733c4b8d78f2",
+          "git_blob_verified": true
+        },
+        {
+          "path": "FileHandlers/PalFileHandler.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "470152bb9c78e80256c4b56a5eb2e4871c757cc4",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/470152bb9c78e80256c4b56a5eb2e4871c757cc4",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "08b2e35d177f332f9211fa68afed42268f8036071c079be86a1a2975aec57ebb",
+          "git_blob_verified": true
+        },
+        {
+          "path": "FileHandlers/SObjTblFileHandler.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "6f2d2fd7693735a6d130a91b1165eb30977ad09b",
+          "size": 768,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/6f2d2fd7693735a6d130a91b1165eb30977ad09b",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "b26fab1b49f5a79b9117998975337c1b31060798380b5e8feb251e89a7c3c88e",
+          "git_blob_verified": true
+        },
+        {
+          "path": "FileHandlers/SObjTblFileHandler.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "7917cc93dc8b17354ea5c4f8103b1b8b96c39946",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/7917cc93dc8b17354ea5c4f8103b1b8b96c39946",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "0704590361494052b41fd319981afcbc38dc6051e96d665a82debf6d0d66b010",
+          "git_blob_verified": true
+        },
+        {
+          "path": "FileHandlers/TileTblFileHandler.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "924a95edb8042dd8e46c37aa838535aa18ed664b",
+          "size": 497,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/924a95edb8042dd8e46c37aa838535aa18ed664b",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "002e539864e88eab2658a79b2677bb63cc410d74c2a908f8df97cd6f44e90ab7",
+          "git_blob_verified": true
+        },
+        {
+          "path": "FileHandlers/TileTblFileHandler.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "5a671613778ccf7087248c565538c4672a3a7394",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/5a671613778ccf7087248c565538c4672a3a7394",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "f8cdfa65f446abb9e838f1b99dbf7bc1e2c7c38b345a512f6c55c1eedff76026",
+          "git_blob_verified": true
+        },
+        {
+          "path": "LICENSE",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "0b1a8845ea85e330da942d930e9e9aff157702c4",
+          "size": 1069,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/0b1a8845ea85e330da942d930e9e9aff157702c4",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "f48dc27a7dfd2e3882eb4ef150ad32257a1aa318224b18b3baf0690bf798dcea",
+          "git_blob_verified": true
+        },
+        {
+          "path": "README.md",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "3c396c01da5b0f7bdc0ea9284c4d397181885188",
+          "size": 279,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/3c396c01da5b0f7bdc0ea9284c4d397181885188",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "1c6a8d1559b5d55b312198855c299d9092b17d74d6853ac5540ace1d2575fdf0",
+          "git_blob_verified": true
+        },
+        {
+          "path": "Renderers/NTK_CharacterRenderer.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "a0ca8c9c4852a99fe49fb1b142764e61e6abf733",
+          "size": 6869,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/a0ca8c9c4852a99fe49fb1b142764e61e6abf733",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "c32b2bff2ae8a7c3523dc9176c52a7ad97df5a63a36c811cbf25e8ac996d9ce4",
+          "git_blob_verified": true
+        },
+        {
+          "path": "Renderers/NTK_CharacterRenderer.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "d8c69090fa135b02176ce4003a25ba8beab80ff2",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/d8c69090fa135b02176ce4003a25ba8beab80ff2",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "1b8533c3df710a886918ec25eacb1d336827b9419b7a6671b8b31b16bd75ff27",
+          "git_blob_verified": true
+        },
+        {
+          "path": "Renderers/NTK_EffectRenderer.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "967d5a23d143cd5f61cb5a959bc9d959a598d710",
+          "size": 2037,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/967d5a23d143cd5f61cb5a959bc9d959a598d710",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "8c819122ab39dcddb4b52c0ca81e9975d4d958a4a36a815dacbbf62cf17ae60b",
+          "git_blob_verified": true
+        },
+        {
+          "path": "Renderers/NTK_EffectRenderer.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "9f2344d85c79bb084fe31b4b1897925abc61cff2",
+          "size": 19,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/9f2344d85c79bb084fe31b4b1897925abc61cff2",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "1b76bc65b197b9053d87c265bf2f0d9db29ddac345f1d5bc67d41f48d5c77897",
+          "git_blob_verified": true
+        },
+        {
+          "path": "Renderers/NTK_MobRenderer.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "ed0545055f5b28e0b86ce03d7573bedc70fd7849",
+          "size": 1630,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/ed0545055f5b28e0b86ce03d7573bedc70fd7849",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "7d12920429d7e9b4043b38dfecf984e06c842b970fa1545ef27af949b816a9bc",
+          "git_blob_verified": true
+        },
+        {
+          "path": "Renderers/NTK_MobRenderer.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "bd1fe81d380b9ac18fca0c6e62cbcc354802806c",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/bd1fe81d380b9ac18fca0c6e62cbcc354802806c",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "5a425ca517cf83562ccd9c734575896d5bf83421c784f7b948c16aff8b7eaedf",
+          "git_blob_verified": true
+        },
+        {
+          "path": "Renderers/NTK_PartRenderer.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "4ee1ba13d25de90b960137f931166f3d46304e4c",
+          "size": 2017,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/4ee1ba13d25de90b960137f931166f3d46304e4c",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "9e7e60fe95d93c978eb8e8f63c3841e5c497b186cd9255e4f32f9eab6dd437de",
+          "git_blob_verified": true
+        },
+        {
+          "path": "Renderers/NTK_PartRenderer.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "17973400ee9c089c91dfc62437407edb29209be9",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/17973400ee9c089c91dfc62437407edb29209be9",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "547268bb4faf4c930c2915af715581eae562c6d8f8a603b899dd36be5127c2ce",
+          "git_blob_verified": true
+        },
+        {
+          "path": "Renderers/NTK_Renderer.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "8b72a390cbb351b136f3d647620d4d74b16cde13",
+          "size": 6450,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/8b72a390cbb351b136f3d647620d4d74b16cde13",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "2ea1124b6b479c6e30f61739610b5cd94e5331b13cff3fef11708aa0b4069e94",
+          "git_blob_verified": true
+        },
+        {
+          "path": "Renderers/NTK_Renderer.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "c0e0651fd638af679556c8bea9075a3e2905d6b8",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/c0e0651fd638af679556c8bea9075a3e2905d6b8",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "7987171c6d463925f684efa3dd5f65d2815899109f2876cce61ddbdc6117cb76",
+          "git_blob_verified": true
+        },
+        {
+          "path": "Resources/Database.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "79a33b0ac5cd5f65601d126424fb268d83c5b90c",
+          "size": 2827,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/79a33b0ac5cd5f65601d126424fb268d83c5b90c",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "56f5030a14eb73651b63bdba0eabe62a04470219064bb9c0f20701c9ae2b1654",
+          "git_blob_verified": true
+        },
+        {
+          "path": "Resources/Database.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "082d1d92f803d8d6c0b09f7839f2327862e0fafa",
+          "size": 19,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/082d1d92f803d8d6c0b09f7839f2327862e0fafa",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "d816de293d0bb6de70bcbc09c389c6b96542bb97dc9163e5a123fc59b4c385da",
+          "git_blob_verified": true
+        },
+        {
+          "path": "Resources/Debug.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "376be03f3ddd07d4c3a23a5a333bbba49a134532",
+          "size": 1456,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/376be03f3ddd07d4c3a23a5a333bbba49a134532",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "3584933d33a6d187a45b90da0805121a2b990c5cc5dc17e3b08d8eda7184715c",
+          "git_blob_verified": true
+        },
+        {
+          "path": "Resources/Debug.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "6461b7c613032aa0e9926f66aa945a5b967f77be",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/6461b7c613032aa0e9926f66aa945a5b967f77be",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "8ce483bd6bb136a3f8e11b2a5a27caab69af60547a36bee14eff07023f82edca",
+          "git_blob_verified": true
+        },
+        {
+          "path": "Resources/FrameCache.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "d73915d6d5abae02fe7e7be8b6606a7d156f8938",
+          "size": 962,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/d73915d6d5abae02fe7e7be8b6606a7d156f8938",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "1d4cf556708ccd8f9ae1c8dacea7269f25ea3aaf0a53bc09aec7ec2406206d79",
+          "git_blob_verified": true
+        },
+        {
+          "path": "Resources/FrameCache.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "939e4b83c5ec5b1bf3c1e8987ced6c97068e2ca0",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/939e4b83c5ec5b1bf3c1e8987ced6c97068e2ca0",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "3907ed72c49e2dcaf702db81e6c84680fac2addedc25203416be37f1de0a6b92",
+          "git_blob_verified": true
+        },
+        {
+          "path": "Resources/FrameCacheItem.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "859fb129dc59ce7595f0069e564ca53f7df518e1",
+          "size": 284,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/859fb129dc59ce7595f0069e564ca53f7df518e1",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "3b9f772803a2739f63316e5a251be7a8ec0f5f52351aeb91bc82bf5043448d16",
+          "git_blob_verified": true
+        },
+        {
+          "path": "Resources/FrameCacheItem.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "414f92fe26624ac0c6bf52ccdfbb88b602c6273d",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/414f92fe26624ac0c6bf52ccdfbb88b602c6273d",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "04237af4fa2fded97a720723038dfe0a6178ab63a9bd6a120a53b05fcbb8d59d",
+          "git_blob_verified": true
+        },
+        {
+          "path": "Resources/NTK_Animations.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "8e78b9b5a7f48ebbe0312364ce12470156eba9da",
+          "size": 7727,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/8e78b9b5a7f48ebbe0312364ce12470156eba9da",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "4a0bbcbc5590a850633b0032d5ebdb95bffc79d388ae0987ee0ee7a33f9eea77",
+          "git_blob_verified": true
+        },
+        {
+          "path": "Resources/NTK_Animations.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "9da53cd2d7265e16df0f4b12fea8cd4d5bf63b92",
+          "size": 19,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/9da53cd2d7265e16df0f4b12fea8cd4d5bf63b92",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "9c8f69bde420d37aa9dcf841ee85a44a514687a71645cb6237270547439a494f",
+          "git_blob_verified": true
+        },
+        {
+          "path": "Resources/Renderers.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "e905d2470a13420c222a180cc37002afaec72815",
+          "size": 2929,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/e905d2470a13420c222a180cc37002afaec72815",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "5efc333cf61992be6091a4bc74899feb7bf3accb20542fab27fa06edc4ffcd7c",
+          "git_blob_verified": true
+        },
+        {
+          "path": "Resources/Renderers.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "525048d409fe7609d2714cb697d9ce6033b5e7e8",
+          "size": 19,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/525048d409fe7609d2714cb697d9ce6033b5e7e8",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "9a28846894a8f0b317ca5a21600225edcfe5c5e3f3870bb00d6280691527cda9",
+          "git_blob_verified": true
+        },
+        {
+          "path": "Resources/Resources.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "482a75153473cae8dec6830a12437f6625a596f3",
+          "size": 861,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/482a75153473cae8dec6830a12437f6625a596f3",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "1b12f102d5cd68e61c271ccf606fd65c3d8d0e9db599c85d9b40619b85a7857c",
+          "git_blob_verified": true
+        },
+        {
+          "path": "Resources/Resources.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "30b0b96a34341383a8398ead463f14498a11d253",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/30b0b96a34341383a8398ead463f14498a11d253",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "b8684336a35629be60a36dcbbf1d28c4d26daa2b4dcb511724f4a6c781758ecc",
+          "git_blob_verified": true
+        },
+        {
+          "path": "Resources/ViewerResources.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "f176778ec8b8209f628037fa6f775cfe7fc7d875",
+          "size": 21084,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/f176778ec8b8209f628037fa6f775cfe7fc7d875",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "52da2c95e7319bf722156659912108409645c2c681c0354aef2007878b23ce2b",
+          "git_blob_verified": true
+        },
+        {
+          "path": "Resources/ViewerResources.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "79875d5cc518acef724498450ff2e5deb4c9104e",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/79875d5cc518acef724498450ff2e5deb4c9104e",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "3fa3ca574d1b37abfbf76481557d3aa2e57c49dbcce4538418f0e9081f149b4a",
+          "git_blob_verified": true
+        },
+        {
+          "path": "Shaders/NTK_FrameShader.gdshader",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "fd58b7191b353d5921925ddb31dd3a1c0142ca8c",
+          "size": 1453,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/fd58b7191b353d5921925ddb31dd3a1c0142ca8c",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "e289ea5a3294b48e9fef8c111d9ba4b96e91887cb657f8d9854bf8d4cf1dc49d",
+          "git_blob_verified": true
+        },
+        {
+          "path": "Shaders/NTK_FrameShader.gdshader.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "0efd1237aba34d1ca805dc60b5666aab2dce8e38",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/0efd1237aba34d1ca805dc60b5666aab2dce8e38",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "6d6f562cb007fd0003b506ce6e50e7bea03d9a244de2f85f272b0637292a3f40",
+          "git_blob_verified": true
+        },
+        {
+          "path": "addons/godot-sqlite/LICENSE.md",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "68d6eb5fee9979a034ea3c5395edc1cac7a4275e",
+          "size": 1094,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/68d6eb5fee9979a034ea3c5395edc1cac7a4275e",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "7e1d50976e6e1d269d80b48101e1d58bd7fde7826dd82ecf9dbabc305eefd2a4",
+          "git_blob_verified": true
+        },
+        {
+          "path": "addons/godot-sqlite/bin/libgdsqlite.android.template_debug.arm64.so",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "e6cf6eb4d9cf3f87a4d7590f39cef52972a17d97",
+          "size": 2114320,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/e6cf6eb4d9cf3f87a4d7590f39cef52972a17d97",
+          "acquisition_status": "BINARY_NOT_ACQUIRED",
+          "sha256": null,
+          "git_blob_verified": false
+        },
+        {
+          "path": "addons/godot-sqlite/bin/libgdsqlite.android.template_debug.x86_64.so",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "3094dcb0313d93fced11ad7a7c41e6f09ac8ef54",
+          "size": 2198352,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/3094dcb0313d93fced11ad7a7c41e6f09ac8ef54",
+          "acquisition_status": "BINARY_NOT_ACQUIRED",
+          "sha256": null,
+          "git_blob_verified": false
+        },
+        {
+          "path": "addons/godot-sqlite/bin/libgdsqlite.android.template_release.arm64.so",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "29dbf91aff3b6199ca3b82fc9182859c322b50a5",
+          "size": 2147608,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/29dbf91aff3b6199ca3b82fc9182859c322b50a5",
+          "acquisition_status": "BINARY_NOT_ACQUIRED",
+          "sha256": null,
+          "git_blob_verified": false
+        },
+        {
+          "path": "addons/godot-sqlite/bin/libgdsqlite.android.template_release.x86_64.so",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "e60b6c6c702bf2b62dce4803f6e936cc26063e35",
+          "size": 2264960,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/e60b6c6c702bf2b62dce4803f6e936cc26063e35",
+          "acquisition_status": "BINARY_NOT_ACQUIRED",
+          "sha256": null,
+          "git_blob_verified": false
+        },
+        {
+          "path": "addons/godot-sqlite/bin/libgdsqlite.ios.template_debug.arm64.dylib",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "2110e9eff63439dc694106e9c90a7197b7e092c7",
+          "size": 1457432,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/2110e9eff63439dc694106e9c90a7197b7e092c7",
+          "acquisition_status": "BINARY_NOT_ACQUIRED",
+          "sha256": null,
+          "git_blob_verified": false
+        },
+        {
+          "path": "addons/godot-sqlite/bin/libgdsqlite.ios.template_debug.xcframework/Info.plist",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "31fa2a961602ee22659506d0f7b9ecb7e9c5abe2",
+          "size": 1248,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/31fa2a961602ee22659506d0f7b9ecb7e9c5abe2",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "a118d1f4bdbe17560216701e3c19cfa548d19810b10d0c2fadc46ecef5144e68",
+          "git_blob_verified": true
+        },
+        {
+          "path": "addons/godot-sqlite/bin/libgdsqlite.ios.template_debug.xcframework/ios-arm64/libgdsqlite.ios.template_debug.a",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "af7c986b4aa4d748d414556b79a4e64ad6297eb1",
+          "size": 1810536,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/af7c986b4aa4d748d414556b79a4e64ad6297eb1",
+          "acquisition_status": "BINARY_NOT_ACQUIRED",
+          "sha256": null,
+          "git_blob_verified": false
+        },
+        {
+          "path": "addons/godot-sqlite/bin/libgdsqlite.ios.template_debug.xcframework/ios-arm64_x86_64-simulator/libgdsqlite.ios.template_debug.simulator.a",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "ccfb84a4588bc5536c5569d64526576dbbb37131",
+          "size": 3632872,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/ccfb84a4588bc5536c5569d64526576dbbb37131",
+          "acquisition_status": "BINARY_NOT_ACQUIRED",
+          "sha256": null,
+          "git_blob_verified": false
+        },
+        {
+          "path": "addons/godot-sqlite/bin/libgdsqlite.ios.template_release.arm64.dylib",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "07641a68f4b091887d317eed65f23d88a2c354be",
+          "size": 1523032,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/07641a68f4b091887d317eed65f23d88a2c354be",
+          "acquisition_status": "BINARY_NOT_ACQUIRED",
+          "sha256": null,
+          "git_blob_verified": false
+        },
+        {
+          "path": "addons/godot-sqlite/bin/libgdsqlite.ios.template_release.xcframework/Info.plist",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "c75d2c21d7bb95d50940a3c41e083022e748e187",
+          "size": 1256,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/c75d2c21d7bb95d50940a3c41e083022e748e187",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "1fc9b19ebbda0215938ab4cff2ca227bfd54a7fc130c5794cd200e70c4bceb7a",
+          "git_blob_verified": true
+        },
+        {
+          "path": "addons/godot-sqlite/bin/libgdsqlite.ios.template_release.xcframework/ios-arm64/libgdsqlite.ios.template_release.a",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "2cdfe8fa0729e30eba993277568d2edcef7cda6b",
+          "size": 1977528,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/2cdfe8fa0729e30eba993277568d2edcef7cda6b",
+          "acquisition_status": "BINARY_NOT_ACQUIRED",
+          "sha256": null,
+          "git_blob_verified": false
+        },
+        {
+          "path": "addons/godot-sqlite/bin/libgdsqlite.ios.template_release.xcframework/ios-arm64_x86_64-simulator/libgdsqlite.ios.template_release.simulator.a",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "bdfe04f0bc68fe47b2975db5b4875b3f55e6711f",
+          "size": 3901920,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/bdfe04f0bc68fe47b2975db5b4875b3f55e6711f",
+          "acquisition_status": "BINARY_NOT_ACQUIRED",
+          "sha256": null,
+          "git_blob_verified": false
+        },
+        {
+          "path": "addons/godot-sqlite/bin/libgdsqlite.linux.template_debug.x86_64.so",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "6f6d4af1d483bb59ac19d5f232dc50cfda1e7b1b",
+          "size": 1946408,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/6f6d4af1d483bb59ac19d5f232dc50cfda1e7b1b",
+          "acquisition_status": "BINARY_NOT_ACQUIRED",
+          "sha256": null,
+          "git_blob_verified": false
+        },
+        {
+          "path": "addons/godot-sqlite/bin/libgdsqlite.linux.template_release.x86_64.so",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "4613a43c56aa32ba5f4d90a5c924cc33ec14b7cb",
+          "size": 2277400,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/4613a43c56aa32ba5f4d90a5c924cc33ec14b7cb",
+          "acquisition_status": "BINARY_NOT_ACQUIRED",
+          "sha256": null,
+          "git_blob_verified": false
+        },
+        {
+          "path": "addons/godot-sqlite/bin/libgdsqlite.macos.template_debug.framework/Resources/Info.plist",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "994d21b74b08558bd707f821b93da73447893b0a",
+          "size": 793,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/994d21b74b08558bd707f821b93da73447893b0a",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "43624bcd797656ccb2b0492b201f6e077fe22ad13459c71179f5a1b1c8de0381",
+          "git_blob_verified": true
+        },
+        {
+          "path": "addons/godot-sqlite/bin/libgdsqlite.macos.template_debug.framework/libgdsqlite.macos.template_debug",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "e17c525182dad749a5a77f2844b8835393839800",
+          "size": 3059992,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/e17c525182dad749a5a77f2844b8835393839800",
+          "acquisition_status": "BINARY_NOT_ACQUIRED",
+          "sha256": null,
+          "git_blob_verified": false
+        },
+        {
+          "path": "addons/godot-sqlite/bin/libgdsqlite.macos.template_debug.framework/libmacos.libgdsqlite.template_debug",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "51d2de34efb31226bcfee7fa44cb17f3c886ee56",
+          "size": 2695760,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/51d2de34efb31226bcfee7fa44cb17f3c886ee56",
+          "acquisition_status": "BINARY_NOT_ACQUIRED",
+          "sha256": null,
+          "git_blob_verified": false
+        },
+        {
+          "path": "addons/godot-sqlite/bin/libgdsqlite.macos.template_release.framework/Resources/Info.plist",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "60b980813d839f1ca500b8814af3b81df0a48e01",
+          "size": 797,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/60b980813d839f1ca500b8814af3b81df0a48e01",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "03ab997a3ef6830e2f739c112e60a02a1fca07265d0ccfedd5fed0f001485a5b",
+          "git_blob_verified": true
+        },
+        {
+          "path": "addons/godot-sqlite/bin/libgdsqlite.macos.template_release.framework/libgdsqlite.macos.template_release",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "b977296052ec6c5afdb4dba2386aa6f92aa3ed95",
+          "size": 3191624,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/b977296052ec6c5afdb4dba2386aa6f92aa3ed95",
+          "acquisition_status": "BINARY_NOT_ACQUIRED",
+          "sha256": null,
+          "git_blob_verified": false
+        },
+        {
+          "path": "addons/godot-sqlite/bin/libgdsqlite.macos.template_release.framework/libmacos.libgdsqlite.template_release",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "c480fedead77b8569483ed54d0727ee022f06204",
+          "size": 2893264,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/c480fedead77b8569483ed54d0727ee022f06204",
+          "acquisition_status": "BINARY_NOT_ACQUIRED",
+          "sha256": null,
+          "git_blob_verified": false
+        },
+        {
+          "path": "addons/godot-sqlite/bin/libgdsqlite.web.template_debug.wasm32.wasm",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "459acb582c00849979c13224df24e7fb04d84b66",
+          "size": 2079806,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/459acb582c00849979c13224df24e7fb04d84b66",
+          "acquisition_status": "BINARY_NOT_ACQUIRED",
+          "sha256": null,
+          "git_blob_verified": false
+        },
+        {
+          "path": "addons/godot-sqlite/bin/libgdsqlite.web.template_release.wasm32.wasm",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "df507b542f441e55b9e33023b137a97c6355ba1f",
+          "size": 2158826,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/df507b542f441e55b9e33023b137a97c6355ba1f",
+          "acquisition_status": "BINARY_NOT_ACQUIRED",
+          "sha256": null,
+          "git_blob_verified": false
+        },
+        {
+          "path": "addons/godot-sqlite/bin/libgdsqlite.windows.template_debug.x86_64.dll",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "fe906adb9d84b1839494a1e9db4968541606ea6e",
+          "size": 2775552,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/fe906adb9d84b1839494a1e9db4968541606ea6e",
+          "acquisition_status": "BINARY_NOT_ACQUIRED",
+          "sha256": null,
+          "git_blob_verified": false
+        },
+        {
+          "path": "addons/godot-sqlite/bin/libgdsqlite.windows.template_release.x86_64.dll",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "fe68109b33a50027e1af79c343d4d80311570c4c",
+          "size": 3020288,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/fe68109b33a50027e1af79c343d4d80311570c4c",
+          "acquisition_status": "BINARY_NOT_ACQUIRED",
+          "sha256": null,
+          "git_blob_verified": false
+        },
+        {
+          "path": "addons/godot-sqlite/bin/libgodot-cpp.ios.template_debug.xcframework/Info.plist",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "7c5615d1972046c834654cae257d9acdd125f249",
+          "size": 1284,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/7c5615d1972046c834654cae257d9acdd125f249",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "133f186d755bd7eb302fcbb3d1fabed0676b5f11dc21b3c1a3e13e788e492ad2",
+          "git_blob_verified": true
+        },
+        {
+          "path": "addons/godot-sqlite/bin/libgodot-cpp.ios.template_debug.xcframework/ios-arm64/libgodot-cpp.ios.template_debug.arm64.a",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "dd480dd702eb894187348a803e8243009ca65958",
+          "size": 42905488,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/dd480dd702eb894187348a803e8243009ca65958",
+          "acquisition_status": "BINARY_NOT_ACQUIRED",
+          "sha256": null,
+          "git_blob_verified": false
+        },
+        {
+          "path": "addons/godot-sqlite/bin/libgodot-cpp.ios.template_debug.xcframework/ios-arm64_x86_64-simulator/libgodot-cpp.ios.template_debug.universal.simulator.a",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "d67516ad702098e166cc466118835b2d794aed93",
+          "size": 84285584,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/d67516ad702098e166cc466118835b2d794aed93",
+          "acquisition_status": "BINARY_NOT_ACQUIRED",
+          "sha256": null,
+          "git_blob_verified": false
+        },
+        {
+          "path": "addons/godot-sqlite/bin/libgodot-cpp.ios.template_release.xcframework/Info.plist",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "dd5716810c53c5bf522ef426930fdb30eb414a8e",
+          "size": 1292,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/dd5716810c53c5bf522ef426930fdb30eb414a8e",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "6112e6415f775b1efb5f8855fe1e48bfd570700df1b3e298e370702cbe7a2ee5",
+          "git_blob_verified": true
+        },
+        {
+          "path": "addons/godot-sqlite/bin/libgodot-cpp.ios.template_release.xcframework/ios-arm64/libgodot-cpp.ios.template_release.arm64.a",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "be2f8699d98041d97b3c109ededc643ed6bd2e06",
+          "size": 37620424,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/be2f8699d98041d97b3c109ededc643ed6bd2e06",
+          "acquisition_status": "BINARY_NOT_ACQUIRED",
+          "sha256": null,
+          "git_blob_verified": false
+        },
+        {
+          "path": "addons/godot-sqlite/bin/libgodot-cpp.ios.template_release.xcframework/ios-arm64_x86_64-simulator/libgodot-cpp.ios.template_release.universal.simulator.a",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "bbaf0b88695b49bce6cc64a284f568f8e0391984",
+          "size": 76101144,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/bbaf0b88695b49bce6cc64a284f568f8e0391984",
+          "acquisition_status": "BINARY_NOT_ACQUIRED",
+          "sha256": null,
+          "git_blob_verified": false
+        },
+        {
+          "path": "addons/godot-sqlite/gdsqlite.gdextension",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "ea9415d353bccc7157c997312fb083184de48334",
+          "size": 1680,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/ea9415d353bccc7157c997312fb083184de48334",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "c8e9f97b8b2212ffeeb4c083829cd86d48b5e5ed7357b79b6b5c8a6f52645441",
+          "git_blob_verified": true
+        },
+        {
+          "path": "addons/godot-sqlite/gdsqlite.gdextension.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "a05c79319343975155bdfd63f992496718a89b53",
+          "size": 20,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/a05c79319343975155bdfd63f992496718a89b53",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "5f50bf2d645f784cfd7f9a031802f12f438d6770bd66df83a55ab636236a0966",
+          "git_blob_verified": true
+        },
+        {
+          "path": "addons/godot-sqlite/godot-sqlite.gd",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "f81d95c0d39a79965d73dc93e4773710d989d7cf",
+          "size": 420,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/f81d95c0d39a79965d73dc93e4773710d989d7cf",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "ec705e1c3efb488d9d7fa09bd839dd32fd34ac108afbffa6fc46a41b849bf460",
+          "git_blob_verified": true
+        },
+        {
+          "path": "addons/godot-sqlite/godot-sqlite.gd.uid",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "ef77a1da3b18547fc995fefee2f742ee3e448ff2",
+          "size": 19,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/ef77a1da3b18547fc995fefee2f742ee3e448ff2",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "a15bf680d66b80a4af7fbe9ea68c249e8c3df53895a16ad40dfb9d50df8f8bb0",
+          "git_blob_verified": true
+        },
+        {
+          "path": "addons/godot-sqlite/plugin.cfg",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "03bc112e26b7401d005f27b2739045377ffc6426",
+          "size": 252,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/03bc112e26b7401d005f27b2739045377ffc6426",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "cb10928c5e09b857af83c5de11e7fe1979fa0c8e42ee846652acb2a2253fb5cf",
+          "git_blob_verified": true
+        },
+        {
+          "path": "epfviewer.gif",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "3db3b7a181b21c10987db2288e696fdfa91c886c",
+          "size": 237375,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/3db3b7a181b21c10987db2288e696fdfa91c886c",
+          "acquisition_status": "BINARY_NOT_ACQUIRED",
+          "sha256": null,
+          "git_blob_verified": false
+        },
+        {
+          "path": "icon.png",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "2a42265a53e8e7fb0f72c81a896fdcf0efea60a9",
+          "size": 2377,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/2a42265a53e8e7fb0f72c81a896fdcf0efea60a9",
+          "acquisition_status": "BINARY_NOT_ACQUIRED",
+          "sha256": null,
+          "git_blob_verified": false
+        },
+        {
+          "path": "icon.png.import",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "29cb2cf514ef7814a70930fdfe829aea91a15aab",
+          "size": 916,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/29cb2cf514ef7814a70930fdfe829aea91a15aab",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "c47ff67e51317673697e1caf6933a7fdf9452e0bc10ab483c81bc50243ccb3e1",
+          "git_blob_verified": true
+        },
+        {
+          "path": "project.godot",
+          "mode": "100644",
+          "type": "blob",
+          "sha": "c3343649dc9c3e4dd9c1cef8f594255674748275",
+          "size": 2523,
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/blobs/c3343649dc9c3e4dd9c1cef8f594255674748275",
+          "acquisition_status": "ACQUIRED",
+          "sha256": "9ee073fd682615415795fbf8c355a1437b907b3895f1ad5ee2a4cfb0ca925524",
+          "git_blob_verified": true
+        }
+      ],
+      "full_tree_status": "COMPLETE_FIXED_SOURCE_TREE_BYTES",
+      "full_tree_files_acquired": 147,
+      "full_tree_files_matched": 147,
+      "full_tree_manifest_sha256": "295487e0a99ded4cc137c51744dffcde611c94d6e6531a32fbbf7dc2274f761a",
+      "full_tree_manifest_path": "/workspace/scratch/8a697b0cae82/research/visual_full/EPFViewer-FULL_MANIFEST.json",
+      "initial_text_only_scope": "Historical local text acquisition files remain183; additional28binary source-treefiles acquired separately without executing"
+    }
+  ],
+  "private_source_previews": [
+    {
+      "file": "body_0_104.png",
+      "family": "Body",
+      "frame_start": 0,
+      "frame_count": 104,
+      "palette": 0,
+      "scope": "source preview only; labels zero-based frame and left/top; no game rendering/timing",
+      "sha256": "f326dcd9b25c84940aa3bb7d25cb06b168a52dc44bc065210bb8ce23a6ef9014",
+      "anchor": [
+        64,
+        76
+      ],
+      "caption": "frame index label; grey cross source(0,0); common anchor no centering/flipping"
+    },
+    {
+      "file": "head_0_100.png",
+      "family": "Head",
+      "frame_start": 0,
+      "frame_count": 100,
+      "palette": 0,
+      "scope": "source preview only; labels zero-based frame and left/top; no game rendering/timing",
+      "sha256": "8fad22f92b93067d3e4e7b86624bd963cf05c6fff1fa1a1cca345d22d328e3e2",
+      "anchor": [
+        64,
+        76
+      ],
+      "caption": "frame index label; grey cross source(0,0); common anchor no centering/flipping"
+    },
+    {
+      "file": "sword_20_20.png",
+      "family": "Sword",
+      "frame_start": 20,
+      "frame_count": 20,
+      "palette": 0,
+      "scope": "source preview only; labels zero-based frame and left/top; no game rendering/timing",
+      "sha256": "e4e84cfb2b571a6a84d9506fc2e3aac1a8538b575815a448e9561729db254650",
+      "anchor": [
+        64,
+        76
+      ],
+      "caption": "frame index label; grey cross source(0,0); common anchor no centering/flipping"
+    },
+    {
+      "file": "monster_0_20.png",
+      "family": "Monster",
+      "frame_start": 0,
+      "frame_count": 20,
+      "palette": 0,
+      "scope": "source preview only; labels zero-based frame and left/top; no game rendering/timing",
+      "sha256": "759620cc2ee64e3a20c1af96335a59d9575038b81f9e6b81aae0eb39b922adfc",
+      "anchor": [
+        64,
+        76
+      ],
+      "caption": "frame index label; grey cross source(0,0); common anchor no centering/flipping"
+    },
+    {
+      "file": "monster_520_20.png",
+      "family": "Monster",
+      "frame_start": 520,
+      "frame_count": 20,
+      "palette": 0,
+      "scope": "source preview only; labels zero-based frame and left/top; no game rendering/timing",
+      "sha256": "1881f97f5e9db4d229bc6d1d61f222bc94fff2db652e821f15d0bac67cea6b91",
+      "anchor": [
+        64,
+        76
+      ],
+      "caption": "frame index label; grey cross source(0,0); common anchor no centering/flipping"
+    },
+    {
+      "file": "effect_0_25.png",
+      "family": "Effect",
+      "frame_start": 0,
+      "frame_count": 25,
+      "palette": 0,
+      "scope": "source preview only; labels zero-based frame and left/top; no game rendering/timing",
+      "sha256": "3b9f508ef69e03ea398131cd8f4074e46e97a3662d11fbe96f62892af26e7325",
+      "anchor": [
+        64,
+        76
+      ],
+      "caption": "frame index label; grey cross source(0,0); common anchor no centering/flipping"
+    },
+    {
+      "file": "dlglogin.png",
+      "family": "DLGLOGIN",
+      "frame_start": 0,
+      "frame_count": 1,
+      "palette_member": "DlgLogin.pal",
+      "palette_binding": "CANDIDATE_NAME_MATCH_NOT_RUNTIME_PROVED",
+      "mask": "UNDECODED_RAW_PIXELS_ONLY",
+      "scope": "source pixels only; UI order/action/historical eligibility unproved",
+      "sha256": "dcf16bc9c575b249c1252e4e55ea66733d33b052926e478c1e702b35a478446b"
+    },
+    {
+      "file": "dlgnew01.png",
+      "family": "DLGNEW01",
+      "frame_start": 0,
+      "frame_count": 1,
+      "palette_member": "NewUser.pal",
+      "palette_binding": "CANDIDATE_NAME_MATCH_NOT_RUNTIME_PROVED",
+      "mask": "UNDECODED_RAW_PIXELS_ONLY",
+      "scope": "source pixels only; UI order/action/historical eligibility unproved",
+      "sha256": "aa50b8db31a5ce50e94fe1ad9a9ad021cb972fd93d600bbc52f839c160b28278"
+    },
+    {
+      "file": "dlgnew02.png",
+      "family": "DLGNEW02",
+      "frame_start": 0,
+      "frame_count": 1,
+      "palette_member": "NewUser.pal",
+      "palette_binding": "CANDIDATE_NAME_MATCH_NOT_RUNTIME_PROVED",
+      "mask": "DECODED",
+      "scope": "source pixels only; UI order/action/historical eligibility unproved",
+      "sha256": "cd165f0d746053911fc68865a2c131e2f7dfc09795d362a24c796ed73b695632"
+    },
+    {
+      "file": "guide_P15-ARIMG-0a76eb2363ec.png",
+      "source_id": "P15-ARIMG-0a76eb2363ec",
+      "source_gif_sha256": "74e9bc52d82e06919418f13c7f652aa08f2fc9029c38433064b3267a22a97dc9",
+      "frame_count": 9,
+      "scope": "official guideGIF composited source-frame sheet; allframes visually reviewed; no game runtime/timing",
+      "sha256": "0b671166b43ddb4604b35c61b5d3d4d464378f5b0755870b39c54014fe59533d"
+    },
+    {
+      "file": "guide_P15-ARIMG-8c25ba405454.png",
+      "source_id": "P15-ARIMG-8c25ba405454",
+      "source_gif_sha256": "2d2db3690b8edb2879856b6519cb299bde466a0ed6e122c9ab9517a0581464f1",
+      "frame_count": 25,
+      "scope": "official guideGIF composited source-frame sheet; allframes visually reviewed; no game runtime/timing",
+      "sha256": "557f09eccb684ac698ece6cd99ed23bdcca98820c80cfc52bea1cf659fcdbeee"
+    },
+    {
+      "file": "guide_P15-ARIMG-f89ad09a2416.png",
+      "source_id": "P15-ARIMG-f89ad09a2416",
+      "source_gif_sha256": "529e8702efc9bfde15b1e49bb1e5bf7e4542a457699a5bd3e66e8a634f7c15fa",
+      "frame_count": 11,
+      "scope": "official guideGIF composited source-frame sheet; allframes visually reviewed; no game runtime/timing",
+      "sha256": "e96be2ee0d916bb2896f728b933e15e7a47a6bcbb2097d02c437592da7437a6e"
+    },
+    {
+      "file": "guide_P15-ARIMG-232181ef72f2.png",
+      "source_id": "P15-ARIMG-232181ef72f2",
+      "source_gif_sha256": "01ceb9b94b0a7c82443d12f1f2321253cb0d93b0f6e858726ffbab6f987ce839",
+      "frame_count": 13,
+      "scope": "official guideGIF composited source-frame sheet; allframes visually reviewed; no game runtime/timing",
+      "sha256": "23917bc2af913e3e42dd0ef1bca712a88474a9464eb11fd57549492912f471f6"
+    }
+  ],
+  "static_parser_tests": {
+    "tests": [
+      {
+        "name": "all9counted_tables_fullcount_uniqueID",
+        "result": "PASS"
+      },
+      {
+        "name": "Effect128_sequences1788frames_preserve17negativeFrameSentinel",
+        "result": "PASS"
+      },
+      {
+        "name": "counted_truncated_rejected",
+        "result": "PASS"
+      },
+      {
+        "name": "counted_duplicateID_rejected",
+        "result": "PASS"
+      },
+      {
+        "name": "counted_unknown_syntax_rejected",
+        "result": "PASS"
+      },
+      {
+        "name": "effect_truncated_rejected",
+        "result": "PASS"
+      },
+      {
+        "name": "effect_bad_declared_count_rejected",
+        "result": "PASS"
+      },
+      {
+        "name": "effect_duplicateID_rejected",
+        "result": "PASS"
+      },
+      {
+        "name": "independentRIFFfmt_PCM_all163",
+        "result": "PASS",
+        "members": 163
+      },
+      {
+        "name": "wronginputhash",
+        "result": "PASS",
+        "observed_exit_code": 1,
+        "observed_status": "FAIL"
+      },
+      {
+        "name": "missinginput",
+        "result": "PASS",
+        "observed_exit_code": 2,
+        "observed_status": "BLOCKED"
+      }
+    ],
+    "passed": 11,
+    "total": 11,
+    "scope": "fixed actual bytes + isolated parser-invalid input, not target-era/gameplay checks"
+  },
+  "sprite_decode_expected": 27624,
+  "sprite_decode_checked": 27624,
+  "sprite_decode_passed": 27622,
+  "sprite_decode_blocked": 2,
+  "ui_mask_diagnostic": [
+    {
+      "member": "DLGLOGIN.epf",
+      "declared_frame_width": 316,
+      "row_count": 187,
+      "raw_run_width_histogram": {
+        "318": 187
+      },
+      "disposition": "unsupported exact input mask dialect; no clip/default; source corruption not established"
+    },
+    {
+      "member": "DLGNEW01.epf",
+      "declared_frame_width": 316,
+      "row_count": 202,
+      "raw_run_width_histogram": {
+        "318": 202
+      },
+      "disposition": "unsupported exact input mask dialect; no clip/default; source corruption not established"
+    }
+  ],
+  "private_source_previews_visual_review": {
+    "files_seen": 9,
+    "images_created": 9,
+    "scope": "source parts separated at fixed origin; no compositor, animation timing or original runtime",
+    "observed": [
+      "Monster graphic0 image shows facing back/right/front/left in groups0..2/3..5/6..8/9..11; sample only, name unknown",
+      "Body0 and Head0 visually include four directions and distinct action silhouettes; no global action table identified",
+      "Body0 frame94 is empty source frame; no replacement synthesized",
+      "Sword1 source images carry distinct blade/swing silhouettes; no equipment-item binding proved",
+      "UI palette name matching is only candidate: creation preview appears dithered/blue, no palette correctness claim",
+      "DLGLOGIN and DLGNEW01 preview raw indexed pixels without undecoded mask; deliberately not marked complete decode"
+    ]
+  },
+  "p2_observation_cases": [
+    {
+      "case_id": "P15-ASSET-OBS-CHAR",
+      "unit": "P2-02",
+      "inputs": [
+        "NWind.dat:Body/Head/Sword/DrwOrder tables+EPF/PAL"
+      ],
+      "required_setup": "fixed KR491 source copy; no NPC/item name assumed from graphic number; Body0/Head0/Sword1 reference subset; exact client-server compatibility remains blocked",
+      "actions": [
+        "isolate four direction source frames",
+        "compare walk and attack body/head/weapon origins",
+        "observe actual draw token use and part shifts in separately authorized reference session"
+      ],
+      "observe": [
+        "direction index mapping",
+        "action entry/exit/repeat/interruption",
+        "token w/b/h/s/0 semantics",
+        "unsupported last4 Body frames relative to100 DrwOrder tokens"
+      ],
+      "timing_unit": "UNKNOWN; recording FPS is measurement resolution only",
+      "current_status": "PARTIAL_FORMAT_INPUT_READY_RUNTIME_NOT_RUN"
+    },
+    {
+      "case_id": "P15-ASSET-OBS-EFX",
+      "unit": "P2-03",
+      "inputs": [
+        "NWind.dat:Effect.tbl/frm/epf/pal",
+        "NWind.snd:all163WAV"
+      ],
+      "required_setup": "compatible KR491 reference environment not yet established; known skill must be bound by actual event/code before measurement",
+      "actions": [
+        "select effect sequence with front+back, one repeat, one Frame#=-1, one mixed repeat sentinel",
+        "capture input/cast/impact/sound and action-resume as separate events with single audio/video clock"
+      ],
+      "observe": [
+        "Delay unit",
+        "Frame#=-1 event semantics",
+        "Alpha/Light",
+        "spell→effect/sound ID binding",
+        "front/back ordering",
+        "input/network/audio/video latency kept separate"
+      ],
+      "current_status": "PARTIAL_RAW_DATA_READY_BEHAVIOR_BLOCKED"
+    },
+    {
+      "case_id": "P15-ASSET-OBS-UIMASK",
+      "unit": "P2-04",
+      "inputs": [
+        "NWind.dat:DLGLOGIN.epf/DLGNEW01.epf/DLGNEW02.epf",
+        "DlgLogin/NewUser/Baram palettes"
+      ],
+      "required_setup": "immutable source bytes and exact hashes; avoid clamping mask rowwidth",
+      "actions": [
+        "compare corresponding original UI resource in source-compatible reference display",
+        "inspect decoder consuming login mask widths316 vs run sums318",
+        "derive supported format change only after independent evidence"
+      ],
+      "observe": [
+        "right-edge padding or different mask convention",
+        "actual palette binding",
+        "position/shape/color match"
+      ],
+      "current_status": "BLOCKED_MASK_DIALECT"
+    },
+    {
+      "case_id": "P15-ASSET-OBS-CREATE",
+      "unit": "P2-04",
+      "inputs": [
+        "NWind.dat:Str_Kor.res208lines + selected38 UI strings"
+      ],
+      "required_setup": "source-compatible KR491 reference flow; local profile/authentication kept separate",
+      "actions": [
+        "observe sex/face/nation/guardian choices",
+        "record order/cancel/back/error",
+        "test valid Korean input and rejected duplicate/length only in separately authorized isolated setup"
+      ],
+      "observe": [
+        "actual option order",
+        "Korean IME composition",
+        "server accepted names and errors",
+        "starting job/location/items remain independent server facts"
+      ],
+      "current_status": "PARTIAL_KOREAN_OPTION_EVIDENCE_READY"
+    }
+  ],
+  "private_selected_content_files": [
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_asset_draw_order.jsonl",
+      "rows": 100,
+      "bytes": 128968,
+      "sha256": "3f50128cb53d44d926362f09bc0c62324dfeccf0c1041d67b8b19ffce46f4fbb",
+      "public_republish": false
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_asset_effect_frame_palettes.jsonl",
+      "rows": 1611,
+      "bytes": 2154832,
+      "sha256": "b644c6def8fa486524b81ddc16fda6b5b8e48d3c0f20702e6705a54b5879c713",
+      "public_republish": false
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_asset_effect_sequences.jsonl",
+      "rows": 128,
+      "bytes": 547576,
+      "sha256": "1a269e602493b04a4ae6b96160d480e16dad7e82ba98344e277396f692036961",
+      "public_republish": false
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_asset_guide_effects.jsonl",
+      "rows": 162,
+      "bytes": 195091,
+      "sha256": "63d8fb07e70a72ee3c1a94999c76aac5959edd67fef12d9e3adf99bd2efca7d7",
+      "public_republish": false
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_asset_legacy_effect_tables.jsonl",
+      "rows": 168,
+      "bytes": 227464,
+      "sha256": "d200d09e47e0bda9646b69c96d651274b9ce70f04db70f629a79430b40ee8982",
+      "public_republish": false
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_asset_monster_groups.jsonl",
+      "rows": 225,
+      "bytes": 265302,
+      "sha256": "91c911eece0ff1ac1b7342370c1ecc96eaf736ce43f572715c7ca1d4eb47b2b5",
+      "public_republish": false
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_asset_parts.jsonl",
+      "rows": 1927,
+      "bytes": 2884171,
+      "sha256": "b1e5086da6ebad28ecc76e7ee387fc7077d5d6f5854f710638b951617c603726",
+      "public_republish": false
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_asset_sound_metadata.jsonl",
+      "rows": 163,
+      "bytes": 192911,
+      "sha256": "7009968509ca44eee06698c218a4da450158175e0e00560ffe507e30cb1a6d5c",
+      "public_republish": false
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_asset_sprite_frames.jsonl",
+      "rows": 9,
+      "bytes": 548473,
+      "sha256": "74416716dc20f3ceb3dd26828397069fd5c0efe5667e4b9fcadb8dad9a32dd7b",
+      "public_republish": false
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_asset_ui_strings.jsonl",
+      "rows": 38,
+      "bytes": 52726,
+      "sha256": "83c211482f0e1785af628855d014d2d80fc9fd76104c3d780bd8af6399fe009c",
+      "public_republish": false
+    }
+  ],
+  "full_visual_source_tree_acquisition": {
+    "scope": "two fixed visual-tool repositories complete source trees, not built or run",
+    "results": [
+      {
+        "repository": "DizzyThermal/TKViewer",
+        "commit": "2943507d0a8b91b990b94d2cc82c3f589343d3ec",
+        "status": "COMPLETE_FIXED_SOURCE_TREE_BYTES",
+        "files_expected": 64,
+        "files_acquired": 64,
+        "matched": 64,
+        "new_files": 2,
+        "new_bytes": 4754,
+        "nonblob": 0,
+        "lfs_pointers": 0,
+        "manifest_path": "/workspace/scratch/8a697b0cae82/research/visual_full/TKViewer-FULL_MANIFEST.json",
+        "manifest_sha256": "2eb7fef480f3f907fcdc3662c39be4a5afb00cee33dbf957f2cf02f6171475cb"
+      },
+      {
+        "repository": "DizzyThermal/EPFViewer",
+        "commit": "2bc585b3ae3310df5de46f7789eada92840fbd59",
+        "status": "COMPLETE_FIXED_SOURCE_TREE_BYTES",
+        "files_expected": 147,
+        "files_acquired": 147,
+        "matched": 147,
+        "new_files": 26,
+        "new_bytes": 290279872,
+        "nonblob": 0,
+        "lfs_pointers": 0,
+        "manifest_path": "/workspace/scratch/8a697b0cae82/research/visual_full/EPFViewer-FULL_MANIFEST.json",
+        "manifest_sha256": "295487e0a99ded4cc137c51744dffcde611c94d6e6531a32fbbf7dc2274f761a"
+      }
+    ]
+  },
+  "guide_effect_comparison": {
+    "counts": {
+      "guide_images_checked": 60,
+      "unique_guide_image_hashes": 51,
+      "guide_images_with_unique_full_sequence_match": 18,
+      "unique_image_hashes_with_full_sequence_match": 13,
+      "distinct_effect_sequences_identified": 13,
+      "named_guide_relationship_rows": 162,
+      "named_exact_relationships": 53,
+      "distinct_exact_skill_names": 32
+    },
+    "method": "Pillow composited GIF→trimmed nonblackRGB SHA256 with exact dimensions→all1611KR491Effect frames and their original FRM palettes→complete front-only ordered effect sequence; no position/timing equivalence. Named HTML row must both reference basename and belong to the acquired image's recorded parent sources.",
+    "script_sha256": "121b0d6fa94ff1b6f31620ef221b29ed394d07672b80fa5770300f8be37316b7",
+    "private_evidence_sha256": "cd16d538439ef2ac4ce621b079e92c0c3a275865ead0497dca6996646ebe0abd",
+    "private_evidence_path": "/workspace/scratch/8a697b0cae82/private-research-assets/guide_effect_comparison.json",
+    "guide_manifest_sha256": "fbcb19106b9dfd8dd7f2f01ffee75514ade1f80f2933e5ae7699eb672d49b6b2",
+    "guide_logical_relative_refs_expected": 52,
+    "guide_url_requests": 64,
+    "valid_gif_retrievals": 60,
+    "unique_valid_gif_hashes": 51,
+    "access_blocked": 3,
+    "nonimage_format_failed": 1,
+    "game_tests": "NOT_RUN",
+    "timing_unit": "UNKNOWN; GIFdeclared centiseconds do not establish sourceDelay unit",
+    "examples": [
+      {
+        "skill": "진백호령",
+        "guide_image": "eff043.gif",
+        "exact_nonblank_frames": 24,
+        "kr_effect_sequence": 56,
+        "source_frame_range": [
+          536,
+          559
+        ],
+        "state": "IDENTIFIED_BITMAPS_P2_ONLY"
+      },
+      {
+        "skill": "백호검무",
+        "guide_image": "eff052.gif",
+        "exact_nonblank_frames": 10,
+        "kr_effect_sequence": 68,
+        "source_frame_range": [
+          665,
+          674
+        ],
+        "state": "IDENTIFIED_BITMAPS_P2_ONLY"
+      },
+      {
+        "skill": "백호참",
+        "guide_image": "eff050.gif",
+        "exact_nonblank_frames": 6,
+        "total_nonblank_frames": 8,
+        "kr_effect_sequence_candidate": 66,
+        "state": "PARTIAL_NOT_SELECTED"
+      }
+    ],
+    "parent_core_sha256": "010bef4cff3aa21716ca63423eda0eb9f225c58cba0b6be79029c6ca954429dc"
+  },
+  "npc_screenshot_frame_comparison": {
+    "method": "Every7136MonsterEPFframe with own Monster.tbl palette; only100+opaque-pixel templates fitting manuallyidentified crop; all valid translations maskedRGB exact-equality, no approximate ID adoption",
+    "source_template_frames": 7136,
+    "cases": [
+      {
+        "npc": "검성태백",
+        "source_id": "P15-ARCASSET-b686ee32bb35",
+        "screenshot_sha256": "87e3f3a0373c1bafee326f26434e0bd8dcfea77c697b25dcdd2035e586464eea",
+        "bbox": [
+          204,
+          143,
+          232,
+          193
+        ],
+        "exact_matches": [],
+        "templates_checked": 2600,
+        "disposition": "Exact opaqueRGB frame comparison only; no body/head composition tested. Quantization, clothing recolor and screenshot clipping may prevent exact match. No NPC lookID adopted unless unique independently reviewed."
+      },
+      {
+        "npc": "현자해두",
+        "source_id": "P15-ARCASSET-cea7f4fc49ab",
+        "screenshot_sha256": "87c1e0ac05c8fef9d6bac8548dd339c97f2629467ee40226da20ee0f04497f3a",
+        "bbox": [
+          207,
+          149,
+          230,
+          193
+        ],
+        "exact_matches": [],
+        "templates_checked": 1638,
+        "disposition": "Exact opaqueRGB frame comparison only; no body/head composition tested. Quantization, clothing recolor and screenshot clipping may prevent exact match. No NPC lookID adopted unless unique independently reviewed."
+      },
+      {
+        "npc": "태성마로",
+        "source_id": "P15-ARCASSET-8f44f514dd59",
+        "screenshot_sha256": "4bd51aae2475b9b33f2a4672fd07a58c6a5cdfe5005f7f29b927ae772045e410",
+        "bbox": [
+          207,
+          152,
+          230,
+          193
+        ],
+        "exact_matches": [],
+        "templates_checked": 1061,
+        "disposition": "Exact opaqueRGB frame comparison only; no body/head composition tested. Quantization, clothing recolor and screenshot clipping may prevent exact match. No NPC lookID adopted unless unique independently reviewed."
+      },
+      {
+        "npc": "진선진선",
+        "source_id": "P15-ARCASSET-15baa2f13413",
+        "screenshot_sha256": "087412f2eee918689e9e65b656791baf9981f23987d55342cf4986bc0165516f",
+        "bbox": [
+          204,
+          152,
+          230,
+          194
+        ],
+        "exact_matches": [],
+        "templates_checked": 1439,
+        "disposition": "Exact opaqueRGB frame comparison only; no body/head composition tested. Quantization, clothing recolor and screenshot clipping may prevent exact match. No NPC lookID adopted unless unique independently reviewed."
+      }
+    ],
+    "game_tests": "NOT_RUN"
+  },
+  "guide_effect_previews_visual_reviewed": 4
+}

@@ -278,7 +278,7 @@ def main():
         block = text[m.start():end]
         first = text.count("\n", 0, m.start()) + 1
         value = {"npc_identifier": m[2], "callback_kind": m[1], "calls": [{"line": first + n, "source_text": line.strip()} for n, line in enumerate(block.splitlines()) if re.search(r"ctx[:.]", line) and not line.lstrip().startswith("--")], "semantic_parse": "PARTIAL_LEXICAL_INDEX_ONLY", "dialogue_graph": "NOT_DECODED", "requires_consumer": "Server/NpcScript.cs"}
-        records_by_domain["npc_dialogue"].append(record("P1998", path, f"dialog-{m[1]}-{m[2]}", value, first, text.count("\n", 0, end) + 1, kind="static_script_index"))
+        records_by_domain["npc_dialogue"].append(record("P1998", path, f"dialog-{m[1]}-{m[2]}", value, first, min(text.count("\n", 0, end) + 1, len(text.splitlines())), kind="static_script_index"))
     counts["P1998.lua_dialogue_entrypoints"] = len(npc_entries)
 
     # Full dependency manifests, without restore/build/package installation.

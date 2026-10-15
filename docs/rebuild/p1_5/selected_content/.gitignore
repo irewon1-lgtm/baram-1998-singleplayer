@@ -1,0 +1,2 @@
+# Actual value exports belong to the private handoff; never publish client resource tables.
+*.jsonl

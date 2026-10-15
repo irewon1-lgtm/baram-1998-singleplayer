@@ -1,0 +1,14 @@
+[
+  {
+    "name": "NA_4.95_Nexus495.exe",
+    "reader": "libarchive13",
+    "result": "BLOCKED_UNSUPPORTED",
+    "error": "Unrecognized archive format"
+  },
+  {
+    "name": "NA_4.03_french.exe",
+    "reader": "libarchive13",
+    "result": "BLOCKED_UNSUPPORTED",
+    "error": "Unrecognized archive format"
+  }
+]

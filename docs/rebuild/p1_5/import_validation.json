@@ -1,0 +1,2047 @@
+{
+  "task_id": "BARAM_REBUILD_P1_5_001",
+  "executed_at_utc": "2026-10-15T23:36:16.926928+00:00",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "tools/rebuild/p1_5/import_dry_run.py",
+    "--input-map",
+    "/workspace/scratch/8a697b0cae82/private-recheck/input_map_validation.json",
+    "--catalog-manifest",
+    "docs/rebuild/p1_5/INPUT_MANIFEST.json",
+    "--output",
+    "docs/rebuild/p1_5/import_validation.json"
+  ],
+  "validator_version": "baram-p15-static-import/1.0",
+  "validator_sha256": "66a6b9286b824751e890376f87e8a908498a3a319f2e457e744de30350a8632f",
+  "result": "FAIL",
+  "integrity_result": "PASS",
+  "source_reference_result": "FAIL",
+  "semantic_readiness_result": "BLOCKED",
+  "files_read": 37,
+  "rows_read": 44796,
+  "unique_record_ids": 44796,
+  "sources_referenced": 1009,
+  "source_byte_hashes_read": 1241,
+  "records_by_file": {
+    "kr_asset_draw_order": 100,
+    "kr_asset_effect_frame_palettes": 1611,
+    "kr_asset_effect_sequences": 128,
+    "kr_asset_guide_effects": 162,
+    "kr_asset_legacy_effect_tables": 168,
+    "kr_asset_monster_groups": 225,
+    "kr_asset_parts": 1927,
+    "kr_asset_sound_metadata": 163,
+    "kr_asset_sprite_frames": 9,
+    "kr_asset_ui_strings": 38,
+    "kr_documented_fields": 303,
+    "kr_official_core": 928,
+    "kr_official_crafting_facts": 18,
+    "kr_official_creation_visual": 1,
+    "kr_official_facility_rules": 28,
+    "kr_official_flow": 20,
+    "kr_official_full_maps": 2,
+    "kr_official_image_bindings": 105,
+    "kr_official_items": 771,
+    "kr_official_map_assets": 129,
+    "kr_official_npc_appearance": 4,
+    "kr_official_services": 45,
+    "kr_official_skill_effects": 377,
+    "na_reference_craft_calls": 16,
+    "na_reference_economy": 2834,
+    "na_reference_job_skill": 2979,
+    "na_reference_map": 4882,
+    "na_reference_monster": 5354,
+    "na_reference_npc": 413,
+    "na_reference_npc_calls": 163,
+    "na_reference_npc_dialogue": 26,
+    "na_reference_rtk_drops": 387,
+    "na_reference_rtk_sql": 20078,
+    "na_reference_spell_calls": 394,
+    "save_contracts": 8
+  },
+  "files": [
+    {
+      "file": "kr_asset_draw_order.jsonl",
+      "rows": 100,
+      "sha256": "3f50128cb53d44d926362f09bc0c62324dfeccf0c1041d67b8b19ffce46f4fbb",
+      "bytes": 128968
+    },
+    {
+      "file": "kr_asset_effect_frame_palettes.jsonl",
+      "rows": 1611,
+      "sha256": "b644c6def8fa486524b81ddc16fda6b5b8e48d3c0f20702e6705a54b5879c713",
+      "bytes": 2154832
+    },
+    {
+      "file": "kr_asset_effect_sequences.jsonl",
+      "rows": 128,
+      "sha256": "1a269e602493b04a4ae6b96160d480e16dad7e82ba98344e277396f692036961",
+      "bytes": 547576
+    },
+    {
+      "file": "kr_asset_guide_effects.jsonl",
+      "rows": 162,
+      "sha256": "63d8fb07e70a72ee3c1a94999c76aac5959edd67fef12d9e3adf99bd2efca7d7",
+      "bytes": 195091
+    },
+    {
+      "file": "kr_asset_legacy_effect_tables.jsonl",
+      "rows": 168,
+      "sha256": "d200d09e47e0bda9646b69c96d651274b9ce70f04db70f629a79430b40ee8982",
+      "bytes": 227464
+    },
+    {
+      "file": "kr_asset_monster_groups.jsonl",
+      "rows": 225,
+      "sha256": "91c911eece0ff1ac1b7342370c1ecc96eaf736ce43f572715c7ca1d4eb47b2b5",
+      "bytes": 265302
+    },
+    {
+      "file": "kr_asset_parts.jsonl",
+      "rows": 1927,
+      "sha256": "b1e5086da6ebad28ecc76e7ee387fc7077d5d6f5854f710638b951617c603726",
+      "bytes": 2884171
+    },
+    {
+      "file": "kr_asset_sound_metadata.jsonl",
+      "rows": 163,
+      "sha256": "7009968509ca44eee06698c218a4da450158175e0e00560ffe507e30cb1a6d5c",
+      "bytes": 192911
+    },
+    {
+      "file": "kr_asset_sprite_frames.jsonl",
+      "rows": 9,
+      "sha256": "74416716dc20f3ceb3dd26828397069fd5c0efe5667e4b9fcadb8dad9a32dd7b",
+      "bytes": 548473
+    },
+    {
+      "file": "kr_asset_ui_strings.jsonl",
+      "rows": 38,
+      "sha256": "83c211482f0e1785af628855d014d2d80fc9fd76104c3d780bd8af6399fe009c",
+      "bytes": 52726
+    },
+    {
+      "file": "kr_documented_fields.jsonl",
+      "rows": 303,
+      "sha256": "adf6e7b066ed3136861a8221100bd138a8e0d5f8ff88453f81563e4e4fb8238f",
+      "bytes": 567756
+    },
+    {
+      "file": "kr_official_core.jsonl",
+      "rows": 928,
+      "sha256": "010bef4cff3aa21716ca63423eda0eb9f225c58cba0b6be79029c6ca954429dc",
+      "bytes": 3192620
+    },
+    {
+      "file": "kr_official_crafting_facts.jsonl",
+      "rows": 18,
+      "sha256": "c631140d771439f23e8c6be93cd090e2e27c98efe9c4c305525c63b7644dabb1",
+      "bytes": 42194
+    },
+    {
+      "file": "kr_official_creation_visual.jsonl",
+      "rows": 1,
+      "sha256": "6fc273565ab672988fcb61d2f687f606202b2b270be4f0cad5412f309e1ad6c3",
+      "bytes": 2777
+    },
+    {
+      "file": "kr_official_facility_rules.jsonl",
+      "rows": 28,
+      "sha256": "3b49767055f6cb55bbe0334e43d1c035ab05dc71fa4530c8ef3d915df955a00f",
+      "bytes": 58341
+    },
+    {
+      "file": "kr_official_flow.jsonl",
+      "rows": 20,
+      "sha256": "5b62f399506d2fa51f56c221b6b253b22f9e2db0ba267fd0ff562a12e621d980",
+      "bytes": 44075
+    },
+    {
+      "file": "kr_official_full_maps.jsonl",
+      "rows": 2,
+      "sha256": "cdc09b76fbcf455d845a3553a5a6370d2eacb688e5493c0754b9c2857bffbf55",
+      "bytes": 5511
+    },
+    {
+      "file": "kr_official_image_bindings.jsonl",
+      "rows": 105,
+      "sha256": "f5cfb6565437c20ac190c9775f17883d7893b9159e6d0c8073bb5039790d94b3",
+      "bytes": 258817
+    },
+    {
+      "file": "kr_official_items.jsonl",
+      "rows": 771,
+      "sha256": "fba69ec5c19236bbcf8615cea64753f1536832e8f994e41cac51337ff2440f15",
+      "bytes": 3473092
+    },
+    {
+      "file": "kr_official_map_assets.jsonl",
+      "rows": 129,
+      "sha256": "ba92e06ab8a757671933224f6e3226f7a66c55e8c15ed453dcd4d5e386d262b4",
+      "bytes": 367714
+    },
+    {
+      "file": "kr_official_npc_appearance.jsonl",
+      "rows": 4,
+      "sha256": "7d1667c5e8d919ee9e5efc089317aba635a4fe522c24a228f216b9098cd22c49",
+      "bytes": 12894
+    },
+    {
+      "file": "kr_official_services.jsonl",
+      "rows": 45,
+      "sha256": "a4363e3d38de491efc3cc9dc7f319823416caa6285d50b0e6b2c4e94662c64b0",
+      "bytes": 153545
+    },
+    {
+      "file": "kr_official_skill_effects.jsonl",
+      "rows": 377,
+      "sha256": "b8947b92e05d43994d3af3529ced87203daf9d3255132afe9b227ad818d30b1f",
+      "bytes": 1590584
+    },
+    {
+      "file": "na_reference_craft_calls.jsonl",
+      "rows": 16,
+      "sha256": "4b4722aa836fcef52bd1ca76278e9f630362689f3e45e9009ad86a06850f1699",
+      "bytes": 195948
+    },
+    {
+      "file": "na_reference_economy.jsonl",
+      "rows": 2834,
+      "sha256": "a91fd02de9ac181f91d77736a306aad4f24d5bbd3bb3276dd2897da7df645f11",
+      "bytes": 3450872
+    },
+    {
+      "file": "na_reference_job_skill.jsonl",
+      "rows": 2979,
+      "sha256": "11349e33321feee2591728f61f5aabe1f6dcdd6f62ba15ab93a4ec0d56ab71b5",
+      "bytes": 1773707
+    },
+    {
+      "file": "na_reference_map.jsonl",
+      "rows": 4882,
+      "sha256": "a138414df3d09a6b42b31737e45c47a2d7f16c60ddd3f47a409d4d4fcf0071d8",
+      "bytes": 2521080
+    },
+    {
+      "file": "na_reference_monster.jsonl",
+      "rows": 5354,
+      "sha256": "4ed8160ba7b281266c1034746a6463c2eb8c09de44af7b80db31dcd026df0a80",
+      "bytes": 2943719
+    },
+    {
+      "file": "na_reference_npc.jsonl",
+      "rows": 413,
+      "sha256": "157d5128f7fb55d8d3d2b70615c7a6772b9f6445ad7d2e027347f17e1111e640",
+      "bytes": 347082
+    },
+    {
+      "file": "na_reference_npc_calls.jsonl",
+      "rows": 163,
+      "sha256": "98e472a061a238d8760984d740c9e72013ec30495d9b58fc3e58286b9b4c39b9",
+      "bytes": 922369
+    },
+    {
+      "file": "na_reference_npc_dialogue.jsonl",
+      "rows": 26,
+      "sha256": "6a9bd19d14cbd70af356db57100112c93decab3778c6c18dc8cfadf4ba17f23e",
+      "bytes": 42933
+    },
+    {
+      "file": "na_reference_rtk_drops.jsonl",
+      "rows": 387,
+      "sha256": "b6c1f70169b549318b812e59f5d8241979877f3d2c22e90ee49a906d7ebeaa66",
+      "bytes": 532043
+    },
+    {
+      "file": "na_reference_rtk_sql.jsonl",
+      "rows": 20078,
+      "sha256": "e46a8a3a2c2250127af5e7bab145bcd29645957e7e41e68f6453109aedbb8489",
+      "bytes": 19679550
+    },
+    {
+      "file": "na_reference_spell_calls.jsonl",
+      "rows": 394,
+      "sha256": "beb72070e7d00d6c90176010cabba82907b319c4dd27daf67ec25810523e71dd",
+      "bytes": 965239
+    },
+    {
+      "file": "catalog.json",
+      "rows": 0,
+      "sha256": "a6085079214dff200988201c95b75697b76e7a8f1651cd1841bc00b0e8580e49",
+      "bytes": 14388
+    },
+    {
+      "file": "na_reference_catalog.json",
+      "rows": 0,
+      "sha256": "e788f665d04c21894ec190748979c44eb08a30a58968cd531941cb2640abc84c",
+      "bytes": 5979
+    },
+    {
+      "file": "save_contracts.json",
+      "rows": 8,
+      "sha256": "28b88bde1f543ef6a811d17af08427af94961c0ce88bd4b7a3f34ed8be05752c",
+      "bytes": 23724
+    }
+  ],
+  "checks": [
+    {
+      "axis": "integrity",
+      "check": "asset_frame_palette_bounds",
+      "counts": {
+        "PASS": 1927
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "asset_member_container_slice",
+      "counts": {
+        "PASS": 4369
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "asset_parser_code_fingerprint",
+      "counts": {
+        "PASS": 4206
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "asset_relative_absolute_offset",
+      "counts": {
+        "PASS": 4206
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "asset_text_line_bounds",
+      "counts": {
+        "PASS": 2586
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "attachment_image_hash_binding",
+      "counts": {
+        "PASS": 104
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "consumer_semantic_evidence_bounds",
+      "counts": {
+        "PASS": 15
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "consumer_source_line_bounds",
+      "counts": {
+        "PASS": 83
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "content_input_set",
+      "counts": {
+        "PASS": 1
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "csv_drop_literal_bounds",
+      "counts": {
+        "PASS": 992
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "csv_row_exact_original_and_absence",
+      "counts": {
+        "PASS": 16462
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "drop_probability_contract:independent_each_line",
+      "counts": {
+        "PASS": 629
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "drop_probability_contract:roll_all_then_first_success_in_source_order",
+      "counts": {
+        "PASS": 373
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "effect_frame_palette_reference",
+      "counts": {
+        "PASS": 1788
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "frozen_catalog_set",
+      "counts": {
+        "PASS": 35
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "guide_image_input_hash",
+      "counts": {
+        "PASS": 162
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "guide_named_row_reference",
+      "counts": {
+        "PASS": 162
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "named_image_entity_reference",
+      "counts": {
+        "PASS": 105
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "named_image_hash_binding",
+      "counts": {
+        "PASS": 105
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "no_NA_to_KR_selection",
+      "counts": {
+        "PASS": 37526
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "no_unexecuted_runtime_promotion",
+      "counts": {
+        "PASS": 44796
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "nonempty_catalog_records",
+      "counts": {
+        "PASS": 1
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "normalized_catalog_hash",
+      "counts": {
+        "PASS": 35
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "npc_screenshot_hash_binding",
+      "counts": {
+        "PASS": 4
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "npc_source_bbox_bounds",
+      "counts": {
+        "PASS": 4
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "official_map_zip_member_hash_crc",
+      "counts": {
+        "PASS": 2
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "registry_unchanged_during_read",
+      "counts": {
+        "PASS": 11
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "row_identity",
+      "counts": {
+        "PASS": 44796
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "row_input_hash",
+      "counts": {
+        "PASS": 2727
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "row_provenance_axis",
+      "counts": {
+        "PASS": 44796
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "row_source_set",
+      "counts": {
+        "PASS": 44796
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "save_reference_hash",
+      "counts": {
+        "PASS": 5
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "script_call_literal_anchor",
+      "counts": {
+        "PASS": 7055
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "selected_profile_dispatch_contract",
+      "counts": {
+        "PASS": 2285
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "skill_effect_cell_identity",
+      "counts": {
+        "PASS": 377
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "skill_effect_parent_corpus_fingerprint",
+      "counts": {
+        "PASS": 377
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "skill_effect_parser_code_fingerprint",
+      "counts": {
+        "PASS": 377
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "skill_effect_published_fragment",
+      "counts": {
+        "PASS": 1105
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "skill_effect_selected_field_contract",
+      "counts": {
+        "PASS": 377
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "source_bytes",
+      "counts": {
+        "PASS": 1241
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "source_declared_length",
+      "counts": {
+        "PASS": 1081
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "source_git_blob_identity",
+      "counts": {
+        "PASS": 630
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "source_id_reference",
+      "counts": {
+        "PASS": 46514
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "source_locator",
+      "counts": {
+        "PASS": 40127
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "source_locator_url",
+      "counts": {
+        "PASS": 2333
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "sql_tuple_locator_bounds",
+      "counts": {
+        "PASS": 20078
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "table_image_html_locator",
+      "counts": {
+        "PASS": 214
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "table_image_url_locator",
+      "counts": {
+        "PASS": 109
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "table_source_url_locator",
+      "counts": {
+        "PASS": 109
+      },
+      "examples": []
+    },
+    {
+      "axis": "integrity",
+      "check": "wav_metadata_exact",
+      "counts": {
+        "PASS": 163
+      },
+      "examples": []
+    },
+    {
+      "axis": "references",
+      "check": "area_spawn_to_monster",
+      "counts": {
+        "PASS": 2592,
+        "FAIL": 24
+      },
+      "examples": [
+        {
+          "id": "NA-P1998-AreaSpawns-L430",
+          "result": "FAIL",
+          "detail": "FAIL_IN_SOURCE_REFERENCE_GRAPH; preserved source value is absent from known source-local target pool"
+        },
+        {
+          "id": "NA-P1998-AreaSpawns-L432",
+          "result": "FAIL",
+          "detail": "FAIL_IN_SOURCE_REFERENCE_GRAPH; preserved source value is absent from known source-local target pool"
+        },
+        {
+          "id": "NA-P1998-AreaSpawns-L435",
+          "result": "FAIL",
+          "detail": "FAIL_IN_SOURCE_REFERENCE_GRAPH; preserved source value is absent from known source-local target pool"
+        },
+        {
+          "id": "NA-P1998-AreaSpawns-L441",
+          "result": "FAIL",
+          "detail": "FAIL_IN_SOURCE_REFERENCE_GRAPH; preserved source value is absent from known source-local target pool"
+        },
+        {
+          "id": "NA-P1998-AreaSpawns-L445",
+          "result": "FAIL",
+          "detail": "FAIL_IN_SOURCE_REFERENCE_GRAPH; preserved source value is absent from known source-local target pool"
+        },
+        {
+          "id": "NA-P1998-AreaSpawns-L448",
+          "result": "FAIL",
+          "detail": "FAIL_IN_SOURCE_REFERENCE_GRAPH; preserved source value is absent from known source-local target pool"
+        },
+        {
+          "id": "NA-P1998-AreaSpawns-L796",
+          "result": "FAIL",
+          "detail": "FAIL_IN_SOURCE_REFERENCE_GRAPH; preserved source value is absent from known source-local target pool"
+        },
+        {
+          "id": "NA-P1998-AreaSpawns-L1463",
+          "result": "FAIL",
+          "detail": "FAIL_IN_SOURCE_REFERENCE_GRAPH; preserved source value is absent from known source-local target pool"
+        }
+      ]
+    },
+    {
+      "axis": "references",
+      "check": "catalog_private_payload",
+      "counts": {
+        "PASS": 11
+      },
+      "examples": []
+    },
+    {
+      "axis": "references",
+      "check": "csv_drop_to_item",
+      "counts": {
+        "PASS": 917
+      },
+      "examples": []
+    },
+    {
+      "axis": "references",
+      "check": "csv_drop_to_item:documented_sentinel",
+      "counts": {
+        "PASS": 75
+      },
+      "examples": []
+    },
+    {
+      "axis": "references",
+      "check": "csv_drop_to_monster",
+      "counts": {
+        "PASS": 377
+      },
+      "examples": []
+    },
+    {
+      "axis": "references",
+      "check": "drop_pool_selector:consumer_proved",
+      "counts": {
+        "PASS": 5
+      },
+      "examples": []
+    },
+    {
+      "axis": "references",
+      "check": "drop_to_item",
+      "counts": {
+        "PASS": 922,
+        "FAIL": 8
+      },
+      "examples": [
+        {
+          "id": "NA-RTK-drop-tiger_night",
+          "result": "FAIL",
+          "detail": "FAIL_IN_SOURCE_REFERENCE_GRAPH; preserved source value is absent from known source-local target pool"
+        },
+        {
+          "id": "NA-RTK-drop-tiger_storm",
+          "result": "FAIL",
+          "detail": "FAIL_IN_SOURCE_REFERENCE_GRAPH; preserved source value is absent from known source-local target pool"
+        },
+        {
+          "id": "NA-RTK-drop-tiger_blizzard",
+          "result": "FAIL",
+          "detail": "FAIL_IN_SOURCE_REFERENCE_GRAPH; preserved source value is absent from known source-local target pool"
+        },
+        {
+          "id": "NA-RTK-drop-tiger_summit",
+          "result": "FAIL",
+          "detail": "FAIL_IN_SOURCE_REFERENCE_GRAPH; preserved source value is absent from known source-local target pool"
+        },
+        {
+          "id": "NA-RTK-drop-pig_guardian",
+          "result": "FAIL",
+          "detail": "FAIL_IN_SOURCE_REFERENCE_GRAPH; preserved source value is absent from known source-local target pool"
+        },
+        {
+          "id": "NA-RTK-drop-pig_champion",
+          "result": "FAIL",
+          "detail": "FAIL_IN_SOURCE_REFERENCE_GRAPH; preserved source value is absent from known source-local target pool"
+        },
+        {
+          "id": "NA-RTK-drop-boar_defender",
+          "result": "FAIL",
+          "detail": "FAIL_IN_SOURCE_REFERENCE_GRAPH; preserved source value is absent from known source-local target pool"
+        },
+        {
+          "id": "NA-RTK-drop-pig_avenger",
+          "result": "FAIL",
+          "detail": "FAIL_IN_SOURCE_REFERENCE_GRAPH; preserved source value is absent from known source-local target pool"
+        }
+      ]
+    },
+    {
+      "axis": "references",
+      "check": "drop_to_monster",
+      "counts": {
+        "PASS": 375,
+        "FAIL": 7
+      },
+      "examples": [
+        {
+          "id": "NA-RTK-drop-golden_hare_wild",
+          "result": "FAIL",
+          "detail": "FAIL_IN_SOURCE_REFERENCE_GRAPH; preserved source value is absent from known source-local target pool"
+        },
+        {
+          "id": "NA-RTK-drop-horse_guardsman_main",
+          "result": "FAIL",
+          "detail": "FAIL_IN_SOURCE_REFERENCE_GRAPH; preserved source value is absent from known source-local target pool"
+        },
+        {
+          "id": "NA-RTK-drop-horse_sentry_main",
+          "result": "FAIL",
+          "detail": "FAIL_IN_SOURCE_REFERENCE_GRAPH; preserved source value is absent from known source-local target pool"
+        },
+        {
+          "id": "NA-RTK-drop-horse_swordsman_main",
+          "result": "FAIL",
+          "detail": "FAIL_IN_SOURCE_REFERENCE_GRAPH; preserved source value is absent from known source-local target pool"
+        },
+        {
+          "id": "NA-RTK-drop-horse_guardian_main",
+          "result": "FAIL",
+          "detail": "FAIL_IN_SOURCE_REFERENCE_GRAPH; preserved source value is absent from known source-local target pool"
+        },
+        {
+          "id": "NA-RTK-drop-hooves_main",
+          "result": "FAIL",
+          "detail": "FAIL_IN_SOURCE_REFERENCE_GRAPH; preserved source value is absent from known source-local target pool"
+        },
+        {
+          "id": "NA-RTK-drop-horse_defender_main",
+          "result": "FAIL",
+          "detail": "FAIL_IN_SOURCE_REFERENCE_GRAPH; preserved source value is absent from known source-local target pool"
+        }
+      ]
+    },
+    {
+      "axis": "references",
+      "check": "equipment_to_npc",
+      "counts": {
+        "PASS": 2
+      },
+      "examples": []
+    },
+    {
+      "axis": "references",
+      "check": "guide_to_effect_sequence_reference",
+      "counts": {
+        "BLOCKED": 109,
+        "PASS": 53
+      },
+      "examples": [
+        {
+          "id": "KR491:guide_image:P15-ARIMG-0a76eb2363ec:KRO-99597792a088",
+          "result": "BLOCKED",
+          "detail": "No unique exact full-sequence bitmap match"
+        },
+        {
+          "id": "KR491:guide_image:P15-ARIMG-a5b887d2fff9:KRO-5876a73f0738",
+          "result": "BLOCKED",
+          "detail": "No unique exact full-sequence bitmap match"
+        },
+        {
+          "id": "KR491:guide_image:P15-ARIMG-f35e1c96020e:KRO-c142ec1e6cc2",
+          "result": "BLOCKED",
+          "detail": "No unique exact full-sequence bitmap match"
+        },
+        {
+          "id": "KR491:guide_image:P15-ARIMG-f6e667a15312:KRO-9c0053153a9b",
+          "result": "BLOCKED",
+          "detail": "No unique exact full-sequence bitmap match"
+        },
+        {
+          "id": "KR491:guide_image:P15-ARIMG-9fea529308b2:KRO-661caabd8a2e",
+          "result": "BLOCKED",
+          "detail": "No unique exact full-sequence bitmap match"
+        },
+        {
+          "id": "KR491:guide_image:P15-ARIMG-9fea529308b2:KRO-0eae7fde3f73",
+          "result": "BLOCKED",
+          "detail": "No unique exact full-sequence bitmap match"
+        },
+        {
+          "id": "KR491:guide_image:P15-ARIMG-9fea529308b2:KRO-3559b12ed6a7",
+          "result": "BLOCKED",
+          "detail": "No unique exact full-sequence bitmap match"
+        },
+        {
+          "id": "KR491:guide_image:P15-ARIMG-9fea529308b2:KRO-d616d37f5b7a",
+          "result": "BLOCKED",
+          "detail": "No unique exact full-sequence bitmap match"
+        }
+      ]
+    },
+    {
+      "axis": "references",
+      "check": "learning_to_item",
+      "counts": {
+        "PASS": 1073
+      },
+      "examples": []
+    },
+    {
+      "axis": "references",
+      "check": "learning_to_item:documented_sentinel",
+      "counts": {
+        "PASS": 1291
+      },
+      "examples": []
+    },
+    {
+      "axis": "references",
+      "check": "learning_to_job",
+      "counts": {
+        "PASS": 591
+      },
+      "examples": []
+    },
+    {
+      "axis": "references",
+      "check": "learning_to_skill",
+      "counts": {
+        "PASS": 591
+      },
+      "examples": []
+    },
+    {
+      "axis": "references",
+      "check": "normalized_parent_reference",
+      "counts": {
+        "PASS": 377
+      },
+      "examples": []
+    },
+    {
+      "axis": "references",
+      "check": "normalized_record_reference",
+      "counts": {
+        "PASS": 271
+      },
+      "examples": []
+    },
+    {
+      "axis": "references",
+      "check": "npc_to_map",
+      "counts": {
+        "PASS": 385
+      },
+      "examples": []
+    },
+    {
+      "axis": "references",
+      "check": "npc_to_map:target_pool_absent",
+      "counts": {
+        "BLOCKED": 380
+      },
+      "examples": [
+        {
+          "id": "NA-P1998-NPCs-L2",
+          "result": "BLOCKED",
+          "detail": "Target pool not included in this source namespace; not proof of an invalid original ID"
+        },
+        {
+          "id": "NA-P1998-NPCs-L3",
+          "result": "BLOCKED",
+          "detail": "Target pool not included in this source namespace; not proof of an invalid original ID"
+        },
+        {
+          "id": "NA-P1998-NPCs-L4",
+          "result": "BLOCKED",
+          "detail": "Target pool not included in this source namespace; not proof of an invalid original ID"
+        },
+        {
+          "id": "NA-P1998-NPCs-L5",
+          "result": "BLOCKED",
+          "detail": "Target pool not included in this source namespace; not proof of an invalid original ID"
+        },
+        {
+          "id": "NA-P1998-NPCs-L6",
+          "result": "BLOCKED",
+          "detail": "Target pool not included in this source namespace; not proof of an invalid original ID"
+        },
+        {
+          "id": "NA-P1998-NPCs-L7",
+          "result": "BLOCKED",
+          "detail": "Target pool not included in this source namespace; not proof of an invalid original ID"
+        },
+        {
+          "id": "NA-P1998-NPCs-L8",
+          "result": "BLOCKED",
+          "detail": "Target pool not included in this source namespace; not proof of an invalid original ID"
+        },
+        {
+          "id": "NA-P1998-NPCs-L9",
+          "result": "BLOCKED",
+          "detail": "Target pool not included in this source namespace; not proof of an invalid original ID"
+        }
+      ]
+    },
+    {
+      "axis": "references",
+      "check": "recipe_explicit_empty_pair",
+      "counts": {
+        "PASS": 3
+      },
+      "examples": []
+    },
+    {
+      "axis": "references",
+      "check": "recipe_to_material",
+      "counts": {
+        "PASS": 2
+      },
+      "examples": []
+    },
+    {
+      "axis": "references",
+      "check": "recipe_to_result",
+      "counts": {
+        "PASS": 1
+      },
+      "examples": []
+    },
+    {
+      "axis": "references",
+      "check": "shop_to_item",
+      "counts": {
+        "PASS": 944
+      },
+      "examples": []
+    },
+    {
+      "axis": "references",
+      "check": "shop_to_item:documented_sentinel",
+      "counts": {
+        "PASS": 7
+      },
+      "examples": []
+    },
+    {
+      "axis": "references",
+      "check": "shop_to_npc",
+      "counts": {
+        "PASS": 95
+      },
+      "examples": []
+    },
+    {
+      "axis": "references",
+      "check": "skill_to_job",
+      "counts": {
+        "PASS": 1600,
+        "FAIL": 115
+      },
+      "examples": [
+        {
+          "id": "NA-RTK-SQL-Spells-O1957324",
+          "result": "FAIL",
+          "detail": "FAIL_IN_SOURCE_REFERENCE_GRAPH; preserved source value is absent from known source-local target pool"
+        },
+        {
+          "id": "NA-RTK-SQL-Spells-O1957371",
+          "result": "FAIL",
+          "detail": "FAIL_IN_SOURCE_REFERENCE_GRAPH; preserved source value is absent from known source-local target pool"
+        },
+        {
+          "id": "NA-RTK-SQL-Spells-O1957430",
+          "result": "FAIL",
+          "detail": "FAIL_IN_SOURCE_REFERENCE_GRAPH; preserved source value is absent from known source-local target pool"
+        },
+        {
+          "id": "NA-RTK-SQL-Spells-O1957491",
+          "result": "FAIL",
+          "detail": "FAIL_IN_SOURCE_REFERENCE_GRAPH; preserved source value is absent from known source-local target pool"
+        },
+        {
+          "id": "NA-RTK-SQL-Spells-O1957548",
+          "result": "FAIL",
+          "detail": "FAIL_IN_SOURCE_REFERENCE_GRAPH; preserved source value is absent from known source-local target pool"
+        },
+        {
+          "id": "NA-RTK-SQL-Spells-O1957614",
+          "result": "FAIL",
+          "detail": "FAIL_IN_SOURCE_REFERENCE_GRAPH; preserved source value is absent from known source-local target pool"
+        },
+        {
+          "id": "NA-RTK-SQL-Spells-O1957682",
+          "result": "FAIL",
+          "detail": "FAIL_IN_SOURCE_REFERENCE_GRAPH; preserved source value is absent from known source-local target pool"
+        },
+        {
+          "id": "NA-RTK-SQL-Spells-O1957741",
+          "result": "FAIL",
+          "detail": "FAIL_IN_SOURCE_REFERENCE_GRAPH; preserved source value is absent from known source-local target pool"
+        }
+      ]
+    },
+    {
+      "axis": "references",
+      "check": "skill_to_job:documented_sentinel",
+      "counts": {
+        "PASS": 118
+      },
+      "examples": []
+    },
+    {
+      "axis": "references",
+      "check": "sound_alias_id_preserved",
+      "counts": {
+        "PASS": 173
+      },
+      "examples": []
+    },
+    {
+      "axis": "references",
+      "check": "spawn_to_map",
+      "counts": {
+        "PASS": 1175
+      },
+      "examples": []
+    },
+    {
+      "axis": "references",
+      "check": "spawn_to_map:target_pool_absent",
+      "counts": {
+        "BLOCKED": 1175
+      },
+      "examples": [
+        {
+          "id": "NA-P1998-Spawns-L2",
+          "result": "BLOCKED",
+          "detail": "Target pool not included in this source namespace; not proof of an invalid original ID"
+        },
+        {
+          "id": "NA-P1998-Spawns-L3",
+          "result": "BLOCKED",
+          "detail": "Target pool not included in this source namespace; not proof of an invalid original ID"
+        },
+        {
+          "id": "NA-P1998-Spawns-L4",
+          "result": "BLOCKED",
+          "detail": "Target pool not included in this source namespace; not proof of an invalid original ID"
+        },
+        {
+          "id": "NA-P1998-Spawns-L5",
+          "result": "BLOCKED",
+          "detail": "Target pool not included in this source namespace; not proof of an invalid original ID"
+        },
+        {
+          "id": "NA-P1998-Spawns-L6",
+          "result": "BLOCKED",
+          "detail": "Target pool not included in this source namespace; not proof of an invalid original ID"
+        },
+        {
+          "id": "NA-P1998-Spawns-L7",
+          "result": "BLOCKED",
+          "detail": "Target pool not included in this source namespace; not proof of an invalid original ID"
+        },
+        {
+          "id": "NA-P1998-Spawns-L8",
+          "result": "BLOCKED",
+          "detail": "Target pool not included in this source namespace; not proof of an invalid original ID"
+        },
+        {
+          "id": "NA-P1998-Spawns-L9",
+          "result": "BLOCKED",
+          "detail": "Target pool not included in this source namespace; not proof of an invalid original ID"
+        }
+      ]
+    },
+    {
+      "axis": "references",
+      "check": "spawn_to_monster",
+      "counts": {
+        "PASS": 2350
+      },
+      "examples": []
+    },
+    {
+      "axis": "references",
+      "check": "unknown_catalog_schema",
+      "counts": {
+        "NOT_RUN": 1
+      },
+      "examples": [
+        {
+          "id": "catalog.json",
+          "result": "NOT_RUN",
+          "detail": null
+        }
+      ]
+    },
+    {
+      "axis": "references",
+      "check": "warp_to_map",
+      "counts": {
+        "PASS": 8952
+      },
+      "examples": []
+    },
+    {
+      "axis": "references",
+      "check": "warp_to_map:target_pool_absent",
+      "counts": {
+        "BLOCKED": 9648
+      },
+      "examples": [
+        {
+          "id": "NA-P1998-Warps-L2",
+          "result": "BLOCKED",
+          "detail": "Target pool not included in this source namespace; not proof of an invalid original ID"
+        },
+        {
+          "id": "NA-P1998-Warps-L2",
+          "result": "BLOCKED",
+          "detail": "Target pool not included in this source namespace; not proof of an invalid original ID"
+        },
+        {
+          "id": "NA-P1998-Warps-L3",
+          "result": "BLOCKED",
+          "detail": "Target pool not included in this source namespace; not proof of an invalid original ID"
+        },
+        {
+          "id": "NA-P1998-Warps-L3",
+          "result": "BLOCKED",
+          "detail": "Target pool not included in this source namespace; not proof of an invalid original ID"
+        },
+        {
+          "id": "NA-P1998-Warps-L4",
+          "result": "BLOCKED",
+          "detail": "Target pool not included in this source namespace; not proof of an invalid original ID"
+        },
+        {
+          "id": "NA-P1998-Warps-L4",
+          "result": "BLOCKED",
+          "detail": "Target pool not included in this source namespace; not proof of an invalid original ID"
+        },
+        {
+          "id": "NA-P1998-Warps-L5",
+          "result": "BLOCKED",
+          "detail": "Target pool not included in this source namespace; not proof of an invalid original ID"
+        },
+        {
+          "id": "NA-P1998-Warps-L5",
+          "result": "BLOCKED",
+          "detail": "Target pool not included in this source namespace; not proof of an invalid original ID"
+        }
+      ]
+    },
+    {
+      "axis": "semantics",
+      "check": "declared_field_gaps",
+      "counts": {
+        "BLOCKED": 4671
+      },
+      "examples": [
+        {
+          "id": "KR491:body:0",
+          "result": "BLOCKED",
+          "detail": "Preserved explicit unresolved fields"
+        },
+        {
+          "id": "KR491:body:1",
+          "result": "BLOCKED",
+          "detail": "Preserved explicit unresolved fields"
+        },
+        {
+          "id": "KR491:body:2",
+          "result": "BLOCKED",
+          "detail": "Preserved explicit unresolved fields"
+        },
+        {
+          "id": "KR491:body:3",
+          "result": "BLOCKED",
+          "detail": "Preserved explicit unresolved fields"
+        },
+        {
+          "id": "KR491:body:4",
+          "result": "BLOCKED",
+          "detail": "Preserved explicit unresolved fields"
+        },
+        {
+          "id": "KR491:body:5",
+          "result": "BLOCKED",
+          "detail": "Preserved explicit unresolved fields"
+        },
+        {
+          "id": "KR491:body:6",
+          "result": "BLOCKED",
+          "detail": "Preserved explicit unresolved fields"
+        },
+        {
+          "id": "KR491:body:7",
+          "result": "BLOCKED",
+          "detail": "Preserved explicit unresolved fields"
+        }
+      ]
+    },
+    {
+      "axis": "semantics",
+      "check": "drop_global_conditions",
+      "counts": {
+        "BLOCKED": 387
+      },
+      "examples": [
+        {
+          "id": "NA-RTK-drop-rabbit",
+          "result": "BLOCKED",
+          "detail": "Additional source-global drops remain separate"
+        },
+        {
+          "id": "NA-RTK-drop-white_rabbit",
+          "result": "BLOCKED",
+          "detail": "Additional source-global drops remain separate"
+        },
+        {
+          "id": "NA-RTK-drop-squirrel",
+          "result": "BLOCKED",
+          "detail": "Additional source-global drops remain separate"
+        },
+        {
+          "id": "NA-RTK-drop-green_squirrel",
+          "result": "BLOCKED",
+          "detail": "Additional source-global drops remain separate"
+        },
+        {
+          "id": "NA-RTK-drop-deer",
+          "result": "BLOCKED",
+          "detail": "Additional source-global drops remain separate"
+        },
+        {
+          "id": "NA-RTK-drop-black_buck",
+          "result": "BLOCKED",
+          "detail": "Additional source-global drops remain separate"
+        },
+        {
+          "id": "NA-RTK-drop-snake",
+          "result": "BLOCKED",
+          "detail": "Additional source-global drops remain separate"
+        },
+        {
+          "id": "NA-RTK-drop-boa",
+          "result": "BLOCKED",
+          "detail": "Additional source-global drops remain separate"
+        }
+      ]
+    },
+    {
+      "axis": "semantics",
+      "check": "effect_timing_layer_semantics",
+      "counts": {
+        "BLOCKED": 512
+      },
+      "examples": [
+        {
+          "id": "KR491:effect_sequence:0",
+          "result": "BLOCKED",
+          "detail": "delay_unit"
+        },
+        {
+          "id": "KR491:effect_sequence:0",
+          "result": "BLOCKED",
+          "detail": "alpha_interpretation"
+        },
+        {
+          "id": "KR491:effect_sequence:0",
+          "result": "BLOCKED",
+          "detail": "light_interpretation"
+        },
+        {
+          "id": "KR491:effect_sequence:0",
+          "result": "BLOCKED",
+          "detail": "repeat_sentinel_semantics"
+        },
+        {
+          "id": "KR491:effect_sequence:1",
+          "result": "BLOCKED",
+          "detail": "delay_unit"
+        },
+        {
+          "id": "KR491:effect_sequence:1",
+          "result": "BLOCKED",
+          "detail": "alpha_interpretation"
+        },
+        {
+          "id": "KR491:effect_sequence:1",
+          "result": "BLOCKED",
+          "detail": "light_interpretation"
+        },
+        {
+          "id": "KR491:effect_sequence:1",
+          "result": "BLOCKED",
+          "detail": "repeat_sentinel_semantics"
+        }
+      ]
+    },
+    {
+      "axis": "semantics",
+      "check": "effect_unsupported_row",
+      "counts": {
+        "BLOCKED": 17
+      },
+      "examples": [
+        {
+          "id": "KR491:effect_sequence:70",
+          "result": "BLOCKED",
+          "detail": "Retained raw unsupported effect semantics"
+        },
+        {
+          "id": "KR491:effect_sequence:70",
+          "result": "BLOCKED",
+          "detail": "Retained raw unsupported effect semantics"
+        },
+        {
+          "id": "KR491:effect_sequence:71",
+          "result": "BLOCKED",
+          "detail": "Retained raw unsupported effect semantics"
+        },
+        {
+          "id": "KR491:effect_sequence:71",
+          "result": "BLOCKED",
+          "detail": "Retained raw unsupported effect semantics"
+        },
+        {
+          "id": "KR491:effect_sequence:91",
+          "result": "BLOCKED",
+          "detail": "Retained raw unsupported effect semantics"
+        },
+        {
+          "id": "KR491:effect_sequence:91",
+          "result": "BLOCKED",
+          "detail": "Retained raw unsupported effect semantics"
+        },
+        {
+          "id": "KR491:effect_sequence:96",
+          "result": "BLOCKED",
+          "detail": "Retained raw unsupported effect semantics"
+        },
+        {
+          "id": "KR491:effect_sequence:99",
+          "result": "BLOCKED",
+          "detail": "Retained raw unsupported effect semantics"
+        }
+      ]
+    },
+    {
+      "axis": "semantics",
+      "check": "korean_entity_and_chain_binding",
+      "counts": {
+        "BLOCKED": 278
+      },
+      "examples": [
+        {
+          "id": "KRF-8c1f4ff94ea4",
+          "result": "BLOCKED",
+          "detail": "Document names/functions are not complete stable entity/asset/NPC/map chains"
+        },
+        {
+          "id": "KRF-12c78e11b98a",
+          "result": "BLOCKED",
+          "detail": "Document names/functions are not complete stable entity/asset/NPC/map chains"
+        },
+        {
+          "id": "KRF-976f1f1fe762",
+          "result": "BLOCKED",
+          "detail": "Document names/functions are not complete stable entity/asset/NPC/map chains"
+        },
+        {
+          "id": "KRF-6cb12ab1dd58",
+          "result": "BLOCKED",
+          "detail": "Document names/functions are not complete stable entity/asset/NPC/map chains"
+        },
+        {
+          "id": "KRF-400433f988ef",
+          "result": "BLOCKED",
+          "detail": "Document names/functions are not complete stable entity/asset/NPC/map chains"
+        },
+        {
+          "id": "KRF-377c4db982ce",
+          "result": "BLOCKED",
+          "detail": "Document names/functions are not complete stable entity/asset/NPC/map chains"
+        },
+        {
+          "id": "KRF-9c7c008cb840",
+          "result": "BLOCKED",
+          "detail": "Document names/functions are not complete stable entity/asset/NPC/map chains"
+        },
+        {
+          "id": "KRF-aa54a0fd2e2f",
+          "result": "BLOCKED",
+          "detail": "Document names/functions are not complete stable entity/asset/NPC/map chains"
+        }
+      ]
+    },
+    {
+      "axis": "semantics",
+      "check": "map_geometry_tile_object_chain",
+      "counts": {
+        "BLOCKED": 9850
+      },
+      "examples": [
+        {
+          "id": "NA-RTK-SQL-Maps-O475837",
+          "result": "BLOCKED",
+          "detail": "SQL map metadata is not source tile/object/collision decoding"
+        },
+        {
+          "id": "NA-RTK-SQL-Maps-O475953",
+          "result": "BLOCKED",
+          "detail": "SQL map metadata is not source tile/object/collision decoding"
+        },
+        {
+          "id": "NA-RTK-SQL-Maps-O476078",
+          "result": "BLOCKED",
+          "detail": "SQL map metadata is not source tile/object/collision decoding"
+        },
+        {
+          "id": "NA-RTK-SQL-Maps-O476201",
+          "result": "BLOCKED",
+          "detail": "SQL map metadata is not source tile/object/collision decoding"
+        },
+        {
+          "id": "NA-RTK-SQL-Maps-O476322",
+          "result": "BLOCKED",
+          "detail": "SQL map metadata is not source tile/object/collision decoding"
+        },
+        {
+          "id": "NA-RTK-SQL-Maps-O476443",
+          "result": "BLOCKED",
+          "detail": "SQL map metadata is not source tile/object/collision decoding"
+        },
+        {
+          "id": "NA-RTK-SQL-Maps-O476563",
+          "result": "BLOCKED",
+          "detail": "SQL map metadata is not source tile/object/collision decoding"
+        },
+        {
+          "id": "NA-RTK-SQL-Maps-O476682",
+          "result": "BLOCKED",
+          "detail": "SQL map metadata is not source tile/object/collision decoding"
+        }
+      ]
+    },
+    {
+      "axis": "semantics",
+      "check": "motion_layer_direction_semantics",
+      "counts": {
+        "BLOCKED": 325
+      },
+      "examples": [
+        {
+          "id": "KR491:draw_order:0",
+          "result": "BLOCKED",
+          "detail": "Raw order/counts do not identify runtime directions/timing/layers"
+        },
+        {
+          "id": "KR491:draw_order:1",
+          "result": "BLOCKED",
+          "detail": "Raw order/counts do not identify runtime directions/timing/layers"
+        },
+        {
+          "id": "KR491:draw_order:2",
+          "result": "BLOCKED",
+          "detail": "Raw order/counts do not identify runtime directions/timing/layers"
+        },
+        {
+          "id": "KR491:draw_order:3",
+          "result": "BLOCKED",
+          "detail": "Raw order/counts do not identify runtime directions/timing/layers"
+        },
+        {
+          "id": "KR491:draw_order:4",
+          "result": "BLOCKED",
+          "detail": "Raw order/counts do not identify runtime directions/timing/layers"
+        },
+        {
+          "id": "KR491:draw_order:5",
+          "result": "BLOCKED",
+          "detail": "Raw order/counts do not identify runtime directions/timing/layers"
+        },
+        {
+          "id": "KR491:draw_order:6",
+          "result": "BLOCKED",
+          "detail": "Raw order/counts do not identify runtime directions/timing/layers"
+        },
+        {
+          "id": "KR491:draw_order:7",
+          "result": "BLOCKED",
+          "detail": "Raw order/counts do not identify runtime directions/timing/layers"
+        }
+      ]
+    },
+    {
+      "axis": "semantics",
+      "check": "named_effect_sound_timing_chain",
+      "counts": {
+        "BLOCKED": 162
+      },
+      "examples": [
+        {
+          "id": "KR491:guide_image:P15-ARIMG-0a76eb2363ec:KRO-99597792a088",
+          "result": "BLOCKED",
+          "detail": "Bitmap identity does not establish invocation position, delay, sound or hit event"
+        },
+        {
+          "id": "KR491:guide_image:P15-ARIMG-8c25ba405454:KRO-29b502df2cd4",
+          "result": "BLOCKED",
+          "detail": "Bitmap identity does not establish invocation position, delay, sound or hit event"
+        },
+        {
+          "id": "KR491:guide_image:P15-ARIMG-f89ad09a2416:KRO-f9083d6d08f3",
+          "result": "BLOCKED",
+          "detail": "Bitmap identity does not establish invocation position, delay, sound or hit event"
+        },
+        {
+          "id": "KR491:guide_image:P15-ARIMG-232181ef72f2:KRO-f7c50a49bf19",
+          "result": "BLOCKED",
+          "detail": "Bitmap identity does not establish invocation position, delay, sound or hit event"
+        },
+        {
+          "id": "KR491:guide_image:P15-ARIMG-cdf4b611dbf7:KRO-bb2fa9e3c34f",
+          "result": "BLOCKED",
+          "detail": "Bitmap identity does not establish invocation position, delay, sound or hit event"
+        },
+        {
+          "id": "KR491:guide_image:P15-ARIMG-8e2c3cf67d2e:KRO-42f6d5181ce5",
+          "result": "BLOCKED",
+          "detail": "Bitmap identity does not establish invocation position, delay, sound or hit event"
+        },
+        {
+          "id": "KR491:guide_image:P15-ARIMG-a5b887d2fff9:KRO-5876a73f0738",
+          "result": "BLOCKED",
+          "detail": "Bitmap identity does not establish invocation position, delay, sound or hit event"
+        },
+        {
+          "id": "KR491:guide_image:P15-ARIMG-f35e1c96020e:KRO-c142ec1e6cc2",
+          "result": "BLOCKED",
+          "detail": "Bitmap identity does not establish invocation position, delay, sound or hit event"
+        }
+      ]
+    },
+    {
+      "axis": "semantics",
+      "check": "npc_graphic_dialogue_service_chain",
+      "counts": {
+        "BLOCKED": 765
+      },
+      "examples": [
+        {
+          "id": "NA-P1998-NPCs-L2",
+          "result": "BLOCKED",
+          "detail": "Namespaced appearance IDs/flags exist; full render/dialogue/service semantics not executed"
+        },
+        {
+          "id": "NA-P1998-NPCs-L3",
+          "result": "BLOCKED",
+          "detail": "Namespaced appearance IDs/flags exist; full render/dialogue/service semantics not executed"
+        },
+        {
+          "id": "NA-P1998-NPCs-L4",
+          "result": "BLOCKED",
+          "detail": "Namespaced appearance IDs/flags exist; full render/dialogue/service semantics not executed"
+        },
+        {
+          "id": "NA-P1998-NPCs-L5",
+          "result": "BLOCKED",
+          "detail": "Namespaced appearance IDs/flags exist; full render/dialogue/service semantics not executed"
+        },
+        {
+          "id": "NA-P1998-NPCs-L6",
+          "result": "BLOCKED",
+          "detail": "Namespaced appearance IDs/flags exist; full render/dialogue/service semantics not executed"
+        },
+        {
+          "id": "NA-P1998-NPCs-L7",
+          "result": "BLOCKED",
+          "detail": "Namespaced appearance IDs/flags exist; full render/dialogue/service semantics not executed"
+        },
+        {
+          "id": "NA-P1998-NPCs-L8",
+          "result": "BLOCKED",
+          "detail": "Namespaced appearance IDs/flags exist; full render/dialogue/service semantics not executed"
+        },
+        {
+          "id": "NA-P1998-NPCs-L9",
+          "result": "BLOCKED",
+          "detail": "Namespaced appearance IDs/flags exist; full render/dialogue/service semantics not executed"
+        }
+      ]
+    },
+    {
+      "axis": "semantics",
+      "check": "recipe_to_npc_conditions",
+      "counts": {
+        "BLOCKED": 1
+      },
+      "examples": [
+        {
+          "id": "NA-RTK-SQL-ItemSets-O44576",
+          "result": "BLOCKED",
+          "detail": "SQL item-set list alone lacks NPC/conditions/success/failure semantics"
+        }
+      ]
+    },
+    {
+      "axis": "semantics",
+      "check": "save_runtime_contract",
+      "counts": {
+        "NOT_RUN": 1
+      },
+      "examples": [
+        {
+          "id": "save_contracts.json",
+          "result": "NOT_RUN",
+          "detail": "P2/native save, IME and real authentication not executed"
+        }
+      ]
+    },
+    {
+      "axis": "semantics",
+      "check": "script_command_semantics",
+      "counts": {
+        "BLOCKED": 599
+      },
+      "examples": [
+        {
+          "id": "NA-RTK-script-18657a788592cfe0",
+          "result": "BLOCKED",
+          "detail": "Lexical calls/branch anchors are not a decoded executable dialogue/craft/spell graph"
+        },
+        {
+          "id": "NA-RTK-script-583999323f869321",
+          "result": "BLOCKED",
+          "detail": "Lexical calls/branch anchors are not a decoded executable dialogue/craft/spell graph"
+        },
+        {
+          "id": "NA-RTK-script-72745e1eb088e178",
+          "result": "BLOCKED",
+          "detail": "Lexical calls/branch anchors are not a decoded executable dialogue/craft/spell graph"
+        },
+        {
+          "id": "NA-RTK-script-048f191362e04b56",
+          "result": "BLOCKED",
+          "detail": "Lexical calls/branch anchors are not a decoded executable dialogue/craft/spell graph"
+        },
+        {
+          "id": "NA-RTK-script-047ee002eb338def",
+          "result": "BLOCKED",
+          "detail": "Lexical calls/branch anchors are not a decoded executable dialogue/craft/spell graph"
+        },
+        {
+          "id": "NA-RTK-script-8762884529bad221",
+          "result": "BLOCKED",
+          "detail": "Lexical calls/branch anchors are not a decoded executable dialogue/craft/spell graph"
+        },
+        {
+          "id": "NA-RTK-script-49d20664d0b821c8",
+          "result": "BLOCKED",
+          "detail": "Lexical calls/branch anchors are not a decoded executable dialogue/craft/spell graph"
+        },
+        {
+          "id": "NA-RTK-script-86c19fbf953b84ae",
+          "result": "BLOCKED",
+          "detail": "Lexical calls/branch anchors are not a decoded executable dialogue/craft/spell graph"
+        }
+      ]
+    },
+    {
+      "axis": "semantics",
+      "check": "skill_effect_sound_chain",
+      "counts": {
+        "BLOCKED": 128
+      },
+      "examples": [
+        {
+          "id": "KR491:effect_sequence:0",
+          "result": "BLOCKED",
+          "detail": "Korean skill/effect/sound binding absent"
+        },
+        {
+          "id": "KR491:effect_sequence:1",
+          "result": "BLOCKED",
+          "detail": "Korean skill/effect/sound binding absent"
+        },
+        {
+          "id": "KR491:effect_sequence:2",
+          "result": "BLOCKED",
+          "detail": "Korean skill/effect/sound binding absent"
+        },
+        {
+          "id": "KR491:effect_sequence:3",
+          "result": "BLOCKED",
+          "detail": "Korean skill/effect/sound binding absent"
+        },
+        {
+          "id": "KR491:effect_sequence:4",
+          "result": "BLOCKED",
+          "detail": "Korean skill/effect/sound binding absent"
+        },
+        {
+          "id": "KR491:effect_sequence:5",
+          "result": "BLOCKED",
+          "detail": "Korean skill/effect/sound binding absent"
+        },
+        {
+          "id": "KR491:effect_sequence:6",
+          "result": "BLOCKED",
+          "detail": "Korean skill/effect/sound binding absent"
+        },
+        {
+          "id": "KR491:effect_sequence:7",
+          "result": "BLOCKED",
+          "detail": "Korean skill/effect/sound binding absent"
+        }
+      ]
+    },
+    {
+      "axis": "semantics",
+      "check": "source_absent_fields",
+      "counts": {
+        "BLOCKED": 353
+      },
+      "examples": [
+        {
+          "id": "NA-P1998-ItemParams-L2",
+          "result": "BLOCKED",
+          "detail": [
+            "full",
+            "hpcost",
+            "statuskey",
+            "duration",
+            "wardname",
+            "stat",
+            "category",
+            "activemsg",
+            "notes",
+            "Sources"
+          ]
+        },
+        {
+          "id": "NA-P1998-ItemParams-L3",
+          "result": "BLOCKED",
+          "detail": [
+            "full",
+            "hpcost",
+            "statuskey",
+            "duration",
+            "wardname",
+            "stat",
+            "category",
+            "activemsg",
+            "notes",
+            "Sources"
+          ]
+        },
+        {
+          "id": "NA-P1998-ItemParams-L4",
+          "result": "BLOCKED",
+          "detail": [
+            "full",
+            "hpcost",
+            "statuskey",
+            "duration",
+            "wardname",
+            "stat",
+            "category",
+            "activemsg",
+            "notes",
+            "Sources"
+          ]
+        },
+        {
+          "id": "NA-P1998-ItemParams-L5",
+          "result": "BLOCKED",
+          "detail": [
+            "full",
+            "hpcost",
+            "statuskey",
+            "duration",
+            "wardname",
+            "stat",
+            "category",
+            "activemsg",
+            "notes",
+            "Sources"
+          ]
+        },
+        {
+          "id": "NA-P1998-ItemParams-L6",
+          "result": "BLOCKED",
+          "detail": [
+            "full",
+            "hpcost",
+            "statuskey",
+            "duration",
+            "wardname",
+            "stat",
+            "category",
+            "activemsg",
+            "notes",
+            "Sources"
+          ]
+        },
+        {
+          "id": "NA-P1998-ItemParams-L7",
+          "result": "BLOCKED",
+          "detail": [
+            "full",
+            "hpcost",
+            "statuskey",
+            "duration",
+            "wardname",
+            "stat",
+            "category",
+            "activemsg",
+            "notes",
+            "Sources"
+          ]
+        },
+        {
+          "id": "NA-P1998-ItemParams-L8",
+          "result": "BLOCKED",
+          "detail": [
+            "full",
+            "hpcost",
+            "statuskey",
+            "duration",
+            "wardname",
+            "stat",
+            "category",
+            "activemsg",
+            "notes",
+            "Sources"
+          ]
+        },
+        {
+          "id": "NA-P1998-ItemParams-L9",
+          "result": "BLOCKED",
+          "detail": [
+            "full",
+            "hpcost",
+            "statuskey",
+            "duration",
+            "wardname",
+            "stat",
+            "category",
+            "activemsg",
+            "notes",
+            "Sources"
+          ]
+        }
+      ]
+    },
+    {
+      "axis": "semantics",
+      "check": "sprite_stencil_decode",
+      "counts": {
+        "BLOCKED": 2
+      },
+      "examples": [
+        {
+          "id": "KR491:sprite_family:DLGLOGIN",
+          "result": "BLOCKED",
+          "detail": {
+            "frame_index": 0,
+            "reason": "EPF stencil run is empty or exceeds row width"
+          }
+        },
+        {
+          "id": "KR491:sprite_family:DLGNEW01",
+          "result": "BLOCKED",
+          "detail": {
+            "frame_index": 0,
+            "reason": "EPF stencil run is empty or exceeds row width"
+          }
+        }
+      ]
+    }
+  ],
+  "korean_complete_chains": {
+    "NPC→graphic/dialogue/service": "BLOCKED",
+    "monster→spawn/drop/item": "BLOCKED",
+    "recipe→materials/result/NPC": "BLOCKED",
+    "skill→job/effect/sound": "BLOCKED",
+    "map→tile/object/exits": "BLOCKED"
+  },
+  "source_registry_fingerprints": {
+    "sources.jsonl": "f8c0f6c2d0aec18275c71f42b1fb1194c125e878f709b92dc3e641b24e98ea51",
+    "sources_delta.jsonl": "14d70dfd8a33dc75da15a48312785d682d8ac9b827fead781f01b369585038cf",
+    "research_assets.json": "dbf0344381a9ed411bb031e8092b1aa28f2f8663e7db8e729dfd86fd562e8af1",
+    "research_korean.json": "1ea4a4686144f5cad9a77b2fe7e6ea4cb38457755b445952d81abfdc1665286c",
+    "research_official_core.json": "f30578c74d66479e62cd89bd949db05d96f56133633b133d2cab4bd1a7ca2e0f",
+    "research_official_creation_visual.json": "c66fa54934ed2733ffaba9762f70220db856e564a9bd7e223f0e5f0e3e92d121",
+    "research_official_flow.json": "fddef8c58c4c9e6a332b11a68ebdd021f0d6091202553ec555ae1c569a5dbe30",
+    "research_official_images.json": "0cdf9be665da5643da86ca8af24f576a53e0fb87128c02a39666386516e46340",
+    "research_official_skill_effects.json": "031cac045b9f973a642d07a06e836d5aa9f1e0dec9ef8fc09da126f9931c8f33",
+    "research_official_zone_item.json": "0a97a0e227fda8e854ba0a32a66984c01e9c9bce8a807a7549e02b983a84db0e",
+    "research_server.json": "6552b6acec644689637fa49b944c34d2740b22802e8f955c90efd38420594a24"
+  },
+  "historical_accuracy": "UNKNOWN",
+  "runtime_tests": "NOT_RUN",
+  "p2_tests": "NOT_RUN",
+  "zero_defaults_inserted": 0,
+  "scope": "ALL INPUT ROWS: STATIC SCHEMA/SOURCE-HASH/LOCATOR/DECLARED REFERENCE DRY-RUN; no reference/game code, SQL or Lua execution",
+  "limitations": [
+    "NA and KR numeric IDs never auto-joined",
+    "Known-pool dangling source references FAIL; absent/unknown target pools remain BLOCKED",
+    "Opaque scripts and unspecified field semantics are not execution support",
+    "SQL typed values use fixed-parser extraction evidence plus exact normalized hashes and tuple locators; no SQL engine execution",
+    "Whole Korean gameplay chains remain blocked independently from source-byte integrity"
+  ]
+}

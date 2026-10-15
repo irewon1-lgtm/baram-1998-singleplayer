@@ -1,7 +1,7 @@
 {
   "task_id": "BARAM_REBUILD_P1_5_001",
   "scope": "FULL_PINNED_SOURCE_ACQUISITION_AND_BULK_NA_STATIC_EXTRACTION",
-  "script_sha256": "223ca1336dfee89a4dc91a07e3571f7d6315fb61aabc3a34dc90d794f4dd224e",
+  "script_sha256": "970daf0f67d7929694fc437d1a0ab3b356fa49fb5c6b06b951f104f9cf892ec6",
   "source_commits": {
     "Project1998": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
     "RTK-Server": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6"
@@ -12496,7 +12496,7 @@
     },
     {
       "path": "na_reference_npc_dialogue.jsonl",
-      "sha256": "ee8a4adc8bff2505bf4b9812792ed7bf00de377ef77c711b854279d7af220923",
+      "sha256": "6a9bd19d14cbd70af356db57100112c93decab3778c6c18dc8cfadf4ba17f23e",
       "bytes": 42933,
       "records": 26
     },

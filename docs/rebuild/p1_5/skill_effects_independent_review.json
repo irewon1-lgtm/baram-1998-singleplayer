@@ -1,0 +1,432 @@
+{
+  "task_id": "BARAM_REBUILD_P1_5_001",
+  "reviewer": "Independent server_content agent; did not import author decoder",
+  "status": "PASS_WITHIN_ARCHIVED_DESCRIPTION_FIELD_SCOPE",
+  "overall_game_readiness": "PARTIAL",
+  "runtime_tests": "NOT_RUN",
+  "scope": "All377 parent skill rows, all180 unique actual archived official Korean effect descriptions, all1105 selected source-published fact instances and2 separate unselected reconstruction candidates. Static provenance and semantic review only.",
+  "inputs": {
+    "parent_core": {
+      "path": "docs/rebuild/p1_5/selected_content/kr_official_core.jsonl",
+      "sha256": "010bef4cff3aa21716ca63423eda0eb9f225c58cba0b6be79029c6ca954429dc",
+      "rows": 928,
+      "skill_rows": 377
+    },
+    "effect_sidecar": {
+      "path": "docs/rebuild/p1_5/selected_content/kr_official_skill_effects.jsonl",
+      "sha256": "b8947b92e05d43994d3af3529ced87203daf9d3255132afe9b227ad818d30b1f",
+      "bytes": 1590584,
+      "rows": 377
+    },
+    "author_parser": {
+      "path": "tools/rebuild/p1_5/extract_official_skill_effects.py",
+      "sha256": "d6b6b0e23b0451bff0de297fb115a00c48c72837d0fe05d730d7d5aa0f66c04a"
+    },
+    "previous_core_review": {
+      "path": "docs/rebuild/p1_5/official_independent_review.json",
+      "sha256": "535cdc8a776215120767cf6045d0b142cd6ed4f62a4c85bffd7ebbc22f4d3ef3",
+      "unchanged_by_this_review": true
+    }
+  },
+  "method": {
+    "independent_parser": "lxml active DOM row/cell selection and separate raw third-cell boundary scan; strictCP949 decoding; author parser neither imported nor executed",
+    "human_semantic_review": "Read all180 unique source descriptions and compared allselected field dictionaries. Newly added24 facts separately rechecked against corresponding source descriptions. Source prose retained privately; report exports no full descriptions.",
+    "coverage_population": "Parent set equality, unique record/parent IDs, exact source hashes, source linebounds, description hashes, fragment characterbounds/hashes and field/value equality, every Arabic numeric source mention, explicit exclusion of2 editorial3 mentions.",
+    "not_claimed": "No independent historical gameplay measurement, runtime effect execution, animation/sound association, native numeric skillID binding or complete engine mechanics."
+  },
+  "counts": {
+    "unique_source_bytehashes_checked": 12,
+    "source_input_hashes_checked": 377,
+    "independent_dom_description_hashes_checked": 377,
+    "cell_line_anchors_checked": 377,
+    "fact_fragment_hashes_and_selected_values_checked": 1105,
+    "unpublished_numeric_runtime_fields_null_checked": 1885,
+    "profile_and_no_runtime_status_checked": 377,
+    "editorial_numeric_mentions_checked": 2,
+    "numeric_mentions_checked": 81,
+    "separate_unselected_reconstruction_candidates_checked": 2,
+    "source_skill_rows_reviewed": 377,
+    "unique_description_families_read": 180,
+    "unique_description_field_facts": 540,
+    "original_fact_instances": 1105,
+    "separate_unselected_reconstruction_candidates": 2,
+    "numeric_mentions_mapped": 81,
+    "editorial_numeric_mentions_excluded": 2,
+    "structural_errors": 0,
+    "unresolved_numeric_mentions": 0
+  },
+  "source_byte_evidence": [
+    {
+      "source_id": "P15-ARC-030e07a01431",
+      "sha256": "1dfe3b80b3135be74b34507375cc82d4de4fddf0e6e7e0d9ed313f3b4817bbb5",
+      "original_url": "http://baram.nexon.co.kr:80/guide/middle/magic/common.html",
+      "archive_capture_at": "20011003204357",
+      "skill_rows": 3
+    },
+    {
+      "source_id": "P15-ARC-06559eaf496d",
+      "sha256": "79452a17c183d6b0a0bd65c9caa978ebafb940b7832f3e471f107f1984ee468b",
+      "original_url": "http://baram.nexon.co.kr:80/guide/magic/thidf.html",
+      "archive_capture_at": "20000511110910",
+      "skill_rows": 42
+    },
+    {
+      "source_id": "P15-ARC-0b7dcb5d2678",
+      "sha256": "cce4f37e09a030f73e6e2ae725ee44f3fc56cb0f213d5d5e0cbff8560de27068",
+      "original_url": "http://baram.nexon.co.kr:80/guide/middle/magic/dosa.html",
+      "archive_capture_at": "20010705222452",
+      "skill_rows": 35
+    },
+    {
+      "source_id": "P15-ARC-18b605403844",
+      "sha256": "1599201843290740063571c00b397b17c126c2c3bcafd39b40892cc661550a28",
+      "original_url": "http://baram.nexon.co.kr:80/guide/magic/wizard.html",
+      "archive_capture_at": "20000511120952",
+      "skill_rows": 67
+    },
+    {
+      "source_id": "P15-ARC-59eba4beca79",
+      "sha256": "077e788ffddb359cbfec5485ca337be16ecaf59b104bb03f009088ba229f3d32",
+      "original_url": "http://baram.nexon.co.kr:80/guide/magic/dosa.html",
+      "archive_capture_at": "20000619233353",
+      "skill_rows": 36
+    },
+    {
+      "source_id": "P15-ARC-85066ebecea9",
+      "sha256": "8425d6093366e8ef57a3a81a89ab58b46c28251469188e0cefce1190dd973f8b",
+      "original_url": "http://baram.nexon.co.kr:80/guide/middle/magic/thidf.html",
+      "archive_capture_at": "20010705225249",
+      "skill_rows": 42
+    },
+    {
+      "source_id": "P15-ARC-89c540cc9f59",
+      "sha256": "77afaeb442c30f929b92bde3a329698764495bf2e543f7667e522d090d3eba0a",
+      "original_url": "http://baram.nexon.co.kr:80/guide/magic/common.html",
+      "archive_capture_at": "20000511101312",
+      "skill_rows": 3
+    },
+    {
+      "source_id": "P15-ARC-8f636f3c673d",
+      "sha256": "037aa9e77d50ac27b4fcaaede8163466bcc42c4047a47b7c61a7544f4d15a2b2",
+      "original_url": "http://baram.nexon.co.kr:80/guide/middle/magic/fighter.html",
+      "archive_capture_at": "20010705223439",
+      "skill_rows": 17
+    },
+    {
+      "source_id": "P15-ARC-b8758ccfdcc9",
+      "sha256": "26f57b4cb57b91f0ecd5b47473202f7d7f4ea09a1ec83fac3279966210a7b0c6",
+      "original_url": "http://baram.nexon.co.kr:80/guide/middle/magic/seung.html",
+      "archive_capture_at": "20010801154501",
+      "skill_rows": 24
+    },
+    {
+      "source_id": "P15-ARC-bf707407790a",
+      "sha256": "979d95d5fb42cea549f7dfa0e4278a2e7d67ac9ecdf0bd6b0c36d4532bd8f8ec",
+      "original_url": "http://baram.nexon.co.kr:80/guide/magic/fighter.html",
+      "archive_capture_at": "20000511154844",
+      "skill_rows": 17
+    },
+    {
+      "source_id": "P15-ARC-c139836fe487",
+      "sha256": "3ee12d87b2bf4e274040d9a72d8ae0777483cfc0cb186a49746b03c89dfe2cd6",
+      "original_url": "http://www.baram.nexon.co.kr:80/guide/magic/seung.html",
+      "archive_capture_at": "20001017184612",
+      "skill_rows": 24
+    },
+    {
+      "source_id": "P15-ARC-cb5e34400c09",
+      "sha256": "2fd702ee856d60fb3ab0a6513f8a0f5d77c1ab34a54c50cc3670712c35b417f1",
+      "original_url": "http://baram.nexon.co.kr:80/guide/middle/magic/wizard.html",
+      "archive_capture_at": "20010705225644",
+      "skill_rows": 67
+    }
+  ],
+  "semantic_controls": [
+    {
+      "skill": "부활",
+      "field": "effect_type.MP_RESTORE",
+      "source_rule": "resurrection_consumes_all_MP_does_not_restore_MP",
+      "rows_checked": 2,
+      "result": "PASS"
+    },
+    {
+      "skill": "투명",
+      "field": "effect_type.DAMAGE_DEALING",
+      "source_rule": "followup_attack_modifier_not_cast_time_damage",
+      "rows_checked": 2,
+      "result": "PASS"
+    },
+    {
+      "skill": "투명",
+      "field": "damage.invisibility_multiplier",
+      "source_rule": "source_seven_to_eight_not_fixed_coefficient",
+      "rows_checked": 2,
+      "result": "PASS"
+    },
+    {
+      "skill": "백호의희원",
+      "field": "target.other_player_supported",
+      "source_rule": "상대_entity_class_is_unstated",
+      "rows_checked": 2,
+      "result": "PASS"
+    },
+    {
+      "skill": "백호의희원",
+      "field": "target.other_entity_supported",
+      "source_rule": "상대_unresolved_entity_class",
+      "rows_checked": 2,
+      "result": "PASS"
+    },
+    {
+      "skill": "노도성황",
+      "field": "damage.periodic_hp_loss",
+      "source_rule": "three_percent_max_HP_per_second",
+      "rows_checked": 2,
+      "result": "PASS"
+    },
+    {
+      "skill": "반탄공",
+      "field": "reflection.probability",
+      "source_rule": "fifty_percent_reflect_not_cast_success",
+      "rows_checked": 2,
+      "result": "PASS"
+    },
+    {
+      "skill": "보호",
+      "field": "damage.incoming_multiplier",
+      "source_rule": "half_incoming_damage",
+      "rows_checked": 4,
+      "result": "PASS"
+    },
+    {
+      "skill": "백호참",
+      "field": "cost.hp",
+      "source_rule": "HP50percent_basis_unstated",
+      "rows_checked": 2,
+      "result": "PASS"
+    },
+    {
+      "skill": "어검술",
+      "field": "range.documented",
+      "source_rule": "two_필드_not_normalized_as_tiles",
+      "rows_checked": 2,
+      "result": "PASS"
+    },
+    {
+      "skill": "초혼비무",
+      "field": "movement.source_distance",
+      "source_rule": "four_tile_pull_not_caster_blink",
+      "rows_checked": 2,
+      "result": "PASS"
+    },
+    {
+      "skill": "초혼비무",
+      "field": "movement.caster_to_target_then_attack",
+      "source_rule": "pull_does_not_teleport_caster",
+      "rows_checked": 2,
+      "result": "PASS"
+    },
+    {
+      "skill": "쇄혼비무",
+      "field": "movement.source_distance",
+      "source_rule": "four_tile_caster_blink_not_pull",
+      "rows_checked": 2,
+      "result": "PASS"
+    },
+    {
+      "skill": "쇄혼비무",
+      "field": "movement.pull_target_to_caster_front_then_attack",
+      "source_rule": "caster_blink_does_not_pull",
+      "rows_checked": 2,
+      "result": "PASS"
+    },
+    {
+      "skill": "공력증강",
+      "field": "healing.full_mp_restore",
+      "source_rule": "full_MP_restore_not_flat100_restore",
+      "rows_checked": 2,
+      "result": "PASS"
+    },
+    {
+      "skill": "공력증가",
+      "field": "healing.full_mp_restore",
+      "source_rule": "full_MP_restore_not_flat100_restore",
+      "rows_checked": 2,
+      "result": "PASS"
+    },
+    {
+      "skill": "공력증강",
+      "field": "cost.mp",
+      "source_rule": "flatMP100_is_cost",
+      "rows_checked": 2,
+      "result": "PASS"
+    },
+    {
+      "skill": "공력증가",
+      "field": "cost.mp",
+      "source_rule": "flatMP100_is_cost",
+      "rows_checked": 2,
+      "result": "PASS"
+    },
+    {
+      "skill": "공력주입",
+      "field": "resource_transfer",
+      "source_rule": "transfer_not_damage_formula",
+      "rows_checked": 2,
+      "result": "PASS"
+    },
+    {
+      "skill": "공력주입",
+      "field": "cost.mp",
+      "source_rule": "transfer_MP_cost_not_flat_default",
+      "rows_checked": 2,
+      "result": "PASS"
+    },
+    {
+      "skill": "흡성대법",
+      "field": "absorption.hp_cap",
+      "source_rule": "absorption_cap_two_caster_maxHP",
+      "rows_checked": 2,
+      "result": "PASS"
+    },
+    {
+      "skill": "흡성대법",
+      "field": "target.monster_hp_condition",
+      "source_rule": "low_HP_monster_threshold_unstated",
+      "rows_checked": 2,
+      "result": "PASS"
+    },
+    {
+      "skill": "파력무참",
+      "field": "damage.conditional_multiplier",
+      "source_rule": "two_times_finisher_magic_only",
+      "rows_checked": 2,
+      "result": "PASS"
+    },
+    {
+      "skill": "신령지익",
+      "profile": "KR_GUIDE_2000_SNAPSHOT",
+      "rule": "2000_caster_nearby_group_vs2001_all_nearby_people_monsters",
+      "rows_checked": 1,
+      "result": "PASS"
+    },
+    {
+      "skill": "파력무참",
+      "profile": "KR_GUIDE_2000_SNAPSHOT",
+      "rule": "2000_caster_nearby_group_vs2001_all_nearby_people_monsters",
+      "rows_checked": 1,
+      "result": "PASS"
+    },
+    {
+      "skill": "신령지익",
+      "profile": "KR_GUIDE_2001_SNAPSHOT",
+      "rule": "2000_caster_nearby_group_vs2001_all_nearby_people_monsters",
+      "rows_checked": 1,
+      "result": "PASS"
+    },
+    {
+      "skill": "파력무참",
+      "profile": "KR_GUIDE_2001_SNAPSHOT",
+      "rule": "2000_caster_nearby_group_vs2001_all_nearby_people_monsters",
+      "rows_checked": 1,
+      "result": "PASS"
+    },
+    {
+      "rule": "MP_RESTORE_only_explicit_object_phrase",
+      "rows_checked": 6,
+      "skill_names": [
+        "공력주입",
+        "공력증가",
+        "공력증강"
+      ],
+      "result": "PASS"
+    }
+  ],
+  "additional_semantic_review": [
+    {
+      "scope": "All37 exact HP-heal amount fields",
+      "result": "PASS",
+      "finding": "Published HP amounts and perrecipient units retained; no missing MP cost or duration defaulted."
+    },
+    {
+      "scope": "All12 hitcount fields and10 basicattack multiplier fields",
+      "result": "PASS",
+      "finding": "Repeated attack count distinct from attackpower multiplier; approximate2x and combo~16/~40 kept qualitative, complete_formula false."
+    },
+    {
+      "scope": "Range/area/movement",
+      "result": "PASS",
+      "finding": "4칸 pull and casterblink remain different commands. 2필드 unnormalized;4direction area not4tiles. Groupdamage immunity notrecipient set. 원거리/일정범위 remain nonnumeric."
+    },
+    {
+      "scope": "Damage/heal coefficients, costs and timing",
+      "result": "PASS",
+      "finding": "Explicit3percent targetmaxHP persecond and50percent spellreflection isolated from castsuccess. HP50percent current/maxunknown. MP100cost withfullMPrestore not100restore. 기력-toMP mapping/coefficients remainunknown. Effectreferences do notinherit missing costs."
+    },
+    {
+      "scope": "Qualitative lifecycle constraints",
+      "result": "PASS",
+      "finding": "Barrier casterimmobility, absorption breakonhealing, lowHP thresholdunknown, nonexhaustive subordinate summon list retained; missing exactduration/stack/delay/cooldown/castsuccess remainnull."
+    },
+    {
+      "scope": "All180 unique descriptions versus selected qualitative effects",
+      "result": "PASS",
+      "finding": "No remaining unsupported directdamage, playeronly target, fixedprobability/delay or completeformula found afterclosedissues below."
+    }
+  ],
+  "closed_findings": [
+    {
+      "id": "EFX-IND-001",
+      "affected_rows": 2,
+      "skill": "부활",
+      "defect": "Broad 마력...회복 regex crossed allMPcost into unrelated highesthealing prose",
+      "resolution": "MP_RESTORE removed; resurrection andallMPcost preserved. Full377rerun shows MP_RESTORE only6 explicit MPobject rows.",
+      "status": "CLOSED_RETESTED"
+    },
+    {
+      "id": "EFX-IND-002",
+      "affected_rows": 2,
+      "skill": "투명",
+      "defect": "Future surpriseattack prose classified as direct DAMAGE_DEALING",
+      "resolution": "Changed to ATTACK_MODIFIER_FOLLOWUP plusinvisibility;7to8descriptive multiplier preserved.",
+      "status": "CLOSED_RETESTED"
+    },
+    {
+      "id": "EFX-IND-003",
+      "affected_rows": 2,
+      "skill": "백호의희원",
+      "defect": "상대 was overnarrowed to otherplayer",
+      "resolution": "EntityclassUNSPECIFIED; selfsupportedexplicit; no otherplayeronly selection.",
+      "status": "CLOSED_RETESTED"
+    },
+    {
+      "id": "EFX-IND-004",
+      "affected_rows": 2,
+      "skill": "비영승보",
+      "defect": "Contextual repair ofsource typo 배우 was mixed into selectedoriginalvalue despite interpretationlabel",
+      "resolution": "Behindtarget candidate moved to separate reconstructed_value plusindependent evidence; selected_reconstruction_for_build false. Explicitrear2x/combo~16 preservedoriginal.",
+      "status": "CLOSED_RETESTED"
+    }
+  ],
+  "remaining_limits": [
+    "2000and2001are archival document profiles, not verifiedclient versions. 신령지익/파력무참 nearbygroup versusallnearby people/monsters conflict requires explicittargetprofile decision; globaldefault false.",
+    "Sourcepublished prose is not proof of actual runtime output, exactcoefficients, successrates or timing. No bound/exercised/gamePASS promotion.",
+    "Native KR effect/sound/motion IDs, palette/layer anchors, actualhitframes, cancellation andnextaction timings remain separate P2 observation work.",
+    "Ambiguous published 필드 unit, current/maxHPbasis, 기력runtime mapping, unspecifiedtarget identity and source typo interpretation remainexplicitly unresolved or reconstruction."
+  ],
+  "private_reproduction_evidence": [
+    {
+      "relative_path": "research/server/independent_effect_review.py",
+      "sha256": "3b3042d4b9aa0ef09935d7879dab615b080c160d72d4b0f81ec96264ab484cde"
+    },
+    {
+      "relative_path": "research/server/effect-review-structural-result.json",
+      "sha256": "0dd79c94e9dcf0d99a02de45c87b004b72871cfc6a55874010c9a8e92494345e"
+    },
+    {
+      "relative_path": "research/server/effect_review_source_descriptions.json",
+      "sha256": "0050ccacee9541cb4af6ef3c3946a6dec50d1b6194d204ea6f74d786d96e02d6"
+    }
+  ],
+  "errors": []
+}

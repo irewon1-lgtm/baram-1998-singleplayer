@@ -1,0 +1,537 @@
+{
+  "task_id": "BARAM_REBUILD_P1_5_001",
+  "executed_at_utc": "2026-10-15T23:31:29.540384+00:00",
+  "validator_sha256": "66a6b9286b824751e890376f87e8a908498a3a319f2e457e744de30350a8632f",
+  "regression_script_sha256": "e7d45d4a3b3247232553a95d36723910d8bd974cbf30f74b5c914b4f5cc4c900",
+  "result": "PASS",
+  "cases": [
+    {
+      "case_id": "normal_complete",
+      "input_origin": "SYNTHETIC_FIXTURE_ONLY",
+      "expected": "PASS",
+      "actual": "PASS",
+      "exit_code": 0,
+      "result": "PASS",
+      "assertions": {
+        "status": true,
+        "integrity": true,
+        "exit": true,
+        "runtime_not_run": true,
+        "no_defaults": true
+      },
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/p1_5/import_dry_run.py",
+        "--registry-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/normal_complete/registry",
+        "--content-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/normal_complete/selected",
+        "--input-map",
+        "/tmp/baram-import-fixture-6zb9j9mi/normal_complete/input_map.json",
+        "--output",
+        "/tmp/baram-import-fixture-6zb9j9mi/normal_complete/result.json"
+      ],
+      "stdout": "{\"result\": \"PASS\", \"integrity_result\": \"PASS\", \"source_reference_result\": \"PASS\", \"semantic_readiness_result\": \"PASS\", \"files_read\": 1, \"rows_read\": 1, \"unique_record_ids\": 1, \"source_byte_hashes_read\": 1}",
+      "stderr": ""
+    },
+    {
+      "case_id": "duplicate_id",
+      "input_origin": "SYNTHETIC_FIXTURE_ONLY",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "exit_code": 1,
+      "result": "PASS",
+      "assertions": {
+        "status": true,
+        "integrity": true,
+        "exit": true,
+        "runtime_not_run": true,
+        "no_defaults": true
+      },
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/p1_5/import_dry_run.py",
+        "--registry-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/duplicate_id/registry",
+        "--content-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/duplicate_id/selected",
+        "--input-map",
+        "/tmp/baram-import-fixture-6zb9j9mi/duplicate_id/input_map.json",
+        "--output",
+        "/tmp/baram-import-fixture-6zb9j9mi/duplicate_id/result.json"
+      ],
+      "stdout": "{\"result\": \"FAIL\", \"integrity_result\": \"FAIL\", \"source_reference_result\": \"PASS\", \"semantic_readiness_result\": \"PASS\", \"files_read\": 1, \"rows_read\": 2, \"unique_record_ids\": 1, \"source_byte_hashes_read\": 1}",
+      "stderr": ""
+    },
+    {
+      "case_id": "broken_source_reference",
+      "input_origin": "SYNTHETIC_FIXTURE_ONLY",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "exit_code": 1,
+      "result": "PASS",
+      "assertions": {
+        "status": true,
+        "integrity": true,
+        "exit": true,
+        "runtime_not_run": true,
+        "no_defaults": true
+      },
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/p1_5/import_dry_run.py",
+        "--registry-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/broken_source_reference/registry",
+        "--content-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/broken_source_reference/selected",
+        "--input-map",
+        "/tmp/baram-import-fixture-6zb9j9mi/broken_source_reference/input_map.json",
+        "--output",
+        "/tmp/baram-import-fixture-6zb9j9mi/broken_source_reference/result.json"
+      ],
+      "stdout": "{\"result\": \"FAIL\", \"integrity_result\": \"FAIL\", \"source_reference_result\": \"PASS\", \"semantic_readiness_result\": \"PASS\", \"files_read\": 1, \"rows_read\": 1, \"unique_record_ids\": 1, \"source_byte_hashes_read\": 0}",
+      "stderr": ""
+    },
+    {
+      "case_id": "changed_source_bytes",
+      "input_origin": "SYNTHETIC_FIXTURE_ONLY",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "exit_code": 1,
+      "result": "PASS",
+      "assertions": {
+        "status": true,
+        "integrity": true,
+        "exit": true,
+        "runtime_not_run": true,
+        "no_defaults": true
+      },
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/p1_5/import_dry_run.py",
+        "--registry-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/changed_source_bytes/registry",
+        "--content-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/changed_source_bytes/selected",
+        "--input-map",
+        "/tmp/baram-import-fixture-6zb9j9mi/changed_source_bytes/input_map.json",
+        "--output",
+        "/tmp/baram-import-fixture-6zb9j9mi/changed_source_bytes/result.json"
+      ],
+      "stdout": "{\"result\": \"FAIL\", \"integrity_result\": \"FAIL\", \"source_reference_result\": \"PASS\", \"semantic_readiness_result\": \"PASS\", \"files_read\": 1, \"rows_read\": 1, \"unique_record_ids\": 1, \"source_byte_hashes_read\": 0}",
+      "stderr": ""
+    },
+    {
+      "case_id": "wrong_row_input_hash",
+      "input_origin": "SYNTHETIC_FIXTURE_ONLY",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "exit_code": 1,
+      "result": "PASS",
+      "assertions": {
+        "status": true,
+        "integrity": true,
+        "exit": true,
+        "runtime_not_run": true,
+        "no_defaults": true
+      },
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/p1_5/import_dry_run.py",
+        "--registry-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/wrong_row_input_hash/registry",
+        "--content-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/wrong_row_input_hash/selected",
+        "--input-map",
+        "/tmp/baram-import-fixture-6zb9j9mi/wrong_row_input_hash/input_map.json",
+        "--output",
+        "/tmp/baram-import-fixture-6zb9j9mi/wrong_row_input_hash/result.json"
+      ],
+      "stdout": "{\"result\": \"FAIL\", \"integrity_result\": \"FAIL\", \"source_reference_result\": \"PASS\", \"semantic_readiness_result\": \"PASS\", \"files_read\": 1, \"rows_read\": 1, \"unique_record_ids\": 1, \"source_byte_hashes_read\": 1}",
+      "stderr": ""
+    },
+    {
+      "case_id": "zero_catalogs",
+      "input_origin": "SYNTHETIC_FIXTURE_ONLY",
+      "expected": "BLOCKED",
+      "actual": "BLOCKED",
+      "exit_code": 2,
+      "result": "PASS",
+      "assertions": {
+        "status": true,
+        "integrity": true,
+        "exit": true,
+        "runtime_not_run": true,
+        "no_defaults": true
+      },
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/p1_5/import_dry_run.py",
+        "--registry-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/zero_catalogs/registry",
+        "--content-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/zero_catalogs/selected",
+        "--input-map",
+        "/tmp/baram-import-fixture-6zb9j9mi/zero_catalogs/input_map.json",
+        "--output",
+        "/tmp/baram-import-fixture-6zb9j9mi/zero_catalogs/result.json"
+      ],
+      "stdout": "{\"result\": \"BLOCKED\", \"integrity_result\": \"BLOCKED\", \"source_reference_result\": \"PASS\", \"semantic_readiness_result\": \"PASS\", \"files_read\": 0, \"rows_read\": 0, \"unique_record_ids\": 0, \"source_byte_hashes_read\": 0}",
+      "stderr": ""
+    },
+    {
+      "case_id": "unsupported_script_semantics",
+      "input_origin": "SYNTHETIC_FIXTURE_ONLY",
+      "expected": "BLOCKED",
+      "actual": "BLOCKED",
+      "exit_code": 2,
+      "result": "PASS",
+      "assertions": {
+        "status": true,
+        "integrity": true,
+        "exit": true,
+        "runtime_not_run": true,
+        "no_defaults": true
+      },
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/p1_5/import_dry_run.py",
+        "--registry-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/unsupported_script_semantics/registry",
+        "--content-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/unsupported_script_semantics/selected",
+        "--input-map",
+        "/tmp/baram-import-fixture-6zb9j9mi/unsupported_script_semantics/input_map.json",
+        "--output",
+        "/tmp/baram-import-fixture-6zb9j9mi/unsupported_script_semantics/result.json"
+      ],
+      "stdout": "{\"result\": \"BLOCKED\", \"integrity_result\": \"PASS\", \"source_reference_result\": \"PASS\", \"semantic_readiness_result\": \"BLOCKED\", \"files_read\": 1, \"rows_read\": 1, \"unique_record_ids\": 1, \"source_byte_hashes_read\": 1}",
+      "stderr": ""
+    },
+    {
+      "case_id": "empty_jsonl",
+      "input_origin": "SYNTHETIC_FIXTURE_ONLY",
+      "expected": "BLOCKED",
+      "actual": "BLOCKED",
+      "exit_code": 2,
+      "result": "PASS",
+      "assertions": {
+        "status": true,
+        "integrity": true,
+        "exit": true,
+        "runtime_not_run": true,
+        "no_defaults": true
+      },
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/p1_5/import_dry_run.py",
+        "--registry-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/empty_jsonl/registry",
+        "--content-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/empty_jsonl/selected",
+        "--input-map",
+        "/tmp/baram-import-fixture-6zb9j9mi/empty_jsonl/input_map.json",
+        "--output",
+        "/tmp/baram-import-fixture-6zb9j9mi/empty_jsonl/result.json"
+      ],
+      "stdout": "{\"result\": \"BLOCKED\", \"integrity_result\": \"BLOCKED\", \"source_reference_result\": \"PASS\", \"semantic_readiness_result\": \"PASS\", \"files_read\": 1, \"rows_read\": 0, \"unique_record_ids\": 0, \"source_byte_hashes_read\": 0}",
+      "stderr": ""
+    },
+    {
+      "case_id": "empty_json_array",
+      "input_origin": "SYNTHETIC_FIXTURE_ONLY",
+      "expected": "BLOCKED",
+      "actual": "BLOCKED",
+      "exit_code": 2,
+      "result": "PASS",
+      "assertions": {
+        "status": true,
+        "integrity": true,
+        "exit": true,
+        "runtime_not_run": true,
+        "no_defaults": true
+      },
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/p1_5/import_dry_run.py",
+        "--registry-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/empty_json_array/registry",
+        "--content-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/empty_json_array/selected",
+        "--input-map",
+        "/tmp/baram-import-fixture-6zb9j9mi/empty_json_array/input_map.json",
+        "--output",
+        "/tmp/baram-import-fixture-6zb9j9mi/empty_json_array/result.json"
+      ],
+      "stdout": "{\"result\": \"BLOCKED\", \"integrity_result\": \"BLOCKED\", \"source_reference_result\": \"PASS\", \"semantic_readiness_result\": \"PASS\", \"files_read\": 1, \"rows_read\": 0, \"unique_record_ids\": 0, \"source_byte_hashes_read\": 0}",
+      "stderr": ""
+    },
+    {
+      "case_id": "malformed_registry",
+      "input_origin": "SYNTHETIC_FIXTURE_ONLY",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "exit_code": 1,
+      "result": "PASS",
+      "assertions": {
+        "status": true,
+        "integrity": true,
+        "exit": true,
+        "runtime_not_run": true,
+        "no_defaults": true
+      },
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/p1_5/import_dry_run.py",
+        "--registry-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/malformed_registry/registry",
+        "--content-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/malformed_registry/selected",
+        "--input-map",
+        "/tmp/baram-import-fixture-6zb9j9mi/malformed_registry/input_map.json",
+        "--output",
+        "/tmp/baram-import-fixture-6zb9j9mi/malformed_registry/result.json"
+      ],
+      "stdout": "{\"task_id\": \"BARAM_REBUILD_P1_5_001\", \"result\": \"FAIL\", \"integrity_result\": \"FAIL\", \"error_type\": \"AttributeError\", \"scope\": \"STRUCTURED_INPUT_LOAD_OR_SCHEMA_ERROR\", \"runtime_tests\": \"NOT_RUN\", \"p2_tests\": \"NOT_RUN\", \"zero_defaults_inserted\": 0}",
+      "stderr": ""
+    },
+    {
+      "case_id": "malformed_source_ids",
+      "input_origin": "SYNTHETIC_FIXTURE_ONLY",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "exit_code": 1,
+      "result": "PASS",
+      "assertions": {
+        "status": true,
+        "integrity": true,
+        "exit": true,
+        "runtime_not_run": true,
+        "no_defaults": true
+      },
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/p1_5/import_dry_run.py",
+        "--registry-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/malformed_source_ids/registry",
+        "--content-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/malformed_source_ids/selected",
+        "--input-map",
+        "/tmp/baram-import-fixture-6zb9j9mi/malformed_source_ids/input_map.json",
+        "--output",
+        "/tmp/baram-import-fixture-6zb9j9mi/malformed_source_ids/result.json"
+      ],
+      "stdout": "{\"task_id\": \"BARAM_REBUILD_P1_5_001\", \"result\": \"FAIL\", \"integrity_result\": \"FAIL\", \"error_type\": \"TypeError\", \"scope\": \"STRUCTURED_INPUT_LOAD_OR_SCHEMA_ERROR\", \"runtime_tests\": \"NOT_RUN\", \"p2_tests\": \"NOT_RUN\", \"zero_defaults_inserted\": 0}",
+      "stderr": ""
+    },
+    {
+      "case_id": "wrong_locator_url",
+      "input_origin": "SYNTHETIC_FIXTURE_ONLY",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "exit_code": 1,
+      "result": "PASS",
+      "assertions": {
+        "status": true,
+        "integrity": true,
+        "exit": true,
+        "runtime_not_run": true,
+        "no_defaults": true
+      },
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/p1_5/import_dry_run.py",
+        "--registry-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/wrong_locator_url/registry",
+        "--content-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/wrong_locator_url/selected",
+        "--input-map",
+        "/tmp/baram-import-fixture-6zb9j9mi/wrong_locator_url/input_map.json",
+        "--output",
+        "/tmp/baram-import-fixture-6zb9j9mi/wrong_locator_url/result.json"
+      ],
+      "stdout": "{\"result\": \"FAIL\", \"integrity_result\": \"FAIL\", \"source_reference_result\": \"PASS\", \"semantic_readiness_result\": \"PASS\", \"files_read\": 1, \"rows_read\": 1, \"unique_record_ids\": 1, \"source_byte_hashes_read\": 1}",
+      "stderr": ""
+    },
+    {
+      "case_id": "wrong_parser_fingerprint",
+      "input_origin": "SYNTHETIC_FIXTURE_ONLY",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "exit_code": 1,
+      "result": "PASS",
+      "assertions": {
+        "status": true,
+        "integrity": true,
+        "exit": true,
+        "runtime_not_run": true,
+        "no_defaults": true
+      },
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/p1_5/import_dry_run.py",
+        "--registry-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/wrong_parser_fingerprint/registry",
+        "--content-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/wrong_parser_fingerprint/selected",
+        "--input-map",
+        "/tmp/baram-import-fixture-6zb9j9mi/wrong_parser_fingerprint/input_map.json",
+        "--output",
+        "/tmp/baram-import-fixture-6zb9j9mi/wrong_parser_fingerprint/result.json"
+      ],
+      "stdout": "{\"result\": \"FAIL\", \"integrity_result\": \"FAIL\", \"source_reference_result\": \"PASS\", \"semantic_readiness_result\": \"PASS\", \"files_read\": 1, \"rows_read\": 1, \"unique_record_ids\": 1, \"source_byte_hashes_read\": 1}",
+      "stderr": ""
+    },
+    {
+      "case_id": "missing_declared_catalog",
+      "input_origin": "SYNTHETIC_FIXTURE_ONLY",
+      "expected": "BLOCKED",
+      "actual": "BLOCKED",
+      "exit_code": 2,
+      "result": "PASS",
+      "assertions": {
+        "status": true,
+        "integrity": true,
+        "exit": true,
+        "runtime_not_run": true,
+        "no_defaults": true
+      },
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/p1_5/import_dry_run.py",
+        "--registry-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/missing_declared_catalog/registry",
+        "--content-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/missing_declared_catalog/selected",
+        "--input-map",
+        "/tmp/baram-import-fixture-6zb9j9mi/missing_declared_catalog/input_map.json",
+        "--output",
+        "/tmp/baram-import-fixture-6zb9j9mi/missing_declared_catalog/result.json",
+        "--catalog-manifest",
+        "/tmp/baram-import-fixture-6zb9j9mi/missing_declared_catalog/manifest.json"
+      ],
+      "stdout": "{\"result\": \"BLOCKED\", \"integrity_result\": \"BLOCKED\", \"source_reference_result\": \"PASS\", \"semantic_readiness_result\": \"PASS\", \"files_read\": 1, \"rows_read\": 1, \"unique_record_ids\": 1, \"source_byte_hashes_read\": 1}",
+      "stderr": ""
+    },
+    {
+      "case_id": "wrong_relative_catalog_path",
+      "input_origin": "SYNTHETIC_FIXTURE_ONLY",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "exit_code": 1,
+      "result": "PASS",
+      "assertions": {
+        "status": true,
+        "integrity": true,
+        "exit": true,
+        "runtime_not_run": true,
+        "no_defaults": true
+      },
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/p1_5/import_dry_run.py",
+        "--registry-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/wrong_relative_catalog_path/registry",
+        "--content-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/wrong_relative_catalog_path/selected",
+        "--input-map",
+        "/tmp/baram-import-fixture-6zb9j9mi/wrong_relative_catalog_path/input_map.json",
+        "--output",
+        "/tmp/baram-import-fixture-6zb9j9mi/wrong_relative_catalog_path/result.json",
+        "--catalog-manifest",
+        "/tmp/baram-import-fixture-6zb9j9mi/wrong_relative_catalog_path/manifest.json"
+      ],
+      "stdout": "{\"result\": \"FAIL\", \"integrity_result\": \"FAIL\", \"source_reference_result\": \"PASS\", \"semantic_readiness_result\": \"PASS\", \"files_read\": 1, \"rows_read\": 1, \"unique_record_ids\": 1, \"source_byte_hashes_read\": 1}",
+      "stderr": ""
+    },
+    {
+      "case_id": "unexecuted_audio_PASS",
+      "input_origin": "SYNTHETIC_FIXTURE_ONLY",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "exit_code": 1,
+      "result": "PASS",
+      "assertions": {
+        "status": true,
+        "integrity": true,
+        "exit": true,
+        "runtime_not_run": true,
+        "no_defaults": true
+      },
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/p1_5/import_dry_run.py",
+        "--registry-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/unexecuted_audio_PASS/registry",
+        "--content-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/unexecuted_audio_PASS/selected",
+        "--input-map",
+        "/tmp/baram-import-fixture-6zb9j9mi/unexecuted_audio_PASS/input_map.json",
+        "--output",
+        "/tmp/baram-import-fixture-6zb9j9mi/unexecuted_audio_PASS/result.json"
+      ],
+      "stdout": "{\"result\": \"FAIL\", \"integrity_result\": \"FAIL\", \"source_reference_result\": \"PASS\", \"semantic_readiness_result\": \"PASS\", \"files_read\": 1, \"rows_read\": 1, \"unique_record_ids\": 1, \"source_byte_hashes_read\": 1}",
+      "stderr": ""
+    },
+    {
+      "case_id": "broken_normalized_record_reference",
+      "input_origin": "SYNTHETIC_FIXTURE_ONLY",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "exit_code": 1,
+      "result": "PASS",
+      "assertions": {
+        "status": true,
+        "integrity": true,
+        "exit": true,
+        "runtime_not_run": true,
+        "no_defaults": true
+      },
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/p1_5/import_dry_run.py",
+        "--registry-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/broken_normalized_record_reference/registry",
+        "--content-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/broken_normalized_record_reference/selected",
+        "--input-map",
+        "/tmp/baram-import-fixture-6zb9j9mi/broken_normalized_record_reference/input_map.json",
+        "--output",
+        "/tmp/baram-import-fixture-6zb9j9mi/broken_normalized_record_reference/result.json"
+      ],
+      "stdout": "{\"result\": \"FAIL\", \"integrity_result\": \"PASS\", \"source_reference_result\": \"FAIL\", \"semantic_readiness_result\": \"PASS\", \"files_read\": 1, \"rows_read\": 1, \"unique_record_ids\": 1, \"source_byte_hashes_read\": 1}",
+      "stderr": ""
+    },
+    {
+      "case_id": "unproved_pool_selector_is_not_mob",
+      "input_origin": "SYNTHETIC_FIXTURE_ONLY",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "exit_code": 1,
+      "result": "PASS",
+      "assertions": {
+        "status": true,
+        "integrity": true,
+        "exit": true,
+        "runtime_not_run": true,
+        "no_defaults": true
+      },
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/scratch/8a697b0cae82/baram-repo/tools/rebuild/p1_5/import_dry_run.py",
+        "--registry-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/unproved_pool_selector_is_not_mob/registry",
+        "--content-dir",
+        "/tmp/baram-import-fixture-6zb9j9mi/unproved_pool_selector_is_not_mob/selected",
+        "--input-map",
+        "/tmp/baram-import-fixture-6zb9j9mi/unproved_pool_selector_is_not_mob/input_map.json",
+        "--output",
+        "/tmp/baram-import-fixture-6zb9j9mi/unproved_pool_selector_is_not_mob/result.json"
+      ],
+      "stdout": "{\"result\": \"FAIL\", \"integrity_result\": \"PASS\", \"source_reference_result\": \"FAIL\", \"semantic_readiness_result\": \"PASS\", \"files_read\": 1, \"rows_read\": 2, \"unique_record_ids\": 2, \"source_byte_hashes_read\": 1}",
+      "stderr": ""
+    }
+  ],
+  "scope": "IMPORTER CONTROL FLOW/INTEGRITY REGRESSION; synthetic normal PASS is not original-data/history/gameplay PASS",
+  "runtime_tests": "NOT_RUN"
+}

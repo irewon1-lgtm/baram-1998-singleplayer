@@ -1,0 +1,85 @@
+{
+  "schema": "baram.p1_5.clean_handoff_validation/1",
+  "task_id": "BARAM_REBUILD_P1_5_001",
+  "result": "PASS_REPRODUCTION_SCOPE",
+  "recorded_at_utc": "2026-10-15T23:39:49.778611+00:00",
+  "scope": "Work separate-directory byte/path restoration and actual full import. Not Codex receiver G0.",
+  "input_maps": {
+    "full_import_ids": 3564,
+    "old_ledger_exact_ids": 2489,
+    "unknown_ids_in_old_scope": 0,
+    "independent_unique_hash_objects": 3037,
+    "all_paths_inside_clean_source_cache": true,
+    "full_map_sha256": "3d51245d03f838ac01e9a725765c2cb5fa429a7dd2418edbbabd612e71a6b557",
+    "old_map_sha256": "4d4f2bd58bcf48c2c458763de04484dcf4104d85e1640e798d41531152cd0ad1",
+    "source_files_modified": false
+  },
+  "byte_gate": {
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "tools/rebuild/step01/validate_step01.py",
+      "--input-map",
+      "/workspace/scratch/8a697b0cae82/clean-handoff-work/input_map.step01.json",
+      "--output",
+      "/workspace/scratch/8a697b0cae82/clean-handoff-work/clean_step01_validation_final.json"
+    ],
+    "result": "PASS",
+    "exit_code": 0,
+    "expected": 2489,
+    "read_matched": 2489,
+    "metadata_result": "PASS",
+    "detailed_result_sha256": "1a100db61678e8f4b45f1cf26f034b5ac1d8a8f850c05a2df2aff0431c70df78"
+  },
+  "normalized_import": {
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "tools/rebuild/p1_5/import_dry_run.py",
+      "--repo",
+      "/workspace/scratch/8a697b0cae82/clean-handoff-work/checkout",
+      "--registry-dir",
+      "/workspace/scratch/8a697b0cae82/clean-handoff-work/checkout/docs/rebuild/p1_5",
+      "--input-map",
+      "/workspace/scratch/8a697b0cae82/clean-handoff-work/input_map.json",
+      "--catalog-manifest",
+      "/workspace/scratch/8a697b0cae82/clean-handoff-work/checkout/docs/rebuild/p1_5/INPUT_MANIFEST.json",
+      "--output",
+      "/workspace/scratch/8a697b0cae82/clean-handoff-work/clean_import_validation_final.json"
+    ],
+    "observed_exit_code": 1,
+    "result": "FAIL",
+    "integrity_result": "PASS",
+    "source_reference_result": "FAIL",
+    "semantic_readiness_result": "BLOCKED",
+    "rows_read": 44796,
+    "source_byte_hashes_read": 1241,
+    "detailed_result_sha256": "0c685459e8a1ef74dbea08a9ce2023850e1c62f4a4b74bb3d5446bf0c2f77bda",
+    "same_failure_edges_as_original_run": 154
+  },
+  "scope_equivalence": {
+    "INPUT_MANIFEST.json": true,
+    "sources_delta.jsonl": true,
+    "selected_content/catalog.json": true
+  },
+  "input_manifest_sha256": "556d0be5ec4632a5d85b618971045f0edb8f1a73148bb9c55a9663e396681c82",
+  "normalized_catalog_sha256": "a6085079214dff200988201c95b75697b76e7a8f1651cd1841bc00b0e8580e49",
+  "tool_sha256": "0e3ea1993af4995b0a6fa02017a1bab29f2f2e3fdc3e104bc02fb600f0cf57e1",
+  "importer_sha256": "66a6b9286b824751e890376f87e8a908498a3a319f2e457e744de30350a8632f",
+  "initial_failures_preserved": [
+    {
+      "observed": "Mixed full-import map passed2489bytechecks but old metadata rejected extraP1.5IDs",
+      "result": "FAIL",
+      "exit_code": 1,
+      "resolution": "Separate exact2489 old-ledger map; unknown-ID rejection preserved"
+    },
+    {
+      "observed": "Legacy visual composite101IDs absent from initial portable declaration; old-path fallback could mask incomplete relocation",
+      "result": "FAIL_OR_BLOCKED_RELOCATION_SCOPE",
+      "resolution": "Declared source.files composite IDs, copied101IDs/100unique additional objects, reran actual gates with allpaths inclean pool"
+    }
+  ],
+  "detailed_source_validation_reuse": "Same normalized/source byte hashes, parser and field scope; see import_validation.json plus actual rerun fingerprints above. The source graph failure was reproduced, not waived.",
+  "network_requests_during_copy_and_tests": 0,
+  "runtime_tests": "NOT_RUN",
+  "codex_receiver_G0": "NOT_RUN",
+  "p2_executed": false
+}

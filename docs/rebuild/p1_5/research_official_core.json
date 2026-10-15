@@ -1,0 +1,3512 @@
+{
+  "task_id": "BARAM_REBUILD_P1_5_001",
+  "status": "PARTIAL",
+  "sources": [
+    {
+      "source_id": "P15-ARC-c05252ad964d",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/begin/basic.html",
+      "archive_capture_at": "20000511012427",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20000511012427id_/http://baram.nexon.co.kr:80/guide/begin/basic.html",
+      "final_response_url": "https://web.archive.org/web/20000511012427id_/http://baram.nexon.co.kr:80/guide/begin/basic.html",
+      "status": 200,
+      "byte_length": 5786,
+      "sha256": "1bb93660c656e77c30f57374bd0f96928cb4a7b6fdc5055197b46704b896e8e9",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20000511012427__guide__begin__basic.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20000511; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "ACQUIRED_TEXT_NOT_ALL_FIELDS_NORMALIZED",
+      "html_title": "Baram Homepage"
+    },
+    {
+      "source_id": "P15-ARC-34a4517952df",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/begin/character.html",
+      "archive_capture_at": "20000510231523",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20000510231523id_/http://baram.nexon.co.kr:80/guide/begin/character.html",
+      "final_response_url": "https://web.archive.org/web/20000510231523id_/http://baram.nexon.co.kr:80/guide/begin/character.html",
+      "status": 200,
+      "byte_length": 7431,
+      "sha256": "60c1de828ef383809ab11b65d912d7a6ebb42b2b40d66aac0fddd8a5f3203d5c",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20000510231523__guide__begin__character.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20000510; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "ACQUIRED_TEXT_NOT_ALL_FIELDS_NORMALIZED",
+      "html_title": "Baram Homepage"
+    },
+    {
+      "source_id": "P15-ARC-27596a0d8ed8",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/begin/info.html",
+      "archive_capture_at": "20000511001605",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20000511001605id_/http://baram.nexon.co.kr:80/guide/begin/info.html",
+      "final_response_url": "https://web.archive.org/web/20000511001605id_/http://baram.nexon.co.kr:80/guide/begin/info.html",
+      "status": 200,
+      "byte_length": 13403,
+      "sha256": "9616a473094c7b8f69418e08e90eb47113b5b1394b1905d655e2d9501c7a45ec",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20000511001605__guide__begin__info.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20000511; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "ACQUIRED_TEXT_NOT_ALL_FIELDS_NORMALIZED",
+      "html_title": "Baram Homepage"
+    },
+    {
+      "source_id": "P15-ARC-63a839eecb4e",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/begin/key.html",
+      "archive_capture_at": "20000511015103",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20000511015103id_/http://baram.nexon.co.kr:80/guide/begin/key.html",
+      "final_response_url": "https://web.archive.org/web/20000511015103id_/http://baram.nexon.co.kr:80/guide/begin/key.html",
+      "status": 200,
+      "byte_length": 11616,
+      "sha256": "48cb789dd1c6f89e7d354c2bd7dbef5c902d1c3d3d9954614832d70c79b8e385",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20000511015103__guide__begin__key.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20000511; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "ACQUIRED_TEXT_NOT_ALL_FIELDS_NORMALIZED",
+      "html_title": "Baram Homepage"
+    },
+    {
+      "source_id": "P15-ARC-f68c373df3e7",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/begin/key02.html",
+      "archive_capture_at": "20001018024649",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20001018024649id_/http://baram.nexon.co.kr:80/guide/begin/key02.html",
+      "final_response_url": "https://web.archive.org/web/20001018024649id_/http://baram.nexon.co.kr:80/guide/begin/key02.html",
+      "status": 200,
+      "byte_length": 12046,
+      "sha256": "d122a86862f28c6783f8681332a5a31fee276a0317a6dd13e1bc0e36073f96fd",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20001018024649__guide__begin__key02.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20001018; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "ACQUIRED_TEXT_NOT_ALL_FIELDS_NORMALIZED",
+      "html_title": "Baram Homepage"
+    },
+    {
+      "source_id": "P15-ARC-2646485a1ab7",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/begin/key03.html",
+      "archive_capture_at": "20001101213024",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20001101213024id_/http://baram.nexon.co.kr:80/guide/begin/key03.html",
+      "final_response_url": "https://web.archive.org/web/20001101213024id_/http://baram.nexon.co.kr:80/guide/begin/key03.html",
+      "status": 200,
+      "byte_length": 9097,
+      "sha256": "14be4711849387976ead537ccc9fb821a72452dfd9937db47a91ac06473aa00c",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20001101213024__guide__begin__key03.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20001101; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "ACQUIRED_TEXT_NOT_ALL_FIELDS_NORMALIZED",
+      "html_title": "Baram Homepage"
+    },
+    {
+      "source_id": "P15-ARC-8881234afddd",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/begin/order.html",
+      "archive_capture_at": "20000619162416",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20000619162416id_/http://baram.nexon.co.kr:80/guide/begin/order.html",
+      "final_response_url": "https://web.archive.org/web/20000619162416id_/http://baram.nexon.co.kr:80/guide/begin/order.html",
+      "status": 200,
+      "byte_length": 7975,
+      "sha256": "7e93706cc1ba3caec881d771b45d253d582bee9176c7dd635d76736ac1e73349",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20000619162416__guide__begin__order.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20000619; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "ACQUIRED_TEXT_NOT_ALL_FIELDS_NORMALIZED",
+      "html_title": "Baram Homepage"
+    },
+    {
+      "source_id": "P15-ARC-a071fac33812",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/begin/use.html",
+      "archive_capture_at": "20000511011340",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20000511011340id_/http://baram.nexon.co.kr:80/guide/begin/use.html",
+      "final_response_url": "https://web.archive.org/web/20000511011340id_/http://baram.nexon.co.kr:80/guide/begin/use.html",
+      "status": 200,
+      "byte_length": 5624,
+      "sha256": "c9de7e87d234481e1e2037d8abbf04d23c18c66aaf8fe1446f5ff24e6c0df7a2",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20000511011340__guide__begin__use.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20000511; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "ACQUIRED_TEXT_NOT_ALL_FIELDS_NORMALIZED",
+      "html_title": "Baram Homepage"
+    },
+    {
+      "source_id": "P15-ARC-d9a991e9f11e",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/dungeon/12_god.html",
+      "archive_capture_at": "20001109151100",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20001109151100id_/http://baram.nexon.co.kr:80/guide/dungeon/12_god.html",
+      "final_response_url": "https://web.archive.org/web/20001109151100id_/http://baram.nexon.co.kr:80/guide/dungeon/12_god.html",
+      "status": 200,
+      "byte_length": 91220,
+      "sha256": "02c2e634a833c1a3a9db1ac17ac950a4fde0eb8af7e2f193a6c2547d9b86e49d",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20001109151100__guide__dungeon__12_god.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20001109; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "FULL_TEXT_SEMANTIC_REVIEW",
+      "html_title": "Baram Homepage"
+    },
+    {
+      "source_id": "P15-ARC-df2e454a3e69",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/dungeon/begin.html",
+      "archive_capture_at": "20000511021422",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20000511021422id_/http://baram.nexon.co.kr:80/guide/dungeon/begin.html",
+      "final_response_url": "https://web.archive.org/web/20000511021422id_/http://baram.nexon.co.kr:80/guide/dungeon/begin.html",
+      "status": 200,
+      "byte_length": 19087,
+      "sha256": "4aba79331af7bd4d616e06606c9f3212b617792021b8a59957f1952b7f0ef6d3",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20000511021422__guide__dungeon__begin.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20000511; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "FULL_TEXT_SEMANTIC_REVIEW",
+      "html_title": "Baram Homepage"
+    },
+    {
+      "source_id": "P15-ARC-a9b2ef8a677b",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/dungeon/high.html",
+      "archive_capture_at": "20000511042305",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20000511042305id_/http://baram.nexon.co.kr:80/guide/dungeon/high.html",
+      "final_response_url": "https://web.archive.org/web/20000511042305id_/http://baram.nexon.co.kr:80/guide/dungeon/high.html",
+      "status": 200,
+      "byte_length": 31689,
+      "sha256": "1b34044266141303c55c32d6b19fda872f92913c882abf184e2c3b1b31a260c6",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20000511042305__guide__dungeon__high.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20000511; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "FULL_TEXT_SEMANTIC_REVIEW",
+      "html_title": "Baram Homepage"
+    },
+    {
+      "source_id": "P15-ARC-acb545809cfd",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/dungeon/middle.html",
+      "archive_capture_at": "20000616102155",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20000616102155id_/http://baram.nexon.co.kr:80/guide/dungeon/middle.html",
+      "final_response_url": "https://web.archive.org/web/20000616102155id_/http://baram.nexon.co.kr:80/guide/dungeon/middle.html",
+      "status": 200,
+      "byte_length": 12297,
+      "sha256": "5a76fa1a1f6b6fa07ce04d350401179515173b694f9cd31367e4596ec826b4cf",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20000616102155__guide__dungeon__middle.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20000616; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "FULL_TEXT_SEMANTIC_REVIEW",
+      "html_title": "Baram Homepage"
+    },
+    {
+      "source_id": "P15-ARC-85629cabe925",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/dungeon/north.html",
+      "archive_capture_at": "20001018070033",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20001018070033id_/http://baram.nexon.co.kr:80/guide/dungeon/north.html",
+      "final_response_url": "https://web.archive.org/web/20001018070033id_/http://baram.nexon.co.kr:80/guide/dungeon/north.html",
+      "status": 200,
+      "byte_length": 31191,
+      "sha256": "2716a34912474dff81dc58ecc4b4793171482e03b85eba113bb722a6c0db4c1b",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20001018070033__guide__dungeon__north.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20001018; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "FULL_TEXT_SEMANTIC_REVIEW",
+      "html_title": "Baram Homepage"
+    },
+    {
+      "source_id": "P15-ARC-359e01fbdeff",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/dungeon/seung.html",
+      "archive_capture_at": "20010612134823",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20010612134823id_/http://baram.nexon.co.kr:80/guide/dungeon/seung.html",
+      "final_response_url": "https://web.archive.org/web/20010612134823id_/http://baram.nexon.co.kr:80/guide/dungeon/seung.html",
+      "status": 200,
+      "byte_length": 10097,
+      "sha256": "00cebf613b616c47fae0586fb09666275abe8a3c3a17c7f19c19cdd3b0cd0cab",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20010612134823__guide__dungeon__seung.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20010612; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "FULL_TEXT_SEMANTIC_REVIEW",
+      "html_title": "Baram Homepage"
+    },
+    {
+      "source_id": "P15-ARC-89c540cc9f59",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/magic/common.html",
+      "archive_capture_at": "20000511101312",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20000511101312id_/http://baram.nexon.co.kr:80/guide/magic/common.html",
+      "final_response_url": "https://web.archive.org/web/20000511101312id_/http://baram.nexon.co.kr:80/guide/magic/common.html",
+      "status": 200,
+      "byte_length": 4893,
+      "sha256": "77afaeb442c30f929b92bde3a329698764495bf2e543f7667e522d090d3eba0a",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20000511101312__guide__magic__common.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20000511; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "FULL_TEXT_SEMANTIC_REVIEW",
+      "html_title": "Baram Homepage"
+    },
+    {
+      "source_id": "P15-ARC-59eba4beca79",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/magic/dosa.html",
+      "archive_capture_at": "20000619233353",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20000619233353id_/http://baram.nexon.co.kr:80/guide/magic/dosa.html",
+      "final_response_url": "https://web.archive.org/web/20000619233353id_/http://baram.nexon.co.kr:80/guide/magic/dosa.html",
+      "status": 200,
+      "byte_length": 25733,
+      "sha256": "077e788ffddb359cbfec5485ca337be16ecaf59b104bb03f009088ba229f3d32",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20000619233353__guide__magic__dosa.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20000619; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "FULL_TEXT_SEMANTIC_REVIEW",
+      "html_title": "Baram Homepage"
+    },
+    {
+      "source_id": "P15-ARC-bf707407790a",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/magic/fighter.html",
+      "archive_capture_at": "20000511154844",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20000511154844id_/http://baram.nexon.co.kr:80/guide/magic/fighter.html",
+      "final_response_url": "https://web.archive.org/web/20000511154844id_/http://baram.nexon.co.kr:80/guide/magic/fighter.html",
+      "status": 200,
+      "byte_length": 13786,
+      "sha256": "979d95d5fb42cea549f7dfa0e4278a2e7d67ac9ecdf0bd6b0c36d4532bd8f8ec",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20000511154844__guide__magic__fighter.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20000511; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "FULL_TEXT_SEMANTIC_REVIEW",
+      "html_title": "Baram Homepage"
+    },
+    {
+      "source_id": "P15-ARC-c139836fe487",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://www.baram.nexon.co.kr:80/guide/magic/seung.html",
+      "archive_capture_at": "20001017184612",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20001017184612id_/http://www.baram.nexon.co.kr:80/guide/magic/seung.html",
+      "final_response_url": "https://web.archive.org/web/20001017184612id_/http://www.baram.nexon.co.kr:80/guide/magic/seung.html",
+      "status": 200,
+      "byte_length": 31017,
+      "sha256": "3ee12d87b2bf4e274040d9a72d8ae0777483cfc0cb186a49746b03c89dfe2cd6",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20001017184612__guide__magic__seung.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20001017; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "FULL_TEXT_SEMANTIC_REVIEW",
+      "html_title": "Baram Homepage"
+    },
+    {
+      "source_id": "P15-ARC-06559eaf496d",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/magic/thidf.html",
+      "archive_capture_at": "20000511110910",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20000511110910id_/http://baram.nexon.co.kr:80/guide/magic/thidf.html",
+      "final_response_url": "https://web.archive.org/web/20000511110910id_/http://baram.nexon.co.kr:80/guide/magic/thidf.html",
+      "status": 200,
+      "byte_length": 27561,
+      "sha256": "79452a17c183d6b0a0bd65c9caa978ebafb940b7832f3e471f107f1984ee468b",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20000511110910__guide__magic__thidf.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20000511; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "FULL_TEXT_SEMANTIC_REVIEW",
+      "html_title": "Baram Homepage"
+    },
+    {
+      "source_id": "P15-ARC-18b605403844",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/magic/wizard.html",
+      "archive_capture_at": "20000511120952",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20000511120952id_/http://baram.nexon.co.kr:80/guide/magic/wizard.html",
+      "final_response_url": "https://web.archive.org/web/20000511120952id_/http://baram.nexon.co.kr:80/guide/magic/wizard.html",
+      "status": 200,
+      "byte_length": 42828,
+      "sha256": "1599201843290740063571c00b397b17c126c2c3bcafd39b40892cc661550a28",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20000511120952__guide__magic__wizard.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20000511; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "FULL_TEXT_SEMANTIC_REVIEW",
+      "html_title": "Baram Homepage"
+    },
+    {
+      "source_id": "P15-ARC-2f4f9dad4a94",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/middle/dungeon/12_god.html",
+      "archive_capture_at": "20010705212212",
+      "source_authored_or_modified_at": "Modified by ice (2001.03.24) --",
+      "source_path_or_url": "https://web.archive.org/web/20010705212212id_/http://baram.nexon.co.kr:80/guide/middle/dungeon/12_god.html",
+      "final_response_url": "https://web.archive.org/web/20010705212212id_/http://baram.nexon.co.kr:80/guide/middle/dungeon/12_god.html",
+      "status": 200,
+      "byte_length": 82906,
+      "sha256": "01ca659aa58e5c45b983bffe4b3688e5cdc7144aef5be89e8b3ddce99fe4d0ca",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20010705212212__guide__middle__dungeon__12_god.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20010705; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "FULL_TEXT_SEMANTIC_REVIEW",
+      "html_title": "Baram Homepage"
+    },
+    {
+      "source_id": "P15-ARC-505599d12090",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/middle/dungeon/begin.html",
+      "archive_capture_at": "20011003195358",
+      "source_authored_or_modified_at": "Modified by ice (2001.03.24) --",
+      "source_path_or_url": "https://web.archive.org/web/20011003195358id_/http://baram.nexon.co.kr:80/guide/middle/dungeon/begin.html",
+      "final_response_url": "https://web.archive.org/web/20011003195358id_/http://baram.nexon.co.kr:80/guide/middle/dungeon/begin.html",
+      "status": 200,
+      "byte_length": 24251,
+      "sha256": "9aee81079df977eb130626f9cb911ecff8e75e658c748ed43bb46bf9ef837499",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20011003195358__guide__middle__dungeon__begin.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20011003; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "FULL_TEXT_SEMANTIC_REVIEW",
+      "html_title": "Baram Homepage"
+    },
+    {
+      "source_id": "P15-ARC-4facc5e91fe8",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/middle/dungeon/high.html",
+      "archive_capture_at": "20010705214845",
+      "source_authored_or_modified_at": "Modified by ice (2001.03.24) --",
+      "source_path_or_url": "https://web.archive.org/web/20010705214845id_/http://baram.nexon.co.kr:80/guide/middle/dungeon/high.html",
+      "final_response_url": "https://web.archive.org/web/20010705214845id_/http://baram.nexon.co.kr:80/guide/middle/dungeon/high.html",
+      "status": 200,
+      "byte_length": 45407,
+      "sha256": "38abaeb5d3c9c916d72cff21e94b3ef97916b139cd1168fb35a4788e87a72bd0",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20010705214845__guide__middle__dungeon__high.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20010705; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "FULL_TEXT_SEMANTIC_REVIEW",
+      "html_title": "Baram Homepage"
+    },
+    {
+      "source_id": "P15-ARC-babe633c1d1f",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/middle/dungeon/japan.html",
+      "archive_capture_at": "20010705215527",
+      "source_authored_or_modified_at": "Modified by ice (2001.03.24) --",
+      "source_path_or_url": "https://web.archive.org/web/20010705215527id_/http://baram.nexon.co.kr:80/guide/middle/dungeon/japan.html",
+      "final_response_url": "https://web.archive.org/web/20010705215527id_/http://baram.nexon.co.kr:80/guide/middle/dungeon/japan.html",
+      "status": 200,
+      "byte_length": 56404,
+      "sha256": "b0defb3aaf761e318a411dd4aae541df4ca265dc836e9eebada94408b039ff41",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20010705215527__guide__middle__dungeon__japan.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20010705; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "FULL_TEXT_SEMANTIC_REVIEW",
+      "html_title": "Baram Homepage"
+    },
+    {
+      "source_id": "P15-ARC-5652e61048d7",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/middle/dungeon/middle.html",
+      "archive_capture_at": "20010705215945",
+      "source_authored_or_modified_at": "Modified by ice (2001.03.24) --",
+      "source_path_or_url": "https://web.archive.org/web/20010705215945id_/http://baram.nexon.co.kr:80/guide/middle/dungeon/middle.html",
+      "final_response_url": "https://web.archive.org/web/20010705215945id_/http://baram.nexon.co.kr:80/guide/middle/dungeon/middle.html",
+      "status": 200,
+      "byte_length": 13051,
+      "sha256": "5794c8bad4e4f9beeb7ffb7cc71620e303029a24eebc1529cd7de0867ffba154",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20010705215945__guide__middle__dungeon__middle.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20010705; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "FULL_TEXT_SEMANTIC_REVIEW",
+      "html_title": "Baram Homepage"
+    },
+    {
+      "source_id": "P15-ARC-9a00c0c34b12",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/middle/dungeon/north.html",
+      "archive_capture_at": "20010705221240",
+      "source_authored_or_modified_at": "Modified by ice (2001.03.24) --",
+      "source_path_or_url": "https://web.archive.org/web/20010705221240id_/http://baram.nexon.co.kr:80/guide/middle/dungeon/north.html",
+      "final_response_url": "https://web.archive.org/web/20010705221240id_/http://baram.nexon.co.kr:80/guide/middle/dungeon/north.html",
+      "status": 200,
+      "byte_length": 28337,
+      "sha256": "e8d05e99b04f2ffafb60b738d47b3551b437f2ea32d7f01c1a533ecca250eed9",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20010705221240__guide__middle__dungeon__north.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20010705; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "FULL_TEXT_SEMANTIC_REVIEW",
+      "html_title": "Baram Homepage"
+    },
+    {
+      "source_id": "P15-ARC-5d993de00892",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/middle/dungeon/seung.html",
+      "archive_capture_at": "20010801143911",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20010801143911id_/http://baram.nexon.co.kr:80/guide/middle/dungeon/seung.html",
+      "final_response_url": "https://web.archive.org/web/20010801143911id_/http://baram.nexon.co.kr:80/guide/middle/dungeon/seung.html",
+      "status": 200,
+      "byte_length": 9962,
+      "sha256": "a73ac2959ed3dbb8c0c1b907a1dcf9e24d4cffd8fc578b71b5e2815b487526db",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20010801143911__guide__middle__dungeon__seung.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20010801; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "FULL_TEXT_SEMANTIC_REVIEW",
+      "html_title": "Baram Homepage"
+    },
+    {
+      "source_id": "P15-ARC-030e07a01431",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/middle/magic/common.html",
+      "archive_capture_at": "20011003204357",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20011003204357id_/http://baram.nexon.co.kr:80/guide/middle/magic/common.html",
+      "final_response_url": "https://web.archive.org/web/20011003204357id_/http://baram.nexon.co.kr:80/guide/middle/magic/common.html",
+      "status": 200,
+      "byte_length": 3893,
+      "sha256": "1dfe3b80b3135be74b34507375cc82d4de4fddf0e6e7e0d9ed313f3b4817bbb5",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20011003204357__guide__middle__magic__common.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20011003; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "FULL_TEXT_SEMANTIC_REVIEW",
+      "html_title": "::: 바람의 나라 :::"
+    },
+    {
+      "source_id": "P15-ARC-0b7dcb5d2678",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/middle/magic/dosa.html",
+      "archive_capture_at": "20010705222452",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20010705222452id_/http://baram.nexon.co.kr:80/guide/middle/magic/dosa.html",
+      "final_response_url": "https://web.archive.org/web/20010705222452id_/http://baram.nexon.co.kr:80/guide/middle/magic/dosa.html",
+      "status": 200,
+      "byte_length": 30176,
+      "sha256": "cce4f37e09a030f73e6e2ae725ee44f3fc56cb0f213d5d5e0cbff8560de27068",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20010705222452__guide__middle__magic__dosa.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20010705; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "FULL_TEXT_SEMANTIC_REVIEW",
+      "html_title": "::: 바람의 나라 :::"
+    },
+    {
+      "source_id": "P15-ARC-8f636f3c673d",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/middle/magic/fighter.html",
+      "archive_capture_at": "20010705223439",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20010705223439id_/http://baram.nexon.co.kr:80/guide/middle/magic/fighter.html",
+      "final_response_url": "https://web.archive.org/web/20010705223439id_/http://baram.nexon.co.kr:80/guide/middle/magic/fighter.html",
+      "status": 200,
+      "byte_length": 15896,
+      "sha256": "037aa9e77d50ac27b4fcaaede8163466bcc42c4047a47b7c61a7544f4d15a2b2",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20010705223439__guide__middle__magic__fighter.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20010705; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "FULL_TEXT_SEMANTIC_REVIEW",
+      "html_title": "::: 바람의 나라 :::"
+    },
+    {
+      "source_id": "P15-ARC-b8758ccfdcc9",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/middle/magic/seung.html",
+      "archive_capture_at": "20010801154501",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20010801154501id_/http://baram.nexon.co.kr:80/guide/middle/magic/seung.html",
+      "final_response_url": "https://web.archive.org/web/20010801154501id_/http://baram.nexon.co.kr:80/guide/middle/magic/seung.html",
+      "status": 200,
+      "byte_length": 28020,
+      "sha256": "26f57b4cb57b91f0ecd5b47473202f7d7f4ea09a1ec83fac3279966210a7b0c6",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20010801154501__guide__middle__magic__seung.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20010801; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "FULL_TEXT_SEMANTIC_REVIEW",
+      "html_title": "::: 바람의 나라 :::"
+    },
+    {
+      "source_id": "P15-ARC-85066ebecea9",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/middle/magic/thidf.html",
+      "archive_capture_at": "20010705225249",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20010705225249id_/http://baram.nexon.co.kr:80/guide/middle/magic/thidf.html",
+      "final_response_url": "https://web.archive.org/web/20010705225249id_/http://baram.nexon.co.kr:80/guide/middle/magic/thidf.html",
+      "status": 200,
+      "byte_length": 34439,
+      "sha256": "8425d6093366e8ef57a3a81a89ab58b46c28251469188e0cefce1190dd973f8b",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20010705225249__guide__middle__magic__thidf.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20010705; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "FULL_TEXT_SEMANTIC_REVIEW",
+      "html_title": "::: 바람의 나라 :::"
+    },
+    {
+      "source_id": "P15-ARC-cb5e34400c09",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/middle/magic/wizard.html",
+      "archive_capture_at": "20010705225644",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20010705225644id_/http://baram.nexon.co.kr:80/guide/middle/magic/wizard.html",
+      "final_response_url": "https://web.archive.org/web/20010705225644id_/http://baram.nexon.co.kr:80/guide/middle/magic/wizard.html",
+      "status": 200,
+      "byte_length": 56316,
+      "sha256": "2fd702ee856d60fb3ab0a6513f8a0f5d77c1ab34a54c50cc3670712c35b417f1",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20010705225644__guide__middle__magic__wizard.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20010705; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "FULL_TEXT_SEMANTIC_REVIEW",
+      "html_title": "::: 바람의 나라 :::"
+    },
+    {
+      "source_id": "P15-ARC-752c04d00d60",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/start/basic.html",
+      "archive_capture_at": "20010705215232",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20010705215232id_/http://baram.nexon.co.kr:80/guide/start/basic.html",
+      "final_response_url": "https://web.archive.org/web/20010705215232id_/http://baram.nexon.co.kr:80/guide/start/basic.html",
+      "status": 200,
+      "byte_length": 3570,
+      "sha256": "e1a33ef7fb03d850b225b7fef82051202d5c6445818789b105a64fe3d108bf3d",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20010705215232__guide__start__basic.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20010705; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "ACQUIRED_TEXT_NOT_ALL_FIELDS_NORMALIZED",
+      "html_title": "::: 바람의 나라 :::"
+    },
+    {
+      "source_id": "P15-ARC-c85fa4599c9e",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/start/character.html",
+      "archive_capture_at": "20010801152726",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20010801152726id_/http://baram.nexon.co.kr:80/guide/start/character.html",
+      "final_response_url": "https://web.archive.org/web/20010801152726id_/http://baram.nexon.co.kr:80/guide/start/character.html",
+      "status": 200,
+      "byte_length": 7414,
+      "sha256": "299607e044775c34f55fe618b7054e26609a74f73ecd563fe2702052a465b5ff",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20010801152726__guide__start__character.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20010801; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "ACQUIRED_TEXT_NOT_ALL_FIELDS_NORMALIZED",
+      "html_title": "::: 바람의 나라 :::"
+    },
+    {
+      "source_id": "P15-ARC-94e564154795",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/start/map.html",
+      "archive_capture_at": "20011121111049",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20011121111049id_/http://baram.nexon.co.kr:80/guide/start/map.html",
+      "final_response_url": "https://web.archive.org/web/20011121111049id_/http://baram.nexon.co.kr:80/guide/start/map.html",
+      "status": 200,
+      "byte_length": 2087,
+      "sha256": "75df525073607839464510a9ab1366253983ec9784374243ad900f9e677da27c",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20011121111049__guide__start__map.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20011121; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "ACQUIRED_TEXT_NOT_ALL_FIELDS_NORMALIZED",
+      "html_title": "::: 바람의 나라 :::"
+    },
+    {
+      "source_id": "P15-ARC-277e6606e514",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/start/map02.html",
+      "archive_capture_at": "20011121111241",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20011121111241id_/http://baram.nexon.co.kr:80/guide/start/map02.html",
+      "final_response_url": "https://web.archive.org/web/20011121111241id_/http://baram.nexon.co.kr:80/guide/start/map02.html",
+      "status": 200,
+      "byte_length": 599,
+      "sha256": "ebf4a20a160b2de5b2fa5d9327f7bff50bf794152bb1cb371005f8a8312270b5",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20011121111241__guide__start__map02.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20011121; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "ACQUIRED_TEXT_NOT_ALL_FIELDS_NORMALIZED",
+      "html_title": " 바람의 나라 "
+    },
+    {
+      "source_id": "P15-ARC-26a6de677c94",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/start/rule.html",
+      "archive_capture_at": "20010705221903",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20010705221903id_/http://baram.nexon.co.kr:80/guide/start/rule.html",
+      "final_response_url": "https://web.archive.org/web/20010705221903id_/http://baram.nexon.co.kr:80/guide/start/rule.html",
+      "status": 200,
+      "byte_length": 2698,
+      "sha256": "8a691cd644b1183fa81da0b3d54c165162b157665119b0b241fe2ce93a29424e",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20010705221903__guide__start__rule.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20010705; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "ACQUIRED_TEXT_NOT_ALL_FIELDS_NORMALIZED",
+      "html_title": "::: 바람의 나라 :::"
+    },
+    {
+      "source_id": "P15-ARC-39d741fa6fb5",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/start/s01.html",
+      "archive_capture_at": "20010706122557",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20010706122557id_/http://baram.nexon.co.kr:80/guide/start/s01.html",
+      "final_response_url": "https://web.archive.org/web/20010706122557id_/http://baram.nexon.co.kr:80/guide/start/s01.html",
+      "status": 200,
+      "byte_length": 865,
+      "sha256": "1c93ecf9d22f7877af4258d333daed7a982a0d5864fb736175ff3aa6ac1b30ff",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20010706122557__guide__start__s01.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20010706; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "ACQUIRED_TEXT_NOT_ALL_FIELDS_NORMALIZED",
+      "html_title": "시작하기"
+    },
+    {
+      "source_id": "P15-ARC-7ae3ef2cde83",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/start/s02.html",
+      "archive_capture_at": "20010706122034",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20010706122034id_/http://baram.nexon.co.kr:80/guide/start/s02.html",
+      "final_response_url": "https://web.archive.org/web/20010706122034id_/http://baram.nexon.co.kr:80/guide/start/s02.html",
+      "status": 200,
+      "byte_length": 905,
+      "sha256": "1fb75854f9be44cf337cef93e19da0c506ac19abcbb9ce7decf66d860993d8b8",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20010706122034__guide__start__s02.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20010706; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "ACQUIRED_TEXT_NOT_ALL_FIELDS_NORMALIZED",
+      "html_title": "시작하기"
+    },
+    {
+      "source_id": "P15-ARC-bea286dfb209",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/start/s03.html",
+      "archive_capture_at": "20010811170744",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20010811170744id_/http://baram.nexon.co.kr:80/guide/start/s03.html",
+      "final_response_url": "https://web.archive.org/web/20010811170744id_/http://baram.nexon.co.kr:80/guide/start/s03.html",
+      "status": 200,
+      "byte_length": 905,
+      "sha256": "0eceae0aabdbfc442bc1f8a9448eb970c2d1ab1c255cf57ce7014b64a7ae79eb",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20010811170744__guide__start__s03.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20010811; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "ACQUIRED_TEXT_NOT_ALL_FIELDS_NORMALIZED",
+      "html_title": "시작하기"
+    },
+    {
+      "source_id": "P15-ARC-1b0f66e429d2",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/start/s04.html",
+      "archive_capture_at": "20010706034010",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20010706034010id_/http://baram.nexon.co.kr:80/guide/start/s04.html",
+      "final_response_url": "https://web.archive.org/web/20010706034010id_/http://baram.nexon.co.kr:80/guide/start/s04.html",
+      "status": 200,
+      "byte_length": 905,
+      "sha256": "91860d33ce46b648f1fd3e9559ec8d2a4955fa4c5703a4a640d0d82b840343a7",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20010706034010__guide__start__s04.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20010706; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "ACQUIRED_TEXT_NOT_ALL_FIELDS_NORMALIZED",
+      "html_title": "시작하기"
+    },
+    {
+      "source_id": "P15-ARC-eaa55ea446b5",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/start/s05.html",
+      "archive_capture_at": "20011201092042",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20011201092042id_/http://baram.nexon.co.kr:80/guide/start/s05.html",
+      "final_response_url": "https://web.archive.org/web/20011201092042id_/http://baram.nexon.co.kr:80/guide/start/s05.html",
+      "status": 200,
+      "byte_length": 905,
+      "sha256": "7536dd1a23264c568f628907e1d0b4204c43ffbddc39af5a1d403b599e92f396",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20011201092042__guide__start__s05.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20011201; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "ACQUIRED_TEXT_NOT_ALL_FIELDS_NORMALIZED",
+      "html_title": "시작하기"
+    },
+    {
+      "source_id": "P15-ARC-a9adfe1d4bd1",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/start/s06.html",
+      "archive_capture_at": "20010811174837",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20010811174837id_/http://baram.nexon.co.kr:80/guide/start/s06.html",
+      "final_response_url": "https://web.archive.org/web/20010811174837id_/http://baram.nexon.co.kr:80/guide/start/s06.html",
+      "status": 200,
+      "byte_length": 905,
+      "sha256": "0281a85751c7e3f9bcdcc010f798559e7708f88db8a687acc7871b6b722cb06f",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20010811174837__guide__start__s06.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20010811; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "ACQUIRED_TEXT_NOT_ALL_FIELDS_NORMALIZED",
+      "html_title": "시작하기"
+    },
+    {
+      "source_id": "P15-ARC-0ee27df3bb22",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/start/s07.html",
+      "archive_capture_at": "20010706122411",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20010706122411id_/http://baram.nexon.co.kr:80/guide/start/s07.html",
+      "final_response_url": "https://web.archive.org/web/20010706122411id_/http://baram.nexon.co.kr:80/guide/start/s07.html",
+      "status": 200,
+      "byte_length": 936,
+      "sha256": "d59f2a837653ede2e6c45f0e6f975c025c13d9295b63725b8db681665e17f873",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20010706122411__guide__start__s07.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20010706; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "ACQUIRED_TEXT_NOT_ALL_FIELDS_NORMALIZED",
+      "html_title": "시작하기"
+    },
+    {
+      "source_id": "P15-ARC-0c06298df8d9",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/start/s08.html",
+      "archive_capture_at": "20010706122508",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20010706122508id_/http://baram.nexon.co.kr:80/guide/start/s08.html",
+      "final_response_url": "https://web.archive.org/web/20010706122508id_/http://baram.nexon.co.kr:80/guide/start/s08.html",
+      "status": 200,
+      "byte_length": 865,
+      "sha256": "0cfc1f5cb3769bb49a8c82ed2feee9c9fd5b5fcc7988fb2281a4f62397f84e91",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20010706122508__guide__start__s08.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20010706; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "ACQUIRED_TEXT_NOT_ALL_FIELDS_NORMALIZED",
+      "html_title": "시작하기"
+    },
+    {
+      "source_id": "P15-ARC-9d64b594eeb3",
+      "source_type": "ARCHIVED_OFFICIAL_GUIDE",
+      "source_family": "NEXON_OFFICIAL_GUIDE",
+      "original_url": "http://baram.nexon.co.kr:80/guide/start/start.html",
+      "archive_capture_at": "20010705222406",
+      "source_authored_or_modified_at": null,
+      "source_path_or_url": "https://web.archive.org/web/20010705222406id_/http://baram.nexon.co.kr:80/guide/start/start.html",
+      "final_response_url": "https://web.archive.org/web/20010705222406id_/http://baram.nexon.co.kr:80/guide/start/start.html",
+      "status": 200,
+      "byte_length": 4033,
+      "sha256": "3ff0e8bea398592746838586a3fdf9e7e55d1e427df4c075a7809d04957c0811",
+      "local_private_path": "/workspace/scratch/8a697b0cae82/research/korean/official/20010705222406__guide__start__start.html",
+      "encoding": "cp949 strict",
+      "content_era": "Official page captured20010705; content modificationdate separate",
+      "game_region": "KR",
+      "client_build": "UNKNOWN",
+      "read_status": "ACQUIRED_TEXT_NOT_ALL_FIELDS_NORMALIZED",
+      "html_title": "::: 바람의 나라 :::"
+    }
+  ],
+  "records": 928,
+  "counts_by_type": {
+    "monster": 551,
+    "skill": 377
+  },
+  "private_acquisition_manifest": "/workspace/scratch/8a697b0cae82/research/korean/official/acquisition.json",
+  "parser_sha256": "dbd77455273430e378e999a40ee267fea52cfb1e8f0f37243afc0620b984b1fc",
+  "input_manifest_sha256": "e250aa4c309e4442274c9c55be7a523e973de54ce86d8ea1a8b98e4d6144de7d",
+  "excluded_inactive_source_spans": [
+    {
+      "source_id": "P15-ARC-359e01fbdeff",
+      "line_start": 66,
+      "line_end": 80,
+      "reason": "HTML_COMMENT_INACTIVE_NOT_DISPLAYED",
+      "fragment_sha256": "0a057700a9228f507d7c1da2de587c7dcc281c862e2d37abe53a3ec07686448d"
+    },
+    {
+      "source_id": "P15-ARC-0d4a729ee109",
+      "line_start": 256,
+      "line_end": 271,
+      "reason": "HTML_COMMENT_INACTIVE_NOT_DISPLAYED",
+      "fragment_sha256": "3d84470d96c19348d780273d85a732f40dd6e44a5b86600fe1bfcd18904f0040"
+    },
+    {
+      "source_id": "P15-ARC-59eba4beca79",
+      "line_start": 83,
+      "line_end": 93,
+      "reason": "HTML_COMMENT_INACTIVE_NOT_DISPLAYED",
+      "fragment_sha256": "b67887aaaa06fd211919284a80b8d261647c5237f0f167383e7d0c3b3187d3b1"
+    },
+    {
+      "source_id": "P15-ARC-babe633c1d1f",
+      "line_start": 59,
+      "line_end": 73,
+      "reason": "HTML_COMMENT_INACTIVE_NOT_DISPLAYED",
+      "fragment_sha256": "f7e341278a96766712d600e5a51068de1177a0d6fd9369da729b47c86f0a4573"
+    },
+    {
+      "source_id": "P15-ARC-babe633c1d1f",
+      "line_start": 102,
+      "line_end": 116,
+      "reason": "HTML_COMMENT_INACTIVE_NOT_DISPLAYED",
+      "fragment_sha256": "b121efa41d3927b2f142f06106304d95314a3fce78335ef8a85472c198883d8b"
+    },
+    {
+      "source_id": "P15-ARC-babe633c1d1f",
+      "line_start": 173,
+      "line_end": 186,
+      "reason": "HTML_COMMENT_INACTIVE_NOT_DISPLAYED",
+      "fragment_sha256": "46b58802cd625b9fc717e0b306d1c5cfbf1d5b24e39023e004f714163bb57e15"
+    },
+    {
+      "source_id": "P15-ARC-babe633c1d1f",
+      "line_start": 236,
+      "line_end": 250,
+      "reason": "HTML_COMMENT_INACTIVE_NOT_DISPLAYED",
+      "fragment_sha256": "ce5848c855723711e054ca5f485c3ccd65e302c9a3b4c7d9aee38a21414da901"
+    },
+    {
+      "source_id": "P15-ARC-babe633c1d1f",
+      "line_start": 286,
+      "line_end": 299,
+      "reason": "HTML_COMMENT_INACTIVE_NOT_DISPLAYED",
+      "fragment_sha256": "ff009276dc87d770c27fe6fec5f54e839c14e4d5f026cd4b24c3384368d40482"
+    },
+    {
+      "source_id": "P15-ARC-babe633c1d1f",
+      "line_start": 343,
+      "line_end": 354,
+      "reason": "HTML_COMMENT_INACTIVE_NOT_DISPLAYED",
+      "fragment_sha256": "06d941654bdc9e2b115b460c572ff7f101d5c2dc59ee82930acf449052a06a07"
+    },
+    {
+      "source_id": "P15-ARC-babe633c1d1f",
+      "line_start": 424,
+      "line_end": 436,
+      "reason": "HTML_COMMENT_INACTIVE_NOT_DISPLAYED",
+      "fragment_sha256": "4b7e08cb6c27cb7e2cc91ca28273702ab57247675276d18065d2a5ef3b33d6e3"
+    },
+    {
+      "source_id": "P15-ARC-babe633c1d1f",
+      "line_start": 493,
+      "line_end": 510,
+      "reason": "HTML_COMMENT_INACTIVE_NOT_DISPLAYED",
+      "fragment_sha256": "fabe5529dfdd5fab2d86a9c0b60d0a87188c55871f7dc6d87aa372c428c91229"
+    },
+    {
+      "source_id": "P15-ARC-babe633c1d1f",
+      "line_start": 610,
+      "line_end": 627,
+      "reason": "HTML_COMMENT_INACTIVE_NOT_DISPLAYED",
+      "fragment_sha256": "d32b649440e453f57921d15125b4fdf1d2d8d04fc8c0cbe879d134b18208b530"
+    },
+    {
+      "source_id": "P15-ARC-babe633c1d1f",
+      "line_start": 703,
+      "line_end": 720,
+      "reason": "HTML_COMMENT_INACTIVE_NOT_DISPLAYED",
+      "fragment_sha256": "37872ee5b615f97f63c607a1ebec035e8d260ea659c2171ab12c0e16f088b621"
+    },
+    {
+      "source_id": "P15-ARC-babe633c1d1f",
+      "line_start": 818,
+      "line_end": 835,
+      "reason": "HTML_COMMENT_INACTIVE_NOT_DISPLAYED",
+      "fragment_sha256": "250465e7b475855a5c2c1c758f4db8595dd5ba73ad7c06af2682db6e1bc4f511"
+    },
+    {
+      "source_id": "P15-ARC-babe633c1d1f",
+      "line_start": 886,
+      "line_end": 903,
+      "reason": "HTML_COMMENT_INACTIVE_NOT_DISPLAYED",
+      "fragment_sha256": "5eb65d24ae42b82350c1df167452838a4ffce287339b3a69e40665d2aa57cf4e"
+    },
+    {
+      "source_id": "P15-ARC-9a00c0c34b12",
+      "line_start": 359,
+      "line_end": 482,
+      "reason": "HTML_COMMENT_INACTIVE_NOT_DISPLAYED",
+      "fragment_sha256": "35696b979aa9e942c9e2ed322140195ab36956cf4c16f1cc1247d6dd361f04f6"
+    },
+    {
+      "source_id": "P15-ARC-5d993de00892",
+      "line_start": 56,
+      "line_end": 70,
+      "reason": "HTML_COMMENT_INACTIVE_NOT_DISPLAYED",
+      "fragment_sha256": "35d0cda6418118d6c246c532d2003bc4c8aa83c31e1e0cb5fe93b050c91785ee"
+    },
+    {
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "line_start": 276,
+      "line_end": 291,
+      "reason": "HTML_COMMENT_INACTIVE_NOT_DISPLAYED",
+      "fragment_sha256": "3d84470d96c19348d780273d85a732f40dd6e44a5b86600fe1bfcd18904f0040"
+    },
+    {
+      "source_id": "P15-ARC-0b7dcb5d2678",
+      "line_start": 70,
+      "line_end": 80,
+      "reason": "HTML_COMMENT_INACTIVE_NOT_DISPLAYED",
+      "fragment_sha256": "b67887aaaa06fd211919284a80b8d261647c5237f0f167383e7d0c3b3187d3b1"
+    }
+  ],
+  "epoch_conflicts": [
+    {
+      "variant_group_id": "KRO-VAR-ccb63fb006ca",
+      "entity_name_ko": "범증",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-7e3d68cc43d3",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "호랑이왕"
+        },
+        {
+          "content_id": "KRO-400760fc45bf",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "호랑이왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-740565ebd6ea",
+      "entity_name_ko": "범수",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-0dd8483f20e6",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "호랑이왕"
+        },
+        {
+          "content_id": "KRO-bd2397ecc7f3",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "호랑이왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-695017a8690b",
+      "entity_name_ko": "범천",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-297572284c7e",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "호랑이왕"
+        },
+        {
+          "content_id": "KRO-8f93df76e3f6",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "호랑이왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-a6848a90657e",
+      "entity_name_ko": "백호왕",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-a6f0f4c559d9",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "호랑이왕"
+        },
+        {
+          "content_id": "KRO-12c02d0b82cf",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "호랑이왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-776a9dc43fe4",
+      "entity_name_ko": "범지",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-08ac7499d20f",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "호랑이왕"
+        },
+        {
+          "content_id": "KRO-a428e5097c79",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "호랑이왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-6101ffecbfa2",
+      "entity_name_ko": "범녹",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-fa861fb67c45",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "호랑이왕"
+        },
+        {
+          "content_id": "KRO-fa4686d72230",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "호랑이왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-c5b0235e5c03",
+      "entity_name_ko": "범목",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-138866be3778",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "호랑이왕"
+        },
+        {
+          "content_id": "KRO-a8a27f0207f1",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "호랑이왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-491a75788b8c",
+      "entity_name_ko": "적호왕",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-0cfccdaa827e",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "호랑이왕"
+        },
+        {
+          "content_id": "KRO-880d65ae0701",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "호랑이왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-b3f5b1e2f5df",
+      "entity_name_ko": "진백호왕",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-f103001d2f8a",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "호랑이왕"
+        },
+        {
+          "content_id": "KRO-3b8acc461c8a",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "호랑이왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-393b53a1ce39",
+      "entity_name_ko": "꼬마돼지",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-6bd007669a35",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "돼지왕"
+        },
+        {
+          "content_id": "KRO-3109e9cda7bd",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "돼지왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-a4a740d4a6fc",
+      "entity_name_ko": "백돈",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-b1dffa1d5ade",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "돼지왕"
+        },
+        {
+          "content_id": "KRO-464c251c129c",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "돼지왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-0b1755c249d4",
+      "entity_name_ko": "명돈",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-37db410372e3",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "돼지왕"
+        },
+        {
+          "content_id": "KRO-3fdeecc47581",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "돼지왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-25454bd54777",
+      "entity_name_ko": "태돈",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-49336e06f32b",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "돼지왕"
+        },
+        {
+          "content_id": "KRO-f5c1cbfef772",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "돼지왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-710c168ca45f",
+      "entity_name_ko": "서해백",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-765c4d486249",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "돼지왕"
+        },
+        {
+          "content_id": "KRO-2c5798db8c9f",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "돼지왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-8cd263dafa89",
+      "entity_name_ko": "돼지왕",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-22acc0ee2e37",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "돼지왕"
+        },
+        {
+          "content_id": "KRO-55c6d479e0d4",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "돼지왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-99e5c015e3c3",
+      "entity_name_ko": "흑병아리",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-138d37fdebc0",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "닭 왕"
+        },
+        {
+          "content_id": "KRO-f3d4dc004228",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "닭왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-06340818a975",
+      "entity_name_ko": "장 닭",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-8e67ed470334",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "닭 왕"
+        },
+        {
+          "content_id": "KRO-25ccf68f7c27",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "닭왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-dc4ba2869767",
+      "entity_name_ko": "검은닭",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-b7a21819cde0",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "닭 왕"
+        },
+        {
+          "content_id": "KRO-d364f7a0a740",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "닭왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-c1072e52c729",
+      "entity_name_ko": "닭 왕",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-328cb2f441fd",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "닭 왕"
+        },
+        {
+          "content_id": "KRO-0e777a8ac2c6",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "닭왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-e9e609eefc78",
+      "entity_name_ko": "붉은쥐",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-b1aec994642f",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "쥐 왕"
+        },
+        {
+          "content_id": "KRO-6c625d14438e",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "쥐왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-93d1b9f138e4",
+      "entity_name_ko": "흑왕쥐",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-5e18bdfa9335",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "쥐 왕"
+        },
+        {
+          "content_id": "KRO-3c0db5db342c",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "쥐왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-18921c005723",
+      "entity_name_ko": "불왕쥐",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-86fb83a13995",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "쥐 왕"
+        },
+        {
+          "content_id": "KRO-23bc451c987b",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "쥐왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-e59148c3fc25",
+      "entity_name_ko": "큰 쥐",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-d8a0bc47dc89",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "쥐 왕"
+        },
+        {
+          "content_id": "KRO-b6d076579192",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "쥐왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-2fa7c7acb8b8",
+      "entity_name_ko": "쥐 왕",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-ea8cf2d4a4b7",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "쥐 왕"
+        },
+        {
+          "content_id": "KRO-caeccbe5fff4",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "쥐왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-9527e2fdea72",
+      "entity_name_ko": "농사꾼 원숭이",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-5458c2a3a0eb",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "원숭이왕"
+        },
+        {
+          "content_id": "KRO-31be17ffafcb",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "원숭이왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-c1e4ea7aec46",
+      "entity_name_ko": "부자 원숭이",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-7dbe10e9b2a2",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "원숭이왕"
+        },
+        {
+          "content_id": "KRO-39e966c9e1c7",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "원숭이왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-a12db31205a8",
+      "entity_name_ko": "날쌘 원숭이",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-769b51a295a7",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "원숭이왕"
+        },
+        {
+          "content_id": "KRO-24498ade0597",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "원숭이왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-147fc3b33f64",
+      "entity_name_ko": "사냥꾼 원숭이",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-7c0e1cc3ce58",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "원숭이왕"
+        },
+        {
+          "content_id": "KRO-3bcf283a74cb",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "원숭이왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-c060a8f89c7d",
+      "entity_name_ko": "콩고",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-57c5b64a4b6d",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "원숭이왕"
+        },
+        {
+          "content_id": "KRO-f10dfef70647",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "원숭이왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-2b97d985eaa3",
+      "entity_name_ko": "오랑우탄",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-82561093e898",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "원숭이왕"
+        },
+        {
+          "content_id": "KRO-0b522efdbfc2",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "원숭이왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-f72e5049ca51",
+      "entity_name_ko": "원숭이왕",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-4b7275a3ebfb",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "원숭이왕"
+        },
+        {
+          "content_id": "KRO-7ebf7e7ba99b",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "원숭이왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-f14bbe808258",
+      "entity_name_ko": "장로원숭이",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-2db47a049c7d",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "원숭이왕"
+        },
+        {
+          "content_id": "KRO-ff68cf65adc4",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "원숭이왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-b5aecad9123d",
+      "entity_name_ko": "까만소",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-7eb567843b79",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "소 왕"
+        },
+        {
+          "content_id": "KRO-6424f01793fb",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "소왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-a571ddf8cd5f",
+      "entity_name_ko": "황 소",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-e275577849cd",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "소 왕"
+        },
+        {
+          "content_id": "KRO-e4d526a1c21c",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "소왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-a2fbdb157be3",
+      "entity_name_ko": "코뿔소",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-6c116678a4a7",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "소 왕"
+        },
+        {
+          "content_id": "KRO-2a67efb32a79",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "소왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-1181bc2d91fa",
+      "entity_name_ko": "소 왕",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-0af9bb9658e8",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "소 왕"
+        },
+        {
+          "content_id": "KRO-2a0cd6948290",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "소왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-491e92c238ab",
+      "entity_name_ko": "불토끼",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-a55f887aec86",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "토끼왕"
+        },
+        {
+          "content_id": "KRO-f74281271302",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "토끼왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-af49022eac6a",
+      "entity_name_ko": "토끼부하",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-7be8120ce5d3",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "토끼왕"
+        },
+        {
+          "content_id": "KRO-6e203f121e27",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "토끼왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-7d4a19a19f5c",
+      "entity_name_ko": "토끼왕",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-c6955579184d",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "토끼왕"
+        },
+        {
+          "content_id": "KRO-f95de70962a9",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "토끼왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-b577cf4a46bd",
+      "entity_name_ko": "살모사",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-ffa424700a17",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "뱀 왕"
+        },
+        {
+          "content_id": "KRO-94449efc9583",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "뱀왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-b5c133348494",
+      "entity_name_ko": "토종뱀",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-ecef6dbd9b6b",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "뱀 왕"
+        },
+        {
+          "content_id": "KRO-9090ca9047d5",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "뱀왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-ce6d63da888b",
+      "entity_name_ko": "꽃뱀",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-db568095f9ef",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "뱀 왕"
+        },
+        {
+          "content_id": "KRO-34eb99d5c76f",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "뱀왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-258a41e95bd6",
+      "entity_name_ko": "흑구렁이",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-448e0ffe0a59",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "뱀 왕"
+        },
+        {
+          "content_id": "KRO-d3069e2ca1eb",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "뱀왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-ce78c115fd1a",
+      "entity_name_ko": "불구렁이",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-5daa516e36c2",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "뱀 왕"
+        },
+        {
+          "content_id": "KRO-8c739b6702e4",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "뱀왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-691502d906ca",
+      "entity_name_ko": "가짜뱀왕",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-ab8b01d5eb00",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "뱀 왕"
+        },
+        {
+          "content_id": "KRO-6ec8ca2f6d14",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "뱀왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-b9d48ab76cbf",
+      "entity_name_ko": "뱀 왕",
+      "job": null,
+      "field": "region",
+      "candidates": [
+        {
+          "content_id": "KRO-4a9f2dbb72a0",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": "뱀 왕"
+        },
+        {
+          "content_id": "KRO-ff6f9f69c365",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": "뱀왕굴"
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-ae5ad61ba165",
+      "entity_name_ko": "흑룡",
+      "job": null,
+      "field": "possible_item_names",
+      "candidates": [
+        {
+          "content_id": "KRO-d10d5ccf4e89",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": [
+            "진룡의어금니"
+          ]
+        },
+        {
+          "content_id": "KRO-187499f94933",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": [
+            "흑룡의어금니"
+          ]
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-53e67a8fe8d1",
+      "entity_name_ko": "진룡",
+      "job": null,
+      "field": "possible_item_names",
+      "candidates": [
+        {
+          "content_id": "KRO-59fea74ad94b",
+          "source_ids": [
+            "P15-ARC-d9a991e9f11e"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": [
+            "흑룡의어금니"
+          ]
+        },
+        {
+          "content_id": "KRO-9c91ef59d49b",
+          "source_ids": [
+            "P15-ARC-2f4f9dad4a94"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": [
+            "진룡의어금니"
+          ]
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-2e143c65d0b7",
+      "entity_name_ko": "다람쥐",
+      "job": null,
+      "field": "experience",
+      "candidates": [
+        {
+          "content_id": "KRO-16eb3b63f989",
+          "source_ids": [
+            "P15-ARC-df2e454a3e69"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": {
+            "value": 5,
+            "unit": "XP"
+          }
+        },
+        {
+          "content_id": "KRO-a278e4d3cd81",
+          "source_ids": [
+            "P15-ARC-505599d12090"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": {
+            "value": 10,
+            "unit": "XP"
+          }
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-58a9aa0140cd",
+      "entity_name_ko": "구미호",
+      "job": null,
+      "field": "possible_item_names",
+      "candidates": [
+        {
+          "content_id": "KRO-3ad48db913fd",
+          "source_ids": [
+            "P15-ARC-df2e454a3e69"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": [
+            "철도"
+          ]
+        },
+        {
+          "content_id": "KRO-43cf4c550732",
+          "source_ids": [
+            "P15-ARC-505599d12090"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": [
+            "사각방패"
+          ]
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-8ab3442fca80",
+      "entity_name_ko": "불산",
+      "job": null,
+      "field": "experience",
+      "candidates": [
+        {
+          "content_id": "KRO-a901a5380442",
+          "source_ids": [
+            "P15-ARC-a9b2ef8a677b"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": {
+            "value": 200000,
+            "unit": "XP"
+          }
+        },
+        {
+          "content_id": "KRO-732c7f7c6cac",
+          "source_ids": [
+            "P15-ARC-4facc5e91fe8"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": {
+            "value": 300000,
+            "unit": "XP"
+          }
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-9aa409d8d6f1",
+      "entity_name_ko": "도깨비",
+      "job": null,
+      "field": "experience",
+      "candidates": [
+        {
+          "content_id": "KRO-31de8cb00891",
+          "source_ids": [
+            "P15-ARC-a9b2ef8a677b"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": null
+        },
+        {
+          "content_id": "KRO-d3071ce6756d",
+          "source_ids": [
+            "P15-ARC-4facc5e91fe8"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": {
+            "value": 300000,
+            "unit": "XP"
+          }
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-9aa409d8d6f1",
+      "entity_name_ko": "도깨비",
+      "job": null,
+      "field": "possible_item_names",
+      "candidates": [
+        {
+          "content_id": "KRO-31de8cb00891",
+          "source_ids": [
+            "P15-ARC-a9b2ef8a677b"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": []
+        },
+        {
+          "content_id": "KRO-d3071ce6756d",
+          "source_ids": [
+            "P15-ARC-4facc5e91fe8"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": [
+            "호박"
+          ]
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-525e47b7816d",
+      "entity_name_ko": "도깨비불",
+      "job": null,
+      "field": "experience",
+      "candidates": [
+        {
+          "content_id": "KRO-b85b2edb4bae",
+          "source_ids": [
+            "P15-ARC-a9b2ef8a677b"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": null
+        },
+        {
+          "content_id": "KRO-2d3f49d5eb7b",
+          "source_ids": [
+            "P15-ARC-4facc5e91fe8"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": {
+            "value": 300000,
+            "unit": "XP"
+          }
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-525e47b7816d",
+      "entity_name_ko": "도깨비불",
+      "job": null,
+      "field": "possible_item_names",
+      "candidates": [
+        {
+          "content_id": "KRO-b85b2edb4bae",
+          "source_ids": [
+            "P15-ARC-a9b2ef8a677b"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": []
+        },
+        {
+          "content_id": "KRO-2d3f49d5eb7b",
+          "source_ids": [
+            "P15-ARC-4facc5e91fe8"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": [
+            "호박"
+          ]
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-746cf1c1c7cb",
+      "entity_name_ko": "사명비",
+      "job": null,
+      "field": "experience",
+      "candidates": [
+        {
+          "content_id": "KRO-1143ecef3ecf",
+          "source_ids": [
+            "P15-ARC-a9b2ef8a677b"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": null
+        },
+        {
+          "content_id": "KRO-2fc6aae9dfd9",
+          "source_ids": [
+            "P15-ARC-4facc5e91fe8"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": {
+            "value": 550000,
+            "unit": "XP"
+          }
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-746cf1c1c7cb",
+      "entity_name_ko": "사명비",
+      "job": null,
+      "field": "possible_item_names",
+      "candidates": [
+        {
+          "content_id": "KRO-1143ecef3ecf",
+          "source_ids": [
+            "P15-ARC-a9b2ef8a677b"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": []
+        },
+        {
+          "content_id": "KRO-2fc6aae9dfd9",
+          "source_ids": [
+            "P15-ARC-4facc5e91fe8"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": [
+            "환두대두"
+          ]
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-d91c02fcfb4b",
+      "entity_name_ko": "적명비",
+      "job": null,
+      "field": "experience",
+      "candidates": [
+        {
+          "content_id": "KRO-b369fc9ecf1a",
+          "source_ids": [
+            "P15-ARC-a9b2ef8a677b"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": null
+        },
+        {
+          "content_id": "KRO-58dda3e49936",
+          "source_ids": [
+            "P15-ARC-4facc5e91fe8"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": {
+            "value": 550000,
+            "unit": "XP"
+          }
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-d91c02fcfb4b",
+      "entity_name_ko": "적명비",
+      "job": null,
+      "field": "possible_item_names",
+      "candidates": [
+        {
+          "content_id": "KRO-b369fc9ecf1a",
+          "source_ids": [
+            "P15-ARC-a9b2ef8a677b"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": []
+        },
+        {
+          "content_id": "KRO-58dda3e49936",
+          "source_ids": [
+            "P15-ARC-4facc5e91fe8"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": [
+            "대마령봉"
+          ]
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-1d549be14d89",
+      "entity_name_ko": "자명비",
+      "job": null,
+      "field": "experience",
+      "candidates": [
+        {
+          "content_id": "KRO-7fc389ce920c",
+          "source_ids": [
+            "P15-ARC-a9b2ef8a677b"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": null
+        },
+        {
+          "content_id": "KRO-b62ccc21b8c4",
+          "source_ids": [
+            "P15-ARC-4facc5e91fe8"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": {
+            "value": 300000,
+            "unit": "XP"
+          }
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-1d549be14d89",
+      "entity_name_ko": "자명비",
+      "job": null,
+      "field": "possible_item_names",
+      "candidates": [
+        {
+          "content_id": "KRO-7fc389ce920c",
+          "source_ids": [
+            "P15-ARC-a9b2ef8a677b"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": []
+        },
+        {
+          "content_id": "KRO-b62ccc21b8c4",
+          "source_ids": [
+            "P15-ARC-4facc5e91fe8"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": [
+            "가시철단도"
+          ]
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-6c88f770109f",
+      "entity_name_ko": "청명비",
+      "job": null,
+      "field": "experience",
+      "candidates": [
+        {
+          "content_id": "KRO-e7d518a79a7f",
+          "source_ids": [
+            "P15-ARC-a9b2ef8a677b"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": null
+        },
+        {
+          "content_id": "KRO-416e2903b1b6",
+          "source_ids": [
+            "P15-ARC-4facc5e91fe8"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": {
+            "value": 550000,
+            "unit": "XP"
+          }
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-6c88f770109f",
+      "entity_name_ko": "청명비",
+      "job": null,
+      "field": "possible_item_names",
+      "candidates": [
+        {
+          "content_id": "KRO-e7d518a79a7f",
+          "source_ids": [
+            "P15-ARC-a9b2ef8a677b"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": []
+        },
+        {
+          "content_id": "KRO-416e2903b1b6",
+          "source_ids": [
+            "P15-ARC-4facc5e91fe8"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": [
+            "삼촉현창"
+          ]
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-22a420d63945",
+      "entity_name_ko": "눈괴물",
+      "job": null,
+      "field": "experience",
+      "candidates": [
+        {
+          "content_id": "KRO-c156dbe41329",
+          "source_ids": [
+            "P15-ARC-a9b2ef8a677b"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": null
+        },
+        {
+          "content_id": "KRO-80698f3f2987",
+          "source_ids": [
+            "P15-ARC-4facc5e91fe8"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": {
+            "value": 400000,
+            "unit": "XP"
+          }
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-fd4f55918c9a",
+      "entity_name_ko": "북극해골",
+      "job": null,
+      "field": "experience",
+      "candidates": [
+        {
+          "content_id": "KRO-496e9d181d3b",
+          "source_ids": [
+            "P15-ARC-a9b2ef8a677b"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": null
+        },
+        {
+          "content_id": "KRO-62d4a3a92852",
+          "source_ids": [
+            "P15-ARC-4facc5e91fe8"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": {
+            "value": 300000,
+            "unit": "XP"
+          }
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-817868edda5e",
+      "entity_name_ko": "북극곰",
+      "job": null,
+      "field": "experience",
+      "candidates": [
+        {
+          "content_id": "KRO-a9dac973fe4a",
+          "source_ids": [
+            "P15-ARC-a9b2ef8a677b"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": null
+        },
+        {
+          "content_id": "KRO-e3409a085267",
+          "source_ids": [
+            "P15-ARC-4facc5e91fe8"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": {
+            "value": 300000,
+            "unit": "XP"
+          }
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-776281894b69",
+      "entity_name_ko": "소혼강신",
+      "job": "도사",
+      "field": "ingredients",
+      "candidates": [
+        {
+          "content_id": "KRO-a299d198bd41",
+          "source_ids": [
+            "P15-ARC-59eba4beca79"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 70,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "자호의가죽",
+              "quantity": 5,
+              "item_id": null
+            }
+          ]
+        },
+        {
+          "content_id": "KRO-92e8760e33c9",
+          "source_ids": [
+            "P15-ARC-0b7dcb5d2678"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 100,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "자호의가죽",
+              "quantity": 2,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "적호의 가죽",
+              "quantity": 1,
+              "item_id": null
+            }
+          ]
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-776281894b69",
+      "entity_name_ko": "소혼강신",
+      "job": "도사",
+      "field": "learn_money",
+      "candidates": [
+        {
+          "content_id": "KRO-a299d198bd41",
+          "source_ids": [
+            "P15-ARC-59eba4beca79"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": {
+            "value": 500,
+            "unit": "전",
+            "source_says_no_money": false
+          }
+        },
+        {
+          "content_id": "KRO-92e8760e33c9",
+          "source_ids": [
+            "P15-ARC-0b7dcb5d2678"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": {
+            "value": 800,
+            "unit": "전",
+            "source_says_no_money": false
+          }
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-b4f24a9bd455",
+      "entity_name_ko": "생명의기원",
+      "job": "도사",
+      "field": "ingredients",
+      "candidates": [
+        {
+          "content_id": "KRO-b38fe3be05ad",
+          "source_ids": [
+            "P15-ARC-59eba4beca79"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 100,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "진호박",
+              "quantity": 20,
+              "item_id": null
+            }
+          ]
+        },
+        {
+          "content_id": "KRO-86fa389d2985",
+          "source_ids": [
+            "P15-ARC-0b7dcb5d2678"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 100,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "빨간시약",
+              "quantity": 1,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "진호박",
+              "quantity": 1,
+              "item_id": null
+            }
+          ]
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-2d4e1eb1ee89",
+      "entity_name_ko": "대지의기원",
+      "job": "전사",
+      "field": "ingredients",
+      "candidates": [
+        {
+          "content_id": "KRO-a757e19a4082",
+          "source_ids": [
+            "P15-ARC-bf707407790a"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 80,
+              "item_id": null
+            }
+          ]
+        },
+        {
+          "content_id": "KRO-b263815ade47",
+          "source_ids": [
+            "P15-ARC-8f636f3c673d"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 70,
+              "item_id": null
+            }
+          ]
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-3b9d89a5fed8",
+      "entity_name_ko": "건곤대나이",
+      "job": "전사",
+      "field": "learn_money",
+      "candidates": [
+        {
+          "content_id": "KRO-548e3cfd0769",
+          "source_ids": [
+            "P15-ARC-bf707407790a"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": {
+            "value": 5000,
+            "unit": "전",
+            "source_says_no_money": false
+          }
+        },
+        {
+          "content_id": "KRO-e5c1e3e5f6c4",
+          "source_ids": [
+            "P15-ARC-8f636f3c673d"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": {
+            "value": 1500,
+            "unit": "전",
+            "source_says_no_money": false
+          }
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-7c05d8ad2475",
+      "entity_name_ko": "검신검귀",
+      "job": "전사",
+      "field": "ingredients",
+      "candidates": [
+        {
+          "content_id": "KRO-f9fefb2b4e2d",
+          "source_ids": [
+            "P15-ARC-bf707407790a"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 80,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "현철 중검",
+              "quantity": 1,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "호박",
+              "quantity": 10,
+              "item_id": null
+            }
+          ]
+        },
+        {
+          "content_id": "KRO-f61c13102b19",
+          "source_ids": [
+            "P15-ARC-8f636f3c673d"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 80,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "철도",
+              "quantity": 1,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "자호의가죽",
+              "quantity": 20,
+              "item_id": null
+            }
+          ]
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-8a28d946cca9",
+      "entity_name_ko": "삼중공격",
+      "job": "도적",
+      "field": "ingredients",
+      "candidates": [
+        {
+          "content_id": "KRO-92936d5d5fe5",
+          "source_ids": [
+            "P15-ARC-06559eaf496d"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": null
+        },
+        {
+          "content_id": "KRO-03d224759cbf",
+          "source_ids": [
+            "P15-ARC-85066ebecea9"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 180,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "야월도",
+              "quantity": 1,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "자호의 가죽",
+              "quantity": 20,
+              "item_id": null
+            }
+          ]
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-9c8dd8ac268d",
+      "entity_name_ko": "화영열주(화)",
+      "job": "주술사",
+      "field": "ingredients",
+      "candidates": [
+        {
+          "content_id": "KRO-cf1d3fd0b8e7",
+          "source_ids": [
+            "P15-ARC-18b605403844"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 50,
+              "item_id": null
+            }
+          ]
+        },
+        {
+          "content_id": "KRO-c2825b2dab80",
+          "source_ids": [
+            "P15-ARC-cb5e34400c09"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 70,
+              "item_id": null
+            }
+          ]
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-2b48aea45306",
+      "entity_name_ko": "자영무주(수)",
+      "job": "주술사",
+      "field": "ingredients",
+      "candidates": [
+        {
+          "content_id": "KRO-73fd0b46ed13",
+          "source_ids": [
+            "P15-ARC-18b605403844"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 50,
+              "item_id": null
+            }
+          ]
+        },
+        {
+          "content_id": "KRO-24bed760289e",
+          "source_ids": [
+            "P15-ARC-cb5e34400c09"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 70,
+              "item_id": null
+            }
+          ]
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-05f86aa4c244",
+      "entity_name_ko": "백령주(지)",
+      "job": "주술사",
+      "field": "ingredients",
+      "candidates": [
+        {
+          "content_id": "KRO-31d214baee1c",
+          "source_ids": [
+            "P15-ARC-18b605403844"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 50,
+              "item_id": null
+            }
+          ]
+        },
+        {
+          "content_id": "KRO-1802948bd89e",
+          "source_ids": [
+            "P15-ARC-cb5e34400c09"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 70,
+              "item_id": null
+            }
+          ]
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-47862e5d2a6c",
+      "entity_name_ko": "뢰격주 (풍뢰)",
+      "job": "주술사",
+      "field": "ingredients",
+      "candidates": [
+        {
+          "content_id": "KRO-7df4caa2d7c5",
+          "source_ids": [
+            "P15-ARC-18b605403844"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 50,
+              "item_id": null
+            }
+          ]
+        },
+        {
+          "content_id": "KRO-e579012ca1e0",
+          "source_ids": [
+            "P15-ARC-cb5e34400c09"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 70,
+              "item_id": null
+            }
+          ]
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-ac4494eeddf8",
+      "entity_name_ko": "화영열주첨(화)",
+      "job": "주술사",
+      "field": "ingredients",
+      "candidates": [
+        {
+          "content_id": "KRO-721ec79c5248",
+          "source_ids": [
+            "P15-ARC-18b605403844"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 30,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "막걸리",
+              "quantity": 20,
+              "item_id": null
+            }
+          ]
+        },
+        {
+          "content_id": "KRO-244a416223d6",
+          "source_ids": [
+            "P15-ARC-cb5e34400c09"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 30,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "곰가죽",
+              "quantity": 10,
+              "item_id": null
+            }
+          ]
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-0ef9e78bfe22",
+      "entity_name_ko": "자영무주첨(수)",
+      "job": "주술사",
+      "field": "ingredients",
+      "candidates": [
+        {
+          "content_id": "KRO-8cb82b296ec7",
+          "source_ids": [
+            "P15-ARC-18b605403844"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 30,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "막걸리",
+              "quantity": 20,
+              "item_id": null
+            }
+          ]
+        },
+        {
+          "content_id": "KRO-3e3c1d13ebb1",
+          "source_ids": [
+            "P15-ARC-cb5e34400c09"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 30,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "곰가죽",
+              "quantity": 10,
+              "item_id": null
+            }
+          ]
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-46517a55e4a9",
+      "entity_name_ko": "백령주첨(지)",
+      "job": "주술사",
+      "field": "ingredients",
+      "candidates": [
+        {
+          "content_id": "KRO-9c9e52c3a6ed",
+          "source_ids": [
+            "P15-ARC-18b605403844"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 30,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "막걸리",
+              "quantity": 20,
+              "item_id": null
+            }
+          ]
+        },
+        {
+          "content_id": "KRO-9c56730ff85e",
+          "source_ids": [
+            "P15-ARC-cb5e34400c09"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 30,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "곰가죽",
+              "quantity": 10,
+              "item_id": null
+            }
+          ]
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-7c478627b71f",
+      "entity_name_ko": "뢰격주첨 (풍뢰)",
+      "job": "주술사",
+      "field": "ingredients",
+      "candidates": [
+        {
+          "content_id": "KRO-80eac5d19531",
+          "source_ids": [
+            "P15-ARC-18b605403844"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 30,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "막걸리",
+              "quantity": 20,
+              "item_id": null
+            }
+          ]
+        },
+        {
+          "content_id": "KRO-f3a488297810",
+          "source_ids": [
+            "P15-ARC-cb5e34400c09"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 30,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "곰가죽",
+              "quantity": 10,
+              "item_id": null
+            }
+          ]
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    },
+    {
+      "variant_group_id": "KRO-VAR-f5866c330362",
+      "entity_name_ko": "혼돈",
+      "job": "주술사",
+      "field": "ingredients",
+      "candidates": [
+        {
+          "content_id": "KRO-bb73b8e9c871",
+          "source_ids": [
+            "P15-ARC-18b605403844"
+          ],
+          "build_profile_id": "KR_GUIDE_2000_SNAPSHOT",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 90,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "호박",
+              "quantity": 2,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "영혼 마령봉",
+              "quantity": 1,
+              "item_id": null
+            }
+          ]
+        },
+        {
+          "content_id": "KRO-0c9704f73c74",
+          "source_ids": [
+            "P15-ARC-cb5e34400c09"
+          ],
+          "build_profile_id": "KR_GUIDE_2001_SNAPSHOT",
+          "value": [
+            {
+              "item_name_literal": "도토리",
+              "quantity": 90,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "호박",
+              "quantity": 2,
+              "item_id": null
+            },
+            {
+              "item_name_literal": "해골죽장",
+              "quantity": 1,
+              "item_id": null
+            }
+          ]
+        }
+      ],
+      "resolution": "UNRESOLVED_NO_AVERAGE_OR_GLOBAL_DEFAULT"
+    }
+  ],
+  "default_build_profile_id": null,
+  "outputs": [
+    {
+      "path": "kr_official_core.jsonl",
+      "sha256": "010bef4cff3aa21716ca63423eda0eb9f225c58cba0b6be79029c6ca954429dc",
+      "bytes": 3192620,
+      "records": 928
+    }
+  ],
+  "warning": "Sourcecapture dates are not client build dates. Website data can be stale; compare2000and2001actualvalues, do notmerge by averaging."
+}

@@ -1,0 +1,489 @@
+{
+  "schema": "baram.p1_5.integration_metadata_validation/1",
+  "task_id": "BARAM_REBUILD_P1_5_001",
+  "reviewer": "korean_research independent integration review",
+  "checked_at_utc": "2026-10-15T23:26:29.727344+00:00",
+  "status": "PASS_METADATA_SCOPE",
+  "overall_restoration_status": "PARTIAL",
+  "scope": "Read-only full integrated metadata/catalog/reference checks. Does not validate original game mechanics, execute runtime, select one historical server patch, or certify Codex receiving environment.",
+  "actual_command": "python3 /workspace/scratch/8a697b0cae82/research/korean/check_integration_metadata.py",
+  "script_sha256": "031882a03be20eb96c4366f6eef2425949c8303fca9c3d98f3a3742339182b8f",
+  "exit_code": 0,
+  "counts": {
+    "sources": 1313,
+    "requirements": 150,
+    "bindings": 35,
+    "gaps": 137,
+    "catalog_files": 35,
+    "normalized_records": 44796
+  },
+  "input_fingerprints": [
+    {
+      "path": "docs/rebuild/p1_5/sources_delta.jsonl",
+      "sha256": "14d70dfd8a33dc75da15a48312785d682d8ac9b827fead781f01b369585038cf",
+      "bytes": 1647827
+    },
+    {
+      "path": "docs/rebuild/p1_5/requirements_delta.csv",
+      "sha256": "42988e15a9e51aefb560baaacdd566356f6ed191162627dcc48b00e06a11fdaf",
+      "bytes": 277510
+    },
+    {
+      "path": "docs/rebuild/p1_5/field_bindings.jsonl",
+      "sha256": "59799f0969621e8e1490041af2277b78c402cb24b2cbc522634386e7dac74602",
+      "bytes": 127782
+    },
+    {
+      "path": "docs/rebuild/p1_5/gaps_by_feature.csv",
+      "sha256": "9da1f0ea115464023f28b5ff52acc22033f73746a2c37c9f5957ec1bb31b6328",
+      "bytes": 74387
+    },
+    {
+      "path": "docs/rebuild/p1_5/INPUT_MANIFEST.json",
+      "sha256": "b889173e6e1ec44737863e19e85b2ac5210a369fa1c4871a79b8dc4ed4f594f0",
+      "bytes": 30644
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/catalog.json",
+      "sha256": "a6085079214dff200988201c95b75697b76e7a8f1651cd1841bc00b0e8580e49",
+      "bytes": 14388
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_asset_draw_order.jsonl",
+      "sha256": "3f50128cb53d44d926362f09bc0c62324dfeccf0c1041d67b8b19ffce46f4fbb",
+      "bytes": 128968
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_asset_effect_frame_palettes.jsonl",
+      "sha256": "b644c6def8fa486524b81ddc16fda6b5b8e48d3c0f20702e6705a54b5879c713",
+      "bytes": 2154832
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_asset_effect_sequences.jsonl",
+      "sha256": "1a269e602493b04a4ae6b96160d480e16dad7e82ba98344e277396f692036961",
+      "bytes": 547576
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_asset_guide_effects.jsonl",
+      "sha256": "63d8fb07e70a72ee3c1a94999c76aac5959edd67fef12d9e3adf99bd2efca7d7",
+      "bytes": 195091
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_asset_legacy_effect_tables.jsonl",
+      "sha256": "d200d09e47e0bda9646b69c96d651274b9ce70f04db70f629a79430b40ee8982",
+      "bytes": 227464
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_asset_monster_groups.jsonl",
+      "sha256": "91c911eece0ff1ac1b7342370c1ecc96eaf736ce43f572715c7ca1d4eb47b2b5",
+      "bytes": 265302
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_asset_parts.jsonl",
+      "sha256": "b1e5086da6ebad28ecc76e7ee387fc7077d5d6f5854f710638b951617c603726",
+      "bytes": 2884171
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_asset_sound_metadata.jsonl",
+      "sha256": "7009968509ca44eee06698c218a4da450158175e0e00560ffe507e30cb1a6d5c",
+      "bytes": 192911
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_asset_sprite_frames.jsonl",
+      "sha256": "74416716dc20f3ceb3dd26828397069fd5c0efe5667e4b9fcadb8dad9a32dd7b",
+      "bytes": 548473
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_asset_ui_strings.jsonl",
+      "sha256": "83c211482f0e1785af628855d014d2d80fc9fd76104c3d780bd8af6399fe009c",
+      "bytes": 52726
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_documented_fields.jsonl",
+      "sha256": "adf6e7b066ed3136861a8221100bd138a8e0d5f8ff88453f81563e4e4fb8238f",
+      "bytes": 567756
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_official_core.jsonl",
+      "sha256": "010bef4cff3aa21716ca63423eda0eb9f225c58cba0b6be79029c6ca954429dc",
+      "bytes": 3192620
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_official_crafting_facts.jsonl",
+      "sha256": "c631140d771439f23e8c6be93cd090e2e27c98efe9c4c305525c63b7644dabb1",
+      "bytes": 42194
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_official_creation_visual.jsonl",
+      "sha256": "6fc273565ab672988fcb61d2f687f606202b2b270be4f0cad5412f309e1ad6c3",
+      "bytes": 2777
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_official_facility_rules.jsonl",
+      "sha256": "3b49767055f6cb55bbe0334e43d1c035ab05dc71fa4530c8ef3d915df955a00f",
+      "bytes": 58341
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_official_flow.jsonl",
+      "sha256": "5b62f399506d2fa51f56c221b6b253b22f9e2db0ba267fd0ff562a12e621d980",
+      "bytes": 44075
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_official_full_maps.jsonl",
+      "sha256": "cdc09b76fbcf455d845a3553a5a6370d2eacb688e5493c0754b9c2857bffbf55",
+      "bytes": 5511
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_official_image_bindings.jsonl",
+      "sha256": "f5cfb6565437c20ac190c9775f17883d7893b9159e6d0c8073bb5039790d94b3",
+      "bytes": 258817
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_official_items.jsonl",
+      "sha256": "fba69ec5c19236bbcf8615cea64753f1536832e8f994e41cac51337ff2440f15",
+      "bytes": 3473092
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_official_map_assets.jsonl",
+      "sha256": "ba92e06ab8a757671933224f6e3226f7a66c55e8c15ed453dcd4d5e386d262b4",
+      "bytes": 367714
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_official_npc_appearance.jsonl",
+      "sha256": "7d1667c5e8d919ee9e5efc089317aba635a4fe522c24a228f216b9098cd22c49",
+      "bytes": 12894
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_official_services.jsonl",
+      "sha256": "a4363e3d38de491efc3cc9dc7f319823416caa6285d50b0e6b2c4e94662c64b0",
+      "bytes": 153545
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/kr_official_skill_effects.jsonl",
+      "sha256": "b8947b92e05d43994d3af3529ced87203daf9d3255132afe9b227ad818d30b1f",
+      "bytes": 1590584
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/na_reference_craft_calls.jsonl",
+      "sha256": "4b4722aa836fcef52bd1ca76278e9f630362689f3e45e9009ad86a06850f1699",
+      "bytes": 195948
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/na_reference_economy.jsonl",
+      "sha256": "a91fd02de9ac181f91d77736a306aad4f24d5bbd3bb3276dd2897da7df645f11",
+      "bytes": 3450872
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/na_reference_job_skill.jsonl",
+      "sha256": "11349e33321feee2591728f61f5aabe1f6dcdd6f62ba15ab93a4ec0d56ab71b5",
+      "bytes": 1773707
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/na_reference_map.jsonl",
+      "sha256": "a138414df3d09a6b42b31737e45c47a2d7f16c60ddd3f47a409d4d4fcf0071d8",
+      "bytes": 2521080
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/na_reference_monster.jsonl",
+      "sha256": "4ed8160ba7b281266c1034746a6463c2eb8c09de44af7b80db31dcd026df0a80",
+      "bytes": 2943719
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/na_reference_npc.jsonl",
+      "sha256": "157d5128f7fb55d8d3d2b70615c7a6772b9f6445ad7d2e027347f17e1111e640",
+      "bytes": 347082
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/na_reference_npc_calls.jsonl",
+      "sha256": "98e472a061a238d8760984d740c9e72013ec30495d9b58fc3e58286b9b4c39b9",
+      "bytes": 922369
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/na_reference_npc_dialogue.jsonl",
+      "sha256": "6a9bd19d14cbd70af356db57100112c93decab3778c6c18dc8cfadf4ba17f23e",
+      "bytes": 42933
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/na_reference_rtk_drops.jsonl",
+      "sha256": "b6c1f70169b549318b812e59f5d8241979877f3d2c22e90ee49a906d7ebeaa66",
+      "bytes": 532043
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/na_reference_rtk_sql.jsonl",
+      "sha256": "e46a8a3a2c2250127af5e7bab145bcd29645957e7e41e68f6453109aedbb8489",
+      "bytes": 19679550
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/na_reference_spell_calls.jsonl",
+      "sha256": "beb72070e7d00d6c90176010cabba82907b319c4dd27daf67ec25810523e71dd",
+      "bytes": 965239
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/save_contracts.json",
+      "sha256": "28b88bde1f543ef6a811d17af08427af94961c0ce88bd4b7a3f34ed8be05752c",
+      "bytes": 23724
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/na_reference_catalog.json",
+      "sha256": "e788f665d04c21894ec190748979c44eb08a30a58968cd531941cb2640abc84c",
+      "bytes": 5979
+    }
+  ],
+  "checks": [
+    {
+      "check": "source_id_unique",
+      "status": "PASS",
+      "details": {
+        "records": 1313,
+        "duplicate_ids": []
+      }
+    },
+    {
+      "check": "requirement_id_unique",
+      "status": "PASS",
+      "details": {
+        "records": 150,
+        "duplicate_ids": []
+      }
+    },
+    {
+      "check": "binding_id_unique",
+      "status": "PASS",
+      "details": {
+        "records": 35,
+        "duplicate_ids": []
+      }
+    },
+    {
+      "check": "catalog_full_expected_set",
+      "status": "PASS",
+      "details": {
+        "declared_files": 35,
+        "actual_files": 35,
+        "records": 44796,
+        "missing_paths": [],
+        "extra_paths": [],
+        "errors": [],
+        "input_manifest_matches_catalog": true,
+        "supplementary_index_files_excluded_from_content_population": [
+          "selected_content/na_reference_catalog.json"
+        ]
+      }
+    },
+    {
+      "check": "normalized_global_record_ids_unique",
+      "status": "PASS",
+      "details": {
+        "records": 44796,
+        "unique_ids": 44796,
+        "missing_ids": [],
+        "duplicates": {}
+      }
+    },
+    {
+      "check": "source_requirement_binding_references",
+      "status": "PASS",
+      "details": {
+        "reference_occurrences_checked": {
+          "source_id": 43543,
+          "archive_source_id": 299,
+          "parent_source_ids": 469,
+          "requirement_id": 150,
+          "source_ids": 6036,
+          "parent_requirement_ids": 217,
+          "binding_id": 43,
+          "requirement_ids": 4832,
+          "binding_ids": 311
+        },
+        "broken_references": [],
+        "csv_multivalue_separators": [
+          "|",
+          ";"
+        ]
+      }
+    },
+    {
+      "check": "prior_120_requirements_preserved",
+      "status": "PASS",
+      "details": {
+        "baseline": 120,
+        "present": 120,
+        "preserved_contract_fields": [
+          "canonical_requirement",
+          "expected_behavior",
+          "implementation_feature",
+          "normal_test_id",
+          "normal_test",
+          "failure_test_id",
+          "failure_test",
+          "cancel_test_id",
+          "cancel_test"
+        ],
+        "changed_contract_fields": [],
+        "prior_priority": {
+          "P0": 114,
+          "P1": 6
+        },
+        "new_priority": {
+          "P1": 59,
+          "P0": 88,
+          "P2": 3
+        }
+      }
+    },
+    {
+      "check": "prior_32_binding_groups_preserved",
+      "status": "PASS",
+      "details": {
+        "baseline": 32,
+        "present": 32,
+        "identity_fields_changed": []
+      }
+    },
+    {
+      "check": "prior_197_sources_and_79_types",
+      "status": "PASS",
+      "details": {
+        "baseline_sources": 197,
+        "preserved_sources": 197,
+        "id_url_sha_changes": [],
+        "previously_missing_source_type": 79,
+        "now_typed": 79,
+        "type_correction_errors": [],
+        "size_bytes_omitted_from_delta_but_preserved_in_base_ledger": 116
+      }
+    },
+    {
+      "check": "A_to_J_coverage_and_unknown_population",
+      "status": "PASS",
+      "details": {
+        "rows": 137,
+        "area_rows": {
+          "A": 12,
+          "B": 10,
+          "C": 18,
+          "D": 13,
+          "E": 18,
+          "F": 11,
+          "G": 13,
+          "H": 15,
+          "I": 14,
+          "J": 13
+        },
+        "incorrectly_claimed_population": [],
+        "population_scope": "Known corpus only; global original entity denominator UNKNOWN"
+      }
+    },
+    {
+      "check": "original_reconstruction_NA_separation",
+      "status": "PASS",
+      "details": {
+        "NA_rows": 37526,
+        "NA_not_adopted_for_KR_errors": [],
+        "reconstruction_rows": 6,
+        "reconstruction_by_file": {
+          "selected_content/kr_documented_fields.jsonl": 4,
+          "selected_content/kr_official_skill_effects.jsonl": 2
+        },
+        "reconstruction_original_conflation_errors": [],
+        "special_save_contracts": {
+          "rows": 8,
+          "original_game_value_null": true
+        }
+      }
+    },
+    {
+      "check": "2000_2001_profile_dispatch_no_global_default",
+      "status": "PASS",
+      "details": {
+        "profile_rows": 2420,
+        "profiles": {
+          "KR_GUIDE_2000_SNAPSHOT": 940,
+          "KR_GUIDE_2001_SNAPSHOT": 1480
+        },
+        "manifest_default": null,
+        "catalog_default": null,
+        "binding_defaults_null": true,
+        "profile_guard_errors": []
+      }
+    },
+    {
+      "check": "no_game_runtime_promotion",
+      "status": "PASS",
+      "details": {
+        "runtime_status_errors": [],
+        "counts": {
+          "use_status": {
+            "ACQUIRED": 257,
+            "DECODED": 251,
+            "IDENTIFIED": 3690,
+            "DISCOVERED": 4
+          },
+          "test_status": {
+            "NOT_RUN": 41763
+          },
+          "new_runtime_bound": {
+            "False": 361
+          },
+          "new_runtime_binding": {
+            "NOT_STARTED": 41408
+          },
+          "utilization_status": {
+            "IDENTIFIED": 683,
+            "DECODED": 4478
+          },
+          "runtime_binding": {
+            "NOT_STARTED": 4206
+          }
+        },
+        "manifest_runtime_tests": "NOT_RUN",
+        "p2_executed": false,
+        "distinction": "Static source/format/import PASS is outside this game/runtime status check"
+      }
+    },
+    {
+      "check": "binding_selected_file_references",
+      "status": "PASS",
+      "details": {
+        "binding_groups": 35,
+        "file_reference_occurrences": 78,
+        "errors": []
+      }
+    },
+    {
+      "check": "MASTER_and_step01_unchanged_from_handoff",
+      "status": "PASS",
+      "details": {
+        "actual_command": "git diff --exit-code 5d70e48e88a6a73553fee0f35c2c5812547d6dbf -- docs/rebuild/MASTER_PLAN.md docs/rebuild/step01",
+        "exit_code": 0,
+        "diff_bytes": 0,
+        "stderr": ""
+      }
+    },
+    {
+      "check": "no_missing_source_types",
+      "status": "PASS",
+      "details": {
+        "sources": 1313,
+        "missing_type_ids": []
+      }
+    }
+  ],
+  "failed_checks": 0,
+  "review_history": [
+    {
+      "round": 0,
+      "exit_code": 1,
+      "metadata_finding": "New BND-033/034/035 omitted explicit default_build_profile_id=null; root corrected assembler and ledger before final rerun. No content value changed.",
+      "review_scope_correction": "na_reference_catalog.json is a supplementary index, not a normalized content table. It is explicitly named/excluded from content population and separately fingerprinted."
+    },
+    {
+      "round": 1,
+      "exit_code": 0,
+      "action": "Full metadata check rerun after explicit null fix; all normalized content hashes rechecked."
+    }
+  ],
+  "game_runtime": "NOT_RUN",
+  "receiver_environment": "NOT_RUN",
+  "freeze_note": "Frozen result applies only to the listed exact input hashes; modifying an integrated input requires rerun."
+}

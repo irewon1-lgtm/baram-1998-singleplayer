@@ -1,0 +1,9 @@
+{
+  "scope": "private reference source archive entries/CRC/SHA against pinned package manifest; not execution or malware verdict",
+  "archive_sha256": "6e922fc3725c52e9bad3dd45924756c57e01781a36c9fd9b8eb35cd81291c508",
+  "entries_checked": 11428,
+  "excluded_source_files": 37,
+  "failures": [],
+  "result": "PASS",
+  "runtime_tests": "NOT_RUN"
+}

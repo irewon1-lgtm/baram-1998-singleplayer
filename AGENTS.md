@@ -20,3 +20,5 @@ Keep the five user questions and old failure cases in MASTER_PLAN visible. Updat
 
 ## Current P1.5 execution (2026-10-16)
 User task `BARAM_REBUILD_P1_5_001` explicitly authorizes `STEP015_WORK_INSTRUCTIONS.md` sections 0–12. Continue from `docs/rebuild/p1_5/` and STATE; P0/P1 historical records stay unchanged. Static source processing, evidence selection, validator fixes and handoff only. Runtime/reference server/build/deploy/P2 remain unauthorized in this task.
+
+P1.5 resume: read `docs/rebuild/p1_5/REPORT.md`, `VALIDATION.json`, `INPUT_MANIFEST.json`, and the external `DELIVERY_RECEIPT.json`. Known NA source reference failures must remain visible. Normalized data is private; public catalogs are not data substitutes. Codex receiver G0 and all P2/runtime/device/auth tests remain NOT_RUN.

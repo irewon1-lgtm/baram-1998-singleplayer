@@ -22223,5 +22223,2629 @@
     }
   ],
   "scope": "BYTE/CONTAINER CHECK ONLY; NOT HISTORICAL FACT, MALWARE OR GAMEPLAY PASS",
-  "runtime_tests": "NOT_RUN"
+  "runtime_tests": "NOT_RUN",
+  "new_material_access": {
+    "scope": "New source records with explicit current private byte paths, checked separately from old42/2204; URL-only/pinned fullsource references use domain source manifests and import_validation.",
+    "counts": {
+      "MATCH": 431
+    },
+    "sources": [
+      {
+        "source_id": "P15-WEB-PASTSTORY-15",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-WEB-PASTSTORY-42",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-WEB-PASTSTORY-53",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-WEB-PASTSTORY-54",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-WEB-PASTSTORY-55",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-WEB-PASTSTORY-56",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-WEB-PASTSTORY-75",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-WEB-PASTSTORY-22",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-WEB-PASTSTORY-18",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-WEB-PASTSTORY-208",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-WEB-NEXON-HISTORY",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-WEB-NEXIA-ARCHIVE",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-IMG-PASTSTORY-42-IMAGE-01",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-IMG-PASTSTORY-42-IMAGE-02",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-IMG-PASTSTORY-42-IMAGE-03",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-IMG-PASTSTORY-42-IMAGE-04",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-IMG-PASTSTORY-42-IMAGE-05",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-IMG-PASTSTORY-42-IMAGE-06",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-IMG-PASTSTORY-42-IMAGE-07",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-IMG-PASTSTORY-42-IMAGE-08",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-IMG-PASTSTORY-42-IMAGE-09",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-IMG-PASTSTORY-42-IMAGE-10",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-IMG-PASTSTORY-75-IMAGE-01",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-IMG-PASTSTORY-22-IMAGE-01",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-IMG-PASTSTORY-53-IMAGE-01",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-IMG-PASTSTORY-53-IMAGE-02",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-IMG-PASTSTORY-53-IMAGE-03",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-IMG-PASTSTORY-18-IMAGE-01",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-IMG-PASTSTORY-18-IMAGE-02",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-IMG-PASTSTORY-18-IMAGE-03",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-IMG-KR125-MAP",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-IMG-KR125-FACILITIES",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-IMG-KR125-TITLE",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-IMG-KR125-RESURRECTION",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-IMG-KR125-JOBINTRO",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-c05252ad964d",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-34a4517952df",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-27596a0d8ed8",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-63a839eecb4e",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-f68c373df3e7",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-2646485a1ab7",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-8881234afddd",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-a071fac33812",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-d9a991e9f11e",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-df2e454a3e69",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-a9b2ef8a677b",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-acb545809cfd",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-85629cabe925",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-359e01fbdeff",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-89c540cc9f59",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-59eba4beca79",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-bf707407790a",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-c139836fe487",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-06559eaf496d",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-18b605403844",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-2f4f9dad4a94",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-505599d12090",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-4facc5e91fe8",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-babe633c1d1f",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-5652e61048d7",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-9a00c0c34b12",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-5d993de00892",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-030e07a01431",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-0b7dcb5d2678",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-8f636f3c673d",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-b8758ccfdcc9",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-85066ebecea9",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-cb5e34400c09",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-752c04d00d60",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-c85fa4599c9e",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-94e564154795",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-277e6606e514",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-26a6de677c94",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-39d741fa6fb5",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-7ae3ef2cde83",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-bea286dfb209",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-1b0f66e429d2",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-eaa55ea446b5",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-a9adfe1d4bd1",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-0ee27df3bb22",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-0c06298df8d9",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-9d64b594eeb3",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-a5a986f5e34a",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-0a76eb2363ec",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-8c25ba405454",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-f89ad09a2416",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-232181ef72f2",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-cdf4b611dbf7",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-8e2c3cf67d2e",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-a5b887d2fff9",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-f35e1c96020e",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-f6e667a15312",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-be403b7fafd9",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-9fea529308b2",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-127264c1e858",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-62e28fec5196",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-e38e365f3725",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-d8a35803b6cf",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-2485c528c364",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-5f8693b91b24",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-cb12b51494de",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-82708b093b28",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-0f42cce8c093",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-b9222bb17d72",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-6b71273e0e16",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-1bddd62ac47b",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-2952ccb0a3b1",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-1f197b704a5d",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-05fe62541db6",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-bd10d0c09471",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-845d34c86bdc",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-52a988cbdb74",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-9ffd3f6fe37b",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-218e88c53048",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-04c0f0eeaeb6",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-65b72960fb9f",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-a7e1047f7483",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-fc99c778d4c6",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-561bd75d3067",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-35682cf206da",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-e58b8b895b8c",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-1ab306f59326",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-3d01b20ffebf",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-7cda0035d57e",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-90ee410b948a",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-0b9d2d8c89a5",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-5a59d619de9f",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-ffa43c98a126",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-52d30fb2b896",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-c0e0193e3933",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-30d2353cf5d7",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-85bc7e777ed8",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-01fe95fb32a6",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-10f5c0396191",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-428838f764a6",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-7f7d9a31b351",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-6582407680a5",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-9f5ff22b9895",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-315847a9fba8",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-1ef48ac9bb23",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-95848e996f51",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-45519b54b371",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-532563ae34ac",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-2d50d71d49a1",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-bb8cc6bc5973",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-4454f22235c2",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-f8b9eccd515e",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-f9ff7be8e19f",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-5d8a02e39e96",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARIMG-7e384d98f053",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-47c12b139a05",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-33ae61cfbee2",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-eccc761dbd15",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-491e0701be32",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-e64acb844955",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-cb8caf6ff8a3",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-7892029989a1",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-31985f864b6a",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-0d7f9c976524",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-0d4a729ee109",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-1c6970b28d36",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-3c2807668d1a",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-1ba55d9def1a",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-89ba788efd6a",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-a4960ee3ebe7",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-eaf214ac2f1a",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-288b13c6c478",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-2431066bc9df",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-2a467297fc0b",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-47db11b99913",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-8fd66a29e87e",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-4e137f2484cc",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-a7eab177dc47",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-2d0eb6d73788",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-7eee1d661c10",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-b5bb214b5d9b",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-e06ce986f6fe",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-c58e2ad668e7",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-8d6577288259",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-6f7bfd5306bf",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-d5ab5002d6e8",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-ab24af3c1d98",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-94b479d51f83",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-b06a41313b94",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-0699fc05ade4",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-ea38061e9f4d",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-4c05e5b57a11",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-63220d3bc960",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-a5c542054c1b",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-27e02d907227",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-70a53eb91c9d",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-c9a03d4cde6f",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-d8f94b8385ce",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-f62dc8f8118a",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-e4b1691874c9",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-e43b4874931f",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-bd0fd0a17341",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-b13756f60c3d",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-1915bc90a9ea",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-939c031a8183",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-794d2c8ddb21",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-baff08115722",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-1d53edcc8528",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-eee876d40000",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-f71724ad24f7",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-fd2ea74d3e23",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-4f3b3f5410c8",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-ef3707b3312d",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-7c19e5cd8b3c",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-b9bc4796e8da",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-d2b0182d9474",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-857e957fb853",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-533966b77e93",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-99c2fa14a39c",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-34481e73b8a1",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-6b51c4d16dc9",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-c9c8af2b3fe4",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-d84820795b4e",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-2489ba808616",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-7b44849c199b",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-128f464e21e1",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-1c793a1ffa75",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-af2115d9a2df",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-4c5013dab745",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARC-dfccd4d5c876",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-009994d20442",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-01af67c616dc",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-033da75a6926",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-072e23278a33",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-0993d9fc298d",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-09e8e729b30c",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-0bf554a5742c",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-0e016a323c5d",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-0e7d8c3d085b",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-109e8c8a0207",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-116bf153b324",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-1251150b2efb",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-12a0ddac1c2c",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-142bb3ee4306",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-14fb244c5d6f",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-15baa2f13413",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-1650487df866",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-16e601701d47",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-16f2441a752b",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-18c410d56066",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-1ab52ba23838",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-1b97e7ada804",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-1d884d399829",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-1f5e3f4799ee",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-2034cb9a2ba5",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-21c99def3648",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-222464bade73",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-2317fab3f7e1",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-23484419721b",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-240ccd1d4d3e",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-25434ff9ca47",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-267d46bb7dd0",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-298a2a3a126a",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-2a5b7cacd0d2",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-2a7f4ae3ca39",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-2b6702e5e49a",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-2b6d6dec9b7f",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-2d32f01adf22",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-2dbe2ec7eecf",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-2defc9b3d280",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-2f6fe2bf28fc",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-32de76954ae6",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-34200e04dfe4",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-345b276beadd",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-34f9bcadad38",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-35b93f1eb64a",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-373dd243ea22",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-3859760c2359",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-38e1974113e3",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-398529cef91c",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-39c1dd3a53d9",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-39fd9b9add21",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-3be511c44bae",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-3c773d6a4e39",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-3e4020e20a27",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-3ea61d133e70",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-418ae26cfb26",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-44fda2f62f7c",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-468459351e39",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-491f69f8abd2",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-4a0499321514",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-4bd0fccb4591",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-4c960cd49cf4",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-4cd44ea2c899",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-4eccb493a394",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-4f43fd53bd42",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-508d849c7d35",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-511515d8bf30",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-51ffa5c8fd80",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-5239bbdb452e",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-5263803e56d8",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-548585a0969f",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-54971e0b52ac",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-57b0cc191409",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-58833e090b84",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-59f48645cc2d",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-5a998a76174a",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-5bd5196affbd",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-5c043531b758",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-5e17870e9136",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-5e5be7e47056",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-6109f6298d12",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-61fecdfc7a29",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-623d445b5ec4",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-6395a1530658",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-63e97427036f",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-6451cb2afdc6",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-6578abe3089f",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-66660472118f",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-67c0f58e0674",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-69cb4e7e808d",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-6ba2a3ce5820",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-6e12f2788bb7",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-6e9a5e4da55f",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-6ec2f516d3fa",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-6fd5771a9829",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-757fa26adc9b",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-7bd69aed40eb",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-7cc5c7846cfd",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-7d4b736a1a77",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-7f2f6f353e43",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-800713fcd7e8",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-806aec8f474b",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-81ae56b5f813",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-82ecd9a66681",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-82f8a80a1162",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-8417524077bb",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-8439bf3292e0",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-8466c8f6cfa5",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-84ca39cba459",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-84fdf5ee2057",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-86554874cd9d",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-865fa03c03c1",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-8668ca24bded",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-868def774fbe",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-8b17a285015c",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-8f44f514dd59",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-8f71596c07f8",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-90f824efd984",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-91dad3e07281",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-927e62437e79",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-93a8ff451bff",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-96706e2d0934",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-96e1c7e1d9db",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-97713cd9fc8b",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-9780645becd4",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-9863bb6801df",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-9a57ee5a6f45",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-9a896714d8b1",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-9b42e58bd875",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-9ebe49f5fe26",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-9f143d3b2084",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-a351cba4eec7",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-a41d9d328218",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-a9ed6e224359",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-aa4f5e275c59",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-ad1e27e77ffd",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-ad1e6d5c1634",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-aebe06c4ac03",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-b0e2e45c99c3",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-b0f52a39b0a3",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-b128157a6e10",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-b1ff6a8be264",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-b2a7aba6cad4",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-b33b475bc9d0",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-b403b0821157",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-b42bd13711f7",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-b43c654c7b50",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-b4b0391894e4",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-b4b85e092fbd",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-b686ee32bb35",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-b90b9d1b2707",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-ba267e0e9b51",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-ba4766171398",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-bb32127501f3",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-bd096ac386b2",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-be0b9b289e84",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-be77c92d6ef2",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-beb2b2e8bd45",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-c01eb94cf9b8",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-c14d50397fd0",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-c3542965b7c4",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-c44d0d3860a0",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-c4b44709b1c3",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-c4bd98a3fe00",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-c59471b0b694",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-c6c2636eec74",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-c968def1e771",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-ca4391f13225",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-cb9237e29455",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-cea7f4fc49ab",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-d0a7b241e78f",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-d14549bd45a4",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-d48c548d1968",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-d61bb6c8f6a2",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-d63c49cc39cf",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-d6df4a86f55e",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-d7cbf0a74f0f",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-da9b5e1696a3",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-dcb066a204c1",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-dcf83baec751",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-df368dfa52e5",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-e2bedc9e42f3",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-e552d9ba9eb5",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-e67d9935c03a",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-e87ead9e71ef",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-ed4ba1a90a36",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-eebe2dd30cee",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-f2804b47ecbd",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-f2ebc446a6ed",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-f483d4b960b8",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-f4cac94a5ea4",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-f5d4394b99c5",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-f5ee2b95fbb2",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-f663bbb543e0",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-f6ded5d8f06e",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-f74db96dc3c0",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-f7aee7c6f213",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-f8f35d40d4a4",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-f94fa03d8310",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-fbb1ed71df06",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-fc3c1941ee9f",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCASSET-fce0b2e0d73b",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCMAP-3fc035d58457",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCMAP-0579ce2fedc9",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      },
+      {
+        "source_id": "P15-ARCMAP-7dd51290d10b",
+        "byte_result": "MATCH",
+        "source_registry": "sources_delta.jsonl",
+        "note": "Byte identity only. Actual image/ZIP decode and era/selection are in per-domain research metadata."
+      }
+    ],
+    "format_failures_do_not_disappear_on_hash_match": [
+      "received Bu fullmap ZIP CRC mismatch",
+      "zone/image decode failures",
+      "one nonimage effect GIF response"
+    ],
+    "details": [
+      "research_official_zone_item.json",
+      "research_official_images.json",
+      "research_assets.json",
+      "import_validation.json"
+    ]
+  },
+  "previous_audit_delta": {
+    "unavailable7_now_original_sha_matched": [
+      "LIB-029",
+      "LIB-030",
+      "LIB-031",
+      "LIB-032",
+      "LIB-033",
+      "LIB-034",
+      "LIB-035"
+    ],
+    "independent_unchecked739_now_reached": 739,
+    "remaining_unreached_from_old2204": 0,
+    "new_private_sources_full_blob_sets": [
+      "research_server.json source_commits+source manifests",
+      "research_assets.json full_visual_source_tree_acquisition"
+    ],
+    "new_korean_full_map_pcx": 2,
+    "received_Bu_zip_crc": "FAIL_RETAINED_UNSELECTED"
+  }
 }
