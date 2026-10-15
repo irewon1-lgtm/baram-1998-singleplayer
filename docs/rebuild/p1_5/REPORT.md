@@ -67,3 +67,5 @@ P2 관측의 판본·필요파일·입력·예상 관측·제한은 `NEXT_P2_DEL
 공개 Git에는 문서·메타데이터·정적 도구만, 비공개 인계 파일에는 선정 값과 민감 파일을 제거한 참고 소스·검수 증거를 둔다. 원본42개는 기존 지속 ID를 재사용한다. reference source ZIP의 해시·제외·11,428파일 확인은 INPUT_MANIFEST와 `reference_package_validation.json`에 있다.
 
 자기 참조를 피하려고 최종 커밋/원격 tree 재조회, 완성 ZIP의 SHA/지속 파일ID·가져오기 절차는 별도 `DELIVERY_RECEIPT.json`에 기록한다. Work의 독립 사본3,037개와 전체경로표3,564 ID를 사용한 깨끗한 디렉터리 검사에서 기존 원장2,489 PASS 및 전체44,796행 무결성 PASS/참조154 FAIL이 재현됐다. 초기 경로표 범위 혼합과 composite101 ID 누락은 실제 발견·수정·재시험했고 이전 원장 검증기의 거부를 완화하지 않았다. 이는 Codex 수신 환경 G0 PASS가 아니다. 이후 별도 P2 지시가 있으면 최신 STATE→이 REPORT→NEXT_P2_DELTA의 G0에서 시작한다. 입력/파서/설정/범위 지문이 같은 기존 검사는 반복하지 않는다.
+
+인계 최종화에서 최신 원격 체크포인트를 보존하고 경로 복원 도구와 CLI/지문 계약을 일치시켰다. 원문 HTML·첨부와 이전 도구 판본은 비공개 묶음의 PRIVATE_SOURCE_INDEX에서 실제 SHA로 복구하며 원본42개·민감 SQL은 별도 접근한다. 전체 파일명·길이·SHA 및 정규화 catalog를 검사하는 격리20회귀와 새 패키지/깨끗한 디렉터리 검사 결과는 외부 DELIVERY_RECHECK_RECEIPT.json을 따른다. 기존 clean_handoff_validation.json은 이전 도구 세대의 유효한 과거 증거로 보존한다.

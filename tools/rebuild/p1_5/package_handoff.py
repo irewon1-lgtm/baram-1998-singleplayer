@@ -38,7 +38,7 @@ def main():
     add(repo / 'AGENTS.md', 'AGENTS.md')
     for directory in ['docs/rebuild', 'tools/rebuild']:
         for p in sorted((repo / directory).rglob('*')):
-            if not p.is_file() or '__pycache__' in p.parts or p.name == 'DELIVERY_RECEIPT.json':
+            if not p.is_file() or '__pycache__' in p.parts or p.name in ['DELIVERY_RECEIPT.json', 'DELIVERY_RECHECK_RECEIPT.json']:
                 continue
             if p.suffix in ['.pyc', '.pyo']:
                 continue
@@ -117,7 +117,7 @@ def main():
                 'RTK raw database and credential-bearing settings, transfer receipts, .git and caches are intentionally excluded.\n'
                 'The source graph contains documented NA dangling references: importer overall FAIL must remain visible.\n'
                 'Runtime, devices, authentication and Codex receiver G0 are NOT_RUN.\n'
-                'ZIP file ID/hash and publication checks are in the external DELIVERY_RECEIPT.json to avoid self-reference.\n')
+                'ZIP file ID/hash and publication checks are in the external DELIVERY_RECHECK_RECEIPT.json to avoid self-reference.\n')
         put('READ_FIRST.md', note.encode())
         wrapper = {'schema': 'baram.p1_5.package_manifest/1', 'source_commit': args.source_commit, 'files': entries,
                    'manifest_self_excluded': True, 'runtime_tests': 'NOT_RUN', 'codex_receiver': 'NOT_RUN'}

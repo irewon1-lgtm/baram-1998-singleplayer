@@ -35,3 +35,5 @@ Python 3.12.14, zlib 1.3.2, libarchive banner 3.7.2를 확인했다. 설치 패�
 정적 해제도 native parser를 사용하므로 악성 입력의 위험이 사라지는 것은 아니다. 바이트·깊이 한도는 있으나 컨테이너 전체가 외부 누적 검사 전에 메모리에 올라갈 수 있고, 별도 CPU/메모리/실행시간 격리를 전수 시험하지 않았다. 새 대용량·미신뢰 형식은 제한된 복사본과 고정 도구로 처리해야 한다. 서명/토큰 패턴 검사는 휴리스틱이며 난독화된 비밀, 모든 Git 과거 object, 악성코드 전체를 검사하지 않았다.
 
 공개 예정 P1.5 파일 집합(AGENTS·STATE·수정 검증기·P1.5 도구/문서, 비공개 selected JSONL 제외) 62개를 최종용 감사 도구로 읽어 파일명·강한 비밀 표식을 검사했고 오류·표식 0건이었다. 격리 ZIP 9종(정상, 빈 입력, 경로 이탈, symlink, 전송 receipt, 합성 토큰, manifest 누락·변조, CRC 변조)의 예상 거부/통과를 실제 확인했다. 결과는 `package_security_validation.json`이다. 완성 outer ZIP 및 최종 커밋 tree는 아직 NOT_RUN이며 실제 파일 집합을 받은 뒤 별도로 검사한다. 이 공개 파일 집합의 정적 PASS를 최종 배포·악성코드 부재 PASS로 쓰지 않는다.
+
+최종 인계의 outer PACKAGE_MANIFEST와 내부 SOURCE_MANIFEST·정규화 catalog를 전체 파일 집합/길이/SHA로 대조한다. 누락·추가·동일개수 교체·해시/길이변조 등 격리20회귀를 사용하며 실제 완성 ZIP 결과는 외부 DELIVERY_RECHECK_RECEIPT.json에 기록한다. 앞의62파일/9회귀 기록은 과거 스냅샷이고 최종 패키지 결과가 아니다.
