@@ -1,0 +1,67 @@
+{
+  "plan_id": "BARAM_REBUILD_PLAN_V1_20261015",
+  "plan_version": "1.0",
+  "recorded_date": "2026-10-15",
+  "timezone": "Asia/Seoul",
+  "repository": "irewon1-lgtm/baram-1998-singleplayer",
+  "planning_branch": "planning/rebuild-20261015",
+  "branch_base_sha": "443b49abe97948f59893d3e23f667b0e2eb5e8ff",
+  "master_plan_path": "docs/rebuild/MASTER_PLAN.md",
+  "master_plan_commit": "3adf98171efc422efcf1db1d589b075d8acad65a",
+  "entrypoint_path": "AGENTS.md",
+  "status": "PLAN_RECORDED",
+  "implementation_status": "NOT_STARTED",
+  "user_decisions": {
+    "clean_rebuild": "CONFIRMED",
+    "preserve_originals_and_existing_game": "RETAINED",
+    "prepare_and_record_plan_before_development": "CONFIRMED",
+    "detailed_execution_sequence": "PROPOSAL_FOR_USER_REVIEW",
+    "new_implementation_authorized_by_this_turn": false
+  },
+  "question_coverage": {
+    "Q1_acquisition_and_hard_to_observe_behaviors": "MASTER_PLAN section 2",
+    "Q2_duplicate_conflict_missing_corrupt_information": "MASTER_PLAN section 3",
+    "Q3_acquired_but_unused_sources": "MASTER_PLAN section 4",
+    "Q4_development_sequence": "MASTER_PLAN section 5",
+    "Q5_predevelopment_quality_and_risk_controls": "MASTER_PLAN section 6"
+  },
+  "completed_in_this_turn": [
+    "Read prior v2 restoration instructions and defect checklist",
+    "Confirmed existence of selected mounted original/client/build archives; not a new full binary audit",
+    "Read actual repository branch references",
+    "Read Project1998 README, Architecture and research documentation",
+    "Reviewed public resource-tool and official Godot documentation",
+    "Authored and stored the clean rebuild plan and worker entrypoint"
+  ],
+  "not_run": [
+    "New game implementation",
+    "Bulk source acquisition and extraction",
+    "Reference client/server execution",
+    "New original-asset parser or renderer validation",
+    "New Windows/Android builds and native playtests",
+    "Real Galaxy device tests",
+    "Real authentication and cross-device save roundtrip",
+    "Existing save migration"
+  ],
+  "source_limitations": [
+    "Project1998 functionality is a maintainer documentation claim until independently run",
+    "Linked Essorcal/project1998-testclient README fetch returned 404 in this connection",
+    "Prior asset counts and build audit results are historical handoff claims, not current runtime verification",
+    "Godot audio documentation notes incomplete update for version 4.7"
+  ],
+  "next_action_after_user_instruction": "P0/P1: preserve source identities, establish requirements-to-evidence inventory and missing-data priorities, then execute P2 risk proofs on Windows and Android before bulk runtime implementation.",
+  "unresolved_before_architecture_freeze": [
+    "Coherent default Korean era/profile and exact source-to-feature matches",
+    "Reference server/client pair independently executable in available free environment",
+    "Korean map parser and render metadata verified against independent references",
+    "Chosen Godot/language/export toolchain actually passes both target platforms",
+    "Free account synchronization path and real-device verification access"
+  ],
+  "forbidden_without_later_authorization": [
+    "Reset, force-push or overwrite existing branches",
+    "Delete or overwrite original assets, installed builds or saves",
+    "Change production game or deploy",
+    "Republish original client/resource archives",
+    "Incur new costs"
+  ]
+}
