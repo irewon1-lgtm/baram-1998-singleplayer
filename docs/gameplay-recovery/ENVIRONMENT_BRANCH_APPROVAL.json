@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "operation": "Add one exact existing recovery branch to selected deployment branches",
+  "environment": "baram-windows-private",
+  "branch": "work/gameplay-recovery-20261015",
+  "observed_before": [
+    "codex/game-core",
+    "work/mobile-controls-20261015"
+  ],
+  "observed_after": [
+    "codex/game-core",
+    "work/gameplay-recovery-20261015",
+    "work/mobile-controls-20261015"
+  ],
+  "policy": "Selected branches and tags",
+  "tags_allowed": 0,
+  "protection_rules_unchanged": true,
+  "secrets_or_values_changed": false,
+  "confirmation": "User explicitly approved this exact change in the immediately following message",
+  "observed_success": "Deployment branch rule \"work/gameplay-recovery-20261015\" saved successfully.",
+  "verified_at_utc": "2026-10-15T11:47:10.058320+00:00",
+  "latest_test_helper_source_commit": "dc36b5c7f3283fd10739947238b0c6b1b56dbccc",
+  "native_run": "REQUESTED_AFTER_THIS_COMMIT"
+}

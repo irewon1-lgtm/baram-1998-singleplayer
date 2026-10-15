@@ -1,4 +1,4 @@
-name: Gameplay recovery native packages
+name: Gameplay recovery native verification
 on:
   push:
     branches: [work/mobile-controls-20261015, work/gameplay-recovery-20261015]
