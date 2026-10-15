@@ -1,0 +1,94 @@
+name: Android full private candidate check (cloud release blocked)
+on:
+  push:
+    branches: [codex/game-core]
+    paths: [.github/workflows/android-private-check.yml]
+  workflow_dispatch:
+    inputs:
+      source_ref:
+        description: Reviewed mobile source commit to verify; this diagnostic never publishes a cloud-ready player
+        default: 54f4d969971ac10c7e22b179cec2aa5545a6b5ff
+permissions:
+  contents: read
+jobs:
+  original-android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    environment: baram-windows-private
+    env:
+      PRIVATE_REPO: ${{ vars.BARAM_PRIVATE_REPOSITORY || 'irewon1-lgtm/baram-windows-private' }}
+      GH_TOKEN: ${{ secrets.BARAM_PRIVATE_REPO_TOKEN }}
+      SOURCE_REF: ${{ inputs.source_ref || '54f4d969971ac10c7e22b179cec2aa5545a6b5ff' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ env.SOURCE_REF }}
+          path: mobile-source
+          persist-credentials: false
+      - name: Verify private input and diagnostic destination
+        run: |
+          test -n "$GH_TOKEN"
+          test "$(gh api repos/$PRIVATE_REPO --jq .private)" = true
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ env.PRIVATE_REPO }}
+          token: ${{ secrets.BARAM_PRIVATE_REPO_TOKEN }}
+          path: vault
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Official pinned engine and exact private runtime
+        working-directory: mobile-source
+        run: |
+          python -m pip install Pillow==11.3.0
+          curl -fL https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_linux.x86_64.zip -o godot.zip
+          echo 'd0bc2113065e481c9c2c2b2c37daa4e8be3fe9e27f0ab9ab0b6096e9a37907f3  godot.zip' | sha256sum --check
+          unzip -q godot.zip -d editor
+          chmod +x editor/Godot_v4.6.3-stable_linux.x86_64
+          curl -fL https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_export_templates.tpz -o templates.tpz
+          echo '3fbe2c0e2dec9d537ab9ec97bcf8da91dcf23357fc51f67092dd068d839290a8  templates.tpz' | sha256sum --check
+          unzip -q templates.tpz templates/android_debug.apk templates/android_release.apk
+          python tools/restore_private_runtime.py --vault ../vault --out ../vault/runtime
+          python tools/test_android_signing.py --out test-signing
+          mkdir -p seed/saves/v2
+          editor/Godot_v4.6.3-stable_linux.x86_64 --headless --path game -- --assets="$GITHUB_WORKSPACE/vault/runtime/private_assets" --content="$GITHUB_WORKSPACE/vault/runtime/private_content" --save="$PWD/seed/saves/v2/character.json" --exercise=mobile-pc-seed --evidence="$PWD/seed"
+          python tools/android_ci.py --runtime ../vault/runtime --godot "$PWD/editor/Godot_v4.6.3-stable_linux.x86_64" --template templates/android_debug.apk --sdk "$ANDROID_HOME" --signing test-signing/fixture.json --verification --probe-mode mobile-smoke --initial-save seed/saves/v2/character.json --out android-check
+          python tools/android_ci.py --runtime ../vault/runtime --godot "$PWD/editor/Godot_v4.6.3-stable_linux.x86_64" --template templates/android_release.apk --sdk "$ANDROID_HOME" --signing ../vault/android/android-signing.json --out android-candidate
+      - name: KVM for the original-content Android test
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+      - name: Original-content APK, touch input, save and fresh PC process
+        uses: ReactiveCircus/android-emulator-runner@4c44018e59b437e86cdfc41da381398f93ed8808
+        with:
+          api-level: 35
+          arch: x86_64
+          target: google_apis
+          ram-size: 4096M
+          disable-animations: true
+          emulator-options: -no-window -gpu swangle -noaudio -no-boot-anim -camera-back none -memory 4096
+          script: python mobile-source/tools/android_emulator_test.py --apk mobile-source/android-check/baram-Android-verification.apk --godot "$GITHUB_WORKSPACE/mobile-source/editor/Godot_v4.6.3-stable_linux.x86_64" --project mobile-source/game --runtime vault/runtime --out mobile-source/emulator-evidence
+      - name: Preserve diagnostics and candidate only in private draft
+        if: always()
+        working-directory: mobile-source
+        run: |
+          test "$(gh api repos/$PRIVATE_REPO --jq .private)" = true
+          python - <<'PY'
+          from pathlib import Path
+          import zipfile
+          with zipfile.ZipFile('private-android-check.zip','w',zipfile.ZIP_DEFLATED) as z:
+              for folder in ['seed','emulator-evidence','android-check','android-candidate']:
+                  for p in Path(folder).rglob('*'):
+                      if p.is_file() and (p.suffix=='.log' or p.suffix=='.png' or p.name in ['android-build.json','android-metrics.json','mobile-report.json']):z.write(p,p.as_posix())
+          PY
+          tag="android-check-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+          gh release create "$tag" --repo "$PRIVATE_REPO" --draft --title "Private Android native check; cloud release BLOCKED" --notes 'Original-content emulator/file-format evidence. Not a verified cloud-continuity release. Galaxy hardware and real account roundtrip remain unverified.'
+          gh release upload "$tag" private-android-check.zip --repo "$PRIVATE_REPO"
+          if test -f android-candidate/baram-Android-arm64.apk; then gh release upload "$tag" android-candidate/baram-Android-arm64.apk --repo "$PRIVATE_REPO"; fi
+      - name: Scope and publication guard
+        if: always()
+        run: |
+          echo 'Private original-content diagnostic only. No public original artifacts, no cloud-ready release.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Real account HTTPS PC/Android/PC and Galaxy hardware are still separately unverified.' >> "$GITHUB_STEP_SUMMARY"
