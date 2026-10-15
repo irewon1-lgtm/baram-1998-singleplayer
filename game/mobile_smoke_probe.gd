@@ -5,6 +5,8 @@ func check(ok: bool, name: String):
     checks.append({"name":name,"status":"PASS" if ok else "FAIL"})
     print("MOBILE_CHECK "+name+" "+("PASS" if ok else "FAIL"))
 func tap(game,point: Vector2,index=1):
+    # Synthetic Input events enter through the window, in physical pixels.
+    point=game.get_viewport().get_screen_transform()*point
     var press=InputEventScreenTouch.new();press.index=index;press.position=point;press.pressed=true
     Input.parse_input_event(press)
     await get_tree().create_timer(.08).timeout
@@ -42,7 +44,11 @@ func run(game,mode,directory):
         check(game.save_game(),"Android_saved_shared_schema2")
         await RenderingServer.frame_post_draw
         var frame=game.get_viewport().get_texture().get_image()
-        check(not frame.is_empty() and frame.save_png(directory.path_join("android-frame.png"))==OK,"Android_rendered_frame")
+        var colors={}
+        if not frame.is_empty():
+            for y in range(0,frame.get_height(),8):
+                for x in range(0,frame.get_width(),8):colors[frame.get_pixel(x,y).to_rgba32()]=true
+        check(not frame.is_empty() and colors.size()>=8 and frame.save_png(directory.path_join("android-frame.png"))==OK,"Android_rendered_game_frame_not_blank")
         var report={"status":"PASS" if checks.all(func(c):return c.status=="PASS") else "FAIL", "checks":checks,
             "platform":OS.get_name(),"scope":"NATIVE_EMULATOR_FILE_TRANSPORT_NOT_CLOUD_NOT_GALAXY", "name":game.player.name,"before":before,"after":[game.player.x,game.player.y]}
         var f=FileAccess.open(directory.path_join("mobile-report.json"),FileAccess.WRITE);f.store_string(JSON.stringify(report));f.close()

@@ -83,7 +83,7 @@ jobs:
           target: google_apis
           ram-size: 4096M
           disable-animations: true
-          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -memory 4096
+          emulator-options: -no-window -gpu swangle -noaudio -no-boot-anim -camera-back none -memory 4096
           script: python tools/android_emulator_test.py --apk android-fixture/baram-Android-verification.apk --godot "$PWD/editor/Godot_v4.6.3-stable_linux.x86_64" --project game --runtime fixture --out emulator-evidence
       - name: Publish only generated fixture diagnostics
         if: always()

@@ -43,7 +43,9 @@ def main(args):
     for name in ['character.json','mobile-report.json','android-frame.png']:
         content=adb('exec-out','run-as',PACKAGE,'cat',find_file(name)).stdout
         (out/name).write_bytes(content)
+    print(json.dumps(report,ensure_ascii=False))
     if report['status']!='PASS' or report['platform']!='Android':raise RuntimeError('Android native test failed')
+    if re.search(r'E/godot\s*\([^\n]+(?:ERROR:|SCRIPT ERROR:)',raw):raise RuntimeError('Godot engine error; inspect Android logcat')
     if not peak:raise RuntimeError('Android PSS measurement missing')
     ready=re.findall(r'BARAM_READY (\{[^\n]+\})',raw)
     startup=json.loads(ready[-1]) if ready else {}
