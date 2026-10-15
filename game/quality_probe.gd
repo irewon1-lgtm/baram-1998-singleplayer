@@ -49,6 +49,7 @@ func run(g, mode: String, directory: String):
     game=g;root=directory;started=Time.get_ticks_msec();DirAccess.make_dir_recursive_absolute(root)
     if mode in ["quality-core","quality-soak"]:
         await super.run(g,"work-core",directory)
+        await touch_combat_and_loot()
         check(await guided(game.world.home.map),"return_to_town_through_existing_travel_service")
     else:
         game.name_edit.release_focus();await key(KEY_ENTER);await key(KEY_E)
@@ -56,6 +57,12 @@ func run(g, mode: String, directory: String):
     if game.touch_controls==null:
         check(false,"mobile_overlay_exists");complete();return
     check(game.field_rect()==game.get_viewport_rect(),"field_uses_entire_mobile_viewport")
+    var disjoint=true;var inside=true
+    var targets=game.touch_controls.targets
+    for i in range(targets.size()):
+        inside=inside and game.get_viewport_rect().encloses(targets[i].rect)
+        for j in range(i+1,targets.size()):disjoint=disjoint and not targets[i].rect.intersects(targets[j].rect)
+    check(disjoint and inside,"HUD_touch_targets_inside_screen_without_overlap")
     await capture("mobile-field")
     # Visual direction evidence: actual layered render for idle/walk/attack.
     for d in range(4):
@@ -134,6 +141,44 @@ func run(g, mode: String, directory: String):
         check(true,"600_seconds_continuous_live_process",{"elapsed_ms":Time.get_ticks_msec()-elapsed_start})
         check(game.frame_times.size()>0,"post_capture_frame_timing_collected",{"duration_ms":Time.get_ticks_msec()-measured_start,"scope":"software_rendered_source_after_screenshots_not_Android_FPS"})
     complete()
+
+func touch_combat_and_loot():
+    var selected=false;var hit=false;var picked=false
+    for attempt in range(12):
+        var rabbits=game.entities.values().filter(func(e):return e.map==game.player.map and e.alive and e.spec.name=="토끼")
+        rabbits.sort_custom(func(a,b):return Vector2i(a.x,a.y).distance_to(game.cell())<Vector2i(b.x,b.y).distance_to(game.cell()))
+        if rabbits.is_empty() or game.player.hp<=0:break
+        var e=rabbits[0];var reached=false
+        for d in game.DIRECTIONS:
+            var at=Vector2i(e.x,e.y)+d
+            if game.free_cell(game.player.map,at) and await route(at):reached=true;break
+        if not reached:continue
+        var before=game.event_log.filter(func(row):return row.event=="attack_started").size()
+        await tap(game.screen_point(e.x,e.y)-Vector2(0,42))
+        selected=selected or (game.selected_target==e.id and game.event_log.filter(func(row):return row.event=="attack_started").size()==before)
+        await capture("mobile-combat")
+        await touch(game.touch_controls.center_for(KEY_SPACE),true,2)
+        var limit=Time.get_ticks_msec()+5000
+        while e.alive and Time.get_ticks_msec()<limit:await get_tree().create_timer(.1).timeout
+        await touch(game.touch_controls.center_for(KEY_SPACE),false,2)
+        hit=hit or not e.alive
+        var drops=game.loot.filter(func(n):return n.map==game.player.map)
+        if drops.is_empty():continue
+        var drop=drops[0];var target=Vector2i(drop.x,drop.y)
+        for d in game.DIRECTIONS:
+            var away=target+d*3
+            if game.free_cell(game.player.map,away) and await route(away):break
+        var inventory_before=int(game.player.inventory.get(drop.item,0))
+        await tap(game.screen_point(drop.x,drop.y)-Vector2(0,14))
+        var distant=game.cell().distance_to(target)>1.1
+        check(not distant or int(game.player.inventory.get(drop.item,0))==inventory_before,"distant_loot_not_collected_remotely")
+        await wait_path(15)
+        picked=int(game.player.inventory.get(drop.item,0))>inventory_before
+        await capture("mobile-loot")
+        if picked:break
+    check(selected,"monster_tap_selects_without_immediate_attack")
+    check(hit,"touch_attack_hits_selected_monster")
+    check(picked,"real_drop_tap_approaches_then_increases_inventory")
 
 func complete():
     var times=game.frame_times.duplicate();times.sort()

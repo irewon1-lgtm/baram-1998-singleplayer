@@ -6,4 +6,6 @@
 - Official store: https://play.google.com/store/apps/details?id=com.nexon.baram . Store identity and official links inspected; promotional screenshots were not used as control-behavior evidence.
 - Actual gameplay article: https://www.inven.co.kr/webzine/news/?news=241340 (2020-07-15). Embedded videos identified from page: https://www.youtube.com/watch?v=AQTYCFUphkA and https://www.youtube.com/watch?v=_xwgaCQuKm4 . Video playback was unavailable in this browser (Unable to play media); no timestamps or observed video behavior are claimed.
 
+The second embedded video subsequently redirected this browser to Google's unusual-traffic reCAPTCHA. No challenge was attempted and no video behavior/timestamp is claimed.
+
 Observed: layout and guide-described joystick/quick-slot/menu access. Not established by these sources: tapping portrait to open details, arbitrary floor tap routing, target-approach semantics. Those are this user's explicit requirements implemented for this offline game, not claimed original Yeon behavior.

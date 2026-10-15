@@ -13,6 +13,7 @@ var scroll_origin=0
 var toast=""
 var toast_until=0.0
 var hud_portrait
+var portrait_key=""
 var rows=[] # compatibility with old diagnostic introspection; no strip buttons
 var buttons=[]
 
@@ -47,8 +48,8 @@ func layout():
     var center=Vector2(safe.end.x-unit*.65,safe.end.y-unit*.65)
     add_target("attack",Rect2(center-Vector2.ONE*unit*.6,Vector2.ONE*unit*1.2))
     add_target("skill0",Rect2(center+Vector2(-unit*1.72,-unit*.42),Vector2.ONE*unit))
-    add_target("skill1",Rect2(center+Vector2(-unit*1.2,-unit*1.6),Vector2.ONE*unit))
-    add_target("skill2",Rect2(center+Vector2(-unit*.5,-unit*1.95),Vector2.ONE*unit))
+    add_target("skill1",Rect2(center+Vector2(-unit*1.65,-unit*1.65),Vector2.ONE*unit))
+    add_target("skill2",Rect2(center+Vector2(-unit*.45,-unit*2.15),Vector2.ONE*unit))
     if not game.player.is_empty():
         var context=context_action()
         if context!="":add_target(context,Rect2(Vector2(safe.end.x-unit*3.25,safe.end.y-unit*1.1),Vector2.ONE*unit))
@@ -206,7 +207,12 @@ func _draw():
         if id=="status":
             panel(rect);var a=rect.position
             draw_circle(a+Vector2(32,31),20,Color(.32,.33,.25,.9))
-            draw_circle(a+Vector2(32,25),7,Color(.8,.7,.48));draw_arc(a+Vector2(32,41),12,PI,TAU,12,Color(.8,.7,.48),4)
+            update_portrait()
+            if hud_portrait!=null:
+                var size=Vector2(hud_portrait.get_size());size*=minf(38/size.x,44/size.y)
+                draw_texture_rect(hud_portrait,Rect2(a+Vector2(32,31)-size/2,size),false)
+            else:
+                draw_circle(a+Vector2(32,25),7,Color(.8,.7,.48));draw_arc(a+Vector2(32,41),12,PI,TAU,12,Color(.8,.7,.48),4)
             text(p.name+"  Lv."+str(p.level),a+Vector2(61,25),18)
             for i in range(2):
                 var r=Rect2(a+Vector2(62,38+i*18),Vector2(180,11))
@@ -246,6 +252,19 @@ func modal_rect() -> Rect2:
 
 func visible_rows() -> int:return maxi(2,int((modal_rect().size.y-210)/(maxf(52,unit*.65))))
 
+func update_portrait():
+    var p=game.player
+    var gear=p.get("equipment_instances",{}).get(p.get("equipment_slots",{}).get("head",""),{})
+    var key_value=p.job+":"+str(gear.get("definition_id",""))
+    if portrait_key==key_value:return
+    portrait_key=key_value;hud_portrait=null
+    var classes=game.content.by_kind("class").filter(func(id):return game.content.definition(id).get("name","")==p.job)
+    if classes.is_empty():return
+    var head=game.content.definition(classes[0]).get("visual",{}).get("head_asset_id","")
+    head=game.rules.runtime_definitions.get(gear.get("definition_id",""),{}).get("data",{}).get("visual",{}).get("equipment_asset_id",head)
+    var frame=game.work_assets.frame_index(head,"walk_unarmed",2,100)
+    if frame>=0:hud_portrait=game.work_assets.icon(head,frame)
+
 func modal_button(id: String, title: String, rect: Rect2):
     add_target(id,rect);panel(rect,Color(.19,.22,.17,.95),9)
     text(title,rect.position+Vector2(14,rect.size.y*.5+7),18,Color(.96,.9,.72),rect.size.x-20)
@@ -254,10 +273,11 @@ func draw_modal():
     targets=[]
     draw_rect(get_viewport_rect(),Color(0,0,0,.46))
     var r=modal_rect();panel(r,Color(.07,.09,.08,.97))
-    var headings={"status":"캐릭터 정보","inventory":"가방","pause":"메뉴","equipment":"장비","skills":"배운 기술","trainer":"기술 수련","shop":"물품 거래","dialogue":"대화","services":"NPC 서비스","travel":"길 안내","map":"지역 목록"}
+    var headings={"status":"캐릭터 정보","inventory":"가방","pause":"메뉴","equipment":"장비","skills":"배운 기술","trainer":"기술 수련","shop":"물품 거래","dialogue":"대화","services":"NPC 서비스","travel":"길 안내","map":"지역 목록","compass":"비영사천문","quests":"의뢰와 보상","advancement":"승급","recipe":"재료 제작","experience_exchange":"경험치 교환","enhancement":"장비 강화","save_error":"저장 오류 · 원본 보존"}
     text(headings.get(game.menu,game.menu),r.position+Vector2(25,40),25)
     var close=Rect2(Vector2(r.end.x-unit-8,r.position.y+4),Vector2.ONE*unit)
     add_target("close",close);glyph("close",close.get_center(),unit)
+    if not game.log_lines.is_empty():text(str(game.log_lines.back()),r.position+Vector2(28,73),16,Color(.85,.8,.64),r.size.x-56)
     if game.menu=="status":
         var p=game.player;var y=r.position.y+102
         for line in [p.name+" · "+p.job+" · 레벨 "+str(p.level),"체력  %d / %d     마력  %d / %d"%[p.hp,p.hp_max,p.mp,p.mp_max],"경험치  %s     금전  %d전"%[str(float(p.xp2)/2),p.gold],"힘  %d     사냥  %d"%[p.strength,p.kills],"무기  "+game.rules.display_name(p.equipped) if p.equipped!="" else "무기  맨손","옷  "+game.rules.display_name(p.get("armor_equipped",""))]:
@@ -272,13 +292,24 @@ func draw_modal():
         text("버전  "+game.store.game_build.left(12),Vector2(r.position.x+28,r.end.y-48),16)
         if game.continuity!=null:text(game.continuity.badge.text,Vector2(r.position.x+28,r.end.y-22),16)
         return
+    if game.menu=="dialogue":
+        var paragraphs=PackedStringArray()
+        for line in game.choices.slice(scroll_origin):paragraphs.append(str(line))
+        draw_multiline_string(game.font,r.position+Vector2(28,120),"\n\n".join(paragraphs),HORIZONTAL_ALIGNMENT_LEFT,r.size.x-56,21,maxi(1,int((r.size.y-150)/28)),Color(.94,.9,.76))
+        return
     var row_h=maxf(52,unit*.65);var count=visible_rows()
     for i in range(scroll_origin,mini(game.choices.size(),scroll_origin+count)):
         var choice=game.choices[i];var id=str(choice);var title=game.rules.display_name(id)
         if game.menu=="services":title=choice.get("name",choice.get("type","서비스"))
-        elif game.menu=="equipment":title=game.rules.display_name(game.player.equipment_instances[id].definition_id)
+        elif game.menu=="equipment":title=game.rules.display_name(game.player.equipment_instances[id].definition_id)+" +"+str(int(game.player.equipment_instances[id].enhancement_level))
         elif game.menu=="travel":title=game.maps[game.world.get("map_aliases",{}).get(id,id)].name
         if game.menu=="inventory":title+="  ×"+str(game.player.inventory.get(id,0))
+        elif game.menu=="quests":title+=" · "+{"ACTIVE":"진행 중","CLAIMED":"보상 받음"}.get(game.player.quest_progress.get(id,{}).get("state",""),"접수 가능")
+        elif game.menu=="shop":
+            var price=int(game.rules.value_or(game.rules.item(id),"vendor_buy_price",5))
+            for offer in game.npc.get("work_offers",[]):
+                if offer.get("item_id","")==id:price=int(offer.get("price_gold",offer.get("buy_price",offer.get("price",price))))
+            title+=" · %d전 · 보유 %d"%[price,int(game.player.inventory.get(id,0))]
         var row=Rect2(r.position+Vector2(22,92+(i-scroll_origin)*row_h),Vector2(r.size.x-44,row_h-3))
         add_target("row:"+str(i),row)
         if game.selected==i:panel(row,Color(.28,.27,.15,.95),6)
@@ -294,8 +325,18 @@ func draw_modal():
     if game.menu=="trainer":commands.append([KEY_ENTER,"습득"])
     var width=(r.size.x-44)/maxi(1,commands.size())
     for i in range(commands.size()):modal_button("key:"+str(commands[i][0]),commands[i][1],Rect2(Vector2(r.position.x+22+i*width,r.end.y-unit-18),Vector2(width-6,unit)))
+    var detail=""
     if game.choices.is_empty():text("표시할 항목이 없습니다.",r.position+Vector2(35,130),20)
-    elif game.choices.size()>count:text("위아래로 밀어 더 보기",Vector2(r.position.x+28,r.end.y-unit-32),16)
+    elif game.menu=="inventory":
+        var it=game.rules.item(str(game.choices[game.selected]))
+        detail="공격 %d~%d · 방어 %d · 필요 힘 %d"%[int(game.rules.value_or(it,"damage_min",0)),int(game.rules.value_or(it,"damage_max",0)),int(game.rules.value_or(it,"armor_class",0)),int(game.rules.value_or(it,"strength_required",0))]
+    elif game.menu in ["skills","trainer"]:
+        var id=str(game.choices[game.selected]);var s=game.rules.skill(game.player,id)
+        detail="%s · 마력 %d"%[game.rules.display_name(id),int(game.rules.value_or(s,"cast_mp",0))]
+        if game.menu=="trainer":detail+=" · Lv.%d · %s전"%[int(game.rules.value_or(s,"learn_level",0)),str(s.get("learn_money","미확정"))]
+    elif game.menu=="services" and not game.npc.get("dialogue",[]).is_empty():detail=game.npc.dialogue[0].get("text","")
+    if detail!="":text(detail,Vector2(r.position.x+28,r.end.y-unit-34),17,Color(.94,.9,.76),r.size.x-56)
+    if game.choices.size()>count:text("↕",Vector2(r.end.x-25,r.end.y-unit-34),18)
 
 func _notification(what):
     if what in [NOTIFICATION_APPLICATION_PAUSED,NOTIFICATION_APPLICATION_FOCUS_OUT]:release_all()
