@@ -24,8 +24,41 @@ func run(g,mode,directory):
             var captured=not frame.is_empty() and colors.size()>=8
             if captured:captured=frame.save_png(root.path_join("windows-startup-frame.png"))==OK
             check(captured,"windowed_game_frame_rendered",{"sampled_colors":colors.size(),"width":frame.get_width(),"height":frame.get_height()})
+            await visual_directions()
         finish();return
     await super.run(g,"work-restart" if mode=="native-restart" else "work-core",directory)
+
+func visual_frame(title: String):
+    await RenderingServer.frame_post_draw
+    var image=game.get_viewport().get_texture().get_image()
+    check(not image.is_empty() and image.save_png(root.path_join(title+".png"))==OK,"captured_"+title)
+
+func visual_directions():
+    game.name_edit.release_focus()
+    await key(KEY_ENTER);await key(KEY_E)
+    # Reach a nearby open cross using existing collision data and actual keys.
+    var origin=game.cell();var reached=false
+    for radius in range(1,7):
+        for offset in [Vector2i(radius,0),Vector2i(-radius,0),Vector2i(0,radius),Vector2i(0,-radius)]:
+            var at=origin+offset
+            if game.free_cell(game.player.map,at) and game.DIRECTIONS.all(func(d):return game.free_cell(game.player.map,at+d)):
+                if await route(at):reached=true;break
+        if reached:break
+    check(reached,"native_visual_reaches_open_cross_by_keyboard")
+    await visual_frame("windows-field")
+    for d in range(4):
+        var code=[KEY_UP,KEY_LEFT,KEY_DOWN,KEY_RIGHT][d]
+        await key(code,.03,true)
+        var press=InputEventKey.new();press.keycode=code;press.physical_keycode=code;press.pressed=true;Input.parse_input_event(press)
+        await get_tree().create_timer(.06).timeout
+        await visual_frame("windows-direction-"+str(d)+"-walk")
+        press=InputEventKey.new();press.keycode=code;press.physical_keycode=code;press.pressed=false;Input.parse_input_event(press)
+        await get_tree().create_timer(.25).timeout
+        await visual_frame("windows-direction-"+str(d)+"-idle")
+        await key(KEY_SPACE,.17)
+        await visual_frame("windows-direction-"+str(d)+"-attack")
+        await get_tree().create_timer(.6).timeout
+    await key(KEY_I);await visual_frame("windows-bag");await key(KEY_ESCAPE)
 
 func capture(title: String):
     # Rendering assertions require an independently observed Windows GUI.

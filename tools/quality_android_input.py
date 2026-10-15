@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Exercise the exact signed release APK with Android OS input, no test pack."""
-import argparse,hashlib,json,subprocess,time,re,traceback
+import argparse,hashlib,json,subprocess,time,re,traceback,xml.etree.ElementTree as ET
 from pathlib import Path
 P='org.irewon.baram.singleplayer'
 def adb(*args,check=True):
@@ -17,17 +17,36 @@ def main(a):
  def key(code):adb('shell','input','keyevent',code);time.sleep(.2)
  def tap(x,y):adb('shell','input','tap',int(x),int(y));time.sleep(.15)
  def diag():
-  key(138)
   names=adb('shell','find',f'/data/user/0/{P}/files','-path','*/diagnostics/latest.json').decode().splitlines()
-  if len(names)!=1:raise RuntimeError('F8 diagnostic missing')
-  return json.loads(adb('exec-out','cat',names[0]))
- def launch():
+  for name in names:adb('shell','rm','-f',name) # This test's previous diagnostic, never a save.
+  key(138)
+  for _ in range(30):
+   names=adb('shell','find',f'/data/user/0/{P}/files','-path','*/diagnostics/latest.json').decode().splitlines()
+   if len(names)==1:
+    try:return json.loads(adb('exec-out','cat',names[0]))
+    except json.JSONDecodeError:pass
+   time.sleep(.2)
+  raise RuntimeError('F8 diagnostic missing after bounded wait')
+ def dismiss_fullscreen_notice():
+  adb('shell','uiautomator','dump','/sdcard/baram-window.xml',check=False)
+  raw=adb('exec-out','cat','/sdcard/baram-window.xml',check=False)
+  if not raw.strip():return
+  try:tree=ET.fromstring(raw)
+  except ET.ParseError:return
+  for node in tree.iter('node'):
+   if node.get('text') in ['Got it','확인'] and node.get('package')=='com.android.systemui':
+    bounds=list(map(int,re.findall(r'\d+',node.get('bounds',''))))
+    if len(bounds)==4:tap((bounds[0]+bounds[2])/2,(bounds[1]+bounds[3])/2);print('Dismissed Android first-use fullscreen notice',flush=True)
+ def launch(resume=False):
+  prior_pid=adb('shell','pidof',P,check=False).strip()
   comp=adb('shell','cmd','package','resolve-activity','--brief','-a','android.intent.action.MAIN','-c','android.intent.category.LAUNCHER','-p',P).decode().strip().splitlines()[-1]
   adb('shell','am','start','-W','-n',comp)
   until=time.monotonic()+100
   while time.monotonic()<until:
    raw=adb('logcat','-d','-v','brief').decode(errors='replace')
-   if 'BARAM_READY ' in raw:return
+   same_process=resume and prior_pid and prior_pid==adb('shell','pidof',P,check=False).strip()
+   if 'BARAM_READY ' in raw or same_process:
+    dismiss_fullscreen_notice();return
    if 'SCRIPT ERROR:' in raw or 'FATAL EXCEPTION' in raw:raise RuntimeError('Engine error during startup')
    time.sleep(1)
   raise RuntimeError('Startup timed out')
@@ -57,7 +76,7 @@ def main(a):
   tap(80,45);check(diag()['menu']=='status','portrait_opens_status');shot('05-status');key(4)
   d=diag();tap(*ui_point('menu',d));check(diag()['menu']=='pause','menu_icon');shot('06-menu');key(4)
   # OS lifecycle + drag release; touch drag ownership tested separately by game event suite.
-  adb('shell','input','swipe',130,600,230,600,700);key(3);time.sleep(1);adb('logcat','-c');launch();time.sleep(.8)
+  adb('shell','input','swipe',130,600,230,600,700);key(3);time.sleep(1);launch(resume=True);time.sleep(.8)
   before=diag()['position'];time.sleep(1);check(diag()['position']==before,'OS_background_return_no_stuck_movement')
   # Exactly the same signed APK can be installed over its own data without wiping.
   key(135) # F5
@@ -82,7 +101,7 @@ def main(a):
   key(138);key(4);shot('11-tablet-menu')
   check(True,'tablet_ratio_rendered_NOT_GALAXY')
  except Exception:
-  (out/'failure.txt').write_text(traceback.format_exc());shot('failure')
+  failure=traceback.format_exc();(out/'failure.txt').write_text(failure);print(failure,flush=True);shot('failure')
   checks.append({'name':'complete_OS_flow','status':'FAIL'})
  finally:
   raw=adb('logcat','-d','-v','brief').decode(errors='replace');(out/'android-logcat.log').write_text(raw)
