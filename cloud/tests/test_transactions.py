@@ -85,6 +85,13 @@ class Transactions(unittest.TestCase):
     def test_no_lease_cannot_push(self):
         self.open(self.pc)
         self.assertEqual(self.push(self.android,0)['status'],'BUSY')
+    def test_null_stats_and_negative_inventory_rejected(self):
+        self.open(self.pc)
+        for field,value in [('hp',None),('inventory',{'item':-1}),('equipment_instances',None)]:
+            d=json.loads(document());s=json.loads(d['payload']);s['player'][field]=value
+            d['payload']=json.dumps(s);d['sha256']=hashlib.sha256(d['payload'].encode()).hexdigest()
+            with self.assertRaises(psycopg.Error):self.push(self.pc,0,json.dumps(d))
+        self.assertEqual(self.open(self.pc)['version'],0)
     def test_empty_character_release(self):
         self.open(self.pc)
         self.assertEqual(rpc(self.owner,'baram_release_empty',self.pc,COMPAT)['status'],'OK')

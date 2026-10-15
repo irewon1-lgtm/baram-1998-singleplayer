@@ -48,11 +48,20 @@ begin
   if jsonb_typeof(s->'player') is distinct from 'object' or jsonb_typeof(s->'world') is distinct from 'object'
     or not s ? 'rng_state' or not (s->'player') ?& array['level','hp','hp_max','mp','mp_max','gold','inventory']
     or jsonb_typeof(s->'player'->'inventory') is distinct from 'object'
+    or exists (select 1 from unnest(array['level','hp','hp_max','mp','mp_max','gold']) k
+      where jsonb_typeof(s->'player'->k) is distinct from 'number')
     or (s->'player'->>'level')::numeric not between 1 and 99
     or (s->'player'->>'hp_max')::numeric <= 0
     or (s->'player'->>'hp')::numeric not between 0 and (s->'player'->>'hp_max')::numeric
     or (s->'player'->>'mp')::numeric not between 0 and (s->'player'->>'mp_max')::numeric
     or (s->'player'->>'gold')::numeric < 0 then raise exception 'Invalid save'; end if;
+  if exists (select 1 from jsonb_each(s->'player'->'inventory') i
+      where jsonb_typeof(i.value) <> 'number' or (i.value::text)::numeric < 0
+        or trunc((i.value::text)::numeric) <> (i.value::text)::numeric)
+    or (s->'player' ? 'equipment_instances' and jsonb_typeof(s->'player'->'equipment_instances') <> 'object')
+    or (s->'player' ? 'quest_progress' and jsonb_typeof(s->'player'->'quest_progress') <> 'object') then
+    raise exception 'Invalid inventory or progress';
+  end if;
   if p_compatibility is distinct from 'schema2:' || (d->>'content_version') then
     return jsonb_build_object('status','UPDATE_REQUIRED');
   end if;

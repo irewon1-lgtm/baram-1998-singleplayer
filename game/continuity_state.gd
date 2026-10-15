@@ -42,6 +42,7 @@ func select_account(id: String, compat: String, device_id: String) -> bool:
     return true
 
 func mark_dirty() -> bool:
+    if meta.get("conflict",false):error="CONFLICT_PRESERVED";return false
     if not meta.get("leased",false):error="NO_SESSION";return false
     meta.dirty=true
     return persist()
@@ -51,6 +52,7 @@ func compatible_document(text: String) -> bool:
     return typeof(doc)==TYPE_DICTIONARY and int(doc.get("schema",0))==2 and "schema2:"+str(doc.get("content_version",""))==compatibility
 
 func preserve_conflict(remote: String) -> bool:
+    if meta.get("conflict",false):error="CONFLICT_PRESERVED";return false
     var folder=path.get_base_dir().path_join("conflicts").path_join(uuid())
     if DirAccess.make_dir_recursive_absolute(folder)!=OK:return false
     if FileAccess.file_exists(path) and DirAccess.copy_absolute(path,folder.path_join("local.json"))!=OK:return false
@@ -91,6 +93,7 @@ func accept_open(reply: Dictionary, legacy: String) -> bool:
     return persist()
 
 func upload_request() -> Dictionary:
+    if meta.get("conflict",false):error="CONFLICT_PRESERVED";return {}
     if not meta.get("leased",false) or not FileAccess.file_exists(path):return {}
     var store=Store.new()
     if store.read_one(path).is_empty():error="INVALID_LOCAL_SAVE";return {}
