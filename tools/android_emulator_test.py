@@ -59,7 +59,8 @@ def main(args):
         numbers=re.match(r'\s*(\d+)',size.stdout.decode())
         if numbers:installed=int(numbers[1])*1024
     if installed is None:raise RuntimeError('Android installed code size measurement unavailable')
-    write_json(out/'android-metrics.json',{'scope':'ACTUAL_EMULATOR_FIXTURE_NOT_GALAXY_NOT_CLOUD',
+    fixture=json.loads((Path(args.runtime)/'PACKAGE_MANIFEST.json').read_text(encoding='utf-8')).get('fixture',False)
+    write_json(out/'android-metrics.json',{'scope':'ACTUAL_EMULATOR_FIXTURE_NOT_GALAXY_NOT_CLOUD' if fixture else 'ACTUAL_EMULATOR_FULL_ORIGINAL_RUNTIME_NOT_GALAXY_NOT_CLOUD',
         'platform':'Android','peak_observed_pss_bytes':peak,'installed_code_allocated_bytes':installed,
         'internal_game_ready_ms':startup.get('elapsed_ms'),'process_to_ready_seconds':round(first_ready,3) if first_ready else None,
         'apk_bytes':Path(args.apk).stat().st_size,'report':report})

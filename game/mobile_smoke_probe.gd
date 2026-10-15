@@ -21,7 +21,7 @@ func run(game,mode,directory):
         var e=InputEventKey.new();e.keycode=KEY_ENTER;e.pressed=true;game._input(e)
         check(not game.player.is_empty() and game.save_game(),"PC_normal_character_saved")
     elif mode=="mobile-pc-resume":
-        var expected=JSON.parse_string(FileAccess.get_file_as_string(game.options.expected))
+        var expected=game.store.normalize_numbers(JSON.parse_string(FileAccess.get_file_as_string(game.options.expected)))
         check(game.save_loaded,"PC_fresh_process_loaded_Android_save")
         check(game.player.name==expected.name and [game.player.x,game.player.y]==expected.after,"PC_restores_Android_changed_position_and_same_character")
         check(expected.before!=expected.after,"Android_actually_changed_progress")

@@ -93,6 +93,7 @@ jobs:
           path: |
             emulator-evidence/android-logcat.log
             emulator-evidence/mobile-report.json
+            emulator-evidence/character.json
             emulator-evidence/android-metrics.json
             emulator-evidence/android-frame.png
             emulator-evidence/pc-resume.log
