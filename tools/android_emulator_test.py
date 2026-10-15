@@ -10,7 +10,10 @@ from windows_ci import write_json, command
 
 PACKAGE='org.irewon.baram.singleplayer.verification'
 def adb(*args,check=True):
-    return subprocess.run(['adb',*map(str,args)],capture_output=True,check=check)
+    r=subprocess.run(['adb',*map(str,args)],capture_output=True)
+    if check and r.returncode:
+        raise RuntimeError('adb '+str(args[:4])+' failed: '+(r.stdout+r.stderr).decode('utf-8',errors='replace')[:1500])
+    return r
 def find_file(name):
     result=adb('shell','run-as',PACKAGE,'find','files','-name',name).stdout.decode().strip().splitlines()
     if len(result)!=1:raise RuntimeError('Missing/ambiguous Android '+name)
@@ -21,7 +24,10 @@ def main(args):
     adb('shell','pm','clear',PACKAGE)
     adb('logcat','-c')
     start=time.monotonic();peak=0;report=None;raw='';first_ready=None
-    adb('shell','am','start','-W','-n',PACKAGE+'/com.godot.game.GodotApp')
+    resolved=adb('shell','cmd','package','resolve-activity','--brief','-a','android.intent.action.MAIN','-c','android.intent.category.LAUNCHER','-p',PACKAGE).stdout.decode().splitlines()
+    components=[s.strip() for s in resolved if s.strip().startswith(PACKAGE+'/')]
+    if len(components)!=1:raise RuntimeError('Android launcher resolution failed: '+str(resolved))
+    adb('shell','am','start','-W','-n',components[0])
     while time.monotonic()-start<180:
         raw=adb('logcat','-d','-v','brief').stdout.decode('utf-8',errors='replace')
         if 'BARAM_READY ' in raw and first_ready is None:first_ready=time.monotonic()-start

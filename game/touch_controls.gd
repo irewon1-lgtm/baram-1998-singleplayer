@@ -25,7 +25,7 @@ func initialize(g):
     for spec in specs:
         var control=TouchScreenButton.new();control.position=spec[2]
         var width=60 if spec[1] in [KEY_UP,KEY_LEFT,KEY_DOWN,KEY_RIGHT] else 90
-        var shape=RectangleShape2D.new();shape.size=Vector2(width,60);control.shape=shape;control.shape_centered=false
+        var shape=RectangleShape2D.new();shape.size=Vector2(width,60);control.shape=shape;control.shape_centered=true
         var image=Image.create(width,60,false,Image.FORMAT_RGBA8);image.fill(Color(.16,.19,.16,.95))
         control.texture_normal=ImageTexture.create_from_image(image)
         control.pressed.connect(func():held[spec[1]]=true;key(spec[1]))
