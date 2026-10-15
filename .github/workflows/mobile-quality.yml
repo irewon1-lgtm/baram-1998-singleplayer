@@ -59,7 +59,7 @@ jobs:
           ram-size: 4096M
           disable-animations: true
           emulator-options: -no-window -gpu swangle -noaudio -no-boot-anim -camera-back none -memory 4096
-          script: python source/tools/quality_android_input.py --apk source/deliverable/baram-Android-update.apk --out source/deliverable/android-evidence
+          script: python source/tools/quality_android_input.py --apk source/deliverable/baram-Android-update.apk --out source/deliverable/android-evidence --world vault/runtime/private_assets/source_maps/world.json
       - name: Encrypt private artifacts
         if: always()
         working-directory: source
