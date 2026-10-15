@@ -1,0 +1,150 @@
+#!/usr/bin/env python3
+"""Build one arm64 APK for phones/tablets without deleting original content.
+
+Private signing config is supplied from the existing private vault. Public
+cloud config can contain only a publishable key. No deployment PASS is inferred
+from export. Verification APK and player APK are distinct.
+"""
+import argparse
+import base64
+import hashlib
+import json
+import os
+import re
+from pathlib import Path
+import shutil
+import subprocess
+import time
+import zipfile
+from windows_ci import ROOT, command, validate_runtime, write_json, sha256
+
+EXCLUDE='build_world_cache.gd,*runner.gd,*probe.gd,native_regression.gd,exercise.gd,data/balance_tests.json'
+def public_config(path):
+    if not path or not Path(path).exists():return None
+    data=json.loads(Path(path).read_text(encoding='utf-8'))
+    if set(data)!={'url','public_key'} or not data['url'].startswith('https://'):
+        raise ValueError('Only HTTPS URL and public publishable key belong in an app')
+    key=data['public_key']
+    if key.startswith('sb_publishable_'):return data
+    try:
+        claim=json.loads(base64.urlsafe_b64decode(key.split('.')[1]+'==='))
+    except Exception:raise ValueError('Expected a public publishable/anon key')
+    if claim.get('role')!='anon':raise ValueError('Admin/service role keys are forbidden in apps')
+    return data
+
+def build(args):
+    runtime=Path(args.runtime).resolve();out=Path(args.out).resolve()
+    out.mkdir(parents=True,exist_ok=False)
+    metadata,rows=validate_runtime(runtime)
+    project=out/'project';shutil.copytree(ROOT/'game',project,ignore=shutil.ignore_patterns('.godot','*.uid','cloud_public.json'))
+    active=json.loads((runtime/'private_content/ACTIVE.json').read_text(encoding='utf-8')) if (runtime/'private_content/ACTIVE.json').exists() else {'release_id':'legacy-base'}
+    commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
+    write_json(project/'data/build_info.json',{'commit':commit,'content_version':active['release_id']})
+    cloud=public_config(args.cloud)
+    if args.require_cloud and not cloud:raise ValueError('Cloud connection missing; production delivery blocked')
+    if cloud:write_json(project/'data/cloud_public.json',cloud)
+    cache=runtime/'runtime_cache'
+    if not cache.exists():
+        command([args.godot,'--headless','--path',ROOT/'game','--script','build_world_cache.gd','--',
+                 '--assets='+str(runtime/'private_assets'),'--content='+str(runtime/'private_content'),'--out='+str(cache)],out/'cache.log')
+    cm=json.loads((cache/'manifest.json').read_text(encoding='utf-8'))
+    if cm['source_world_sha256']!=sha256(runtime/'private_assets/source_maps/world.json') or cm['content_version']!=active['release_id'] or cm['sha256']!=sha256(cache/'world.bin'):
+        raise ValueError('World cache mismatch')
+    small_cache=out/'android-cache'
+    command([args.godot,'--headless','--path',ROOT/'game','--script',ROOT/'tools/compress_world_cache.gd','--',
+             '--cache='+str(cache),'--out='+str(small_cache)],out/'cache-compression.log')
+    members=[r['path'] for r in rows]+[{'path':'runtime_cache/'+name,'source':str(small_cache/name)} for name in ['manifest.json','world.bin']]
+    write_json(out/'runtime-members.json',members)
+    command([args.godot,'--headless','--path',ROOT/'game','--script',ROOT/'tools/pack_runtime.gd','--',
+             '--root='+str(runtime),'--manifest='+str(out/'runtime-members.json'),'--out='+str(project/'runtime.pck')],out/'pack.log')
+    cfg=(project/'project.godot').read_text(encoding='utf-8').replace('run/main_scene="res://main.tscn"','run/main_scene="res://android_bootstrap.tscn"')
+    cfg=cfg.replace('[rendering]','window/handheld/orientation=0\n\n[rendering]')
+    # Godot's Android project validator requires ETC2 import support even when
+    # all original PNGs are read losslessly from our raw runtime pack.
+    cfg=cfg.replace('[rendering]','[rendering]\ntextures/vram_compression/import_etc2_astc=true')
+    cfg=cfg.replace('[application]','[application]\nconfig/icon="res://android_icon.svg"')
+    (project/'project.godot').write_text(cfg,encoding='utf-8')
+    signing=json.loads(Path(args.signing).read_text(encoding='utf-8'))
+    keystore=out/'private-signing.p12';keystore.write_bytes(base64.b64decode(signing['pkcs12_base64']));keystore.chmod(0o600)
+    if args.verification:
+        probes=['exercise.gd','work_play_probe.gd','native_regression.gd','mobile_smoke_probe.gd']
+        write_json(out/'verification-members.json',probes)
+        command([args.godot,'--headless','--path',ROOT/'game','--script',ROOT/'tools/pack_runtime.gd','--',
+            '--root='+str(ROOT/'game'),'--manifest='+str(out/'verification-members.json'),'--out='+str(project/'verification.pck')],out/'verification-pack.log')
+        write_json(project/'data/mobile_probe.json',{'exercise':args.probe_mode,'save':'user://verification/saves/v2/character.json','evidence':'user://verification/evidence'})
+        if args.initial_save:shutil.copy2(args.initial_save,project/'data/initial_save.json')
+    editor_settings=Path(args.editor_settings) if args.editor_settings else Path.home()/'.config/godot/editor_settings-4.6.tres'
+    editor_settings.parent.mkdir(parents=True,exist_ok=True)
+    java=Path(os.environ.get('JAVA_HOME','/usr/lib/jvm/java-17-openjdk-amd64'))
+    editor_settings.write_text('[gd_resource type="EditorSettings" format=3]\n[resource]\nexport/android/android_sdk_path='+json.dumps(str(Path(args.sdk).resolve()))+'\nexport/android/java_sdk_path='+json.dumps(str(java))+'\n',encoding='utf-8')
+    version=int(time.time())
+    preset=f'''[preset.0]
+name="Android"
+platform="Android"
+runnable=true
+export_filter="all_resources"
+include_filter="*.json,*.pck"
+exclude_filter="{EXCLUDE}"
+script_export_mode=1
+[preset.0.options]
+custom_template/debug={json.dumps(str(Path(args.template).resolve()))}
+custom_template/release={json.dumps(str(Path(args.template).resolve()))}
+gradle_build/use_gradle_build=false
+command_line/extra_args="{'--audio-driver Dummy' if args.verification else ''}"
+architectures/armeabi-v7a=false
+architectures/arm64-v8a={str(not args.verification).lower()}
+architectures/x86=false
+architectures/x86_64={str(args.verification).lower()}
+version/code={version}
+version/name="0.2.{commit[:8]}"
+package/unique_name="org.irewon.baram.singleplayer{'.verification' if args.verification else ''}"
+package/name="바람의나라"
+package/signed=true
+screen/orientation=0
+permissions/internet=true
+keystore/debug={json.dumps(str(keystore))}
+keystore/debug_user={json.dumps(signing['alias'])}
+keystore/debug_password={json.dumps(signing['password'])}
+keystore/release={json.dumps(str(keystore))}
+keystore/release_user={json.dumps(signing['alias'])}
+keystore/release_password={json.dumps(signing['password'])}
+'''
+    preset_path=project/'export_presets.cfg';preset_path.write_text(preset,encoding='utf-8');preset_path.chmod(0o600)
+    target=out/('baram-Android-verification.apk' if args.verification else 'baram-Android-arm64.apk')
+    try:
+        command([args.godot,'--headless','--editor','--path',project,'--import','--quit'],out/'import.log')
+        command([args.godot,'--headless','--path',project,'--export-debug' if args.verification else '--export-release','Android',target],out/'export.log')
+    finally:
+        # Signing secret never enters a package; remove temporary plaintext.
+        preset_path.unlink(missing_ok=True);keystore.unlink(missing_ok=True)
+    signers=list((Path(args.sdk)/'build-tools').glob('*/'+('apksigner.bat' if os.name=='nt' else 'apksigner')))
+    signers.sort(key=lambda p:tuple(int(n) for n in re.findall(r'\d+',p.parent.name)))
+    if not signers:raise ValueError('Android SDK apksigner missing')
+    apksigner=signers[-1]
+    command([apksigner,'verify','--verbose','--print-certs',target],out/'signature.log')
+    with zipfile.ZipFile(target) as z:
+        if z.testzip():raise ValueError('APK CRC failure')
+        if not args.verification and any(re.search(r'(?:probe|runner)\.gd(?:c|\.remap)?$|/native_regression\.gd|/exercise\.gd|initial_save\.json|mobile_probe\.json|verification\.pck',n) for n in z.namelist()):
+            raise ValueError('Development files leaked into player APK')
+        if not any('arm64-v8a/' in n for n in z.namelist()) and not args.verification:raise ValueError('ARM64 missing')
+        if any('x86_64/' in n for n in z.namelist()) and not args.verification:raise ValueError('Emulator ABI leaked into player APK')
+        unpacked=sum(i.file_size for i in z.infolist())
+    # Exact original source/pack membership is checked before packing, never
+    # claim byte equivalence merely because the app contains some textures.
+    for row in rows:
+        if sha256(runtime/row['path'])!=row['sha256']:raise ValueError('Original runtime changed')
+    result={'status':'BUILT_NOT_EXECUTION_PASS','commit':commit,'content_version':active['release_id'],
+        'apk':str(target),'sha256':sha256(target),'apk_bytes':target.stat().st_size,
+        'apk_uncompressed_member_bytes':unpacked,'original_private_files':len([r for r in rows if r['path'].startswith('private_')]),
+        'original_private_bytes_preserved':True,'android_emulator':'NOT_RUN','galaxy_phone_and_tab_s10_fe':'NOT_RUN',
+        'cloud_configured':bool(cloud),'production_delivery':'BLOCKED_UNTIL_END_TO_END_PASS',
+        'installed_size_bytes':None,'cold_start_ms':None,'memory_pss_bytes':None}
+    write_json(out/'android-build.json',result)
+    print(json.dumps(result,ensure_ascii=False))
+
+if __name__=='__main__':
+    p=argparse.ArgumentParser(description=__doc__)
+    for key in ['runtime','godot','template','sdk','signing','out']:p.add_argument('--'+key,required=True)
+    p.add_argument('--cloud');p.add_argument('--require-cloud',action='store_true');p.add_argument('--verification',action='store_true');p.add_argument('--editor-settings')
+    p.add_argument('--probe-mode',default='native-core');p.add_argument('--initial-save')
+    build(p.parse_args())

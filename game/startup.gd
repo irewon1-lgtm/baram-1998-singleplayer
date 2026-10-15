@@ -30,7 +30,10 @@ func prepare(content, content_folder: String, world_path: String, cache_root: St
         var binary = cache_root.path_join("world.bin")
         if typeof(manifest)!=TYPE_DICTIONARY or manifest.get("format","")!="BARAM_WORLD_CACHE_V1" or manifest.get("content_version","")!=content.version or manifest.get("source_world_sha256","")!=world_hash or not FileAccess.file_exists(binary) or FileAccess.get_sha256(binary)!=manifest.get("sha256",""):
             result={"ok":false,"error":{"code":"WORLD_CACHE_MISMATCH"}};return
-        var file = FileAccess.open(binary,FileAccess.READ)
+        if manifest.get("compression","") not in ["","zstd"]:
+            result={"ok":false,"error":{"code":"WORLD_CACHE_COMPRESSION"}};return
+        var file = FileAccess.open_compressed(binary,FileAccess.READ) if manifest.get("compression","")=="zstd" else FileAccess.open(binary,FileAccess.READ)
+        if file==null:result={"ok":false,"error":{"code":"WORLD_CACHE_READ"}};return
         world = file.get_var(false) # Never deserialize executable objects.
         cached = true
     else:

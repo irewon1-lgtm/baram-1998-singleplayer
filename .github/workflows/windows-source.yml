@@ -35,6 +35,8 @@ jobs:
         run: |
           python -m unittest discover -s tests -p 'test_windows*.py' -v
           if ($LASTEXITCODE) { throw 'Python regression failure' }
+          & $env:GODOT --headless --path game --script continuity_test_runner.gd 2>&1 | Tee-Object continuity-journal.log
+          if ($LASTEXITCODE -or (Select-String -Path continuity-journal.log -Pattern 'SCRIPT ERROR:|^ERROR:|FAIL ')) { throw 'Windows continuity journal/client regression failure' }
           python tools/windows_fixture.py --out fixture --font font.ttc
           & $env:GODOT --headless --path game --script build_world_cache.gd -- --assets="$pwd/fixture/private_assets" --content="$pwd/fixture/private_content" --out="$pwd/fixture/runtime_cache"
           if ($LASTEXITCODE) { throw 'World cache compilation failure' }

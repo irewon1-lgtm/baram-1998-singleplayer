@@ -1,0 +1,101 @@
+name: PC Android save safety
+on:
+  push:
+    branches: [codex/game-core, 'work/mobile-continuity-*']
+  pull_request:
+    branches: [codex/game-core]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: continuity-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
+jobs:
+  transactions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_PASSWORD: continuity-ci-fixture-only
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd pg_isready --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      BARAM_TEST_DATABASE_URL: postgresql://postgres:continuity-ci-fixture-only@localhost:5432/postgres
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install 'psycopg[binary]==3.2.10'
+      - name: Actual PostgreSQL CAS, device locks, auth isolation and backup
+        run: python cloud/tests/test_transactions.py
+      - name: Install pinned official Godot
+        run: |
+          curl -fL https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_linux.x86_64.zip -o godot.zip
+          echo 'd0bc2113065e481c9c2c2b2c37daa4e8be3fe9e27f0ab9ab0b6096e9a37907f3  godot.zip' | sha256sum --check
+          unzip -q godot.zip -d editor
+          chmod +x editor/Godot_v4.6.3-stable_linux.x86_64
+      - name: Actual Godot local journal and client parse
+        run: |
+          set -o pipefail
+          editor/Godot_v4.6.3-stable_linux.x86_64 --headless --path game --script continuity_test_runner.gd 2>&1 | tee journal.log
+          if rg 'SCRIPT ERROR:|^ERROR:|FAIL ' journal.log; then exit 1; fi
+      - name: Scope
+        run: echo 'PostgreSQL + local journal are exercised; deployed account login, device roundtrip and Galaxy hardware are separate required checks.' >> "$GITHUB_STEP_SUMMARY"
+  android-fixture:
+    needs: transactions
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test-only fixtures, official engine and templates
+        run: |
+          python -m pip install Pillow==11.3.0
+          curl -fL https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_linux.x86_64.zip -o godot.zip
+          echo 'd0bc2113065e481c9c2c2b2c37daa4e8be3fe9e27f0ab9ab0b6096e9a37907f3  godot.zip' | sha256sum --check
+          unzip -q godot.zip -d editor
+          chmod +x editor/Godot_v4.6.3-stable_linux.x86_64
+          curl -fL https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_export_templates.tpz -o templates.tpz
+          echo '3fbe2c0e2dec9d537ab9ec97bcf8da91dcf23357fc51f67092dd068d839290a8  templates.tpz' | sha256sum --check
+          unzip -q templates.tpz templates/android_debug.apk
+          curl -fL https://raw.githubusercontent.com/notofonts/noto-cjk/main/Sans/OTC/NotoSansCJK-Regular.ttc -o font.ttc
+          python tools/windows_fixture.py --out fixture --font font.ttc
+          python tools/test_android_signing.py --out test-signing
+          mkdir -p seed/saves/v2
+          editor/Godot_v4.6.3-stable_linux.x86_64 --headless --path game -- --assets="$PWD/fixture/private_assets" --content="$PWD/fixture/private_content" --save="$PWD/seed/saves/v2/character.json" --exercise=mobile-pc-seed --evidence="$PWD/seed"
+          python tools/android_ci.py --runtime fixture --godot "$PWD/editor/Godot_v4.6.3-stable_linux.x86_64" --template templates/android_debug.apk --sdk "$ANDROID_HOME" --signing test-signing/fixture.json --verification --probe-mode mobile-smoke --initial-save seed/saves/v2/character.json --out android-fixture
+      - name: Enable KVM on standard hosted runner
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+      - name: Actual Android emulator and fresh PC restore
+        uses: ReactiveCircus/android-emulator-runner@4c44018e59b437e86cdfc41da381398f93ed8808
+        with:
+          api-level: 35
+          arch: x86_64
+          target: google_apis
+          ram-size: 4096M
+          disable-animations: true
+          emulator-options: -no-window -gpu swangle -noaudio -no-boot-anim -camera-back none -memory 4096
+          script: python tools/android_emulator_test.py --apk android-fixture/baram-Android-verification.apk --godot "$PWD/editor/Godot_v4.6.3-stable_linux.x86_64" --project game --runtime fixture --out emulator-evidence
+      - name: Publish only generated fixture diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-fixture-evidence-${{ github.sha }}
+          path: |
+            emulator-evidence/android-logcat.log
+            emulator-evidence/mobile-report.json
+            emulator-evidence/character.json
+            emulator-evidence/android-metrics.json
+            emulator-evidence/android-frame.png
+            emulator-evidence/pc-resume.log
+          if-no-files-found: ignore
+          retention-days: 14
