@@ -1,0 +1,50 @@
+{
+  "profile_id": "KR_CLASSIC_1998_2001_DRAFT_001",
+  "status": "PROVISIONAL_NOT_RUNTIME_CONTENT",
+  "target": "한국판1998~2001 개인용 싱글플레이",
+  "working_cutoff_proposal": "2001년말. 전체목표1998~2001은유지하며 개별항목이전시점후보는별도보존; 최종판본미동결",
+  "era_basis_source_ids": ["PLAN-MASTER", "PLAN-INSTRUCTIONS", "WEB-KR-004", "LIB-010", "OLD-KR-CONFLICTS"],
+  "cities": {
+    "initial_city_proposal": "국내성",
+    "other_required_city": "부여성",
+    "geometry_selection": "UNRESOLVED",
+    "rule": "국내성과부여성의지형/출구/NPC를각각한국동시기근거로선택. NA지형이름번역이나임시포털은기본한국맵근거로채택하지않음",
+    "KR125_maps": "한국원본218MAP는포맷검증입력. 목표시기도시지형일치는미확인",
+    "KR491_maps": "조사한설치CAB/DAT에는MAP없음. 전체한국지도부재의증명은아님"
+  },
+  "jobs_and_growth": {
+    "new_character": "사용자요구:Lv1평민,희망직업별도,미학습공격기술없음",
+    "first_job": "사용자요구:Lv5사범전직. 기존Lv6선택직업적용정책과동일시금지",
+    "jobs": ["전사", "도적", "주술사", "도사"],
+    "progression": "1~99와시기적합승급. 공식연혁상3차2000.4는후보,4차2002.12는기본제외",
+    "skill_values": "조건/레벨/재료/돈/효과/소리각필드출처선택전UNKNOWN. KR491동봉도사/주술사문서는서로다른시대후보"
+  },
+  "ui": {
+    "authority_source_ids": ["LIB-001", "LIB-002", "LIB-003", "LIB-040", "PLAN-INSTRUCTIONS"],
+    "layout": "사용자사진기준우측물품/기술/장비/능력치전환+하단상태/대화유지,실제아이콘/착용외형/한국어",
+    "photo_era": "UNKNOWN; 사용자화면요구와역사연대는별개",
+    "minimap": "공식연혁2004.6. 사용자요구의지도편의후보로분리;1998~2001원작미니맵이라고표시하지않음",
+    "modern_graphics": "2003.12리뉴얼을1998~2001기본원형으로자동채택하지않음"
+  },
+  "assets_and_mechanics": {
+    "visual_candidates": "KR491DAT의Body/Head/Sword/Item/Effect및해시일치기존추출본. 모든프레임의역사정확도/렌더링동작은미검증",
+    "tables": "KR491텍스트Effect/Body/DrwOrder와현대NexusbinaryEfx/DSC/DNA/Motion을구분",
+    "sound": "원본WAV163개확보;기술/사건ID호출조건·실제청각출력시점미확인",
+    "stock_and_services": "NPC+지도+시대+서비스별출처. 전역재고·역할전품목·빈재고도토리·공통수리비는미채택",
+    "crafting": "공식연혁조합2000.7후보. 개별레시피와NPC제작은별도출처필요",
+    "NA_and_RTK": "구조/프로토콜/포맷비교후보. 한국지형/수치/스폰/한글정책의정답이아님",
+    "averaging": "지역/시대/직업/일반·변종·보스충돌수치를평균하지않음"
+  },
+  "platform_and_save": {
+    "targets": ["Windows", "Android휴대폰", "Galaxy Tab S10 FE"],
+    "same_rules_content_save": true,
+    "offline": true,
+    "same_account_sequential_continuation": "REQUIRED_NOT_IMPLEMENTED",
+    "engine_candidate": "Godot4.6.3 GDScript/GL기존후보;P2동일장면검증전미동결",
+    "save_schema": "UNSELECTED. 기존schema2는좁은검증/백업패턴후보",
+    "authentication": "옛로그인화면/오프라인프로필/실계정인증/기기왕복각기다른기능"
+  },
+  "historical_fact_status": "UNKNOWN_UNTIL_FIELD_SELECTION",
+  "runtime_binding": "NOT_STARTED",
+  "runtime_test_status": "NOT_RUN"
+}

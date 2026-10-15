@@ -1,0 +1,2477 @@
+{
+  "sources": [
+    {
+      "source_id": "EXT-VIS-001",
+      "repository": "DizzyThermal/TKViewer",
+      "ref": "2943507d0a8b91b990b94d2cc82c3f589343d3ec",
+      "tree_sha": "2943507d0a8b91b990b94d2cc82c3f589343d3ec",
+      "repo_metadata": {
+        "description": "NexusTK DAT Object Viewer",
+        "default_branch": "master",
+        "fork": false,
+        "parent": null,
+        "license": "UNKNOWN"
+      },
+      "releases": [
+        {
+          "name": "TKViewer 3.7.2",
+          "tag": "3.7.2",
+          "published_at": "2025-03-01T19:02:21Z",
+          "url": "https://github.com/DizzyThermal/TKViewer/releases/tag/3.7.2",
+          "notes": "# TKViewer 3.7.2\r\n\r\n* Adding Frame/Animation tooltip when hovering over parts\r\n* Fixed version displayed on GUI and updated POM file versions",
+          "assets": [
+            {
+              "name": "tk-viewer-3.7.2.jar",
+              "size": 8218759,
+              "url": "https://github.com/DizzyThermal/TKViewer/releases/download/3.7.2/tk-viewer-3.7.2.jar"
+            }
+          ]
+        },
+        {
+          "name": "TKViewer 3.7.1",
+          "tag": "3.7.1",
+          "published_at": "2023-12-28T00:14:30Z",
+          "url": "https://github.com/DizzyThermal/TKViewer/releases/tag/3.7.1",
+          "notes": "* EffectRenderer getFrameIndex offset fix (https://github.com/DizzyThermal/TKViewer/pull/28) - Thank you @zaventh ",
+          "assets": [
+            {
+              "name": "tk-viewer-3.7.1.jar",
+              "size": 8218506,
+              "url": "https://github.com/DizzyThermal/TKViewer/releases/download/3.7.1/tk-viewer-3.7.1.jar"
+            }
+          ]
+        },
+        {
+          "name": "TKViewer 3.7.0",
+          "tag": "3.7.0",
+          "published_at": "2023-12-13T14:06:25Z",
+          "url": "https://github.com/DizzyThermal/TKViewer/releases/tag/3.7.0",
+          "notes": "* Updating Library Dependency Versions\r\n* Adding NTK_LINUX_DATA_DIRECTORY `($HOME/NexusTK/Data)`\r\n* Updating README instructions for building/running",
+          "assets": [
+            {
+              "name": "tk-viewer-3.7.0.jar",
+              "size": 8218501,
+              "url": "https://github.com/DizzyThermal/TKViewer/releases/download/3.7.0/tk-viewer-3.7.0.jar"
+            }
+          ]
+        },
+        {
+          "name": "TKViewer 3.6.1",
+          "tag": "3.6.1",
+          "published_at": "2022-03-28T22:34:48Z",
+          "url": "https://github.com/DizzyThermal/TKViewer/releases/tag/3.6.1",
+          "notes": "- Added MNM Map name to file title when rendering the map (i.e., Bamboo Tavern)",
+          "assets": [
+            {
+              "name": "TKViewer-3.6.1.jar",
+              "size": 7365418,
+              "url": "https://github.com/DizzyThermal/TKViewer/releases/download/3.6.1/TKViewer-3.6.1.jar"
+            }
+          ]
+        },
+        {
+          "name": "TKViewer 3.6",
+          "tag": "3.6",
+          "published_at": "2022-03-28T20:52:16Z",
+          "url": "https://github.com/DizzyThermal/TKViewer/releases/tag/3.6",
+          "notes": "- [BUG FIX]: File > Open Map opens the intended map instead of the previously scaled map.\r\n- Added Drag-and-Drop feature for opening maps.",
+          "assets": [
+            {
+              "name": "TKViewer-3.6.jar",
+              "size": 7365383,
+              "url": "https://github.com/DizzyThermal/TKViewer/releases/download/3.6/TKViewer-3.6.jar"
+            }
+          ]
+        },
+        {
+          "name": "TKViewer 3.5",
+          "tag": "3.5",
+          "published_at": "2021-11-12T20:54:40Z",
+          "url": "https://github.com/DizzyThermal/TKViewer/releases/tag/3.5",
+          "notes": "- Added Legend Resources (misc.dat > SYMBOLS.EPF, char.dat > ITEM.PAL) - Note: Palette was a guess, colors may not be correct.\r\n- Added Mini Map Resources\r\n- Added World Maps",
+          "assets": [
+            {
+              "name": "TKViewer-3.5.jar",
+              "size": 7345119,
+              "url": "https://github.com/DizzyThermal/TKViewer/releases/download/3.5/TKViewer-3.5.jar"
+            }
+          ]
+        },
+        {
+          "name": "TKViewer 3.3",
+          "tag": "3.3",
+          "published_at": "2020-05-13T02:02:19Z",
+          "url": "https://github.com/DizzyThermal/TKViewer/releases/tag/3.3",
+          "notes": "* Fixed TKViewer and TKPartPicker POM resource paths so IntelliJ understands the resource content root.\r\n* Fixed View > Mob Animations/Frames",
+          "assets": [
+            {
+              "name": "TKViewer-3.3.jar",
+              "size": 7186117,
+              "url": "https://github.com/DizzyThermal/TKViewer/releases/download/3.3/TKViewer-3.3.jar"
+            }
+          ]
+        },
+        {
+          "name": "TKViewer 3.2",
+          "tag": "3.2",
+          "published_at": "2019-10-23T04:29:59Z",
+          "url": "https://github.com/DizzyThermal/TKViewer/releases/tag/3.2",
+          "notes": "## Added Features\r\n* Added FaceDecorations to View\r\n* Added Animations to View Renderer (can toggle to Frames)\r\n* Streams directly from dats - no more reading pre-extracted files!",
+          "assets": [
+            {
+              "name": "TKViewer-3.2.jar",
+              "size": 7167319,
+              "url": "https://github.com/DizzyThermal/TKViewer/releases/download/3.2/TKViewer-3.2.jar"
+            }
+          ]
+        },
+        {
+          "name": "TKViewer 3.0.0",
+          "tag": "3.0.0",
+          "published_at": "2019-10-18T00:00:22Z",
+          "url": "https://github.com/DizzyThermal/TKViewer/releases/tag/3.0.0",
+          "notes": "**Features:**\r\n\r\n* Renders CMP and MAP files\r\n* Renders NTK Assets\r\n  * Bodies/Faces/Hair\r\n  * Coats/Helmets/Mantles/Shoes\r\n  * Effects/Mobs\r\n  * Bows/Fans/Shields/Spears/Swords\r\n\r\nCompiled JAR and JSmooth EXE wrapper executable attached",
+          "assets": [
+            {
+              "name": "TKViewer-3.0.0.jar",
+              "size": 7160269,
+              "url": "https://github.com/DizzyThermal/TKViewer/releases/download/3.0.0/TKViewer-3.0.0.jar"
+            }
+          ]
+        }
+      ],
+      "tags_status": "BLOCKED_CONNECTOR_400",
+      "files": [
+        {
+          "path": "README.md",
+          "blob_sha": "ce1f173d1421d8e60ca1a63730664b3d73676af4",
+          "size": 15798,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/README.md",
+          "sha256": "308930ded5a9b835ba56728458cdec1e97d21d232ce5dd4f8e8985f32c2498f5",
+          "actual_size": 15798,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/README.md",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "common/pom.xml",
+          "blob_sha": "f8c7b9a59d9c18ce02f148b9e5661bd0cbafb5ec",
+          "size": 3312,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/common/pom.xml",
+          "sha256": "93d56e5bcc4afbd8ae7f3fad5f6ec20302b44cba367f56a878009fd716cbed13",
+          "actual_size": 3312,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/common/pom.xml",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/file_handlers/CmpFileHandler.java",
+          "blob_sha": "d6a5a892c95452d0a3cfa2609e28223b2e11d016",
+          "size": 1711,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/common/src/main/java/com/gamemode/tkviewer/file_handlers/CmpFileHandler.java",
+          "sha256": "d56511ce975c6b4849a3220670e061c62895e36fbd9062163cfac6b73db8c831",
+          "actual_size": 1711,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/common/src/main/java/com/gamemode/tkviewer/file_handlers/CmpFileHandler.java",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/file_handlers/DatFileHandler.java",
+          "blob_sha": "e5120eac65cb5b01e26e59499a8a55ec984d07d0",
+          "size": 5982,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/common/src/main/java/com/gamemode/tkviewer/file_handlers/DatFileHandler.java",
+          "sha256": "b58098c90cbc1f030ab404b2f859a58c19cfba7ec7aba6fe4da1ffa765c59259",
+          "actual_size": 5982,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/common/src/main/java/com/gamemode/tkviewer/file_handlers/DatFileHandler.java",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/file_handlers/DnaFileHandler.java",
+          "blob_sha": "71b39a435b835847b432ee588969e3102836979b",
+          "size": 3498,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/common/src/main/java/com/gamemode/tkviewer/file_handlers/DnaFileHandler.java",
+          "sha256": "f76a7d12518c79f2dc9dfa1018d91ec6de0f03410f442547e36df76e5f09cab0",
+          "actual_size": 3498,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/common/src/main/java/com/gamemode/tkviewer/file_handlers/DnaFileHandler.java",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/file_handlers/DscFileHandler.java",
+          "blob_sha": "ce98a1a1fe47b5a8dd8b3e3864530c8f010fae6b",
+          "size": 3909,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/common/src/main/java/com/gamemode/tkviewer/file_handlers/DscFileHandler.java",
+          "sha256": "cac1e504e21c36469d56f4510c7fd38aec2ac6450f33d295dd2c432cb981b223",
+          "actual_size": 3909,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/common/src/main/java/com/gamemode/tkviewer/file_handlers/DscFileHandler.java",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/file_handlers/EfxTblFileHandler.java",
+          "blob_sha": "a1f5f7600e2ccd54ad37df118523e38f9848511a",
+          "size": 5011,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/common/src/main/java/com/gamemode/tkviewer/file_handlers/EfxTblFileHandler.java",
+          "sha256": "31b1fe79693acb7c1e98ce497c8b2d2ccda2129df355bc99e272b5d14fbab73e",
+          "actual_size": 5011,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/common/src/main/java/com/gamemode/tkviewer/file_handlers/EfxTblFileHandler.java",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/file_handlers/EpfFileHandler.java",
+          "blob_sha": "66f3edcc26fc9f8445999f82ecd35ad903de429e",
+          "size": 4802,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/common/src/main/java/com/gamemode/tkviewer/file_handlers/EpfFileHandler.java",
+          "sha256": "591d6fcc49e8f100bac2e8a0ea52d23d663d61c1ffafe4bdb8bc2a7db12a489e",
+          "actual_size": 4802,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/common/src/main/java/com/gamemode/tkviewer/file_handlers/EpfFileHandler.java",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/file_handlers/FileHandler.java",
+          "blob_sha": "04761431cdf144ea4b99884f6ef66dc58f9cfb69",
+          "size": 12740,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/common/src/main/java/com/gamemode/tkviewer/file_handlers/FileHandler.java",
+          "sha256": "424f2bccb63c550d6256e40b39efb93049fb08993fd8f59f984963cff7f045f4",
+          "actual_size": 12740,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/common/src/main/java/com/gamemode/tkviewer/file_handlers/FileHandler.java",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/file_handlers/FileWriter.java",
+          "blob_sha": "71e1aac43666bcf04ec19c9233fcf3cc56a597b1",
+          "size": 1669,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/common/src/main/java/com/gamemode/tkviewer/file_handlers/FileWriter.java",
+          "sha256": "12aa34e7c7c4db69314c9f4a52c962f6450c9653a884928b5fa37af8a0cdf0b1",
+          "actual_size": 1669,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/common/src/main/java/com/gamemode/tkviewer/file_handlers/FileWriter.java",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/file_handlers/FrmFileHandler.java",
+          "blob_sha": "6c7fc751876546af7b2aead8fa308dd5438a2072",
+          "size": 1279,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/common/src/main/java/com/gamemode/tkviewer/file_handlers/FrmFileHandler.java",
+          "sha256": "3aebfd3293dd7bd9bd5125e8d585d22a77c22e8ff29043322b968b56ef380ec0",
+          "actual_size": 1279,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/common/src/main/java/com/gamemode/tkviewer/file_handlers/FrmFileHandler.java",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/file_handlers/MapFileHandler.java",
+          "blob_sha": "773e8e7a9544e42fc85f833a664c1f0b474e8c04",
+          "size": 1467,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/common/src/main/java/com/gamemode/tkviewer/file_handlers/MapFileHandler.java",
+          "sha256": "2dadd371983d6d03a969af5ab3ba47e87546dbaddcead639f87b5b503cf2c4fd",
+          "actual_size": 1467,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/common/src/main/java/com/gamemode/tkviewer/file_handlers/MapFileHandler.java",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/file_handlers/MnmFileHandler.java",
+          "blob_sha": "259437854d30a92d838020cc722afd0829a0b796",
+          "size": 1133,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/common/src/main/java/com/gamemode/tkviewer/file_handlers/MnmFileHandler.java",
+          "sha256": "320ef73d1ea3cfcdcb2d1694e15f2e0c40ad5919085552375c28fa2cd918c804",
+          "actual_size": 1133,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/common/src/main/java/com/gamemode/tkviewer/file_handlers/MnmFileHandler.java",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/file_handlers/PalFileHandler.java",
+          "blob_sha": "1819ea3b3007d8a40b545eecbc263cf42c49740e",
+          "size": 4108,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/common/src/main/java/com/gamemode/tkviewer/file_handlers/PalFileHandler.java",
+          "sha256": "8051b006f5bd9df702f752b5066aaf3829aaf9cd72b7121b267e8824c6def1d4",
+          "actual_size": 4108,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/common/src/main/java/com/gamemode/tkviewer/file_handlers/PalFileHandler.java",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/file_handlers/SObjTblFileHandler.java",
+          "blob_sha": "e7d3cfc8e9d664514a0766746674a1088beb0c2a",
+          "size": 1496,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/common/src/main/java/com/gamemode/tkviewer/file_handlers/SObjTblFileHandler.java",
+          "sha256": "c9ed1a9ca2b5b9cef34f9c8cafbd0c7df4acaf0a1125af84b1c63223395a23e2",
+          "actual_size": 1496,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/common/src/main/java/com/gamemode/tkviewer/file_handlers/SObjTblFileHandler.java",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/file_handlers/TileTblFileHandler.java",
+          "blob_sha": "59c1e0d6666c9275cf52cbc4c3e17ec8ed39fa3d",
+          "size": 7658,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/common/src/main/java/com/gamemode/tkviewer/file_handlers/TileTblFileHandler.java",
+          "sha256": "c803aa799bc96d48beb75671d9de0f9169359eb42da7ee428da4995f36ee2674",
+          "actual_size": 7658,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/common/src/main/java/com/gamemode/tkviewer/file_handlers/TileTblFileHandler.java",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/render/EffectRenderer.java",
+          "blob_sha": "74f0d4a6ef01d5d6e4e36c951ec926186466972f",
+          "size": 7840,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/common/src/main/java/com/gamemode/tkviewer/render/EffectRenderer.java",
+          "sha256": "c9d0b99295ac30e5dd7cd3089a6cf18dd0c89cac0de84f16ed6b91f25fcdb974",
+          "actual_size": 7840,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/common/src/main/java/com/gamemode/tkviewer/render/EffectRenderer.java",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/render/MapRenderer.java",
+          "blob_sha": "550724956e93d406ab3094161769f36096bf2abf",
+          "size": 10550,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/common/src/main/java/com/gamemode/tkviewer/render/MapRenderer.java",
+          "sha256": "f26b3ebe0d30e20c53afc322e4574d21290d7add4cca59af04b788a7ba9b860c",
+          "actual_size": 10550,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/common/src/main/java/com/gamemode/tkviewer/render/MapRenderer.java",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/render/MobRenderer.java",
+          "blob_sha": "cf6d8807469ab6c8ba24c2e317c882cb1c1a2f98",
+          "size": 9847,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/common/src/main/java/com/gamemode/tkviewer/render/MobRenderer.java",
+          "sha256": "2e5e404b2b4b39c72f09aa8316d4cf773c4840db95bfb633b93a5dcc2217efcc",
+          "actual_size": 9847,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/common/src/main/java/com/gamemode/tkviewer/render/MobRenderer.java",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/render/PartRenderer.java",
+          "blob_sha": "c429a550e941bada5479f7e3fccc2d6ed3ea9588",
+          "size": 17047,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/common/src/main/java/com/gamemode/tkviewer/render/PartRenderer.java",
+          "sha256": "9b1be747a855743fc6c7cfb36a71d19f70994afd4088c47a560bfe286a51cb3d",
+          "actual_size": 17047,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/common/src/main/java/com/gamemode/tkviewer/render/PartRenderer.java",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/utilities/FileUtils.java",
+          "blob_sha": "13e8f64b05f5edb7719eddd5502b3d1f937f0dfc",
+          "size": 14297,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/common/src/main/java/com/gamemode/tkviewer/utilities/FileUtils.java",
+          "sha256": "9527093d33a356b08bbe7f79d8a7e7a44b643b160f3ca2d75678799d92d9d01d",
+          "actual_size": 14297,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/common/src/main/java/com/gamemode/tkviewer/utilities/FileUtils.java",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/utilities/RenderUtils.java",
+          "blob_sha": "cacac5648eb7331271b5bb6599efe26d33dbf8ef",
+          "size": 10261,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/common/src/main/java/com/gamemode/tkviewer/utilities/RenderUtils.java",
+          "sha256": "be3d6306bc3900050041830eabd5c5528290770f5f1c467e5d6fd9cf9ab26ed1",
+          "actual_size": 10261,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/common/src/main/java/com/gamemode/tkviewer/utilities/RenderUtils.java",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "common/src/main/kotlin/com/gamemode/tkviewer/EffectFrame.kt",
+          "blob_sha": "d41a17024657745a2c88649ee4424d0974a7cb13",
+          "size": 132,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/common/src/main/kotlin/com/gamemode/tkviewer/EffectFrame.kt",
+          "sha256": "452440f980d0106e8f9cc5f6422b8e2fac67ecf454323f804a15597cbb828ace",
+          "actual_size": 132,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/common/src/main/kotlin/com/gamemode/tkviewer/EffectFrame.kt",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "common/src/main/kotlin/com/gamemode/tkviewer/EffectImage.kt",
+          "blob_sha": "67561e2a9f2af76510b58c993f13e22f6d433d15",
+          "size": 191,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/common/src/main/kotlin/com/gamemode/tkviewer/EffectImage.kt",
+          "sha256": "490892b72b87213b5a514d2f9af5a32f26b87e4fc481404669fa160e1d328355",
+          "actual_size": 191,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/common/src/main/kotlin/com/gamemode/tkviewer/EffectImage.kt",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "common/src/main/kotlin/com/gamemode/tkviewer/MobBlock.kt",
+          "blob_sha": "5ad9a4c5e7733f5898393a1625a90d18c9f030da",
+          "size": 172,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/common/src/main/kotlin/com/gamemode/tkviewer/MobBlock.kt",
+          "sha256": "ee2c77a206635c68d7fcc1d488e823f8e6ca1639fe1637accc2d96535634ed7f",
+          "actual_size": 172,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/common/src/main/kotlin/com/gamemode/tkviewer/MobBlock.kt",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "common/src/main/kotlin/com/gamemode/tkviewer/PartBlock.kt",
+          "blob_sha": "cb8f323041333dbe6a9e0b28784281d7adc6176a",
+          "size": 231,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/common/src/main/kotlin/com/gamemode/tkviewer/PartBlock.kt",
+          "sha256": "1c5dc1987cd74cf1d54db3fb27e09ef5be591a939bbcaf04b1378a3779ed0e6c",
+          "actual_size": 231,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/common/src/main/kotlin/com/gamemode/tkviewer/PartBlock.kt",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "common/src/main/kotlin/com/gamemode/tkviewer/PartMetadata.kt",
+          "blob_sha": "ed911372cb5b63395bfca5c1137dcf70d6d7da14",
+          "size": 229,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/common/src/main/kotlin/com/gamemode/tkviewer/PartMetadata.kt",
+          "sha256": "9c89ee12f9d4f7bbd793aa93e48e881b8b944e9d162ff87d2f0dce5dcca647c6",
+          "actual_size": 229,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/common/src/main/kotlin/com/gamemode/tkviewer/PartMetadata.kt",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "common/src/main/kotlin/com/gamemode/tkviewer/PivotData.kt",
+          "blob_sha": "6657ab9b660bae6acc9b3b07de5b24ea3ec1333b",
+          "size": 125,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/common/src/main/kotlin/com/gamemode/tkviewer/PivotData.kt",
+          "sha256": "985bd460148cb6c6f26dd958fb5e1611fc857f1d8b72abbd8ca8560916830830",
+          "actual_size": 125,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/common/src/main/kotlin/com/gamemode/tkviewer/PivotData.kt",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "pom.xml",
+          "blob_sha": "57f5eac9d6345617a03c5ab560dbe78944017a7f",
+          "size": 2840,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/pom.xml",
+          "sha256": "ee97428961efff7a43c5fb3bf62a4b60c47b99d65f0afcaf2743340998bb08a5",
+          "actual_size": 2840,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/pom.xml",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "tk-partpicker/pom.xml",
+          "blob_sha": "f6f2edda4d106526bea4b15ddbeca090ea007815",
+          "size": 2563,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/tk-partpicker/pom.xml",
+          "sha256": "8cb06e27caed86886f8dd7b122de6b667450d96d08bd3345b756ed4fdf3ea280",
+          "actual_size": 2563,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/tk-partpicker/pom.xml",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "tk-viewer/pom.xml",
+          "blob_sha": "409aceb56673040a714654efe9c9da1161ada8a4",
+          "size": 2558,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/tk-viewer/pom.xml",
+          "sha256": "62767aba01d69924bdfb5f33d1c16dac5a5b9cbdbda8de836bc0bc9101a93de5",
+          "actual_size": 2558,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/tk-viewer/pom.xml",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "common/src/main/java/com/gamemode/tkviewer/gui/ViewFrame.java",
+          "blob_sha": "60eb736a0c4278254087b751cc0bcc0ad0a04e8e",
+          "size": 23111,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/common/src/main/java/com/gamemode/tkviewer/gui/ViewFrame.java",
+          "sha256": "86ceb8690f5f89823e76cb2ade0bb2107eeb9ab4c20705077e65118301562c32",
+          "actual_size": 23111,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/common/src/main/java/com/gamemode/tkviewer/gui/ViewFrame.java",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "config.properties",
+          "blob_sha": "163e43767c4cd4e628adc2196e77433a6cfe9265",
+          "size": 816,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKViewer/config.properties",
+          "sha256": "0a3f25d0d00d83296aa5a561bcc66c9d3e9856afccae2aeff388f4b73314bc73",
+          "actual_size": 816,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKViewer/blob/2943507d0a8b91b990b94d2cc82c3f589343d3ec/config.properties",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        }
+      ],
+      "observed": [
+        "DAT container, DNA, DSC, EPF, FRM, PAL, effect/tile/static-object TBL, MAP handlers exist in acquired Java/Kotlin source.",
+        "EffectRenderer transfers effect.tbl frame delay to EffectImage; MobRenderer transfers DNA duration.",
+        "PartRenderer.java:368–369 instead uses fixed defaultDuration=64*16 milliseconds for part GIF frames. This is a tool default, not verified Korean original timing.",
+        "README Motion TBL structure describes name and per-frame layer IDs, but this Java tree has no MotionTblFileHandler; corresponding Godot implementation is EXT-VIS-003."
+      ],
+      "limitations": [
+        "NexusTK-oriented third-party parser; no actual Korean 1.25/4.91 compatibility run.",
+        "No LICENSE entry was found in the fetched recursive tree; code adoption requires clarifying permission.",
+        "Static acquisition is not parser execution or rendered-output accuracy.",
+        "Sound volume property does not establish sound decoding, sound ID mapping or event timing."
+      ],
+      "reuse": [
+        "Independent parser-output comparison candidate for DAT/EPF/PAL/DNA/DSC/effects on a copy of exact same input.",
+        "Exported animation metadata may be useful, but fixed character timing must not be imported."
+      ],
+      "setup": {
+        "tool_version": "pom.xml 3.7.2 at pinned HEAD; older 3.7.2 release commit differs from HEAD",
+        "dependencies": "Maven; Java source/target 8; Kotlin 1.9.21; guava 32.1.3-jre; ij 1.54g; commons-io 2.15.1",
+        "release_candidate": "3.7.2 JAR, not downloaded/executed",
+        "runtime_status": "NOT_RUN"
+      },
+      "source_url": "https://github.com/DizzyThermal/TKViewer",
+      "captured_at": "2026-10-15",
+      "game_region": "NA_NexusTK",
+      "client_build": "UNKNOWN_NOT_TESTED",
+      "content_era": "UNKNOWN_NOT_KR_1998_2001_VERIFIED",
+      "lineage": "TKViewer family",
+      "fact_status": "UNKNOWN_FOR_KR_ORIGINAL",
+      "evidence_class": "STATIC_SOURCE_OBSERVATION",
+      "usage_status": "ACQUIRED",
+      "test_result": "NOT_RUN",
+      "read_scope": "Named key files inspected; other files acquired and hashes verified, not all code fully reviewed."
+    },
+    {
+      "source_id": "EXT-VIS-002",
+      "repository": "DizzyThermal/TKMapper",
+      "ref": "13c6dc3089b51ba2ba390a421125bd55ebf4edd3",
+      "tree_sha": "13c6dc3089b51ba2ba390a421125bd55ebf4edd3",
+      "repo_metadata": {
+        "description": "NexusTK Map Creator/Editor written in Godot 4.x",
+        "default_branch": "master",
+        "fork": false,
+        "parent": null,
+        "license": "MIT"
+      },
+      "releases": [],
+      "tags_status": "BLOCKED_CONNECTOR_400",
+      "files": [
+        {
+          "path": "DataTypes/FrameSprite.gd",
+          "blob_sha": "e0a20710ab150d66b4a3fe76c2640e91d813ca6b",
+          "size": 2827,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKMapper/DataTypes/FrameSprite.gd",
+          "sha256": "7c960022397e974b34a8759e63371610f804fe6b30c0fa39196fd9e218ed0d36",
+          "actual_size": 2827,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKMapper/blob/13c6dc3089b51ba2ba390a421125bd55ebf4edd3/DataTypes/FrameSprite.gd",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "DataTypes/NTK_Frame.gd",
+          "blob_sha": "50c161a0e66fae50ec0bd74a03aa43cd097263f2",
+          "size": 931,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKMapper/DataTypes/NTK_Frame.gd",
+          "sha256": "54a859ede8b36ceb25bb06f48b515537389cb5bba74dd86aafbe3aeade165c2f",
+          "actual_size": 931,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKMapper/blob/13c6dc3089b51ba2ba390a421125bd55ebf4edd3/DataTypes/NTK_Frame.gd",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "DataTypes/Palette.gd",
+          "blob_sha": "9ddb230f5aaaea7731ea638027141a8dac9f168c",
+          "size": 1267,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKMapper/DataTypes/Palette.gd",
+          "sha256": "15e7183c6baf509bdd4cd0db82ebdeb5ec91d53d23d1f33f73800827e528ab69",
+          "actual_size": 1267,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKMapper/blob/13c6dc3089b51ba2ba390a421125bd55ebf4edd3/DataTypes/Palette.gd",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "DataTypes/Pivot.gd",
+          "blob_sha": "9c95ff2140b4f80f4dd89f18aff09a233f093309",
+          "size": 1118,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKMapper/DataTypes/Pivot.gd",
+          "sha256": "7ac31e3b339dee4c95f6ee97bf65648ec2e7ee2ef10b254b8c83297c28290330",
+          "actual_size": 1118,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKMapper/blob/13c6dc3089b51ba2ba390a421125bd55ebf4edd3/DataTypes/Pivot.gd",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "FileHandlers/BaseMapFileHandler.gd",
+          "blob_sha": "0c176d19bd2ed5af4ef05f118d39ad97383bedea",
+          "size": 2360,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKMapper/FileHandlers/BaseMapFileHandler.gd",
+          "sha256": "9957c81ea7506db0386c7ab3a7d3e6a8dc820e099159d0439419a28f592b3123",
+          "actual_size": 2360,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKMapper/blob/13c6dc3089b51ba2ba390a421125bd55ebf4edd3/FileHandlers/BaseMapFileHandler.gd",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "FileHandlers/CmpFileHandler.gd",
+          "blob_sha": "bc4a6aa224350659daf488cef8b00e4d709b4b3d",
+          "size": 800,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKMapper/FileHandlers/CmpFileHandler.gd",
+          "sha256": "463669fa657b5579b97be5a74a6f108e150d4fa012329b8cfaa764458e1c0625",
+          "actual_size": 800,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKMapper/blob/13c6dc3089b51ba2ba390a421125bd55ebf4edd3/FileHandlers/CmpFileHandler.gd",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "FileHandlers/DatFileHandler.gd",
+          "blob_sha": "14b8069839d92fcaf755370c731faec616c426fa",
+          "size": 1306,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKMapper/FileHandlers/DatFileHandler.gd",
+          "sha256": "7379a18a06ab97551cecaa943e11c44978b1c1df01b27878fc5809a303caeac6",
+          "actual_size": 1306,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKMapper/blob/13c6dc3089b51ba2ba390a421125bd55ebf4edd3/FileHandlers/DatFileHandler.gd",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "FileHandlers/EpfFileHandler.gd",
+          "blob_sha": "5bfd94895d7a88556b7d5a0e01ab74f60da96279",
+          "size": 4507,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKMapper/FileHandlers/EpfFileHandler.gd",
+          "sha256": "bbb3de3b1e23fe7a6264faf6555659d9673def2d72d2b85f09a9ff6c221be2b9",
+          "actual_size": 4507,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKMapper/blob/13c6dc3089b51ba2ba390a421125bd55ebf4edd3/FileHandlers/EpfFileHandler.gd",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "FileHandlers/MapFileHandler.gd",
+          "blob_sha": "9f68920b96eadcbecfa18ca0193bbc88285f799d",
+          "size": 987,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKMapper/FileHandlers/MapFileHandler.gd",
+          "sha256": "975af74c4a4f1a8d01ce46ee7312e1bbb70e0e689ffc755390d90e8892b3dfe3",
+          "actual_size": 987,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKMapper/blob/13c6dc3089b51ba2ba390a421125bd55ebf4edd3/FileHandlers/MapFileHandler.gd",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "FileHandlers/NTK_FileHandler.gd",
+          "blob_sha": "9dbd92bf35e920eebac1177758c62528ce34cd36",
+          "size": 1201,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKMapper/FileHandlers/NTK_FileHandler.gd",
+          "sha256": "7d208007e1cf3a963a8c10fbdc44ea1d8932d2c65f88302d0eeafe4518c169e8",
+          "actual_size": 1201,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKMapper/blob/13c6dc3089b51ba2ba390a421125bd55ebf4edd3/FileHandlers/NTK_FileHandler.gd",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "FileHandlers/PalFileHandler.gd",
+          "blob_sha": "3f118197a71d8915e9c735a8ae10918ec1bdc0c8",
+          "size": 2163,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKMapper/FileHandlers/PalFileHandler.gd",
+          "sha256": "0c987ab45b5a656c5a17696f2850362fa7da45b45772dfe892d5f025fcad0e29",
+          "actual_size": 2163,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKMapper/blob/13c6dc3089b51ba2ba390a421125bd55ebf4edd3/FileHandlers/PalFileHandler.gd",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "FileHandlers/SObjTblFileHandler.gd",
+          "blob_sha": "d64fb1401294636972aa3f5a2953d0a89332053a",
+          "size": 847,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKMapper/FileHandlers/SObjTblFileHandler.gd",
+          "sha256": "77b17feb0a181ad7ff098e12f4dc71ddde51480bd17f93195178fc0ede267321",
+          "actual_size": 847,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKMapper/blob/13c6dc3089b51ba2ba390a421125bd55ebf4edd3/FileHandlers/SObjTblFileHandler.gd",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "FileHandlers/TileTblFileHandler.gd",
+          "blob_sha": "f8b2e322233730cded567f31d13e4e124bf0e282",
+          "size": 526,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKMapper/FileHandlers/TileTblFileHandler.gd",
+          "sha256": "6bf3d0568f96b9750171e41d5538ccf2f70d49a718ab8a139ef445e27a593f71",
+          "actual_size": 526,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKMapper/blob/13c6dc3089b51ba2ba390a421125bd55ebf4edd3/FileHandlers/TileTblFileHandler.gd",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "README.md",
+          "blob_sha": "5178a6750325e42ad5d527afa2540e3d813dcbb5",
+          "size": 2578,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKMapper/README.md",
+          "sha256": "ba07bdd02da2100689dae2e465e9627cda06686ff6d6c251e5ce3d5416dea902",
+          "actual_size": 2578,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKMapper/blob/13c6dc3089b51ba2ba390a421125bd55ebf4edd3/README.md",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "Renderers/NTK_MapRenderer.gd",
+          "blob_sha": "f8ca8e8abd7f9499d79e96953eac10e52a1f7fef",
+          "size": 14600,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKMapper/Renderers/NTK_MapRenderer.gd",
+          "sha256": "691761500b8350d439e91fcc9d3479a7bed512e4e4746fe70247ff087a54f8c5",
+          "actual_size": 14600,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKMapper/blob/13c6dc3089b51ba2ba390a421125bd55ebf4edd3/Renderers/NTK_MapRenderer.gd",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "Renderers/NTK_Renderer.gd",
+          "blob_sha": "9278f07e1d3f53fcc4235729f965202167dd585f",
+          "size": 3982,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKMapper/Renderers/NTK_Renderer.gd",
+          "sha256": "60fae84696deab07c55be1edf68cec3b383a25eb72f34fb3c79e09827d9e5b07",
+          "actual_size": 3982,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKMapper/blob/13c6dc3089b51ba2ba390a421125bd55ebf4edd3/Renderers/NTK_Renderer.gd",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "Renderers/NTK_SObjRenderer.gd",
+          "blob_sha": "19819398d7b4cd16f7f8adfb561802db05b859cc",
+          "size": 449,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKMapper/Renderers/NTK_SObjRenderer.gd",
+          "sha256": "d9b12e4d145a9dace2cbb0ac031057aa54a7617c052dfdfeda367ca70617cd15",
+          "actual_size": 449,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKMapper/blob/13c6dc3089b51ba2ba390a421125bd55ebf4edd3/Renderers/NTK_SObjRenderer.gd",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "Renderers/NTK_TileRenderer.gd",
+          "blob_sha": "ef1b9e73b90a85b75596526db68af52f4ee250a8",
+          "size": 1255,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKMapper/Renderers/NTK_TileRenderer.gd",
+          "sha256": "4104998625a5c3ccd3d3fbabfa457d9280a34cf3068e73776422eeb1c7cd22a1",
+          "actual_size": 1255,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKMapper/blob/13c6dc3089b51ba2ba390a421125bd55ebf4edd3/Renderers/NTK_TileRenderer.gd",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "Resources/Database.gd",
+          "blob_sha": "267376f5a42b4a080d5dee29a35f348e3e3e6342",
+          "size": 3701,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKMapper/Resources/Database.gd",
+          "sha256": "23ba05f1a9bec896ecedf83cb19290369cff440f5200fc4247fd0c5357d82326",
+          "actual_size": 3701,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKMapper/blob/13c6dc3089b51ba2ba390a421125bd55ebf4edd3/Resources/Database.gd",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "Resources/Resources.gd",
+          "blob_sha": "b5e5a18abd3d4a385d62bb084b6808558d42c5ec",
+          "size": 1077,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKMapper/Resources/Resources.gd",
+          "sha256": "cedc643c2dd0c8ca85741eb44660de8b949d7522bc0da276569fe45bd43257d0",
+          "actual_size": 1077,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKMapper/blob/13c6dc3089b51ba2ba390a421125bd55ebf4edd3/Resources/Resources.gd",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "project.godot",
+          "blob_sha": "69ad01fd50ca6bc861bcea4c70e79413cb37bbcf",
+          "size": 12681,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/TKMapper/project.godot",
+          "sha256": "2b9a09c8d478ab8230b28a71d0f7489e8c32703a52b73b90dfeff91e9cebe19b",
+          "actual_size": 12681,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/TKMapper/blob/13c6dc3089b51ba2ba390a421125bd55ebf4edd3/project.godot",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        }
+      ],
+      "observed": [
+        "MapFileHandler reads big-endian width/height, selects 4-byte or 6-byte cell layout using payload length, reads tile ID, optional explicit unpassable flag and static-object ID minus one.",
+        "SObjTblFileHandler separately reads static-object collision byte, height and tile indices.",
+        "BaseMapFileHandler has MAP and compressed CMAP save paths; source only, no write performed.",
+        "HEAD MAP change is labeled Fixing Map saving regressions; preceding MAP Load/Save commit calls the feature preliminary and possibly buggy."
+      ],
+      "limitations": [
+        "Does not prove exact old Korean MAP header/layout, tile numbering or collision mapping.",
+        "MAP geometry source alone does not provide server exits, NPC placement, monster spawn regions or Korean city names.",
+        "No tool was executed; save/read roundtrip and native exports are NOT_RUN.",
+        "project.godot currently declares Godot 4.7 Forward Plus; README 4.x alone is insufficient to freeze P2 engine."
+      ],
+      "reuse": [
+        "Candidate second viewer for matching tile/object IDs, static collision and map extent.",
+        "Reuse reader modules only after exact Korean file-variant checks."
+      ],
+      "setup": {
+        "tool_version": "pinned HEAD, no releases returned",
+        "dependencies": "Godot project config 4.7 / Forward Plus; source tree contains godot-sqlite addon. Do not bulk-import tool or binary addon into new game.",
+        "required_inputs": "Client tile/object EPF+PAL+TBL and selected exact MAP/CMAP; data_dir configuration in Resources/Database.gd",
+        "runtime_status": "NOT_RUN"
+      },
+      "source_url": "https://github.com/DizzyThermal/TKMapper",
+      "captured_at": "2026-10-15",
+      "game_region": "NA_NexusTK",
+      "client_build": "UNKNOWN_NOT_TESTED",
+      "content_era": "UNKNOWN_NOT_KR_1998_2001_VERIFIED",
+      "lineage": "DizzyThermal Godot tool family; design lineage overlap with TKViewer",
+      "fact_status": "UNKNOWN_FOR_KR_ORIGINAL",
+      "evidence_class": "STATIC_SOURCE_OBSERVATION",
+      "usage_status": "ACQUIRED",
+      "test_result": "NOT_RUN",
+      "read_scope": "Named key files inspected; other files acquired and hashes verified, not all code fully reviewed."
+    },
+    {
+      "source_id": "EXT-VIS-003",
+      "repository": "DizzyThermal/EPFViewer",
+      "ref": "2bc585b3ae3310df5de46f7789eada92840fbd59",
+      "tree_sha": "2bc585b3ae3310df5de46f7789eada92840fbd59",
+      "repo_metadata": {
+        "description": "NexusTK EPF Viewer written in Godot 4.x ",
+        "default_branch": "master",
+        "fork": false,
+        "parent": null,
+        "license": "MIT"
+      },
+      "releases": [],
+      "tags_status": "BLOCKED_CONNECTOR_400",
+      "files": [
+        {
+          "path": "DataTypes/MobAnimationFrame.gd",
+          "blob_sha": "75b3c998be5ce9dc656adb5fd2c1166d854104b4",
+          "size": 507,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/DataTypes/MobAnimationFrame.gd",
+          "sha256": "19b49d7fde84ec6a3bb086faf8371c3def41fd8d4c6df99399c30498fe0d53eb",
+          "actual_size": 507,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/DataTypes/MobAnimationFrame.gd",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "DataTypes/Motion.gd",
+          "blob_sha": "e46dc8c1d8956fc2c412a99dcf906e4193c58635",
+          "size": 457,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/DataTypes/Motion.gd",
+          "sha256": "f1c84b3afb4ce93f7c90d90805486a5eae4e7805fef574b315c06449a5828386",
+          "actual_size": 457,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/DataTypes/Motion.gd",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "DataTypes/MotionFrame.gd",
+          "blob_sha": "34175070cd970db48773c68a40e3ccd27a0a9e98",
+          "size": 322,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/DataTypes/MotionFrame.gd",
+          "sha256": "aea1996f869404ace6cdd8b95a634dbb949a99bb5af47f755c7b2a29948daec1",
+          "actual_size": 322,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/DataTypes/MotionFrame.gd",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "DataTypes/NTK_Effect.gd",
+          "blob_sha": "1bf89d4610c760cc1b17e1f549b7c07ce5164838",
+          "size": 355,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/DataTypes/NTK_Effect.gd",
+          "sha256": "f1187be8e69c331e131d469364d98ad26aad5f9509722204aef0051f92a4bb54",
+          "actual_size": 355,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/DataTypes/NTK_Effect.gd",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "DataTypes/NTK_EffectFrame.gd",
+          "blob_sha": "b533cff64c1c35ffd45bc37e30242c2e4648e235",
+          "size": 384,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/DataTypes/NTK_EffectFrame.gd",
+          "sha256": "e4250add3d23ca8279b737578032beeda5103a3f663aa59fca499c49c07e4942",
+          "actual_size": 384,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/DataTypes/NTK_EffectFrame.gd",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "DataTypes/NTK_Frame.gd",
+          "blob_sha": "d8fcb146b200423b6ce377cc80eb75d990f8ae3e",
+          "size": 859,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/DataTypes/NTK_Frame.gd",
+          "sha256": "be4cdf4bc24a491d0e34e8c6a16c59731cac76778c6baf0640cf454d9b57fd54",
+          "actual_size": 859,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/DataTypes/NTK_Frame.gd",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "DataTypes/PartAnimation.gd",
+          "blob_sha": "b29c4c4253254fad23755a0d6f918580e345b183",
+          "size": 445,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/DataTypes/PartAnimation.gd",
+          "sha256": "babb4ab7a76a39138589b3edd2bb1910fd7ee41f60dfd43d4fa2d324a487922b",
+          "actual_size": 445,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/DataTypes/PartAnimation.gd",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "DataTypes/PartAnimationFrame.gd",
+          "blob_sha": "f56adb31aeb0658d998809384feaeb0d24b3afd0",
+          "size": 280,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/DataTypes/PartAnimationFrame.gd",
+          "sha256": "979f9fe8af649d64fa6a195051c47263862eb658b03f5c7aedcb69baf0bb18fe",
+          "actual_size": 280,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/DataTypes/PartAnimationFrame.gd",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "DataTypes/Pivot.gd",
+          "blob_sha": "9c95ff2140b4f80f4dd89f18aff09a233f093309",
+          "size": 1118,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/DataTypes/Pivot.gd",
+          "sha256": "7ac31e3b339dee4c95f6ee97bf65648ec2e7ee2ef10b254b8c83297c28290330",
+          "actual_size": 1118,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/DataTypes/Pivot.gd",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "FileHandlers/DatFileHandler.gd",
+          "blob_sha": "e13f74f2a00c8b61b014b2bcf3844fa8f4fabccc",
+          "size": 1736,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/FileHandlers/DatFileHandler.gd",
+          "sha256": "aab8cae2b92633578aaddcf5bafbc3938f93d3d6c4dec868797be75a146ba806",
+          "actual_size": 1736,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/FileHandlers/DatFileHandler.gd",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "FileHandlers/DnaFileHandler.gd",
+          "blob_sha": "f67b8afd2a597b5a743897bdacd934ba4a8f02c0",
+          "size": 1777,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/FileHandlers/DnaFileHandler.gd",
+          "sha256": "ba83d77f4e912225d7eefa778a19ab492295c6a2bb574252faea8759f6a47787",
+          "actual_size": 1777,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/FileHandlers/DnaFileHandler.gd",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "FileHandlers/DscFileHandler.gd",
+          "blob_sha": "93e65821f841567b904db459a39e7f2ebf0d73fc",
+          "size": 2750,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/FileHandlers/DscFileHandler.gd",
+          "sha256": "a3de418c49d10afe363f750ccbbfdb12d0638c7ae1ceb2d2a2afdbf2b9baeb45",
+          "actual_size": 2750,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/FileHandlers/DscFileHandler.gd",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "FileHandlers/EfxTblFileHandler.gd",
+          "blob_sha": "db7c5d0b6786491cf7d7092910309f5f17a91182",
+          "size": 3127,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/FileHandlers/EfxTblFileHandler.gd",
+          "sha256": "898649abe545a9a76bad64d659bc722a32de589333d3c9377cad8364e3458cb5",
+          "actual_size": 3127,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/FileHandlers/EfxTblFileHandler.gd",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "FileHandlers/EpfFileHandler.gd",
+          "blob_sha": "f71aedadcfd7d914003ed655c649f561dc6c918d",
+          "size": 4238,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/FileHandlers/EpfFileHandler.gd",
+          "sha256": "9ff0c15e15c862c5917957d68b1446468146af6696e0cae95825915c4f656316",
+          "actual_size": 4238,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/FileHandlers/EpfFileHandler.gd",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "FileHandlers/FrmFileHandler.gd",
+          "blob_sha": "605c33f18dfba89935ecb038437056cdce70f80a",
+          "size": 382,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/FileHandlers/FrmFileHandler.gd",
+          "sha256": "e7a66c3be627041c198e93ca5013d5dbaae52fa3e475ac1c3843bb8b23b1b430",
+          "actual_size": 382,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/FileHandlers/FrmFileHandler.gd",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "FileHandlers/ItemTblFileHandler.gd",
+          "blob_sha": "769a41fe61dac74e8c3576652b7b2ac959701fc2",
+          "size": 2021,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/FileHandlers/ItemTblFileHandler.gd",
+          "sha256": "5ef1b077a32f8ad31369a91b5b9e435098aaa8217d3b9ad1986fa74abfb11c6c",
+          "actual_size": 2021,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/FileHandlers/ItemTblFileHandler.gd",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "FileHandlers/MnmFileHandler.gd",
+          "blob_sha": "2389dec0e3b50128979a093d3f0d2ef376caaa74",
+          "size": 1891,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/FileHandlers/MnmFileHandler.gd",
+          "sha256": "274ac27cc19af5ada639f0212a9563f0ed4054b51022d76bfab404acf2c35355",
+          "actual_size": 1891,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/FileHandlers/MnmFileHandler.gd",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "FileHandlers/MotionTblFileHandler.gd",
+          "blob_sha": "39ffa0af2cb2b418d241a3fe1248aa4d83105f0c",
+          "size": 2052,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/FileHandlers/MotionTblFileHandler.gd",
+          "sha256": "04183b81f0d14a9a30b069baedd9c9fe345864520e2e776d11105755b8d40b85",
+          "actual_size": 2052,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/FileHandlers/MotionTblFileHandler.gd",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "FileHandlers/NTK_FileHandler.gd",
+          "blob_sha": "6a2ab1b35b6084d374a5601ecd29ef966e82336a",
+          "size": 2212,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/FileHandlers/NTK_FileHandler.gd",
+          "sha256": "b2c106edf9870df4ade9969d91797c434394aeaf234fe3f29f61da082f7362cf",
+          "actual_size": 2212,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/FileHandlers/NTK_FileHandler.gd",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "FileHandlers/PalFileHandler.gd",
+          "blob_sha": "95e1ee00bdf875a0800e93a1e168bedcdf3d6d20",
+          "size": 2003,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/FileHandlers/PalFileHandler.gd",
+          "sha256": "df6fb121568d9633ea5671264c9222b27faeef2c495447210196733c4b8d78f2",
+          "actual_size": 2003,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/FileHandlers/PalFileHandler.gd",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "FileHandlers/SObjTblFileHandler.gd",
+          "blob_sha": "6f2d2fd7693735a6d130a91b1165eb30977ad09b",
+          "size": 768,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/FileHandlers/SObjTblFileHandler.gd",
+          "sha256": "b26fab1b49f5a79b9117998975337c1b31060798380b5e8feb251e89a7c3c88e",
+          "actual_size": 768,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/FileHandlers/SObjTblFileHandler.gd",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "FileHandlers/TileTblFileHandler.gd",
+          "blob_sha": "924a95edb8042dd8e46c37aa838535aa18ed664b",
+          "size": 497,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/FileHandlers/TileTblFileHandler.gd",
+          "sha256": "002e539864e88eab2658a79b2677bb63cc410d74c2a908f8df97cd6f44e90ab7",
+          "actual_size": 497,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/FileHandlers/TileTblFileHandler.gd",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "README.md",
+          "blob_sha": "3c396c01da5b0f7bdc0ea9284c4d397181885188",
+          "size": 279,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/README.md",
+          "sha256": "1c6a8d1559b5d55b312198855c299d9092b17d74d6853ac5540ace1d2575fdf0",
+          "actual_size": 279,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/README.md",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "Renderers/NTK_CharacterRenderer.gd",
+          "blob_sha": "a0ca8c9c4852a99fe49fb1b142764e61e6abf733",
+          "size": 6869,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/Renderers/NTK_CharacterRenderer.gd",
+          "sha256": "c32b2bff2ae8a7c3523dc9176c52a7ad97df5a63a36c811cbf25e8ac996d9ce4",
+          "actual_size": 6869,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/Renderers/NTK_CharacterRenderer.gd",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "Renderers/NTK_EffectRenderer.gd",
+          "blob_sha": "967d5a23d143cd5f61cb5a959bc9d959a598d710",
+          "size": 2037,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/Renderers/NTK_EffectRenderer.gd",
+          "sha256": "8c819122ab39dcddb4b52c0ca81e9975d4d958a4a36a815dacbbf62cf17ae60b",
+          "actual_size": 2037,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/Renderers/NTK_EffectRenderer.gd",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "Renderers/NTK_MobRenderer.gd",
+          "blob_sha": "ed0545055f5b28e0b86ce03d7573bedc70fd7849",
+          "size": 1630,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/Renderers/NTK_MobRenderer.gd",
+          "sha256": "7d12920429d7e9b4043b38dfecf984e06c842b970fa1545ef27af949b816a9bc",
+          "actual_size": 1630,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/Renderers/NTK_MobRenderer.gd",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "Renderers/NTK_PartRenderer.gd",
+          "blob_sha": "4ee1ba13d25de90b960137f931166f3d46304e4c",
+          "size": 2017,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/Renderers/NTK_PartRenderer.gd",
+          "sha256": "9e7e60fe95d93c978eb8e8f63c3841e5c497b186cd9255e4f32f9eab6dd437de",
+          "actual_size": 2017,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/Renderers/NTK_PartRenderer.gd",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "Renderers/NTK_Renderer.gd",
+          "blob_sha": "8b72a390cbb351b136f3d647620d4d74b16cde13",
+          "size": 6450,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/Renderers/NTK_Renderer.gd",
+          "sha256": "2ea1124b6b479c6e30f61739610b5cd94e5331b13cff3fef11708aa0b4069e94",
+          "actual_size": 6450,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/Renderers/NTK_Renderer.gd",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "Resources/NTK_Animations.gd",
+          "blob_sha": "8e78b9b5a7f48ebbe0312364ce12470156eba9da",
+          "size": 7727,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/Resources/NTK_Animations.gd",
+          "sha256": "4a0bbcbc5590a850633b0032d5ebdb95bffc79d388ae0987ee0ee7a33f9eea77",
+          "actual_size": 7727,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/Resources/NTK_Animations.gd",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "Resources/Renderers.gd",
+          "blob_sha": "e905d2470a13420c222a180cc37002afaec72815",
+          "size": 2929,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/Resources/Renderers.gd",
+          "sha256": "5efc333cf61992be6091a4bc74899feb7bf3accb20542fab27fa06edc4ffcd7c",
+          "actual_size": 2929,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/Resources/Renderers.gd",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "Resources/Resources.gd",
+          "blob_sha": "482a75153473cae8dec6830a12437f6625a596f3",
+          "size": 861,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/Resources/Resources.gd",
+          "sha256": "1b12f102d5cd68e61c271ccf606fd65c3d8d0e9db599c85d9b40619b85a7857c",
+          "actual_size": 861,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/Resources/Resources.gd",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "Resources/ViewerResources.gd",
+          "blob_sha": "f176778ec8b8209f628037fa6f775cfe7fc7d875",
+          "size": 21084,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/Resources/ViewerResources.gd",
+          "sha256": "52da2c95e7319bf722156659912108409645c2c681c0354aef2007878b23ce2b",
+          "actual_size": 21084,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/Resources/ViewerResources.gd",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "project.godot",
+          "blob_sha": "c3343649dc9c3e4dd9c1cef8f594255674748275",
+          "size": 2523,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/project.godot",
+          "sha256": "9ee073fd682615415795fbf8c355a1437b907b3895f1ad5ee2a4cfb0ca925524",
+          "actual_size": 2523,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/project.godot",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "EPFViewer.gd",
+          "blob_sha": "1ebdd6a12dc394fedd954b154dad0f1d1bdb9321",
+          "size": 32128,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/DizzyThermal/EPFViewer/EPFViewer.gd",
+          "sha256": "305f7ca274f0ba45f6a018fd0e11a0370e05ff891e2c9848f04b59d21f249b5e",
+          "actual_size": 32128,
+          "git_blob_verified": true,
+          "url": "https://github.com/DizzyThermal/EPFViewer/blob/2bc585b3ae3310df5de46f7789eada92840fbd59/EPFViewer.gd",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        }
+      ],
+      "observed": [
+        "DAT parser extracts named members and byte offsets; EPF parser reads top/left/bottom/right, pixel and mask offsets.",
+        "DSC parser preserves per-part palette/base-frame/frame-count, animation ID, frame offsets and unknown bytes.",
+        "DNA parser preserves base frame, animation frame offsets, duration, alpha and unknown fields.",
+        "Motion.tbl parser reads 21-byte MotionStandard/name fields, motion ID, frame count and up to 30 per-frame layer IDs until -1.",
+        "NTK_CharacterRenderer uses motion-frame layer order, per-part animation frame offsets and shared pivot; contains TODO concerning chunkNumber/animation dictionary.",
+        "EfxTbl parser decodes effect index and frame index/delay/palette/unknown; FRM maps frame index to palette. NTK_EffectRenderer uses FRM palette lookup while Efx palette metadata is also retained. This difference needs observation, not an assumed correction.",
+        "PAL parser distinguishes DLPalette header versus multi-palette container and reads animated palette index ranges.",
+        "ViewerResources lists Nexus UI candidates DLGLOGIN, DLGNEW, iteminv/invenbut and palettes; some other mappings are explicitly Not sure. These filenames are leads for matching Korean archive members, not proof of Korean UI ownership."
+      ],
+      "limitations": [
+        "All code is NexusTK-oriented reimplementation, not original Korean source. Numeric IDs have not been mapped to Korean spell/item/motion names.",
+        "DSC unknown fields do not supply confirmed player frame timing or hit frame; DNA duration/effect delay units need matching target version validation.",
+        "No sound decoder, sound ID → resource mapping or gameplay audio event call was established in inspected tool code.",
+        "Viewer palette cycling uses a user speed slider (EPFViewer.gd:164); visual preview speed is not original palette-cycle timing.",
+        "Character composition TODO and palette-source differences require P2 bounds/order/unknown-ID tests.",
+        "Godot 4.7 Forward Plus config and database/addon need explicit P2 compatibility review."
+      ],
+      "reuse": [
+        "Best static candidate for exact motion layer and frame metadata extraction; MIT code license recorded.",
+        "Candidate preview renderer and named UI asset/palette crosswalk, conditional on region/version identification."
+      ],
+      "setup": {
+        "tool_version": "pinned HEAD; no releases returned",
+        "dependencies": "Godot 4.7 Forward Plus per project.godot, Nexus data_dir; source includes godot-sqlite addon. README main scene EPFViewer.tscn.",
+        "required_inputs": "bint0/1/2.dat; char.dat/Motion.tbl and part DSC/PAL; misc.dat; partN.dat/EPF; efx.dat/effect.tbl/EFFECT.FRM/EFFECT.PAL plus efxN.dat; mob DNA/PAL and EPFs for chosen test. Use exact per-client member inventory first.",
+        "runtime_status": "NOT_RUN"
+      },
+      "source_url": "https://github.com/DizzyThermal/EPFViewer",
+      "captured_at": "2026-10-15",
+      "game_region": "NA_NexusTK",
+      "client_build": "UNKNOWN_NOT_TESTED",
+      "content_era": "UNKNOWN_NOT_KR_1998_2001_VERIFIED",
+      "lineage": "DizzyThermal Godot tool family; design lineage overlap with TKViewer",
+      "fact_status": "UNKNOWN_FOR_KR_ORIGINAL",
+      "evidence_class": "STATIC_SOURCE_OBSERVATION",
+      "usage_status": "ACQUIRED",
+      "test_result": "NOT_RUN",
+      "read_scope": "Named key files inspected; other files acquired and hashes verified, not all code fully reviewed."
+    },
+    {
+      "source_id": "EXT-VIS-004",
+      "repository": "olds463/EPFViewer",
+      "ref": "056eb4045d2e7592bb17453f8a4a472232a83d7e",
+      "tree_sha": "056eb4045d2e7592bb17453f8a4a472232a83d7e",
+      "repo_metadata": {
+        "description": "NexusTK EPF Viewer",
+        "default_branch": "master",
+        "fork": true,
+        "parent": "DizzyThermal/TKViewer",
+        "license": "GPL-3.0"
+      },
+      "releases": [],
+      "tags_status": "BLOCKED_CONNECTOR_400",
+      "files": [
+        {
+          "path": "README.md",
+          "blob_sha": "8bfd12d5c238ef2b9bba0a3204b216f8d9f4985f",
+          "size": 4287,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/olds463/EPFViewer/README.md",
+          "sha256": "ee72990fec18859f3863470bc89ac805e4bc8bf3067bb90c423f3366c092cca7",
+          "actual_size": 4287,
+          "git_blob_verified": true,
+          "url": "https://github.com/olds463/EPFViewer/blob/056eb4045d2e7592bb17453f8a4a472232a83d7e/README.md",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "epf_gui.py",
+          "blob_sha": "9365a1bdf99d1660c26d639a8b82c88e8bd7cf2b",
+          "size": 7953,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/olds463/EPFViewer/epf_gui.py",
+          "sha256": "a5569cc6f29904e20c45f5b69424ce591f13820badb023ffd4c40961d4bc5351",
+          "actual_size": 7953,
+          "git_blob_verified": true,
+          "url": "https://github.com/olds463/EPFViewer/blob/056eb4045d2e7592bb17453f8a4a472232a83d7e/epf_gui.py",
+          "review_status": "ACQUIRED_HASH_VERIFIED_NOT_FULLY_REVIEWED"
+        },
+        {
+          "path": "epf_viewer.py",
+          "blob_sha": "8e52d9686c9f820f4397575b16b3cef338c81511",
+          "size": 4686,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/olds463/EPFViewer/epf_viewer.py",
+          "sha256": "9dfb381f884413ded485491d9b711d1ce94a028f431cc9d68f6eacb298e5b151",
+          "actual_size": 4686,
+          "git_blob_verified": true,
+          "url": "https://github.com/olds463/EPFViewer/blob/056eb4045d2e7592bb17453f8a4a472232a83d7e/epf_viewer.py",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        },
+        {
+          "path": "file_reader.py",
+          "blob_sha": "94d0161643744d13bbd22ec089636a1b797b5d7a",
+          "size": 9539,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/olds463/EPFViewer/file_reader.py",
+          "sha256": "3d5b7886dde18f29d4dcd02ea7762478a78f50634893188c36c3fc04e44ec175",
+          "actual_size": 9539,
+          "git_blob_verified": true,
+          "url": "https://github.com/olds463/EPFViewer/blob/056eb4045d2e7592bb17453f8a4a472232a83d7e/file_reader.py",
+          "review_status": "STATIC_KEY_SECTIONS_READ"
+        }
+      ],
+      "observed": [
+        "Actual Python source has TBL/PAL/EPF/MAP readers; GUI exports TileA/B/C tiles.",
+        "README and GitHub metadata establish it as a fork in the TKViewer lineage, not an independent original data source.",
+        "file_reader.py:273 fixes PAL path to the 0.pal variant; get_tile:297–302 uses 24x24 pixel chunks/output. TBL palette indices are read elsewhere but not consumed by get_tile.",
+        "MAP reader uses big-endian width/height and reads 4-byte cells, retaining tile short and skipping second short."
+      ],
+      "limitations": [
+        "README support list exceeds GUI functionality; SObj is explicitly not yet implemented in README.",
+        "Fixed 24x24/first-palette export must not be used as a general EPF/frame/palette truth source.",
+        "Same parser lineage is not independent corroboration; compare semantics with original input or another independent observation.",
+        "Dependencies listed: Python3, PyQt5, Pillow. GPL-3.0. No execution performed."
+      ],
+      "reuse": [
+        "Only a narrow historical tile-format comparison candidate; prefer current tools for offsets/masks and animated metadata."
+      ],
+      "setup": {
+        "tool_version": "pinned 2017 head",
+        "dependencies": "Python3; PyQt5; Pillow; struct is standard library",
+        "required_inputs": "Private Data/TileA/B/C.epf, corresponding TBL and PAL; originals intentionally absent from repository",
+        "runtime_status": "NOT_RUN"
+      },
+      "source_url": "https://github.com/olds463/EPFViewer",
+      "captured_at": "2026-10-15",
+      "game_region": "NA_NexusTK",
+      "client_build": "UNKNOWN_NOT_TESTED",
+      "content_era": "UNKNOWN_NOT_KR_1998_2001_VERIFIED",
+      "lineage": "TKViewer family",
+      "fact_status": "UNKNOWN_FOR_KR_ORIGINAL",
+      "evidence_class": "STATIC_SOURCE_OBSERVATION",
+      "usage_status": "ACQUIRED",
+      "test_result": "NOT_RUN",
+      "read_scope": "Named key files inspected; other files acquired and hashes verified, not all code fully reviewed."
+    },
+    {
+      "source_id": "EXT-VIS-007",
+      "repository": "kwackjiyong/barambook-api",
+      "source_url": "https://github.com/kwackjiyong/barambook-api",
+      "ref": "2192f9e650bed0072a839a7681dc8442b2639bfe",
+      "tree_sha": "2192f9e650bed0072a839a7681dc8442b2639bfe",
+      "captured_at": "2026-10-15",
+      "game_region": "KR_MODERN_CLASSIC_MAPLESTORY_WORLDS_MIXED",
+      "client_build": "UNKNOWN",
+      "content_era": "MODERN_NOT_1998_2001_ORIGINAL",
+      "evidence_class": "STATIC_SOURCE_OBSERVATION",
+      "fact_status": "UNKNOWN_FOR_KR1998_2001",
+      "usage_status": "ACQUIRED",
+      "test_result": "NOT_RUN",
+      "files": [
+        {
+          "path": "src/lib/char-ms/renderer.ts",
+          "blob_sha": "16106d95a7209232cd6918125a2ce7ec26a2cfbc",
+          "sha256": "a2679fc3162299290157607038a9008a9ced9f1e42a1e03c2038ad4139edd3c3",
+          "actual_size": 15662,
+          "git_blob_verified": true,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/kwackjiyong/barambook-api/src/lib/char-ms/renderer.ts",
+          "url": "https://github.com/kwackjiyong/barambook-api/blob/2192f9e650bed0072a839a7681dc8442b2639bfe/src/lib/char-ms/renderer.ts",
+          "review_status": "STATIC_KEY_SECTIONS_READ",
+          "material_type": "THIRD_PARTY_SOURCE_OR_DOC"
+        },
+        {
+          "path": "src/lib/epfDecoder.ts",
+          "blob_sha": "6653c8f96cdea4ed525920cd114a64178cefb29e",
+          "sha256": "8cbd057785de754d84459d1ca15c45d93c38c64895649dbca728391db1b94de3",
+          "actual_size": 8329,
+          "git_blob_verified": true,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/kwackjiyong/barambook-api/src/lib/epfDecoder.ts",
+          "url": "https://github.com/kwackjiyong/barambook-api/blob/2192f9e650bed0072a839a7681dc8442b2639bfe/src/lib/epfDecoder.ts",
+          "review_status": "STATIC_KEY_SECTIONS_READ",
+          "material_type": "THIRD_PARTY_SOURCE_OR_DOC"
+        },
+        {
+          "path": "src/lib/char-ms/frames.ts",
+          "blob_sha": "97bdeaac4ea8fd9331caf6b68af8c17adb004b36",
+          "sha256": "dd8c4d40c2ed448e2e2d9feaf19fd8882c001795ce8fa245e27ca8139ec7d96e",
+          "actual_size": 2644,
+          "git_blob_verified": true,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/kwackjiyong/barambook-api/src/lib/char-ms/frames.ts",
+          "url": "https://github.com/kwackjiyong/barambook-api/blob/2192f9e650bed0072a839a7681dc8442b2639bfe/src/lib/char-ms/frames.ts",
+          "review_status": "STATIC_KEY_SECTIONS_READ",
+          "material_type": "THIRD_PARTY_SOURCE_OR_DOC"
+        },
+        {
+          "path": "src/lib/char-ms/format.ts",
+          "blob_sha": "86ca00e6bf7393c5a88e0d462c8260d568d4e34a",
+          "sha256": "13cd48d77abe41c80aa38810c82d9b0ac55839cac3e6a2f2fc43f1b7c3fe2ef3",
+          "actual_size": 24523,
+          "git_blob_verified": true,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/kwackjiyong/barambook-api/src/lib/char-ms/format.ts",
+          "url": "https://github.com/kwackjiyong/barambook-api/blob/2192f9e650bed0072a839a7681dc8442b2639bfe/src/lib/char-ms/format.ts",
+          "review_status": "STATIC_KEY_SECTIONS_READ",
+          "material_type": "THIRD_PARTY_SOURCE_OR_DOC"
+        },
+        {
+          "path": "src/lib/char-ms/assets.ts",
+          "blob_sha": "ba4417c8a62db3dcce356d279dd4c26d3b9c2cf5",
+          "sha256": "3c6f5c4adc759163d8c6e2e149860d3d19c7e2ea99f110ce7864d270554f5778",
+          "actual_size": 6118,
+          "git_blob_verified": true,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/kwackjiyong/barambook-api/src/lib/char-ms/assets.ts",
+          "url": "https://github.com/kwackjiyong/barambook-api/blob/2192f9e650bed0072a839a7681dc8442b2639bfe/src/lib/char-ms/assets.ts",
+          "review_status": "STATIC_KEY_SECTIONS_READ",
+          "material_type": "THIRD_PARTY_SOURCE_OR_DOC"
+        },
+        {
+          "path": "src/assets/tbl/drworder.json",
+          "blob_sha": "3d8f5227589fa7c0939d8fd27cb2b422fd35a4d6",
+          "sha256": "565ce8a4e2439b97ab5988eda3a0653aec13c173d83ef9061df70063434a04fb",
+          "actual_size": 1803,
+          "git_blob_verified": true,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/kwackjiyong/barambook-api/src/assets/tbl/drworder.json",
+          "url": "https://github.com/kwackjiyong/barambook-api/blob/2192f9e650bed0072a839a7681dc8442b2639bfe/src/assets/tbl/drworder.json",
+          "review_status": "STATIC_KEY_SECTIONS_READ",
+          "material_type": "THIRD_PARTY_EXTRACTED_DATA_PRIVATE_ONLY"
+        },
+        {
+          "path": "src/assets/tbl/body.json",
+          "blob_sha": "29cd9f8fe7cf57fd93712e79fc4e3edd55db4c0f",
+          "sha256": "a1185a36b065d6e9d1214fbd61cdcad4cda82973583244ad256dcea01022cfd6",
+          "actual_size": 13602,
+          "git_blob_verified": true,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/kwackjiyong/barambook-api/src/assets/tbl/body.json",
+          "url": "https://github.com/kwackjiyong/barambook-api/blob/2192f9e650bed0072a839a7681dc8442b2639bfe/src/assets/tbl/body.json",
+          "review_status": "STATIC_KEY_SECTIONS_READ",
+          "material_type": "THIRD_PARTY_EXTRACTED_DATA_PRIVATE_ONLY"
+        },
+        {
+          "path": "README.md",
+          "blob_sha": "560d4ba99a704f6d809f9b59502acf2b1ab045b6",
+          "sha256": "6a14e16d0f7ad2de460eee6fcccc1e60f22dec18658217bda29194b9796c84a6",
+          "actual_size": 6407,
+          "git_blob_verified": true,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/kwackjiyong/barambook-api/README.md",
+          "url": "https://github.com/kwackjiyong/barambook-api/blob/2192f9e650bed0072a839a7681dc8442b2639bfe/README.md",
+          "review_status": "STATIC_KEY_SECTIONS_READ",
+          "material_type": "THIRD_PARTY_SOURCE_OR_DOC"
+        },
+        {
+          "path": "package.json",
+          "blob_sha": "c18ef66b8a8236d067690279058395b183d9c5ed",
+          "sha256": "a85ad1c72cba0facadad4065a7a025b4a6027b0c47fab9eb514facc6358698d5",
+          "actual_size": 3367,
+          "git_blob_verified": true,
+          "local_path": "/workspace/scratch/8309e434ce3b/private-external/visual/kwackjiyong/barambook-api/package.json",
+          "url": "https://github.com/kwackjiyong/barambook-api/blob/2192f9e650bed0072a839a7681dc8442b2639bfe/package.json",
+          "review_status": "STATIC_KEY_SECTIONS_READ",
+          "material_type": "THIRD_PARTY_SOURCE_OR_DOC"
+        }
+      ],
+      "observed": [
+        "renderer.ts:61–62,556–560 uses classic drworder order string as layer tie-breaker.",
+        "frames.ts explicitly maps classic frame numbers to modern MapleStoryWorlds states,directions,ticks. This is not an original client action table.",
+        "epfDecoder.ts reads offsets/stencil bits and palette indexing but includes modern dye rules and fallback black; not original truth.",
+        "Extracted drworder.json has180 entries and body.json has244; KR491 Body.tbl directly declares66, so arrays cannot be copied by index as matching original.",
+        "Recursive tree292files has no .map files or map-named JSON/DAT/ZIP/EPF/PAL/TBL binary data candidate. No missing Korean map gap filled."
+      ],
+      "limitations": [
+        "README is generic Nest template; no target Korean client provenance or original-year proof found.",
+        "Modern action atlas and cosmetic fallback rules must not override original tables or user UI.",
+        "No LICENSE file in fetched tree. Only source-inspection lead before any adoption.",
+        "Original/derived third-party asset bytes were retained privately and are not republished here."
+      ],
+      "reuse": [
+        "Narrow code-reading lead for DrwOrder label interpretation, pending original binary/reference comparison."
+      ],
+      "releases": []
+    }
+  ],
+  "task_id": "BARAM_REBUILD_P0P1_001",
+  "scope": "P0/P1 STATIC ONLY",
+  "captured_at": "2026-10-15",
+  "source_snapshot_counts": {
+    "repositories": 5,
+    "source_files_acquired": 101,
+    "git_blob_matches": 101,
+    "original_table_members_static_fields_read": 7,
+    "reference_tool_runs": 0,
+    "new_game_tests": 0
+  },
+  "read_documents": [
+    "AGENTS.md",
+    "docs/rebuild/MASTER_PLAN.md",
+    "docs/rebuild/STATE.json",
+    "docs/rebuild/STEP01_WORK_INSTRUCTIONS.md"
+  ],
+  "feature_evidence": [
+    {
+      "topic": "DAT named members",
+      "sources": [
+        "EXT-VIS-001",
+        "EXT-VIS-003"
+      ],
+      "locator": "EXT-VIS-003 FileHandlers/DatFileHandler.gd:3–33",
+      "confirmed": "12-byte filename plus member start/end extraction in current tool",
+      "missing": "Exact Korean archive variant and byte-range validity",
+      "implementation_needed": "Version-aware member identity, strict bounds, no silent empty-file substitution",
+      "normal_failure_cancel_tests": "Known member extraction matches bytes/hash; missing/truncated/out-of-range member produces identified error; cancel enumeration keeps source immutable"
+    },
+    {
+      "topic": "Korean map terrain/collision",
+      "sources": [
+        "EXT-VIS-001",
+        "EXT-VIS-002",
+        "EXT-VIS-004"
+      ],
+      "locator": "EXT-VIS-002 FileHandlers/MapFileHandler.gd:8–31; SObjTblFileHandler.gd:16–33",
+      "confirmed": "4/6-byte cell and SObj collision candidate semantics",
+      "missing": "Korean city/map numeric ID, format variant, correct tile/palette/collision observations; exits/spawns need separate source",
+      "implementation_needed": "Explicit map-variant loader and immutable map IDs; expected map manifest",
+      "normal_failure_cancel_tests": "Compare map extent/tile/object corners with independent viewer; malformed size/collision rejected; cancel load keeps prior map/player/drop positions"
+    },
+    {
+      "topic": "Four-direction character and equipment composition",
+      "sources": [
+        "EXT-VIS-001",
+        "EXT-VIS-003",
+        "LIB-010"
+      ],
+      "locator": "EXT-VIS-003 DscFileHandler.gd:12–53; MotionTblFileHandler.gd:21–45; NTK_CharacterRenderer.gd:94–144",
+      "confirmed": "Motion name/ID, layer order, per-part frame offsets, shared pivot available in parser code; KR491 original Body.tbl ID/Palette/Starting and DrwOrder tokens present; modern tool IDs not adopted.",
+      "missing": "Matching Korean motion table and original direction/layer snapshots; player frame delay and hit frame",
+      "implementation_needed": "Motion-specific frame and layer binding with strict part/motion/palette bounds; no arbitrary mirroring",
+      "normal_failure_cancel_tests": "Same body/hair/weapon/coat all 4 directions; optional missing part and unknown required part separated; changing/cancelling equipment does not alter saved stats or frame pivot",
+      "additional_original_evidence": "original_table_observations and original_audio_inventory_reference"
+    },
+    {
+      "topic": "Effect animation/frame/palette",
+      "sources": [
+        "EXT-VIS-001",
+        "EXT-VIS-003",
+        "LIB-010"
+      ],
+      "locator": "EXT-VIS-003 EfxTblFileHandler.gd:57–102; FrmFileHandler.gd:9–20; NTK_EffectRenderer.gd:13–56",
+      "confirmed": "Effect metadata includes frame IDs/delay/palette; FRM lookup is implemented; KR491 original text directly exposes front/back frame sequences,RepeatFrom/To,Delay,Alpha,Light plus EffLayer/EffRange associations.",
+      "missing": "Korean spell → effect original ID; signed/sentinel semantics, delay units, layer/projectile behavior and call conditions",
+      "implementation_needed": "Version-scoped effect binding and bounded lifecycle; retain unknown bytes and both palette sources",
+      "normal_failure_cancel_tests": "Chosen effect frame sequence/palette compared with second tool; malformed sentinel/unknown effect exits safely; cancel/map transition stops loops without locking movement",
+      "additional_original_evidence": "original_table_observations and original_audio_inventory_reference"
+    },
+    {
+      "topic": "Monster frame timing",
+      "sources": [
+        "EXT-VIS-001",
+        "EXT-VIS-003",
+        "LIB-010"
+      ],
+      "locator": "EXT-VIS-003 DnaFileHandler.gd:22–50; EXT-VIS-001 MobRenderer.java:210",
+      "confirmed": "DNA offset/duration/alpha retained",
+      "missing": "Korean monster/species numeric binding and duration units; no spawn or combat formula from visual data",
+      "implementation_needed": "Metadata playback separated from spawn/combat rules",
+      "normal_failure_cancel_tests": "Known mob 4 direction/action frame metadata; invalid animation rejected; cancel spawn never changes world rules",
+      "additional_original_evidence": "original_table_observations and original_audio_inventory_reference"
+    },
+    {
+      "topic": "Palette animation and transparency",
+      "sources": [
+        "EXT-VIS-001",
+        "EXT-VIS-003"
+      ],
+      "locator": "EXT-VIS-003 PalFileHandler.gd:11–45; EpfFileHandler.gd:41–90; EPFViewer.gd:164",
+      "confirmed": "Frame offsets, stencil mask and animation ranges in current source",
+      "missing": "Original cycle speed, transparency boundary behavior and old Korean header variants",
+      "implementation_needed": "Indexed pixels/palettes/masks preserved; derived texture key includes parser/config/palette hashes",
+      "normal_failure_cancel_tests": "Same raw EPF under each declared palette; invalid mask/palette bounds identified; cancelling preview cannot overwrite original"
+    },
+    {
+      "topic": "Old login/creation/right-panel artwork",
+      "sources": [
+        "EXT-VIS-003"
+      ],
+      "locator": "EXT-VIS-003 Resources/ViewerResources.gd:56–81,100–104",
+      "confirmed": "Named Nexus leads DLGLOGIN, DLGNEW, iteminv, invenbut with palette associations",
+      "missing": "Actual Korean archive member identity and user-photo match; original auth/creation flow is not implied",
+      "implementation_needed": "Field-level UI asset identity and profile-localized skin separate from real authentication",
+      "normal_failure_cancel_tests": "Photo-to-asset comparison for 4 panels/status; missing icon visibly diagnosed; cancelling creation leaves no character"
+    },
+    {
+      "topic": "Sound and hit feel",
+      "sources": [
+        "EXT-VIS-001",
+        "EXT-VIS-003",
+        "LIB-010"
+      ],
+      "locator": "Selected tool file set; config.properties sfx volume property only",
+      "confirmed": "163WAVoriginal header metadata is available from reused LIB-010 inventory; inspected viewers still do not establish soundID→action/spellcalltiming.",
+      "missing": "Sound file originals/IDs, spell-to-sound binding, call conditions, sample rate, loop metadata, input→hit→audio→unlock timing and qualified video FPS/speed",
+      "implementation_needed": "Audio binding/event record with timestamps; independent frame/audio comparison; original delay separate from output latency",
+      "normal_failure_cancel_tests": "Same action recording and waveform alignment; missing sound/voice count/format failure surfaced; interruption/teleport cancels or completes explicitly with no stuck state",
+      "additional_original_evidence": "original_table_observations and original_audio_inventory_reference"
+    }
+  ],
+  "issues": [
+    {
+      "issue_id": "ISS-VIS-001",
+      "classification": "VERSION_MISMATCH",
+      "priority": "P2_REQUIRED",
+      "sources": [
+        "EXT-VIS-001",
+        "EXT-VIS-002",
+        "EXT-VIS-003"
+      ],
+      "description": "Tool source acquired but KR1.25/KR4.91 compatibility unexecuted; Nexus numeric IDs and semantics cannot become Korean original values.",
+      "next_action": "Use exact client/member hashes from original inventory and small representative sample, compare output with independent visual reference; unsupported format remains BLOCKED."
+    },
+    {
+      "issue_id": "ISS-VIS-002",
+      "classification": "ID_UNIDENTIFIED",
+      "priority": "P2_REQUIRED",
+      "sources": [
+        "EXT-VIS-003"
+      ],
+      "description": "Motion/effect/frame metadata found; spell names, sound IDs and original call conditions unresolved.",
+      "next_action": "Connect server/reference protocol spell/effect/sound call evidence with actual Korean client raw ID; preserve unmatched IDs separately."
+    },
+    {
+      "issue_id": "ISS-VIS-003",
+      "classification": "INTENTIONAL_NON_USE",
+      "priority": "P2_REQUIRED",
+      "sources": [
+        "EXT-VIS-001"
+      ],
+      "description": "PartRenderer fixed 64*16ms is viewer default and cannot establish original character speed.",
+      "next_action": "Never adopt it as original timing; find target client metadata or matched recording/reference run, measure hit/next-action time separately."
+    },
+    {
+      "issue_id": "ISS-VIS-004",
+      "classification": "ID_UNIDENTIFIED",
+      "priority": "P2_REQUIRED",
+      "sources": [
+        "EXT-VIS-003"
+      ],
+      "description": "Unknown DSC/DNA/effect bytes, effect sentinel parsing and FRM-vs-effect palette source not resolved.",
+      "next_action": "Record raw values/offsets; bounded representative decode and independent compare in P2; unknown fields stay unknown."
+    },
+    {
+      "issue_id": "ISS-VIS-005",
+      "classification": "INTENTIONAL_NON_USE",
+      "priority": "P2_REQUIRED",
+      "sources": [
+        "EXT-VIS-004"
+      ],
+      "description": "Old Python fork export fixes 24x24 and first PAL; it must not adjudicate general EPF geometry/palette.",
+      "next_action": "Restrict to documented tile subset; use newer parser and actual original observations; count lineage once."
+    },
+    {
+      "issue_id": "ISS-VIS-006",
+      "classification": "MISSING_SUPPORT_CODE",
+      "priority": "P2_REQUIRED",
+      "sources": [
+        "EXT-VIS-001",
+        "EXT-VIS-003"
+      ],
+      "description": "Inspected viewer sources do not establish actual sound decoding/binding/call timing; volume config is insufficient.",
+      "next_action": "Inspect target sound files and reference server/client calls, then prepare audio sample/hash + original ID + action event; do not synthesize missing original sound."
+    },
+    {
+      "issue_id": "ISS-VIS-007",
+      "classification": "VERSION_MISMATCH",
+      "priority": "P2_REQUIRED",
+      "sources": [
+        "EXT-VIS-002",
+        "EXT-VIS-003"
+      ],
+      "description": "Current tool project configs declare Godot4.7 Forward Plus; readmes only say4.x. New game engine not yet chosen.",
+      "next_action": "Freeze tool and engine versions separately; inspect version-compatible tool snapshot and chosen export chain during P2, without adopting bulk project/addons."
+    },
+    {
+      "issue_id": "ISS-VIS-008",
+      "classification": "MISSING_EVIDENCE",
+      "priority": "FOLLOWUP_CONTENT",
+      "sources": [],
+      "description": "No qualified Korean1998–2001 video/audio with verified build,FPS,speed,timecode acquired in this search.",
+      "next_action": "Target official/archive recordings for chosen action IDs; modern classic/private-server clips remain leads only; use P2 exact reference pair if compatible."
+    },
+    {
+      "issue_id": "ISS-VIS-009",
+      "classification": "VERSION_MISMATCH",
+      "priority": "P2_REQUIRED",
+      "sources": [
+        "EXT-VIS-002"
+      ],
+      "description": "MAP read/save was recently preliminary and then regression-fixed per history; map writes unverified.",
+      "next_action": "P2 first read-only compare; any later roundtrip only on copies with full member/hash/geometry comparison."
+    },
+    {
+      "issue_id": "ISS-VIS-010",
+      "classification": "ACCESS_UNAVAILABLE",
+      "priority": "FOLLOWUP_CONTENT",
+      "sources": [
+        "EXT-VIS-001",
+        "EXT-VIS-002",
+        "EXT-VIS-003",
+        "EXT-VIS-004"
+      ],
+      "description": "GitHub connector blocked tags/forks collection URL with400; this is connector access, not proof of missing tags/forks.",
+      "next_action": "Known TKViewer release3.7.2 commit pinned; investigate specific older snapshot only if current parser fails target variant. Avoid repeated identical blocked requests."
+    },
+    {
+      "issue_id": "ISS-VIS-011",
+      "classification": "MISSING_EVIDENCE",
+      "priority": "BEFORE_CODE_ADOPTION",
+      "sources": [
+        "EXT-VIS-001"
+      ],
+      "description": "TKViewer recursive tree has no explicit LICENSE; current Python fork isGPL3 and Godot toolsMIT.",
+      "next_action": "Use static semantics/validation candidate now; clarify code reuse licensing before copying TKViewer code. Original game asset rights remain separate."
+    },
+    {
+      "issue_id": "ISS-VIS-012",
+      "classification": "VERSION_MISMATCH",
+      "priority": "P2_REQUIRED",
+      "sources": [
+        "LIB-010",
+        "EXT-VIS-003",
+        "EXT-VIS-007"
+      ],
+      "description": "KR491 Effect.tbl/Body.tbl/DrwOrder.tbl directly read as text while modern Nexus readers expect different encrypted/binary DSC/DNA/Motion/effect structures; modern barambook extracted arrays also differ in record counts.",
+      "next_action": "Select original exact field metadata as P2 input and explicitly version the parser; compare to source tools only where layout matches. Never feed original text to modern Efx binary decoder or import180/244entrymodernarrays as KR491 originals."
+    }
+  ],
+  "p2_recipes": [
+    {
+      "p2_id": "P2-VIS-MAP",
+      "readiness": "PARTIAL_INPUT_PREPARED",
+      "inputs": "Exact KR map+tileEPF+PAL+TBL hashes/member IDs from original inventory; EXT-VIS-002 pinned parser and EXT-VIS-001 comparison candidate. Tool sources ready; Korean match untested.",
+      "procedure": "Read-only representative town/hunting entrance map; compare dimensions, corner and doorway tile/object indices, palettes and collision with independent map screenshot/tool. Check required absent map rejects and cancel keeps prior state. Do not use NA terrain as KR.",
+      "expected_evidence": "Side-by-side same input ID/hash render; collision overlays; source list and mismatch log. Exits/NPC/spawns separate not inferred from geometry.",
+      "test_status": "NOT_RUN"
+    },
+    {
+      "p2_id": "P2-VIS-CHAR",
+      "readiness": "PARTIAL_INPUT_PREPARED",
+      "inputs": "Start with LIB-010 KR491 Body.tbl/DrwOrder.tbl and exact related EPF/PALmember IDs from original_table_observations. Current DSC/DNA/Motion tool metadata is alternate-format reference only; do not require absent modern tables in old client.",
+      "procedure": "One fixed body+hair+weapon+coat in four directions under walk/attack/cast; capture each frame with offsets/layers and palette. Compare independent reference; do not use TKViewer fixed1024ms as timing. Test missing/unknown part and cancel.",
+      "expected_evidence": "Per-frame body/weapon shared pivot, layer sequence and original direction. Timing unknown remains marked until measured.",
+      "test_status": "NOT_RUN"
+    },
+    {
+      "p2_id": "P2-VIS-EFX-SFX",
+      "readiness": "PARTIAL_EFFECT_INPUT_AUDIO_BINDING_BLOCKED",
+      "inputs": "LIB-010 Effect.tbl/Effect.frm/EffLayer.tbl/EffRange.tbl with original member IDs/hashes in original_table_observations;163WAVheader metadata already in archive_members.jsonl. Gameplay spell/effect/soundIDbindingandactualcalltiming unresolved.",
+      "procedure": "Decode sequence with bounded sentinel handling; compare palette source and frame duration; reference action capture records input,motion,hit,effect,audio,next action. Include repeated teleport/cancel/map transition/watchdog.",
+      "expected_evidence": "Frame sequence+timestamps, waveform/sample rate, event/log alignment and missing sound failure. play() log alone is insufficient.",
+      "test_status": "NOT_RUN"
+    },
+    {
+      "p2_id": "P2-VIS-UI",
+      "readiness": "PARTIAL_CROSSWALK_LEADS",
+      "inputs": "User photo IDs7480/7478/7476 and exact KR archive UI members; EXT-VIS-003 Nexus DLGLOGIN/DLGNEW/iteminv leads.",
+      "procedure": "Compare old artwork and each right-panel/status layout to user photos; test icon identity and equipment appearance; keep login-skin/local-profile/real-auth as separate cases.",
+      "expected_evidence": "UI asset source/match sheet; unresolved year/region remains provisional.",
+      "test_status": "NOT_RUN"
+    }
+  ],
+  "history": {
+    "TKViewer_release_3_7_2": {
+      "ref": "3.7.2",
+      "commit": "95462b952f5768192505260d89d39400b36241d6",
+      "relationship": "Older public tool release, not original game build; binary not downloaded or executed."
+    },
+    "EPFViewer_motion": [
+      {
+        "sha": "28919f439d9e922249753566d22e399e472f6728",
+        "node_id": "C_kwDOLJRidNoAKDI4OTE5ZjQzOWQ5ZTkyMjI0OTc1MzU2NmQyMmUzOTllNDcyZjY3Mjg",
+        "commit": {
+          "author": {
+            "name": "Stephen Diniz",
+            "email": "DizzyThermal@gmail.com",
+            "date": "2026-05-03T01:47:40Z"
+          },
+          "committer": {
+            "name": "Stephen Diniz",
+            "email": "DizzyThermal@gmail.com",
+            "date": "2026-05-03T01:47:40Z"
+          },
+          "message": "Linting and Typing",
+          "tree": {
+            "sha": "d9094bd39dd4836a8045086a27f57e0cbfe2ca37",
+            "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/trees/d9094bd39dd4836a8045086a27f57e0cbfe2ca37"
+          },
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/commits/28919f439d9e922249753566d22e399e472f6728",
+          "comment_count": 0,
+          "verification": {
+            "verified": false,
+            "reason": "unsigned",
+            "signature": null,
+            "payload": null,
+            "verified_at": null
+          }
+        },
+        "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/commits/28919f439d9e922249753566d22e399e472f6728",
+        "html_url": "https://github.com/DizzyThermal/EPFViewer/commit/28919f439d9e922249753566d22e399e472f6728",
+        "comments_url": "https://api.github.com/repos/DizzyThermal/EPFViewer/commits/28919f439d9e922249753566d22e399e472f6728/comments",
+        "author": {
+          "login": "DizzyThermal",
+          "id": 730767,
+          "node_id": "MDQ6VXNlcjczMDc2Nw==",
+          "avatar_url": "https://avatars.githubusercontent.com/u/730767?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/DizzyThermal",
+          "html_url": "https://github.com/DizzyThermal",
+          "followers_url": "https://api.github.com/users/DizzyThermal/followers",
+          "following_url": "https://api.github.com/users/DizzyThermal/following{/other_user}",
+          "gists_url": "https://api.github.com/users/DizzyThermal/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/DizzyThermal/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/DizzyThermal/subscriptions",
+          "organizations_url": "https://api.github.com/users/DizzyThermal/orgs",
+          "repos_url": "https://api.github.com/users/DizzyThermal/repos",
+          "events_url": "https://api.github.com/users/DizzyThermal/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/DizzyThermal/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "committer": {
+          "login": "DizzyThermal",
+          "id": 730767,
+          "node_id": "MDQ6VXNlcjczMDc2Nw==",
+          "avatar_url": "https://avatars.githubusercontent.com/u/730767?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/DizzyThermal",
+          "html_url": "https://github.com/DizzyThermal",
+          "followers_url": "https://api.github.com/users/DizzyThermal/followers",
+          "following_url": "https://api.github.com/users/DizzyThermal/following{/other_user}",
+          "gists_url": "https://api.github.com/users/DizzyThermal/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/DizzyThermal/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/DizzyThermal/subscriptions",
+          "organizations_url": "https://api.github.com/users/DizzyThermal/orgs",
+          "repos_url": "https://api.github.com/users/DizzyThermal/repos",
+          "events_url": "https://api.github.com/users/DizzyThermal/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/DizzyThermal/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "parents": [
+          {
+            "sha": "883365d31ee29fc9166b9ee7e837a86233b6254b",
+            "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/commits/883365d31ee29fc9166b9ee7e837a86233b6254b",
+            "html_url": "https://github.com/DizzyThermal/EPFViewer/commit/883365d31ee29fc9166b9ee7e837a86233b6254b"
+          }
+        ]
+      },
+      {
+        "sha": "3a12ebcdc845ea54deba09880ed69d78fb84b09e",
+        "node_id": "C_kwDOLJRidNoAKDNhMTJlYmNkYzg0NWVhNTRkZWJhMDk4ODBlZDY5ZDc4ZmI4NGIwOWU",
+        "commit": {
+          "author": {
+            "name": "Stephen Diniz",
+            "email": "DizzyThermal@gmail.com",
+            "date": "2025-04-08T00:32:20Z"
+          },
+          "committer": {
+            "name": "Stephen Diniz",
+            "email": "DizzyThermal@gmail.com",
+            "date": "2025-04-08T00:32:20Z"
+          },
+          "message": "Updating FileHandlers",
+          "tree": {
+            "sha": "a749815628eeb56a71a7244b3571229b800aa517",
+            "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/trees/a749815628eeb56a71a7244b3571229b800aa517"
+          },
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/commits/3a12ebcdc845ea54deba09880ed69d78fb84b09e",
+          "comment_count": 0,
+          "verification": {
+            "verified": false,
+            "reason": "unsigned",
+            "signature": null,
+            "payload": null,
+            "verified_at": null
+          }
+        },
+        "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/commits/3a12ebcdc845ea54deba09880ed69d78fb84b09e",
+        "html_url": "https://github.com/DizzyThermal/EPFViewer/commit/3a12ebcdc845ea54deba09880ed69d78fb84b09e",
+        "comments_url": "https://api.github.com/repos/DizzyThermal/EPFViewer/commits/3a12ebcdc845ea54deba09880ed69d78fb84b09e/comments",
+        "author": {
+          "login": "DizzyThermal",
+          "id": 730767,
+          "node_id": "MDQ6VXNlcjczMDc2Nw==",
+          "avatar_url": "https://avatars.githubusercontent.com/u/730767?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/DizzyThermal",
+          "html_url": "https://github.com/DizzyThermal",
+          "followers_url": "https://api.github.com/users/DizzyThermal/followers",
+          "following_url": "https://api.github.com/users/DizzyThermal/following{/other_user}",
+          "gists_url": "https://api.github.com/users/DizzyThermal/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/DizzyThermal/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/DizzyThermal/subscriptions",
+          "organizations_url": "https://api.github.com/users/DizzyThermal/orgs",
+          "repos_url": "https://api.github.com/users/DizzyThermal/repos",
+          "events_url": "https://api.github.com/users/DizzyThermal/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/DizzyThermal/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "committer": {
+          "login": "DizzyThermal",
+          "id": 730767,
+          "node_id": "MDQ6VXNlcjczMDc2Nw==",
+          "avatar_url": "https://avatars.githubusercontent.com/u/730767?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/DizzyThermal",
+          "html_url": "https://github.com/DizzyThermal",
+          "followers_url": "https://api.github.com/users/DizzyThermal/followers",
+          "following_url": "https://api.github.com/users/DizzyThermal/following{/other_user}",
+          "gists_url": "https://api.github.com/users/DizzyThermal/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/DizzyThermal/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/DizzyThermal/subscriptions",
+          "organizations_url": "https://api.github.com/users/DizzyThermal/orgs",
+          "repos_url": "https://api.github.com/users/DizzyThermal/repos",
+          "events_url": "https://api.github.com/users/DizzyThermal/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/DizzyThermal/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "parents": [
+          {
+            "sha": "e9fe33fb8d894d878a6053fd7ac67e40c88efe7d",
+            "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/commits/e9fe33fb8d894d878a6053fd7ac67e40c88efe7d",
+            "html_url": "https://github.com/DizzyThermal/EPFViewer/commit/e9fe33fb8d894d878a6053fd7ac67e40c88efe7d"
+          }
+        ]
+      },
+      {
+        "sha": "76085e8d28674495230efee6fc4be34b56a5e75e",
+        "node_id": "C_kwDOLJRidNoAKDc2MDg1ZThkMjg2NzQ0OTUyMzBlZmVlNmZjNGJlMzRiNTZhNWU3NWU",
+        "commit": {
+          "author": {
+            "name": "Stephen Diniz",
+            "email": "DizzyThermal@gmail.com",
+            "date": "2024-01-24T23:25:07Z"
+          },
+          "committer": {
+            "name": "Stephen Diniz",
+            "email": "DizzyThermal@gmail.com",
+            "date": "2024-01-24T23:25:07Z"
+          },
+          "message": "Adding EPFViewer App",
+          "tree": {
+            "sha": "eed56af25eb27ecbfae0de7aff2a6d2aeb5e04d9",
+            "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/trees/eed56af25eb27ecbfae0de7aff2a6d2aeb5e04d9"
+          },
+          "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/git/commits/76085e8d28674495230efee6fc4be34b56a5e75e",
+          "comment_count": 0,
+          "verification": {
+            "verified": false,
+            "reason": "unsigned",
+            "signature": null,
+            "payload": null,
+            "verified_at": null
+          }
+        },
+        "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/commits/76085e8d28674495230efee6fc4be34b56a5e75e",
+        "html_url": "https://github.com/DizzyThermal/EPFViewer/commit/76085e8d28674495230efee6fc4be34b56a5e75e",
+        "comments_url": "https://api.github.com/repos/DizzyThermal/EPFViewer/commits/76085e8d28674495230efee6fc4be34b56a5e75e/comments",
+        "author": {
+          "login": "DizzyThermal",
+          "id": 730767,
+          "node_id": "MDQ6VXNlcjczMDc2Nw==",
+          "avatar_url": "https://avatars.githubusercontent.com/u/730767?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/DizzyThermal",
+          "html_url": "https://github.com/DizzyThermal",
+          "followers_url": "https://api.github.com/users/DizzyThermal/followers",
+          "following_url": "https://api.github.com/users/DizzyThermal/following{/other_user}",
+          "gists_url": "https://api.github.com/users/DizzyThermal/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/DizzyThermal/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/DizzyThermal/subscriptions",
+          "organizations_url": "https://api.github.com/users/DizzyThermal/orgs",
+          "repos_url": "https://api.github.com/users/DizzyThermal/repos",
+          "events_url": "https://api.github.com/users/DizzyThermal/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/DizzyThermal/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "committer": {
+          "login": "DizzyThermal",
+          "id": 730767,
+          "node_id": "MDQ6VXNlcjczMDc2Nw==",
+          "avatar_url": "https://avatars.githubusercontent.com/u/730767?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/DizzyThermal",
+          "html_url": "https://github.com/DizzyThermal",
+          "followers_url": "https://api.github.com/users/DizzyThermal/followers",
+          "following_url": "https://api.github.com/users/DizzyThermal/following{/other_user}",
+          "gists_url": "https://api.github.com/users/DizzyThermal/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/DizzyThermal/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/DizzyThermal/subscriptions",
+          "organizations_url": "https://api.github.com/users/DizzyThermal/orgs",
+          "repos_url": "https://api.github.com/users/DizzyThermal/repos",
+          "events_url": "https://api.github.com/users/DizzyThermal/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/DizzyThermal/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "parents": [
+          {
+            "sha": "8b0acf7bc20a2ece4992d7f1b3cb989b43f81596",
+            "url": "https://api.github.com/repos/DizzyThermal/EPFViewer/commits/8b0acf7bc20a2ece4992d7f1b3cb989b43f81596",
+            "html_url": "https://github.com/DizzyThermal/EPFViewer/commit/8b0acf7bc20a2ece4992d7f1b3cb989b43f81596"
+          }
+        ]
+      }
+    ],
+    "TKMapper_MAP": [
+      {
+        "sha": "13c6dc3089b51ba2ba390a421125bd55ebf4edd3",
+        "node_id": "C_kwDOOJhohNoAKDEzYzZkYzMwODliNTFiYTJiYTM5MGE0MjExMjViZDU1ZWJmNGVkZDM",
+        "commit": {
+          "author": {
+            "name": "DizzyThermal",
+            "email": "DizzyThermal@gmail.com",
+            "date": "2026-06-27T18:32:44Z"
+          },
+          "committer": {
+            "name": "DizzyThermal",
+            "email": "DizzyThermal@gmail.com",
+            "date": "2026-06-27T18:32:44Z"
+          },
+          "message": "Fixing Map saving regressions",
+          "tree": {
+            "sha": "df5e1bfd8d0758d012bee0ad4e872e502e5453b1",
+            "url": "https://api.github.com/repos/DizzyThermal/TKMapper/git/trees/df5e1bfd8d0758d012bee0ad4e872e502e5453b1"
+          },
+          "url": "https://api.github.com/repos/DizzyThermal/TKMapper/git/commits/13c6dc3089b51ba2ba390a421125bd55ebf4edd3",
+          "comment_count": 0,
+          "verification": {
+            "verified": false,
+            "reason": "unsigned",
+            "signature": null,
+            "payload": null,
+            "verified_at": null
+          }
+        },
+        "url": "https://api.github.com/repos/DizzyThermal/TKMapper/commits/13c6dc3089b51ba2ba390a421125bd55ebf4edd3",
+        "html_url": "https://github.com/DizzyThermal/TKMapper/commit/13c6dc3089b51ba2ba390a421125bd55ebf4edd3",
+        "comments_url": "https://api.github.com/repos/DizzyThermal/TKMapper/commits/13c6dc3089b51ba2ba390a421125bd55ebf4edd3/comments",
+        "author": {
+          "login": "DizzyThermal",
+          "id": 730767,
+          "node_id": "MDQ6VXNlcjczMDc2Nw==",
+          "avatar_url": "https://avatars.githubusercontent.com/u/730767?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/DizzyThermal",
+          "html_url": "https://github.com/DizzyThermal",
+          "followers_url": "https://api.github.com/users/DizzyThermal/followers",
+          "following_url": "https://api.github.com/users/DizzyThermal/following{/other_user}",
+          "gists_url": "https://api.github.com/users/DizzyThermal/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/DizzyThermal/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/DizzyThermal/subscriptions",
+          "organizations_url": "https://api.github.com/users/DizzyThermal/orgs",
+          "repos_url": "https://api.github.com/users/DizzyThermal/repos",
+          "events_url": "https://api.github.com/users/DizzyThermal/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/DizzyThermal/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "committer": {
+          "login": "DizzyThermal",
+          "id": 730767,
+          "node_id": "MDQ6VXNlcjczMDc2Nw==",
+          "avatar_url": "https://avatars.githubusercontent.com/u/730767?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/DizzyThermal",
+          "html_url": "https://github.com/DizzyThermal",
+          "followers_url": "https://api.github.com/users/DizzyThermal/followers",
+          "following_url": "https://api.github.com/users/DizzyThermal/following{/other_user}",
+          "gists_url": "https://api.github.com/users/DizzyThermal/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/DizzyThermal/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/DizzyThermal/subscriptions",
+          "organizations_url": "https://api.github.com/users/DizzyThermal/orgs",
+          "repos_url": "https://api.github.com/users/DizzyThermal/repos",
+          "events_url": "https://api.github.com/users/DizzyThermal/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/DizzyThermal/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "parents": [
+          {
+            "sha": "daf814e2a6a9e2a5f531f6e833d101c1c7047486",
+            "url": "https://api.github.com/repos/DizzyThermal/TKMapper/commits/daf814e2a6a9e2a5f531f6e833d101c1c7047486",
+            "html_url": "https://github.com/DizzyThermal/TKMapper/commit/daf814e2a6a9e2a5f531f6e833d101c1c7047486"
+          }
+        ]
+      },
+      {
+        "sha": "daf814e2a6a9e2a5f531f6e833d101c1c7047486",
+        "node_id": "C_kwDOOJhohNoAKGRhZjgxNGUyYTZhOWUyYTVmNTMxZjZlODMzZDEwMWMxYzcwNDc0ODY",
+        "commit": {
+          "author": {
+            "name": "DizzyThermal",
+            "email": "DizzyThermal@gmail.com",
+            "date": "2026-06-26T18:32:03Z"
+          },
+          "committer": {
+            "name": "DizzyThermal",
+            "email": "DizzyThermal@gmail.com",
+            "date": "2026-06-26T18:32:03Z"
+          },
+          "message": "Adding preliminary MAP Load/Save functionality - may be buggy!",
+          "tree": {
+            "sha": "c0710a974e71309e055e36de0d931b2aa609a0a7",
+            "url": "https://api.github.com/repos/DizzyThermal/TKMapper/git/trees/c0710a974e71309e055e36de0d931b2aa609a0a7"
+          },
+          "url": "https://api.github.com/repos/DizzyThermal/TKMapper/git/commits/daf814e2a6a9e2a5f531f6e833d101c1c7047486",
+          "comment_count": 0,
+          "verification": {
+            "verified": false,
+            "reason": "unsigned",
+            "signature": null,
+            "payload": null,
+            "verified_at": null
+          }
+        },
+        "url": "https://api.github.com/repos/DizzyThermal/TKMapper/commits/daf814e2a6a9e2a5f531f6e833d101c1c7047486",
+        "html_url": "https://github.com/DizzyThermal/TKMapper/commit/daf814e2a6a9e2a5f531f6e833d101c1c7047486",
+        "comments_url": "https://api.github.com/repos/DizzyThermal/TKMapper/commits/daf814e2a6a9e2a5f531f6e833d101c1c7047486/comments",
+        "author": {
+          "login": "DizzyThermal",
+          "id": 730767,
+          "node_id": "MDQ6VXNlcjczMDc2Nw==",
+          "avatar_url": "https://avatars.githubusercontent.com/u/730767?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/DizzyThermal",
+          "html_url": "https://github.com/DizzyThermal",
+          "followers_url": "https://api.github.com/users/DizzyThermal/followers",
+          "following_url": "https://api.github.com/users/DizzyThermal/following{/other_user}",
+          "gists_url": "https://api.github.com/users/DizzyThermal/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/DizzyThermal/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/DizzyThermal/subscriptions",
+          "organizations_url": "https://api.github.com/users/DizzyThermal/orgs",
+          "repos_url": "https://api.github.com/users/DizzyThermal/repos",
+          "events_url": "https://api.github.com/users/DizzyThermal/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/DizzyThermal/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "committer": {
+          "login": "DizzyThermal",
+          "id": 730767,
+          "node_id": "MDQ6VXNlcjczMDc2Nw==",
+          "avatar_url": "https://avatars.githubusercontent.com/u/730767?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/DizzyThermal",
+          "html_url": "https://github.com/DizzyThermal",
+          "followers_url": "https://api.github.com/users/DizzyThermal/followers",
+          "following_url": "https://api.github.com/users/DizzyThermal/following{/other_user}",
+          "gists_url": "https://api.github.com/users/DizzyThermal/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/DizzyThermal/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/DizzyThermal/subscriptions",
+          "organizations_url": "https://api.github.com/users/DizzyThermal/orgs",
+          "repos_url": "https://api.github.com/users/DizzyThermal/repos",
+          "events_url": "https://api.github.com/users/DizzyThermal/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/DizzyThermal/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "parents": [
+          {
+            "sha": "463dfce44ec2feba8ffe1643645f3b463b384a95",
+            "url": "https://api.github.com/repos/DizzyThermal/TKMapper/commits/463dfce44ec2feba8ffe1643645f3b463b384a95",
+            "html_url": "https://github.com/DizzyThermal/TKMapper/commit/463dfce44ec2feba8ffe1643645f3b463b384a95"
+          }
+        ]
+      }
+    ],
+    "fork_list_status": {
+      "status": "BLOCKED_CONNECTOR_400",
+      "reason": "GitHub Fetch URL is not an allowed public GitHub repository or search endpoint"
+    },
+    "barambook_map_check": {
+      "repository": "kwackjiyong/barambook-api",
+      "ref": "2192f9e650bed0072a839a7681dc8442b2639bfe",
+      "tree_files": 292,
+      "map_candidates": 0,
+      "scope": "Recursive tree path check: .map or mapnamedJSON/DAT/ZIP/EPF/PAL/TBL. No Korean MAP payload acquired."
+    }
+  },
+  "search_log": [
+    {
+      "engine": "system2",
+      "queries": [
+        "바람의나라 1998 1999 2000 로그인 캐릭터 생성 효과음 동영상",
+        "바람의나라 구버전 마법 효과음 동작 프레임 도움말 1998"
+      ],
+      "result": "No qualified original KR 1998–2001 action+audio recording verified; modern/private-server and unrelated results excluded."
+    },
+    {
+      "engine": "system1",
+      "queries": [
+        "바람의나라 1999 2000 영상 로그인 효과음 유튜브",
+        "site.youtube.com \"바람의나라\" \"1998\"",
+        "바람의나라 넥슨 컴퓨터박물관 1996 1999 영상"
+      ],
+      "result": "Coverage poor; no qualified timing evidence."
+    },
+    {
+      "engine": "system2",
+      "queries": [
+        "\"The Kingdom of the Winds\" \"museum\" 1996 video",
+        "\"Nexon Computer Museum\" \"baram\"",
+        "\"바람의나라\" \"효과음\" \"구버전\"",
+        "\"바람의나라\" \"로그인\" \"1999\""
+      ],
+      "result": "Official history and Nexon museum report found; no inspected audiovisual original."
+    }
+  ],
+  "additional_primary_references": [
+    {
+      "source_id": "EXT-VIS-006",
+      "url": "https://peak.nexon.com/en/post/1569",
+      "kind": "Nexon-hosted museum report",
+      "retrieval": "Web text opened and1996 restoration passage read; rawHTML not downloaded",
+      "sha256": null,
+      "hash_missing_reason": "Only web-service text representation obtained; originHTML bytes not claimed",
+      "observed": "2026 museum article mentions1996 restoration materials and digitized magazines; discovery path only, distinct from target1998–2001. No primary audio/video bytes inspected.",
+      "source_content_date": "2026-05-31",
+      "test_result": "NOT_RUN"
+    }
+  ],
+  "verification": {
+    "method": "SHA256 over acquired UTF8 bytes and Git blobSHA1 over blob-header+bytes compared with immutable recursive-tree blobSHA",
+    "result": "101/101 exact source-byte matches;7existing original table members linked by inventory memberID/hash and selected static text/header read; audio header results reused.",
+    "limits": "Only acquisition integrity; no original game facts,parser-output correctness,rendering,audio,nativeWindows,Android or new runtime PASS."
+  },
+  "next_resume": "Frozen visual evidence. Integrator merges EXT-VIS-001,002,003,004,007 plus referenced LIB-010 original members and WEB-KR004 chronology. No more external expansion required for P1; P2mustselectexactKRformatandbindsoundcallIDs. Tool execution NOT_RUN.",
+  "not_run": [
+    "All tool execution",
+    "Original parser execution in this subtask",
+    "Reference client/server",
+    "Game implementation",
+    "Windows/Android build",
+    "Native device tests",
+    "Sound playback",
+    "Video timing measurement"
+  ],
+  "related_integrated_sources": [
+    {
+      "source_id": "WEB-KR004",
+      "topic": "Official Korean retrospective chronology; maintained by root, not counted again here"
+    }
+  ],
+  "original_table_observations": [
+    {
+      "archive_member": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.dat!Body.tbl",
+      "depth": 3,
+      "inspection": "BYTES_READ_HASHED_EXISTING_STATIC_READER",
+      "kind": "table",
+      "mapping_candidates": [],
+      "member_id": "LIB-010-M-6ace34fcf47c",
+      "original_id_candidate": null,
+      "parent_byte_offset": 8957241,
+      "parser_version": "baram-static-links/1.0",
+      "sha256": "3f00ffd5fb9373da07ac4528c952e11441652ca05475a7a2d637813ca8494c46",
+      "size_bytes": 2103,
+      "source_id": "LIB-010",
+      "format": "ASCII text",
+      "observed_fields": [
+        "NumBodies",
+        "ID",
+        "Palette",
+        "Starting"
+      ],
+      "confirmed": "Header directly declares66body records; body frame base and palette references available.",
+      "unknown": "Mapping to Korean item names, action/direction meaning and exact usage.",
+      "source_location": "/Baram1998Assets/KR_4.91_491v.zip",
+      "local_parent": "/workspace/scratch/8309e434ce3b/private-extracted/kr491-parser/NWind.dat",
+      "input_parent_sha256": "f8271a52d8dbde5601a0c7bf7460052376b2651930b6bc004eeb1ed20357bfc7",
+      "inspection_scope": "Existing DAT directory reader plus selected raw text/header reading, no new parser,render or playback",
+      "fact_status": "ORIGINAL_BYTES_FIELDS_OBSERVED_VERSION_ERA_PENDING",
+      "test_result": "NOT_RUN"
+    },
+    {
+      "archive_member": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.dat!DrwOrder.tbl",
+      "depth": 3,
+      "inspection": "BYTES_READ_HASHED_EXISTING_STATIC_READER",
+      "kind": "table",
+      "mapping_candidates": [],
+      "member_id": "LIB-010-M-b89c932190dc",
+      "original_id_candidate": null,
+      "parent_byte_offset": 13654089,
+      "parser_version": "baram-static-links/1.0",
+      "sha256": "c61a39740a467b001a4cd0d4455b1dadff1f9229d8cb08c91aaa01d72bbe74ca",
+      "size_bytes": 500,
+      "source_id": "LIB-010",
+      "format": "Semicolon-delimited ASCII order tokens",
+      "observed_fields": [
+        "w/b/h/s order tokens"
+      ],
+      "confirmed": "Raw order strings directly exist; token letters are not self-defined here.",
+      "unknown": "Exact letter-to-part semantics and per-frame index need original code/reference matching.",
+      "source_location": "/Baram1998Assets/KR_4.91_491v.zip",
+      "local_parent": "/workspace/scratch/8309e434ce3b/private-extracted/kr491-parser/NWind.dat",
+      "input_parent_sha256": "f8271a52d8dbde5601a0c7bf7460052376b2651930b6bc004eeb1ed20357bfc7",
+      "inspection_scope": "Existing DAT directory reader plus selected raw text/header reading, no new parser,render or playback",
+      "fact_status": "ORIGINAL_BYTES_FIELDS_OBSERVED_VERSION_ERA_PENDING",
+      "test_result": "NOT_RUN"
+    },
+    {
+      "archive_member": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.dat!Effect.frm",
+      "depth": 3,
+      "inspection": "BYTES_READ_HASHED_EXISTING_STATIC_READER",
+      "kind": "animation",
+      "mapping_candidates": [],
+      "member_id": "LIB-010-M-16ef881cf3c8",
+      "original_id_candidate": null,
+      "parent_byte_offset": 20507014,
+      "parser_version": "baram-static-links/1.0",
+      "sha256": "2a166f05a9c231f545c3b57df69b0c765c9149121b8ef251401a52d035c734e5",
+      "size_bytes": 6448,
+      "source_id": "LIB-010",
+      "format": "Binary",
+      "observed_fields": [
+        "header/raw index candidate"
+      ],
+      "confirmed": "Raw bytes/member hash read; format semantics not decoded in this subtask.",
+      "unknown": "Verify current FRM reader matches this exact variant.",
+      "source_location": "/Baram1998Assets/KR_4.91_491v.zip",
+      "local_parent": "/workspace/scratch/8309e434ce3b/private-extracted/kr491-parser/NWind.dat",
+      "input_parent_sha256": "f8271a52d8dbde5601a0c7bf7460052376b2651930b6bc004eeb1ed20357bfc7",
+      "inspection_scope": "Existing DAT directory reader plus selected raw text/header reading, no new parser,render or playback",
+      "fact_status": "ORIGINAL_BYTES_FIELDS_OBSERVED_VERSION_ERA_PENDING",
+      "test_result": "NOT_RUN"
+    },
+    {
+      "archive_member": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.dat!Effect.tbl",
+      "depth": 3,
+      "inspection": "BYTES_READ_HASHED_EXISTING_STATIC_READER",
+      "kind": "table",
+      "mapping_candidates": [],
+      "member_id": "LIB-010-M-295b87f08885",
+      "original_id_candidate": null,
+      "parent_byte_offset": 20527196,
+      "parser_version": "baram-static-links/1.0",
+      "sha256": "ef56308d711d52ce154950d542724def164870645aea1dd72d2685005fc1b1a8",
+      "size_bytes": 100512,
+      "source_id": "LIB-010",
+      "format": "ASCII text, incompatible with blindly applying modern encrypted EfxTbl reader",
+      "observed_fields": [
+        "NumEffects",
+        "ID",
+        "NumFrontFrames",
+        "RepeatFrontFrom",
+        "RepeatFrontTo",
+        "NumBackFrames",
+        "RepeatBackFrom",
+        "RepeatBackTo",
+        "Frame#",
+        "Delay",
+        "Alpha",
+        "Light"
+      ],
+      "confirmed": "Header declares128effects; first inspected sequences carry explicit front/back counts,repeat boundaries,frame IDs,Delay,Alpha,Light.",
+      "unknown": "Delay unit,Alpha interpretation,light-index semantics,spell-name association and gameplay invocation not confirmed.",
+      "source_location": "/Baram1998Assets/KR_4.91_491v.zip",
+      "local_parent": "/workspace/scratch/8309e434ce3b/private-extracted/kr491-parser/NWind.dat",
+      "input_parent_sha256": "f8271a52d8dbde5601a0c7bf7460052376b2651930b6bc004eeb1ed20357bfc7",
+      "inspection_scope": "Existing DAT directory reader plus selected raw text/header reading, no new parser,render or playback",
+      "fact_status": "ORIGINAL_BYTES_FIELDS_OBSERVED_VERSION_ERA_PENDING",
+      "test_result": "NOT_RUN"
+    },
+    {
+      "archive_member": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.dat!EffLayer.tbl",
+      "depth": 3,
+      "inspection": "BYTES_READ_HASHED_EXISTING_STATIC_READER",
+      "kind": "table",
+      "mapping_candidates": [],
+      "member_id": "LIB-010-M-d61152c67002",
+      "original_id_candidate": null,
+      "parent_byte_offset": 20635100,
+      "parser_version": "baram-static-links/1.0",
+      "sha256": "7c92fff628c59fe3374c0dfcf7524f61373ad48e2f3e90e761e217371313238a",
+      "size_bytes": 807,
+      "source_id": "LIB-010",
+      "format": "Tab-delimited text with comments",
+      "observed_fields": [
+        "ID",
+        "front",
+        "back"
+      ],
+      "confirmed": "Direct explicit front/back effect associations and version-change comments.",
+      "unknown": "Exact renderer layering and spell IDs need matching reference.",
+      "source_location": "/Baram1998Assets/KR_4.91_491v.zip",
+      "local_parent": "/workspace/scratch/8309e434ce3b/private-extracted/kr491-parser/NWind.dat",
+      "input_parent_sha256": "f8271a52d8dbde5601a0c7bf7460052376b2651930b6bc004eeb1ed20357bfc7",
+      "inspection_scope": "Existing DAT directory reader plus selected raw text/header reading, no new parser,render or playback",
+      "fact_status": "ORIGINAL_BYTES_FIELDS_OBSERVED_VERSION_ERA_PENDING",
+      "test_result": "NOT_RUN"
+    },
+    {
+      "archive_member": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.dat!EffRange.tbl",
+      "depth": 3,
+      "inspection": "BYTES_READ_HASHED_EXISTING_STATIC_READER",
+      "kind": "table",
+      "mapping_candidates": [],
+      "member_id": "LIB-010-M-29ce0f41f465",
+      "original_id_candidate": null,
+      "parent_byte_offset": 20635907,
+      "parser_version": "baram-static-links/1.0",
+      "sha256": "7f0d12abe41a623f42daa5432dc070ae77e3c8d1315e4eb5d7d6b90cb349cc39",
+      "size_bytes": 1276,
+      "source_id": "LIB-010",
+      "format": "Whitespace/tab-delimited text with comments",
+      "observed_fields": [
+        "ID",
+        "framecount",
+        "palette",
+        "blending/alpha"
+      ],
+      "confirmed": "Comment identifies effectID0asdummy; fields state framecount,palette,blending; comments mention later added effects.",
+      "unknown": "Exact alpha blend convention and source-era match not assumed.",
+      "source_location": "/Baram1998Assets/KR_4.91_491v.zip",
+      "local_parent": "/workspace/scratch/8309e434ce3b/private-extracted/kr491-parser/NWind.dat",
+      "input_parent_sha256": "f8271a52d8dbde5601a0c7bf7460052376b2651930b6bc004eeb1ed20357bfc7",
+      "inspection_scope": "Existing DAT directory reader plus selected raw text/header reading, no new parser,render or playback",
+      "fact_status": "ORIGINAL_BYTES_FIELDS_OBSERVED_VERSION_ERA_PENDING",
+      "test_result": "NOT_RUN"
+    },
+    {
+      "archive_member": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.dat!MonsFrm.tbl",
+      "depth": 3,
+      "inspection": "BYTES_READ_HASHED_EXISTING_STATIC_READER",
+      "kind": "table",
+      "mapping_candidates": [],
+      "member_id": "LIB-010-M-dd4a60742966",
+      "original_id_candidate": null,
+      "parent_byte_offset": 29854405,
+      "parser_version": "baram-static-links/1.0",
+      "sha256": "6df861860930d3b4564df862925519fe0e25380a5c4defdbe296b2425c8eede6",
+      "size_bytes": 866,
+      "source_id": "LIB-010",
+      "format": "Text rule groups",
+      "observed_fields": [
+        "monster ID list",
+        "walking",
+        "attacking"
+      ],
+      "confirmed": "Header labels group values walking/attacking; group rules directly present.",
+      "unknown": "Timing units,monster names,spawns and combat formulas not supplied.",
+      "source_location": "/Baram1998Assets/KR_4.91_491v.zip",
+      "local_parent": "/workspace/scratch/8309e434ce3b/private-extracted/kr491-parser/NWind.dat",
+      "input_parent_sha256": "f8271a52d8dbde5601a0c7bf7460052376b2651930b6bc004eeb1ed20357bfc7",
+      "inspection_scope": "Existing DAT directory reader plus selected raw text/header reading, no new parser,render or playback",
+      "fact_status": "ORIGINAL_BYTES_FIELDS_OBSERVED_VERSION_ERA_PENDING",
+      "test_result": "NOT_RUN"
+    }
+  ],
+  "original_audio_inventory_reference": {
+    "source_id": "LIB-010",
+    "archive_member_prefix": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!",
+    "sha256": "003534e57b426971900f7ec39f5e65d3662fa5f32672cd0564d04680e31e300c",
+    "entries": 163,
+    "metadata_path": "docs/rebuild/step01/archive_members.jsonl",
+    "scope": "Inventory agent has actual perWAVchannels,rate_hz,sample_width,frames,duration_seconds. Reused same input results; no repeated decode or playback.",
+    "remaining": "SoundID→action/spell call condition and playback timestamp unresolved; original sample metadata does not establish hit timing."
+  }
+}

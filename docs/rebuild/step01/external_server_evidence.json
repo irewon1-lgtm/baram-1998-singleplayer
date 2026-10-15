@@ -1,0 +1,2297 @@
+{
+  "task_id": "BARAM_REBUILD_P0P1_001",
+  "scope": "Externalstaticacquisitiononly",
+  "plan_version": "BARAM_REBUILD_PLAN_V1_20261015",
+  "captured_date": "2026-10-15",
+  "originals_publicly_republished": false,
+  "new_runtime_code_written": false,
+  "reference_servers_executed": false,
+  "p2_executed": false,
+  "repositories": [
+    {
+      "source_id": "EXT-SRV-P1998-REPO",
+      "repository": "project1998/Project1998",
+      "branch": "master",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "tree_nodes": 2806,
+      "tree_truncated": false,
+      "lineage": "RTK/ClassicTK-derived reconstruction; imported data not independent of RTK",
+      "releases": "API retrieved empty list",
+      "tags": "git/refs/tags404; tagscollection connector rejected",
+      "fork_trace": "Essorcal/Project1998 comparison:behind603,ahead0; head/mergebasef491531d90faccc0c31c1ac1a60a50d0cbb78107; no unique evidence acquired",
+      "runtime_status": "NOT_RUN"
+    },
+    {
+      "source_id": "EXT-SRV-RTK-REPO",
+      "repository": "unkmc/RTK-Server",
+      "branch": "main",
+      "commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+      "tree_nodes": 8635,
+      "tree_truncated": false,
+      "lineage": "Mithia/ClassicTK2019 per P1998docs; not original Korean server",
+      "releases": "API retrieved empty list",
+      "tags": "git/refs/tags404; tagscollection connector rejected",
+      "fork_trace": "RTK-Server-1 discovered; not acquired because no specific unfilled requirement justified duplicatefulltree",
+      "runtime_status": "NOT_RUN"
+    }
+  ],
+  "files": [
+    {
+      "source_id": "EXT-SRV-P1998-DIRECTORY-BUILD-PROPS",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Directory.Build.props",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/Directory.Build.props",
+      "original_id": "Directory.Build.props",
+      "blob_sha": "6c5194b1d8848c03e47bed4834b3b84bf18cb092",
+      "blob_sha_matched": true,
+      "sha256": "b9d37f4f1a61271a8574a5bbc15a9bfa9a5b1e8214630efd57b970150de7db3d",
+      "bytes": 730,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-LOGINPROBE-PROGRAM-CS",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/LoginProbe/Program.cs",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/LoginProbe/Program.cs",
+      "original_id": "LoginProbe/Program.cs",
+      "blob_sha": "973dd9cde29822ece211b0bccaba665728008dab",
+      "blob_sha_matched": true,
+      "sha256": "eb21bc82008b7bd62fec3248984221b9d026e3cefebd182de09376a003a2ce2b",
+      "bytes": 6430,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-LOGINSERVER-LOGINSESSION-CS",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/LoginServer/LoginSession.cs",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/LoginServer/LoginSession.cs",
+      "original_id": "LoginServer/LoginSession.cs",
+      "blob_sha": "c312d6f822ee0432969c2b614659172afe78323b",
+      "blob_sha_matched": true,
+      "sha256": "be9468196804330e65c064cbf0da317883cf177e58c22a82b98b8a8183d9dfce",
+      "bytes": 28097,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-README-MD",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/README.md",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/README.md",
+      "original_id": "README.md",
+      "blob_sha": "d1a3d0eef21ea42c1e88c2d46a7635a4fba29727",
+      "blob_sha_matched": true,
+      "sha256": "a89f08d9763b3243c5ba0085a0dd6100356f6f611a023e1c435e41226959c1b1",
+      "bytes": 16002,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-SERVER-CONTENT-MUSIC-CS",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Server/Content.Music.cs",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/Server/Content.Music.cs",
+      "original_id": "Server/Content.Music.cs",
+      "blob_sha": "9a52e41abcc2ba57b89c969ee57ed03443c44d3c",
+      "blob_sha_matched": true,
+      "sha256": "06a978dbe0058f6334cd076cbe975372b4aa87d04b1bb01c9f3280fba47ae991",
+      "bytes": 12890,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-SERVER-CONTENT-SPELLS-CS",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Server/Content.Spells.cs",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/Server/Content.Spells.cs",
+      "original_id": "Server/Content.Spells.cs",
+      "blob_sha": "ea7455b626ab25c486441f34da1112e7be1cf2d4",
+      "blob_sha_matched": true,
+      "sha256": "ad4fb730792b054d943cb8924f98009467fb4884973c828b523f7e0cb4bc05fa",
+      "bytes": 132098,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-SERVER-SERVER-CSPROJ",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Server/Server.csproj",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/Server/Server.csproj",
+      "original_id": "Server/Server.csproj",
+      "blob_sha": "13cfd55444a3de9ee36af419c4bab262e10892a9",
+      "blob_sha_matched": true,
+      "sha256": "426e15f99209eb8457e8a81eaf35840672e2fed1fb052117517135ce38cd9df5",
+      "bytes": 2242,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-SERVER-SESSION-MEDIA-CS",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Server/Session.Media.cs",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/Server/Session.Media.cs",
+      "original_id": "Server/Session.Media.cs",
+      "blob_sha": "7938854023af335c3bec3f58e9a53677243c353f",
+      "blob_sha_matched": true,
+      "sha256": "e2110193e74b8a6703a0e0e70eb7871a19ad2c27c15e534ebbae30fc749cee15",
+      "bytes": 37932,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-SERVER-SESSION-MOVEMENT-CS",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Server/Session.Movement.cs",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/Server/Session.Movement.cs",
+      "original_id": "Server/Session.Movement.cs",
+      "blob_sha": "d98ca77269706b3bd5cd38e629822f186acb818c",
+      "blob_sha_matched": true,
+      "sha256": "00317b6bd965d287d044e47e1454858aeff6bafec73d6ddad7fb35a5ed28ada0",
+      "bytes": 66197,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-SERVER-SESSION-SHOP-CS",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Server/Session.Shop.cs",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/Server/Session.Shop.cs",
+      "original_id": "Server/Session.Shop.cs",
+      "blob_sha": "6a42c17b5b91ce422eb418082c41bcea2791da46",
+      "blob_sha_matched": true,
+      "sha256": "f25650d7e5a2b56f713ec7db0a24aa24735ee21e81e60feb316b2afb7bd2b1a2",
+      "bytes": 14165,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-SERVER-SESSION-SPELLS-CS",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Server/Session.Spells.cs",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/Server/Session.Spells.cs",
+      "original_id": "Server/Session.Spells.cs",
+      "blob_sha": "3b8a2133bb470953c7bf07e19ea4fc8639dd174a",
+      "blob_sha_matched": true,
+      "sha256": "41c86208361c7c90250adf57a7830b6ff64073e68730dbe19c6353abf9eede96",
+      "bytes": 249286,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-SERVER-SESSION-CS",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Server/Session.cs",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/Server/Session.cs",
+      "original_id": "Server/Session.cs",
+      "blob_sha": "b32c1b6d48641392e3fa701509ba6a247b9cd899",
+      "blob_sha_matched": true,
+      "sha256": "506d0adc9f6d3d5176db1f73b1b9d61494188a8e52313a2918770b4aa0bf1a6d",
+      "bytes": 128507,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-SERVER-WORLD-SPAWNDIRECTOR-CS",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Server/World.SpawnDirector.cs",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/Server/World.SpawnDirector.cs",
+      "original_id": "Server/World.SpawnDirector.cs",
+      "blob_sha": "151073b30d512d4cd1604822f877d7bd8b1975f0",
+      "blob_sha_matched": true,
+      "sha256": "042216b46f380a306ef066a6cc11f6b32598799504c8fd424ce23871c451b166",
+      "bytes": 50475,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-SHARED-CHARACTER-CS",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Shared/Character.cs",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/Shared/Character.cs",
+      "original_id": "Shared/Character.cs",
+      "blob_sha": "83c4d7a7c3c956cdd612127294ccf185fd98d134",
+      "blob_sha_matched": true,
+      "sha256": "7657f1eacee195a7ec8fc8c039edcee9cb60efc3fa0886ea08ba7577fe403a6d",
+      "bytes": 27402,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-SHARED-CHARACTERFACTORY-CS",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Shared/CharacterFactory.cs",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/Shared/CharacterFactory.cs",
+      "original_id": "Shared/CharacterFactory.cs",
+      "blob_sha": "255ddc4acb69399be8169237cc6118b3a17d3991",
+      "blob_sha_matched": true,
+      "sha256": "6f8490f027b657187824df91a264fc03bdee98a71962a0da7465e3c651c3ff4e",
+      "bytes": 12144,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-SHARED-CHARACTERSTORE-CS",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Shared/CharacterStore.cs",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/Shared/CharacterStore.cs",
+      "original_id": "Shared/CharacterStore.cs",
+      "blob_sha": "c0375b1563830ade1883128f9ea4767fb91dadd4",
+      "blob_sha_matched": true,
+      "sha256": "6d5d53f44bf79b748aa05e361f82aa326f86aead6251b35fb8e1e61c8135f07f",
+      "bytes": 21766,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-SHARED-DB-CS",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Shared/Db.cs",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/Shared/Db.cs",
+      "original_id": "Shared/Db.cs",
+      "blob_sha": "5a5c6b606b849882fd9cc054615ae8f91ad30622",
+      "blob_sha_matched": true,
+      "sha256": "5606a27b31d015ec1bb1fd932a575d605edaffc5aa8a93842fa0d8675fc6c812",
+      "bytes": 22645,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-SHARED-LOGINAUTH-CS",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Shared/LoginAuth.cs",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/Shared/LoginAuth.cs",
+      "original_id": "Shared/LoginAuth.cs",
+      "blob_sha": "d32ce002c14ba5d83841f52dd6399fb3904747c9",
+      "blob_sha_matched": true,
+      "sha256": "f4e50c6befb3dac2a764f676c87802d60dcd2c2a268c91768a5bfae37ec6aacc",
+      "bytes": 6897,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-SHARED-NAMERULES-CS",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Shared/NameRules.cs",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/Shared/NameRules.cs",
+      "original_id": "Shared/NameRules.cs",
+      "blob_sha": "5bee15f30bff488321af974e1069c332330ad043",
+      "blob_sha_matched": true,
+      "sha256": "6cb610d5a433a059f31248d6d22566c7db349ad285c50f26cb5a69e815c2f100",
+      "bytes": 1589,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-SHARED-SHARED-CSPROJ",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Shared/Shared.csproj",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/Shared/Shared.csproj",
+      "original_id": "Shared/Shared.csproj",
+      "blob_sha": "afcb3b65be379a013662315e4a492801d60f2594",
+      "blob_sha_matched": true,
+      "sha256": "fc74e3cc40d31a18db1647ae7c56e10370b32f1755daf524805745023acb4d17",
+      "bytes": 912,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-TOOLS-PROGRAM-CS",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Tools/Program.cs",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/Tools/Program.cs",
+      "original_id": "Tools/Program.cs",
+      "blob_sha": "a907e8c682a84f55140793a4d6dc47f032436215",
+      "blob_sha_matched": true,
+      "sha256": "e4ecbec90b6094035b4d229d634db5286db1ff7e1d52a38115d483a8a34e5adf",
+      "bytes": 4478,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-DOCS-4-X-README-MD",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/docs/4.x/README.md",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/docs/4.x/README.md",
+      "original_id": "docs/4.x/README.md",
+      "blob_sha": "56059d990dde24d1f366b08474a38faec15610df",
+      "blob_sha_matched": true,
+      "sha256": "a5f19e17a69ac1c508fbd61dee276c8d5cd17e37d16026de0ae4a6d15a88d05f",
+      "bytes": 3172,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-DOCS-COMMON-CONFIGURATION-MD",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/docs/common/Configuration.md",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/docs/common/Configuration.md",
+      "original_id": "docs/common/Configuration.md",
+      "blob_sha": "95c46a822fc1f1d4117968a636fe0c402e12603d",
+      "blob_sha_matched": true,
+      "sha256": "6a2977cce0f1e9ac78907ed8ce7108f8be6eb6e74aee00cd436d25fafd209d54",
+      "bytes": 23984,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-DOCS-COMMON-SPELL-SOUND-AUDIT-TXT",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/docs/common/Spell-Sound-Audit.txt",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/docs/common/Spell-Sound-Audit.txt",
+      "original_id": "docs/common/Spell-Sound-Audit.txt",
+      "blob_sha": "bd76c44f014a11bded78985d6bbb390caba473df",
+      "blob_sha_matched": true,
+      "sha256": "14f6980a01a7d556e45a8c3bb6dcbfdf3bc933bd82fceb7c3b6a605c6ec28464",
+      "bytes": 18251,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-DOCS-RESEARCH-README-MD",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/docs/research/README.md",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/docs/research/README.md",
+      "original_id": "docs/research/README.md",
+      "blob_sha": "4194f4594083afad6f352a95f298813fd431e83d",
+      "blob_sha_matched": true,
+      "sha256": "3058a725619c9306a958561d5e9d1bddd804419bd46c44b3bbe1f94ce8466385",
+      "bytes": 7812,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-GAME-DATA-MAPBGM-CSV",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/game-data/MapBgm.csv",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/game-data/MapBgm.csv",
+      "original_id": "game-data/MapBgm.csv",
+      "blob_sha": "50d9b756a7fdb36274b0e072d2ef8aed0a7c92a3",
+      "blob_sha_matched": true,
+      "sha256": "ac40f8018801624add5bea019cac943fa50833013ca28786baec50e28a5d9303",
+      "bytes": 1245,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-GAME-DATA-MUSICTRACKS-CSV",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/game-data/MusicTracks.csv",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/game-data/MusicTracks.csv",
+      "original_id": "game-data/MusicTracks.csv",
+      "blob_sha": "de83618132345a39b6acf26333ad7779fb4b0aaa",
+      "blob_sha_matched": true,
+      "sha256": "66d26a7efd36d90b7f11fbc3ba89d86141161a56e4ac0ec5567d9ad889ff5c6e",
+      "bytes": 7902,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-GAME-DATA-PATHGROWTH-CSV",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/game-data/PathGrowth.csv",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/game-data/PathGrowth.csv",
+      "original_id": "game-data/PathGrowth.csv",
+      "blob_sha": "229e8d058b7c5f62e3d74c38c8314162a1bd134c",
+      "blob_sha_matched": true,
+      "sha256": "c0ea059447f3439b0c12c24ed24eed8d3e46ce6e0928bac48bf761df331880d2",
+      "bytes": 98,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-GAME-DATA-PATHS-CSV",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/game-data/Paths.csv",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/game-data/Paths.csv",
+      "original_id": "game-data/Paths.csv",
+      "blob_sha": "ca362101577ac059768782e0dcd1aa0042381650",
+      "blob_sha_matched": true,
+      "sha256": "0f6f6120bea28ffa174e9614b9342c895898c60d8e3a6d8db8b92b80fb9b38c1",
+      "bytes": 1877,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-GAME-DATA-SHOPSTOCK-CSV",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/game-data/ShopStock.csv",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/game-data/ShopStock.csv",
+      "original_id": "game-data/ShopStock.csv",
+      "blob_sha": "18ec6d77ca34819a1a4836e80a227af69c0738ea",
+      "blob_sha_matched": true,
+      "sha256": "05b164bba2d7766bd50f6331f26d01c520353f1a12069031f85167a9506b1ce1",
+      "bytes": 4914,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-GAME-DATA-SOURCES-CSV",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/game-data/Sources.csv",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/game-data/Sources.csv",
+      "original_id": "game-data/Sources.csv",
+      "blob_sha": "56069e9abf8a8fb05ba2f310adf8651f318034fd",
+      "blob_sha_matched": true,
+      "sha256": "2f8c1b74fd33edcd1dee5fc4ef0a28c59491230cad107743427a6e5f2cc01c50",
+      "bytes": 33824,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-GAME-DATA-SPAWNS-CSV",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/game-data/Spawns.csv",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/game-data/Spawns.csv",
+      "original_id": "game-data/Spawns.csv",
+      "blob_sha": "25815a6d5b1e31a060a4cbb66a84bb9e816e7a12",
+      "blob_sha_matched": true,
+      "sha256": "d1df898026ac2198624bc552111ed05bcd17fb98d7d194ee6c3a3537a22bca5a",
+      "bytes": 41350,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-GAME-DATA-SPELLLEARNCOSTS-CSV",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/game-data/SpellLearnCosts.csv",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/game-data/SpellLearnCosts.csv",
+      "original_id": "game-data/SpellLearnCosts.csv",
+      "blob_sha": "ddb2f6d78930350611d8f7a59394fe7032d4509f",
+      "blob_sha_matched": true,
+      "sha256": "b0055dbc3c8c9bc4879e1ce92f2d63e4fffb4954f5a5e48e5f9a6383671b4b0e",
+      "bytes": 39116,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-GAME-DATA-SPELLLEVELS-CSV",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/game-data/SpellLevels.csv",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/game-data/SpellLevels.csv",
+      "original_id": "game-data/SpellLevels.csv",
+      "blob_sha": "110b13ff409b4a4d4fc9668f68064cf52a10f70f",
+      "blob_sha_matched": true,
+      "sha256": "a95d8fa113c8905bde90d125b5e69beda7c98ae56a7e41b5b8cebabcf6409650",
+      "bytes": 3200,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-GAME-DATA-SPELLS-CSV",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/game-data/Spells.csv",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/game-data/Spells.csv",
+      "original_id": "game-data/Spells.csv",
+      "blob_sha": "becd4197abfaac7b06a438958aad63b38bdaba40",
+      "blob_sha_matched": true,
+      "sha256": "5c0f82120dd60d6afcc0420ed2bacff84fe1a85a5228b8fde958d40526399ac4",
+      "bytes": 58566,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-GAME-DATA-WARPS-CSV",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/game-data/Warps.csv",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/game-data/Warps.csv",
+      "original_id": "game-data/Warps.csv",
+      "blob_sha": "c2be28d10e95c1fac84b4f13abb38a0413dc17da",
+      "blob_sha_matched": true,
+      "sha256": "4e74e7a45cdae1e897e790989fb5662774f4b92d14c05caba308e89e3ca1d362",
+      "bytes": 118345,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-GAME-DATA-SPELL-EFFECTS-CSV",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/game-data/spell_effects.csv",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/game-data/spell_effects.csv",
+      "original_id": "game-data/spell_effects.csv",
+      "blob_sha": "36331c120f0e54e5ac9fe1aea7d92fd53cb05c8b",
+      "blob_sha_matched": true,
+      "sha256": "6ce16b6311fcda99fab07ad70462e345d184eb67bd2096c5d36acaf19c55aa6c",
+      "bytes": 41471,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-GAME-DATA-SPELL-VERBS-LUA",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/game-data/spell_verbs.lua",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/game-data/spell_verbs.lua",
+      "original_id": "game-data/spell_verbs.lua",
+      "blob_sha": "e974165e6639576cadff0cd8e86af10bf2b8772d",
+      "blob_sha_matched": true,
+      "sha256": "5697906314d3ef8efc08b7e4a04db4fa5c826009c56286c9b3917a8b5e0298be",
+      "bytes": 89659,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-GLOBAL-JSON",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/global.json",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/global.json",
+      "original_id": "global.json",
+      "blob_sha": "391ba3c2a30b9c36244b0700565072079649b2bd",
+      "blob_sha_matched": true,
+      "sha256": "1fdeb1b73953b98c28deda19adc5fea29f21712fe925ec208457eff1c093b107",
+      "bytes": 80,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-RE-ARCHIVE-MAGE-SPELLS-MD",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/re/archive_mage_spells.md",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/re/archive_mage_spells.md",
+      "original_id": "re/archive_mage_spells.md",
+      "blob_sha": "6057492ea706028bbb256692f5af1d5041be5973",
+      "blob_sha_matched": true,
+      "sha256": "1c48e5caa5ed71098c7c3f7582ab06d99d9409b2a942fa95a6e6163f570e7bad",
+      "bytes": 5941,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-RE-ARCHIVE-POET-SPELLS-MD",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/re/archive_poet_spells.md",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/re/archive_poet_spells.md",
+      "original_id": "re/archive_poet_spells.md",
+      "blob_sha": "5e6cd8d4ecf091491ab3414a21bea98820281544",
+      "blob_sha_matched": true,
+      "sha256": "b2f3fb50af3fadb85fd3283956499373e1fe4831a3c6e2c83d8be4d2893d5e7e",
+      "bytes": 3555,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-RE-ARCHIVE-ROGUE-SPELLS-MD",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/re/archive_rogue_spells.md",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/re/archive_rogue_spells.md",
+      "original_id": "re/archive_rogue_spells.md",
+      "blob_sha": "22e9e17823af2e9c75e2c73f50d63bd4d8d97583",
+      "blob_sha_matched": true,
+      "sha256": "025ed911feba05d3ea0b18e0a065c760c9d4849d5a3fdb0440afb6a72b9b82e1",
+      "bytes": 6015,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-P1998-RE-ARCHIVE-WARRIOR-SPELLS-MD",
+      "repository": "project1998/Project1998",
+      "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "game_region": "NA",
+      "client_build": "4.95 reference server target",
+      "content_era": "2001-07-09 reconstruction; mixed later source inputs",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/re/archive_warrior_spells.md",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/p/re/archive_warrior_spells.md",
+      "original_id": "re/archive_warrior_spells.md",
+      "blob_sha": "4711c41e519ca48cb50e5393d553555c678dbb45",
+      "blob_sha_matched": true,
+      "sha256": "cc0f90f0ed99dcc576f567969c9e9974d1d25e4f56137654e47f137b6842fc59",
+      "bytes": 3855,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-RTK-DOCKERFILE",
+      "repository": "unkmc/RTK-Server",
+      "commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+      "game_region": "NA",
+      "client_build": "7.x/Mithia lineage per Project1998 docs; precise RetroTK client UNKNOWN",
+      "content_era": "ClassicTK2019/RTK2020 lineage; not KR1998-2001",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/Dockerfile",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/r/Dockerfile",
+      "original_id": "Dockerfile",
+      "blob_sha": "187f1ecc9b3a2c36a93933a0e4ee34ed48674729",
+      "blob_sha_matched": true,
+      "sha256": "31ce2c8020e25fb592fa7577354dc2e170be02daac214033d4c2c673ed210d15",
+      "bytes": 456,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-RTK-README-MD",
+      "repository": "unkmc/RTK-Server",
+      "commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+      "game_region": "NA",
+      "client_build": "7.x/Mithia lineage per Project1998 docs; precise RetroTK client UNKNOWN",
+      "content_era": "ClassicTK2019/RTK2020 lineage; not KR1998-2001",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/README.md",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/r/README.md",
+      "original_id": "README.md",
+      "blob_sha": "19b30257bd7cfd2ee46f6dcadfed9931e28764a9",
+      "blob_sha_matched": true,
+      "sha256": "9ce88a2c6fa2f4e830c737192411ec7e7543bc1cb925e22aea14a819f4d72f2c",
+      "bytes": 12449,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-RTK-DOCKER-COMPOSE-YML",
+      "repository": "unkmc/RTK-Server",
+      "commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+      "game_region": "NA",
+      "client_build": "7.x/Mithia lineage per Project1998 docs; precise RetroTK client UNKNOWN",
+      "content_era": "ClassicTK2019/RTK2020 lineage; not KR1998-2001",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/docker-compose.yml",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/r/docker-compose.yml",
+      "original_id": "docker-compose.yml",
+      "blob_sha": "05ee12a1b5919afdefdcf051d5e4a292467c85f7",
+      "blob_sha_matched": true,
+      "sha256": "b9a39164b2690627bfdd5c114731699a49b731c40369c30e4db9272c61b9eaee",
+      "bytes": 929,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-RTK-RTK-SRC-CHAR-CHAR-DB-C",
+      "repository": "unkmc/RTK-Server",
+      "commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+      "game_region": "NA",
+      "client_build": "7.x/Mithia lineage per Project1998 docs; precise RetroTK client UNKNOWN",
+      "content_era": "ClassicTK2019/RTK2020 lineage; not KR1998-2001",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtk/src/char/char_db.c",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/r/rtk/src/char/char_db.c",
+      "original_id": "rtk/src/char/char_db.c",
+      "blob_sha": "48b783065b3546167eef23c527d6b8095ffd4ede",
+      "blob_sha_matched": true,
+      "sha256": "26798d70a2938fda8e9655a76c286b1e4e25bc8bd0ff4682b472da1e16fddd77",
+      "bytes": 59651,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-RTK-RTK-SRC-CHAR-LOGIF-C",
+      "repository": "unkmc/RTK-Server",
+      "commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+      "game_region": "NA",
+      "client_build": "7.x/Mithia lineage per Project1998 docs; precise RetroTK client UNKNOWN",
+      "content_era": "ClassicTK2019/RTK2020 lineage; not KR1998-2001",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtk/src/char/logif.c",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/r/rtk/src/char/logif.c",
+      "original_id": "rtk/src/char/logif.c",
+      "blob_sha": "b2a60b66ef85e8834d7f6bb94d02f509a079b852",
+      "blob_sha_matched": true,
+      "sha256": "8ab940fe849c9269c1b771461d5729d71e7d1c47a3a779e288b398e9a5ff4377",
+      "bytes": 4329,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-RTK-RTK-SRC-LOGIN-CLIF-C",
+      "repository": "unkmc/RTK-Server",
+      "commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+      "game_region": "NA",
+      "client_build": "7.x/Mithia lineage per Project1998 docs; precise RetroTK client UNKNOWN",
+      "content_era": "ClassicTK2019/RTK2020 lineage; not KR1998-2001",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtk/src/login/clif.c",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/r/rtk/src/login/clif.c",
+      "original_id": "rtk/src/login/clif.c",
+      "blob_sha": "bb0a10f6a235a25ae36e08f16c0a73428f82e7de",
+      "blob_sha_matched": true,
+      "sha256": "34865fc8707c36dd0bf0979be9767a804926499211d3c3b610c3de0bbb14dcc0",
+      "bytes": 19931,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-RTK-RTK-SRC-MAP-CLASS-DB-C",
+      "repository": "unkmc/RTK-Server",
+      "commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+      "game_region": "NA",
+      "client_build": "7.x/Mithia lineage per Project1998 docs; precise RetroTK client UNKNOWN",
+      "content_era": "ClassicTK2019/RTK2020 lineage; not KR1998-2001",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtk/src/map/class_db.c",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/r/rtk/src/map/class_db.c",
+      "original_id": "rtk/src/map/class_db.c",
+      "blob_sha": "4de8ba88702476936fdb6c0158cfd3905bdb4cd1",
+      "blob_sha_matched": true,
+      "sha256": "884854e8407774f7f83ad0cc311d973b2d0bc4c53f43783702013b14a02f15b5",
+      "bytes": 5952,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-RTK-RTK-SRC-MAP-CLIF-C",
+      "repository": "unkmc/RTK-Server",
+      "commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+      "game_region": "NA",
+      "client_build": "7.x/Mithia lineage per Project1998 docs; precise RetroTK client UNKNOWN",
+      "content_era": "ClassicTK2019/RTK2020 lineage; not KR1998-2001",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtk/src/map/clif.c",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/r/rtk/src/map/clif.c",
+      "original_id": "rtk/src/map/clif.c",
+      "blob_sha": "28df574f467f6271933782a5b57e08bdbbc3116a",
+      "blob_sha_matched": true,
+      "sha256": "ec1e5ce9711c18ec5233c88b2a3ef940dfedf31894a35a69ffe9b0b9991c946e",
+      "bytes": 420899,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-RTK-RTK-SRC-MAP-MAGIC-C",
+      "repository": "unkmc/RTK-Server",
+      "commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+      "game_region": "NA",
+      "client_build": "7.x/Mithia lineage per Project1998 docs; precise RetroTK client UNKNOWN",
+      "content_era": "ClassicTK2019/RTK2020 lineage; not KR1998-2001",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtk/src/map/magic.c",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/r/rtk/src/map/magic.c",
+      "original_id": "rtk/src/map/magic.c",
+      "blob_sha": "bfaa7cc4e40a636eacf25ae08362254c5158fa3f",
+      "blob_sha_matched": true,
+      "sha256": "497e472dc667a25367492245eb8eb8e0025797fe79dad82c10ec58ed34e88d0f",
+      "bytes": 5839,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-RTK-RTK-SRC-MAP-MAP-C",
+      "repository": "unkmc/RTK-Server",
+      "commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+      "game_region": "NA",
+      "client_build": "7.x/Mithia lineage per Project1998 docs; precise RetroTK client UNKNOWN",
+      "content_era": "ClassicTK2019/RTK2020 lineage; not KR1998-2001",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtk/src/map/map.c",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/r/rtk/src/map/map.c",
+      "original_id": "rtk/src/map/map.c",
+      "blob_sha": "25972b6b7791df393b0cb8dce43a3ae557689999",
+      "blob_sha_matched": true,
+      "sha256": "02c8621bef5414f261a9821c35d2142dfe546a5fb45af3d1ff256d0f8f989b05",
+      "bytes": 82844,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-RTK-RTK-SRC-MAP-MOB-C",
+      "repository": "unkmc/RTK-Server",
+      "commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+      "game_region": "NA",
+      "client_build": "7.x/Mithia lineage per Project1998 docs; precise RetroTK client UNKNOWN",
+      "content_era": "ClassicTK2019/RTK2020 lineage; not KR1998-2001",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtk/src/map/mob.c",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/r/rtk/src/map/mob.c",
+      "original_id": "rtk/src/map/mob.c",
+      "blob_sha": "4e7a66fc90b2975a1cba4d0c46cc54e50f46a7aa",
+      "blob_sha_matched": true,
+      "sha256": "d5f5f7c13dc73cf56f8855cc1e7ee242ad9a97259bb736d2f8d46638ba41ea7d",
+      "bytes": 58285,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-RTK-RTK-SRC-MAP-NPC-C",
+      "repository": "unkmc/RTK-Server",
+      "commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+      "game_region": "NA",
+      "client_build": "7.x/Mithia lineage per Project1998 docs; precise RetroTK client UNKNOWN",
+      "content_era": "ClassicTK2019/RTK2020 lineage; not KR1998-2001",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtk/src/map/npc.c",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/r/rtk/src/map/npc.c",
+      "original_id": "rtk/src/map/npc.c",
+      "blob_sha": "09eb48d88396c8f86d86c365da18913841b170d6",
+      "blob_sha_matched": true,
+      "sha256": "345d498062ca1807ffe77fc3217691040f02770410f9d7adf255ca8852c964cc",
+      "bytes": 18977,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-RTK-RTK-SRC-MAP-SL-C",
+      "repository": "unkmc/RTK-Server",
+      "commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+      "game_region": "NA",
+      "client_build": "7.x/Mithia lineage per Project1998 docs; precise RetroTK client UNKNOWN",
+      "content_era": "ClassicTK2019/RTK2020 lineage; not KR1998-2001",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtk/src/map/sl.c",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/r/rtk/src/map/sl.c",
+      "original_id": "rtk/src/map/sl.c",
+      "blob_sha": "928c4a6100acbb0dbbc8ecc33091cc3cf97aebad",
+      "blob_sha_matched": true,
+      "sha256": "14b9de9d422c85f5fb9378a4aa1304c7489f22a1f0098e8189325eb6fbf4ece8",
+      "bytes": 370136,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-RTK-RTKLUA-ACCEPTED-NPCS-COMMON-MAGE-TRAINER-LUA",
+      "repository": "unkmc/RTK-Server",
+      "commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+      "game_region": "NA",
+      "client_build": "7.x/Mithia lineage per Project1998 docs; precise RetroTK client UNKNOWN",
+      "content_era": "ClassicTK2019/RTK2020 lineage; not KR1998-2001",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtklua/Accepted/NPCs/Common/mage_trainer.lua",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/r/rtklua/Accepted/NPCs/Common/mage_trainer.lua",
+      "original_id": "rtklua/Accepted/NPCs/Common/mage_trainer.lua",
+      "blob_sha": "3fc4a78746590cd1bcb7ae47f855cd1a54070ae1",
+      "blob_sha_matched": true,
+      "sha256": "512643e1702ca726ccb600c0e9c0191c44cd06777ef78cb089e908ce8ac3b3bd",
+      "bytes": 35470,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-RTK-RTKLUA-ACCEPTED-NPCS-COMMON-POET-TRAINER-LUA",
+      "repository": "unkmc/RTK-Server",
+      "commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+      "game_region": "NA",
+      "client_build": "7.x/Mithia lineage per Project1998 docs; precise RetroTK client UNKNOWN",
+      "content_era": "ClassicTK2019/RTK2020 lineage; not KR1998-2001",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtklua/Accepted/NPCs/Common/poet_trainer.lua",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/r/rtklua/Accepted/NPCs/Common/poet_trainer.lua",
+      "original_id": "rtklua/Accepted/NPCs/Common/poet_trainer.lua",
+      "blob_sha": "a65c8ee42330339ab70279a90315c1f7f2cff85c",
+      "blob_sha_matched": true,
+      "sha256": "29b98cb6babc32f000ffb9dc26e2655f7797f5083036daf8e86c44986880c3f9",
+      "bytes": 28222,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-RTK-RTKLUA-ACCEPTED-NPCS-COMMON-POTION-SHOP-LUA",
+      "repository": "unkmc/RTK-Server",
+      "commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+      "game_region": "NA",
+      "client_build": "7.x/Mithia lineage per Project1998 docs; precise RetroTK client UNKNOWN",
+      "content_era": "ClassicTK2019/RTK2020 lineage; not KR1998-2001",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtklua/Accepted/NPCs/Common/potion_shop.lua",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/r/rtklua/Accepted/NPCs/Common/potion_shop.lua",
+      "original_id": "rtklua/Accepted/NPCs/Common/potion_shop.lua",
+      "blob_sha": "b992d6ecc83eab0cdf22c732cdbf6be2f9d2f1a2",
+      "blob_sha_matched": true,
+      "sha256": "92556dd3426c68ea372967b8cca1ce94402cf0f95ffeceb133182d87be6d02a4",
+      "bytes": 6270,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-RTK-RTKLUA-ACCEPTED-NPCS-COMMON-ROGUE-TRAINER-LUA",
+      "repository": "unkmc/RTK-Server",
+      "commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+      "game_region": "NA",
+      "client_build": "7.x/Mithia lineage per Project1998 docs; precise RetroTK client UNKNOWN",
+      "content_era": "ClassicTK2019/RTK2020 lineage; not KR1998-2001",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtklua/Accepted/NPCs/Common/rogue_trainer.lua",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/r/rtklua/Accepted/NPCs/Common/rogue_trainer.lua",
+      "original_id": "rtklua/Accepted/NPCs/Common/rogue_trainer.lua",
+      "blob_sha": "3cefb14056f4af20d25f04625a4036bd901b80bd",
+      "blob_sha_matched": true,
+      "sha256": "a12722220c14b74c68b4588d8501928bcc5067ca09e4034cd8d368ade3f0d2f3",
+      "bytes": 35496,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-RTK-RTKLUA-ACCEPTED-NPCS-COMMON-WARRIOR-TRAINER-LUA",
+      "repository": "unkmc/RTK-Server",
+      "commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+      "game_region": "NA",
+      "client_build": "7.x/Mithia lineage per Project1998 docs; precise RetroTK client UNKNOWN",
+      "content_era": "ClassicTK2019/RTK2020 lineage; not KR1998-2001",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtklua/Accepted/NPCs/Common/warrior_trainer.lua",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/r/rtklua/Accepted/NPCs/Common/warrior_trainer.lua",
+      "original_id": "rtklua/Accepted/NPCs/Common/warrior_trainer.lua",
+      "blob_sha": "2cd7b33f8e7918837f73d34428e8db8d70674cdd",
+      "blob_sha_matched": true,
+      "sha256": "04179a4d9aaf1f6bcad87a8c2fffadb732d3fc4f2d9ec0dd9bb4059515414b0d",
+      "bytes": 26943,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-RTK-RTKLUA-ACCEPTED-SPELLS-COMMON-GATEWAY-LUA",
+      "repository": "unkmc/RTK-Server",
+      "commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+      "game_region": "NA",
+      "client_build": "7.x/Mithia lineage per Project1998 docs; precise RetroTK client UNKNOWN",
+      "content_era": "ClassicTK2019/RTK2020 lineage; not KR1998-2001",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtklua/Accepted/Spells/common/gateway.lua",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/r/rtklua/Accepted/Spells/common/gateway.lua",
+      "original_id": "rtklua/Accepted/Spells/common/gateway.lua",
+      "blob_sha": "62e88ab2fba2272788404a1ad2dfe684c4d83ff4",
+      "blob_sha_matched": true,
+      "sha256": "0497bde782a39d6f7c9e5072998cbe79553970caf42125786fa79a81c912d77c",
+      "bytes": 4151,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-RTK-RTKLUA-ACCEPTED-SPELLS-COMMON-GLOBAL-HEAL-LUA",
+      "repository": "unkmc/RTK-Server",
+      "commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+      "game_region": "NA",
+      "client_build": "7.x/Mithia lineage per Project1998 docs; precise RetroTK client UNKNOWN",
+      "content_era": "ClassicTK2019/RTK2020 lineage; not KR1998-2001",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtklua/Accepted/Spells/common/global_heal.lua",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/r/rtklua/Accepted/Spells/common/global_heal.lua",
+      "original_id": "rtklua/Accepted/Spells/common/global_heal.lua",
+      "blob_sha": "aad00c3d395f0f6df634210de056c0dd934d2df1",
+      "blob_sha_matched": true,
+      "sha256": "3599117154b9178afe4438f54d3978b5daccfd7f91d7a893d9710b2b33c09617",
+      "bytes": 1154,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-RTK-RTKLUA-ACCEPTED-SPELLS-COMMON-GLOBAL-ZAP-LUA",
+      "repository": "unkmc/RTK-Server",
+      "commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+      "game_region": "NA",
+      "client_build": "7.x/Mithia lineage per Project1998 docs; precise RetroTK client UNKNOWN",
+      "content_era": "ClassicTK2019/RTK2020 lineage; not KR1998-2001",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtklua/Accepted/Spells/common/global_zap.lua",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/r/rtklua/Accepted/Spells/common/global_zap.lua",
+      "original_id": "rtklua/Accepted/Spells/common/global_zap.lua",
+      "blob_sha": "b2ee359ccf654488eff08f6875cebeed493a50f9",
+      "blob_sha_matched": true,
+      "sha256": "7525ebcd111113d9970e5fc98bd080adce16d3ddb3ab29f6ec7f5b7512bcef0d",
+      "bytes": 5640,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-RTK-RTKLUA-ACCEPTED-SPELLS-MAGE-SPARK-LUA",
+      "repository": "unkmc/RTK-Server",
+      "commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+      "game_region": "NA",
+      "client_build": "7.x/Mithia lineage per Project1998 docs; precise RetroTK client UNKNOWN",
+      "content_era": "ClassicTK2019/RTK2020 lineage; not KR1998-2001",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtklua/Accepted/Spells/mage/spark.lua",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/r/rtklua/Accepted/Spells/mage/spark.lua",
+      "original_id": "rtklua/Accepted/Spells/mage/spark.lua",
+      "blob_sha": "f5150744eac3ab5ea58551c99c2f013e8ead119e",
+      "blob_sha_matched": true,
+      "sha256": "abf4579a8d9e4b6e511782bd2c5f11f9e7a41b0edb2909e92ef9fb4095ac674d",
+      "bytes": 2919,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-RTK-RTKLUA-ACCEPTED-SPELLS-POET-HEAL-LUA",
+      "repository": "unkmc/RTK-Server",
+      "commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+      "game_region": "NA",
+      "client_build": "7.x/Mithia lineage per Project1998 docs; precise RetroTK client UNKNOWN",
+      "content_era": "ClassicTK2019/RTK2020 lineage; not KR1998-2001",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtklua/Accepted/Spells/poet/heal.lua",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/r/rtklua/Accepted/Spells/poet/heal.lua",
+      "original_id": "rtklua/Accepted/Spells/poet/heal.lua",
+      "blob_sha": "ff597eef5484321e3ba62cb0bdb35a2b4237ee64",
+      "blob_sha_matched": true,
+      "sha256": "1c47bf20c6bec220b4edf7da1777623a49bf461763aaab2b5d73fad6b3568074",
+      "bytes": 2565,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-RTK-RTKLUA-ACCEPTED-SPELLS-ROGUE-INVISIBLE-LUA",
+      "repository": "unkmc/RTK-Server",
+      "commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+      "game_region": "NA",
+      "client_build": "7.x/Mithia lineage per Project1998 docs; precise RetroTK client UNKNOWN",
+      "content_era": "ClassicTK2019/RTK2020 lineage; not KR1998-2001",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtklua/Accepted/Spells/rogue/invisible.lua",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/r/rtklua/Accepted/Spells/rogue/invisible.lua",
+      "original_id": "rtklua/Accepted/Spells/rogue/invisible.lua",
+      "blob_sha": "77d56d3daee6c58690690002d6df1ef5565d7d80",
+      "blob_sha_matched": true,
+      "sha256": "87ceef7cd047f25287521c48939d878f571a68a7a7674063ff0d0e1f89e5164e",
+      "bytes": 4658,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    },
+    {
+      "source_id": "EXT-SRV-RTK-RTKLUA-ACCEPTED-SPELLS-WARRIOR-SLASH-LUA",
+      "repository": "unkmc/RTK-Server",
+      "commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+      "game_region": "NA",
+      "client_build": "7.x/Mithia lineage per Project1998 docs; precise RetroTK client UNKNOWN",
+      "content_era": "ClassicTK2019/RTK2020 lineage; not KR1998-2001",
+      "captured_at": "2026-10-15",
+      "source_path_or_url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtklua/Accepted/Spells/warrior/slash.lua",
+      "private_local_path": "/workspace/scratch/8309e434ce3b/private-external/server/r/rtklua/Accepted/Spells/warrior/slash.lua",
+      "original_id": "rtklua/Accepted/Spells/warrior/slash.lua",
+      "blob_sha": "b6fde1a8838e3215d0cd5eab7b5c59995ef7377c",
+      "blob_sha_matched": true,
+      "sha256": "72eaa807ae06e98c11d0bcf4b290c3f3e8441d4306cb8b9b04156b6d13ea0dd8",
+      "bytes": 2361,
+      "acquisition_status": "ACQUIRED",
+      "utilization_status": "IDENTIFIED",
+      "historical_fact_status": "UNKNOWN",
+      "observation_type": "STATIC_SOURCE_AT_COMMIT",
+      "test_result": "NOT_RUN",
+      "read_scope": "Full UTF-8 content acquired and integrity checked; selected semantic anchors reviewed as observations; not exhaustive source audit"
+    }
+  ],
+  "observations": [
+    {
+      "observation_id": "EXT-SRV-OBS-01",
+      "topic": "생성·로그인·오류",
+      "evidence": [
+        {
+          "source_id": "EXT-SRV-P1998-LOGINSERVER-LOGINSESSION-CS",
+          "lines": [
+            192,
+            270
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/LoginServer/LoginSession.cs#L192-L270"
+        },
+        {
+          "source_id": "EXT-SRV-P1998-SHARED-LOGINAUTH-CS",
+          "lines": [
+            79,
+            122
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Shared/LoginAuth.cs#L79-L122"
+        }
+      ],
+      "confirmed_static": "생성 단계에 이름 중복 재검사·외형 저장·암호 등록. 로그인은 없는 계정/틀린 암호/암호 없는 캐릭터를 구분.",
+      "missing_or_constraint": "한국 원본 로그인 화면·선택순서의 증거는 아님.",
+      "p2_test": "생성→로그인→종료→재로그인; 중복/틀린암호/취소의 저장 변경0 확인.",
+      "execution_result": "NOT_RUN"
+    },
+    {
+      "observation_id": "EXT-SRV-OBS-02",
+      "topic": "한글 이름 비호환",
+      "evidence": [
+        {
+          "source_id": "EXT-SRV-P1998-SHARED-NAMERULES-CS",
+          "lines": [
+            16,
+            27
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Shared/NameRules.cs#L16-L27"
+        },
+        {
+          "source_id": "EXT-SRV-P1998-LOGINSERVER-LOGINSESSION-CS",
+          "lines": [
+            288,
+            290
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/LoginServer/LoginSession.cs#L288-L290"
+        },
+        {
+          "source_id": "EXT-SRV-P1998-SHARED-CHARACTERSTORE-CS",
+          "lines": [
+            100,
+            106
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Shared/CharacterStore.cs#L100-L106"
+        }
+      ],
+      "confirmed_static": "NameRules는 ASCII letters만 허용; login wire는 Encoding.ASCII. 저장 key 정규화와 입력 제한을 혼동하면 안 됨.",
+      "missing_or_constraint": "그대로 이식하면 한글 생성 요구 위반. 한국 CP949/EUC-KR와 Android IME는 별도.",
+      "p2_test": "한글/자모조합/최대바이트/중복정규화/입력중취소.",
+      "execution_result": "NOT_RUN"
+    },
+    {
+      "observation_id": "EXT-SRV-OBS-03",
+      "topic": "생성 외형 및 Lv1평민",
+      "evidence": [
+        {
+          "source_id": "EXT-SRV-P1998-SHARED-CHARACTERFACTORY-CS",
+          "lines": [
+            23,
+            76
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Shared/CharacterFactory.cs#L23-L76"
+        },
+        {
+          "source_id": "EXT-SRV-RTK-RTK-SRC-CHAR-LOGIF-C",
+          "lines": [
+            58,
+            64
+          ],
+          "url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtk/src/char/logif.c#L58-L64"
+        },
+        {
+          "source_id": "EXT-SRV-P1998-SHARED-CHARACTER-CS",
+          "lines": [
+            75,
+            79
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Shared/Character.cs#L75-L79"
+        },
+        {
+          "source_id": "EXT-SRV-P1998-SHARED-CHARACTER-CS",
+          "lines": [
+            106,
+            110
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Shared/Character.cs#L106-L110"
+        },
+        {
+          "source_id": "EXT-SRV-P1998-SHARED-CHARACTER-CS",
+          "lines": [
+            162,
+            162
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Shared/Character.cs#L162"
+        }
+      ],
+      "confirmed_static": "생성 body 보존·face/sex/nation/totem/hair해독. Character 기본값 Lv1·빈 Spells·Peasant.",
+      "missing_or_constraint": "4.95 hair는 저장되지만 렌더 슬롯 없음이라는 주석. 초기HP/MP는 NA 값. 모든 생성/로드 경로 확인 미실행.",
+      "p2_test": "외형 한필드씩 변경·재로그인 보존; 정상계정Lv1평민·미학습기술 제한.",
+      "execution_result": "NOT_RUN"
+    },
+    {
+      "observation_id": "EXT-SRV-OBS-04",
+      "topic": "네 직업 전직·학습",
+      "evidence": [
+        {
+          "source_id": "EXT-SRV-RTK-RTKLUA-ACCEPTED-NPCS-COMMON-WARRIOR-TRAINER-LUA",
+          "lines": [
+            120,
+            153
+          ],
+          "url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtklua/Accepted/NPCs/Common/warrior_trainer.lua#L120-L153"
+        },
+        {
+          "source_id": "EXT-SRV-RTK-RTKLUA-ACCEPTED-NPCS-COMMON-ROGUE-TRAINER-LUA",
+          "lines": [
+            103,
+            119
+          ],
+          "url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtklua/Accepted/NPCs/Common/rogue_trainer.lua#L103-L119"
+        },
+        {
+          "source_id": "EXT-SRV-RTK-RTKLUA-ACCEPTED-NPCS-COMMON-MAGE-TRAINER-LUA",
+          "lines": [
+            108,
+            124
+          ],
+          "url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtklua/Accepted/NPCs/Common/mage_trainer.lua#L108-L124"
+        },
+        {
+          "source_id": "EXT-SRV-RTK-RTKLUA-ACCEPTED-NPCS-COMMON-POET-TRAINER-LUA",
+          "lines": [
+            102,
+            118
+          ],
+          "url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtklua/Accepted/NPCs/Common/poet_trainer.lua#L102-L118"
+        },
+        {
+          "source_id": "EXT-SRV-P1998-GAME-DATA-SPELLLEARNCOSTS-CSV",
+          "lines": [
+            1,
+            6
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/game-data/SpellLearnCosts.csv#L1-L6"
+        },
+        {
+          "source_id": "EXT-SRV-P1998-GAME-DATA-PATHS-CSV",
+          "lines": [
+            1,
+            6
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/game-data/Paths.csv#L1-L6"
+        }
+      ],
+      "confirmed_static": "네 trainer는 baseClass 분기가 별개이고 Lv5미만 전직거부. 비용표는 key/pathId/level/gold/items/source 분리.",
+      "missing_or_constraint": "NA기술명·재료·후대승급을 KR정본으로 대입 금지.",
+      "p2_test": "KR직업별 기술1개씩 다른직업/Lv미달/미학습/재료부족/취소/정상학습.",
+      "execution_result": "NOT_RUN"
+    },
+    {
+      "observation_id": "EXT-SRV-OBS-05",
+      "topic": "상점 재고와 서비스",
+      "evidence": [
+        {
+          "source_id": "EXT-SRV-RTK-RTKLUA-ACCEPTED-NPCS-COMMON-POTION-SHOP-LUA",
+          "lines": [
+            147,
+            256
+          ],
+          "url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtklua/Accepted/NPCs/Common/potion_shop.lua#L147-L256"
+        },
+        {
+          "source_id": "EXT-SRV-RTK-RTK-SRC-MAP-NPC-C",
+          "lines": [
+            230,
+            231
+          ],
+          "url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtk/src/map/npc.c#L230-L231"
+        },
+        {
+          "source_id": "EXT-SRV-P1998-GAME-DATA-SHOPSTOCK-CSV",
+          "lines": [
+            1,
+            6
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/game-data/ShopStock.csv#L1-L6"
+        }
+      ],
+      "confirmed_static": "mapTitle별 재고·전역재고조건. NPC필드 IsRepairNpc/IsShopNpc/IsBankNpc가 별개.",
+      "missing_or_constraint": "KR상점 위치·가격·서비스권한은 미확인; 공통재고로 통일 금지.",
+      "p2_test": "다른두상점 재고비교·수리불가상점 거부·금전부족/수량초과/취소 상태불변.",
+      "execution_result": "NOT_RUN"
+    },
+    {
+      "observation_id": "EXT-SRV-OBS-06",
+      "topic": "지도·출구·충돌·스폰",
+      "evidence": [
+        {
+          "source_id": "EXT-SRV-P1998-GAME-DATA-WARPS-CSV",
+          "lines": [
+            1,
+            6
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/game-data/Warps.csv#L1-L6"
+        },
+        {
+          "source_id": "EXT-SRV-P1998-SERVER-SESSION-MOVEMENT-CS",
+          "lines": [
+            197,
+            248
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Server/Session.Movement.cs#L197-L248"
+        },
+        {
+          "source_id": "EXT-SRV-RTK-RTK-SRC-MAP-NPC-C",
+          "lines": [
+            165,
+            204
+          ],
+          "url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtk/src/map/npc.c#L165-L204"
+        },
+        {
+          "source_id": "EXT-SRV-RTK-RTK-SRC-MAP-MAP-C",
+          "lines": [
+            1081,
+            1196
+          ],
+          "url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtk/src/map/map.c#L1081-L1196"
+        },
+        {
+          "source_id": "EXT-SRV-P1998-GAME-DATA-SPAWNS-CSV",
+          "lines": [
+            1,
+            6
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/game-data/Spawns.csv#L1-L6"
+        },
+        {
+          "source_id": "EXT-SRV-P1998-SERVER-WORLD-SPAWNDIRECTOR-CS",
+          "lines": [
+            39,
+            74
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Server/World.SpawnDirector.cs#L39-L74"
+        },
+        {
+          "source_id": "EXT-SRV-RTK-RTK-SRC-MAP-MOB-C",
+          "lines": [
+            290,
+            290
+          ],
+          "url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtk/src/map/mob.c#L290"
+        }
+      ],
+      "confirmed_static": "출구는 원/목적map+xy. 이동에 충돌·경계·warp gate. 스폰은종/map/xy/시간/대체ID 및 점/그룹 clock 분리.",
+      "missing_or_constraint": "NA지형/배치구조 참고. KR지도 이름치환 금지. binary지도 전체는 이 조사에서 미확보.",
+      "p2_test": "KR도시+사냥터의 독립지형/충돌/출구왕복/누락지도 거부/보스변종 차단.",
+      "execution_result": "NOT_RUN"
+    },
+    {
+      "observation_id": "EXT-SRV-OBS-07",
+      "topic": "spark 효과·소리 호출",
+      "evidence": [
+        {
+          "source_id": "EXT-SRV-RTK-RTKLUA-ACCEPTED-SPELLS-MAGE-SPARK-LUA",
+          "lines": [
+            2,
+            8
+          ],
+          "url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtklua/Accepted/Spells/mage/spark.lua#L2-L8"
+        },
+        {
+          "source_id": "EXT-SRV-RTK-RTKLUA-ACCEPTED-SPELLS-COMMON-GLOBAL-ZAP-LUA",
+          "lines": [
+            34,
+            41
+          ],
+          "url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtklua/Accepted/Spells/common/global_zap.lua#L34-L41"
+        },
+        {
+          "source_id": "EXT-SRV-RTK-RTKLUA-ACCEPTED-SPELLS-COMMON-GLOBAL-ZAP-LUA",
+          "lines": [
+            74,
+            77
+          ],
+          "url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtklua/Accepted/Spells/common/global_zap.lua#L74-L77"
+        },
+        {
+          "source_id": "EXT-SRV-RTK-RTK-SRC-MAP-SL-C",
+          "lines": [
+            3864,
+            3869
+          ],
+          "url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtk/src/map/sl.c#L3864-L3869"
+        },
+        {
+          "source_id": "EXT-SRV-RTK-RTK-SRC-MAP-SL-C",
+          "lines": [
+            4299,
+            4304
+          ],
+          "url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtk/src/map/sl.c#L4299-L4304"
+        },
+        {
+          "source_id": "EXT-SRV-RTK-RTK-SRC-MAP-CLIF-C",
+          "lines": [
+            8595,
+            8649
+          ],
+          "url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtk/src/map/clif.c#L8595-L8649"
+        }
+      ],
+      "confirmed_static": "spark→global_zap(pcalign11)→sound55+animation28. Lua playSound→clif_playsound→opcode0x19+ID/entity. sendAction은 type/time과 소리분리.",
+      "missing_or_constraint": "호출순서는 실제출력파형·지연·프레임·팔레트·레이어증거가 아님. KR동일숫자ID 대응불명.",
+      "p2_test": "원본 sound길이/효과프레임 해독 후 입력→동작→명중→소리파형→다음행동 동시기록.",
+      "execution_result": "NOT_RUN"
+    },
+    {
+      "observation_id": "EXT-SRV-OBS-08",
+      "topic": "치유 효과·소리",
+      "evidence": [
+        {
+          "source_id": "EXT-SRV-RTK-RTKLUA-ACCEPTED-SPELLS-POET-HEAL-LUA",
+          "lines": [
+            2,
+            7
+          ],
+          "url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtklua/Accepted/Spells/poet/heal.lua#L2-L7"
+        },
+        {
+          "source_id": "EXT-SRV-RTK-RTKLUA-ACCEPTED-SPELLS-COMMON-GLOBAL-HEAL-LUA",
+          "lines": [
+            22,
+            45
+          ],
+          "url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtklua/Accepted/Spells/common/global_heal.lua#L22-L45"
+        }
+      ],
+      "confirmed_static": "unaligned heal: action(6,35),sound4,animation5,HP추가. alignment별98/65,63/64,4/63분기.",
+      "missing_or_constraint": "KR도사기술과 동일 수치/음향/효과라고 확정 불가.",
+      "p2_test": "대상/거리/체력고정 비교; 마력부족/죽음/취소 별도.",
+      "execution_result": "NOT_RUN"
+    },
+    {
+      "observation_id": "EXT-SRV-OBS-09",
+      "topic": "같은 이름의 효과ID 충돌",
+      "evidence": [
+        {
+          "source_id": "EXT-SRV-P1998-GAME-DATA-SPELL-EFFECTS-CSV",
+          "lines": [
+            183,
+            183
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/game-data/spell_effects.csv#L183"
+        },
+        {
+          "source_id": "EXT-SRV-P1998-GAME-DATA-SPELL-EFFECTS-CSV",
+          "lines": [
+            299,
+            299
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/game-data/spell_effects.csv#L299"
+        },
+        {
+          "source_id": "EXT-SRV-P1998-SERVER-CONTENT-SPELLS-CS",
+          "lines": [
+            742,
+            771
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Server/Content.Spells.cs#L742-L771"
+        },
+        {
+          "source_id": "EXT-SRV-P1998-SERVER-SESSION-SPELLS-CS",
+          "lines": [
+            342,
+            360
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Server/Session.Spells.cs#L342-L360"
+        }
+      ],
+      "confirmed_static": "P1998 spark_mage row=anim28/sound701, RTK Lua=sound55. effect0x29와 sound0x19 독립.",
+      "missing_or_constraint": "같은계보를 독립근거로 계산 금지. 701의 KRarchive존재 미확인. 평균·자동통일금지.",
+      "p2_test": "repo/client별 ID가 archive에 존재하는지 검사 후 실제시청각 비교.",
+      "execution_result": "NOT_RUN"
+    },
+    {
+      "observation_id": "EXT-SRV-OBS-10",
+      "topic": "시전시간 추정",
+      "evidence": [
+        {
+          "source_id": "EXT-SRV-P1998-SERVER-CONTENT-SPELLS-CS",
+          "lines": [
+            280,
+            288
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Server/Content.Spells.cs#L280-L288"
+        },
+        {
+          "source_id": "EXT-SRV-P1998-SERVER-SESSION-SPELLS-CS",
+          "lines": [
+            346,
+            359
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Server/Session.Spells.cs#L346-L359"
+        }
+      ],
+      "confirmed_static": "P1998 CastAnimFrames35 일괄상수. 주석에 RTK최빈값을 채택했으며 real4.95개별값 근거미확인이라고 설명.",
+      "missing_or_constraint": "35/60초를 KR정본으로 채택금지. 통신·녹화FPS·출력지연 분리.",
+      "p2_test": "KR동작표/영상FPS·속도·timecode 고정; 프레임순서·시간·판정/음향시점 측정.",
+      "execution_result": "NOT_RUN"
+    },
+    {
+      "observation_id": "EXT-SRV-OBS-11",
+      "topic": "BGM·지도전환",
+      "evidence": [
+        {
+          "source_id": "EXT-SRV-P1998-SERVER-SESSION-MEDIA-CS",
+          "lines": [
+            12,
+            16
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Server/Session.Media.cs#L12-L16"
+        },
+        {
+          "source_id": "EXT-SRV-P1998-SERVER-SESSION-MEDIA-CS",
+          "lines": [
+            312,
+            343
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Server/Session.Media.cs#L312-L343"
+        },
+        {
+          "source_id": "EXT-SRV-P1998-GAME-DATA-MAPBGM-CSV",
+          "lines": [
+            1,
+            6
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/game-data/MapBgm.csv#L1-L6"
+        },
+        {
+          "source_id": "EXT-SRV-P1998-GAME-DATA-MUSICTRACKS-CSV",
+          "lines": [
+            1,
+            6
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/game-data/MusicTracks.csv#L1-L6"
+        }
+      ],
+      "confirmed_static": "4.95음악은 NexusTK.snd MIDI1~12,0stop으로 문서화. zone곡매핑·같은곡 재시작 방지 코드.",
+      "missing_or_constraint": "MapBgm에 default곡/warpgraph spill 등 현대 재구현설계 포함. KR도시 원곡 미확인.",
+      "p2_test": "KR도시/건물왕복 곡ID·루프·재시작·음량·기기별출력 비교.",
+      "execution_result": "NOT_RUN"
+    },
+    {
+      "observation_id": "EXT-SRV-OBS-12",
+      "topic": "비영사천문 재발방지 참고",
+      "evidence": [
+        {
+          "source_id": "EXT-SRV-RTK-RTKLUA-ACCEPTED-SPELLS-COMMON-GATEWAY-LUA",
+          "lines": [
+            19,
+            55
+          ],
+          "url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtklua/Accepted/Spells/common/gateway.lua#L19-L55"
+        },
+        {
+          "source_id": "EXT-SRV-RTK-RTKLUA-ACCEPTED-SPELLS-COMMON-GATEWAY-LUA",
+          "lines": [
+            120,
+            143
+          ],
+          "url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtklua/Accepted/Spells/common/gateway.lua#L120-L143"
+        },
+        {
+          "source_id": "EXT-SRV-P1998-GAME-DATA-SPELL-VERBS-LUA",
+          "lines": [
+            882,
+            887
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/game-data/spell_verbs.lua#L882-L887"
+        }
+      ],
+      "confirmed_static": "region→city/map→N/E/S/W gatebox 분기. 단일village고정과 다른 구조.",
+      "missing_or_constraint": "좌표·지명은NA. KR기술의 목적지/제한/취소/마력은 별도.",
+      "p2_test": "KR두도시×4방향·금지맵·빈답/취소·반복100회 위치/정지/메모리 기록.",
+      "execution_result": "NOT_RUN"
+    },
+    {
+      "observation_id": "EXT-SRV-OBS-13",
+      "topic": "저장·손상·재개",
+      "evidence": [
+        {
+          "source_id": "EXT-SRV-P1998-SHARED-CHARACTERSTORE-CS",
+          "lines": [
+            125,
+            183
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Shared/CharacterStore.cs#L125-L183"
+        },
+        {
+          "source_id": "EXT-SRV-P1998-SHARED-CHARACTERSTORE-CS",
+          "lines": [
+            219,
+            247
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Shared/CharacterStore.cs#L219-L247"
+        },
+        {
+          "source_id": "EXT-SRV-P1998-SHARED-CHARACTERSTORE-CS",
+          "lines": [
+            403,
+            425
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/Shared/CharacterStore.cs#L403-L425"
+        },
+        {
+          "source_id": "EXT-SRV-RTK-RTK-SRC-CHAR-CHAR-DB-C",
+          "lines": [
+            434,
+            441
+          ],
+          "url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/rtk/src/char/char_db.c#L434-L441"
+        }
+      ],
+      "confirmed_static": "SQLite트랜잭션·읽을수없는JSON과미존재 구분·손상덮어쓰기거부. RTK저장필드는map/xy/성장/외형 분리.",
+      "missing_or_constraint": "서버저장참고이며 Android오프라인·계정동기화·세이브이전 구현증거 없음.",
+      "p2_test": "좌표/전리품 보존재시작·손상/구버전/중단; PC→Android→PC순차roundtrip 별도.",
+      "execution_result": "NOT_RUN"
+    },
+    {
+      "observation_id": "EXT-SRV-OBS-14",
+      "topic": "출처·후대값 계보",
+      "evidence": [
+        {
+          "source_id": "EXT-SRV-P1998-DOCS-RESEARCH-README-MD",
+          "lines": [
+            29,
+            63
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/docs/research/README.md#L29-L63"
+        },
+        {
+          "source_id": "EXT-SRV-P1998-DOCS-RESEARCH-README-MD",
+          "lines": [
+            90,
+            102
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/docs/research/README.md#L90-L102"
+        },
+        {
+          "source_id": "EXT-SRV-P1998-RE-ARCHIVE-WARRIOR-SPELLS-MD",
+          "lines": [
+            1,
+            6
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/re/archive_warrior_spells.md#L1-L6"
+        },
+        {
+          "source_id": "EXT-SRV-P1998-GAME-DATA-SOURCES-CSV",
+          "lines": [
+            1,
+            4
+          ],
+          "url": "https://github.com/project1998/Project1998/blob/65cb3ef28f289ee35d19abfb6829d6120b9ec0cd/game-data/Sources.csv#L1-L4"
+        }
+      ],
+      "confirmed_static": "P1998문서는 RTK7.x/Mithia·ClassicTK2019계보·밸런스차이·2005~2019tutor시차를 명시.",
+      "missing_or_constraint": "문서작성자의weight를 KR고증판정으로 채택하지 않음. P1998_ARCHIVE원문덤프 미확보.",
+      "p2_test": "KR동시기자료와 필드별비교; 포크동일파일은 독립근거로 세지않음.",
+      "execution_result": "NOT_RUN"
+    }
+  ],
+  "issues": [
+    {
+      "issue_id": "EXT-SRV-ISSUE-KR-ENCODING",
+      "category": "VERSION_MISMATCH",
+      "priority": "P2_KR_CREATION",
+      "problem": "NA ASCII생성/로그인과KR한글요구 충돌",
+      "next_action": "KR도움말·인코딩·IME분리검증",
+      "evidence_ids": [
+        "EXT-SRV-OBS-02"
+      ]
+    },
+    {
+      "issue_id": "EXT-SRV-ISSUE-SOUND-ID",
+      "category": "VERSION_MISMATCH",
+      "priority": "P2_EFFECT_SOUND",
+      "problem": "spark sound55/701충돌",
+      "next_action": "각client archive에서 ID검사;평균금지",
+      "evidence_ids": [
+        "EXT-SRV-OBS-07",
+        "EXT-SRV-OBS-09"
+      ]
+    },
+    {
+      "issue_id": "EXT-SRV-ISSUE-TIMING",
+      "category": "ID_UNIDENTIFIED",
+      "priority": "P2_EFFECT_SOUND",
+      "problem": "35프레임은 역사적실측아닌fallback",
+      "next_action": "KR동작표/영상시간축 확보",
+      "evidence_ids": [
+        "EXT-SRV-OBS-10"
+      ]
+    },
+    {
+      "issue_id": "EXT-SRV-ISSUE-MAPS",
+      "category": "INTENTIONAL_UNUSED",
+      "priority": "P2_KR_MAP",
+      "problem": "NA지형/배치를KR원본전용불가",
+      "next_action": "KR지형 primary;NA는포맷/구조참고",
+      "evidence_ids": [
+        "EXT-SRV-OBS-06"
+      ]
+    },
+    {
+      "issue_id": "EXT-SRV-ISSUE-TESTCLIENT",
+      "category": "ACCESS_UNAVAILABLE",
+      "priority": "P2_REFERENCE_PARTIAL",
+      "problem": "Essorcal/project1998-testclient API404",
+      "next_action": "LoginProbe·원본UI최소flow;전체suite준비주장금지",
+      "evidence_ids": [
+        "EXT-SRV-OBS-01"
+      ]
+    },
+    {
+      "issue_id": "EXT-SRV-ISSUE-CODE-REUSE",
+      "category": "INTENTIONAL_UNUSED",
+      "priority": "BEFORE_CODE_PORT",
+      "problem": "P1998 README라이선스미지정,RTK metadata license null",
+      "next_action": "현재정적관찰·행동명세참고;코드복사결정전조건확인;원본재게시금지",
+      "evidence_ids": [
+        "EXT-SRV-OBS-14"
+      ]
+    },
+    {
+      "issue_id": "EXT-SRV-ISSUE-RTK-DEPS",
+      "category": "VERSION_MISMATCH",
+      "priority": "P2_SECONDARY",
+      "problem": "READMEUbuntu16.04i386와Dockerfilei386/latest·옛패키지혼합",
+      "next_action": "P2격리loopback·패키지실재/DBschema확인;게임의무의존성금지",
+      "evidence_ids": [
+        "EXT-SRV-OBS-14"
+      ]
+    },
+    {
+      "issue_id": "EXT-SRV-ISSUE-ARCHIVE",
+      "category": "ACCESS_UNAVAILABLE",
+      "priority": "FOLLOWUP_EVIDENCE",
+      "problem": "P1998_ARCHIVE·KR동시기온라인원문미확보",
+      "next_action": "보유도움말우선;원문작성일/캡처일 확인전채택금지",
+      "evidence_ids": [
+        "EXT-SRV-OBS-14"
+      ]
+    }
+  ],
+  "p2_candidates": [
+    {
+      "candidate_id": "EXT-SRV-P2-P1998-495",
+      "status": "PARTIALLY_PREPARED",
+      "server_commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+      "client": "privateNA4.95candidate; hash/location requiresmaininventory; KRinteroperabilityNOT_CONFIRMED",
+      "prepared": [
+        "43selectedsource/data/docsfileswithSHA",
+        "net8.0; global.json8.0.100/latestFeature; Microsoft.Data.Sqlite8.0.10;BCrypt.Net-Next4.0.3;MoonSharp2.0.0",
+        "two processes LoginServer2000/2001 andServer2005/2006",
+        "Tools/Program.cs Inter.dat12characterIPpatcher;LoginProbe/Program.cs wireprobe",
+        "Configuration.md: P1998_BIND=127.0.0.1; P1998_STATE=<disposable absolute state path>; apply to both processes in future P2"
+      ],
+      "remaining": [
+        "fullpinnedcheckout/restore; snapshotsareNOTcompleterunnablecheckout",
+        "exact4.95clientbinary+Inter.dat+NexusTK.dat/.snd+Maps; disposablecopyonly",
+        "loopbackbinding;isolatedemptystate;Windowsactualrun/capture",
+        "linkedtestclientsuite404"
+      ],
+      "not_a_solution_for": [
+        "KRHangul",
+        "KRmap/spawn/balance",
+        "Androidoffline",
+        "accountsynchronization"
+      ]
+    },
+    {
+      "candidate_id": "EXT-SRV-P2-RTK",
+      "status": "SECONDARY_STATIC_REFERENCE",
+      "server_commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+      "client": "README/client/RetroTKfoldernotpresentinrecursivetree; preciseclientbuildUNKNOWN",
+      "prepared": [
+        "25selectedC/Lua/docfileswithSHA",
+        "READMEUbuntu16.04i386/GCC/make/MySQL/Lua5.1dev",
+        "login→char→map;database/migrate.sh pathdiscovered"
+      ],
+      "remaining": [
+        "exactcompatibleRetroTKclient+hash",
+        "fullpinnedcheckout+disposabledatabase;defaultcredentialsnotusersecretsandmustnotbeusedinsharednetwork",
+        "oldpackageavailability/build/runNOT_RUN"
+      ],
+      "not_a_solution_for": [
+        "KR1998-2001provenance",
+        "Androidofflinearchitecture"
+      ]
+    }
+  ],
+  "korean_archive_leads": [
+    {
+      "source_id": "EXT-SRV-KR-ARCHIVE-LEAD",
+      "source_path_or_url": "https://paststory.tistory.com/15",
+      "title": "[1996~2014년]연도별바람의나라홈페이지",
+      "observed_status": "PUBLIC_PAGE_TEXT_READ",
+      "utilization_status": "DISCOVERED",
+      "sha256": null,
+      "hash_scope": "URLleadonly;originalHTML/imagesnotacquired",
+      "published_date": "2014-08-13",
+      "content_era": "retrospective;author estimatesyearboundaries",
+      "finding": "homepageimagesidentifyarchive targets;nogameplaynumericproof",
+      "next_action": "primarycontemporaneousbody/captureseparate;clienthelppreferred"
+    },
+    {
+      "source_id": "EXT-SRV-KR-NEXON-1996-LEAD",
+      "source_path_or_url": "https://forum.nexon.com/ncmpedia/board_view?thread=2201109",
+      "title": "바람의나라1996복원및공개",
+      "observed_status": "SEARCH_INDEX_LEAD_ONLY_BODY_NOT_AVAILABLE",
+      "utilization_status": "DISCOVERED",
+      "sha256": null,
+      "hash_scope": "bodyunacquired",
+      "published_date": "searchindex2023-07-09;bodyunconfirmed",
+      "content_era": "1996reconstructionoutside mainscope",
+      "finding": "indexmentions1998/1999source;fetchedpageemptybody shell",
+      "next_action": "pursueonlyifneededafterexistingKRhelp;noacquisition/executionclaim"
+    }
+  ],
+  "static_integrity": {
+    "file_count": 68,
+    "bytes": 2573642,
+    "git_blob_sha_matched_count": 68,
+    "set_sha256": "bf8b696289089a78c071728c76ea92bdb285dcb81d64b98cd23e7d4702c2ff47",
+    "scope": "exactUTF8bytesagainstpinnedGittreeblobIDs;notgameexecution",
+    "validation": {
+      "source_ids_unique": 68,
+      "observation_source_and_line_references_checked": 55,
+      "sha256_rechecked": 68,
+      "result": "PASS",
+      "scope": "STATIC_METADATA_ONLY; no runtime PASS"
+    }
+  },
+  "limitations": [
+    "selected68files,notcompletecode/dataaudit;binarymaps/SQLdumpnotacquiredhere",
+    "sourcecorrectnessdoesnotestablishKRhistoricalaccuracy",
+    "allnewruntime/audiovisual/device testsNOT_RUN",
+    "noclient/server/build/deploy/packageinstallationexecuted",
+    "forkscollectionconnectorrejected;repositorysearchandonecompareusedinstead"
+  ]
+}

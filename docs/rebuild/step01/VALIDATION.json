@@ -1,0 +1,219 @@
+{
+  "task_id": "BARAM_REBUILD_P0P1_001",
+  "executed_at_utc": "2026-10-15T14:55:45.874761+00:00",
+  "command": "python3 tools/rebuild/step01/validate_step01.py",
+  "result": "PASS",
+  "scope": "STATIC P0/P1 ARTIFACT/REFERENCE/BYTE VALIDATION ONLY; NOT GAMEPLAY OR HISTORICAL ACCURACY",
+  "checks": [
+    {
+      "check_id": "required_deliverables",
+      "result": "PASS",
+      "scope": "STATIC_ARTIFACT_INTEGRITY_ONLY",
+      "observed": [
+        "REPORT.md",
+        "requirements.csv",
+        "sources.jsonl",
+        "issues.csv",
+        "NEXT_P2.md"
+      ]
+    },
+    {
+      "check_id": "unique_requirement_ids",
+      "result": "PASS",
+      "scope": "STATIC_ARTIFACT_INTEGRITY_ONLY",
+      "observed": {
+        "rows": 120,
+        "unique": 120
+      }
+    },
+    {
+      "check_id": "unique_source_ids",
+      "result": "PASS",
+      "scope": "STATIC_ARTIFACT_INTEGRITY_ONLY",
+      "observed": {
+        "rows": 197,
+        "unique": 197
+      }
+    },
+    {
+      "check_id": "unique_issue_and_binding_member_ids",
+      "result": "PASS",
+      "scope": "STATIC_ARTIFACT_INTEGRITY_ONLY",
+      "observed": {
+        "issues": 34,
+        "bindings": 32,
+        "members": 2204
+      }
+    },
+    {
+      "check_id": "requirement_cells_complete",
+      "result": "PASS",
+      "scope": "STATIC_ARTIFACT_INTEGRITY_ONLY",
+      "observed": {
+        "empty_cells": []
+      }
+    },
+    {
+      "check_id": "all_source_requirement_member_refs",
+      "result": "PASS",
+      "scope": "STATIC_ARTIFACT_INTEGRITY_ONLY",
+      "observed": {
+        "broken_refs": []
+      }
+    },
+    {
+      "check_id": "unique_normal_failure_cancel_tests",
+      "result": "PASS",
+      "scope": "STATIC_ARTIFACT_INTEGRITY_ONLY",
+      "observed": {
+        "designed": 360,
+        "unique": 360
+      }
+    },
+    {
+      "check_id": "unexecuted_game_tests_not_pass",
+      "result": "PASS",
+      "scope": "STATIC_ARTIFACT_INTEGRITY_ONLY",
+      "observed": {
+        "runtime_tests_executed": 0,
+        "requirement_test_status_counts": {
+          "NOT_RUN": 120
+        }
+      }
+    },
+    {
+      "check_id": "no_new_runtime_bound_claim",
+      "result": "PASS",
+      "scope": "STATIC_ARTIFACT_INTEGRITY_ONLY",
+      "observed": {
+        "bound_or_exercised": 0
+      }
+    },
+    {
+      "check_id": "canonical_provenance_axes",
+      "result": "PASS",
+      "scope": "STATIC_ARTIFACT_INTEGRITY_ONLY",
+      "observed": {
+        "source_specific_notes_preserved": 5
+      }
+    },
+    {
+      "check_id": "source_and_member_hashes_or_explicit_gap",
+      "result": "PASS",
+      "scope": "STATIC_ARTIFACT_INTEGRITY_ONLY",
+      "observed": {
+        "hash_errors": [],
+        "sources_with_explicit_missing_hash": 8
+      }
+    },
+    {
+      "check_id": "available_acquired_files_match_ledger",
+      "result": "PASS",
+      "scope": "STATIC_ARTIFACT_INTEGRITY_ONLY",
+      "observed": {
+        "files_checked": 211,
+        "failures": [],
+        "note": "Other remote/snapshot bytes have agent hash evidence; unavailable private paths are not invented."
+      }
+    },
+    {
+      "check_id": "required_categories_and_inherited_failures",
+      "result": "PASS",
+      "scope": "STATIC_ARTIFACT_INTEGRITY_ONLY",
+      "observed": {
+        "categories": {
+          "title_profile_auth_creation": 13,
+          "right_panels_icons_input": 13,
+          "kr_world_geometry_exits_spawns": 17,
+          "four_jobs_progression": 13,
+          "combat_death_return": 11,
+          "npc_life_equipment_quests": 13,
+          "animation_effect_audio_hit_axis": 17,
+          "save_offline_sync_update": 13,
+          "inventory_performance_cache_regression": 10
+        },
+        "regression_groups": 10,
+        "broken_refs": []
+      }
+    },
+    {
+      "check_id": "seven_unused_reasons_have_actions",
+      "result": "PASS",
+      "scope": "STATIC_ARTIFACT_INTEGRITY_ONLY",
+      "observed": {
+        "reason_categories": [
+          "ID 미식별",
+          "버전 불일치",
+          "의도적 미사용",
+          "접근 불가",
+          "지원 코드 없음",
+          "패키징·캐시 결함",
+          "해독 실패"
+        ],
+        "issue_states": {
+          "OPEN": 27,
+          "DEFERRED_INTENTIONAL": 5,
+          "RESOLVED": 2
+        }
+      }
+    },
+    {
+      "check_id": "stage_and_approval_boundary",
+      "result": "PASS",
+      "scope": "STATIC_ARTIFACT_INTEGRITY_ONLY",
+      "observed": {
+        "implementation_status": "NOT_STARTED",
+        "p2_execution_authorized": false,
+        "profile_status": "PROVISIONAL_NOT_RUNTIME_CONTENT"
+      }
+    },
+    {
+      "check_id": "public_metadata_only_no_secret_patterns",
+      "result": "PASS",
+      "scope": "STATIC_ARTIFACT_INTEGRITY_ONLY",
+      "observed": {
+        "unexpected_file_types": [],
+        "secret_pattern_files": [],
+        "note": "No original binaries, graphics/audio, real save, credential or signing-key bytes in deliverables."
+      }
+    }
+  ],
+  "input_fingerprints": {
+    "AGENTS.md": "b37bda1aa4ac8c89f952aa5d75624e2f9be9bc913c59166624c6a1d779744f7d",
+    "docs/rebuild/STATE.json": "b42d16311b2f1618ed33ae779f2d3d9106c0a85e9a2040aa74b0e2b5d68f8ce5",
+    "docs/rebuild/step01/NEXT_P2.md": "0b41b135c4acb2d125cb0c057458f9e714a74901cc800aeb72ee2f4d760183fa",
+    "docs/rebuild/step01/REPORT.md": "71f6360eaa12bf8660dc984d85898ae5d4257d1533643a79102b3c22c17afcf6",
+    "docs/rebuild/step01/RESTORATION_PROFILE.json": "f37cd7245332a51f195ebc3f2bdfab63ab20cd4bbc4f79fdb665277b7f516160",
+    "docs/rebuild/step01/archive_evidence.md": "10aa66b5ae714af1d982c2156c29de9e2fbffcc072cf42df4003827a5c1e66e6",
+    "docs/rebuild/step01/archive_members.jsonl": "ef738a6d98e0f211e9e2ee74d5880ef3f987bc497e62c6874f979396f2d754ef",
+    "docs/rebuild/step01/archive_sources.jsonl": "44343e64af65b3bff46fd385012e17ee868d8d5f78690a00733afe31c0b74c48",
+    "docs/rebuild/step01/assembly_summary.json": "d103c52637a27eec5f36b994378e962773caa6fbe58b6deb39700d7bdf669645",
+    "docs/rebuild/step01/coverage_matrix.json": "36452f3b3bade75f0001e821541a50b68cdebec7c613dfd4b4c8e7f7ab9112f8",
+    "docs/rebuild/step01/discovery_inventory.json": "165b40ffba8a92a47357ef1e4b082c3b0e55aae9d6ddc8700ea7dd2f8c7a6100",
+    "docs/rebuild/step01/duplicate_groups.json": "d8402c799efa09a14ae42532dcb723abd25fcb8b89d3114d4ec7d2d370c8c3e9",
+    "docs/rebuild/step01/existing_branch_evidence.json": "6f3fb39676624afc6bbc96622964f7ab45742b215fb31844a98569c393ff0aa6",
+    "docs/rebuild/step01/existing_branch_evidence.md": "68586433ca5816036bc95a761122d982a35fc7128d0595d5aaecd5e3874b1e8f",
+    "docs/rebuild/step01/external_server_evidence.json": "aba4d5af028702b2f8834f2b3cdd110f7b2b6a047521222fbbc10ace36083ad3",
+    "docs/rebuild/step01/external_server_evidence.md": "df514dec11553221b8e885fb27fbdd028846bbd350a55ed57a95f6003c598c1e",
+    "docs/rebuild/step01/external_visual_evidence.json": "8667b4f3192ffe15cee2ca3acab2899a3119dcb8787d459ee6ba7279eaa56dd2",
+    "docs/rebuild/step01/external_visual_evidence.md": "b1fc0eb267be9b9d39cd9e9930c348f7f5b779c808ea31620343c1d809ef2897",
+    "docs/rebuild/step01/field_bindings.jsonl": "884addcfe25c872470815a9511dccf440dcf88a0ee813b0c9d7630dd9cc77296",
+    "docs/rebuild/step01/independent_review.md": "9744fa119deb4a586f46508422e5c9494dc1f0175e506bcb384812ecfb7b3d30",
+    "docs/rebuild/step01/issues.csv": "872e30640b2532a04d2df785689fda6b202c90dc432cee53ba0d38b4a84130ab",
+    "docs/rebuild/step01/requirements.csv": "1aebe0f41f5ae2d699f01a71065ae1d8ae0ba719ef2355cc017673e53ef6a290",
+    "docs/rebuild/step01/requirements_drafting_notes.md": "d3291abf1975b0a966fceac6d8c6585c0669b1b9a5f562182bcaa190873e5669",
+    "docs/rebuild/step01/sources.jsonl": "f8c0f6c2d0aec18275c71f42b1fb1194c125e878f709b92dc3e641b24e98ea51",
+    "docs/rebuild/step01/ui_reference_observation.json": "036ed8f9aa49f81aa7edf29118068ccf8a02c4a8d82cf10d8543916b12b60fbd",
+    "docs/rebuild/step01/web_evidence.json": "30e6d8f9fa673790dad0689cfeecc6dd0ef98459eabec7a3cb748e125ea71ba2",
+    "tools/rebuild/step01/inventory_archives.py": "d50c9e9393868d9bfa6fe991df7e6c829bcadd279a6baaca93f06625c9e79607",
+    "tools/rebuild/step01/link_archive_metadata.py": "57b9751893830ee15fe4891bd08c554df752b1777421cfa435fdbd34ec4e5bf5",
+    "tools/rebuild/step01/validate_step01.py": "be9ba5acb706e2f83aaaef91a45b7b185d82dccf849b9b63524f8b436e43d04f"
+  },
+  "runtime_tests_executed": 0,
+  "p2_executed": false,
+  "limitations": [
+    "Container byte inventory is not all asset semantic decoding",
+    "Original historical values and audiovisual identity remain provisional",
+    "No native Windows/Android, reference server or real account roundtrip tests"
+  ]
+}

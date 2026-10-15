@@ -1,0 +1,5710 @@
+{
+  "policy": "Exact bytes only; same palette-varying imagery, same names, forks and eras are NOT merged automatically. Locations retained; no originals deleted.",
+  "groups": [
+    {
+      "sha256": "1b268f01a95883fef923d8b0dcfc0d0d3bdba22a3706da14953213a96c2adca7",
+      "occurrences": [
+        {
+          "source_id": "LIB-001",
+          "locator": "/7476.jpg"
+        },
+        {
+          "member_id": "LIB-001-M-a05a35e638da",
+          "source_id": "LIB-001",
+          "locator": "7476.jpg"
+        },
+        {
+          "member_id": "LIB-026-M-390df746f06d",
+          "source_id": "LIB-026",
+          "locator": "baram-work-fix-package-20261015.zip!references/7476.jpg"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "9d7df72b4ada338fc6233e85c15647549f9fe14b657d6d3e0a0035cbb395d170",
+      "occurrences": [
+        {
+          "source_id": "LIB-002",
+          "locator": "/7478.jpg"
+        },
+        {
+          "member_id": "LIB-002-M-8fd9c5c84a0b",
+          "source_id": "LIB-002",
+          "locator": "7478.jpg"
+        },
+        {
+          "member_id": "LIB-026-M-9fa05bf7bdbe",
+          "source_id": "LIB-026",
+          "locator": "baram-work-fix-package-20261015.zip!references/7478.jpg"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "a6b92fcdcc5a3a1b91641dd09bc2ee6b86875f48e730645931ad9db475b948d6",
+      "occurrences": [
+        {
+          "source_id": "LIB-003",
+          "locator": "/7480.jpg"
+        },
+        {
+          "member_id": "LIB-003-M-ab89e6493164",
+          "source_id": "LIB-003",
+          "locator": "7480.jpg"
+        },
+        {
+          "member_id": "LIB-026-M-17fbe59a310a",
+          "source_id": "LIB-026",
+          "locator": "baram-work-fix-package-20261015.zip!references/7480.jpg"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "34bee372e754fc423099193587ae265b731d7f7ff0f083a87cb564179aeb266a",
+      "occurrences": [
+        {
+          "source_id": "LIB-004",
+          "locator": "/Baram1998Assets/BARAM.PAL"
+        },
+        {
+          "member_id": "LIB-004-M-b78effb90b27",
+          "source_id": "LIB-004",
+          "locator": "BARAM.PAL"
+        },
+        {
+          "member_id": "LIB-008-M-9be1aa16abd6",
+          "source_id": "LIB-008",
+          "locator": "Judge_Map_Editor.7z!BARAM.PAL"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "4b63aaff6aea18c7b038db715e753468f9a0202e0d3e692dfd7f0c3f341c6e5a",
+      "occurrences": [
+        {
+          "source_id": "LIB-005",
+          "locator": "/Baram1998Assets/Baram_Map_Editor.7z"
+        },
+        {
+          "member_id": "LIB-005-M-be754d4ce45b",
+          "source_id": "LIB-005",
+          "locator": "Baram_Map_Editor.7z"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "338f0b1e6519901141925be2b92c3423ad72e741a0aed3ea91ec889c04e855ea",
+      "occurrences": [
+        {
+          "source_id": "LIB-006",
+          "locator": "/Baram1998Assets/CODEX_ASSET_INTAKE_20261014.md"
+        },
+        {
+          "member_id": "LIB-006-M-05d9ac975a18",
+          "source_id": "LIB-006",
+          "locator": "CODEX_ASSET_INTAKE_20261014.md"
+        },
+        {
+          "member_id": "LIB-017-M-9272802e6543",
+          "source_id": "LIB-017",
+          "locator": "baram_Codex_tile_handoff_PRIVATE.zip!docs/CODEX_ASSET_INTAKE_20261014.md"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "d58303a3129547505daf7006e7dc58cc27bcfdad33ee5137c1350ef172a02221",
+      "occurrences": [
+        {
+          "source_id": "LIB-007",
+          "locator": "/Baram1998Assets/EPFTool.exe"
+        },
+        {
+          "member_id": "LIB-007-M-a79c8b7b3597",
+          "source_id": "LIB-007",
+          "locator": "EPFTool.exe"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "7df59393d9aa077c79e0d6f0b40b89d7b56f0ca7edf9f86f9823dc94aa630646",
+      "occurrences": [
+        {
+          "source_id": "LIB-008",
+          "locator": "/Baram1998Assets/Judge_Map_Editor.7z"
+        },
+        {
+          "member_id": "LIB-008-M-98f71e68b574",
+          "source_id": "LIB-008",
+          "locator": "Judge_Map_Editor.7z"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "62642ca3ef492f58947abb2c17cbae5b5a60d5f96fd146704b7d99d1aad3bcef",
+      "occurrences": [
+        {
+          "source_id": "LIB-009",
+          "locator": "/Baram1998Assets/KR_1.25_winbaram.zip"
+        },
+        {
+          "member_id": "LIB-009-M-3fdf6d4d5dba",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "f11e448db6478b1aca3a7dd47403bdef00cf873b203b14629b0215632190532f",
+      "occurrences": [
+        {
+          "source_id": "LIB-010",
+          "locator": "/Baram1998Assets/KR_4.91_491v.zip"
+        },
+        {
+          "member_id": "LIB-010-M-462ee61dbfdc",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "db89e2b1ac3dfd3f5668fd7746478507b370ee627b4321d7dec441620ce96b53",
+      "occurrences": [
+        {
+          "source_id": "LIB-011",
+          "locator": "/Baram1998Assets/NA_4.03_NexusTK.7z"
+        },
+        {
+          "member_id": "LIB-011-M-1e132854d7ff",
+          "source_id": "LIB-011",
+          "locator": "NA_4.03_NexusTK.7z"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "c8820ac5af784fa6aadcdc86198c84f07ac4e73af1c74ece1152a1c9bd52cd4b",
+      "occurrences": [
+        {
+          "source_id": "LIB-012",
+          "locator": "/Baram1998Assets/NA_4.03_french.exe"
+        },
+        {
+          "member_id": "LIB-012-M-9011d1494efd",
+          "source_id": "LIB-012",
+          "locator": "NA_4.03_french.exe"
+        },
+        {
+          "member_id": "LIB-015-M-85de73586ac9",
+          "source_id": "LIB-015",
+          "locator": "NA_5.0_or_older_clients_ALL.7z!5.0 or Older Clients (All)/4.03 (French Version)/nexusf.exe"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "54ca6b8892a2b44ddfaadebc92e1886a770ac07a82b60ceacbfd3e2e44e5774a",
+      "occurrences": [
+        {
+          "source_id": "LIB-013",
+          "locator": "/Baram1998Assets/NA_4.66_NexusTK.7z"
+        },
+        {
+          "member_id": "LIB-013-M-bedae119de81",
+          "source_id": "LIB-013",
+          "locator": "NA_4.66_NexusTK.7z"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "486f4684b76658d92eaf84aab77fe9be9489ea01de8264fe90d0040466620aaa",
+      "occurrences": [
+        {
+          "source_id": "LIB-014",
+          "locator": "/Baram1998Assets/NA_4.95_Nexus495.exe"
+        },
+        {
+          "member_id": "LIB-014-M-f53dd815b53a",
+          "source_id": "LIB-014",
+          "locator": "NA_4.95_Nexus495.exe"
+        },
+        {
+          "member_id": "LIB-015-M-149c9da49533",
+          "source_id": "LIB-015",
+          "locator": "NA_5.0_or_older_clients_ALL.7z!5.0 or Older Clients (All)/4.95 Client/Nexus495.exe"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "d41b644303581f7dfc05ef627d99820f8ccce3152637c9be533f0465dbbcb885",
+      "occurrences": [
+        {
+          "source_id": "LIB-015",
+          "locator": "/Baram1998Assets/NA_5.0_or_older_clients_ALL.7z"
+        },
+        {
+          "member_id": "LIB-015-M-5327eca6f8e9",
+          "source_id": "LIB-015",
+          "locator": "NA_5.0_or_older_clients_ALL.7z"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "4bc4119feee541d60a6d46f1930d3e6dafa0ba7b104264c5aa5db83fc5d725b5",
+      "occurrences": [
+        {
+          "source_id": "LIB-016",
+          "locator": "/Baram1998Assets/PRIVATE_ASSET_INVENTORY_20261014.json"
+        },
+        {
+          "member_id": "LIB-016-M-18a759732ee6",
+          "source_id": "LIB-016",
+          "locator": "PRIVATE_ASSET_INVENTORY_20261014.json"
+        },
+        {
+          "member_id": "LIB-017-M-c783af816427",
+          "source_id": "LIB-017",
+          "locator": "baram_Codex_tile_handoff_PRIVATE.zip!docs/PRIVATE_ASSET_INVENTORY_20261014.json"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "f36929c43d775058678a708a1da7a140ea13e0e9243d5f4fc2b5e304fa54500b",
+      "occurrences": [
+        {
+          "source_id": "LIB-017",
+          "locator": "/Baram1998Assets/baram_Codex_tile_handoff_PRIVATE.zip"
+        },
+        {
+          "member_id": "LIB-017-M-326ceb7103d1",
+          "source_id": "LIB-017",
+          "locator": "baram_Codex_tile_handoff_PRIVATE.zip"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "18581f104aa725eb615a205d428a10b46bd670b956876b99fa92ce32ebdc1514",
+      "occurrences": [
+        {
+          "source_id": "LIB-018",
+          "locator": "/Baram1998Assets/baram_tile_atlases_PRIVATE.zip"
+        },
+        {
+          "member_id": "LIB-017-M-2f0017163568",
+          "source_id": "LIB-017",
+          "locator": "baram_Codex_tile_handoff_PRIVATE.zip!baram_tile_atlases_PRIVATE.zip"
+        },
+        {
+          "member_id": "LIB-018-M-1a7f1e92ca81",
+          "source_id": "LIB-018",
+          "locator": "baram_tile_atlases_PRIVATE.zip"
+        },
+        {
+          "member_id": "LIB-034-M-40d73fb7d5fa",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/undated_tile_atlases.zip"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "95d55d99f2267b19bd39df637f231461678b33714520aaa7dca51fc982daa16e",
+      "occurrences": [
+        {
+          "source_id": "LIB-019",
+          "locator": "/Baram1998Assets/godot_private_tile_atlas.gd"
+        },
+        {
+          "member_id": "LIB-017-M-6a1955acbb8f",
+          "source_id": "LIB-017",
+          "locator": "baram_Codex_tile_handoff_PRIVATE.zip!tools/godot_private_tile_atlas.gd"
+        },
+        {
+          "member_id": "LIB-019-M-60afcf32e448",
+          "source_id": "LIB-019",
+          "locator": "godot_private_tile_atlas.gd"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "114c9d3716262cc0df3437e414b206643413ab35fcb6da0dc52bc20ca66e272d",
+      "occurrences": [
+        {
+          "source_id": "LIB-020",
+          "locator": "/Baram1998Assets/import_private_tile_atlases.py"
+        },
+        {
+          "member_id": "LIB-017-M-ede103a6c34e",
+          "source_id": "LIB-017",
+          "locator": "baram_Codex_tile_handoff_PRIVATE.zip!tools/import_private_tile_atlases.py"
+        },
+        {
+          "member_id": "LIB-020-M-fcbc6ba3556f",
+          "source_id": "LIB-020",
+          "locator": "import_private_tile_atlases.py"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "d49ca6f1ee839d8bf3146b1455bbb07f9642fcc945c914d08106beea40bd54b1",
+      "occurrences": [
+        {
+          "source_id": "LIB-021",
+          "locator": "/Baram1998Assets/mithiamapeditor-master.zip"
+        },
+        {
+          "member_id": "LIB-021-M-555bbafaa7fd",
+          "source_id": "LIB-021",
+          "locator": "mithiamapeditor-master.zip"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "c1b682354f15f4c85010f42e2dde8e776076b751aa3bf9ac888d22f15bec0b44",
+      "occurrences": [
+        {
+          "source_id": "LIB-022",
+          "locator": "/baram-1998-github-ready.zip"
+        },
+        {
+          "member_id": "LIB-022-M-469a813396c9",
+          "source_id": "LIB-022",
+          "locator": "baram-1998-github-ready.zip"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "edced326043017a5aca29e7bc6d5555262b6fe37fe08289dade42caafee7ad2f",
+      "occurrences": [
+        {
+          "source_id": "LIB-023",
+          "locator": "/baram-PC-Android-progress-20261015.md"
+        },
+        {
+          "member_id": "LIB-023-M-9c20b2b35531",
+          "source_id": "LIB-023",
+          "locator": "baram-PC-Android-progress-20261015.md"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "04fefccedeb686563b91b951a3b74b547ca5da3cf11b7fe1834ba34956de243f",
+      "occurrences": [
+        {
+          "source_id": "LIB-024",
+          "locator": "/baram-checksums-05bde481.json"
+        },
+        {
+          "member_id": "LIB-024-M-b656039751c2",
+          "source_id": "LIB-024",
+          "locator": "baram-checksums-05bde481.json"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "c95648025c435a36636f1d4666021a2e35a8d992c81bb1348fe51aebc2ed623d",
+      "occurrences": [
+        {
+          "source_id": "LIB-025",
+          "locator": "/baram-evidence-05bde481.zip"
+        },
+        {
+          "member_id": "LIB-025-M-c05afb73e05d",
+          "source_id": "LIB-025",
+          "locator": "baram-evidence-05bde481.zip"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "1d11618f7cd7c38ab7165721c4c1305d094fffb2c9b92496c3ee55e78cda61de",
+      "occurrences": [
+        {
+          "source_id": "LIB-026",
+          "locator": "/baram-work-fix-package-20261015.zip"
+        },
+        {
+          "member_id": "LIB-026-M-48dcc85ebc27",
+          "source_id": "LIB-026",
+          "locator": "baram-work-fix-package-20261015.zip"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "f35a21cb9132bc88b857040fe18b4d8c90e284012d143ca2c1d070114bfe17ba",
+      "occurrences": [
+        {
+          "source_id": "LIB-027",
+          "locator": "/baram_1998_4_0_research_v1.zip"
+        },
+        {
+          "member_id": "LIB-022-M-90dde3f2d67d",
+          "source_id": "LIB-022",
+          "locator": "baram-1998-github-ready.zip!baram-1998-singleplayer/research/archive/baram_1998_4_0_research_v1.zip"
+        },
+        {
+          "member_id": "LIB-027-M-3b4d10898bc3",
+          "source_id": "LIB-027",
+          "locator": "baram_1998_4_0_research_v1.zip"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "1ad24e63801e8f69d97c4a17bc5bd377529b2e884c56dfe9ad061327dc01aba5",
+      "occurrences": [
+        {
+          "source_id": "LIB-028",
+          "locator": "/baram_windows_recovery_results_20261015.md"
+        },
+        {
+          "member_id": "LIB-028-M-9bac49a7e0c3",
+          "source_id": "LIB-028",
+          "locator": "baram_windows_recovery_results_20261015.md"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "34dc80b1b9550b53046e498e7bae5e879172f4f05eb860f1231175f4025a85a8",
+      "occurrences": [
+        {
+          "source_id": "LIB-029",
+          "locator": "/어플/baram-ui-map-audit-20261015.json"
+        },
+        {
+          "member_id": "LIB-026-M-bbc2635de447",
+          "source_id": "LIB-026",
+          "locator": "baram-work-fix-package-20261015.zip!audit/baram-ui-map-audit-20261015.json"
+        },
+        {
+          "member_id": "LIB-029-M-6e3d081f597a",
+          "source_id": "LIB-029",
+          "locator": "baram-ui-map-audit-20261015.json"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "f63aa67ac468c898eb647790f0653fe88ad60a7fbeaecd6201918412d82c9608",
+      "occurrences": [
+        {
+          "source_id": "LIB-030",
+          "locator": "/어플/baram-ui-map-audit-20261015.md"
+        },
+        {
+          "member_id": "LIB-026-M-75760620a574",
+          "source_id": "LIB-026",
+          "locator": "baram-work-fix-package-20261015.zip!audit/baram-ui-map-audit-20261015.md"
+        },
+        {
+          "member_id": "LIB-030-M-fa1f679a9614",
+          "source_id": "LIB-030",
+          "locator": "baram-ui-map-audit-20261015.md"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "04e78ea5784eef0d63b6d2a7a7d569483644af5ddff0b0063db836e611e67658",
+      "occurrences": [
+        {
+          "source_id": "LIB-031",
+          "locator": "/어플/baram-work-fix-instructions-20261015.md"
+        },
+        {
+          "member_id": "LIB-026-M-5cb3b567c3e9",
+          "source_id": "LIB-026",
+          "locator": "baram-work-fix-package-20261015.zip!01_WORK_INSTRUCTIONS.md"
+        },
+        {
+          "member_id": "LIB-031-M-330676a04fc5",
+          "source_id": "LIB-031",
+          "locator": "baram-work-fix-instructions-20261015.md"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "8d68178fd64c451d910ace0b702abeb9a19998113f88489c169c1176bd3703ea",
+      "occurrences": [
+        {
+          "source_id": "LIB-032",
+          "locator": "/어플/baram_1997_resources_PRIVATE.zip"
+        },
+        {
+          "member_id": "LIB-032-M-5fdff29433d4",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip"
+        },
+        {
+          "member_id": "LIB-034-M-36dfd2f9afe9",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "1e3bd29712d4ad7e4dd5f2554d80757b65692e31b1846820e26cd7156110c3dd",
+      "occurrences": [
+        {
+          "source_id": "LIB-033",
+          "locator": "/어플/baram_1997_sprite_atlases_PRIVATE.zip"
+        },
+        {
+          "member_id": "LIB-033-M-1af335e8238f",
+          "source_id": "LIB-033",
+          "locator": "baram_1997_sprite_atlases_PRIVATE.zip"
+        },
+        {
+          "member_id": "LIB-034-M-d3bacd0cb4a6",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_sprite_atlases.zip"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "a13dac2a107feefeec256c620ff003cc22b0f40fefb8a619c0276c316dd62dde",
+      "occurrences": [
+        {
+          "source_id": "LIB-034",
+          "locator": "/어플/baram_restoration_ASSET_HANDOFF_PRIVATE.zip"
+        },
+        {
+          "member_id": "LIB-034-M-533f9fe3136e",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "36faf7c7aec5a647af29f815fac4c5a81a42703f226443744104346a56cbfd0c",
+      "occurrences": [
+        {
+          "source_id": "LIB-035",
+          "locator": "/어플/baram_source_intake_20261014.md"
+        },
+        {
+          "member_id": "LIB-034-M-617daeab5db5",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!README/INTAKE_REPORT.md"
+        },
+        {
+          "member_id": "LIB-035-M-106e7105d8a1",
+          "source_id": "LIB-035",
+          "locator": "baram_source_intake_20261014.md"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "3bbcd5d69565bbe0d3bbe34149c59061dc3d1c5f3d27533e50a336cefd3e207c",
+      "occurrences": [
+        {
+          "source_id": "LIB-036",
+          "locator": "/어플/work_assets_shared_PRIVATE_final_20261014.zip"
+        },
+        {
+          "member_id": "LIB-036-M-8c6a61986fe7",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "0759c95a578c5e25cab3de55b31e254bd1387514de5ce2a191db69699d00956f",
+      "occurrences": [
+        {
+          "source_id": "LIB-037",
+          "locator": "/어플/work_regions_PRIVATE_expansion_002_20261014.zip"
+        },
+        {
+          "member_id": "LIB-037-M-efe770574ff6",
+          "source_id": "LIB-037",
+          "locator": "work_regions_PRIVATE_expansion_002_20261014.zip"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "77bb4290061d5c41b3552623d32c4c795de438d4dcd895cf59cb2c7cefb06b41",
+      "occurrences": [
+        {
+          "source_id": "LIB-038",
+          "locator": "/어플/work_regions_PRIVATE_final_20261014.zip"
+        },
+        {
+          "member_id": "LIB-038-M-4e37fe82649d",
+          "source_id": "LIB-038",
+          "locator": "work_regions_PRIVATE_final_20261014.zip"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "c5589eda69919f79ef331000531bef9b61eb9aaaa7596957f164f79dc69356db",
+      "occurrences": [
+        {
+          "source_id": "LIB-039",
+          "locator": "/어플/03_치명결함_필수수정과_회귀시험.md"
+        },
+        {
+          "member_id": "LIB-039-M-9a1253af609f",
+          "source_id": "LIB-039",
+          "locator": "03_치명결함_필수수정과_회귀시험.md"
+        },
+        {
+          "member_id": "LIB-042-M-f07d8f347d1b",
+          "source_id": "LIB-042",
+          "locator": "바람의나라_통합복원_치명결함반영_v2_20261015.zip!03_치명결함_필수수정과_회귀시험.md"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "81ed6c992edbb18ef95f0673aeeec2932cf7c53883127546820af6529ec25c20",
+      "occurrences": [
+        {
+          "source_id": "LIB-040",
+          "locator": "/어플/work_ui_recovered_PRIVATE_002_20261014.zip"
+        },
+        {
+          "member_id": "LIB-040-M-c9dad5bb99f3",
+          "source_id": "LIB-040",
+          "locator": "work_ui_recovered_PRIVATE_002_20261014.zip"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "c98071d95024c36e037dda48ab96539d4a1b0052ba0fc62600cbb55e7baf727d",
+      "occurrences": [
+        {
+          "source_id": "LIB-041",
+          "locator": "/어플/바람의나라_통합복원_분석과실행지시서_20261015.zip"
+        },
+        {
+          "member_id": "LIB-041-M-23d847af9057",
+          "source_id": "LIB-041",
+          "locator": "바람의나라_통합복원_분석과실행지시서_20261015.zip"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "5376bdcf1024b4e6b49531ef13dd681db2e2fc62baff174a9e3a4fa02534c52d",
+      "occurrences": [
+        {
+          "source_id": "LIB-042",
+          "locator": "/어플/바람의나라_통합복원_치명결함반영_v2_20261015.zip"
+        },
+        {
+          "member_id": "LIB-042-M-8d48db5e2c5a",
+          "source_id": "LIB-042",
+          "locator": "바람의나라_통합복원_치명결함반영_v2_20261015.zip"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "05f5aacc3119662a968e53e6b5256983ef7faddd5cde5f47da6f0a1570eb7aca",
+      "occurrences": [
+        {
+          "member_id": "LIB-005-M-ff8109230b46",
+          "source_id": "LIB-005",
+          "locator": "Baram_Map_Editor.7z!data/TileA0.pal"
+        },
+        {
+          "member_id": "LIB-005-M-57aba42ba2f8",
+          "source_id": "LIB-005",
+          "locator": "Baram_Map_Editor.7z!data/TileA3.pal"
+        },
+        {
+          "member_id": "LIB-005-M-d68702da9eab",
+          "source_id": "LIB-005",
+          "locator": "Baram_Map_Editor.7z!data/TileB2.pal"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "d5f9eaa3322af0c22ef536b02b96b47d44e82b61776488a6c0d026fc27af27df",
+      "occurrences": [
+        {
+          "member_id": "LIB-005-M-af44debee5d5",
+          "source_id": "LIB-005",
+          "locator": "Baram_Map_Editor.7z!data/TileA1.pal"
+        },
+        {
+          "member_id": "LIB-005-M-188d21491204",
+          "source_id": "LIB-005",
+          "locator": "Baram_Map_Editor.7z!data/TileB0.pal"
+        },
+        {
+          "member_id": "LIB-005-M-25d59099ff52",
+          "source_id": "LIB-005",
+          "locator": "Baram_Map_Editor.7z!data/TileB1.pal"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "bb314ea55640c48288eae403608c6c1ecd1a158cc15f6e7c3c11db95958e29d9",
+      "occurrences": [
+        {
+          "member_id": "LIB-005-M-7c7b0b55a0be",
+          "source_id": "LIB-005",
+          "locator": "Baram_Map_Editor.7z!data/TileA2.pal"
+        },
+        {
+          "member_id": "LIB-005-M-a3a0884f2c8c",
+          "source_id": "LIB-005",
+          "locator": "Baram_Map_Editor.7z!data/TileC0.pal"
+        },
+        {
+          "member_id": "LIB-005-M-576879f65a45",
+          "source_id": "LIB-005",
+          "locator": "Baram_Map_Editor.7z!data/TileC1.pal"
+        },
+        {
+          "member_id": "LIB-005-M-af9c57bed012",
+          "source_id": "LIB-005",
+          "locator": "Baram_Map_Editor.7z!data/TileC4.pal"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "e36b764292e13ebb3001c4556166d1c1234389a48d9c793fbb46e4aa9212e4e6",
+      "occurrences": [
+        {
+          "member_id": "LIB-005-M-f72a050a4ace",
+          "source_id": "LIB-005",
+          "locator": "Baram_Map_Editor.7z!data/TileA4.pal"
+        },
+        {
+          "member_id": "LIB-005-M-241a4cd812f3",
+          "source_id": "LIB-005",
+          "locator": "Baram_Map_Editor.7z!data/TileA7.pal"
+        },
+        {
+          "member_id": "LIB-005-M-580a057a4952",
+          "source_id": "LIB-005",
+          "locator": "Baram_Map_Editor.7z!data/TileB3.pal"
+        },
+        {
+          "member_id": "LIB-005-M-b44c1c2aff05",
+          "source_id": "LIB-005",
+          "locator": "Baram_Map_Editor.7z!data/TileC6.pal"
+        },
+        {
+          "member_id": "LIB-005-M-168a8d41a763",
+          "source_id": "LIB-005",
+          "locator": "Baram_Map_Editor.7z!data/TileC7.pal"
+        },
+        {
+          "member_id": "LIB-005-M-1ab674e31723",
+          "source_id": "LIB-005",
+          "locator": "Baram_Map_Editor.7z!data/TileC8.pal"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "55236f68fd608c12dd5316eefdf39e8a6be64ac3e44d2c13b69c5035397db85c",
+      "occurrences": [
+        {
+          "member_id": "LIB-005-M-5d87e6f4ef26",
+          "source_id": "LIB-005",
+          "locator": "Baram_Map_Editor.7z!data/TileA5.pal"
+        },
+        {
+          "member_id": "LIB-005-M-2b13ba438dbb",
+          "source_id": "LIB-005",
+          "locator": "Baram_Map_Editor.7z!data/TileA6.pal"
+        },
+        {
+          "member_id": "LIB-005-M-5fbde56eddb3",
+          "source_id": "LIB-005",
+          "locator": "Baram_Map_Editor.7z!data/TileB4.pal"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "d2596141ddc4c1c336bfb1f976c992b2da2893d0a0b5d9775bab3ef8aa9d75a2",
+      "occurrences": [
+        {
+          "member_id": "LIB-005-M-b0dce3690900",
+          "source_id": "LIB-005",
+          "locator": "Baram_Map_Editor.7z!data/TileC2.pal"
+        },
+        {
+          "member_id": "LIB-005-M-823fb184d0c0",
+          "source_id": "LIB-005",
+          "locator": "Baram_Map_Editor.7z!data/TileC3.pal"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "839eba58dbea6d2c18e382b6bd5afd4a6165e27db98554ef4cf46559def908b8",
+      "occurrences": [
+        {
+          "member_id": "LIB-008-M-9d37929a2a45",
+          "source_id": "LIB-008",
+          "locator": "Judge_Map_Editor.7z!TEST.COL"
+        },
+        {
+          "member_id": "LIB-008-M-365ea0ee1998",
+          "source_id": "LIB-008",
+          "locator": "Judge_Map_Editor.7z!TILEPAL.COL"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "41c441e73899073a5ff6ff14ce315ac7d9f7ec55017e916fca54ee02b04681a2",
+      "occurrences": [
+        {
+          "member_id": "LIB-009-M-6068d17713d9",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!9.map"
+        },
+        {
+          "member_id": "LIB-009-M-9c94e94b8c3a",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!85.map"
+        },
+        {
+          "member_id": "LIB-009-M-0e27cc272556",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!26.map"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "d32407c81e245d10d0bbe693bda3264f8a1f5666bf4e831c5b5bbf5f3cc1c151",
+      "occurrences": [
+        {
+          "member_id": "LIB-009-M-02573638ce2c",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!83.map"
+        },
+        {
+          "member_id": "LIB-009-M-14b746606ab8",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!6.map"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "72b5c6ffc0d07b921777ccb224f902313f9fc4b224920e66bb1e94a5ac0fca98",
+      "occurrences": [
+        {
+          "member_id": "LIB-009-M-5c76fc69a55a",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!81.map"
+        },
+        {
+          "member_id": "LIB-009-M-63a141453806",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!80.map"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "636ef64c2b47aa73b398c007bbf14bb6d04c18330a59741dc98f9c5d4ae5a2a9",
+      "occurrences": [
+        {
+          "member_id": "LIB-009-M-2897c570c180",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!54.map"
+        },
+        {
+          "member_id": "LIB-009-M-365b60a6cbce",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!45.map"
+        },
+        {
+          "member_id": "LIB-009-M-db303aeaaa1c",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!44.map"
+        },
+        {
+          "member_id": "LIB-009-M-0f0d54faf727",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!41.map"
+        },
+        {
+          "member_id": "LIB-009-M-a143f0444388",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!40.map"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "695c0e8263a0bcb5af3a2b8f7659c3c116ef8b9e47c215ed0628caa2f66d26ab",
+      "occurrences": [
+        {
+          "member_id": "LIB-009-M-d6cf98a4bdaf",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!52.map"
+        },
+        {
+          "member_id": "LIB-009-M-b128a167c8a2",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!51.map"
+        },
+        {
+          "member_id": "LIB-009-M-10788aa0465b",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!43.map"
+        },
+        {
+          "member_id": "LIB-009-M-2daea9f27acf",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!39.map"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "4e2a0bcd7de06bb1dddf30768aeb5c52134bfd542f86c5c59341433e0e4a9542",
+      "occurrences": [
+        {
+          "member_id": "LIB-009-M-e10b2e246265",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!211.map"
+        },
+        {
+          "member_id": "LIB-009-M-91915717c748",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!210.map"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "bbd95bb34ea3e0218956828fe931de75efcd666b3d559f0c8fd1912be14833a3",
+      "occurrences": [
+        {
+          "member_id": "LIB-010-M-9bbdbd01c5af",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/LANG.DAT"
+        },
+        {
+          "member_id": "LIB-011-M-6f9fb01dd8e6",
+          "source_id": "LIB-011",
+          "locator": "NA_4.03_NexusTK.7z!Nexus/lang.dat"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "f0a23096deb887650dbb000c365d5936fa5aa90ba86b645e43b3fa1583384722",
+      "occurrences": [
+        {
+          "member_id": "LIB-010-M-58aea527ad77",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/OS.DAT"
+        },
+        {
+          "member_id": "LIB-011-M-1792e42de8de",
+          "source_id": "LIB-011",
+          "locator": "NA_4.03_NexusTK.7z!Nexus/os.dat"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "0b1bd89e6b2f555a6acbe90cc4e51f71f7b91feb6b9578e7adc252573b5d2cd7",
+      "occurrences": [
+        {
+          "member_id": "LIB-010-M-72c736658656",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/SETUP.EXE"
+        },
+        {
+          "member_id": "LIB-011-M-cbb626a4a6c6",
+          "source_id": "LIB-011",
+          "locator": "NA_4.03_NexusTK.7z!Nexus/SETUP.EXE"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "dff6dd773aeaedd00ba76d4f634ec3b63a10f30aae633e1be09861ce739bfd42",
+      "occurrences": [
+        {
+          "member_id": "LIB-010-M-d7253b2a536f",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/SETUP.LID"
+        },
+        {
+          "member_id": "LIB-011-M-81ebe24b234b",
+          "source_id": "LIB-011",
+          "locator": "NA_4.03_NexusTK.7z!Nexus/setup.lid"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "1e30b93004db5e58d2e3d9657fc46a7bdc650ca7fa126d7f875cee9687559732",
+      "occurrences": [
+        {
+          "member_id": "LIB-010-M-3b43c5db2da7",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/_INST32I.EX_"
+        },
+        {
+          "member_id": "LIB-011-M-c036a21c4918",
+          "source_id": "LIB-011",
+          "locator": "NA_4.03_NexusTK.7z!Nexus/_INST32I.EX_"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "a4261dd5d1816a9938726b2346553b3a7eabc501ce98dde5bae9ee7363ac5ef9",
+      "occurrences": [
+        {
+          "member_id": "LIB-010-M-dc3c34460787",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/_ISDEL.EXE"
+        },
+        {
+          "member_id": "LIB-011-M-ecacf560953a",
+          "source_id": "LIB-011",
+          "locator": "NA_4.03_NexusTK.7z!Nexus/_ISDEL.EXE"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "ce2cbf52194fb474194ca91f5ecc61ecd1789a096005efdd62e01d28fc44106d",
+      "occurrences": [
+        {
+          "member_id": "LIB-010-M-90a71fbb223a",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/_SETUP.DLL"
+        },
+        {
+          "member_id": "LIB-011-M-e623927e242d",
+          "source_id": "LIB-011",
+          "locator": "NA_4.03_NexusTK.7z!Nexus/_SETUP.DLL"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "e57846563ffe4efbc776eb9ccc169374c07a8e246981775ec31abb61dfc73065",
+      "occurrences": [
+        {
+          "member_id": "LIB-017-M-e78248424f15",
+          "source_id": "LIB-017",
+          "locator": "baram_Codex_tile_handoff_PRIVATE.zip!baram_tile_atlases_PRIVATE.zip!MANIFEST.json"
+        },
+        {
+          "member_id": "LIB-018-M-6689cd22aa98",
+          "source_id": "LIB-018",
+          "locator": "baram_tile_atlases_PRIVATE.zip!MANIFEST.json"
+        },
+        {
+          "member_id": "LIB-034-M-ef2faaa4f537",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/undated_tile_atlases.zip!MANIFEST.json"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "15a3cac1bfdd6bf216d34572fcfc82bec6aa793bc4b95a713ac6b27181fe2df0",
+      "occurrences": [
+        {
+          "member_id": "LIB-017-M-df8a017adef1",
+          "source_id": "LIB-017",
+          "locator": "baram_Codex_tile_handoff_PRIVATE.zip!baram_tile_atlases_PRIVATE.zip!README.txt"
+        },
+        {
+          "member_id": "LIB-018-M-ac13c030daaa",
+          "source_id": "LIB-018",
+          "locator": "baram_tile_atlases_PRIVATE.zip!README.txt"
+        },
+        {
+          "member_id": "LIB-034-M-fd58d1d1f61e",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/undated_tile_atlases.zip!README.txt"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "ad239e1e35be06fb5c777aaebcd649a019649bab1a341faf4e77e71889108ef0",
+      "occurrences": [
+        {
+          "member_id": "LIB-017-M-96739357da85",
+          "source_id": "LIB-017",
+          "locator": "baram_Codex_tile_handoff_PRIVATE.zip!baram_tile_atlases_PRIVATE.zip!TileA_frame_map.json"
+        },
+        {
+          "member_id": "LIB-018-M-5ba059345df1",
+          "source_id": "LIB-018",
+          "locator": "baram_tile_atlases_PRIVATE.zip!TileA_frame_map.json"
+        },
+        {
+          "member_id": "LIB-034-M-c3efdb52d89c",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/undated_tile_atlases.zip!TileA_frame_map.json"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "40b55df3b5df9e0d0c4c72d7ff0ea837f903191fb6c02854f367e9fd88d6deb0",
+      "occurrences": [
+        {
+          "member_id": "LIB-017-M-dffa6ac90713",
+          "source_id": "LIB-017",
+          "locator": "baram_Codex_tile_handoff_PRIVATE.zip!baram_tile_atlases_PRIVATE.zip!TileA_palette0_atlas.png"
+        },
+        {
+          "member_id": "LIB-018-M-965f7dba832c",
+          "source_id": "LIB-018",
+          "locator": "baram_tile_atlases_PRIVATE.zip!TileA_palette0_atlas.png"
+        },
+        {
+          "member_id": "LIB-034-M-0b2ab72d6abc",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/undated_tile_atlases.zip!TileA_palette0_atlas.png"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "d14f65dd51b51f737059132b0b6a7ab1cb44c0fa6c61d2fcaec52121dc12798b",
+      "occurrences": [
+        {
+          "member_id": "LIB-017-M-379cd258fc51",
+          "source_id": "LIB-017",
+          "locator": "baram_Codex_tile_handoff_PRIVATE.zip!baram_tile_atlases_PRIVATE.zip!TileB_frame_map.json"
+        },
+        {
+          "member_id": "LIB-018-M-06ad0ee07918",
+          "source_id": "LIB-018",
+          "locator": "baram_tile_atlases_PRIVATE.zip!TileB_frame_map.json"
+        },
+        {
+          "member_id": "LIB-034-M-251c717442dc",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/undated_tile_atlases.zip!TileB_frame_map.json"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "4010c9055f674353751ebb00d40134320bfd50df70eff331873cc253126f5f31",
+      "occurrences": [
+        {
+          "member_id": "LIB-017-M-056ea8d4b391",
+          "source_id": "LIB-017",
+          "locator": "baram_Codex_tile_handoff_PRIVATE.zip!baram_tile_atlases_PRIVATE.zip!TileB_palette0_atlas.png"
+        },
+        {
+          "member_id": "LIB-018-M-f8c910ecfc4d",
+          "source_id": "LIB-018",
+          "locator": "baram_tile_atlases_PRIVATE.zip!TileB_palette0_atlas.png"
+        },
+        {
+          "member_id": "LIB-034-M-8a670260b984",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/undated_tile_atlases.zip!TileB_palette0_atlas.png"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "54aa161b42d0d418dd880a337223c3ee675abe379d26a5b671f21d5dcfb8e6b6",
+      "occurrences": [
+        {
+          "member_id": "LIB-017-M-944ca0f3ebdd",
+          "source_id": "LIB-017",
+          "locator": "baram_Codex_tile_handoff_PRIVATE.zip!baram_tile_atlases_PRIVATE.zip!TileC_frame_map.json"
+        },
+        {
+          "member_id": "LIB-018-M-7d4ebe869af7",
+          "source_id": "LIB-018",
+          "locator": "baram_tile_atlases_PRIVATE.zip!TileC_frame_map.json"
+        },
+        {
+          "member_id": "LIB-034-M-7751290ac655",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/undated_tile_atlases.zip!TileC_frame_map.json"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "e9b0b5a1608ff5a545ffb752152aa6af1f7348f3f2b225f2dd6fcb728f0407a6",
+      "occurrences": [
+        {
+          "member_id": "LIB-017-M-74838171141f",
+          "source_id": "LIB-017",
+          "locator": "baram_Codex_tile_handoff_PRIVATE.zip!baram_tile_atlases_PRIVATE.zip!TileC_palette0_atlas.png"
+        },
+        {
+          "member_id": "LIB-018-M-9d513ae4e6ed",
+          "source_id": "LIB-018",
+          "locator": "baram_tile_atlases_PRIVATE.zip!TileC_palette0_atlas.png"
+        },
+        {
+          "member_id": "LIB-034-M-8f945423b402",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/undated_tile_atlases.zip!TileC_palette0_atlas.png"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "1be2b55c5025000f22b0f1c22873f35279825d18530ae1d7b6b36fbdf6b3dfd8",
+      "occurrences": [
+        {
+          "member_id": "LIB-021-M-b3ec3f3e68be",
+          "source_id": "LIB-021",
+          "locator": "mithiamapeditor-master.zip!mithiamapeditor-master/Aesir5/Archiver.cs"
+        },
+        {
+          "member_id": "LIB-021-M-3e215adc4ec4",
+          "source_id": "LIB-021",
+          "locator": "mithiamapeditor-master.zip!mithiamapeditor-master/MapSplitJoinTool/Archiver.cs"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "e9bbef64c727cb1524d589d736f2389276b5f3360dd21f4528a7ed86c65a50f2",
+      "occurrences": [
+        {
+          "member_id": "LIB-021-M-2e60aabbedb9",
+          "source_id": "LIB-021",
+          "locator": "mithiamapeditor-master.zip!mithiamapeditor-master/Aesir5/Crc32.cs"
+        },
+        {
+          "member_id": "LIB-021-M-bbeedac7177f",
+          "source_id": "LIB-021",
+          "locator": "mithiamapeditor-master.zip!mithiamapeditor-master/MapSplitJoinTool/Crc32.cs"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "4e8d9b0f59917f3e18bbc1be805e9765d9a8f6a1b3d27983d38fbf9a374d663f",
+      "occurrences": [
+        {
+          "member_id": "LIB-021-M-ab5e2a537a1b",
+          "source_id": "LIB-021",
+          "locator": "mithiamapeditor-master.zip!mithiamapeditor-master/Aesir5/EncryptionHelper.cs"
+        },
+        {
+          "member_id": "LIB-021-M-511941e80d7a",
+          "source_id": "LIB-021",
+          "locator": "mithiamapeditor-master.zip!mithiamapeditor-master/MapSplitJoinTool/EncryptionHelper.cs"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "7263987e93baf4088e047f82d73a78d628e18bed376a1dad0797a8b87d64b068",
+      "occurrences": [
+        {
+          "member_id": "LIB-021-M-23b7422cc72f",
+          "source_id": "LIB-021",
+          "locator": "mithiamapeditor-master.zip!mithiamapeditor-master/Aesir5/FormAbout.resx"
+        },
+        {
+          "member_id": "LIB-021-M-a2fbd4f1bbec",
+          "source_id": "LIB-021",
+          "locator": "mithiamapeditor-master.zip!mithiamapeditor-master/Aesir5/MapSizeDialog.resx"
+        },
+        {
+          "member_id": "LIB-021-M-5d91d1e917d7",
+          "source_id": "LIB-021",
+          "locator": "mithiamapeditor-master.zip!mithiamapeditor-master/Aesir5/NumberInputForm.resx"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "4363cd7d5b8671c72442ce1a1bfc10d64ebd24b2d718b54bd4fcd025e4967298",
+      "occurrences": [
+        {
+          "member_id": "LIB-021-M-8f1890a27527",
+          "source_id": "LIB-021",
+          "locator": "mithiamapeditor-master.zip!mithiamapeditor-master/Aesir5/FormCopySection.resx"
+        },
+        {
+          "member_id": "LIB-021-M-7abe7b7a92e8",
+          "source_id": "LIB-021",
+          "locator": "mithiamapeditor-master.zip!mithiamapeditor-master/Aesir5/FormMinimap.resx"
+        },
+        {
+          "member_id": "LIB-021-M-9cc0b5770421",
+          "source_id": "LIB-021",
+          "locator": "mithiamapeditor-master.zip!mithiamapeditor-master/MapSplitJoinTool/FormMain.resx"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "e9039997767306637f8ac81e9879441bab3b916ebdf1df4f9ab33c1426c84666",
+      "occurrences": [
+        {
+          "member_id": "LIB-021-M-ea413d47938d",
+          "source_id": "LIB-021",
+          "locator": "mithiamapeditor-master.zip!mithiamapeditor-master/Aesir5/Map.cs"
+        },
+        {
+          "member_id": "LIB-021-M-8461e42141bf",
+          "source_id": "LIB-021",
+          "locator": "mithiamapeditor-master.zip!mithiamapeditor-master/MapSplitJoinTool/Map.cs"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "66b5ebd1b0fc73f041ba669ce2184f6f471d5e3524efa34ca31233e9f5395262",
+      "occurrences": [
+        {
+          "member_id": "LIB-021-M-f7f934dfe42d",
+          "source_id": "LIB-021",
+          "locator": "mithiamapeditor-master.zip!mithiamapeditor-master/Aesir5/Properties/Resources.resx"
+        },
+        {
+          "member_id": "LIB-021-M-865c55217009",
+          "source_id": "LIB-021",
+          "locator": "mithiamapeditor-master.zip!mithiamapeditor-master/MapSplitJoinTool/Properties/Resources.resx"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "f6a4290723520caddd934b8800319c7ca6cc7eeab647059ec89b7a13b1513265",
+      "occurrences": [
+        {
+          "member_id": "LIB-021-M-c7dc5323c82e",
+          "source_id": "LIB-021",
+          "locator": "mithiamapeditor-master.zip!mithiamapeditor-master/Aesir5/Properties/Settings.settings"
+        },
+        {
+          "member_id": "LIB-021-M-499d78c9a3ba",
+          "source_id": "LIB-021",
+          "locator": "mithiamapeditor-master.zip!mithiamapeditor-master/MapSplitJoinTool/Properties/Settings.settings"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "731ddf9913dd0aa5f253087844b2e8fa5a157173d6e128b8e2ef3fc61ec69088",
+      "occurrences": [
+        {
+          "member_id": "LIB-022-M-d8d6991b088b",
+          "source_id": "LIB-022",
+          "locator": "baram-1998-github-ready.zip!baram-1998-singleplayer/research/archive/baram_1998_4_0_research_v1.zip!1998_4.0_research_report.md"
+        },
+        {
+          "member_id": "LIB-022-M-d921550879be",
+          "source_id": "LIB-022",
+          "locator": "baram-1998-github-ready.zip!baram-1998-singleplayer/research/v1/1998_4.0_research_report.md"
+        },
+        {
+          "member_id": "LIB-027-M-0f5821055009",
+          "source_id": "LIB-027",
+          "locator": "baram_1998_4_0_research_v1.zip!1998_4.0_research_report.md"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "5680796702697c055371e89f6bdf6240c40a68d7f3d80e85c7f289c435237569",
+      "occurrences": [
+        {
+          "member_id": "LIB-022-M-c5a00c6d9be2",
+          "source_id": "LIB-022",
+          "locator": "baram-1998-github-ready.zip!baram-1998-singleplayer/research/archive/baram_1998_4_0_research_v1.zip!1998_4.0_source_ledger.json"
+        },
+        {
+          "member_id": "LIB-022-M-864510e19064",
+          "source_id": "LIB-022",
+          "locator": "baram-1998-github-ready.zip!baram-1998-singleplayer/research/v1/1998_4.0_source_ledger.json"
+        },
+        {
+          "member_id": "LIB-027-M-a3a92b14a647",
+          "source_id": "LIB-027",
+          "locator": "baram_1998_4_0_research_v1.zip!1998_4.0_source_ledger.json"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "e40cb5d45f14560580525a38c84bfa5557e7cd09c8242d6f6552fc16dded55e8",
+      "occurrences": [
+        {
+          "member_id": "LIB-025-M-0041554b1b89",
+          "source_id": "LIB-025",
+          "locator": "baram-evidence-05bde481.zip!evidence/repair-layout-packaged-phone/expanded-again.png"
+        },
+        {
+          "member_id": "LIB-025-M-746de19f5da2",
+          "source_id": "LIB-025",
+          "locator": "baram-evidence-05bde481.zip!evidence/repair-layout-packaged-phone/tab-3.png"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "e7fdc7166d1cc9fc4b13d479c46870de3fe389b48ec2371b44d5aed33b8d25de",
+      "occurrences": [
+        {
+          "member_id": "LIB-025-M-ae694ea57d7a",
+          "source_id": "LIB-025",
+          "locator": "baram-evidence-05bde481.zip!evidence/repair-layout-packaged-tablet/expanded-again.png"
+        },
+        {
+          "member_id": "LIB-025-M-0507a3add7e7",
+          "source_id": "LIB-025",
+          "locator": "baram-evidence-05bde481.zip!evidence/repair-layout-packaged-tablet/tab-3.png"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "7a978e1dde1595b5a15958e2aa6f665ea3469f7720d4897ab9bdcedc69223456",
+      "occurrences": [
+        {
+          "member_id": "LIB-025-M-51252f50e366",
+          "source_id": "LIB-025",
+          "locator": "baram-evidence-05bde481.zip!failed-attempts/attempt04-drop-hit-npc/hunt-progress-40.png"
+        },
+        {
+          "member_id": "LIB-025-M-73edbc8b1413",
+          "source_id": "LIB-025",
+          "locator": "baram-evidence-05bde481.zip!failed-attempts/attempt04-drop-hit-npc/hunt-progress-50.png"
+        },
+        {
+          "member_id": "LIB-025-M-de2cd6e76824",
+          "source_id": "LIB-025",
+          "locator": "baram-evidence-05bde481.zip!failed-attempts/attempt04-drop-hit-npc/hunt-progress-30.png"
+        },
+        {
+          "member_id": "LIB-025-M-4346b5caa94a",
+          "source_id": "LIB-025",
+          "locator": "baram-evidence-05bde481.zip!failed-attempts/attempt04-drop-hit-npc/hunt-progress-20.png"
+        },
+        {
+          "member_id": "LIB-025-M-ed1fada5ff0f",
+          "source_id": "LIB-025",
+          "locator": "baram-evidence-05bde481.zip!failed-attempts/attempt04-drop-hit-npc/hunt-progress-70.png"
+        },
+        {
+          "member_id": "LIB-025-M-2296b2bbbc04",
+          "source_id": "LIB-025",
+          "locator": "baram-evidence-05bde481.zip!failed-attempts/attempt04-drop-hit-npc/hunt-progress-60.png"
+        },
+        {
+          "member_id": "LIB-025-M-7b9fc69bbd5b",
+          "source_id": "LIB-025",
+          "locator": "baram-evidence-05bde481.zip!failed-attempts/attempt04-drop-hit-npc/hunt-progress-10.png"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "0e587efeed8f83bb9feba91d5e1056ef5f41a494a87a406ef9f6f5f433847f02",
+      "occurrences": [
+        {
+          "member_id": "LIB-025-M-3e547a790f71",
+          "source_id": "LIB-025",
+          "locator": "baram-evidence-05bde481.zip!failed-attempts/attempt04-drop-hit-npc/items.png"
+        },
+        {
+          "member_id": "LIB-025-M-e9a75963e896",
+          "source_id": "LIB-025",
+          "locator": "baram-evidence-05bde481.zip!failed-attempts/attempt04-drop-hit-npc/korean-start-exit.png"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "6e8a6bc8a1a44ad1226a56572ba978e8893826ad10e9ce981b34a1932f2dc9c5",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-3078b5ea8baa",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/OBJECT.SPR"
+        },
+        {
+          "member_id": "LIB-034-M-9df377346fc0",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/OBJECT.SPR"
+        },
+        {
+          "member_id": "LIB-009-M-abbcf9ed7bcc",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!OBJECT.SPR"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "9837ee11347a9a13a037d433493e9097288820b909b54a0c59964bee421452e4",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-e410137403b1",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/9X11FONT.BMP"
+        },
+        {
+          "member_id": "LIB-034-M-0ae10f099ddf",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/9X11FONT.BMP"
+        },
+        {
+          "member_id": "LIB-010-M-9c28c7481679",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.dat!9x11font.bin"
+        },
+        {
+          "member_id": "LIB-009-M-0b44fe7b363b",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!9X11FONT.BMP"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "deb92182850949d16fb23642c640487b88880f77531ec718f811f2e633c6f9b9",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-10fc607c879d",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/IH01.FNT"
+        },
+        {
+          "member_id": "LIB-032-M-9b85a4f2e2b3",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/IH02.FNT"
+        },
+        {
+          "member_id": "LIB-034-M-1a1a93bb646e",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/IH01.FNT"
+        },
+        {
+          "member_id": "LIB-034-M-1f722f7531a8",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/IH02.FNT"
+        },
+        {
+          "member_id": "LIB-009-M-36d0af2bc055",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!IH01.FNT"
+        },
+        {
+          "member_id": "LIB-009-M-b20fe35bfcbc",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!IH02.FNT"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "e1d235f77705397e32e5f6635d2714438f5d034a4586be3e86f3d862134e63d3",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-8935b901df6e",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/IE02.FNT"
+        },
+        {
+          "member_id": "LIB-032-M-9bf0d50d4d7e",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/IE01.FNT"
+        },
+        {
+          "member_id": "LIB-034-M-6138479e3a07",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/IE02.FNT"
+        },
+        {
+          "member_id": "LIB-034-M-5b1701f05bec",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/IE01.FNT"
+        },
+        {
+          "member_id": "LIB-009-M-ac190abe0cde",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!IE01.FNT"
+        },
+        {
+          "member_id": "LIB-009-M-30da606b91f4",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!IE02.FNT"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "3fcb75fa4fa8280ac8314ce7c4da2f38a76dcc1e3b55686857c3f09944a8770b",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-a83f6a616c05",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/6.WAV"
+        },
+        {
+          "member_id": "LIB-034-M-80de4f3f2d61",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/6.WAV"
+        },
+        {
+          "member_id": "LIB-009-M-e4bd5c4bbf4e",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!6.WAV"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "0931e975d467b096143030f5cde2084a374822cfff7fe535698d515a6b3e59b8",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-22381305a76f",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/STOP.BMP"
+        },
+        {
+          "member_id": "LIB-034-M-163739355a98",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/STOP.BMP"
+        },
+        {
+          "member_id": "LIB-009-M-447155814f95",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!STOP.BMP"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "a41b4579373bb35aa13afb91b7bd0e05770aa00001561c91836678b68368abe8",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-2aecbbf6f6ff",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/EFFECT.SPR"
+        },
+        {
+          "member_id": "LIB-034-M-8f07ef0aaf69",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/EFFECT.SPR"
+        },
+        {
+          "member_id": "LIB-009-M-2ffbf62ce97f",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!EFFECT.SPR"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "1fb5b43fe73a4f55005e0399c8a155d23e1991c8f3b92c2ce0f300e5b24edd93",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-bcd62ef0c761",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/EFFLAYER.ELT"
+        },
+        {
+          "member_id": "LIB-034-M-f72147ab6fae",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/EFFLAYER.ELT"
+        },
+        {
+          "member_id": "LIB-009-M-3795992daa73",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!EFFLAYER.ELT"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "73a121bcc91d9e2b0d824306ac40e4e6e03106ae029df38600e5c6dd2b173b63",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-53c5cdb159f4",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/EFFECT1.TAB"
+        },
+        {
+          "member_id": "LIB-034-M-364c471a3cc8",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/EFFECT1.TAB"
+        },
+        {
+          "member_id": "LIB-009-M-c0fb7bb545c8",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!EFFECT1.TAB"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "1c13991af0807797dc005bd331d5d7a4b7e273f4efeac661e919852e907f90aa",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-c853836149ac",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/SOTP.DAT"
+        },
+        {
+          "member_id": "LIB-034-M-a72809355fe8",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/SOTP.DAT"
+        },
+        {
+          "member_id": "LIB-009-M-fe0fcf6b8c6b",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!SOTP.DAT"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "5d4f11b551699b6420effd82fc3222701a88d6b47f3284e4dd992a51d8e6a1f8",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-1714f3bd66b6",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/WEAPON.TAB"
+        },
+        {
+          "member_id": "LIB-034-M-95f74d1ec2fb",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/WEAPON.TAB"
+        },
+        {
+          "member_id": "LIB-009-M-4cecf2439b26",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!WEAPON.TAB"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "3f3a7e284b04cd7d094dbdda26cd122ccd9b9727a0aad19d655a2b6a87475368",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-537acb19beab",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/OBJECT.TAB"
+        },
+        {
+          "member_id": "LIB-034-M-6177ef163385",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/OBJECT.TAB"
+        },
+        {
+          "member_id": "LIB-009-M-ddd1014d3f10",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!OBJECT.TAB"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "35106d968508c99c7edf9df5ebf0bf8381059c8c40dc238df5694105a7a242be",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-faf4917f3caa",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/SOBJECT.OTB"
+        },
+        {
+          "member_id": "LIB-034-M-41aaaaaaf66a",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/SOBJECT.OTB"
+        },
+        {
+          "member_id": "LIB-009-M-7bd5afa84b7a",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!SOBJECT.OTB"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "b2baffa9f6a70c149f30a0da78cc15b45afb367066e414836face2d9d9c7cfc8",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-6bb498c280f2",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/4.WAV"
+        },
+        {
+          "member_id": "LIB-034-M-7eeb4a904d79",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/4.WAV"
+        },
+        {
+          "member_id": "LIB-009-M-bfb10f317522",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!4.WAV"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "434e74b01ee29fa80a90ece3d9388f455b06e44c822cbbc1de6277606b66f01a",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-a45568d56103",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/9.WAV"
+        },
+        {
+          "member_id": "LIB-034-M-65c3b96e86b4",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/9.WAV"
+        },
+        {
+          "member_id": "LIB-009-M-e6c1f7e4f361",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!9.WAV"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "bb125eeae606154de834b4373bec432d8b7cba1fd9d03dca445a0837cd5255c0",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-f0e8e153ad60",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/TILEA.BMP"
+        },
+        {
+          "member_id": "LIB-034-M-9ae6ab52750e",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/TILEA.BMP"
+        },
+        {
+          "member_id": "LIB-009-M-d0cd4e5b2107",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!TILEA.BMP"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "5b3ce682482acc60b075fc8329adf6607da4ae2c4996fc1204640e859d7e8194",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-6a447321f76c",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/MONSTER.SPR"
+        },
+        {
+          "member_id": "LIB-034-M-ca1b83ee95cb",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/MONSTER.SPR"
+        },
+        {
+          "member_id": "LIB-009-M-713f7d383bbe",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!MONSTER.SPR"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "7116b4f16cea952b1897b559ff355a7c0329900ae18ca54cb766103d9641a7e4",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-91e50363ce4e",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/WEAPON.SPR"
+        },
+        {
+          "member_id": "LIB-034-M-86171b6d4111",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/WEAPON.SPR"
+        },
+        {
+          "member_id": "LIB-009-M-9a7d7db32d7e",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!WEAPON.SPR"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "2a26d99cadb69f52bd814807989b19a49332ca060132d559e8510e5613038dc6",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-4bb52740b695",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/0.WAV"
+        },
+        {
+          "member_id": "LIB-034-M-52c57e383287",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/0.WAV"
+        },
+        {
+          "member_id": "LIB-009-M-f22a6bc100c6",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!0.WAV"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "3bba3624849aabe738d344c949343780f05f3b29978c93fd1d785e81af3fce5d",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-f6cd9d9f74eb",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/WindLand.pal"
+        },
+        {
+          "member_id": "LIB-034-M-0c2533866f11",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/WindLand.pal"
+        },
+        {
+          "member_id": "LIB-010-M-65730bc639e9",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.dat!Baram.pal"
+        },
+        {
+          "member_id": "LIB-010-M-54e842a4adc0",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.dat!Effect0.pal"
+        },
+        {
+          "member_id": "LIB-010-M-60f80f185d73",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.dat!Ghost.pal"
+        },
+        {
+          "member_id": "LIB-010-M-1ba4a75d4b6c",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.dat!Monster0.pal"
+        },
+        {
+          "member_id": "LIB-009-M-6c1393835cff",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!WindLand.pal"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "36a6d6ef48f612b81d395847fb9f3994b38e6bea8d40b9a186463968cfe0a23a",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-677604d2b978",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/5.WAV"
+        },
+        {
+          "member_id": "LIB-034-M-428bfa71f07e",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/5.WAV"
+        },
+        {
+          "member_id": "LIB-009-M-8fec666201d0",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!5.WAV"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "3aa427e2ea0d3488fc62f53f28593c6f596cd6290f81ceea9d0b26d832b499cb",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-66bda0ea16eb",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/EFFECT1.SPR"
+        },
+        {
+          "member_id": "LIB-034-M-a36b915823b9",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/EFFECT1.SPR"
+        },
+        {
+          "member_id": "LIB-009-M-66c2ea0bebcb",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!EFFECT1.SPR"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "09a89d8ee81020c29d14ade53c7728202fbd30eb2a49266a92fd96cf7add4fa1",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-76ae8616a602",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/TILEB.BMP"
+        },
+        {
+          "member_id": "LIB-034-M-2ede8db805f0",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/TILEB.BMP"
+        },
+        {
+          "member_id": "LIB-009-M-e0d753cf6f73",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!TILEB.BMP"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "afa20de8247d8e1ca52a3e0b6f3ac5ae7f26ddd970e298ddd33f4b13dbc42044",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-da92334dcfb2",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/MONSTER.TAB"
+        },
+        {
+          "member_id": "LIB-034-M-00b27ab4c9e9",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/MONSTER.TAB"
+        },
+        {
+          "member_id": "LIB-009-M-3bb4aa66841a",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!MONSTER.TAB"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "ce385d6777ba8ae97526bec2aaae82538cdcf3eb2f573a8026630e76a233876d",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-4c37764f875e",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/TILEC.BMP"
+        },
+        {
+          "member_id": "LIB-034-M-0606481d8ecb",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/TILEC.BMP"
+        },
+        {
+          "member_id": "LIB-009-M-09e3d41f009b",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!TILEC.BMP"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "4c3e3098127a110c06ce15e5fec15e309fd1f888e903fe5feb6b3f12ebc2c5c8",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-c28c5384e786",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/TITLE.GRP"
+        },
+        {
+          "member_id": "LIB-034-M-f86c0d45aaae",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/TITLE.GRP"
+        },
+        {
+          "member_id": "LIB-009-M-afc1a158c734",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!TITLE.GRP"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "45712361387d7169637bc2e7d24e83a5e41ce43a84ad3f71ce637feee15f2084",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-cf69a535ce19",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/ANITABLE.DAT"
+        },
+        {
+          "member_id": "LIB-034-M-02c61464d094",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/ANITABLE.DAT"
+        },
+        {
+          "member_id": "LIB-009-M-54fa53ef677d",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!ANITABLE.DAT"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "aaae7e3f022d1528733c2f26d6d30e903ce85209adeb94992571afc9a0596c74",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-6ef85ec84754",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/2.WAV"
+        },
+        {
+          "member_id": "LIB-034-M-612196ceb70b",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/2.WAV"
+        },
+        {
+          "member_id": "LIB-009-M-53536acaf14c",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!2.WAV"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "5055e8fb0fc350bb771096577add16b3d908235487a053e093b7ade7280185d3",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-472e5041f440",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/ICON.BMP"
+        },
+        {
+          "member_id": "LIB-034-M-e620ac4c1c12",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/ICON.BMP"
+        },
+        {
+          "member_id": "LIB-009-M-419dcc015943",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!ICON.BMP"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "2dfc7e2dfe2df390ffcf3a3e1531b08e326f904d5fe3a24afc7efd334b988707",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-543412e05f72",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/7.WAV"
+        },
+        {
+          "member_id": "LIB-034-M-9e62992b7081",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/7.WAV"
+        },
+        {
+          "member_id": "LIB-009-M-33f29111f9f3",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!7.WAV"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "90d373987f962823c7a61c233720f81a9de7fdc09857df7b09848f2ba12b05a3",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-8be9fba39f22",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/BODY.TAB"
+        },
+        {
+          "member_id": "LIB-034-M-2130b35c8707",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/BODY.TAB"
+        },
+        {
+          "member_id": "LIB-009-M-9e164f53e3f3",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!BODY.TAB"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "b5c455406000a19624bd197c82c60b4bea34f96e8e6ebbe2b370d2d0aa9d8d81",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-f9970244109a",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/GHOST.SPR"
+        },
+        {
+          "member_id": "LIB-034-M-fc6febbbd9fb",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/GHOST.SPR"
+        },
+        {
+          "member_id": "LIB-009-M-b3c771622409",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!GHOST.SPR"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "9788e1b51ffd6806576bc48eb62ff60d9c0a988eb44ade9d1497a396feefff4c",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-5f11c34837f8",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/EMOTION.TAB"
+        },
+        {
+          "member_id": "LIB-034-M-a2f11ef3925d",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/EMOTION.TAB"
+        },
+        {
+          "member_id": "LIB-009-M-c60788fcff24",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!EMOTION.TAB"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "bf901383fe745fd5895670bc0545940cf3a8893e8754efc0ff6b816b8d3fad1a",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-cf802afc0123",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/HEAD.SPR"
+        },
+        {
+          "member_id": "LIB-034-M-e488e59c990d",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/HEAD.SPR"
+        },
+        {
+          "member_id": "LIB-009-M-dbd20870e67d",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!HEAD.SPR"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "2b6639f6a27928dce292839f3efb92fc28c2c74dd88b0f52f4a120ffefe889d0",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-644420fdcb9a",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/FRAME.GRP"
+        },
+        {
+          "member_id": "LIB-034-M-62a0a805ff07",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/FRAME.GRP"
+        },
+        {
+          "member_id": "LIB-009-M-bac5cdee279d",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!FRAME.GRP"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "99c72c65bfe7e927c5d5c2459b75db5827b9e332ae905886b56fc77c2417b0ec",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-41def7333734",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/3.WAV"
+        },
+        {
+          "member_id": "LIB-034-M-1c03578b6e78",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/3.WAV"
+        },
+        {
+          "member_id": "LIB-009-M-75bef813b9f7",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!3.WAV"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "502834ac4b59e0c901bac75d2b9d1913d642aaecbe4abf83ab17bf4f8e3901d8",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-412bb84e368c",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/1.WAV"
+        },
+        {
+          "member_id": "LIB-034-M-f887586cd9b7",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/1.WAV"
+        },
+        {
+          "member_id": "LIB-009-M-6d8ba3c0c709",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!1.WAV"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "b0b8ef39f0e8b74e5fa5e41ddebb0e01b9e6e03f3408eac6150dae1a4391d8fe",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-0455fcdb1634",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/8.WAV"
+        },
+        {
+          "member_id": "LIB-034-M-ebd9cebcfb4f",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/8.WAV"
+        },
+        {
+          "member_id": "LIB-009-M-a224178cba42",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!8.WAV"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "103c4ccebce158655c0b4233b9aab9dbc8e1f232727a8657f82259b71384e60d",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-cc78f0f53fd3",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/MANIFEST.json"
+        },
+        {
+          "member_id": "LIB-034-M-deb834386a2b",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/MANIFEST.json"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "afa64b1fe7e07b667eee77c40c118d538a56d6f196a8c27b0018e4dd887271b4",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-ae3cc6e5e105",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/EMOTION.SPR"
+        },
+        {
+          "member_id": "LIB-034-M-56edef6e2a12",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/EMOTION.SPR"
+        },
+        {
+          "member_id": "LIB-009-M-787c0686b79a",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!EMOTION.SPR"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "c6868e3566f730b4815bab0f6e76c171ce64a1ab7621a4ef8df8acd3d5c1e66d",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-7a44a2ceb73d",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/HEAD.TAB"
+        },
+        {
+          "member_id": "LIB-034-M-77e1f33cc4e6",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/HEAD.TAB"
+        },
+        {
+          "member_id": "LIB-009-M-cda81e3b9edf",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!HEAD.TAB"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "eb0acbb86e0b2081b2a00e464492e0dd71bbb0dc18a301f4b2ec5b6141b21cc3",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-dc44de7f3f4f",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/BODY.SPR"
+        },
+        {
+          "member_id": "LIB-034-M-e88a8a681f7d",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/BODY.SPR"
+        },
+        {
+          "member_id": "LIB-009-M-dbb47470b7f6",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!BODY.SPR"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "643bdb5231217a5b155fc573311782e23bc3591f021048dba992a5fd84e58ffc",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-3f2f48d74a3a",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/EFFECT.TAB"
+        },
+        {
+          "member_id": "LIB-034-M-f101cf87a349",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/EFFECT.TAB"
+        },
+        {
+          "member_id": "LIB-009-M-81659203fce7",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!EFFECT.TAB"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "b56a7bdd25d6506f1ff78ac19afa87360e1325332526d13cc98c96dce26e6196",
+      "occurrences": [
+        {
+          "member_id": "LIB-032-M-7898aa55f856",
+          "source_id": "LIB-032",
+          "locator": "baram_1997_resources_PRIVATE.zip!v125/GHOST.TAB"
+        },
+        {
+          "member_id": "LIB-034-M-4aa3f795290c",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_resources.zip!v125/GHOST.TAB"
+        },
+        {
+          "member_id": "LIB-009-M-5d345434d524",
+          "source_id": "LIB-009",
+          "locator": "KR_1.25_winbaram.zip!winbaram.dat!GHOST.TAB"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "c686ea71057e6bec4ea5680601bd4adb40c5f3a320526305281ffc5268a43740",
+      "occurrences": [
+        {
+          "member_id": "LIB-033-M-cff117cbeb27",
+          "source_id": "LIB-033",
+          "locator": "baram_1997_sprite_atlases_PRIVATE.zip!BODY_frame_index.json"
+        },
+        {
+          "member_id": "LIB-034-M-bb352d2b121e",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_sprite_atlases.zip!BODY_frame_index.json"
+        },
+        {
+          "member_id": "LIB-036-M-7637e7f17bd6",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!v125/BODY_frame_index.json"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "fe7969cf0608a55aad5702490b7e924e542bf1c815b240bbbd84981149761e61",
+      "occurrences": [
+        {
+          "member_id": "LIB-033-M-1034f3f8ec53",
+          "source_id": "LIB-033",
+          "locator": "baram_1997_sprite_atlases_PRIVATE.zip!BODY_v125_atlas.png"
+        },
+        {
+          "member_id": "LIB-034-M-e8a4a43ac23d",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_sprite_atlases.zip!BODY_v125_atlas.png"
+        },
+        {
+          "member_id": "LIB-036-M-b23e481480e0",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!v125/BODY_v125_atlas.png"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "92a39d9457ddb47847b37fc6802836674fc316d77614b16b7dd9ed71a216362f",
+      "occurrences": [
+        {
+          "member_id": "LIB-033-M-04b93bf97e7e",
+          "source_id": "LIB-033",
+          "locator": "baram_1997_sprite_atlases_PRIVATE.zip!EFFECT1_frame_index.json"
+        },
+        {
+          "member_id": "LIB-034-M-886eaf8850c9",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_sprite_atlases.zip!EFFECT1_frame_index.json"
+        },
+        {
+          "member_id": "LIB-036-M-e4435c878e96",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!v125/EFFECT1_frame_index.json"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "24506a10db81d26198813d81963cffbf59ff4a07e110db51dc848f3f547d91e2",
+      "occurrences": [
+        {
+          "member_id": "LIB-033-M-848f1f54b45c",
+          "source_id": "LIB-033",
+          "locator": "baram_1997_sprite_atlases_PRIVATE.zip!EFFECT1_v125_atlas.png"
+        },
+        {
+          "member_id": "LIB-034-M-38cd9ad1a76a",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_sprite_atlases.zip!EFFECT1_v125_atlas.png"
+        },
+        {
+          "member_id": "LIB-036-M-b62792d45d8f",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!v125/EFFECT1_v125_atlas.png"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "8b0d988b87d7026e40c9c93296b4e0bd1cce0b68e3cdb9e960edd695b955b594",
+      "occurrences": [
+        {
+          "member_id": "LIB-033-M-eac931befd9a",
+          "source_id": "LIB-033",
+          "locator": "baram_1997_sprite_atlases_PRIVATE.zip!EFFECT_frame_index.json"
+        },
+        {
+          "member_id": "LIB-034-M-885220433a4c",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_sprite_atlases.zip!EFFECT_frame_index.json"
+        },
+        {
+          "member_id": "LIB-036-M-06e66377fbb0",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!v125/EFFECT_frame_index.json"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "c0ed188a24e1a76d623b9976687d7ddab7f0d8ce0f24afea61821ddcd6146b21",
+      "occurrences": [
+        {
+          "member_id": "LIB-033-M-d23fa03db2ca",
+          "source_id": "LIB-033",
+          "locator": "baram_1997_sprite_atlases_PRIVATE.zip!EFFECT_v125_atlas.png"
+        },
+        {
+          "member_id": "LIB-034-M-e7d90dba69a5",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_sprite_atlases.zip!EFFECT_v125_atlas.png"
+        },
+        {
+          "member_id": "LIB-036-M-c04dfe0e9fe4",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!v125/EFFECT_v125_atlas.png"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "04430ac9ae7b5b1947d191aefd63184d26eaeaffd0a577255783b921b2cef4b1",
+      "occurrences": [
+        {
+          "member_id": "LIB-033-M-a98b4b27dd19",
+          "source_id": "LIB-033",
+          "locator": "baram_1997_sprite_atlases_PRIVATE.zip!EMOTION_frame_index.json"
+        },
+        {
+          "member_id": "LIB-034-M-ecb2e4ef2520",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_sprite_atlases.zip!EMOTION_frame_index.json"
+        },
+        {
+          "member_id": "LIB-036-M-0852d5bb6bac",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!v125/EMOTION_frame_index.json"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "10f2d4d9fc521d072c9b95712b0c6cd5a57b59d0a1c3489f519ff2c870594d76",
+      "occurrences": [
+        {
+          "member_id": "LIB-033-M-88156cdedc4b",
+          "source_id": "LIB-033",
+          "locator": "baram_1997_sprite_atlases_PRIVATE.zip!EMOTION_v125_atlas.png"
+        },
+        {
+          "member_id": "LIB-034-M-143fd53f14a5",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_sprite_atlases.zip!EMOTION_v125_atlas.png"
+        },
+        {
+          "member_id": "LIB-036-M-061a53ac1d78",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!v125/EMOTION_v125_atlas.png"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "cf6bf769028adf61179a9d01be5d41e58eff0cccd7ebad8df8cca5e7bc32e2ee",
+      "occurrences": [
+        {
+          "member_id": "LIB-033-M-193fc622cbf5",
+          "source_id": "LIB-033",
+          "locator": "baram_1997_sprite_atlases_PRIVATE.zip!GHOST_frame_index.json"
+        },
+        {
+          "member_id": "LIB-034-M-5167c2f3562b",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_sprite_atlases.zip!GHOST_frame_index.json"
+        },
+        {
+          "member_id": "LIB-036-M-c4741c4f9b93",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!v125/GHOST_frame_index.json"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "0c1c1e4f6bd7aac66456b83fa250892e7ef0a82cd4c2eb9323f8400317d3fcaf",
+      "occurrences": [
+        {
+          "member_id": "LIB-033-M-4cff13eb7529",
+          "source_id": "LIB-033",
+          "locator": "baram_1997_sprite_atlases_PRIVATE.zip!GHOST_v125_atlas.png"
+        },
+        {
+          "member_id": "LIB-034-M-dcd3dadff452",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_sprite_atlases.zip!GHOST_v125_atlas.png"
+        },
+        {
+          "member_id": "LIB-036-M-7f3af6901239",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!v125/GHOST_v125_atlas.png"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "b77c232748a554dc3905b5253e8de65aa4480da8b16764263af704463895eb52",
+      "occurrences": [
+        {
+          "member_id": "LIB-033-M-994324b3d6a5",
+          "source_id": "LIB-033",
+          "locator": "baram_1997_sprite_atlases_PRIVATE.zip!HEAD_frame_index.json"
+        },
+        {
+          "member_id": "LIB-034-M-77b8ef6dc252",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_sprite_atlases.zip!HEAD_frame_index.json"
+        },
+        {
+          "member_id": "LIB-036-M-89f142d182e4",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!v125/HEAD_frame_index.json"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "d7eba0cadeee4fb12295d32fa8f8e9ea70af5234b8d8b098eff06838f6cff40a",
+      "occurrences": [
+        {
+          "member_id": "LIB-033-M-f3eaae897a94",
+          "source_id": "LIB-033",
+          "locator": "baram_1997_sprite_atlases_PRIVATE.zip!HEAD_v125_atlas.png"
+        },
+        {
+          "member_id": "LIB-034-M-6433a3b2d278",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_sprite_atlases.zip!HEAD_v125_atlas.png"
+        },
+        {
+          "member_id": "LIB-036-M-2e44cd1cae3f",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!v125/HEAD_v125_atlas.png"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "38bcce794411bf20b5a71343febdc497b318dc02a17d1780dda672a24ebbefd1",
+      "occurrences": [
+        {
+          "member_id": "LIB-033-M-c3702b23408a",
+          "source_id": "LIB-033",
+          "locator": "baram_1997_sprite_atlases_PRIVATE.zip!MANIFEST.json"
+        },
+        {
+          "member_id": "LIB-034-M-d70b18022779",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_sprite_atlases.zip!MANIFEST.json"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "590237e1500192798cdfbfeff9cd91f65953d5d729be019511147d280e1b7c93",
+      "occurrences": [
+        {
+          "member_id": "LIB-033-M-573003ef5f66",
+          "source_id": "LIB-033",
+          "locator": "baram_1997_sprite_atlases_PRIVATE.zip!MONSTER_frame_index.json"
+        },
+        {
+          "member_id": "LIB-034-M-53d31014e683",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_sprite_atlases.zip!MONSTER_frame_index.json"
+        },
+        {
+          "member_id": "LIB-036-M-091c0d6494ff",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!v125/MONSTER_frame_index.json"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "a466a2b04850c2c50989f94ec89d914640f1f9809c2510f16f319b441d845f24",
+      "occurrences": [
+        {
+          "member_id": "LIB-033-M-76ef6db8d28d",
+          "source_id": "LIB-033",
+          "locator": "baram_1997_sprite_atlases_PRIVATE.zip!MONSTER_v125_atlas.png"
+        },
+        {
+          "member_id": "LIB-034-M-fa6d4f810361",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_sprite_atlases.zip!MONSTER_v125_atlas.png"
+        },
+        {
+          "member_id": "LIB-036-M-a42d32fee9f1",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!v125/MONSTER_v125_atlas.png"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "c0b2f151f8e3a727a0594e0eecb6c5c39a47429fbcd60ee817411e43dddd187f",
+      "occurrences": [
+        {
+          "member_id": "LIB-033-M-eda95baed839",
+          "source_id": "LIB-033",
+          "locator": "baram_1997_sprite_atlases_PRIVATE.zip!OBJECT_frame_index.json"
+        },
+        {
+          "member_id": "LIB-034-M-9bb9bafcb223",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_sprite_atlases.zip!OBJECT_frame_index.json"
+        },
+        {
+          "member_id": "LIB-036-M-bfc8b768f2ae",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!v125/OBJECT_frame_index.json"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "a4cccd31df2fdebf637f348633152dae318c5d9212d5cb2fadc782f9408fe4da",
+      "occurrences": [
+        {
+          "member_id": "LIB-033-M-587d0c98a062",
+          "source_id": "LIB-033",
+          "locator": "baram_1997_sprite_atlases_PRIVATE.zip!OBJECT_v125_atlas.png"
+        },
+        {
+          "member_id": "LIB-034-M-ab764e8cbb72",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_sprite_atlases.zip!OBJECT_v125_atlas.png"
+        },
+        {
+          "member_id": "LIB-036-M-e25c404fc5ae",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!v125/OBJECT_v125_atlas.png"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "78e08e1880e4cde18dfc894a7a0836763efd206b7231042dd4c9478b798cb6ea",
+      "occurrences": [
+        {
+          "member_id": "LIB-033-M-41e43d7b32bc",
+          "source_id": "LIB-033",
+          "locator": "baram_1997_sprite_atlases_PRIVATE.zip!README.txt"
+        },
+        {
+          "member_id": "LIB-034-M-d645c5d1bdd6",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_sprite_atlases.zip!README.txt"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "c2a36accf891be55839d7568b9e51bd8e3746ccbd3dd89aeba3ce4953dabb87a",
+      "occurrences": [
+        {
+          "member_id": "LIB-033-M-8ae9f69e7dc6",
+          "source_id": "LIB-033",
+          "locator": "baram_1997_sprite_atlases_PRIVATE.zip!WEAPON_frame_index.json"
+        },
+        {
+          "member_id": "LIB-034-M-30c1a4da2eb4",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_sprite_atlases.zip!WEAPON_frame_index.json"
+        },
+        {
+          "member_id": "LIB-036-M-374f1a15fe9e",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!v125/WEAPON_frame_index.json"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "cb8ae6f8a025061d27a503596e5b45dd8d130652bcff7a3af008f6bf1d16a11b",
+      "occurrences": [
+        {
+          "member_id": "LIB-033-M-cb322d9bebfa",
+          "source_id": "LIB-033",
+          "locator": "baram_1997_sprite_atlases_PRIVATE.zip!WEAPON_v125_atlas.png"
+        },
+        {
+          "member_id": "LIB-034-M-f2f986ebdb23",
+          "source_id": "LIB-034",
+          "locator": "baram_restoration_ASSET_HANDOFF_PRIVATE.zip!ART/1997_sprite_atlases.zip!WEAPON_v125_atlas.png"
+        },
+        {
+          "member_id": "LIB-036-M-ef7872f08ddd",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!v125/WEAPON_v125_atlas.png"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "3b275afe70132381ed251fa1227473d6d27a43d577b08ef35a95105451c2f0ee",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-1d4533e21587",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/001.wav"
+        },
+        {
+          "member_id": "LIB-010-M-3ac43d21a3ed",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!001.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "bebf0df4c64e68d3ef792a9f6c959e8e9b3144dd6e2b8efc43d3044a72052538",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-ea5afb2d9fcb",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/002.wav"
+        },
+        {
+          "member_id": "LIB-010-M-ab98927cdb81",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!002.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "bb129e81fea6134daba37fbf5aabc96df4a9f9be90ebdc027e7924ecf882591c",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-1ffc53842be6",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/003.wav"
+        },
+        {
+          "member_id": "LIB-010-M-5d9bbfa2d378",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!003.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "e59de050331f64ebbae9803fd45a02331287914de210c1a9e4b4d09fd642df5f",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-04e9e3bf8910",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/004.wav"
+        },
+        {
+          "member_id": "LIB-010-M-88bf985b535e",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!004.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "cba447226f13e1520d81149ffba041ed4ed421b40ec3d88a766c53625ec6727b",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-f237f97d3769",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/005.wav"
+        },
+        {
+          "member_id": "LIB-010-M-84f943d42a16",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!005.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "a12b98dad820ec09bfcfe2e527bd3c83b7195246912b6c481535ee3d83ff2321",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-a705ee27217d",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/006.wav"
+        },
+        {
+          "member_id": "LIB-010-M-1c483dbd06dc",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!006.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "804ac55f4a74ea692ebdfc0f53e5d6cd5a66f454a957f275425fd999113352cc",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-7681542209ec",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/007.wav"
+        },
+        {
+          "member_id": "LIB-010-M-d371358f5c58",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!007.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "b7dcf3f63cd8ea7752db1e88292db9c96357a5e61bff2fa01d435e25be9b02a9",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-e4f0794d935b",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/008.wav"
+        },
+        {
+          "member_id": "LIB-010-M-2f3444ae3b4d",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!008.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "c3d5e162a8caa4b935f39c8b470f68d07d49861372be89816179bfd01fcc2601",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-1f17a3946d48",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/009.wav"
+        },
+        {
+          "member_id": "LIB-010-M-aceb7d585954",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!009.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "7425d97900ef8f5073213b7fe279ee517e8261526a28d606cf6a10ca34b9007d",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-03b3a6e2afa9",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/010.wav"
+        },
+        {
+          "member_id": "LIB-010-M-b19083c8a651",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!010.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "e320b8da459a7df26afab26a66faa23b4855380e55c8b86dfb890b4bca1d002c",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-c9409d8dd9d9",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/012.wav"
+        },
+        {
+          "member_id": "LIB-010-M-bbe10edb176a",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!012.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "10f0a75ac1df3e3c7b095460df7a4717fbaa0da807fa68d1f9d7ffc39248e194",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-45bda3c7524b",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/013.wav"
+        },
+        {
+          "member_id": "LIB-010-M-80c68d480bbd",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!013.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "eef61c72c03b8eec3ca5dd65157d9b4ab53b4114ccdaf04ba42fa582f2c2b7e3",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-dfca31aad325",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/014.wav"
+        },
+        {
+          "member_id": "LIB-036-M-18ec413a8d52",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/088.wav"
+        },
+        {
+          "member_id": "LIB-010-M-7a5331d2d9e3",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!014.wav"
+        },
+        {
+          "member_id": "LIB-010-M-818f851d2543",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!088.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "4582375d4b9c77ae1b54ccae50ec6b162744bd9cbc5b1291a71b3390cc43510b",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-8cb89efe4b1f",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/017.wav"
+        },
+        {
+          "member_id": "LIB-010-M-4a2252a6b09e",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!017.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "77c4bf0f5de5eb1ab22238ed4396abe2d5cf4f1cda4a46d7b55c68da06fcdf63",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-1e7c013c88ea",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/018.wav"
+        },
+        {
+          "member_id": "LIB-010-M-01e80abbec57",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!018.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "e6f3e52cfc01e08ca6bb6f4734091cdf7c05d314ec732c5b73150b3dcc140076",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-2c25f7041c03",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/019.wav"
+        },
+        {
+          "member_id": "LIB-010-M-927a7119e826",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!019.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "e0ec3cd0ea7aac0f892f021d3780530c96b326ee8dd7a85ab975301df96657ca",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-44aba55b4aaf",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/020.wav"
+        },
+        {
+          "member_id": "LIB-010-M-d8a037ad8dba",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!020.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "aca6057f70c33b4500d58f4b528ebfd881d480860d72adbdc1b70d239a220b67",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-bbeaa850076a",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/021.wav"
+        },
+        {
+          "member_id": "LIB-010-M-f3c2e6fdb3c1",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!021.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "7bed319f4328b0ec4d7e06555ae38af71b2898913a4fb80a95ea8b80e1f646d9",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-46bf133c552b",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/022.wav"
+        },
+        {
+          "member_id": "LIB-010-M-739ee648cb78",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!022.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "4c8a684d968245465dbfe827ec2279ff803797ef359f1b575c7df2fa66ad9df3",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-85287f410ec1",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/023.wav"
+        },
+        {
+          "member_id": "LIB-010-M-9268e523da0a",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!023.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "d5ba5839efff105c43829b3865a5deee0d1b4235ca1616e85fd0b9b71c1ceef7",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-37225a555d8d",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/024.wav"
+        },
+        {
+          "member_id": "LIB-010-M-6739ada34658",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!024.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "9455f32ebd29e8eb91ea2634c6f38ea8c612155d14e1bd24cd65839258ab7ee0",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-b717d9ced7d7",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/025.wav"
+        },
+        {
+          "member_id": "LIB-010-M-f39707fe9f70",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!025.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "74c8fdb8afdd14309dd900ee14af76d1f244acfc8d5c3a7194b3f640d82ed488",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-e87f85b696b9",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/026.wav"
+        },
+        {
+          "member_id": "LIB-010-M-8cff34d5959d",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!026.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "ac16299fec5b773b469b5e4a885cc74818131b74f947ff8952e71b8e6adfa574",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-051dd3d2e155",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/027.wav"
+        },
+        {
+          "member_id": "LIB-010-M-63859708ebf3",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!027.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "0c7ba0b814e9cdb183c0833553b2c1af19c4b1d35dbd91f937e98b49776e4534",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-a3503a03e21a",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/028.wav"
+        },
+        {
+          "member_id": "LIB-010-M-bb20ed8eda5a",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!028.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "02b6d7087306a171bb8496564ab9b1b1496b9cb28cc2c8734ac033e133a08986",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-21d1e4aa5aae",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/029.wav"
+        },
+        {
+          "member_id": "LIB-010-M-c446687372ba",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!029.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "3696eb4863d01b1eb81146d31737a6177d1cf73f286ff808b8266efdadfc13a8",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-77f79e94d2bb",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/030.wav"
+        },
+        {
+          "member_id": "LIB-010-M-629890cee778",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!030.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "704db3f43cd737ce8a1e4205c16f1fd6c101456132eedc5cf842310f6da1d75c",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-91e54d22e0d0",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/031.wav"
+        },
+        {
+          "member_id": "LIB-010-M-60b88c1b5d2e",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!031.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "f2692e86936ebac2785953f550b19523ddce797547bba29004f559e22f4edbd7",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-1e6d710a5123",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/032.wav"
+        },
+        {
+          "member_id": "LIB-010-M-5ca971e8c100",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!032.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "8410c8dc77c40213f407c7bc11a4107470159c8f4cf6e7cf0fdecae15755e1d3",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-7a4407af1c45",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/033.wav"
+        },
+        {
+          "member_id": "LIB-010-M-93e94c07261f",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!033.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "afed9e10239487fc9a0618a69b14b805f3583fa4503ba9a8a88efeeef6340519",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-c9a25007407a",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/034.wav"
+        },
+        {
+          "member_id": "LIB-010-M-d2a8ca177eb9",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!034.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "809d6340d82a63c651bc0084390b14ff68c2bddd1a41999a9100de9d85dee63d",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-43d7c0486043",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/035.wav"
+        },
+        {
+          "member_id": "LIB-010-M-abaa1a5735ba",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!035.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "e0fca144e104e73b0e4f694623c7fb7849be9d6161202597a096e17e8de907b2",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-b8a102588d01",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/036.wav"
+        },
+        {
+          "member_id": "LIB-010-M-bcebe5c50e80",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!036.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "fd84473b9308eb84b83fddc634bc2a80e06255802fb3993d8118999dbd0c44a8",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-ce0d233fe029",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/037.wav"
+        },
+        {
+          "member_id": "LIB-010-M-c56ca90ad353",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!037.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "a7270f48c8406535a19cd30baf8c96b7eb450b5cccc67713d6afb67d08bef59c",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-e79aec5d8e77",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/038.wav"
+        },
+        {
+          "member_id": "LIB-010-M-3f65a230b148",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!038.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "e8d2dff255b90ab852dc91d809e4053b40e3fb42e281eed53a5e0e9938430b8f",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-8e479eaf3d51",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/039.wav"
+        },
+        {
+          "member_id": "LIB-010-M-8f02e19ae0b4",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!039.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "25c6c5091ba02742ab58ef7820bbd4be7bdfa07072a448c86514dc3226e19ece",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-c9a7ce3e4b14",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/040.wav"
+        },
+        {
+          "member_id": "LIB-036-M-bf4f174c1ffd",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/041.wav"
+        },
+        {
+          "member_id": "LIB-010-M-c486cc3caebf",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!040.wav"
+        },
+        {
+          "member_id": "LIB-010-M-85b571a951f7",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!041.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "cdb0e8a85493f3eb7d95d55b4d2dcefcd8d92078dd38bbeccea5e91b8b57434d",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-39cedf6f3308",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/042.wav"
+        },
+        {
+          "member_id": "LIB-010-M-f8963fa2dbc1",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!042.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "f6afd5b5b84b4415d4476d8c8854208609bc0a2ddd4098474211fe4afb3a946d",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-819390cd9f98",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/043.wav"
+        },
+        {
+          "member_id": "LIB-010-M-aee71b2eb205",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!043.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "8f94a1417c56f51c41b0664c0d1e178d2d3035a1957a54ef097d801f9453e937",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-ac3985b06bdb",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/044.wav"
+        },
+        {
+          "member_id": "LIB-010-M-a3117b4cb22d",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!044.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "2e9785aae3a106791f118a00bf93504f10643f0a6f24cad5f4e1c9e6510a6f52",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-52aaf5abb8e8",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/045.wav"
+        },
+        {
+          "member_id": "LIB-036-M-9f825c012691",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/046.wav"
+        },
+        {
+          "member_id": "LIB-010-M-a7d37500f8c0",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!045.wav"
+        },
+        {
+          "member_id": "LIB-010-M-617549b10a06",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!046.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "0b35366771f512ccd956a4adb64319cda2cf7359efa75b29ea2bd7812fa86e69",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-40ee33393da6",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/047.wav"
+        },
+        {
+          "member_id": "LIB-010-M-2022ef464ac0",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!047.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "9ede9d93bff9b7460486ad869f4fdf12e50f9acf606a7e55f100643f13586ecd",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-a6ff520a77a5",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/048.wav"
+        },
+        {
+          "member_id": "LIB-010-M-27bc12e87e5e",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!048.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "4a23329384c8ec6169fcb9c006f6f2be9a32e2c1cb10938642190870d63a4f03",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-851820c6dacc",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/049.wav"
+        },
+        {
+          "member_id": "LIB-010-M-e1754c51db9a",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!049.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "945b0bcf7bdca41df0568773206ceda40e3329b18a70880eedf2321cfb929d69",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-85b897bdeace",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/050.wav"
+        },
+        {
+          "member_id": "LIB-036-M-f25f882c0a07",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/051.wav"
+        },
+        {
+          "member_id": "LIB-010-M-dce6d019b99f",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!050.wav"
+        },
+        {
+          "member_id": "LIB-010-M-6e84f78e6a9c",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!051.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "de0ee3b3ce73433533f0c2b723f4a60d5b8162b7da975c7915be6b34df44ff69",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-a51a4edbe70d",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/052.wav"
+        },
+        {
+          "member_id": "LIB-010-M-29c8dca3fe78",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!052.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "02ad18dd805c6feca802ec5bd8e3823804254877c0dcadcd3d27e87496c886e2",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-f6a7c4296ced",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/053.wav"
+        },
+        {
+          "member_id": "LIB-010-M-e5789d5200ef",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!053.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "6e34261b8d4853d88a07e43144678cd9450c00a73e02fa5a3ba7f53be6fca2a6",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-85a49115de9f",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/054.wav"
+        },
+        {
+          "member_id": "LIB-010-M-dfc3fdbc2d70",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!054.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "51fa81060cf5288311b3b57b4e3f244713ed9cd31793e8a3b14d00a4938d9c81",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-c8ac83421529",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/055.wav"
+        },
+        {
+          "member_id": "LIB-036-M-7581cfd6ddb5",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/056.wav"
+        },
+        {
+          "member_id": "LIB-010-M-15d48b1a9557",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!055.wav"
+        },
+        {
+          "member_id": "LIB-010-M-36ee8b46a917",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!056.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "1d43a83fe5fb98ebcb08707f1e9eec7da6a650c70c50767091b79549c6921425",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-47ec7a440daf",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/057.wav"
+        },
+        {
+          "member_id": "LIB-010-M-b248d587dc01",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!057.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "db0dd848af0f8eb45e82751d5ccf40ae4eef26246a6b0c68d92bc182a4b25c28",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-0d3ad221f87b",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/058.wav"
+        },
+        {
+          "member_id": "LIB-010-M-325d0cff0f3b",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!058.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "1ea76b0d3cbf1f2c374cac103e70cd16cbe9a1792d2fc232c27608ab9a98cbe9",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-44af74a1e3f1",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/059.wav"
+        },
+        {
+          "member_id": "LIB-010-M-c9b851d489c8",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!059.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "18f7645c4ce40ce5a576ac36df0f2291166291dc253ca33a545750bd18560ec5",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-24d682a4b4a7",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/060.wav"
+        },
+        {
+          "member_id": "LIB-010-M-c2db7970d184",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!060.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "c040d4abc353943cf6599532c67e5478ae9fd083437717c0ddd3245baac7c93d",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-f4fb3c5f188c",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/061.wav"
+        },
+        {
+          "member_id": "LIB-010-M-e5e26f9e5598",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!061.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "65147b5cffb031241a25ffab91a42fdb59c90728ae45e936823da124a9ea3dff",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-884ad6296712",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/062.wav"
+        },
+        {
+          "member_id": "LIB-010-M-c035e9f21b33",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!062.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "ab82eeb0c902cf9dd049300c1fecacc58091cb46ee2e519099f1bde5ab183a32",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-926b58a0fb59",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/063.wav"
+        },
+        {
+          "member_id": "LIB-010-M-f6c110b2f6d3",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!063.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "b8d654b3812f003f8d8fa13443549143751c63becafdc7d21485bf10c0c5d87f",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-bad351a941f4",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/064.wav"
+        },
+        {
+          "member_id": "LIB-010-M-b774fb47990a",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!064.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "e93425f16245d1ca3621d5ad95b13f5e0c6306d5174a4eeaf9db43bcb598b6f2",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-69378125e1f5",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/065.wav"
+        },
+        {
+          "member_id": "LIB-010-M-24f6deb1315a",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!065.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "1b0bd474f3a5ff41b118c753faad2650757c42572587d0c1998c87ab47eca4a2",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-526af49f422b",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/066.wav"
+        },
+        {
+          "member_id": "LIB-010-M-a6c4c607df96",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!066.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "73c41fd124f13857fccb5a36922df079d81190948a8cea1ee9d80c15bcbf48fc",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-6ba0e46b3b7d",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/067.wav"
+        },
+        {
+          "member_id": "LIB-010-M-d1db6d370fb6",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!067.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "6879c80115e2422b71316b39c0a5df78bf5ecfa05d539e53865a8a7f50de0091",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-08e63bc2c3f1",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/068.wav"
+        },
+        {
+          "member_id": "LIB-010-M-0d3d63473e37",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!068.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "20c772ce0fe177d4bc0394f0453f998bb4c006554eadc36d346e4cd79500b447",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-0651aedeeee9",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/069.wav"
+        },
+        {
+          "member_id": "LIB-010-M-468df40a06c6",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!069.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "56e36c7e6a6834e2d2df9fb2821d2d8060f3170475b7f7584acfecddb0a177f2",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-9bc8c1a9cfb3",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/070.wav"
+        },
+        {
+          "member_id": "LIB-010-M-3395f7d954d1",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!070.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "96b34cbaeac913a27cfcda5f35bc8332652af1ae97c3cfbd2db17e11fa1ee842",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-79191687b698",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/071.wav"
+        },
+        {
+          "member_id": "LIB-010-M-3125c995fa27",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!071.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "5a22ed9ab8dd2421ef972b2f43af747d4a5f889db9d86a3a8032a8cdc6e63d2c",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-9180a8119823",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/072.wav"
+        },
+        {
+          "member_id": "LIB-010-M-18c5ab933ad8",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!072.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "81c07c85996d4c9db197746b1c8e0b72ca848482930566ce16a318116e412f6b",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-3301f1ab3aa3",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/073.wav"
+        },
+        {
+          "member_id": "LIB-010-M-83166aff7d4e",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!073.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "5c2944601edfe537cddba7233528d46f32f047e675879e4af8e1aab01f5f023c",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-59a9449f7d21",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/074.wav"
+        },
+        {
+          "member_id": "LIB-010-M-451beb1ec68b",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!074.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "faf2f1a0e89ce97ff7266d94c7a16c761edb258457d92ae281be43ca8464d421",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-6aef7e407e7f",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/075.wav"
+        },
+        {
+          "member_id": "LIB-010-M-91e00e8da751",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!075.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "c88344d849c4613002fcef37650b4aa39aaa1d6bc96fcb54914aa4e7a33fbd32",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-117537e28718",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/076.wav"
+        },
+        {
+          "member_id": "LIB-010-M-eddc6fe0ab7b",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!076.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "88398a7bb3d5137a4df8ef022007a8c28eb1a77cb0e6144a8dfa80aa5b11f23e",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-30708c9b737d",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/077.wav"
+        },
+        {
+          "member_id": "LIB-010-M-b286a96ef215",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!077.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "325771ce9000696eba1ae43190e60a896e09bc68db59a76a6a4e0842c92c2068",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-0ccc72771378",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/078.wav"
+        },
+        {
+          "member_id": "LIB-010-M-c8ed24b7890f",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!078.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "69cf37e707f28ef200cdc1ba772407187e603d096be1b4afc250c5226243d163",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-5cf25e65db19",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/079.wav"
+        },
+        {
+          "member_id": "LIB-010-M-e7bfc868b64b",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!079.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "a9e6da99a0b600433ffb57643591a92f16cbf892775ac7013e47e43715d02607",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-cecf65548963",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/080.wav"
+        },
+        {
+          "member_id": "LIB-010-M-84cbeb7812bf",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!080.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "f084ca2c4833a5549068d890234ddc3321902feec84e981be6bad2e48e4f90bb",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-25a17ec04550",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/081.wav"
+        },
+        {
+          "member_id": "LIB-010-M-249cfb409996",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!081.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "08e62581209e0014c79212c3d6355aeb4bdcc47d98599b15e9eead9a8c30ef52",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-7234b022228d",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/082.wav"
+        },
+        {
+          "member_id": "LIB-010-M-ea1fc7e359bb",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!082.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "699dc299ec2745a94482c4ef391696dfd2fe9547be4b996014ed042bfedb11c0",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-b9790a04e62a",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/083.wav"
+        },
+        {
+          "member_id": "LIB-010-M-860f65d296fc",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!083.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "c45d7331dcd882c48bb2bf7029abe51a1592c27a41d72032694f9b76e2d7baa6",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-cd6459195576",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/084.wav"
+        },
+        {
+          "member_id": "LIB-010-M-0abefca2e663",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!084.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "2e6e7466bcaafa3813830c22d641a3bbbecb81255c164eae664b51e4b6c49790",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-6d6e58639b58",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/085.wav"
+        },
+        {
+          "member_id": "LIB-010-M-af99de263674",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!085.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "773b6e2abc03a8e54871de6904369db85e3bf24a46180c84eaaaff037bcbb8a0",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-972eba9376bc",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/086.wav"
+        },
+        {
+          "member_id": "LIB-010-M-c6a22d37ec61",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!086.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "10466d2c7d73637f1fc0a1bef100c5dba9ceac5538cd0b02a29733e49cf0f628",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-0d9f0a3418dd",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/087.wav"
+        },
+        {
+          "member_id": "LIB-010-M-8cadab0bec3d",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!087.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "35ac417752393a87f764a4ad6990c387052109cee02b814ecdbdaa8db5183e24",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-8015eefd4289",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/089.wav"
+        },
+        {
+          "member_id": "LIB-010-M-0ef99b6f0468",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!089.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "0cac75c69b6c01d7f5c18e2830d7faa69bcddefa9ad2a1edc288f24336638d3f",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-f4dccd4a4d14",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/090.wav"
+        },
+        {
+          "member_id": "LIB-010-M-4c454f0ec9e9",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!090.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "4f4a70fe7ac4277274abf1dd78c680d18768cc2a479f3669fd3ae309c717bf4e",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-ee7c02aa60fa",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/091.wav"
+        },
+        {
+          "member_id": "LIB-010-M-261f947e7201",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!091.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "d715014c5e877b080232db6e3da555015c19ce2fd567e1ec709f78357663fc6d",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-9fc88df62986",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/092.wav"
+        },
+        {
+          "member_id": "LIB-010-M-b2f70ff6eb82",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!092.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "5eaf057f0dc8df28a4f8b0cae4375a505a406242ae87649f61bc66148c6269a2",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-71422666686f",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/093.wav"
+        },
+        {
+          "member_id": "LIB-010-M-3704336eb167",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!093.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "7ec26c7b36ec90d5b205d169fc2d92be408230148499dd9abf17eb981a2f1060",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-966b97cd3d6a",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/094.wav"
+        },
+        {
+          "member_id": "LIB-010-M-b29d175633ab",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!094.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "9b1b7742a38eb12dde845cd0e13275e9ab7c403499e2fc02d5f788843b3fab49",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-b14121425eab",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/095.wav"
+        },
+        {
+          "member_id": "LIB-010-M-caa9f2539a53",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!095.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "3a4f47725c03cb7a9619b9b0797fcf746bba68615211d426c20138cc990ac681",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-54523ee54f34",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/096.wav"
+        },
+        {
+          "member_id": "LIB-010-M-70e9362fc6a8",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!096.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "d3c29639801e2e3ebdb5c6547fba224b352dcf7a62b32093849d30455fe97862",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-f3793a4a4a98",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/097.wav"
+        },
+        {
+          "member_id": "LIB-010-M-6b3a8ab0e4d5",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!097.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "a694b6ace7175442bbefa73f1f91ffa34459bacc274c5168badac49eda5ebb01",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-7288d6de2983",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/098.wav"
+        },
+        {
+          "member_id": "LIB-010-M-3667a7cf9ba4",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!098.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "a5fe289a37a337f7c980cada705165be1237c425614986b78944fa7ea8f3e95c",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-e1d4c5f87165",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/099.wav"
+        },
+        {
+          "member_id": "LIB-010-M-f25866400e48",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!099.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "197e0af8346a8c0de1e146542b194a2bad15faabae9b1d6fe50a236cd58d03a2",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-b6515b183a78",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/100.wav"
+        },
+        {
+          "member_id": "LIB-010-M-0ababef65387",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!100.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "9e0677d9be04977bd2fc83ee79c56dfbf59b1bebdbf5d2cc60e24501a5af83d1",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-c97febac363e",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/101.wav"
+        },
+        {
+          "member_id": "LIB-010-M-eeb11af570e7",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!101.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "8cc63fba8338376300de3e92afedb2a671cdadaba7d3490b5813270b8c3bd820",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-ec075e0a6f1d",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/102.wav"
+        },
+        {
+          "member_id": "LIB-010-M-bdcf9756c416",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!102.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "33a725900e41627cb8c58e264d65546fe5f4fa8aa90fb5d71c6d24d388eb4de7",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-2f6dad1af403",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/103.wav"
+        },
+        {
+          "member_id": "LIB-010-M-a2a740371757",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!103.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "745fbfc0b05df284983b4b57bfe5c5463c893515c67407e2ad5a3788ca617375",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-cb9dc731ad3f",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/104.wav"
+        },
+        {
+          "member_id": "LIB-010-M-0a9d33c4a2a3",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!104.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "9aabb8cf432093d73e5afede496f4abcc67c38a8e0f1d811779103ae0e2946a9",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-78e916a9dc74",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/105.wav"
+        },
+        {
+          "member_id": "LIB-010-M-2632a700330d",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!105.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "6a445c3d58e8461eb8268ea9d51214a9934cf9bb4871e22df54b9d94c6e9f77a",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-7092b68bad84",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/106.wav"
+        },
+        {
+          "member_id": "LIB-010-M-8433f4fb9c5d",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!106.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "e82ab39cdcb1479ee54a8b35a3b2a2681a154081ca01238738a0443fb2aac1ec",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-5df134cc78d3",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/107.wav"
+        },
+        {
+          "member_id": "LIB-010-M-565eaa6df9da",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!107.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "4a41def6656f04694f58b9250af761c0bc9795c0d99a318eae59d8c160995f7a",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-9e82333e72fa",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/108.wav"
+        },
+        {
+          "member_id": "LIB-010-M-1112b84604fb",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!108.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "b5c956cef88ec45f222fa4a3f87ff395de644248f87db338980f0d6e789f47e0",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-32b061964d1a",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/109.wav"
+        },
+        {
+          "member_id": "LIB-010-M-22b32ac271e0",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!109.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "df41e687dc5ae1647d1d1e3e6543b37f372ec5384bb3bbd665603c3b08c40311",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-fbe30682867b",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/110.wav"
+        },
+        {
+          "member_id": "LIB-010-M-94f98304e4af",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!110.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "98de15461cc543e40a66ffb1e2528fb12ec0730d6adf1bcf26ff2e878ee54e9a",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-4b740a1629b1",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/111.wav"
+        },
+        {
+          "member_id": "LIB-010-M-58665b8498e0",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!111.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "6a216dcfba9b793ff1b55e1a4aec50b56c62bb070575f9e8e80c10a8f0a442fc",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-e39324289863",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/300.wav"
+        },
+        {
+          "member_id": "LIB-010-M-93e49bbdd97a",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!300.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "bbbd29b5dad2bf85530f5bae55efbd09afff77f7c5ee3ec24d349e40fda31c6f",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-d8b5cdb1bdb4",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/301.wav"
+        },
+        {
+          "member_id": "LIB-010-M-85a396fdef2e",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!301.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "844fcf94405e5ead61b263b136495eae9221e0efa4f02ebd3a2ca4cd3684f1d8",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-2915ab923a7b",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/302.wav"
+        },
+        {
+          "member_id": "LIB-010-M-301a33aae7a4",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!302.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "f77554413bab08d0765badf2539631ebe14a0b376202a3f503ba5e54000e904f",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-ee98419cf43b",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/303.wav"
+        },
+        {
+          "member_id": "LIB-010-M-212eab21dea6",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!303.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "ff16c72db6c68942d9e9298ef114a38e6fa64fee7cb852b31aa333cc26ff63e6",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-b52edf615409",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/304.wav"
+        },
+        {
+          "member_id": "LIB-010-M-a6fc49eb9425",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!304.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "9ddfac00d1654f99ca37b5e3f5da61411efd515483d3fe17d750e89a6dc8d3ab",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-822d5a7da76b",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/305.wav"
+        },
+        {
+          "member_id": "LIB-010-M-8b185efd3c95",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!305.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "588714d62caecc86fe958c376957821dd7197ffcc0956ec3b2d669aa6f06a298",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-35e9caa6e40a",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/306.wav"
+        },
+        {
+          "member_id": "LIB-010-M-7d432aa0d726",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!306.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "8c0890ea5c190543737411d8e6e2ec895c8b558ad23499406ed516d1eee7825d",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-3141a89a27a1",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/307.wav"
+        },
+        {
+          "member_id": "LIB-010-M-dd3bbb3d04e8",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!307.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "a52c1d393f44d17b191d90749fbdbf99500ddd2f534da7be7c569e1051db95e7",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-492fd032627c",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/308.wav"
+        },
+        {
+          "member_id": "LIB-010-M-69d78806250b",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!308.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "a2405303e3a4b10a6e0319d53493b2788312397b8fc0d0e8b7875d2baef04b53",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-f327ce4cc637",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/309.wav"
+        },
+        {
+          "member_id": "LIB-010-M-20f2c7958e15",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!309.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "c75576bf90025fff182497d9b264c7969967c557f191941927cf4a53be7c072d",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-5030616b00a8",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/310.wav"
+        },
+        {
+          "member_id": "LIB-010-M-28db2747da27",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!310.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "a19ce9464659354eaecdfad22aefe461680321431778f9593bc28beb314b279f",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-37056898d323",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/311.wav"
+        },
+        {
+          "member_id": "LIB-010-M-9998c08ccc16",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!311.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "c8250c2b3ea2f5b0be047f732f4c0c89d4c68df8be55daed6a973758f496cb45",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-834c4373a2c1",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/312.wav"
+        },
+        {
+          "member_id": "LIB-010-M-4ae29cee5048",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!312.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "bda5e541fe25b2e1a58c6f62a0dae3cb91e257679dfacac2cb6c443be2917c8a",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-6315d6a5153a",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/313.wav"
+        },
+        {
+          "member_id": "LIB-010-M-c95f6d6cd019",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!313.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "542f629b0780c6af1b2b8517484b8fc547d8a4d00ac4236ff97956826a6fe87f",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-7bbed53befbd",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/331.wav"
+        },
+        {
+          "member_id": "LIB-010-M-9c734386d63b",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!331.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "7e39dcba72c7d1ca88ec823fae8f105be1d5bdc0313f0212adb5addc44dd624d",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-a8f3735a0cce",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/332.wav"
+        },
+        {
+          "member_id": "LIB-010-M-9d079c860f89",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!332.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "7b4369b2fdd746e1cae163180a421bb0f15e46d02d41973752085fe3db2f3d95",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-f4d4f1bf6888",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/333.wav"
+        },
+        {
+          "member_id": "LIB-010-M-4ccb046d77bb",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!333.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "95458625c89d26a45532ea840474dcc6f103423f063c803b84630beee7faf691",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-d7c23d31f60e",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/334.wav"
+        },
+        {
+          "member_id": "LIB-010-M-4d32613e07fb",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!334.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "d8b0c882e8f8f854317c41dfca47c30c3997e00b56fcea87aab569eb7bce40b3",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-3e81ee2d8f01",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/335.wav"
+        },
+        {
+          "member_id": "LIB-010-M-a2d0096f93bc",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!335.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "354aef80f29b7f8dc81bc69995650e67c62736707260b6626c8356f6e7e6fc52",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-67bddfab16b9",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/336.wav"
+        },
+        {
+          "member_id": "LIB-010-M-094145ee814f",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!336.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "20b97cabd1c79b905b582a1fb1b1cb63f09106dc409deeda9d311764a6d1f017",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-f8b6d786f49b",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/337.wav"
+        },
+        {
+          "member_id": "LIB-010-M-d74bb4859eb5",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!337.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "b7f9eb4ccec2dad25e823f3e20870d8d36dc75e3c121f423d632118c754f126e",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-f906a74ebd7e",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/338.wav"
+        },
+        {
+          "member_id": "LIB-010-M-bccdc84b40d2",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!338.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "a89116b8ad55624990d50def2f8ef0479d6874a23dbb9dd1e0f870beffa17c44",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-a483f54999ef",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/339.wav"
+        },
+        {
+          "member_id": "LIB-010-M-31427ab5d697",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!339.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "3d484789f3f3338a25b85a8a5f4e0013da3cc03e33eda888e0ad45ae293ffb75",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-6823f18804ae",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/340.wav"
+        },
+        {
+          "member_id": "LIB-010-M-f8799251a9e2",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!340.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "2e679d241a8f4d058e8d2a0e128af9237289ed71775961dc2f2e4b57a98655a3",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-55c0cbf3c167",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/341.wav"
+        },
+        {
+          "member_id": "LIB-010-M-95355ca7a0b6",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!341.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "ac75a6921de9f848d283595d1a4a6c7da9ba9e9927968d50b9846019672c2f4e",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-7bdc121d5177",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/342.wav"
+        },
+        {
+          "member_id": "LIB-010-M-61e1af126f6a",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!342.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "69c68b5ba02da95e16863c8ed3781196709d75c8361df871be2b307b24627251",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-8a8233c6e581",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/343.wav"
+        },
+        {
+          "member_id": "LIB-010-M-ee7e0d82ec0f",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!343.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "29e491d4e3ac957d6c860468f6e13699234861a3863e9828adfe3842c8781f0f",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-abde250d42b0",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/344.wav"
+        },
+        {
+          "member_id": "LIB-010-M-1d6d00025037",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!344.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "9d915e0f7c427f3f7e3e1c5128089eafae06f7c323c17f7b389ffd574f417e90",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-33f3be9628c6",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/345.wav"
+        },
+        {
+          "member_id": "LIB-010-M-d6df63cf2532",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!345.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "a07d22db85da3b5a365a09bb2e3c6ddf503015b3423b1d766c9f6b44511457df",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-47aac555dd3a",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/346.wav"
+        },
+        {
+          "member_id": "LIB-010-M-48cb68cc3ce6",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!346.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "3cf41be923939e0fed0ca831fb467404cd13c27042444a0cd9b768f1936a7cca",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-60f532c81987",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/347.wav"
+        },
+        {
+          "member_id": "LIB-010-M-ab568a65ba9d",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!347.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "8912bdd2ecd1ba72e95ff0aa0a89de3c3f37a460b8198da0138df3329618738f",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-8f8d660b9363",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/348.wav"
+        },
+        {
+          "member_id": "LIB-010-M-2113feb3bf0c",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!348.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "5e3c3857348e42db62d697af20e45bd870653f3a8b65c7936dadf66552bd4d1a",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-17bd95f1d8c3",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/349.wav"
+        },
+        {
+          "member_id": "LIB-010-M-1e559da4ddb3",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!349.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "9de4776ac17c466f86e7217a677344a54cb3067a2a375e27c5004b01dae9672c",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-716ddaf74e6b",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/350.wav"
+        },
+        {
+          "member_id": "LIB-010-M-2eca0577f023",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!350.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "39b0644712ba09ad047c3abcbd8a586af1d29dd7496db4dc670d303e4abb6368",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-a0eb12837b16",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/351.wav"
+        },
+        {
+          "member_id": "LIB-010-M-aa0371d0b738",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!351.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "541c5d6c40535d9dbe321e688a608dde7c1768bda867b20f4e43f66bb7649dd4",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-de9a1be32aaf",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/352.wav"
+        },
+        {
+          "member_id": "LIB-010-M-b32e8af8d1fa",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!352.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "4cbc4f273c03d2b5c5a73598ab6c2fb4e3508f232daeaf448bf9df63a3664024",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-7b81f0dbc8e3",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/353.wav"
+        },
+        {
+          "member_id": "LIB-010-M-7b21cdc66d97",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!353.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "13420c22dd936e515995621c1e5cfd6b5895b44cfe6944a00b150ee94dd9638d",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-6c521aeec4a6",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/354.wav"
+        },
+        {
+          "member_id": "LIB-010-M-9fa7bb3bdc94",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!354.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "15b22f978b944d0002ca575a1343cb4ea8ad343401f7fd05f8d6d4eb707e4b05",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-4859495dee7a",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/355.wav"
+        },
+        {
+          "member_id": "LIB-010-M-cb3f6bedf6e1",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!355.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "46378184448ba1cdf323b2ffc9db1c762a538fa576c69cc6f4285046dd6395c2",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-33c66f773d40",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/356.wav"
+        },
+        {
+          "member_id": "LIB-010-M-0e2b878bafb1",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!356.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "13aaed02ccadcbd68275d9a1245a3cb5a45f03201e24eb94f4123a5e9aa15b69",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-01a3e724f0e9",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/357.wav"
+        },
+        {
+          "member_id": "LIB-010-M-4d9618235a5c",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!357.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "31f8cdff54589c6b5d8292e51cc87745ea6a997d0941b0e492276e133ccac6a0",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-64525cf253d2",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/358.wav"
+        },
+        {
+          "member_id": "LIB-010-M-6098eed95f57",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!358.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "a4135bd867dae1ad6ef5b5bb519c116c99cb9ad4a0d4bb481fe8ea29c4695c86",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-b6f2bbb2a01b",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/359.wav"
+        },
+        {
+          "member_id": "LIB-010-M-2eb5bbdc17de",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!359.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "79848f3e7a436cfadbde8ba8647430f3d35b1445522e8a81258275ac04c5981e",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-77e06532e02b",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/401.wav"
+        },
+        {
+          "member_id": "LIB-010-M-377145fd2004",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!401.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "db27bc5539ccc5413824d7ec10e3a0312d7d53485cf902a9fefc1f483e0bb4f8",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-f61dfa6dc237",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/402.wav"
+        },
+        {
+          "member_id": "LIB-010-M-f5ad17e1b9f7",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!402.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "75cd8f718383a041c354df4822c147dd6fc9c142c19d20f9945e7445bf1f14e5",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-8183277b2923",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/403.wav"
+        },
+        {
+          "member_id": "LIB-010-M-c8fac845345a",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!403.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "0cdb40f8710790fe701422b9e9e31b6e5138f545c2bb924faed9bbefdd21f6ad",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-14b9732d5f4c",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/404.wav"
+        },
+        {
+          "member_id": "LIB-010-M-6aabe4e4b8de",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!404.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "cb6025211afa3717d143e3740d1a0acd0453df076198ecf7f48b82655b469c68",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-631c5d91fce0",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/405.wav"
+        },
+        {
+          "member_id": "LIB-010-M-1e38a3640269",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!405.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "912f641e63a0f33ba089227b3748889533c7812eb9c7fb264dc9122fdbf0de35",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-ab2001f55f94",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/406.wav"
+        },
+        {
+          "member_id": "LIB-010-M-9c132483fca8",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!406.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "ee00a5c0939ca7b192444620da9911e44798a6e19896f95963efc88b63cb983b",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-e42a23367657",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/407.wav"
+        },
+        {
+          "member_id": "LIB-010-M-f7ea133a6628",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!407.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "4b0c8d129c667895a3c5c2c9ad36926059f2c5667e53c71ee7618c2bb2255978",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-99acdde5c350",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/408.wav"
+        },
+        {
+          "member_id": "LIB-010-M-dc1deaff5281",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!408.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "ffbf7b23e371dc087658d779b7ec5820d3547766c75208d38c72a7871b83b4a4",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-9c430c2c6d7e",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/409.wav"
+        },
+        {
+          "member_id": "LIB-010-M-2ee14eb6d397",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!409.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "4a5d2eb7f953383446f8a12a50fa4369ff4d600f6460bf115cc57775f281c1dd",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-9bd1e44f8ac9",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/410.wav"
+        },
+        {
+          "member_id": "LIB-010-M-01677c4b10e0",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!410.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "2e4ba99a9967c4b68e9d7c5331bea37bf7594fe1706c2fe0a3edd9cb0c7ee211",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-61f0601b7826",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/411.wav"
+        },
+        {
+          "member_id": "LIB-010-M-8ea980c6e93e",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!411.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "7b7a9ba528623484bfa38b9ee3a2001d43b9554e6076c830480379e9bdea5c58",
+      "occurrences": [
+        {
+          "member_id": "LIB-036-M-4712646e7f24",
+          "source_id": "LIB-036",
+          "locator": "work_assets_shared_PRIVATE_final_20261014.zip!sounds/412.wav"
+        },
+        {
+          "member_id": "LIB-010-M-0fb909cfb310",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.snd!412.wav"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "059566f0585e4642cd3550074b83efd8dcc8858267c9b0863b8c3086ab1ed4c0",
+      "occurrences": [
+        {
+          "member_id": "LIB-041-M-119c5440aaa4",
+          "source_id": "LIB-041",
+          "locator": "바람의나라_통합복원_분석과실행지시서_20261015.zip!02_외부프로젝트_가져오기_방법.md"
+        },
+        {
+          "member_id": "LIB-042-M-735ed72eb805",
+          "source_id": "LIB-042",
+          "locator": "바람의나라_통합복원_치명결함반영_v2_20261015.zip!02_외부프로젝트_가져오기_방법.md"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "622c903882d7915b9e1c525391da89907d0927fd9d24ab74e2bd2984207af8cb",
+      "occurrences": [
+        {
+          "member_id": "LIB-041-M-259b6e2e3cdc",
+          "source_id": "LIB-041",
+          "locator": "바람의나라_통합복원_분석과실행지시서_20261015.zip!audit_baram_sources.py"
+        },
+        {
+          "member_id": "LIB-042-M-2c6e3fbb71a6",
+          "source_id": "LIB-042",
+          "locator": "바람의나라_통합복원_치명결함반영_v2_20261015.zip!audit_baram_sources.py"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "70c6c3fed4e28d42cea2cf9b1b5700dfe795860853ba64d955d8759728e39eaa",
+      "occurrences": [
+        {
+          "member_id": "LIB-041-M-b9f8e86cd347",
+          "source_id": "LIB-041",
+          "locator": "바람의나라_통합복원_분석과실행지시서_20261015.zip!audit/SHOP_duplicate_stock_243448ac.csv"
+        },
+        {
+          "member_id": "LIB-042-M-0f9172796cc0",
+          "source_id": "LIB-042",
+          "locator": "바람의나라_통합복원_치명결함반영_v2_20261015.zip!audit/SHOP_duplicate_stock_243448ac.csv"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "a97c451846a2712bf2148b17356c558c97cbfbe497e83617e59949f9d7c3cdef",
+      "occurrences": [
+        {
+          "member_id": "LIB-041-M-3f1c82fa0ef9",
+          "source_id": "LIB-041",
+          "locator": "바람의나라_통합복원_분석과실행지시서_20261015.zip!audit/MAP_NA495_KR_label_mismatch_243448ac.csv"
+        },
+        {
+          "member_id": "LIB-042-M-e2655f5ef3bb",
+          "source_id": "LIB-042",
+          "locator": "바람의나라_통합복원_치명결함반영_v2_20261015.zip!audit/MAP_NA495_KR_label_mismatch_243448ac.csv"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "87a3aec45382a1bdfc47c6c3f65c70a1804140e1ce26e1b114b314fe6c9145e5",
+      "occurrences": [
+        {
+          "member_id": "LIB-041-M-c80d5a508fa3",
+          "source_id": "LIB-041",
+          "locator": "바람의나라_통합복원_분석과실행지시서_20261015.zip!audit/SKILL_class_registry_243448ac.csv"
+        },
+        {
+          "member_id": "LIB-042-M-ee523387d6a7",
+          "source_id": "LIB-042",
+          "locator": "바람의나라_통합복원_치명결함반영_v2_20261015.zip!audit/SKILL_class_registry_243448ac.csv"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "639615d3e358b7619e478e048d0b5b5252d6b9500c461f95a366a80c7bf1b2ba",
+      "occurrences": [
+        {
+          "member_id": "LIB-041-M-47b81b2eec23",
+          "source_id": "LIB-041",
+          "locator": "바람의나라_통합복원_분석과실행지시서_20261015.zip!audit/KR_1_25_map_inventory.csv"
+        },
+        {
+          "member_id": "LIB-042-M-2d2d2a2acc74",
+          "source_id": "LIB-042",
+          "locator": "바람의나라_통합복원_치명결함반영_v2_20261015.zip!audit/KR_1_25_map_inventory.csv"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "eb11246a7ec5643a526e6cf779cd34394f70fdb168c3961b9bcf2486206474e7",
+      "occurrences": [
+        {
+          "member_id": "LIB-041-M-6f78fed594f1",
+          "source_id": "LIB-041",
+          "locator": "바람의나라_통합복원_분석과실행지시서_20261015.zip!audit/static_audit_summary.json"
+        },
+        {
+          "member_id": "LIB-042-M-d4cd4cdbbd01",
+          "source_id": "LIB-042",
+          "locator": "바람의나라_통합복원_치명결함반영_v2_20261015.zip!audit/static_audit_summary.json"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "433a348d37959fa74a8ed137f3ef603704bc2513a68fa8602bdfbad4b36e9632",
+      "occurrences": [
+        {
+          "member_id": "LIB-041-M-29cdb7ec7b27",
+          "source_id": "LIB-041",
+          "locator": "바람의나라_통합복원_분석과실행지시서_20261015.zip!audit/KR_4_91_guides_inventory.csv"
+        },
+        {
+          "member_id": "LIB-042-M-36998ff87471",
+          "source_id": "LIB-042",
+          "locator": "바람의나라_통합복원_치명결함반영_v2_20261015.zip!audit/KR_4_91_guides_inventory.csv"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "163c737d8147a113167be5da447e2d91b845126d0e5dec37917ba2743363da49",
+      "occurrences": [
+        {
+          "member_id": "LIB-010-M-f22ffb794652",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.dat!Cursor01.pal"
+        },
+        {
+          "member_id": "LIB-010-M-e271aa2cdeda",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.dat!Effect1.pal"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "e249aa6b702c6fe99b3d4a2bb7ddd3a46c6362a19d1b6382faeda3cfb24813be",
+      "occurrences": [
+        {
+          "member_id": "LIB-010-M-af8ad6663049",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.dat!DlgLogin.pal"
+        },
+        {
+          "member_id": "LIB-010-M-b0e5f2939692",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.dat!DlgPass.pal"
+        },
+        {
+          "member_id": "LIB-010-M-be5e4397eec6",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.dat!StryBack.pal"
+        }
+      ],
+      "independent_evidence_count": 1
+    },
+    {
+      "sha256": "f35d4a094cbe70ae080fb6faf5652fc6cf29c1e18134d31a59cebc672c7f3d8c",
+      "occurrences": [
+        {
+          "member_id": "LIB-010-M-cc3347cc1c0a",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.dat!Effect5.pal"
+        },
+        {
+          "member_id": "LIB-010-M-20394cbd9656",
+          "source_id": "LIB-010",
+          "locator": "KR_4.91_491v.zip!Install/DATA1.CAB!NWind.dat!Effect6.pal"
+        }
+      ],
+      "independent_evidence_count": 1
+    }
+  ]
+}

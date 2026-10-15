@@ -69,6 +69,21 @@
       "sha256": null,
       "missing_hash_reason": "Web extracted text observed; original HTML byte hash unavailable",
       "lineage": "Official Godot docs"
+    },
+    {
+      "source_id": "WEB-KR-004",
+      "url": "https://baram.nexon.com/GameGuide/View/3",
+      "title": "넥슨 공식 업데이트 연혁",
+      "source_locator": "L394-425 and L434, extracted full page read 2026-10-15",
+      "observed": "공식 회고 연혁은 1998 고구려/부여 분할·1차승급·12지신, 2000.4 3차승급·2000.7 조합/북방·2000.12 일본, 2001 세시/용궁, 2002.12 4차승급/도삭산, 2003.12 그래픽 리뉴얼, 2004.6 미니맵으로 구분한다. 따라서 1998~2001 기본 프로필과 후대 기능을 구분할 외부 시대 경계를 확보했다. 회고 문서는 게임 내부 개별 수치·좌표·버전4.91 날짜를 확정하지 않는다.",
+      "game_region": "KR",
+      "client_build": "UNKNOWN; retrospective official timeline",
+      "content_era": "1998-2004 major milestones; page guide updated2024-10-25",
+      "use_status": "IDENTIFIED",
+      "read_status": "EXTRACTED_TEXT_READ",
+      "sha256": null,
+      "missing_hash_reason": "Extracted web text inspected; original HTML byte hash not supplied",
+      "lineage": "Nexon official retrospective history; not an independent native gameplay capture"
     }
   ],
   "search_scope": {

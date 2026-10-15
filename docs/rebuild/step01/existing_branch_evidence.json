@@ -1,0 +1,2444 @@
+{
+  "schema": "BARAM_REBUILD_EXISTING_BRANCH_EVIDENCE_V1",
+  "task_id": "BARAM_REBUILD_P0P1_001",
+  "scope": "P0/P1 static source inventory; no runtime/server/build/deployment",
+  "inspected_at_kst": "2026-10-15",
+  "read_before_work": [
+    "AGENTS.md",
+    "docs/rebuild/MASTER_PLAN.md",
+    "docs/rebuild/STATE.json",
+    "docs/rebuild/STEP01_WORK_INSTRUCTIONS.md"
+  ],
+  "plan_version": "1.0",
+  "refs": {
+    "content": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+    "restoration": "2775b1166a760b6a1757f09f2faf1e799d3fd59e",
+    "world": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+    "community": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+    "core": "ac08964cbbc2ae1a6499a760de7d6b81c45c3f27",
+    "mobile": "2bb4ec55fa8ccb347b11d2bf2532ae4d4806b76a",
+    "mobile_workflow_pinned_input": "2bb4ec55fa8ccb347b11d2bf2532ae4d4806b76a"
+  },
+  "tree_reads": [
+    {
+      "branch_key": "content",
+      "sha": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "entries": 956,
+      "truncated": false
+    },
+    {
+      "branch_key": "restoration",
+      "sha": "2775b1166a760b6a1757f09f2faf1e799d3fd59e",
+      "entries": 154,
+      "truncated": false
+    },
+    {
+      "branch_key": "world",
+      "sha": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "entries": 79,
+      "truncated": false
+    },
+    {
+      "branch_key": "community",
+      "sha": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "entries": 77,
+      "truncated": false
+    },
+    {
+      "branch_key": "core",
+      "sha": "ac08964cbbc2ae1a6499a760de7d6b81c45c3f27",
+      "entries": 468,
+      "truncated": false
+    },
+    {
+      "branch_key": "mobile_workflow_input",
+      "sha": "2bb4ec55fa8ccb347b11d2bf2532ae4d4806b76a",
+      "entries": 487,
+      "truncated": false
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "OLD-CONTENT-HANDOFF",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/HANDOFF_INDEX.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/HANDOFF_INDEX.json",
+      "git_blob_sha1": "67b94eeb56c6128fd4376679df1c3d7bfb4326ef",
+      "sha256": "3b026b1b7def48760b61ca2d2889e398304f3ef35b75326572be0c178a1cdf48",
+      "size_bytes": 12457,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/HANDOFF_INDEX.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-CONTENT-WORK-STATE",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/WORK_STATE.md",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/WORK_STATE.md",
+      "git_blob_sha1": "b37cf9cfd07391e5e5fd88a63c1d4e893bb6f083",
+      "sha256": "5eb990b0eacff99bbf85a951c8d19396c5fdbb48e03a4d4944cd9956da0696b8",
+      "size_bytes": 8911,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/WORK_STATE.md",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-CONTENT-CONTENT-BUILD",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/catalog/content-build.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/catalog/content-build.json",
+      "git_blob_sha1": "6b8716d46e15c60b74c971e2a468a20958fea598",
+      "sha256": "428974138d9ca1e1adf849fb9ad7b7713e644bc9a3754d70863a4d3ad5a44ac3",
+      "size_bytes": 3050,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/catalog/content-build.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-CONTENT-STATUS-SUMMARY",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/catalog/status-summary.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/catalog/status-summary.json",
+      "git_blob_sha1": "d35710f9fb0170c8b4ccecd7d9e81b7836ffca1f",
+      "sha256": "990704af40d1a4be540e4ff778e7d045fdbc06e9f82d0913446c9a39b26ba18b",
+      "size_bytes": 684,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/catalog/status-summary.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-CONTENT-ASSET-UTILIZATION-SUMMARY",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/catalog/asset-utilization-summary.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/catalog/asset-utilization-summary.json",
+      "git_blob_sha1": "9860b9f01c19320a39e0bdb860c628294b459be4",
+      "sha256": "d4ed084a30365ab1997817c270d0d7fe13719819a3547caf7ff538b7249bbfc9",
+      "size_bytes": 546,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/catalog/asset-utilization-summary.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-WK-ASSETS-001-MANIFEST",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/packages/WK-ASSETS-001/manifest.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/packages/WK-ASSETS-001/manifest.json",
+      "git_blob_sha1": "b6aa2e45b58b78a526c726bbcac6c0ddc824de1c",
+      "sha256": "4e5e6356f30f798657109ff95f204fe5f38351a072b61a8b19e6828f40e23bab",
+      "size_bytes": 4373,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/packages/WK-ASSETS-001/manifest.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-WK-CONTENT-001-MANIFEST",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/packages/WK-CONTENT-001/manifest.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/packages/WK-CONTENT-001/manifest.json",
+      "git_blob_sha1": "4ed6e3a18acdba01cd934de2be1dd8737542f5a9",
+      "sha256": "74b0bc2fd588ecb4036c6f691a6f2f77fda4f1f54bb01806d8489837a34aecf3",
+      "size_bytes": 23592,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/packages/WK-CONTENT-001/manifest.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-WK-CONTENT-002-MANIFEST",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/packages/WK-CONTENT-002/manifest.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/packages/WK-CONTENT-002/manifest.json",
+      "git_blob_sha1": "41883e01e85d7f20966eaabe2c84f4a65da7602f",
+      "sha256": "0d33d029997534123a94346530d8bbd9ad8ee11ea1bc08ecd600d1a1aac849ec",
+      "size_bytes": 17646,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/packages/WK-CONTENT-002/manifest.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-WK-CONTENT-003-MANIFEST",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/packages/WK-CONTENT-003/manifest.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/packages/WK-CONTENT-003/manifest.json",
+      "git_blob_sha1": "c4356d11a33f19bf90980de70e5df720f98daf1a",
+      "sha256": "e20ab0ad657503f6972a57745ceabad1f76019c84b6492dd81472a9b8687ae1d",
+      "size_bytes": 6725,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/packages/WK-CONTENT-003/manifest.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-WK-CONTENT-004-MANIFEST",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/packages/WK-CONTENT-004/manifest.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/packages/WK-CONTENT-004/manifest.json",
+      "git_blob_sha1": "38a0386c25dc2f9fbc2f92781a89a4bd99ff05ea",
+      "sha256": "df5c6dcad9b79ffa597fe72a3fed1ba36a396e87cb8416bf2820bac8c0c737a2",
+      "size_bytes": 9211,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/packages/WK-CONTENT-004/manifest.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-WK-ASSETS-002-MANIFEST",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/packages/WK-ASSETS-002/manifest.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/packages/WK-ASSETS-002/manifest.json",
+      "git_blob_sha1": "e1d698f6d0c707ca0dc0da0c14c3a20dcb42180f",
+      "sha256": "e8535c430a1f90fb06a6559ad4c3904378a2b0f4a8bbecd37f58ecf976c15629",
+      "size_bytes": 2073,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/packages/WK-ASSETS-002/manifest.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-WK-CONTENT-005-MANIFEST",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/packages/WK-CONTENT-005/manifest.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/packages/WK-CONTENT-005/manifest.json",
+      "git_blob_sha1": "a58b087a190f467e4b00898989fb7028a52ff2c8",
+      "sha256": "53af2b585050dfd21edd1b439442bd0afee545f33592f5c4909ea84765edeca6",
+      "size_bytes": 19095,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/packages/WK-CONTENT-005/manifest.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-WK-ASSETS-003-MANIFEST",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/packages/WK-ASSETS-003/manifest.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/packages/WK-ASSETS-003/manifest.json",
+      "git_blob_sha1": "a4d7b9326196572e420b824fc9b46b3f852982da",
+      "sha256": "cb7e81e4047da7419c231d8031129272b28577ae99bdaf266ddca5b54c90c45f",
+      "size_bytes": 2128,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/packages/WK-ASSETS-003/manifest.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-WK-CONTENT-006-MANIFEST",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/packages/WK-CONTENT-006/manifest.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/packages/WK-CONTENT-006/manifest.json",
+      "git_blob_sha1": "128c1e7ac3e53d5ba3db88c1c04e6ee65b1321a8",
+      "sha256": "29216fdd87f09a289a1fd3ad5205e5b2b3157245d1ea01f34776fab16137ef7e",
+      "size_bytes": 3737,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/packages/WK-CONTENT-006/manifest.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-WK-CONTENT-007-MANIFEST",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/packages/WK-CONTENT-007/manifest.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/packages/WK-CONTENT-007/manifest.json",
+      "git_blob_sha1": "8119fedb4b8b1ca29b4fe0c7e54e2dffa5b91d33",
+      "sha256": "26d0a495104daedf461b6e41cd8b41bd8574bff09fa892a8c169a3f1aaf8316f",
+      "size_bytes": 10700,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/packages/WK-CONTENT-007/manifest.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-WK-CONTENT-008-MANIFEST",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/packages/WK-CONTENT-008/manifest.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/packages/WK-CONTENT-008/manifest.json",
+      "git_blob_sha1": "c7fe95fe180f5106aaa7067333881261aa457086",
+      "sha256": "d9f69210a63b0cdcd6013561cdbc83d2976bb9fcdcd65437f170bb40433dfa4b",
+      "size_bytes": 10147,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/packages/WK-CONTENT-008/manifest.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-WK-CONTENT-009-MANIFEST",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/packages/WK-CONTENT-009/manifest.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/packages/WK-CONTENT-009/manifest.json",
+      "git_blob_sha1": "a9e1d85da33698cf3513fff32864a9697335ca62",
+      "sha256": "a9788fecb85761db06350ac51cb5b8057a2e411cadc27e3ea2f407eaddba7b50",
+      "size_bytes": 19479,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/packages/WK-CONTENT-009/manifest.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-WK-CONTENT-010-MANIFEST",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/packages/WK-CONTENT-010/manifest.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/packages/WK-CONTENT-010/manifest.json",
+      "git_blob_sha1": "c917e13defa1b356de6182aa490228e7acff3f79",
+      "sha256": "59e352d2c2b34bdab160380e2dd00aade99c86b18cfe35ab3b3873f8aec1bb4f",
+      "size_bytes": 5257,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/packages/WK-CONTENT-010/manifest.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-WK-CONTENT-001-PROVENANCE",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/packages/WK-CONTENT-001/provenance.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/packages/WK-CONTENT-001/provenance.json",
+      "git_blob_sha1": "0a8327d74d1c2f433d3303dbc2ac742145c3fcb9",
+      "sha256": "639c4ef03deb799c9dc18dc0a54f1a4624918017db94e72ce63f899d02ee2822",
+      "size_bytes": 6188,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/packages/WK-CONTENT-001/provenance.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-WK-CONTENT-003-PROVENANCE",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/packages/WK-CONTENT-003/provenance.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/packages/WK-CONTENT-003/provenance.json",
+      "git_blob_sha1": "9dce5b535753853a1c2982d8dafa8eac0e2a59be",
+      "sha256": "0fc8705cd18fb8d4869de95c375256853a8252645f5adf4d0b5345f0fd1c4cbc",
+      "size_bytes": 1943,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/packages/WK-CONTENT-003/provenance.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-WK-CONTENT-004-PROVENANCE",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/packages/WK-CONTENT-004/provenance.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/packages/WK-CONTENT-004/provenance.json",
+      "git_blob_sha1": "8f0fef4b56824aaaff1d98d5f7d2a9ceacc967c1",
+      "sha256": "900d6d7187f632a266b05a7706d1b0a4c51ea6e08b073a509214b83dbfc4fc9c",
+      "size_bytes": 1239,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/packages/WK-CONTENT-004/provenance.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-WK-CONTENT-004-SKILLS-SUMMARY",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/packages/WK-CONTENT-004/skills-summary.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/packages/WK-CONTENT-004/skills-summary.json",
+      "git_blob_sha1": "d69bcfc82e70f483042f1c28c201b8dc6af251e5",
+      "sha256": "50b09588acd1ed46ca43849e3d105c1f2ea0d225c7eed093751f5ec07049f424",
+      "size_bytes": 3649,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/packages/WK-CONTENT-004/skills-summary.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-WK-ASSETS-001-ACQUISITION",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/packages/WK-ASSETS-001/acquisition.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/packages/WK-ASSETS-001/acquisition.json",
+      "git_blob_sha1": "8ab3029c9eef2fa84f8fe7cf520e04da06788db2",
+      "sha256": "26fb1a1ea76e0a12d43fb07181184dbe6fd557ccb44204773f8ea71828772bd1",
+      "size_bytes": 940,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/packages/WK-ASSETS-001/acquisition.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-WK-ASSETS-002-RECOVERY-SUMMARY",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/packages/WK-ASSETS-002/recovery-summary.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/packages/WK-ASSETS-002/recovery-summary.json",
+      "git_blob_sha1": "e79c35b5a3cf413b1086fd2e5be2e07f7bdf0e4c",
+      "sha256": "d59b0496066e83ec5b682c9a8fca54ac41833c5063340c0626c7dc6781d1f432",
+      "size_bytes": 512,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/packages/WK-ASSETS-002/recovery-summary.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-WK-ASSETS-003-RECOVERY-SUMMARY",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/packages/WK-ASSETS-003/recovery-summary.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/packages/WK-ASSETS-003/recovery-summary.json",
+      "git_blob_sha1": "a58c8ad2f43a19b718f9eb64519022e767c050ba",
+      "sha256": "f2d08963ed7cf1a9dc524c26595db4987bd9fdc40eb810d7a4db4e02c50fe876",
+      "size_bytes": 2978,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/packages/WK-ASSETS-003/recovery-summary.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-WK-CONTENT-006-LINKS-SUMMARY",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/packages/WK-CONTENT-006/links-summary.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/packages/WK-CONTENT-006/links-summary.json",
+      "git_blob_sha1": "3b977b1c16ccd30c38aa2a882fd1e607816117be",
+      "sha256": "de3a141e3ff30a2e7ecac29130734dbab7927590c27889e6b5f4122c9bfc829b",
+      "size_bytes": 697,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/packages/WK-CONTENT-006/links-summary.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-CONTENT-SUMMARY009",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/catalog/expansion-2/current-summary.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/catalog/expansion-2/current-summary.json",
+      "git_blob_sha1": "007d7e36e714483e52d48cce0fe7683684bde3d8",
+      "sha256": "ce7e474bdd215c5fd7b49225ff8e8804e50d957a9ca7ba6e0b68d2d11f74a7a4",
+      "size_bytes": 3189,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/catalog/expansion-2/current-summary.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-NPC-008-010-CONFLICT",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/catalog/content010-resume/npc-merge-proposal.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/catalog/content010-resume/npc-merge-proposal.json",
+      "git_blob_sha1": "03f973035794a0ec19d82e3a587ef9daa606bd8a",
+      "sha256": "02e4bff1bc29a338f20e783f80fd09ea701687b1bd57937b637a047d04e63baa",
+      "size_bytes": 40406,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/catalog/content010-resume/npc-merge-proposal.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-PARSER-DAT-EPF-PAL",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "tools/legacy_assets.py",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/tools/legacy_assets.py",
+      "git_blob_sha1": "6bc9e1e6638a4260deb7f7b02291c0772f4b5b87",
+      "sha256": "f5152ae3473b3e2f2d120b8c1b8679529428d2bd09f9024528d71aa9a9be86e2",
+      "size_bytes": 7703,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/tools/legacy_assets.py",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-PARSER-MAP-TBL",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "tools/legacy_maps.py",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/tools/legacy_maps.py",
+      "git_blob_sha1": "ba39be0013e3cf72c167c54127e441a25fde43aa",
+      "sha256": "4dc67ccc1ea80174d8f04940b85598006602043780a98ffc4f5b12ab75b67bd4",
+      "size_bytes": 3232,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/tools/legacy_maps.py",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-PARSER-INSTALLER",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "tools/legacy_installers.py",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/tools/legacy_installers.py",
+      "git_blob_sha1": "b2f18718badd9186a9fb0cb1142e602adb7bd8b7",
+      "sha256": "5dd1d31cd287a01a8da494c315df5479a032a0a18979a30901bee49b558fd382",
+      "size_bytes": 6340,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/tools/legacy_installers.py",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-EFFECT-WAIT-PARSER",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/tools/recover_effect_waits.py",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/tools/recover_effect_waits.py",
+      "git_blob_sha1": "328f88c95915ad47322af03f53b6204b7f42df8c",
+      "sha256": "a9e4305f7d155e48ab28696f61da98ad52c03575e774ca70ec103871c3face01",
+      "size_bytes": 5507,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/tools/recover_effect_waits.py",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-CONTENT-GENERATOR",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/tools/build_content.py",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/tools/build_content.py",
+      "git_blob_sha1": "559eb75127fa16af0c62b1f86ef6dc1cdb9b5631",
+      "sha256": "c5cd4f8796191f571a47c8c40e1420411b382e77de08168d28911f08fc6eef9c",
+      "size_bytes": 61644,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/tools/build_content.py",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-WK-ASSETS-001-CONTENT-000",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/packages/WK-ASSETS-001/content-000.jsonl",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/packages/WK-ASSETS-001/content-000.jsonl",
+      "git_blob_sha1": "7d4bacbda3e828cbd208a9bb2218408da8e6f9b1",
+      "sha256": "5b0ae2382c32705f8be0cce05694d9fd1d5ef3ee484071051a9ccc6720e73df9",
+      "size_bytes": 55978,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/packages/WK-ASSETS-001/content-000.jsonl",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-WK-ASSETS-001-CONTENT-018",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/packages/WK-ASSETS-001/content-018.jsonl",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/packages/WK-ASSETS-001/content-018.jsonl",
+      "git_blob_sha1": "0e867fdbca968f737b5c47a68a16b4bc4fc19f49",
+      "sha256": "6e75db95623bd0be321b4beff8d934e4cbfc9f694762e491ead62f9df4ddebb8",
+      "size_bytes": 55153,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/packages/WK-ASSETS-001/content-018.jsonl",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-WK-ASSETS-001-CONTENT-020",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/packages/WK-ASSETS-001/content-020.jsonl",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/packages/WK-ASSETS-001/content-020.jsonl",
+      "git_blob_sha1": "d3676a244927971365b651d6b1a22bc0d2d613c2",
+      "sha256": "40a3f7a85d9d473f27eb7cf03af55f0468060cef441ab430db7c652279106125",
+      "size_bytes": 16335,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/packages/WK-ASSETS-001/content-020.jsonl",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-WK-CONTENT-001-CONTENT-000",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/packages/WK-CONTENT-001/content-000.jsonl",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/packages/WK-CONTENT-001/content-000.jsonl",
+      "git_blob_sha1": "12764fe3eda6c822337f217f25b047b4f59efc88",
+      "sha256": "c835a58244026312f274b3d64cb0638336f3067c7cfac5e4e25a67dedcb26984",
+      "size_bytes": 45515,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/packages/WK-CONTENT-001/content-000.jsonl",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-WK-CONTENT-004-CONTENT-000",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/packages/WK-CONTENT-004/content-000.jsonl",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/packages/WK-CONTENT-004/content-000.jsonl",
+      "git_blob_sha1": "4422440388f55b9934bb53154277f342e853fe45",
+      "sha256": "7e34d9ba22d96df8f8213030f69b632520c5c4b800b78be35b71e33a7e97122c",
+      "size_bytes": 47996,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/packages/WK-CONTENT-004/content-000.jsonl",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-WK-ASSETS-003-CONTENT-000",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/packages/WK-ASSETS-003/content-000.jsonl",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/packages/WK-ASSETS-003/content-000.jsonl",
+      "git_blob_sha1": "2158849fd86d111c2806b909f56caf1099e9020e",
+      "sha256": "8554a2e6502301dbf7b67b6371045fdaa075e6b4d3d0bc2ce670c94882212a49",
+      "size_bytes": 19230,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/packages/WK-ASSETS-003/content-000.jsonl",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-SOURCE-MAP-SAMPLE",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/catalog/source-maps/000.jsonl",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/catalog/source-maps/000.jsonl",
+      "git_blob_sha1": "8dbf98fda6dc5b2bb11a744b619e547739bcfc89",
+      "sha256": "28e96696225c91a5ecac100673f945fdddc4cdb34613a882706b1f3228d8fe5f",
+      "size_bytes": 48897,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/catalog/source-maps/000.jsonl",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-WK-CONTENT-001-ACQUISITION",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/packages/WK-CONTENT-001/acquisition.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/packages/WK-CONTENT-001/acquisition.json",
+      "git_blob_sha1": "d726398b67bf06d8c9b6c7d5924f7754752bc8e3",
+      "sha256": "989cc47cf9855c6cbef584d423326eb7241a49bdbed1b9f120bb099b737ffdff",
+      "size_bytes": 795,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/packages/WK-CONTENT-001/acquisition.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-RESTORATION-HANDOFF",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "restoration",
+      "commit": "2775b1166a760b6a1757f09f2faf1e799d3fd59e",
+      "file_path": "research/restoration-integrated-20261013/CODEX_HANDOFF.md",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/2775b1166a760b6a1757f09f2faf1e799d3fd59e/research/restoration-integrated-20261013/CODEX_HANDOFF.md",
+      "git_blob_sha1": "cbb70ad85ff1ac2795e3f157e2b37050ea04baad",
+      "sha256": "45a6c29a0a53c2d331a70884b270fb0a1b408cdee133ae23ec28d14a10e659fb",
+      "size_bytes": 4772,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/research/restoration-integrated-20261013/CODEX_HANDOFF.md",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-RESTORATION-RULES",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "restoration",
+      "commit": "2775b1166a760b6a1757f09f2faf1e799d3fd59e",
+      "file_path": "research/restoration-integrated-20261013/RUNTIME_INPUT_RULES.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/2775b1166a760b6a1757f09f2faf1e799d3fd59e/research/restoration-integrated-20261013/RUNTIME_INPUT_RULES.json",
+      "git_blob_sha1": "06b8551b8055621abbdfeb1b906e4e7462ae64e4",
+      "sha256": "7f8e6ef511ebd0f4417888873ba2e019a601fe7bb3dc0affbfff1b00f7d96e22",
+      "size_bytes": 2641,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/research/restoration-integrated-20261013/RUNTIME_INPUT_RULES.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-RESTORATION-CONTENT",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "restoration",
+      "commit": "2775b1166a760b6a1757f09f2faf1e799d3fd59e",
+      "file_path": "research/restoration-integrated-20261013/CONTENT_SUMMARY.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/2775b1166a760b6a1757f09f2faf1e799d3fd59e/research/restoration-integrated-20261013/CONTENT_SUMMARY.json",
+      "git_blob_sha1": "68149aa38d026ed481c463622cf82c65c8324f6b",
+      "sha256": "80bea908511a803b032c0388f1f10a9633599d8d93d0046e960d6ba17a78a367",
+      "size_bytes": 1007,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/research/restoration-integrated-20261013/CONTENT_SUMMARY.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-RESTORATION-ASSETS",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "restoration",
+      "commit": "2775b1166a760b6a1757f09f2faf1e799d3fd59e",
+      "file_path": "research/restoration-integrated-20261013/ASSET_SUMMARY.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/2775b1166a760b6a1757f09f2faf1e799d3fd59e/research/restoration-integrated-20261013/ASSET_SUMMARY.json",
+      "git_blob_sha1": "c3505b9356ebf57ac00ced0d24ab67c155a3a829",
+      "sha256": "639d030fdddd6dee12f390ec741471e5f1936d826fcbd055484e5c48307e0e0a",
+      "size_bytes": 632,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/research/restoration-integrated-20261013/ASSET_SUMMARY.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-RESTORATION-RECOVERY",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "restoration",
+      "commit": "2775b1166a760b6a1757f09f2faf1e799d3fd59e",
+      "file_path": "research/restoration-integrated-20261013/INPUT_RECOVERY.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/2775b1166a760b6a1757f09f2faf1e799d3fd59e/research/restoration-integrated-20261013/INPUT_RECOVERY.json",
+      "git_blob_sha1": "8ebf12c30532dabde447a6784a7d2054573745c3",
+      "sha256": "52e2493a7cb266ce74bf65f2ae18c82a8e672390f4e35c677fa3650b29843b5b",
+      "size_bytes": 67399,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/research/restoration-integrated-20261013/INPUT_RECOVERY.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-KR-SUMMARY",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "restoration",
+      "commit": "2775b1166a760b6a1757f09f2faf1e799d3fd59e",
+      "file_path": "research/korean-history-20261013/SUMMARY.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/2775b1166a760b6a1757f09f2faf1e799d3fd59e/research/korean-history-20261013/SUMMARY.json",
+      "git_blob_sha1": "8f88e38efcd31d7993174ff44e069e4e1758903c",
+      "sha256": "e9949bb71106c5133e7f174a8bc959e7fa5c1de862493b4759782e0c854850bf",
+      "size_bytes": 3239,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/research/korean-history-20261013/SUMMARY.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-KR-GAPS",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "restoration",
+      "commit": "2775b1166a760b6a1757f09f2faf1e799d3fd59e",
+      "file_path": "research/korean-history-20261013/missing.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/2775b1166a760b6a1757f09f2faf1e799d3fd59e/research/korean-history-20261013/missing.json",
+      "git_blob_sha1": "708654c310aaaf203e80054db771f0eb5fe2282c",
+      "sha256": "f7025619bcdab272aefcb499d1250bdcdf97f86b821b18b2c57d58c3cd1f3ba8",
+      "size_bytes": 3044,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/research/korean-history-20261013/missing.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-KR-CONFLICTS",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "restoration",
+      "commit": "2775b1166a760b6a1757f09f2faf1e799d3fd59e",
+      "file_path": "research/korean-history-20261013/contradictions.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/2775b1166a760b6a1757f09f2faf1e799d3fd59e/research/korean-history-20261013/contradictions.json",
+      "git_blob_sha1": "ad6dc105090048e8496cb6ccad9ae3c09a4b2459",
+      "sha256": "60025858fcfa6dca38c8b9c873e8668ff42d642fdc37fcbb36c11899456e9e50",
+      "size_bytes": 5086,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/research/korean-history-20261013/contradictions.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-WORLD-HANDOFF",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "world",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "file_path": "research/world-audit/HANDOFF.md",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/0ebfbe1514700a8afc00f71b20b9f88b23eb075f/research/world-audit/HANDOFF.md",
+      "git_blob_sha1": "5db155365a8cc6d573a0adcb746749355144a53f",
+      "sha256": "7b2770375d9ec882ce33711c9daebd6366d250c29bbac2c10885f0cff8a7277b",
+      "size_bytes": 4376,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/research/world-audit/HANDOFF.md",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-ORIGINAL-ARCHIVE-LEDGER",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "world",
+      "commit": "0ebfbe1514700a8afc00f71b20b9f88b23eb075f",
+      "file_path": "research/world-audit/acquired-original-files.json",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/0ebfbe1514700a8afc00f71b20b9f88b23eb075f/research/world-audit/acquired-original-files.json",
+      "git_blob_sha1": "f60f132ffeb51142d96d1c6b546d8e4c295351f5",
+      "sha256": "69c3ae731bf855b085ad4c4318f0a6b3dbc795d58507848052a77b71c43b2494",
+      "size_bytes": 6316,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/research/world-audit/acquired-original-files.json",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-COMMUNITY-REUSE",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "community",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "file_path": "research/community-audit/reuse-matrix.md",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/0aac06f7c713e5b1d16e95e101c106847bc56ed4/research/community-audit/reuse-matrix.md",
+      "git_blob_sha1": "9d1727f3bc130eb49289424d70334f020e775a2b",
+      "sha256": "4afb2c787c6fe0c0022b5f8594f1e7ee456cd2f7b07ff3e5b7278fba144283e1",
+      "size_bytes": 5037,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/research/community-audit/reuse-matrix.md",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-COMMUNITY-LINEAGE",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "community",
+      "commit": "0aac06f7c713e5b1d16e95e101c106847bc56ed4",
+      "file_path": "research/community-audit/source-quality.md",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/0aac06f7c713e5b1d16e95e101c106847bc56ed4/research/community-audit/source-quality.md",
+      "git_blob_sha1": "4680216fb91985b9b681c844d7eba8cae95e4afa",
+      "sha256": "f452808c5ebf7686f089fbe479cb7b1eea0059f48b58ffb4ebd94a0fc17a8e6d",
+      "size_bytes": 2855,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/research/community-audit/source-quality.md",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-SAVE-STORE",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "core",
+      "commit": "ac08964cbbc2ae1a6499a760de7d6b81c45c3f27",
+      "file_path": "game/save_store.gd",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/ac08964cbbc2ae1a6499a760de7d6b81c45c3f27/game/save_store.gd",
+      "git_blob_sha1": "f97807e181de3c21c44a328d34ae63320a651c21",
+      "sha256": "57b0fc0aabbab3bd0ca7568d87ace999bc3daeef7255e502bd71d8d317e09bc9",
+      "size_bytes": 6807,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/game/save_store.gd",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-EFFECT-RUNTIME",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "core",
+      "commit": "ac08964cbbc2ae1a6499a760de7d6b81c45c3f27",
+      "file_path": "game/effect_runtime.gd",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/ac08964cbbc2ae1a6499a760de7d6b81c45c3f27/game/effect_runtime.gd",
+      "git_blob_sha1": "083b0a3131ff4e307d680099d1ff0d148aee25d6",
+      "sha256": "f2bf48546135c68ed9b583672675358267049309bdec4e2a92b567f208db1faf",
+      "size_bytes": 6833,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/game/effect_runtime.gd",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-CACHE-BUILDER",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "core",
+      "commit": "ac08964cbbc2ae1a6499a760de7d6b81c45c3f27",
+      "file_path": "game/build_world_cache.gd",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/ac08964cbbc2ae1a6499a760de7d6b81c45c3f27/game/build_world_cache.gd",
+      "git_blob_sha1": "2588ea48a52e584c7fbe1f7997e4aaecfe469817",
+      "sha256": "324f0038c4cc6865958245e923af446c50228c96ff293447483ee0bd4162d411",
+      "size_bytes": 1684,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/game/build_world_cache.gd",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-PROJECT-GODOT",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "core",
+      "commit": "ac08964cbbc2ae1a6499a760de7d6b81c45c3f27",
+      "file_path": "game/project.godot",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/ac08964cbbc2ae1a6499a760de7d6b81c45c3f27/game/project.godot",
+      "git_blob_sha1": "06d9cf01004ec699121d5d3546555a0dc04a922e",
+      "sha256": "33c51cc652014f1d2dfb63871c05aa6056292af9cc64256e1c4515e8aaee2ee5",
+      "size_bytes": 768,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/game/project.godot",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-CORE-ANDROID-PRIVATE-CHECK",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "core",
+      "commit": "ac08964cbbc2ae1a6499a760de7d6b81c45c3f27",
+      "file_path": ".github/workflows/android-private-check.yml",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/ac08964cbbc2ae1a6499a760de7d6b81c45c3f27/.github/workflows/android-private-check.yml",
+      "git_blob_sha1": "9ff9aac99d13eee8baee62aec6d0bd7be5da843d",
+      "sha256": "89d216fe928aa2041ae36900210f675cfeb0afc889874c1687fb1eee0decf2a2",
+      "size_bytes": 6975,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/.github/workflows/android-private-check.yml",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-CORE-WINDOWS-CONTINUITY-PRIVATE-CHECK",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "core",
+      "commit": "ac08964cbbc2ae1a6499a760de7d6b81c45c3f27",
+      "file_path": ".github/workflows/windows-continuity-private-check.yml",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/ac08964cbbc2ae1a6499a760de7d6b81c45c3f27/.github/workflows/windows-continuity-private-check.yml",
+      "git_blob_sha1": "ac866eca0696d07e823c1cffba3b7aae7e1f9d14",
+      "sha256": "473e0517f038acc425ef4701fe9bd7aec0ef4fba17810cacd970157f84a26c9c",
+      "size_bytes": 8694,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/.github/workflows/windows-continuity-private-check.yml",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-CORE-WINDOWS-PLAYER",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "core",
+      "commit": "ac08964cbbc2ae1a6499a760de7d6b81c45c3f27",
+      "file_path": ".github/workflows/windows-player.yml",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/ac08964cbbc2ae1a6499a760de7d6b81c45c3f27/.github/workflows/windows-player.yml",
+      "git_blob_sha1": "0817186c08fab1c899ed590ef3d82a6038f4e676",
+      "sha256": "afe5a69709b5247e661f2c662b65e91195368a6f8fbfcc4a6d4ee410154b57bc",
+      "size_bytes": 4713,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/.github/workflows/windows-player.yml",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-CORE-WINDOWS-SOURCE",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "core",
+      "commit": "ac08964cbbc2ae1a6499a760de7d6b81c45c3f27",
+      "file_path": ".github/workflows/windows-source.yml",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/ac08964cbbc2ae1a6499a760de7d6b81c45c3f27/.github/workflows/windows-source.yml",
+      "git_blob_sha1": "6b346a0780913850e7a73fdec0d77ec983b40618",
+      "sha256": "2ef3dabb17b16d58022760a5d19407347c5c407eeffc9b0401abae2ff84e8a74",
+      "size_bytes": 3301,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/.github/workflows/windows-source.yml",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-THIRD-PARTY-NOTICE",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "core",
+      "commit": "ac08964cbbc2ae1a6499a760de7d6b81c45c3f27",
+      "file_path": "docs/development/THIRD_PARTY_NOTICES.md",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/ac08964cbbc2ae1a6499a760de7d6b81c45c3f27/docs/development/THIRD_PARTY_NOTICES.md",
+      "git_blob_sha1": "8efef1f22b2b027273b78e56e2adc3d0407ea41a",
+      "sha256": "6f61581571d62c0ca65345c2b38895b01002d273b98df805cf505f076ca92ec9",
+      "size_bytes": 2445,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/docs/development/THIRD_PARTY_NOTICES.md",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-CACHE-READER",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "core",
+      "commit": "ac08964cbbc2ae1a6499a760de7d6b81c45c3f27",
+      "file_path": "game/startup.gd",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/ac08964cbbc2ae1a6499a760de7d6b81c45c3f27/game/startup.gd",
+      "git_blob_sha1": "185a4bcdb642474881133bf934aef7e5c65eecb8",
+      "sha256": "542f0901ba72150224860af44b5c71b5e540a7cdc0ef1301b4fe002d62ae145e",
+      "size_bytes": 2621,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/game/startup.gd",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-ANDROID-EXPORT",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "mobile",
+      "commit": "2bb4ec55fa8ccb347b11d2bf2532ae4d4806b76a",
+      "file_path": "tools/android_ci.py",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/2bb4ec55fa8ccb347b11d2bf2532ae4d4806b76a/tools/android_ci.py",
+      "git_blob_sha1": "826ea8287c8d3ab6e280b4e8ab3e3d710d4ca552",
+      "sha256": "4331fbd9cdc57976231cc69f372bf1f7f58ff10eaee3ee6752fdaa7a370a2d3b",
+      "size_bytes": 9998,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/tools/android_ci.py",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-CONTINUITY-CLIENT",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "mobile",
+      "commit": "2bb4ec55fa8ccb347b11d2bf2532ae4d4806b76a",
+      "file_path": "game/continuity.gd",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/2bb4ec55fa8ccb347b11d2bf2532ae4d4806b76a/game/continuity.gd",
+      "git_blob_sha1": "025469781839c8dd063408aba64f453174a446b8",
+      "sha256": "d70e8c314e162578235b3562d8dc713708dc5db96f3ee1f20b98790a268859bc",
+      "size_bytes": 11841,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/game/continuity.gd",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-CONTINUITY-JOURNAL",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "mobile",
+      "commit": "2bb4ec55fa8ccb347b11d2bf2532ae4d4806b76a",
+      "file_path": "game/continuity_state.gd",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/2bb4ec55fa8ccb347b11d2bf2532ae4d4806b76a/game/continuity_state.gd",
+      "git_blob_sha1": "e488efc4eebc49e10f6c9b0155d825220770d168",
+      "sha256": "064c6a1ce9b7654fd6900e870545dab736e96be96eddf3c7954a2a0e67367ec1",
+      "size_bytes": 6022,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/game/continuity_state.gd",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-MOBILE-CONTINUITY",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "mobile",
+      "commit": "2bb4ec55fa8ccb347b11d2bf2532ae4d4806b76a",
+      "file_path": ".github/workflows/continuity.yml",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/2bb4ec55fa8ccb347b11d2bf2532ae4d4806b76a/.github/workflows/continuity.yml",
+      "git_blob_sha1": "fb6911133b1b1b312b1d6e01cdb6c5793c62f25e",
+      "sha256": "a93e411a6918b0bdf82f54bd1e74df15d8e128863a1ac9b43fa7e2c544a23ab1",
+      "size_bytes": 5371,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/.github/workflows/continuity.yml",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-CLOUD-README",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "mobile",
+      "commit": "2bb4ec55fa8ccb347b11d2bf2532ae4d4806b76a",
+      "file_path": "cloud/README.md",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/2bb4ec55fa8ccb347b11d2bf2532ae4d4806b76a/cloud/README.md",
+      "git_blob_sha1": "e18750e281e2e7f99b03785533d7af9758c1060c",
+      "sha256": "519f1f699851d843e2f06ce7a93bd0e8d011eb7b8ef330d26c94d796a5d3861c",
+      "size_bytes": 4530,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/cloud/README.md",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-CONTINUITY-ACCEPTANCE",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "mobile",
+      "commit": "2bb4ec55fa8ccb347b11d2bf2532ae4d4806b76a",
+      "file_path": "docs/development/MOBILE_CONTINUITY_ACCEPTANCE.md",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/2bb4ec55fa8ccb347b11d2bf2532ae4d4806b76a/docs/development/MOBILE_CONTINUITY_ACCEPTANCE.md",
+      "git_blob_sha1": "c6f3ffd903ddafa3971d16aa441d67df8c0dcbaa",
+      "sha256": "6469ede589cb86abec3fbf85e1053f5155db966b670d46f83a45c8bf4bc26b3f",
+      "size_bytes": 2483,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/docs/development/MOBILE_CONTINUITY_ACCEPTANCE.md",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    },
+    {
+      "source_id": "OLD-WK-CONTENT-001-CONTENT-001",
+      "source_type": "EXISTING_REPOSITORY_TEXT",
+      "repository": "irewon1-lgtm/baram-1998-singleplayer",
+      "branch_key": "content",
+      "commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+      "file_path": "content-work/packages/WK-CONTENT-001/content-001.jsonl",
+      "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/blob/c919cf1bdffe0e318d4058dc3fc17be4a2844203/content-work/packages/WK-CONTENT-001/content-001.jsonl",
+      "git_blob_sha1": "d7e0f9657ad19b7eea670e03291a6352f7823ebb",
+      "sha256": "cbf2c971e9d471f6b7fa9f390fccc580d90f3b1a5c11c1881dfe929abe044ea8",
+      "size_bytes": 55434,
+      "region": "MIXED_KR_NA_OR_TOOL",
+      "content_era": "1998-2001 target mixed with later reconstruction; field classification required",
+      "access_state": "ACQUIRED",
+      "inspection": "FULL_TEXT_FETCHED; targeted static reading/JSON field inspection; Git blob identity recomputed",
+      "factuality": "UNKNOWN",
+      "game_test_result": "NOT_RUN",
+      "lineage_group": "irewon1-lgtm/baram-1998-singleplayer/content-work/packages/WK-CONTENT-001/content-001.jsonl",
+      "scope_note": "Fetched document/code bytes are verified; historical claims and inherited PASS are not independently rerun. No original archive bytes are included in this evidence file."
+    }
+  ],
+  "package_inventory": [
+    {
+      "batch_id": "WK-ASSETS-001",
+      "package_commit": "1800a3a0d7ffdb4b27212c6dfdd2539a93212d6b",
+      "manifest_source_id": "OLD-WK-ASSETS-001-MANIFEST",
+      "manifest_sha256": "4e5e6356f30f798657109ff95f204fe5f38351a072b61a8b19e6828f40e23bab",
+      "counts": {
+        "asset": 992
+      },
+      "dependencies": [],
+      "required_capabilities": [
+        "private_bundle_acquisition_and_hash_verification",
+        "atlas_frame_pivots_and_alpha",
+        "four_direction_multilayer_animation",
+        "effect_front_back_repeat_timing",
+        "audio_event_binding",
+        "inferred_name_to_model_bindings"
+      ],
+      "historical_import_status": "PARTIALLY_IMPORTED",
+      "historical_import_scope": "Claim/read receipt documented at earlier core commit, not a present execution or rebuild import",
+      "new_game_import": "NOT_RUN",
+      "new_gameplay": "NOT_RUN",
+      "scope": "DATA_ONLY_GAMEPLAY_NOT_RUN"
+    },
+    {
+      "batch_id": "WK-CONTENT-001",
+      "package_commit": "d318098bce3c2923516a8b83ad5e2d1fe53d055e",
+      "manifest_source_id": "OLD-WK-CONTENT-001-MANIFEST",
+      "manifest_sha256": "74b0bc2fd588ecb4036c6f691a6f2f77fda4f1f54bb01806d8489837a34aecf3",
+      "counts": {
+        "advancement": 12,
+        "class": 5,
+        "drop_group": 269,
+        "economy": 1,
+        "enhancement": 1,
+        "growth": 401,
+        "item": 535,
+        "map": 64,
+        "monster": 269,
+        "npc": 59,
+        "quest": 33,
+        "recipe": 1,
+        "shop": 38,
+        "skill": 199
+      },
+      "dependencies": [
+        {
+          "batch_id": "WK-ASSETS-001",
+          "commit": "1800a3a0d7ffdb4b27212c6dfdd2539a93212d6b",
+          "manifest_sha256": "4e5e6356f30f798657109ff95f204fe5f38351a072b61a8b19e6828f40e23bab"
+        }
+      ],
+      "required_capabilities": [
+        "JSONL_two_pass_references",
+        "conditional_field_guards_with_absence",
+        "existing_ID_runtime_definition_extension",
+        "private_layout_bundle_acquisition",
+        "original_TBL_ground_and_object_columns",
+        "directional_collision_masks",
+        "declarative_skill_effects_and_status",
+        "four_job_growth_1_to_99_and_terminal",
+        "NPC_shops_training_quests",
+        "atomic_consumption_and_rewards",
+        "level99_experience_exchange",
+        "optional_enhancement_disabled_by_default",
+        "source_variant_selection"
+      ],
+      "historical_import_status": "IMPORTED",
+      "historical_import_scope": "Claim/read receipt documented at earlier core commit, not a present execution or rebuild import",
+      "new_game_import": "NOT_RUN",
+      "new_gameplay": "NOT_RUN",
+      "scope": "DATA_ONLY_GAMEPLAY_NOT_RUN"
+    },
+    {
+      "batch_id": "WK-CONTENT-002",
+      "package_commit": "10b4dcfbf1d1c9fff89b36c71ca36429f12e7bda",
+      "manifest_source_id": "OLD-WK-CONTENT-002-MANIFEST",
+      "manifest_sha256": "0d33d029997534123a94346530d8bbd9ad8ee11ea1bc08ecd600d1a1aac849ec",
+      "counts": {
+        "item": 356,
+        "monster": 36,
+        "npc": 45,
+        "shop": 20
+      },
+      "dependencies": [
+        {
+          "batch_id": "WK-ASSETS-001",
+          "manifest_sha256": "4e5e6356f30f798657109ff95f204fe5f38351a072b61a8b19e6828f40e23bab",
+          "package_commit": "1800a3a0d7ffdb4b27212c6dfdd2539a93212d6b"
+        },
+        {
+          "batch_id": "WK-CONTENT-001",
+          "manifest_sha256": "74b0bc2fd588ecb4036c6f691a6f2f77fda4f1f54bb01806d8489837a34aecf3",
+          "package_commit": "d318098bce3c2923516a8b83ad5e2d1fe53d055e"
+        }
+      ],
+      "required_capabilities": [],
+      "historical_import_status": "IMPORTED",
+      "historical_import_scope": "Claim/read receipt documented at earlier core commit, not a present execution or rebuild import",
+      "new_game_import": "NOT_RUN",
+      "new_gameplay": "NOT_RUN",
+      "scope": "DATA_ONLY_GAMEPLAY_NOT_RUN"
+    },
+    {
+      "batch_id": "WK-CONTENT-003",
+      "package_commit": "897495bfd15f9c35fd7d0d9da64c4009232ad33b",
+      "manifest_source_id": "OLD-WK-CONTENT-003-MANIFEST",
+      "manifest_sha256": "e20ab0ad657503f6972a57745ceabad1f76019c84b6492dd81472a9b8687ae1d",
+      "counts": {
+        "drop_group": 51,
+        "item": 66,
+        "map": 327,
+        "monster": 51,
+        "npc": 96,
+        "quest": 62,
+        "recipe": 192,
+        "shop": 24
+      },
+      "dependencies": [
+        {
+          "batch_id": "WK-ASSETS-001",
+          "manifest_sha256": "4e5e6356f30f798657109ff95f204fe5f38351a072b61a8b19e6828f40e23bab",
+          "package_commit": "1800a3a0d7ffdb4b27212c6dfdd2539a93212d6b"
+        },
+        {
+          "batch_id": "WK-CONTENT-001",
+          "manifest_sha256": "74b0bc2fd588ecb4036c6f691a6f2f77fda4f1f54bb01806d8489837a34aecf3",
+          "package_commit": "d318098bce3c2923516a8b83ad5e2d1fe53d055e"
+        },
+        {
+          "batch_id": "WK-CONTENT-002",
+          "manifest_sha256": "0d33d029997534123a94346530d8bbd9ad8ee11ea1bc08ecd600d1a1aac849ec",
+          "package_commit": "10b4dcfbf1d1c9fff89b36c71ca36429f12e7bda"
+        }
+      ],
+      "required_capabilities": [
+        "private_layout_bundle_acquisition",
+        "original_TBL_ground_and_object_columns",
+        "directional_collision_masks",
+        "shared_map_objects_from_pinned_dependency_bundle"
+      ],
+      "historical_import_status": "IMPORTED",
+      "historical_import_scope": "Claim/read receipt documented at earlier core commit, not a present execution or rebuild import",
+      "new_game_import": "NOT_RUN",
+      "new_gameplay": "NOT_RUN",
+      "scope": "DATA_ONLY_GAMEPLAY_NOT_RUN"
+    },
+    {
+      "batch_id": "WK-CONTENT-004",
+      "package_commit": "da6679f563a55dd54cec719eb0903edd8745eca5",
+      "manifest_source_id": "OLD-WK-CONTENT-004-MANIFEST",
+      "manifest_sha256": "df5c6dcad9b79ffa597fe72a3fed1ba36a396e87cb8416bf2820bac8c0c737a2",
+      "counts": {
+        "class": 4,
+        "item": 12,
+        "npc": 4,
+        "quest": 4,
+        "skill": 211
+      },
+      "dependencies": [
+        {
+          "batch_id": "WK-ASSETS-001",
+          "manifest_sha256": "4e5e6356f30f798657109ff95f204fe5f38351a072b61a8b19e6828f40e23bab",
+          "package_commit": "1800a3a0d7ffdb4b27212c6dfdd2539a93212d6b"
+        },
+        {
+          "batch_id": "WK-CONTENT-001",
+          "manifest_sha256": "74b0bc2fd588ecb4036c6f691a6f2f77fda4f1f54bb01806d8489837a34aecf3",
+          "package_commit": "d318098bce3c2923516a8b83ad5e2d1fe53d055e"
+        },
+        {
+          "batch_id": "WK-CONTENT-002",
+          "manifest_sha256": "0d33d029997534123a94346530d8bbd9ad8ee11ea1bc08ecd600d1a1aac849ec",
+          "package_commit": "10b4dcfbf1d1c9fff89b36c71ca36429f12e7bda"
+        },
+        {
+          "batch_id": "WK-CONTENT-003",
+          "manifest_sha256": "e20ab0ad657503f6972a57745ceabad1f76019c84b6492dd81472a9b8687ae1d",
+          "package_commit": "897495bfd15f9c35fd7d0d9da64c4009232ad33b"
+        }
+      ],
+      "required_capabilities": [
+        "declarative_skill_effects_and_status",
+        "effect_front_back_repeat_timing",
+        "atomic_consumption_and_rewards",
+        "skill_learn_rank_and_bound_materials",
+        "item_requirements_advancement_rank"
+      ],
+      "historical_import_status": "IMPORTED",
+      "historical_import_scope": "Claim/read receipt documented at earlier core commit, not a present execution or rebuild import",
+      "new_game_import": "NOT_RUN",
+      "new_gameplay": "NOT_RUN",
+      "scope": "DATA_ONLY_GAMEPLAY_NOT_RUN"
+    },
+    {
+      "batch_id": "WK-ASSETS-002",
+      "package_commit": "174eb63dad76e36dee83551b02648f7da8f2dcc4",
+      "manifest_source_id": "OLD-WK-ASSETS-002-MANIFEST",
+      "manifest_sha256": "e8535c430a1f90fb06a6559ad4c3904378a2b0f4a8bbecd37f58ecf976c15629",
+      "counts": {
+        "asset": 47
+      },
+      "dependencies": [
+        {
+          "batch_id": "WK-ASSETS-001",
+          "manifest_sha256": "4e5e6356f30f798657109ff95f204fe5f38351a072b61a8b19e6828f40e23bab",
+          "package_commit": "1800a3a0d7ffdb4b27212c6dfdd2539a93212d6b"
+        }
+      ],
+      "required_capabilities": [
+        "private_bundle_acquisition_and_hash_verification",
+        "atlas_frame_pivots_and_alpha"
+      ],
+      "historical_import_status": "IMPORTED",
+      "historical_import_scope": "Claim/read receipt documented at earlier core commit, not a present execution or rebuild import",
+      "new_game_import": "NOT_RUN",
+      "new_gameplay": "NOT_RUN",
+      "scope": "DATA_ONLY_GAMEPLAY_NOT_RUN"
+    },
+    {
+      "batch_id": "WK-CONTENT-005",
+      "package_commit": "901a85be123ff0bf80beb09f30fa5ba35b08a276",
+      "manifest_source_id": "OLD-WK-CONTENT-005-MANIFEST",
+      "manifest_sha256": "53af2b585050dfd21edd1b439442bd0afee545f33592f5c4909ea84765edeca6",
+      "counts": {
+        "class": 4,
+        "item": 24,
+        "npc": 4,
+        "quest": 8,
+        "skill": 16
+      },
+      "dependencies": [
+        {
+          "batch_id": "WK-ASSETS-001",
+          "manifest_sha256": "4e5e6356f30f798657109ff95f204fe5f38351a072b61a8b19e6828f40e23bab",
+          "package_commit": "1800a3a0d7ffdb4b27212c6dfdd2539a93212d6b"
+        },
+        {
+          "batch_id": "WK-CONTENT-001",
+          "manifest_sha256": "74b0bc2fd588ecb4036c6f691a6f2f77fda4f1f54bb01806d8489837a34aecf3",
+          "package_commit": "d318098bce3c2923516a8b83ad5e2d1fe53d055e"
+        },
+        {
+          "batch_id": "WK-CONTENT-002",
+          "manifest_sha256": "0d33d029997534123a94346530d8bbd9ad8ee11ea1bc08ecd600d1a1aac849ec",
+          "package_commit": "10b4dcfbf1d1c9fff89b36c71ca36429f12e7bda"
+        },
+        {
+          "batch_id": "WK-CONTENT-003",
+          "manifest_sha256": "e20ab0ad657503f6972a57745ceabad1f76019c84b6492dd81472a9b8687ae1d",
+          "package_commit": "897495bfd15f9c35fd7d0d9da64c4009232ad33b"
+        },
+        {
+          "batch_id": "WK-CONTENT-004",
+          "manifest_sha256": "df5c6dcad9b79ffa597fe72a3fed1ba36a396e87cb8416bf2820bac8c0c737a2",
+          "package_commit": "da6679f563a55dd54cec719eb0903edd8745eca5"
+        }
+      ],
+      "required_capabilities": [
+        "declarative_skill_effects_and_status",
+        "effect_front_back_repeat_timing",
+        "atomic_consumption_and_rewards",
+        "skill_learn_rank_and_bound_materials",
+        "item_requirements_advancement_rank"
+      ],
+      "historical_import_status": "NOT_RUN",
+      "historical_import_scope": "Claim/read receipt documented at earlier core commit, not a present execution or rebuild import",
+      "new_game_import": "NOT_RUN",
+      "new_gameplay": "NOT_RUN",
+      "scope": "DATA_ONLY_GAMEPLAY_NOT_RUN"
+    },
+    {
+      "batch_id": "WK-ASSETS-003",
+      "package_commit": "7051fd1b2ce68fb62decf6094f8b2d78cf121662",
+      "manifest_source_id": "OLD-WK-ASSETS-003-MANIFEST",
+      "manifest_sha256": "cb7e81e4047da7419c231d8031129272b28577ae99bdaf266ddca5b54c90c45f",
+      "counts": {
+        "asset": 8
+      },
+      "dependencies": [
+        {
+          "batch_id": "WK-ASSETS-001",
+          "manifest_sha256": "4e5e6356f30f798657109ff95f204fe5f38351a072b61a8b19e6828f40e23bab",
+          "package_commit": "1800a3a0d7ffdb4b27212c6dfdd2539a93212d6b"
+        }
+      ],
+      "required_capabilities": [
+        "effect_blank_frame_wait",
+        "effect_front_back_repeat_timing",
+        "private_bundle_acquisition_and_hash_verification"
+      ],
+      "historical_import_status": "NOT_RUN",
+      "historical_import_scope": "Claim/read receipt documented at earlier core commit, not a present execution or rebuild import",
+      "new_game_import": "NOT_RUN",
+      "new_gameplay": "NOT_RUN",
+      "scope": "DATA_ONLY_GAMEPLAY_NOT_RUN"
+    },
+    {
+      "batch_id": "WK-CONTENT-006",
+      "package_commit": "d4bd4b17a5307d5c882936c39547d698736d3733",
+      "manifest_source_id": "OLD-WK-CONTENT-006-MANIFEST",
+      "manifest_sha256": "29216fdd87f09a289a1fd3ad5205e5b2b3157245d1ea01f34776fab16137ef7e",
+      "counts": {
+        "skill": 7
+      },
+      "dependencies": [
+        {
+          "batch_id": "WK-ASSETS-001",
+          "manifest_sha256": "4e5e6356f30f798657109ff95f204fe5f38351a072b61a8b19e6828f40e23bab",
+          "package_commit": "1800a3a0d7ffdb4b27212c6dfdd2539a93212d6b"
+        },
+        {
+          "batch_id": "WK-CONTENT-001",
+          "manifest_sha256": "74b0bc2fd588ecb4036c6f691a6f2f77fda4f1f54bb01806d8489837a34aecf3",
+          "package_commit": "d318098bce3c2923516a8b83ad5e2d1fe53d055e"
+        },
+        {
+          "batch_id": "WK-CONTENT-002",
+          "manifest_sha256": "0d33d029997534123a94346530d8bbd9ad8ee11ea1bc08ecd600d1a1aac849ec",
+          "package_commit": "10b4dcfbf1d1c9fff89b36c71ca36429f12e7bda"
+        },
+        {
+          "batch_id": "WK-CONTENT-003",
+          "manifest_sha256": "e20ab0ad657503f6972a57745ceabad1f76019c84b6492dd81472a9b8687ae1d",
+          "package_commit": "897495bfd15f9c35fd7d0d9da64c4009232ad33b"
+        },
+        {
+          "batch_id": "WK-CONTENT-004",
+          "manifest_sha256": "df5c6dcad9b79ffa597fe72a3fed1ba36a396e87cb8416bf2820bac8c0c737a2",
+          "package_commit": "da6679f563a55dd54cec719eb0903edd8745eca5"
+        },
+        {
+          "batch_id": "WK-CONTENT-005",
+          "manifest_sha256": "53af2b585050dfd21edd1b439442bd0afee545f33592f5c4909ea84765edeca6",
+          "package_commit": "901a85be123ff0bf80beb09f30fa5ba35b08a276"
+        },
+        {
+          "batch_id": "WK-ASSETS-003",
+          "manifest_sha256": "cb7e81e4047da7419c231d8031129272b28577ae99bdaf266ddca5b54c90c45f",
+          "package_commit": "7051fd1b2ce68fb62decf6094f8b2d78cf121662"
+        }
+      ],
+      "required_capabilities": [
+        "effect_blank_frame_wait",
+        "effect_front_back_repeat_timing"
+      ],
+      "historical_import_status": "NOT_RUN",
+      "historical_import_scope": "Claim/read receipt documented at earlier core commit, not a present execution or rebuild import",
+      "new_game_import": "NOT_RUN",
+      "new_gameplay": "NOT_RUN",
+      "scope": "DATA_ONLY_GAMEPLAY_NOT_RUN"
+    },
+    {
+      "batch_id": "WK-CONTENT-007",
+      "package_commit": "381cfefad15a2fff6356f2e9a0bd3859af3fc703",
+      "manifest_source_id": "OLD-WK-CONTENT-007-MANIFEST",
+      "manifest_sha256": "26d0a495104daedf461b6e41cd8b41bd8574bff09fa892a8c169a3f1aaf8316f",
+      "counts": {
+        "item": 23,
+        "npc": 14,
+        "recipe": 22
+      },
+      "dependencies": [
+        {
+          "batch_id": "WK-ASSETS-001",
+          "manifest_sha256": "4e5e6356f30f798657109ff95f204fe5f38351a072b61a8b19e6828f40e23bab",
+          "package_commit": "1800a3a0d7ffdb4b27212c6dfdd2539a93212d6b"
+        },
+        {
+          "batch_id": "WK-CONTENT-001",
+          "manifest_sha256": "74b0bc2fd588ecb4036c6f691a6f2f77fda4f1f54bb01806d8489837a34aecf3",
+          "package_commit": "d318098bce3c2923516a8b83ad5e2d1fe53d055e"
+        },
+        {
+          "batch_id": "WK-CONTENT-002",
+          "manifest_sha256": "0d33d029997534123a94346530d8bbd9ad8ee11ea1bc08ecd600d1a1aac849ec",
+          "package_commit": "10b4dcfbf1d1c9fff89b36c71ca36429f12e7bda"
+        },
+        {
+          "batch_id": "WK-CONTENT-003",
+          "manifest_sha256": "e20ab0ad657503f6972a57745ceabad1f76019c84b6492dd81472a9b8687ae1d",
+          "package_commit": "897495bfd15f9c35fd7d0d9da64c4009232ad33b"
+        },
+        {
+          "batch_id": "WK-CONTENT-004",
+          "manifest_sha256": "df5c6dcad9b79ffa597fe72a3fed1ba36a396e87cb8416bf2820bac8c0c737a2",
+          "package_commit": "da6679f563a55dd54cec719eb0903edd8745eca5"
+        },
+        {
+          "batch_id": "WK-CONTENT-005",
+          "manifest_sha256": "53af2b585050dfd21edd1b439442bd0afee545f33592f5c4909ea84765edeca6",
+          "package_commit": "901a85be123ff0bf80beb09f30fa5ba35b08a276"
+        }
+      ],
+      "required_capabilities": [
+        "atomic_consumption_and_rewards",
+        "original_sword_spear_attachment"
+      ],
+      "historical_import_status": "NOT_RUN",
+      "historical_import_scope": "Claim/read receipt documented at earlier core commit, not a present execution or rebuild import",
+      "new_game_import": "NOT_RUN",
+      "new_gameplay": "NOT_RUN",
+      "scope": "DATA_ONLY_GAMEPLAY_NOT_RUN"
+    },
+    {
+      "batch_id": "WK-CONTENT-008",
+      "package_commit": "2935c1f7cebed5a673dca1660d6bb0fbff0ae35d",
+      "manifest_source_id": "OLD-WK-CONTENT-008-MANIFEST",
+      "manifest_sha256": "d9f69210a63b0cdcd6013561cdbc83d2976bb9fcdcd65437f170bb40433dfa4b",
+      "counts": {
+        "item": 16,
+        "npc": 12,
+        "recipe": 16
+      },
+      "dependencies": [
+        {
+          "batch_id": "WK-ASSETS-001",
+          "manifest_sha256": "4e5e6356f30f798657109ff95f204fe5f38351a072b61a8b19e6828f40e23bab",
+          "package_commit": "1800a3a0d7ffdb4b27212c6dfdd2539a93212d6b"
+        },
+        {
+          "batch_id": "WK-CONTENT-001",
+          "manifest_sha256": "74b0bc2fd588ecb4036c6f691a6f2f77fda4f1f54bb01806d8489837a34aecf3",
+          "package_commit": "d318098bce3c2923516a8b83ad5e2d1fe53d055e"
+        },
+        {
+          "batch_id": "WK-CONTENT-002",
+          "manifest_sha256": "0d33d029997534123a94346530d8bbd9ad8ee11ea1bc08ecd600d1a1aac849ec",
+          "package_commit": "10b4dcfbf1d1c9fff89b36c71ca36429f12e7bda"
+        },
+        {
+          "batch_id": "WK-CONTENT-003",
+          "manifest_sha256": "e20ab0ad657503f6972a57745ceabad1f76019c84b6492dd81472a9b8687ae1d",
+          "package_commit": "897495bfd15f9c35fd7d0d9da64c4009232ad33b"
+        },
+        {
+          "batch_id": "WK-CONTENT-004",
+          "manifest_sha256": "df5c6dcad9b79ffa597fe72a3fed1ba36a396e87cb8416bf2820bac8c0c737a2",
+          "package_commit": "da6679f563a55dd54cec719eb0903edd8745eca5"
+        },
+        {
+          "batch_id": "WK-CONTENT-005",
+          "manifest_sha256": "53af2b585050dfd21edd1b439442bd0afee545f33592f5c4909ea84765edeca6",
+          "package_commit": "901a85be123ff0bf80beb09f30fa5ba35b08a276"
+        },
+        {
+          "batch_id": "WK-CONTENT-007",
+          "manifest_sha256": "26d0a495104daedf461b6e41cd8b41bd8574bff09fa892a8c169a3f1aaf8316f",
+          "package_commit": "381cfefad15a2fff6356f2e9a0bd3859af3fc703"
+        }
+      ],
+      "required_capabilities": [
+        "fan_weapon_animation_attachment",
+        "offhand_slot_and_shield_animation_attachment",
+        "atomic_consumption_and_rewards"
+      ],
+      "historical_import_status": "NOT_RUN",
+      "historical_import_scope": "Claim/read receipt documented at earlier core commit, not a present execution or rebuild import",
+      "new_game_import": "NOT_RUN",
+      "new_gameplay": "NOT_RUN",
+      "scope": "DATA_ONLY_GAMEPLAY_NOT_RUN"
+    },
+    {
+      "batch_id": "WK-CONTENT-009",
+      "package_commit": "c75c3b9352070c02f3013e9afd2079797b754823",
+      "manifest_source_id": "OLD-WK-CONTENT-009-MANIFEST",
+      "manifest_sha256": "a9788fecb85761db06350ac51cb5b8057a2e411cadc27e3ea2f407eaddba7b50",
+      "counts": {
+        "drop_group": 70,
+        "item": 12,
+        "map": 90,
+        "monster": 70,
+        "npc": 104,
+        "quest": 16
+      },
+      "dependencies": [
+        {
+          "batch_id": "WK-ASSETS-001",
+          "manifest_sha256": "4e5e6356f30f798657109ff95f204fe5f38351a072b61a8b19e6828f40e23bab",
+          "package_commit": "1800a3a0d7ffdb4b27212c6dfdd2539a93212d6b"
+        },
+        {
+          "batch_id": "WK-CONTENT-001",
+          "manifest_sha256": "74b0bc2fd588ecb4036c6f691a6f2f77fda4f1f54bb01806d8489837a34aecf3",
+          "package_commit": "d318098bce3c2923516a8b83ad5e2d1fe53d055e"
+        },
+        {
+          "batch_id": "WK-CONTENT-002",
+          "manifest_sha256": "0d33d029997534123a94346530d8bbd9ad8ee11ea1bc08ecd600d1a1aac849ec",
+          "package_commit": "10b4dcfbf1d1c9fff89b36c71ca36429f12e7bda"
+        },
+        {
+          "batch_id": "WK-CONTENT-003",
+          "manifest_sha256": "e20ab0ad657503f6972a57745ceabad1f76019c84b6492dd81472a9b8687ae1d",
+          "package_commit": "897495bfd15f9c35fd7d0d9da64c4009232ad33b"
+        },
+        {
+          "batch_id": "WK-CONTENT-004",
+          "manifest_sha256": "df5c6dcad9b79ffa597fe72a3fed1ba36a396e87cb8416bf2820bac8c0c737a2",
+          "package_commit": "da6679f563a55dd54cec719eb0903edd8745eca5"
+        },
+        {
+          "batch_id": "WK-CONTENT-005",
+          "manifest_sha256": "53af2b585050dfd21edd1b439442bd0afee545f33592f5c4909ea84765edeca6",
+          "package_commit": "901a85be123ff0bf80beb09f30fa5ba35b08a276"
+        },
+        {
+          "batch_id": "WK-CONTENT-007",
+          "manifest_sha256": "26d0a495104daedf461b6e41cd8b41bd8574bff09fa892a8c169a3f1aaf8316f",
+          "package_commit": "381cfefad15a2fff6356f2e9a0bd3859af3fc703"
+        }
+      ],
+      "required_capabilities": [
+        "atomic_consumption_and_rewards",
+        "source_actor_walk_attack_frames"
+      ],
+      "historical_import_status": "NOT_RUN",
+      "historical_import_scope": "Claim/read receipt documented at earlier core commit, not a present execution or rebuild import",
+      "new_game_import": "NOT_RUN",
+      "new_gameplay": "NOT_RUN",
+      "scope": "DATA_ONLY_GAMEPLAY_NOT_RUN"
+    },
+    {
+      "batch_id": "WK-CONTENT-010",
+      "package_commit": "f7a85eee9615db2d2f977ae5796a867a096bce07",
+      "manifest_source_id": "OLD-WK-CONTENT-010-MANIFEST",
+      "manifest_sha256": "59e352d2c2b34bdab160380e2dd00aade99c86b18cfe35ab3b3873f8aec1bb4f",
+      "counts": {
+        "item": 3,
+        "npc": 3,
+        "recipe": 3
+      },
+      "dependencies": [
+        {
+          "batch_id": "WK-ASSETS-001",
+          "manifest_sha256": "4e5e6356f30f798657109ff95f204fe5f38351a072b61a8b19e6828f40e23bab",
+          "package_commit": "1800a3a0d7ffdb4b27212c6dfdd2539a93212d6b"
+        },
+        {
+          "batch_id": "WK-CONTENT-001",
+          "manifest_sha256": "74b0bc2fd588ecb4036c6f691a6f2f77fda4f1f54bb01806d8489837a34aecf3",
+          "package_commit": "d318098bce3c2923516a8b83ad5e2d1fe53d055e"
+        },
+        {
+          "batch_id": "WK-CONTENT-002",
+          "manifest_sha256": "0d33d029997534123a94346530d8bbd9ad8ee11ea1bc08ecd600d1a1aac849ec",
+          "package_commit": "10b4dcfbf1d1c9fff89b36c71ca36429f12e7bda"
+        },
+        {
+          "batch_id": "WK-CONTENT-003",
+          "manifest_sha256": "e20ab0ad657503f6972a57745ceabad1f76019c84b6492dd81472a9b8687ae1d",
+          "package_commit": "897495bfd15f9c35fd7d0d9da64c4009232ad33b"
+        },
+        {
+          "batch_id": "WK-CONTENT-004",
+          "manifest_sha256": "df5c6dcad9b79ffa597fe72a3fed1ba36a396e87cb8416bf2820bac8c0c737a2",
+          "package_commit": "da6679f563a55dd54cec719eb0903edd8745eca5"
+        },
+        {
+          "batch_id": "WK-CONTENT-005",
+          "manifest_sha256": "53af2b585050dfd21edd1b439442bd0afee545f33592f5c4909ea84765edeca6",
+          "package_commit": "901a85be123ff0bf80beb09f30fa5ba35b08a276"
+        },
+        {
+          "batch_id": "WK-CONTENT-007",
+          "manifest_sha256": "26d0a495104daedf461b6e41cd8b41bd8574bff09fa892a8c169a3f1aaf8316f",
+          "package_commit": "381cfefad15a2fff6356f2e9a0bd3859af3fc703"
+        },
+        {
+          "batch_id": "WK-CONTENT-009",
+          "manifest_sha256": "a9788fecb85761db06350ac51cb5b8057a2e411cadc27e3ea2f407eaddba7b50",
+          "package_commit": "c75c3b9352070c02f3013e9afd2079797b754823"
+        }
+      ],
+      "required_capabilities": [
+        "original_bow_firing_pose_attachment",
+        "ranged_physical_weapon_attack",
+        "atomic_consumption_and_rewards"
+      ],
+      "historical_import_status": "NOT_RUN",
+      "historical_import_scope": "Claim/read receipt documented at earlier core commit, not a present execution or rebuild import",
+      "new_game_import": "NOT_RUN",
+      "new_gameplay": "NOT_RUN",
+      "scope": "DATA_ONLY_GAMEPLAY_NOT_RUN"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "OLD-F01",
+      "title": "한국 지도와 NA 지도 후보를 분리",
+      "source_ids": [
+        "OLD-WK-CONTENT-001-PROVENANCE",
+        "OLD-WK-CONTENT-003-PROVENANCE",
+        "OLD-SOURCE-MAP-SAMPLE"
+      ],
+      "evidence": [
+        "rule.map.overlay: Original NA geography, not verified KR1998 layout",
+        "rule.exp2.region: NA495 geometry is not verified Korean1998 geography; square dimensions inferred",
+        "source-maps/000.jsonl original_map_id 0: NA-4.95/Maps/TK0.map sha256 88a5d13247dcff1245bbb818a67820ab421b064e17acb1fe6fef12ba607a2315, 193600 bytes"
+      ],
+      "meaning": "기존 논리386/물리385 정의가 한국 지형/도시 좌표의 근거가 되지 않는다. 원본 지도1750 대장은 북미4.95 계열이다.",
+      "unused_reason": "버전 불일치",
+      "next_action": "KR 원본 MAP/member와 독립 스크린샷·공식 좌표를 연결. NA 후보는 포맷 검증에만 사용. 한국 맵 P2는 이 연결을 별도 확인.",
+      "test_result": "NOT_RUN"
+    },
+    {
+      "finding_id": "OLD-F02",
+      "title": "전직·네 직업 자료는 실제로 나뉘나 광범위 fallback 존재",
+      "source_ids": [
+        "OLD-WK-CONTENT-001-CONTENT-000",
+        "OLD-WK-CONTENT-001-CONTENT-001",
+        "OLD-CONTENT-GENERATOR"
+      ],
+      "evidence": [
+        "class arrays: novice0, warrior33, rogue57, mage85, poet51 skill IDs",
+        "build_content.py:348-349: 직업 문자열에서 아무 직업도 찾지 못하면 jobs=JOBS.copy()",
+        "class starter.selected_job_applies_from_level=6 vs current requested Lv5 guild transition requires semantic review"
+      ],
+      "meaning": "모든 직업 자료가 아예 없었던 것은 아니다. 생성/학습 제한이 이 목록을 소비하는지와 식별 실패 시 전직업 허용이 별도 문제다.",
+      "unused_reason": "ID 미식별 / 지원 코드 연결 미검증",
+      "next_action": "직업 미식별 기술은 UNKNOWN/quarantine. Lv1 평민 미학습·Lv5 전직·다른 직업 기술 거부를 데이터 계약과 P3 회귀시험에 넣는다.",
+      "test_result": "NOT_RUN"
+    },
+    {
+      "finding_id": "OLD-F03",
+      "title": "기술 효과의 원본 시간표와 기술 의미 대응을 분리",
+      "source_ids": [
+        "OLD-WK-ASSETS-003-CONTENT-000",
+        "OLD-WK-ASSETS-003-RECOVERY-SUMMARY",
+        "OLD-WK-CONTENT-004-PROVENANCE",
+        "OLD-CONTENT-GENERATOR"
+      ],
+      "evidence": [
+        "effect 70 front: frame687..696 each100ms then frame-1 700ms; back starts frame-1 1000ms",
+        "ASSETS003: 8 recovered timelines,139 entries,17 wait entries; -1 blank wait interpretation INFERRED/native NOT_RUN",
+        "CONTENT004 effect association: element/purpose-compatible pool; individual historical skill correspondence unverified",
+        "build_content.py:388 impact_delay_ms=160 for base skills"
+      ],
+      "meaning": "소스의 front/back/repeat/delay는 쓸 수 있지만 특정 한국 기술의 정확한 모양·타격시점은 미확인이다.",
+      "unused_reason": "ID 미식별 / 버전·시간 의미 미검증",
+      "next_action": "effect.tbl signed parse만 좁게 재사용; 기준본/영상의 기술 ID와 시간축을 P2에서 비교. 160ms 공통 타격값은 역사값에서 제외.",
+      "test_result": "NOT_RUN"
+    },
+    {
+      "finding_id": "OLD-F04",
+      "title": "소리 보유와 실제 호출 연결의 큰 차이",
+      "source_ids": [
+        "OLD-CONTENT-SUMMARY009",
+        "OLD-WK-ASSETS-001-CONTENT-018",
+        "OLD-CONTENT-GENERATOR"
+      ],
+      "evidence": [
+        "163 sound definitions: CONTENT_DEFINED_REFERENCE1,DECODED_UNUSED162",
+        "sound352 original metadata: sounds/352.wav SHA256 541c5d6c40535d9dbe321e688a608dde7c1768bda867b20f4e43f66bb7649dd4; mono11025Hz16bit4592 samples416ms",
+        "base skill animation assigns sound.003, or first available sound fallback"
+      ],
+      "meaning": "파일 부재만의 문제가 아니라 소리 ID 의미/호출 조건/시점이 미식별인데 공통 소리를 선택한 상태다.",
+      "unused_reason": "ID 미식별 / 지원 코드 연결 미검증",
+      "next_action": "파일 ID별 듣기 표본과 원본 행동/서버 message 소리값을 연결; 일반공격/시전/명중/BGM을 구분, native output timing NOT_RUN.",
+      "test_result": "NOT_RUN"
+    },
+    {
+      "finding_id": "OLD-F05",
+      "title": "상점별 자료가 역할 기반 추정으로 보완됨",
+      "source_ids": [
+        "OLD-CONTENT-GENERATOR",
+        "OLD-WK-CONTENT-001-PROVENANCE"
+      ],
+      "evidence": [
+        "build_content.py:312-319: shop role filters all buyable items, infinite stock, empty=>acorn; smith repair multiplier .001",
+        "build_content.py:475-480: remaining buyable items added to first grocer/craft shop",
+        "NPC dialogue/placements are authored Korean offline completion"
+      ],
+      "meaning": "기능 가능한 재고를 생성한 것이며 당대 NPC별 원전 재고·서비스표를 복원한 근거가 아니다.",
+      "unused_reason": "ID 미식별 / 의도적 추정 보완",
+      "next_action": "NPC+era별 buy/sell/repair/rest/craft 관계를 원전 필드로 분리. 임의 재고/도토리 fallback/수리배수는 기본 복원 프로필에서 채택 보류.",
+      "test_result": "NOT_RUN"
+    },
+    {
+      "finding_id": "OLD-F06",
+      "title": "008/010의 수정 충돌은 적용 순서로 해결되지 않음",
+      "source_ids": [
+        "OLD-CONTENT-WORK-STATE",
+        "OLD-NPC-008-010-CONFLICT"
+      ],
+      "evidence": [
+        "wk.npc.exp2.dry.51.smith and wk.npc.exp2.forest.11.smith; services/dialogue 4 fields conflict",
+        "known-state merge proposal exists; original immutable packages preserved"
+      ],
+      "meaning": "공개 패키지13개 존재와 전부 안전하게 결합 가능은 다르다.",
+      "unused_reason": "패키징·버전 충돌",
+      "next_action": "기본 역사 프로필에서 authored extension 필요성부터 결정. 채택 시 두 입력 manifest 고정·known-state guard·원자 병합. 새 게임 적용 NOT_RUN.",
+      "test_result": "NOT_RUN"
+    },
+    {
+      "finding_id": "OLD-F07",
+      "title": "기존 숫자 평균과 지역별 대체 공식은 채택 보류",
+      "source_ids": [
+        "OLD-KR-CONFLICTS",
+        "OLD-RESTORATION-RULES"
+      ],
+      "evidence": [
+        "C04 squirrelXP5/10 separate dated captures; historical implementation had mean7.5",
+        "C13 guild coordinates1999/2001 differ; relocation date unknown; do not average",
+        "RUNTIME_INPUT_RULES initialHP/MP = P1998 external replacement; repair NA/RTK/Mithia options unselected"
+      ],
+      "meaning": "과거 평균 정책은 현재 정본의 지역·연도 분리 원칙으로 대체한다. 그림을 가진 클라이언트가 서버 수치까지 증명하지 않는다.",
+      "unused_reason": "버전 불일치 / 근거 부족",
+      "next_action": "기본 도시/시기 프로필을 PROVISIONAL로 만들고 원문 날짜 필드 유지. 동귀어진/백호왕800/길드명 독립 보류.",
+      "test_result": "NOT_RUN"
+    },
+    {
+      "finding_id": "OLD-F08",
+      "title": "좁은 파서 세 개는 재사용 후보",
+      "source_ids": [
+        "OLD-PARSER-DAT-EPF-PAL",
+        "OLD-PARSER-MAP-TBL",
+        "OLD-PARSER-INSTALLER",
+        "OLD-THIRD-PARTY-NOTICE"
+      ],
+      "evidence": [
+        "DAT bounds and duplicate names; EPF stencil and signed frame rectangle; PAL animation ranges",
+        "MAP headerless byte-count requires separately attributed dimensions; TBL bases and static-object columns",
+        "InstallShield v4 raw DEFLATE and Wise stream CRC reader; no installer execution"
+      ],
+      "meaning": "파일 포맷 처리 기능은 독립 모듈이며 전체 main.gd와 분리해 쓸 수 있다.",
+      "unused_reason": "새 런타임 미연결",
+      "next_action": "입력 SHA+parser hash가 같을 때 기존 추출본 재사용. KR 입력/독립 MIT viewer 표본을 P2에서 대조; 기존 claims는 재실행하지 않음.",
+      "test_result": "NOT_RUN"
+    },
+    {
+      "finding_id": "OLD-F09",
+      "title": "저장·캐시 유틸은 범위를 좁혀 재사용",
+      "source_ids": [
+        "OLD-SAVE-STORE",
+        "OLD-CACHE-BUILDER",
+        "OLD-CACHE-READER"
+      ],
+      "evidence": [
+        "save_store schema2 payload SHA,16MiB limit,pending/backup/future format refusal",
+        "cache manifest has format/content_version/source_world_sha256/binary SHA, but omits converter source/config/toolchain fingerprint"
+      ],
+      "meaning": "저장 검증·백업 패턴은 후보지만 계정 연동이나 OS atomic-replace 완료를 뜻하지 않는다. 캐시 코드를 그대로 가져오면 변환코드 변경 누락이 재발할 수 있다.",
+      "unused_reason": "지원 코드 미검증 / 캐시 지문 부족",
+      "next_action": "새 save schema adapter·Windows/Android rename failure/interrupt tests; cache key must include input/parser/compiler/config/palette/map generation hashes.",
+      "test_result": "NOT_RUN"
+    },
+    {
+      "finding_id": "OLD-F10",
+      "title": "기존 Android/Windows 도구체인과 클라우드의 준비 범위",
+      "source_ids": [
+        "OLD-PROJECT-GODOT",
+        "OLD-CORE-ANDROID-PRIVATE-CHECK",
+        "OLD-CORE-WINDOWS-CONTINUITY-PRIVATE-CHECK",
+        "OLD-ANDROID-EXPORT",
+        "OLD-CONTINUITY-CLIENT",
+        "OLD-CONTINUITY-JOURNAL",
+        "OLD-CLOUD-README"
+      ],
+      "evidence": [
+        "Godot4.6.3 stable; GDScript, gl_compatibility, 960x640 viewport",
+        "workflows in core use separate mobile commit2bb4ec55; generated export_presets rather than tracked file",
+        "android_ci JAVA_HOME or Java17 path, ANDROID_HOME external SDK, no pinned platform/build-tools version; arm64 player and x86_64 verification; non-Gradle export",
+        "signing supplied by private vault; actual private identity not opened in this task",
+        "cloud README: deployment pending; no project/schema/player account provisioned at pinned commit; real HTTPS and Galaxy remain unverified"
+      ],
+      "meaning": "구현된 HTTP/Auth/RPC 코드가 있어도 실제 배포·인증·계정 왕복이 준비됐다는 뜻은 아니다. 이전 file transport/fixture 검사를 cloud PASS로 승계하지 않는다.",
+      "unused_reason": "실행환경 접근 미확인 / 서비스 미배포",
+      "next_action": "P2 Godot/language/export candidate as above; verify actual SDK/template hashes/signing metadata only when builds authorized. P3/P6 free real Auth+RPC deployment and same account roundtrip separately.",
+      "test_result": "NOT_RUN"
+    }
+  ],
+  "inherited_counts_not_runtime_measurements": {
+    "through_CONTENT009": {
+      "asset_definitions": 1047,
+      "asset_states": {
+        "CONTENT_DEFINED_DEPENDENCY": 7,
+        "CONTENT_DEFINED_REFERENCE": 628,
+        "DECODED_UNUSED": 412
+      },
+      "asset_states_by_family": {
+        "body": {
+          "CONTENT_DEFINED_REFERENCE": 66
+        },
+        "effect": {
+          "CONTENT_DEFINED_REFERENCE": 109,
+          "DECODED_UNUSED": 18
+        },
+        "fan": {
+          "CONTENT_DEFINED_REFERENCE": 3
+        },
+        "head": {
+          "CONTENT_DEFINED_REFERENCE": 4,
+          "DECODED_UNUSED": 85
+        },
+        "monster": {
+          "CONTENT_DEFINED_REFERENCE": 311,
+          "DECODED_UNUSED": 16
+        },
+        "sheet": {
+          "CONTENT_DEFINED_DEPENDENCY": 7,
+          "CONTENT_DEFINED_REFERENCE": 5,
+          "DECODED_UNUSED": 128
+        },
+        "shield": {
+          "CONTENT_DEFINED_REFERENCE": 13
+        },
+        "sound": {
+          "CONTENT_DEFINED_REFERENCE": 1,
+          "DECODED_UNUSED": 162
+        },
+        "spear": {
+          "CONTENT_DEFINED_REFERENCE": 29
+        },
+        "sword": {
+          "CONTENT_DEFINED_REFERENCE": 87,
+          "DECODED_UNUSED": 3
+        }
+      },
+      "effective_logical_map_definitions": 386,
+      "effective_nonasset_definitions_by_kind": {
+        "advancement": 12,
+        "class": 5,
+        "drop_group": 390,
+        "economy": 1,
+        "enhancement": 1,
+        "growth": 401,
+        "item": 675,
+        "map": 386,
+        "monster": 390,
+        "npc": 259,
+        "quest": 123,
+        "recipe": 231,
+        "shop": 62,
+        "skill": 227
+      },
+      "explicit_selected_index_counts_by_asset_type": {
+        "animation": 11356,
+        "audio": 0,
+        "effect_sequence": 1228,
+        "frame_sheet": 1348,
+        "tile_sheet": 0
+      },
+      "game_import": "NOT_RUN",
+      "gameplay": "NOT_RUN",
+      "historical_identity": "Mixed source and explicitly authored/inferred extensions, no new historical proof",
+      "initial_asset_definitions": 992,
+      "initial_asset_states": {
+        "CONTENT_DEFINED_DEPENDENCY": 7,
+        "CONTENT_DEFINED_REFERENCE": 48,
+        "DECODED_UNUSED": 937
+      },
+      "map_aliases_not_new_terrain": 1,
+      "new_content_since_work001": {
+        "bosses": 12,
+        "items": 140,
+        "monsters": 121,
+        "npcs": 200,
+        "physical_maps": 322,
+        "quests": 90,
+        "recipe_entries": 230,
+        "region_groups": 24,
+        "shops": 24,
+        "skills": 28
+      },
+      "new_definitions_including_fixed_work001_by_kind": {
+        "asset": 1047,
+        "class": 5,
+        "drop_group": 390,
+        "economy": 1,
+        "enhancement": 1,
+        "item": 141,
+        "map": 357,
+        "monster": 121,
+        "npc": 200,
+        "quest": 123,
+        "recipe": 231,
+        "shop": 62,
+        "skill": 28
+      },
+      "new_distinct_source_terrain_hashes": 322,
+      "new_physical_maps": 322,
+      "observed_at_utc": "2026-10-14T13:48:41.097962+00:00",
+      "original_distinct_terrain_hashes": 60,
+      "original_physical_maps": 63,
+      "package_ids": [
+        "WK-ASSETS-001",
+        "WK-CONTENT-001",
+        "WK-CONTENT-002",
+        "WK-CONTENT-003",
+        "WK-CONTENT-004",
+        "WK-ASSETS-002",
+        "WK-CONTENT-005",
+        "WK-ASSETS-003",
+        "WK-CONTENT-006",
+        "WK-CONTENT-007",
+        "WK-CONTENT-008",
+        "WK-CONTENT-009"
+      ],
+      "proposal_records_by_kind": {
+        "advancement": 12,
+        "class": 8,
+        "growth": 401,
+        "item": 903,
+        "map": 124,
+        "monster": 305,
+        "npc": 138,
+        "shop": 20,
+        "skill": 405
+      },
+      "rank1_teacher_menu_links_repaired": 12,
+      "rank2_3_teacher_menu_links_added": 16,
+      "recipient_acquisition": "NOT_RUN",
+      "recovered_effect_timed_wait_entries": 17,
+      "recovered_effect_timelines": 8,
+      "recovered_effect_timelines_content_linked": 7,
+      "recovered_ui_frames": 75,
+      "recovered_ui_png_files": 47,
+      "recovered_ui_sheets": 47,
+      "remaining_empty_source_inputs": 3,
+      "scope": "DATA_ONLY_CONTENT_REFERENCES_NOT_GAME_USAGE",
+      "source_frame_indices": 74154,
+      "source_frame_note": "Prior74079 whole-sheet source frames plus75 newly decoded UI frames. Eight recovered effects reuse old frames, no new pixels. Model/sequence entries are not added to this total.",
+      "source_map_files": 1750,
+      "source_map_states": {
+        "BLOCKED_DIMENSION_EVIDENCE": 322,
+        "CONTENT_DEFINED_VALIDATED": 385,
+        "ROLE_RESERVE": 190,
+        "SOURCE_DUPLICATE_PRESERVED": 853
+      },
+      "whole_game_completion_percent": "NOT_COMPUTED"
+    },
+    "CONTENT010_delta": {
+      "new_items": 3,
+      "new_recipes": 3,
+      "modified_npcs": 3,
+      "resulting_item_definitions": 678,
+      "resulting_recipe_definitions": 234,
+      "other_kind_counts": "unchanged from through_CONTENT009; effective definitions are reported by existing WORK_STATE, not a new full merge"
+    }
+  },
+  "checks_performed_now": {
+    "recomputed_git_blob_identity": {
+      "result": "PASS",
+      "checked_files": 70
+    },
+    "manifest_vs_handoff_sha256_and_count": {
+      "result": "PASS",
+      "manifests": 13
+    },
+    "manifest_member_tree_path_and_size": {
+      "result": "PASS",
+      "member_refs": 415,
+      "scope": "tree metadata existence/size only; unread payload SHA256 not independently checked"
+    },
+    "selected_read_manifest_member_sha256": {
+      "result": "PASS",
+      "member_checks": 16
+    },
+    "finding_source_refs": {
+      "result": "PASS",
+      "findings": 10
+    },
+    "game_or_server_execution": {
+      "result": "NOT_RUN"
+    },
+    "native_or_emulator_execution": {
+      "result": "NOT_RUN"
+    },
+    "source_historical_exactness": {
+      "result": "NOT_RUN"
+    }
+  },
+  "not_inspected": [
+    "Full original client archives in this assignment; delegated source preservation inspection remains authoritative",
+    "Every package JSONL record or all original resource bytes",
+    "Current installed APK/Windows provenance beyond specified refs",
+    "Private signing bytes, private vault files, actual account passwords/tokens",
+    "Full historical source originals behind inherited research reports",
+    "Complete original gameplay video/audio or exact impact measurements"
+  ],
+  "reuse_rule": "Keep originals and branches; import only narrow candidate modules after P2 compatibility proof. Previous PASS remains previous input/scope evidence. No copied original binaries, source archives, signing data or user saves in this deliverable."
+}
