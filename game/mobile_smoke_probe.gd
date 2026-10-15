@@ -28,18 +28,18 @@ func run(game,mode,directory):
     else:
         check(OS.get_name()=="Android","actual_Android_process")
         check(game.save_loaded,"Android_loaded_PC_save")
-        check(game.touch_controls!=null and game.touch_controls.buttons.size()>=16,"touch_buttons_created")
+        check(game.touch_controls!=null and game.touch_controls.buttons.size()==13,"touch_buttons_created")
         var before=[game.player.x,game.player.y]
         var moved=false
         for d in range(4):
             if game.free_cell(game.player.map,game.cell()+game.DIRECTIONS[d],"",d):
-                await tap(game,[Vector2(115,680),Vector2(45,750),Vector2(115,750),Vector2(185,750)][d])
+                await tap(game,game.touch_controls.center_for([KEY_UP,KEY_LEFT,KEY_DOWN,KEY_RIGHT][d]))
                 moved=[game.player.x,game.player.y]!=before
                 if moved:break
         check(moved,"actual_screen_touch_moves_character")
-        await tap(game,Vector2(345,750))
+        await tap(game,game.touch_controls.center_for(KEY_I))
         check(game.menu=="inventory","actual_screen_touch_opens_bag")
-        await tap(game,Vector2(555,750))
+        await tap(game,game.touch_controls.center_for(KEY_ESCAPE))
         check(game.menu=="","actual_screen_touch_closes_menu")
         check(game.save_game(),"Android_saved_shared_schema2")
         await RenderingServer.frame_post_draw
