@@ -108,6 +108,10 @@ jobs:
           if ($LASTEXITCODE) { throw 'Build failure' }
           python tools/windows_ci.py verify --out player-check
           if ($LASTEXITCODE) { throw 'Windows native regression failed' }
+          # Private vault was checked above; only the encrypted archive is uploaded.
+          $env:BARAM_PRIVATE_DELIVERY_VERIFIED = 'true'
+          python tools/windows_ci.py archive --out player-check --require-windows
+          if ($LASTEXITCODE) { throw 'Windows native archive gate failed' }
           New-Item -ItemType Directory deliverable -Force
           Copy-Item player-check/*.zip deliverable/
           Copy-Item player-check/build.json deliverable/

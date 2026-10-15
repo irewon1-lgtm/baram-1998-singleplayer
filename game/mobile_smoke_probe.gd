@@ -28,12 +28,13 @@ func run(game,mode,directory):
     else:
         check(OS.get_name()=="Android","actual_Android_process")
         check(game.save_loaded,"Android_loaded_PC_save")
-        check(game.touch_controls!=null and game.touch_controls.buttons.size()==13,"touch_buttons_created")
+        check(game.touch_controls!=null and game.touch_controls.center_for(KEY_I)!=Vector2.ZERO,"mobile_overlay_created")
         var before=[game.player.x,game.player.y]
         var moved=false
         for d in range(4):
             if game.free_cell(game.player.map,game.cell()+game.DIRECTIONS[d],"",d):
-                await tap(game,game.touch_controls.center_for([KEY_UP,KEY_LEFT,KEY_DOWN,KEY_RIGHT][d]))
+                var goal=game.cell()+game.DIRECTIONS[d]
+                await tap(game,game.screen_point(goal.x,goal.y)-Vector2(0,20))
                 moved=[game.player.x,game.player.y]!=before
                 if moved:break
         check(moved,"actual_screen_touch_moves_character")

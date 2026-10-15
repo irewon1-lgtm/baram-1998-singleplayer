@@ -4,7 +4,6 @@ var quality_mode=""
 var elapsed_start=0
 
 func capture(title: String):
-    await get_tree().create_timer(.22).timeout
     if DisplayServer.get_name()=="headless":return
     await RenderingServer.frame_post_draw
     var image=game.get_viewport().get_texture().get_image()
@@ -48,8 +47,9 @@ func nearby_goal(distance=3) -> Vector2i:
 func run(g, mode: String, directory: String):
     quality_mode=mode;elapsed_start=Time.get_ticks_msec()
     game=g;root=directory;started=Time.get_ticks_msec();DirAccess.make_dir_recursive_absolute(root)
-    if mode=="quality-core":
+    if mode in ["quality-core","quality-soak"]:
         await super.run(g,"work-core",directory)
+        check(await guided(game.world.home.map),"return_to_town_through_existing_travel_service")
     else:
         game.name_edit.release_focus();await key(KEY_ENTER);await key(KEY_E)
     await get_tree().create_timer(.2).timeout
@@ -122,6 +122,8 @@ func run(g, mode: String, directory: String):
             await key(KEY_ESCAPE)
     game.save_game();await capture("mobile-final")
     if mode=="quality-soak":
+        game.frame_times.clear();game.last_frame_us=0
+        var measured_start=Time.get_ticks_msec()
         while Time.get_ticks_msec()-elapsed_start<610000:
             if game.menu!="":await key(KEY_ESCAPE)
             var to=nearby_goal(3)
@@ -130,6 +132,7 @@ func run(g, mode: String, directory: String):
                 await tap(game.touch_controls.center_for(KEY_I));await key(KEY_ESCAPE);game.save_game()
             await get_tree().create_timer(.2).timeout
         check(true,"600_seconds_continuous_live_process",{"elapsed_ms":Time.get_ticks_msec()-elapsed_start})
+        check(game.frame_times.size()>0,"post_capture_frame_timing_collected",{"duration_ms":Time.get_ticks_msec()-measured_start,"scope":"software_rendered_source_after_screenshots_not_Android_FPS"})
     complete()
 
 func complete():
