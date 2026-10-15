@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "scope": "Public metric/probe copies only; no source assets or screenshots copied. Production code unchanged.",
+  "files": [
+    {
+      "file": "compass-current.json",
+      "bytes": 2701,
+      "sha256": "41341dae3fbd416751b5a7569df468edbd04081ecf332d66b26f45254e3fcdff"
+    },
+    {
+      "file": "current-production-source-equivalence.json",
+      "bytes": 5910,
+      "sha256": "5de0c54e9ae5ac54f72b5541139b6b6e70111267e2bc0f96152d95741997e24c"
+    },
+    {
+      "file": "native-android.json",
+      "bytes": 71213,
+      "sha256": "4c5b7cb392d68651c4a77892f76eba4b467aa35c0021e5808e10855dc92d08d8"
+    },
+    {
+      "file": "native-windows.json",
+      "bytes": 13014,
+      "sha256": "6850506f0b638a9be443e4755bb8c206115ac2c69c3fc6d0b39c0c28210b4cf0"
+    },
+    {
+      "file": "ordinary-frame-report.json",
+      "bytes": 1496,
+      "sha256": "9ff405fc0cc3fce7e89e73be9e7fe6d9da83410a9cbb61496c8f51bfad98c819"
+    },
+    {
+      "file": "ordinary_frame_probe.gd",
+      "bytes": 4125,
+      "sha256": "8dbfb5e759b408f8fcdf3dd1a6d3f9763a17b845d4c1c0c82a19fcdb71774d8a"
+    },
+    {
+      "file": "performance-assessment.json",
+      "bytes": 9092,
+      "sha256": "69f9da9660120286f650a685d3d5242ef1c78efff8a52ee8c9127c28ac95d7d3"
+    },
+    {
+      "file": "retained-save-profile-assessment.json",
+      "bytes": 5745,
+      "sha256": "212fb0f051d8e41a52d25f79a86861bd2f0b2591e6f604f2ceb8311bcd10796a"
+    },
+    {
+      "file": "transition-stage-report.json",
+      "bytes": 5177,
+      "sha256": "f618b161275276878db8faed4716f1feb499832f82e2357fd8633c13ae9d9a08"
+    },
+    {
+      "file": "transition_stage_probe.gd",
+      "bytes": 5609,
+      "sha256": "7805f623822649e18ac6a3989dc6a81506011037191f78069527b332a5179185"
+    }
+  ]
+}

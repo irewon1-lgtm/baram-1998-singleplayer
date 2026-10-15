@@ -1,0 +1,58 @@
+{
+  "commit": "f0247ced8ed62313af5c6b506533d1295e497a52",
+  "content_version": "e43e30ccea064113c22ae8a28a3675348a283b05b6775121df1ba5ebb901465b",
+  "display": "X11",
+  "entities": 4578,
+  "maps": 423,
+  "native_steady_state_FPS": "NOT_RUN",
+  "phases": [
+    {
+      "draw_submission": {
+        "maximum_us": 14074,
+        "mean_us": 8576.22222222222,
+        "p95_us": 11703,
+        "samples": 180
+      },
+      "entities_in_map": 0,
+      "frame_interval": {
+        "maximum_us": 41506,
+        "mean_us": 17102.8611111111,
+        "p95_us": 21906,
+        "samples": 180
+      },
+      "map": "village",
+      "process": {
+        "maximum_us": 425,
+        "mean_us": 87.0611111111111,
+        "p95_us": 148,
+        "samples": 180
+      }
+    },
+    {
+      "draw_submission": {
+        "maximum_us": 16428,
+        "mean_us": 8120.74444444444,
+        "p95_us": 11947,
+        "samples": 180
+      },
+      "entities_in_map": 8,
+      "frame_interval": {
+        "maximum_us": 44900,
+        "mean_us": 18310.3444444444,
+        "p95_us": 25879,
+        "samples": 180
+      },
+      "map": "ruins",
+      "process": {
+        "maximum_us": 4216,
+        "mean_us": 280.177777777778,
+        "p95_us": 481,
+        "samples": 180
+      }
+    }
+  ],
+  "platform": "Linux",
+  "renderer": "gl_compatibility",
+  "scope": "Controlled idle actual main.gd Linux X11 software OpenGL process/draw CPU samples; cold entry excluded with20warmupframes; no native FPS claim.",
+  "status": "PASS"
+}

@@ -1,0 +1,132 @@
+{
+  "status": "PASS",
+  "scope": "Production21 source exactbytes current repo vs frozen f024 APK copied project used by independent timing subclass. Does not compare intentionally different Android project.godot or verification helpers.",
+  "files": [
+    {
+      "file": "android_bootstrap.gd",
+      "exact_source_bytes_equal": true,
+      "current_sha256": "4a404b0b4bebd9027258e7a0562ba0ff955b9d3c059a6bc93227dea4bcb179f3",
+      "measured_sha256": "4a404b0b4bebd9027258e7a0562ba0ff955b9d3c059a6bc93227dea4bcb179f3"
+    },
+    {
+      "file": "assets.gd",
+      "exact_source_bytes_equal": true,
+      "current_sha256": "2d79db23a47bd75d7e5e493e7f5d255129015f8defdd06a45997e1cd788da3e1",
+      "measured_sha256": "2d79db23a47bd75d7e5e493e7f5d255129015f8defdd06a45997e1cd788da3e1"
+    },
+    {
+      "file": "content_registry.gd",
+      "exact_source_bytes_equal": true,
+      "current_sha256": "426191a2ca59e6b126124fd0b51d0a9a3ced786f8c36cd86b38b2aba3fe60a22",
+      "measured_sha256": "426191a2ca59e6b126124fd0b51d0a9a3ced786f8c36cd86b38b2aba3fe60a22"
+    },
+    {
+      "file": "continuity.gd",
+      "exact_source_bytes_equal": true,
+      "current_sha256": "def798e3015d6e77690f69dfdfd8d77d2fb1c3ce5b8c0558a00388351121510e",
+      "measured_sha256": "def798e3015d6e77690f69dfdfd8d77d2fb1c3ce5b8c0558a00388351121510e"
+    },
+    {
+      "file": "continuity_state.gd",
+      "exact_source_bytes_equal": true,
+      "current_sha256": "064c6a1ce9b7654fd6900e870545dab736e96be96eddf3c7954a2a0e67367ec1",
+      "measured_sha256": "064c6a1ce9b7654fd6900e870545dab736e96be96eddf3c7954a2a0e67367ec1"
+    },
+    {
+      "file": "core_actions.gd",
+      "exact_source_bytes_equal": true,
+      "current_sha256": "bd341b184b569cdba5b353bc5b3a9ff30990bac28fc9e2cc5dac52cedd00fa17",
+      "measured_sha256": "bd341b184b569cdba5b353bc5b3a9ff30990bac28fc9e2cc5dac52cedd00fa17"
+    },
+    {
+      "file": "effect_runtime.gd",
+      "exact_source_bytes_equal": true,
+      "current_sha256": "1adcfd2c9ea20b6f4384596b48ebcb115979fa7da6ec0d9b9df45518d2db935f",
+      "measured_sha256": "1adcfd2c9ea20b6f4384596b48ebcb115979fa7da6ec0d9b9df45518d2db935f"
+    },
+    {
+      "file": "facing.gd",
+      "exact_source_bytes_equal": true,
+      "current_sha256": "63c72e7a0a794f00073a1cb0a70f5190ec9af157afea2138a340f28a814f9665",
+      "measured_sha256": "63c72e7a0a794f00073a1cb0a70f5190ec9af157afea2138a340f28a814f9665"
+    },
+    {
+      "file": "license_export.gd",
+      "exact_source_bytes_equal": true,
+      "current_sha256": "ecbf629ce64ba265aa47ef64f92a4bfdc5206cc4a3a4bf4b6166a0ad05ff927f",
+      "measured_sha256": "ecbf629ce64ba265aa47ef64f92a4bfdc5206cc4a3a4bf4b6166a0ad05ff927f"
+    },
+    {
+      "file": "main.gd",
+      "exact_source_bytes_equal": true,
+      "current_sha256": "0eb6bc9479a9ab8b6a550a0229187fd645bb8e6a3c86291a313df94e80f7c49e",
+      "measured_sha256": "0eb6bc9479a9ab8b6a550a0229187fd645bb8e6a3c86291a313df94e80f7c49e"
+    },
+    {
+      "file": "navigation.gd",
+      "exact_source_bytes_equal": true,
+      "current_sha256": "e4d2bf0ac2698e6939617596dd07fc989c1d19cdcf50d710a87d9ff0ffc51598",
+      "measured_sha256": "e4d2bf0ac2698e6939617596dd07fc989c1d19cdcf50d710a87d9ff0ffc51598"
+    },
+    {
+      "file": "pathfinder.gd",
+      "exact_source_bytes_equal": true,
+      "current_sha256": "e0225840c089864663edd56e61286b19cd76ff75dc7759170ce1c4f22cc69bba",
+      "measured_sha256": "e0225840c089864663edd56e61286b19cd76ff75dc7759170ce1c4f22cc69bba"
+    },
+    {
+      "file": "precision.gd",
+      "exact_source_bytes_equal": true,
+      "current_sha256": "d41d2558e28a3dbbab8155eba4fea35c48950fa75eea85a66c8ef094b7b56ee2",
+      "measured_sha256": "d41d2558e28a3dbbab8155eba4fea35c48950fa75eea85a66c8ef094b7b56ee2"
+    },
+    {
+      "file": "rules.gd",
+      "exact_source_bytes_equal": true,
+      "current_sha256": "80721bfd299f101360c1eb449652e78c551abe66a4ea599cb2e43c29bb231da9",
+      "measured_sha256": "80721bfd299f101360c1eb449652e78c551abe66a4ea599cb2e43c29bb231da9"
+    },
+    {
+      "file": "save_store.gd",
+      "exact_source_bytes_equal": true,
+      "current_sha256": "dd77dc219ac5cc0a7063f9c8e3b28071078766388e21ed33897d3e097dafaa3b",
+      "measured_sha256": "dd77dc219ac5cc0a7063f9c8e3b28071078766388e21ed33897d3e097dafaa3b"
+    },
+    {
+      "file": "startup.gd",
+      "exact_source_bytes_equal": true,
+      "current_sha256": "709ff2a4c8ce220aee2582e0ee8be2d977db936cea9853427b52eedc73faad9c",
+      "measured_sha256": "709ff2a4c8ce220aee2582e0ee8be2d977db936cea9853427b52eedc73faad9c"
+    },
+    {
+      "file": "touch_controls.gd",
+      "exact_source_bytes_equal": true,
+      "current_sha256": "caf469047eb3283ffec83e4df1e6e8979d69cbc01cffaeac5ba9c9195accb162",
+      "measured_sha256": "caf469047eb3283ffec83e4df1e6e8979d69cbc01cffaeac5ba9c9195accb162"
+    },
+    {
+      "file": "windows_bootstrap.gd",
+      "exact_source_bytes_equal": true,
+      "current_sha256": "b8b6ce86c7066144bc6ca974dfa8b1185c76b5a47f43df7ce33cadc0b4badbff",
+      "measured_sha256": "b8b6ce86c7066144bc6ca974dfa8b1185c76b5a47f43df7ce33cadc0b4badbff"
+    },
+    {
+      "file": "work_assets.gd",
+      "exact_source_bytes_equal": true,
+      "current_sha256": "fd2a7bb4481050914fb04f704bb1695c4dbb526b8a8cd479e44b837d392b91d0",
+      "measured_sha256": "fd2a7bb4481050914fb04f704bb1695c4dbb526b8a8cd479e44b837d392b91d0"
+    },
+    {
+      "file": "world_map_view.gd",
+      "exact_source_bytes_equal": true,
+      "current_sha256": "383db85f57c4764cc80f280fcb42eaaccb44f8ac3611140721b93636dbc8abeb",
+      "measured_sha256": "383db85f57c4764cc80f280fcb42eaaccb44f8ac3611140721b93636dbc8abeb"
+    },
+    {
+      "file": "world_repairs.gd",
+      "exact_source_bytes_equal": true,
+      "current_sha256": "baf45ca871377bcd860a4d9568efdf4638eff4b5771b6f0439211afebd7d8441",
+      "measured_sha256": "baf45ca871377bcd860a4d9568efdf4638eff4b5771b6f0439211afebd7d8441"
+    }
+  ]
+}

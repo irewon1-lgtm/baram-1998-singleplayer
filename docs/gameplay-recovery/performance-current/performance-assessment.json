@@ -1,0 +1,217 @@
+{
+  "status": "FAIL",
+  "scope": "Retained Linux save evidence review plus fresh isolated Linux current-code-equivalent compass/transition/draw measurements during native CI; production source unchanged.",
+  "native_ci": "PENDING_ROOT_NATIVE_RUN_38729864952",
+  "save": {
+    "correctness": "PASS_RETAINED_SAVE_SUCCESS_AND_SEPARATE_RESTART_CHECKS",
+    "performance": "FAIL_CONFIRMED_SYNCHRONOUS_MAIN_THREAD_STALL",
+    "primary_log": "/workspace/scratch/3c696736f844/pilot-windows-a0cc-continuation-20261015/evidence/recovery-attack.log",
+    "worst_observed_profile": {
+      "line": 15,
+      "snapshot_ms": 56.251,
+      "success": true,
+      "total_ms": 716.739,
+      "store_stage_residual_ms": 660.488
+    },
+    "second_profile": {
+      "line": 17,
+      "snapshot_ms": 40.367,
+      "success": true,
+      "total_ms": 548.897,
+      "store_stage_residual_ms": 508.53
+    },
+    "broader_linux_samples": [
+      {
+        "path": "/workspace/scratch/3c696736f844/pilot-windows-a0cc-continuation-20261015/evidence/recovery-attack.log",
+        "summary": {
+          "count": 2,
+          "snapshot_min_ms": 40.367,
+          "snapshot_max_ms": 56.251,
+          "snapshot_median_ms": 48.309,
+          "total_min_ms": 548.897,
+          "total_max_ms": 716.739,
+          "total_median_ms": 632.818,
+          "total_mean_ms": 632.818
+        }
+      },
+      {
+        "path": "/workspace/scratch/3c696736f844/fresh-core-dc36b5c-20261015/evidence/recovery-core.log",
+        "summary": {
+          "count": 12,
+          "snapshot_min_ms": 36.405,
+          "snapshot_max_ms": 56.538,
+          "snapshot_median_ms": 42.480999999999995,
+          "total_min_ms": 397.483,
+          "total_max_ms": 785.334,
+          "total_median_ms": 659.85,
+          "total_mean_ms": 653.2974166666667
+        }
+      },
+      {
+        "path": "/workspace/scratch/3c696736f844/pilot-windows-a0cc-20261015/evidence/core/recovery-core.log",
+        "summary": {
+          "count": 18,
+          "snapshot_min_ms": 34.58,
+          "snapshot_max_ms": 47.485,
+          "snapshot_median_ms": 37.434,
+          "total_min_ms": 317.506,
+          "total_max_ms": 750.547,
+          "total_median_ms": 633.046,
+          "total_mean_ms": 631.1741111111111
+        }
+      }
+    ],
+    "source_evidence": {
+      "save_game": "game/main.gd:1176-1192 snapshot then synchronous store.write_state; timer ends before notice and save-file hash event.",
+      "store_write_state": "game/save_store.gd:106-151 validates/serializes current world, reads existing save, verifies/writes current+backup files and renames.",
+      "production_autosave": "game/continuity.gd:192-207 calls same synchronous save every 30 seconds and on application pause/focus loss."
+    },
+    "unmeasured_subphases": {
+      "json_serialization": "NOT_RUN",
+      "existing_save_read_and_validation": "NOT_RUN",
+      "file_flush_backup_hash_rename": "NOT_RUN",
+      "native_actual_frame_hitch": "NOT_RUN_PENDING_NATIVE_CI"
+    },
+    "interpretation": "716.739ms is total instrumented snapshot+store call, not a 717ms snapshot. The store residual is 660.488ms; no individual disk/JSON attribution was measured. The subsequent event file hash lies outside the timer, so this is not full input-to-resume latency. Frequent probe checkpoints are not evidence that production saves occur equally often."
+  },
+  "compass": {
+    "function": "PASS_NORMAL_LEARNED_SKILL_COST_DIRECTION_SELECTION_AND_REAL_HOME_MAP_CHANGE",
+    "search_performance": "PASS_SCOPE_NEAREST_GATE_SEARCH_ONLY",
+    "latest_retained": {
+      "path": "/workspace/scratch/3c696736f844/pilot-windows-a0cc-continuation-20261015/evidence/recovery-attack-report.json",
+      "game_build": "a0ccaa4b0e7bfc724d0d2fbf2ded91eb8c683a2d",
+      "platform": "Linux",
+      "display": "headless",
+      "events": [
+        {
+          "time": 0.709,
+          "candidate_checks": 1,
+          "entity_visits": 0,
+          "microseconds": 29,
+          "path_searches": 0,
+          "radius": 0
+        }
+      ]
+    },
+    "a6_retained": [
+      {
+        "path": "/workspace/scratch/3c696736f844/preserved/evidence/Windows-local/recovery-core-report.json",
+        "platform": "Linux",
+        "display": "headless",
+        "events": [
+          {
+            "time": 269.376,
+            "candidate_checks": 1,
+            "entity_visits": 0,
+            "microseconds": 42,
+            "path_searches": 0,
+            "radius": 0
+          }
+        ]
+      },
+      {
+        "path": "/workspace/scratch/3c696736f844/preserved/evidence/Android-local/recovery-core-report.json",
+        "platform": "Linux",
+        "display": "headless",
+        "events": [
+          {
+            "time": 283.889,
+            "candidate_checks": 1,
+            "entity_visits": 0,
+            "microseconds": 48,
+            "path_searches": 0,
+            "radius": 0
+          }
+        ]
+      }
+    ],
+    "measured_scope": "navigation.compass_entry only; candidate check1, entity visits0, BFS searches0 in village. Current29microseconds vs retained a6 42/48microseconds, separate runs, no timing regression observed.",
+    "full_monster_traversal": "REMOVED_FROM_GATE_SEARCH_BY_MAP_INDEX; observed village count0; broader all-map per-frame CPU profile NOT_RUN in current retained runs.",
+    "total_cast_to_first_playable_frame": "NOT_RUN",
+    "transition_cpu_wall_time": {
+      "status": "PASS",
+      "scope": "CPU call duration, not full cast",
+      "same_village_us": [
+        54,
+        81
+      ],
+      "cold_work_map_us": 60,
+      "same_work_map_us": 62
+    },
+    "first_post_transition_tile_decode_and_cache_build": {
+      "status": "PASS",
+      "scope": "Linux X11 softwareGL first main._draw CPU submission, one sample each; no native first playable frame claim. Cold map includes all draw work, not separately isolated PNG decode.",
+      "cold_work_draw_us": 339957,
+      "cold_work_tile_builds": 73,
+      "repeat_work_draw_us": 8175,
+      "repeat_work_tile_builds": 0
+    },
+    "same_map_tile_cache_hit_reset_counters": {
+      "status": "PASS",
+      "cold_builds": 73,
+      "same_map_rebuilds": 0,
+      "same_map_resets": 0,
+      "same_map_hits": 258,
+      "real_change_resets": 1
+    },
+    "source_preservation": "Current navigation and WorkAssets core cache logic recovered to original a6 exact source/bytecode; enter_map clears Work tile cache only when map ID changes. This static preservation is not a new runtime timing PASS.",
+    "fresh_algorithm_comparison": "docs/gameplay-recovery/performance-current/compass-current.json"
+  },
+  "correctness_limits": [
+    "No new save-corruption defect observed in these retained successful saves/restarts; performance remains an identified gap.",
+    "The initial pilot core route failure is preserved. A normally learned compass fallback proves a legal escape and later attack-spell continuation, not that the originally blocked cave walk exit has been retested successfully.",
+    "Folders named Android-local and Windows-local contain platform=Linux/display=headless reports; their names do not establish Android or Windows native timing."
+  ],
+  "production_game_complete": false,
+  "confirmed_remaining_limitations": [
+    {
+      "feature": "main_thread_save_latency",
+      "status": "FAIL",
+      "total_ms": 716.739,
+      "snapshot_ms": 56.251,
+      "store_residual_ms": 660.488
+    },
+    {
+      "feature": "cold_work_map_first_draw_hitch",
+      "status": "FAIL",
+      "first_draw_cpu_ms": 339.957,
+      "first_post_draw_wall_ms": 354.298,
+      "scope": "Linux softwareGL one controlled cold entry. No device performance budget extrapolation."
+    },
+    {
+      "feature": "native_fps_and_first_playable_frame",
+      "status": "NOT_RUN"
+    }
+  ],
+  "ordinary_frame_cpu": {
+    "status": "PASS",
+    "raw": "ordinary-frame-report.json",
+    "scope": "Linux idle180frames per village/ruins after20warmup; nativeFPS and controlled old/new ordinaryframe comparison NOT_RUN",
+    "native_fps": "NOT_RUN",
+    "same_condition_old_new_comparison": "NOT_RUN"
+  },
+  "native_windows": {
+    "status": "FAIL",
+    "scope": "ActualWindowsCI38729864952 native coreheadless+separatewindowedstage;saveperformanceFAIL notoverallnativeexecutionfailure.",
+    "evidence": "native-windows.json",
+    "compass_search_us": 26,
+    "save_total_median_ms": 785.4,
+    "save_total_maximum_ms": 898.379,
+    "native_fps": "NOT_RUN",
+    "native_first_playable_frame": "NOT_RUN"
+  },
+  "native_android": {
+    "status": "FAIL",
+    "scope": "ActualAndroid35x86_64emulator;playerAPKprocessinterval+save measuredFAIL,verificationAPKnormalcompassPASS,GPUfps/GalaxyNOT_RUN.",
+    "evidence": "native-android.json",
+    "player_mean_process_interval_ms": 94.6551193628001,
+    "player_p99_process_interval_ms": 199.058,
+    "player_samples": 4457,
+    "player_save_profiles": 54,
+    "player_save_total_median_ms": 886.7375,
+    "player_save_total_maximum_ms": 5082.194,
+    "verification_save_profiles": 16,
+    "verification_save_total_median_ms": 925.3285,
+    "verification_compass_search_us": 43
+  }
+}

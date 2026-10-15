@@ -1,0 +1,158 @@
+{
+  "captures": [
+    {
+      "height": 640,
+      "path": "/workspace/scratch/3c696736f844/performance-current-243448a/transition/compass-same-village-first-gate.png",
+      "sha256": "2384b60479616c4993ce427d086c58d2a673fab3c86c24d447d66294b0d4ce71",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "path": "/workspace/scratch/3c696736f844/performance-current-243448a/transition/compass-same-village-repeat-gate.png",
+      "sha256": "814f7854e650f943745908c12f342ab0841ee7d00d3b84a57f2173519e340a75",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "path": "/workspace/scratch/3c696736f844/performance-current-243448a/transition/work-map-cold-entry.png",
+      "sha256": "ed1e46af5a1c481a6792243c10205c78e60f0c77dfb788482fb7afb1d708a7ae",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "path": "/workspace/scratch/3c696736f844/performance-current-243448a/transition/work-map-same-map-repeat.png",
+      "sha256": "8bc83a492bf1ebbf8893713f610a911e7c8465fa1337df460ad4e268f8fba834",
+      "width": 960
+    },
+    {
+      "height": 640,
+      "path": "/workspace/scratch/3c696736f844/performance-current-243448a/transition/work-map-forced-flush-legacy-proxy.png",
+      "sha256": "fe53794915f21eeaea0f9729bf100c9b02242ebc779fa76c47d8fd10339cb5b2",
+      "width": 960
+    }
+  ],
+  "commit": "f0247ced8ed62313af5c6b506533d1295e497a52",
+  "compass_search": {
+    "internal": {
+      "candidate_checks": 1,
+      "entity_visits": 0,
+      "microseconds": 56,
+      "path_searches": 0,
+      "radius": 0
+    },
+    "outer_call_us": 81
+  },
+  "content_version": "e43e30ccea064113c22ae8a28a3675348a283b05b6775121df1ba5ebb901465b",
+  "display": "X11",
+  "entities": 4578,
+  "maps": 423,
+  "native_first_playable_frame": "NOT_RUN",
+  "platform": "Linux",
+  "renderer": "gl_compatibility",
+  "scope": "Controlled actual main.gd direct transition handler and first desktop draw. No source mutation; not legal-spell gameplay or native-device timing. Forced flush is an explicit cache-lifetime proxy, not the old whole game.",
+  "stages": [
+    {
+      "actual_map": "village",
+      "first_draw": {
+        "cached_work_tiles": 0,
+        "draw_submission_us": 15129,
+        "observed_at_us": 6868217,
+        "tile_builds": 0,
+        "tile_hits": 0,
+        "tile_resets_during_draw": 0
+      },
+      "first_post_draw_wall_us": 124035,
+      "forced_flush_proxy": false,
+      "origin_map": "village",
+      "prior_cached_work_tiles": 0,
+      "stage": "compass-same-village-first-gate",
+      "status": "PASS",
+      "target_map": "village",
+      "tile_resets_in_transition": 0,
+      "transition_handler_us": 54
+    },
+    {
+      "actual_map": "village",
+      "first_draw": {
+        "cached_work_tiles": 0,
+        "draw_submission_us": 7848,
+        "observed_at_us": 7066990,
+        "tile_builds": 0,
+        "tile_hits": 0,
+        "tile_resets_during_draw": 0
+      },
+      "first_post_draw_wall_us": 26690,
+      "forced_flush_proxy": false,
+      "origin_map": "village",
+      "prior_cached_work_tiles": 0,
+      "stage": "compass-same-village-repeat-gate",
+      "status": "PASS",
+      "target_map": "village",
+      "tile_resets_in_transition": 0,
+      "transition_handler_us": 81
+    },
+    {
+      "actual_map": "kr.map.089e90495862",
+      "first_draw": {
+        "cached_work_tiles": 73,
+        "draw_submission_us": 339957,
+        "observed_at_us": 7506683,
+        "tile_builds": 73,
+        "tile_hits": 185,
+        "tile_resets_during_draw": 0
+      },
+      "first_post_draw_wall_us": 354298,
+      "forced_flush_proxy": false,
+      "origin_map": "village",
+      "prior_cached_work_tiles": 0,
+      "stage": "work-map-cold-entry",
+      "status": "PASS",
+      "target_map": "kr.map.089e90495862",
+      "tile_resets_in_transition": 1,
+      "transition_handler_us": 60
+    },
+    {
+      "actual_map": "kr.map.089e90495862",
+      "first_draw": {
+        "cached_work_tiles": 73,
+        "draw_submission_us": 8175,
+        "observed_at_us": 7608195,
+        "tile_builds": 0,
+        "tile_hits": 258,
+        "tile_resets_during_draw": 0
+      },
+      "first_post_draw_wall_us": 21353,
+      "forced_flush_proxy": false,
+      "origin_map": "kr.map.089e90495862",
+      "prior_cached_work_tiles": 73,
+      "same_map_no_tile_rebuild": true,
+      "stage": "work-map-same-map-repeat",
+      "status": "PASS",
+      "target_map": "kr.map.089e90495862",
+      "tile_resets_in_transition": 0,
+      "transition_handler_us": 62
+    },
+    {
+      "actual_map": "kr.map.089e90495862",
+      "first_draw": {
+        "cached_work_tiles": 73,
+        "draw_submission_us": 9492,
+        "observed_at_us": 7703880,
+        "tile_builds": 73,
+        "tile_hits": 185,
+        "tile_resets_during_draw": 0
+      },
+      "first_post_draw_wall_us": 24134,
+      "forced_flush_proxy": true,
+      "origin_map": "kr.map.089e90495862",
+      "prior_cached_work_tiles": 73,
+      "stage": "work-map-forced-flush-legacy-proxy",
+      "status": "PASS",
+      "target_map": "kr.map.089e90495862",
+      "tile_resets_in_transition": 0,
+      "transition_handler_us": 50
+    }
+  ],
+  "status": "PASS",
+  "steady_state_FPS": "NOT_RUN"
+}

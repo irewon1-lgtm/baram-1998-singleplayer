@@ -1,0 +1,242 @@
+{
+  "scope": "Read-only actual retained Linux BARAM_SAVE_PROFILE log events; save calls execute synchronously in main.gd.",
+  "rows": [
+    {
+      "path": "/workspace/scratch/3c696736f844/pilot-windows-a0cc-continuation-20261015/evidence/recovery-attack.log",
+      "profiles": [
+        {
+          "line": 15,
+          "snapshot_ms": 56.251,
+          "success": true,
+          "total_ms": 716.739
+        },
+        {
+          "line": 17,
+          "snapshot_ms": 40.367,
+          "success": true,
+          "total_ms": 548.897
+        }
+      ],
+      "summary": {
+        "count": 2,
+        "snapshot_min_ms": 40.367,
+        "snapshot_max_ms": 56.251,
+        "snapshot_median_ms": 48.309,
+        "total_min_ms": 548.897,
+        "total_max_ms": 716.739,
+        "total_median_ms": 632.818,
+        "total_mean_ms": 632.818
+      }
+    },
+    {
+      "path": "/workspace/scratch/3c696736f844/fresh-core-dc36b5c-20261015/evidence/recovery-core.log",
+      "profiles": [
+        {
+          "line": 18,
+          "snapshot_ms": 42.366,
+          "success": true,
+          "total_ms": 397.483
+        },
+        {
+          "line": 24,
+          "snapshot_ms": 38.986,
+          "success": true,
+          "total_ms": 681.057
+        },
+        {
+          "line": 26,
+          "snapshot_ms": 47.731,
+          "success": true,
+          "total_ms": 638.643
+        },
+        {
+          "line": 28,
+          "snapshot_ms": 36.405,
+          "success": true,
+          "total_ms": 624.492
+        },
+        {
+          "line": 30,
+          "snapshot_ms": 56.538,
+          "success": true,
+          "total_ms": 695.707
+        },
+        {
+          "line": 35,
+          "snapshot_ms": 42.596,
+          "success": true,
+          "total_ms": 620.435
+        },
+        {
+          "line": 39,
+          "snapshot_ms": 46.853,
+          "success": true,
+          "total_ms": 785.334
+        },
+        {
+          "line": 41,
+          "snapshot_ms": 50.011,
+          "success": true,
+          "total_ms": 752.066
+        },
+        {
+          "line": 43,
+          "snapshot_ms": 41.924,
+          "success": true,
+          "total_ms": 694.041
+        },
+        {
+          "line": 45,
+          "snapshot_ms": 43.902,
+          "success": true,
+          "total_ms": 631.266
+        },
+        {
+          "line": 47,
+          "snapshot_ms": 40.642,
+          "success": true,
+          "total_ms": 687.773
+        },
+        {
+          "line": 49,
+          "snapshot_ms": 41.285,
+          "success": true,
+          "total_ms": 631.272
+        }
+      ],
+      "summary": {
+        "count": 12,
+        "snapshot_min_ms": 36.405,
+        "snapshot_max_ms": 56.538,
+        "snapshot_median_ms": 42.480999999999995,
+        "total_min_ms": 397.483,
+        "total_max_ms": 785.334,
+        "total_median_ms": 659.85,
+        "total_mean_ms": 653.2974166666667
+      }
+    },
+    {
+      "path": "/workspace/scratch/3c696736f844/pilot-windows-a0cc-20261015/evidence/core/recovery-core.log",
+      "profiles": [
+        {
+          "line": 18,
+          "snapshot_ms": 34.899,
+          "success": true,
+          "total_ms": 317.506
+        },
+        {
+          "line": 24,
+          "snapshot_ms": 47.075,
+          "success": true,
+          "total_ms": 750.547
+        },
+        {
+          "line": 26,
+          "snapshot_ms": 42.6,
+          "success": true,
+          "total_ms": 632.149
+        },
+        {
+          "line": 28,
+          "snapshot_ms": 35.433,
+          "success": true,
+          "total_ms": 626.978
+        },
+        {
+          "line": 30,
+          "snapshot_ms": 34.58,
+          "success": true,
+          "total_ms": 581.578
+        },
+        {
+          "line": 35,
+          "snapshot_ms": 36.065,
+          "success": true,
+          "total_ms": 640.518
+        },
+        {
+          "line": 39,
+          "snapshot_ms": 47.485,
+          "success": true,
+          "total_ms": 696.811
+        },
+        {
+          "line": 41,
+          "snapshot_ms": 36.398,
+          "success": true,
+          "total_ms": 639.605
+        },
+        {
+          "line": 43,
+          "snapshot_ms": 41.769,
+          "success": true,
+          "total_ms": 745.301
+        },
+        {
+          "line": 45,
+          "snapshot_ms": 35.757,
+          "success": true,
+          "total_ms": 578.502
+        },
+        {
+          "line": 47,
+          "snapshot_ms": 35.016,
+          "success": true,
+          "total_ms": 607.8
+        },
+        {
+          "line": 49,
+          "snapshot_ms": 41.983,
+          "success": true,
+          "total_ms": 617.418
+        },
+        {
+          "line": 51,
+          "snapshot_ms": 41.753,
+          "success": true,
+          "total_ms": 681.046
+        },
+        {
+          "line": 62,
+          "snapshot_ms": 36.356,
+          "success": true,
+          "total_ms": 633.943
+        },
+        {
+          "line": 69,
+          "snapshot_ms": 42.45,
+          "success": true,
+          "total_ms": 675.202
+        },
+        {
+          "line": 77,
+          "snapshot_ms": 38.47,
+          "success": true,
+          "total_ms": 723.388
+        },
+        {
+          "line": 81,
+          "snapshot_ms": 42.0,
+          "success": true,
+          "total_ms": 601.263
+        },
+        {
+          "line": 83,
+          "snapshot_ms": 35.395,
+          "success": true,
+          "total_ms": 611.579
+        }
+      ],
+      "summary": {
+        "count": 18,
+        "snapshot_min_ms": 34.58,
+        "snapshot_max_ms": 47.485,
+        "snapshot_median_ms": 37.434,
+        "total_min_ms": 317.506,
+        "total_max_ms": 750.547,
+        "total_median_ms": 633.046,
+        "total_mean_ms": 631.1741111111111
+      }
+    }
+  ]
+}

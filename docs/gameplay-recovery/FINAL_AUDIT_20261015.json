@@ -1,0 +1,1188 @@
+{
+  "format": "BARAM_CONSOLIDATED_GAMEPLAY_AUDIT_V1",
+  "as_of_utc": "2026-10-15T12:25:38.294017+00:00",
+  "result": "FAIL",
+  "overall_improvement_complete": false,
+  "source_commit": "243448ac891232cc879a9321c9320133a4ae8020",
+  "delivered_baseline": {
+    "source_commit": "f248613d6139fc5274bd383ac3ce292aa0a9d67d",
+    "content_release": "9e30ec651489a4f5bdbf5c4e727a41a3c7a2b2825a373262056c1e896a82fb7c",
+    "apk_sha256": "856300b12442cea015668a01a132ce099178d683bffc9d274313b56f7e8bab0a",
+    "runtime_member_comparison": {
+      "result": "PASS",
+      "members": 946
+    }
+  },
+  "content_proof": {
+    "work_commit": "c919cf1bdffe0e318d4058dc3fc17be4a2844203",
+    "audited_active_release": "cd0c680ab5fc8fb223ef2d14ff0b991b18e3e100fecba693bd608040f8a66e57",
+    "fresh_rebuilt_release": "406043bbf934fddb0a6ff71338348e879bdb9da154546c5a90c99993eb95a098",
+    "fresh_rebuilt_consumer_commit": "b18e67f2dbde15ff7617b4e3d2d0f7a3768980c7",
+    "semantic_comparison": {
+      "actual_semantic_sha256": "6842599b0180934b1d51a0e840f70daf07354a30cf917ac3b3345fed24491825",
+      "expected_semantic_sha256": "6842599b0180934b1d51a0e840f70daf07354a30cf917ac3b3345fed24491825",
+      "ignored_fields": [
+        "imports.*.applied_before_game_commit"
+      ],
+      "reference_release": "cd0c680ab5fc8fb223ef2d14ff0b991b18e3e100fecba693bd608040f8a66e57",
+      "status": "PASS"
+    },
+    "scope": "DATA_PRODUCTION_IMPORT_ACTIVE_IDENTITY_NOT_FULL_PACKAGE_GAMEPLAY",
+    "fresh_linux_core_release": "3b5423ed7d65f951489361d202d5312adb136c8d7c0f21cc6f66441a46799234",
+    "fresh_linux_release_semantic_comparison": {
+      "result": "NOT_RUN",
+      "execution_state": "NOT_REQUIRED_FOR_CURRENT_NATIVE_GATE",
+      "scope": "Older3b Linux execution data not directly compared; current Windows aa212 native data is separately fully compared to cd0"
+    },
+    "ci_installer_active_releases": {
+      "windows": "aa212082041a5cd81faff4f16eb713a5bc52c18ab5a00c19caa3632a16ff0f2c",
+      "android": "aa212082041a5cd81faff4f16eb713a5bc52c18ab5a00c19caa3632a16ff0f2c"
+    },
+    "windows_native_full_semantic_comparison": {
+      "result": "PASS",
+      "reference_release": "cd0c680ab5fc8fb223ef2d14ff0b991b18e3e100fecba693bd608040f8a66e57",
+      "actual_native_release": "aa212082041a5cd81faff4f16eb713a5bc52c18ab5a00c19caa3632a16ff0f2c",
+      "ignored_fields": [
+        "imports.*.applied_before_game_commit"
+      ],
+      "semantic_sha256": "6842599b0180934b1d51a0e840f70daf07354a30cf917ac3b3345fed24491825",
+      "consumer_metadata_only_differences": {
+        "WK-ASSETS-003": {
+          "old": "9f9a6b9d4388ec089ffa89a489330a5099502156",
+          "native": "243448ac891232cc879a9321c9320133a4ae8020"
+        },
+        "WK-CONTENT-005": {
+          "old": "9f9a6b9d4388ec089ffa89a489330a5099502156",
+          "native": "243448ac891232cc879a9321c9320133a4ae8020"
+        },
+        "WK-CONTENT-006": {
+          "old": "9f9a6b9d4388ec089ffa89a489330a5099502156",
+          "native": "243448ac891232cc879a9321c9320133a4ae8020"
+        },
+        "WK-CONTENT-007": {
+          "old": "9f9a6b9d4388ec089ffa89a489330a5099502156",
+          "native": "243448ac891232cc879a9321c9320133a4ae8020"
+        },
+        "WK-CONTENT-008": {
+          "old": "9f9a6b9d4388ec089ffa89a489330a5099502156",
+          "native": "243448ac891232cc879a9321c9320133a4ae8020"
+        },
+        "WK-CONTENT-009": {
+          "old": "9f9a6b9d4388ec089ffa89a489330a5099502156",
+          "native": "243448ac891232cc879a9321c9320133a4ae8020"
+        },
+        "WK-CONTENT-010": {
+          "old": "9f9a6b9d4388ec089ffa89a489330a5099502156",
+          "native": "243448ac891232cc879a9321c9320133a4ae8020"
+        }
+      },
+      "evidence_sha256": "ddaf307ca3b4016b28c289f765d4e9d28fcbdec92518468f63af9f53cd10601c"
+    }
+  },
+  "packages": [
+    {
+      "batch_id": "WK-CONTENT-001",
+      "source_commit": "d318098bce3c2923516a8b83ad5e2d1fe53d055e",
+      "manifest_sha256": "74b0bc2fd588ecb4036c6f691a6f2f77fda4f1f54bb01806d8489837a34aecf3",
+      "authoring_result": "PASS",
+      "delivered_f248_import_result": "PASS",
+      "recovered_import_result": "PASS",
+      "recovered_import_status": "IMPORTED",
+      "recovered_active_data_result": "PASS",
+      "active_import_identity_match": true,
+      "applied_records": 1887,
+      "fresh_rebuild_ledger_result": "PASS",
+      "full_package_gameplay": "NOT_RUN",
+      "windows_native_active_identity_result": "PASS"
+    },
+    {
+      "batch_id": "WK-CONTENT-002",
+      "source_commit": "10b4dcfbf1d1c9fff89b36c71ca36429f12e7bda",
+      "manifest_sha256": "0d33d029997534123a94346530d8bbd9ad8ee11ea1bc08ecd600d1a1aac849ec",
+      "authoring_result": "PASS",
+      "delivered_f248_import_result": "PASS",
+      "recovered_import_result": "PASS",
+      "recovered_import_status": "IMPORTED",
+      "recovered_active_data_result": "PASS",
+      "active_import_identity_match": true,
+      "applied_records": 457,
+      "fresh_rebuild_ledger_result": "PASS",
+      "full_package_gameplay": "NOT_RUN",
+      "windows_native_active_identity_result": "PASS"
+    },
+    {
+      "batch_id": "WK-CONTENT-003",
+      "source_commit": "897495bfd15f9c35fd7d0d9da64c4009232ad33b",
+      "manifest_sha256": "e20ab0ad657503f6972a57745ceabad1f76019c84b6492dd81472a9b8687ae1d",
+      "authoring_result": "PASS",
+      "delivered_f248_import_result": "PASS",
+      "recovered_import_result": "PASS",
+      "recovered_import_status": "IMPORTED",
+      "recovered_active_data_result": "PASS",
+      "active_import_identity_match": true,
+      "applied_records": 869,
+      "fresh_rebuild_ledger_result": "PASS",
+      "full_package_gameplay": "NOT_RUN",
+      "windows_native_active_identity_result": "PASS"
+    },
+    {
+      "batch_id": "WK-CONTENT-004",
+      "source_commit": "da6679f563a55dd54cec719eb0903edd8745eca5",
+      "manifest_sha256": "df5c6dcad9b79ffa597fe72a3fed1ba36a396e87cb8416bf2820bac8c0c737a2",
+      "authoring_result": "PASS",
+      "delivered_f248_import_result": "PASS",
+      "recovered_import_result": "PASS",
+      "recovered_import_status": "IMPORTED",
+      "recovered_active_data_result": "PASS",
+      "active_import_identity_match": true,
+      "applied_records": 235,
+      "fresh_rebuild_ledger_result": "PASS",
+      "full_package_gameplay": "NOT_RUN",
+      "windows_native_active_identity_result": "PASS"
+    },
+    {
+      "batch_id": "WK-CONTENT-005",
+      "source_commit": "901a85be123ff0bf80beb09f30fa5ba35b08a276",
+      "manifest_sha256": "53af2b585050dfd21edd1b439442bd0afee545f33592f5c4909ea84765edeca6",
+      "authoring_result": "PASS",
+      "delivered_f248_import_result": "NOT_RUN",
+      "recovered_import_result": "PASS",
+      "recovered_import_status": "IMPORTED",
+      "recovered_active_data_result": "PASS",
+      "active_import_identity_match": true,
+      "applied_records": 56,
+      "fresh_rebuild_ledger_result": "PASS",
+      "full_package_gameplay": "NOT_RUN",
+      "windows_native_active_identity_result": "PASS"
+    },
+    {
+      "batch_id": "WK-CONTENT-006",
+      "source_commit": "d4bd4b17a5307d5c882936c39547d698736d3733",
+      "manifest_sha256": "29216fdd87f09a289a1fd3ad5205e5b2b3157245d1ea01f34776fab16137ef7e",
+      "authoring_result": "PASS",
+      "delivered_f248_import_result": "NOT_RUN",
+      "recovered_import_result": "PASS",
+      "recovered_import_status": "IMPORTED",
+      "recovered_active_data_result": "PASS",
+      "active_import_identity_match": true,
+      "applied_records": 7,
+      "fresh_rebuild_ledger_result": "PASS",
+      "full_package_gameplay": "NOT_RUN",
+      "windows_native_active_identity_result": "PASS"
+    },
+    {
+      "batch_id": "WK-CONTENT-007",
+      "source_commit": "381cfefad15a2fff6356f2e9a0bd3859af3fc703",
+      "manifest_sha256": "26d0a495104daedf461b6e41cd8b41bd8574bff09fa892a8c169a3f1aaf8316f",
+      "authoring_result": "PASS",
+      "delivered_f248_import_result": "NOT_RUN",
+      "recovered_import_result": "PASS",
+      "recovered_import_status": "IMPORTED",
+      "recovered_active_data_result": "PASS",
+      "active_import_identity_match": true,
+      "applied_records": 59,
+      "fresh_rebuild_ledger_result": "PASS",
+      "full_package_gameplay": "NOT_RUN",
+      "windows_native_active_identity_result": "PASS"
+    },
+    {
+      "batch_id": "WK-CONTENT-008",
+      "source_commit": "2935c1f7cebed5a673dca1660d6bb0fbff0ae35d",
+      "manifest_sha256": "d9f69210a63b0cdcd6013561cdbc83d2976bb9fcdcd65437f170bb40433dfa4b",
+      "authoring_result": "PASS",
+      "delivered_f248_import_result": "NOT_RUN",
+      "recovered_import_result": "PASS",
+      "recovered_import_status": "IMPORTED",
+      "recovered_active_data_result": "PASS",
+      "active_import_identity_match": true,
+      "applied_records": 44,
+      "fresh_rebuild_ledger_result": "PASS",
+      "full_package_gameplay": "NOT_RUN",
+      "windows_native_active_identity_result": "PASS"
+    },
+    {
+      "batch_id": "WK-CONTENT-009",
+      "source_commit": "c75c3b9352070c02f3013e9afd2079797b754823",
+      "manifest_sha256": "a9788fecb85761db06350ac51cb5b8057a2e411cadc27e3ea2f407eaddba7b50",
+      "authoring_result": "PASS",
+      "delivered_f248_import_result": "NOT_RUN",
+      "recovered_import_result": "PASS",
+      "recovered_import_status": "IMPORTED",
+      "recovered_active_data_result": "PASS",
+      "active_import_identity_match": true,
+      "applied_records": 362,
+      "fresh_rebuild_ledger_result": "PASS",
+      "full_package_gameplay": "NOT_RUN",
+      "windows_native_active_identity_result": "PASS"
+    },
+    {
+      "batch_id": "WK-CONTENT-010",
+      "source_commit": "f7a85eee9615db2d2f977ae5796a867a096bce07",
+      "manifest_sha256": "59e352d2c2b34bdab160380e2dd00aade99c86b18cfe35ab3b3873f8aec1bb4f",
+      "authoring_result": "PASS",
+      "delivered_f248_import_result": "NOT_RUN",
+      "recovered_import_result": "PASS",
+      "recovered_import_status": "IMPORTED",
+      "recovered_active_data_result": "PASS",
+      "active_import_identity_match": true,
+      "applied_records": 9,
+      "fresh_rebuild_ledger_result": "PASS",
+      "full_package_gameplay": "NOT_RUN",
+      "windows_native_active_identity_result": "PASS"
+    }
+  ],
+  "loaded_definition_counts": {
+    "advancement": 12,
+    "asset": 1038,
+    "class": 5,
+    "drop_group": 390,
+    "economy": 1,
+    "enhancement": 1,
+    "growth": 401,
+    "item": 678,
+    "map": 386,
+    "monster": 390,
+    "npc": 259,
+    "quest": 123,
+    "recipe": 234,
+    "shop": 62,
+    "skill": 227
+  },
+  "static_world": {
+    "physical_maps": 423,
+    "graph_reachable_maps": 423,
+    "terrain_reachable_maps_from_home": 423,
+    "graph_unreachable_map_ids": [],
+    "terrain_unreachable_map_ids": [],
+    "portal_reference_or_arrival_errors": [],
+    "invalid_global_arrivals": [],
+    "maps_with_unreachable_local_portals": 0,
+    "blocked_spawn_instances": 0,
+    "spawns_no_local_terrain_access": 0,
+    "npcs_no_local_terrain_access": 0,
+    "empty_maps": 0,
+    "scope": "STATIC_TERRAIN_DIRECTIONAL_COLLISION_AND_BLOCKING_NPCS; DYNAMIC_MONSTER_OCCUPANCY_AND_ACTUAL_PLAY_NOT_RUN"
+  },
+  "runtime_contracts": [
+    {
+      "id": "immutable-release-and-assets",
+      "result": "PASS",
+      "tested": 2305
+    },
+    {
+      "id": "all-skills-compile-and-validate",
+      "result": "PASS",
+      "tested": 227
+    },
+    {
+      "id": "all-skills-controlled-effects-accepted",
+      "result": "PASS",
+      "tested": 227
+    },
+    {
+      "id": "all-NPC-services-and-dialogue-references",
+      "result": "PASS",
+      "tested": 259
+    },
+    {
+      "id": "all-monster-drop-groups-and-roll-references",
+      "result": "PASS",
+      "tested": 390
+    },
+    {
+      "id": "all-quest-objective-events-and-reward-references",
+      "result": "PASS",
+      "tested": 123
+    },
+    {
+      "id": "all-recipe-input-output-references",
+      "result": "PASS",
+      "tested": 234
+    }
+  ],
+  "features": [
+    {
+      "id": "maps_static_runtime_load",
+      "result": "PASS",
+      "tested": 423,
+      "scope": "Actual ContentRegistry world load, directional terrain/NPC topology and travel edges; dynamic occupancy/full manual play excluded"
+    },
+    {
+      "id": "hunting_map_repairs",
+      "result": "PASS",
+      "empty_hunting_maps_fixed": 7,
+      "coordinate_relocations": 41,
+      "portal_relocations": 1,
+      "overlevel_map_relocations": 9,
+      "scope": "Static/source-backed recovery placement; original coordinates not asserted"
+    },
+    {
+      "id": "progression_controlled",
+      "result": "PASS",
+      "tested": 34,
+      "scope": "Actual rules with controlled states; not natural all-job leveling1to99"
+    },
+    {
+      "id": "core_systems_controlled",
+      "result": "PASS",
+      "tested": 43,
+      "scope": "Actual core systems with synthetic test data"
+    },
+    {
+      "id": "combat_source_render_controlled",
+      "result": "PASS",
+      "tested": 34,
+      "scope": "Actual main game methods and original rendering; not natural all-combat play"
+    },
+    {
+      "id": "status_effects_controlled",
+      "result": "PASS",
+      "tested": 12,
+      "scope": "Paralysis and weakness runtime expiry/damage behavior; declared additive weakness adapter is not original unit proof"
+    },
+    {
+      "id": "map_geometry_routes_mobile_ui",
+      "result": "PASS",
+      "tested": 16,
+      "scope": "Geometry/routes/UI16 controlled checks, normal map input and actual Android player OS touch-menu/M-key same spatial map checks PASS"
+    },
+    {
+      "id": "old_f248_save_compatibility_preserved_evidence",
+      "result": "PASS",
+      "tested": 7,
+      "scope": "Captured old save copy read by new main and exact preserved APK code on Linux; original player and source save bytes preserved; not new Android OS update-install test"
+    },
+    {
+      "id": "compass_candidate_search",
+      "result": "PASS",
+      "candidate_checks": 1,
+      "entity_visits": 0,
+      "path_searches": 0,
+      "microseconds": 26,
+      "scope": "Latest actual Windows normal learned-skill cast; entity visits0/path searches0; excludes total frame guarantee",
+      "platform": "Windows"
+    },
+    {
+      "id": "all_maps_manual_play",
+      "result": "NOT_RUN",
+      "static_maps": 423,
+      "historical_normal_input_representative_maps": 8
+    },
+    {
+      "id": "all_skills_natural_learn_cast_animation",
+      "result": "NOT_RUN",
+      "defined_skills": 227
+    },
+    {
+      "id": "all_quests_and_advancement_manual_play",
+      "result": "NOT_RUN",
+      "defined_quests": 123
+    },
+    {
+      "id": "all_jobs_natural_level1to99",
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "range_catalog_items_acquisition",
+      "result": "FAIL",
+      "count": 2,
+      "classification": "UNLINKED_CATALOG_DEFINITIONS",
+      "items": [
+        "웨딩드레스1~11번",
+        "망또00번~21번"
+      ]
+    },
+    {
+      "id": "unused_craft_shop_links",
+      "result": "FAIL",
+      "count": 2,
+      "classification": "UNLINKED_DEFINITIONS",
+      "items": [
+        "설영 craft",
+        "몽이 craft"
+      ]
+    },
+    {
+      "id": "original_asset_gaps",
+      "result": "BLOCKED",
+      "count": 9,
+      "classification": "ORIGINAL_NOT_AVAILABLE_HELD"
+    },
+    {
+      "id": "hostile_original_attack_motion",
+      "result": "BLOCKED",
+      "count": 4,
+      "classification": "SOURCE_ATTACK_UNAVAILABLE_WALK_FALLBACK",
+      "non_hostile_object_models_also_without_attack": 40
+    },
+    {
+      "id": "complete_original_1998_korean_restoration",
+      "result": "NOT_RUN",
+      "scope": "Known inferred KR roles on some NA original terrain, identity/art gaps, 1999/2001 rules sources and DEV_ESTIMATE strength growth remain; all original initial/growth values not verified"
+    },
+    {
+      "id": "user_galaxy_and_windows_devices",
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "linux_same_map_tile_cache_reuse",
+      "result": "PASS",
+      "cold_work_tile_builds": 73,
+      "repeat_work_tile_builds": 0,
+      "repeat_work_tile_hits": 258,
+      "tile570_direct_cache_check": "PASS"
+    },
+    {
+      "id": "linux_cold_work_first_draw_latency",
+      "result": "FAIL",
+      "cpu_ms": 339.957,
+      "scope": "One controlled actual main.gd draw CPU submission on Linux X11 softwareGL; native device extrapolation excluded"
+    },
+    {
+      "id": "linux_synchronous_save_latency",
+      "result": "FAIL",
+      "fresh_core_samples": 12,
+      "minimum_ms": 397.483,
+      "maximum_ms": 785.334,
+      "median_ms": 659.85,
+      "retained_profile_total_ms": 716.739,
+      "retained_profile_snapshot_ms": 56.251,
+      "retained_profile_store_residual_ms": 660.488,
+      "native_windows_further_latency_confirmed": true
+    },
+    {
+      "id": "native_fps_and_first_playable_frame",
+      "result": "NOT_RUN",
+      "scope": "GPU presentation FPS and cast-to-first-playable frame not measured; actual Android _process interval performance is separately measured FAIL"
+    },
+    {
+      "id": "cold_decode_tile_draw_and_save_subphase_costs",
+      "result": "NOT_RUN"
+    },
+    {
+      "id": "native_windows_synchronous_save_latency",
+      "result": "FAIL",
+      "samples": 17,
+      "minimum_ms": 392.557,
+      "median_ms": 785.4,
+      "maximum_ms": 898.379,
+      "snapshot_median_ms": 47.89,
+      "scope": "Actual Windows native main-thread successful save profile; not full input-to-resume time"
+    },
+    {
+      "id": "android_player_process_frame_intervals",
+      "result": "FAIL",
+      "samples": 4457,
+      "mean_ms": 94.6551193628001,
+      "p99_ms": 199.058,
+      "scope": "Android35 emulator _process intervals, not GPU FPS or Galaxy"
+    },
+    {
+      "id": "android_player_synchronous_save_latency",
+      "result": "FAIL",
+      "samples": 54,
+      "median_ms": 886.7375,
+      "maximum_ms": 5082.194
+    },
+    {
+      "id": "android_repeated_stress_navigation_budget",
+      "result": "FAIL",
+      "samples": 24,
+      "node_limit": 4096,
+      "search_ms_range": [
+        17.438,
+        31.19
+      ],
+      "scope": "Retained new-command stress slice; cause not determined; distinct compass optimized path"
+    }
+  ],
+  "normal_play": {
+    "platform": "Linux loading actual exported Windows EXE embedded game pack",
+    "initial_core": {
+      "result": "FAIL",
+      "pass": 39,
+      "fail": 3,
+      "preserved": true,
+      "scope": "Normal inputs and timers; reached commoner5/job/mage6/80kills; trainer return blocked by live cave occupants"
+    },
+    "failed_stage_continuation": {
+      "result": "PASS",
+      "checks": 5,
+      "production_exe_unchanged": true,
+      "save_stat_fixture_or_override": false,
+      "learned_compass_normal_hotkey_used": true,
+      "fire_spell_level": 6,
+      "fire_spell_material_acorns": 10,
+      "actual_spell_damage": 44
+    },
+    "fresh_process_restart": {
+      "result": "PASS",
+      "checks": 4,
+      "scope": "Player, monsters, loot, RNG"
+    },
+    "fresh_full_core_rerun": {
+      "result": "PASS",
+      "execution_state": "COMPLETED",
+      "platform": "Linux embedded PCK of actual unchanged exported Windows EXE",
+      "requested_source_commit": "dc36b5c7f3283fd10739947238b0c6b1b56dbccc",
+      "embedded_production_build_commit": "a0ccaa4b0e7bfc724d0d2fbf2ded91eb8c683a2d",
+      "production_exe_sha256": "d4b31da9aa1dbadb1e280e087af78fde93cd649cdcfdc501100b4196551f6813",
+      "production_exe_unchanged": true,
+      "only_game_input_changed": [
+        "game/recovery_play_probe.gd"
+      ],
+      "all_other_game_inputs_byte_identical": true,
+      "fresh_save_absent_before_launch": true,
+      "core": {
+        "status": "PASS",
+        "elapsed_ms": 504924,
+        "PASS": 45,
+        "FAIL": 0,
+        "NOT_RUN": 0,
+        "BLOCKED": 0
+      },
+      "restart": {
+        "status": "PASS",
+        "elapsed_ms": 394,
+        "PASS": 4,
+        "FAIL": 0,
+        "NOT_RUN": 0,
+        "BLOCKED": 0
+      },
+      "wall_seconds": 518.903,
+      "actual_spell_damage": 44,
+      "natural_kills_at_level6": 65,
+      "compass_search_microseconds": 29,
+      "entity_visits": 0,
+      "path_searches": 0,
+      "windows_native_execution": "NOT_RUN",
+      "android_native_execution": "NOT_RUN",
+      "first_failed_core_preserved": true,
+      "full_content_playthrough": "NOT_RUN",
+      "evidence_summary": "FRESH_CORE_DC36B5C.md",
+      "source_report_sha256": "6eff51beab2272cc9c7ecdbc317d6c831dee8ad58a7067fd9067fb2141545bee",
+      "source_lineage_sha256": "4a152aa85a8229f50a383f6422de98c89ccfcfe172d6b13ff0f35f11298639b4",
+      "content_release": "3b5423ed7d65f951489361d202d5312adb136c8d7c0f21cc6f66441a46799234"
+    },
+    "historical_representative_routes": {
+      "result": "PASS",
+      "checks": 23,
+      "restart_checks": 4,
+      "unique_maps": 8,
+      "content_release": "cd0c680ab5fc8fb223ef2d14ff0b991b18e3e100fecba693bd608040f8a66e57",
+      "scope": "Preserved earlier Linux X11 normal input routes/NPC transactions; not fresh full-map manual play"
+    }
+  },
+  "native": {
+    "run_id": 38729864952,
+    "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/actions/runs/38729864952",
+    "source_commit": "243448ac891232cc879a9321c9320133a4ae8020",
+    "android": {
+      "result": "PASS",
+      "execution_state": "COMPLETED",
+      "source_commit": "243448ac891232cc879a9321c9320133a4ae8020",
+      "content_release": "aa212082041a5cd81faff4f16eb713a5bc52c18ab5a00c19caa3632a16ff0f2c",
+      "source_inputs_sha256": "d048acbf23a7e55ef020657f91f5a9e2abd9d12566674de96d2a97d5208abf80",
+      "player": {
+        "result": "PASS",
+        "checks": 25,
+        "scope": "EXACT_RELEASE_APK_ANDROID_35_X86_64_OS_INPUT_NOT_GALAXY",
+        "input_session_seconds": 606.05,
+        "input_session_iterations": 423,
+        "replace_install_preserves_save_bytes": "PASS",
+        "map_touch_and_M_key": "PASS"
+      },
+      "separate_verification_runner": {
+        "result": "PASS",
+        "checks": 14,
+        "scope": "ACTUAL_ANDROID35_VERIFICATION_APK_INPUT_RUNNER_NOT_PLAYER_APK_NOT_PHYSICAL_GALAXY"
+      },
+      "separate_verification_core": {
+        "result": "PASS",
+        "checks": 53,
+        "elapsed_ms": 666015,
+        "platform": "Android",
+        "time_scale": 1.0,
+        "actual_spell_damage": 44,
+        "attack_spell_verified_at_ms": 661637,
+        "final_level": 6,
+        "final_job": "주술사",
+        "final_kills": 64,
+        "scope": "Actual Android35 separate verification APK with same frozen production code/content; not the player APK full-level6 input path"
+      },
+      "separate_verification_restart": {
+        "result": "PASS",
+        "checks": 4,
+        "elapsed_ms": 1761
+      },
+      "apk": {
+        "file": "baram-Android-update.apk",
+        "bytes": 283652192,
+        "sha256": "236a668a5e651f84e7ee22bb3cdecf6a0b4631531ac829f5a65920c79e3b120b",
+        "runtime_pck_sha256": "0c41521bf00c220bdca0164dc328070299f29770effff3113a718c5cb9f12775"
+      },
+      "package": "org.irewon.baram.singleplayer",
+      "certificate_sha256": "f8cf43158c663e80b3e15aaa82681ea328be009ea900c7c5ea68e8a6ddec608a",
+      "version_code": 1792065007,
+      "artifact_validation": {
+        "result": "PASS",
+        "checks": 39
+      },
+      "player_and_verification_source_inputs_equal": true,
+      "player_and_verification_runtime_pck_sha256_equal": true,
+      "windows_source_inputs_equal": true,
+      "windows_content_release_equal": true,
+      "apk_sha256_and_embedded_build_info_and_runtime_read": true,
+      "core_and_restart_actual_reports_read": true,
+      "physical_galaxy": "NOT_RUN",
+      "full_content_gameplay": "NOT_RUN",
+      "inspection_report_sha256": "afe2d30993f0d73dfa17ba7838cff53f3fad10a250758124060c6d5cd28a59cb",
+      "player_report_sha256": "30a0010649dc3d598fe33ed82ceea068e97ee86d12213d9ff36dfcc5775eaac8",
+      "runner_report_sha256": "851f828b08ac7387b7cb169deb9806debc65ba779ccd7aa6f28e4445c609bd19",
+      "core_report_sha256": "51d06b3a6093a1564c6a9dddc5f1f73c6ddd4ad7225c66cdb9576bfa9551cd08",
+      "restart_report_sha256": "b43567d8783295eaee15ba38bcaca67b98a6e3c2b1b80585c8d02d320701b1d3"
+    },
+    "windows": {
+      "result": "PASS",
+      "execution_state": "COMPLETED",
+      "source_commit": "243448ac891232cc879a9321c9320133a4ae8020",
+      "content_release": "aa212082041a5cd81faff4f16eb713a5bc52c18ab5a00c19caa3632a16ff0f2c",
+      "source_inputs_sha256": "d048acbf23a7e55ef020657f91f5a9e2abd9d12566674de96d2a97d5208abf80",
+      "windowed": {
+        "result": "PASS",
+        "checks": 19,
+        "visible_window_samples": 133,
+        "windows_message_pump": "PASS"
+      },
+      "headless_smoke": {
+        "result": "PASS",
+        "checks": 3
+      },
+      "core": {
+        "result": "PASS",
+        "checks": 51,
+        "elapsed_ms": 577050,
+        "platform": "Windows",
+        "time_scale": 1.0,
+        "actual_spell_damage": 44,
+        "attack_spell_verified_at_ms": 573827,
+        "final_kills": 82
+      },
+      "fresh_restart": {
+        "result": "PASS",
+        "checks": 4,
+        "elapsed_ms": 479
+      },
+      "archive": {
+        "file": "바람의나라_Windows64_복구판_243448ac89.zip",
+        "bytes": 175904711,
+        "sha256": "58b6cb400d17063c4771d2756a0f51dde16be87db9205db1de1f16005311e042"
+      },
+      "manifest_validation": {
+        "result": "PASS",
+        "files": 1833,
+        "validator_checks": 3695
+      },
+      "archive_sha256_independently_read": true,
+      "core_and_restart_actual_reports_read": true,
+      "archive_execution_metadata_read": true,
+      "human_operator_gui_observation": "NOT_RUN",
+      "full_content_gameplay": "NOT_RUN",
+      "overall_game_complete": false,
+      "inspection_report_sha256": "78b02f8aec67774e2b1ec0abbacbcda42c75db64a45b32de378134dcc4fb7e30",
+      "core_report_sha256": "dcf04edce29c3cb7e26ae551e34ae6ece93da0066fecac25c9810b9f0d9b8c39",
+      "restart_report_sha256": "80ffa170ddbd2a029b458a85432c2e39984c31e8a87d3fa4c1c82cd541b5bf78"
+    },
+    "old_environment_block_resolved": true,
+    "original_two_branch_rules_preserved": true,
+    "extra_allowed_exact_branch": "work/gameplay-recovery-20261015",
+    "current_run_scope": "All three CI jobs succeeded. Actual platform/player/verification/pointer artifacts and strict functional delivery gate validated. Overall game/performance completion remains false.",
+    "final_installer_hashes": {
+      "android": {
+        "platform": "Android",
+        "file": "baram-Android-243448ac.apk",
+        "bytes": 283652192,
+        "sha256": "236a668a5e651f84e7ee22bb3cdecf6a0b4631531ac829f5a65920c79e3b120b"
+      },
+      "windows": {
+        "platform": "Windows",
+        "file": "baram-Windows64-243448ac.zip",
+        "bytes": 175904711,
+        "sha256": "58b6cb400d17063c4771d2756a0f51dde16be87db9205db1de1f16005311e042"
+      }
+    },
+    "final_delivery_gate": {
+      "result": "PASS",
+      "execution_state": "COMPLETED",
+      "delivery_status": "READY",
+      "checks": 3740,
+      "all_checks_pass": true,
+      "source_commit": "243448ac891232cc879a9321c9320133a4ae8020",
+      "content_release": "aa212082041a5cd81faff4f16eb713a5bc52c18ab5a00c19caa3632a16ff0f2c",
+      "source_inputs_sha256": "d048acbf23a7e55ef020657f91f5a9e2abd9d12566674de96d2a97d5208abf80",
+      "files": [
+        {
+          "platform": "Android",
+          "file": "baram-Android-243448ac.apk",
+          "bytes": 283652192,
+          "sha256": "236a668a5e651f84e7ee22bb3cdecf6a0b4631531ac829f5a65920c79e3b120b"
+        },
+        {
+          "platform": "Windows",
+          "file": "baram-Windows64-243448ac.zip",
+          "bytes": 175904711,
+          "sha256": "58b6cb400d17063c4771d2756a0f51dde16be87db9205db1de1f16005311e042"
+        }
+      ],
+      "signature_scope": "CI_APKSIGNER_ATTESTATION_BOUND_TO_AES_AUTHENTICATED_ARTIFACT_AND_ACTUAL_APK_HASH",
+      "overall_game_complete": false,
+      "actual_report_sha256": "1b8266ab555b57c36d6c64c565bb2fefd04fa3694de4665a2167c316ad7c9f72",
+      "verified_delivery_file_bytes_and_hashes_independently_read": true
+    },
+    "package_to_preserve": "org.irewon.baram.singleplayer",
+    "certificate_sha256_to_preserve": "f8cf43158c663e80b3e15aaa82681ea328be009ea900c7c5ea68e8a6ddec608a",
+    "android_pointers": {
+      "result": "PASS",
+      "execution_state": "COMPLETED",
+      "checks": 11,
+      "job_id": 116416262005,
+      "apk_sha256": "236a668a5e651f84e7ee22bb3cdecf6a0b4631531ac829f5a65920c79e3b120b",
+      "scope": "Android35 native MotionEvent OS two-pointer injection; not physical Galaxy",
+      "report_sha256": "c5ba227a49bbaa257229ac887ddcaa023c6d8e22f4d173512810f9c1604b2716"
+    },
+    "execution_state": "COMPLETED",
+    "workflow_conclusion": "success",
+    "jobs": [
+      {
+        "id": 116404693197,
+        "name": "windows",
+        "execution_state": "COMPLETED",
+        "conclusion": "success",
+        "labels": [
+          "windows-latest"
+        ]
+      },
+      {
+        "id": 116404693525,
+        "name": "android",
+        "execution_state": "COMPLETED",
+        "conclusion": "success",
+        "labels": [
+          "ubuntu-latest"
+        ]
+      },
+      {
+        "id": 116416262005,
+        "name": "android_pointers",
+        "execution_state": "COMPLETED",
+        "conclusion": "success",
+        "labels": [
+          "ubuntu-latest"
+        ]
+      }
+    ]
+  },
+  "preservation": {
+    "original_assets_and_content": true,
+    "existing_player_forced_reset": false,
+    "original_raw_source_hash_matches": 54,
+    "historical_source_files": 57,
+    "production_token_equivalent_scripts": 22,
+    "token_comparison_excludes": "line/column positions only",
+    "unrecovered_python_implementation": "Explicitly reconstructed; original raw byte identity not claimed",
+    "private_payloads_in_report": false
+  },
+  "evidence": [
+    "BASELINE_AUDIT.md",
+    "RECOVERED_AUDIT.md",
+    "recovery-source-static-audit.json",
+    "recovery-source-runtime-contract.json",
+    "content-rebuilt-fresh.json",
+    "local-play-continuation/first-core-fail-preserved.json",
+    "local-play-continuation/continuation-verification.json",
+    "ENVIRONMENT_BRANCH_APPROVAL.json",
+    "source-recovery/current-source-hash-comparison.json",
+    "source-recovery/current-source-token-equivalence.json",
+    "FRESH_CORE_DC36B5C.md",
+    "preflight-checks.json",
+    "POST_CI_DELIVERY.md",
+    "PERFORMANCE_CURRENT_LINUX_20261015.md",
+    "performance-current/native-windows.json",
+    "NATIVE_GATE.md",
+    "NATIVE_EXECUTION_STATUS.json",
+    "performance-current/native-android.json"
+  ],
+  "historical_preserved_evidence": {
+    "audit_summary_sha256": "98d3adaadca96a1bc77c5d04be8795df1affa147075d789e616e1df64ed1b82d",
+    "old_save_compiled_apk_report_sha256": "64a798c6f5d713b0f0ae5e40a5738f3c5a7b99bf1d5f9822c44b9725d0f1fe7b",
+    "reports_not_relabelled_as_fresh_execution": true
+  },
+  "paid_services_used": false,
+  "native_pass_inferred_from_build_or_linux": false,
+  "summary_code": "CORE_PLAY_RECOVERED_BOTH_NATIVE_INSTALLERS_READY_PERFORMANCE_FAIL_FULL_CONTENT_NOT_RUN",
+  "regression": {
+    "python": {
+      "result": "PASS",
+      "passed": 70,
+      "skipped": 1,
+      "discovered": 71,
+      "scope": "Existing Python unit suite; skipped test not counted as PASS"
+    },
+    "reconstructed_content_safety": {
+      "result": "PASS",
+      "passed": 6
+    },
+    "post_ci_transport_and_delivery_policy": {
+      "result": "PASS",
+      "passed": 10,
+      "scope": "Synthetic/policy tests; not native execution or actual transport completion"
+    }
+  },
+  "performance": {
+    "result": "FAIL",
+    "reason": "Confirmed cold Work first draw and synchronous save latency remain",
+    "measured_platform": "Linux X11 software OpenGL gl_compatibility",
+    "measurement_source_commit": "f0247ced8ed62313af5c6b506533d1295e497a52",
+    "measurement_content_release": "e43e30ccea064113c22ae8a28a3675348a283b05b6775121df1ba5ebb901465b",
+    "production_source_equivalence": {
+      "result": "PASS",
+      "current_production_scripts_byte_identical": 21,
+      "excludes": "Android project settings and verification helpers"
+    },
+    "world": {
+      "entities": 4578,
+      "maps": 423,
+      "town_height": 220.0,
+      "town_width": 220.0
+    },
+    "compass_same_world_comparison": {
+      "result": "PASS",
+      "legacy": {
+        "candidate_checks": 48400,
+        "destination": "(217, 110)",
+        "entity_visits": 148363824,
+        "microseconds": 80784925,
+        "path_searches": 0
+      },
+      "optimized": {
+        "candidate_checks": 1,
+        "destination": "(217, 110)",
+        "entity_visits": 0,
+        "microseconds": 20,
+        "path_searches": 0,
+        "radius": 0
+      },
+      "optimized_30_runs": {
+        "maximum_us": 16,
+        "median_us": 3,
+        "p95_us": 5
+      },
+      "scope": "Controlled legacy algorithm reconstruction with counters; not delivered APK/device wait reproduction"
+    },
+    "direct_tile_cache_check": {
+      "initial_build_us": 228574,
+      "loaded": 570,
+      "map": "kr.map.089e90495862",
+      "repeat_lookup_us": 1101,
+      "repeat_rebuilds": 0,
+      "resets_after_real_map_change": 1,
+      "status": "PASS",
+      "unique_work_tiles": 570
+    },
+    "actual_transition_first_draw": {
+      "result": "PASS",
+      "scope": "Measurement/correctness result; latency gap remains FAIL. Direct calls to actual main.gd, not normal input gameplay or native first-playable timing",
+      "stages": [
+        {
+          "first_draw": {
+            "cached_work_tiles": 0,
+            "draw_submission_us": 15129,
+            "observed_at_us": 6868217,
+            "tile_builds": 0,
+            "tile_hits": 0,
+            "tile_resets_during_draw": 0
+          },
+          "first_post_draw_wall_us": 124035,
+          "forced_flush_proxy": false,
+          "stage": "compass-same-village-first-gate",
+          "target_map": "village",
+          "tile_resets_in_transition": 0,
+          "transition_handler_us": 54
+        },
+        {
+          "first_draw": {
+            "cached_work_tiles": 0,
+            "draw_submission_us": 7848,
+            "observed_at_us": 7066990,
+            "tile_builds": 0,
+            "tile_hits": 0,
+            "tile_resets_during_draw": 0
+          },
+          "first_post_draw_wall_us": 26690,
+          "forced_flush_proxy": false,
+          "stage": "compass-same-village-repeat-gate",
+          "target_map": "village",
+          "tile_resets_in_transition": 0,
+          "transition_handler_us": 81
+        },
+        {
+          "first_draw": {
+            "cached_work_tiles": 73,
+            "draw_submission_us": 339957,
+            "observed_at_us": 7506683,
+            "tile_builds": 73,
+            "tile_hits": 185,
+            "tile_resets_during_draw": 0
+          },
+          "first_post_draw_wall_us": 354298,
+          "forced_flush_proxy": false,
+          "stage": "work-map-cold-entry",
+          "target_map": "kr.map.089e90495862",
+          "tile_resets_in_transition": 1,
+          "transition_handler_us": 60
+        },
+        {
+          "first_draw": {
+            "cached_work_tiles": 73,
+            "draw_submission_us": 8175,
+            "observed_at_us": 7608195,
+            "tile_builds": 0,
+            "tile_hits": 258,
+            "tile_resets_during_draw": 0
+          },
+          "first_post_draw_wall_us": 21353,
+          "forced_flush_proxy": false,
+          "stage": "work-map-same-map-repeat",
+          "target_map": "kr.map.089e90495862",
+          "tile_resets_in_transition": 0,
+          "transition_handler_us": 62
+        },
+        {
+          "first_draw": {
+            "cached_work_tiles": 73,
+            "draw_submission_us": 9492,
+            "observed_at_us": 7703880,
+            "tile_builds": 73,
+            "tile_hits": 185,
+            "tile_resets_during_draw": 0
+          },
+          "first_post_draw_wall_us": 24134,
+          "forced_flush_proxy": true,
+          "stage": "work-map-forced-flush-legacy-proxy",
+          "target_map": "kr.map.089e90495862",
+          "tile_resets_in_transition": 0,
+          "transition_handler_us": 50
+        }
+      ]
+    },
+    "ordinary_frame": {
+      "result": "PASS",
+      "scope": "Controlled idle actual main.gd Linux X11 software OpenGL process/draw CPU samples; cold entry excluded with20warmupframes; no native FPS claim.",
+      "phases": [
+        {
+          "draw_submission": {
+            "maximum_us": 14074,
+            "mean_us": 8576.22222222222,
+            "p95_us": 11703,
+            "samples": 180
+          },
+          "entities_in_map": 0,
+          "frame_interval": {
+            "maximum_us": 41506,
+            "mean_us": 17102.8611111111,
+            "p95_us": 21906,
+            "samples": 180
+          },
+          "map": "village",
+          "process": {
+            "maximum_us": 425,
+            "mean_us": 87.0611111111111,
+            "p95_us": 148,
+            "samples": 180
+          }
+        },
+        {
+          "draw_submission": {
+            "maximum_us": 16428,
+            "mean_us": 8120.74444444444,
+            "p95_us": 11947,
+            "samples": 180
+          },
+          "entities_in_map": 8,
+          "frame_interval": {
+            "maximum_us": 44900,
+            "mean_us": 18310.3444444444,
+            "p95_us": 25879,
+            "samples": 180
+          },
+          "map": "ruins",
+          "process": {
+            "maximum_us": 4216,
+            "mean_us": 280.177777777778,
+            "p95_us": 481,
+            "samples": 180
+          }
+        }
+      ],
+      "native_fps": "NOT_RUN",
+      "old_new_controlled_ordinary_frame_comparison": "NOT_RUN"
+    },
+    "save_profiles": [
+      {
+        "sample_set": "retained_continuation",
+        "summary": {
+          "count": 2,
+          "snapshot_min_ms": 40.367,
+          "snapshot_max_ms": 56.251,
+          "snapshot_median_ms": 48.309,
+          "total_min_ms": 548.897,
+          "total_max_ms": 716.739,
+          "total_median_ms": 632.818,
+          "total_mean_ms": 632.818
+        }
+      },
+      {
+        "sample_set": "fresh_core",
+        "summary": {
+          "count": 12,
+          "snapshot_min_ms": 36.405,
+          "snapshot_max_ms": 56.538,
+          "snapshot_median_ms": 42.480999999999995,
+          "total_min_ms": 397.483,
+          "total_max_ms": 785.334,
+          "total_median_ms": 659.85,
+          "total_mean_ms": 653.2974166666667
+        }
+      },
+      {
+        "sample_set": "preserved_first_core",
+        "summary": {
+          "count": 18,
+          "snapshot_min_ms": 34.58,
+          "snapshot_max_ms": 47.485,
+          "snapshot_median_ms": 37.434,
+          "total_min_ms": 317.506,
+          "total_max_ms": 750.547,
+          "total_median_ms": 633.046,
+          "total_mean_ms": 631.1741111111111
+        }
+      }
+    ],
+    "source_report": "PERFORMANCE_CURRENT_LINUX_20261015.md",
+    "native_windows": {
+      "result": "FAIL",
+      "successful_save_profiles": 17,
+      "save_median_ms": 785.4,
+      "save_maximum_ms": 898.379,
+      "snapshot_median_ms": 47.89,
+      "compass_search_us": 26,
+      "candidate_checks": 1,
+      "entity_visits": 0,
+      "path_searches": 0,
+      "native_fps": "NOT_RUN",
+      "first_playable_frame": "NOT_RUN",
+      "evidence": "performance-current/native-windows.json",
+      "evidence_sha256": "6850506f0b638a9be443e4755bb8c206115ac2c69c3fc6d0b39c0c28210b4cf0"
+    },
+    "native_android": {
+      "result": "FAIL",
+      "scope": "Actual Android35 x86_64 emulator _process intervals include saves/lifecycle/instrumentation; not Galaxy or GPU presentation FPS",
+      "player_process_frame_intervals": [
+        {
+          "sample_set": "diagnostic-before-restart.json",
+          "frame_intervals": {
+            "mean_ms": 191.484295227525,
+            "over_100_ms": 653,
+            "over_50_ms": 779,
+            "p99_ms": 1353.047,
+            "samples": 901
+          }
+        },
+        {
+          "sample_set": "diagnostic-phone.json",
+          "frame_intervals": {
+            "mean_ms": 94.6551193628001,
+            "over_100_ms": 962,
+            "over_50_ms": 4219,
+            "p99_ms": 199.058,
+            "samples": 4457
+          }
+        }
+      ],
+      "player_save": {
+        "status": "FAIL",
+        "total": {
+          "samples": 54,
+          "minimum_ms": 726.499,
+          "maximum_ms": 5082.194,
+          "median_ms": 886.7375,
+          "mean_ms": 1194.6671111111111,
+          "p95_nearest_rank_ms": 3292.367
+        },
+        "snapshot": {
+          "samples": 54,
+          "minimum_ms": 68.4,
+          "maximum_ms": 959.571,
+          "median_ms": 107.485,
+          "mean_ms": 145.9521851851852,
+          "p95_nearest_rank_ms": 373.138
+        },
+        "store_residual": {
+          "samples": 54,
+          "minimum_ms": 515.112,
+          "maximum_ms": 4496.344,
+          "median_ms": 775.998,
+          "mean_ms": 1048.7149259259259,
+          "p95_nearest_rank_ms": 2919.229
+        }
+      },
+      "verification_save": {
+        "status": "FAIL",
+        "total": {
+          "samples": 16,
+          "minimum_ms": 474.56,
+          "maximum_ms": 987.132,
+          "median_ms": 925.3285000000001,
+          "mean_ms": 905.11025,
+          "p95_nearest_rank_ms": 987.132
+        },
+        "snapshot": {
+          "samples": 16,
+          "minimum_ms": 63.703,
+          "maximum_ms": 98.267,
+          "median_ms": 69.5205,
+          "mean_ms": 72.2271875,
+          "p95_nearest_rank_ms": 98.267
+        },
+        "store_residual": {
+          "samples": 16,
+          "minimum_ms": 401.574,
+          "maximum_ms": 918.285,
+          "median_ms": 854.6514999999999,
+          "mean_ms": 832.8830625,
+          "p95_nearest_rank_ms": 918.285
+        }
+      },
+      "normally_learned_compass_search_us": 43,
+      "candidate_checks": 1,
+      "entity_visits": 0,
+      "path_searches": 0,
+      "retained_navigation_budget_exhaustions": {
+        "result": "FAIL",
+        "samples": 24,
+        "node_limit": 4096,
+        "minimum_ms": 17.438,
+        "maximum_ms": 31.19,
+        "scope": "Retained slice of new stress-tap commands; not compass path or proof canceled routes restarted",
+        "correctness_cause": "NOT_RUN"
+      },
+      "gpu_presentation_fps": "NOT_RUN",
+      "physical_galaxy": "NOT_RUN",
+      "first_playable_frame": "NOT_RUN",
+      "evidence": "performance-current/native-android.json",
+      "evidence_sha256": "4c5b7cb392d68651c4a77892f76eba4b467aa35c0021e5808e10855dc92d08d8"
+    },
+    "first_playable_frame_and_gpu_presentation_fps": "NOT_RUN"
+  },
+  "result_scope": "OVERALL_REQUESTED_AUDIT_INCOMPLETE_DUE_TO_KNOWN_PERFORMANCE_AND_CATALOG_LINK_FAILURES; STRICT_FUNCTIONAL_DELIVERY_GATE_PASS_SEPARATELY"
+}

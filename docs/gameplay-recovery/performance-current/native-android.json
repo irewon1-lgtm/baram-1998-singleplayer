@@ -1,0 +1,2209 @@
+{
+  "status": "PASS",
+  "scope": "Read-only extraction of actual Android35 x86_64 emulator evidence. PASS means extraction/provenance, not whole-game performance acceptance or Galaxy verification.",
+  "environment": {
+    "os": "Android",
+    "api_level": 35,
+    "architecture": "x86_64",
+    "physical_Galaxy_phone_or_Tab_S10_FE": {
+      "status": "NOT_RUN"
+    },
+    "ci_run_id": "38729864952",
+    "game_build": "243448ac891232cc879a9321c9320133a4ae8020",
+    "content_version": "aa212082041a5cd81faff4f16eb713a5bc52c18ab5a00c19caa3632a16ff0f2c"
+  },
+  "player_apk": {
+    "apk_sha256": "236a668a5e651f84e7ee22bb3cdecf6a0b4631531ac829f5a65920c79e3b120b",
+    "package": "org.irewon.baram.singleplayer",
+    "os_functional_checks": {
+      "status": "PASS",
+      "scope": "EXACT_RELEASE_APK_ANDROID_35_X86_64_OS_INPUT_NOT_GALAXY",
+      "check_count": 25,
+      "note": "The quality report contains functional checks, not a frame-performance pass threshold."
+    },
+    "frame_interval_performance": {
+      "status": "FAIL",
+      "scope": "Actual production APK OS input sessions; frame intervals measured between main._process starts, including saves/menu/lifecycle/instrumentation overhead. Derived reciprocal is process frequency, not independent GPU presentation FPS. Separate process observations cannot establish a before/after optimization delta.",
+      "diagnostics": [
+        {
+          "artifact_relative_path": "android-evidence/diagnostic-before-restart.json",
+          "game_build": "243448ac891232cc879a9321c9320133a4ae8020",
+          "content_version": "aa212082041a5cd81faff4f16eb713a5bc52c18ab5a00c19caa3632a16ff0f2c",
+          "map_id": "village",
+          "position": [
+            50,
+            155
+          ],
+          "viewport": [
+            1137.0,
+            640.0
+          ],
+          "frame_intervals": {
+            "mean_ms": 191.484295227525,
+            "over_100_ms": 653,
+            "over_50_ms": 779,
+            "p99_ms": 1353.047,
+            "samples": 901
+          },
+          "derived_process_intervals_per_second": 5.222360396771873,
+          "over_50_ms_percent": 86.45948945615983,
+          "over_100_ms_percent": 72.47502774694783,
+          "last_engine_process_monitor_ms": 21.962,
+          "last_save_performance": {
+            "snapshot_ms": 99.475,
+            "success": true,
+            "total_ms": 914.801
+          },
+          "navigation_generation": 84,
+          "retained_navigation_searches": [
+            {
+              "details": {
+                "from": "(44, 157)",
+                "generation": 55,
+                "goal": "(47, 156)",
+                "map": "village",
+                "microseconds": 154,
+                "path_size": 4,
+                "status": "FOUND",
+                "visited": 12
+              },
+              "event": "navigation_search",
+              "time": 82.39
+            },
+            {
+              "details": {
+                "from": "(47, 156)",
+                "generation": 56,
+                "goal": "(46, 153)",
+                "map": "village",
+                "microseconds": 170,
+                "path_size": 4,
+                "status": "FOUND",
+                "visited": 18
+              },
+              "event": "navigation_search",
+              "time": 83.606
+            },
+            {
+              "details": {
+                "from": "(46, 153)",
+                "generation": 57,
+                "goal": "(44, 153)",
+                "map": "village",
+                "microseconds": 470,
+                "path_size": 2,
+                "status": "FOUND",
+                "visited": 9
+              },
+              "event": "navigation_search",
+              "time": 85.03
+            },
+            {
+              "details": {
+                "from": "(44, 153)",
+                "generation": 58,
+                "goal": "(47, 155)",
+                "map": "village",
+                "microseconds": 195,
+                "path_size": 5,
+                "status": "FOUND",
+                "visited": 41
+              },
+              "event": "navigation_search",
+              "time": 86.174
+            }
+          ],
+          "retained_search_summary": {
+            "samples": 4,
+            "status_counts": {
+              "FOUND": 4
+            },
+            "minimum_us": 154,
+            "maximum_us": 470
+          }
+        },
+        {
+          "artifact_relative_path": "android-evidence/diagnostic-phone.json",
+          "game_build": "243448ac891232cc879a9321c9320133a4ae8020",
+          "content_version": "aa212082041a5cd81faff4f16eb713a5bc52c18ab5a00c19caa3632a16ff0f2c",
+          "map_id": "village",
+          "position": [
+            49,
+            156
+          ],
+          "viewport": [
+            1137.0,
+            640.0
+          ],
+          "frame_intervals": {
+            "mean_ms": 94.6551193628001,
+            "over_100_ms": 962,
+            "over_50_ms": 4219,
+            "p99_ms": 199.058,
+            "samples": 4457
+          },
+          "derived_process_intervals_per_second": 10.564668944815727,
+          "over_50_ms_percent": 94.66008525914292,
+          "over_100_ms_percent": 21.584025129010545,
+          "last_engine_process_monitor_ms": 105.546,
+          "last_save_performance": {
+            "snapshot_ms": 119.114,
+            "success": true,
+            "total_ms": 879.363
+          },
+          "navigation_generation": 591,
+          "retained_navigation_searches": [
+            {
+              "details": {
+                "from": "(49, 156)",
+                "generation": 558,
+                "goal": "(48, 157)",
+                "map": "village",
+                "microseconds": 19044,
+                "path_size": 0,
+                "status": "BUDGET_EXCEEDED",
+                "visited": 4096
+              },
+              "event": "navigation_search",
+              "time": 371.858
+            },
+            {
+              "details": {
+                "from": "(49, 156)",
+                "generation": 559,
+                "goal": "(49, 157)",
+                "map": "village",
+                "microseconds": 22615,
+                "path_size": 0,
+                "status": "BUDGET_EXCEEDED",
+                "visited": 4096
+              },
+              "event": "navigation_search",
+              "time": 372.85
+            },
+            {
+              "details": {
+                "from": "(49, 156)",
+                "generation": 560,
+                "goal": "(50, 157)",
+                "map": "village",
+                "microseconds": 19777,
+                "path_size": 0,
+                "status": "BUDGET_EXCEEDED",
+                "visited": 4096
+              },
+              "event": "navigation_search",
+              "time": 374.053
+            },
+            {
+              "details": {
+                "from": "(49, 156)",
+                "generation": 561,
+                "goal": "(48, 157)",
+                "map": "village",
+                "microseconds": 19900,
+                "path_size": 0,
+                "status": "BUDGET_EXCEEDED",
+                "visited": 4096
+              },
+              "event": "navigation_search",
+              "time": 374.942
+            },
+            {
+              "details": {
+                "from": "(49, 156)",
+                "generation": 562,
+                "goal": "(49, 157)",
+                "map": "village",
+                "microseconds": 20192,
+                "path_size": 0,
+                "status": "BUDGET_EXCEEDED",
+                "visited": 4096
+              },
+              "event": "navigation_search",
+              "time": 375.736
+            },
+            {
+              "details": {
+                "from": "(49, 156)",
+                "generation": 568,
+                "goal": "(50, 157)",
+                "map": "village",
+                "microseconds": 20740,
+                "path_size": 0,
+                "status": "BUDGET_EXCEEDED",
+                "visited": 4096
+              },
+              "event": "navigation_search",
+              "time": 377.196
+            },
+            {
+              "details": {
+                "from": "(49, 156)",
+                "generation": 569,
+                "goal": "(48, 157)",
+                "map": "village",
+                "microseconds": 20038,
+                "path_size": 0,
+                "status": "BUDGET_EXCEEDED",
+                "visited": 4096
+              },
+              "event": "navigation_search",
+              "time": 378.089
+            },
+            {
+              "details": {
+                "from": "(49, 156)",
+                "generation": 570,
+                "goal": "(49, 157)",
+                "map": "village",
+                "microseconds": 20026,
+                "path_size": 0,
+                "status": "BUDGET_EXCEEDED",
+                "visited": 4096
+              },
+              "event": "navigation_search",
+              "time": 379.215
+            },
+            {
+              "details": {
+                "from": "(49, 156)",
+                "generation": 571,
+                "goal": "(50, 157)",
+                "map": "village",
+                "microseconds": 19850,
+                "path_size": 0,
+                "status": "BUDGET_EXCEEDED",
+                "visited": 4096
+              },
+              "event": "navigation_search",
+              "time": 380.023
+            },
+            {
+              "details": {
+                "from": "(49, 156)",
+                "generation": 572,
+                "goal": "(48, 157)",
+                "map": "village",
+                "microseconds": 26750,
+                "path_size": 0,
+                "status": "BUDGET_EXCEEDED",
+                "visited": 4096
+              },
+              "event": "navigation_search",
+              "time": 381.07
+            },
+            {
+              "details": {
+                "from": "(49, 156)",
+                "generation": 573,
+                "goal": "(49, 157)",
+                "map": "village",
+                "microseconds": 18122,
+                "path_size": 0,
+                "status": "BUDGET_EXCEEDED",
+                "visited": 4096
+              },
+              "event": "navigation_search",
+              "time": 381.901
+            },
+            {
+              "details": {
+                "from": "(49, 156)",
+                "generation": 574,
+                "goal": "(50, 157)",
+                "map": "village",
+                "microseconds": 28988,
+                "path_size": 0,
+                "status": "BUDGET_EXCEEDED",
+                "visited": 4096
+              },
+              "event": "navigation_search",
+              "time": 382.754
+            },
+            {
+              "details": {
+                "from": "(49, 156)",
+                "generation": 575,
+                "goal": "(48, 157)",
+                "map": "village",
+                "microseconds": 21513,
+                "path_size": 0,
+                "status": "BUDGET_EXCEEDED",
+                "visited": 4096
+              },
+              "event": "navigation_search",
+              "time": 383.853
+            },
+            {
+              "details": {
+                "from": "(49, 156)",
+                "generation": 576,
+                "goal": "(49, 157)",
+                "map": "village",
+                "microseconds": 23520,
+                "path_size": 0,
+                "status": "BUDGET_EXCEEDED",
+                "visited": 4096
+              },
+              "event": "navigation_search",
+              "time": 384.719
+            },
+            {
+              "details": {
+                "from": "(49, 156)",
+                "generation": 577,
+                "goal": "(50, 157)",
+                "map": "village",
+                "microseconds": 20333,
+                "path_size": 0,
+                "status": "BUDGET_EXCEEDED",
+                "visited": 4096
+              },
+              "event": "navigation_search",
+              "time": 385.68
+            },
+            {
+              "details": {
+                "from": "(49, 156)",
+                "generation": 578,
+                "goal": "(48, 157)",
+                "map": "village",
+                "microseconds": 20353,
+                "path_size": 0,
+                "status": "BUDGET_EXCEEDED",
+                "visited": 4096
+              },
+              "event": "navigation_search",
+              "time": 386.507
+            },
+            {
+              "details": {
+                "from": "(49, 156)",
+                "generation": 579,
+                "goal": "(49, 157)",
+                "map": "village",
+                "microseconds": 17438,
+                "path_size": 0,
+                "status": "BUDGET_EXCEEDED",
+                "visited": 4096
+              },
+              "event": "navigation_search",
+              "time": 387.464
+            },
+            {
+              "details": {
+                "from": "(49, 156)",
+                "generation": 580,
+                "goal": "(50, 157)",
+                "map": "village",
+                "microseconds": 20973,
+                "path_size": 0,
+                "status": "BUDGET_EXCEEDED",
+                "visited": 4096
+              },
+              "event": "navigation_search",
+              "time": 388.501
+            },
+            {
+              "details": {
+                "from": "(49, 156)",
+                "generation": 586,
+                "goal": "(48, 157)",
+                "map": "village",
+                "microseconds": 21305,
+                "path_size": 0,
+                "status": "BUDGET_EXCEEDED",
+                "visited": 4096
+              },
+              "event": "navigation_search",
+              "time": 389.845
+            },
+            {
+              "details": {
+                "from": "(49, 156)",
+                "generation": 587,
+                "goal": "(49, 157)",
+                "map": "village",
+                "microseconds": 31190,
+                "path_size": 0,
+                "status": "BUDGET_EXCEEDED",
+                "visited": 4096
+              },
+              "event": "navigation_search",
+              "time": 390.69
+            },
+            {
+              "details": {
+                "from": "(49, 156)",
+                "generation": 588,
+                "goal": "(50, 157)",
+                "map": "village",
+                "microseconds": 20306,
+                "path_size": 0,
+                "status": "BUDGET_EXCEEDED",
+                "visited": 4096
+              },
+              "event": "navigation_search",
+              "time": 390.69
+            },
+            {
+              "details": {
+                "from": "(49, 156)",
+                "generation": 589,
+                "goal": "(48, 157)",
+                "map": "village",
+                "microseconds": 30883,
+                "path_size": 0,
+                "status": "BUDGET_EXCEEDED",
+                "visited": 4096
+              },
+              "event": "navigation_search",
+              "time": 391.592
+            },
+            {
+              "details": {
+                "from": "(49, 156)",
+                "generation": 590,
+                "goal": "(49, 157)",
+                "map": "village",
+                "microseconds": 18825,
+                "path_size": 0,
+                "status": "BUDGET_EXCEEDED",
+                "visited": 4096
+              },
+              "event": "navigation_search",
+              "time": 392.324
+            },
+            {
+              "details": {
+                "from": "(49, 156)",
+                "generation": 591,
+                "goal": "(50, 157)",
+                "map": "village",
+                "microseconds": 20785,
+                "path_size": 0,
+                "status": "BUDGET_EXCEEDED",
+                "visited": 4096
+              },
+              "event": "navigation_search",
+              "time": 393.072
+            }
+          ],
+          "retained_search_summary": {
+            "samples": 24,
+            "status_counts": {
+              "BUDGET_EXCEEDED": 24
+            },
+            "minimum_us": 17438,
+            "maximum_us": 31190
+          }
+        }
+      ],
+      "gpu_presentation_fps": {
+        "status": "NOT_RUN"
+      },
+      "formal_unchanged_condition_old_new_comparison": {
+        "status": "NOT_RUN"
+      }
+    },
+    "save": {
+      "correctness": {
+        "status": "PASS",
+        "successful_profiles": 54
+      },
+      "performance": {
+        "status": "FAIL",
+        "total": {
+          "samples": 54,
+          "minimum_ms": 726.499,
+          "maximum_ms": 5082.194,
+          "median_ms": 886.7375,
+          "mean_ms": 1194.6671111111111,
+          "p95_nearest_rank_ms": 3292.367
+        },
+        "snapshot": {
+          "samples": 54,
+          "minimum_ms": 68.4,
+          "maximum_ms": 959.571,
+          "median_ms": 107.485,
+          "mean_ms": 145.9521851851852,
+          "p95_nearest_rank_ms": 373.138
+        },
+        "store_residual": {
+          "samples": 54,
+          "minimum_ms": 515.112,
+          "maximum_ms": 4496.344,
+          "median_ms": 775.998,
+          "mean_ms": 1048.7149259259259,
+          "p95_nearest_rank_ms": 2919.229
+        }
+      },
+      "profiles": [
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 15778,
+          "process_id": 3033,
+          "snapshot_ms": 211.387,
+          "success": true,
+          "total_ms": 726.499,
+          "store_residual_ms": 515.112
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 17128,
+          "process_id": 3033,
+          "snapshot_ms": 143.738,
+          "success": true,
+          "total_ms": 1998.161,
+          "store_residual_ms": 1854.423
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 22958,
+          "process_id": 3033,
+          "snapshot_ms": 373.138,
+          "success": true,
+          "total_ms": 3292.367,
+          "store_residual_ms": 2919.229
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 25253,
+          "process_id": 3033,
+          "snapshot_ms": 959.571,
+          "success": true,
+          "total_ms": 5042.955,
+          "store_residual_ms": 4083.384
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 27023,
+          "process_id": 3033,
+          "snapshot_ms": 585.85,
+          "success": true,
+          "total_ms": 5082.194,
+          "store_residual_ms": 4496.344
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 27932,
+          "process_id": 3033,
+          "snapshot_ms": 217.005,
+          "success": true,
+          "total_ms": 1484.207,
+          "store_residual_ms": 1267.202
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 29495,
+          "process_id": 3033,
+          "snapshot_ms": 207.191,
+          "success": true,
+          "total_ms": 1616.639,
+          "store_residual_ms": 1409.448
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 30483,
+          "process_id": 3033,
+          "snapshot_ms": 105.232,
+          "success": true,
+          "total_ms": 1801.424,
+          "store_residual_ms": 1696.192
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 33212,
+          "process_id": 3033,
+          "snapshot_ms": 103.736,
+          "success": true,
+          "total_ms": 1151.61,
+          "store_residual_ms": 1047.874
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 34269,
+          "process_id": 3033,
+          "snapshot_ms": 146.025,
+          "success": true,
+          "total_ms": 1086.316,
+          "store_residual_ms": 940.291
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 34542,
+          "process_id": 3033,
+          "snapshot_ms": 148.539,
+          "success": true,
+          "total_ms": 967.597,
+          "store_residual_ms": 819.058
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 34633,
+          "process_id": 3033,
+          "snapshot_ms": 84.338,
+          "success": true,
+          "total_ms": 885.258,
+          "store_residual_ms": 800.92
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 34696,
+          "process_id": 3033,
+          "snapshot_ms": 98.427,
+          "success": true,
+          "total_ms": 919.114,
+          "store_residual_ms": 820.687
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 34828,
+          "process_id": 3033,
+          "snapshot_ms": 74.354,
+          "success": true,
+          "total_ms": 902.922,
+          "store_residual_ms": 828.568
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 34884,
+          "process_id": 3033,
+          "snapshot_ms": 117.97,
+          "success": true,
+          "total_ms": 962.825,
+          "store_residual_ms": 844.855
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 35004,
+          "process_id": 3033,
+          "snapshot_ms": 93.478,
+          "success": true,
+          "total_ms": 932.18,
+          "store_residual_ms": 838.702
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 36167,
+          "process_id": 3033,
+          "snapshot_ms": 107.896,
+          "success": true,
+          "total_ms": 934.111,
+          "store_residual_ms": 826.215
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 36235,
+          "process_id": 3033,
+          "snapshot_ms": 131.822,
+          "success": true,
+          "total_ms": 967.573,
+          "store_residual_ms": 835.751
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 36310,
+          "process_id": 3033,
+          "snapshot_ms": 96.648,
+          "success": true,
+          "total_ms": 923.84,
+          "store_residual_ms": 827.192
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 36664,
+          "process_id": 3033,
+          "snapshot_ms": 110.919,
+          "success": true,
+          "total_ms": 948.551,
+          "store_residual_ms": 837.632
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 37707,
+          "process_id": 3033,
+          "snapshot_ms": 115.063,
+          "success": true,
+          "total_ms": 942.146,
+          "store_residual_ms": 827.083
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 37877,
+          "process_id": 3033,
+          "snapshot_ms": 127.623,
+          "success": true,
+          "total_ms": 955.17,
+          "store_residual_ms": 827.547
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 38602,
+          "process_id": 3033,
+          "snapshot_ms": 267.915,
+          "success": true,
+          "total_ms": 2820.427,
+          "store_residual_ms": 2552.512
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 38680,
+          "process_id": 3033,
+          "snapshot_ms": 68.4,
+          "success": true,
+          "total_ms": 924.954,
+          "store_residual_ms": 856.554
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 38791,
+          "process_id": 3033,
+          "snapshot_ms": 99.475,
+          "success": true,
+          "total_ms": 914.801,
+          "store_residual_ms": 815.326
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 40384,
+          "process_id": 8932,
+          "snapshot_ms": 116.846,
+          "success": true,
+          "total_ms": 877.272,
+          "store_residual_ms": 760.426
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 40576,
+          "process_id": 8932,
+          "snapshot_ms": 96.553,
+          "success": true,
+          "total_ms": 863.193,
+          "store_residual_ms": 766.64
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 40585,
+          "process_id": 8932,
+          "snapshot_ms": 107.228,
+          "success": true,
+          "total_ms": 878.179,
+          "store_residual_ms": 770.951
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 40828,
+          "process_id": 8932,
+          "snapshot_ms": 101.944,
+          "success": true,
+          "total_ms": 847.222,
+          "store_residual_ms": 745.278
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 40830,
+          "process_id": 8932,
+          "snapshot_ms": 101.331,
+          "success": true,
+          "total_ms": 859.855,
+          "store_residual_ms": 758.524
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 42523,
+          "process_id": 8932,
+          "snapshot_ms": 112.125,
+          "success": true,
+          "total_ms": 888.217,
+          "store_residual_ms": 776.092
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 42556,
+          "process_id": 8932,
+          "snapshot_ms": 109.319,
+          "success": true,
+          "total_ms": 865.238,
+          "store_residual_ms": 755.919
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 42695,
+          "process_id": 8932,
+          "snapshot_ms": 86.945,
+          "success": true,
+          "total_ms": 847.843,
+          "store_residual_ms": 760.898
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 42708,
+          "process_id": 8932,
+          "snapshot_ms": 100.834,
+          "success": true,
+          "total_ms": 870.746,
+          "store_residual_ms": 769.912
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 43010,
+          "process_id": 8932,
+          "snapshot_ms": 108.945,
+          "success": true,
+          "total_ms": 879.841,
+          "store_residual_ms": 770.896
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 43195,
+          "process_id": 8932,
+          "snapshot_ms": 103.61,
+          "success": true,
+          "total_ms": 892.507,
+          "store_residual_ms": 788.897
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 43710,
+          "process_id": 8932,
+          "snapshot_ms": 107.225,
+          "success": true,
+          "total_ms": 882.939,
+          "store_residual_ms": 775.714
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 43983,
+          "process_id": 8932,
+          "snapshot_ms": 107.398,
+          "success": true,
+          "total_ms": 883.302,
+          "store_residual_ms": 775.904
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 44423,
+          "process_id": 8932,
+          "snapshot_ms": 103.749,
+          "success": true,
+          "total_ms": 863.123,
+          "store_residual_ms": 759.374
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 44786,
+          "process_id": 8932,
+          "snapshot_ms": 95.493,
+          "success": true,
+          "total_ms": 866.341,
+          "store_residual_ms": 770.848
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 45176,
+          "process_id": 8932,
+          "snapshot_ms": 105.126,
+          "success": true,
+          "total_ms": 877.243,
+          "store_residual_ms": 772.117
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 45503,
+          "process_id": 8932,
+          "snapshot_ms": 98.343,
+          "success": true,
+          "total_ms": 859.282,
+          "store_residual_ms": 760.939
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 45818,
+          "process_id": 8932,
+          "snapshot_ms": 110.951,
+          "success": true,
+          "total_ms": 873.971,
+          "store_residual_ms": 763.02
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 46236,
+          "process_id": 8932,
+          "snapshot_ms": 116.376,
+          "success": true,
+          "total_ms": 871.394,
+          "store_residual_ms": 755.018
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 46497,
+          "process_id": 8932,
+          "snapshot_ms": 101.797,
+          "success": true,
+          "total_ms": 853.608,
+          "store_residual_ms": 751.811
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 46939,
+          "process_id": 8932,
+          "snapshot_ms": 117.243,
+          "success": true,
+          "total_ms": 875.53,
+          "store_residual_ms": 758.287
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 47149,
+          "process_id": 8932,
+          "snapshot_ms": 101.501,
+          "success": true,
+          "total_ms": 855.469,
+          "store_residual_ms": 753.968
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 47666,
+          "process_id": 8932,
+          "snapshot_ms": 102.452,
+          "success": true,
+          "total_ms": 870.263,
+          "store_residual_ms": 767.811
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 47820,
+          "process_id": 8932,
+          "snapshot_ms": 99.837,
+          "success": true,
+          "total_ms": 849.561,
+          "store_residual_ms": 749.724
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 48488,
+          "process_id": 8932,
+          "snapshot_ms": 98.534,
+          "success": true,
+          "total_ms": 866.47,
+          "store_residual_ms": 767.936
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 48600,
+          "process_id": 8932,
+          "snapshot_ms": 112.837,
+          "success": true,
+          "total_ms": 940.264,
+          "store_residual_ms": 827.427
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 49290,
+          "process_id": 8932,
+          "snapshot_ms": 134.45,
+          "success": true,
+          "total_ms": 909.847,
+          "store_residual_ms": 775.397
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 49358,
+          "process_id": 8932,
+          "snapshot_ms": 119.114,
+          "success": true,
+          "total_ms": 879.363,
+          "store_residual_ms": 760.249
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 50899,
+          "process_id": 12345,
+          "snapshot_ms": 107.572,
+          "success": true,
+          "total_ms": 880.1,
+          "store_residual_ms": 772.528
+        }
+      ]
+    },
+    "save_by_process": {
+      "3033": {
+        "correctness": {
+          "status": "PASS",
+          "successful_profiles": 25
+        },
+        "performance": {
+          "status": "FAIL",
+          "total": {
+            "samples": 25,
+            "minimum_ms": 726.499,
+            "maximum_ms": 5082.194,
+            "median_ms": 962.825,
+            "mean_ms": 1567.35364,
+            "p95_nearest_rank_ms": 5042.955
+          },
+          "snapshot": {
+            "samples": 25,
+            "minimum_ms": 68.4,
+            "maximum_ms": 959.571,
+            "median_ms": 117.97,
+            "mean_ms": 191.8296,
+            "p95_nearest_rank_ms": 585.85
+          },
+          "store_residual": {
+            "samples": 25,
+            "minimum_ms": 515.112,
+            "maximum_ms": 4496.344,
+            "median_ms": 838.702,
+            "mean_ms": 1375.52404,
+            "p95_nearest_rank_ms": 4083.384
+          }
+        },
+        "profiles": [
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 15778,
+            "process_id": 3033,
+            "snapshot_ms": 211.387,
+            "success": true,
+            "total_ms": 726.499,
+            "store_residual_ms": 515.112
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 17128,
+            "process_id": 3033,
+            "snapshot_ms": 143.738,
+            "success": true,
+            "total_ms": 1998.161,
+            "store_residual_ms": 1854.423
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 22958,
+            "process_id": 3033,
+            "snapshot_ms": 373.138,
+            "success": true,
+            "total_ms": 3292.367,
+            "store_residual_ms": 2919.229
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 25253,
+            "process_id": 3033,
+            "snapshot_ms": 959.571,
+            "success": true,
+            "total_ms": 5042.955,
+            "store_residual_ms": 4083.384
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 27023,
+            "process_id": 3033,
+            "snapshot_ms": 585.85,
+            "success": true,
+            "total_ms": 5082.194,
+            "store_residual_ms": 4496.344
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 27932,
+            "process_id": 3033,
+            "snapshot_ms": 217.005,
+            "success": true,
+            "total_ms": 1484.207,
+            "store_residual_ms": 1267.202
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 29495,
+            "process_id": 3033,
+            "snapshot_ms": 207.191,
+            "success": true,
+            "total_ms": 1616.639,
+            "store_residual_ms": 1409.448
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 30483,
+            "process_id": 3033,
+            "snapshot_ms": 105.232,
+            "success": true,
+            "total_ms": 1801.424,
+            "store_residual_ms": 1696.192
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 33212,
+            "process_id": 3033,
+            "snapshot_ms": 103.736,
+            "success": true,
+            "total_ms": 1151.61,
+            "store_residual_ms": 1047.874
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 34269,
+            "process_id": 3033,
+            "snapshot_ms": 146.025,
+            "success": true,
+            "total_ms": 1086.316,
+            "store_residual_ms": 940.291
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 34542,
+            "process_id": 3033,
+            "snapshot_ms": 148.539,
+            "success": true,
+            "total_ms": 967.597,
+            "store_residual_ms": 819.058
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 34633,
+            "process_id": 3033,
+            "snapshot_ms": 84.338,
+            "success": true,
+            "total_ms": 885.258,
+            "store_residual_ms": 800.92
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 34696,
+            "process_id": 3033,
+            "snapshot_ms": 98.427,
+            "success": true,
+            "total_ms": 919.114,
+            "store_residual_ms": 820.687
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 34828,
+            "process_id": 3033,
+            "snapshot_ms": 74.354,
+            "success": true,
+            "total_ms": 902.922,
+            "store_residual_ms": 828.568
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 34884,
+            "process_id": 3033,
+            "snapshot_ms": 117.97,
+            "success": true,
+            "total_ms": 962.825,
+            "store_residual_ms": 844.855
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 35004,
+            "process_id": 3033,
+            "snapshot_ms": 93.478,
+            "success": true,
+            "total_ms": 932.18,
+            "store_residual_ms": 838.702
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 36167,
+            "process_id": 3033,
+            "snapshot_ms": 107.896,
+            "success": true,
+            "total_ms": 934.111,
+            "store_residual_ms": 826.215
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 36235,
+            "process_id": 3033,
+            "snapshot_ms": 131.822,
+            "success": true,
+            "total_ms": 967.573,
+            "store_residual_ms": 835.751
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 36310,
+            "process_id": 3033,
+            "snapshot_ms": 96.648,
+            "success": true,
+            "total_ms": 923.84,
+            "store_residual_ms": 827.192
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 36664,
+            "process_id": 3033,
+            "snapshot_ms": 110.919,
+            "success": true,
+            "total_ms": 948.551,
+            "store_residual_ms": 837.632
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 37707,
+            "process_id": 3033,
+            "snapshot_ms": 115.063,
+            "success": true,
+            "total_ms": 942.146,
+            "store_residual_ms": 827.083
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 37877,
+            "process_id": 3033,
+            "snapshot_ms": 127.623,
+            "success": true,
+            "total_ms": 955.17,
+            "store_residual_ms": 827.547
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 38602,
+            "process_id": 3033,
+            "snapshot_ms": 267.915,
+            "success": true,
+            "total_ms": 2820.427,
+            "store_residual_ms": 2552.512
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 38680,
+            "process_id": 3033,
+            "snapshot_ms": 68.4,
+            "success": true,
+            "total_ms": 924.954,
+            "store_residual_ms": 856.554
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 38791,
+            "process_id": 3033,
+            "snapshot_ms": 99.475,
+            "success": true,
+            "total_ms": 914.801,
+            "store_residual_ms": 815.326
+          }
+        ]
+      },
+      "8932": {
+        "correctness": {
+          "status": "PASS",
+          "successful_profiles": 28
+        },
+        "performance": {
+          "status": "FAIL",
+          "total": {
+            "samples": 28,
+            "minimum_ms": 847.222,
+            "maximum_ms": 940.264,
+            "median_ms": 871.0699999999999,
+            "mean_ms": 873.1458214285715,
+            "p95_nearest_rank_ms": 909.847
+          },
+          "snapshot": {
+            "samples": 28,
+            "minimum_ms": 86.945,
+            "maximum_ms": 134.45,
+            "median_ms": 104.4375,
+            "mean_ms": 106.36092857142857,
+            "p95_nearest_rank_ms": 119.114
+          },
+          "store_residual": {
+            "samples": 28,
+            "minimum_ms": 745.278,
+            "maximum_ms": 827.427,
+            "median_ms": 764.8299999999999,
+            "mean_ms": 766.7848928571428,
+            "p95_nearest_rank_ms": 788.897
+          }
+        },
+        "profiles": [
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 40384,
+            "process_id": 8932,
+            "snapshot_ms": 116.846,
+            "success": true,
+            "total_ms": 877.272,
+            "store_residual_ms": 760.426
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 40576,
+            "process_id": 8932,
+            "snapshot_ms": 96.553,
+            "success": true,
+            "total_ms": 863.193,
+            "store_residual_ms": 766.64
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 40585,
+            "process_id": 8932,
+            "snapshot_ms": 107.228,
+            "success": true,
+            "total_ms": 878.179,
+            "store_residual_ms": 770.951
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 40828,
+            "process_id": 8932,
+            "snapshot_ms": 101.944,
+            "success": true,
+            "total_ms": 847.222,
+            "store_residual_ms": 745.278
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 40830,
+            "process_id": 8932,
+            "snapshot_ms": 101.331,
+            "success": true,
+            "total_ms": 859.855,
+            "store_residual_ms": 758.524
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 42523,
+            "process_id": 8932,
+            "snapshot_ms": 112.125,
+            "success": true,
+            "total_ms": 888.217,
+            "store_residual_ms": 776.092
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 42556,
+            "process_id": 8932,
+            "snapshot_ms": 109.319,
+            "success": true,
+            "total_ms": 865.238,
+            "store_residual_ms": 755.919
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 42695,
+            "process_id": 8932,
+            "snapshot_ms": 86.945,
+            "success": true,
+            "total_ms": 847.843,
+            "store_residual_ms": 760.898
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 42708,
+            "process_id": 8932,
+            "snapshot_ms": 100.834,
+            "success": true,
+            "total_ms": 870.746,
+            "store_residual_ms": 769.912
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 43010,
+            "process_id": 8932,
+            "snapshot_ms": 108.945,
+            "success": true,
+            "total_ms": 879.841,
+            "store_residual_ms": 770.896
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 43195,
+            "process_id": 8932,
+            "snapshot_ms": 103.61,
+            "success": true,
+            "total_ms": 892.507,
+            "store_residual_ms": 788.897
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 43710,
+            "process_id": 8932,
+            "snapshot_ms": 107.225,
+            "success": true,
+            "total_ms": 882.939,
+            "store_residual_ms": 775.714
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 43983,
+            "process_id": 8932,
+            "snapshot_ms": 107.398,
+            "success": true,
+            "total_ms": 883.302,
+            "store_residual_ms": 775.904
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 44423,
+            "process_id": 8932,
+            "snapshot_ms": 103.749,
+            "success": true,
+            "total_ms": 863.123,
+            "store_residual_ms": 759.374
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 44786,
+            "process_id": 8932,
+            "snapshot_ms": 95.493,
+            "success": true,
+            "total_ms": 866.341,
+            "store_residual_ms": 770.848
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 45176,
+            "process_id": 8932,
+            "snapshot_ms": 105.126,
+            "success": true,
+            "total_ms": 877.243,
+            "store_residual_ms": 772.117
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 45503,
+            "process_id": 8932,
+            "snapshot_ms": 98.343,
+            "success": true,
+            "total_ms": 859.282,
+            "store_residual_ms": 760.939
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 45818,
+            "process_id": 8932,
+            "snapshot_ms": 110.951,
+            "success": true,
+            "total_ms": 873.971,
+            "store_residual_ms": 763.02
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 46236,
+            "process_id": 8932,
+            "snapshot_ms": 116.376,
+            "success": true,
+            "total_ms": 871.394,
+            "store_residual_ms": 755.018
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 46497,
+            "process_id": 8932,
+            "snapshot_ms": 101.797,
+            "success": true,
+            "total_ms": 853.608,
+            "store_residual_ms": 751.811
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 46939,
+            "process_id": 8932,
+            "snapshot_ms": 117.243,
+            "success": true,
+            "total_ms": 875.53,
+            "store_residual_ms": 758.287
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 47149,
+            "process_id": 8932,
+            "snapshot_ms": 101.501,
+            "success": true,
+            "total_ms": 855.469,
+            "store_residual_ms": 753.968
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 47666,
+            "process_id": 8932,
+            "snapshot_ms": 102.452,
+            "success": true,
+            "total_ms": 870.263,
+            "store_residual_ms": 767.811
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 47820,
+            "process_id": 8932,
+            "snapshot_ms": 99.837,
+            "success": true,
+            "total_ms": 849.561,
+            "store_residual_ms": 749.724
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 48488,
+            "process_id": 8932,
+            "snapshot_ms": 98.534,
+            "success": true,
+            "total_ms": 866.47,
+            "store_residual_ms": 767.936
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 48600,
+            "process_id": 8932,
+            "snapshot_ms": 112.837,
+            "success": true,
+            "total_ms": 940.264,
+            "store_residual_ms": 827.427
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 49290,
+            "process_id": 8932,
+            "snapshot_ms": 134.45,
+            "success": true,
+            "total_ms": 909.847,
+            "store_residual_ms": 775.397
+          },
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 49358,
+            "process_id": 8932,
+            "snapshot_ms": 119.114,
+            "success": true,
+            "total_ms": 879.363,
+            "store_residual_ms": 760.249
+          }
+        ]
+      },
+      "12345": {
+        "correctness": {
+          "status": "PASS",
+          "successful_profiles": 1
+        },
+        "performance": {
+          "status": "FAIL",
+          "total": {
+            "samples": 1,
+            "minimum_ms": 880.1,
+            "maximum_ms": 880.1,
+            "median_ms": 880.1,
+            "mean_ms": 880.1,
+            "p95_nearest_rank_ms": 880.1
+          },
+          "snapshot": {
+            "samples": 1,
+            "minimum_ms": 107.572,
+            "maximum_ms": 107.572,
+            "median_ms": 107.572,
+            "mean_ms": 107.572,
+            "p95_nearest_rank_ms": 107.572
+          },
+          "store_residual": {
+            "samples": 1,
+            "minimum_ms": 772.528,
+            "maximum_ms": 772.528,
+            "median_ms": 772.528,
+            "mean_ms": 772.528,
+            "p95_nearest_rank_ms": 772.528
+          }
+        },
+        "profiles": [
+          {
+            "artifact_relative_path": "android-evidence/android-logcat.log",
+            "log_line": 50899,
+            "process_id": 12345,
+            "snapshot_ms": 107.572,
+            "success": true,
+            "total_ms": 880.1,
+            "store_residual_ms": 772.528
+          }
+        ]
+      }
+    },
+    "startup": {
+      "status": "PASS",
+      "scope": "BARAM_READY elapsed timer, first launch and two later independent processes; not full process-launch-to-first-playable-frame.",
+      "observations": [
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 14022,
+          "process_id": 3033,
+          "cache_used": true,
+          "content_ms": 5707,
+          "elapsed_ms": 21521,
+          "maps": 423,
+          "phases": [
+            {
+              "elapsed_ms": 1135,
+              "stage": "콘텐츠와 지도 준비",
+              "static_memory": 0
+            },
+            {
+              "elapsed_ms": 13975,
+              "stage": "게임 규칙 연결",
+              "static_memory": 0
+            },
+            {
+              "elapsed_ms": 15903,
+              "stage": "그래픽 준비",
+              "static_memory": 0
+            },
+            {
+              "elapsed_ms": 20018,
+              "stage": "글꼴과 음향 준비",
+              "static_memory": 0
+            },
+            {
+              "elapsed_ms": 20901,
+              "stage": "맵과 캐릭터 연결",
+              "static_memory": 0
+            },
+            {
+              "elapsed_ms": 21442,
+              "stage": "저장 파일 확인",
+              "static_memory": 0
+            }
+          ],
+          "ready": true,
+          "registered_tiles": 50104,
+          "static_memory": 0,
+          "world_ms": 6730
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 40212,
+          "process_id": 8932,
+          "cache_used": true,
+          "content_ms": 2683,
+          "elapsed_ms": 11146,
+          "maps": 423,
+          "phases": [
+            {
+              "elapsed_ms": 216,
+              "stage": "콘텐츠와 지도 준비",
+              "static_memory": 0
+            },
+            {
+              "elapsed_ms": 6487,
+              "stage": "게임 규칙 연결",
+              "static_memory": 0
+            },
+            {
+              "elapsed_ms": 7202,
+              "stage": "그래픽 준비",
+              "static_memory": 0
+            },
+            {
+              "elapsed_ms": 9349,
+              "stage": "글꼴과 음향 준비",
+              "static_memory": 0
+            },
+            {
+              "elapsed_ms": 10064,
+              "stage": "맵과 캐릭터 연결",
+              "static_memory": 0
+            },
+            {
+              "elapsed_ms": 10401,
+              "stage": "저장 파일 확인",
+              "static_memory": 0
+            }
+          ],
+          "ready": true,
+          "registered_tiles": 50104,
+          "static_memory": 0,
+          "world_ms": 3350
+        },
+        {
+          "artifact_relative_path": "android-evidence/android-logcat.log",
+          "log_line": 50612,
+          "process_id": 12345,
+          "cache_used": true,
+          "content_ms": 1726,
+          "elapsed_ms": 7817,
+          "maps": 423,
+          "phases": [
+            {
+              "elapsed_ms": 172,
+              "stage": "콘텐츠와 지도 준비",
+              "static_memory": 0
+            },
+            {
+              "elapsed_ms": 3614,
+              "stage": "게임 규칙 연결",
+              "static_memory": 0
+            },
+            {
+              "elapsed_ms": 4269,
+              "stage": "그래픽 준비",
+              "static_memory": 0
+            },
+            {
+              "elapsed_ms": 6214,
+              "stage": "글꼴과 음향 준비",
+              "static_memory": 0
+            },
+            {
+              "elapsed_ms": 6694,
+              "stage": "맵과 캐릭터 연결",
+              "static_memory": 0
+            },
+            {
+              "elapsed_ms": 7046,
+              "stage": "저장 파일 확인",
+              "static_memory": 0
+            }
+          ],
+          "ready": true,
+          "registered_tiles": 50104,
+          "static_memory": 0,
+          "world_ms": 1577
+        }
+      ],
+      "static_memory": {
+        "status": "NOT_RUN",
+        "reason": "Release counter prints0; not evidence of zero memory usage."
+      }
+    },
+    "repeated_route_budget_observation": {
+      "status": "FAIL",
+      "scope": "Latest retained32events include24 fresh navigation commands from repeated OS stress taps; all24 exhausted4096nodes in17.438–31.190ms. Not a compass-search result and not evidence that canceled paths restarted automatically. Only the retained event slice was counted, not all423stress iterations.",
+      "navigation_correctness_cause": {
+        "status": "NOT_RUN"
+      },
+      "source_of_new_commands": "tools/quality_android_input.py loop sends new taps, buttons, menus, explicit saves; functional session check606.05seconds/423iterations."
+    }
+  },
+  "verification_apk": {
+    "apk_sha256": "c903f657fe5618d95ed64bcb1faf4841fe3de6716d6617a5b32a48c84af4b971",
+    "package": "org.irewon.baram.singleplayer.verification",
+    "normal_input_core": {
+      "status": "PASS",
+      "platform": "Android",
+      "display": "Android",
+      "time_scale": 1.0,
+      "production_source_modified_by_harness": false,
+      "scope": "ACTUAL_ANDROID35_VERIFICATION_APK_INPUT_RUNNER_NOT_PLAYER_APK_NOT_PHYSICAL_GALAXY"
+    },
+    "normally_learned_compass_search": {
+      "status": "PASS",
+      "observations": [
+        {
+          "elapsed_ms": 362480,
+          "name": "compass_gate_selection_changes_actual_map",
+          "observed": {
+            "candidate_checks": 1,
+            "entity_visits": 0,
+            "microseconds": 43,
+            "path_searches": 0,
+            "radius": 0
+          },
+          "status": "PASS"
+        }
+      ],
+      "scope": "Actual normal cast and gate input, search CPU measured separately from animation/render transition."
+    },
+    "save": {
+      "correctness": {
+        "status": "PASS",
+        "successful_profiles": 16
+      },
+      "performance": {
+        "status": "FAIL",
+        "total": {
+          "samples": 16,
+          "minimum_ms": 474.56,
+          "maximum_ms": 987.132,
+          "median_ms": 925.3285000000001,
+          "mean_ms": 905.11025,
+          "p95_nearest_rank_ms": 987.132
+        },
+        "snapshot": {
+          "samples": 16,
+          "minimum_ms": 63.703,
+          "maximum_ms": 98.267,
+          "median_ms": 69.5205,
+          "mean_ms": 72.2271875,
+          "p95_nearest_rank_ms": 98.267
+        },
+        "store_residual": {
+          "samples": 16,
+          "minimum_ms": 401.574,
+          "maximum_ms": 918.285,
+          "median_ms": 854.6514999999999,
+          "mean_ms": 832.8830625,
+          "p95_nearest_rank_ms": 918.285
+        }
+      },
+      "profiles": [
+        {
+          "artifact_relative_path": "android-recovery-evidence/recovery-core-logcat.log",
+          "log_line": 1266,
+          "process_id": 12618,
+          "snapshot_ms": 72.986,
+          "success": true,
+          "total_ms": 474.56,
+          "store_residual_ms": 401.574
+        },
+        {
+          "artifact_relative_path": "android-recovery-evidence/recovery-core-logcat.log",
+          "log_line": 1397,
+          "process_id": 12618,
+          "snapshot_ms": 65.736,
+          "success": true,
+          "total_ms": 913.869,
+          "store_residual_ms": 848.133
+        },
+        {
+          "artifact_relative_path": "android-recovery-evidence/recovery-core-logcat.log",
+          "log_line": 1490,
+          "process_id": 12618,
+          "snapshot_ms": 77.664,
+          "success": true,
+          "total_ms": 892.812,
+          "store_residual_ms": 815.148
+        },
+        {
+          "artifact_relative_path": "android-recovery-evidence/recovery-core-logcat.log",
+          "log_line": 1632,
+          "process_id": 12618,
+          "snapshot_ms": 73.246,
+          "success": true,
+          "total_ms": 903.788,
+          "store_residual_ms": 830.542
+        },
+        {
+          "artifact_relative_path": "android-recovery-evidence/recovery-core-logcat.log",
+          "log_line": 1710,
+          "process_id": 12618,
+          "snapshot_ms": 67.564,
+          "success": true,
+          "total_ms": 950.016,
+          "store_residual_ms": 882.452
+        },
+        {
+          "artifact_relative_path": "android-recovery-evidence/recovery-core-logcat.log",
+          "log_line": 1814,
+          "process_id": 12618,
+          "snapshot_ms": 86.195,
+          "success": true,
+          "total_ms": 964.075,
+          "store_residual_ms": 877.88
+        },
+        {
+          "artifact_relative_path": "android-recovery-evidence/recovery-core-logcat.log",
+          "log_line": 2239,
+          "process_id": 12618,
+          "snapshot_ms": 98.267,
+          "success": true,
+          "total_ms": 933.651,
+          "store_residual_ms": 835.384
+        },
+        {
+          "artifact_relative_path": "android-recovery-evidence/recovery-core-logcat.log",
+          "log_line": 2249,
+          "process_id": 12618,
+          "snapshot_ms": 69.478,
+          "success": true,
+          "total_ms": 956.541,
+          "store_residual_ms": 887.063
+        },
+        {
+          "artifact_relative_path": "android-recovery-evidence/recovery-core-logcat.log",
+          "log_line": 2525,
+          "process_id": 12618,
+          "snapshot_ms": 65.113,
+          "success": true,
+          "total_ms": 919.355,
+          "store_residual_ms": 854.242
+        },
+        {
+          "artifact_relative_path": "android-recovery-evidence/recovery-core-logcat.log",
+          "log_line": 2636,
+          "process_id": 12618,
+          "snapshot_ms": 71.546,
+          "success": true,
+          "total_ms": 957.894,
+          "store_residual_ms": 886.348
+        },
+        {
+          "artifact_relative_path": "android-recovery-evidence/recovery-core-logcat.log",
+          "log_line": 2759,
+          "process_id": 12618,
+          "snapshot_ms": 64.95,
+          "success": true,
+          "total_ms": 930.907,
+          "store_residual_ms": 865.957
+        },
+        {
+          "artifact_relative_path": "android-recovery-evidence/recovery-core-logcat.log",
+          "log_line": 3865,
+          "process_id": 12618,
+          "snapshot_ms": 68.847,
+          "success": true,
+          "total_ms": 987.132,
+          "store_residual_ms": 918.285
+        },
+        {
+          "artifact_relative_path": "android-recovery-evidence/recovery-core-logcat.log",
+          "log_line": 3973,
+          "process_id": 12618,
+          "snapshot_ms": 63.703,
+          "success": true,
+          "total_ms": 918.764,
+          "store_residual_ms": 855.061
+        },
+        {
+          "artifact_relative_path": "android-recovery-evidence/recovery-core-logcat.log",
+          "log_line": 4092,
+          "process_id": 12618,
+          "snapshot_ms": 68.628,
+          "success": true,
+          "total_ms": 947.262,
+          "store_residual_ms": 878.634
+        },
+        {
+          "artifact_relative_path": "android-recovery-evidence/recovery-core-logcat.log",
+          "log_line": 4851,
+          "process_id": 12618,
+          "snapshot_ms": 69.563,
+          "success": true,
+          "total_ms": 911.388,
+          "store_residual_ms": 841.825
+        },
+        {
+          "artifact_relative_path": "android-recovery-evidence/recovery-core-logcat.log",
+          "log_line": 4877,
+          "process_id": 12618,
+          "snapshot_ms": 72.149,
+          "success": true,
+          "total_ms": 919.75,
+          "store_residual_ms": 847.601
+        }
+      ]
+    },
+    "save_profile_pid_filter": {
+      "core_process_id": 12618,
+      "included_profiles": 16,
+      "excluded_prior_production_process_profiles": [
+        {
+          "artifact_relative_path": "android-recovery-evidence/recovery-core-logcat.log",
+          "log_line": 466,
+          "process_id": 12345,
+          "snapshot_ms": 395.046,
+          "success": true,
+          "total_ms": 1923.656
+        },
+        {
+          "artifact_relative_path": "android-recovery-evidence/recovery-core-logcat.log",
+          "log_line": 503,
+          "process_id": 12345,
+          "snapshot_ms": 90.813,
+          "success": true,
+          "total_ms": 1034.456
+        }
+      ],
+      "reason": "Logcat core export retains two prior playerPID12345 save messages before verificationPID12618 startup; excluded to avoid inflating verification statistics."
+    },
+    "restart": {
+      "status": "PASS",
+      "executed_checks": 4
+    },
+    "startup": {
+      "status": "PASS",
+      "internal_ready_observations": [
+        {
+          "artifact_relative_path": "android-recovery-evidence/recovery-core-logcat.log",
+          "log_line": 1205,
+          "process_id": 12618,
+          "cache_used": true,
+          "content_ms": 4266,
+          "elapsed_ms": 12682,
+          "maps": 423,
+          "phases": [
+            {
+              "elapsed_ms": 368,
+              "stage": "콘텐츠와 지도 준비",
+              "static_memory": 64897689
+            },
+            {
+              "elapsed_ms": 7204,
+              "stage": "게임 규칙 연결",
+              "static_memory": 737755573
+            },
+            {
+              "elapsed_ms": 7921,
+              "stage": "그래픽 준비",
+              "static_memory": 740768853
+            },
+            {
+              "elapsed_ms": 11294,
+              "stage": "글꼴과 음향 준비",
+              "static_memory": 764962437
+            },
+            {
+              "elapsed_ms": 12178,
+              "stage": "맵과 캐릭터 연결",
+              "static_memory": 784462453
+            },
+            {
+              "elapsed_ms": 12590,
+              "stage": "저장 파일 확인",
+              "static_memory": 809581793
+            }
+          ],
+          "ready": true,
+          "registered_tiles": 50104,
+          "static_memory": 810163729,
+          "world_ms": 2325
+        },
+        {
+          "artifact_relative_path": "android-recovery-evidence/recovery-restart-logcat.log",
+          "log_line": 438,
+          "process_id": 19084,
+          "cache_used": true,
+          "content_ms": 3163,
+          "elapsed_ms": 11251,
+          "maps": 423,
+          "phases": [
+            {
+              "elapsed_ms": 223,
+              "stage": "콘텐츠와 지도 준비",
+              "static_memory": 64897689
+            },
+            {
+              "elapsed_ms": 5611,
+              "stage": "게임 규칙 연결",
+              "static_memory": 737755573
+            },
+            {
+              "elapsed_ms": 6320,
+              "stage": "그래픽 준비",
+              "static_memory": 740768853
+            },
+            {
+              "elapsed_ms": 8630,
+              "stage": "글꼴과 음향 준비",
+              "static_memory": 764962437
+            },
+            {
+              "elapsed_ms": 10053,
+              "stage": "맵과 캐릭터 연결",
+              "static_memory": 784462453
+            },
+            {
+              "elapsed_ms": 10417,
+              "stage": "저장 파일 확인",
+              "static_memory": 809581793
+            }
+          ],
+          "ready": true,
+          "registered_tiles": 50104,
+          "static_memory": 868628453,
+          "world_ms": 2087
+        }
+      ],
+      "external_controller_runs": [
+        {
+          "mode": "recovery-core",
+          "status": "PASS",
+          "peak_pss_bytes": 1749593088,
+          "startup_wall_seconds": 16.29089622000015,
+          "wall_seconds": 682.588,
+          "game_build": "243448ac891232cc879a9321c9320133a4ae8020",
+          "content_version": "aa212082041a5cd81faff4f16eb713a5bc52c18ab5a00c19caa3632a16ff0f2c"
+        },
+        {
+          "mode": "recovery-restart",
+          "status": "PASS",
+          "peak_pss_bytes": 1515781120,
+          "startup_wall_seconds": 14.439903560000175,
+          "wall_seconds": 16.729,
+          "game_build": "243448ac891232cc879a9321c9320133a4ae8020",
+          "content_version": "aa212082041a5cd81faff4f16eb713a5bc52c18ab5a00c19caa3632a16ff0f2c"
+        }
+      ],
+      "scope": "Internal startup timer, controller observed startup wall and PSS are distinct metrics. PSS sampled peak is not continuously observed maximum."
+    },
+    "full_frame_distribution": {
+      "status": "NOT_RUN"
+    }
+  },
+  "unmeasured": {
+    "native_compass_transition_stage_cpu": {
+      "status": "NOT_RUN"
+    },
+    "native_first_tile_decode_and_cache_build": {
+      "status": "NOT_RUN"
+    },
+    "native_cast_to_first_playable_frame": {
+      "status": "NOT_RUN"
+    },
+    "save_json_disk_flush_backup_separate_phases": {
+      "status": "NOT_RUN"
+    }
+  },
+  "artifact_provenance": [
+    {
+      "artifact_relative_path": "android-evidence/android-quality-report.json",
+      "bytes": 3487,
+      "sha256": "30a0010649dc3d598fe33ed82ceea068e97ee86d12213d9ff36dfcc5775eaac8"
+    },
+    {
+      "artifact_relative_path": "android-evidence/diagnostic-before-restart.json",
+      "bytes": 7138,
+      "sha256": "990c48f2ed0c63461e956f78736d830dcd4c684e9e494b4531ce22cc3ce6f65c"
+    },
+    {
+      "artifact_relative_path": "android-evidence/diagnostic-phone.json",
+      "bytes": 10210,
+      "sha256": "e205413185ddf84ea00515b3df0f92288c28053993bed89c7f9d42b919f6888b"
+    },
+    {
+      "artifact_relative_path": "android-evidence/android-logcat.log",
+      "bytes": 5843461,
+      "sha256": "ec7e72fc2cd9d335cb86acd4f50d4ebd63e5ad2315fb40ad6bb8ddba6f00aeab"
+    },
+    {
+      "artifact_relative_path": "android-recovery-evidence/recovery-core-report.json",
+      "bytes": 107142,
+      "sha256": "51d06b3a6093a1564c6a9dddc5f1f73c6ddd4ad7225c66cdb9576bfa9551cd08"
+    },
+    {
+      "artifact_relative_path": "android-recovery-evidence/recovery-restart-report.json",
+      "bytes": 4719,
+      "sha256": "b43567d8783295eaee15ba38bcaca67b98a6e3c2b1b80585c8d02d320701b1d3"
+    },
+    {
+      "artifact_relative_path": "android-recovery-evidence/android-recovery-report.json",
+      "bytes": 3380,
+      "sha256": "851f828b08ac7387b7cb169deb9806debc65ba779ccd7aa6f28e4445c609bd19"
+    },
+    {
+      "artifact_relative_path": "android-recovery-evidence/recovery-core-logcat.log",
+      "bytes": 517112,
+      "sha256": "a021cbf419e3645420e0888f346570814a9189a8dd3738bcf770410f86042e11"
+    },
+    {
+      "artifact_relative_path": "android-recovery-evidence/recovery-restart-logcat.log",
+      "bytes": 68834,
+      "sha256": "ca22b107c929978b7589b2743305a4b4fb16f83c4fe8eea032207c2915dc1cfc"
+    },
+    {
+      "artifact_relative_path": "android-build.json",
+      "bytes": 17993,
+      "sha256": "1279cd18cfdd80ef3e775e3d171ff10b6a4a25d15cf7e2f00a3eb16e1579cf28"
+    },
+    {
+      "artifact_relative_path": "android-verification-build.json",
+      "bytes": 18022,
+      "sha256": "38b94690485b28fc2ec0e8e0bafb43b4e8c9ec4946049c7875dc5b0432385431"
+    },
+    {
+      "artifact_relative_path": "artifact-fetch-report.json",
+      "bytes": 611,
+      "sha256": "16451b5a498b37efc16dce3f41610a1122e8839788e1493ca1e499f1e31cfa72"
+    }
+  ]
+}

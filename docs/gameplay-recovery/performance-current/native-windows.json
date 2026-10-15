@@ -1,0 +1,462 @@
+{
+  "status": "PASS",
+  "scope": "Read-only extraction of measured performance counters from actual native Windows CI artifacts. PASS is evidence extraction, not whole-game performance acceptance.",
+  "native_execution": {
+    "status": "PASS",
+    "platform": "Windows",
+    "core_display": "headless",
+    "core_time_scale": 1.0,
+    "run_id": "38729864952",
+    "game_build": "243448ac891232cc879a9321c9320133a4ae8020",
+    "content_version": "aa212082041a5cd81faff4f16eb713a5bc52c18ab5a00c19caa3632a16ff0f2c",
+    "production_source_modified_by_harness": false
+  },
+  "compass_destination_search": {
+    "status": "PASS",
+    "samples": [
+      {
+        "elapsed_ms": 280284,
+        "name": "compass_gate_selection_changes_actual_map",
+        "observed": {
+          "candidate_checks": 1,
+          "entity_visits": 0,
+          "microseconds": 26,
+          "path_searches": 0,
+          "radius": 0
+        },
+        "status": "PASS"
+      }
+    ],
+    "scope": "Normal learned compass input through actual map change; observed search CPU only, not full cast/render latency."
+  },
+  "save": {
+    "correctness": {
+      "status": "PASS",
+      "successful_profiles": 17,
+      "restart_status": "PASS"
+    },
+    "performance": {
+      "status": "FAIL",
+      "reason": "Confirmed synchronous main-thread snapshot+store spans hundreds of ms in actual native Windows process.",
+      "total": {
+        "samples": 17,
+        "minimum_ms": 392.557,
+        "maximum_ms": 898.379,
+        "median_ms": 785.4,
+        "mean_ms": 771.001294117647,
+        "p95_nearest_rank_ms": 898.379
+      },
+      "snapshot": {
+        "samples": 17,
+        "minimum_ms": 46.727,
+        "maximum_ms": 55.005,
+        "median_ms": 47.89,
+        "mean_ms": 48.75735294117647,
+        "p95_nearest_rank_ms": 55.005
+      },
+      "store_residual": {
+        "samples": 17,
+        "minimum_ms": 343.093,
+        "maximum_ms": 849.661,
+        "median_ms": 734.224,
+        "mean_ms": 722.2439411764706,
+        "p95_nearest_rank_ms": 849.661
+      }
+    },
+    "profiles": [
+      {
+        "log_line": 18,
+        "snapshot_ms": 49.464,
+        "success": true,
+        "total_ms": 392.557,
+        "store_residual_ms": 343.093
+      },
+      {
+        "log_line": 24,
+        "snapshot_ms": 47.467,
+        "success": true,
+        "total_ms": 781.576,
+        "store_residual_ms": 734.109
+      },
+      {
+        "log_line": 26,
+        "snapshot_ms": 46.727,
+        "success": true,
+        "total_ms": 775.343,
+        "store_residual_ms": 728.616
+      },
+      {
+        "log_line": 28,
+        "snapshot_ms": 52.66,
+        "success": true,
+        "total_ms": 786.884,
+        "store_residual_ms": 734.224
+      },
+      {
+        "log_line": 30,
+        "snapshot_ms": 47.701,
+        "success": true,
+        "total_ms": 770.087,
+        "store_residual_ms": 722.386
+      },
+      {
+        "log_line": 35,
+        "snapshot_ms": 48.032,
+        "success": true,
+        "total_ms": 773.254,
+        "store_residual_ms": 725.222
+      },
+      {
+        "log_line": 39,
+        "snapshot_ms": 46.979,
+        "success": true,
+        "total_ms": 785.4,
+        "store_residual_ms": 738.421
+      },
+      {
+        "log_line": 41,
+        "snapshot_ms": 47.622,
+        "success": true,
+        "total_ms": 779.424,
+        "store_residual_ms": 731.802
+      },
+      {
+        "log_line": 43,
+        "snapshot_ms": 46.758,
+        "success": true,
+        "total_ms": 770.861,
+        "store_residual_ms": 724.103
+      },
+      {
+        "log_line": 45,
+        "snapshot_ms": 47.89,
+        "success": true,
+        "total_ms": 778.702,
+        "store_residual_ms": 730.812
+      },
+      {
+        "log_line": 47,
+        "snapshot_ms": 48.916,
+        "success": true,
+        "total_ms": 786.051,
+        "store_residual_ms": 737.135
+      },
+      {
+        "log_line": 49,
+        "snapshot_ms": 47.244,
+        "success": true,
+        "total_ms": 806.946,
+        "store_residual_ms": 759.702
+      },
+      {
+        "log_line": 63,
+        "snapshot_ms": 51.425,
+        "success": true,
+        "total_ms": 790.095,
+        "store_residual_ms": 738.67
+      },
+      {
+        "log_line": 71,
+        "snapshot_ms": 48.909,
+        "success": true,
+        "total_ms": 788.387,
+        "store_residual_ms": 739.478
+      },
+      {
+        "log_line": 82,
+        "snapshot_ms": 47.358,
+        "success": true,
+        "total_ms": 786.384,
+        "store_residual_ms": 739.026
+      },
+      {
+        "log_line": 88,
+        "snapshot_ms": 48.718,
+        "success": true,
+        "total_ms": 898.379,
+        "store_residual_ms": 849.661
+      },
+      {
+        "log_line": 90,
+        "snapshot_ms": 55.005,
+        "success": true,
+        "total_ms": 856.692,
+        "store_residual_ms": 801.687
+      }
+    ],
+    "scope": "Timer starts before snapshot and ends after store.write_state; later save event file hashing is outside the timer. Store residual is subtraction, not separate disk/JSON profiling. Test checkpoint frequency is not production autosave frequency.",
+    "json_disk_backup_subphases": {
+      "status": "NOT_RUN"
+    }
+  },
+  "startup": {
+    "status": "PASS",
+    "scope": "BARAM_READY elapsed since startup_started, not process launch to interactive rendered frame. Each scope executed once; not a comparative benchmark.",
+    "observations": [
+      {
+        "artifact_relative_path": "evidence/core/recovery-core.log",
+        "log_line": 9,
+        "display_scope": "headless",
+        "cache_used": true,
+        "content_ms": 892,
+        "elapsed_ms": 4538,
+        "maps": 423,
+        "phases": [
+          {
+            "elapsed_ms": 8,
+            "stage": "콘텐츠와 지도 준비",
+            "static_memory": 0
+          },
+          {
+            "elapsed_ms": 1953,
+            "stage": "게임 규칙 연결",
+            "static_memory": 0
+          },
+          {
+            "elapsed_ms": 2429,
+            "stage": "그래픽 준비",
+            "static_memory": 0
+          },
+          {
+            "elapsed_ms": 4234,
+            "stage": "글꼴과 음향 준비",
+            "static_memory": 0
+          },
+          {
+            "elapsed_ms": 4261,
+            "stage": "맵과 캐릭터 연결",
+            "static_memory": 0
+          },
+          {
+            "elapsed_ms": 4528,
+            "stage": "저장 파일 확인",
+            "static_memory": 0
+          }
+        ],
+        "ready": true,
+        "registered_tiles": 50104,
+        "static_memory": 0,
+        "world_ms": 1028
+      },
+      {
+        "artifact_relative_path": "evidence/core/recovery-restart.log",
+        "log_line": 9,
+        "display_scope": "headless",
+        "cache_used": true,
+        "content_ms": 892,
+        "elapsed_ms": 5180,
+        "maps": 423,
+        "phases": [
+          {
+            "elapsed_ms": 8,
+            "stage": "콘텐츠와 지도 준비",
+            "static_memory": 0
+          },
+          {
+            "elapsed_ms": 1959,
+            "stage": "게임 규칙 연결",
+            "static_memory": 0
+          },
+          {
+            "elapsed_ms": 2427,
+            "stage": "그래픽 준비",
+            "static_memory": 0
+          },
+          {
+            "elapsed_ms": 4203,
+            "stage": "글꼴과 음향 준비",
+            "static_memory": 0
+          },
+          {
+            "elapsed_ms": 4232,
+            "stage": "맵과 캐릭터 연결",
+            "static_memory": 0
+          },
+          {
+            "elapsed_ms": 4536,
+            "stage": "저장 파일 확인",
+            "static_memory": 0
+          }
+        ],
+        "ready": true,
+        "registered_tiles": 50104,
+        "static_memory": 0,
+        "world_ms": 1033
+      },
+      {
+        "artifact_relative_path": "evidence/smoke/native-smoke.log",
+        "log_line": 9,
+        "display_scope": "headless",
+        "cache_used": true,
+        "content_ms": 959,
+        "elapsed_ms": 4597,
+        "maps": 423,
+        "phases": [
+          {
+            "elapsed_ms": 8,
+            "stage": "콘텐츠와 지도 준비",
+            "static_memory": 0
+          },
+          {
+            "elapsed_ms": 1987,
+            "stage": "게임 규칙 연결",
+            "static_memory": 0
+          },
+          {
+            "elapsed_ms": 2455,
+            "stage": "그래픽 준비",
+            "static_memory": 0
+          },
+          {
+            "elapsed_ms": 4278,
+            "stage": "글꼴과 음향 준비",
+            "static_memory": 0
+          },
+          {
+            "elapsed_ms": 4309,
+            "stage": "맵과 캐릭터 연결",
+            "static_memory": 0
+          },
+          {
+            "elapsed_ms": 4586,
+            "stage": "저장 파일 확인",
+            "static_memory": 0
+          }
+        ],
+        "ready": true,
+        "registered_tiles": 50104,
+        "static_memory": 0,
+        "world_ms": 1014
+      },
+      {
+        "artifact_relative_path": "evidence/windowed/native-smoke.log",
+        "log_line": 12,
+        "display_scope": "Windows windowed",
+        "cache_used": true,
+        "content_ms": 1073,
+        "elapsed_ms": 5376,
+        "maps": 423,
+        "phases": [
+          {
+            "elapsed_ms": 102,
+            "stage": "콘텐츠와 지도 준비",
+            "static_memory": 0
+          },
+          {
+            "elapsed_ms": 2491,
+            "stage": "게임 규칙 연결",
+            "static_memory": 0
+          },
+          {
+            "elapsed_ms": 2975,
+            "stage": "그래픽 준비",
+            "static_memory": 0
+          },
+          {
+            "elapsed_ms": 4815,
+            "stage": "글꼴과 음향 준비",
+            "static_memory": 0
+          },
+          {
+            "elapsed_ms": 4979,
+            "stage": "맵과 캐릭터 연결",
+            "static_memory": 0
+          },
+          {
+            "elapsed_ms": 5255,
+            "stage": "저장 파일 확인",
+            "static_memory": 0
+          }
+        ],
+        "ready": true,
+        "registered_tiles": 50104,
+        "static_memory": 0,
+        "world_ms": 1236
+      }
+    ],
+    "static_memory": {
+      "status": "NOT_RUN",
+      "reason": "Windows counter printed0; do not treat it as actual zero memory consumption."
+    }
+  },
+  "windowed_render_evidence": {
+    "status": "PASS",
+    "renderer_observed": "ANGLE (Microsoft, Microsoft Basic Render Driver (0x0000008C) Direct3D11 vs_5_0 ps_5_0, D3D11-10.0.26100.33438)",
+    "checks": [
+      {
+        "name": "windowed_game_frame_rendered",
+        "observed": {
+          "height": 640,
+          "sampled_colors": 80,
+          "width": 960
+        },
+        "status": "PASS"
+      }
+    ],
+    "scope": "A nonblank native window and directional screenshots were captured, but no frame interval/CPU/FPS distribution was exported."
+  },
+  "unmeasured": {
+    "steady_state_native_fps": {
+      "status": "NOT_RUN"
+    },
+    "native_process_draw_cpu_distribution": {
+      "status": "NOT_RUN"
+    },
+    "native_compass_transition_cpu": {
+      "status": "NOT_RUN"
+    },
+    "native_first_tile_decode_cache_build": {
+      "status": "NOT_RUN"
+    },
+    "native_cast_to_first_playable_frame": {
+      "status": "NOT_RUN"
+    }
+  },
+  "artifact_provenance": [
+    {
+      "artifact_relative_path": "evidence/core/recovery-core.log",
+      "bytes": 55312,
+      "sha256": "0317b48628ced84651df6149507b192764d537a6c04dfc57952428eccd9f7616"
+    },
+    {
+      "artifact_relative_path": "evidence/core/recovery-restart.log",
+      "bytes": 2008,
+      "sha256": "c0d5f888f13af86bd3ed722ad9c92f38bbdc10b5ed3dd605f318397ce0f0cf0e"
+    },
+    {
+      "artifact_relative_path": "evidence/core/recovery-core-report.json",
+      "bytes": 103085,
+      "sha256": "dcf04edce29c3cb7e26ae551e34ae6ece93da0066fecac25c9810b9f0d9b8c39"
+    },
+    {
+      "artifact_relative_path": "evidence/core/recovery-restart-report.json",
+      "bytes": 4550,
+      "sha256": "80ffa170ddbd2a029b458a85432c2e39984c31e8a87d3fa4c1c82cd541b5bf78"
+    },
+    {
+      "artifact_relative_path": "evidence/smoke/native-smoke.log",
+      "bytes": 1971,
+      "sha256": "086df967a3cb8c8b8e7cd93541346d0acb258158a22a0dd428292fd5edccef25"
+    },
+    {
+      "artifact_relative_path": "evidence/windowed/native-smoke.log",
+      "bytes": 4469,
+      "sha256": "5c4fc64c748c83c6d16c332048f3d98f3b61ef35c0001710bc7e91b410d43b8d"
+    },
+    {
+      "artifact_relative_path": "evidence/windowed/native-smoke-report.json",
+      "bytes": 2742,
+      "sha256": "eb23db5fbe86155268e14faeb7d365e2030da65f7b0583a56be9412fa9d71a28"
+    },
+    {
+      "artifact_relative_path": "build.json",
+      "bytes": 17757,
+      "sha256": "dae7c9c20392a7fa431bf6d0be5343e704c06b76ece6be82ed07e8947754e60f"
+    },
+    {
+      "artifact_relative_path": "artifact-fetch-report.json",
+      "bytes": 611,
+      "sha256": "c88816a52b638c59059c27c50debe89ec4cc984396930f24b0d320aecf42c075"
+    }
+  ]
+}

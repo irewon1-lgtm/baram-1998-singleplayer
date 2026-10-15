@@ -1,80 +1,404 @@
 {
+  "format": "BARAM_NATIVE_EXECUTION_STATUS_V2",
+  "as_of_utc": "2026-10-15T12:25:38.294017+00:00",
   "repository": "irewon1-lgtm/baram-1998-singleplayer",
   "branch": "work/gameplay-recovery-20261015",
-  "remote_head": "f0247ced8ed62313af5c6b506533d1295e497a52",
-  "reviewed_tree": "fda444a8f90cdde38e3332bcff22b01d3f03c58e",
+  "source_commit": "243448ac891232cc879a9321c9320133a4ae8020",
   "source_published": true,
-  "source_code_secret_safety": "PASS",
-  "game_scripts_recovered": 57,
-  "original_raw_source_hash_matches": 54,
-  "production_gdc_token_equivalence": {
-    "status": "PASS",
-    "scripts": 22,
-    "ignored": "line/column positions only"
-  },
-  "native_ci": {
-    "run_id": 38724985965,
-    "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/actions/runs/38724985965",
-    "raw_workflow_conclusion": "failure",
-    "feature_status": "BLOCKED",
-    "steps_executed": 0,
-    "runner_ids": [
-      0,
-      0,
-      0
-    ],
-    "cause": "Branch \"work/gameplay-recovery-20261015\" is not allowed to deploy to baram-windows-private due to environment protection rules.",
-    "environment_changed": false,
-    "paid_services_used": false
-  },
-  "local_pilot": {
-    "source_commit": "a0ccaa4b0e7bfc724d0d2fbf2ded91eb8c683a2d",
-    "remote_game_source_inputs_equal": true,
-    "normal_play": "PASS_PHASED_CONTINUATION_NOT_FRESH_FULL_CORE_RERUN",
-    "native_windows": "NOT_RUN",
-    "android_os": "BLOCKED_TCG_BOOT_TIMEOUT",
-    "first_core": {
-      "status": "FAIL",
-      "passed": 39,
-      "failed": 3,
-      "preserved": true,
-      "reason": "Verification helper could not return from an occupied cave route."
-    },
-    "failed_step_resume": {
-      "status": "PASS",
-      "checks": 5,
-      "normal_action": "Already learned compass -> actual trainer -> consume10acorns -> fire spell actual44damage/kill/XP/MP"
-    },
-    "fresh_process_restart": {
-      "status": "PASS",
-      "checks": 4,
-      "preserved": "entire player/world/loot/RNG"
-    },
-    "full_core_fresh_rerun_after_helper_fix": "NOT_RUN",
-    "production_exe_unchanged": true,
-    "android_local_apk": "BUILT_NOT_NATIVE_VERIFIED"
-  },
+  "result": "PASS",
+  "scope": "REQUIRED_NATIVE_CORE_AND_STRICT_FUNCTIONAL_DELIVERY_GATE_ONLY; NOT_WHOLE_GAME_OR_PERFORMANCE_COMPLETION",
   "overall_improvement_complete": false,
-  "required_next_permission": {
-    "environment": "baram-windows-private",
-    "operation": "Add this exact branch to the existing deployment branch allowlist without loosening other protection rules.",
-    "branch": "work/gameplay-recovery-20261015",
-    "reason": "Existing environment protection rules rejected all jobs before any runner was assigned.",
-    "changes_made": false
+  "native_ci": {
+    "run_id": 38729864952,
+    "url": "https://github.com/irewon1-lgtm/baram-1998-singleplayer/actions/runs/38729864952",
+    "execution_state": "COMPLETED",
+    "windows_job": {
+      "job_id": 116404693197,
+      "observed_conclusion": "success",
+      "finished_at_utc": "2026-10-15T12:03:20Z"
+    },
+    "android_job": {
+      "observed_conclusion": "success",
+      "finished_at_utc": "2026-10-15T12:16:27Z",
+      "evidence": "Actual decrypted player/wrapper/core/restart reports and actual APK identity read and validated"
+    },
+    "android_pointers_job": {
+      "job_id": 116416262005,
+      "execution_state": "COMPLETED",
+      "observed_conclusion": "success"
+    },
+    "conclusion": "success",
+    "head_sha": "243448ac891232cc879a9321c9320133a4ae8020",
+    "jobs": [
+      {
+        "id": 116404693197,
+        "name": "windows",
+        "execution_state": "COMPLETED",
+        "conclusion": "success",
+        "labels": [
+          "windows-latest"
+        ]
+      },
+      {
+        "id": 116404693525,
+        "name": "android",
+        "execution_state": "COMPLETED",
+        "conclusion": "success",
+        "labels": [
+          "ubuntu-latest"
+        ]
+      },
+      {
+        "id": 116416262005,
+        "name": "android_pointers",
+        "execution_state": "COMPLETED",
+        "conclusion": "success",
+        "labels": [
+          "ubuntu-latest"
+        ]
+      }
+    ]
+  },
+  "windows": {
+    "result": "PASS",
+    "execution_state": "COMPLETED",
+    "source_commit": "243448ac891232cc879a9321c9320133a4ae8020",
+    "content_release": "aa212082041a5cd81faff4f16eb713a5bc52c18ab5a00c19caa3632a16ff0f2c",
+    "source_inputs_sha256": "d048acbf23a7e55ef020657f91f5a9e2abd9d12566674de96d2a97d5208abf80",
+    "windowed": {
+      "result": "PASS",
+      "checks": 19,
+      "visible_window_samples": 133,
+      "windows_message_pump": "PASS"
+    },
+    "headless_smoke": {
+      "result": "PASS",
+      "checks": 3
+    },
+    "core": {
+      "result": "PASS",
+      "checks": 51,
+      "elapsed_ms": 577050,
+      "platform": "Windows",
+      "time_scale": 1.0,
+      "actual_spell_damage": 44,
+      "attack_spell_verified_at_ms": 573827,
+      "final_kills": 82
+    },
+    "fresh_restart": {
+      "result": "PASS",
+      "checks": 4,
+      "elapsed_ms": 479
+    },
+    "archive": {
+      "file": "바람의나라_Windows64_복구판_243448ac89.zip",
+      "bytes": 175904711,
+      "sha256": "58b6cb400d17063c4771d2756a0f51dde16be87db9205db1de1f16005311e042"
+    },
+    "manifest_validation": {
+      "result": "PASS",
+      "files": 1833,
+      "validator_checks": 3695
+    },
+    "archive_sha256_independently_read": true,
+    "core_and_restart_actual_reports_read": true,
+    "archive_execution_metadata_read": true,
+    "human_operator_gui_observation": "NOT_RUN",
+    "full_content_gameplay": "NOT_RUN",
+    "overall_game_complete": false,
+    "inspection_report_sha256": "78b02f8aec67774e2b1ec0abbacbcda42c75db64a45b32de378134dcc4fb7e30",
+    "core_report_sha256": "dcf04edce29c3cb7e26ae551e34ae6ece93da0066fecac25c9810b9f0d9b8c39",
+    "restart_report_sha256": "80ffa170ddbd2a029b458a85432c2e39984c31e8a87d3fa4c1c82cd541b5bf78"
+  },
+  "android": {
+    "result": "PASS",
+    "execution_state": "COMPLETED",
+    "source_commit": "243448ac891232cc879a9321c9320133a4ae8020",
+    "content_release": "aa212082041a5cd81faff4f16eb713a5bc52c18ab5a00c19caa3632a16ff0f2c",
+    "source_inputs_sha256": "d048acbf23a7e55ef020657f91f5a9e2abd9d12566674de96d2a97d5208abf80",
+    "player": {
+      "result": "PASS",
+      "checks": 25,
+      "scope": "EXACT_RELEASE_APK_ANDROID_35_X86_64_OS_INPUT_NOT_GALAXY",
+      "input_session_seconds": 606.05,
+      "input_session_iterations": 423,
+      "replace_install_preserves_save_bytes": "PASS",
+      "map_touch_and_M_key": "PASS"
+    },
+    "separate_verification_runner": {
+      "result": "PASS",
+      "checks": 14,
+      "scope": "ACTUAL_ANDROID35_VERIFICATION_APK_INPUT_RUNNER_NOT_PLAYER_APK_NOT_PHYSICAL_GALAXY"
+    },
+    "separate_verification_core": {
+      "result": "PASS",
+      "checks": 53,
+      "elapsed_ms": 666015,
+      "platform": "Android",
+      "time_scale": 1.0,
+      "actual_spell_damage": 44,
+      "attack_spell_verified_at_ms": 661637,
+      "final_level": 6,
+      "final_job": "주술사",
+      "final_kills": 64,
+      "scope": "Actual Android35 separate verification APK with same frozen production code/content; not the player APK full-level6 input path"
+    },
+    "separate_verification_restart": {
+      "result": "PASS",
+      "checks": 4,
+      "elapsed_ms": 1761
+    },
+    "apk": {
+      "file": "baram-Android-update.apk",
+      "bytes": 283652192,
+      "sha256": "236a668a5e651f84e7ee22bb3cdecf6a0b4631531ac829f5a65920c79e3b120b",
+      "runtime_pck_sha256": "0c41521bf00c220bdca0164dc328070299f29770effff3113a718c5cb9f12775"
+    },
+    "package": "org.irewon.baram.singleplayer",
+    "certificate_sha256": "f8cf43158c663e80b3e15aaa82681ea328be009ea900c7c5ea68e8a6ddec608a",
+    "version_code": 1792065007,
+    "artifact_validation": {
+      "result": "PASS",
+      "checks": 39
+    },
+    "player_and_verification_source_inputs_equal": true,
+    "player_and_verification_runtime_pck_sha256_equal": true,
+    "windows_source_inputs_equal": true,
+    "windows_content_release_equal": true,
+    "apk_sha256_and_embedded_build_info_and_runtime_read": true,
+    "core_and_restart_actual_reports_read": true,
+    "physical_galaxy": "NOT_RUN",
+    "full_content_gameplay": "NOT_RUN",
+    "inspection_report_sha256": "afe2d30993f0d73dfa17ba7838cff53f3fad10a250758124060c6d5cd28a59cb",
+    "player_report_sha256": "30a0010649dc3d598fe33ed82ceea068e97ee86d12213d9ff36dfcc5775eaac8",
+    "runner_report_sha256": "851f828b08ac7387b7cb169deb9806debc65ba779ccd7aa6f28e4445c609bd19",
+    "core_report_sha256": "51d06b3a6093a1564c6a9dddc5f1f73c6ddd4ad7225c66cdb9576bfa9551cd08",
+    "restart_report_sha256": "b43567d8783295eaee15ba38bcaca67b98a6e3c2b1b80585c8d02d320701b1d3"
+  },
+  "android_pointers": {
+    "result": "PASS",
+    "execution_state": "COMPLETED",
+    "checks": 11,
+    "job_id": 116416262005,
+    "apk_sha256": "236a668a5e651f84e7ee22bb3cdecf6a0b4631531ac829f5a65920c79e3b120b",
+    "scope": "Android35 native MotionEvent OS two-pointer injection; not physical Galaxy",
+    "report_sha256": "c5ba227a49bbaa257229ac887ddcaa023c6d8e22f4d173512810f9c1604b2716"
+  },
+  "final_delivery": {
+    "result": "PASS",
+    "execution_state": "COMPLETED",
+    "delivery_status": "READY",
+    "checks": 3740,
+    "all_checks_pass": true,
+    "source_commit": "243448ac891232cc879a9321c9320133a4ae8020",
+    "content_release": "aa212082041a5cd81faff4f16eb713a5bc52c18ab5a00c19caa3632a16ff0f2c",
+    "source_inputs_sha256": "d048acbf23a7e55ef020657f91f5a9e2abd9d12566674de96d2a97d5208abf80",
+    "files": [
+      {
+        "platform": "Android",
+        "file": "baram-Android-243448ac.apk",
+        "bytes": 283652192,
+        "sha256": "236a668a5e651f84e7ee22bb3cdecf6a0b4631531ac829f5a65920c79e3b120b"
+      },
+      {
+        "platform": "Windows",
+        "file": "baram-Windows64-243448ac.zip",
+        "bytes": 175904711,
+        "sha256": "58b6cb400d17063c4771d2756a0f51dde16be87db9205db1de1f16005311e042"
+      }
+    ],
+    "signature_scope": "CI_APKSIGNER_ATTESTATION_BOUND_TO_AES_AUTHENTICATED_ARTIFACT_AND_ACTUAL_APK_HASH",
+    "overall_game_complete": false,
+    "actual_report_sha256": "1b8266ab555b57c36d6c64c565bb2fefd04fa3694de4665a2167c316ad7c9f72",
+    "verified_delivery_file_bytes_and_hashes_independently_read": true
+  },
+  "data_identity": {
+    "work_packages": 10,
+    "work_data_identity_result": "PASS",
+    "full_package_gameplay": "NOT_RUN",
+    "windows_content_release": "aa212082041a5cd81faff4f16eb713a5bc52c18ab5a00c19caa3632a16ff0f2c",
+    "windows_source_inputs_sha256": "d048acbf23a7e55ef020657f91f5a9e2abd9d12566674de96d2a97d5208abf80",
+    "whole_content_semantic_comparison": {
+      "result": "PASS",
+      "reference_release": "cd0c680ab5fc8fb223ef2d14ff0b991b18e3e100fecba693bd608040f8a66e57",
+      "actual_native_release": "aa212082041a5cd81faff4f16eb713a5bc52c18ab5a00c19caa3632a16ff0f2c",
+      "ignored_fields": [
+        "imports.*.applied_before_game_commit"
+      ],
+      "semantic_sha256": "6842599b0180934b1d51a0e840f70daf07354a30cf917ac3b3345fed24491825",
+      "consumer_metadata_only_differences": {
+        "WK-ASSETS-003": {
+          "old": "9f9a6b9d4388ec089ffa89a489330a5099502156",
+          "native": "243448ac891232cc879a9321c9320133a4ae8020"
+        },
+        "WK-CONTENT-005": {
+          "old": "9f9a6b9d4388ec089ffa89a489330a5099502156",
+          "native": "243448ac891232cc879a9321c9320133a4ae8020"
+        },
+        "WK-CONTENT-006": {
+          "old": "9f9a6b9d4388ec089ffa89a489330a5099502156",
+          "native": "243448ac891232cc879a9321c9320133a4ae8020"
+        },
+        "WK-CONTENT-007": {
+          "old": "9f9a6b9d4388ec089ffa89a489330a5099502156",
+          "native": "243448ac891232cc879a9321c9320133a4ae8020"
+        },
+        "WK-CONTENT-008": {
+          "old": "9f9a6b9d4388ec089ffa89a489330a5099502156",
+          "native": "243448ac891232cc879a9321c9320133a4ae8020"
+        },
+        "WK-CONTENT-009": {
+          "old": "9f9a6b9d4388ec089ffa89a489330a5099502156",
+          "native": "243448ac891232cc879a9321c9320133a4ae8020"
+        },
+        "WK-CONTENT-010": {
+          "old": "9f9a6b9d4388ec089ffa89a489330a5099502156",
+          "native": "243448ac891232cc879a9321c9320133a4ae8020"
+        }
+      },
+      "evidence_sha256": "ddaf307ca3b4016b28c289f765d4e9d28fcbdec92518468f63af9f53cd10601c"
+    },
+    "android_content_release": "aa212082041a5cd81faff4f16eb713a5bc52c18ab5a00c19caa3632a16ff0f2c",
+    "android_source_inputs_sha256": "d048acbf23a7e55ef020657f91f5a9e2abd9d12566674de96d2a97d5208abf80",
+    "cross_platform_source_inputs_equal": true,
+    "cross_platform_content_equal": true
+  },
+  "local_fresh_core": {
+    "result": "PASS",
+    "execution_state": "COMPLETED",
+    "platform": "Linux embedded PCK of actual unchanged exported Windows EXE",
+    "requested_source_commit": "dc36b5c7f3283fd10739947238b0c6b1b56dbccc",
+    "embedded_production_build_commit": "a0ccaa4b0e7bfc724d0d2fbf2ded91eb8c683a2d",
+    "production_exe_sha256": "d4b31da9aa1dbadb1e280e087af78fde93cd649cdcfdc501100b4196551f6813",
+    "production_exe_unchanged": true,
+    "only_game_input_changed": [
+      "game/recovery_play_probe.gd"
+    ],
+    "all_other_game_inputs_byte_identical": true,
+    "fresh_save_absent_before_launch": true,
+    "core": {
+      "status": "PASS",
+      "elapsed_ms": 504924,
+      "PASS": 45,
+      "FAIL": 0,
+      "NOT_RUN": 0,
+      "BLOCKED": 0
+    },
+    "restart": {
+      "status": "PASS",
+      "elapsed_ms": 394,
+      "PASS": 4,
+      "FAIL": 0,
+      "NOT_RUN": 0,
+      "BLOCKED": 0
+    },
+    "wall_seconds": 518.903,
+    "actual_spell_damage": 44,
+    "natural_kills_at_level6": 65,
+    "compass_search_microseconds": 29,
+    "entity_visits": 0,
+    "path_searches": 0,
+    "windows_native_execution": "NOT_RUN",
+    "android_native_execution": "NOT_RUN",
+    "first_failed_core_preserved": true,
+    "full_content_playthrough": "NOT_RUN",
+    "evidence_summary": "FRESH_CORE_DC36B5C.md",
+    "source_report_sha256": "6eff51beab2272cc9c7ecdbc317d6c831dee8ad58a7067fd9067fb2141545bee",
+    "source_lineage_sha256": "4a152aa85a8229f50a383f6422de98c89ccfcfe172d6b13ff0f35f11298639b4",
+    "content_release": "3b5423ed7d65f951489361d202d5312adb136c8d7c0f21cc6f66441a46799234"
   },
   "performance": {
-    "compass_actual_check": {
-      "status": "PASS",
+    "result": "FAIL",
+    "windows_compass_search": {
+      "result": "PASS",
+      "microseconds": 26,
       "candidate_checks": 1,
       "entity_visits": 0,
-      "path_searches": 0,
-      "microseconds": 20,
-      "scope": "Linux pilot actual learned-skill transition; not whole-device frame-time guarantee"
+      "path_searches": 0
     },
-    "save_latency": {
-      "observed_peak_ms_approx": 717,
-      "zero_pause_claim": "NOT_RUN",
-      "scope": "Remaining observed snapshot/commit pause; no claim of stall-free native performance"
-    }
-  }
+    "windows_synchronous_save": {
+      "result": "FAIL",
+      "samples": 17,
+      "median_ms": 785.4,
+      "maximum_ms": 898.379
+    },
+    "linux_cold_work_draw": {
+      "result": "FAIL",
+      "cpu_ms": 339.957
+    },
+    "native_fps_and_first_playable_frame": "NOT_RUN",
+    "evidence": "PERFORMANCE_CURRENT_LINUX_20261015.md",
+    "android_player_process_intervals": {
+      "result": "FAIL",
+      "samples": 4457,
+      "mean_ms": 94.6551193628001,
+      "p99_ms": 199.058,
+      "scope": "Emulator _process intervals, not GPU FPS or Galaxy"
+    },
+    "android_player_save": {
+      "result": "FAIL",
+      "samples": 54,
+      "median_ms": 886.7375,
+      "maximum_ms": 5082.194
+    },
+    "frame_scope_note": "Android process intervals measured FAIL; GPU presentation FPS, Windows steady FPS and first playable frame remain NOT_RUN",
+    "android_evidence": "performance-current/native-android.json"
+  },
+  "all_map_manual_play": "NOT_RUN",
+  "all_job_natural_level1to99": "NOT_RUN",
+  "user_galaxy_and_windows_pc": "NOT_RUN",
+  "known_gaps": {
+    "held_original_assets": 9,
+    "hostile_models_without_original_attack_motion": 4,
+    "unlinked_catalog_range_items": 2,
+    "unused_craft_shop_definitions": 2,
+    "complete_original_1998_reconstruction": "NOT_RUN"
+  },
+  "branch_approval": {
+    "result": "PASS",
+    "environment": "baram-windows-private",
+    "branch": "work/gameplay-recovery-20261015",
+    "observed_before": [
+      "codex/game-core",
+      "work/mobile-controls-20261015"
+    ],
+    "observed_after": [
+      "codex/game-core",
+      "work/gameplay-recovery-20261015",
+      "work/mobile-controls-20261015"
+    ],
+    "protection_rules_unchanged": true,
+    "secrets_or_values_changed": false,
+    "required_next_permission": false,
+    "evidence": "ENVIRONMENT_BRANCH_APPROVAL.json"
+  },
+  "history": {
+    "blocked_run_id": 38724985965,
+    "blocked_run_result": "BLOCKED",
+    "prior_steps_executed": 0,
+    "unchanged_snapshots": [
+      {
+        "file": "NATIVE_GATE_BEFORE_APPROVAL_38724985965.md",
+        "bytes": 3519,
+        "sha256": "b87a80ac4d26544c105f26378403655cb622def5cf925aee05699cc6c81835ff",
+        "kind": "UNCHANGED_BEFORE_APPROVAL_SNAPSHOT_NOT_CURRENT_STATUS"
+      },
+      {
+        "file": "NATIVE_EXECUTION_STATUS_BEFORE_APPROVAL_38724985965.json",
+        "bytes": 2904,
+        "sha256": "3b53e2c0962bb4ac2b8867497671822ae5c58849479bb4908b9bb807d58b53ad",
+        "kind": "UNCHANGED_BEFORE_APPROVAL_SNAPSHOT_NOT_CURRENT_STATUS"
+      }
+    ],
+    "first_failed_core": "local-play-continuation/first-core-fail-preserved.json",
+    "first_failed_core_result": "FAIL",
+    "first_failed_core_pass": 39,
+    "first_failed_core_fail": 3,
+    "later_results_do_not_erase_previous_failures": true
+  },
+  "paid_services_used": false,
+  "source_code_modified_by_this_report": false,
+  "private_asset_or_user_save_payload_in_report": false,
+  "consolidated_report": "FINAL_AUDIT_20261015.md",
+  "consolidated_json": "FINAL_AUDIT_20261015.json"
 }

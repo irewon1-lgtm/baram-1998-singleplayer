@@ -1,8 +1,10 @@
 # 네이티브 CI 후속 도구
 
-이 폴더는 원격 게시·동결한 게임 저장소와 분리되어 있다. 소실된 두 Python 파일의 원문은 회수하지 못해 재구성했다. 게임 소스, 서명 파일, 원본 런타임을 수정하지 않는다.
+소실된 두 후속 Python 도구의 원문은 회수하지 못해 재구성했다. 게임 소스, 서명 파일, 원본 런타임을 수정하지 않는다.
 
-현재 설치본 승격은 **BLOCKED**다. CI run `38724985965`는 `baram-windows-private` 환경의 새 브랜치 배포 허용 규칙 때문에 실제 runner/step 실행 전에 거부되었다. 이것은 게임 실행 실패로 기록하지 않는다. 환경 허용 규칙을 해결하고 동일한 동결 소스에서 새 네이티브 실행이 끝나기 전에는 다운로드 도구나 정책 시험 결과로 설치본을 완료 처리하지 않는다.
+최신 `243448ac`의 CI run `38729864952`는 Windows·Android·다중 터치 세 작업이 모두 성공했다. 실제 복호화 보고서와 설치본 바이트를 대조한 엄격한 기능 배포 관문은 **3,740/3,740 PASS**, 검증 설치본은 **READY**다. 이 판정은 게임 전체·전수 수동 플레이·성능 완료가 아니다. 성능 FAIL과 Galaxy·사람의 Windows 화면 직접 관찰·계정 동기화 NOT_RUN은 [현재 관문](NATIVE_GATE.md)과 [통합 감사](FINAL_AUDIT_20261015.md)에 남긴다.
+
+이전 run `38724985965`의 보호 규칙 차단은 [승인 전 기록](NATIVE_GATE_BEFORE_APPROVAL_38724985965.md)이다. 사용자가 승인한 정확한 브랜치 추가 후 해결되었으며, 현재 승격 차단이나 게임 실행 실패로 표시하지 않는다.
 
 ## 실행 준비
 
@@ -21,7 +23,7 @@ python -m unittest -v test_post_ci_tools.py
 python fetch_recovery_artifact.py \
   --url-file /absolute/private/windows-artifact-url.txt \
   --sealed-name windows-quality.sealed \
-  --signing /workspace/scratch/cba709186ebd/private-local/android-signing.json \
+  --signing /absolute/private/android-signing.json \
   --output /absolute/fresh/windows-native-artifact \
   --report /absolute/reports/windows-transport.json
 ```
@@ -38,7 +40,7 @@ python package_recovery_delivery.py \
   --windows-dir /absolute/windows-native-artifact \
   --ci-run /absolute/reports/ci-run.json \
   --source-sha FULL_40_CHARACTER_FROZEN_COMMIT \
-  --signing /workspace/scratch/cba709186ebd/private-local/android-signing.json \
+  --signing /absolute/private/android-signing.json \
   --output /absolute/fresh/verified-delivery \
   --report /absolute/reports/delivery-gate.json
 ```

@@ -1,0 +1,126 @@
+{
+  "checks": [
+    {
+      "name": "same_real_world_destination",
+      "status": "PASS"
+    },
+    {
+      "name": "row_major_equivalence_direction_0",
+      "status": "PASS"
+    },
+    {
+      "name": "row_major_equivalence_direction_1",
+      "status": "PASS"
+    },
+    {
+      "name": "row_major_equivalence_direction_2",
+      "status": "PASS"
+    },
+    {
+      "name": "row_major_equivalence_direction_3",
+      "status": "PASS"
+    },
+    {
+      "name": "occupied_gate_fallback_preserves_tie_break",
+      "status": "PASS"
+    },
+    {
+      "name": "same_map_teleport_keeps_all_immutable_tile_frames",
+      "status": "PASS"
+    },
+    {
+      "name": "real_map_change_releases_old_map_tile_frames",
+      "status": "PASS"
+    }
+  ],
+  "directions": [
+    {
+      "actual": "(217, 110)",
+      "direction": 0,
+      "expected": "(217, 110)",
+      "metrics": {
+        "candidate_checks": 1,
+        "entity_visits": 0,
+        "microseconds": 17,
+        "path_searches": 0,
+        "radius": 0
+      }
+    },
+    {
+      "actual": "(2, 110)",
+      "direction": 1,
+      "expected": "(2, 110)",
+      "metrics": {
+        "candidate_checks": 1,
+        "entity_visits": 0,
+        "microseconds": 22,
+        "path_searches": 0,
+        "radius": 0
+      }
+    },
+    {
+      "actual": "(110, 217)",
+      "direction": 2,
+      "expected": "(110, 217)",
+      "metrics": {
+        "candidate_checks": 1,
+        "entity_visits": 0,
+        "microseconds": 21,
+        "path_searches": 0,
+        "radius": 0
+      }
+    },
+    {
+      "actual": "(110, 2)",
+      "direction": 3,
+      "expected": "(110, 2)",
+      "metrics": {
+        "candidate_checks": 1,
+        "entity_visits": 0,
+        "microseconds": 31,
+        "path_searches": 0,
+        "radius": 0
+      }
+    }
+  ],
+  "frame_rate": {
+    "reason": "Headless CPU benchmark does not establish device FPS.",
+    "status": "NOT_RUN"
+  },
+  "legacy": {
+    "candidate_checks": 48400,
+    "destination": "(217, 110)",
+    "entity_visits": 148363824,
+    "microseconds": 80784925,
+    "path_searches": 0
+  },
+  "optimized": {
+    "candidate_checks": 1,
+    "destination": "(217, 110)",
+    "entity_visits": 0,
+    "microseconds": 20,
+    "path_searches": 0,
+    "radius": 0
+  },
+  "optimized_30_runs": {
+    "maximum_us": 16,
+    "median_us": 3,
+    "p95_us": 5
+  },
+  "tile_cache": {
+    "initial_build_us": 228574,
+    "loaded": 570,
+    "map": "kr.map.089e90495862",
+    "repeat_lookup_us": 1101,
+    "repeat_rebuilds": 0,
+    "resets_after_real_map_change": 1,
+    "status": "PASS",
+    "unique_work_tiles": 570
+  },
+  "world": {
+    "entities": 4578,
+    "maps": 423,
+    "town_height": 220.0,
+    "town_width": 220.0
+  }
+}
