@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/workspace/p2-private/toolchain/debian-root/usr/lib/wine/wine64",
+    "/workspace/p2-private/builds/frozen-v4/baram-p2-inspection.exe",
+    "--headless",
+    "--",
+    "--p2-smoke"
+  ],
+  "platform": "Windows_UNDER_WINE_10_NOT_NATIVE",
+  "exit_code": 1,
+  "elapsed_seconds": 3.6255862712860107,
+  "artifact_sha256": "6c089810838c313c1d00c502f8bfae77bc27b958f62b041372cea4e95f07fb93",
+  "code_sha": "7bfe3fff902f95de5b0b4253e2e0187853e24de0",
+  "input_manifest_sha256": "3ed2dd0dd2572e7da2920ddfd01ae6c3b7e954bddf376731da93f826a2a12b73",
+  "log": "/workspace/p2-private/windows/frozen-v4/ui-smoke.log",
+  "ui_checks": 11,
+  "ui_failures": 0,
+  "save_checks": 85,
+  "save_failures": 12,
+  "save_not_run": 22
+}

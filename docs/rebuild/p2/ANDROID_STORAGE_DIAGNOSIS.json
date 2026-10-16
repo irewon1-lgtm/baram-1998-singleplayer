@@ -1,0 +1,90 @@
+{
+  "schema": "baram.p2.android-storage-diagnosis/1",
+  "scope": "Android API29 software emulator, newly installed synthetic inspection app; not Galaxy hardware",
+  "original_frozen_result_preserved": {
+    "code_sha": "c6ee7d660a32e155388d54366a81655ffd49d97c",
+    "apk_sha256_prefix": "fbb87222",
+    "ui_checks_passed": 11,
+    "executed_storage_checks": 74,
+    "recorded_storage_passed_checks": 69,
+    "storage_failed_checks": 5,
+    "storage_not_run_checks": 27,
+    "status": "FAIL",
+    "private_report": "/workspace/p2-private/platform/android-fbb87222/trial2-ui-smoke.json",
+    "report_sha256": "b086cfb3beb1f614e9345b7469668439db29e6358e594b6ce9fdcbba0e191e20",
+    "failed_test_ids": [
+      "backup_only_preserved_other_owner",
+      "backup_only_preserved_future_schema",
+      "backup_only_preserved_deferred_profile",
+      "valid_backup_only_preserved_when_new_primary_saved",
+      "symlink_target_rejected_.pending"
+    ]
+  },
+  "read_only_observations": {
+    "backup_only_cases": "All three incompatible backup-only fixture directories already contained primary character.json files; same fixed test directory had been used by an earlier execution.",
+    "valid_backup_case": "Existing primary revision 2 was the previous valid snapshot, so saving it correctly produced a revision-2 backup rather than the fresh-fixture revision-1 expectation.",
+    "pending_case": "Read-only adb ls/readlink found both character.json and character.json.pending as actual symlinks to unrelated-fixture.txt in the old fixed fixture directory. The primary link dated from the earlier execution.",
+    "unchanged_data": "No Android fixture was removed, reset or overwritten by this diagnosis."
+  },
+  "causes": [
+    {
+      "kind": "TEST_FIXTURE_REUSE",
+      "effect": "Four backup-only tests relied on fresh absent primaries but reused prior files. Do not attribute these assertions to save data loss."
+    },
+    {
+      "kind": "STORAGE_GUARD_BACKEND_DEFECT",
+      "effect": "Globalizing a path then DirAccess.open(absolute_parent) selected Android ACCESS_FILESYSTEM DirAccessJAndroid, which does not override is_link. The guard therefore missed real symlinks. Android ACCESS_USERDATA uses DirAccessUnix with native lstat/symlink support."
+    }
+  ],
+  "official_sources": [
+    {
+      "url": "https://github.com/godotengine/godot/blob/4.6.3-stable/drivers/unix/dir_access_unix.cpp",
+      "fixed_tag": "4.6.3-stable",
+      "sha256": "549c1f5017d1b2cc9b922065e88ef5002aa13faacda8ef3d95838cfdd9d0cd05"
+    },
+    {
+      "url": "https://github.com/godotengine/godot/blob/4.6.3-stable/platform/android/dir_access_jandroid.cpp",
+      "fixed_tag": "4.6.3-stable",
+      "sha256": "faff6215a5f9a41edd0487d4ec429ec0016856e97b3c31ffdef9415a7b8302b0"
+    },
+    {
+      "url": "https://github.com/godotengine/godot/blob/4.6.3-stable/platform/android/os_android.cpp",
+      "fixed_tag": "4.6.3-stable",
+      "sha256": "824fc4fffe594089b5447907728c46ab770c8a65d0616834609ef573b623ba70"
+    },
+    {
+      "url": "https://github.com/godotengine/godot/blob/4.6.3-stable/core/io/dir_access.cpp",
+      "fixed_tag": "4.6.3-stable",
+      "sha256": "03ee7d7b71c7ac1ec0ffdcc1d43091f6a056058d32228b6e25baccf352ced458"
+    }
+  ],
+  "corrections": [
+    "Root UI assigns each run a distinct fixture root and preserves old directories.",
+    "Store opens user:// to retain the native USERDATA backend, then change_dir to each absolute parent before is_link.",
+    "Suite creates links through that native backend with absolute source and target paths even when the suite root is absolute.",
+    "New regression requires native USERDATA detection of a genuine symlink and records the absolute FILESYSTEM backend observation separately. Existing protection assertions stay intact."
+  ],
+  "corrected_code_fingerprints": {
+    "rebuild/p2/storage/save_store.gd": "54c72522afadf5f14d53f55ba57bddf745a8837ce9b11a60511960694c097c0a",
+    "rebuild/p2/storage/save_self_test.gd": "3de2bdd56f17c3d6af8cd28319b077d9f7132a48e5bbc677851b8ff0f92d64de"
+  },
+  "post_correction_validation": {
+    "linux_full": {
+      "checks": 107,
+      "failures": 0,
+      "exit_code": 0,
+      "private_receipt": "/workspace/p2-private/save-tests/run-10-native-backend-full-receipt.json"
+    },
+    "linux_local": {
+      "checks": 85,
+      "failures": 0,
+      "not_run": 22,
+      "exit_code": 0,
+      "private_receipt": "/workspace/p2-private/save-tests/run-11-native-backend-local-receipt.json"
+    },
+    "android_corrected_artifact": "NOT_RUN_AT_DIAGNOSIS_WRITE; follow the later platform receipt",
+    "native_windows": "NOT_RUN",
+    "galaxy_tab_s10_fe": "NOT_RUN"
+  },
+  "judgment": "The original Android FAIL is preserved. Linux correction results do not establish Android or device PASS."
+}

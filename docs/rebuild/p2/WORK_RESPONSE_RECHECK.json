@@ -1,0 +1,35 @@
+{
+  "work_commit": "d9817bf66ffd230b231e0584f367df3c9823fa73",
+  "response_sha256": "c0405170a27c14ca0b9b2dae9801ea469c550501f1e7ac22f10b7c79a44df3fc",
+  "request_id": "CODEX-P2-REQ-001",
+  "work_acknowledgment": "ACKNOWLEDGED_BY_WORK; BYTE_TRANSFER_TO_CODEX_BLOCKED",
+  "receiver_checked_proposed_paths": [
+    {
+      "path": "/workspace/scratch/68a0f3ea5a03/delivery/final_set/BARAM_P1_5_handoff_20261016.zip",
+      "exists": false
+    },
+    {
+      "path": "/workspace/scratch/68a0f3ea5a03/delivery/final_set/BARAM_P1_5_reference_sources.zip.part001",
+      "exists": false
+    },
+    {
+      "path": "/workspace/scratch/68a0f3ea5a03/delivery/final_set/BARAM_P1_5_reference_sources.zip.part002",
+      "exists": false
+    },
+    {
+      "path": "/workspace/scratch/68a0f3ea5a03/delivery/final_set/BARAM_P1_5_reference_sources.zip.part003",
+      "exists": false
+    },
+    {
+      "path": "/workspace/scratch/3624c67f59e8/delivery/BARAM_WORK_SOURCE_DELTA_B001_20261016.zip",
+      "exists": false
+    },
+    {
+      "path": "/workspace/scratch/3624c67f59e8/delivery/BARAM_WORK_SOURCE_DELTA_B002_20261016.zip",
+      "exists": false
+    }
+  ],
+  "result": "BLOCKED_NO_RECEIVER_BYTES",
+  "B001_B002_receipt": "DEFERRED_ZERO_ADOPTED_FIELDS",
+  "no_sensitive_values_read": true
+}

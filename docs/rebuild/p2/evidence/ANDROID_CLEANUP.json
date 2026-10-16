@@ -1,0 +1,43 @@
+{
+  "schema": "baram.p2.owned_runtime_cleanup/1",
+  "owned_emulator_pid": 64076,
+  "owned_adb_port": 5038,
+  "preserved": [
+    "Xvfb DISPLAY=:91",
+    "Wine prefixes and processes under root coordination",
+    "all APKs, inputs, fixture files, reports and logs"
+  ],
+  "commands": [
+    {
+      "command": [
+        "/workspace/p2-private/toolchain/android-sdk/platform-tools/adb",
+        "-P",
+        "5038",
+        "-s",
+        "127.0.0.1:5583",
+        "emu",
+        "kill"
+      ],
+      "exit_code": 1,
+      "elapsed_seconds": 0.003,
+      "output": ""
+    },
+    {
+      "command": [
+        "/workspace/p2-private/toolchain/android-sdk/platform-tools/adb",
+        "-P",
+        "5038",
+        "kill-server"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.01,
+      "output": ""
+    },
+    {
+      "action": "SIGTERM own emulator process group",
+      "pid": 64076
+    }
+  ],
+  "emulator_final_state": "Z",
+  "result": "PASS"
+}

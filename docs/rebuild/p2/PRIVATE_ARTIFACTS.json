@@ -1,0 +1,100 @@
+{
+  "schema": "baram.p2.private_artifacts/1",
+  "code_sha": "7bfe3fff902f95de5b0b4253e2e0187853e24de0",
+  "input_manifest_sha256": "3ed2dd0dd2572e7da2920ddfd01ae6c3b7e954bddf376731da93f826a2a12b73",
+  "delivery": "BLOCKED_NO_CONFIRMED_PRIVATE_DOWNLOAD_CHANNEL",
+  "not_a_download_confirmation": true,
+  "excluded": [
+    "audit-only2",
+    "originalarchives",
+    "reference source checkout",
+    "all account DB files",
+    "signing keys/password files",
+    "fonts",
+    "actual user saves"
+  ],
+  "scope": "Generated original-asset-free P2 inspection builds and screenshots only; not playable slice/update",
+  "previous_generated_files": [
+    {
+      "path": "/workspace/p2-private/builds/frozen/baram-p2-inspection.exe",
+      "bytes": 100829992,
+      "sha256": "dba426b53a978bf09f54aa92e3115cce119b67e83ed94feb35ff9a1031cc3cca",
+      "private_delivery": "NOT_TRANSFERRED"
+    },
+    {
+      "path": "/workspace/p2-private/builds/frozen/baram-p2-inspection.apk",
+      "bytes": 55789187,
+      "sha256": "fbb872224ea1bd112ddfe31b4f5c4910768ff30bd8e7ede826b0d4677900057d",
+      "private_delivery": "NOT_TRANSFERRED"
+    },
+    {
+      "path": "/workspace/p2-private/linux/ui-frozen.json.png",
+      "bytes": 47786,
+      "sha256": "cd884fab2652727922aefbe3ffbc1982ab9bbe2c0414d68aae5aa498a176a3ba",
+      "private_delivery": "NOT_TRANSFERRED"
+    },
+    {
+      "path": "/workspace/p2-private/linux/ui-frozen.json",
+      "bytes": 17473,
+      "sha256": "0eb557ad4b3e7cea4399ad32ee812a0d74ea677f3a1473cf6c1e66af2805a1b6",
+      "private_delivery": "NOT_TRANSFERRED"
+    },
+    {
+      "path": "/workspace/p2-private/windows/frozen/ui-smoke.json",
+      "bytes": 17396,
+      "sha256": "5d7beaf5f7f7ed674f00974da66d8078d76953620e7f6e6623994b563dd62b14",
+      "private_delivery": "NOT_TRANSFERRED"
+    }
+  ],
+  "files": [
+    {
+      "path": "/workspace/p2-private/builds/frozen-v4/baram-p2-inspection.exe",
+      "bytes": 100831192,
+      "sha256": "6c089810838c313c1d00c502f8bfae77bc27b958f62b041372cea4e95f07fb93",
+      "private_delivery": "NOT_TRANSFERRED"
+    },
+    {
+      "path": "/workspace/p2-private/builds/frozen-v4/baram-p2-inspection.apk",
+      "bytes": 55789187,
+      "sha256": "3f5020ed79ecc2777a7ac699704a439d771a343ee7e36a634859efd307388e8e",
+      "private_delivery": "NOT_TRANSFERRED"
+    },
+    {
+      "path": "/workspace/p2-private/linux/ui-native-backend.json.png",
+      "bytes": 47786,
+      "sha256": "cd884fab2652727922aefbe3ffbc1982ab9bbe2c0414d68aae5aa498a176a3ba",
+      "private_delivery": "NOT_TRANSFERRED"
+    },
+    {
+      "path": "/workspace/p2-private/linux/ui-native-backend.json",
+      "bytes": 17825,
+      "sha256": "fed53893fae075e6543cd7331f4572c9c3e4ff5cb697617779991334ff4f4cbd",
+      "private_delivery": "NOT_TRANSFERRED"
+    },
+    {
+      "path": "/workspace/p2-private/windows/frozen-v4/ui-smoke.json",
+      "bytes": 17754,
+      "sha256": "4eef606587bacf5f0e8f5cb5c09f3739c08b61e4318716dcddeb10a3dc67cb2f",
+      "private_delivery": "NOT_TRANSFERRED"
+    },
+    {
+      "path": "/workspace/p2-private/platform/android-v4-3f5020ed/trial1-ui-smoke.png",
+      "bytes": 50983,
+      "sha256": "51ab894e4c518695dd80e11ed06f6703e4cb23b18a26083b92c9143fad1a3cd0",
+      "private_delivery": "NOT_TRANSFERRED"
+    },
+    {
+      "path": "/workspace/p2-private/platform/android-v4-3f5020ed/trial2-ui-smoke.png",
+      "bytes": 50983,
+      "sha256": "51ab894e4c518695dd80e11ed06f6703e4cb23b18a26083b92c9143fad1a3cd0",
+      "private_delivery": "NOT_TRANSFERRED"
+    },
+    {
+      "path": "/workspace/p2-private/platform/android-v4-3f5020ed/RUN_RECEIPT.json",
+      "bytes": 11398,
+      "sha256": "8ca008086044a8ad044770f1eddbabb25bfaa03126965614c4cee0b427dff982",
+      "private_delivery": "NOT_TRANSFERRED"
+    }
+  ],
+  "no_original_visual_audio_recording": "Original-dependent P2-01/02/03 blocked; inspection UI screenshots only. No gameplay video or audio recording generated."
+}

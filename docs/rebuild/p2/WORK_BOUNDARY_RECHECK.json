@@ -1,0 +1,49 @@
+{
+  "head": "d9817bf66ffd230b231e0584f367df3c9823fa73",
+  "state_sha256": "b72b12e6f891cff2f43645ee5d288db4185b3e631abd813c2ff39afba7e53880",
+  "current_batches": [
+    "B001",
+    "B002"
+  ],
+  "checked_at": "completed P2 execution boundary",
+  "batch_checks": [
+    {
+      "batch": "B001",
+      "file": "READY.md",
+      "same_bytes_as_reviewed": true,
+      "sha256": "71b431e6cb290089015cc4f2f0c562538b987526d8eb65385cd933c454a6a1b4"
+    },
+    {
+      "batch": "B001",
+      "file": "MANIFEST.json",
+      "same_bytes_as_reviewed": true,
+      "sha256": "db14b1c67f199f92eefa1cffa80cf4229544b7113f891925bcbed3f9129a0946"
+    },
+    {
+      "batch": "B001",
+      "file": "VALIDATION.json",
+      "same_bytes_as_reviewed": true,
+      "sha256": "309b266a9dcdaab4d9046f98a415f3f9036150cde33550b2f2b28c9dabe7e902"
+    },
+    {
+      "batch": "B002",
+      "file": "READY.md",
+      "same_bytes_as_reviewed": true,
+      "sha256": "33757ccfb66c9f5cc7e048947fdb7a0f402a750af4c6f5e9b4fd4417bae9ce2b"
+    },
+    {
+      "batch": "B002",
+      "file": "MANIFEST.json",
+      "same_bytes_as_reviewed": true,
+      "sha256": "d965e4041ca0eccfd4d689510679a0e96fbb5483ed4ab986b8cea689397aa89d"
+    },
+    {
+      "batch": "B002",
+      "file": "VALIDATION.json",
+      "same_bytes_as_reviewed": true,
+      "sha256": "d2da645ed028098bde5e968331c4dbc031edaa4b9e332f4466cd94536f426e2f"
+    }
+  ],
+  "adoption_unchanged": "DEFERRED0fields",
+  "automatic_chat_acknowledgment_assumed": false
+}

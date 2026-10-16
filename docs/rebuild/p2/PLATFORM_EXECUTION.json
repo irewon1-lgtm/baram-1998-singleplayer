@@ -1,0 +1,444 @@
+{
+  "schema": "baram.p2.platform_execution/1",
+  "app_code_sha": "7bfe3fff902f95de5b0b4253e2e0187853e24de0",
+  "input_manifest_sha256": "3ed2dd0dd2572e7da2920ddfd01ae6c3b7e954bddf376731da93f826a2a12b73",
+  "engine": "Godot4.6.3.stable.official.7d41c59c4",
+  "source_profile": "P2_INFRASTRUCTURE_ONLY",
+  "linux": {
+    "UI": "PASS11checks",
+    "storage_full": "PASS107checks",
+    "shared_suite": "PASS85checks;22NOT_RUN no child driver",
+    "evidence": "evidence/LINUX_UI_FINAL.json",
+    "historical_accuracy": "NOT_TESTED"
+  },
+  "windows_under_wine": {
+    "UI": "PASS11checks",
+    "storage": "FAIL12 of85 checks,73PASS,22NOT_RUN",
+    "cause": "Wine10 CreateSymbolicLinkW stub; real link fixtures unavailable. Original assertions/FAIL unchanged.",
+    "evidence": "WINE_STORAGE_DIAGNOSIS.json",
+    "native_Windows": "NOT_RUN"
+  },
+  "android_emulator": {
+    "environment": "Android10/API29/x86_64 software emulator37.2.12, noKVM, swangle",
+    "real_Galaxy": false,
+    "execution": {
+      "schema": "baram.p2.android_execution/1",
+      "code_sha": "7bfe3fff902f95de5b0b4253e2e0187853e24de0",
+      "apk_sha256": "3f5020ed79ecc2777a7ac699704a439d771a343ee7e36a634859efd307388e8e",
+      "apk_bytes": 55789187,
+      "platform": "EXPLICIT_ANDROID_TARGET_SEE_DEVICE_METADATA",
+      "native_galaxy": "NOT_ESTABLISHED_BY_RUNNER",
+      "package": "org.baram.rebuild.p2.codex001",
+      "original_assets_consumed": 0,
+      "commands": [
+        {
+          "command": [
+            "/workspace/p2-private/toolchain/android-sdk/build-tools/35.0.1/aapt",
+            "dump",
+            "badging",
+            "/workspace/p2-private/platform/android-v4-3f5020ed/inspection.apk"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.005,
+          "log": "/workspace/p2-private/platform/android-v4-3f5020ed/apk-package.log"
+        },
+        {
+          "command": [
+            "/workspace/p2-private/toolchain/android-sdk/build-tools/35.0.1/apksigner",
+            "verify",
+            "/workspace/p2-private/platform/android-v4-3f5020ed/inspection.apk"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.326,
+          "log": "/workspace/p2-private/platform/android-v4-3f5020ed/apk-signature.log"
+        },
+        {
+          "command": [
+            "/workspace/p2-private/toolchain/android-sdk/platform-tools/adb",
+            "-P",
+            "5038",
+            "-s",
+            "127.0.0.1:5583",
+            "shell",
+            "getprop",
+            "ro.build.version.release"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.227,
+          "log": "/workspace/p2-private/platform/android-v4-3f5020ed/device-ro.build.version.release.log"
+        },
+        {
+          "command": [
+            "/workspace/p2-private/toolchain/android-sdk/platform-tools/adb",
+            "-P",
+            "5038",
+            "-s",
+            "127.0.0.1:5583",
+            "shell",
+            "getprop",
+            "ro.build.version.sdk"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.219,
+          "log": "/workspace/p2-private/platform/android-v4-3f5020ed/device-ro.build.version.sdk.log"
+        },
+        {
+          "command": [
+            "/workspace/p2-private/toolchain/android-sdk/platform-tools/adb",
+            "-P",
+            "5038",
+            "-s",
+            "127.0.0.1:5583",
+            "shell",
+            "getprop",
+            "ro.product.cpu.abi"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.283,
+          "log": "/workspace/p2-private/platform/android-v4-3f5020ed/device-ro.product.cpu.abi.log"
+        },
+        {
+          "command": [
+            "/workspace/p2-private/toolchain/android-sdk/platform-tools/adb",
+            "-P",
+            "5038",
+            "-s",
+            "127.0.0.1:5583",
+            "shell",
+            "getprop",
+            "ro.kernel.qemu"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.243,
+          "log": "/workspace/p2-private/platform/android-v4-3f5020ed/device-ro.kernel.qemu.log"
+        },
+        {
+          "command": [
+            "/workspace/p2-private/toolchain/android-sdk/platform-tools/adb",
+            "-P",
+            "5038",
+            "-s",
+            "127.0.0.1:5583",
+            "install",
+            "-r",
+            "--no-incremental",
+            "--no-streaming",
+            "/workspace/p2-private/platform/android-v4-3f5020ed/inspection.apk"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 16.46,
+          "log": "/workspace/p2-private/platform/android-v4-3f5020ed/install.log"
+        },
+        {
+          "command": [
+            "/workspace/p2-private/toolchain/android-sdk/platform-tools/adb",
+            "-P",
+            "5038",
+            "-s",
+            "127.0.0.1:5583",
+            "shell",
+            "am",
+            "force-stop",
+            "org.baram.rebuild.p2.codex001"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 1.423,
+          "log": "/workspace/p2-private/platform/android-v4-3f5020ed/trial1-force-stop.log"
+        },
+        {
+          "command": [
+            "/workspace/p2-private/toolchain/android-sdk/platform-tools/adb",
+            "-P",
+            "5038",
+            "-s",
+            "127.0.0.1:5583",
+            "shell",
+            "run-as",
+            "org.baram.rebuild.p2.codex001",
+            "rm",
+            "-f",
+            "files/ui-smoke.json",
+            "files/ui-smoke.json.png"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.91,
+          "log": "/workspace/p2-private/platform/android-v4-3f5020ed/trial1-remove-stale-report.log"
+        },
+        {
+          "command": [
+            "/workspace/p2-private/toolchain/android-sdk/platform-tools/adb",
+            "-P",
+            "5038",
+            "-s",
+            "127.0.0.1:5583",
+            "shell",
+            "am",
+            "start",
+            "-n",
+            "org.baram.rebuild.p2.codex001/com.godot.game.GodotAppLauncher"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 1.188,
+          "log": "/workspace/p2-private/platform/android-v4-3f5020ed/trial1-launch.log"
+        },
+        {
+          "command": [
+            "/workspace/p2-private/toolchain/android-sdk/platform-tools/adb",
+            "-P",
+            "5038",
+            "-s",
+            "127.0.0.1:5583",
+            "logcat",
+            "-d",
+            "-t",
+            "4000",
+            "-s",
+            "godot:V",
+            "AndroidRuntime:V",
+            "ActivityTaskManager:V"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 1.557,
+          "log": "/workspace/p2-private/platform/android-v4-3f5020ed/trial1-logcat.log"
+        },
+        {
+          "command": [
+            "/workspace/p2-private/toolchain/android-sdk/platform-tools/adb",
+            "-P",
+            "5038",
+            "-s",
+            "127.0.0.1:5583",
+            "exec-out",
+            "run-as",
+            "org.baram.rebuild.p2.codex001",
+            "cat",
+            "files/ui-smoke.json.png"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.898,
+          "log": "/workspace/p2-private/platform/android-v4-3f5020ed/trial1-screenshot.log"
+        },
+        {
+          "command": [
+            "/workspace/p2-private/toolchain/android-sdk/platform-tools/adb",
+            "-P",
+            "5038",
+            "-s",
+            "127.0.0.1:5583",
+            "exec-out",
+            "run-as",
+            "org.baram.rebuild.p2.codex001",
+            "cat",
+            "/data/data/org.baram.rebuild.p2.codex001/files/p2-save-fixture-tests/run-3626-f7d2ea72b083bd04/roundtrip/character.json"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.329,
+          "log": "/workspace/p2-private/platform/android-v4-3f5020ed/trial1-fixture.log"
+        },
+        {
+          "command": [
+            "/workspace/p2-private/toolchain/android-sdk/platform-tools/adb",
+            "-P",
+            "5038",
+            "-s",
+            "127.0.0.1:5583",
+            "shell",
+            "am",
+            "force-stop",
+            "org.baram.rebuild.p2.codex001"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.474,
+          "log": "/workspace/p2-private/platform/android-v4-3f5020ed/trial2-force-stop.log"
+        },
+        {
+          "command": [
+            "/workspace/p2-private/toolchain/android-sdk/platform-tools/adb",
+            "-P",
+            "5038",
+            "-s",
+            "127.0.0.1:5583",
+            "shell",
+            "run-as",
+            "org.baram.rebuild.p2.codex001",
+            "rm",
+            "-f",
+            "files/ui-smoke.json",
+            "files/ui-smoke.json.png"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.314,
+          "log": "/workspace/p2-private/platform/android-v4-3f5020ed/trial2-remove-stale-report.log"
+        },
+        {
+          "command": [
+            "/workspace/p2-private/toolchain/android-sdk/platform-tools/adb",
+            "-P",
+            "5038",
+            "-s",
+            "127.0.0.1:5583",
+            "shell",
+            "am",
+            "start",
+            "-n",
+            "org.baram.rebuild.p2.codex001/com.godot.game.GodotAppLauncher"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.988,
+          "log": "/workspace/p2-private/platform/android-v4-3f5020ed/trial2-launch.log"
+        },
+        {
+          "command": [
+            "/workspace/p2-private/toolchain/android-sdk/platform-tools/adb",
+            "-P",
+            "5038",
+            "-s",
+            "127.0.0.1:5583",
+            "logcat",
+            "-d",
+            "-t",
+            "4000",
+            "-s",
+            "godot:V",
+            "AndroidRuntime:V",
+            "ActivityTaskManager:V"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 3.198,
+          "log": "/workspace/p2-private/platform/android-v4-3f5020ed/trial2-logcat.log"
+        },
+        {
+          "command": [
+            "/workspace/p2-private/toolchain/android-sdk/platform-tools/adb",
+            "-P",
+            "5038",
+            "-s",
+            "127.0.0.1:5583",
+            "exec-out",
+            "run-as",
+            "org.baram.rebuild.p2.codex001",
+            "cat",
+            "files/ui-smoke.json.png"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.331,
+          "log": "/workspace/p2-private/platform/android-v4-3f5020ed/trial2-screenshot.log"
+        },
+        {
+          "command": [
+            "/workspace/p2-private/toolchain/android-sdk/platform-tools/adb",
+            "-P",
+            "5038",
+            "-s",
+            "127.0.0.1:5583",
+            "exec-out",
+            "run-as",
+            "org.baram.rebuild.p2.codex001",
+            "cat",
+            "/data/data/org.baram.rebuild.p2.codex001/files/p2-save-fixture-tests/run-3732-35ca865845ef7331/roundtrip/character.json"
+          ],
+          "exit_code": 0,
+          "elapsed_seconds": 0.34,
+          "log": "/workspace/p2-private/platform/android-v4-3f5020ed/trial2-fixture.log"
+        }
+      ],
+      "trials": [
+        {
+          "trial": 1,
+          "report": "/workspace/p2-private/platform/android-v4-3f5020ed/trial1-ui-smoke.json",
+          "report_sha256": "33fe7e3c49f22ad5290f564d7771dc8ef1273b1997ba4a0085868e404ac97963",
+          "ui_checks": 11,
+          "ui_failures": 0,
+          "save_checks": 85,
+          "save_failures": 0,
+          "save_not_run": 22,
+          "result": "PASS",
+          "screenshot": "/workspace/p2-private/platform/android-v4-3f5020ed/trial1-ui-smoke.png",
+          "screenshot_sha256": "51ab894e4c518695dd80e11ed06f6703e4cb23b18a26083b92c9143fad1a3cd0",
+          "fixture": "/workspace/p2-private/platform/android-v4-3f5020ed/trial1-character.json",
+          "fixture_sha256": "31eb8cabdeb46713884dfbd9bc4c51f8e0e3af5d57fba3cacad519375ff30fbe",
+          "linux_fixture_comparison": {
+            "source": "/home/agent/.local/share/baram_rebuild_p2_001/p2-save-fixture-tests/run-66341-be1a5dee40c489d5/roundtrip/character.json",
+            "linux_sha256": "31eb8cabdeb46713884dfbd9bc4c51f8e0e3af5d57fba3cacad519375ff30fbe",
+            "byte_equal": true,
+            "json_equal": true,
+            "scope": "Synthetic save format only; no authentication or original-save migration"
+          }
+        },
+        {
+          "trial": 2,
+          "report": "/workspace/p2-private/platform/android-v4-3f5020ed/trial2-ui-smoke.json",
+          "report_sha256": "f7531b371374857bd1ae400bf609425fb2f2c5379ae68708187244f92b91ebd8",
+          "ui_checks": 11,
+          "ui_failures": 0,
+          "save_checks": 85,
+          "save_failures": 0,
+          "save_not_run": 22,
+          "result": "PASS",
+          "screenshot": "/workspace/p2-private/platform/android-v4-3f5020ed/trial2-ui-smoke.png",
+          "screenshot_sha256": "51ab894e4c518695dd80e11ed06f6703e4cb23b18a26083b92c9143fad1a3cd0",
+          "fixture": "/workspace/p2-private/platform/android-v4-3f5020ed/trial2-character.json",
+          "fixture_sha256": "31eb8cabdeb46713884dfbd9bc4c51f8e0e3af5d57fba3cacad519375ff30fbe",
+          "linux_fixture_comparison": {
+            "source": "/home/agent/.local/share/baram_rebuild_p2_001/p2-save-fixture-tests/run-66341-be1a5dee40c489d5/roundtrip/character.json",
+            "linux_sha256": "31eb8cabdeb46713884dfbd9bc4c51f8e0e3af5d57fba3cacad519375ff30fbe",
+            "byte_equal": true,
+            "json_equal": true,
+            "scope": "Synthetic save format only; no authentication or original-save migration"
+          }
+        }
+      ],
+      "physical_input": "NOT_RUN",
+      "IME": "NOT_RUN",
+      "authentication": "NOT_RUN",
+      "result": "PASS"
+    },
+    "same_linux_fixture_bytes": true,
+    "initial_failures": [
+      {
+        "trial": 1,
+        "result": "FAIL_RENDERER_INITIALIZATION",
+        "renderer": "emulator-swiftshader-GLES",
+        "actual_Godot_engine_started": true,
+        "error": "SceneShaderGLES3: Fragment shader active uniforms exceed GL_MAX_FRAGMENT_UNIFORM_VECTORS (261)",
+        "smoke_report": "NOT_GENERATED",
+        "ui_tests": "NOT_RUN",
+        "storage_tests": "UNKNOWN_COMPLETED_COUNT_PARTIAL_SIDE_EFFECTS",
+        "screenshot": "/workspace/p2-private/platform/android-fbb87222/trial1-framebuffer.png",
+        "log": "/workspace/p2-private/platform/android-fbb87222/trial1-logcat.log",
+        "completed_storage_count": "UNKNOWN",
+        "completed_UI_count": "UNKNOWN_NO_REPORT",
+        "counted_test_PASS": 0
+      },
+      {
+        "trial": 2,
+        "backend": "swangle",
+        "result": "FAIL",
+        "report": "/workspace/p2-private/platform/android-fbb87222/trial2-ui-smoke.json",
+        "report_sha256": "b086cfb3beb1f614e9345b7469668439db29e6358e594b6ce9fdcbba0e191e20",
+        "platform": "Android",
+        "ui_checks": 11,
+        "ui_failures": 0,
+        "save_checks": 74,
+        "save_failures": 5,
+        "save_not_run": 27,
+        "linux_fixture_comparison": {
+          "linux_path": "/home/agent/.local/share/baram_rebuild_p2_001/p2-save-fixture-tests/roundtrip/character.json",
+          "android_path": "/workspace/p2-private/platform/android-fbb87222/trial2-character.json",
+          "linux_sha256": "31eb8cabdeb46713884dfbd9bc4c51f8e0e3af5d57fba3cacad519375ff30fbe",
+          "android_sha256": "31eb8cabdeb46713884dfbd9bc4c51f8e0e3af5d57fba3cacad519375ff30fbe",
+          "json_equal": true,
+          "byte_equal": true,
+          "scope": "Synthetic Korean name/stable IDs/equipment/skills/coordinates/loot; local file contract only, no authentication"
+        }
+      }
+    ],
+    "historical_accuracy": "NOT_TESTED"
+  },
+  "native_Galaxy_Tab_S10_FE": "NOT_RUN_NO_DEVICE",
+  "native_phone": "NOT_RUN_NO_DEVICE",
+  "physical_keyboard_touch": "NOT_RUN",
+  "native_IME": "NOT_RUN",
+  "HTTPS_account_roundtrip": "NOT_RUN_NO_TEST_ENVIRONMENT",
+  "artifact_delivery": "BLOCKED_NO_CONFIRMED_PRIVATE_CHANNEL"
+}

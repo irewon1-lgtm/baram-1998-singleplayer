@@ -1,0 +1,23 @@
+{
+  "schema": "baram.p2.final_preservation/1",
+  "protected_baseline_mismatches": [],
+  "original_checkout_status": "",
+  "frozen_exports": [
+    {
+      "platform": "windows",
+      "artifact_sha256": "6c089810838c313c1d00c502f8bfae77bc27b958f62b041372cea4e95f07fb93",
+      "frozen_app_source_mismatches": [],
+      "sources_unchanged_during_export": true
+    },
+    {
+      "platform": "android",
+      "artifact_sha256": "3f5020ed79ecc2777a7ac699704a439d771a343ee7e36a634859efd307388e8e",
+      "frozen_app_source_mismatches": [],
+      "sources_unchanged_during_export": true
+    }
+  ],
+  "new_text_files_scanned": 70,
+  "strong_secret_marker_paths": [],
+  "apk_excluded_extension_members": [],
+  "claim_limit": "Targeted filename/marker checks only; not malware or all-secret absence proof"
+}

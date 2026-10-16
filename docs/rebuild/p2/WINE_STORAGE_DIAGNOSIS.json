@@ -1,0 +1,69 @@
+{
+  "schema": "baram.p2.wine-storage-diagnosis/1",
+  "scope": "Windows export under Wine 10.0 compatibility runtime; synthetic fixtures only",
+  "frozen_code_sha": "c6ee7d660a32e155388d54366a81655ffd49d97c",
+  "frozen_exe_sha256": "dba426b53a978bf09f54aa92e3115cce119b67e83ed94feb35ff9a1031cc3cca",
+  "original_result_preserved": {
+    "status": "FAIL",
+    "executed_checks": 84,
+    "recorded_passed_checks": 73,
+    "failed_checks": 11,
+    "separate_not_run_checks": 22,
+    "private_result": "/workspace/p2-private/windows/frozen/ui-smoke.json",
+    "assertions_changed": false
+  },
+  "cause": "Wine 10.0 CreateSymbolicLinkW is a stub that returns TRUE without creating a symbolic link. Godot create_link therefore returned OK although no link existed. Subsequent ordinary-file writes did not exercise actual symlink protection.",
+  "official_sources": [
+    {
+      "url": "https://github.com/wine-mirror/wine/blob/wine-10.0/dlls/kernelbase/file.c",
+      "fixed_tag": "wine-10.0",
+      "observation": "CreateSymbolicLinkW logs stub and returns TRUE."
+    },
+    {
+      "url": "https://github.com/godotengine/godot/blob/4.6.3-stable/drivers/windows/dir_access_windows.cpp",
+      "fixed_tag": "4.6.3-stable",
+      "observation": "create_link uses CreateSymbolicLinkW; is_link tests GetFileAttributesW FILE_ATTRIBUTE_REPARSE_POINT."
+    }
+  ],
+  "isolated_runtime_reproduction": {
+    "command": [
+      "/workspace/p2-private/toolchain/debian-root/usr/lib/wine/wine64",
+      "cmd",
+      "/c",
+      "mklink",
+      "Z:\\workspace\\p2-private\\save-tests\\wine-native-api-probe\\link.txt",
+      "Z:\\workspace\\p2-private\\save-tests\\wine-native-api-probe\\source.txt"
+    ],
+    "exit_code": 0,
+    "debug_observation": "fixme:file:CreateSymbolicLinkW(...): stub",
+    "host_link_exists": false,
+    "host_is_symlink": false,
+    "private_receipt": "/workspace/p2-private/save-tests/wine-native-api-probe/receipt.json"
+  },
+  "judgments": {
+    "wine_link_fixture_capability": "FAIL_REPRODUCED",
+    "wine_actual_symlink_storage_cases": "NOT_RUN_CAPABILITY",
+    "wine_frozen_save_suite": "FAIL_UNCHANGED",
+    "native_windows": "NOT_RUN",
+    "linux_actual_symlink_regression": "PASS_IN_SEPARATE_LINUX_RECEIPT"
+  },
+  "private_diagnosis": {
+    "path": "/workspace/p2-private/save-tests/wine-link-diagnosis.json",
+    "sha256": "009b3dfef1893c37c55e78ee0a2b6d23ad4827179f3ba4bccf93af3a43c81746"
+  },
+  "next_condition": "Execute the unchanged suite on native Windows with genuine symbolic-link support. Wine results do not establish native Windows save safety. No recorded FAIL is converted into a save PASS.",
+  "latest_v4_result": {
+    "code_sha": "7bfe3fff902f95de5b0b4253e2e0187853e24de0",
+    "exe_sha256": "6c089810838c313c1d00c502f8bfae77bc27b958f62b041372cea4e95f07fb93",
+    "ui_checks": 11,
+    "ui_failures": 0,
+    "save_checks": 85,
+    "passed_checks": 73,
+    "failed_checks": 12,
+    "separate_not_run_checks": 22,
+    "exit_code": 1,
+    "additional_failure": "native_userdata_backend_detects_globalized_fixture_link requires real symlink; same Wine CreateSymbolicLinkW stub cannot supply one",
+    "assertions_changed_to_pass": false,
+    "private_receipt": "/workspace/p2-private/windows/frozen-v4/ui-smoke-receipt.json"
+  }
+}

@@ -1,0 +1,674 @@
+{
+  "IME": "NOT_RUN",
+  "authentication": "NOT_RUN",
+  "checks": [
+    {
+      "id": "four_panels",
+      "pass": true
+    },
+    {
+      "id": "panel_0",
+      "pass": true
+    },
+    {
+      "id": "panel_1",
+      "pass": true
+    },
+    {
+      "id": "panel_2",
+      "pass": true
+    },
+    {
+      "id": "panel_3",
+      "pass": true
+    },
+    {
+      "id": "input_adapter_synthetic_key",
+      "pass": true
+    },
+    {
+      "id": "synthetic_simultaneous_actions",
+      "pass": true
+    },
+    {
+      "id": "release_one_action_keeps_other",
+      "pass": true
+    },
+    {
+      "id": "focus_loss_clears_held",
+      "pass": true
+    },
+    {
+      "id": "missing_original_visible",
+      "pass": true
+    },
+    {
+      "id": "unicode_direct_injection_only",
+      "pass": true
+    }
+  ],
+  "engine": "4.6.3-stable (official)",
+  "frame_us_p95": 12500,
+  "frame_us_p99": 21673,
+  "memory_static_bytes": 70286618,
+  "original_assets_consumed": 0,
+  "physical_input": "NOT_RUN",
+  "platform": "Linux",
+  "profile": "P2_INFRASTRUCTURE_ONLY",
+  "rendering": "gl_compatibility",
+  "sampled_frames": 180,
+  "save_tests": {
+    "checks": 84,
+    "engine": {
+      "build": "official",
+      "hash": "7d41c59c457bd5a245092b4e7eb2d833e3b3f8c3",
+      "hex": 263683,
+      "major": 4,
+      "minor": 6,
+      "patch": 3,
+      "status": "stable",
+      "string": "4.6.3-stable (official)",
+      "timestamp": 0
+    },
+    "failures": 0,
+    "fixture_kind": "SYNTHETIC_NO_HISTORICAL_ACCURACY_CLAIM",
+    "os": "Linux",
+    "schema": "baram.p2.save-test-results/1",
+    "status": "PASS",
+    "tests": [
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "fixture_deep_validation"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "canonical_json_independent_key_numeric_example"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "korean_ids_equipment_skills_coordinates_loot_roundtrip"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "checksum_excludes_only_self_field"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "fixture_decoding_does_not_mutate_source"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "first_save"
+      },
+      {
+        "detail": "No child process driver supplied on this platform",
+        "status": "NOT_RUN",
+        "test": "fresh_process_restart_reads_same_state"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "second_save"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "previous_backup_exact_bytes"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "primary_revision2_backup_revision1"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "metadata_tamper_detected_schema_id"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "metadata_tamper_detected_schema_version"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "metadata_tamper_detected_content_profile"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "metadata_tamper_detected_content_manifest_sha256"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "metadata_tamper_detected_build_id"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "metadata_tamper_detected_owner_id"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "metadata_tamper_detected_character_id"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "metadata_tamper_detected_revision"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "payload_tamper_detected"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "signed_wrong_owner_rejected"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "signed_future_schema_rejected"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "future_primary_never_falls_back"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "future_primary_never_overwritten"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "wrong_owner_never_falls_back_or_overwrites"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "content_profile_deferred"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "unknown_item_never_defaulted"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "duplicate_inventory_instance_rejected"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "equipment_missing_instance_rejected"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "equipment_wrong_slot_rejected"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "unknown_skill_never_defaulted"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "duplicate_loot_identity_rejected"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "fractional_integer_rejected"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "health_range_rejected"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "negative_coordinates_rejected"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "out_of_bounds_coordinates_deferred"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "collision_coordinates_deferred"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "character_identity_mismatch_rejected"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "control_character_name_rejected"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "oversize_rejected_before_parse"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "depth_limit_rejected_before_parse"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "truncated_json_rejected"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "json_quote_and_escape_depth_scanner"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "corrupt_primary_reads_valid_backup"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "recovery_read_preserves_both_files"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "explicit_repair_saves_new_state"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "repair_preserves_corrupt_exact_bytes_and_valid_backup"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "both_corrupt_never_create_new_character"
+      },
+      {
+        "detail": {
+          "field": "pending",
+          "status": "VERIFY_FAILED"
+        },
+        "status": "PASS",
+        "test": "partial_write_rejected_after_pending_write"
+      },
+      {
+        "detail": {
+          "field": "backup.pending",
+          "status": "VERIFY_FAILED"
+        },
+        "status": "PASS",
+        "test": "partial_write_rejected_after_backup_write"
+      },
+      {
+        "detail": {
+          "field": "after_pending_write",
+          "status": "INJECTED_FAILURE"
+        },
+        "status": "PASS",
+        "test": "return_fault_after_pending_write"
+      },
+      {
+        "detail": {
+          "field": "after_pending_verify",
+          "status": "INJECTED_FAILURE"
+        },
+        "status": "PASS",
+        "test": "return_fault_after_pending_verify"
+      },
+      {
+        "detail": {
+          "field": "after_backup_write",
+          "status": "INJECTED_FAILURE"
+        },
+        "status": "PASS",
+        "test": "return_fault_after_backup_write"
+      },
+      {
+        "detail": {
+          "field": "after_backup_verify",
+          "status": "INJECTED_FAILURE"
+        },
+        "status": "PASS",
+        "test": "return_fault_after_backup_verify"
+      },
+      {
+        "detail": {
+          "field": "after_backup_replace",
+          "status": "INJECTED_FAILURE"
+        },
+        "status": "PASS",
+        "test": "return_fault_after_backup_replace"
+      },
+      {
+        "detail": {
+          "field": "before_primary_replace",
+          "status": "INJECTED_FAILURE"
+        },
+        "status": "PASS",
+        "test": "return_fault_before_primary_replace"
+      },
+      {
+        "detail": {
+          "field": "after_primary_replace",
+          "status": "COMMITTED_ACK_LOST"
+        },
+        "status": "PASS",
+        "test": "return_fault_after_primary_replace"
+      },
+      {
+        "detail": "No child process driver supplied on this platform",
+        "status": "NOT_RUN",
+        "test": "process_killed_at_after_pending_write"
+      },
+      {
+        "detail": "No child process driver supplied on this platform",
+        "status": "NOT_RUN",
+        "test": "restart_after_kill_after_pending_write"
+      },
+      {
+        "detail": "No child process driver supplied on this platform",
+        "status": "NOT_RUN",
+        "test": "prior_snapshot_retained_after_kill_after_pending_write"
+      },
+      {
+        "detail": "No child process driver supplied on this platform",
+        "status": "NOT_RUN",
+        "test": "process_killed_at_after_pending_verify"
+      },
+      {
+        "detail": "No child process driver supplied on this platform",
+        "status": "NOT_RUN",
+        "test": "restart_after_kill_after_pending_verify"
+      },
+      {
+        "detail": "No child process driver supplied on this platform",
+        "status": "NOT_RUN",
+        "test": "prior_snapshot_retained_after_kill_after_pending_verify"
+      },
+      {
+        "detail": "No child process driver supplied on this platform",
+        "status": "NOT_RUN",
+        "test": "process_killed_at_after_backup_write"
+      },
+      {
+        "detail": "No child process driver supplied on this platform",
+        "status": "NOT_RUN",
+        "test": "restart_after_kill_after_backup_write"
+      },
+      {
+        "detail": "No child process driver supplied on this platform",
+        "status": "NOT_RUN",
+        "test": "prior_snapshot_retained_after_kill_after_backup_write"
+      },
+      {
+        "detail": "No child process driver supplied on this platform",
+        "status": "NOT_RUN",
+        "test": "process_killed_at_after_backup_verify"
+      },
+      {
+        "detail": "No child process driver supplied on this platform",
+        "status": "NOT_RUN",
+        "test": "restart_after_kill_after_backup_verify"
+      },
+      {
+        "detail": "No child process driver supplied on this platform",
+        "status": "NOT_RUN",
+        "test": "prior_snapshot_retained_after_kill_after_backup_verify"
+      },
+      {
+        "detail": "No child process driver supplied on this platform",
+        "status": "NOT_RUN",
+        "test": "process_killed_at_after_backup_replace"
+      },
+      {
+        "detail": "No child process driver supplied on this platform",
+        "status": "NOT_RUN",
+        "test": "restart_after_kill_after_backup_replace"
+      },
+      {
+        "detail": "No child process driver supplied on this platform",
+        "status": "NOT_RUN",
+        "test": "prior_snapshot_retained_after_kill_after_backup_replace"
+      },
+      {
+        "detail": "No child process driver supplied on this platform",
+        "status": "NOT_RUN",
+        "test": "process_killed_at_before_primary_replace"
+      },
+      {
+        "detail": "No child process driver supplied on this platform",
+        "status": "NOT_RUN",
+        "test": "restart_after_kill_before_primary_replace"
+      },
+      {
+        "detail": "No child process driver supplied on this platform",
+        "status": "NOT_RUN",
+        "test": "prior_snapshot_retained_after_kill_before_primary_replace"
+      },
+      {
+        "detail": "No child process driver supplied on this platform",
+        "status": "NOT_RUN",
+        "test": "process_killed_at_after_primary_replace"
+      },
+      {
+        "detail": "No child process driver supplied on this platform",
+        "status": "NOT_RUN",
+        "test": "restart_after_kill_after_primary_replace"
+      },
+      {
+        "detail": "No child process driver supplied on this platform",
+        "status": "NOT_RUN",
+        "test": "prior_snapshot_retained_after_kill_after_primary_replace"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "map_version_change_ready_with_valid_coordinates"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "map_version_preserves_character_and_loot"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "map_plan_does_not_mutate_source"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "character_mapping_unavailable_deferred_preserving_source"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "loot_mapping_unavailable_deferred_preserving_source"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "map_missing_deferred_without_teleport"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "update_missing_item_deferred_preserving_source"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "filesystem_write_failure_reported"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "filesystem_write_failure_preserves_existing_file"
+      },
+      {
+        "detail": {
+          "returned_failures": 1,
+          "returned_status": "FAIL"
+        },
+        "status": "PASS",
+        "test": "unwritable_results_returns_fail_and_nonzero_count"
+      },
+      {
+        "detail": {
+          "field": "backup.OWNER_MISMATCH",
+          "status": "EXISTING_SAVE_NOT_WRITABLE"
+        },
+        "status": "PASS",
+        "test": "backup_only_preserved_other_owner"
+      },
+      {
+        "detail": {
+          "field": "backup.OWNER_MISMATCH",
+          "status": "EXISTING_SAVE_NOT_WRITABLE"
+        },
+        "status": "PASS",
+        "test": "incompatible_backup_preserved_with_primary_other_owner"
+      },
+      {
+        "detail": {
+          "field": "backup.UNSUPPORTED_FUTURE",
+          "status": "EXISTING_SAVE_NOT_WRITABLE"
+        },
+        "status": "PASS",
+        "test": "backup_only_preserved_future_schema"
+      },
+      {
+        "detail": {
+          "field": "backup.UNSUPPORTED_FUTURE",
+          "status": "EXISTING_SAVE_NOT_WRITABLE"
+        },
+        "status": "PASS",
+        "test": "incompatible_backup_preserved_with_primary_future_schema"
+      },
+      {
+        "detail": {
+          "field": "backup.DEFERRED",
+          "status": "EXISTING_SAVE_NOT_WRITABLE"
+        },
+        "status": "PASS",
+        "test": "backup_only_preserved_deferred_profile"
+      },
+      {
+        "detail": {
+          "field": "backup.DEFERRED",
+          "status": "EXISTING_SAVE_NOT_WRITABLE"
+        },
+        "status": "PASS",
+        "test": "incompatible_backup_preserved_with_primary_deferred_profile"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "valid_backup_only_preserved_when_new_primary_saved"
+      },
+      {
+        "detail": {
+          "field": ".pending",
+          "status": "UNSAFE_PATH_LINK"
+        },
+        "status": "PASS",
+        "test": "symlink_target_rejected_.pending"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "symlink_target_preserved_.pending"
+      },
+      {
+        "detail": {
+          "field": ".backup.pending",
+          "status": "UNSAFE_PATH_LINK"
+        },
+        "status": "PASS",
+        "test": "symlink_target_rejected_.backup.pending"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "symlink_target_preserved_.backup.pending"
+      },
+      {
+        "detail": {
+          "field": ".backup",
+          "status": "UNSAFE_PATH_LINK"
+        },
+        "status": "PASS",
+        "test": "symlink_target_rejected_.backup"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "symlink_target_preserved_.backup"
+      },
+      {
+        "detail": {
+          "field": "primary",
+          "status": "UNSAFE_PATH_LINK"
+        },
+        "status": "PASS",
+        "test": "symlink_target_rejected_"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "symlink_target_preserved_"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "symlink_ancestor_rejected"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "symlink_ancestor_directory_preserved"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "corrupt_copy_symlink_rejected"
+      },
+      {
+        "detail": "",
+        "status": "PASS",
+        "test": "corrupt_copy_symlink_preserves_all_sources"
+      }
+    ]
+  },
+  "schema": "baram.p2.ui_smoke/1",
+  "script_ready_us": 63204,
+  "smoke_elapsed_us": 1460378
+}

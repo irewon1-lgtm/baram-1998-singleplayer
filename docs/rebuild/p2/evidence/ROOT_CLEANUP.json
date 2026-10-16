@@ -1,0 +1,21 @@
+{
+  "reference_servers": "stopped aftertests, see REFERENCE_RESULTS",
+  "Android_emulator_and_own_ADB": "stopped, see ANDROID_CLEANUP",
+  "remaining_cleanup": [
+    {
+      "target": "ownWineprefixv2",
+      "command": [
+        "/workspace/p2-private/toolchain/debian-root/usr/lib/wine/wineserver",
+        "-k"
+      ],
+      "exit_code": 1
+    },
+    {
+      "target": "ownXvfb91",
+      "pid": 58942,
+      "identity_matched": true,
+      "signal": "SIGTERM"
+    }
+  ],
+  "background_work": false
+}

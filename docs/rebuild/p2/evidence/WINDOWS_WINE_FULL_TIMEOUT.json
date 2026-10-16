@@ -1,0 +1,19 @@
+{
+  "command": [
+    "wine64",
+    "/workspace/p2-private/builds/frozen/baram-p2-inspection.exe",
+    "--headless",
+    "--script",
+    "Z:/workspace/baram-p2-codex/tools/rebuild/p2/test_save.gd",
+    "--",
+    "--root",
+    "Z:/workspace/p2-private/windows/frozen/save-full"
+  ],
+  "platform": "Windows_UNDER_WINE_10_NOT_NATIVE",
+  "status": "BLOCKED_HARNESS_TIMEOUT",
+  "timeout_seconds": 120,
+  "tests_completed": 0,
+  "exit_code": "TIMEOUT_SUBPROCESS_TERMINATED",
+  "log": "/workspace/p2-private/windows/frozen/save-full.log",
+  "code_sha": "c6ee7d660a32e155388d54366a81655ffd49d97c"
+}

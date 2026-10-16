@@ -3,7 +3,7 @@
   "task_id": "BARAM_REBUILD_CODEX_P2_001",
   "branch": "codex/rebuild-p2-20261016",
   "base_plan_sha": "590bd626b63cebf6d858c8e9c1c9ce822ea0ec94",
-  "status": "IN_PROGRESS",
+  "status": "PARTIAL_BLOCKED_INPUT_NATIVE_DEVICE_AND_AUTH",
   "authorization_history": [
     {
       "source": "current user request and attached sections1-10",
@@ -38,20 +38,59 @@
   ],
   "work_requests": "docs/rebuild/p2/WORK_REQUESTS.jsonl",
   "work_receipts": "docs/rebuild/p2/WORK_BATCH_RECEIPTS.jsonl",
-  "current_step": "G0_ACCESS_AND_INDEPENDENT_PLATFORM_PROBE",
+  "current_step": "HANDOFF_SAVED_NO_BACKGROUND_WORK",
   "profile": {
     "default": null,
     "explicit_per_test": true
   },
-  "G0": "IN_PROGRESS",
+  "G0": "BLOCKED",
   "P2": {
-    "P2-01": "NOT_RUN",
-    "P2-02": "NOT_RUN",
-    "P2-03": "NOT_RUN",
-    "P2-04": "NOT_RUN",
-    "P2-05": "NOT_RUN",
-    "P2-06": "NOT_RUN"
+    "P2-01": "BLOCKED_INPUT",
+    "P2-02": "BLOCKED_INPUT",
+    "P2-03": "BLOCKED_INPUT",
+    "P2-04": "PARTIAL_NA_SYNTHETIC_PROTOCOL_PASS_GRAPHICAL_CLIENT_BLOCKED",
+    "P2-05": "PARTIAL_LINUX107_PASS_ANDROID_TWO_RUNS_85_PASS_EACH_WINE12_FAIL_NATIVE_DEVICES_NOT_RUN",
+    "P2-06": "BLOCKED_ENVIRONMENT"
   },
-  "P3": "NOT_AUTHORIZED",
-  "next_resume": "Read latest STATE_CODEX and completed execution receipts; resume unfinished tests only."
+  "P3": "NOT_READY_NOT_AUTHORIZED",
+  "next_resume": "Read STATE_CODEX/RESULTS and actual receipts first. Restore missing private inputs and run exact G0; do not rerun unchanged completed synthetic/reference scopes. NEXT_P3 lists dependent unfinished tests.",
+  "source_code_frozen_sha": "7bfe3fff902f95de5b0b4253e2e0187853e24de0",
+  "input_manifest_generation": "P2-GEN001-INFRASTRUCTURE",
+  "input_manifest_sha256": "3ed2dd0dd2572e7da2920ddfd01ae6c3b7e954bddf376731da93f826a2a12b73",
+  "work_observed_head": "d9817bf66ffd230b231e0584f367df3c9823fa73",
+  "work_batches": {
+    "B001": "DEFERRED",
+    "B002": "DEFERRED"
+  },
+  "work_adopted_fields": 0,
+  "work_exercised_fields": 0,
+  "private_artifact_delivery": "BLOCKED_NO_PRIVATE_DOWNLOAD_CHANNEL",
+  "remaining": [
+    "Exact private byte route for corev1+referenceparts3+originals42 and B001/B002",
+    "Required Korean map/composition/effect/audio/creation evidence and actual consumers",
+    "Native Windows/Galaxy and native IME/physical input",
+    "Free test-only actual auth+HTTPS+DB endpoint and cross-platform client access"
+  ],
+  "common_state_change_proposal": {
+    "new_authorization_task_id": "BARAM_REBUILD_CODEX_P2_001",
+    "G0": "BLOCKED_CURRENT_INPUT_ACCESS",
+    "P2": "PARTIAL_EVIDENCE_SAVED",
+    "P3": "NOT_READY; separate authorization still required",
+    "proposal_only": true
+  },
+  "updated_at_utc": "2026-10-16T02:43:09.415383+00:00",
+  "work_request001_response": "ACKNOWLEDGED_BY_WORK_BYTE_TRANSFER_BLOCKED",
+  "platform_execution": "PLATFORM_EXECUTION.json",
+  "completed_independent_checks": {
+    "Linux_save": 107,
+    "Android_two_runs_each_save": 85,
+    "Android_each_UI": 11,
+    "NA_supplied_tests": 81,
+    "NA_loopback_observer": 17,
+    "batch_and_cache_guards": 42,
+    "Windows_Wine_save_failures": 12
+  },
+  "private_route_recheck": "PRIVATE_ROUTE_RECHECK.json",
+  "execution_receipt": "PLATFORM_EXECUTION.json",
+  "processes": "Reference servers, inspection apps, own Android emulator/ADB stopped; own Xvfb signaled; see cleanup receipts"
 }
