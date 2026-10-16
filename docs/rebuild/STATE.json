@@ -9,7 +9,7 @@
   "master_plan_path": "docs/rebuild/MASTER_PLAN.md",
   "master_plan_commit": "3adf98171efc422efcf1db1d589b075d8acad65a",
   "entrypoint_path": "AGENTS.md",
-  "status": "P1_5_PARTIAL_STATIC_HANDOFF_VALIDATED",
+  "status": "P1_5_PARTIAL_HANDOFF_SAVED",
   "implementation_status": "NOT_STARTED",
   "user_decisions": {
     "clean_rebuild": "CONFIRMED",
@@ -54,7 +54,7 @@
     "정확한 referenceclient pair/testclient404 및 의존성설치/실행 미확보; 전체source 확보와별도",
     "Windows/Android/Galaxy/nativeIME/실제세이브·인증왕복 NOT_RUN; Codex수신G0도NOT_RUN"
   ],
-  "next_action_after_user_instruction": "별도P2지시후 docs/rebuild/p1_5/NEXT_P2_DELTA.md G0에서 지속파일ID/SHA·최신브랜치를검사. 동결입력/파서/범위가같은조사는반복하지않음.",
+  "next_action_after_user_instruction": "After separate P2instruction, read current DELIVERY_RECHECK_RECEIPT and NEXT_P2_DELTA G0. Do not repeat completed research/static scopes with matching fingerprints.",
   "unresolved_before_architecture_freeze": [
     "한국 목표시기 전체 editable 지도/충돌/출구·사냥터 스폰 및 개별 NPC native look/대화 분기 미확정",
     "공식2000/2001 서로다른프로필의15충돌; default profile null, 명시dispatch필수",
@@ -86,7 +86,7 @@
   "current_task_id": "BARAM_REBUILD_P1_5_001",
   "current_remote_input_sha": "5d70e48e88a6a73553fee0f35c2c5812547d6dbf",
   "checkpoint": {
-    "status": "P1_5_STATIC_RESEARCH_PARTIAL_HANDOFF_VALIDATED",
+    "status": "P1_5_PARTIAL_HANDOFF_SAVED",
     "previous_remote_checkpoints": [
       "683cde8e23f7f4ae7d84eae63b7fa79e662b7a23",
       "af5d2cd74e1638b82c579bf9794ca5f46324f062",
@@ -103,7 +103,7 @@
       "receiver_g0": "NOT_RUN",
       "p2_authorized": false
     },
-    "remote_publication": "Current content and delivery requery recorded in external DELIVERY_RECHECK_RECEIPT.json; older receipt remains historical."
+    "remote_publication": "Content commit8022fbcfd1f3408028cfc45eb7f20137f9bd7ad9/tree6d1d913f9bdeaf2bfd61dc85c1b349bba060ba29:101publicblobs re-read/match. Final receipt/state commit requery reported externally."
   },
   "historical_planning_record": {
     "status": "PLAN_RECORDED",
@@ -186,7 +186,7 @@
     "scope": "Independent AI review of deliverables, not historical gameplay or human acceptance"
   },
   "p1_5": {
-    "status": "PARTIAL_VALIDATED_FINALIZING_DELIVERY",
+    "status": "PARTIAL_VALIDATED_HANDOFF_SAVED",
     "read_intake": [
       "AGENTS.md",
       "MASTER_PLAN.md",
@@ -197,7 +197,7 @@
       "BARAM_P0P1_독립감사_20261016.md",
       "BARAM_P1_5_자료공백_보완계획_20261016.md"
     ],
-    "latest_checkpoint": "Completed outstanding clean receiver byte gate2489PASS and importer44796integrityPASS/source154FAIL; current resolver3565IDs/3038hashes. Finalizing corrected contract and durable package.",
+    "latest_checkpoint": "Current coreLibraryversion1 saved; three referenceparts reused with exact hashes. Final clean resolver3565/3565PASS; sourcegraph154FAIL and Korean semanticsBLOCKED retained.",
     "runtime_tests": "NOT_RUN",
     "p2_executed": false,
     "originals_preserved": true,
@@ -247,7 +247,19 @@
     ],
     "clean_handoff": "PASS_REPRODUCTION_SCOPE; CodexG0 NOT_RUN",
     "input_manifest_sha256": "124573e4a57d7ff759501315bf9a101fcd8a3959944f25006120b3e14c02a1d5",
-    "resume_validation": "docs/rebuild/p1_5/resumed_static_recheck_summary.json"
+    "resume_validation": "docs/rebuild/p1_5/resumed_static_recheck_summary.json",
+    "delivery_receipt": "docs/rebuild/p1_5/DELIVERY_RECHECK_RECEIPT.json",
+    "delivery_source_commit": "8022fbcfd1f3408028cfc45eb7f20137f9bd7ad9",
+    "current_resolver": {
+      "required_ids": 3565,
+      "resolved_ids": 3565,
+      "resolved_unique_hashes": 3038
+    },
+    "separately_required_sensitive_reference_ids": [
+      "EXT-SRV-RTK-DOCKER-COMPOSE-YML",
+      "P15-NA-RTK-a572a5da03a2"
+    ],
+    "receiver_G0_condition": "NOT_RUN:42originals, nested extraction and current4filedelivery plus2excluded RTK audit inputs privately reacquired by pinned Git hash. Missing either remainsBLOCKED."
   },
   "historical_p0p1_source_limitations": [
     "KR125 MAP218 present but target1998-2001 geometry correspondence not confirmed; inspectedKR491CAB/DAT contain noMAP",

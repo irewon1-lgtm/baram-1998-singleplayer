@@ -1,0 +1,261 @@
+{
+  "schema": "baram.p1_5.delivery_recheck_receipt/1",
+  "task_id": "BARAM_REBUILD_P1_5_001",
+  "recorded_at_utc": "2026-10-16T00:41:05.660734+00:00",
+  "task_result": "PARTIAL",
+  "delivery_result": "CURRENT_CORE_SAVED_VERSION1_AND_THREE_IDENTICAL_SAVED_PARTS_VERIFIED",
+  "resumed_from_remote": "9b9abf5928814ea5099b067330c9a18a37024102",
+  "content_source_commit": "8022fbcfd1f3408028cfc45eb7f20137f9bd7ad9",
+  "content_source_tree": "6d1d913f9bdeaf2bfd61dc85c1b349bba060ba29",
+  "remote_content_verification": {
+    "public_files_compared": 101,
+    "blob_mismatches": 0,
+    "recursive_tree_truncated": false,
+    "commit_and_tree_requeried": true
+  },
+  "files": [
+    {
+      "file_name": "BARAM_P1_5_handoff_20261016.zip",
+      "bytes": 28665916,
+      "sha256": "f9fa57ea09f2755d5038cb7208258e3c5b44f6dddea77ebf66dfd6129ef8233c",
+      "library_file_id": "libfile_5625c3d22e548191bb3c06296c42bf6c",
+      "file_id": "file_00000000df988209b8efa7d8f5bb576b",
+      "library_path": "/BARAM_P1_5_handoff_20261016.zip",
+      "version": 1,
+      "storage_result": "SAVED_REPLACEMENT",
+      "local_metadata_applied": true
+    },
+    {
+      "file_name": "BARAM_P1_5_reference_sources.zip.part001",
+      "bytes": 41943040,
+      "sha256": "b7bb487c336c185ef2256539a490d85b77519a78cfb19cd08ae536c8eba655cb",
+      "library_file_id": "libfile_036902e5f5d88191b4d9080d1646855c",
+      "file_id": "file_00000000db40820d921c884a274ee119",
+      "library_path": "/BARAM_P1_5_reference_sources.zip.part001",
+      "version": 0,
+      "storage_result": "REUSED_EXISTING_SAVED_EXACT_BYTES"
+    },
+    {
+      "file_name": "BARAM_P1_5_reference_sources.zip.part002",
+      "bytes": 41943040,
+      "sha256": "79ad49d06b62f8d40c0141a34346c8f8d2502a691cdd5cf58bb42fb18611e941",
+      "library_file_id": "libfile_9dde919394388191a9c1943fb5908035",
+      "file_id": "file_000000002f5482309a19ffe94183ab69",
+      "library_path": "/BARAM_P1_5_reference_sources.zip.part002",
+      "version": 0,
+      "storage_result": "REUSED_EXISTING_SAVED_EXACT_BYTES"
+    },
+    {
+      "file_name": "BARAM_P1_5_reference_sources.zip.part003",
+      "bytes": 40576768,
+      "sha256": "67c0a3a9469bd2bf905e8cd6d83f595c1f2bd8dee36e2545d8279959bacae2c9",
+      "library_file_id": "libfile_6a18240b68c88191bf3df12b49e58025",
+      "file_id": "file_00000000258081f8b713c40d67180aa4",
+      "library_path": "/BARAM_P1_5_reference_sources.zip.part003",
+      "version": 0,
+      "storage_result": "REUSED_EXISTING_SAVED_EXACT_BYTES"
+    }
+  ],
+  "delivery_composition": {
+    "core": {
+      "file_name": "BARAM_P1_5_handoff_20261016.zip",
+      "bytes": 28665916,
+      "sha256": "f9fa57ea09f2755d5038cb7208258e3c5b44f6dddea77ebf66dfd6129ef8233c"
+    },
+    "external_reference": {
+      "path": "inputs/reference_sources.zip",
+      "bytes": 124462848,
+      "sha256": "6e922fc3725c52e9bad3dd45924756c57e01781a36c9fd9b8eb35cd81291c508",
+      "parts": [
+        {
+          "file_name": "BARAM_P1_5_reference_sources.zip.part001",
+          "bytes": 41943040,
+          "sha256": "b7bb487c336c185ef2256539a490d85b77519a78cfb19cd08ae536c8eba655cb"
+        },
+        {
+          "file_name": "BARAM_P1_5_reference_sources.zip.part002",
+          "bytes": 41943040,
+          "sha256": "79ad49d06b62f8d40c0141a34346c8f8d2502a691cdd5cf58bb42fb18611e941"
+        },
+        {
+          "file_name": "BARAM_P1_5_reference_sources.zip.part003",
+          "bytes": 40576768,
+          "sha256": "67c0a3a9469bd2bf905e8cd6d83f595c1f2bd8dee36e2545d8279959bacae2c9"
+        }
+      ]
+    },
+    "reconstruction_hash_check": "PASS",
+    "source_commit": "8022fbcfd1f3408028cfc45eb7f20137f9bd7ad9",
+    "runtime": "NOT_RUN"
+  },
+  "previous_delivery": "Older core version0 receipt is historical. Use current core version1 and same3referencepartIDs. No reference source data was changed or uploaded again.",
+  "corrections_this_resume": [
+    "Current resolver CLI/version/SHA, scope3565IDs/3038hashes, preserved private guide HTML and historical-tool bytes aligned in handoff contract.",
+    "Split transport notes now point to this current receipt.",
+    "Completed only outstanding clean byte/import execution; retained25validator/18importer/20package guard regression evidence under matching tool/data/config/scope. No P0/P1 research restarted."
+  ],
+  "static_verification": {
+    "byte_gate": {
+      "result": "PASS",
+      "expected": 2489,
+      "read": 2489,
+      "matched": 2489,
+      "exit_code": 0,
+      "evidence": "docs/rebuild/p1_5/resumed_static_recheck_summary.json; private evidence/resume/step01_validation.json"
+    },
+    "normalized_import": {
+      "integrity": "PASS",
+      "rows": 44796,
+      "source_byte_hashes": 1241,
+      "source_graph": "FAIL",
+      "dangling_edges": 154,
+      "semantic_readiness": "BLOCKED",
+      "exit_code": 1,
+      "evidence": "private evidence/resume/import_validation.json"
+    },
+    "current_final_source_resolution": {
+      "result": "PASS",
+      "tool_version": "baram-p15-input-resolver/1.0",
+      "tool_sha256": "6553d77735c58ea5744312c569407c6428ae023b3c6f4f94eae558eb5654edc0",
+      "required_ids": 3565,
+      "resolved_ids": 3565,
+      "resolved_unique_hashes": 3038,
+      "whole_byte_declared_ids": 2489,
+      "files_hashed": 3919,
+      "reference_members_materialized": 0
+    },
+    "source_resolution_scope": "Current final core extracted into a fresh directory with verified referenceZIP. Explicit previous exact-hash input map was supplied as source cache; every required file rehashed. Work reproduction only; not an independent Codex environment or implicit Library access test. The cache included2intentionally excluded sensitive RTK files listed separately below. Package+originals alone cannot satisfy those2IDs; receiver G0 remains BLOCKED until exact private copies are supplied.",
+    "final_outer_package": {
+      "location": "BARAM_P1_5_verified_handoff_20261016.zip",
+      "findings": [],
+      "errors": [],
+      "members_checked": 881,
+      "bytes_read": 220681994,
+      "nested": [
+        {
+          "location": "BARAM_P1_5_verified_handoff_20261016.zip!inputs/reference_sources.zip",
+          "findings": [],
+          "errors": [],
+          "members_checked": 11429,
+          "bytes_read": 442222929,
+          "nested": [],
+          "private_selected_jsonl_count": 0,
+          "secret_values_printed": false,
+          "reference_manifest": {
+            "entries_expected": 11428,
+            "entries_read": 11428,
+            "missing": 0,
+            "extra": 0,
+            "mismatched": 0,
+            "declared_exclusions": 37,
+            "declared_exclusions_present": 0
+          },
+          "result": "PASS",
+          "archive_identity": {
+            "sha256": "6e922fc3725c52e9bad3dd45924756c57e01781a36c9fd9b8eb35cd81291c508",
+            "bytes": 124462848
+          }
+        }
+      ],
+      "private_selected_jsonl_count": 34,
+      "secret_values_printed": false,
+      "package_manifest": {
+        "entries_expected": 880,
+        "entries_read": 880,
+        "missing": 0,
+        "extra": 0,
+        "mismatched": 0
+      },
+      "normalized_catalog": {
+        "files_expected": 35,
+        "private_jsonl_expected": 34,
+        "private_jsonl_read": 34,
+        "missing_jsonl": 0,
+        "extra_jsonl": 0,
+        "mismatched": 0
+      },
+      "result": "PASS"
+    },
+    "final_package_identity": {
+      "file_name": "BARAM_P1_5_verified_handoff_20261016.zip",
+      "sha256": "49b33e48cd71e256d295f0ddd53eeeebe7eabcedac1a01c4722e4bfeae2522c6",
+      "bytes": 153128075
+    },
+    "four_file_set": {
+      "result": "PASS_DELIVERY_SET_SCOPE",
+      "core_files_checked": 879,
+      "normalized_files": 35,
+      "normalized_rows": 44796,
+      "required_parts": 3,
+      "parts_read": 3,
+      "reference_sha256": "6e922fc3725c52e9bad3dd45924756c57e01781a36c9fd9b8eb35cd81291c508",
+      "reference_bytes": 124462848,
+      "restored_reference": "REUSED_EXACT_HASH",
+      "runtime": "NOT_RUN",
+      "Codex_G0": "NOT_RUN",
+      "observed_exit_code": 0
+    },
+    "regression_reuse": {
+      "validator_cases": 25,
+      "importer_cases": 18,
+      "package_guard_cases": 20,
+      "package_guard_tool_sha256": "cb4f8d20779d98f6f3b4fb1cd91888dd7370c23593f819a63dc45c34beb33750",
+      "package_guard_previous_receipt_sha256": "98d20677eb5af56332a0bc217e28e998ee3c8f4f73667ee248aa012f463d5c6b",
+      "reason": "Relevant tool/data/config fingerprints match; original execution time and detailed receipts preserved. These cases were not rerun this resume."
+    },
+    "security": "Static archive paths/types/fullmanifest/nestedreference/exclusions and public101files PASS within stated scope; no malware-absence claim. Credentials/signingkeys/saves excluded."
+  },
+  "historical_accuracy": "PARTIAL",
+  "new_game_binding": "NOT_STARTED",
+  "runtime_tests": "NOT_RUN",
+  "P2_execution": "NOT_RUN",
+  "Codex_receiver_G0": "NOT_RUN",
+  "p2_readiness": {
+    "P2-01": "PARTIAL",
+    "P2-02": "PARTIAL",
+    "P2-03": "PARTIAL",
+    "P2-04": "PARTIAL",
+    "P2-05": "PARTIAL",
+    "P2-06": "BLOCKED_ENVIRONMENT"
+  },
+  "remaining_major_gaps": [
+    "Korean individual NPC look/nativeID/dialogue branches",
+    "Target-era editable Korean map/collision/exits/spawn",
+    "Drop-table semantics/success rates/failed crafting loss and repair economics",
+    "Motion duration/transition, Korean skill sound/impact/action-resume time",
+    "Native Windows/Android/Galaxy/IME/save/account roundtrip"
+  ],
+  "receiver_steps": [
+    "Read latest planning/rebuild-20261015 AGENTS/STATE/this receipt/REPORT/NEXT_P2_DELTA. Preserve newer commits; never reset to content_source_commit.",
+    "Materialize these4existing LibraryIDs, selecting core current version1. Pin its file_id and check28665916bytes/SHA f9fa57ea09f2755d5038cb7208258e3c5b44f6dddea77ebf66dfd6129ef8233c. Keep3parts in numeric order.",
+    "Run python3 tools/rebuild/p1_5/verify_delivery_set.py --core <delivery>/BARAM_P1_5_handoff_20261016.zip --parts-dir <delivery> --restore-reference-to <extracted-handoff>/inputs/reference_sources.zip --output <new-verification.json>. Every core/part/catalog byte must match.",
+    "Extract validated core privately. PRIVATE_SOURCE_INDEX/PRIVATE_IMAGE_INDEX preserve acquired guide bytes; normalized35files are actual inputs, not public catalogs alone. Do not publish original data/reference contents.",
+    "Use42original IDs/SHA/length in INPUT_MANIFEST. Materialize originals separately and use pinned bounded recheck_archives.py for needed nested bytes. Read handoff_input_contract.json for exact CLI/current roots.",
+    "Additional required audit-only reference inputs: retrieve the2separately_required_excluded_reference_inputs by recorded public fixed Git URL/commit and exact SHA into a separate private cache, pass that cache as --source-root. Never execute SQL/settings, print secrets or add these2files to the ZIP. If either input is unavailable, preserve BLOCKED rather than dropping it from required scope. This explicit supplement governs receiving alongside the packaged handoff_input_contract.",
+    "Use prepare_handoff_inputs.py --package-root <extracted-handoff> --source-root <originals> --source-root <rechecked-byte-cache> --work-dir <separate-work> --output <full-map.json> --report <resolution.json>. Existing verified --input-map may be supplied; every path is rehashed.",
+    "Only when resolution PASS, execute emitted exact2489-ID byte command and full-map normalized import. Keep154sourcegraphFAIL and semanticBLOCKED visible. Work tests do not satisfy CodexG0.",
+    "P2 requires separate user instruction. Next exact start is NEXT_P2_DELTA G0, followed only by separately authorized P2-01..06. No runtime/build/deploy is included in P1.5."
+  ],
+  "receipt_publication": "This receipt is outside the package. Its final commit/tree is checked and reported externally to avoid self-reference.",
+  "separately_required_excluded_reference_inputs": [
+    {
+      "source_id": "EXT-SRV-RTK-DOCKER-COMPOSE-YML",
+      "sha256": "b9a39164b2690627bfdd5c114731699a49b731c40369c30e4db9272c61b9eaee",
+      "source_path_or_url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/docker-compose.yml",
+      "repository": "unkmc/RTK-Server",
+      "commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+      "bytes": 929,
+      "reason": "Intentional sensitive reference exclusion; remains required by frozen audit scope. Retrieve exact pinned public Git bytes only into a private source cache; never execute, print body or include in handoff."
+    },
+    {
+      "source_id": "P15-NA-RTK-a572a5da03a2",
+      "sha256": "80c87bcf65a54021c7dc26b3c919dc80acdb0bf12aeff860f98d7a57e5d7582a",
+      "source_path_or_url": "https://github.com/unkmc/RTK-Server/blob/e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6/database/2020-09-02-21-55-01_RTK.sql.bak",
+      "repository": "unkmc/RTK-Server",
+      "commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+      "path": "database/2020-09-02-21-55-01_RTK.sql.bak",
+      "bytes": 2143739,
+      "reason": "Intentional sensitive reference exclusion; remains required by frozen audit scope. Retrieve exact pinned public Git bytes only into a private source cache; never execute, print body or include in handoff."
+    }
+  ]
+}
