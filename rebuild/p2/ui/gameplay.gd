@@ -86,6 +86,7 @@ var last_message := ""
 var keyboard_moves: Dictionary = {}
 var history: RichTextLabel
 var was_portrait:=false
+var touch_action_buttons: Array[Button] = []
 
 func checkpoint(stage: String, details: Dictionary = {}) -> void:
 	var value := {"stage":stage,"ticks_ms":Time.get_ticks_msec(),"pid":OS.get_process_id(),"platform":OS.get_name(),"details":details}
@@ -137,6 +138,20 @@ func _button(parent: Node, title: String, action: Callable) -> Button:
 	button.text = title
 	button.custom_minimum_size.y = 34
 	button.pressed.connect(action)
+	# Native Button mouse emulation only covers one finger. Handle each real
+	# screen-touch here so a second finger can attack while the stick is held.
+	var touches: Dictionary = {}
+	button.set_meta("native_touches",touches)
+	button.gui_input.connect(func(event: InputEvent):
+		if event is InputEventScreenTouch:
+			if event.pressed:
+				touches[event.index]=true
+			elif touches.has(event.index):
+				touches.erase(event.index)
+				if not button.disabled and Rect2(Vector2.ZERO,button.size).has_point(event.position): action.call()
+			button.accept_event())
+	touch_action_buttons=touch_action_buttons.filter(func(existing): return is_instance_valid(existing))
+	touch_action_buttons.append(button)
 	parent.add_child(button)
 	return button
 
@@ -300,6 +315,8 @@ func _begin_touch_move(move: Vector2i) -> void:
 func _stop_motion() -> void:
 	movement=Vector2i.ZERO;touch_moves.clear();keyboard_moves.clear();path.clear();arrival_action.clear()
 	if is_instance_valid(stick): stick.cancel()
+	for button in touch_action_buttons:
+		if is_instance_valid(button): button.get_meta("native_touches",{}).clear()
 
 func _toggle_panels() -> void:
 	_stop_motion();side.visible=not side.visible
@@ -524,6 +541,12 @@ func _basic_attack() -> void:
 	_dispatch({"type":"attack","target_id":target})
 
 func _input(event: InputEvent) -> void:
+	# Real touch callbacks above already perform the action. Suppress only their
+	# emulated mouse copies, leaving normal mouse, keyboard, tabs and lists intact.
+	if event is InputEventMouseButton and event.device==InputEvent.DEVICE_ID_EMULATION:
+		for button in touch_action_buttons:
+			if is_instance_valid(button) and button.is_visible_in_tree() and button.get_global_rect().has_point(event.position):
+				get_viewport().set_input_as_handled();return
 	if not event is InputEventKey or not play.visible or game.state.is_empty(): return
 	var key: int = event.physical_keycode
 	input_received_ms=Time.get_ticks_msec()
