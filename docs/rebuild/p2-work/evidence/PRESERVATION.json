@@ -1,0 +1,14 @@
+{
+  "source_baseline": "aea28bb6deb3b45f5d4cc9f4028dd636cbe63f6a",
+  "unchanged": {
+    "rebuild/p2/storage/save_store.gd": true,
+    "rebuild/p2/storage/save_self_test.gd": true,
+    "tools/rebuild/p2/test_save.gd": true,
+    "docs/rebuild/STATE.json": true,
+    "docs/rebuild/MASTER_PLAN.md": true,
+    "AGENTS.md": true
+  },
+  "game_directory_git_diff": "",
+  "codex_historical_reports_git_diff": "",
+  "existing_user_saves_and_signing_keys": "NOT_OPENED"
+}

@@ -53,5 +53,12 @@
     "png_verified": 2100,
     "original_mask3_failures_preserved": true,
     "p2_runtime_gen003": "NOT_RUN_BY_DIAGNOSIS_AGENT"
+  },
+  "postcorrection_runtime": {
+    "generation": "WORK-P2-GEN003",
+    "Linux": "PASS_BITMAP_DISPLAY_OBSERVED",
+    "evidence": "linux-gen003/work-original-smoke.json-creation.png",
+    "original_creation_flow": "NOT_IMPLEMENTED",
+    "native_IME": "NOT_RUN"
   }
 }

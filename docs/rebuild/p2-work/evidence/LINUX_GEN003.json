@@ -1,0 +1,1573 @@
+{
+  "IME": "NOT_RUN",
+  "audio_captured_frames": 66560,
+  "audio_mix_peak": 0.896877944469452,
+  "authentication": "BLOCKED_ENVIRONMENT",
+  "checks": [
+    {
+      "details": [],
+      "id": "frozen_original_generation_loaded",
+      "status": "PASS"
+    },
+    {
+      "details": "",
+      "id": "nonempty_original_maps",
+      "status": "PASS"
+    },
+    {
+      "details": "",
+      "id": "original_character_variants",
+      "status": "PASS"
+    },
+    {
+      "details": "",
+      "id": "effect128_records_present",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "full_effect_semantics": "BLOCKED_UNKNOWN",
+        "safe_slideshows": 25
+      },
+      "id": "unsupported_effects_not_silently_selected",
+      "status": "PASS"
+    },
+    {
+      "details": "",
+      "id": "wav163_present",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "candidate_ids": [
+          "WD-MS-001",
+          "WD-MS-002",
+          "WD-MS-003",
+          "WD-MS-004",
+          "WD-MS-005",
+          "WD-MN-001"
+        ],
+        "global_timing_or_map_adoption": false
+      },
+      "id": "work_batch_guard_policy_consumed",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "allowed": 15862,
+        "blocked": 522
+      },
+      "id": "map_1.0_both_free_and_blocked_steps",
+      "status": "PASS"
+    },
+    {
+      "details": "",
+      "id": "map_1.0_bounds_rejected",
+      "status": "PASS"
+    },
+    {
+      "details": "",
+      "id": "map_1.0_no_fabricated_exits",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "allowed": 14980,
+        "blocked": 1404
+      },
+      "id": "map_99.0_both_free_and_blocked_steps",
+      "status": "PASS"
+    },
+    {
+      "details": "",
+      "id": "map_99.0_bounds_rejected",
+      "status": "PASS"
+    },
+    {
+      "details": "",
+      "id": "map_99.0_no_fabricated_exits",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "allowed": 15252,
+        "blocked": 1132
+      },
+      "id": "map_100.0_both_free_and_blocked_steps",
+      "status": "PASS"
+    },
+    {
+      "details": "",
+      "id": "map_100.0_bounds_rejected",
+      "status": "PASS"
+    },
+    {
+      "details": "",
+      "id": "map_100.0_no_fabricated_exits",
+      "status": "PASS"
+    },
+    {
+      "details": "",
+      "id": "original_native_ids_save_roundtrip",
+      "status": "PASS"
+    },
+    {
+      "details": "",
+      "id": "unlearned_new_character_skills_empty",
+      "status": "PASS"
+    },
+    {
+      "details": "",
+      "id": "map_version_only_keeps_character_and_loot_coordinates",
+      "status": "PASS"
+    },
+    {
+      "details": "",
+      "id": "unmapped_coordinate_change_defers_and_preserves_source",
+      "status": "PASS"
+    },
+    {
+      "details": "",
+      "id": "original_native_id_backup_created",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "drawn": [
+          "kr491/images/sword-00000-sword-0.png",
+          "kr491/images/body-00012-body-0.png",
+          "kr491/images/head-00012-head-0.png",
+          "kr491/images/shield-00000-shield-0.png"
+        ],
+        "expected_parts": 4,
+        "historical_direction": "VISUALLY_INFERRED",
+        "preview": [
+          "kr491/images/sword-00000-sword-0.png",
+          "kr491/images/body-00012-body-0.png",
+          "kr491/images/head-00012-head-0.png",
+          "kr491/images/shield-00000-shield-0.png"
+        ]
+      },
+      "id": "original_parts_standing_0",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "drawn": [
+          "kr491/images/shield-00003-shield-0.png",
+          "kr491/images/body-00015-body-0.png",
+          "kr491/images/head-00015-head-0.png",
+          "kr491/images/sword-00003-sword-0.png"
+        ],
+        "expected_parts": 4,
+        "historical_direction": "VISUALLY_INFERRED",
+        "preview": [
+          "kr491/images/shield-00003-shield-0.png",
+          "kr491/images/body-00015-body-0.png",
+          "kr491/images/head-00015-head-0.png",
+          "kr491/images/sword-00003-sword-0.png"
+        ]
+      },
+      "id": "original_parts_standing_1",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "drawn": [
+          "kr491/images/body-00018-body-0.png",
+          "kr491/images/head-00018-head-0.png",
+          "kr491/images/shield-00006-shield-0.png",
+          "kr491/images/sword-00006-sword-0.png"
+        ],
+        "expected_parts": 4,
+        "historical_direction": "VISUALLY_INFERRED",
+        "preview": [
+          "kr491/images/body-00018-body-0.png",
+          "kr491/images/head-00018-head-0.png",
+          "kr491/images/shield-00006-shield-0.png",
+          "kr491/images/sword-00006-sword-0.png"
+        ]
+      },
+      "id": "original_parts_standing_2",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "drawn": [
+          "kr491/images/sword-00009-sword-0.png",
+          "kr491/images/body-00021-body-0.png",
+          "kr491/images/head-00021-head-0.png",
+          "kr491/images/shield-00009-shield-0.png"
+        ],
+        "expected_parts": 4,
+        "historical_direction": "VISUALLY_INFERRED",
+        "preview": [
+          "kr491/images/sword-00009-sword-0.png",
+          "kr491/images/body-00021-body-0.png",
+          "kr491/images/head-00021-head-0.png",
+          "kr491/images/shield-00009-shield-0.png"
+        ]
+      },
+      "id": "original_parts_standing_3",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "drawn": [
+          "kr491/images/shield-00002-shield-0.png",
+          "kr491/images/sword-00002-sword-0.png",
+          "kr491/images/body-00014-body-0.png",
+          "kr491/images/head-00014-head-0.png"
+        ],
+        "expected_parts": 4,
+        "historical_direction": "VISUALLY_INFERRED",
+        "preview": [
+          "kr491/images/shield-00002-shield-0.png",
+          "kr491/images/sword-00002-sword-0.png",
+          "kr491/images/body-00014-body-0.png",
+          "kr491/images/head-00014-head-0.png"
+        ]
+      },
+      "id": "original_parts_walking_0",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "drawn": [
+          "kr491/images/shield-00005-shield-0.png",
+          "kr491/images/body-00017-body-0.png",
+          "kr491/images/head-00017-head-0.png",
+          "kr491/images/sword-00005-sword-0.png"
+        ],
+        "expected_parts": 4,
+        "historical_direction": "VISUALLY_INFERRED",
+        "preview": [
+          "kr491/images/shield-00005-shield-0.png",
+          "kr491/images/body-00017-body-0.png",
+          "kr491/images/head-00017-head-0.png",
+          "kr491/images/sword-00005-sword-0.png"
+        ]
+      },
+      "id": "original_parts_walking_1",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "drawn": [
+          "kr491/images/body-00020-body-0.png",
+          "kr491/images/head-00020-head-0.png",
+          "kr491/images/shield-00008-shield-0.png",
+          "kr491/images/sword-00008-sword-0.png"
+        ],
+        "expected_parts": 4,
+        "historical_direction": "VISUALLY_INFERRED",
+        "preview": [
+          "kr491/images/body-00020-body-0.png",
+          "kr491/images/head-00020-head-0.png",
+          "kr491/images/shield-00008-shield-0.png",
+          "kr491/images/sword-00008-sword-0.png"
+        ]
+      },
+      "id": "original_parts_walking_2",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "drawn": [
+          "kr491/images/sword-00011-sword-0.png",
+          "kr491/images/body-00023-body-0.png",
+          "kr491/images/head-00023-head-0.png",
+          "kr491/images/shield-00011-shield-0.png"
+        ],
+        "expected_parts": 4,
+        "historical_direction": "VISUALLY_INFERRED",
+        "preview": [
+          "kr491/images/sword-00011-sword-0.png",
+          "kr491/images/body-00023-body-0.png",
+          "kr491/images/head-00023-head-0.png",
+          "kr491/images/shield-00011-shield-0.png"
+        ]
+      },
+      "id": "original_parts_walking_3",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "drawn": [
+          "kr491/images/shield-00012-shield-0.png",
+          "kr491/images/body-00024-body-0.png",
+          "kr491/images/head-00024-head-0.png",
+          "kr491/images/sword-00012-sword-0.png"
+        ],
+        "expected_parts": 4,
+        "historical_direction": "VISUALLY_INFERRED",
+        "preview": [
+          "kr491/images/shield-00012-shield-0.png",
+          "kr491/images/body-00024-body-0.png",
+          "kr491/images/head-00024-head-0.png",
+          "kr491/images/sword-00012-sword-0.png"
+        ]
+      },
+      "id": "original_parts_attack_0",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "drawn": [
+          "kr491/images/shield-00014-shield-0.png",
+          "kr491/images/body-00026-body-0.png",
+          "kr491/images/head-00026-head-0.png",
+          "kr491/images/sword-00014-sword-0.png"
+        ],
+        "expected_parts": 4,
+        "historical_direction": "VISUALLY_INFERRED",
+        "preview": [
+          "kr491/images/shield-00014-shield-0.png",
+          "kr491/images/body-00026-body-0.png",
+          "kr491/images/head-00026-head-0.png",
+          "kr491/images/sword-00014-sword-0.png"
+        ]
+      },
+      "id": "original_parts_attack_1",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "drawn": [
+          "kr491/images/sword-00016-sword-0.png",
+          "kr491/images/body-00028-body-0.png",
+          "kr491/images/head-00028-head-0.png",
+          "kr491/images/shield-00016-shield-0.png"
+        ],
+        "expected_parts": 4,
+        "historical_direction": "VISUALLY_INFERRED",
+        "preview": [
+          "kr491/images/sword-00016-sword-0.png",
+          "kr491/images/body-00028-body-0.png",
+          "kr491/images/head-00028-head-0.png",
+          "kr491/images/shield-00016-shield-0.png"
+        ]
+      },
+      "id": "original_parts_attack_2",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "drawn": [
+          "kr491/images/sword-00018-sword-0.png",
+          "kr491/images/body-00030-body-0.png",
+          "kr491/images/head-00030-head-0.png",
+          "kr491/images/shield-00018-shield-0.png"
+        ],
+        "expected_parts": 4,
+        "historical_direction": "VISUALLY_INFERRED",
+        "preview": [
+          "kr491/images/sword-00018-sword-0.png",
+          "kr491/images/body-00030-body-0.png",
+          "kr491/images/head-00030-head-0.png",
+          "kr491/images/shield-00018-shield-0.png"
+        ]
+      },
+      "id": "original_parts_attack_3",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "drawn": [
+          "kr491/images/body-00072-body-0.png",
+          "kr491/images/head-00072-head-0.png"
+        ],
+        "expected_parts": 2,
+        "historical_direction": "VISUALLY_INFERRED",
+        "preview": [
+          "kr491/images/body-00072-body-0.png",
+          "kr491/images/head-00072-head-0.png"
+        ]
+      },
+      "id": "original_parts_casting_0",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "drawn": [
+          "kr491/images/body-00073-body-0.png",
+          "kr491/images/head-00073-head-0.png"
+        ],
+        "expected_parts": 2,
+        "historical_direction": "VISUALLY_INFERRED",
+        "preview": [
+          "kr491/images/body-00073-body-0.png",
+          "kr491/images/head-00073-head-0.png"
+        ]
+      },
+      "id": "original_parts_casting_1",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "drawn": [
+          "kr491/images/body-00074-body-0.png",
+          "kr491/images/head-00074-head-0.png"
+        ],
+        "expected_parts": 2,
+        "historical_direction": "VISUALLY_INFERRED",
+        "preview": [
+          "kr491/images/body-00074-body-0.png",
+          "kr491/images/head-00074-head-0.png"
+        ]
+      },
+      "id": "original_parts_casting_2",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "drawn": [
+          "kr491/images/body-00075-body-0.png",
+          "kr491/images/head-00075-head-0.png"
+        ],
+        "expected_parts": 2,
+        "historical_direction": "VISUALLY_INFERRED",
+        "preview": [
+          "kr491/images/body-00075-body-0.png",
+          "kr491/images/head-00075-head-0.png"
+        ]
+      },
+      "id": "original_parts_casting_3",
+      "status": "PASS"
+    },
+    {
+      "details": "",
+      "id": "equipment_swap_changes_original_parts",
+      "status": "PASS"
+    },
+    {
+      "details": "",
+      "id": "equipment_unequip_hides_actual_weapon",
+      "status": "PASS"
+    },
+    {
+      "details": [
+        "kr491/images/effect-00003-effect-0.png"
+      ],
+      "id": "safe_effect_actual_frame_observed",
+      "status": "PASS"
+    },
+    {
+      "details": "",
+      "id": "oneshot_effect_finishes_without_residue",
+      "status": "PASS"
+    },
+    {
+      "details": "",
+      "id": "wav_preview_active_before_cancel",
+      "status": "PASS"
+    },
+    {
+      "details": "",
+      "id": "mode_change_cancels_effect_and_audio",
+      "status": "PASS"
+    },
+    {
+      "details": "",
+      "id": "original_wav_decoded",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "hardware_listening": "NOT_RUN",
+        "peak": 0.896877944469452
+      },
+      "id": "audio_mix_nonzero",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "frames": 54272,
+        "result": 0
+      },
+      "id": "captured_output_wav_written",
+      "status": "PASS"
+    },
+    {
+      "details": [],
+      "id": "no_selected_asset_decode_errors",
+      "status": "PASS"
+    }
+  ],
+  "consumed_files": [
+    "runtime.json",
+    "maps/index.json",
+    "maps/map-1.json",
+    "maps/map-99.json",
+    "maps/map-100.json",
+    "kr491/kr491_runtime.json",
+    "work_batch_policy.json",
+    "maps/map-1-floor.png",
+    "maps/objects/object-223.png",
+    "maps/objects/object-220.png",
+    "maps/objects/object-221.png",
+    "maps/objects/object-219.png",
+    "maps/objects/object-226.png",
+    "maps/objects/object-227.png",
+    "maps/objects/object-224.png",
+    "maps/objects/object-505.png",
+    "maps/objects/object-506.png",
+    "maps/objects/object-540.png",
+    "maps/objects/object-539.png",
+    "maps/objects/object-538.png",
+    "kr491/images/sword-00000-sword-0.png",
+    "kr491/images/body-00012-body-0.png",
+    "kr491/images/head-00012-head-0.png",
+    "kr491/images/shield-00000-shield-0.png",
+    "maps/map-99-floor.png",
+    "maps/objects/object-484.png",
+    "maps/objects/object-461.png",
+    "maps/objects/object-482.png",
+    "maps/objects/object-477.png",
+    "maps/objects/object-469.png",
+    "maps/objects/object-480.png",
+    "maps/objects/object-483.png",
+    "maps/objects/object-478.png",
+    "maps/objects/object-481.png",
+    "maps/objects/object-78.png",
+    "maps/objects/object-79.png",
+    "maps/objects/object-490.png",
+    "maps/objects/object-470.png",
+    "maps/objects/object-473.png",
+    "maps/objects/object-472.png",
+    "maps/objects/object-471.png",
+    "maps/objects/object-462.png",
+    "maps/map-100-floor.png",
+    "maps/objects/object-843.png",
+    "maps/objects/object-901.png",
+    "maps/objects/object-840.png",
+    "maps/objects/object-898.png",
+    "maps/objects/object-899.png",
+    "maps/objects/object-836.png",
+    "maps/objects/object-839.png",
+    "maps/objects/object-900.png",
+    "maps/objects/object-77.png",
+    "maps/objects/object-463.png",
+    "maps/objects/object-460.png",
+    "maps/objects/object-459.png",
+    "maps/objects/object-456.png",
+    "maps/objects/object-449.png",
+    "maps/objects/object-448.png",
+    "kr491/images/shield-00003-shield-0.png",
+    "kr491/images/body-00015-body-0.png",
+    "kr491/images/head-00015-head-0.png",
+    "kr491/images/sword-00003-sword-0.png",
+    "kr491/images/body-00018-body-0.png",
+    "kr491/images/head-00018-head-0.png",
+    "kr491/images/shield-00006-shield-0.png",
+    "kr491/images/sword-00006-sword-0.png",
+    "kr491/images/sword-00009-sword-0.png",
+    "kr491/images/body-00021-body-0.png",
+    "kr491/images/head-00021-head-0.png",
+    "kr491/images/shield-00009-shield-0.png",
+    "kr491/images/sword-00001-sword-0.png",
+    "kr491/images/body-00013-body-0.png",
+    "kr491/images/head-00013-head-0.png",
+    "kr491/images/shield-00001-shield-0.png",
+    "kr491/images/shield-00002-shield-0.png",
+    "kr491/images/sword-00002-sword-0.png",
+    "kr491/images/body-00014-body-0.png",
+    "kr491/images/head-00014-head-0.png",
+    "kr491/images/shield-00004-shield-0.png",
+    "kr491/images/body-00016-body-0.png",
+    "kr491/images/head-00016-head-0.png",
+    "kr491/images/sword-00004-sword-0.png",
+    "kr491/images/shield-00005-shield-0.png",
+    "kr491/images/body-00017-body-0.png",
+    "kr491/images/head-00017-head-0.png",
+    "kr491/images/sword-00005-sword-0.png",
+    "kr491/images/shield-00007-shield-0.png",
+    "kr491/images/body-00019-body-0.png",
+    "kr491/images/head-00019-head-0.png",
+    "kr491/images/sword-00007-sword-0.png",
+    "kr491/images/body-00020-body-0.png",
+    "kr491/images/head-00020-head-0.png",
+    "kr491/images/shield-00008-shield-0.png",
+    "kr491/images/sword-00008-sword-0.png",
+    "kr491/images/sword-00010-sword-0.png",
+    "kr491/images/body-00022-body-0.png",
+    "kr491/images/head-00022-head-0.png",
+    "kr491/images/shield-00010-shield-0.png",
+    "kr491/images/sword-00011-sword-0.png",
+    "kr491/images/body-00023-body-0.png",
+    "kr491/images/head-00023-head-0.png",
+    "kr491/images/shield-00011-shield-0.png",
+    "kr491/images/shield-00012-shield-0.png",
+    "kr491/images/body-00024-body-0.png",
+    "kr491/images/head-00024-head-0.png",
+    "kr491/images/sword-00012-sword-0.png",
+    "kr491/images/sword-00013-sword-0.png",
+    "kr491/images/body-00025-body-0.png",
+    "kr491/images/head-00025-head-0.png",
+    "kr491/images/shield-00013-shield-0.png",
+    "kr491/images/shield-00014-shield-0.png",
+    "kr491/images/body-00026-body-0.png",
+    "kr491/images/head-00026-head-0.png",
+    "kr491/images/sword-00014-sword-0.png",
+    "kr491/images/sword-00015-sword-0.png",
+    "kr491/images/shield-00015-shield-0.png",
+    "kr491/images/body-00027-body-0.png",
+    "kr491/images/head-00027-head-0.png",
+    "kr491/images/sword-00016-sword-0.png",
+    "kr491/images/body-00028-body-0.png",
+    "kr491/images/head-00028-head-0.png",
+    "kr491/images/shield-00016-shield-0.png",
+    "kr491/images/shield-00017-shield-0.png",
+    "kr491/images/body-00029-body-0.png",
+    "kr491/images/head-00029-head-0.png",
+    "kr491/images/sword-00017-sword-0.png",
+    "kr491/images/sword-00018-sword-0.png",
+    "kr491/images/body-00030-body-0.png",
+    "kr491/images/head-00030-head-0.png",
+    "kr491/images/shield-00018-shield-0.png",
+    "kr491/images/shield-00019-shield-0.png",
+    "kr491/images/body-00031-body-0.png",
+    "kr491/images/sword-00019-sword-0.png",
+    "kr491/images/head-00031-head-0.png",
+    "kr491/images/body-00072-body-0.png",
+    "kr491/images/head-00072-head-0.png",
+    "kr491/images/body-00073-body-0.png",
+    "kr491/images/head-00073-head-0.png",
+    "kr491/images/body-00074-body-0.png",
+    "kr491/images/head-00074-head-0.png",
+    "kr491/images/body-00075-body-0.png",
+    "kr491/images/head-00075-head-0.png",
+    "kr491/images/sword-00029-sword-0.png",
+    "kr491/images/body-00229-body-0.png",
+    "kr491/images/head-00121-head-0.png",
+    "kr491/images/shield-00029-shield-0.png",
+    "kr491/images/body-00217-body-0.png",
+    "kr491/images/head-00109-head-0.png",
+    "kr491/images/effect-00000-effect-0.png",
+    "kr491/images/effect-00001-effect-0.png",
+    "kr491/images/effect-00002-effect-0.png",
+    "kr491/images/effect-00003-effect-0.png",
+    "kr491/images/effect-00005-effect-0.png",
+    "kr491/images/effect-00006-effect-0.png",
+    "kr491/images/effect-00007-effect-0.png",
+    "kr491/images/effect-00009-effect-0.png",
+    "kr491/images/effect-00010-effect-0.png",
+    "kr491/images/effect-00011-effect-0.png",
+    "kr491/sounds/001.wav",
+    "kr491/images/effect-00004-effect-0.png",
+    "kr491/images/effect-00008-effect-0.png",
+    "kr491/images/dlgnew02-00000-baram-0.png"
+  ],
+  "engine": "4.6.3-stable (official)",
+  "events": [
+    {
+      "details": {
+        "errors": [],
+        "generation": "WORK-P2-GEN003",
+        "loaded": true
+      },
+      "event": "generation_open",
+      "us": 340331
+    },
+    {
+      "details": {
+        "guards": [
+          "WD-MS-001",
+          "WD-MS-002",
+          "WD-MS-003",
+          "WD-MS-004",
+          "WD-MS-005",
+          "WD-MN-001"
+        ],
+        "historical_timing": "UNKNOWN",
+        "map_profile_default": null
+      },
+      "event": "work_batch_policy_enforced",
+      "us": 503276
+    },
+    {
+      "details": {
+        "action": "standing",
+        "historical_mapping": "VISUALLY_INFERRED",
+        "inspection_frame_ms": 130
+      },
+      "event": "inspection_motion",
+      "us": 1396334
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "direction",
+      "us": 1396405
+    },
+    {
+      "details": {
+        "direction": 1
+      },
+      "event": "direction",
+      "us": 1678657
+    },
+    {
+      "details": {
+        "direction": 2
+      },
+      "event": "direction",
+      "us": 1930584
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "direction",
+      "us": 2160325
+    },
+    {
+      "details": {
+        "action": "walking",
+        "historical_mapping": "VISUALLY_INFERRED",
+        "inspection_frame_ms": 130
+      },
+      "event": "inspection_motion",
+      "us": 2468738
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "direction",
+      "us": 2468941
+    },
+    {
+      "details": {
+        "direction": 1
+      },
+      "event": "direction",
+      "us": 2609232
+    },
+    {
+      "details": {
+        "direction": 2
+      },
+      "event": "direction",
+      "us": 2862527
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "direction",
+      "us": 3133777
+    },
+    {
+      "details": {
+        "action": "attack",
+        "historical_mapping": "VISUALLY_INFERRED",
+        "inspection_frame_ms": 130
+      },
+      "event": "inspection_motion",
+      "us": 3402081
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "direction",
+      "us": 3402252
+    },
+    {
+      "details": {
+        "direction": 1
+      },
+      "event": "direction",
+      "us": 3648012
+    },
+    {
+      "details": {
+        "direction": 2
+      },
+      "event": "direction",
+      "us": 3909852
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "direction",
+      "us": 4155034
+    },
+    {
+      "details": {
+        "action": "casting",
+        "historical_mapping": "VISUALLY_INFERRED",
+        "inspection_frame_ms": 130
+      },
+      "event": "inspection_motion",
+      "us": 4415682
+    },
+    {
+      "details": {
+        "direction": 0
+      },
+      "event": "direction",
+      "us": 4415824
+    },
+    {
+      "details": {
+        "direction": 1
+      },
+      "event": "direction",
+      "us": 4700704
+    },
+    {
+      "details": {
+        "direction": 2
+      },
+      "event": "direction",
+      "us": 4945168
+    },
+    {
+      "details": {
+        "direction": 3
+      },
+      "event": "direction",
+      "us": 5212375
+    },
+    {
+      "details": {
+        "action": "standing",
+        "historical_mapping": "VISUALLY_INFERRED",
+        "inspection_frame_ms": 130
+      },
+      "event": "inspection_motion",
+      "us": 5484483
+    },
+    {
+      "details": {
+        "variant": 1
+      },
+      "event": "equipment_swap",
+      "us": 5485095
+    },
+    {
+      "details": {
+        "enabled": false,
+        "variant_index": 1
+      },
+      "event": "equipment_toggle",
+      "us": 5791127
+    },
+    {
+      "details": {
+        "enabled": true,
+        "variant_index": 1
+      },
+      "event": "equipment_toggle",
+      "us": 5891282
+    },
+    {
+      "details": {
+        "effect_binding": "UNKNOWN",
+        "member": "001.wav",
+        "play_call_us": 7507373
+      },
+      "event": "original_wav_preview",
+      "us": 7507377
+    },
+    {
+      "details": {
+        "effect_binding": "UNKNOWN",
+        "member": "001.wav",
+        "play_call_us": 7700960
+      },
+      "event": "original_wav_preview",
+      "us": 7700964
+    }
+  ],
+  "generation": "WORK-P2-GEN003",
+  "hardware_listening": "NOT_RUN",
+  "historical_timing": "UNKNOWN",
+  "map_runtime_test": [
+    {
+      "historical_exits": "BLOCKED_UNRESOLVED",
+      "historical_returns": "BLOCKED_UNRESOLVED",
+      "native_map_id": 1.0,
+      "outcomes": {
+        "allowed": 15862,
+        "blocked": 522
+      },
+      "scope": "Godot native MAP storage grid probe using independently disassembled EXE rules; active server dimensions unknown"
+    },
+    {
+      "historical_exits": "BLOCKED_UNRESOLVED",
+      "historical_returns": "BLOCKED_UNRESOLVED",
+      "native_map_id": 99.0,
+      "outcomes": {
+        "allowed": 14980,
+        "blocked": 1404
+      },
+      "scope": "Godot native MAP storage grid probe using independently disassembled EXE rules; active server dimensions unknown"
+    },
+    {
+      "historical_exits": "BLOCKED_UNRESOLVED",
+      "historical_returns": "BLOCKED_UNRESOLVED",
+      "native_map_id": 100.0,
+      "outcomes": {
+        "allowed": 15252,
+        "blocked": 1132
+      },
+      "scope": "Godot native MAP storage grid probe using independently disassembled EXE rules; active server dimensions unknown"
+    }
+  ],
+  "originality": "Original bitmaps; motion meanings visually inferred; no target-era map equivalence claim",
+  "platform": "Linux",
+  "save_original_id_test": {
+    "actual_user_save": "NOT_OPENED",
+    "authentication": "NOT_RUN",
+    "checksum": "935530e8ddd6bfe3d687d8c1117dea6fda4a263d06902bd262aaf16f5bd0bfda",
+    "item_meanings": "UNKNOWN; asset IDs in controlled fixture",
+    "native_ids": [
+      "kr125:map-1.0",
+      "kr491:sword-0",
+      "kr491:body-0"
+    ],
+    "path_kind": "NEW_ISOLATED_TEST_FIXTURE",
+    "revision": 2.0,
+    "schema": "baram.p2.synthetic-save",
+    "status": "OK"
+  },
+  "schema": "baram.work.p2.original-smoke/1",
+  "source_frames": {
+    "kr491/images/body-00012-body-0.png": {
+      "order": "wbhs",
+      "original_frame": 12.0,
+      "part": "body",
+      "source_id": "KR491:sprite:Body:12"
+    },
+    "kr491/images/body-00013-body-0.png": {
+      "order": "wbhs",
+      "original_frame": 13.0,
+      "part": "body",
+      "source_id": "KR491:sprite:Body:13"
+    },
+    "kr491/images/body-00014-body-0.png": {
+      "order": "swbh",
+      "original_frame": 14.0,
+      "part": "body",
+      "source_id": "KR491:sprite:Body:14"
+    },
+    "kr491/images/body-00015-body-0.png": {
+      "order": "sbhw",
+      "original_frame": 15.0,
+      "part": "body",
+      "source_id": "KR491:sprite:Body:15"
+    },
+    "kr491/images/body-00016-body-0.png": {
+      "order": "sbhw",
+      "original_frame": 16.0,
+      "part": "body",
+      "source_id": "KR491:sprite:Body:16"
+    },
+    "kr491/images/body-00017-body-0.png": {
+      "order": "sbhw",
+      "original_frame": 17.0,
+      "part": "body",
+      "source_id": "KR491:sprite:Body:17"
+    },
+    "kr491/images/body-00018-body-0.png": {
+      "order": "bhsw",
+      "original_frame": 18.0,
+      "part": "body",
+      "source_id": "KR491:sprite:Body:18"
+    },
+    "kr491/images/body-00019-body-0.png": {
+      "order": "sbhw",
+      "original_frame": 19.0,
+      "part": "body",
+      "source_id": "KR491:sprite:Body:19"
+    },
+    "kr491/images/body-00020-body-0.png": {
+      "order": "bhsw",
+      "original_frame": 20.0,
+      "part": "body",
+      "source_id": "KR491:sprite:Body:20"
+    },
+    "kr491/images/body-00021-body-0.png": {
+      "order": "wbhs",
+      "original_frame": 21.0,
+      "part": "body",
+      "source_id": "KR491:sprite:Body:21"
+    },
+    "kr491/images/body-00022-body-0.png": {
+      "order": "wbhs",
+      "original_frame": 22.0,
+      "part": "body",
+      "source_id": "KR491:sprite:Body:22"
+    },
+    "kr491/images/body-00023-body-0.png": {
+      "order": "wbhs",
+      "original_frame": 23.0,
+      "part": "body",
+      "source_id": "KR491:sprite:Body:23"
+    },
+    "kr491/images/body-00024-body-0.png": {
+      "order": "sbhw",
+      "original_frame": 24.0,
+      "part": "body",
+      "source_id": "KR491:sprite:Body:24"
+    },
+    "kr491/images/body-00025-body-0.png": {
+      "order": "wbhs",
+      "original_frame": 25.0,
+      "part": "body",
+      "source_id": "KR491:sprite:Body:25"
+    },
+    "kr491/images/body-00026-body-0.png": {
+      "order": "sbhw",
+      "original_frame": 26.0,
+      "part": "body",
+      "source_id": "KR491:sprite:Body:26"
+    },
+    "kr491/images/body-00027-body-0.png": {
+      "order": "wsbh",
+      "original_frame": 27.0,
+      "part": "body",
+      "source_id": "KR491:sprite:Body:27"
+    },
+    "kr491/images/body-00028-body-0.png": {
+      "order": "wbhs",
+      "original_frame": 28.0,
+      "part": "body",
+      "source_id": "KR491:sprite:Body:28"
+    },
+    "kr491/images/body-00029-body-0.png": {
+      "order": "sbhw",
+      "original_frame": 29.0,
+      "part": "body",
+      "source_id": "KR491:sprite:Body:29"
+    },
+    "kr491/images/body-00030-body-0.png": {
+      "order": "wbhs",
+      "original_frame": 30.0,
+      "part": "body",
+      "source_id": "KR491:sprite:Body:30"
+    },
+    "kr491/images/body-00031-body-0.png": {
+      "order": "sbwh",
+      "original_frame": 31.0,
+      "part": "body",
+      "source_id": "KR491:sprite:Body:31"
+    },
+    "kr491/images/body-00072-body-0.png": {
+      "order": "wbh0",
+      "original_frame": 72.0,
+      "part": "body",
+      "source_id": "KR491:sprite:Body:72"
+    },
+    "kr491/images/body-00073-body-0.png": {
+      "order": "wbh0",
+      "original_frame": 73.0,
+      "part": "body",
+      "source_id": "KR491:sprite:Body:73"
+    },
+    "kr491/images/body-00074-body-0.png": {
+      "order": "wbh0",
+      "original_frame": 74.0,
+      "part": "body",
+      "source_id": "KR491:sprite:Body:74"
+    },
+    "kr491/images/body-00075-body-0.png": {
+      "order": "wbh0",
+      "original_frame": 75.0,
+      "part": "body",
+      "source_id": "KR491:sprite:Body:75"
+    },
+    "kr491/images/body-00217-body-0.png": {
+      "order": "wbhs",
+      "original_frame": 217.0,
+      "part": "body",
+      "source_id": "KR491:sprite:Body:217"
+    },
+    "kr491/images/body-00229-body-0.png": {
+      "order": "wbhs",
+      "original_frame": 229.0,
+      "part": "body",
+      "source_id": "KR491:sprite:Body:229"
+    },
+    "kr491/images/head-00012-head-0.png": {
+      "order": "wbhs",
+      "original_frame": 12.0,
+      "part": "head",
+      "source_id": "KR491:sprite:Head:12"
+    },
+    "kr491/images/head-00013-head-0.png": {
+      "order": "wbhs",
+      "original_frame": 13.0,
+      "part": "head",
+      "source_id": "KR491:sprite:Head:13"
+    },
+    "kr491/images/head-00014-head-0.png": {
+      "order": "swbh",
+      "original_frame": 14.0,
+      "part": "head",
+      "source_id": "KR491:sprite:Head:14"
+    },
+    "kr491/images/head-00015-head-0.png": {
+      "order": "sbhw",
+      "original_frame": 15.0,
+      "part": "head",
+      "source_id": "KR491:sprite:Head:15"
+    },
+    "kr491/images/head-00016-head-0.png": {
+      "order": "sbhw",
+      "original_frame": 16.0,
+      "part": "head",
+      "source_id": "KR491:sprite:Head:16"
+    },
+    "kr491/images/head-00017-head-0.png": {
+      "order": "sbhw",
+      "original_frame": 17.0,
+      "part": "head",
+      "source_id": "KR491:sprite:Head:17"
+    },
+    "kr491/images/head-00018-head-0.png": {
+      "order": "bhsw",
+      "original_frame": 18.0,
+      "part": "head",
+      "source_id": "KR491:sprite:Head:18"
+    },
+    "kr491/images/head-00019-head-0.png": {
+      "order": "sbhw",
+      "original_frame": 19.0,
+      "part": "head",
+      "source_id": "KR491:sprite:Head:19"
+    },
+    "kr491/images/head-00020-head-0.png": {
+      "order": "bhsw",
+      "original_frame": 20.0,
+      "part": "head",
+      "source_id": "KR491:sprite:Head:20"
+    },
+    "kr491/images/head-00021-head-0.png": {
+      "order": "wbhs",
+      "original_frame": 21.0,
+      "part": "head",
+      "source_id": "KR491:sprite:Head:21"
+    },
+    "kr491/images/head-00022-head-0.png": {
+      "order": "wbhs",
+      "original_frame": 22.0,
+      "part": "head",
+      "source_id": "KR491:sprite:Head:22"
+    },
+    "kr491/images/head-00023-head-0.png": {
+      "order": "wbhs",
+      "original_frame": 23.0,
+      "part": "head",
+      "source_id": "KR491:sprite:Head:23"
+    },
+    "kr491/images/head-00024-head-0.png": {
+      "order": "sbhw",
+      "original_frame": 24.0,
+      "part": "head",
+      "source_id": "KR491:sprite:Head:24"
+    },
+    "kr491/images/head-00025-head-0.png": {
+      "order": "wbhs",
+      "original_frame": 25.0,
+      "part": "head",
+      "source_id": "KR491:sprite:Head:25"
+    },
+    "kr491/images/head-00026-head-0.png": {
+      "order": "sbhw",
+      "original_frame": 26.0,
+      "part": "head",
+      "source_id": "KR491:sprite:Head:26"
+    },
+    "kr491/images/head-00027-head-0.png": {
+      "order": "wsbh",
+      "original_frame": 27.0,
+      "part": "head",
+      "source_id": "KR491:sprite:Head:27"
+    },
+    "kr491/images/head-00028-head-0.png": {
+      "order": "wbhs",
+      "original_frame": 28.0,
+      "part": "head",
+      "source_id": "KR491:sprite:Head:28"
+    },
+    "kr491/images/head-00029-head-0.png": {
+      "order": "sbhw",
+      "original_frame": 29.0,
+      "part": "head",
+      "source_id": "KR491:sprite:Head:29"
+    },
+    "kr491/images/head-00030-head-0.png": {
+      "order": "wbhs",
+      "original_frame": 30.0,
+      "part": "head",
+      "source_id": "KR491:sprite:Head:30"
+    },
+    "kr491/images/head-00031-head-0.png": {
+      "order": "sbwh",
+      "original_frame": 31.0,
+      "part": "head",
+      "source_id": "KR491:sprite:Head:31"
+    },
+    "kr491/images/head-00072-head-0.png": {
+      "order": "wbh0",
+      "original_frame": 72.0,
+      "part": "head",
+      "source_id": "KR491:sprite:Head:72"
+    },
+    "kr491/images/head-00073-head-0.png": {
+      "order": "wbh0",
+      "original_frame": 73.0,
+      "part": "head",
+      "source_id": "KR491:sprite:Head:73"
+    },
+    "kr491/images/head-00074-head-0.png": {
+      "order": "wbh0",
+      "original_frame": 74.0,
+      "part": "head",
+      "source_id": "KR491:sprite:Head:74"
+    },
+    "kr491/images/head-00075-head-0.png": {
+      "order": "wbh0",
+      "original_frame": 75.0,
+      "part": "head",
+      "source_id": "KR491:sprite:Head:75"
+    },
+    "kr491/images/head-00109-head-0.png": {
+      "order": "wbhs",
+      "original_frame": 109.0,
+      "part": "head",
+      "source_id": "KR491:sprite:Head:109"
+    },
+    "kr491/images/head-00121-head-0.png": {
+      "order": "wbhs",
+      "original_frame": 121.0,
+      "part": "head",
+      "source_id": "KR491:sprite:Head:121"
+    },
+    "kr491/images/shield-00000-shield-0.png": {
+      "order": "wbhs",
+      "original_frame": 0.0,
+      "part": "shield",
+      "source_id": "KR491:sprite:Shield:0"
+    },
+    "kr491/images/shield-00001-shield-0.png": {
+      "order": "wbhs",
+      "original_frame": 1.0,
+      "part": "shield",
+      "source_id": "KR491:sprite:Shield:1"
+    },
+    "kr491/images/shield-00002-shield-0.png": {
+      "order": "swbh",
+      "original_frame": 2.0,
+      "part": "shield",
+      "source_id": "KR491:sprite:Shield:2"
+    },
+    "kr491/images/shield-00003-shield-0.png": {
+      "order": "sbhw",
+      "original_frame": 3.0,
+      "part": "shield",
+      "source_id": "KR491:sprite:Shield:3"
+    },
+    "kr491/images/shield-00004-shield-0.png": {
+      "order": "sbhw",
+      "original_frame": 4.0,
+      "part": "shield",
+      "source_id": "KR491:sprite:Shield:4"
+    },
+    "kr491/images/shield-00005-shield-0.png": {
+      "order": "sbhw",
+      "original_frame": 5.0,
+      "part": "shield",
+      "source_id": "KR491:sprite:Shield:5"
+    },
+    "kr491/images/shield-00006-shield-0.png": {
+      "order": "bhsw",
+      "original_frame": 6.0,
+      "part": "shield",
+      "source_id": "KR491:sprite:Shield:6"
+    },
+    "kr491/images/shield-00007-shield-0.png": {
+      "order": "sbhw",
+      "original_frame": 7.0,
+      "part": "shield",
+      "source_id": "KR491:sprite:Shield:7"
+    },
+    "kr491/images/shield-00008-shield-0.png": {
+      "order": "bhsw",
+      "original_frame": 8.0,
+      "part": "shield",
+      "source_id": "KR491:sprite:Shield:8"
+    },
+    "kr491/images/shield-00009-shield-0.png": {
+      "order": "wbhs",
+      "original_frame": 9.0,
+      "part": "shield",
+      "source_id": "KR491:sprite:Shield:9"
+    },
+    "kr491/images/shield-00010-shield-0.png": {
+      "order": "wbhs",
+      "original_frame": 10.0,
+      "part": "shield",
+      "source_id": "KR491:sprite:Shield:10"
+    },
+    "kr491/images/shield-00011-shield-0.png": {
+      "order": "wbhs",
+      "original_frame": 11.0,
+      "part": "shield",
+      "source_id": "KR491:sprite:Shield:11"
+    },
+    "kr491/images/shield-00012-shield-0.png": {
+      "order": "sbhw",
+      "original_frame": 12.0,
+      "part": "shield",
+      "source_id": "KR491:sprite:Shield:12"
+    },
+    "kr491/images/shield-00013-shield-0.png": {
+      "order": "wbhs",
+      "original_frame": 13.0,
+      "part": "shield",
+      "source_id": "KR491:sprite:Shield:13"
+    },
+    "kr491/images/shield-00014-shield-0.png": {
+      "order": "sbhw",
+      "original_frame": 14.0,
+      "part": "shield",
+      "source_id": "KR491:sprite:Shield:14"
+    },
+    "kr491/images/shield-00015-shield-0.png": {
+      "order": "wsbh",
+      "original_frame": 15.0,
+      "part": "shield",
+      "source_id": "KR491:sprite:Shield:15"
+    },
+    "kr491/images/shield-00016-shield-0.png": {
+      "order": "wbhs",
+      "original_frame": 16.0,
+      "part": "shield",
+      "source_id": "KR491:sprite:Shield:16"
+    },
+    "kr491/images/shield-00017-shield-0.png": {
+      "order": "sbhw",
+      "original_frame": 17.0,
+      "part": "shield",
+      "source_id": "KR491:sprite:Shield:17"
+    },
+    "kr491/images/shield-00018-shield-0.png": {
+      "order": "wbhs",
+      "original_frame": 18.0,
+      "part": "shield",
+      "source_id": "KR491:sprite:Shield:18"
+    },
+    "kr491/images/shield-00019-shield-0.png": {
+      "order": "sbwh",
+      "original_frame": 19.0,
+      "part": "shield",
+      "source_id": "KR491:sprite:Shield:19"
+    },
+    "kr491/images/shield-00029-shield-0.png": {
+      "order": "wbhs",
+      "original_frame": 29.0,
+      "part": "shield",
+      "source_id": "KR491:sprite:Shield:29"
+    },
+    "kr491/images/sword-00000-sword-0.png": {
+      "order": "wbhs",
+      "original_frame": 0.0,
+      "part": "sword",
+      "source_id": "KR491:sprite:Sword:0"
+    },
+    "kr491/images/sword-00001-sword-0.png": {
+      "order": "wbhs",
+      "original_frame": 1.0,
+      "part": "sword",
+      "source_id": "KR491:sprite:Sword:1"
+    },
+    "kr491/images/sword-00002-sword-0.png": {
+      "order": "swbh",
+      "original_frame": 2.0,
+      "part": "sword",
+      "source_id": "KR491:sprite:Sword:2"
+    },
+    "kr491/images/sword-00003-sword-0.png": {
+      "order": "sbhw",
+      "original_frame": 3.0,
+      "part": "sword",
+      "source_id": "KR491:sprite:Sword:3"
+    },
+    "kr491/images/sword-00004-sword-0.png": {
+      "order": "sbhw",
+      "original_frame": 4.0,
+      "part": "sword",
+      "source_id": "KR491:sprite:Sword:4"
+    },
+    "kr491/images/sword-00005-sword-0.png": {
+      "order": "sbhw",
+      "original_frame": 5.0,
+      "part": "sword",
+      "source_id": "KR491:sprite:Sword:5"
+    },
+    "kr491/images/sword-00006-sword-0.png": {
+      "order": "bhsw",
+      "original_frame": 6.0,
+      "part": "sword",
+      "source_id": "KR491:sprite:Sword:6"
+    },
+    "kr491/images/sword-00007-sword-0.png": {
+      "order": "sbhw",
+      "original_frame": 7.0,
+      "part": "sword",
+      "source_id": "KR491:sprite:Sword:7"
+    },
+    "kr491/images/sword-00008-sword-0.png": {
+      "order": "bhsw",
+      "original_frame": 8.0,
+      "part": "sword",
+      "source_id": "KR491:sprite:Sword:8"
+    },
+    "kr491/images/sword-00009-sword-0.png": {
+      "order": "wbhs",
+      "original_frame": 9.0,
+      "part": "sword",
+      "source_id": "KR491:sprite:Sword:9"
+    },
+    "kr491/images/sword-00010-sword-0.png": {
+      "order": "wbhs",
+      "original_frame": 10.0,
+      "part": "sword",
+      "source_id": "KR491:sprite:Sword:10"
+    },
+    "kr491/images/sword-00011-sword-0.png": {
+      "order": "wbhs",
+      "original_frame": 11.0,
+      "part": "sword",
+      "source_id": "KR491:sprite:Sword:11"
+    },
+    "kr491/images/sword-00012-sword-0.png": {
+      "order": "sbhw",
+      "original_frame": 12.0,
+      "part": "sword",
+      "source_id": "KR491:sprite:Sword:12"
+    },
+    "kr491/images/sword-00013-sword-0.png": {
+      "order": "wbhs",
+      "original_frame": 13.0,
+      "part": "sword",
+      "source_id": "KR491:sprite:Sword:13"
+    },
+    "kr491/images/sword-00014-sword-0.png": {
+      "order": "sbhw",
+      "original_frame": 14.0,
+      "part": "sword",
+      "source_id": "KR491:sprite:Sword:14"
+    },
+    "kr491/images/sword-00015-sword-0.png": {
+      "order": "wsbh",
+      "original_frame": 15.0,
+      "part": "sword",
+      "source_id": "KR491:sprite:Sword:15"
+    },
+    "kr491/images/sword-00016-sword-0.png": {
+      "order": "wbhs",
+      "original_frame": 16.0,
+      "part": "sword",
+      "source_id": "KR491:sprite:Sword:16"
+    },
+    "kr491/images/sword-00017-sword-0.png": {
+      "order": "sbhw",
+      "original_frame": 17.0,
+      "part": "sword",
+      "source_id": "KR491:sprite:Sword:17"
+    },
+    "kr491/images/sword-00018-sword-0.png": {
+      "order": "wbhs",
+      "original_frame": 18.0,
+      "part": "sword",
+      "source_id": "KR491:sprite:Sword:18"
+    },
+    "kr491/images/sword-00019-sword-0.png": {
+      "order": "sbwh",
+      "original_frame": 19.0,
+      "part": "sword",
+      "source_id": "KR491:sprite:Sword:19"
+    },
+    "kr491/images/sword-00029-sword-0.png": {
+      "order": "wbhs",
+      "original_frame": 29.0,
+      "part": "sword",
+      "source_id": "KR491:sprite:Sword:29"
+    }
+  },
+  "private_visual_evidence": [
+    {
+      "filename": "original-runtime.mp4",
+      "bytes": 123853,
+      "sha256": "dcf58c2e2d4f63a2d22bf291413f469b570d6a9170fd36ee35d0ffab702dfe42"
+    },
+    {
+      "filename": "work-original-smoke.json-audio.wav",
+      "bytes": 217132,
+      "sha256": "62b80f7b210e91646fbd46084992f91f104d9caea208823d3496be6f55c8b332"
+    },
+    {
+      "filename": "work-original-smoke.json-character-0.png",
+      "bytes": 64638,
+      "sha256": "d1c24395bba11b20dfbae1436bd8ca5995d67ed7dd00912beb45e1ef87f75d85"
+    },
+    {
+      "filename": "work-original-smoke.json-character-1.png",
+      "bytes": 64133,
+      "sha256": "17ff6fe388b90096e4d60f8aae102b2003b89897b7250b0ba307608e72d6c2d1"
+    },
+    {
+      "filename": "work-original-smoke.json-character-2.png",
+      "bytes": 65164,
+      "sha256": "17d3f80f90f3c363cfdf79b809ed51584e5963d9ab5fe8767eefee1a0a17087f"
+    },
+    {
+      "filename": "work-original-smoke.json-character-3.png",
+      "bytes": 64453,
+      "sha256": "3c5fa07687f451fc9bd73e3487f06ba422d2ab473ae1918a845ddb95e7fadc88"
+    },
+    {
+      "filename": "work-original-smoke.json-creation.png",
+      "bytes": 255807,
+      "sha256": "8ca43055188c38ecaf4bb5946e6d26bf8f70f2a1af930ca7d332555ad7295040"
+    },
+    {
+      "filename": "work-original-smoke.json-effect.png",
+      "bytes": 61523,
+      "sha256": "3b48c752e6bcc0960dc0524e7328fe8b23f4459d3e6a0530850de7adea86f4a2"
+    },
+    {
+      "filename": "work-original-smoke.json-equipment-off.png",
+      "bytes": 63653,
+      "sha256": "1445758e2b7e1fe10dc1305b766dd03ba0b5b9b47e900d96a3e650c70741b1b3"
+    },
+    {
+      "filename": "work-original-smoke.json-equipment-swap.png",
+      "bytes": 64161,
+      "sha256": "19ee6748ca14be97ee4bcd2836ef31cf7ef6dc70a867fa2637256bd98c3436b1"
+    },
+    {
+      "filename": "work-original-smoke.json-map-1.png",
+      "bytes": 281852,
+      "sha256": "52bb96c6144dbb5a02950cfe0ab3f8618e94a408d40fee64ce58683b277c3655"
+    },
+    {
+      "filename": "work-original-smoke.json-map-2.png",
+      "bytes": 170475,
+      "sha256": "6ffb233c16d42e505a6d7b7e732a8326ab4ace00fc856c1353cb8c97f8d0b3b2"
+    },
+    {
+      "filename": "work-original-smoke.json-map.png",
+      "bytes": 99224,
+      "sha256": "f59ade7e6516a70886b3b61df2eb2684cfbb2217ccc85d00272b814595c6605e"
+    }
+  ]
+}

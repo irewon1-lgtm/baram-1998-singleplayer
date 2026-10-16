@@ -1,0 +1,9 @@
+{
+  "schema": "baram.work.p2.native_request/1",
+  "vault_ref": "work/rebuild-p2-inputs-gen003-20261016",
+  "vault_commit": "eee75026c9ac50bb10c9c78dab986170d279ab38",
+  "runtime_zip_path": "p2-work/WORK-P2-GEN003/runtime.zip",
+  "runtime_zip_sha256": "e3468bd90333967e28cdadc35604098a7d2bf8403b73a4ef8435a119bf96e5b9",
+  "execution": "NOT_TRIGGERED; existing environment must authorize the Work branch first",
+  "scope": "Same original P2 inspection; no user save; no production; standard free public Windows runner"
+}

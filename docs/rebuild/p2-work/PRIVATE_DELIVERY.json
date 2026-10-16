@@ -1,0 +1,127 @@
+{
+  "schema": "baram.work.p2.private_delivery/1",
+  "status": "SAVED_PRIVATE_DOWNLOADS_AVAILABLE; APK_WINDOWS_INPUT_BYTES_RETRIEVED_AND_SHA_MATCHED",
+  "generation": "WORK-P2-GEN003",
+  "private_only": true,
+  "public_release": false,
+  "source_commit_checkpoint": "b55c7ed0061301820d15a780f08ddb1d8a4e8832",
+  "files": [
+    {
+      "filename": "BARAM_P2_PRIVATE_INPUT_GEN003.zip",
+      "local_path": "/workspace/scratch/97ae6f841c63/delivery/BARAM_P2_PRIVATE_INPUT_GEN003.zip",
+      "bytes": 7847930,
+      "sha256": "e3468bd90333967e28cdadc35604098a7d2bf8403b73a4ef8435a119bf96e5b9",
+      "download_confirmed": true,
+      "library_file_id": "libfile_d19402f30ab881918f3d82665e5fbd86",
+      "file_id": "file_0000000023b881f68868c9c6bc59dc4e",
+      "version": 0,
+      "download_path_provisioned": true,
+      "user_download_observed": false,
+      "same_account_retrieval_sha256": "e3468bd90333967e28cdadc35604098a7d2bf8403b73a4ef8435a119bf96e5b9",
+      "local_metadata_applied": true
+    },
+    {
+      "filename": "baram-p2-work-Android-GEN003.apk",
+      "local_path": "/workspace/scratch/97ae6f841c63/delivery/baram-p2-work-Android-GEN003.apk",
+      "bytes": 61957314,
+      "sha256": "e319415c905084e1bcde50cc96b30e06be4b5a626117cc27b01546ddd6c0353b",
+      "download_confirmed": true,
+      "library_file_id": "libfile_8f53495029ac8191b1e494cf5ad097cd",
+      "file_id": "file_000000009e7c81f6806735765abb93d0",
+      "version": 0,
+      "download_path_provisioned": true,
+      "user_download_observed": false,
+      "same_account_retrieval_sha256": "e319415c905084e1bcde50cc96b30e06be4b5a626117cc27b01546ddd6c0353b",
+      "local_metadata_applied": true
+    },
+    {
+      "filename": "baram-p2-work-GEN003-demo.mp4",
+      "local_path": "/workspace/scratch/97ae6f841c63/delivery/baram-p2-work-GEN003-demo.mp4",
+      "bytes": 123853,
+      "sha256": "dcf58c2e2d4f63a2d22bf291413f469b570d6a9170fd36ee35d0ffab702dfe42",
+      "download_confirmed": false,
+      "library_file_id": "libfile_cdc203d9335081919e00f6bcd0216839",
+      "file_id": "file_00000000c13c81f683e9290bf2efff55",
+      "version": 0,
+      "download_path_provisioned": true,
+      "user_download_observed": false,
+      "local_metadata_applied": true
+    },
+    {
+      "filename": "baram-p2-work-GEN003-evidence.zip",
+      "local_path": "/workspace/scratch/97ae6f841c63/delivery/baram-p2-work-GEN003-evidence.zip",
+      "bytes": 1501587,
+      "sha256": "b66a266aa82c033233a5d8f2b9d09b2b20013887f4400631910bb4dba72e4785",
+      "download_confirmed": false,
+      "library_file_id": "libfile_28932f06a2248191a8bb6c74de0a3d54",
+      "file_id": "file_00000000d6ac81f5926048a60d093de3",
+      "version": 1,
+      "download_path_provisioned": true,
+      "user_download_observed": false,
+      "local_metadata_applied": true
+    },
+    {
+      "filename": "baram-p2-work-GEN003-results.html",
+      "local_path": "/workspace/scratch/97ae6f841c63/delivery/baram-p2-work-GEN003-results.html",
+      "bytes": 1110498,
+      "sha256": "c87288b5f0b18e41307036b2f8c61d914b44d40a79e925d0fdb199a8a7cec57d",
+      "download_confirmed": false,
+      "library_file_id": "libfile_67922847536c8191b6386b3bcea02681",
+      "file_id": "file_00000000ad7881f58b6b4556862cdf73",
+      "version": 1,
+      "download_path_provisioned": true,
+      "user_download_observed": false,
+      "local_metadata_applied": true
+    },
+    {
+      "filename": "baram-p2-work-Windows-GEN003.zip",
+      "local_path": "/workspace/scratch/97ae6f841c63/delivery/baram-p2-work-Windows-GEN003.zip",
+      "bytes": 37100612,
+      "sha256": "f9a776c7e7722855f718a7cf4a284ae401acb50936ed33d2107f0e1a3ec9a115",
+      "download_confirmed": true,
+      "library_file_id": "libfile_f3ad59c64cfc8191a8ea8d7a85dc564f",
+      "file_id": "file_000000003b2481f68456a62c4d3f26f8",
+      "version": 0,
+      "download_path_provisioned": true,
+      "user_download_observed": false,
+      "same_account_retrieval_sha256": "f9a776c7e7722855f718a7cf4a284ae401acb50936ed33d2107f0e1a3ec9a115",
+      "local_metadata_applied": true
+    }
+  ],
+  "excluded": [
+    "original client archives",
+    "signing/private keys",
+    "cookies",
+    "fonts",
+    "actual user saves",
+    "account DBs",
+    "tokens",
+    "sensitive RTK audit inputs"
+  ],
+  "scope": "Same account private files only; Android auto inspection and Windows inspector, not P3 gameplay/update",
+  "runtime_private_git": {
+    "repository": "irewon1-lgtm/baram-windows-private",
+    "branch": "work/rebuild-p2-inputs-gen003-20261016",
+    "commit": "eee75026c9ac50bb10c9c78dab986170d279ab38",
+    "path": "p2-work/WORK-P2-GEN003/runtime.zip",
+    "sha256": "e3468bd90333967e28cdadc35604098a7d2bf8403b73a4ef8435a119bf96e5b9",
+    "current_connector_binary_read": "BLOCKED_UTF8_DECODER",
+    "persistence": "Git blob stored; direct same-account file restoration will use saved private input artifact"
+  },
+  "library_input_receipt": {
+    "library_file_id": "libfile_d19402f30ab881918f3d82665e5fbd86",
+    "version": 0,
+    "received_sha256": "e3468bd90333967e28cdadc35604098a7d2bf8403b73a4ef8435a119bf96e5b9",
+    "clean_source_commit": "b55c7ed0061301820d15a780f08ddb1d8a4e8832",
+    "execution_checks": 47,
+    "execution_failures": 0,
+    "user_other_tool_receipt": "NOT_RUN"
+  },
+  "platform_limits": {
+    "Linux_GEN003": "47 PASS",
+    "Android_GEN003": "FAIL_NO_REPORT at480 seconds; install only PASS",
+    "Android_GEN002": "46 historical PASS, not promoted",
+    "Windows": "EXPORTED; native execution blocked by environment branch rule",
+    "Galaxy_IME_hardware_listening_auth": "NOT_RUN/BLOCKED"
+  }
+}

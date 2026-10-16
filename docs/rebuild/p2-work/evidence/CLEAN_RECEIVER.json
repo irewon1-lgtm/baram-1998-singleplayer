@@ -1,0 +1,19 @@
+{
+  "schema": "baram.work.p2.clean-receiver/1",
+  "source_commit": "b55c7ed0061301820d15a780f08ddb1d8a4e8832",
+  "code_restored": "Fresh public clone of Work branch",
+  "asset_restore": {
+    "status": "PASS_RESTORED_BYTES",
+    "generation": "WORK-P2-GEN003",
+    "files": 2323,
+    "runtime_manifest_sha256": "ddf88ca05f63ab67c73f12f474005310eed39b31996f8d6c70b9015703922973",
+    "execution": "NOT_RUN_BY_RESTORER"
+  },
+  "runtime_execution": "Godot4.6.3 headless actual original consumer; GUI evidence in separate Linux receipt",
+  "checks": 47,
+  "failures": 0,
+  "save_checksum_match": true,
+  "receiver_scope": "Same service/account; not a different user/tool receiving proof",
+  "archive_read_source": "Successfully saved private Library input was re-materialized by exact ID and SHA into a new directory; 47 actual consumer checks passed",
+  "library_file_id": "libfile_d19402f30ab881918f3d82665e5fbd86"
+}

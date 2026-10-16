@@ -126,7 +126,10 @@
     "path": "p2-work/WORK-P2-GEN003/runtime.zip",
     "sha256": "e3468bd90333967e28cdadc35604098a7d2bf8403b73a4ef8435a119bf96e5b9",
     "bytes": 7847930,
-    "github_connector_binary_read": "BLOCKED_UTF8_DECODER; private authenticated Git checkout is possible in allowed environments; private Library artifact route will be recorded after save"
+    "github_connector_binary_read": "BLOCKED_UTF8_DECODER; private authenticated Git checkout is possible in allowed environments; private Library artifact route will be recorded after save",
+    "library_file_id": "libfile_d19402f30ab881918f3d82665e5fbd86",
+    "library_version": 0,
+    "actual_library_receive": "PASS_EXACT_BYTES_RESTORED_AND_CLEAN_SOURCE47_EXECUTED"
   },
   "full_original42_gate": "BLOCKED_NOT_FULLY_VERIFIED",
   "sensitive_audit2": "Not in runtime dependency closure; not newly retrieved or executed",

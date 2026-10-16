@@ -1,0 +1,24 @@
+{
+  "schema": "baram.work.p2.android_prior/1",
+  "generation": "WORK-P2-GEN002",
+  "status": "PASS_HISTORICAL_SCOPE_ONLY",
+  "checks": 46,
+  "failures": 0,
+  "original_id_save": {
+    "actual_user_save": "NOT_OPENED",
+    "authentication": "NOT_RUN",
+    "checksum": "e0b056971ea04b47b99890a799aa41b9eeb1d72e337bd6ee6597b5b768f2f8c2",
+    "item_meanings": "UNKNOWN; asset IDs in controlled fixture",
+    "native_ids": [
+      "kr125:map-1.0",
+      "kr491:sword-0",
+      "kr491:body-0"
+    ],
+    "path_kind": "NEW_ISOLATED_TEST_FIXTURE",
+    "revision": 2.0,
+    "schema": "baram.p2.synthetic-save",
+    "status": "OK"
+  },
+  "final_GEN003": "FAIL_NO_REPORT; not promoted from this earlier result",
+  "evidence_report_sha256": "edb2fdb8b9b56bb37b2ea1872cd525c33dad14c6e835619d3bf64d7ece6ab8b0"
+}

@@ -2,18 +2,18 @@
   "schema": "baram.work.p2.state/1",
   "task_id": "BARAM_REBUILD_WORK_P2_TAKEOVER_001",
   "branch": "work/rebuild-runtime-20261016",
-  "current_step": "FINAL_ANDROID_EXECUTION_AND_PRIVATE_DELIVERY",
+  "current_step": "P2_CHECKPOINT_SAVED_NO_BACKGROUND_WORK",
   "G0": "BLOCKED_FULL42_INPUTS",
   "P2": {
     "P2-01": "PARTIAL_KR125_MAP_RENDER3_STATIC_COLLISION_RULES_EXECUTED_EXITS_RETURN_UNRESOLVED",
     "P2-02": "PARTIAL_KR491_ORIGINAL_COMPOSITION_MOTION_VISUALLY_INFERRED_MASK3_FAIL",
     "P2-03": "PARTIAL_EFFECT0_FRAME_PREVIEW_WAV001_MIX_CAPTURE_FULL_COMMANDS_BLOCKED",
     "P2-04": "PARTIAL_VALID_ORIGINAL_CREATION_BITMAPS_NATIVE_IME_NOT_RUN",
-    "P2-05": "PARTIAL_LINUX47_PASS_GEN002_ANDROID46_PASS_GEN003_ANDROID_PENDING_WINDOWS_NATIVE_BLOCKED_BRANCH_RULE",
+    "P2-05": "PARTIAL_LINUX47_PASS_WINDOWS_EXPORT_ONLY_NATIVE_BLOCKED_ANDROID_GEN003_FAIL_NO_REPORT_GEN00246_HISTORICAL_PASS",
     "P2-06": "BLOCKED_NO_FREE_TEST_AUTH_ENDPOINT"
   },
-  "P3": "NOT_STARTED_NOT_AUTHORIZED",
-  "resume": "Do not redo source acquisition or Linux47; inspect android-gen003-final receipt, then finish artifact saves and remote receipt",
+  "P3": "BLOCKED_NOT_STARTED_NOT_AUTHORIZED",
+  "resume": "Use same Work owner. Read RESULTS/PRIVATE_DELIVERY and actual remote HEAD first. Diagnose GEN003 Android FAIL_NO_REPORT with full process/ActivityManager/graphics logs before any retry; native Windows requires authorized branch in existing test environment. Do not redo acquisition/unchanged tests.",
   "owned_paths": [
     "rebuild/p2/**",
     "tools/rebuild/p2/**",
@@ -45,8 +45,10 @@
       "expected": "same project includes source IDs and offline saves; actual Windows/Android distinguished from Linux and build-only"
     }
   ],
-  "status": "PARTIAL_ORIGINAL_ASSETS_CONNECTED",
+  "status": "PARTIAL_P2_RESULTS_AND_PRIVATE_FILES_SAVED",
   "input_generation": "WORK-P2-GEN003",
-  "source_snapshot_note": "GEN003 app source is frozen; Linux47 PASS; Windows/Android exports PASS. Final Android actual run pending after isolated stale AVD-lock diagnosis.",
-  "next_resume": "Read this state and platform receipts; run only final current-source platform checks; finish source delivery and P3 decision. No P0/P1 repeat."
+  "source_snapshot_note": "GEN003 actual app source unchanged between Linux47 PASS and both exports; Android final execution report missing at480 seconds, install only PASS; cause unknown.",
+  "next_resume": "Exact inputs and restore commands are in INPUT_MANIFEST/RESTORE.md; same-account Library input restore + clean source47 reproduced. P3 remains BLOCKED and unauthorized.",
+  "source_code_frozen_sha": "b55c7ed0061301820d15a780f08ddb1d8a4e8832",
+  "processes": "Own emulator/ADB/X11/audio test processes stopped; no scheduled/background work"
 }

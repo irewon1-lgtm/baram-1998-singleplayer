@@ -1,0 +1,48 @@
+{
+  "schema": "baram.work.p2.android-gen003-scope/1",
+  "generation": "WORK-P2-GEN003",
+  "result": "FAIL_NO_REPORT",
+  "apk_sha256": "e319415c905084e1bcde50cc96b30e06be4b5a626117cc27b01546ddd6c0353b",
+  "platform": "API29 x86_64 software emulator; TCG swangle; no hardware acceleration",
+  "package": "com.irewon.baram.p2work20261016",
+  "boot_seconds": 119.37,
+  "install": "PASS_INSTALL_ONLY",
+  "launch_command": "EXIT_0_WITHOUT_APP_REPORT",
+  "app_report": "NOT_RECEIVED_WITHIN_EXISTING_480_SECOND_LIMIT",
+  "checks_executed_observed": 0,
+  "actual_passes_observed": 0,
+  "screenshots_received": 0,
+  "audio_capture_received": false,
+  "save_fixture_received": false,
+  "original_id_save_checksum": "NOT_RECEIVED",
+  "root_cause": "UNKNOWN; Godot/AndroidRuntime filtered log contains no Godot lines, no exception stack; app files directory remained empty",
+  "current_screen_capture": "NOT_CAPTURED; no generated app screenshots in isolated files",
+  "cleanup": {
+    "own_emulator_and_adb_live_pids": [],
+    "other_processes_killed": false
+  },
+  "source_changes": false,
+  "retries_after_final_attempt": 0,
+  "prior_generation": "GEN002 historical 46 PASS remains separate reuse evidence; not current GEN003 PASS",
+  "real_Galaxy": "NOT_RUN",
+  "actual_IME": "NOT_RUN",
+  "physical_audio_listening": "NOT_RUN",
+  "actual_user_save": "NOT_OPENED",
+  "evidence": {
+    "run_receipt": "/workspace/scratch/97ae6f841c63/private_evidence/android-gen003-final/RUN_RECEIPT.json",
+    "boot_receipt": "/workspace/scratch/97ae6f841c63/private_evidence/android-gen003-final-boot/BOOT_RECEIPT.json",
+    "logcat": "/workspace/scratch/97ae6f841c63/private_evidence/android-gen003-final/logcat.log",
+    "final_isolated_files_tar": {
+      "path": "/workspace/scratch/97ae6f841c63/private_evidence/android-gen003-final-boot/final-isolated-test-files.tar",
+      "bytes": 1536,
+      "sha256": "e7b253d95f15f9f6efa501fe53c9f58476cf02d226f385da05f0511db40239d5",
+      "actual_user_save": "NOT_OPENED"
+    },
+    "prior_isolated_files_tar": {
+      "path": "/workspace/scratch/97ae6f841c63/private_evidence/android-gen003-final-boot/prior-isolated-test-files.tar",
+      "bytes": 2691072,
+      "sha256": "f8005c4cba5c53d5c785e85f21a5c4551268dd220e7ee3511df43c00619072f9",
+      "actual_user_save": "NOT_OPENED"
+    }
+  }
+}
