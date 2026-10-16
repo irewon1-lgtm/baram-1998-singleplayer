@@ -1,0 +1,415 @@
+{
+  "request_id": "CODEX-P2-REQ-001",
+  "observed_codex_branch": "codex/rebuild-p2-20261016",
+  "observed_head": "5e522f4ad2e534c24c04ebc8e6e60e11adf0dfc9",
+  "observed_utc": "2026-10-16T02:20:43.167633+00:00",
+  "request_status": "ACKNOWLEDGED_BY_WORK; BYTE_TRANSFER_TO_CODEX_BLOCKED",
+  "request_scope": "Existing exact corev1 +3parts +originals42+B001; B002 is new optional delta",
+  "verified_existing_delivery_files": [
+    {
+      "file_name": "BARAM_P1_5_handoff_20261016.zip",
+      "bytes": 28665916,
+      "sha256": "f9fa57ea09f2755d5038cb7208258e3c5b44f6dddea77ebf66dfd6129ef8233c",
+      "library_file_id": "libfile_5625c3d22e548191bb3c06296c42bf6c",
+      "file_id": "file_00000000df988209b8efa7d8f5bb576b",
+      "library_path": "/BARAM_P1_5_handoff_20261016.zip",
+      "version": 1,
+      "storage_result": "SAVED_REPLACEMENT",
+      "local_metadata_applied": true,
+      "actual_local_path": "/workspace/scratch/68a0f3ea5a03/delivery/final_set/BARAM_P1_5_handoff_20261016.zip",
+      "actual_byte_status": "MATCHED_NOW_FOR_TRANSFER_REQUEST"
+    },
+    {
+      "file_name": "BARAM_P1_5_reference_sources.zip.part001",
+      "bytes": 41943040,
+      "sha256": "b7bb487c336c185ef2256539a490d85b77519a78cfb19cd08ae536c8eba655cb",
+      "library_file_id": "libfile_036902e5f5d88191b4d9080d1646855c",
+      "file_id": "file_00000000db40820d921c884a274ee119",
+      "library_path": "/BARAM_P1_5_reference_sources.zip.part001",
+      "version": 0,
+      "storage_result": "REUSED_EXISTING_SAVED_EXACT_BYTES",
+      "actual_local_path": "/workspace/scratch/68a0f3ea5a03/delivery/final_set/BARAM_P1_5_reference_sources.zip.part001",
+      "actual_byte_status": "MATCHED_NOW_FOR_TRANSFER_REQUEST"
+    },
+    {
+      "file_name": "BARAM_P1_5_reference_sources.zip.part002",
+      "bytes": 41943040,
+      "sha256": "79ad49d06b62f8d40c0141a34346c8f8d2502a691cdd5cf58bb42fb18611e941",
+      "library_file_id": "libfile_9dde919394388191a9c1943fb5908035",
+      "file_id": "file_000000002f5482309a19ffe94183ab69",
+      "library_path": "/BARAM_P1_5_reference_sources.zip.part002",
+      "version": 0,
+      "storage_result": "REUSED_EXISTING_SAVED_EXACT_BYTES",
+      "actual_local_path": "/workspace/scratch/68a0f3ea5a03/delivery/final_set/BARAM_P1_5_reference_sources.zip.part002",
+      "actual_byte_status": "MATCHED_NOW_FOR_TRANSFER_REQUEST"
+    },
+    {
+      "file_name": "BARAM_P1_5_reference_sources.zip.part003",
+      "bytes": 40576768,
+      "sha256": "67c0a3a9469bd2bf905e8cd6d83f595c1f2bd8dee36e2545d8279959bacae2c9",
+      "library_file_id": "libfile_6a18240b68c88191bf3df12b49e58025",
+      "file_id": "file_00000000258081f8b713c40d67180aa4",
+      "library_path": "/BARAM_P1_5_reference_sources.zip.part003",
+      "version": 0,
+      "storage_result": "REUSED_EXISTING_SAVED_EXACT_BYTES",
+      "actual_local_path": "/workspace/scratch/68a0f3ea5a03/delivery/final_set/BARAM_P1_5_reference_sources.zip.part003",
+      "actual_byte_status": "MATCHED_NOW_FOR_TRANSFER_REQUEST"
+    }
+  ],
+  "new_batches": [
+    {
+      "batch": "B001",
+      "files": 7,
+      "candidates": 5,
+      "zip_bytes": 19352,
+      "zip_sha256": "b61c169c899853c0a90849f81174d76c8503e6827ef3244ca489aff2b721e6af",
+      "zip_path": "/workspace/scratch/3624c67f59e8/delivery/BARAM_WORK_SOURCE_DELTA_B001_20261016.zip",
+      "guard_cases": 5
+    },
+    {
+      "batch": "B002",
+      "files": 28,
+      "candidates": 154,
+      "zip_bytes": 613492,
+      "zip_sha256": "dc87687e7260ee4f0c3777bbb46559a67be64f7050195baf6650a29d1c068aee",
+      "zip_path": "/workspace/scratch/3624c67f59e8/delivery/BARAM_WORK_SOURCE_DELTA_B002_20261016.zip",
+      "guard_cases": 5
+    }
+  ],
+  "originals": [
+    {
+      "source_id": "LIB-001",
+      "library_file_id": "libfile_ffcf125d9e208191861c69d9171cc108",
+      "library_path": "/7476.jpg",
+      "sha256": "1b268f01a95883fef923d8b0dcfc0d0d3bdba22a3706da14953213a96c2adca7",
+      "size_bytes": 341517
+    },
+    {
+      "source_id": "LIB-002",
+      "library_file_id": "libfile_fcc7a55c4fd8819182cd4dd9badea24f",
+      "library_path": "/7478.jpg",
+      "sha256": "9d7df72b4ada338fc6233e85c15647549f9fe14b657d6d3e0a0035cbb395d170",
+      "size_bytes": 385438
+    },
+    {
+      "source_id": "LIB-003",
+      "library_file_id": "libfile_d7369f0eaba08191aebce13d6d658af1",
+      "library_path": "/7480.jpg",
+      "sha256": "a6b92fcdcc5a3a1b91641dd09bc2ee6b86875f48e730645931ad9db475b948d6",
+      "size_bytes": 298660
+    },
+    {
+      "source_id": "LIB-004",
+      "library_file_id": "libfile_e5e13eb7a9648191aac3e9a307883bae",
+      "library_path": "/Baram1998Assets/BARAM.PAL",
+      "sha256": "34bee372e754fc423099193587ae265b731d7f7ff0f083a87cb564179aeb266a",
+      "size_bytes": 768
+    },
+    {
+      "source_id": "LIB-005",
+      "library_file_id": "libfile_8a6db54007508191b9f51717a0de566e",
+      "library_path": "/Baram1998Assets/Baram_Map_Editor.7z",
+      "sha256": "4b63aaff6aea18c7b038db715e753468f9a0202e0d3e692dfd7f0c3f341c6e5a",
+      "size_bytes": 1817308
+    },
+    {
+      "source_id": "LIB-006",
+      "library_file_id": "libfile_6266ebd0a8d8819182b17729f14c8f8a",
+      "library_path": "/Baram1998Assets/CODEX_ASSET_INTAKE_20261014.md",
+      "sha256": "338f0b1e6519901141925be2b92c3423ad72e741a0aed3ea91ec889c04e855ea",
+      "size_bytes": 6059
+    },
+    {
+      "source_id": "LIB-007",
+      "library_file_id": "libfile_f4a4ccbb5eec81919f96ecd4a2dac2a8",
+      "library_path": "/Baram1998Assets/EPFTool.exe",
+      "sha256": "d58303a3129547505daf7006e7dc58cc27bcfdad33ee5137c1350ef172a02221",
+      "size_bytes": 385024
+    },
+    {
+      "source_id": "LIB-008",
+      "library_file_id": "libfile_5d426fbc78688191a0e20caafef79f36",
+      "library_path": "/Baram1998Assets/Judge_Map_Editor.7z",
+      "sha256": "7df59393d9aa077c79e0d6f0b40b89d7b56f0ca7edf9f86f9823dc94aa630646",
+      "size_bytes": 2577176
+    },
+    {
+      "source_id": "LIB-009",
+      "library_file_id": "libfile_135f7d90220c81919353822363ea2395",
+      "library_path": "/Baram1998Assets/KR_1.25_winbaram.zip",
+      "sha256": "62642ca3ef492f58947abb2c17cbae5b5a60d5f96fd146704b7d99d1aad3bcef",
+      "size_bytes": 2207781
+    },
+    {
+      "source_id": "LIB-010",
+      "library_file_id": "libfile_8c9b5125c46c8191b3e21428f6b2b1a4",
+      "library_path": "/Baram1998Assets/KR_4.91_491v.zip",
+      "sha256": "f11e448db6478b1aca3a7dd47403bdef00cf873b203b14629b0215632190532f",
+      "size_bytes": 26556803
+    },
+    {
+      "source_id": "LIB-011",
+      "library_file_id": "libfile_8927e0894a5c8191aa95e91b57fed064",
+      "library_path": "/Baram1998Assets/NA_4.03_NexusTK.7z",
+      "sha256": "db89e2b1ac3dfd3f5668fd7746478507b370ee627b4321d7dec441620ce96b53",
+      "size_bytes": 8517463
+    },
+    {
+      "source_id": "LIB-012",
+      "library_file_id": "libfile_2574d6feb3b08191bd621361ed9d79d1",
+      "library_path": "/Baram1998Assets/NA_4.03_french.exe",
+      "sha256": "c8820ac5af784fa6aadcdc86198c84f07ac4e73af1c74ece1152a1c9bd52cd4b",
+      "size_bytes": 6617137
+    },
+    {
+      "source_id": "LIB-013",
+      "library_file_id": "libfile_9c0497c882988191b9e9bc4a6c9f0840",
+      "library_path": "/Baram1998Assets/NA_4.66_NexusTK.7z",
+      "sha256": "54ca6b8892a2b44ddfaadebc92e1886a770ac07a82b60ceacbfd3e2e44e5774a",
+      "size_bytes": 11850016
+    },
+    {
+      "source_id": "LIB-014",
+      "library_file_id": "libfile_0ef3b7e0828c8191a637c4061889b72d",
+      "library_path": "/Baram1998Assets/NA_4.95_Nexus495.exe",
+      "sha256": "486f4684b76658d92eaf84aab77fe9be9489ea01de8264fe90d0040466620aaa",
+      "size_bytes": 24658356
+    },
+    {
+      "source_id": "LIB-015",
+      "library_file_id": "libfile_763dcd5bf7bc8191b8a7bf555403a1b4",
+      "library_path": "/Baram1998Assets/NA_5.0_or_older_clients_ALL.7z",
+      "sha256": "d41b644303581f7dfc05ef627d99820f8ccce3152637c9be533f0465dbbcb885",
+      "size_bytes": 218174017
+    },
+    {
+      "source_id": "LIB-016",
+      "library_file_id": "libfile_0b1736e534948191b5cee32ceffb5b5c",
+      "library_path": "/Baram1998Assets/PRIVATE_ASSET_INVENTORY_20261014.json",
+      "sha256": "4bc4119feee541d60a6d46f1930d3e6dafa0ba7b104264c5aa5db83fc5d725b5",
+      "size_bytes": 5258
+    },
+    {
+      "source_id": "LIB-017",
+      "library_file_id": "libfile_03062c0c1d808191bd8e03d73a9df68e",
+      "library_path": "/Baram1998Assets/baram_Codex_tile_handoff_PRIVATE.zip",
+      "sha256": "f36929c43d775058678a708a1da7a140ea13e0e9243d5f4fc2b5e304fa54500b",
+      "size_bytes": 7017376
+    },
+    {
+      "source_id": "LIB-018",
+      "library_file_id": "libfile_60297b3e1ec081918c1dd21d413fc316",
+      "library_path": "/Baram1998Assets/baram_tile_atlases_PRIVATE.zip",
+      "sha256": "18581f104aa725eb615a205d428a10b46bd670b956876b99fa92ce32ebdc1514",
+      "size_bytes": 7008649
+    },
+    {
+      "source_id": "LIB-019",
+      "library_file_id": "libfile_de62e418824481919c06e57812591af7",
+      "library_path": "/Baram1998Assets/godot_private_tile_atlas.gd",
+      "sha256": "95d55d99f2267b19bd39df637f231461678b33714520aaa7dca51fc982daa16e",
+      "size_bytes": 2889
+    },
+    {
+      "source_id": "LIB-020",
+      "library_file_id": "libfile_de86cb44b3508191b2e8df4db946613b",
+      "library_path": "/Baram1998Assets/import_private_tile_atlases.py",
+      "sha256": "114c9d3716262cc0df3437e414b206643413ab35fcb6da0dc52bc20ca66e272d",
+      "size_bytes": 5452
+    },
+    {
+      "source_id": "LIB-021",
+      "library_file_id": "libfile_fb88347ce2708191ab828bf3690ce11e",
+      "library_path": "/Baram1998Assets/mithiamapeditor-master.zip",
+      "sha256": "d49ca6f1ee839d8bf3146b1455bbb07f9642fcc945c914d08106beea40bd54b1",
+      "size_bytes": 119648
+    },
+    {
+      "source_id": "LIB-022",
+      "library_file_id": "libfile_4b9d859bc728819194cd995746777fbf",
+      "library_path": "/baram-1998-github-ready.zip",
+      "sha256": "c1b682354f15f4c85010f42e2dde8e776076b751aa3bf9ac888d22f15bec0b44",
+      "size_bytes": 37216
+    },
+    {
+      "source_id": "LIB-023",
+      "library_file_id": "libfile_07228e0f7f8881918558230226058887",
+      "library_path": "/baram-PC-Android-progress-20261015.md",
+      "sha256": "edced326043017a5aca29e7bc6d5555262b6fe37fe08289dade42caafee7ad2f",
+      "size_bytes": 15439
+    },
+    {
+      "source_id": "LIB-024",
+      "library_file_id": "libfile_2f151520f2188191bee6c27168a647c9",
+      "library_path": "/baram-checksums-05bde481.json",
+      "sha256": "04fefccedeb686563b91b951a3b74b547ca5da3cf11b7fe1834ba34956de243f",
+      "size_bytes": 1487
+    },
+    {
+      "source_id": "LIB-025",
+      "library_file_id": "libfile_28226864442881919a7252aef418cfdb",
+      "library_path": "/baram-evidence-05bde481.zip",
+      "sha256": "c95648025c435a36636f1d4666021a2e35a8d992c81bb1348fe51aebc2ed623d",
+      "size_bytes": 10584410
+    },
+    {
+      "source_id": "LIB-026",
+      "library_file_id": "libfile_878b995aaef88191a87647cea02e04a8",
+      "library_path": "/baram-work-fix-package-20261015.zip",
+      "sha256": "1d11618f7cd7c38ab7165721c4c1305d094fffb2c9b92496c3ee55e78cda61de",
+      "size_bytes": 1017612
+    },
+    {
+      "source_id": "LIB-027",
+      "library_file_id": "libfile_e5d5799da018819188f03aa471d30b44",
+      "library_path": "/baram_1998_4_0_research_v1.zip",
+      "sha256": "f35a21cb9132bc88b857040fe18b4d8c90e284012d143ca2c1d070114bfe17ba",
+      "size_bytes": 8616
+    },
+    {
+      "source_id": "LIB-028",
+      "library_file_id": "libfile_3943ff5574a88191ae019c710189fbed",
+      "library_path": "/baram_windows_recovery_results_20261015.md",
+      "sha256": "1ad24e63801e8f69d97c4a17bc5bd377529b2e884c56dfe9ad061327dc01aba5",
+      "size_bytes": 10341
+    },
+    {
+      "source_id": "LIB-029",
+      "library_file_id": "libfile_e7fde4f317dc81918d248e9fc8ca1d83",
+      "library_path": "/어플/baram-ui-map-audit-20261015.json",
+      "sha256": "34dc80b1b9550b53046e498e7bae5e879172f4f05eb860f1231175f4025a85a8",
+      "size_bytes": 49869
+    },
+    {
+      "source_id": "LIB-030",
+      "library_file_id": "libfile_87168d390ba88191bb248670c350123b",
+      "library_path": "/어플/baram-ui-map-audit-20261015.md",
+      "sha256": "f63aa67ac468c898eb647790f0653fe88ad60a7fbeaecd6201918412d82c9608",
+      "size_bytes": 13221
+    },
+    {
+      "source_id": "LIB-031",
+      "library_file_id": "libfile_bb18c9ffce64819197dddb3ed015f9f6",
+      "library_path": "/어플/baram-work-fix-instructions-20261015.md",
+      "sha256": "04e78ea5784eef0d63b6d2a7a7d569483644af5ddff0b0063db836e611e67658",
+      "size_bytes": 14532
+    },
+    {
+      "source_id": "LIB-032",
+      "library_file_id": "libfile_59dedc86ce30819182c9f9b1a4c1a4c3",
+      "library_path": "/어플/baram_1997_resources_PRIVATE.zip",
+      "sha256": "8d68178fd64c451d910ace0b702abeb9a19998113f88489c169c1176bd3703ea",
+      "size_bytes": 1933116
+    },
+    {
+      "source_id": "LIB-033",
+      "library_file_id": "libfile_9afa4d2c562c8191ad95a481b9ef7e87",
+      "library_path": "/어플/baram_1997_sprite_atlases_PRIVATE.zip",
+      "sha256": "1e3bd29712d4ad7e4dd5f2554d80757b65692e31b1846820e26cd7156110c3dd",
+      "size_bytes": 2407678
+    },
+    {
+      "source_id": "LIB-034",
+      "library_file_id": "libfile_322759c82b4c81919a11a960f427a30c",
+      "library_path": "/어플/baram_restoration_ASSET_HANDOFF_PRIVATE.zip",
+      "sha256": "a13dac2a107feefeec256c620ff003cc22b0f40fefb8a619c0276c316dd62dde",
+      "size_bytes": 11687627
+    },
+    {
+      "source_id": "LIB-035",
+      "library_file_id": "libfile_67f86e2645788191901c3e04258e1f51",
+      "library_path": "/어플/baram_source_intake_20261014.md",
+      "sha256": "36faf7c7aec5a647af29f815fac4c5a81a42703f226443744104346a56cbfd0c",
+      "size_bytes": 5156
+    },
+    {
+      "source_id": "LIB-036",
+      "library_file_id": "libfile_e8323a0756908191a6b0862fab1291c7",
+      "library_path": "/어플/work_assets_shared_PRIVATE_final_20261014.zip",
+      "sha256": "3bbcd5d69565bbe0d3bbe34149c59061dc3d1c5f3d27533e50a336cefd3e207c",
+      "size_bytes": 45747991
+    },
+    {
+      "source_id": "LIB-037",
+      "library_file_id": "libfile_355d5fc3bc70819183e497df9f3e9f9b",
+      "library_path": "/어플/work_regions_PRIVATE_expansion_002_20261014.zip",
+      "sha256": "0759c95a578c5e25cab3de55b31e254bd1387514de5ce2a191db69699d00956f",
+      "size_bytes": 474654
+    },
+    {
+      "source_id": "LIB-038",
+      "library_file_id": "libfile_12659d1a1ab08191bb34bb78ffe68a0d",
+      "library_path": "/어플/work_regions_PRIVATE_final_20261014.zip",
+      "sha256": "77bb4290061d5c41b3552623d32c4c795de438d4dcd895cf59cb2c7cefb06b41",
+      "size_bytes": 219203
+    },
+    {
+      "source_id": "LIB-039",
+      "library_file_id": "libfile_17b5ba8d2a408191b8db6e6cf91450fe",
+      "library_path": "/어플/03_치명결함_필수수정과_회귀시험.md",
+      "sha256": "c5589eda69919f79ef331000531bef9b61eb9aaaa7596957f164f79dc69356db",
+      "size_bytes": 16619
+    },
+    {
+      "source_id": "LIB-040",
+      "library_file_id": "libfile_bd12aecbf084819182d18b3e717239da",
+      "library_path": "/어플/work_ui_recovered_PRIVATE_002_20261014.zip",
+      "sha256": "81ed6c992edbb18ef95f0673aeeec2932cf7c53883127546820af6529ec25c20",
+      "size_bytes": 3686257
+    },
+    {
+      "source_id": "LIB-041",
+      "library_file_id": "libfile_2b06e1dac1bc8191abe60295622901ff",
+      "library_path": "/어플/바람의나라_통합복원_분석과실행지시서_20261015.zip",
+      "sha256": "c98071d95024c36e037dda48ab96539d4a1b0052ba0fc62600cbb55e7baf727d",
+      "size_bytes": 44261
+    },
+    {
+      "source_id": "LIB-042",
+      "library_file_id": "libfile_b86d9a5a913c8191b11b4b51ad2af702",
+      "library_path": "/어플/바람의나라_통합복원_치명결함반영_v2_20261015.zip",
+      "sha256": "5376bdcf1024b4e6b49531ef13dd681db2e2fc62baff174a9e3a4fa02534c52d",
+      "size_bytes": 53115
+    }
+  ],
+  "B001_receipt": {
+    "task_id": "BARAM_REBUILD_CODEX_P2_001",
+    "batch_id": "B001",
+    "work_commit": "2eb791f20335a8ccda2a597897a73e8349b63274",
+    "status": "DEFERRED",
+    "metadata_result": "PASS",
+    "original_private_zip_received": false,
+    "zip_identity": {
+      "bytes": 19352,
+      "sha256": "b61c169c899853c0a90849f81174d76c8503e6827ef3244ca489aff2b721e6af",
+      "library_file_id": "libfile_9f81524ef6708191b09b4150a8ac908e",
+      "file_id": "file_00000000b4808206a03cce4ddad80bc4",
+      "version": 0
+    },
+    "accepted_fields": [],
+    "exercised_fields": [],
+    "reason": [
+      "Original private batch ZIP is not available at an explicit local path; Library ID is not bytes.",
+      "Original selected record bytes are required to validate the reference closure.",
+      "Catalog/prior-report hash declarations match, but required old input bytes are not verified.",
+      "Frozen dependency private bytes/G0 scope are not verified in this receiver."
+    ],
+    "evidence": "WORK_BATCH_REVIEW.json",
+    "recorded_at_utc": "2026-10-16T02:13:02.887517+00:00"
+  },
+  "B002_receipt": "UNACKNOWLEDGED",
+  "transport_findings": [
+    "Codex actual request reports no Library connector or shared file mount",
+    "Work Library materialization returns only Work-local workspace_path, not a Codex mount",
+    "Only available GitHub write tools take UTF8 text/tree entries; binary private delivery is not exposed",
+    "Existing baram-windows-private is private and contains older runtime/diagnostic/signing artifacts; no exact currentP1.5 core/parts were found. Signing content was not opened or changed.",
+    "No original bytes uploaded to public Git and no oldZIP repackaged/overwritten"
+  ],
+  "completion_not_claimed": [
+    "Codex byte receipt",
+    "G0",
+    "P2",
+    "Accepted or exercised fields"
+  ],
+  "next_action": "Provide these existing byte-identical files through Codex explicit attachment/mount; for each needed original use exact INPUT_MANIFEST ID/hash. Work must not perform receiverG0 or pretend Library IDs equal bytes."
+}

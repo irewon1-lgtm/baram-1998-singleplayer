@@ -17,12 +17,15 @@
   "remote_codex_records": {
     "checked_utc": "2026-10-16T01:53:42.061036+00:00",
     "scope": "All16remote branches; planning tree135entries; codex/game-core HEADac08964c dated2026-10-15",
-    "requests": [],
-    "receipt": "UNACKNOWLEDGED",
+    "requests": [
+      "CODEX-P2-REQ-001"
+    ],
+    "receipt": "B001_DEFERRED_METADATA_ONLY; B002_UNACKNOWLEDGED",
     "p2_branch": "codex/rebuild-p2-20261016",
-    "head_observed": "81976dcc38d75312375710358a02cf0729e6880d",
+    "head_observed": "5e522f4ad2e534c24c04ebc8e6e60e11adf0dfc9",
     "observation": "CODEX_OBSERVATION.json",
-    "note": "Codex BASELINE records Work B001 head but WORK_BATCH_RECEIPTS is empty; seeing a branch is not adoption."
+    "note": "Read actual Codex request/receipt; accepted_fields/exercised_fields empty. No shared mount/Library connector in receiver.",
+    "response": "CODEX_REQUEST_RESPONSE.json"
   },
   "read_only_root": "/workspace/scratch/3624c67f59e8/work-source-delta/docs/rebuild",
   "allowed_prefix": "content-work/rebuild-source-delta-20261016/",
@@ -45,7 +48,7 @@
     {
       "step": "publication",
       "expected": "Dedicated branch-only diff, actual saved ZIP identity and exact remote requery",
-      "status": "IN_PROGRESS"
+      "status": "PASS_FOR_CONTENT_COMMIT_A74F4DD; RECEIPT_UPDATE_PENDING"
     }
   ],
   "completed": [
@@ -54,9 +57,7 @@
     "B002 immutable source/meaning delta saved; independent audit574checks0errors",
     "New Work-only reference guards reject6invalid reference cases; common tools unchanged"
   ],
-  "in_progress": [
-    "Final Work-only remote publication and exact blob verification"
-  ],
+  "in_progress": [],
   "published_batches": [
     {
       "batch": "B001",
@@ -69,7 +70,7 @@
       "library_file_id": "libfile_9f81524ef6708191b09b4150a8ac908e",
       "file_id": "file_00000000b4808206a03cce4ddad80bc4",
       "version": 0,
-      "receipt": "UNACKNOWLEDGED"
+      "receipt": "DEFERRED_METADATA_ONLY"
     },
     {
       "batch": "B002",
@@ -86,8 +87,8 @@
     }
   ],
   "runtime_tests": "NOT_RUN",
-  "next_action": "Finish remote publication check; after resume inspect actual Codex request/receipt ledgers before new research. Continue exact unresolved source leads in gaps_delta, not full P1.5.",
-  "status": "PARTIAL_SOURCE_DELTA_SAVED_AWAITING_FINAL_REMOTE_PUBLICATION_CHECK",
+  "next_action": "Highestpriority CODEX-P2-REQ-001: receive exact4existingdelivery files+needed frozen originals via explicitCodexattachment/mount; then CodexG0 only. Workresponse/indexprepared, actualtransferBLOCKED.",
+  "status": "PARTIAL_SOURCE_DELTA_SAVED_RECEIVER_BYTE_ACCESS_BLOCKED",
   "new_evidence": {
     "candidate_rows": 159,
     "new_original_source_byte_files": 13,
@@ -99,5 +100,12 @@
     "reconstruction_npc_location_hypotheses": 4,
     "frozen_NA_reference_failures": 154
   },
-  "updated_utc": "2026-10-16T02:13:44.802988+00:00"
+  "updated_utc": "2026-10-16T02:20:43.167633+00:00",
+  "last_verified_remote_publication": {
+    "content_commit": "a74f4dd5322c67ec5ab5ee2b49d9f08299846f49",
+    "tree": "97edf197beebe8be51e9ba9b030b8a9e6a082451",
+    "public_files": 60,
+    "mismatches": [],
+    "outside_allowed": []
+  }
 }
