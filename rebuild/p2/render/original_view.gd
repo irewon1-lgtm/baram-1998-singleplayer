@@ -8,11 +8,12 @@ var zoom := 1.0
 var last_drawn: Array[String] = []
 var last_layer_metadata: Array = []
 var draw_errors: Array[String] = []
+var background_color:=Color("171d21")
 
 func _ready() -> void:
 	texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	clip_contents = true
-	custom_minimum_size = Vector2(380, 380)
+	if custom_minimum_size==Vector2.ZERO: custom_minimum_size=Vector2(380,380)
 	resized.connect(queue_redraw)
 
 func configure(next_layers: Array, extent: Vector2, center: Vector2, scale_factor: float = 1.0) -> void:
@@ -23,7 +24,7 @@ func configure(next_layers: Array, extent: Vector2, center: Vector2, scale_facto
 	queue_redraw()
 
 func _draw() -> void:
-	draw_rect(Rect2(Vector2.ZERO, size), Color("171d21"))
+	draw_rect(Rect2(Vector2.ZERO, size),background_color)
 	last_drawn.clear()
 	last_layer_metadata.clear()
 	draw_errors.clear()
@@ -48,6 +49,8 @@ func _draw() -> void:
 		if tex == null:
 			continue
 		var s := layer_scale * zoom
-		draw_texture_rect(tex, Rect2(offset + pos * zoom, tex.get_size() * s), false, Color(1, 1, 1, opacity))
+		var destination:=Rect2(offset+pos*zoom,tex.get_size()*s)
+		if not destination.intersects(Rect2(Vector2.ZERO,size)): continue
+		draw_texture_rect(tex,destination,false,Color(1,1,1,opacity))
 		last_drawn.append(path)
 		last_layer_metadata.append({"path":path, "opacity":opacity, "original_frame":entry.get("original_frame"), "source_index":entry.get("source_index")})

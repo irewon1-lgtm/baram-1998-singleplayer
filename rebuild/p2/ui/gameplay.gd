@@ -5,6 +5,11 @@ const Store = preload("res://storage/gameplay_store.gd")
 const Content = preload("res://content/gameplay_content.gd")
 const View = preload("res://render/gameplay_view.gd")
 const Effect = preload("res://render/effect_preview.gd")
+const ClassicList = preload("res://ui/classic_list.gd")
+const Paper = preload("res://ui/parchment_panel.gd")
+const Stick = preload("res://input/touch_stick.gd")
+const Navigation = preload("res://input/grid_navigation.gd")
+const OriginalView = preload("res://render/original_view.gd")
 const OWNER := "local-profile:default"
 var game = Game.new()
 var store = Store.new()
@@ -21,9 +26,9 @@ var message: Label
 var status: Label
 var help_text: Label
 var panels: TabContainer
-var bag: ItemList
-var equipment: ItemList
-var skills: ItemList
+var bag
+var equipment
+var skills
 var attributes: RichTextLabel
 var dialogue: PanelContainer
 var dialogue_body: VBoxContainer
@@ -57,6 +62,30 @@ var screenshot_queue: Array = []
 var panel_clock := 0.0
 var replay_result: Dictionary = {}
 var mobile_controls: Control
+var body: HBoxContainer
+var side: VBoxContainer
+var equipment_preview
+var hp_bar: ProgressBar
+var mp_bar: ProgressBar
+var stick
+var panel_toggle: Button
+var path: Array[Vector2i] = []
+var arrival_action: Dictionary = {}
+var tick_accumulator := 0.0
+var render_accumulator := 0.0
+var panel_dirty := true
+var map_render_key := ""
+var scenery_cache: Array = []
+var visual_positions: Dictionary = {}
+var frame_samples: Array[float] = []
+var max_process_ms := 0.0
+var input_received_ms := 0
+var input_latencies: Array[float] = []
+var chat_log: Array[String] = []
+var last_message := ""
+var keyboard_moves: Dictionary = {}
+var history: RichTextLabel
+var was_portrait:=false
 
 func checkpoint(stage: String, details: Dictionary = {}) -> void:
 	var value := {"stage":stage,"ticks_ms":Time.get_ticks_msec(),"pid":OS.get_process_id(),"platform":OS.get_name(),"details":details}
@@ -119,163 +148,175 @@ func _label(parent: Node, title: String) -> Label:
 	return label
 
 func _build_ui() -> void:
-	var background := ColorRect.new()
-	background.color = Color("162321")
+	var theme := Theme.new()
+	theme.default_font_size=16
+	var korean:=SystemFont.new()
+	korean.font_names=PackedStringArray(["Malgun Gothic","Noto Sans CJK KR","NanumGothic","sans-serif"])
+	theme.default_font=korean
+	ThemeDB.fallback_font=korean
+	var button_style:=StyleBoxFlat.new()
+	button_style.bg_color=Color("684329");button_style.border_color=Color("b18b51")
+	button_style.set_border_width_all(1);button_style.set_corner_radius_all(3)
+	button_style.content_margin_left=7;button_style.content_margin_right=7
+	theme.set_stylebox("normal","Button",button_style)
+	var pressed:=button_style.duplicate();pressed.bg_color=Color("322012")
+	theme.set_stylebox("pressed","Button",pressed)
+	var hover:=button_style.duplicate();hover.bg_color=Color("976d3b")
+	theme.set_stylebox("hover","Button",hover)
+	theme.set_color("font_color","Button",Color("f8dfaa"))
+	self.theme=theme
+	var background:=ColorRect.new();background.color=Color("24140c")
 	background.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	background.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	add_child(background)
-	var margin := MarginContainer.new()
-	margin.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	for side in ["left","top","right","bottom"]: margin.add_theme_constant_override("margin_"+side, 12)
+	background.mouse_filter=Control.MOUSE_FILTER_IGNORE;add_child(background)
+	var margin:=MarginContainer.new();margin.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	for edge in ["left","right","top","bottom"]: margin.add_theme_constant_override("margin_"+edge,8)
 	add_child(margin)
-	var root := VBoxContainer.new()
-	margin.add_child(root)
-	var heading := _label(root, "바람의나라 · 첫 걸음")
-	heading.add_theme_font_size_override("font_size", 24)
-	menu = VBoxContainer.new()
-	root.add_child(menu)
-	_label(menu, "로컬 프로필 · 이 기기의 캐릭터\n한국 2001 자료를 우선한 작업 규칙과 한국 원본 그림을 사용합니다. 지역 배치·스폰·확률·일부 외형은 재구성 실행값입니다.")
-	names = OptionButton.new()
-	menu.add_child(names)
-	_button(menu, "이어 하기", _continue_character)
-	_button(menu, "새 캐릭터", _show_creation)
-	creation = VBoxContainer.new()
-	menu.add_child(creation)
-	_label(creation, "이름 (한글·영문·숫자 2~12자) · 고구려 평민 Lv1")
-	name_input = LineEdit.new()
-	name_input.placeholder_text = "캐릭터 이름"
-	name_input.max_length = 12
+	var root:=VBoxContainer.new();root.add_theme_constant_override("separation",5);margin.add_child(root)
+	var title:=HBoxContainer.new();root.add_child(title)
+	var heading:=_label(title,"바람의나라 · 첫 걸음")
+	heading.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	heading.add_theme_color_override("font_color",Color("dbc292"))
+	panel_toggle=_button(title,"물품 · 기술 · 장비 · 능력치",_toggle_panels)
+	panel_toggle.hide()
+	menu=VBoxContainer.new();root.add_child(menu)
+	_label(menu,"오프라인 캐릭터 · 한국 원본 그림을 사용한 개인용 게임")
+	names=OptionButton.new();menu.add_child(names)
+	_button(menu,"이어 하기",_continue_character)
+	_button(menu,"새 캐릭터",_show_creation)
+	creation=VBoxContainer.new();menu.add_child(creation)
+	_label(creation,"이름 (한글·영문·숫자 2~12자) · 고구려 평민 Lv1")
+	name_input=LineEdit.new();name_input.placeholder_text="캐릭터 이름";name_input.max_length=12
+	name_input.virtual_keyboard_enabled=true;name_input.custom_minimum_size.y=40
 	creation.add_child(name_input)
-	guardian = OptionButton.new()
+	guardian=OptionButton.new()
 	for value in ["주작","청룡","백호","현무"]: guardian.add_item(value)
 	creation.add_child(guardian)
-	appearance = OptionButton.new()
-	appearance.add_item("모습 1")
-	appearance.add_item("모습 2")
+	appearance=OptionButton.new();appearance.add_item("모습 1");appearance.add_item("모습 2")
 	creation.add_child(appearance)
-	_button(creation, "만들고 시작", _create_character)
-	_button(creation, "취소", func(): creation.hide(); name_input.clear(); message.text="캐릭터를 만들지 않았습니다.")
+	_button(creation,"만들고 시작",_create_character)
+	_button(creation,"취소",func(): creation.hide();name_input.clear();message.text="캐릭터를 만들지 않았습니다.")
 	creation.hide()
-	play = VBoxContainer.new()
-	play.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	root.add_child(play)
-	play.hide()
-	status = _label(play, "")
-	var body := HBoxContainer.new()
-	body.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	play.add_child(body)
-	view = View.new()
-	view.content = content.assets
-	view.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	view.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	view.world_pressed.connect(_click_world)
-	body.add_child(view)
-	panels = TabContainer.new()
-	panels.custom_minimum_size.x = 280
-	body.add_child(panels)
-	var bag_box := VBoxContainer.new()
-	bag_box.name = "가방"
-	panels.add_child(bag_box)
-	bag = ItemList.new()
-	bag.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	bag.custom_minimum_size.y = 150
-	bag.fixed_icon_size = Vector2i(24,24)
-	bag_box.add_child(bag)
-	_button(bag_box, "장착 / 사용", _use_selected_item)
-	_button(bag_box, "가까운 NPC에 판매 (1개)", _sell_selected)
-	var skill_box := VBoxContainer.new()
-	skill_box.name = "기술"
-	panels.add_child(skill_box)
-	skills = ItemList.new()
-	skills.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	skill_box.add_child(skills)
-	direction_picker = OptionButton.new()
+	play=VBoxContainer.new();play.size_flags_vertical=Control.SIZE_EXPAND_FILL;root.add_child(play);play.hide()
+	body=HBoxContainer.new();body.size_flags_vertical=Control.SIZE_EXPAND_FILL;play.add_child(body)
+	view=View.new();view.content=content.assets
+	view.custom_minimum_size=Vector2(220,180)
+	view.size_flags_horizontal=Control.SIZE_EXPAND_FILL;view.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	view.world_pressed.connect(_click_world);body.add_child(view)
+	side=VBoxContainer.new();side.custom_minimum_size.x=310;body.add_child(side)
+	var paper:=Paper.new();paper.size_flags_vertical=Control.SIZE_EXPAND_FILL;side.add_child(paper)
+	panels=TabContainer.new();panels.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	panels.add_theme_stylebox_override("panel",StyleBoxEmpty.new())
+	paper.add_child(panels)
+	panels.tab_changed.connect(func(_index): _stop_motion();panel_dirty=true)
+	var bag_box:=VBoxContainer.new();bag_box.name="물품";panels.add_child(bag_box)
+	bag=ClassicList.new();bag.size_flags_vertical=Control.SIZE_EXPAND_FILL;bag_box.add_child(bag)
+	bag.item_selected.connect(func(_index): _stop_motion())
+	_button(bag_box,"장착 / 사용",_use_selected_item)
+	_button(bag_box,"가까운 상인에게 판매 (1개)",_sell_selected)
+	var skill_box:=VBoxContainer.new();skill_box.name="기술";panels.add_child(skill_box)
+	skills=ClassicList.new();skills.size_flags_vertical=Control.SIZE_EXPAND_FILL;skill_box.add_child(skills)
+	skills.item_selected.connect(func(_index): _stop_motion())
+	direction_picker=OptionButton.new()
 	for value in ["동","서","남","북"]: direction_picker.add_item(value)
 	skill_box.add_child(direction_picker)
-	_button(skill_box, "선택 기술 사용", _cast_selected)
-	var equip_box := VBoxContainer.new()
-	equip_box.name = "장비"
-	panels.add_child(equip_box)
-	equipment = ItemList.new()
-	equipment.size_flags_vertical = Control.SIZE_EXPAND_FILL
-	equipment.fixed_icon_size = Vector2i(24,24)
-	equip_box.add_child(equipment)
-	_button(equip_box, "선택 장비 해제", _unequip_selected)
-	_button(equip_box, "대장장이에게 수리", _repair_selected)
-	attributes = RichTextLabel.new()
-	attributes.name = "능력치"
-	attributes.custom_minimum_size.x = 280
-	panels.add_child(attributes)
-	help_text = _label(play, "방향키/WASD 이동 · Space 공격 · Enter 대화 · Z 줍기 · 숫자 1~9 기술 · Tab 패널\n지도를 누르면 가까운 대상과 대화하거나 공격합니다. 마을 길 끝의 네 문으로 초보 사냥터에 갑니다.")
-	var actions := HBoxContainer.new()
-	play.add_child(actions)
-	_button(actions, "대화", _talk_nearest)
-	_button(actions, "줍기", _pickup_nearest)
-	_button(actions, "귀신 → 부활", func(): _dispatch({"type":"respawn"}))
-	_button(actions, "저장하고 처음으로", _return_menu)
-	dialogue = PanelContainer.new()
-	dialogue.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
-	dialogue.position = Vector2(100,100)
-	dialogue.custom_minimum_size = Vector2(480,280)
-	add_child(dialogue)
-	var dialogue_scroll := ScrollContainer.new()
-	dialogue_scroll.custom_minimum_size=Vector2(480,330)
-	dialogue_scroll.size=Vector2(480,330)
+	_button(skill_box,"선택 기술 사용",_cast_selected)
+	var hotkey:=HBoxContainer.new();skill_box.add_child(hotkey)
+	for slot in [1,2,3]:
+		var number:=str(slot)
+		_button(hotkey,number+"번 지정",func():
+			var id:=_selection(skills)
+			if id.is_empty(): message.text="기술을 먼저 고르세요.";return
+			_dispatch({"type":"bind_hotkey","slot":number,"skill_id":id}))
+	var equip_box:=VBoxContainer.new();equip_box.name="장비";panels.add_child(equip_box)
+	equipment_preview=OriginalView.new();equipment_preview.content=content.assets
+	equipment_preview.background_color=Color("c4a067")
+	equipment_preview.custom_minimum_size=Vector2(130,128);equip_box.add_child(equipment_preview)
+	equipment_preview.mouse_filter=Control.MOUSE_FILTER_IGNORE
+	equipment=ClassicList.new();equipment.size_flags_vertical=Control.SIZE_EXPAND_FILL;equip_box.add_child(equipment)
+	equipment.item_selected.connect(func(_index): _stop_motion())
+	_button(equip_box,"선택 부위 해제",_unequip_selected)
+	_button(equip_box,"대장장이에게 수리",_repair_selected)
+	attributes=RichTextLabel.new();attributes.name="능력치";attributes.scroll_active=true
+	attributes.add_theme_color_override("default_color",Color("302012"));panels.add_child(attributes)
+	var vitals:=PanelContainer.new();var vitals_style:=StyleBoxFlat.new()
+	vitals_style.bg_color=Color("3c2616");vitals_style.border_color=Color("a17b46");vitals_style.set_border_width_all(2)
+	vitals.add_theme_stylebox_override("panel",vitals_style);side.add_child(vitals)
+	var stats:=VBoxContainer.new();vitals.add_child(stats)
+	status=_label(stats,"");status.add_theme_font_size_override("font_size",15)
+	hp_bar=ProgressBar.new();hp_bar.custom_minimum_size.y=20;stats.add_child(hp_bar)
+	mp_bar=ProgressBar.new();mp_bar.custom_minimum_size.y=20;stats.add_child(mp_bar)
+	for entry in [[hp_bar,Color("a63424")],[mp_bar,Color("315d9d")]]:
+		var fill:=StyleBoxFlat.new();fill.bg_color=entry[1];entry[0].add_theme_stylebox_override("fill",fill)
+		entry[0].show_percentage=false
+	help_text=_label(play,"지면 탭: 걸어가기 · 드래그: 이동 · Space: 공격 · Enter: 대화 · Z: 줍기 · Tab: 패널")
+	help_text.add_theme_font_size_override("font_size",13)
+	var actions:=HBoxContainer.new();play.add_child(actions)
+	_button(actions,"지도",_show_map)
+	_button(actions,"대화",_talk_nearest);_button(actions,"줍기",_pickup_nearest)
+	_button(actions,"부활",func(): _dispatch({"type":"respawn"}))
+	_button(actions,"저장 · 처음으로",_return_menu)
+	dialogue=Paper.new();dialogue.custom_minimum_size=Vector2(440,280);add_child(dialogue)
+	var dialogue_scroll:=ScrollContainer.new();dialogue_scroll.custom_minimum_size=Vector2(0,240)
 	dialogue.add_child(dialogue_scroll)
-	dialogue_body = VBoxContainer.new()
-	dialogue_body.size_flags_horizontal=Control.SIZE_EXPAND_FILL
-	dialogue_scroll.add_child(dialogue_body)
-	dialogue.hide()
-	message = _label(root, "로컬 캐릭터를 선택하거나 새로 만드세요.")
-	message.custom_minimum_size.y = 46
+	dialogue_body=VBoxContainer.new();dialogue_body.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	dialogue_scroll.add_child(dialogue_body);dialogue.hide()
+	message=_label(root,"로컬 캐릭터를 선택하거나 새로 만드세요.")
+	message.add_theme_color_override("font_color",Color("f1ddae"))
+	message.custom_minimum_size.y=25
+	history=RichTextLabel.new();history.custom_minimum_size.y=50;history.scroll_following=true
+	var chat_style:=StyleBoxFlat.new();chat_style.bg_color=Color("c1a478");chat_style.border_color=Color("6f4727");chat_style.set_border_width_all(2)
+	chat_style.content_margin_left=6;chat_style.content_margin_top=4
+	history.add_theme_stylebox_override("normal",chat_style)
+	history.add_theme_color_override("default_color",Color("302214"));history.add_theme_font_size_override("normal_font_size",14)
+	root.add_child(history)
 	for i in range(8):
-		var player := AudioStreamPlayer.new()
-		player.volume_db = -8
-		add_child(player)
-		audio.append(player)
-	_build_touch()
-	resized.connect(_resize_ui)
-	_resize_ui()
+		var player:=AudioStreamPlayer.new();player.volume_db=-8;add_child(player);audio.append(player)
+	_build_touch();resized.connect(_resize_ui);_resize_ui()
 
 func _build_touch() -> void:
-	if OS.get_name() not in ["Android","iOS"]: return
-	var overlay := Control.new()
-	mobile_controls=overlay
-	overlay.hide()
-	overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	view.add_child(overlay)
-	for entry in [["↑",Vector2(72,-190),Vector2i(0,-1)],["←",Vector2(12,-130),Vector2i(-1,0)],["↓",Vector2(72,-70),Vector2i(0,1)],["→",Vector2(132,-130),Vector2i(1,0)]]:
-		var button := Button.new()
-		button.text = entry[0]
-		button.anchor_top = 1; button.anchor_bottom = 1
-		button.position = entry[1]; button.size = Vector2(56,56)
-		var move: Vector2i = entry[2]
-		button.button_down.connect(func(): _begin_touch_move(move))
-		button.button_up.connect(func(): touch_moves.erase(str(move)))
-		overlay.add_child(button)
-	var attack := _button(overlay,"공격",func(): _dispatch({"type":"attack","target_id":selected_target}))
-	attack.anchor_left = 1; attack.anchor_right = 1; attack.anchor_top = 1; attack.anchor_bottom = 1
-	attack.offset_left=-100; attack.offset_top=-140; attack.offset_right=-16; attack.offset_bottom=-70
-	var skill := _button(overlay,"기술",_cast_selected)
-	skill.anchor_left = 1; skill.anchor_right = 1; skill.anchor_top = 1; skill.anchor_bottom = 1
-	skill.offset_left=-100; skill.offset_top=-220; skill.offset_right=-16; skill.offset_bottom=-160
-	if DisplayServer.has_feature(DisplayServer.FEATURE_ORIENTATION): DisplayServer.screen_set_orientation(DisplayServer.SCREEN_LANDSCAPE)
+	# Dynamic stick is also mouse-draggable on PC. No permanent arrow grid.
+	stick=Stick.new();stick.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	view.add_child(stick)
+	stick.direction_changed.connect(func(move):
+		path.clear();arrival_action.clear();movement=move
+		if move!=Vector2i.ZERO: _advance_movement())
+	stick.tapped.connect(func(position):
+		var world: Vector2=(position-view.size*0.5)/view.zoom+view.focus
+		_click_world(Vector2i(floori(world.x/24),floori(world.y/24))))
+	var overlay:=Control.new();overlay.mouse_filter=Control.MOUSE_FILTER_IGNORE
+	overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);view.add_child(overlay)
+	mobile_controls=overlay;overlay.hide()
+	var attack:=_button(overlay,"공격",_basic_attack)
+	attack.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_RIGHT)
+	attack.offset_left=-100;attack.offset_right=-12;attack.offset_top=-72;attack.offset_bottom=-16
+	var skill:=_button(overlay,"기술",_cast_selected)
+	skill.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_RIGHT)
+	skill.offset_left=-90;skill.offset_right=-12;skill.offset_top=-122;skill.offset_bottom=-78
+	for button in [attack,skill]: button.modulate.a=0.78;button.focus_mode=Control.FOCUS_NONE
 
 func _begin_touch_move(move: Vector2i) -> void:
-	touch_moves[str(move)]=move
-	if game.state.is_empty() or not play.visible or dialogue.visible: return
-	# A press/release can arrive in one slow Android render frame. Commit the
-	# initial step on press; _process continues repeat movement while held.
-	var result: Dictionary=_dispatch({"type":"move","dx":move.x,"dy":move.y})
-	input_repeat=0.15
-	checkpoint("touch_direction",{"dx":move.x,"dy":move.y,"status":result.status,"reason":result.get("reason"),"x":game.state.character.x,"y":game.state.character.y})
+	movement=move;path.clear();arrival_action.clear();_advance_movement()
+
+func _stop_motion() -> void:
+	movement=Vector2i.ZERO;touch_moves.clear();keyboard_moves.clear();path.clear();arrival_action.clear()
+	if is_instance_valid(stick): stick.cancel()
+
+func _toggle_panels() -> void:
+	_stop_motion();side.visible=not side.visible
 
 func _resize_ui() -> void:
-	if panels == null: return
-	panels.custom_minimum_size.x = 260 if size.x < 1000 else 300
-	help_text.visible = size.y > 600
-	if is_instance_valid(dialogue): dialogue.position = Vector2(maxf(12,(size.x-500)/2),maxf(60,(size.y-350)/2))
+	if panels==null: return
+	var portrait:=size.x<760
+	panel_toggle.visible=portrait
+	if portrait and not was_portrait: side.hide()
+	if not portrait: side.show()
+	was_portrait=portrait
+	side.custom_minimum_size.x=clampf(size.x*0.29,270,330)
+	help_text.visible=size.y>620
+	if is_instance_valid(dialogue):
+		dialogue.custom_minimum_size.x=minf(440,size.x-24)
+		dialogue.size=Vector2(minf(500,size.x-24),minf(360,size.y-32))
+		dialogue.position=(size-dialogue.size)*0.5
 
 func _refresh_characters() -> void:
 	names.clear()
@@ -323,7 +364,8 @@ func _start_play() -> void:
 	save_failure = false
 	selected_target = ""; current_npc = ""
 	get_viewport().gui_release_focus()
-	message.text="마을의 네 길을 따라 사냥터로 걸어가세요. 평민 Lv5가 되면 원하는 사범에게 전직할 수 있습니다."
+	message.text="지면을 누르거나 드래그해서 이동하세요. 공격은 가까운 몬스터를 자동으로 찾습니다."
+	_stop_motion();visual_positions.clear();map_render_key="";panel_dirty=true
 	_refresh_panels(); _render_world()
 	_layout_checkpoint.call_deferred()
 
@@ -359,17 +401,20 @@ func _save() -> bool:
 
 func _dispatch(command: Dictionary) -> Dictionary:
 	if game.state.is_empty() or save_failure: return {"status":"REFUSED","reason":"NO_ACTIVE_OR_SAVED_STATE","events":[]}
-	var before: Dictionary = game.snapshot()
+	var before: Dictionary = game.state
 	command = command.duplicate(true)
 	if not smoke or not command.has("request_id"):
 		command["request_id"] = "ui:"+str(int(game.state.request_watermarks.get("ui",0))+1)
 	var result: Dictionary = game.command(command)
 	if result.get("changed",false) and str(command.type) not in ["move","attack","cast"]:
-		if not _save(): game.restore(before); return {"status":"SAVE_FAILED","events":[]}
+		if not _save(): game.state=before; return {"status":"SAVE_FAILED","events":[]}
 	_consume_events(result.get("events",[]))
-	if result.status not in ["OK","DUPLICATE","CANCELLED"] and result.reason not in ["ACTION_COOLDOWN","MOVE_COOLDOWN"]:
+	if result.status not in ["OK","DUPLICATE","CANCELLED"] and (result.reason not in ["ACTION_COOLDOWN","MOVE_COOLDOWN"] or command.type in ["attack","cast"]):
 		message.text = _reason(str(result.reason))
-	if result.get("changed",false): _refresh_panels()
+	if result.get("changed",false):
+		if command.type not in ["move","attack","cast"]: panel_dirty=true
+		if command.type in ["move","attack","cast"] and input_received_ms>0:
+			input_latencies.append(float(Time.get_ticks_msec()-input_received_ms));input_received_ms=0
 	return result
 
 func _consume_events(events: Array) -> void:
@@ -380,6 +425,11 @@ func _consume_events(events: Array) -> void:
 		if event.get("sound_id") != null: _sound(str(event.sound_id))
 		if event.get("effect_id") != null:
 			active_effects.append({"id":str(event.effect_id),"at":clock,"map_id":event.get("map_id",game.state.character.map_id),"x":event.get("x",game.state.character.x),"y":event.get("y",game.state.character.y)})
+		if type in ["moved","monster_moved"]:
+			var visual_id:="player" if type=="moved" else str(event.target_id)
+			var from:=Vector2(float(event.from.x),float(event.from.y))
+			if visual_positions.has(visual_id): from=_visual_point(visual_id,from.x,from.y)
+			visual_positions[visual_id]={"from":from,"to":Vector2(float(event.x),float(event.y)),"at":clock,"duration":float(content.data.config.get("move_interval",0.16)) if type=="moved" else 0.2}
 		if type in ["attack_started","cast_started","moved"]:
 			character_animation = {"attack_started":"attack","cast_started":"casting","moved":"walking"}[type]
 			animation_until = clock + (0.22 if type=="moved" else 0.55)
@@ -391,7 +441,10 @@ func _consume_events(events: Array) -> void:
 			actor_walk_until[id]=clock+0.3
 		if type == "monster_died" and selected_target==str(event.get("target_id","")): selected_target=""
 		if type == "dialogue": _show_dialogue(str(event.npc_id))
-		if type == "map_changed": selected_target=""; movement=Vector2i.ZERO; touch_moves.clear(); dialogue.hide(); message.text=str(content.data.maps[event.map_id].name)
+		if type == "map_changed":
+			selected_target="";_stop_motion();visual_positions.clear();map_render_key="";dialogue.hide();message.text=str(content.data.maps[event.map_id].name)
+		if type not in ["moved","monster_moved","attack_started","monster_attack_started"]: panel_dirty=true
+		if type=="player_died": _stop_motion()
 		if event.get("sound_id")==null and type in ["picked_up","bought","sold","equipped","unequipped","player_died"]:
 			var key:=str({"picked_up":"pickup","bought":"transaction","sold":"transaction","equipped":"equip","unequipped":"equip","player_died":"death"}[type])
 			_sound(str(content.data.config.get("audio",{}).get(key,{"pickup":2,"transaction":12,"equip":13,"death":10}[key])))
@@ -412,49 +465,84 @@ func _sound(id: String) -> void:
 		if not player.playing: player.stream=stream; player.play(); return
 
 func _process(delta: float) -> void:
-	clock += delta
-	panel_clock += delta
+	var started:=Time.get_ticks_usec()
+	clock+=delta;panel_clock+=delta;render_accumulator+=delta
+	if frame_samples.size()<40000: frame_samples.append(delta*1000.0)
 	if not frame_checkpoint and is_instance_valid(view) and startup_error.is_empty():
-		frame_checkpoint = true
-		checkpoint("first_frame",{"mode":"menu","viewport":[size.x,size.y]})
+		frame_checkpoint=true;checkpoint("first_frame",{"mode":"menu","viewport":[size.x,size.y]})
 		_layout_checkpoint.call_deferred()
 	if game.state.is_empty() or not play.visible or save_failure: return
+	if message.text!=last_message:
+		last_message=message.text;chat_log.append(last_message)
+		if chat_log.size()>32: chat_log.pop_front()
+		history.text="\n".join(chat_log)
 	if not smoke:
-		var before: Dictionary = game.snapshot()
-		var result: Dictionary = game.tick(minf(delta,0.2))
-		var critical := false
-		for event in result.get("events",[]):
-			if str(event.type) in ["monster_died","skill_applied","player_died","level_up"]: critical=true
-		if critical and not _save(): game.restore(before)
-		else: _consume_events(result.get("events",[]))
-		autosave += delta
-		if autosave>=3.0: autosave=0; _save()
-		input_repeat -= delta
-		if input_repeat<=0 and not dialogue.visible:
-			var move := movement
-			if not touch_moves.is_empty(): move=touch_moves.values()[-1]
-			if move!=Vector2i.ZERO:
-				_dispatch({"type":"move","dx":move.x,"dy":move.y}); input_repeat=0.15
-	if int(game.state.revision)!=last_state_revision and panel_clock>=0.2: panel_clock=0; _refresh_panels()
-	_render_world()
+		tick_accumulator+=minf(delta,0.5)
+		if tick_accumulator>=0.05:
+			var before: Dictionary=game.state
+			var result: Dictionary=game.tick(tick_accumulator)
+			tick_accumulator=0
+			var critical:=false
+			for event in result.get("events",[]):
+				if str(event.type) in ["monster_died","skill_applied","player_died","level_up"]: critical=true
+			if critical and not _save(): game.state=before
+			else: _consume_events(result.get("events",[]))
+			autosave+=delta
+			if autosave>=3.0: autosave=0;_save()
+			if not dialogue.visible: _advance_movement()
+	if panel_clock>=0.2:
+		panel_clock=0
+		if panel_dirty: _refresh_panels();panel_dirty=false
+		else: _refresh_vitals()
+	if render_accumulator>=1.0/60.0:
+		render_accumulator=0;_render_world()
+	max_process_ms=maxf(max_process_ms,float(Time.get_ticks_usec()-started)/1000.0)
+
+func _advance_movement() -> void:
+	if game.state.is_empty() or dialogue.visible or save_failure: return
+	if not game._ready("move") or not game._ready("action"): return
+	var move:=movement
+	if move==Vector2i.ZERO and not path.is_empty():
+		var cell:=path[0];var c: Dictionary=game.state.character
+		move=cell-Vector2i(c.x,c.y)
+		if absi(move.x)+absi(move.y)!=1: path.clear();arrival_action.clear();return
+	if move==Vector2i.ZERO: return
+	var result:=_dispatch({"type":"move","dx":move.x,"dy":move.y})
+	if result.status=="OK":
+		if not path.is_empty(): path.pop_front()
+		if path.is_empty() and not arrival_action.is_empty():
+			var action:=arrival_action.duplicate();arrival_action.clear();_dispatch(action)
+	elif result.reason not in ["ACTION_COOLDOWN","MOVE_COOLDOWN"]:
+		path.clear();arrival_action.clear()
+
+func _basic_attack() -> void:
+	if game.state.is_empty() or dialogue.visible: return
+	path.clear();arrival_action.clear()
+	input_received_ms=Time.get_ticks_msec()
+	var target:=""
+	if not game._target(selected_target,int(game.derived_stats().attack_range)).is_empty(): target=selected_target
+	_dispatch({"type":"attack","target_id":target})
 
 func _input(event: InputEvent) -> void:
 	if not event is InputEventKey or not play.visible or game.state.is_empty(): return
 	var key: int = event.physical_keycode
+	input_received_ms=Time.get_ticks_msec()
 	if dialogue.visible:
 		if event.pressed and key==KEY_ESCAPE: dialogue.hide(); movement=Vector2i.ZERO; get_viewport().set_input_as_handled()
 		return
 	if key in [KEY_UP,KEY_W,KEY_DOWN,KEY_S,KEY_LEFT,KEY_A,KEY_RIGHT,KEY_D]:
 		if event.pressed:
-			movement={KEY_UP:Vector2i.UP,KEY_W:Vector2i.UP,KEY_DOWN:Vector2i.DOWN,KEY_S:Vector2i.DOWN,KEY_LEFT:Vector2i.LEFT,KEY_A:Vector2i.LEFT,KEY_RIGHT:Vector2i.RIGHT,KEY_D:Vector2i.RIGHT}[key]
+			keyboard_moves[key]={KEY_UP:Vector2i.UP,KEY_W:Vector2i.UP,KEY_DOWN:Vector2i.DOWN,KEY_S:Vector2i.DOWN,KEY_LEFT:Vector2i.LEFT,KEY_A:Vector2i.LEFT,KEY_RIGHT:Vector2i.RIGHT,KEY_D:Vector2i.RIGHT}[key]
+			movement=keyboard_moves.values()[-1];path.clear();arrival_action.clear()
 			if not event.echo:
-				_dispatch({"type":"move","dx":movement.x,"dy":movement.y}); input_repeat=0.15
-		else: movement=Vector2i.ZERO
+				_advance_movement()
+		else:
+			keyboard_moves.erase(key);movement=Vector2i.ZERO if keyboard_moves.is_empty() else keyboard_moves.values()[-1]
 		get_viewport().set_input_as_handled()
 		return
 	if not event.pressed or event.echo: return
-	if key==KEY_ESCAPE: dialogue.hide(); movement=Vector2i.ZERO
-	elif key==KEY_SPACE and not dialogue.visible: _dispatch({"type":"attack","target_id":selected_target})
+	if key==KEY_ESCAPE: dialogue.hide();_stop_motion();selected_target=""
+	elif key==KEY_SPACE and not dialogue.visible: _basic_attack()
 	elif key==KEY_ENTER and not dialogue.visible: _talk_nearest()
 	elif key==KEY_Z and not dialogue.visible: _pickup_nearest()
 	elif key==KEY_TAB: panels.current_tab=(panels.current_tab+1)%4
@@ -464,7 +552,7 @@ func _input(event: InputEvent) -> void:
 	get_viewport().set_input_as_handled()
 
 func _notification(what: int) -> void:
-	if what==NOTIFICATION_APPLICATION_FOCUS_OUT: movement=Vector2i.ZERO; touch_moves.clear()
+	if what in [NOTIFICATION_APPLICATION_FOCUS_OUT,NOTIFICATION_APPLICATION_PAUSED]: _stop_motion()
 	if what==NOTIFICATION_APPLICATION_PAUSED and not game.state.is_empty(): _save()
 	if what==NOTIFICATION_WM_GO_BACK_REQUEST:
 		if is_instance_valid(dialogue) and dialogue.visible: dialogue.hide()
@@ -474,7 +562,7 @@ func _notification(what: int) -> void:
 
 func _return_menu() -> void:
 	if not _save(): return
-	game.state={}; play.hide(); menu.show(); dialogue.hide(); touch_moves.clear(); movement=Vector2i.ZERO
+	_stop_motion();_performance_checkpoint();game.state={};play.hide();menu.show();dialogue.hide()
 	if is_instance_valid(mobile_controls): mobile_controls.hide()
 	_refresh_characters(); message.text="저장했습니다. 이어 하기에서 같은 진행을 불러올 수 있습니다."
 
@@ -500,23 +588,39 @@ func _pickup_nearest() -> void:
 			_dispatch({"type":"pickup","loot_id":loot.loot_id}); return
 	message.text="가까운 바닥 전리품이 없습니다."
 
+func _navigate(tile: Vector2i, reach: int = 0, action: Dictionary = {}) -> void:
+	_stop_motion()
+	var c: Dictionary=game.state.character
+	if absi(tile.x-int(c.x))+absi(tile.y-int(c.y))<=reach:
+		if not action.is_empty(): _dispatch(action)
+		return
+	path=Navigation.route(game,tile,reach)
+	if path.is_empty(): message.text="그곳까지 걸어갈 수 없습니다. 다른 길을 누르세요.";return
+	arrival_action=action
+	input_received_ms=Time.get_ticks_msec();_advance_movement()
+
 func _click_world(tile: Vector2i) -> void:
 	if game.state.is_empty() or dialogue.visible: return
 	for id in content.data.npcs:
-		var npc: Dictionary = content.data.npcs[id]
+		var npc: Dictionary=content.data.npcs[id]
 		if npc.map_id==game.state.character.map_id and Vector2i(npc.x,npc.y)==tile:
-			_dispatch({"type":"talk","npc_id":id}); return
+			_navigate(tile,int(npc.get("interaction_range",2)),{"type":"talk","npc_id":id});return
+	var nearest:="";var best:=999
 	for id in game.state.monsters:
-		var monster: Dictionary = game.state.monsters[id]
-		if monster.map_id==game.state.character.map_id and monster.alive and Vector2i(monster.x,monster.y)==tile:
-			selected_target=id; message.text="대상: "+str(content.data.monsters[monster.monster_id].name)
-			_dispatch({"type":"attack","target_id":id}); return
-	var delta := tile-Vector2i(game.state.character.x,game.state.character.y)
-	if absi(delta.x)+absi(delta.y)==1: _dispatch({"type":"move","dx":delta.x,"dy":delta.y})
+		var monster: Dictionary=game.state.monsters[id]
+		if monster.map_id!=game.state.character.map_id or not monster.alive: continue
+		var distance:=absi(int(monster.x)-tile.x)+absi(int(monster.y)-tile.y)
+		if distance<=1 and distance<best: nearest=id;best=distance
+	if not nearest.is_empty():
+		selected_target=nearest
+		var monster: Dictionary=game.state.monsters[nearest]
+		message.text="대상: "+str(content.data.monsters[monster.monster_id].name)
+		_navigate(Vector2i(monster.x,monster.y),1,{"type":"attack","target_id":nearest});return
+	_navigate(tile)
 
 func _show_dialogue(id: String) -> void:
-	current_npc=id; movement=Vector2i.ZERO; touch_moves.clear()
-	for child in dialogue_body.get_children(): child.queue_free()
+	current_npc=id;_stop_motion()
+	for child in dialogue_body.get_children(): dialogue_body.remove_child(child);child.queue_free()
 	var npc: Dictionary = content.data.npcs[id]
 	_label(dialogue_body,str(npc.name)+"\n"+str(npc.get("dialogue",{}).get("greeting","")))
 	for item_id in npc.get("shop",{}):
@@ -539,8 +643,32 @@ func _show_dialogue(id: String) -> void:
 	_button(dialogue_body,"닫기 / 취소",func(): _dispatch({"type":"cancel"}); dialogue.hide())
 	dialogue.show()
 
-func _selection(list: ItemList) -> String:
-	var indexes := list.get_selected_items()
+func _show_map() -> void:
+	_stop_motion()
+	for child in dialogue_body.get_children(): dialogue_body.remove_child(child);child.queue_free()
+	var c: Dictionary=game.state.character
+	var map: Dictionary=content.data.maps[c.map_id]
+	_label(dialogue_body,str(map.name)+" · "+str(int(c.x))+", "+str(int(c.y)))
+	var overview:=OriginalView.new();overview.content=content.assets
+	var extent:=Vector2(float(map.width)*24,float(map.height)*24)
+	overview.custom_minimum_size=Vector2(280,210);dialogue_body.add_child(overview)
+	var layers: Array=map.get("ground_layers",[]).duplicate()
+	if layers.is_empty() and map.has("floor_png"): layers.append({"path":map.floor_png,"x":0,"y":0})
+	overview.configure(layers,extent,extent*0.5,minf(280/extent.x,210/extent.y))
+	for exit in map.get("exits",[]):
+		var target:=Vector2i(exit.x,exit.y)
+		var destination:=str(content.data.maps[exit.to_map].name)
+		_button(dialogue_body,destination+" ("+str(target.x)+", "+str(target.y)+")",func(): dialogue.hide();_navigate(target))
+	for id in content.data.npcs:
+		var npc: Dictionary=content.data.npcs[id]
+		if npc.map_id!=c.map_id: continue
+		var target:=Vector2i(npc.x,npc.y);var npc_id:=str(id)
+		_button(dialogue_body,str(npc.name)+" ("+str(target.x)+", "+str(target.y)+")",func(): dialogue.hide();_navigate(target,int(npc.get("interaction_range",2)),{"type":"talk","npc_id":npc_id}))
+	_button(dialogue_body,"닫기",func(): dialogue.hide())
+	dialogue.show()
+
+func _selection(list) -> String:
+	var indexes: PackedInt32Array = list.get_selected_items()
 	return str(list.get_item_metadata(indexes[0])) if indexes.size()>0 else ""
 
 func _instance(id: String) -> Dictionary:
@@ -568,12 +696,16 @@ func _repair_selected() -> void:
 	if game.state.equipment.has(slot) and not npc.is_empty(): _dispatch({"type":"repair","npc_id":npc,"instance_id":game.state.equipment[slot]})
 
 func _cast_selected() -> void:
+	if game.state.is_empty() or dialogue.visible: return
 	var id := _selection(skills)
 	if id.is_empty() and not game.state.skills.is_empty(): id=str(game.state.skills[0])
 	if not id.is_empty(): _cast(id)
+	else: message.text="아직 배운 기술이 없습니다. Lv5부터 사범에게 전직하세요."
 
 func _cast(id: String) -> void:
-	var cmd := {"type":"cast","skill_id":id,"target_id":selected_target}
+	var target:=selected_target
+	if content.data.skills[id].kind=="damage" and game._target(target,int(content.data.skills[id].get("range",4))).is_empty(): target=game.attack_target(int(content.data.skills[id].get("range",4)))
+	var cmd := {"type":"cast","skill_id":id,"target_id":target}
 	if content.data.skills[id].kind=="return": cmd.direction=direction_picker.get_item_text(direction_picker.selected)
 	_dispatch(cmd)
 
@@ -584,15 +716,17 @@ func _refresh_panels() -> void:
 	bag.clear(); equipment.clear(); skills.clear()
 	for item in game.state.inventory:
 		var def: Dictionary = content.data.items[item.item_id]
-		bag.add_item(str(def.name)+" ×"+str(item.quantity),content.icon(str(item.item_id)))
-		var index := bag.item_count-1
+		bag.add_item(str(def.name)+" ×"+str(int(item.quantity))+(" [착용]" if item.instance_id in game.state.equipment.values() else ""),content.icon(str(item.item_id)))
+		var index: int = bag.item_count-1
 		bag.set_item_metadata(index,item.instance_id)
 		bag.set_item_tooltip(index,str(def.name)+" · 내구 "+str(item.durability)+" · "+str(def.get("fact_status","RECONSTRUCTED")))
 		if item.instance_id==previous_bag: bag.select(index)
-	for slot in game.state.equipment:
+	for slot in ["weapon","armor"]:
+		if not game.state.equipment.has(slot):
+			equipment.add_item(("무기" if slot=="weapon" else "갑옷")+": 없음");equipment.set_item_metadata(equipment.item_count-1,slot);continue
 		var item := _instance(str(game.state.equipment[slot]))
 		if item.is_empty(): continue
-		equipment.add_item(str(slot)+": "+str(content.data.items[item.item_id].name)+" ("+str(item.durability)+")",content.icon(str(item.item_id)))
+		equipment.add_item(("무기" if slot=="weapon" else "갑옷")+": "+str(content.data.items[item.item_id].name)+" · 내구"+str(int(item.durability)),content.icon(str(item.item_id)))
 		equipment.set_item_metadata(equipment.item_count-1,slot)
 		if slot==previous_equipment: equipment.select(equipment.item_count-1)
 	for id in game.state.skills:
@@ -605,7 +739,15 @@ func _refresh_panels() -> void:
 		if id==previous_skill: skills.select(skills.item_count-1)
 	var derived: Dictionary = game.derived_stats()
 	attributes.text="이름  "+str(c.name)+"\n국적  "+str(c.get("nationality","고구려"))+"\n수호  "+str(c.get("guardian","주작"))+"\n직업  "+_job_name(str(c.job))+"\n레벨  "+str(c.level)+"\n경험치  "+str(c.xp)+"\n체력  "+str(c.hp)+" / "+str(c.hp_max)+"\n마력  "+str(c.mp)+" / "+str(c.mp_max)+"\n공격  "+str(derived.attack)+"\n방어  "+str(derived.defense)+"\n금전  "+str(c.money)+"전\n사냥  "+str(game.state.stats.kills)+"마리\n좌표  "+str(c.x)+", "+str(c.y)+"\n\n오프라인 로컬 진행\n원작 미확정 실행값은 재구성 규칙입니다."
-	status.text=str(c.name)+" · "+_job_name(str(c.job))+" Lv"+str(c.level)+"  HP "+str(c.hp)+"/"+str(c.hp_max)+"  MP "+str(c.mp)+"/"+str(c.mp_max)+"  XP "+str(c.xp)+"  "+str(c.money)+"전  · "+str(content.data.maps[c.map_id].name)+( " · 귀신" if c.dead else "")
+	_refresh_equipment_preview()
+	_refresh_vitals()
+	last_state_revision=int(game.state.revision)
+
+func _refresh_vitals() -> void:
+	var c: Dictionary=game.state.character
+	hp_bar.max_value=c.hp_max;hp_bar.value=c.hp;hp_bar.tooltip_text="체력 "+str(int(c.hp))+" / "+str(int(c.hp_max))
+	mp_bar.max_value=c.mp_max;mp_bar.value=c.mp;mp_bar.tooltip_text="마력 "+str(int(c.mp))+" / "+str(int(c.mp_max))
+	status.text=str(c.name)+" · "+_job_name(str(c.job))+" Lv"+str(c.level)+"\n체력 "+str(int(c.hp))+"/"+str(int(c.hp_max))+"  마력 "+str(int(c.mp))+"/"+str(int(c.mp_max))+"\n경험치 "+str(int(c.xp))+" · "+str(int(c.money))+"전\n"+str(content.data.maps[c.map_id].name)+( " · 귀신" if c.dead else "")
 	last_state_revision=int(game.state.revision)
 
 func _look_player() -> String:
@@ -622,32 +764,55 @@ func _look_player() -> String:
 	if int(game.state.character.appearance.get("variant",0))==1: look+="_alt"
 	return look
 
-func _actor_layer(look: String, animation: String, direction: int, x: int, y: int) -> Dictionary:
-	var frame: Dictionary = content.actor(look,animation,direction,clock)
+func _refresh_equipment_preview() -> void:
+	var frame: Dictionary=content.actor(_look_player(),"standing",2,0)
+	if frame.is_empty(): return
+	var layer:={"path":"gameplay-assets/"+str(frame.path),"x":float(frame.offset[0]),"y":float(frame.offset[1])}
+	equipment_preview.configure([layer],Vector2(100,100),Vector2(0,-21),2.3)
+
+func _visual_point(id: String, x: float, y: float) -> Vector2:
+	if not visual_positions.has(id): return Vector2(x,y)
+	var value: Dictionary=visual_positions[id]
+	var progress:=clampf((clock-float(value.at))/maxf(float(value.duration),0.01),0,1)
+	return Vector2(value.from).lerp(Vector2(value.to),progress)
+
+func _actor_layer(look: String, animation: String, direction: int, x: float, y: float) -> Dictionary:
+	var frame: Dictionary=content.actor(look,animation,direction,clock)
 	if frame.is_empty(): return {}
-	var path := str(frame.path)
+	var path:=str(frame.path)
 	if not path.begins_with("gameplay-assets/"): path="gameplay-assets/"+path
-	var offset: Array = frame.get("offset",[0,0])
+	var offset: Array=frame.get("offset",[0,0])
 	return {"path":path,"x":x*24+12+float(offset[0]),"y":y*24+24+float(offset[1]),"depth_y":y*24+24}
+
+func _performance_checkpoint() -> void:
+	var samples:=frame_samples.duplicate();samples.sort()
+	var latency:=input_latencies.duplicate();latency.sort()
+	checkpoint("performance",{"scope":"observed host only; not Galaxy certification","frames":samples.size(),"p50_ms":_percentile(samples,0.5),"p95_ms":_percentile(samples,0.95),"p99_ms":_percentile(samples,0.99),"input_command_p95_ms":_percentile(latency,0.95),"input_latency_scope":"input to accepted command; presentation requires frame/video correlation","max_process_ms":max_process_ms,"memory_static_bytes":OS.get_static_memory_usage(),"texture_pixels":content.assets.texture_pixels})
+
+func _percentile(values: Array, percentile: float) -> float:
+	return float(values[mini(values.size()-1,int(values.size()*percentile))]) if not values.is_empty() else -1.0
 
 func _render_world() -> void:
 	if game.state.is_empty(): return
 	var c: Dictionary = game.state.character
 	var map: Dictionary = content.data.maps[c.map_id]
 	var world_zoom:=1.65 if size.x>=1000 else 1.25
-	var camera:=Vector2(int(c.x)*24+12,int(c.y)*24+12)
+	var player_position:=_visual_point("player",float(c.x),float(c.y))
+	var camera:=player_position*24+Vector2(12,12)
 	var visible_world:=Rect2(camera-view.size/(2*world_zoom),view.size/world_zoom).grow(24)
-	var layers: Array = map.get("ground_layers",[]).duplicate(true)
+	var layers: Array = map.get("ground_layers",[]).duplicate()
 	if layers.is_empty() and map.has("floor_png"): layers.append({"path":map.floor_png,"x":0,"y":0})
 	var sorted: Array = []
-	for object in map.get("objects",[]):
-		# Korean SOBJECT columns are exactly 24 pixels wide, height is in tiles.
-		# Cull offscreen columns before texture lookup; foot-depth order survives.
-		var bounds:=Rect2(float(object.x),float(object.y),24,maxf(24,float(object.get("height",6))*24))
-		if not visible_world.intersects(bounds): continue
-		var entry: Dictionary = object.duplicate(true)
-		if not entry.has("path"): entry.path=entry.get("frame_png","")
-		sorted.append(entry)
+	var next_key:=str(c.map_id)+":"+str(Vector2i(camera/24))+":"+str(view.size)
+	if map_render_key!=next_key:
+		map_render_key=next_key;scenery_cache.clear()
+		for object in map.get("objects",[]):
+			var bounds:=Rect2(float(object.x),float(object.y),24,maxf(24,float(object.get("height",6))*24))
+			if not visible_world.grow(48).intersects(bounds): continue
+			var entry: Dictionary=object.duplicate()
+			if not entry.has("path"): entry.path=entry.get("frame_png","")
+			scenery_cache.append(entry)
+	sorted.append_array(scenery_cache)
 	var labels: Array=[]
 	for landmark in map.get("landmarks",[]):
 		if landmark.has("x") and landmark.has("y"):
@@ -663,9 +828,10 @@ func _render_world() -> void:
 		if monster.map_id!=c.map_id or not monster.alive: continue
 		var def: Dictionary=content.data.monsters[monster.monster_id]
 		var animation := "attack" if clock<float(actor_animations.get(id,0)) else "walking" if clock<float(actor_walk_until.get(id,0)) else "standing"
-		var layer := _actor_layer(str(def.get("look_id",def.get("appearance_id","rabbit"))),animation,int(actor_directions.get(id,2)),int(monster.x),int(monster.y))
+		var at:=_visual_point(str(id),float(monster.x),float(monster.y))
+		var layer := _actor_layer(str(def.get("look_id",def.get("appearance_id","rabbit"))),animation,int(actor_directions.get(id,2)),at.x,at.y)
 		if not layer.is_empty(): sorted.append(layer)
-		labels.append({"x":int(monster.x)*24+12,"y":int(monster.y)*24+24,"text":str(def.name)+( " ◇" if id==selected_target else ""),"hp":monster.hp,"hp_max":def.hp,"color":"f0e8c7"})
+		labels.append({"x":at.x*24+12,"y":at.y*24+24,"text":str(def.name)+( " ◇" if id==selected_target else ""),"hp":monster.hp,"hp_max":def.hp,"color":"f0e8c7"})
 	for loot in game.state.loot:
 		if loot.map_id!=c.map_id: continue
 		var icon: Dictionary=content.actors.get("icons",{}).get(str(loot.get("item_id","")),{})
@@ -674,9 +840,9 @@ func _render_world() -> void:
 			if not path.begins_with("gameplay-assets/"): path="gameplay-assets/"+path
 			sorted.append({"path":path,"x":int(loot.x)*24+2,"y":int(loot.y)*24+8,"depth_y":int(loot.y)*24+23})
 		labels.append({"x":int(loot.x)*24+12,"y":int(loot.y)*24+50,"text":"전리품 · Z","color":"d3c480"})
-	var player := _actor_layer(_look_player(),character_animation if clock<animation_until else "standing",int(c.direction),int(c.x),int(c.y))
+	var player := _actor_layer(_look_player(),character_animation if clock<animation_until else "standing",int(c.direction),player_position.x,player_position.y)
 	if not player.is_empty(): player.opacity=0.4 if c.dead else 1.0; sorted.append(player)
-	labels.append({"x":int(c.x)*24+12,"y":int(c.y)*24+24,"text":c.name,"color":"a9e8bd"})
+	labels.append({"x":player_position.x*24+12,"y":player_position.y*24+24,"text":c.name,"color":"a9e8bd"})
 	sorted.sort_custom(func(a,b): return float(a.get("depth_y",a.y))<float(b.get("depth_y",b.y)))
 	layers.append_array(sorted)
 	for i in range(active_effects.size()-1,-1,-1):
@@ -710,7 +876,7 @@ func _event_text(event: Dictionary) -> String:
 	return str(event.type)
 
 func _reason(reason: String) -> String:
-	return {"NPC_OUT_OF_REACH":"NPC 가까이 걸어가세요.","TARGET_OUT_OF_REACH":"공격할 대상 가까이 가세요.","INSUFFICIENT_MONEY":"금전이 부족합니다.","INSUFFICIENT_MATERIALS":"학습 재료가 부족합니다.","LEVEL_TOO_LOW":"필요한 레벨에 도달하지 않았습니다.","WRONG_JOB_TEACHER":"현재 직업의 사범에게 배우세요.","INSUFFICIENT_HP_MP":"체력 또는 마력이 부족합니다.","SKILL_NOT_LEARNED":"아직 배우지 않은 기술입니다.","JOB_CHANGE_REQUIRED":"먼저 Lv5에 사범에게 전직하세요.","ALREADY_LEARNED":"이미 배운 기술입니다.","BLOCKED":"지나갈 수 없는 곳입니다.","CHARACTER_DEAD":"귀신 상태입니다. 부활하세요."}.get(reason,reason)
+	return {"NO_NEARBY_TARGET":"전방이나 바로 옆에 공격할 몬스터가 없습니다.","ACTION_COOLDOWN":"다음 공격을 준비하고 있습니다.","BLOCKED_TILE":"길이 막혔습니다.","NPC_OUT_OF_REACH":"NPC 가까이 걸어가세요.","TARGET_OUT_OF_REACH":"공격할 대상 가까이 가세요.","INSUFFICIENT_MONEY":"금전이 부족합니다.","INSUFFICIENT_MATERIALS":"학습 재료가 부족합니다.","LEVEL_TOO_LOW":"필요한 레벨에 도달하지 않았습니다.","WRONG_JOB_TEACHER":"현재 직업의 사범에게 배우세요.","INSUFFICIENT_HP_MP":"체력 또는 마력이 부족합니다.","SKILL_NOT_LEARNED":"아직 배우지 않은 기술입니다.","JOB_CHANGE_REQUIRED":"먼저 Lv5에 사범에게 전직하세요.","ALREADY_LEARNED":"이미 배운 기술입니다.","BLOCKED":"지나갈 수 없는 곳입니다.","CHARACTER_DEAD":"귀신 상태입니다. 부활하세요."}.get(reason,reason)
 
 func _run_smoke() -> void:
 	await get_tree().process_frame

@@ -238,6 +238,13 @@ func _execute(cmd: Dictionary) -> Dictionary:
 		"change_job": return _change_job(cmd)
 		"learn": return _learn(cmd)
 		"cast": return _cast(cmd)
+		"bind_hotkey":
+			var slot:=str(cmd.get("slot",""));var skill:=str(cmd.get("skill_id",""))
+			if slot not in ["1","2","3","4","5","6","7","8","9"]: return _response("REFUSED","INVALID_HOTKEY")
+			if skill not in state.skills: return _response("REFUSED","SKILL_NOT_LEARNED")
+			state.hotkeys[slot]=skill
+			_event("hotkey_bound",{"slot":slot,"skill_id":skill})
+			return _response("OK","HOTKEY_BOUND",true)
 		"use_item": return _use_item(cmd)
 	return _response("REFUSED","UNKNOWN_COMMAND")
 
@@ -264,6 +271,11 @@ func _direction(dx: int,dy: int) -> int:
 	if dy<0: return 0
 	return 2
 
+func _direction_value(value: Variant) -> int:
+	if typeof(value)==TYPE_STRING:
+		return int({"north":0,"east":1,"south":2,"west":3,"북":0,"동":1,"남":2,"서":3}.get(value,2))
+	return clampi(int(value),0,3)
+
 func _transition(map_id: String,x: int,y: int,direction: int,reason: String) -> bool:
 	if not valid_position(map_id,x,y) or _occupied(map_id,x,y): return false
 	var c: Dictionary=state.character
@@ -285,7 +297,7 @@ func _move(cmd: Dictionary) -> Dictionary:
 	for exit in data.maps[c.map_id].get("exits",[]):
 		if int(exit.x)==x and int(exit.y)==y:
 			if int(c.level)<int(exit.get("minimum_level",1)): return _response("REFUSED","EXIT_LEVEL_REQUIRED")
-			if not _transition(str(exit.to_map),int(exit.to_x),int(exit.to_y),int(exit.get("direction",_direction(dx,dy))),"exit"): return _response("REFUSED","DESTINATION_UNAVAILABLE")
+			if not _transition(str(exit.to_map),int(exit.to_x),int(exit.to_y),_direction_value(exit.get("direction",_direction(dx,dy))),"exit"): return _response("REFUSED","DESTINATION_UNAVAILABLE")
 			return _response("OK","MAP_TRANSITION",true)
 	var from: Dictionary={"x":c.x,"y":c.y}
 	c.x=x;c.y=y;c.direction=_direction(dx,dy)
@@ -505,9 +517,27 @@ func _target(id: String,range_cells: int) -> Dictionary:
 	if not target.alive or str(target.map_id)!=str(state.character.map_id) or _distance(target,state.character)>range_cells or not _line_clear(str(target.map_id),state.character,target): return {}
 	return target
 
+func attack_target(range_cells: int = 1) -> String:
+	# Facing first, then nearest cardinal neighbour, with stable ID tie-breaking.
+	# _target retains wall, life, map and range checks for every candidate.
+	var c: Dictionary=state.character
+	var facing: Vector2i=[Vector2i.UP,Vector2i.RIGHT,Vector2i.DOWN,Vector2i.LEFT][int(c.direction)]
+	var ids: Array=state.monsters.keys();ids.sort()
+	var chosen:="";var score:=999999
+	for id in ids:
+		var target:=_target(str(id),range_cells)
+		if target.is_empty(): continue
+		var offset:=Vector2i(int(target.x)-int(c.x),int(target.y)-int(c.y))
+		var next:=_distance(target,c)*10+(0 if offset==facing else 1)
+		if next<score: score=next;chosen=str(id)
+	return chosen
+
 func _attack(cmd: Dictionary) -> Dictionary:
 	if not _ready("attack") or not _ready("action"): return _response("REFUSED","ACTION_COOLDOWN")
-	var target: Dictionary=_target(str(cmd.get("target_id","")),int(derived_stats().attack_range))
+	var target_id:=str(cmd.get("target_id",""))
+	if target_id.is_empty(): target_id=attack_target(int(derived_stats().attack_range))
+	if target_id.is_empty(): return _response("REFUSED","NO_NEARBY_TARGET")
+	var target: Dictionary=_target(target_id,int(derived_stats().attack_range))
 	if target.is_empty(): return _response("REFUSED","TARGET_OUT_OF_REACH")
 	var def: Dictionary=data.monsters[target.monster_id]
 	state.character.direction=_direction(int(target.x)-int(state.character.x),int(target.y)-int(state.character.y))
@@ -584,7 +614,7 @@ func _pickup(cmd: Dictionary) -> Dictionary:
 func _respawn() -> Dictionary:
 	if not bool(state.character.dead): return _response("REFUSED","NOT_DEAD")
 	var point: Dictionary=data.respawn
-	if not _transition(str(point.map_id),int(point.x),int(point.y),int(point.get("direction",2)),"resurrection"): return _response("REFUSED","RESPAWN_DESTINATION_UNAVAILABLE")
+	if not _transition(str(point.map_id),int(point.x),int(point.y),_direction_value(point.get("direction",2)),"resurrection"): return _response("REFUSED","RESPAWN_DESTINATION_UNAVAILABLE")
 	state.character.dead=false;state.character.hp=maxi(1,int(round(int(state.character.hp_max)*float(_config("resurrection_hp_fraction",0.5)))))
 	state.character.mp=maxi(0,int(round(int(state.character.mp_max)*float(_config("resurrection_mp_fraction",0.25)))))
 	state.buffs={};state.cooldowns={};state.pending_actions=[]
@@ -677,11 +707,11 @@ func _resolve_action(action: Dictionary) -> void:
 			state.buffs[str(action.skill_id)]={"expires_at":_now()+float(skill.get("duration",20.0)),"attack":int(skill.get("attack_bonus",0)),"defense":int(skill.get("defense_bonus",0)),"attack_multiplier":float(skill.get("attack_multiplier",1.0))}
 		elif kind=="return":
 			var d: Dictionary=action.destination
-			if not _transition(str(d.map_id),int(d.x),int(d.y),int(d.get("direction",2)),"directional_return"):
+			if not _transition(str(d.map_id),int(d.x),int(d.y),_direction_value(d.get("direction",2)),"directional_return"):
 				_event("cast_failed",{"skill_id":action.skill_id,"reason":"DESTINATION_BECAME_UNAVAILABLE_NO_REFUND"});return
 		elif kind=="shrine":
 			var d: Dictionary=data.get("shrine",data.respawn)
-			if not _transition(str(d.map_id),int(d.x),int(d.y),int(d.get("direction",2)),"ghost_to_shrine"):
+			if not _transition(str(d.map_id),int(d.x),int(d.y),_direction_value(d.get("direction",2)),"ghost_to_shrine"):
 				_event("cast_failed",{"skill_id":action.skill_id,"reason":"SHRINE_DESTINATION_UNAVAILABLE"});return
 		_event("skill_applied",{"skill_id":action.skill_id,"kind":kind,"effect_id":skill.get("effect_id"),"sound_id":skill.get("sound_id"),"duration":float(skill.get("visual_duration",0.8)),"map_id":state.character.map_id,"x":state.character.x,"y":state.character.y,"hp":state.character.hp,"mp":state.character.mp})
 

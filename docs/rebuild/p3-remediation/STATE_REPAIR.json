@@ -1,0 +1,25 @@
+{
+  "task_id": "BARAM_REBUILD_WORK_P3_REPAIR_001",
+  "branch": "work/rebuild-p3-remediation-20261016",
+  "baseline_head": "1a8df157845c1afe75adc32b541b576b80bc2702",
+  "baseline_tree": "2c44b8b11e423509b4cee9397dab7128b71107f0",
+  "app_source": "4d6392c875f44219f0b0f26a1415e887365406c2",
+  "input": "WORK-GAMEPLAY-GEN001",
+  "input_zip_sha256": "b97c533e5b979abc4d68470314b37e012898c97c450515c9b9364644c9543461",
+  "status": "IN_PROGRESS",
+  "step": "AFFECTED_GUI_PASS23_ENGINE_PASS30_LAYOUT_AND_FINAL_BINARIES_NEXT",
+  "history_preserved": true,
+  "tests": {
+    "original_99_83_131": "REUSE_WHERE_UNCHANGED_NOT_REEXECUTED",
+    "affected_GUI": "PASS23; fixture setup explicit; InputEvent touches/keys",
+    "affected_engine": "PASS30; exit direction, target generation, hotkeys, legacy save"
+  },
+  "device_gates": {
+    "Galaxy": "NOT_RUN_NO_DEVICE",
+    "native_Windows": "NOT_RUN_NO_AUTHORIZED_HOST",
+    "actual_IME": "NOT_RUN",
+    "hardware_audio": "NOT_RUN"
+  },
+  "next": "Run affected input/combat/render/UI tests, export final Android and Windows, verify actual candidate binaries.",
+  "map_originality": "BLOCKED_GRID_ID_CORRESPONDENCE; official2001PCX visually compared"
+}

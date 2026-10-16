@@ -1,0 +1,23 @@
+﻿id,area,defect_or_gap,action,p3_gate,evidence,required_acceptance
+P3-FIX-01,UI,원본 참조 3장 대비 네 패널/두루마리/상태·대화창 불일치,FIX,P3-01/P3-10,사용자 제공 7476/7478/7480 + 실제 APK 캡처,4탭 실제 화면/기능 + 전후 시각 비교 + Galaxy 사용자 확인
+P3-FIX-02,UI,"장비 전신·슬롯 미표현, 가방/외형/실수치 연결 불충분",FIX,P3-07/P3-10,ui/gameplay.gd _build_ui/_refresh_panels,착용/해제→장비창/필드/스탯/저장 동일
+P3-FIX-03,INPUT,"Android 고정 화살표, 버튼 겹침/실사용 조작성",FIX,P3-02/P3-16,ui/gameplay.gd _build_touch,실제 터치 홀드/방향전환/손떼기/화면가림 최소화
+P3-FIX-04,INPUT,인접 1칸 외 월드 터치 이동 미동작,FIX,P3-02/P3-16,ui/gameplay.gd _click_world,먼 지면 탭 안전 경로 또는 명확한 유효 피드백
+P3-FIX-05,MOVE,반복 0.15s vs 제한시간 조합/입력 누락,FIX,P3-02/P3-16,ui/gameplay.gd _process; state/gameplay_state.gd _move,"홀드중 일정 이동, 입력 해제 즉시 정지, 격자 충돌 유지"
+P3-FIX-06,RENDER,격자 순간이동·매 프레임 전체 씬 재구성/프레임 저하,FIX,P3-02/P3-16,ui/gameplay.gd _render_world; render/original_view.gd configure,"시간기반 보간, dirty/culling, p95/p99 기록"
+P3-FIX-07,COMBAT,선택 몬스터 ID 없으면 기본 공격 불능,FIX,P3-05/P3-10/P3-16,ui/gameplay.gd _build_touch/_click_world; gameplay_state.gd _attack,"타겟 미선택 전방/인접 공격, 선택 공격, 실제 피해/XP/드롭"
+P3-FIX-08,COMBAT,몬스터 터치 작은 hitbox 및 대상 이동/쿨다운 안내 부족,FIX,P3-05/P3-10/P3-16,ui/gameplay.gd _click_world/_dispatch,"터치 선택/공격 재현, 이유 메시지, 중복 타격 방지"
+P3-FIX-09,MAP,국내성 및 초보사냥터 임의 재구성 구조,FIX_WITH_ORIGINALITY_LIMIT,P3-03/P3-11,CONTENT_BINDINGS.json map 11 all RECONSTRUCTED,원본/한국 출처 기반 P3 필수 동선 개선 및 재구성 표기
+P3-FIX-10,MAP,출구/귀환/사망부활·좌표·저장 좌표 이전,REGRESSION,P3-03/P3-11/P3-12/P3-15,state/gameplay_state.gd _transition; gameplay_store.gd,왕복·다국가/방향·세이브 호환·무한전환 없음
+P3-FIX-11,NPC,개별 NPC/상점/재고/전직·학습 GUI 흐름,REGRESSION,P3-06/P3-08/P3-09,CONTENT_BINDINGS.json 9 NPC; ui/gameplay.gd _show_dialogue,실제 NPC 접근/거래/취소/불충분/중복 없음
+P3-FIX-12,ITEM,아이템 아이콘·부위·내구·능력치·필드 합성,REGRESSION,P3-06/P3-07/P3-13,ui/gameplay.gd _look_player/_refresh_panels,가방→장비→필드·능력치→저장 재진입 일치
+P3-FIX-13,SKILL,10개 활성 P3 기술 실제 선택·타겟·시전 연결,REGRESSION,P3-09/P3-10,gameplay_state.gd _cast; ui/gameplay.gd _cast,미학습 거부/MP/명중/효과/음향/회복 시전
+P3-FIX-14,IME,실제 한글 입력 미실행,BLOCKED_OR_FIX,P3-01/P3-16,PLAYTEST_RESULTS.json PARTIAL_IME_NOT_RUN,실 OS IME 조합/완료/취소/백스페이스 실제 증거
+P3-FIX-15,PLATFORM,Android 실기기 조작/성능/청취 미검증,NEEDS_DEVICE,P3-16,Android06/09 emulator only,최종 새 APK 실기기 사용자 검증 + p95/p99
+P3-FIX-16,PLATFORM,Windows native 실행 차단 및 Wine 저장 이력,NEEDS_NATIVE_ENV,P3-16,DELIVERY.json; P2 Wine12 FAIL,허용 native Windows 실제 EXE 및 저장 시험
+P3-FIX-17,SAVE,지도·컨트롤·UI 수정 후 이전 저장 보존,REGRESSION,P3-13/P3-14/P3-15,gameplay_store.gd 기존 83 PASS,새 APK/ZIP 일반 실행 저장·재시작·실패복구
+P3-FIX-18,MEDIA,실제 음향 청취·타격시각·모션 품질 미검증,FIX_AND_DEVICE_VERIFY,P3-10/P3-16,기존 가상 오디오 PASS,이벤트/출력/물리청취 별도 판정
+P3-FIX-19,ASSETS,P2 UI 마스크3건·입력 오류 이력 영향 분리,TRIAGE,P3-01/P3-18,P2 records preserved,"영향 있는 라이브 결함만 보수, 과거 실패를 PASS로 변조 금지"
+P3-FIX-20,DELIVERY,앱 자체 검증 없는 최종 바이너리 전달 방지,VERIFY_NEW_BUILD,P3-18,old P3 APK/Windows ZIP receipts,동일 SHA 최종 설치본+영상+비공개 접근 확인
+P3-FIX-21,AUTH,PC/Android 같은 계정 실제 왕복 미구현,DEFER_P6,P3-17,P3 offline/local profiles only,"P6 분리, P3 기능 PASS 허용, 인증 완료 주장 금지"
+P3-FIX-22,CONTENT,178기술·15NPC 등 미연결 전 분야,DEFER_P4_P5,P4/P5,P3 CONTENT_BINDINGS deferred lists,"정확한 ID 목록 보존, P3 수리와 대량 임포트 혼합 금지"
