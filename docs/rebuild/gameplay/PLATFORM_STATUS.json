@@ -1,0 +1,158 @@
+{
+  "schema": "baram.gameplay.platform-status/1",
+  "task_id": "BARAM_REBUILD_WORK_P3_PLAYABLE_001",
+  "scope": "Free local tools, isolated new package/data; no original game keys/saves/apps/operating resources modified",
+  "engine": {
+    "version": "4.6.3.stable.official.7d41c59c4",
+    "path": "/workspace/scratch/f9c02bf96510/runtime-tools/godot-pinned",
+    "status": "REUSED_PINNED_AVAILABLE"
+  },
+  "templates": {
+    "path": "/workspace/scratch/f9c02bf96510/runtime-tools/gameplay/templates",
+    "version": "4.6.3.stable",
+    "status": "DOWNLOADED_PINNED_EXTRACTED",
+    "members": [
+      "windows_debug_x86_64.exe",
+      "windows_release_x86_64.exe",
+      "android_debug.apk",
+      "android_release.apk"
+    ],
+    "artifacts": [
+      {
+        "name": "platform-tools_r37.0.1-linux.zip",
+        "source": "https://dl.google.com/android/repository/platform-tools_r37.0.1-linux.zip",
+        "bytes": 9054187,
+        "sha256": "d230f13842f60f782a8645f9c813f8f845bf36089ea7289f28c48f17979313f1",
+        "status": "DOWNLOADED_VERIFIED",
+        "seconds": 10.07
+      },
+      {
+        "name": "build-tools_r35.0.1_linux.zip",
+        "source": "https://dl.google.com/android/repository/build-tools_r35.0.1_linux.zip",
+        "bytes": 61959297,
+        "sha256": "5993499f3229a021b89f87088c57242aeefaa62316bf3d69da7de40bfd5350f1",
+        "status": "DOWNLOADED_VERIFIED",
+        "seconds": 10.87
+      },
+      {
+        "name": "Godot_v4.6.3-stable_export_templates.tpz",
+        "source": "https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_export_templates.tpz",
+        "bytes": 1255918323,
+        "sha256": "3fbe2c0e2dec9d537ab9ec97bcf8da91dcf23357fc51f67092dd068d839290a8",
+        "status": "DOWNLOADED_VERIFIED",
+        "seconds": 18.89
+      },
+      {
+        "name": "emulator-linux_x64-16428233.zip",
+        "source": "https://dl.google.com/android/repository/emulator-linux_x64-16428233.zip",
+        "bytes": 349654171,
+        "sha256": "b08fc43d8608d2955f607f1b287beb525041e730086bdca3af152accac3af9c1",
+        "status": "DOWNLOADED_VERIFIED",
+        "seconds": 14.44
+      },
+      {
+        "name": "x86_64-29_r08-linux.zip",
+        "source": "https://dl.google.com/android/repository/sys-img/android/x86_64-29_r08-linux.zip",
+        "bytes": 689676765,
+        "sha256": "b5c3fda1f4b4931c30518d342e4ad5f7464945e0cdced3538d4ff2e12f7bf201",
+        "status": "DOWNLOADED_VERIFIED",
+        "seconds": 16.05
+      }
+    ]
+  },
+  "java": {
+    "path": "/usr/lib/jvm/java-17-openjdk-amd64",
+    "version": "17.0.20",
+    "actual_version_command": "java -version",
+    "official_setup": "https://docs.godotengine.org/en/4.6/tutorials/export/exporting_for_android.html"
+  },
+  "android": {
+    "sdk": "/workspace/scratch/f9c02bf96510/runtime-tools/gameplay/android-sdk",
+    "adb_version": "37.0.1-15733141",
+    "emulator_version": "37.2.12.0-16428233",
+    "image": "API29 default x86_64",
+    "acceleration": "TCG_NO_DEV_KVM",
+    "boot_result": "BOOTED_ENVIRONMENT_ONLY",
+    "boot_seconds": 165.57,
+    "serial": "emulator-5572",
+    "adb_port": 5043,
+    "new_package": "com.irewon.baram.gameplay20261016",
+    "custom_userdata": "baram_rebuild_gameplay_001",
+    "app_export": "NOT_RUN_FINAL_SOURCE_RUNTIME_PENDING",
+    "actual_app_smoke": "NOT_RUN_FINAL_APK_PENDING",
+    "ordinary_app_mode": "DEFAULT_PLAY_CONFIGURED_EXECUTION_PENDING",
+    "Galaxy": "NOT_RUN",
+    "IME": "NOT_RUN",
+    "boot_evidence": {
+      "path": "private/gameplay-platform/BOOT_RECEIPT.json",
+      "sha256": "4f7f6776eb461da3fa0e7ffb3fb8cbbd544daaba06e17af468038e997102b23e"
+    },
+    "smoke_optin": "Same ordinary APK uses explicit debug-only one-shot user://gameplay-test-request.json, consumed/deleted before smoke. No exported-Activity command-line security changed.",
+    "source_proof": "GodotActivity.kt@4.6.3-stable sanitizeLaunchIntent/retrieveCommandLineParamsFromLaunchIntent strip exported-activity extras",
+    "old_GEN003_result": "FAIL_NO_REPORT_PRESERVED"
+  },
+  "windows": {
+    "build": "NOT_RUN_FINAL_SOURCE_RUNTIME_PENDING",
+    "native_execution": "NOT_RUN_ENVIRONMENT_BLOCKED",
+    "reason": "Current host Linux; historical protected environment rejected Work branch before runner start. No protection changes, branch-name bypass or paid/unknown-cost Actions triggered.",
+    "historical_native_evidence": "docs/rebuild/p2-work/platform/WINDOWS_NATIVE_BLOCKER.json",
+    "Wine12_FAIL": "PRESERVED_UNCHANGED",
+    "native_resume": "Use an already authorized actual Windows host/test environment with private inputs; require genuine symbolic-link fixture support and unchanged protection assertions."
+  },
+  "exporter": {
+    "path": "tools/rebuild/p2/gameplay_platform.py",
+    "source_sha256": "ead93288b1f4320cfd99e1060e866fcf1633e155178259602d798afc21f14038",
+    "test_command": "python3 -m unittest discover -s tools/rebuild/p2 -p test_gameplay_platform.py -v",
+    "synthetic_tests": {
+      "run": 6,
+      "failures": 0,
+      "errors": 0,
+      "scope": "Staging/package/unsafe input/normal-mode safety, not actual platform execution"
+    }
+  },
+  "next_command": {
+    "Windows": [
+      "python3",
+      "tools/rebuild/p2/gameplay_platform.py",
+      "export",
+      "--project",
+      "rebuild/p2",
+      "--runtime",
+      "<frozen_WORK_GAMEPLAY_generation>",
+      "--godot",
+      "/workspace/scratch/f9c02bf96510/runtime-tools/godot-pinned",
+      "--templates",
+      "/workspace/scratch/f9c02bf96510/runtime-tools/gameplay/templates",
+      "--target",
+      "Windows",
+      "--output",
+      "<new_private_windows_build_dir>"
+    ],
+    "Android": [
+      "python3",
+      "tools/rebuild/p2/gameplay_platform.py",
+      "export",
+      "--project",
+      "rebuild/p2",
+      "--runtime",
+      "<frozen_WORK_GAMEPLAY_generation>",
+      "--godot",
+      "/workspace/scratch/f9c02bf96510/runtime-tools/godot-pinned",
+      "--templates",
+      "/workspace/scratch/f9c02bf96510/runtime-tools/gameplay/templates",
+      "--target",
+      "Android",
+      "--android-sdk",
+      "/workspace/scratch/f9c02bf96510/runtime-tools/gameplay/android-sdk",
+      "--java-home",
+      "/usr/lib/jvm/java-17-openjdk-amd64",
+      "--signing-root",
+      "/workspace/scratch/f9c02bf96510/private/gameplay-platform/new-synthetic-signing",
+      "--output",
+      "<new_private_android_build_dir>"
+    ]
+  },
+  "new_cost": 0,
+  "production_deployment": "NOT_RUN",
+  "authentication": "BLOCKED_NO_APPROVED_FREE_ENDPOINT"
+}

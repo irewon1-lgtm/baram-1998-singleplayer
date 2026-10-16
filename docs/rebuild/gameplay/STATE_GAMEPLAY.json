@@ -1,0 +1,12 @@
+{
+  "task_id": "BARAM_REBUILD_WORK_P3_PLAYABLE_001",
+  "branch": "work/rebuild-p3-playable-20261016",
+  "baseline_sha": "511b98bc81801e89c3fde8b5344d233aaa0c8a79",
+  "status": "IN_PROGRESS",
+  "current_step": "W1_W4_INTEGRATION",
+  "input_parent": "WORK-PRIORITY-GEN002",
+  "next": "Integrate gameplay_state/content/store/actors/UI, run natural command journey and perjob branches",
+  "new_authorization": "Actual P3 mutations/builds allowed; old P2 preserved",
+  "historical_accuracy": "Perfield ORIGINAL/RECONSTRUCTED/BALANCE separate",
+  "P4_P5": "NOT_AUTHORIZED"
+}

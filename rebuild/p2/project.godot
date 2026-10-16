@@ -1,11 +1,11 @@
-; Independent technical inspection app; never opens the installed game's saves.
+; Isolated offline P3 play; explicit --p2-* options retain previous inspection.
 config_version=5
 
 [application]
-config/name="Baram P2 Inspection"
+config/name="Baram First Journey"
 config/use_custom_user_dir=true
-config/custom_user_dir_name="baram_rebuild_work_p2_001"
-run/main_scene="res://inspection.tscn"
+config/custom_user_dir_name="baram_rebuild_gameplay_001"
+run/main_scene="res://gameplay.tscn"
 
 [display]
 window/size/viewport_width=1100
