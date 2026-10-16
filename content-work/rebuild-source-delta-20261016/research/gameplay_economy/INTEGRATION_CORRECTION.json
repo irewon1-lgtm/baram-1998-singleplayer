@@ -1,0 +1,17 @@
+{
+  "reason": "Independent audit found4craft NPC candidates missing requirement IDs",
+  "candidate_ids": [
+    "WSD-GE-41eb25f4781ad73d",
+    "WSD-GE-6fea4155a1c220d5",
+    "WSD-GE-a0564e23a214bf63",
+    "WSD-GE-2b6e5fafbfbc181e"
+  ],
+  "requirement_ids": [
+    "RQ-073",
+    "RQ-127"
+  ],
+  "private_canonical_refs_updated": true,
+  "private_candidate_sha256": "165a1fee6882eeb9016c8cbf3b74531d7aa98e24c45ca5dcaf30a747a0f9f5b6",
+  "previous_validation": "VALIDATION.json is domain generation snapshot; final batch validation supersedes its output hashes only",
+  "source_values_changed": false
+}

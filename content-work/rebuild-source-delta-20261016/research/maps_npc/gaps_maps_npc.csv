@@ -1,0 +1,5 @@
+area,target_field,binding_ids,delta_status,candidate_ids,remaining
+H,map_id;geometry;exits;return_by_country_direction,BND-013;BND-014,PROFILE_CONFLICT_IDENTIFIED_NO_GEOMETRY_ADOPTED,WD-MN-001,Need primary dated layout identity and executable/MAP comparison
+A,name;building;screen_evidence;direction;body_head_clothes_weapon,BND-033,PARTIAL_SCREEN_REFERENCE_ADDED,WD-MN-002;WD-MN-004,Exact tile/native ID/parts/palette/directions unresolved
+B,spoken_text;branch_condition,BND-034,ONE_TRANSACTION_RESULT_SCREEN_REFERENCE_ADDED,WD-MN-003,"Full state transitions, choices, failure/refusal/cancel/revisit unknown"
+H,Bu full map,BND-013,ALTERNATE_ARCHIVE_PATH_SEARCH_NO_NEW_COPY,,Single original CDX capture only; CRC FAIL preserved. Mirror access403.

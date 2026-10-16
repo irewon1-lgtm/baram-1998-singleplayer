@@ -1,138 +1,138 @@
 gap_ref,area,field,binding_ids,delta_status,evidence,next_action
-docs/rebuild/p1_5/gaps_by_feature.csv:row2,A,name,BND-033,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 NPC 개별 외형/좌표/부품 ID는 화면과 자산을 함께 확인; 같은 역할 외형 일괄 배정 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row3,A,alias,BND-033,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 NPC 개별 외형/좌표/부품 ID는 화면과 자산을 함께 확인; 같은 역할 외형 일괄 배정 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row4,A,native_id,BND-033,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 NPC 개별 외형/좌표/부품 ID는 화면과 자산을 함께 확인; 같은 역할 외형 일괄 배정 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row5,A,region,BND-033,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 NPC 개별 외형/좌표/부품 ID는 화면과 자산을 함께 확인; 같은 역할 외형 일괄 배정 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row6,A,building,BND-033,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 NPC 개별 외형/좌표/부품 ID는 화면과 자산을 함께 확인; 같은 역할 외형 일괄 배정 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row7,A,coordinate,BND-033,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 NPC 개별 외형/좌표/부품 ID는 화면과 자산을 함께 확인; 같은 역할 외형 일괄 배정 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row8,A,direction,BND-033,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 NPC 개별 외형/좌표/부품 ID는 화면과 자산을 함께 확인; 같은 역할 외형 일괄 배정 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row9,A,body_head_clothes_weapon,BND-033,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 NPC 개별 외형/좌표/부품 ID는 화면과 자산을 함께 확인; 같은 역할 외형 일괄 배정 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row10,A,palette,BND-033,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 NPC 개별 외형/좌표/부품 ID는 화면과 자산을 함께 확인; 같은 역할 외형 일괄 배정 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row11,A,motion_layer,BND-033,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 NPC 개별 외형/좌표/부품 ID는 화면과 자산을 함께 확인; 같은 역할 외형 일괄 배정 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row12,A,screen_evidence,BND-033,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 NPC 개별 외형/좌표/부품 ID는 화면과 자산을 함께 확인; 같은 역할 외형 일괄 배정 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row13,A,service,BND-033,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 NPC 개별 외형/좌표/부품 ID는 화면과 자산을 함께 확인; 같은 역할 외형 일괄 배정 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row14,B,spoken_text,BND-034,RESEARCH_IN_PROGRESS,STATE_WORK.json,원문·공략 설명·재구성 구분; 전체 상태 그래프가 없으면 새 기준본에서 조건별 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row15,B,choices,BND-034,RESEARCH_IN_PROGRESS,STATE_WORK.json,원문·공략 설명·재구성 구분; 전체 상태 그래프가 없으면 새 기준본에서 조건별 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row16,B,branch_condition,BND-034,RESEARCH_IN_PROGRESS,STATE_WORK.json,원문·공략 설명·재구성 구분; 전체 상태 그래프가 없으면 새 기준본에서 조건별 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row17,B,reward,BND-034,RESEARCH_IN_PROGRESS,STATE_WORK.json,원문·공략 설명·재구성 구분; 전체 상태 그래프가 없으면 새 기준본에서 조건별 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row18,B,consumption,BND-034,RESEARCH_IN_PROGRESS,STATE_WORK.json,원문·공략 설명·재구성 구분; 전체 상태 그래프가 없으면 새 기준본에서 조건별 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row19,B,failure,BND-034,RESEARCH_IN_PROGRESS,STATE_WORK.json,원문·공략 설명·재구성 구분; 전체 상태 그래프가 없으면 새 기준본에서 조건별 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row20,B,refusal,BND-034,RESEARCH_IN_PROGRESS,STATE_WORK.json,원문·공략 설명·재구성 구분; 전체 상태 그래프가 없으면 새 기준본에서 조건별 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row21,B,cancel,BND-034,RESEARCH_IN_PROGRESS,STATE_WORK.json,원문·공략 설명·재구성 구분; 전체 상태 그래프가 없으면 새 기준본에서 조건별 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row22,B,revisit,BND-034,RESEARCH_IN_PROGRESS,STATE_WORK.json,원문·공략 설명·재구성 구분; 전체 상태 그래프가 없으면 새 기준본에서 조건별 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row23,B,after_completion,BND-034,RESEARCH_IN_PROGRESS,STATE_WORK.json,원문·공략 설명·재구성 구분; 전체 상태 그래프가 없으면 새 기준본에서 조건별 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row24,C,identity_variant_boss,BND-016;BND-017,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 표의 문서값과 NA 참고 소비 코드를 분리; 원작 확률/독립·배타/수량이 없으면 UNKNOWN
-docs/rebuild/p1_5/gaps_by_feature.csv:row25,C,region_floor,BND-016;BND-017,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 표의 문서값과 NA 참고 소비 코드를 분리; 원작 확률/독립·배타/수량이 없으면 UNKNOWN
-docs/rebuild/p1_5/gaps_by_feature.csv:row26,C,graphic,BND-016;BND-017,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 표의 문서값과 NA 참고 소비 코드를 분리; 원작 확률/독립·배타/수량이 없으면 UNKNOWN
-docs/rebuild/p1_5/gaps_by_feature.csv:row27,C,hp_stats,BND-016;BND-017,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 표의 문서값과 NA 참고 소비 코드를 분리; 원작 확률/독립·배타/수량이 없으면 UNKNOWN
-docs/rebuild/p1_5/gaps_by_feature.csv:row28,C,experience,BND-016;BND-017,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 표의 문서값과 NA 참고 소비 코드를 분리; 원작 확률/독립·배타/수량이 없으면 UNKNOWN
-docs/rebuild/p1_5/gaps_by_feature.csv:row29,C,aggression,BND-016;BND-017,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 표의 문서값과 NA 참고 소비 코드를 분리; 원작 확률/독립·배타/수량이 없으면 UNKNOWN
-docs/rebuild/p1_5/gaps_by_feature.csv:row30,C,movement_chase_return,BND-016;BND-017,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 표의 문서값과 NA 참고 소비 코드를 분리; 원작 확률/독립·배타/수량이 없으면 UNKNOWN
-docs/rebuild/p1_5/gaps_by_feature.csv:row31,C,attack_interval,BND-016;BND-017,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 표의 문서값과 NA 참고 소비 코드를 분리; 원작 확률/독립·배타/수량이 없으면 UNKNOWN
-docs/rebuild/p1_5/gaps_by_feature.csv:row32,C,death,BND-016;BND-017,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 표의 문서값과 NA 참고 소비 코드를 분리; 원작 확률/독립·배타/수량이 없으면 UNKNOWN
-docs/rebuild/p1_5/gaps_by_feature.csv:row33,C,respawn_delay,BND-016;BND-017,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 표의 문서값과 NA 참고 소비 코드를 분리; 원작 확률/독립·배타/수량이 없으면 UNKNOWN
-docs/rebuild/p1_5/gaps_by_feature.csv:row34,C,spawn_area_count_cap,BND-016;BND-017,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 표의 문서값과 NA 참고 소비 코드를 분리; 원작 확률/독립·배타/수량이 없으면 UNKNOWN
-docs/rebuild/p1_5/gaps_by_feature.csv:row35,C,item_relation,BND-016;BND-017,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 표의 문서값과 NA 참고 소비 코드를 분리; 원작 확률/독립·배타/수량이 없으면 UNKNOWN
-docs/rebuild/p1_5/gaps_by_feature.csv:row36,C,probability,BND-016;BND-017,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 표의 문서값과 NA 참고 소비 코드를 분리; 원작 확률/독립·배타/수량이 없으면 UNKNOWN
-docs/rebuild/p1_5/gaps_by_feature.csv:row37,C,probability_model,BND-016;BND-017,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 표의 문서값과 NA 참고 소비 코드를 분리; 원작 확률/독립·배타/수량이 없으면 UNKNOWN
-docs/rebuild/p1_5/gaps_by_feature.csv:row38,C,quantity,BND-016;BND-017,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 표의 문서값과 NA 참고 소비 코드를 분리; 원작 확률/독립·배타/수량이 없으면 UNKNOWN
-docs/rebuild/p1_5/gaps_by_feature.csv:row39,C,drop_condition,BND-016;BND-017,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 표의 문서값과 NA 참고 소비 코드를 분리; 원작 확률/독립·배타/수량이 없으면 UNKNOWN
-docs/rebuild/p1_5/gaps_by_feature.csv:row40,C,no_drop,BND-016;BND-017,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 표의 문서값과 NA 참고 소비 코드를 분리; 원작 확률/독립·배타/수량이 없으면 UNKNOWN
-docs/rebuild/p1_5/gaps_by_feature.csv:row41,C,ownership_despawn,BND-016;BND-017,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 표의 문서값과 NA 참고 소비 코드를 분리; 원작 확률/독립·배타/수량이 없으면 UNKNOWN
-docs/rebuild/p1_5/gaps_by_feature.csv:row42,D,era_existence,BND-035,RESEARCH_IN_PROGRESS,STATE_WORK.json,현대 강화·옛 조합·퀘스트 업그레이드·수리 분리; 성공률 임의값 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row43,D,recipe,BND-035,RESEARCH_IN_PROGRESS,STATE_WORK.json,현대 강화·옛 조합·퀘스트 업그레이드·수리 분리; 성공률 임의값 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row44,D,materials,BND-035,RESEARCH_IN_PROGRESS,STATE_WORK.json,현대 강화·옛 조합·퀘스트 업그레이드·수리 분리; 성공률 임의값 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row45,D,material_quantities,BND-035,RESEARCH_IN_PROGRESS,STATE_WORK.json,현대 강화·옛 조합·퀘스트 업그레이드·수리 분리; 성공률 임의값 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row46,D,money,BND-035,RESEARCH_IN_PROGRESS,STATE_WORK.json,현대 강화·옛 조합·퀘스트 업그레이드·수리 분리; 성공률 임의값 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row47,D,npc,BND-035,RESEARCH_IN_PROGRESS,STATE_WORK.json,현대 강화·옛 조합·퀘스트 업그레이드·수리 분리; 성공률 임의값 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row48,D,level_job_condition,BND-035,RESEARCH_IN_PROGRESS,STATE_WORK.json,현대 강화·옛 조합·퀘스트 업그레이드·수리 분리; 성공률 임의값 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row49,D,success_result,BND-035,RESEARCH_IN_PROGRESS,STATE_WORK.json,현대 강화·옛 조합·퀘스트 업그레이드·수리 분리; 성공률 임의값 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row50,D,success_rate,BND-035,RESEARCH_IN_PROGRESS,STATE_WORK.json,현대 강화·옛 조합·퀘스트 업그레이드·수리 분리; 성공률 임의값 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row51,D,failure_loss_or_keep,BND-035,RESEARCH_IN_PROGRESS,STATE_WORK.json,현대 강화·옛 조합·퀘스트 업그레이드·수리 분리; 성공률 임의값 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row52,D,durability,BND-035,RESEARCH_IN_PROGRESS,STATE_WORK.json,현대 강화·옛 조합·퀘스트 업그레이드·수리 분리; 성공률 임의값 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row53,D,repairability,BND-035,RESEARCH_IN_PROGRESS,STATE_WORK.json,현대 강화·옛 조합·퀘스트 업그레이드·수리 분리; 성공률 임의값 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row54,D,repair_price,BND-035,RESEARCH_IN_PROGRESS,STATE_WORK.json,현대 강화·옛 조합·퀘스트 업그레이드·수리 분리; 성공률 임의값 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row55,E,peasant_start,BND-018;BND-020;BND-021,RESEARCH_IN_PROGRESS,STATE_WORK.json,2000/2001 profile dispatch 필수; 문서에 없는 수치·전직업 공통 기본값 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row56,E,job_change_level_npc,BND-018;BND-020;BND-021,RESEARCH_IN_PROGRESS,STATE_WORK.json,2000/2001 profile dispatch 필수; 문서에 없는 수치·전직업 공통 기본값 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row57,E,four_job_learning,BND-018;BND-020;BND-021,RESEARCH_IN_PROGRESS,STATE_WORK.json,2000/2001 profile dispatch 필수; 문서에 없는 수치·전직업 공통 기본값 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row58,E,learn_materials,BND-018;BND-020;BND-021,RESEARCH_IN_PROGRESS,STATE_WORK.json,2000/2001 profile dispatch 필수; 문서에 없는 수치·전직업 공통 기본값 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row59,E,learn_money,BND-018;BND-020;BND-021,RESEARCH_IN_PROGRESS,STATE_WORK.json,2000/2001 profile dispatch 필수; 문서에 없는 수치·전직업 공통 기본값 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row60,E,prerequisite,BND-018;BND-020;BND-021,RESEARCH_IN_PROGRESS,STATE_WORK.json,2000/2001 profile dispatch 필수; 문서에 없는 수치·전직업 공통 기본값 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row61,E,target,BND-018;BND-020;BND-021,RESEARCH_IN_PROGRESS,STATE_WORK.json,2000/2001 profile dispatch 필수; 문서에 없는 수치·전직업 공통 기본값 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row62,E,range_wall,BND-018;BND-020;BND-021,RESEARCH_IN_PROGRESS,STATE_WORK.json,2000/2001 profile dispatch 필수; 문서에 없는 수치·전직업 공통 기본값 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row63,E,cost_hp_mp,BND-018;BND-020;BND-021,RESEARCH_IN_PROGRESS,STATE_WORK.json,2000/2001 profile dispatch 필수; 문서에 없는 수치·전직업 공통 기본값 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row64,E,effect,BND-018;BND-020;BND-021,RESEARCH_IN_PROGRESS,STATE_WORK.json,2000/2001 profile dispatch 필수; 문서에 없는 수치·전직업 공통 기본값 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row65,E,duration,BND-018;BND-020;BND-021,RESEARCH_IN_PROGRESS,STATE_WORK.json,2000/2001 profile dispatch 필수; 문서에 없는 수치·전직업 공통 기본값 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row66,E,stack_dispel,BND-018;BND-020;BND-021,RESEARCH_IN_PROGRESS,STATE_WORK.json,2000/2001 profile dispatch 필수; 문서에 없는 수치·전직업 공통 기본값 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row67,E,failure,BND-018;BND-020;BND-021,RESEARCH_IN_PROGRESS,STATE_WORK.json,2000/2001 profile dispatch 필수; 문서에 없는 수치·전직업 공통 기본값 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row68,E,cooldown,BND-018;BND-020;BND-021,RESEARCH_IN_PROGRESS,STATE_WORK.json,2000/2001 profile dispatch 필수; 문서에 없는 수치·전직업 공통 기본값 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row69,E,experience_growth,BND-018;BND-020;BND-021,RESEARCH_IN_PROGRESS,STATE_WORK.json,2000/2001 profile dispatch 필수; 문서에 없는 수치·전직업 공통 기본값 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row70,E,promotion,BND-018;BND-020;BND-021,RESEARCH_IN_PROGRESS,STATE_WORK.json,2000/2001 profile dispatch 필수; 문서에 없는 수치·전직업 공통 기본값 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row71,E,equipment_condition,BND-018;BND-020;BND-021,RESEARCH_IN_PROGRESS,STATE_WORK.json,2000/2001 profile dispatch 필수; 문서에 없는 수치·전직업 공통 기본값 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row72,E,shop_stock_buy_sell_limit,BND-018;BND-020;BND-021,RESEARCH_IN_PROGRESS,STATE_WORK.json,2000/2001 profile dispatch 필수; 문서에 없는 수치·전직업 공통 기본값 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row73,F,direction_order,BND-009;BND-022,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 원본 표와 네 방향 행동을 대조; 이미지 추출 성공과 모션 의미·속도 복원 분리
-docs/rebuild/p1_5/gaps_by_feature.csv:row74,F,frame_start_end,BND-009;BND-022,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 원본 표와 네 방향 행동을 대조; 이미지 추출 성공과 모션 의미·속도 복원 분리
-docs/rebuild/p1_5/gaps_by_feature.csv:row75,F,repeat,BND-009;BND-022,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 원본 표와 네 방향 행동을 대조; 이미지 추출 성공과 모션 의미·속도 복원 분리
-docs/rebuild/p1_5/gaps_by_feature.csv:row76,F,delay_raw_unit,BND-009;BND-022,NEW_EVIDENCE_P2_OBSERVATION_REQUIRED,handoff/B001,한국 원본 표와 네 방향 행동을 대조; 이미지 추출 성공과 모션 의미·속도 복원 분리
-docs/rebuild/p1_5/gaps_by_feature.csv:row77,F,origin_offset,BND-009;BND-022,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 원본 표와 네 방향 행동을 대조; 이미지 추출 성공과 모션 의미·속도 복원 분리
-docs/rebuild/p1_5/gaps_by_feature.csv:row78,F,palette,BND-009;BND-022,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 원본 표와 네 방향 행동을 대조; 이미지 추출 성공과 모션 의미·속도 복원 분리
-docs/rebuild/p1_5/gaps_by_feature.csv:row79,F,front_back_layer,BND-009;BND-022,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 원본 표와 네 방향 행동을 대조; 이미지 추출 성공과 모션 의미·속도 복원 분리
-docs/rebuild/p1_5/gaps_by_feature.csv:row80,F,action_entry_exit,BND-009;BND-022,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 원본 표와 네 방향 행동을 대조; 이미지 추출 성공과 모션 의미·속도 복원 분리
-docs/rebuild/p1_5/gaps_by_feature.csv:row81,F,transition_interrupt,BND-009;BND-022,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 원본 표와 네 방향 행동을 대조; 이미지 추출 성공과 모션 의미·속도 복원 분리
-docs/rebuild/p1_5/gaps_by_feature.csv:row82,F,body_weapon_alignment,BND-009;BND-022,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 원본 표와 네 방향 행동을 대조; 이미지 추출 성공과 모션 의미·속도 복원 분리
-docs/rebuild/p1_5/gaps_by_feature.csv:row83,F,existent_action_set,BND-009;BND-022,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 원본 표와 네 방향 행동을 대조; 이미지 추출 성공과 모션 의미·속도 복원 분리
-docs/rebuild/p1_5/gaps_by_feature.csv:row84,G,skill_to_guide_image,BND-023;BND-024,RESEARCH_IN_PROGRESS,STATE_WORK.json,모든 확보 GIF와 원본 프레임 비교; Delay raw 단위/음향/타격 시점은 정확한 P2 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row85,G,guide_to_client_sequence,BND-023;BND-024,NEW_EVIDENCE_P2_OBSERVATION_REQUIRED,handoff/B001,모든 확보 GIF와 원본 프레임 비교; Delay raw 단위/음향/타격 시점은 정확한 P2 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row86,G,sequence_frames,BND-023;BND-024,NEW_EVIDENCE_P2_OBSERVATION_REQUIRED,handoff/B001,모든 확보 GIF와 원본 프레임 비교; Delay raw 단위/음향/타격 시점은 정확한 P2 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row87,G,layer_position,BND-023;BND-024,RESEARCH_IN_PROGRESS,STATE_WORK.json,모든 확보 GIF와 원본 프레임 비교; Delay raw 단위/음향/타격 시점은 정확한 P2 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row88,G,repeat_alpha_light,BND-023;BND-024,NEW_EVIDENCE_P2_OBSERVATION_REQUIRED,handoff/B001,모든 확보 GIF와 원본 프레임 비교; Delay raw 단위/음향/타격 시점은 정확한 P2 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row89,G,sound_id,BND-023;BND-024,RESEARCH_IN_PROGRESS,STATE_WORK.json,모든 확보 GIF와 원본 프레임 비교; Delay raw 단위/음향/타격 시점은 정확한 P2 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row90,G,wave_metadata,BND-023;BND-024,RESEARCH_IN_PROGRESS,STATE_WORK.json,모든 확보 GIF와 원본 프레임 비교; Delay raw 단위/음향/타격 시점은 정확한 P2 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row91,G,cast,BND-023;BND-024,RESEARCH_IN_PROGRESS,STATE_WORK.json,모든 확보 GIF와 원본 프레임 비교; Delay raw 단위/음향/타격 시점은 정확한 P2 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row92,G,impact,BND-023;BND-024,RESEARCH_IN_PROGRESS,STATE_WORK.json,모든 확보 GIF와 원본 프레임 비교; Delay raw 단위/음향/타격 시점은 정확한 P2 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row93,G,hit_display,BND-023;BND-024,RESEARCH_IN_PROGRESS,STATE_WORK.json,모든 확보 GIF와 원본 프레임 비교; Delay raw 단위/음향/타격 시점은 정확한 P2 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row94,G,actual_audio_output,BND-023;BND-024,RESEARCH_IN_PROGRESS,STATE_WORK.json,모든 확보 GIF와 원본 프레임 비교; Delay raw 단위/음향/타격 시점은 정확한 P2 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row95,G,next_action_time,BND-023;BND-024,RESEARCH_IN_PROGRESS,STATE_WORK.json,모든 확보 GIF와 원본 프레임 비교; Delay raw 단위/음향/타격 시점은 정확한 P2 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row96,G,latency_uncertainty,BND-023;BND-024,NEW_EVIDENCE_P2_OBSERVATION_REQUIRED,handoff/B001,모든 확보 GIF와 원본 프레임 비교; Delay raw 단위/음향/타격 시점은 정확한 P2 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row97,H,era_city,BND-013;BND-014,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 PCX와 원본 MAP 대응을 검증; NA 지명 교체·임시 포털·village 고정 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row98,H,dimensions,BND-013;BND-014,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 PCX와 원본 MAP 대응을 검증; NA 지명 교체·임시 포털·village 고정 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row99,H,coordinate_origin,BND-013;BND-014,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 PCX와 원본 MAP 대응을 검증; NA 지명 교체·임시 포털·village 고정 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row100,H,landmarks,BND-013;BND-014,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 PCX와 원본 MAP 대응을 검증; NA 지명 교체·임시 포털·village 고정 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row101,H,buildings,BND-013;BND-014,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 PCX와 원본 MAP 대응을 검증; NA 지명 교체·임시 포털·village 고정 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row102,H,four_gates,BND-013;BND-014,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 PCX와 원본 MAP 대응을 검증; NA 지명 교체·임시 포털·village 고정 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row103,H,interiors,BND-013;BND-014,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 PCX와 원본 MAP 대응을 검증; NA 지명 교체·임시 포털·village 고정 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row104,H,hunting_entrances,BND-013;BND-014,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 PCX와 원본 MAP 대응을 검증; NA 지명 교체·임시 포털·village 고정 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row105,H,tiles_objects,BND-013;BND-014,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 PCX와 원본 MAP 대응을 검증; NA 지명 교체·임시 포털·village 고정 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row106,H,collision_occlusion,BND-013;BND-014,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 PCX와 원본 MAP 대응을 검증; NA 지명 교체·임시 포털·village 고정 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row107,H,npc_spawns,BND-013;BND-014,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 PCX와 원본 MAP 대응을 검증; NA 지명 교체·임시 포털·village 고정 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row108,H,exits,BND-013;BND-014,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 PCX와 원본 MAP 대응을 검증; NA 지명 교체·임시 포털·village 고정 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row109,H,return_by_country_direction,BND-013;BND-014,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 PCX와 원본 MAP 대응을 검증; NA 지명 교체·임시 포털·village 고정 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row110,H,resurrection,BND-013;BND-014,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 PCX와 원본 MAP 대응을 검증; NA 지명 교체·임시 포털·village 고정 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row111,H,summon_restriction,BND-013;BND-014,RESEARCH_IN_PROGRESS,STATE_WORK.json,공식 PCX와 원본 MAP 대응을 검증; NA 지명 교체·임시 포털·village 고정 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row112,I,background_buttons,BND-001;BND-005;BND-006;BND-007,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 공식 생성 절차·원본 문자열·사용자 UI 사진을 구분; 로그인 UI 마스크2개와 실제 IME 별도 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row113,I,states,BND-001;BND-005;BND-006;BND-007,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 공식 생성 절차·원본 문자열·사용자 UI 사진을 구분; 로그인 UI 마스크2개와 실제 IME 별도 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row114,I,sound,BND-001;BND-005;BND-006;BND-007,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 공식 생성 절차·원본 문자열·사용자 UI 사진을 구분; 로그인 UI 마스크2개와 실제 IME 별도 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row115,I,name_input_error,BND-001;BND-005;BND-006;BND-007,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 공식 생성 절차·원본 문자열·사용자 UI 사진을 구분; 로그인 UI 마스크2개와 실제 IME 별도 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row116,I,cancel,BND-001;BND-005;BND-006;BND-007,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 공식 생성 절차·원본 문자열·사용자 UI 사진을 구분; 로그인 UI 마스크2개와 실제 IME 별도 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row117,I,creation_options,BND-001;BND-005;BND-006;BND-007,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 공식 생성 절차·원본 문자열·사용자 UI 사진을 구분; 로그인 UI 마스크2개와 실제 IME 별도 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row118,I,choice_order,BND-001;BND-005;BND-006;BND-007,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 공식 생성 절차·원본 문자열·사용자 UI 사진을 구분; 로그인 UI 마스크2개와 실제 IME 별도 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row119,I,initial_place_equipment_job,BND-001;BND-005;BND-006;BND-007,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 공식 생성 절차·원본 문자열·사용자 UI 사진을 구분; 로그인 UI 마스크2개와 실제 IME 별도 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row120,I,IME,BND-001;BND-005;BND-006;BND-007,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 공식 생성 절차·원본 문자열·사용자 UI 사진을 구분; 로그인 UI 마스크2개와 실제 IME 별도 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row121,I,right_four_panels,BND-001;BND-005;BND-006;BND-007,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 공식 생성 절차·원본 문자열·사용자 UI 사진을 구분; 로그인 UI 마스크2개와 실제 IME 별도 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row122,I,bottom_status,BND-001;BND-005;BND-006;BND-007,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 공식 생성 절차·원본 문자열·사용자 UI 사진을 구분; 로그인 UI 마스크2개와 실제 IME 별도 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row123,I,selection_scroll_empty_error,BND-001;BND-005;BND-006;BND-007,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 공식 생성 절차·원본 문자열·사용자 UI 사진을 구분; 로그인 UI 마스크2개와 실제 IME 별도 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row124,I,actual_icons,BND-001;BND-005;BND-006;BND-007,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 공식 생성 절차·원본 문자열·사용자 UI 사진을 구분; 로그인 UI 마스크2개와 실제 IME 별도 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row125,I,equipped_appearance,BND-001;BND-005;BND-006;BND-007,RESEARCH_IN_PROGRESS,STATE_WORK.json,한국 공식 생성 절차·원본 문자열·사용자 UI 사진을 구분; 로그인 UI 마스크2개와 실제 IME 별도 관측
-docs/rebuild/p1_5/gaps_by_feature.csv:row126,J,schema,BND-026;BND-027;BND-028;BND-029,CODEX_EXECUTION_REQUIRED,STATE_WORK.json,정적 참고 패턴과 실기기/실인증 구분; 좌표 일괄 입구 이동 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row127,J,payload_integrity,BND-026;BND-027;BND-028;BND-029,CODEX_EXECUTION_REQUIRED,STATE_WORK.json,정적 참고 패턴과 실기기/실인증 구분; 좌표 일괄 입구 이동 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row128,J,owner_stable_id_bounds,BND-026;BND-027;BND-028;BND-029,CODEX_EXECUTION_REQUIRED,STATE_WORK.json,정적 참고 패턴과 실기기/실인증 구분; 좌표 일괄 입구 이동 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row129,J,atomic_backup_recovery,BND-026;BND-027;BND-028;BND-029,CODEX_EXECUTION_REQUIRED,STATE_WORK.json,정적 참고 패턴과 실기기/실인증 구분; 좌표 일괄 입구 이동 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row130,J,coordinate_validity,BND-026;BND-027;BND-028;BND-029,CODEX_EXECUTION_REQUIRED,STATE_WORK.json,정적 참고 패턴과 실기기/실인증 구분; 좌표 일괄 입구 이동 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row131,J,explicit_migration,BND-026;BND-027;BND-028;BND-029,CODEX_EXECUTION_REQUIRED,STATE_WORK.json,정적 참고 패턴과 실기기/실인증 구분; 좌표 일괄 입구 이동 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row132,J,preserve_on_failure,BND-026;BND-027;BND-028;BND-029,CODEX_EXECUTION_REQUIRED,STATE_WORK.json,정적 참고 패턴과 실기기/실인증 구분; 좌표 일괄 입구 이동 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row133,J,offline_revision_conflict,BND-026;BND-027;BND-028;BND-029,CODEX_EXECUTION_REQUIRED,STATE_WORK.json,정적 참고 패턴과 실기기/실인증 구분; 좌표 일괄 입구 이동 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row134,J,same_account_roundtrip,BND-026;BND-027;BND-028;BND-029,CODEX_EXECUTION_REQUIRED,STATE_WORK.json,정적 참고 패턴과 실기기/실인증 구분; 좌표 일괄 입구 이동 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row135,J,windows,BND-026;BND-027;BND-028;BND-029,CODEX_EXECUTION_REQUIRED,STATE_WORK.json,정적 참고 패턴과 실기기/실인증 구분; 좌표 일괄 입구 이동 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row136,J,android,BND-026;BND-027;BND-028;BND-029,CODEX_EXECUTION_REQUIRED,STATE_WORK.json,정적 참고 패턴과 실기기/실인증 구분; 좌표 일괄 입구 이동 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row137,J,actual_galaxy,BND-026;BND-027;BND-028;BND-029,CODEX_EXECUTION_REQUIRED,STATE_WORK.json,정적 참고 패턴과 실기기/실인증 구분; 좌표 일괄 입구 이동 금지
-docs/rebuild/p1_5/gaps_by_feature.csv:row138,J,auth_environment_access,BND-026;BND-027;BND-028;BND-029,CODEX_EXECUTION_REQUIRED,STATE_WORK.json,정적 참고 패턴과 실기기/실인증 구분; 좌표 일괄 입구 이동 금지
+docs/rebuild/p1_5/gaps_by_feature.csv:row2,A,name,BND-033,PARTIAL_NEW_EVIDENCE_REVIEW_REQUIRED,handoff/B002; research/maps_npc,순이/좌성황의같은판본개별nativeID·몸/머리/옷/팔레트와네방향근거추적
+docs/rebuild/p1_5/gaps_by_feature.csv:row3,A,alias,BND-033,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/maps_npc,순이/좌성황의같은판본개별nativeID·몸/머리/옷/팔레트와네방향근거추적
+docs/rebuild/p1_5/gaps_by_feature.csv:row4,A,native_id,BND-033,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/maps_npc,순이/좌성황의같은판본개별nativeID·몸/머리/옷/팔레트와네방향근거추적
+docs/rebuild/p1_5/gaps_by_feature.csv:row5,A,region,BND-033,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/maps_npc,순이/좌성황의같은판본개별nativeID·몸/머리/옷/팔레트와네방향근거추적
+docs/rebuild/p1_5/gaps_by_feature.csv:row6,A,building,BND-033,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/maps_npc,순이/좌성황의같은판본개별nativeID·몸/머리/옷/팔레트와네방향근거추적
+docs/rebuild/p1_5/gaps_by_feature.csv:row7,A,coordinate,BND-033,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/maps_npc,순이/좌성황의같은판본개별nativeID·몸/머리/옷/팔레트와네방향근거추적
+docs/rebuild/p1_5/gaps_by_feature.csv:row8,A,direction,BND-033,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/maps_npc,순이/좌성황의같은판본개별nativeID·몸/머리/옷/팔레트와네방향근거추적
+docs/rebuild/p1_5/gaps_by_feature.csv:row9,A,body_head_clothes_weapon,BND-033,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/maps_npc,순이/좌성황의같은판본개별nativeID·몸/머리/옷/팔레트와네방향근거추적
+docs/rebuild/p1_5/gaps_by_feature.csv:row10,A,palette,BND-033,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/maps_npc,순이/좌성황의같은판본개별nativeID·몸/머리/옷/팔레트와네방향근거추적
+docs/rebuild/p1_5/gaps_by_feature.csv:row11,A,motion_layer,BND-033,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/maps_npc,순이/좌성황의같은판본개별nativeID·몸/머리/옷/팔레트와네방향근거추적
+docs/rebuild/p1_5/gaps_by_feature.csv:row12,A,screen_evidence,BND-033,PARTIAL_NEW_EVIDENCE_REVIEW_REQUIRED,handoff/B002; research/maps_npc,순이/좌성황의같은판본개별nativeID·몸/머리/옷/팔레트와네방향근거추적
+docs/rebuild/p1_5/gaps_by_feature.csv:row13,A,service,BND-033,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/maps_npc,순이/좌성황의같은판본개별nativeID·몸/머리/옷/팔레트와네방향근거추적
+docs/rebuild/p1_5/gaps_by_feature.csv:row14,B,spoken_text,BND-034,PARTIAL_NEW_EVIDENCE_REVIEW_REQUIRED,handoff/B002; research/maps_npc,순이판매완료원문성공한장외실패/거절/취소/재방문분기및원문영상추적
+docs/rebuild/p1_5/gaps_by_feature.csv:row15,B,choices,BND-034,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/maps_npc,순이판매완료원문성공한장외실패/거절/취소/재방문분기및원문영상추적
+docs/rebuild/p1_5/gaps_by_feature.csv:row16,B,branch_condition,BND-034,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/maps_npc,순이판매완료원문성공한장외실패/거절/취소/재방문분기및원문영상추적
+docs/rebuild/p1_5/gaps_by_feature.csv:row17,B,reward,BND-034,PARTIAL_NEW_EVIDENCE_REVIEW_REQUIRED,handoff/B002; research/maps_npc,순이판매완료원문성공한장외실패/거절/취소/재방문분기및원문영상추적
+docs/rebuild/p1_5/gaps_by_feature.csv:row18,B,consumption,BND-034,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/maps_npc,순이판매완료원문성공한장외실패/거절/취소/재방문분기및원문영상추적
+docs/rebuild/p1_5/gaps_by_feature.csv:row19,B,failure,BND-034,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/maps_npc,순이판매완료원문성공한장외실패/거절/취소/재방문분기및원문영상추적
+docs/rebuild/p1_5/gaps_by_feature.csv:row20,B,refusal,BND-034,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/maps_npc,순이판매완료원문성공한장외실패/거절/취소/재방문분기및원문영상추적
+docs/rebuild/p1_5/gaps_by_feature.csv:row21,B,cancel,BND-034,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/maps_npc,순이판매완료원문성공한장외실패/거절/취소/재방문분기및원문영상추적
+docs/rebuild/p1_5/gaps_by_feature.csv:row22,B,revisit,BND-034,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/maps_npc,순이판매완료원문성공한장외실패/거절/취소/재방문분기및원문영상추적
+docs/rebuild/p1_5/gaps_by_feature.csv:row23,B,after_completion,BND-034,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/maps_npc,순이판매완료원문성공한장외실패/거절/취소/재방문분기및원문영상추적
+docs/rebuild/p1_5/gaps_by_feature.csv:row24,C,identity_variant_boss,BND-016;BND-017,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,"한국층별spawn수/구역/리스폰,불여우도주HP임계,전체공격기하/간격관측"
+docs/rebuild/p1_5/gaps_by_feature.csv:row25,C,region_floor,BND-016;BND-017,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,"한국층별spawn수/구역/리스폰,불여우도주HP임계,전체공격기하/간격관측"
+docs/rebuild/p1_5/gaps_by_feature.csv:row26,C,graphic,BND-016;BND-017,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,"한국층별spawn수/구역/리스폰,불여우도주HP임계,전체공격기하/간격관측"
+docs/rebuild/p1_5/gaps_by_feature.csv:row27,C,hp_stats,BND-016;BND-017,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,"한국층별spawn수/구역/리스폰,불여우도주HP임계,전체공격기하/간격관측"
+docs/rebuild/p1_5/gaps_by_feature.csv:row28,C,experience,BND-016;BND-017,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,"한국층별spawn수/구역/리스폰,불여우도주HP임계,전체공격기하/간격관측"
+docs/rebuild/p1_5/gaps_by_feature.csv:row29,C,aggression,BND-016;BND-017,PARTIAL_NEW_EVIDENCE_REVIEW_REQUIRED,handoff/B002; research/gameplay_economy,"한국층별spawn수/구역/리스폰,불여우도주HP임계,전체공격기하/간격관측"
+docs/rebuild/p1_5/gaps_by_feature.csv:row30,C,movement_chase_return,BND-016;BND-017,PARTIAL_NEW_EVIDENCE_REVIEW_REQUIRED,handoff/B002; research/gameplay_economy,"한국층별spawn수/구역/리스폰,불여우도주HP임계,전체공격기하/간격관측"
+docs/rebuild/p1_5/gaps_by_feature.csv:row31,C,attack_interval,BND-016;BND-017,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,"한국층별spawn수/구역/리스폰,불여우도주HP임계,전체공격기하/간격관측"
+docs/rebuild/p1_5/gaps_by_feature.csv:row32,C,death,BND-016;BND-017,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,"한국층별spawn수/구역/리스폰,불여우도주HP임계,전체공격기하/간격관측"
+docs/rebuild/p1_5/gaps_by_feature.csv:row33,C,respawn_delay,BND-016;BND-017,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,"한국층별spawn수/구역/리스폰,불여우도주HP임계,전체공격기하/간격관측"
+docs/rebuild/p1_5/gaps_by_feature.csv:row34,C,spawn_area_count_cap,BND-016;BND-017,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,"한국층별spawn수/구역/리스폰,불여우도주HP임계,전체공격기하/간격관측"
+docs/rebuild/p1_5/gaps_by_feature.csv:row35,C,item_relation,BND-016;BND-017,PARTIAL_NEW_EVIDENCE_REVIEW_REQUIRED,handoff/B002; research/gameplay_economy,"한국층별spawn수/구역/리스폰,불여우도주HP임계,전체공격기하/간격관측"
+docs/rebuild/p1_5/gaps_by_feature.csv:row36,C,probability,BND-016;BND-017,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,"한국층별spawn수/구역/리스폰,불여우도주HP임계,전체공격기하/간격관측"
+docs/rebuild/p1_5/gaps_by_feature.csv:row37,C,probability_model,BND-016;BND-017,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,"한국층별spawn수/구역/리스폰,불여우도주HP임계,전체공격기하/간격관측"
+docs/rebuild/p1_5/gaps_by_feature.csv:row38,C,quantity,BND-016;BND-017,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,"한국층별spawn수/구역/리스폰,불여우도주HP임계,전체공격기하/간격관측"
+docs/rebuild/p1_5/gaps_by_feature.csv:row39,C,drop_condition,BND-016;BND-017,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,"한국층별spawn수/구역/리스폰,불여우도주HP임계,전체공격기하/간격관측"
+docs/rebuild/p1_5/gaps_by_feature.csv:row40,C,no_drop,BND-016;BND-017,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,"한국층별spawn수/구역/리스폰,불여우도주HP임계,전체공격기하/간격관측"
+docs/rebuild/p1_5/gaps_by_feature.csv:row41,C,ownership_despawn,BND-016;BND-017,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,"한국층별spawn수/구역/리스폰,불여우도주HP임계,전체공격기하/간격관측"
+docs/rebuild/p1_5/gaps_by_feature.csv:row42,D,era_existence,BND-035,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,제작NPC장소추론을원대화로확인;성공률/실패소모/수리공식원문미확정유지
+docs/rebuild/p1_5/gaps_by_feature.csv:row43,D,recipe,BND-035,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,제작NPC장소추론을원대화로확인;성공률/실패소모/수리공식원문미확정유지
+docs/rebuild/p1_5/gaps_by_feature.csv:row44,D,materials,BND-035,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,제작NPC장소추론을원대화로확인;성공률/실패소모/수리공식원문미확정유지
+docs/rebuild/p1_5/gaps_by_feature.csv:row45,D,material_quantities,BND-035,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,제작NPC장소추론을원대화로확인;성공률/실패소모/수리공식원문미확정유지
+docs/rebuild/p1_5/gaps_by_feature.csv:row46,D,money,BND-035,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,제작NPC장소추론을원대화로확인;성공률/실패소모/수리공식원문미확정유지
+docs/rebuild/p1_5/gaps_by_feature.csv:row47,D,npc,BND-035,PARTIAL_NEW_EVIDENCE_REVIEW_REQUIRED,handoff/B002; research/gameplay_economy,제작NPC장소추론을원대화로확인;성공률/실패소모/수리공식원문미확정유지
+docs/rebuild/p1_5/gaps_by_feature.csv:row48,D,level_job_condition,BND-035,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,제작NPC장소추론을원대화로확인;성공률/실패소모/수리공식원문미확정유지
+docs/rebuild/p1_5/gaps_by_feature.csv:row49,D,success_result,BND-035,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,제작NPC장소추론을원대화로확인;성공률/실패소모/수리공식원문미확정유지
+docs/rebuild/p1_5/gaps_by_feature.csv:row50,D,success_rate,BND-035,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,제작NPC장소추론을원대화로확인;성공률/실패소모/수리공식원문미확정유지
+docs/rebuild/p1_5/gaps_by_feature.csv:row51,D,failure_loss_or_keep,BND-035,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,제작NPC장소추론을원대화로확인;성공률/실패소모/수리공식원문미확정유지
+docs/rebuild/p1_5/gaps_by_feature.csv:row52,D,durability,BND-035,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,제작NPC장소추론을원대화로확인;성공률/실패소모/수리공식원문미확정유지
+docs/rebuild/p1_5/gaps_by_feature.csv:row53,D,repairability,BND-035,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,제작NPC장소추론을원대화로확인;성공률/실패소모/수리공식원문미확정유지
+docs/rebuild/p1_5/gaps_by_feature.csv:row54,D,repair_price,BND-035,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,제작NPC장소추론을원대화로확인;성공률/실패소모/수리공식원문미확정유지
+docs/rebuild/p1_5/gaps_by_feature.csv:row55,E,peasant_start,BND-018;BND-020;BND-021,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,"토끼고기등누락itemID와특정백씨상인인스턴스,진마반지동일페이지가격충돌해결;XP곡선/승급원문"
+docs/rebuild/p1_5/gaps_by_feature.csv:row56,E,job_change_level_npc,BND-018;BND-020;BND-021,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,"토끼고기등누락itemID와특정백씨상인인스턴스,진마반지동일페이지가격충돌해결;XP곡선/승급원문"
+docs/rebuild/p1_5/gaps_by_feature.csv:row57,E,four_job_learning,BND-018;BND-020;BND-021,PARTIAL_NEW_EVIDENCE_REVIEW_REQUIRED,handoff/B002; research/gameplay_economy,"토끼고기등누락itemID와특정백씨상인인스턴스,진마반지동일페이지가격충돌해결;XP곡선/승급원문"
+docs/rebuild/p1_5/gaps_by_feature.csv:row58,E,learn_materials,BND-018;BND-020;BND-021,PARTIAL_NEW_EVIDENCE_REVIEW_REQUIRED,handoff/B002; research/gameplay_economy,"토끼고기등누락itemID와특정백씨상인인스턴스,진마반지동일페이지가격충돌해결;XP곡선/승급원문"
+docs/rebuild/p1_5/gaps_by_feature.csv:row59,E,learn_money,BND-018;BND-020;BND-021,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,"토끼고기등누락itemID와특정백씨상인인스턴스,진마반지동일페이지가격충돌해결;XP곡선/승급원문"
+docs/rebuild/p1_5/gaps_by_feature.csv:row60,E,prerequisite,BND-018;BND-020;BND-021,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,"토끼고기등누락itemID와특정백씨상인인스턴스,진마반지동일페이지가격충돌해결;XP곡선/승급원문"
+docs/rebuild/p1_5/gaps_by_feature.csv:row61,E,target,BND-018;BND-020;BND-021,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,"토끼고기등누락itemID와특정백씨상인인스턴스,진마반지동일페이지가격충돌해결;XP곡선/승급원문"
+docs/rebuild/p1_5/gaps_by_feature.csv:row62,E,range_wall,BND-018;BND-020;BND-021,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,"토끼고기등누락itemID와특정백씨상인인스턴스,진마반지동일페이지가격충돌해결;XP곡선/승급원문"
+docs/rebuild/p1_5/gaps_by_feature.csv:row63,E,cost_hp_mp,BND-018;BND-020;BND-021,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,"토끼고기등누락itemID와특정백씨상인인스턴스,진마반지동일페이지가격충돌해결;XP곡선/승급원문"
+docs/rebuild/p1_5/gaps_by_feature.csv:row64,E,effect,BND-018;BND-020;BND-021,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,"토끼고기등누락itemID와특정백씨상인인스턴스,진마반지동일페이지가격충돌해결;XP곡선/승급원문"
+docs/rebuild/p1_5/gaps_by_feature.csv:row65,E,duration,BND-018;BND-020;BND-021,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,"토끼고기등누락itemID와특정백씨상인인스턴스,진마반지동일페이지가격충돌해결;XP곡선/승급원문"
+docs/rebuild/p1_5/gaps_by_feature.csv:row66,E,stack_dispel,BND-018;BND-020;BND-021,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,"토끼고기등누락itemID와특정백씨상인인스턴스,진마반지동일페이지가격충돌해결;XP곡선/승급원문"
+docs/rebuild/p1_5/gaps_by_feature.csv:row67,E,failure,BND-018;BND-020;BND-021,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,"토끼고기등누락itemID와특정백씨상인인스턴스,진마반지동일페이지가격충돌해결;XP곡선/승급원문"
+docs/rebuild/p1_5/gaps_by_feature.csv:row68,E,cooldown,BND-018;BND-020;BND-021,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,"토끼고기등누락itemID와특정백씨상인인스턴스,진마반지동일페이지가격충돌해결;XP곡선/승급원문"
+docs/rebuild/p1_5/gaps_by_feature.csv:row69,E,experience_growth,BND-018;BND-020;BND-021,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,"토끼고기등누락itemID와특정백씨상인인스턴스,진마반지동일페이지가격충돌해결;XP곡선/승급원문"
+docs/rebuild/p1_5/gaps_by_feature.csv:row70,E,promotion,BND-018;BND-020;BND-021,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,"토끼고기등누락itemID와특정백씨상인인스턴스,진마반지동일페이지가격충돌해결;XP곡선/승급원문"
+docs/rebuild/p1_5/gaps_by_feature.csv:row71,E,equipment_condition,BND-018;BND-020;BND-021,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/gameplay_economy,"토끼고기등누락itemID와특정백씨상인인스턴스,진마반지동일페이지가격충돌해결;XP곡선/승급원문"
+docs/rebuild/p1_5/gaps_by_feature.csv:row72,E,shop_stock_buy_sell_limit,BND-018;BND-020;BND-021,PARTIAL_NEW_EVIDENCE_REVIEW_REQUIRED,handoff/B002; research/gameplay_economy,"토끼고기등누락itemID와특정백씨상인인스턴스,진마반지동일페이지가격충돌해결;XP곡선/승급원문"
+docs/rebuild/p1_5/gaps_by_feature.csv:row73,F,direction_order,BND-009;BND-022,CODEX_EXECUTION_REQUIRED,handoff/B001,Codex가마스크2개최소입력·방향/기준점·Delay실행관측;GIF시간게임단위사용금지
+docs/rebuild/p1_5/gaps_by_feature.csv:row74,F,frame_start_end,BND-009;BND-022,CODEX_EXECUTION_REQUIRED,handoff/B001,Codex가마스크2개최소입력·방향/기준점·Delay실행관측;GIF시간게임단위사용금지
+docs/rebuild/p1_5/gaps_by_feature.csv:row75,F,repeat,BND-009;BND-022,CODEX_EXECUTION_REQUIRED,handoff/B001,Codex가마스크2개최소입력·방향/기준점·Delay실행관측;GIF시간게임단위사용금지
+docs/rebuild/p1_5/gaps_by_feature.csv:row76,F,delay_raw_unit,BND-009;BND-022,PARTIAL_NEW_EVIDENCE_REVIEW_REQUIRED,handoff/B001,Codex가마스크2개최소입력·방향/기준점·Delay실행관측;GIF시간게임단위사용금지
+docs/rebuild/p1_5/gaps_by_feature.csv:row77,F,origin_offset,BND-009;BND-022,CODEX_EXECUTION_REQUIRED,handoff/B001,Codex가마스크2개최소입력·방향/기준점·Delay실행관측;GIF시간게임단위사용금지
+docs/rebuild/p1_5/gaps_by_feature.csv:row78,F,palette,BND-009;BND-022,CODEX_EXECUTION_REQUIRED,handoff/B001,Codex가마스크2개최소입력·방향/기준점·Delay실행관측;GIF시간게임단위사용금지
+docs/rebuild/p1_5/gaps_by_feature.csv:row79,F,front_back_layer,BND-009;BND-022,CODEX_EXECUTION_REQUIRED,handoff/B001,Codex가마스크2개최소입력·방향/기준점·Delay실행관측;GIF시간게임단위사용금지
+docs/rebuild/p1_5/gaps_by_feature.csv:row80,F,action_entry_exit,BND-009;BND-022,CODEX_EXECUTION_REQUIRED,handoff/B001,Codex가마스크2개최소입력·방향/기준점·Delay실행관측;GIF시간게임단위사용금지
+docs/rebuild/p1_5/gaps_by_feature.csv:row81,F,transition_interrupt,BND-009;BND-022,CODEX_EXECUTION_REQUIRED,handoff/B001,Codex가마스크2개최소입력·방향/기준점·Delay실행관측;GIF시간게임단위사용금지
+docs/rebuild/p1_5/gaps_by_feature.csv:row82,F,body_weapon_alignment,BND-009;BND-022,CODEX_EXECUTION_REQUIRED,handoff/B001,Codex가마스크2개최소입력·방향/기준점·Delay실행관측;GIF시간게임단위사용금지
+docs/rebuild/p1_5/gaps_by_feature.csv:row83,F,existent_action_set,BND-009;BND-022,CODEX_EXECUTION_REQUIRED,handoff/B001,Codex가마스크2개최소입력·방향/기준점·Delay실행관측;GIF시간게임단위사용금지
+docs/rebuild/p1_5/gaps_by_feature.csv:row84,G,skill_to_guide_image,BND-023;BND-024,CODEX_EXECUTION_REQUIRED,handoff/B001,기술별KR소리호출·실제명중/오디오출력/재행동관측;불일치4개원시퀀스보존
+docs/rebuild/p1_5/gaps_by_feature.csv:row85,G,guide_to_client_sequence,BND-023;BND-024,PARTIAL_NEW_EVIDENCE_REVIEW_REQUIRED,handoff/B001,기술별KR소리호출·실제명중/오디오출력/재행동관측;불일치4개원시퀀스보존
+docs/rebuild/p1_5/gaps_by_feature.csv:row86,G,sequence_frames,BND-023;BND-024,PARTIAL_NEW_EVIDENCE_REVIEW_REQUIRED,handoff/B001,기술별KR소리호출·실제명중/오디오출력/재행동관측;불일치4개원시퀀스보존
+docs/rebuild/p1_5/gaps_by_feature.csv:row87,G,layer_position,BND-023;BND-024,CODEX_EXECUTION_REQUIRED,handoff/B001,기술별KR소리호출·실제명중/오디오출력/재행동관측;불일치4개원시퀀스보존
+docs/rebuild/p1_5/gaps_by_feature.csv:row88,G,repeat_alpha_light,BND-023;BND-024,PARTIAL_NEW_EVIDENCE_REVIEW_REQUIRED,handoff/B001,기술별KR소리호출·실제명중/오디오출력/재행동관측;불일치4개원시퀀스보존
+docs/rebuild/p1_5/gaps_by_feature.csv:row89,G,sound_id,BND-023;BND-024,CODEX_EXECUTION_REQUIRED,handoff/B001,기술별KR소리호출·실제명중/오디오출력/재행동관측;불일치4개원시퀀스보존
+docs/rebuild/p1_5/gaps_by_feature.csv:row90,G,wave_metadata,BND-023;BND-024,CODEX_EXECUTION_REQUIRED,handoff/B001,기술별KR소리호출·실제명중/오디오출력/재행동관측;불일치4개원시퀀스보존
+docs/rebuild/p1_5/gaps_by_feature.csv:row91,G,cast,BND-023;BND-024,CODEX_EXECUTION_REQUIRED,handoff/B001,기술별KR소리호출·실제명중/오디오출력/재행동관측;불일치4개원시퀀스보존
+docs/rebuild/p1_5/gaps_by_feature.csv:row92,G,impact,BND-023;BND-024,CODEX_EXECUTION_REQUIRED,handoff/B001,기술별KR소리호출·실제명중/오디오출력/재행동관측;불일치4개원시퀀스보존
+docs/rebuild/p1_5/gaps_by_feature.csv:row93,G,hit_display,BND-023;BND-024,CODEX_EXECUTION_REQUIRED,handoff/B001,기술별KR소리호출·실제명중/오디오출력/재행동관측;불일치4개원시퀀스보존
+docs/rebuild/p1_5/gaps_by_feature.csv:row94,G,actual_audio_output,BND-023;BND-024,CODEX_EXECUTION_REQUIRED,handoff/B001,기술별KR소리호출·실제명중/오디오출력/재행동관측;불일치4개원시퀀스보존
+docs/rebuild/p1_5/gaps_by_feature.csv:row95,G,next_action_time,BND-023;BND-024,CODEX_EXECUTION_REQUIRED,handoff/B001,기술별KR소리호출·실제명중/오디오출력/재행동관측;불일치4개원시퀀스보존
+docs/rebuild/p1_5/gaps_by_feature.csv:row96,G,latency_uncertainty,BND-023;BND-024,PARTIAL_NEW_EVIDENCE_REVIEW_REQUIRED,handoff/B001,기술별KR소리호출·실제명중/오디오출력/재행동관측;불일치4개원시퀀스보존
+docs/rebuild/p1_5/gaps_by_feature.csv:row97,H,era_city,BND-013;BND-014,PARTIAL_NEW_EVIDENCE_REVIEW_REQUIRED,handoff/B002; research/maps_npc,손상부여map_bu_all02.zip의정상별도보관본;동시기사대문/실내/귀환원문·MAP대응
+docs/rebuild/p1_5/gaps_by_feature.csv:row98,H,dimensions,BND-013;BND-014,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/maps_npc,손상부여map_bu_all02.zip의정상별도보관본;동시기사대문/실내/귀환원문·MAP대응
+docs/rebuild/p1_5/gaps_by_feature.csv:row99,H,coordinate_origin,BND-013;BND-014,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/maps_npc,손상부여map_bu_all02.zip의정상별도보관본;동시기사대문/실내/귀환원문·MAP대응
+docs/rebuild/p1_5/gaps_by_feature.csv:row100,H,landmarks,BND-013;BND-014,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/maps_npc,손상부여map_bu_all02.zip의정상별도보관본;동시기사대문/실내/귀환원문·MAP대응
+docs/rebuild/p1_5/gaps_by_feature.csv:row101,H,buildings,BND-013;BND-014,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/maps_npc,손상부여map_bu_all02.zip의정상별도보관본;동시기사대문/실내/귀환원문·MAP대응
+docs/rebuild/p1_5/gaps_by_feature.csv:row102,H,four_gates,BND-013;BND-014,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/maps_npc,손상부여map_bu_all02.zip의정상별도보관본;동시기사대문/실내/귀환원문·MAP대응
+docs/rebuild/p1_5/gaps_by_feature.csv:row103,H,interiors,BND-013;BND-014,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/maps_npc,손상부여map_bu_all02.zip의정상별도보관본;동시기사대문/실내/귀환원문·MAP대응
+docs/rebuild/p1_5/gaps_by_feature.csv:row104,H,hunting_entrances,BND-013;BND-014,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/maps_npc,손상부여map_bu_all02.zip의정상별도보관본;동시기사대문/실내/귀환원문·MAP대응
+docs/rebuild/p1_5/gaps_by_feature.csv:row105,H,tiles_objects,BND-013;BND-014,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/maps_npc,손상부여map_bu_all02.zip의정상별도보관본;동시기사대문/실내/귀환원문·MAP대응
+docs/rebuild/p1_5/gaps_by_feature.csv:row106,H,collision_occlusion,BND-013;BND-014,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/maps_npc,손상부여map_bu_all02.zip의정상별도보관본;동시기사대문/실내/귀환원문·MAP대응
+docs/rebuild/p1_5/gaps_by_feature.csv:row107,H,npc_spawns,BND-013;BND-014,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/maps_npc,손상부여map_bu_all02.zip의정상별도보관본;동시기사대문/실내/귀환원문·MAP대응
+docs/rebuild/p1_5/gaps_by_feature.csv:row108,H,exits,BND-013;BND-014,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/maps_npc,손상부여map_bu_all02.zip의정상별도보관본;동시기사대문/실내/귀환원문·MAP대응
+docs/rebuild/p1_5/gaps_by_feature.csv:row109,H,return_by_country_direction,BND-013;BND-014,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/maps_npc,손상부여map_bu_all02.zip의정상별도보관본;동시기사대문/실내/귀환원문·MAP대응
+docs/rebuild/p1_5/gaps_by_feature.csv:row110,H,resurrection,BND-013;BND-014,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/maps_npc,손상부여map_bu_all02.zip의정상별도보관본;동시기사대문/실내/귀환원문·MAP대응
+docs/rebuild/p1_5/gaps_by_feature.csv:row111,H,summon_restriction,BND-013;BND-014,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/maps_npc,손상부여map_bu_all02.zip의정상별도보관본;동시기사대문/실내/귀환원문·MAP대응
+docs/rebuild/p1_5/gaps_by_feature.csv:row112,I,background_buttons,BND-001;BND-005;BND-006;BND-007,PARTIAL_NEW_EVIDENCE_REVIEW_REQUIRED,handoff/B002; research/archives_ui,새GIF프로필별시각참조;이름정책/오류/취소/IME/실기기는Codex관측
+docs/rebuild/p1_5/gaps_by_feature.csv:row113,I,states,BND-001;BND-005;BND-006;BND-007,PARTIAL_NEW_EVIDENCE_REVIEW_REQUIRED,handoff/B002; research/archives_ui,새GIF프로필별시각참조;이름정책/오류/취소/IME/실기기는Codex관측
+docs/rebuild/p1_5/gaps_by_feature.csv:row114,I,sound,BND-001;BND-005;BND-006;BND-007,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/archives_ui,새GIF프로필별시각참조;이름정책/오류/취소/IME/실기기는Codex관측
+docs/rebuild/p1_5/gaps_by_feature.csv:row115,I,name_input_error,BND-001;BND-005;BND-006;BND-007,CODEX_EXECUTION_REQUIRED,handoff/B002; research/archives_ui,새GIF프로필별시각참조;이름정책/오류/취소/IME/실기기는Codex관측
+docs/rebuild/p1_5/gaps_by_feature.csv:row116,I,cancel,BND-001;BND-005;BND-006;BND-007,CODEX_EXECUTION_REQUIRED,handoff/B002; research/archives_ui,새GIF프로필별시각참조;이름정책/오류/취소/IME/실기기는Codex관측
+docs/rebuild/p1_5/gaps_by_feature.csv:row117,I,creation_options,BND-001;BND-005;BND-006;BND-007,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/archives_ui,새GIF프로필별시각참조;이름정책/오류/취소/IME/실기기는Codex관측
+docs/rebuild/p1_5/gaps_by_feature.csv:row118,I,choice_order,BND-001;BND-005;BND-006;BND-007,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/archives_ui,새GIF프로필별시각참조;이름정책/오류/취소/IME/실기기는Codex관측
+docs/rebuild/p1_5/gaps_by_feature.csv:row119,I,initial_place_equipment_job,BND-001;BND-005;BND-006;BND-007,PARTIAL_NEW_EVIDENCE_REVIEW_REQUIRED,handoff/B002; research/archives_ui,새GIF프로필별시각참조;이름정책/오류/취소/IME/실기기는Codex관측
+docs/rebuild/p1_5/gaps_by_feature.csv:row120,I,IME,BND-001;BND-005;BND-006;BND-007,CODEX_EXECUTION_REQUIRED,handoff/B002; research/archives_ui,새GIF프로필별시각참조;이름정책/오류/취소/IME/실기기는Codex관측
+docs/rebuild/p1_5/gaps_by_feature.csv:row121,I,right_four_panels,BND-001;BND-005;BND-006;BND-007,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/archives_ui,새GIF프로필별시각참조;이름정책/오류/취소/IME/실기기는Codex관측
+docs/rebuild/p1_5/gaps_by_feature.csv:row122,I,bottom_status,BND-001;BND-005;BND-006;BND-007,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/archives_ui,새GIF프로필별시각참조;이름정책/오류/취소/IME/실기기는Codex관측
+docs/rebuild/p1_5/gaps_by_feature.csv:row123,I,selection_scroll_empty_error,BND-001;BND-005;BND-006;BND-007,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/archives_ui,새GIF프로필별시각참조;이름정책/오류/취소/IME/실기기는Codex관측
+docs/rebuild/p1_5/gaps_by_feature.csv:row124,I,actual_icons,BND-001;BND-005;BND-006;BND-007,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/archives_ui,새GIF프로필별시각참조;이름정책/오류/취소/IME/실기기는Codex관측
+docs/rebuild/p1_5/gaps_by_feature.csv:row125,I,equipped_appearance,BND-001;BND-005;BND-006;BND-007,INVESTIGATED_NO_NEW_FIELD_VALUE,handoff/B002; research/archives_ui,새GIF프로필별시각참조;이름정책/오류/취소/IME/실기기는Codex관측
+docs/rebuild/p1_5/gaps_by_feature.csv:row126,J,schema,BND-026;BND-027;BND-028;BND-029,CODEX_EXECUTION_REQUIRED,handoff/B002; research/audit,Codex실제Windows/Android/Galaxy저장·강제종료·인증왕복. Work실행범위아님
+docs/rebuild/p1_5/gaps_by_feature.csv:row127,J,payload_integrity,BND-026;BND-027;BND-028;BND-029,CODEX_EXECUTION_REQUIRED,handoff/B002; research/audit,Codex실제Windows/Android/Galaxy저장·강제종료·인증왕복. Work실행범위아님
+docs/rebuild/p1_5/gaps_by_feature.csv:row128,J,owner_stable_id_bounds,BND-026;BND-027;BND-028;BND-029,CODEX_EXECUTION_REQUIRED,handoff/B002; research/audit,Codex실제Windows/Android/Galaxy저장·강제종료·인증왕복. Work실행범위아님
+docs/rebuild/p1_5/gaps_by_feature.csv:row129,J,atomic_backup_recovery,BND-026;BND-027;BND-028;BND-029,CODEX_EXECUTION_REQUIRED,handoff/B002; research/audit,Codex실제Windows/Android/Galaxy저장·강제종료·인증왕복. Work실행범위아님
+docs/rebuild/p1_5/gaps_by_feature.csv:row130,J,coordinate_validity,BND-026;BND-027;BND-028;BND-029,CODEX_EXECUTION_REQUIRED,handoff/B002; research/audit,Codex실제Windows/Android/Galaxy저장·강제종료·인증왕복. Work실행범위아님
+docs/rebuild/p1_5/gaps_by_feature.csv:row131,J,explicit_migration,BND-026;BND-027;BND-028;BND-029,CODEX_EXECUTION_REQUIRED,handoff/B002; research/audit,Codex실제Windows/Android/Galaxy저장·강제종료·인증왕복. Work실행범위아님
+docs/rebuild/p1_5/gaps_by_feature.csv:row132,J,preserve_on_failure,BND-026;BND-027;BND-028;BND-029,CODEX_EXECUTION_REQUIRED,handoff/B002; research/audit,Codex실제Windows/Android/Galaxy저장·강제종료·인증왕복. Work실행범위아님
+docs/rebuild/p1_5/gaps_by_feature.csv:row133,J,offline_revision_conflict,BND-026;BND-027;BND-028;BND-029,CODEX_EXECUTION_REQUIRED,handoff/B002; research/audit,Codex실제Windows/Android/Galaxy저장·강제종료·인증왕복. Work실행범위아님
+docs/rebuild/p1_5/gaps_by_feature.csv:row134,J,same_account_roundtrip,BND-026;BND-027;BND-028;BND-029,CODEX_EXECUTION_REQUIRED,handoff/B002; research/audit,Codex실제Windows/Android/Galaxy저장·강제종료·인증왕복. Work실행범위아님
+docs/rebuild/p1_5/gaps_by_feature.csv:row135,J,windows,BND-026;BND-027;BND-028;BND-029,CODEX_EXECUTION_REQUIRED,handoff/B002; research/audit,Codex실제Windows/Android/Galaxy저장·강제종료·인증왕복. Work실행범위아님
+docs/rebuild/p1_5/gaps_by_feature.csv:row136,J,android,BND-026;BND-027;BND-028;BND-029,CODEX_EXECUTION_REQUIRED,handoff/B002; research/audit,Codex실제Windows/Android/Galaxy저장·강제종료·인증왕복. Work실행범위아님
+docs/rebuild/p1_5/gaps_by_feature.csv:row137,J,actual_galaxy,BND-026;BND-027;BND-028;BND-029,CODEX_EXECUTION_REQUIRED,handoff/B002; research/audit,Codex실제Windows/Android/Galaxy저장·강제종료·인증왕복. Work실행범위아님
+docs/rebuild/p1_5/gaps_by_feature.csv:row138,J,auth_environment_access,BND-026;BND-027;BND-028;BND-029,CODEX_EXECUTION_REQUIRED,handoff/B002; research/audit,Codex실제Windows/Android/Galaxy저장·강제종료·인증왕복. Work실행범위아님

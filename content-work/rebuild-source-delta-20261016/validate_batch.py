@@ -90,9 +90,16 @@ def validate(root):
 if __name__ == '__main__':
     p = argparse.ArgumentParser()
     p.add_argument('--root', type=Path, required=True)
+    p.add_argument('--baseline', type=Path, required=True)
+    p.add_argument('--content', type=Path, required=True)
     p.add_argument('--output', type=Path)
     a = p.parse_args()
     result = validate(a.root)
+    from verify_evidence_refs import verify
+    evidence = verify(a.root, a.baseline, a.content)
+    result['evidence_references'] = evidence
+    result['result'] = 'PASS' if result['result'] == 'PASS' and evidence['result'] == 'PASS' else 'FAIL'
+    result['scope'] += '; fixed external baseline IDs and declared private evidence references'
     s = json.dumps(result, ensure_ascii=False, indent=2) + '\n'
     if a.output:
         a.output.write_text(s)

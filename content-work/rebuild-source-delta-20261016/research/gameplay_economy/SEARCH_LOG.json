@@ -1,0 +1,53 @@
+{
+  "scope": "Discovery only; no new source accepted or downloaded. Existing official P1.5 bytes are actual candidate evidence.",
+  "queries": [
+    {
+      "engine": "system2",
+      "query": "바람의나라 2000년 공략 내구 수리비 확률 쥐굴"
+    },
+    {
+      "engine": "system2",
+      "query": "바람의나라 1999년 상점 재고 도토리 판매 가격"
+    },
+    {
+      "engine": "system2",
+      "query": "바람의나라 2001 경험치표 레벨 99 승급 조건"
+    },
+    {
+      "engine": "system1",
+      "query": "\"바람의나라\" \"수리비\" \"2001\""
+    },
+    {
+      "engine": "system1",
+      "query": "\"바람의나라\" \"상점\" \"1999\" \"판매\""
+    },
+    {
+      "engine": "system1",
+      "query": "\"바람의나라\" \"경험치\" \"2000\" \"공략\""
+    }
+  ],
+  "discovered_excluded_examples": [
+    {
+      "url": "https://gosuoflife.tistory.com/entry/구버전-바람의나라-클래식-1-99레벨-필요-경험치표-공략",
+      "reason": "2024-11-04 Classic retrospective, not contemporaneous 1998–2001 source; full page not acquired",
+      "retrieval_ref": "turn3search21"
+    },
+    {
+      "url": "https://jinoki.tistory.com/609",
+      "reason": "2024-11-25 Classic guide reuses 바람서치; not independent target-era evidence; full page not acquired",
+      "retrieval_ref": "turn3search2"
+    },
+    {
+      "url": "https://www.winbaram.kr/about",
+      "reason": "Current restoration/private project description alone does not verify historical values; discovery only",
+      "retrieval_ref": "turn1search9"
+    },
+    {
+      "url": "https://kcs311.tistory.com/entry/바람의나라-역사-19922005",
+      "reason": "2024-11 retrospective with recollections and timeline; not adopted as numeric gameplay source",
+      "retrieval_ref": "turn3search0"
+    }
+  ],
+  "newly_acquired_files": 0,
+  "early_failure": "Optional bs4 dependency absent; used standard-library bounded text/HTML-tag cleanup instead. No installation or shared tool mutation."
+}

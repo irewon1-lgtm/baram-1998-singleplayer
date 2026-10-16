@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "scope": "Final B002 ZIP exact set/CRC/bytes/SHA256/excluded filename and credential patterns",
+  "members": 30,
+  "payload_files": 28,
+  "bytes_uncompressed": 2621820,
+  "zip_bytes": 613492,
+  "zip_sha256": "dc87687e7260ee4f0c3777bbb46559a67be64f7050195baf6650a29d1c068aee",
+  "credential_patterns": 0,
+  "excluded_files": 0,
+  "malware_free": "NOT_CLAIMED",
+  "runtime": "NOT_RUN"
+}

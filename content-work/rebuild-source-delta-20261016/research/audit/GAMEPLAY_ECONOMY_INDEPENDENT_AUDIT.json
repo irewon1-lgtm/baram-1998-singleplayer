@@ -1,0 +1,22 @@
+{
+  "schema": "baram.work_delta.gameplay_independent_ai_audit/1",
+  "result": "PASS",
+  "scope": "126 proposed field/reference records; public/private canonical hashes, 4 frozen table identities, 32 actual prior HTML bytes, profile and ID joins; explicit qualitative text checked with HTMLParser independent of derivation regex",
+  "checks": 2508,
+  "candidate_records": 126,
+  "candidate_kinds": {
+    "EXISTING_SOURCE_NEW_SEMANTICS": 24,
+    "EXISTING_DATA_NEW_ID_RELATION": 97,
+    "EXISTING_SOURCE_CONFLICT_IDENTIFIED": 1,
+    "EXISTING_DATA_LOCATION_RELATION_HYPOTHESIS": 4
+  },
+  "errors": [],
+  "new_original_downloads": 0,
+  "runtime": "NOT_RUN",
+  "historical_accuracy": "PARTIAL_NOT_A_GLOBAL_PASS",
+  "limits": [
+    "Independent semantic review covers explicit phrases and relation constraints; no original runtime observations or complete historical behavior proof.",
+    "Existing official pages are one shared source family and their snapshot profiles do not establish exact client build.",
+    "The 32 HTML files are prior-input verification copies; a final immutable batch can reference their P1.5 hashes instead of duplicating them."
+  ]
+}

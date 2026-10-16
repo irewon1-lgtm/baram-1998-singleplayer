@@ -1,0 +1,60 @@
+{
+  "scope": "Work-only candidate data, not existing G0/P2 tests",
+  "positive_assertions": [
+    {
+      "case": "nonempty_full_candidate_set",
+      "pass": true
+    },
+    {
+      "case": "public_values_private",
+      "pass": true
+    },
+    {
+      "case": "public_private_record_hashes",
+      "pass": true
+    },
+    {
+      "case": "bear_retaliation_two_epoch_ids",
+      "pass": true
+    },
+    {
+      "case": "fox_flee_threshold_stays_unknown",
+      "pass": true
+    },
+    {
+      "case": "jinma_price_conflict_not_selected",
+      "pass": true
+    },
+    {
+      "case": "four_jobs_distinct_two_epochs",
+      "pass": true
+    },
+    {
+      "case": "all_runtime_not_run",
+      "pass": true
+    }
+  ],
+  "negative_cases": [
+    {
+      "case": "catalog_byte_mismatch",
+      "exit_code": 1,
+      "success_file_absent": true,
+      "expected_rejection": true
+    },
+    {
+      "case": "missing_selected_directory",
+      "exit_code": 1,
+      "success_file_absent": true,
+      "expected_rejection": true
+    },
+    {
+      "case": "source_hash_mismatch",
+      "exit_code": 1,
+      "success_file_absent": true,
+      "expected_rejection": true
+    }
+  ],
+  "result": "PASS",
+  "runtime": "NOT_RUN",
+  "repeated_generation_counted_as_new_evidence": false
+}

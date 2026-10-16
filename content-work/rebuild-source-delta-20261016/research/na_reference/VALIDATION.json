@@ -1,0 +1,17 @@
+{
+  "scope": "selective static analysis only",
+  "positive": {
+    "result": "PASS",
+    "routes": 15,
+    "distinct_spells": 13,
+    "frozen_path99_edges": 115
+  },
+  "negative": {
+    "case": "one frozen skill failure removed",
+    "result": "PASS_EXPECTED_REJECTION",
+    "exit_code": 1,
+    "output_created": false
+  },
+  "reference_graph": "FAIL154_UNCHANGED",
+  "runtime": "NOT_RUN"
+}

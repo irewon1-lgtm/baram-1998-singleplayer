@@ -1,0 +1,25 @@
+{
+  "schema": "baram.work_delta.b002_independent_ai_audit/1",
+  "result": "PASS",
+  "checks": 574,
+  "errors": [],
+  "candidate_records": 154,
+  "payload_files": 28,
+  "total_files": 30,
+  "zip_sha256": "dc87687e7260ee4f0c3777bbb46559a67be64f7050195baf6650a29d1c068aee",
+  "zip_bytes": 613492,
+  "new_original_byte_sources": 13,
+  "archives_ui_payload_files": 15,
+  "archives_ui_candidates": 10,
+  "economy_post_audit_changes": {},
+  "excluded_file_findings": [],
+  "strong_secret_marker_files": [],
+  "visual_review": [
+    "Actually opened press_login2001.jpg and all4 newly acquired official GIFs. Press menu visibly 접속하기/이어하기/암호변경/배경이야기/만든사람들/종료.",
+    "Thumbnail dimensions do not establish original game resolution; old setup/article publication dates do not establish executable build."
+  ],
+  "scope": "Final staging/ZIP exact bytes, all listed file SHA/length, required candidate counts, new-source bytes, exact old-source excerpt lines, source anchors/bibliography, excluded filename/strong secret patterns; no malware/game/historical completeness certification",
+  "runtime": "NOT_RUN",
+  "Codex_G0_P2": "NOT_RUN",
+  "receipt": "UNACKNOWLEDGED"
+}

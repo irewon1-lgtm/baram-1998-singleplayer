@@ -1,0 +1,70 @@
+{
+  "schema": "baram.work-delta.validation/1",
+  "result": "PASS_DATA_SCOPE",
+  "checks": [
+    {
+      "check": "payload_nonempty_set_and_hashes",
+      "result": "PASS",
+      "details": {
+        "files": 15,
+        "bytes": 1259642
+      }
+    },
+    {
+      "check": "candidate_source_references",
+      "result": "PASS",
+      "details": {
+        "candidates": 10
+      }
+    },
+    {
+      "check": "new_image_decodes_and_visual_review",
+      "result": "PASS",
+      "details": {
+        "images": 5,
+        "static_frames": 5
+      }
+    },
+    {
+      "check": "baseline_normalized_hashes",
+      "result": "PASS",
+      "details": {
+        "files": 3,
+        "no_mutation": true
+      }
+    },
+    {
+      "check": "runtime_separation",
+      "result": "PASS",
+      "details": {
+        "runtime": "NOT_RUN",
+        "adoption": "UNACKNOWLEDGED"
+      }
+    },
+    {
+      "check": "curated_payload_excludes_installer_fonts_secrets",
+      "result": "PASS",
+      "details": {
+        "pattern_scope": "curated filenames, not malware guarantee"
+      }
+    },
+    {
+      "check": "source_dedup_against_P15_registry",
+      "result": "PASS",
+      "details": {
+        "existing_source_semantics": 2,
+        "duplicate_installer_excluded": true,
+        "new_image_bytes": 318488
+      }
+    }
+  ],
+  "source_semantic_status": "PARTIAL",
+  "G0": "NOT_RUN",
+  "P2": "NOT_RUN",
+  "runtime": "NOT_RUN",
+  "game_binding": "NOT_STARTED",
+  "codex_receipt": "UNACKNOWLEDGED",
+  "files_inspected": 15,
+  "candidates": 10,
+  "security_limit": "No executable/script/SQL/server executed. Images decoded with Pillow; no malware-free claim."
+}

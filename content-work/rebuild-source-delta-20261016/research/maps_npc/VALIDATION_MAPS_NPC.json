@@ -1,0 +1,41 @@
+{
+  "schema": "baram.work.maps-npc-validation/1",
+  "result": "PASS",
+  "scope": "Work metadata/static-input/annotation checks only; historical equivalence and runtime not included",
+  "checks": [
+    {
+      "file": "field_candidates_maps_npc.jsonl",
+      "json_rows": 4,
+      "bytes": 12986,
+      "sha256": "45e86005fba743152212923748c993dc0528070a8447ee12509f819690a6382f",
+      "result": "PASS"
+    },
+    {
+      "file": "sources_maps_npc.jsonl",
+      "json_rows": 5,
+      "bytes": 2404,
+      "sha256": "00b675767638708879d5a440dba5c87caa308f4f5fcd2e0249e6044339d6fd7e",
+      "result": "PASS"
+    },
+    {
+      "check": "nonempty_candidate_stable_references",
+      "count": 4,
+      "result": "PASS"
+    },
+    {
+      "check": "corrupted_copy_rejected_before_image_decode",
+      "expected": "nonzero exit + source hash mismatch + no output",
+      "actual_exit_code": 1,
+      "result": "PASS"
+    }
+  ],
+  "existing_visual_inputs_hash_and_decode_checked": 4,
+  "semantic_records": 4,
+  "candidates": 4,
+  "g0_status": "NOT_RUN",
+  "p2_runtime_status": "NOT_RUN",
+  "historical_era_resolution": "UNRESOLVED",
+  "npc_native_id_resolution": "UNRESOLVED",
+  "new_unique_original_asset_count": 0,
+  "new_unique_original_asset_note": "Map-size GIF retrieved but bytes duplicate P1.5; CDX result bytes are acquisition evidence, not game assets."
+}

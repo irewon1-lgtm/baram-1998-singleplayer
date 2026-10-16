@@ -1,0 +1,72 @@
+{
+  "schema": "baram.work_source_delta.validation/1",
+  "result": "PASS",
+  "scope": "Work batch required set/bytes/SHA256/JSON/declared binding and payload references only",
+  "files_checked": 7,
+  "records_parsed": 11,
+  "errors": [],
+  "historical_accuracy": "PARTIAL_NOT_A_GLOBAL_PASS",
+  "runtime": "NOT_RUN",
+  "Codex_G0_P2": "NOT_RUN",
+  "guard_regressions": [
+    {
+      "case": "empty",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "errors": [
+        "empty file set",
+        "required content missing",
+        "file-set mismatch: missing=[] extra=['FIELD_CANDIDATES.jsonl', 'README.md', 'SOURCES.jsonl', 'motion_sound/VALIDATION_MOTION.json', 'motion_sound/gif_sequence_discrepancies.json', 'motion_sound/gif_timing_evidence.json', 'motion_sound/summary.json']",
+        "broken payload ref: motion_sound/gif_timing_evidence.json",
+        "broken payload ref: motion_sound/gif_sequence_discrepancies.json",
+        "broken payload ref: motion_sound/gif_timing_evidence.json",
+        "broken payload ref: motion_sound/gif_sequence_discrepancies.json",
+        "broken payload ref: motion_sound/gif_timing_evidence.json",
+        "broken payload ref: motion_sound/gif_sequence_discrepancies.json",
+        "broken payload ref: motion_sound/gif_timing_evidence.json",
+        "broken payload ref: motion_sound/gif_sequence_discrepancies.json",
+        "broken payload ref: motion_sound/gif_timing_evidence.json",
+        "broken payload ref: motion_sound/gif_sequence_discrepancies.json"
+      ]
+    },
+    {
+      "case": "missing",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "errors": [
+        "file-set mismatch: missing=['motion_sound/summary.json'] extra=[]",
+        "missing regular file: motion_sound/summary.json"
+      ]
+    },
+    {
+      "case": "changed",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "errors": [
+        "length mismatch: motion_sound/summary.json",
+        "hash mismatch: motion_sound/summary.json"
+      ]
+    },
+    {
+      "case": "extra",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "errors": [
+        "file-set mismatch: missing=[] extra=['unexpected.json']"
+      ]
+    },
+    {
+      "case": "bad_reference",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "errors": [
+        "manifest candidate set mismatch"
+      ]
+    }
+  ],
+  "semantic_reference_check": {
+    "result": "PASS",
+    "existing_ids_checked": 36,
+    "unknown_ids": []
+  }
+}

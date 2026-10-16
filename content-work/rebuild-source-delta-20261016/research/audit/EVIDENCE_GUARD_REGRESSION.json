@@ -1,0 +1,77 @@
+{
+  "schema": "baram.work_delta.supplemental_guard_independent_regression/1",
+  "checker_sha256": "86f26a1451494088a574369595c39c2d27c764080b934c5dba7acf7c6ddeca78",
+  "cases": [
+    {
+      "case": "unchanged_complete_batch",
+      "expected": "PASS",
+      "actual": "PASS",
+      "guard_satisfied": true,
+      "errors": [],
+      "checks": 118
+    },
+    {
+      "case": "nonexistent_stable_existing_record",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "guard_satisfied": true,
+      "errors": [
+        "baseline record WD-MS-001:KR491:effect_sequence:999999"
+      ],
+      "checks": 106
+    },
+    {
+      "case": "nonexistent_requirement",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "guard_satisfied": true,
+      "errors": [
+        "requirement WD-MS-001"
+      ],
+      "checks": 118
+    },
+    {
+      "case": "nonexistent_private_record",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "guard_satisfied": true,
+      "errors": [
+        "private record WD-MS-001:DOES_NOT_EXIST"
+      ],
+      "checks": 106
+    },
+    {
+      "case": "wrong_private_file_hash",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "guard_satisfied": true,
+      "errors": [
+        "private SHA WD-MS-001:motion_sound/gif_timing_evidence.json"
+      ],
+      "checks": 118
+    },
+    {
+      "case": "self_allowlisted_nonexistent_binding",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "guard_satisfied": true,
+      "errors": [
+        "binding WD-MS-001"
+      ],
+      "checks": 118
+    },
+    {
+      "case": "wrong_baseline_manifest_fingerprint",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "guard_satisfied": true,
+      "errors": [
+        "baseline manifest fingerprint"
+      ],
+      "checks": 118
+    }
+  ],
+  "all_expected": true,
+  "scope": "Six previously missed semantic references; no B001 modifications or gameplay execution",
+  "runtime": "NOT_RUN"
+}

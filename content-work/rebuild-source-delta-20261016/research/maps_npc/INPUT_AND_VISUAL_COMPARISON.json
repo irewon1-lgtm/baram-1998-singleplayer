@@ -1,0 +1,93 @@
+{
+  "schema": "baram.work.visual-input-check/1",
+  "input_checks": [
+    {
+      "label": "official_map",
+      "relative_path": "evidence/images/84f59bd84c57777d738736b31ff9e6d5b5517f0c2173b34f6068db040626c64c.pcx",
+      "bytes": 1966188,
+      "sha256": "84f59bd84c57777d738736b31ff9e6d5b5517f0c2173b34f6068db040626c64c",
+      "dimensions_pixels": [
+        1451,
+        1451
+      ],
+      "hash_match": true,
+      "image_decoded": true
+    },
+    {
+      "label": "paststory_75",
+      "relative_path": "evidence/images/f2eaa4b18165e2e46a016b7d4153b382a0f1bcd1ce6f485b2dc98c21f585f77d.img",
+      "bytes": 111009,
+      "sha256": "f2eaa4b18165e2e46a016b7d4153b382a0f1bcd1ce6f485b2dc98c21f585f77d",
+      "dimensions_pixels": [
+        500,
+        500
+      ],
+      "hash_match": true,
+      "image_decoded": true
+    },
+    {
+      "label": "sooni",
+      "relative_path": "evidence/images/80ef5507b1acd1d4c1f89a5b7a71c5c4ccbf384383e738f09b2e12e9a9e2d296.gif",
+      "bytes": 48235,
+      "sha256": "80ef5507b1acd1d4c1f89a5b7a71c5c4ccbf384383e738f09b2e12e9a9e2d296",
+      "dimensions_pixels": [
+        434,
+        390
+      ],
+      "hash_match": true,
+      "image_decoded": true
+    },
+    {
+      "label": "shrine",
+      "relative_path": "evidence/images/297d21eb129c9c45a2ff2e7c790e13f87999d37c51a949cac4ffdc9d270426b1.gif",
+      "bytes": 60596,
+      "sha256": "297d21eb129c9c45a2ff2e7c790e13f87999d37c51a949cac4ffdc9d270426b1",
+      "dimensions_pixels": [
+        434,
+        390
+      ],
+      "hash_match": true,
+      "image_decoded": true
+    }
+  ],
+  "map_comparison": {
+    "resize_rgb_bicubic_to": [
+      500,
+      500
+    ],
+    "mean_absolute_difference_rgb": 12.418445333333333,
+    "rms_difference_rgb": 21.456898200168695,
+    "luminance_box_downsample": [
+      {
+        "dimensions": [
+          16,
+          16
+        ],
+        "pearson_correlation": 0.9914491265641114,
+        "mean_absolute_difference": 1.24609375
+      },
+      {
+        "dimensions": [
+          32,
+          32
+        ],
+        "pearson_correlation": 0.979403725565619,
+        "mean_absolute_difference": 2.0224609375
+      },
+      {
+        "dimensions": [
+          64,
+          64
+        ],
+        "pearson_correlation": 0.9512127995173268,
+        "mean_absolute_difference": 3.19384765625
+      }
+    ]
+  },
+  "scope": "Existing-source image correspondence and source integrity only",
+  "source_acquisition_count": 0,
+  "historical_era_validation": "NOT_PROVEN_BY_METRIC",
+  "map_grid_collision_exit_validation": "NOT_RUN",
+  "npc_part_id_validation": "NOT_RUN",
+  "runtime_or_P2_status": "NOT_RUN"
+}

@@ -1,0 +1,231 @@
+{
+  "schema": "baram.work_delta.independent_ai_audit/1",
+  "scope": "B001 static bytes/IDs/private locators plus independent GIF GCE metadata; no original runtime/hit/audio/accuracy certification",
+  "validator_sha256": "258ecac364c080b1ec96ad1177a7a756fdf01c03c6a492b47222fd107774e8db",
+  "validator_mutation_cases": [
+    {
+      "case": "unchanged_complete_batch",
+      "expected": "PASS",
+      "actual": "PASS",
+      "errors": [],
+      "guard_satisfied": true
+    },
+    {
+      "case": "byte_tamper_without_resealing",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "errors": [
+        "length mismatch: motion_sound/summary.json",
+        "hash mismatch: motion_sound/summary.json"
+      ],
+      "guard_satisfied": true
+    },
+    {
+      "case": "missing_file",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "errors": [
+        "file-set mismatch: missing=['motion_sound/summary.json'] extra=[]",
+        "missing regular file: motion_sound/summary.json"
+      ],
+      "guard_satisfied": true
+    },
+    {
+      "case": "zero_manifest_files",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "errors": [
+        "empty file set",
+        "required content missing",
+        "file-set mismatch: missing=[] extra=['FIELD_CANDIDATES.jsonl', 'README.md', 'SOURCES.jsonl', 'motion_sound/VALIDATION_MOTION.json', 'motion_sound/gif_sequence_discrepancies.json', 'motion_sound/gif_timing_evidence.json', 'motion_sound/summary.json']",
+        "broken payload ref: motion_sound/gif_timing_evidence.json",
+        "broken payload ref: motion_sound/gif_sequence_discrepancies.json",
+        "broken payload ref: motion_sound/gif_timing_evidence.json",
+        "broken payload ref: motion_sound/gif_sequence_discrepancies.json",
+        "broken payload ref: motion_sound/gif_timing_evidence.json",
+        "broken payload ref: motion_sound/gif_sequence_discrepancies.json",
+        "broken payload ref: motion_sound/gif_timing_evidence.json",
+        "broken payload ref: motion_sound/gif_sequence_discrepancies.json",
+        "broken payload ref: motion_sound/gif_timing_evidence.json",
+        "broken payload ref: motion_sound/gif_sequence_discrepancies.json"
+      ],
+      "guard_satisfied": true
+    },
+    {
+      "case": "broken_payload_path",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "errors": [
+        "broken payload ref: missing.json"
+      ],
+      "guard_satisfied": true
+    },
+    {
+      "case": "nonexistent_stable_existing_record",
+      "expected": "FAIL",
+      "actual": "PASS",
+      "errors": [],
+      "guard_satisfied": false
+    },
+    {
+      "case": "nonexistent_requirement",
+      "expected": "FAIL",
+      "actual": "PASS",
+      "errors": [],
+      "guard_satisfied": false
+    },
+    {
+      "case": "nonexistent_private_record",
+      "expected": "FAIL",
+      "actual": "PASS",
+      "errors": [],
+      "guard_satisfied": false
+    },
+    {
+      "case": "wrong_private_file_hash",
+      "expected": "FAIL",
+      "actual": "PASS",
+      "errors": [],
+      "guard_satisfied": false
+    },
+    {
+      "case": "self_allowlisted_nonexistent_binding",
+      "expected": "FAIL",
+      "actual": "PASS",
+      "errors": [],
+      "guard_satisfied": false
+    },
+    {
+      "case": "wrong_baseline_manifest_fingerprint",
+      "expected": "FAIL",
+      "actual": "PASS",
+      "errors": [],
+      "guard_satisfied": false
+    }
+  ],
+  "actual_batch": {
+    "stable_id_references_checked": 36,
+    "unknown_stable_ids": [],
+    "unknown_binding_ids": [],
+    "broken_private_locators": [],
+    "independent_gif_metadata": [
+      {
+        "record_id": "MS-GIF-TIMING-056",
+        "gif_hash_matches": true,
+        "dimensions_match": true,
+        "all_declared_durations_match_independent_block_parser": true,
+        "frame_count": 25,
+        "effect_source_pairs_match_frozen_records": true
+      },
+      {
+        "record_id": "MS-GIF-TIMING-068",
+        "gif_hash_matches": true,
+        "dimensions_match": true,
+        "all_declared_durations_match_independent_block_parser": true,
+        "frame_count": 11,
+        "effect_source_pairs_match_frozen_records": true
+      },
+      {
+        "record_id": "MS-GIF-TIMING-000",
+        "gif_hash_matches": true,
+        "dimensions_match": true,
+        "all_declared_durations_match_independent_block_parser": true,
+        "frame_count": 13,
+        "effect_source_pairs_match_frozen_records": true
+      },
+      {
+        "record_id": "MS-GIF-TIMING-065",
+        "gif_hash_matches": true,
+        "dimensions_match": true,
+        "all_declared_durations_match_independent_block_parser": true,
+        "frame_count": 9,
+        "effect_source_pairs_match_frozen_records": true
+      },
+      {
+        "record_id": "MS-GIF-TIMING-007",
+        "gif_hash_matches": true,
+        "dimensions_match": true,
+        "all_declared_durations_match_independent_block_parser": true,
+        "frame_count": 7,
+        "effect_source_pairs_match_frozen_records": true
+      },
+      {
+        "record_id": "MS-GIF-TIMING-004",
+        "gif_hash_matches": true,
+        "dimensions_match": true,
+        "all_declared_durations_match_independent_block_parser": true,
+        "frame_count": 9,
+        "effect_source_pairs_match_frozen_records": true
+      },
+      {
+        "record_id": "MS-GIF-TIMING-002",
+        "gif_hash_matches": true,
+        "dimensions_match": true,
+        "all_declared_durations_match_independent_block_parser": true,
+        "frame_count": 11,
+        "effect_source_pairs_match_frozen_records": true
+      },
+      {
+        "record_id": "MS-GIF-TIMING-009",
+        "gif_hash_matches": true,
+        "dimensions_match": true,
+        "all_declared_durations_match_independent_block_parser": true,
+        "frame_count": 9,
+        "effect_source_pairs_match_frozen_records": true
+      },
+      {
+        "record_id": "MS-GIF-TIMING-038",
+        "gif_hash_matches": true,
+        "dimensions_match": true,
+        "all_declared_durations_match_independent_block_parser": true,
+        "frame_count": 17,
+        "effect_source_pairs_match_frozen_records": true
+      },
+      {
+        "record_id": "MS-GIF-TIMING-064",
+        "gif_hash_matches": true,
+        "dimensions_match": true,
+        "all_declared_durations_match_independent_block_parser": true,
+        "frame_count": 8,
+        "effect_source_pairs_match_frozen_records": true
+      },
+      {
+        "record_id": "MS-GIF-TIMING-005",
+        "gif_hash_matches": true,
+        "dimensions_match": true,
+        "all_declared_durations_match_independent_block_parser": true,
+        "frame_count": 8,
+        "effect_source_pairs_match_frozen_records": true
+      },
+      {
+        "record_id": "MS-GIF-TIMING-067",
+        "gif_hash_matches": true,
+        "dimensions_match": true,
+        "all_declared_durations_match_independent_block_parser": true,
+        "frame_count": 15,
+        "effect_source_pairs_match_frozen_records": true
+      },
+      {
+        "record_id": "MS-GIF-TIMING-006",
+        "gif_hash_matches": true,
+        "dimensions_match": true,
+        "all_declared_durations_match_independent_block_parser": true,
+        "frame_count": 8,
+        "effect_source_pairs_match_frozen_records": true
+      }
+    ],
+    "zip": {
+      "sha256": "b61c169c899853c0a90849f81174d76c8503e6827ef3244ca489aff2b721e6af",
+      "files": 9,
+      "crc_failure": null,
+      "exact_staging_set_and_bytes": true,
+      "excluded_suffixes_found": [],
+      "strong_secret_marker_files": [],
+      "security_scope": "Limited filename/strong credential patterns; no malware or absence-of-all-secrets certification"
+    }
+  },
+  "judgement": "ACTUAL_B001_STATIC_METADATA_CONSISTENT; VALIDATOR_SEMANTIC_REFERENCE_GUARDS_INCOMPLETE",
+  "runtime": "NOT_RUN",
+  "historical_accuracy": "PARTIAL_UNCONFIRMED",
+  "immutable_B001_modified": false
+}

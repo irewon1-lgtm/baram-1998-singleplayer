@@ -19,7 +19,10 @@
     "scope": "All16remote branches; planning tree135entries; codex/game-core HEADac08964c dated2026-10-15",
     "requests": [],
     "receipt": "UNACKNOWLEDGED",
-    "p2_branch": "UNCONFIRMED"
+    "p2_branch": "codex/rebuild-p2-20261016",
+    "head_observed": "81976dcc38d75312375710358a02cf0729e6880d",
+    "observation": "CODEX_OBSERVATION.json",
+    "note": "Codex BASELINE records Work B001 head but WORK_BATCH_RECEIPTS is empty; seeing a branch is not adoption."
   },
   "read_only_root": "/workspace/scratch/3624c67f59e8/work-source-delta/docs/rebuild",
   "allowed_prefix": "content-work/rebuild-source-delta-20261016/",
@@ -32,28 +35,27 @@
     {
       "step": "research",
       "expected": "New or newly interpreted evidence tied to stable IDs and preserved sources",
-      "status": "IN_PROGRESS"
+      "status": "COMPLETED_FOR_THIS_DELTA_WITH_UNRESOLVED_FIELDS"
     },
     {
       "step": "batch_validation",
       "expected": "Nonzero required file set, allbytes/hashes/formats/references, positive and reject cases",
-      "status": "NOT_RUN"
+      "status": "PASS_FOR_WORK_DATA_SCOPE"
     },
     {
       "step": "publication",
       "expected": "Dedicated branch-only diff, actual saved ZIP identity and exact remote requery",
-      "status": "NOT_RUN"
+      "status": "IN_PROGRESS"
     }
   ],
   "completed": [
-    "B001 motion metadata and exact discrepancy evidence, validation, immutable ZIP saved"
+    "AllA-J gap fields retained; bounded domain investigations completed",
+    "B001 immutable effect evidence saved and committed2eb791f20335a8ccda2a597897a73e8349b63274",
+    "B002 immutable source/meaning delta saved; independent audit574checks0errors",
+    "New Work-only reference guards reject6invalid reference cases; common tools unchanged"
   ],
   "in_progress": [
-    "maps_npc",
-    "motion_sound",
-    "gameplay_economy",
-    "archives_ui",
-    "NA reference-failure interpretation"
+    "Final Work-only remote publication and exact blob verification"
   ],
   "published_batches": [
     {
@@ -68,8 +70,34 @@
       "file_id": "file_00000000b4808206a03cce4ddad80bc4",
       "version": 0,
       "receipt": "UNACKNOWLEDGED"
+    },
+    {
+      "batch": "B002",
+      "files": 28,
+      "candidates": 154,
+      "zip_bytes": 613492,
+      "zip_sha256": "dc87687e7260ee4f0c3777bbb46559a67be64f7050195baf6650a29d1c068aee",
+      "zip_path": "/workspace/scratch/3624c67f59e8/delivery/BARAM_WORK_SOURCE_DELTA_B002_20261016.zip",
+      "guard_cases": 5,
+      "library_file_id": "libfile_b231096282808191bd9f316beec877a2",
+      "file_id": "file_000000004ac08207ac644451b42ece4e",
+      "version": 0,
+      "receipt": "UNACKNOWLEDGED"
     }
   ],
   "runtime_tests": "NOT_RUN",
-  "next_action": "Finish maps/NPC, Korean gameplay/economy and archive/UI delta without rewriting B001; publish next batch."
+  "next_action": "Finish remote publication check; after resume inspect actual Codex request/receipt ledgers before new research. Continue exact unresolved source leads in gaps_delta, not full P1.5.",
+  "status": "PARTIAL_SOURCE_DELTA_SAVED_AWAITING_FINAL_REMOTE_PUBLICATION_CHECK",
+  "new_evidence": {
+    "candidate_rows": 159,
+    "new_original_source_byte_files": 13,
+    "official_gifs": 4,
+    "press_jpeg": 1,
+    "html": 8,
+    "new_game_source_code": 0,
+    "full_guidebook": 0,
+    "reconstruction_npc_location_hypotheses": 4,
+    "frozen_NA_reference_failures": 154
+  },
+  "updated_utc": "2026-10-16T02:13:44.802988+00:00"
 }

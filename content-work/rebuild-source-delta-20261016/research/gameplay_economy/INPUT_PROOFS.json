@@ -1,0 +1,30 @@
+[
+  {
+    "path": "selected_content/kr_official_items.jsonl",
+    "sha256": "fba69ec5c19236bbcf8615cea64753f1536832e8f994e41cac51337ff2440f15",
+    "bytes": 3473092,
+    "rows": 771,
+    "inspection": "Read unchanged for joins; not regenerated or reacquired"
+  },
+  {
+    "path": "selected_content/kr_official_core.jsonl",
+    "sha256": "010bef4cff3aa21716ca63423eda0eb9f225c58cba0b6be79029c6ca954429dc",
+    "bytes": 3192620,
+    "rows": 928,
+    "inspection": "Read unchanged for joins; not regenerated or reacquired"
+  },
+  {
+    "path": "selected_content/kr_official_services.jsonl",
+    "sha256": "a4363e3d38de491efc3cc9dc7f319823416caa6285d50b0e6b2c4e94662c64b0",
+    "bytes": 153545,
+    "rows": 45,
+    "inspection": "Read unchanged for joins; not regenerated or reacquired"
+  },
+  {
+    "path": "selected_content/kr_official_crafting_facts.jsonl",
+    "sha256": "c631140d771439f23e8c6be93cd090e2e27c98efe9c4c305525c63b7644dabb1",
+    "bytes": 42194,
+    "rows": 18,
+    "inspection": "Read unchanged for joins; not regenerated or reacquired"
+  }
+]

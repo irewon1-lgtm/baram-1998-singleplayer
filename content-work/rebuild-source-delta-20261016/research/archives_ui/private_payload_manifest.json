@@ -1,0 +1,89 @@
+{
+  "schema": "baram.work-delta.private-payload/1",
+  "task_id": "BARAM_REBUILD_WORK_SOURCE_DELTA_001",
+  "private_root": "/workspace/scratch/3624c67f59e8/private_delta",
+  "files": [
+    {
+      "path": "archives_ui/payload/download.html",
+      "bytes": 54794,
+      "sha256": "4cb4526cc9445b84aa13167ce121629a1517bd4824a5c9e88d3e99500ea255e2"
+    },
+    {
+      "path": "archives_ui/payload/existing_source_excerpt.jsonl",
+      "bytes": 6992,
+      "sha256": "c158e1414cf5c68c9f98b06d8ad6a495fa4d648e6d81769f97a0a6c676b7ba52"
+    },
+    {
+      "path": "archives_ui/payload/ndc2014_0080.html",
+      "bytes": 46301,
+      "sha256": "f6d1a4fa049c3d436932915940900124634e2aaeac41453e0b9d0417b8f011ca"
+    },
+    {
+      "path": "archives_ui/payload/ndc2016_0082.html",
+      "bytes": 47660,
+      "sha256": "f07d41bbc8857b76bb9f64be9a6b76403b8a47416d2ce67425051f155587407f"
+    },
+    {
+      "path": "archives_ui/payload/nlbib23946242.html",
+      "bytes": 165979,
+      "sha256": "627a9f7169c4319570614389c675f3d7930cbb4048857cfdbbf6717150b1e072"
+    },
+    {
+      "path": "archives_ui/payload/nlbib25737613.html",
+      "bytes": 161922,
+      "sha256": "a6ac36bee3ec61c1232e3e3e5bea634d1e2458773eb72337edfd9858f8c6b5f0"
+    },
+    {
+      "path": "archives_ui/payload/oasis_total_name.html",
+      "bytes": 62625,
+      "sha256": "cfac1b22bdb8ec5f3cc4f727cde143aad44fcf6c86076caf1fe042676f97de48"
+    },
+    {
+      "path": "archives_ui/payload/press_login2001.html",
+      "bytes": 92289,
+      "sha256": "de3d03fd49c3c42fb65fd2625618bc7a94e86a12eec5c35986ef46e0395f1707"
+    },
+    {
+      "path": "archives_ui/payload/press_login2001.jpg",
+      "bytes": 239717,
+      "sha256": "83a931f710a6889b599931c203e2874ed3a267b6daed68afa70f1016b7c6a4b8"
+    },
+    {
+      "path": "archives_ui/payload/transcript_locators.json",
+      "bytes": 594,
+      "sha256": "524a267fd71b3c406e868d9c1789b82512ef8dca51bd9588a1ecd2ddd23d0acb"
+    },
+    {
+      "path": "archives_ui/payload/ui_ba_01.gif",
+      "bytes": 13037,
+      "sha256": "c4fb60545db970db88259d707cf9fbc05f1598bdbb86f3af38a5a350a9da5a62"
+    },
+    {
+      "path": "archives_ui/payload/ui_ba_02.gif",
+      "bytes": 17215,
+      "sha256": "ade46403c1c1ab852868e484e70b75b5a6409a941a849208aada00c9563cb58b"
+    },
+    {
+      "path": "archives_ui/payload/ui_ba_03.gif",
+      "bytes": 37462,
+      "sha256": "e3c88b3ac4f4d555a229854973956eb7a11a87d8fc302c54b0b114a53de549fa"
+    },
+    {
+      "path": "archives_ui/payload/ui_ba_04.gif",
+      "bytes": 11057,
+      "sha256": "b45564046dd564522baa6ae3f9c958d34fd12f45db823cc6abe00f1cb5444535"
+    },
+    {
+      "path": "archives_ui/payload/yes2001.html",
+      "bytes": 301998,
+      "sha256": "81926cfe788f3ace6250cfee5a766625ecc0fc3541a0143a60f7a60a23896366"
+    }
+  ],
+  "excluded_duplicate_installer": {
+    "source": "LIB-015-M-b2c194b4019f",
+    "bytes": 3340944,
+    "sha256": "e07cdf98a4727e2661850c480addf0a52fbafde75c6a5176812eae09ba815886",
+    "official_current_url": "https://baramold.dn.nexoncdn.co.kr/baram1996.exe",
+    "new_unique_bytes": 0
+  }
+}

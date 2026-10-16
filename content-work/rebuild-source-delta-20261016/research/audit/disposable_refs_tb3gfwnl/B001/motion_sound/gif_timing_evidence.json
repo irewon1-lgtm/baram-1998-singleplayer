@@ -1,0 +1,3528 @@
+{
+  "schema": "baram-work-motion-metadata-v1",
+  "input_sha256": {
+    "evidence/guide_effect_comparison.json": "cd16d538439ef2ac4ce621b079e92c0c3a275865ead0497dca6996646ebe0abd",
+    "docs/rebuild/p1_5/selected_content/kr_asset_effect_sequences.jsonl": "1a269e602493b04a4ae6b96160d480e16dad7e82ba98344e277396f692036961",
+    "docs/rebuild/p1_5/selected_content/kr_asset_guide_effects.jsonl": "63d8fb07e70a72ee3c1a94999c76aac5959edd67fef12d9e3adf99bd2efca7d7"
+  },
+  "records": [
+    {
+      "record_id": "MS-GIF-TIMING-056",
+      "kind": "EXISTING_BYTES_NEW_CONTAINER_TIMING_ANALYSIS",
+      "binding_ids": [
+        "BND-022",
+        "BND-023",
+        "BND-024"
+      ],
+      "requirement_ids": [
+        "RQ-086",
+        "RQ-088",
+        "RQ-089",
+        "RQ-093",
+        "RQ-094"
+      ],
+      "guide_source_id": "P15-ARIMG-8c25ba405454",
+      "guide_url": "http://www.baram.nexon.co.kr:80/guide/magic/effect/effect043/eff043.gif",
+      "guide_sha256": "2d2db3690b8edb2879856b6519cb299bde466a0ed6e122c9ab9517a0581464f1",
+      "guide_bytes": 2276,
+      "guide_input_relative_path": "evidence/images/2d2db3690b8edb2879856b6519cb299bde466a0ed6e122c9ab9517a0581464f1.gif",
+      "actual_archive_capture": "20010611201202",
+      "requested_archive_capture": "20001017184612",
+      "effect_sequence_id": "KR491:effect_sequence:56",
+      "effect_source": {
+        "container_sha256": "f8271a52d8dbde5601a0c7bf7460052376b2651930b6bc004eeb1ed20357bfc7",
+        "dat_byte_offset": 20559226,
+        "line": 598,
+        "line_byte_offset": 32030,
+        "member": "Effect.tbl",
+        "member_byte_offset": 20527196,
+        "member_sha256": "ef56308d711d52ce154950d542724def164870645aea1dd72d2685005fc1b1a8",
+        "parser_sha256": "8e5544d11e8739a6b7c9d5214cedadff26a4bed505ee0fd0d8493186d5c80049",
+        "reader_sha256": "f5152ae3473b3e2f2d120b8c1b8679529428d2bd09f9024528d71aa9a9be86e2",
+        "source_family": "KR491_CLIENT",
+        "source_id": "LIB-010",
+        "source_type": "original_client_resource"
+      },
+      "related_stable_guide_bindings": [
+        "KR491:guide_image:P15-ARIMG-8c25ba405454:KRO-29b502df2cd4",
+        "KR491:guide_image:P15-ARIMG-fc99c778d4c6:KRO-e59f1b650098"
+      ],
+      "gif_dimensions_px": [
+        72,
+        72
+      ],
+      "gif_declared_loop": 0,
+      "gif_frame_metadata": [
+        {
+          "gif_frame": 0,
+          "blank_in_prior_exact_comparison": true,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": []
+        },
+        {
+          "gif_frame": 1,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            536
+          ]
+        },
+        {
+          "gif_frame": 2,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            537
+          ]
+        },
+        {
+          "gif_frame": 3,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            538
+          ]
+        },
+        {
+          "gif_frame": 4,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            539
+          ]
+        },
+        {
+          "gif_frame": 5,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            540
+          ]
+        },
+        {
+          "gif_frame": 6,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            541
+          ]
+        },
+        {
+          "gif_frame": 7,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            542
+          ]
+        },
+        {
+          "gif_frame": 8,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            543
+          ]
+        },
+        {
+          "gif_frame": 9,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            544
+          ]
+        },
+        {
+          "gif_frame": 10,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            545
+          ]
+        },
+        {
+          "gif_frame": 11,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            546
+          ]
+        },
+        {
+          "gif_frame": 12,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            547
+          ]
+        },
+        {
+          "gif_frame": 13,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            548
+          ]
+        },
+        {
+          "gif_frame": 14,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            549
+          ]
+        },
+        {
+          "gif_frame": 15,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            550
+          ]
+        },
+        {
+          "gif_frame": 16,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            551
+          ]
+        },
+        {
+          "gif_frame": 17,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            552
+          ]
+        },
+        {
+          "gif_frame": 18,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            553
+          ]
+        },
+        {
+          "gif_frame": 19,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            554
+          ]
+        },
+        {
+          "gif_frame": 20,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            555
+          ]
+        },
+        {
+          "gif_frame": 21,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            556
+          ]
+        },
+        {
+          "gif_frame": 22,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            557
+          ]
+        },
+        {
+          "gif_frame": 23,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            558
+          ]
+        },
+        {
+          "gif_frame": 24,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            559
+          ]
+        }
+      ],
+      "aligned_nonblank_timing_pairs": [
+        {
+          "client_frame_index": 536,
+          "effect_tbl_line": 599,
+          "effect_tbl_byte_offset": 32146,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 1,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 537,
+          "effect_tbl_line": 600,
+          "effect_tbl_byte_offset": 32193,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 2,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 538,
+          "effect_tbl_line": 601,
+          "effect_tbl_byte_offset": 32240,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 3,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 539,
+          "effect_tbl_line": 602,
+          "effect_tbl_byte_offset": 32287,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 4,
+          "gif_declared_ms": 200,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "2"
+        },
+        {
+          "client_frame_index": 540,
+          "effect_tbl_line": 603,
+          "effect_tbl_byte_offset": 32334,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 5,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 541,
+          "effect_tbl_line": 604,
+          "effect_tbl_byte_offset": 32381,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 6,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 542,
+          "effect_tbl_line": 605,
+          "effect_tbl_byte_offset": 32428,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 7,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 543,
+          "effect_tbl_line": 606,
+          "effect_tbl_byte_offset": 32475,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 8,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 544,
+          "effect_tbl_line": 607,
+          "effect_tbl_byte_offset": 32522,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 9,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 545,
+          "effect_tbl_line": 608,
+          "effect_tbl_byte_offset": 32569,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 10,
+          "gif_declared_ms": 200,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "2"
+        },
+        {
+          "client_frame_index": 546,
+          "effect_tbl_line": 609,
+          "effect_tbl_byte_offset": 32616,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 11,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 547,
+          "effect_tbl_line": 610,
+          "effect_tbl_byte_offset": 32663,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 12,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 548,
+          "effect_tbl_line": 611,
+          "effect_tbl_byte_offset": 32710,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 13,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 549,
+          "effect_tbl_line": 612,
+          "effect_tbl_byte_offset": 32757,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 14,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 550,
+          "effect_tbl_line": 613,
+          "effect_tbl_byte_offset": 32804,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 15,
+          "gif_declared_ms": 200,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "2"
+        },
+        {
+          "client_frame_index": 551,
+          "effect_tbl_line": 614,
+          "effect_tbl_byte_offset": 32851,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 16,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 552,
+          "effect_tbl_line": 615,
+          "effect_tbl_byte_offset": 32898,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 17,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 553,
+          "effect_tbl_line": 616,
+          "effect_tbl_byte_offset": 32945,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 18,
+          "gif_declared_ms": 200,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "2"
+        },
+        {
+          "client_frame_index": 554,
+          "effect_tbl_line": 617,
+          "effect_tbl_byte_offset": 32992,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 19,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 555,
+          "effect_tbl_line": 618,
+          "effect_tbl_byte_offset": 33039,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 20,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 556,
+          "effect_tbl_line": 619,
+          "effect_tbl_byte_offset": 33086,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 21,
+          "gif_declared_ms": 200,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "2"
+        },
+        {
+          "client_frame_index": 557,
+          "effect_tbl_line": 620,
+          "effect_tbl_byte_offset": 33133,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 22,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 558,
+          "effect_tbl_line": 621,
+          "effect_tbl_byte_offset": 33180,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 23,
+          "gif_declared_ms": 200,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "2"
+        },
+        {
+          "client_frame_index": 559,
+          "effect_tbl_line": 622,
+          "effect_tbl_byte_offset": 33227,
+          "raw_delay_unit_unknown": 400,
+          "gif_frame": 24,
+          "gif_declared_ms": 200,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1/2"
+        }
+      ],
+      "numerical_ratio_set_NOT_A_CLIENT_UNIT": [
+        "1",
+        "1/2",
+        "2"
+      ],
+      "constant_numerical_scale_across_all_nonblank_frames": false,
+      "meaning": "Exact RGB identity does not imply equal timing. GIF centiseconds are container declarations, not recorded client elapsed time or hit time.",
+      "client_delay_unit": "UNKNOWN",
+      "sound_id": null,
+      "runtime_test": "NOT_RUN"
+    },
+    {
+      "record_id": "MS-GIF-TIMING-068",
+      "kind": "EXISTING_BYTES_NEW_CONTAINER_TIMING_ANALYSIS",
+      "binding_ids": [
+        "BND-022",
+        "BND-023",
+        "BND-024"
+      ],
+      "requirement_ids": [
+        "RQ-086",
+        "RQ-088",
+        "RQ-089",
+        "RQ-093",
+        "RQ-094"
+      ],
+      "guide_source_id": "P15-ARIMG-f89ad09a2416",
+      "guide_url": "http://www.baram.nexon.co.kr:80/guide/magic/effect/effect052/eff052.gif",
+      "guide_sha256": "529e8702efc9bfde15b1e49bb1e5bf7e4542a457699a5bd3e66e8a634f7c15fa",
+      "guide_bytes": 2061,
+      "guide_input_relative_path": "evidence/images/529e8702efc9bfde15b1e49bb1e5bf7e4542a457699a5bd3e66e8a634f7c15fa.gif",
+      "actual_archive_capture": "20010612070325",
+      "requested_archive_capture": "20001017184612",
+      "effect_sequence_id": "KR491:effect_sequence:68",
+      "effect_source": {
+        "container_sha256": "f8271a52d8dbde5601a0c7bf7460052376b2651930b6bc004eeb1ed20357bfc7",
+        "dat_byte_offset": 20566659,
+        "line": 738,
+        "line_byte_offset": 39463,
+        "member": "Effect.tbl",
+        "member_byte_offset": 20527196,
+        "member_sha256": "ef56308d711d52ce154950d542724def164870645aea1dd72d2685005fc1b1a8",
+        "parser_sha256": "8e5544d11e8739a6b7c9d5214cedadff26a4bed505ee0fd0d8493186d5c80049",
+        "reader_sha256": "f5152ae3473b3e2f2d120b8c1b8679529428d2bd09f9024528d71aa9a9be86e2",
+        "source_family": "KR491_CLIENT",
+        "source_id": "LIB-010",
+        "source_type": "original_client_resource"
+      },
+      "related_stable_guide_bindings": [
+        "KR491:guide_image:P15-ARIMG-f89ad09a2416:KRO-f9083d6d08f3",
+        "KR491:guide_image:P15-ARIMG-561bd75d3067:KRO-c2d74b5319fd"
+      ],
+      "gif_dimensions_px": [
+        72,
+        72
+      ],
+      "gif_declared_loop": 0,
+      "gif_frame_metadata": [
+        {
+          "gif_frame": 0,
+          "blank_in_prior_exact_comparison": true,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": []
+        },
+        {
+          "gif_frame": 1,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            665
+          ]
+        },
+        {
+          "gif_frame": 2,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            666
+          ]
+        },
+        {
+          "gif_frame": 3,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            667
+          ]
+        },
+        {
+          "gif_frame": 4,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            668
+          ]
+        },
+        {
+          "gif_frame": 5,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            669
+          ]
+        },
+        {
+          "gif_frame": 6,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            670
+          ]
+        },
+        {
+          "gif_frame": 7,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            671
+          ]
+        },
+        {
+          "gif_frame": 8,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            672
+          ]
+        },
+        {
+          "gif_frame": 9,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            673
+          ]
+        },
+        {
+          "gif_frame": 10,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            674
+          ]
+        }
+      ],
+      "aligned_nonblank_timing_pairs": [
+        {
+          "client_frame_index": 665,
+          "effect_tbl_line": 739,
+          "effect_tbl_byte_offset": 39579,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 1,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 666,
+          "effect_tbl_line": 740,
+          "effect_tbl_byte_offset": 39627,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 2,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 667,
+          "effect_tbl_line": 741,
+          "effect_tbl_byte_offset": 39675,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 3,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 668,
+          "effect_tbl_line": 742,
+          "effect_tbl_byte_offset": 39723,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 4,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 669,
+          "effect_tbl_line": 743,
+          "effect_tbl_byte_offset": 39771,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 5,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 670,
+          "effect_tbl_line": 744,
+          "effect_tbl_byte_offset": 39819,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 6,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 671,
+          "effect_tbl_line": 745,
+          "effect_tbl_byte_offset": 39866,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 7,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 672,
+          "effect_tbl_line": 746,
+          "effect_tbl_byte_offset": 39913,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 8,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 673,
+          "effect_tbl_line": 747,
+          "effect_tbl_byte_offset": 39960,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 9,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 674,
+          "effect_tbl_line": 748,
+          "effect_tbl_byte_offset": 40008,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 10,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        }
+      ],
+      "numerical_ratio_set_NOT_A_CLIENT_UNIT": [
+        "1"
+      ],
+      "constant_numerical_scale_across_all_nonblank_frames": true,
+      "meaning": "Exact RGB identity does not imply equal timing. GIF centiseconds are container declarations, not recorded client elapsed time or hit time.",
+      "client_delay_unit": "UNKNOWN",
+      "sound_id": null,
+      "runtime_test": "NOT_RUN"
+    },
+    {
+      "record_id": "MS-GIF-TIMING-000",
+      "kind": "EXISTING_BYTES_NEW_CONTAINER_TIMING_ANALYSIS",
+      "binding_ids": [
+        "BND-022",
+        "BND-023",
+        "BND-024"
+      ],
+      "requirement_ids": [
+        "RQ-086",
+        "RQ-088",
+        "RQ-089",
+        "RQ-093",
+        "RQ-094"
+      ],
+      "guide_source_id": "P15-ARIMG-232181ef72f2",
+      "guide_url": "http://www.baram.nexon.co.kr:80/guide/magic/effect/effect001/eff001.gif",
+      "guide_sha256": "01ceb9b94b0a7c82443d12f1f2321253cb0d93b0f6e858726ffbab6f987ce839",
+      "guide_bytes": 1160,
+      "guide_input_relative_path": "evidence/images/01ceb9b94b0a7c82443d12f1f2321253cb0d93b0f6e858726ffbab6f987ce839.gif",
+      "actual_archive_capture": "20010607062122",
+      "requested_archive_capture": "20001017184612",
+      "effect_sequence_id": "KR491:effect_sequence:0",
+      "effect_source": {
+        "container_sha256": "f8271a52d8dbde5601a0c7bf7460052376b2651930b6bc004eeb1ed20357bfc7",
+        "dat_byte_offset": 20527211,
+        "line": 2,
+        "line_byte_offset": 15,
+        "member": "Effect.tbl",
+        "member_byte_offset": 20527196,
+        "member_sha256": "ef56308d711d52ce154950d542724def164870645aea1dd72d2685005fc1b1a8",
+        "parser_sha256": "8e5544d11e8739a6b7c9d5214cedadff26a4bed505ee0fd0d8493186d5c80049",
+        "reader_sha256": "f5152ae3473b3e2f2d120b8c1b8679529428d2bd09f9024528d71aa9a9be86e2",
+        "source_family": "KR491_CLIENT",
+        "source_id": "LIB-010",
+        "source_type": "original_client_resource"
+      },
+      "related_stable_guide_bindings": [
+        "KR491:guide_image:P15-ARIMG-232181ef72f2:KRO-f7c50a49bf19",
+        "KR491:guide_image:P15-ARIMG-e58b8b895b8c:KRO-455a474f5eac",
+        "KR491:guide_image:P15-ARIMG-e58b8b895b8c:KRO-3f32fc8b60bd"
+      ],
+      "gif_dimensions_px": [
+        72,
+        72
+      ],
+      "gif_declared_loop": 0,
+      "gif_frame_metadata": [
+        {
+          "gif_frame": 0,
+          "blank_in_prior_exact_comparison": true,
+          "declared_duration_ms": 500,
+          "declared_duration_cs": 50,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": []
+        },
+        {
+          "gif_frame": 1,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            0,
+            12,
+            24,
+            63
+          ]
+        },
+        {
+          "gif_frame": 2,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            1
+          ]
+        },
+        {
+          "gif_frame": 3,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            2
+          ]
+        },
+        {
+          "gif_frame": 4,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            3
+          ]
+        },
+        {
+          "gif_frame": 5,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            4
+          ]
+        },
+        {
+          "gif_frame": 6,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            5
+          ]
+        },
+        {
+          "gif_frame": 7,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            6,
+            10
+          ]
+        },
+        {
+          "gif_frame": 8,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            7
+          ]
+        },
+        {
+          "gif_frame": 9,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            8
+          ]
+        },
+        {
+          "gif_frame": 10,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            9
+          ]
+        },
+        {
+          "gif_frame": 11,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            6,
+            10
+          ]
+        },
+        {
+          "gif_frame": 12,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            11
+          ]
+        }
+      ],
+      "aligned_nonblank_timing_pairs": [
+        {
+          "client_frame_index": 0,
+          "effect_tbl_line": 3,
+          "effect_tbl_byte_offset": 130,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 1,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 1,
+          "effect_tbl_line": 4,
+          "effect_tbl_byte_offset": 176,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 2,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 2,
+          "effect_tbl_line": 5,
+          "effect_tbl_byte_offset": 222,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 3,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 3,
+          "effect_tbl_line": 6,
+          "effect_tbl_byte_offset": 268,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 4,
+          "gif_declared_ms": 200,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "2"
+        },
+        {
+          "client_frame_index": 4,
+          "effect_tbl_line": 7,
+          "effect_tbl_byte_offset": 314,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 5,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 5,
+          "effect_tbl_line": 8,
+          "effect_tbl_byte_offset": 360,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 6,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 6,
+          "effect_tbl_line": 9,
+          "effect_tbl_byte_offset": 406,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 7,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 7,
+          "effect_tbl_line": 10,
+          "effect_tbl_byte_offset": 452,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 8,
+          "gif_declared_ms": 200,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "2"
+        },
+        {
+          "client_frame_index": 8,
+          "effect_tbl_line": 11,
+          "effect_tbl_byte_offset": 498,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 9,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 9,
+          "effect_tbl_line": 12,
+          "effect_tbl_byte_offset": 544,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 10,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 10,
+          "effect_tbl_line": 13,
+          "effect_tbl_byte_offset": 590,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 11,
+          "gif_declared_ms": 200,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "2"
+        },
+        {
+          "client_frame_index": 11,
+          "effect_tbl_line": 14,
+          "effect_tbl_byte_offset": 637,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 12,
+          "gif_declared_ms": 200,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "2"
+        }
+      ],
+      "numerical_ratio_set_NOT_A_CLIENT_UNIT": [
+        "1",
+        "2"
+      ],
+      "constant_numerical_scale_across_all_nonblank_frames": false,
+      "meaning": "Exact RGB identity does not imply equal timing. GIF centiseconds are container declarations, not recorded client elapsed time or hit time.",
+      "client_delay_unit": "UNKNOWN",
+      "sound_id": null,
+      "runtime_test": "NOT_RUN"
+    },
+    {
+      "record_id": "MS-GIF-TIMING-065",
+      "kind": "EXISTING_BYTES_NEW_CONTAINER_TIMING_ANALYSIS",
+      "binding_ids": [
+        "BND-022",
+        "BND-023",
+        "BND-024"
+      ],
+      "requirement_ids": [
+        "RQ-086",
+        "RQ-088",
+        "RQ-089",
+        "RQ-093",
+        "RQ-094"
+      ],
+      "guide_source_id": "P15-ARIMG-cdf4b611dbf7",
+      "guide_url": "http://www.baram.nexon.co.kr:80/guide/magic/effect/effect049/eff049.gif",
+      "guide_sha256": "3cd7ca53cefb5d032c56740ade8689d4cc2f8cf5424c4c75992cf53e03b3dda3",
+      "guide_bytes": 1796,
+      "guide_input_relative_path": "evidence/images/3cd7ca53cefb5d032c56740ade8689d4cc2f8cf5424c4c75992cf53e03b3dda3.gif",
+      "actual_archive_capture": "20010607062615",
+      "requested_archive_capture": "20001017184612",
+      "effect_sequence_id": "KR491:effect_sequence:65",
+      "effect_source": {
+        "container_sha256": "f8271a52d8dbde5601a0c7bf7460052376b2651930b6bc004eeb1ed20357bfc7",
+        "dat_byte_offset": 20565041,
+        "line": 708,
+        "line_byte_offset": 37845,
+        "member": "Effect.tbl",
+        "member_byte_offset": 20527196,
+        "member_sha256": "ef56308d711d52ce154950d542724def164870645aea1dd72d2685005fc1b1a8",
+        "parser_sha256": "8e5544d11e8739a6b7c9d5214cedadff26a4bed505ee0fd0d8493186d5c80049",
+        "reader_sha256": "f5152ae3473b3e2f2d120b8c1b8679529428d2bd09f9024528d71aa9a9be86e2",
+        "source_family": "KR491_CLIENT",
+        "source_id": "LIB-010",
+        "source_type": "original_client_resource"
+      },
+      "related_stable_guide_bindings": [
+        "KR491:guide_image:P15-ARIMG-cdf4b611dbf7:KRO-bb2fa9e3c34f",
+        "KR491:guide_image:P15-ARIMG-5f8693b91b24:KRO-8e2db0bee86e",
+        "KR491:guide_image:P15-ARIMG-5f8693b91b24:KRO-62b311762b20",
+        "KR491:guide_image:P15-ARIMG-5f8693b91b24:KRO-66b985b9737a",
+        "KR491:guide_image:P15-ARIMG-5f8693b91b24:KRO-050070727765",
+        "KR491:guide_image:P15-ARIMG-5f8693b91b24:KRO-455068ab7a74",
+        "KR491:guide_image:P15-ARIMG-5f8693b91b24:KRO-1831242cd7eb",
+        "KR491:guide_image:P15-ARIMG-5f8693b91b24:KRO-985c5fc4f711",
+        "KR491:guide_image:P15-ARIMG-5f8693b91b24:KRO-b136d2da2590"
+      ],
+      "gif_dimensions_px": [
+        72,
+        72
+      ],
+      "gif_declared_loop": 0,
+      "gif_frame_metadata": [
+        {
+          "gif_frame": 0,
+          "blank_in_prior_exact_comparison": true,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": []
+        },
+        {
+          "gif_frame": 1,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            638
+          ]
+        },
+        {
+          "gif_frame": 2,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            639
+          ]
+        },
+        {
+          "gif_frame": 3,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            640
+          ]
+        },
+        {
+          "gif_frame": 4,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            641
+          ]
+        },
+        {
+          "gif_frame": 5,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            642
+          ]
+        },
+        {
+          "gif_frame": 6,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            643
+          ]
+        },
+        {
+          "gif_frame": 7,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            644
+          ]
+        },
+        {
+          "gif_frame": 8,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            645
+          ]
+        }
+      ],
+      "aligned_nonblank_timing_pairs": [
+        {
+          "client_frame_index": 638,
+          "effect_tbl_line": 709,
+          "effect_tbl_byte_offset": 37960,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 1,
+          "gif_declared_ms": 200,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "2"
+        },
+        {
+          "client_frame_index": 639,
+          "effect_tbl_line": 710,
+          "effect_tbl_byte_offset": 38007,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 2,
+          "gif_declared_ms": 200,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "2"
+        },
+        {
+          "client_frame_index": 640,
+          "effect_tbl_line": 711,
+          "effect_tbl_byte_offset": 38054,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 3,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 641,
+          "effect_tbl_line": 712,
+          "effect_tbl_byte_offset": 38101,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 4,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 642,
+          "effect_tbl_line": 713,
+          "effect_tbl_byte_offset": 38148,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 5,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 643,
+          "effect_tbl_line": 714,
+          "effect_tbl_byte_offset": 38195,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 6,
+          "gif_declared_ms": 200,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "2"
+        },
+        {
+          "client_frame_index": 644,
+          "effect_tbl_line": 715,
+          "effect_tbl_byte_offset": 38242,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 7,
+          "gif_declared_ms": 200,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "2"
+        },
+        {
+          "client_frame_index": 645,
+          "effect_tbl_line": 716,
+          "effect_tbl_byte_offset": 38289,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 8,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        }
+      ],
+      "numerical_ratio_set_NOT_A_CLIENT_UNIT": [
+        "1",
+        "2"
+      ],
+      "constant_numerical_scale_across_all_nonblank_frames": false,
+      "meaning": "Exact RGB identity does not imply equal timing. GIF centiseconds are container declarations, not recorded client elapsed time or hit time.",
+      "client_delay_unit": "UNKNOWN",
+      "sound_id": null,
+      "runtime_test": "NOT_RUN"
+    },
+    {
+      "record_id": "MS-GIF-TIMING-007",
+      "kind": "EXISTING_BYTES_NEW_CONTAINER_TIMING_ANALYSIS",
+      "binding_ids": [
+        "BND-022",
+        "BND-023",
+        "BND-024"
+      ],
+      "requirement_ids": [
+        "RQ-086",
+        "RQ-088",
+        "RQ-089",
+        "RQ-093",
+        "RQ-094"
+      ],
+      "guide_source_id": "P15-ARIMG-8e2c3cf67d2e",
+      "guide_url": "http://www.baram.nexon.co.kr:80/guide/magic/effect/effect007/eff007.gif",
+      "guide_sha256": "b56388cce3e19c51c0b967bce839ff699c00959a88ad4fd2f5d2a70e9fe83845",
+      "guide_bytes": 1262,
+      "guide_input_relative_path": "evidence/images/b56388cce3e19c51c0b967bce839ff699c00959a88ad4fd2f5d2a70e9fe83845.gif",
+      "actual_archive_capture": "20010607061936",
+      "requested_archive_capture": "20001017184612",
+      "effect_sequence_id": "KR491:effect_sequence:7",
+      "effect_source": {
+        "container_sha256": "f8271a52d8dbde5601a0c7bf7460052376b2651930b6bc004eeb1ed20357bfc7",
+        "dat_byte_offset": 20531651,
+        "line": 87,
+        "line_byte_offset": 4455,
+        "member": "Effect.tbl",
+        "member_byte_offset": 20527196,
+        "member_sha256": "ef56308d711d52ce154950d542724def164870645aea1dd72d2685005fc1b1a8",
+        "parser_sha256": "8e5544d11e8739a6b7c9d5214cedadff26a4bed505ee0fd0d8493186d5c80049",
+        "reader_sha256": "f5152ae3473b3e2f2d120b8c1b8679529428d2bd09f9024528d71aa9a9be86e2",
+        "source_family": "KR491_CLIENT",
+        "source_id": "LIB-010",
+        "source_type": "original_client_resource"
+      },
+      "related_stable_guide_bindings": [
+        "KR491:guide_image:P15-ARIMG-8e2c3cf67d2e:KRO-42f6d5181ce5",
+        "KR491:guide_image:P15-ARIMG-1ab306f59326:KRO-e62a565a9ff3",
+        "KR491:guide_image:P15-ARIMG-1ab306f59326:KRO-1cf4e4e417ed"
+      ],
+      "gif_dimensions_px": [
+        72,
+        72
+      ],
+      "gif_declared_loop": 0,
+      "gif_frame_metadata": [
+        {
+          "gif_frame": 0,
+          "blank_in_prior_exact_comparison": true,
+          "declared_duration_ms": 0,
+          "declared_duration_cs": 0,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": []
+        },
+        {
+          "gif_frame": 1,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            78
+          ]
+        },
+        {
+          "gif_frame": 2,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            79
+          ]
+        },
+        {
+          "gif_frame": 3,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            80
+          ]
+        },
+        {
+          "gif_frame": 4,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            81
+          ]
+        },
+        {
+          "gif_frame": 5,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            82
+          ]
+        },
+        {
+          "gif_frame": 6,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            83
+          ]
+        }
+      ],
+      "aligned_nonblank_timing_pairs": [
+        {
+          "client_frame_index": 78,
+          "effect_tbl_line": 88,
+          "effect_tbl_byte_offset": 4569,
+          "raw_delay_unit_unknown": 200,
+          "gif_frame": 1,
+          "gif_declared_ms": 200,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 79,
+          "effect_tbl_line": 89,
+          "effect_tbl_byte_offset": 4615,
+          "raw_delay_unit_unknown": 200,
+          "gif_frame": 2,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1/2"
+        },
+        {
+          "client_frame_index": 80,
+          "effect_tbl_line": 90,
+          "effect_tbl_byte_offset": 4661,
+          "raw_delay_unit_unknown": 200,
+          "gif_frame": 3,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1/2"
+        },
+        {
+          "client_frame_index": 81,
+          "effect_tbl_line": 91,
+          "effect_tbl_byte_offset": 4707,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 4,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 82,
+          "effect_tbl_line": 92,
+          "effect_tbl_byte_offset": 4754,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 5,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 83,
+          "effect_tbl_line": 93,
+          "effect_tbl_byte_offset": 4801,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 6,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        }
+      ],
+      "numerical_ratio_set_NOT_A_CLIENT_UNIT": [
+        "1",
+        "1/2"
+      ],
+      "constant_numerical_scale_across_all_nonblank_frames": false,
+      "meaning": "Exact RGB identity does not imply equal timing. GIF centiseconds are container declarations, not recorded client elapsed time or hit time.",
+      "client_delay_unit": "UNKNOWN",
+      "sound_id": null,
+      "runtime_test": "NOT_RUN"
+    },
+    {
+      "record_id": "MS-GIF-TIMING-004",
+      "kind": "EXISTING_BYTES_NEW_CONTAINER_TIMING_ANALYSIS",
+      "binding_ids": [
+        "BND-022",
+        "BND-023",
+        "BND-024"
+      ],
+      "requirement_ids": [
+        "RQ-086",
+        "RQ-088",
+        "RQ-089",
+        "RQ-093",
+        "RQ-094"
+      ],
+      "guide_source_id": "P15-ARIMG-be403b7fafd9",
+      "guide_url": "http://baram.nexon.co.kr:80/guide/middle/magic/effect/effect004/eff004.gif",
+      "guide_sha256": "44a058428aec8d82a5851dc88893f8dcf59ee458405c2fd260397e67b43a3c5d",
+      "guide_bytes": 2432,
+      "guide_input_relative_path": "evidence/images/44a058428aec8d82a5851dc88893f8dcf59ee458405c2fd260397e67b43a3c5d.gif",
+      "actual_archive_capture": "20011214060706",
+      "requested_archive_capture": "20010705222452",
+      "effect_sequence_id": "KR491:effect_sequence:4",
+      "effect_source": {
+        "container_sha256": "f8271a52d8dbde5601a0c7bf7460052376b2651930b6bc004eeb1ed20357bfc7",
+        "dat_byte_offset": 20530277,
+        "line": 62,
+        "line_byte_offset": 3081,
+        "member": "Effect.tbl",
+        "member_byte_offset": 20527196,
+        "member_sha256": "ef56308d711d52ce154950d542724def164870645aea1dd72d2685005fc1b1a8",
+        "parser_sha256": "8e5544d11e8739a6b7c9d5214cedadff26a4bed505ee0fd0d8493186d5c80049",
+        "reader_sha256": "f5152ae3473b3e2f2d120b8c1b8679529428d2bd09f9024528d71aa9a9be86e2",
+        "source_family": "KR491_CLIENT",
+        "source_id": "LIB-010",
+        "source_type": "original_client_resource"
+      },
+      "related_stable_guide_bindings": [
+        "KR491:guide_image:P15-ARIMG-be403b7fafd9:KRO-62769e97ce90",
+        "KR491:guide_image:P15-ARIMG-be403b7fafd9:KRO-cce452629337",
+        "KR491:guide_image:P15-ARIMG-be403b7fafd9:KRO-b339899aab5d",
+        "KR491:guide_image:P15-ARIMG-be403b7fafd9:KRO-8501860bf1c5",
+        "KR491:guide_image:P15-ARIMG-be403b7fafd9:KRO-77f964c0bd64",
+        "KR491:guide_image:P15-ARIMG-be403b7fafd9:KRO-b263815ade47",
+        "KR491:guide_image:P15-ARIMG-be403b7fafd9:KRO-5c978cf8ad1b",
+        "KR491:guide_image:P15-ARIMG-be403b7fafd9:KRO-32c49870aa62",
+        "KR491:guide_image:P15-ARIMG-be403b7fafd9:KRO-395ea3235cbe",
+        "KR491:guide_image:P15-ARIMG-be403b7fafd9:KRO-0534ac17e02b",
+        "KR491:guide_image:P15-ARIMG-be403b7fafd9:KRO-4eeca26285d6",
+        "KR491:guide_image:P15-ARIMG-be403b7fafd9:KRO-3b68fb92fcdc",
+        "KR491:guide_image:P15-ARIMG-be403b7fafd9:KRO-f256051ce2c8",
+        "KR491:guide_image:P15-ARIMG-be403b7fafd9:KRO-2a81ef1e699c",
+        "KR491:guide_image:P15-ARIMG-be403b7fafd9:KRO-b6ad73505d85"
+      ],
+      "gif_dimensions_px": [
+        72,
+        72
+      ],
+      "gif_declared_loop": 0,
+      "gif_frame_metadata": [
+        {
+          "gif_frame": 0,
+          "blank_in_prior_exact_comparison": true,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": []
+        },
+        {
+          "gif_frame": 1,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            43
+          ]
+        },
+        {
+          "gif_frame": 2,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            44
+          ]
+        },
+        {
+          "gif_frame": 3,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            45
+          ]
+        },
+        {
+          "gif_frame": 4,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            46
+          ]
+        },
+        {
+          "gif_frame": 5,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            47
+          ]
+        },
+        {
+          "gif_frame": 6,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            48
+          ]
+        },
+        {
+          "gif_frame": 7,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            49
+          ]
+        },
+        {
+          "gif_frame": 8,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            50
+          ]
+        }
+      ],
+      "aligned_nonblank_timing_pairs": [
+        {
+          "client_frame_index": 43,
+          "effect_tbl_line": 63,
+          "effect_tbl_byte_offset": 3195,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 1,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 44,
+          "effect_tbl_line": 64,
+          "effect_tbl_byte_offset": 3242,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 2,
+          "gif_declared_ms": 200,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "2"
+        },
+        {
+          "client_frame_index": 45,
+          "effect_tbl_line": 65,
+          "effect_tbl_byte_offset": 3289,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 3,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 46,
+          "effect_tbl_line": 66,
+          "effect_tbl_byte_offset": 3336,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 4,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 47,
+          "effect_tbl_line": 67,
+          "effect_tbl_byte_offset": 3383,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 5,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 48,
+          "effect_tbl_line": 68,
+          "effect_tbl_byte_offset": 3430,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 6,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 49,
+          "effect_tbl_line": 69,
+          "effect_tbl_byte_offset": 3477,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 7,
+          "gif_declared_ms": 200,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "2"
+        },
+        {
+          "client_frame_index": 50,
+          "effect_tbl_line": 70,
+          "effect_tbl_byte_offset": 3524,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 8,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        }
+      ],
+      "numerical_ratio_set_NOT_A_CLIENT_UNIT": [
+        "1",
+        "2"
+      ],
+      "constant_numerical_scale_across_all_nonblank_frames": false,
+      "meaning": "Exact RGB identity does not imply equal timing. GIF centiseconds are container declarations, not recorded client elapsed time or hit time.",
+      "client_delay_unit": "UNKNOWN",
+      "sound_id": null,
+      "runtime_test": "NOT_RUN"
+    },
+    {
+      "record_id": "MS-GIF-TIMING-002",
+      "kind": "EXISTING_BYTES_NEW_CONTAINER_TIMING_ANALYSIS",
+      "binding_ids": [
+        "BND-022",
+        "BND-023",
+        "BND-024"
+      ],
+      "requirement_ids": [
+        "RQ-086",
+        "RQ-088",
+        "RQ-089",
+        "RQ-093",
+        "RQ-094"
+      ],
+      "guide_source_id": "P15-ARIMG-0f42cce8c093",
+      "guide_url": "http://baram.nexon.co.kr:80/guide/middle/magic/effect/effect003/eff003.gif",
+      "guide_sha256": "16aaab65891018c8820aebe681bf0d4b18e2f2bb14ab34828c5aa432afe9beea",
+      "guide_bytes": 1155,
+      "guide_input_relative_path": "evidence/images/16aaab65891018c8820aebe681bf0d4b18e2f2bb14ab34828c5aa432afe9beea.gif",
+      "actual_archive_capture": "20010816004013",
+      "requested_archive_capture": "20010705222452",
+      "effect_sequence_id": "KR491:effect_sequence:2",
+      "effect_source": {
+        "container_sha256": "f8271a52d8dbde5601a0c7bf7460052376b2651930b6bc004eeb1ed20357bfc7",
+        "dat_byte_offset": 20529218,
+        "line": 42,
+        "line_byte_offset": 2022,
+        "member": "Effect.tbl",
+        "member_byte_offset": 20527196,
+        "member_sha256": "ef56308d711d52ce154950d542724def164870645aea1dd72d2685005fc1b1a8",
+        "parser_sha256": "8e5544d11e8739a6b7c9d5214cedadff26a4bed505ee0fd0d8493186d5c80049",
+        "reader_sha256": "f5152ae3473b3e2f2d120b8c1b8679529428d2bd09f9024528d71aa9a9be86e2",
+        "source_family": "KR491_CLIENT",
+        "source_id": "LIB-010",
+        "source_type": "original_client_resource"
+      },
+      "related_stable_guide_bindings": [
+        "KR491:guide_image:P15-ARIMG-0f42cce8c093:KRO-ade823e9e9b5",
+        "KR491:guide_image:P15-ARIMG-0f42cce8c093:KRO-977b5b115bb9",
+        "KR491:guide_image:P15-ARIMG-0f42cce8c093:KRO-a6afe4d113cf",
+        "KR491:guide_image:P15-ARIMG-0f42cce8c093:KRO-24840b190c5a",
+        "KR491:guide_image:P15-ARIMG-0f42cce8c093:KRO-b35eb75382e6",
+        "KR491:guide_image:P15-ARIMG-0f42cce8c093:KRO-a24c6e3b6dd8",
+        "KR491:guide_image:P15-ARIMG-0f42cce8c093:KRO-eca6a5b6a9fa",
+        "KR491:guide_image:P15-ARIMG-0f42cce8c093:KRO-772367fd21b4",
+        "KR491:guide_image:P15-ARIMG-0f42cce8c093:KRO-8655189ede6f",
+        "KR491:guide_image:P15-ARIMG-0f42cce8c093:KRO-5b6b8028db27",
+        "KR491:guide_image:P15-ARIMG-0f42cce8c093:KRO-b24e3a79dfb4",
+        "KR491:guide_image:P15-ARIMG-0f42cce8c093:KRO-f26ca2744d5f"
+      ],
+      "gif_dimensions_px": [
+        72,
+        72
+      ],
+      "gif_declared_loop": 0,
+      "gif_frame_metadata": [
+        {
+          "gif_frame": 0,
+          "blank_in_prior_exact_comparison": true,
+          "declared_duration_ms": 500,
+          "declared_duration_cs": 50,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": []
+        },
+        {
+          "gif_frame": 1,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            25
+          ]
+        },
+        {
+          "gif_frame": 2,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            26
+          ]
+        },
+        {
+          "gif_frame": 3,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            27
+          ]
+        },
+        {
+          "gif_frame": 4,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            28
+          ]
+        },
+        {
+          "gif_frame": 5,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            29
+          ]
+        },
+        {
+          "gif_frame": 6,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            30
+          ]
+        },
+        {
+          "gif_frame": 7,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 300,
+          "declared_duration_cs": 30,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            31
+          ]
+        },
+        {
+          "gif_frame": 8,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            32
+          ]
+        },
+        {
+          "gif_frame": 9,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            33
+          ]
+        },
+        {
+          "gif_frame": 10,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            34
+          ]
+        }
+      ],
+      "aligned_nonblank_timing_pairs": [
+        {
+          "client_frame_index": 25,
+          "effect_tbl_line": 43,
+          "effect_tbl_byte_offset": 2137,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 1,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 26,
+          "effect_tbl_line": 44,
+          "effect_tbl_byte_offset": 2183,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 2,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 27,
+          "effect_tbl_line": 45,
+          "effect_tbl_byte_offset": 2229,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 3,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 28,
+          "effect_tbl_line": 46,
+          "effect_tbl_byte_offset": 2275,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 4,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 29,
+          "effect_tbl_line": 47,
+          "effect_tbl_byte_offset": 2321,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 5,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 30,
+          "effect_tbl_line": 48,
+          "effect_tbl_byte_offset": 2367,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 6,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 31,
+          "effect_tbl_line": 49,
+          "effect_tbl_byte_offset": 2413,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 7,
+          "gif_declared_ms": 300,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "3"
+        },
+        {
+          "client_frame_index": 32,
+          "effect_tbl_line": 50,
+          "effect_tbl_byte_offset": 2459,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 8,
+          "gif_declared_ms": 200,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "2"
+        },
+        {
+          "client_frame_index": 33,
+          "effect_tbl_line": 51,
+          "effect_tbl_byte_offset": 2505,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 9,
+          "gif_declared_ms": 200,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "2"
+        },
+        {
+          "client_frame_index": 34,
+          "effect_tbl_line": 52,
+          "effect_tbl_byte_offset": 2551,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 10,
+          "gif_declared_ms": 200,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "2"
+        }
+      ],
+      "numerical_ratio_set_NOT_A_CLIENT_UNIT": [
+        "1",
+        "2",
+        "3"
+      ],
+      "constant_numerical_scale_across_all_nonblank_frames": false,
+      "meaning": "Exact RGB identity does not imply equal timing. GIF centiseconds are container declarations, not recorded client elapsed time or hit time.",
+      "client_delay_unit": "UNKNOWN",
+      "sound_id": null,
+      "runtime_test": "NOT_RUN"
+    },
+    {
+      "record_id": "MS-GIF-TIMING-009",
+      "kind": "EXISTING_BYTES_NEW_CONTAINER_TIMING_ANALYSIS",
+      "binding_ids": [
+        "BND-022",
+        "BND-023",
+        "BND-024"
+      ],
+      "requirement_ids": [
+        "RQ-086",
+        "RQ-088",
+        "RQ-089",
+        "RQ-093",
+        "RQ-094"
+      ],
+      "guide_source_id": "P15-ARIMG-b9222bb17d72",
+      "guide_url": "http://baram.nexon.co.kr:80/guide/middle/magic/effect/effect009/eff009.gif",
+      "guide_sha256": "e78ef63e7afb5b84a255506b927cf05f3d07423cff841e576792900f79657383",
+      "guide_bytes": 1089,
+      "guide_input_relative_path": "evidence/images/e78ef63e7afb5b84a255506b927cf05f3d07423cff841e576792900f79657383.gif",
+      "actual_archive_capture": "20020306010135",
+      "requested_archive_capture": "20010705222452",
+      "effect_sequence_id": "KR491:effect_sequence:9",
+      "effect_source": {
+        "container_sha256": "f8271a52d8dbde5601a0c7bf7460052376b2651930b6bc004eeb1ed20357bfc7",
+        "dat_byte_offset": 20532487,
+        "line": 102,
+        "line_byte_offset": 5291,
+        "member": "Effect.tbl",
+        "member_byte_offset": 20527196,
+        "member_sha256": "ef56308d711d52ce154950d542724def164870645aea1dd72d2685005fc1b1a8",
+        "parser_sha256": "8e5544d11e8739a6b7c9d5214cedadff26a4bed505ee0fd0d8493186d5c80049",
+        "reader_sha256": "f5152ae3473b3e2f2d120b8c1b8679529428d2bd09f9024528d71aa9a9be86e2",
+        "source_family": "KR491_CLIENT",
+        "source_id": "LIB-010",
+        "source_type": "original_client_resource"
+      },
+      "related_stable_guide_bindings": [
+        "KR491:guide_image:P15-ARIMG-b9222bb17d72:KRO-e46e771c8567",
+        "KR491:guide_image:P15-ARIMG-b9222bb17d72:KRO-e4c8d653e2ce"
+      ],
+      "gif_dimensions_px": [
+        72,
+        72
+      ],
+      "gif_declared_loop": 0,
+      "gif_frame_metadata": [
+        {
+          "gif_frame": 0,
+          "blank_in_prior_exact_comparison": true,
+          "declared_duration_ms": 500,
+          "declared_duration_cs": 50,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": []
+        },
+        {
+          "gif_frame": 1,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            91
+          ]
+        },
+        {
+          "gif_frame": 2,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            92
+          ]
+        },
+        {
+          "gif_frame": 3,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            93
+          ]
+        },
+        {
+          "gif_frame": 4,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            94
+          ]
+        },
+        {
+          "gif_frame": 5,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            95
+          ]
+        },
+        {
+          "gif_frame": 6,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            96
+          ]
+        },
+        {
+          "gif_frame": 7,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            97,
+            106
+          ]
+        },
+        {
+          "gif_frame": 8,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            98,
+            107,
+            159
+          ]
+        }
+      ],
+      "aligned_nonblank_timing_pairs": [
+        {
+          "client_frame_index": 91,
+          "effect_tbl_line": 103,
+          "effect_tbl_byte_offset": 5405,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 1,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 92,
+          "effect_tbl_line": 104,
+          "effect_tbl_byte_offset": 5451,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 2,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 93,
+          "effect_tbl_line": 105,
+          "effect_tbl_byte_offset": 5497,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 3,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 94,
+          "effect_tbl_line": 106,
+          "effect_tbl_byte_offset": 5543,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 4,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 95,
+          "effect_tbl_line": 107,
+          "effect_tbl_byte_offset": 5589,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 5,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 96,
+          "effect_tbl_line": 108,
+          "effect_tbl_byte_offset": 5635,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 6,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 97,
+          "effect_tbl_line": 109,
+          "effect_tbl_byte_offset": 5681,
+          "raw_delay_unit_unknown": 200,
+          "gif_frame": 7,
+          "gif_declared_ms": 200,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 98,
+          "effect_tbl_line": 110,
+          "effect_tbl_byte_offset": 5727,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 8,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        }
+      ],
+      "numerical_ratio_set_NOT_A_CLIENT_UNIT": [
+        "1"
+      ],
+      "constant_numerical_scale_across_all_nonblank_frames": true,
+      "meaning": "Exact RGB identity does not imply equal timing. GIF centiseconds are container declarations, not recorded client elapsed time or hit time.",
+      "client_delay_unit": "UNKNOWN",
+      "sound_id": null,
+      "runtime_test": "NOT_RUN"
+    },
+    {
+      "record_id": "MS-GIF-TIMING-038",
+      "kind": "EXISTING_BYTES_NEW_CONTAINER_TIMING_ANALYSIS",
+      "binding_ids": [
+        "BND-022",
+        "BND-023",
+        "BND-024"
+      ],
+      "requirement_ids": [
+        "RQ-086",
+        "RQ-088",
+        "RQ-089",
+        "RQ-093",
+        "RQ-094"
+      ],
+      "guide_source_id": "P15-ARIMG-1bddd62ac47b",
+      "guide_url": "http://baram.nexon.co.kr:80/guide/middle/magic/effect/effect030/eff030_1.gif",
+      "guide_sha256": "3495f2dd1f051fcf7ad7fcc12946d428c3c96dc292680e6c969a28ac3acc97c6",
+      "guide_bytes": 4173,
+      "guide_input_relative_path": "evidence/images/3495f2dd1f051fcf7ad7fcc12946d428c3c96dc292680e6c969a28ac3acc97c6.gif",
+      "actual_archive_capture": "20010816021019",
+      "requested_archive_capture": "20010705222452",
+      "effect_sequence_id": "KR491:effect_sequence:38",
+      "effect_source": {
+        "container_sha256": "f8271a52d8dbde5601a0c7bf7460052376b2651930b6bc004eeb1ed20357bfc7",
+        "dat_byte_offset": 20547832,
+        "line": 383,
+        "line_byte_offset": 20636,
+        "member": "Effect.tbl",
+        "member_byte_offset": 20527196,
+        "member_sha256": "ef56308d711d52ce154950d542724def164870645aea1dd72d2685005fc1b1a8",
+        "parser_sha256": "8e5544d11e8739a6b7c9d5214cedadff26a4bed505ee0fd0d8493186d5c80049",
+        "reader_sha256": "f5152ae3473b3e2f2d120b8c1b8679529428d2bd09f9024528d71aa9a9be86e2",
+        "source_family": "KR491_CLIENT",
+        "source_id": "LIB-010",
+        "source_type": "original_client_resource"
+      },
+      "related_stable_guide_bindings": [
+        "KR491:guide_image:P15-ARIMG-1bddd62ac47b:KRO-4a30d77993b3"
+      ],
+      "gif_dimensions_px": [
+        72,
+        72
+      ],
+      "gif_declared_loop": 0,
+      "gif_frame_metadata": [
+        {
+          "gif_frame": 0,
+          "blank_in_prior_exact_comparison": true,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": []
+        },
+        {
+          "gif_frame": 1,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 2,
+          "exact_client_frame_candidates": [
+            340
+          ]
+        },
+        {
+          "gif_frame": 2,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 2,
+          "exact_client_frame_candidates": [
+            341
+          ]
+        },
+        {
+          "gif_frame": 3,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            342
+          ]
+        },
+        {
+          "gif_frame": 4,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 2,
+          "exact_client_frame_candidates": [
+            343
+          ]
+        },
+        {
+          "gif_frame": 5,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 2,
+          "exact_client_frame_candidates": [
+            344
+          ]
+        },
+        {
+          "gif_frame": 6,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 2,
+          "exact_client_frame_candidates": [
+            345
+          ]
+        },
+        {
+          "gif_frame": 7,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 2,
+          "exact_client_frame_candidates": [
+            346
+          ]
+        },
+        {
+          "gif_frame": 8,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 2,
+          "exact_client_frame_candidates": [
+            347
+          ]
+        },
+        {
+          "gif_frame": 9,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 2,
+          "exact_client_frame_candidates": [
+            348
+          ]
+        },
+        {
+          "gif_frame": 10,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 2,
+          "exact_client_frame_candidates": [
+            349
+          ]
+        },
+        {
+          "gif_frame": 11,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 2,
+          "exact_client_frame_candidates": [
+            350
+          ]
+        },
+        {
+          "gif_frame": 12,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 2,
+          "exact_client_frame_candidates": [
+            351
+          ]
+        },
+        {
+          "gif_frame": 13,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 2,
+          "exact_client_frame_candidates": [
+            352
+          ]
+        },
+        {
+          "gif_frame": 14,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 2,
+          "exact_client_frame_candidates": [
+            353
+          ]
+        },
+        {
+          "gif_frame": 15,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            354,
+            355
+          ]
+        },
+        {
+          "gif_frame": 16,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            354,
+            355
+          ]
+        }
+      ],
+      "aligned_nonblank_timing_pairs": [
+        {
+          "client_frame_index": 340,
+          "effect_tbl_line": 384,
+          "effect_tbl_byte_offset": 20752,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 1,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 341,
+          "effect_tbl_line": 385,
+          "effect_tbl_byte_offset": 20799,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 2,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 342,
+          "effect_tbl_line": 386,
+          "effect_tbl_byte_offset": 20846,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 3,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 343,
+          "effect_tbl_line": 387,
+          "effect_tbl_byte_offset": 20893,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 4,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 344,
+          "effect_tbl_line": 388,
+          "effect_tbl_byte_offset": 20940,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 5,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 345,
+          "effect_tbl_line": 389,
+          "effect_tbl_byte_offset": 20987,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 6,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 346,
+          "effect_tbl_line": 390,
+          "effect_tbl_byte_offset": 21034,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 7,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 347,
+          "effect_tbl_line": 391,
+          "effect_tbl_byte_offset": 21081,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 8,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 348,
+          "effect_tbl_line": 392,
+          "effect_tbl_byte_offset": 21128,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 9,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 349,
+          "effect_tbl_line": 393,
+          "effect_tbl_byte_offset": 21175,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 10,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 350,
+          "effect_tbl_line": 394,
+          "effect_tbl_byte_offset": 21222,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 11,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 351,
+          "effect_tbl_line": 395,
+          "effect_tbl_byte_offset": 21269,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 12,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 352,
+          "effect_tbl_line": 396,
+          "effect_tbl_byte_offset": 21316,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 13,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 353,
+          "effect_tbl_line": 397,
+          "effect_tbl_byte_offset": 21363,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 14,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 354,
+          "effect_tbl_line": 398,
+          "effect_tbl_byte_offset": 21410,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 15,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 355,
+          "effect_tbl_line": 399,
+          "effect_tbl_byte_offset": 21457,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 16,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        }
+      ],
+      "numerical_ratio_set_NOT_A_CLIENT_UNIT": [
+        "1"
+      ],
+      "constant_numerical_scale_across_all_nonblank_frames": true,
+      "meaning": "Exact RGB identity does not imply equal timing. GIF centiseconds are container declarations, not recorded client elapsed time or hit time.",
+      "client_delay_unit": "UNKNOWN",
+      "sound_id": null,
+      "runtime_test": "NOT_RUN"
+    },
+    {
+      "record_id": "MS-GIF-TIMING-064",
+      "kind": "EXISTING_BYTES_NEW_CONTAINER_TIMING_ANALYSIS",
+      "binding_ids": [
+        "BND-022",
+        "BND-023",
+        "BND-024"
+      ],
+      "requirement_ids": [
+        "RQ-086",
+        "RQ-088",
+        "RQ-089",
+        "RQ-093",
+        "RQ-094"
+      ],
+      "guide_source_id": "P15-ARIMG-05fe62541db6",
+      "guide_url": "http://baram.nexon.co.kr:80/guide/middle/magic/effect/effect048/eff048.gif",
+      "guide_sha256": "0b8d7b6bd944138ac93e097de1f38f358208ba525d40133d93892b63379f7264",
+      "guide_bytes": 3611,
+      "guide_input_relative_path": "evidence/images/0b8d7b6bd944138ac93e097de1f38f358208ba525d40133d93892b63379f7264.gif",
+      "actual_archive_capture": "20010816032019",
+      "requested_archive_capture": "20010705222452",
+      "effect_sequence_id": "KR491:effect_sequence:64",
+      "effect_source": {
+        "container_sha256": "f8271a52d8dbde5601a0c7bf7460052376b2651930b6bc004eeb1ed20357bfc7",
+        "dat_byte_offset": 20564543,
+        "line": 699,
+        "line_byte_offset": 37347,
+        "member": "Effect.tbl",
+        "member_byte_offset": 20527196,
+        "member_sha256": "ef56308d711d52ce154950d542724def164870645aea1dd72d2685005fc1b1a8",
+        "parser_sha256": "8e5544d11e8739a6b7c9d5214cedadff26a4bed505ee0fd0d8493186d5c80049",
+        "reader_sha256": "f5152ae3473b3e2f2d120b8c1b8679529428d2bd09f9024528d71aa9a9be86e2",
+        "source_family": "KR491_CLIENT",
+        "source_id": "LIB-010",
+        "source_type": "original_client_resource"
+      },
+      "related_stable_guide_bindings": [
+        "KR491:guide_image:P15-ARIMG-05fe62541db6:KRO-86fa389d2985"
+      ],
+      "gif_dimensions_px": [
+        72,
+        72
+      ],
+      "gif_declared_loop": 0,
+      "gif_frame_metadata": [
+        {
+          "gif_frame": 0,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            630
+          ]
+        },
+        {
+          "gif_frame": 1,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            631
+          ]
+        },
+        {
+          "gif_frame": 2,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            632
+          ]
+        },
+        {
+          "gif_frame": 3,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            633
+          ]
+        },
+        {
+          "gif_frame": 4,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            634
+          ]
+        },
+        {
+          "gif_frame": 5,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            635
+          ]
+        },
+        {
+          "gif_frame": 6,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            636
+          ]
+        },
+        {
+          "gif_frame": 7,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 400,
+          "declared_duration_cs": 40,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            637
+          ]
+        }
+      ],
+      "aligned_nonblank_timing_pairs": [
+        {
+          "client_frame_index": 630,
+          "effect_tbl_line": 700,
+          "effect_tbl_byte_offset": 37462,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 0,
+          "gif_declared_ms": 200,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "2"
+        },
+        {
+          "client_frame_index": 631,
+          "effect_tbl_line": 701,
+          "effect_tbl_byte_offset": 37510,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 1,
+          "gif_declared_ms": 200,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "2"
+        },
+        {
+          "client_frame_index": 632,
+          "effect_tbl_line": 702,
+          "effect_tbl_byte_offset": 37558,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 2,
+          "gif_declared_ms": 200,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "2"
+        },
+        {
+          "client_frame_index": 633,
+          "effect_tbl_line": 703,
+          "effect_tbl_byte_offset": 37606,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 3,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 634,
+          "effect_tbl_line": 704,
+          "effect_tbl_byte_offset": 37654,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 4,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 635,
+          "effect_tbl_line": 705,
+          "effect_tbl_byte_offset": 37702,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 5,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 636,
+          "effect_tbl_line": 706,
+          "effect_tbl_byte_offset": 37750,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 6,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 637,
+          "effect_tbl_line": 707,
+          "effect_tbl_byte_offset": 37798,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 7,
+          "gif_declared_ms": 400,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "4"
+        }
+      ],
+      "numerical_ratio_set_NOT_A_CLIENT_UNIT": [
+        "1",
+        "2",
+        "4"
+      ],
+      "constant_numerical_scale_across_all_nonblank_frames": false,
+      "meaning": "Exact RGB identity does not imply equal timing. GIF centiseconds are container declarations, not recorded client elapsed time or hit time.",
+      "client_delay_unit": "UNKNOWN",
+      "sound_id": null,
+      "runtime_test": "NOT_RUN"
+    },
+    {
+      "record_id": "MS-GIF-TIMING-005",
+      "kind": "EXISTING_BYTES_NEW_CONTAINER_TIMING_ANALYSIS",
+      "binding_ids": [
+        "BND-022",
+        "BND-023",
+        "BND-024"
+      ],
+      "requirement_ids": [
+        "RQ-086",
+        "RQ-088",
+        "RQ-089",
+        "RQ-093",
+        "RQ-094"
+      ],
+      "guide_source_id": "P15-ARIMG-04c0f0eeaeb6",
+      "guide_url": "http://baram.nexon.co.kr:80/guide/middle/magic/effect/effect005/eff005.gif",
+      "guide_sha256": "84ca7da84e4c57f8281e9a29c0acf55cb8a98dcdddd9a47a128a3046e599bee7",
+      "guide_bytes": 2194,
+      "guide_input_relative_path": "evidence/images/84ca7da84e4c57f8281e9a29c0acf55cb8a98dcdddd9a47a128a3046e599bee7.gif",
+      "actual_archive_capture": "20010805161427",
+      "requested_archive_capture": "20010705223439",
+      "effect_sequence_id": "KR491:effect_sequence:5",
+      "effect_source": {
+        "container_sha256": "f8271a52d8dbde5601a0c7bf7460052376b2651930b6bc004eeb1ed20357bfc7",
+        "dat_byte_offset": 20530767,
+        "line": 71,
+        "line_byte_offset": 3571,
+        "member": "Effect.tbl",
+        "member_byte_offset": 20527196,
+        "member_sha256": "ef56308d711d52ce154950d542724def164870645aea1dd72d2685005fc1b1a8",
+        "parser_sha256": "8e5544d11e8739a6b7c9d5214cedadff26a4bed505ee0fd0d8493186d5c80049",
+        "reader_sha256": "f5152ae3473b3e2f2d120b8c1b8679529428d2bd09f9024528d71aa9a9be86e2",
+        "source_family": "KR491_CLIENT",
+        "source_id": "LIB-010",
+        "source_type": "original_client_resource"
+      },
+      "related_stable_guide_bindings": [
+        "KR491:guide_image:P15-ARIMG-04c0f0eeaeb6:KRO-e5c1e3e5f6c4"
+      ],
+      "gif_dimensions_px": [
+        72,
+        72
+      ],
+      "gif_declared_loop": 0,
+      "gif_frame_metadata": [
+        {
+          "gif_frame": 0,
+          "blank_in_prior_exact_comparison": true,
+          "declared_duration_ms": 500,
+          "declared_duration_cs": 50,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": []
+        },
+        {
+          "gif_frame": 1,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            64
+          ]
+        },
+        {
+          "gif_frame": 2,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            65
+          ]
+        },
+        {
+          "gif_frame": 3,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            66,
+            68
+          ]
+        },
+        {
+          "gif_frame": 4,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            67
+          ]
+        },
+        {
+          "gif_frame": 5,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            66,
+            68
+          ]
+        },
+        {
+          "gif_frame": 6,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            69
+          ]
+        },
+        {
+          "gif_frame": 7,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            70
+          ]
+        }
+      ],
+      "aligned_nonblank_timing_pairs": [
+        {
+          "client_frame_index": 64,
+          "effect_tbl_line": 72,
+          "effect_tbl_byte_offset": 3685,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 1,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 65,
+          "effect_tbl_line": 73,
+          "effect_tbl_byte_offset": 3731,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 2,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 66,
+          "effect_tbl_line": 74,
+          "effect_tbl_byte_offset": 3777,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 3,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 67,
+          "effect_tbl_line": 75,
+          "effect_tbl_byte_offset": 3824,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 4,
+          "gif_declared_ms": 200,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "2"
+        },
+        {
+          "client_frame_index": 68,
+          "effect_tbl_line": 76,
+          "effect_tbl_byte_offset": 3871,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 5,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 69,
+          "effect_tbl_line": 77,
+          "effect_tbl_byte_offset": 3918,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 6,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 70,
+          "effect_tbl_line": 78,
+          "effect_tbl_byte_offset": 3965,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 7,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        }
+      ],
+      "numerical_ratio_set_NOT_A_CLIENT_UNIT": [
+        "1",
+        "2"
+      ],
+      "constant_numerical_scale_across_all_nonblank_frames": false,
+      "meaning": "Exact RGB identity does not imply equal timing. GIF centiseconds are container declarations, not recorded client elapsed time or hit time.",
+      "client_delay_unit": "UNKNOWN",
+      "sound_id": null,
+      "runtime_test": "NOT_RUN"
+    },
+    {
+      "record_id": "MS-GIF-TIMING-067",
+      "kind": "EXISTING_BYTES_NEW_CONTAINER_TIMING_ANALYSIS",
+      "binding_ids": [
+        "BND-022",
+        "BND-023",
+        "BND-024"
+      ],
+      "requirement_ids": [
+        "RQ-086",
+        "RQ-088",
+        "RQ-089",
+        "RQ-093",
+        "RQ-094"
+      ],
+      "guide_source_id": "P15-ARIMG-35682cf206da",
+      "guide_url": "http://baram.nexon.co.kr:80/guide/middle/magic/effect/effect051/eff051.gif",
+      "guide_sha256": "990a29f8343f795ef641d59b7a65647d3e2f95b8f11e55ab643b0437cdb6a774",
+      "guide_bytes": 1497,
+      "guide_input_relative_path": "evidence/images/990a29f8343f795ef641d59b7a65647d3e2f95b8f11e55ab643b0437cdb6a774.gif",
+      "actual_archive_capture": "20020423174434",
+      "requested_archive_capture": "20010801154501",
+      "effect_sequence_id": "KR491:effect_sequence:67",
+      "effect_source": {
+        "container_sha256": "f8271a52d8dbde5601a0c7bf7460052376b2651930b6bc004eeb1ed20357bfc7",
+        "dat_byte_offset": 20566023,
+        "line": 726,
+        "line_byte_offset": 38827,
+        "member": "Effect.tbl",
+        "member_byte_offset": 20527196,
+        "member_sha256": "ef56308d711d52ce154950d542724def164870645aea1dd72d2685005fc1b1a8",
+        "parser_sha256": "8e5544d11e8739a6b7c9d5214cedadff26a4bed505ee0fd0d8493186d5c80049",
+        "reader_sha256": "f5152ae3473b3e2f2d120b8c1b8679529428d2bd09f9024528d71aa9a9be86e2",
+        "source_family": "KR491_CLIENT",
+        "source_id": "LIB-010",
+        "source_type": "original_client_resource"
+      },
+      "related_stable_guide_bindings": [
+        "KR491:guide_image:P15-ARIMG-35682cf206da:KRO-3010c6e04167"
+      ],
+      "gif_dimensions_px": [
+        72,
+        72
+      ],
+      "gif_declared_loop": 0,
+      "gif_frame_metadata": [
+        {
+          "gif_frame": 0,
+          "blank_in_prior_exact_comparison": true,
+          "declared_duration_ms": 500,
+          "declared_duration_cs": 50,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": []
+        },
+        {
+          "gif_frame": 1,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            654,
+            657,
+            659
+          ]
+        },
+        {
+          "gif_frame": 2,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            655,
+            658,
+            660
+          ]
+        },
+        {
+          "gif_frame": 3,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            656,
+            661
+          ]
+        },
+        {
+          "gif_frame": 4,
+          "blank_in_prior_exact_comparison": true,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": []
+        },
+        {
+          "gif_frame": 5,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            654,
+            657,
+            659
+          ]
+        },
+        {
+          "gif_frame": 6,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            655,
+            658,
+            660
+          ]
+        },
+        {
+          "gif_frame": 7,
+          "blank_in_prior_exact_comparison": true,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": []
+        },
+        {
+          "gif_frame": 8,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            654,
+            657,
+            659
+          ]
+        },
+        {
+          "gif_frame": 9,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            655,
+            658,
+            660
+          ]
+        },
+        {
+          "gif_frame": 10,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            656,
+            661
+          ]
+        },
+        {
+          "gif_frame": 11,
+          "blank_in_prior_exact_comparison": true,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": []
+        },
+        {
+          "gif_frame": 12,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            662
+          ]
+        },
+        {
+          "gif_frame": 13,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            663
+          ]
+        },
+        {
+          "gif_frame": 14,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            664
+          ]
+        }
+      ],
+      "aligned_nonblank_timing_pairs": [
+        {
+          "client_frame_index": 654,
+          "effect_tbl_line": 727,
+          "effect_tbl_byte_offset": 38943,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 1,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 655,
+          "effect_tbl_line": 728,
+          "effect_tbl_byte_offset": 38990,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 2,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 656,
+          "effect_tbl_line": 729,
+          "effect_tbl_byte_offset": 39037,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 3,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 657,
+          "effect_tbl_line": 730,
+          "effect_tbl_byte_offset": 39084,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 5,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 658,
+          "effect_tbl_line": 731,
+          "effect_tbl_byte_offset": 39131,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 6,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 659,
+          "effect_tbl_line": 732,
+          "effect_tbl_byte_offset": 39178,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 8,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 660,
+          "effect_tbl_line": 733,
+          "effect_tbl_byte_offset": 39225,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 9,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 661,
+          "effect_tbl_line": 734,
+          "effect_tbl_byte_offset": 39272,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 10,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 662,
+          "effect_tbl_line": 735,
+          "effect_tbl_byte_offset": 39319,
+          "raw_delay_unit_unknown": 150,
+          "gif_frame": 12,
+          "gif_declared_ms": 200,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "4/3"
+        },
+        {
+          "client_frame_index": 663,
+          "effect_tbl_line": 736,
+          "effect_tbl_byte_offset": 39367,
+          "raw_delay_unit_unknown": 150,
+          "gif_frame": 13,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "2/3"
+        },
+        {
+          "client_frame_index": 664,
+          "effect_tbl_line": 737,
+          "effect_tbl_byte_offset": 39415,
+          "raw_delay_unit_unknown": 150,
+          "gif_frame": 14,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "2/3"
+        }
+      ],
+      "numerical_ratio_set_NOT_A_CLIENT_UNIT": [
+        "1",
+        "2/3",
+        "4/3"
+      ],
+      "constant_numerical_scale_across_all_nonblank_frames": false,
+      "meaning": "Exact RGB identity does not imply equal timing. GIF centiseconds are container declarations, not recorded client elapsed time or hit time.",
+      "client_delay_unit": "UNKNOWN",
+      "sound_id": null,
+      "runtime_test": "NOT_RUN"
+    },
+    {
+      "record_id": "MS-GIF-TIMING-006",
+      "kind": "EXISTING_BYTES_NEW_CONTAINER_TIMING_ANALYSIS",
+      "binding_ids": [
+        "BND-022",
+        "BND-023",
+        "BND-024"
+      ],
+      "requirement_ids": [
+        "RQ-086",
+        "RQ-088",
+        "RQ-089",
+        "RQ-093",
+        "RQ-094"
+      ],
+      "guide_source_id": "P15-ARIMG-01fe95fb32a6",
+      "guide_url": "http://baram.nexon.co.kr:80/guide/middle/magic/effect/effect006/eff006.gif",
+      "guide_sha256": "aa95427ddf83cf520866a7100973f959cec0fe182ecd9d07f891d4e51a0e7a8a",
+      "guide_bytes": 2160,
+      "guide_input_relative_path": "evidence/images/aa95427ddf83cf520866a7100973f959cec0fe182ecd9d07f891d4e51a0e7a8a.gif",
+      "actual_archive_capture": "20010805161239",
+      "requested_archive_capture": "20010705225249",
+      "effect_sequence_id": "KR491:effect_sequence:6",
+      "effect_source": {
+        "container_sha256": "f8271a52d8dbde5601a0c7bf7460052376b2651930b6bc004eeb1ed20357bfc7",
+        "dat_byte_offset": 20531208,
+        "line": 79,
+        "line_byte_offset": 4012,
+        "member": "Effect.tbl",
+        "member_byte_offset": 20527196,
+        "member_sha256": "ef56308d711d52ce154950d542724def164870645aea1dd72d2685005fc1b1a8",
+        "parser_sha256": "8e5544d11e8739a6b7c9d5214cedadff26a4bed505ee0fd0d8493186d5c80049",
+        "reader_sha256": "f5152ae3473b3e2f2d120b8c1b8679529428d2bd09f9024528d71aa9a9be86e2",
+        "source_family": "KR491_CLIENT",
+        "source_id": "LIB-010",
+        "source_type": "original_client_resource"
+      },
+      "related_stable_guide_bindings": [
+        "KR491:guide_image:P15-ARIMG-01fe95fb32a6:KRO-b92828e376a8"
+      ],
+      "gif_dimensions_px": [
+        72,
+        72
+      ],
+      "gif_declared_loop": 0,
+      "gif_frame_metadata": [
+        {
+          "gif_frame": 0,
+          "blank_in_prior_exact_comparison": true,
+          "declared_duration_ms": 200,
+          "declared_duration_cs": 20,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": []
+        },
+        {
+          "gif_frame": 1,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            71
+          ]
+        },
+        {
+          "gif_frame": 2,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            72
+          ]
+        },
+        {
+          "gif_frame": 3,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            73
+          ]
+        },
+        {
+          "gif_frame": 4,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            74
+          ]
+        },
+        {
+          "gif_frame": 5,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            75
+          ]
+        },
+        {
+          "gif_frame": 6,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            76
+          ]
+        },
+        {
+          "gif_frame": 7,
+          "blank_in_prior_exact_comparison": false,
+          "declared_duration_ms": 100,
+          "declared_duration_cs": 10,
+          "disposal_method": 1,
+          "exact_client_frame_candidates": [
+            77
+          ]
+        }
+      ],
+      "aligned_nonblank_timing_pairs": [
+        {
+          "client_frame_index": 71,
+          "effect_tbl_line": 80,
+          "effect_tbl_byte_offset": 4126,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 1,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 72,
+          "effect_tbl_line": 81,
+          "effect_tbl_byte_offset": 4173,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 2,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 73,
+          "effect_tbl_line": 82,
+          "effect_tbl_byte_offset": 4220,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 3,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 74,
+          "effect_tbl_line": 83,
+          "effect_tbl_byte_offset": 4267,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 4,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 75,
+          "effect_tbl_line": 84,
+          "effect_tbl_byte_offset": 4314,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 5,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 76,
+          "effect_tbl_line": 85,
+          "effect_tbl_byte_offset": 4361,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 6,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        },
+        {
+          "client_frame_index": 77,
+          "effect_tbl_line": 86,
+          "effect_tbl_byte_offset": 4408,
+          "raw_delay_unit_unknown": 100,
+          "gif_frame": 7,
+          "gif_declared_ms": 100,
+          "numerical_ratio_ms_per_raw_value_NOT_A_UNIT_ASSIGNMENT": "1"
+        }
+      ],
+      "numerical_ratio_set_NOT_A_CLIENT_UNIT": [
+        "1"
+      ],
+      "constant_numerical_scale_across_all_nonblank_frames": true,
+      "meaning": "Exact RGB identity does not imply equal timing. GIF centiseconds are container declarations, not recorded client elapsed time or hit time.",
+      "client_delay_unit": "UNKNOWN",
+      "sound_id": null,
+      "runtime_test": "NOT_RUN"
+    }
+  ]
+}

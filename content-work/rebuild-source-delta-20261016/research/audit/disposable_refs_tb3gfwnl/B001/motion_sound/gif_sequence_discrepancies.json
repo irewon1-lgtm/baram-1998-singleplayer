@@ -1,0 +1,531 @@
+{
+  "schema": "baram-work-motion-differences-v1",
+  "input_sha256": {
+    "evidence/guide_effect_comparison.json": "cd16d538439ef2ac4ce621b079e92c0c3a275865ead0497dca6996646ebe0abd",
+    "docs/rebuild/p1_5/selected_content/kr_asset_effect_sequences.jsonl": "1a269e602493b04a4ae6b96160d480e16dad7e82ba98344e277396f692036961",
+    "docs/rebuild/p1_5/selected_content/kr_asset_guide_effects.jsonl": "63d8fb07e70a72ee3c1a94999c76aac5959edd67fef12d9e3adf99bd2efca7d7"
+  },
+  "records": [
+    {
+      "record_id": "MS-GIF-DIFFERENCE-044",
+      "binding_ids": [
+        "BND-023",
+        "BND-025"
+      ],
+      "requirement_ids": [
+        "RQ-087",
+        "RQ-088",
+        "RQ-096"
+      ],
+      "guide_source_id": "P15-ARIMG-9fea529308b2",
+      "guide_sha256": "1f4827be34e9486d3f15281923534cf3ceeafc9ba79ef0bcfe8b531a980b4074",
+      "guide_url": "http://baram.nexon.co.kr:80/guide/middle/magic/effect/effect036/eff036.gif",
+      "actual_archive_capture": "20010816023648",
+      "effect_sequence_id": "KR491:effect_sequence:44",
+      "effect_source": {
+        "container_sha256": "f8271a52d8dbde5601a0c7bf7460052376b2651930b6bc004eeb1ed20357bfc7",
+        "dat_byte_offset": 20551543,
+        "line": 453,
+        "line_byte_offset": 24347,
+        "member": "Effect.tbl",
+        "member_byte_offset": 20527196,
+        "member_sha256": "ef56308d711d52ce154950d542724def164870645aea1dd72d2685005fc1b1a8",
+        "parser_sha256": "8e5544d11e8739a6b7c9d5214cedadff26a4bed505ee0fd0d8493186d5c80049",
+        "reader_sha256": "f5152ae3473b3e2f2d120b8c1b8679529428d2bd09f9024528d71aa9a9be86e2",
+        "source_family": "KR491_CLIENT",
+        "source_id": "LIB-010",
+        "source_type": "original_client_resource"
+      },
+      "classification": "SOURCE_LEADING_FRAME_OMITTED",
+      "guide_nonblank_frames": 6,
+      "client_front_frames": 7,
+      "client_back_frames_not_proven_by_guide": 0,
+      "unique_omitted_front_steps": [
+        {
+          "sequence_step_zero_based": 0,
+          "alpha_raw": 0.0,
+          "delay_raw": 100,
+          "frame_index": 8,
+          "light_raw": 3,
+          "palette_index": 0,
+          "source_byte_offset": 24462,
+          "source_line": 454,
+          "unsupported_semantics": null
+        }
+      ],
+      "different_steps": [],
+      "named_rows": [
+        {
+          "guide_row_id": "KRO-661caabd8a2e",
+          "entity_name_ko": "화염주(화)",
+          "source_ids": [
+            "P15-ARC-0b7dcb5d2678"
+          ],
+          "source_locator": {
+            "url": "https://web.archive.org/web/20010705222452id_/http://baram.nexon.co.kr:80/guide/middle/magic/dosa.html",
+            "original_url": "http://baram.nexon.co.kr:80/guide/middle/magic/dosa.html",
+            "line_start": 81,
+            "line_end": 95
+          },
+          "input_sha256": "cce4f37e09a030f73e6e2ae725ee44f3fc56cb0f213d5d5e0cbff8560de27068",
+          "html_archive_capture": "20010705222452"
+        },
+        {
+          "guide_row_id": "KRO-0eae7fde3f73",
+          "entity_name_ko": "화염주(화)",
+          "source_ids": [
+            "P15-ARC-85066ebecea9"
+          ],
+          "source_locator": {
+            "url": "https://web.archive.org/web/20010705225249id_/http://baram.nexon.co.kr:80/guide/middle/magic/thidf.html",
+            "original_url": "http://baram.nexon.co.kr:80/guide/middle/magic/thidf.html",
+            "line_start": 121,
+            "line_end": 133
+          },
+          "input_sha256": "8425d6093366e8ef57a3a81a89ab58b46c28251469188e0cefce1190dd973f8b",
+          "html_archive_capture": "20010705225249"
+        },
+        {
+          "guide_row_id": "KRO-3559b12ed6a7",
+          "entity_name_ko": "화염주(화)",
+          "source_ids": [
+            "P15-ARC-cb5e34400c09"
+          ],
+          "source_locator": {
+            "url": "https://web.archive.org/web/20010705225644id_/http://baram.nexon.co.kr:80/guide/middle/magic/wizard.html",
+            "original_url": "http://baram.nexon.co.kr:80/guide/middle/magic/wizard.html",
+            "line_start": 56,
+            "line_end": 68
+          },
+          "input_sha256": "2fd702ee856d60fb3ab0a6513f8a0f5d77c1ab34a54c50cc3670712c35b417f1",
+          "html_archive_capture": "20010705225644"
+        },
+        {
+          "guide_row_id": "KRO-d616d37f5b7a",
+          "entity_name_ko": "화염주첨 (화)",
+          "source_ids": [
+            "P15-ARC-cb5e34400c09"
+          ],
+          "source_locator": {
+            "url": "https://web.archive.org/web/20010705225644id_/http://baram.nexon.co.kr:80/guide/middle/magic/wizard.html",
+            "original_url": "http://baram.nexon.co.kr:80/guide/middle/magic/wizard.html",
+            "line_start": 154,
+            "line_end": 168
+          },
+          "input_sha256": "2fd702ee856d60fb3ab0a6513f8a0f5d77c1ab34a54c50cc3670712c35b417f1",
+          "html_archive_capture": "20010705225644"
+        }
+      ],
+      "selected_for_build": false,
+      "source_sequence_modified": false,
+      "fact_scope": "Previously unresolved exact frame candidates explain the precise discrepancy. A partial layer/subsequence is not full sequence identification.",
+      "codex_observation": "Compare original client sequence with this guide at the flagged step; preserve both editions. Do not remove/replace frames or infer audio/hit timing from the GIF.",
+      "runtime_test": "NOT_RUN"
+    },
+    {
+      "record_id": "MS-GIF-DIFFERENCE-001",
+      "binding_ids": [
+        "BND-023",
+        "BND-025"
+      ],
+      "requirement_ids": [
+        "RQ-087",
+        "RQ-088",
+        "RQ-096"
+      ],
+      "guide_source_id": "P15-ARIMG-82708b093b28",
+      "guide_sha256": "7cca28c0cf3e0c849f9b391b505ca0c26238925784bc7f258f3b75d1fc670ff5",
+      "guide_url": "http://baram.nexon.co.kr:80/guide/middle/magic/effect/effect002/eff002.gif",
+      "actual_archive_capture": "20010816003523",
+      "effect_sequence_id": "KR491:effect_sequence:1",
+      "effect_source": {
+        "container_sha256": "f8271a52d8dbde5601a0c7bf7460052376b2651930b6bc004eeb1ed20357bfc7",
+        "dat_byte_offset": 20527880,
+        "line": 15,
+        "line_byte_offset": 684,
+        "member": "Effect.tbl",
+        "member_byte_offset": 20527196,
+        "member_sha256": "ef56308d711d52ce154950d542724def164870645aea1dd72d2685005fc1b1a8",
+        "parser_sha256": "8e5544d11e8739a6b7c9d5214cedadff26a4bed505ee0fd0d8493186d5c80049",
+        "reader_sha256": "f5152ae3473b3e2f2d120b8c1b8679529428d2bd09f9024528d71aa9a9be86e2",
+        "source_family": "KR491_CLIENT",
+        "source_id": "LIB-010",
+        "source_type": "original_client_resource"
+      },
+      "classification": "SOURCE_FRONT_FRAME_OMITTED_AND_BACK_UNPROVEN",
+      "guide_nonblank_frames": 12,
+      "client_front_frames": 13,
+      "client_back_frames_not_proven_by_guide": 13,
+      "unique_omitted_front_steps": [
+        {
+          "sequence_step_zero_based": 3,
+          "alpha_raw": 0.0,
+          "delay_raw": 100,
+          "frame_index": 15,
+          "light_raw": 11,
+          "palette_index": 0,
+          "source_byte_offset": 941,
+          "source_line": 19,
+          "unsupported_semantics": null
+        }
+      ],
+      "different_steps": [],
+      "named_rows": [
+        {
+          "guide_row_id": "KRO-d93da00b1518",
+          "entity_name_ko": "차폐",
+          "source_ids": [
+            "P15-ARC-0b7dcb5d2678"
+          ],
+          "source_locator": {
+            "url": "https://web.archive.org/web/20010705222452id_/http://baram.nexon.co.kr:80/guide/middle/magic/dosa.html",
+            "original_url": "http://baram.nexon.co.kr:80/guide/middle/magic/dosa.html",
+            "line_start": 229,
+            "line_end": 243
+          },
+          "input_sha256": "cce4f37e09a030f73e6e2ae725ee44f3fc56cb0f213d5d5e0cbff8560de27068",
+          "html_archive_capture": "20010705222452"
+        },
+        {
+          "guide_row_id": "KRO-9d6d81e73179",
+          "entity_name_ko": "대인차폐",
+          "source_ids": [
+            "P15-ARC-0b7dcb5d2678"
+          ],
+          "source_locator": {
+            "url": "https://web.archive.org/web/20010705222452id_/http://baram.nexon.co.kr:80/guide/middle/magic/dosa.html",
+            "original_url": "http://baram.nexon.co.kr:80/guide/middle/magic/dosa.html",
+            "line_start": 462,
+            "line_end": 476
+          },
+          "input_sha256": "cce4f37e09a030f73e6e2ae725ee44f3fc56cb0f213d5d5e0cbff8560de27068",
+          "html_archive_capture": "20010705222452"
+        },
+        {
+          "guide_row_id": "KRO-7139a2513c5d",
+          "entity_name_ko": "후면공격",
+          "source_ids": [
+            "P15-ARC-8f636f3c673d"
+          ],
+          "source_locator": {
+            "url": "https://web.archive.org/web/20010705223439id_/http://baram.nexon.co.kr:80/guide/middle/magic/fighter.html",
+            "original_url": "http://baram.nexon.co.kr:80/guide/middle/magic/fighter.html",
+            "line_start": 94,
+            "line_end": 108
+          },
+          "input_sha256": "037aa9e77d50ac27b4fcaaede8163466bcc42c4047a47b7c61a7544f4d15a2b2",
+          "html_archive_capture": "20010705223439"
+        },
+        {
+          "guide_row_id": "KRO-f76291c4bb71",
+          "entity_name_ko": "측면공격",
+          "source_ids": [
+            "P15-ARC-8f636f3c673d"
+          ],
+          "source_locator": {
+            "url": "https://web.archive.org/web/20010705223439id_/http://baram.nexon.co.kr:80/guide/middle/magic/fighter.html",
+            "original_url": "http://baram.nexon.co.kr:80/guide/middle/magic/fighter.html",
+            "line_start": 109,
+            "line_end": 122
+          },
+          "input_sha256": "037aa9e77d50ac27b4fcaaede8163466bcc42c4047a47b7c61a7544f4d15a2b2",
+          "html_archive_capture": "20010705223439"
+        },
+        {
+          "guide_row_id": "KRO-17c8793ab22b",
+          "entity_name_ko": "백호령",
+          "source_ids": [
+            "P15-ARC-8f636f3c673d"
+          ],
+          "source_locator": {
+            "url": "https://web.archive.org/web/20010705223439id_/http://baram.nexon.co.kr:80/guide/middle/magic/fighter.html",
+            "original_url": "http://baram.nexon.co.kr:80/guide/middle/magic/fighter.html",
+            "line_start": 171,
+            "line_end": 186
+          },
+          "input_sha256": "037aa9e77d50ac27b4fcaaede8163466bcc42c4047a47b7c61a7544f4d15a2b2",
+          "html_archive_capture": "20010705223439"
+        }
+      ],
+      "selected_for_build": false,
+      "source_sequence_modified": false,
+      "fact_scope": "Previously unresolved exact frame candidates explain the precise discrepancy. A partial layer/subsequence is not full sequence identification.",
+      "codex_observation": "Compare original client sequence with this guide at the flagged step; preserve both editions. Do not remove/replace frames or infer audio/hit timing from the GIF.",
+      "runtime_test": "NOT_RUN"
+    },
+    {
+      "record_id": "MS-GIF-DIFFERENCE-010",
+      "binding_ids": [
+        "BND-023",
+        "BND-025"
+      ],
+      "requirement_ids": [
+        "RQ-087",
+        "RQ-088",
+        "RQ-096"
+      ],
+      "guide_source_id": "P15-ARIMG-d8a35803b6cf",
+      "guide_sha256": "49e97318e86599873b7853706c0f608a2975255b74940bca71db2ef3cff7250d",
+      "guide_url": "http://baram.nexon.co.kr:80/guide/middle/magic/effect/effect010/eff010.gif",
+      "actual_archive_capture": "20010816010111",
+      "effect_sequence_id": "KR491:effect_sequence:10",
+      "effect_source": {
+        "container_sha256": "f8271a52d8dbde5601a0c7bf7460052376b2651930b6bc004eeb1ed20357bfc7",
+        "dat_byte_offset": 20532969,
+        "line": 111,
+        "line_byte_offset": 5773,
+        "member": "Effect.tbl",
+        "member_byte_offset": 20527196,
+        "member_sha256": "ef56308d711d52ce154950d542724def164870645aea1dd72d2685005fc1b1a8",
+        "parser_sha256": "8e5544d11e8739a6b7c9d5214cedadff26a4bed505ee0fd0d8493186d5c80049",
+        "reader_sha256": "f5152ae3473b3e2f2d120b8c1b8679529428d2bd09f9024528d71aa9a9be86e2",
+        "source_family": "KR491_CLIENT",
+        "source_id": "LIB-010",
+        "source_type": "original_client_resource"
+      },
+      "classification": "ONE_DIFFERENT_FRAME",
+      "guide_nonblank_frames": 9,
+      "client_front_frames": 9,
+      "client_back_frames_not_proven_by_guide": 0,
+      "unique_omitted_front_steps": [],
+      "different_steps": [
+        {
+          "sequence_step_zero_based": 2,
+          "source_frame": {
+            "alpha_raw": 0.0,
+            "delay_raw": 120,
+            "frame_index": 101,
+            "light_raw": 17,
+            "palette_index": 0,
+            "source_byte_offset": 5983,
+            "source_line": 114,
+            "unsupported_semantics": null
+          },
+          "gif_frame": 3,
+          "gif_exact_other_client_frames": [
+            156
+          ]
+        }
+      ],
+      "named_rows": [
+        {
+          "guide_row_id": "KRO-57e953a2574e",
+          "entity_name_ko": "공력증강",
+          "source_ids": [
+            "P15-ARC-0b7dcb5d2678"
+          ],
+          "source_locator": {
+            "url": "https://web.archive.org/web/20010705222452id_/http://baram.nexon.co.kr:80/guide/middle/magic/dosa.html",
+            "original_url": "http://baram.nexon.co.kr:80/guide/middle/magic/dosa.html",
+            "line_start": 142,
+            "line_end": 156
+          },
+          "input_sha256": "cce4f37e09a030f73e6e2ae725ee44f3fc56cb0f213d5d5e0cbff8560de27068",
+          "html_archive_capture": "20010705222452"
+        },
+        {
+          "guide_row_id": "KRO-51a6a907dcce",
+          "entity_name_ko": "심안투영",
+          "source_ids": [
+            "P15-ARC-0b7dcb5d2678"
+          ],
+          "source_locator": {
+            "url": "https://web.archive.org/web/20010705222452id_/http://baram.nexon.co.kr:80/guide/middle/magic/dosa.html",
+            "original_url": "http://baram.nexon.co.kr:80/guide/middle/magic/dosa.html",
+            "line_start": 386,
+            "line_end": 400
+          },
+          "input_sha256": "cce4f37e09a030f73e6e2ae725ee44f3fc56cb0f213d5d5e0cbff8560de27068",
+          "html_archive_capture": "20010705222452"
+        },
+        {
+          "guide_row_id": "KRO-1877c729a561",
+          "entity_name_ko": "부활",
+          "source_ids": [
+            "P15-ARC-0b7dcb5d2678"
+          ],
+          "source_locator": {
+            "url": "https://web.archive.org/web/20010705222452id_/http://baram.nexon.co.kr:80/guide/middle/magic/dosa.html",
+            "original_url": "http://baram.nexon.co.kr:80/guide/middle/magic/dosa.html",
+            "line_start": 554,
+            "line_end": 570
+          },
+          "input_sha256": "cce4f37e09a030f73e6e2ae725ee44f3fc56cb0f213d5d5e0cbff8560de27068",
+          "html_archive_capture": "20010705222452"
+        },
+        {
+          "guide_row_id": "KRO-3f305f236c54",
+          "entity_name_ko": "누리의힘",
+          "source_ids": [
+            "P15-ARC-85066ebecea9"
+          ],
+          "source_locator": {
+            "url": "https://web.archive.org/web/20010705225249id_/http://baram.nexon.co.kr:80/guide/middle/magic/thidf.html",
+            "original_url": "http://baram.nexon.co.kr:80/guide/middle/magic/thidf.html",
+            "line_start": 93,
+            "line_end": 106
+          },
+          "input_sha256": "8425d6093366e8ef57a3a81a89ab58b46c28251469188e0cefce1190dd973f8b",
+          "html_archive_capture": "20010705225249"
+        },
+        {
+          "guide_row_id": "KRO-806203718177",
+          "entity_name_ko": "분신",
+          "source_ids": [
+            "P15-ARC-85066ebecea9"
+          ],
+          "source_locator": {
+            "url": "https://web.archive.org/web/20010705225249id_/http://baram.nexon.co.kr:80/guide/middle/magic/thidf.html",
+            "original_url": "http://baram.nexon.co.kr:80/guide/middle/magic/thidf.html",
+            "line_start": 649,
+            "line_end": 664
+          },
+          "input_sha256": "8425d6093366e8ef57a3a81a89ab58b46c28251469188e0cefce1190dd973f8b",
+          "html_archive_capture": "20010705225249"
+        },
+        {
+          "guide_row_id": "KRO-a529a55cc0d2",
+          "entity_name_ko": "보호",
+          "source_ids": [
+            "P15-ARC-cb5e34400c09"
+          ],
+          "source_locator": {
+            "url": "https://web.archive.org/web/20010705225644id_/http://baram.nexon.co.kr:80/guide/middle/magic/wizard.html",
+            "original_url": "http://baram.nexon.co.kr:80/guide/middle/magic/wizard.html",
+            "line_start": 560,
+            "line_end": 574
+          },
+          "input_sha256": "2fd702ee856d60fb3ab0a6513f8a0f5d77c1ab34a54c50cc3670712c35b417f1",
+          "html_archive_capture": "20010705225644"
+        },
+        {
+          "guide_row_id": "KRO-a55e92eecb65",
+          "entity_name_ko": "공력증가",
+          "source_ids": [
+            "P15-ARC-cb5e34400c09"
+          ],
+          "source_locator": {
+            "url": "https://web.archive.org/web/20010705225644id_/http://baram.nexon.co.kr:80/guide/middle/magic/wizard.html",
+            "original_url": "http://baram.nexon.co.kr:80/guide/middle/magic/wizard.html",
+            "line_start": 575,
+            "line_end": 590
+          },
+          "input_sha256": "2fd702ee856d60fb3ab0a6513f8a0f5d77c1ab34a54c50cc3670712c35b417f1",
+          "html_archive_capture": "20010705225644"
+        }
+      ],
+      "selected_for_build": false,
+      "source_sequence_modified": false,
+      "fact_scope": "Previously unresolved exact frame candidates explain the precise discrepancy. A partial layer/subsequence is not full sequence identification.",
+      "codex_observation": "Compare original client sequence with this guide at the flagged step; preserve both editions. Do not remove/replace frames or infer audio/hit timing from the GIF.",
+      "runtime_test": "NOT_RUN"
+    },
+    {
+      "record_id": "MS-GIF-DIFFERENCE-045",
+      "binding_ids": [
+        "BND-023",
+        "BND-025"
+      ],
+      "requirement_ids": [
+        "RQ-087",
+        "RQ-088",
+        "RQ-096"
+      ],
+      "guide_source_id": "P15-ARIMG-ffa43c98a126",
+      "guide_sha256": "75fc3caf04304398ea7d98bdbd988d3c0c959819790d595acc16ea526ac8b1b4",
+      "guide_url": "http://baram.nexon.co.kr:80/guide/middle/magic/effect/effect037/eff037.gif",
+      "actual_archive_capture": "20010816023829",
+      "effect_sequence_id": "KR491:effect_sequence:45",
+      "effect_source": {
+        "container_sha256": "f8271a52d8dbde5601a0c7bf7460052376b2651930b6bc004eeb1ed20357bfc7",
+        "dat_byte_offset": 20551985,
+        "line": 461,
+        "line_byte_offset": 24789,
+        "member": "Effect.tbl",
+        "member_byte_offset": 20527196,
+        "member_sha256": "ef56308d711d52ce154950d542724def164870645aea1dd72d2685005fc1b1a8",
+        "parser_sha256": "8e5544d11e8739a6b7c9d5214cedadff26a4bed505ee0fd0d8493186d5c80049",
+        "reader_sha256": "f5152ae3473b3e2f2d120b8c1b8679529428d2bd09f9024528d71aa9a9be86e2",
+        "source_family": "KR491_CLIENT",
+        "source_id": "LIB-010",
+        "source_type": "original_client_resource"
+      },
+      "classification": "ONE_DIFFERENT_FRAME",
+      "guide_nonblank_frames": 8,
+      "client_front_frames": 8,
+      "client_back_frames_not_proven_by_guide": 0,
+      "unique_omitted_front_steps": [],
+      "different_steps": [
+        {
+          "sequence_step_zero_based": 5,
+          "source_frame": {
+            "alpha_raw": 0.0,
+            "delay_raw": 100,
+            "frame_index": 415,
+            "light_raw": 7,
+            "palette_index": 0,
+            "source_byte_offset": 25139,
+            "source_line": 467,
+            "unsupported_semantics": null
+          },
+          "gif_frame": 6,
+          "gif_exact_other_client_frames": [
+            407
+          ]
+        }
+      ],
+      "named_rows": [
+        {
+          "guide_row_id": "KRO-43232fcf60d7",
+          "entity_name_ko": "화영열주 (화)",
+          "source_ids": [
+            "P15-ARC-85066ebecea9"
+          ],
+          "source_locator": {
+            "url": "https://web.archive.org/web/20010705225249id_/http://baram.nexon.co.kr:80/guide/middle/magic/thidf.html",
+            "original_url": "http://baram.nexon.co.kr:80/guide/middle/magic/thidf.html",
+            "line_start": 289,
+            "line_end": 304
+          },
+          "input_sha256": "8425d6093366e8ef57a3a81a89ab58b46c28251469188e0cefce1190dd973f8b",
+          "html_archive_capture": "20010705225249"
+        },
+        {
+          "guide_row_id": "KRO-c2825b2dab80",
+          "entity_name_ko": "화영열주 (화)",
+          "source_ids": [
+            "P15-ARC-cb5e34400c09"
+          ],
+          "source_locator": {
+            "url": "https://web.archive.org/web/20010705225644id_/http://baram.nexon.co.kr:80/guide/middle/magic/wizard.html",
+            "original_url": "http://baram.nexon.co.kr:80/guide/middle/magic/wizard.html",
+            "line_start": 229,
+            "line_end": 243
+          },
+          "input_sha256": "2fd702ee856d60fb3ab0a6513f8a0f5d77c1ab34a54c50cc3670712c35b417f1",
+          "html_archive_capture": "20010705225644"
+        },
+        {
+          "guide_row_id": "KRO-244a416223d6",
+          "entity_name_ko": "화영열주첨(화)",
+          "source_ids": [
+            "P15-ARC-cb5e34400c09"
+          ],
+          "source_locator": {
+            "url": "https://web.archive.org/web/20010705225644id_/http://baram.nexon.co.kr:80/guide/middle/magic/wizard.html",
+            "original_url": "http://baram.nexon.co.kr:80/guide/middle/magic/wizard.html",
+            "line_start": 364,
+            "line_end": 381
+          },
+          "input_sha256": "2fd702ee856d60fb3ab0a6513f8a0f5d77c1ab34a54c50cc3670712c35b417f1",
+          "html_archive_capture": "20010705225644"
+        }
+      ],
+      "selected_for_build": false,
+      "source_sequence_modified": false,
+      "fact_scope": "Previously unresolved exact frame candidates explain the precise discrepancy. A partial layer/subsequence is not full sequence identification.",
+      "codex_observation": "Compare original client sequence with this guide at the flagged step; preserve both editions. Do not remove/replace frames or infer audio/hit timing from the GIF.",
+      "runtime_test": "NOT_RUN"
+    }
+  ]
+}

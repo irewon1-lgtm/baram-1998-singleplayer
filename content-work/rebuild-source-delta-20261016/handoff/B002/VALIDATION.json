@@ -1,0 +1,70 @@
+{
+  "schema": "baram.work_source_delta.validation/1",
+  "result": "PASS",
+  "scope": "Work batch required set/bytes/SHA256/JSON/declared binding and payload references only; fixed external baseline IDs and declared private evidence references",
+  "files_checked": 28,
+  "records_parsed": 351,
+  "errors": [],
+  "historical_accuracy": "PARTIAL_NOT_A_GLOBAL_PASS",
+  "runtime": "NOT_RUN",
+  "Codex_G0_P2": "NOT_RUN",
+  "evidence_references": {
+    "schema": "baram.work.evidence_ref_validation/1",
+    "result": "PASS",
+    "checks": 1231,
+    "candidates": 154,
+    "baseline_ids_requested": 168,
+    "baseline_ids_found": 168,
+    "errors": [],
+    "scope": "Fixed P1.5 manifest and actual binding/requirement/normalized IDs; declared private file/hash/length/record references",
+    "runtime": "NOT_RUN",
+    "Codex_G0_P2": "NOT_RUN"
+  },
+  "guard_regressions": [
+    {
+      "case": "empty",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "errors": [
+        "empty file set",
+        "required content missing",
+        "file-set mismatch: missing=[] extra=['FIELD_CANDIDATES.jsonl', 'README.md', 'SOURCES.jsonl', 'archives_ui/payload/download.html', 'archives_ui/payload/existing_source_excerpt.jsonl', 'archives_ui/payload/ndc2014_0080.html', 'archives_ui/payload/ndc2016_0082.html', 'archives_ui/payload/nlbib23946242.html', 'archives_ui/payload/nlbib25737613.html', 'archives_ui/payload/oasis_total_name.html', 'archives_ui/payload/press_login2001.html', 'archives_ui/payload/press_login2001.jpg', 'archives_ui/payload/transcript_locators.json', 'archives_ui/payload/ui_ba_01.gif', 'archives_ui/payload/ui_ba_02.gif', 'archives_ui/payload/ui_ba_03.gif', 'archives_ui/payload/ui_ba_04.gif', 'archives_ui/payload/yes2001.html', 'audit/B001_EVIDENCE_RECHECK.json', 'audit/B001_INDEPENDENT_AUDIT.json', 'audit/EVIDENCE_GUARD_REGRESSION.json', 'audit/GAMEPLAY_ECONOMY_INDEPENDENT_AUDIT.json', 'gameplay_economy/field_candidates.private.jsonl', 'maps_npc/additional_receipts.json', 'maps_npc/cdx_exact_2.json', 'maps_npc/cdx_exact_receipts.json', 'maps_npc/semantic_records.jsonl', 'na_reference/grant_routes.json']"
+      ]
+    },
+    {
+      "case": "missing",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "errors": [
+        "file-set mismatch: missing=['na_reference/grant_routes.json'] extra=[]",
+        "missing regular file: na_reference/grant_routes.json"
+      ]
+    },
+    {
+      "case": "changed",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "errors": [
+        "length mismatch: na_reference/grant_routes.json",
+        "hash mismatch: na_reference/grant_routes.json"
+      ]
+    },
+    {
+      "case": "extra",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "errors": [
+        "file-set mismatch: missing=[] extra=['unexpected.json']"
+      ]
+    },
+    {
+      "case": "bad_reference",
+      "expected": "FAIL",
+      "actual": "FAIL",
+      "errors": [
+        "manifest candidate set mismatch"
+      ]
+    }
+  ],
+  "evidence_guard_regressions": "audit/EVIDENCE_GUARD_REGRESSION.json:6invalid reference cases rejected"
+}
