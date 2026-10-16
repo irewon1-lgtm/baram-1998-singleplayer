@@ -53,6 +53,13 @@ def main():
                             'export/android/android_sdk_path = "/workspace/p2-private/toolchain/android-sdk"\n')
     suffix = ".exe" if args.target == "Windows" else ".apk"
     output = args.output_dir / ("baram-p2-inspection" + suffix)
+    def source_snapshot():
+        return {str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest()
+                for p in sorted((ROOT/"rebuild/p2").rglob("*"))
+                if p.is_file() and ".godot" not in p.parts}
+    sources = source_snapshot()
+    code_sha = subprocess.check_output(["git", "-C", str(ROOT), "rev-parse", "HEAD"], text=True).strip()
+    input_manifest_sha = hashlib.sha256((ROOT/"docs/rebuild/p2/INPUT_MANIFEST.json").read_bytes()).hexdigest()
     cmd = [shutil.which("godot") or "godot", "--headless", "--path", str(ROOT/"rebuild/p2"),
            "--export-debug", "P2 " + args.target, str(output)]
     started = time.time()
@@ -69,13 +76,18 @@ def main():
                "file":str(output),"result":"PASS" if completed.returncode == 0 and output.exists() else "FAIL",
                "original_assets":0,"application_execution":"NOT_RUN_BY_EXPORTER",
                "engine":"4.6.3.stable.official.7d41c59c4","signing_key_in_artifact":False}
+    receipt.update(code_sha=code_sha, source_sha256=sources,
+                   input_manifest_sha256=input_manifest_sha,
+                   sources_unchanged_during_export=sources == source_snapshot())
+    if not receipt["sources_unchanged_during_export"]:
+        receipt["result"] = "FAIL_SOURCE_CHANGED_DURING_EXPORT"
     if output.exists():
         receipt.update(bytes=output.stat().st_size,sha256=hashlib.file_digest(output.open("rb"),"sha256").hexdigest())
     (args.output_dir/(args.target.lower()+"-export.json")).write_text(json.dumps(receipt,indent=2)+"\n")
-    print(json.dumps(receipt))
+    print(json.dumps({k:v for k,v in receipt.items() if k != "source_sha256"}))
     if completed.returncode:
         print(stdout[-6000:])
-    return completed.returncode
+    return completed.returncode or (0 if receipt["sources_unchanged_during_export"] else 1)
 
 
 if __name__ == "__main__":

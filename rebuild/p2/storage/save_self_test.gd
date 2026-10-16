@@ -8,6 +8,7 @@ var records: Array = []
 var store = Store.new()
 var test_root: String
 var process_runner: Callable
+var emit_records: bool = true
 
 func catalog() -> Dictionary:
 	return {"profile": "synthetic-storage-fixture-v1", "manifest_sha256": "a".repeat(64), "maps": {"fixture-map:plain": {"version": "synthetic-map-v1", "width": 12, "height": 10, "blocked": [[1, 1]]}}, "items": {"fixture-item:sword": {"slot": "weapon"}, "fixture-item:coat": {"slot": "armor"}, "fixture-item:rice": {"slot": ""}}, "skills": {"fixture-skill:display-only": {}}}
@@ -21,17 +22,26 @@ func check(label: String, condition: bool, detail: Variant = "") -> void:
 		failures += 1
 	var record: Dictionary = {"test": label, "status": "PASS" if condition else "FAIL", "detail": detail}
 	records.append(record)
-	print(JSON.stringify(record))
+	if emit_records:
+		print(JSON.stringify(record))
 
-func put(path: String, text: String) -> void:
+func put(path: String, text: String) -> bool:
+	if store._path_has_link(path):
+		check("fixture_output_path_link", false, path)
+		return false
 	DirAccess.make_dir_recursive_absolute(path.get_base_dir())
 	var file := FileAccess.open(path, FileAccess.WRITE)
 	if file == null:
-		push_error("fixture output unavailable: " + path)
 		check("fixture_output_access", false, path)
-		return
+		return false
 	file.store_string(text)
+	file.flush()
+	var error: Error = file.get_error()
 	file.close()
+	if error != OK or FileAccess.get_file_as_string(path) != text:
+		check("fixture_output_write_verify", false, path)
+		return false
+	return true
 
 func fresh(name: String) -> String:
 	var directory: String = test_root.path_join(name)
@@ -41,10 +51,28 @@ func fresh(name: String) -> String:
 func subprocess(arguments: Array) -> Dictionary:
 	return process_runner.call(arguments)
 
+func corrupt_written_phase(phase: String, expected_phase: String, path: String) -> void:
+	if phase == expected_phase:
+		put(path, "{partial write")
+
 func skip(label: String, reason: String) -> void:
 	var record: Dictionary = {"test": label, "status": "NOT_RUN", "detail": reason}
 	records.append(record)
-	print(JSON.stringify(record))
+	if emit_records:
+		print(JSON.stringify(record))
+
+func summary_snapshot() -> Dictionary:
+	return {"schema": "baram.p2.save-test-results/1", "fixture_kind": "SYNTHETIC_NO_HISTORICAL_ACCURACY_CLAIM", "engine": Engine.get_version_info(), "os": OS.get_name(), "checks": checks, "failures": failures, "status": "PASS" if failures == 0 else "FAIL", "tests": records}
+
+func finalize_results() -> Dictionary:
+	var summary: Dictionary = summary_snapshot()
+	# Output failure is itself a failed check. Rebuild scalars AFTER the write
+	# attempt so returned status/exit count cannot retain the pre-write PASS.
+	put(test_root.path_join("results.json"), JSON.stringify(summary, "\t"))
+	summary = summary_snapshot()
+	if emit_records:
+		print("P2_SAVE_SUMMARY=" + JSON.stringify({"checks": checks, "failures": failures, "status": summary.status}))
+	return summary
 
 func run(output_directory: String, child_runner: Callable = Callable()) -> Dictionary:
 	test_root = output_directory
@@ -54,10 +82,7 @@ func run(output_directory: String, child_runner: Callable = Callable()) -> Dicti
 	records = []
 	DirAccess.make_dir_recursive_absolute(test_root)
 	run_tests()
-	var summary: Dictionary = {"schema": "baram.p2.save-test-results/1", "fixture_kind": "SYNTHETIC_NO_HISTORICAL_ACCURACY_CLAIM", "engine": Engine.get_version_info(), "os": OS.get_name(), "checks": checks, "failures": failures, "status": "PASS" if failures == 0 else "FAIL", "tests": records}
-	put(test_root.path_join("results.json"), JSON.stringify(summary, "\t"))
-	print("P2_SAVE_SUMMARY=" + JSON.stringify({"checks": checks, "failures": failures, "status": summary.status}))
-	return summary
+	return finalize_results()
 
 func run_tests() -> void:
 	var cat: Dictionary = catalog()
@@ -169,6 +194,14 @@ func run_tests() -> void:
 	put(recovery_path, "{primarybroken")
 	put(recovery_path + ".backup", "{backupbroken")
 	check("both_corrupt_never_create_new_character", store.read_state(recovery_path, OWNER, cat).status == "CORRUPT" and store.write_state(recovery_path, fixture(2), OWNER, cat).status == "EXISTING_SAVE_NOT_WRITABLE")
+	for phase in ["after_pending_write", "after_backup_write"]:
+		var corruption_path: String = fresh("partial-" + phase)
+		put(corruption_path, encoded)
+		var suffix: String = ".pending" if phase == "after_pending_write" else ".backup.pending"
+		store.phase_observer = corrupt_written_phase.bind(phase, corruption_path + suffix)
+		var result: Dictionary = store.write_state(corruption_path, fixture(2), OWNER, cat)
+		store.phase_observer = Callable()
+		check("partial_write_rejected_" + phase, result.status == "VERIFY_FAILED" and FileAccess.get_file_as_string(corruption_path) == encoded, result)
 	for phase in Store.PHASES:
 		var phase_path: String = fresh("return-fault-" + phase)
 		put(phase_path, encoded)
@@ -207,8 +240,75 @@ func run_tests() -> void:
 	target.maps.erase("fixture-map:plain")
 	planned = store.plan_map_update(state, OWNER, cat, target)
 	check("map_missing_deferred_without_teleport", planned.status == "DEFERRED" and store.canonical(planned.source) == original)
+	target = cat.duplicate(true)
+	target.items.erase("fixture-item:sword")
+	planned = store.plan_map_update(state, OWNER, cat, target)
+	check("update_missing_item_deferred_preserving_source", planned.status == "DEFERRED" and store.canonical(planned.source) == original)
 	var failure_path: String = fresh("write-failure")
 	put(failure_path, "fixture blocks directory")
 	var result: Dictionary = store.write_state(failure_path.path_join("child.json"), state, OWNER, cat)
 	check("filesystem_write_failure_reported", result.status == "WRITE_FAILED")
 	check("filesystem_write_failure_preserves_existing_file", FileAccess.get_file_as_string(failure_path) == "fixture blocks directory")
+	var evidence_probe = get_script().new()
+	evidence_probe.test_root = fresh("unwritable-results").get_base_dir()
+	evidence_probe.emit_records = false
+	DirAccess.make_dir_recursive_absolute(evidence_probe.test_root.path_join("results.json"))
+	var probe_result: Dictionary = evidence_probe.finalize_results()
+	check("unwritable_results_returns_fail_and_nonzero_count", probe_result.status == "FAIL" and probe_result.failures == 1 and probe_result.checks == 1, {"returned_status": probe_result.status, "returned_failures": probe_result.failures})
+	for backup_kind in ["other_owner", "future_schema", "deferred_profile"]:
+		var backup_path: String = fresh("backup-only-" + backup_kind)
+		var backup_state: Dictionary = fixture()
+		if backup_kind == "other_owner":
+			backup_state.meta.owner_id = "local-account:other"
+		elif backup_kind == "future_schema":
+			backup_state.meta.schema_version = 2
+		else:
+			backup_state.meta.content_profile = "deferred-profile"
+		var backup_text: String = store.encode(backup_state)
+		put(backup_path + ".backup", backup_text)
+		var backup_result: Dictionary = store.write_state(backup_path, state, OWNER, cat)
+		check("backup_only_preserved_" + backup_kind, backup_result.status == "EXISTING_SAVE_NOT_WRITABLE" and not FileAccess.file_exists(backup_path) and FileAccess.get_file_as_string(backup_path + ".backup") == backup_text, backup_result)
+		put(backup_path, encoded)
+		backup_result = store.write_state(backup_path, fixture(2), OWNER, cat)
+		check("incompatible_backup_preserved_with_primary_" + backup_kind, backup_result.status == "EXISTING_SAVE_NOT_WRITABLE" and FileAccess.get_file_as_string(backup_path) == encoded and FileAccess.get_file_as_string(backup_path + ".backup") == backup_text, backup_result)
+	var backup_only_path: String = fresh("backup-only-valid")
+	put(backup_only_path + ".backup", encoded)
+	check("valid_backup_only_preserved_when_new_primary_saved", store.write_state(backup_only_path, fixture(2), OWNER, cat).status == "SAVED" and FileAccess.get_file_as_string(backup_only_path + ".backup") == encoded)
+	for suffix in [".pending", ".backup.pending", ".backup", ""]:
+		var symlink_path: String = fresh("symlink-" + ("primary" if suffix.is_empty() else suffix))
+		var unrelated_path: String = symlink_path.get_base_dir().path_join("unrelated-fixture.txt")
+		put(unrelated_path, "unrelated synthetic data must remain byte-identical")
+		var link_path: String = symlink_path + suffix
+		var directory := DirAccess.open(symlink_path.get_base_dir())
+		var link_result: Error = directory.create_link(unrelated_path, link_path)
+		if link_result != OK:
+			skip("symlink_target_rejected_" + suffix, "Platform could not create synthetic symlink: " + str(link_result))
+			continue
+		var write_result: Dictionary = store.write_state(symlink_path, state, OWNER, cat)
+		check("symlink_target_rejected_" + suffix, write_result.status == "UNSAFE_PATH_LINK", write_result)
+		check("symlink_target_preserved_" + suffix, FileAccess.get_file_as_string(unrelated_path) == "unrelated synthetic data must remain byte-identical" and directory.is_link(link_path))
+	var ancestor_base: String = fresh("symlink-parent").get_base_dir()
+	var ancestor_target: String = ancestor_base.path_join("unrelated-directory")
+	DirAccess.make_dir_recursive_absolute(ancestor_target)
+	var ancestor_link: String = ancestor_base.path_join("linked-parent")
+	var ancestor_directory := DirAccess.open(ancestor_base)
+	var ancestor_result: Error = ancestor_directory.create_link(ancestor_target, ancestor_link)
+	if ancestor_result == OK:
+		check("symlink_ancestor_rejected", store.write_state(ancestor_link.path_join("save.json"), state, OWNER, cat).status == "UNSAFE_PATH_LINK")
+		check("symlink_ancestor_directory_preserved", DirAccess.get_files_at(ancestor_target).is_empty())
+	else:
+		skip("symlink_ancestor_rejected", "Platform could not create synthetic directory symlink: " + str(ancestor_result))
+	var corrupt_link_path: String = fresh("symlink-corrupt-copy")
+	var corrupt_text: String = "{corrupt fixture bytes"
+	put(corrupt_link_path, corrupt_text)
+	put(corrupt_link_path + ".backup", encoded)
+	var corrupt_target: String = corrupt_link_path.get_base_dir().path_join("unrelated-fixture.txt")
+	put(corrupt_target, "unrelated corrupt-copy target")
+	var corrupt_sidecar: String = corrupt_link_path + ".corrupt-" + corrupt_text.sha256_text()
+	var corrupt_directory := DirAccess.open(corrupt_link_path.get_base_dir())
+	var corrupt_link_result: Error = corrupt_directory.create_link(corrupt_target, corrupt_sidecar)
+	if corrupt_link_result == OK:
+		check("corrupt_copy_symlink_rejected", store.write_state(corrupt_link_path, fixture(2), OWNER, cat).status == "UNSAFE_PATH_LINK")
+		check("corrupt_copy_symlink_preserves_all_sources", FileAccess.get_file_as_string(corrupt_target) == "unrelated corrupt-copy target" and FileAccess.get_file_as_string(corrupt_link_path) == corrupt_text and FileAccess.get_file_as_string(corrupt_link_path + ".backup") == encoded)
+	else:
+		skip("corrupt_copy_symlink_rejected", "Platform could not create synthetic symlink: " + str(corrupt_link_result))

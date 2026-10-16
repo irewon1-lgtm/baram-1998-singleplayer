@@ -73,5 +73,35 @@
     "schema",
     "mapping"
   ],
-  "input_generation_frozen_during_tests": true
+  "input_generation_frozen_during_tests": true,
+  "reference_unit": {
+    "source_commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+    "source_manifest_sha256": "5ba5672d1ac2a494c213c04a00e42a4b8f0ea78c9623d34683169b83beb26b6b",
+    "runtime_content": [
+      {
+        "path": "game-data/EraFeatures.csv",
+        "bytes": 6088,
+        "git_blob": "368303d69df55c9a5a6d9b115744e566df9f85d8",
+        "sha256": "98f0569b1072ae0d874246cdd054b2809dd52d5fffa8800846aaaea8c100d13e",
+        "checkout_transformation": null
+      },
+      {
+        "path": "game-data/ServerTuning.csv",
+        "bytes": 375,
+        "git_blob": "dc0292c132a5d4c0bb092236e51e7ed24da383ba",
+        "sha256": "12234cb9f2f1cb00f0aaca163be3f135e78a7b600f8b80b4e4a1aed18026b0e9",
+        "checkout_transformation": null
+      }
+    ],
+    "dependencies": "LoginServer, Protocol.Tk495, Shared, Shared.Core, two era CSVs; new synthetic state only. No game Server, spawn/drop/spell graph, KR archives, excluded RTK inputs, or private selected tables consumed.",
+    "profile": "NA-Project1998-20010709 (source ServerTuning/EraFeatures; not Korean profile)",
+    "historical_scope": "NA_REFERENCE_ONLY",
+    "normalized_private_data_consumed": 0
+  },
+  "reused_save_algorithm_pattern": {
+    "reference": "rebuild/p2/storage/PROVENANCE.json",
+    "source_sha256": "57b0fc0aabbab3bd0ca7568d87ace999bc3daeef7255e502bd71d8d317e09bc9",
+    "byte_check": "MATCH_PINNED_SOURCE",
+    "source_lines_copied": 0
+  }
 }

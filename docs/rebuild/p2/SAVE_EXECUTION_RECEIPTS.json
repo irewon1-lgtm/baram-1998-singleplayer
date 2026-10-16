@@ -1,0 +1,77 @@
+{
+  "initial_results": "SAVE_RESULTS_LINUX.json (historical83 checks; superseded after preservation review)",
+  "final_actual_executions": [
+    {
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        "/workspace/baram-p2-codex/rebuild/p2",
+        "--script",
+        "/workspace/baram-p2-codex/tools/rebuild/p2/test_save.gd",
+        "--",
+        "--root",
+        "/workspace/p2-private/save-tests/run-07-fixed-full"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_s": 3.051,
+      "code_git_head": "5e522f4ad2e534c24c04ebc8e6e60e11adf0dfc9",
+      "uncommitted_code_fingerprints": {
+        "rebuild/p2/storage/save_store.gd": "33f43fb39d8127f6b671684d7f7b73e61b4538d796f84ba65f0e7d8a25e12019",
+        "rebuild/p2/storage/save_self_test.gd": "dc2c9ca4b19cc5006ad37456addf4c4fc47ce337c177020a83f2fccfff4c1a6d",
+        "tools/rebuild/p2/test_save.gd": "a6c9f34cfbecfd4924739c26a454d17b922c5519c1e313535c7f448110d91800"
+      },
+      "output_sha256": "d23e35b5d117356791e64249ae24eb02aa1b4ddb957d8a45ed5c085785981ddc"
+    },
+    {
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        "/workspace/baram-p2-codex/rebuild/p2",
+        "--script",
+        "/workspace/baram-p2-codex/tools/rebuild/p2/test_save.gd",
+        "--",
+        "--root",
+        "/workspace/p2-private/save-tests/run-08-fixed-local",
+        "--local-only"
+      ],
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "elapsed_s": 0.257,
+      "code_git_head": "5e522f4ad2e534c24c04ebc8e6e60e11adf0dfc9",
+      "uncommitted_code_fingerprints": {
+        "rebuild/p2/storage/save_store.gd": "33f43fb39d8127f6b671684d7f7b73e61b4538d796f84ba65f0e7d8a25e12019",
+        "rebuild/p2/storage/save_self_test.gd": "dc2c9ca4b19cc5006ad37456addf4c4fc47ce337c177020a83f2fccfff4c1a6d",
+        "tools/rebuild/p2/test_save.gd": "a6c9f34cfbecfd4924739c26a454d17b922c5519c1e313535c7f448110d91800"
+      },
+      "output_sha256": "bf2851b4d42fbd9e35c7a88d69369551b6b0d06644d9920b304c64b9047c3f8b"
+    },
+    {
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        "/workspace/baram-p2-codex/rebuild/p2",
+        "--script",
+        "/workspace/baram-p2-codex/tools/rebuild/p2/test_save.gd",
+        "--",
+        "--root",
+        "/workspace/p2-private/save-tests/run-09-unwritable-results",
+        "--local-only"
+      ],
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "elapsed_s": 0.254,
+      "code_git_head": "5e522f4ad2e534c24c04ebc8e6e60e11adf0dfc9",
+      "uncommitted_code_fingerprints": {
+        "rebuild/p2/storage/save_store.gd": "33f43fb39d8127f6b671684d7f7b73e61b4538d796f84ba65f0e7d8a25e12019",
+        "rebuild/p2/storage/save_self_test.gd": "dc2c9ca4b19cc5006ad37456addf4c4fc47ce337c177020a83f2fccfff4c1a6d",
+        "tools/rebuild/p2/test_save.gd": "a6c9f34cfbecfd4924739c26a454d17b922c5519c1e313535c7f448110d91800"
+      },
+      "output_sha256": "b0533566a2c84d87dfff1f450f24ce20a2fb0299c978e7566df7754fdf290c56"
+    }
+  ],
+  "expected_failure_is_not_save_data_PASS": true
+}

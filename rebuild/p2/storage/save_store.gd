@@ -203,7 +203,27 @@ func decode(text: String, expected_owner: String, catalog: Dictionary) -> Dictio
 		result.state = document
 	return result
 
+func _path_has_link(path: String) -> bool:
+	# Godot has no no-follow/exclusive-open API. Reject pre-existing symlinks in
+	# the entire path before reads/writes and recheck before replacement. Caller
+	# must use an app-owned directory; this does not promise protection against
+	# a concurrent process swapping filesystem entries between these checks.
+	var current: String = ProjectSettings.globalize_path(path).simplify_path()
+	if not current.is_absolute_path():
+		return true
+	for depth in range(256):
+		var parent: String = current.get_base_dir()
+		if parent == current or current.is_empty():
+			return false
+		var directory := DirAccess.open(parent)
+		if directory != null and directory.is_link(current):
+			return true
+		current = parent
+	return true
+
 func read_one(path: String, expected_owner: String, catalog: Dictionary) -> Dictionary:
+	if _path_has_link(path):
+		return _result("UNSAFE_PATH_LINK")
 	if not FileAccess.file_exists(path):
 		return _result("MISSING")
 	var file := FileAccess.open(path, FileAccess.READ)
@@ -232,6 +252,8 @@ func read_state(path: String, expected_owner: String, catalog: Dictionary) -> Di
 	return primary
 
 func _write(path: String, text: String) -> bool:
+	if _path_has_link(path):
+		return false
 	var file := FileAccess.open(path, FileAccess.WRITE)
 	if file == null:
 		return false
@@ -250,10 +272,20 @@ func write_state(path: String, state: Dictionary, expected_owner: String, catalo
 	var validation = validate(state, expected_owner, catalog)
 	if validation.status != "OK":
 		return validation
+	for suffix in ["", ".pending", ".backup", ".backup.pending"]:
+		if _path_has_link(path + suffix):
+			return _result("UNSAFE_PATH_LINK", "primary" if suffix.is_empty() else suffix)
 	var text: String = encode(state)
 	if text.to_utf8_buffer().size() > MAX_BYTES:
 		return _result("SAVE_SIZE_LIMIT")
 	var previous: String = ""
+	# A backup-only slot can be the sole surviving save. Check it even when no
+	# primary exists, and never consume another owner's/future/deferred copy.
+	if FileAccess.file_exists(path + ".backup"):
+		var existing_backup = read_one(path + ".backup", expected_owner, catalog)
+		if existing_backup.status != "OK":
+			return _result("EXISTING_SAVE_NOT_WRITABLE", "backup." + existing_backup.status)
+		previous = FileAccess.get_file_as_string(path + ".backup")
 	if FileAccess.file_exists(path):
 		var current = read_one(path, expected_owner, catalog)
 		if current.status == "OK":
@@ -271,6 +303,8 @@ func write_state(path: String, state: Dictionary, expected_owner: String, catalo
 			hasher.start(HashingContext.HASH_SHA256)
 			hasher.update(broken)
 			var corrupt_path: String = path + ".corrupt-" + hasher.finish().hex_encode()
+			if _path_has_link(corrupt_path):
+				return _result("UNSAFE_PATH_LINK", "corrupt_copy")
 			if FileAccess.file_exists(corrupt_path):
 				if FileAccess.get_file_as_bytes(corrupt_path) != broken:
 					return _result("PRESERVATION_CONFLICT")
@@ -296,12 +330,16 @@ func write_state(path: String, state: Dictionary, expected_owner: String, catalo
 			return _result("VERIFY_FAILED", "backup.pending")
 		if _phase("after_backup_verify", fault_phase):
 			return _result("INJECTED_FAILURE", "after_backup_verify")
+		if _path_has_link(path + ".backup.pending") or _path_has_link(path + ".backup"):
+			return _result("UNSAFE_PATH_LINK", "backup_replace")
 		if DirAccess.rename_absolute(path + ".backup.pending", path + ".backup") != OK:
 			return _result("REPLACE_FAILED", "backup")
 		if _phase("after_backup_replace", fault_phase):
 			return _result("INJECTED_FAILURE", "after_backup_replace")
 	if _phase("before_primary_replace", fault_phase):
 		return _result("INJECTED_FAILURE", "before_primary_replace")
+	if _path_has_link(path + ".pending") or _path_has_link(path):
+		return _result("UNSAFE_PATH_LINK", "primary_replace")
 	if DirAccess.rename_absolute(path + ".pending", path) != OK:
 		return _result("REPLACE_FAILED", "primary")
 	if _phase("after_primary_replace", fault_phase):

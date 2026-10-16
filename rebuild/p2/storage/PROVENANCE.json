@@ -60,6 +60,8 @@
     "maximum_exact_integer": 9007199254740991,
     "durability": "FileAccess.flush + same-directory rename observed per target runtime. No fsync directory/power-loss durability claim. No true disk-full hardware test.",
     "checksum": "Accidental corruption only; not a signature or account authentication.",
-    "migration": "Only same stable map with still-valid coordinates can be updated. Otherwise DEFERRED and source retained. No old map coordinate transformation invented."
+    "migration": "Only same stable map with still-valid coordinates can be updated. Otherwise DEFERRED and source retained. No old map coordinate transformation invented.",
+    "path_safety": "App-owned directory required. Refuses pre-existing symlinks in primary/sidecars/corrupt copy/ancestors, rechecks before replacement. Godot lacks no-follow/exclusive open; no concurrent entry-swap/hardlink attack protection claim.",
+    "backup_preservation": "Any present backup is validated even with no primary. Foreign owner, future schema, deferred profile or corrupt backup blocks writing rather than discarding the only prior copy."
   }
 }

@@ -1,0 +1,365 @@
+{
+  "schema": "baram.p2.reference_results/1",
+  "unit": "P2-04",
+  "observed_at_utc": "2026-10-16T02:14:30.157550+00:00",
+  "source": "https://github.com/project1998/Project1998",
+  "source_commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+  "observer_sha256": "9ad5bfdf3a8c8f74c27118f2e03b3dd227cde83f53d7fa575d6d8b5f21c8c9ff",
+  "environment": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "rebuild_code_sha_at_execution": "5e522f4ad2e534c24c04ebc8e6e60e11adf0dfc9",
+  "dotnet_sdk": "8.0.426",
+  "evidence_directory": "/workspace/p2-private/reference/evidence/reference-probe-90fdsk88",
+  "actual_client_login": "BLOCKED_MISSING_COMPATIBLE_CLIENT",
+  "korean_original_fidelity": "UNVERIFIED",
+  "native_ime": "NOT_RUN",
+  "prior_results_preserved": [
+    {
+      "path": "/workspace/p2-private/reference/evidence/reference-initial.json",
+      "sha256": "a52cfd0d0b2256da77a915b436a42f6802a71b5ceec8bf12302c7fe9a7b9f42d",
+      "status": "FAIL",
+      "exit_code": 1,
+      "failure": "AssertionError: changed reference file: Project1998.sln",
+      "current_execution_count": false
+    },
+    {
+      "path": "/workspace/p2-private/reference/evidence/reference-second.json",
+      "sha256": "52a861360b1732be8bd96242b62ab4275bd9f54570084b0b10b92785a3d0e376",
+      "status": "FAIL",
+      "exit_code": 1,
+      "failure": "RuntimeError: reference server failed to start; see private process log",
+      "current_execution_count": false
+    },
+    {
+      "path": "/workspace/p2-private/reference/evidence/reference-third.json",
+      "sha256": "85ce214e027fdd45e9a918a7bd32b9edca7d3095daa4e01577ec2d41d56082a4",
+      "status": "FAIL",
+      "exit_code": 1,
+      "failure": "RuntimeError: reference server failed to start (exit -25); see private process log",
+      "current_execution_count": false
+    },
+    {
+      "path": "/workspace/p2-private/reference/evidence/reference-fourth.json",
+      "sha256": "c927bfb5962f368ecc4a21152dcf7322a76077e3c07e323254b56834e8d64232",
+      "status": "FAIL",
+      "exit_code": 1,
+      "failure": "AssertionError: ",
+      "current_execution_count": false
+    },
+    {
+      "path": "/workspace/p2-private/reference/evidence/reference-fifth.json",
+      "sha256": "9131b9f9e091d15bfe919865e8cb8fde9dfbcb06e8acefc147dd1b4494bf4bc1",
+      "status": "PARTIAL",
+      "exit_code": 0,
+      "failure": null,
+      "current_execution_count": false
+    }
+  ],
+  "supplied_tests": {
+    "status": "PASS",
+    "counters": {
+      "total": "81",
+      "executed": "81",
+      "passed": "81",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    },
+    "trx_path": "/workspace/p2-private/reference/evidence/p204-supplied-tests.trx",
+    "trx_sha256": "15c0c63799d410181b9b0a073add0ea738477300f90e8070931e252e7d47c509",
+    "scope": [
+      "NameRulesTests",
+      "CreateFaceByteTests",
+      "ChangePasswordTests",
+      "HandoffTokenTests",
+      "LoginRedirectTests"
+    ],
+    "state": "supplied TestProcessState module initializer creates new temp SQLite state; no existing account DB",
+    "reproduction": {
+      "argv": [
+        "/workspace/p2-private/toolchain/dotnet8/dotnet",
+        "test",
+        "Tests/Tests.csproj",
+        "-c",
+        "Release",
+        "--disable-build-servers",
+        "--filter",
+        "FullyQualifiedName~NameRulesTests|FullyQualifiedName~CreateFaceByteTests|FullyQualifiedName~ChangePasswordTests|FullyQualifiedName~HandoffTokenTests|FullyQualifiedName~LoginRedirectTests",
+        "--logger",
+        "trx;LogFileName=p204-supplied-tests.trx",
+        "--results-directory",
+        "/workspace/p2-private/reference/evidence"
+      ],
+      "cwd": "/workspace/p2-private/reference/Project1998",
+      "exit_code": 0,
+      "environment": {
+        "DOTNET_CLI_HOME": "/workspace/p2-private/reference/dotnet-home",
+        "NUGET_PACKAGES": "/workspace/p2-private/reference/nuget",
+        "TMPDIR": "/workspace/p2-private/reference/test-temp",
+        "P1998_BIND": "127.0.0.1",
+        "P1998_LOG_WIRE": "0",
+        "DOTNET_CLI_TELEMETRY_OPTOUT": "1"
+      }
+    }
+  },
+  "reference_build": {
+    "log_path": "/workspace/p2-private/reference/evidence/build-login.log",
+    "sha256": "781f40bfa6a26c3ef7518bd12f9ec8163d774187df8ec5e5a6d06a628638569a",
+    "status": "PASS",
+    "argv": [
+      "/workspace/p2-private/toolchain/dotnet8/dotnet",
+      "build",
+      "LoginServer/LoginServer.csproj",
+      "-c",
+      "Release",
+      "--disable-build-servers"
+    ],
+    "cwd": "/workspace/p2-private/reference/Project1998",
+    "exit_code": 0
+  },
+  "sdk_artifact": {
+    "version": "8.0.426",
+    "name": "dotnet-sdk-linux-x64.tar.gz",
+    "rid": "linux-x64",
+    "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/8.0.426/dotnet-sdk-8.0.426-linux-x64.tar.gz",
+    "hash": "8141d01bdc53f604aed3bb661b604707a64209f8a947cd81bf95b4f518951593d77864069191f54ea5e84362a409da6b0f69074bf893b283d7e0cf93e2bf20a8",
+    "verified_sha512": "8141d01bdc53f604aed3bb661b604707a64209f8a947cd81bf95b4f518951593d77864069191f54ea5e84362a409da6b0f69074bf893b283d7e0cf93e2bf20a8",
+    "metadata_url": "https://builds.dotnet.microsoft.com/dotnet/release-metadata/8.0/releases.json",
+    "tls_verification": "enabled; inherited proxy and CA trust"
+  },
+  "source_integrity": {
+    "status": "PASS",
+    "commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+    "files_verified": 2770,
+    "bytes_verified": 24221724,
+    "manifest_sha256": "5ba5672d1ac2a494c213c04a00e42a4b8f0ea78c9623d34683169b83beb26b6b",
+    "manifest_path": "/workspace/p2-private/reference/evidence/reference-probe-90fdsk88/reference-source-manifest.json",
+    "runtime_content": [
+      {
+        "path": "game-data/EraFeatures.csv",
+        "bytes": 6088,
+        "git_blob": "368303d69df55c9a5a6d9b115744e566df9f85d8",
+        "sha256": "98f0569b1072ae0d874246cdd054b2809dd52d5fffa8800846aaaea8c100d13e",
+        "checkout_transformation": null
+      },
+      {
+        "path": "game-data/ServerTuning.csv",
+        "bytes": 375,
+        "git_blob": "dc0292c132a5d4c0bb092236e51e7ed24da383ba",
+        "sha256": "12234cb9f2f1cb00f0aaca163be3f135e78a7b600f8b80b4e4a1aed18026b0e9",
+        "checkout_transformation": null
+      }
+    ],
+    "dependency_scope": "LoginServer, Protocol.Tk495, Shared, Shared.Core, two era CSVs; new synthetic state only. No game Server, spawn/drop/spell graph, KR archives, excluded RTK inputs, or private selected tables consumed.",
+    "global_G0": "BLOCKED; this source verification is a separate unit scope"
+  },
+  "loopback_observation": {
+    "status": "PASS",
+    "observer_type": "synthetic protocol observer against actual compiled LoginServer",
+    "tests": [
+      {
+        "id": "fresh_database_empty",
+        "status": "PASS"
+      },
+      {
+        "id": "unknown_login_does_not_create",
+        "status": "PASS"
+      },
+      {
+        "id": "create_without_namecheck_refused",
+        "status": "PASS"
+      },
+      {
+        "id": "na_ascii_policy_rejects_non_ascii_bytes",
+        "status": "PASS",
+        "scope": "synthetic UTF-8 packet; not keyboard, IME, or Korean name-policy evidence"
+      },
+      {
+        "id": "weak_password_refused",
+        "status": "PASS"
+      },
+      {
+        "id": "name_available_before_cancel",
+        "status": "PASS"
+      },
+      {
+        "id": "disconnect_before_create_preserves_empty_database",
+        "status": "PASS"
+      },
+      {
+        "id": "name_reselect_after_cancel",
+        "status": "PASS"
+      },
+      {
+        "id": "create_appearance_persisted",
+        "status": "PASS"
+      },
+      {
+        "id": "new_peasant_level1_unlearned",
+        "status": "PASS",
+        "scope": "NA reference implementation only; Korean original remains unverified"
+      },
+      {
+        "id": "appearance_selection_stored",
+        "status": "PASS"
+      },
+      {
+        "id": "duplicate_name_refused",
+        "status": "PASS"
+      },
+      {
+        "id": "duplicate_creation_refused",
+        "status": "PASS"
+      },
+      {
+        "id": "duplicate_does_not_replace_state_or_credential",
+        "status": "PASS"
+      },
+      {
+        "id": "wrong_password_refused",
+        "status": "PASS"
+      },
+      {
+        "id": "correct_password_loopback_handoff",
+        "status": "PASS",
+        "scope": "server authentication and redirect only; no game connection or graphical client"
+      },
+      {
+        "id": "same_synthetic_account_authenticates_after_restart",
+        "status": "PASS"
+      }
+    ],
+    "listeners": [
+      {
+        "address": "127.0.0.1",
+        "port": 22000
+      },
+      {
+        "address": "127.0.0.1",
+        "port": 22001
+      }
+    ],
+    "command": [
+      "/workspace/p2-private/toolchain/dotnet8/dotnet",
+      "/workspace/p2-private/reference/Project1998/LoginServer/bin/Release/net8.0/LoginServer.dll",
+      "--ports",
+      "22000,22001"
+    ],
+    "process_exit_codes": [
+      143,
+      143
+    ],
+    "termination": "SIGTERM after bounded observation",
+    "profile": "NA-Project1998-20010709 (source ServerTuning/EraFeatures; not Korean profile)",
+    "fresh_state_directory": "/workspace/p2-private/reference/evidence/reference-probe-90fdsk88/runtime/state",
+    "all_accounts": "new synthetic account only",
+    "secrets_or_raw_packets_in_result": false,
+    "not_executed": [
+      "graphical compatible client",
+      "game-world arrival",
+      "Korean original login",
+      "Korean historical name policy",
+      "native Windows IME",
+      "native Android IME",
+      "level5 advancement flow",
+      "HTTPS cross-device account sync"
+    ]
+  },
+  "technical_status": "PARTIAL",
+  "exit_code": 0,
+  "private_evidence": [
+    {
+      "path": "/workspace/p2-private/reference/evidence/reference-probe-90fdsk88/login-server-restart.log",
+      "bytes": 6942,
+      "sha256": "496e9d8a61efdef9829c7d317ce3939f232aafda854c56c505f9df41f200ebec"
+    },
+    {
+      "path": "/workspace/p2-private/reference/evidence/reference-probe-90fdsk88/login-server.log",
+      "bytes": 10225,
+      "sha256": "d70f5280c1bb341f384d5565f3e6320350c7f4a88b14fdcf045a7d8e2331c7da"
+    },
+    {
+      "path": "/workspace/p2-private/reference/evidence/reference-probe-90fdsk88/observer-events.jsonl",
+      "bytes": 1277,
+      "sha256": "dfd9e4f29e79efa75088dd5016ae6848c6e1a0162eb78faad6f5bdac6d45b1f0"
+    },
+    {
+      "path": "/workspace/p2-private/reference/evidence/reference-probe-90fdsk88/reference-source-manifest.json",
+      "bytes": 722177,
+      "sha256": "5ba5672d1ac2a494c213c04a00e42a4b8f0ea78c9623d34683169b83beb26b6b"
+    },
+    {
+      "path": "/workspace/p2-private/reference/evidence/reference-probe-90fdsk88/synthetic-state.backup.sqlite",
+      "bytes": 90112,
+      "sha256": "30b57b3d3a59029fd2a442a5c20910e04572000a7ce9fe754131a326fa0a61bb"
+    }
+  ],
+  "initial_failures_and_supported_corrections": [
+    {
+      "attempt": "supplied-tests-initial.log",
+      "exit_code": 82,
+      "cause": "Configured TMPDIR did not exist; MSBuild failed before running tests.",
+      "correction": "Created the dedicated test-temp directory; reran the same filtered supplied tests.",
+      "log_path": "/workspace/p2-private/reference/evidence/supplied-tests-initial.log",
+      "log_sha256": "03c73edcfbf8ec5c0768fcae360d08442971d4907d0557c9367f2bd3b3eda497"
+    },
+    {
+      "attempt": "reference-initial.json",
+      "exit_code": 1,
+      "cause": "Raw checkout differs from Git blob for explicit CRLF files.",
+      "correction": "Read pinned .gitattributes; require suffix and eol=crlf declaration plus LF-normalized exact blob match. Binary files retain exact raw matching."
+    },
+    {
+      "attempt": "reference-second.json",
+      "exit_code": 1,
+      "cause": "3 GiB virtual address limit prevents CoreCLR heap startup.",
+      "correction": "Verified dotnet startup with 8 GiB bounded virtual space and 256 MiB managed heap."
+    },
+    {
+      "attempt": "reference-third.json",
+      "exit_code": 1,
+      "cause": "RLIMIT_FSIZE blocks CoreCLR W^X sparse 2 TiB memfd reservation (SIGXFSZ).",
+      "correction": "Preserved W^X and removed incompatible file-size limit; bounded actual server logs at 4 MiB. strace preserved privately.",
+      "log_path": "/workspace/p2-private/reference/evidence/coreclr-limit.strace",
+      "log_sha256": "11ac3ce4d9db4525d562567e20a47583f2958c0c094516a08cc2f1ddb60c2a8d"
+    },
+    {
+      "attempt": "reference-fourth.json",
+      "exit_code": 1,
+      "cause": "Harness checked both kernel listeners after only the first channel became ready.",
+      "correction": "Wait for actual greetings on both loopback channels before kernel assertion; terminated the one test-owned process left by this early harness assertion."
+    }
+  ],
+  "compatible_client_requirement": {
+    "source_id": "LIB-014",
+    "library_file_id": "libfile_0ef3b7e0828c8191a637c4061889b72d",
+    "path": "/Baram1998Assets/NA_4.95_Nexus495.exe",
+    "bytes": 24658356,
+    "sha256": "486f4684b76658d92eaf84aab77fe9be9489ea01de8264fe90d0040466620aaa",
+    "required_components": [
+      "compatible executable",
+      "Inter.dat",
+      "NexusTK.dat",
+      "sound archive",
+      "Maps"
+    ],
+    "status": "BLOCKED_MISSING_BYTES",
+    "claim_limit": "No actual graphical login, rendered creation screen or client-observed world entry"
+  },
+  "dotnet_runtime": "Microsoft.NETCore.App 8.0.32; Microsoft.AspNetCore.App 8.0.32",
+  "artifact_delivery": {
+    "status": "BLOCKED_NO_CONFIRMED_PRIVATE_DOWNLOAD_CHANNEL",
+    "generated_private_directory": "/workspace/p2-private/reference/evidence/reference-probe-90fdsk88",
+    "public_code_and_metadata": "Codex branch paths only; raw reference source and synthetic DB/logs stay private",
+    "claim": "A /workspace path is generated location, not a user download confirmation"
+  }
+}
