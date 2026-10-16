@@ -1,0 +1,2671 @@
+{
+  "schema": "baram.v2.skill-semantics-source-adoption/1",
+  "recorded_at": "2026-10-16T22:40:05.477931+00:00",
+  "status": "SOURCE_ADOPTION_AND_UNIT_TESTS_PASS_RUNTIME_EXECUTION_SEPARATE",
+  "module": "tools/rebuild/v2/skill_semantics.py",
+  "module_sha256": "ce954a175b70cc89d9cf2e146d4d00fbd6b456f8840b1df389fc049c7e53a773",
+  "unit_test_file_sha256": "75e0885392c6b66387b132f1014ae9c90596f4d6f79d68e5686d2dcfe2626ef3",
+  "source_effect_table_sha256": "b8947b92e05d43994d3af3529ced87203daf9d3255132afe9b227ad818d30b1f",
+  "input_runtime": {
+    "generation": "WORK-V2-G1-r2",
+    "gameplay_content_sha256": "539653760c3cd3e31069c8321edb4871d90daaca1e2a0f0e876341f07c9ef144",
+    "mutated": false
+  },
+  "actual_source_pass": {
+    "skills": 190,
+    "skills_with_matching_effect_record": 190,
+    "unique_selected_field_types": 114,
+    "selected_field_instances": 559,
+    "dispositions": {
+      "ADOPTED": 199,
+      "ADAPTED": 137,
+      "REFERENCE_RETAINED": 223
+    },
+    "field_types": {
+      "absorption.broken_by": {
+        "REFERENCE_RETAINED": 1
+      },
+      "absorption.hp_cap": {
+        "REFERENCE_RETAINED": 1
+      },
+      "area.center": {
+        "REFERENCE_RETAINED": 2
+      },
+      "area.group_immune_to_damage": {
+        "ADAPTED": 2
+      },
+      "area.relative_directions": {
+        "ADOPTED": 25
+      },
+      "area.simultaneous": {
+        "REFERENCE_RETAINED": 30
+      },
+      "attack.hit_count": {
+        "ADAPTED": 6
+      },
+      "barrier.blocked_entity_class": {
+        "ADAPTED": 2
+      },
+      "buff.armor_strength": {
+        "ADAPTED": 2
+      },
+      "buff.attack_power": {
+        "ADAPTED": 5
+      },
+      "buff.combo_reference": {
+        "REFERENCE_RETAINED": 1
+      },
+      "buff.finisher_damage": {
+        "REFERENCE_RETAINED": 1
+      },
+      "buff.stage": {
+        "REFERENCE_RETAINED": 3
+      },
+      "clones.real_identity_visibility": {
+        "ADAPTED": 1
+      },
+      "consequence.caster_death": {
+        "ADOPTED": 1
+      },
+      "cost.hp": {
+        "REFERENCE_RETAINED": 2,
+        "ADAPTED": 3
+      },
+      "cost.mp": {
+        "ADOPTED": 2,
+        "REFERENCE_RETAINED": 1,
+        "ADAPTED": 2
+      },
+      "damage.basic_attack_multiplier": {
+        "ADAPTED": 5
+      },
+      "damage.combo_multiplier_claim": {
+        "REFERENCE_RETAINED": 2
+      },
+      "damage.conditional_multiplier": {
+        "ADAPTED": 1
+      },
+      "damage.distance_falloff": {
+        "REFERENCE_RETAINED": 1
+      },
+      "damage.guardian_element": {
+        "ADOPTED": 28
+      },
+      "damage.incoming_multiplier": {
+        "ADOPTED": 2
+      },
+      "damage.incoming_nullified": {
+        "ADOPTED": 1
+      },
+      "damage.invisibility_multiplier": {
+        "ADAPTED": 1
+      },
+      "damage.periodic_hp_loss": {
+        "ADAPTED": 1
+      },
+      "damage.poison_scaling": {
+        "REFERENCE_RETAINED": 1
+      },
+      "damage.rear_basic_attack_multiplier": {
+        "REFERENCE_RETAINED": 1
+      },
+      "damage.relative_power": {
+        "REFERENCE_RETAINED": 2
+      },
+      "damage.relative_tier": {
+        "REFERENCE_RETAINED": 18
+      },
+      "damage.stat_scaling": {
+        "REFERENCE_RETAINED": 7
+      },
+      "debuff.armor_class_AC": {
+        "ADAPTED": 1
+      },
+      "debuff.defense": {
+        "ADAPTED": 2
+      },
+      "dispel.all_magic": {
+        "ADAPTED": 1
+      },
+      "dispel.blindness_절망": {
+        "ADAPTED": 1
+      },
+      "dispel.curse": {
+        "ADAPTED": 2
+      },
+      "dispel.paralysis": {
+        "ADAPTED": 2
+      },
+      "dispel.poison": {
+        "ADAPTED": 2
+      },
+      "dispel.removal_skill_reference": {
+        "REFERENCE_RETAINED": 1
+      },
+      "dispel.혼마술": {
+        "ADAPTED": 1
+      },
+      "duration.qualifier": {
+        "REFERENCE_RETAINED": 13
+      },
+      "effect_reference": {
+        "REFERENCE_RETAINED": 6
+      },
+      "effect_type.ACCURACY_BUFF": {
+        "ADAPTED": 1
+      },
+      "effect_type.ATTACK_MODIFIER_FOLLOWUP": {
+        "ADOPTED": 1
+      },
+      "effect_type.BARRIER": {
+        "ADOPTED": 2
+      },
+      "effect_type.BROADCAST_VOICE": {
+        "ADAPTED": 4
+      },
+      "effect_type.DAMAGE_DEALING": {
+        "ADOPTED": 50
+      },
+      "effect_type.DAMAGE_IMMUNITY": {
+        "ADOPTED": 1
+      },
+      "effect_type.DAMAGE_REDUCTION": {
+        "ADOPTED": 2
+      },
+      "effect_type.DEFENSE_DEBUFF": {
+        "ADOPTED": 3
+      },
+      "effect_type.DISPEL_ALL_MAGIC": {
+        "ADOPTED": 1
+      },
+      "effect_type.EVASION_BUFF": {
+        "ADAPTED": 1
+      },
+      "effect_type.HIDDEN_DETECTION": {
+        "ADAPTED": 1
+      },
+      "effect_type.HP_ABSORPTION": {
+        "ADOPTED": 1
+      },
+      "effect_type.HP_HEAL": {
+        "ADOPTED": 27
+      },
+      "effect_type.ILLUSION_CLONES": {
+        "ADAPTED": 1
+      },
+      "effect_type.INVISIBILITY": {
+        "ADOPTED": 2
+      },
+      "effect_type.MONSTER_SUMMON": {
+        "ADOPTED": 1
+      },
+      "effect_type.MOVEMENT_BLOCKING": {
+        "ADOPTED": 2
+      },
+      "effect_type.MOVEMENT_OR_SUMMON": {
+        "ADAPTED": 13
+      },
+      "effect_type.MP_RESTORE": {
+        "ADOPTED": 3
+      },
+      "effect_type.OWN_ITEM_INSPECTION": {
+        "ADOPTED": 1
+      },
+      "effect_type.PLAYER_INSPECTION": {
+        "ADAPTED": 3
+      },
+      "effect_type.REMOTE_ITEM_PICKUP": {
+        "ADOPTED": 1
+      },
+      "effect_type.RESURRECTION": {
+        "ADOPTED": 1
+      },
+      "effect_type.SPELL_REFLECTION": {
+        "ADOPTED": 1
+      },
+      "effect_type.STRENGTH_BUFF": {
+        "ADOPTED": 3
+      },
+      "effect_type.TRANSFORMATION": {
+        "ADOPTED": 6
+      },
+      "healing.full_mp_restore": {
+        "ADOPTED": 2
+      },
+      "healing.hp_amount": {
+        "ADOPTED": 19
+      },
+      "healing.qualitative_amount": {
+        "REFERENCE_RETAINED": 7
+      },
+      "healing.stat_scaling": {
+        "REFERENCE_RETAINED": 1
+      },
+      "inspection.fields": {
+        "ADAPTED": 3
+      },
+      "item_pickup.geometry": {
+        "ADOPTED": 1
+      },
+      "monster.behavior_change": {
+        "ADAPTED": 1
+      },
+      "movement.caster_to_lower_player": {
+        "ADAPTED": 3
+      },
+      "movement.caster_to_target_then_attack": {
+        "ADAPTED": 1
+      },
+      "movement.destination": {
+        "ADAPTED": 5
+      },
+      "movement.equivalent_item_reference": {
+        "REFERENCE_RETAINED": 1
+      },
+      "movement.lower_player_to_caster_front": {
+        "ADAPTED": 3
+      },
+      "movement.obstacles_can_be_crossed": {
+        "REFERENCE_RETAINED": 1
+      },
+      "movement.pull_target_to_caster_front_then_attack": {
+        "ADOPTED": 1
+      },
+      "movement.source_distance": {
+        "ADOPTED": 2
+      },
+      "protection.body_magic": {
+        "REFERENCE_RETAINED": 2
+      },
+      "range.documented": {
+        "REFERENCE_RETAINED": 1
+      },
+      "range.qualitative": {
+        "REFERENCE_RETAINED": 18
+      },
+      "range.short_explicit": {
+        "REFERENCE_RETAINED": 12
+      },
+      "reaction.when_attacked": {
+        "REFERENCE_RETAINED": 1
+      },
+      "reflection.probability": {
+        "ADAPTED": 1
+      },
+      "resource_transfer": {
+        "ADAPTED": 1
+      },
+      "restriction.caster_cannot_move_while_active": {
+        "ADOPTED": 2
+      },
+      "restriction.ghost_only": {
+        "ADOPTED": 1
+      },
+      "status.applied": {
+        "REFERENCE_RETAINED": 6,
+        "ADAPTED": 1
+      },
+      "summon.documented_forms": {
+        "ADAPTED": 1
+      },
+      "summon.form_list_exhaustive": {
+        "REFERENCE_RETAINED": 1
+      },
+      "summon.level_dependent": {
+        "REFERENCE_RETAINED": 1
+      },
+      "summon.relationship": {
+        "REFERENCE_RETAINED": 1
+      },
+      "target.all_group_members": {
+        "ADAPTED": 2
+      },
+      "target.all_nearby_enemies": {
+        "REFERENCE_RETAINED": 1
+      },
+      "target.all_nearby_people_and_monsters": {
+        "ADAPTED": 2
+      },
+      "target.enemies_supported": {
+        "REFERENCE_RETAINED": 6
+      },
+      "target.entity_class": {
+        "REFERENCE_RETAINED": 21
+      },
+      "target.front": {
+        "ADOPTED": 3,
+        "REFERENCE_RETAINED": 1
+      },
+      "target.group_members": {
+        "ADAPTED": 2
+      },
+      "target.monster_hp_condition": {
+        "REFERENCE_RETAINED": 1
+      },
+      "target.monsters_supported": {
+        "REFERENCE_RETAINED": 10
+      },
+      "target.multiple_people": {
+        "ADAPTED": 4
+      },
+      "target.must_be_strictly_lower_level_player": {
+        "ADAPTED": 6
+      },
+      "target.other_entity_supported": {
+        "REFERENCE_RETAINED": 1
+      },
+      "target.other_player_supported": {
+        "ADAPTED": 24
+      },
+      "target.self_only": {
+        "REFERENCE_RETAINED": 5
+      },
+      "target.self_supported": {
+        "REFERENCE_RETAINED": 30
+      },
+      "transform.forms": {
+        "ADAPTED": 6
+      },
+      "voice.audience": {
+        "ADAPTED": 4
+      }
+    }
+  },
+  "unit_tests": {
+    "command": "python3 -m unittest discover -s tools/rebuild/v2 -p test_skill_semantics.py -v",
+    "tests": 10,
+    "failures": 0,
+    "exit_code": 0,
+    "scope": "source-field adoption and conflict handling only, no engine or platform execution"
+  },
+  "interpretation": {
+    "ADOPTED": "Published semantic field/number adopted into supported executor parameters; runtime test still separate.",
+    "ADAPTED": "Explicit offline/ambiguous-coefficient reconstruction; exact historical implementation not claimed.",
+    "REFERENCE_RETAINED": "Incomplete formula, qualitative relation, or source context preserved without claiming that field is implemented exactly.",
+    "UNSUPPORTED_RETAINED": "Unknown field retained with no implementation claim.",
+    "all_fields_accounted_does_not_mean_all_source_mechanics_implemented": true
+  },
+  "engine_coordination": {
+    "owner": "B3",
+    "supported_parameters_agreed": [
+      "directional_pattern",
+      "pull_target",
+      "blink_to_target",
+      "evasion_chance",
+      "damage_multiplier",
+      "reflect_probability",
+      "reflect_fraction",
+      "next_hit_multiplier",
+      "hp_cost_fraction",
+      "hp_cost_all",
+      "allow_lethal_hp_cost",
+      "mp_cost_all",
+      "restore_full_mp",
+      "forget_aggro",
+      "poison_hp_fraction",
+      "rooted",
+      "barrier_radius",
+      "cleanse_statuses",
+      "pickup_front_only",
+      "finisher_multiplier",
+      "accuracy_bonus",
+      "inspect_self_fields",
+      "reveal_hidden"
+    ],
+    "new_status": "blindness, reduced outgoing damage as explicit offline accuracy adaptation",
+    "execution_verification": "B3 dependent tests, not counted here"
+  },
+  "final_runtime_note": "r2 was frozen before final blindness and finisher-only corrections. B4 notified to regenerate candidate or explicitly preserve these as remaining; this report does not claim r2 already contains final module output.",
+  "skills": [
+    {
+      "skill_id": "KRO-eb5513b4fed0",
+      "name": "동해의희원",
+      "matched_effect_records": 1,
+      "selected_fields": 5,
+      "dispositions": {
+        "ADOPTED": 2,
+        "ADAPTED": 2,
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "heal",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-ae472540b06c",
+      "name": "최격참주첨(풍뢰)",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 2,
+        "REFERENCE_RETAINED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-33876779ed3b",
+      "name": "성황령",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADAPTED": 2,
+        "ADOPTED": 1
+      },
+      "compiled_kind": "shrine",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-972853314e6a",
+      "name": "비영사천문",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADAPTED": 2
+      },
+      "compiled_kind": "return",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-89d81ccd8dfc",
+      "name": "물품감정",
+      "matched_effect_records": 1,
+      "selected_fields": 1,
+      "dispositions": {
+        "ADOPTED": 1
+      },
+      "compiled_kind": "identify",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-62769e97ce90",
+      "name": "누리의기원",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 3
+      },
+      "compiled_kind": "heal",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-cce452629337",
+      "name": "바다의기원",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADOPTED": 2,
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "heal",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-661caabd8a2e",
+      "name": "화염주(화)",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADOPTED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-55246dd957ba",
+      "name": "자무주(수)",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADOPTED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-5d155cfe3d67",
+      "name": "백열주(지)",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADOPTED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-85a49273a010",
+      "name": "뢰진주 (풍뢰)",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADOPTED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-57e953a2574e",
+      "name": "공력증강",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 3,
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "restore_mp",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-cd7ac536d2b3",
+      "name": "해독",
+      "matched_effect_records": 1,
+      "selected_fields": 1,
+      "dispositions": {
+        "ADAPTED": 1
+      },
+      "compiled_kind": "cleanse",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-8e2db0bee86e",
+      "name": "천공의기원",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 2,
+        "REFERENCE_RETAINED": 1,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "heal",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-2840e52581cf",
+      "name": "무장",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "REFERENCE_RETAINED": 2,
+        "ADAPTED": 2
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-bb8dfcf8d4b8",
+      "name": "보호",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADOPTED": 2,
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-a3f10a19bd5e",
+      "name": "퇴마주",
+      "matched_effect_records": 1,
+      "selected_fields": 1,
+      "dispositions": {
+        "ADAPTED": 1
+      },
+      "compiled_kind": "cleanse",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-d93da00b1518",
+      "name": "차폐",
+      "matched_effect_records": 1,
+      "selected_fields": 5,
+      "dispositions": {
+        "ADOPTED": 3,
+        "REFERENCE_RETAINED": 1,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-62b311762b20",
+      "name": "구름의기원",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 2,
+        "REFERENCE_RETAINED": 1,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "heal",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-ade823e9e9b5",
+      "name": "출두",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADAPTED": 3
+      },
+      "compiled_kind": "return",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-b339899aab5d",
+      "name": "천공의희원",
+      "matched_effect_records": 1,
+      "selected_fields": 5,
+      "dispositions": {
+        "ADOPTED": 2,
+        "ADAPTED": 2,
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "heal",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-4b3e8b43798a",
+      "name": "귀환",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADAPTED": 2
+      },
+      "compiled_kind": "return",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-977b5b115bb9",
+      "name": "소환",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADAPTED": 3
+      },
+      "compiled_kind": "summon",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-05fc2ebd4d58",
+      "name": "활력",
+      "matched_effect_records": 1,
+      "selected_fields": 1,
+      "dispositions": {
+        "ADAPTED": 1
+      },
+      "compiled_kind": "cleanse",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-e46e771c8567",
+      "name": "시력회복",
+      "matched_effect_records": 1,
+      "selected_fields": 1,
+      "dispositions": {
+        "ADAPTED": 1
+      },
+      "compiled_kind": "cleanse",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-66b985b9737a",
+      "name": "태양의기원",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 2,
+        "REFERENCE_RETAINED": 1,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "heal",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-78063ff5ebe3",
+      "name": "파혼술",
+      "matched_effect_records": 1,
+      "selected_fields": 1,
+      "dispositions": {
+        "ADAPTED": 1
+      },
+      "compiled_kind": "cleanse",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-8501860bf1c5",
+      "name": "구름의희원",
+      "matched_effect_records": 1,
+      "selected_fields": 5,
+      "dispositions": {
+        "ADOPTED": 2,
+        "ADAPTED": 2,
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "heal",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-51a6a907dcce",
+      "name": "심안투영",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADAPTED": 1,
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-4a30d77993b3",
+      "name": "혼마술",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 1,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "debuff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-be71d96f8a3c",
+      "name": "공력주입",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 1,
+        "ADAPTED": 2,
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "restore_mp",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-92e8760e33c9",
+      "name": "소혼강신",
+      "matched_effect_records": 1,
+      "selected_fields": 5,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 3,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "summon",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-e645f8d30a7b",
+      "name": "지진",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 3
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-9d6d81e73179",
+      "name": "대인차폐",
+      "matched_effect_records": 1,
+      "selected_fields": 5,
+      "dispositions": {
+        "ADOPTED": 3,
+        "REFERENCE_RETAINED": 1,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-050070727765",
+      "name": "태양의희원",
+      "matched_effect_records": 1,
+      "selected_fields": 5,
+      "dispositions": {
+        "ADOPTED": 2,
+        "ADAPTED": 2,
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "heal",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-86fa389d2985",
+      "name": "생명의기원",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 2,
+        "REFERENCE_RETAINED": 1,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "heal",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-08163ac20995",
+      "name": "금강불체",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADOPTED": 2,
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-e4c8d653e2ce",
+      "name": "무력화",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 1,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "cleanse",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-9cc84cf8aab4",
+      "name": "사자후도사",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADAPTED": 2
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-1877c729a561",
+      "name": "부활",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADOPTED": 1,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "revive",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-77f964c0bd64",
+      "name": "누리의기원",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 3
+      },
+      "compiled_kind": "heal",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-b263815ade47",
+      "name": "대지의기원",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADOPTED": 1,
+        "ADAPTED": 1,
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "heal",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-2baeab06ad4c",
+      "name": "이중공격",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADAPTED": 2
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-3409aafb6ae7",
+      "name": "신의축복",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADAPTED": 1,
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-7139a2513c5d",
+      "name": "후면공격",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "REFERENCE_RETAINED": 2,
+        "ADOPTED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-f76291c4bb71",
+      "name": "측면공격",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "REFERENCE_RETAINED": 2,
+        "ADOPTED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-c8445f09eff8",
+      "name": "삼중공격",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADAPTED": 2
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-5c978cf8ad1b",
+      "name": "하늘의기원",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 2,
+        "REFERENCE_RETAINED": 2
+      },
+      "compiled_kind": "heal",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-fffd13e5c23a",
+      "name": "신검합일",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADAPTED": 1,
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-17c8793ab22b",
+      "name": "백호령",
+      "matched_effect_records": 1,
+      "selected_fields": 1,
+      "dispositions": {
+        "ADAPTED": 1
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-f3ffc03fa049",
+      "name": "사중공격",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADAPTED": 2
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-e5c1e3e5f6c4",
+      "name": "건곤대나이",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 2,
+        "REFERENCE_RETAINED": 1,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-f61c13102b19",
+      "name": "검신검귀",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADAPTED": 1,
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-17117b05a581",
+      "name": "대력검신",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADAPTED": 1,
+        "REFERENCE_RETAINED": 2
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-d6734471bde7",
+      "name": "오중공격",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADAPTED": 2
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-a81950d8f503",
+      "name": "사자후 전사",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADAPTED": 2
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-9f7802b84ecf",
+      "name": "동귀어진",
+      "matched_effect_records": 1,
+      "selected_fields": 5,
+      "dispositions": {
+        "ADOPTED": 3,
+        "REFERENCE_RETAINED": 1,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-85860ef781d7",
+      "name": "백호참",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 2,
+        "REFERENCE_RETAINED": 1,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-071816771466",
+      "name": "어검술",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "REFERENCE_RETAINED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-e59f1b650098",
+      "name": "진백 호령",
+      "matched_effect_records": 1,
+      "selected_fields": 1,
+      "dispositions": {
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-1201a81433ea",
+      "name": "초혼비무",
+      "matched_effect_records": 1,
+      "selected_fields": 5,
+      "dispositions": {
+        "ADOPTED": 3,
+        "REFERENCE_RETAINED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-8fdcc9511e14",
+      "name": "쇄혼비무",
+      "matched_effect_records": 1,
+      "selected_fields": 6,
+      "dispositions": {
+        "ADOPTED": 2,
+        "ADAPTED": 2,
+        "REFERENCE_RETAINED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-0ccdc2795ba8",
+      "name": "포효검황",
+      "matched_effect_records": 1,
+      "selected_fields": 5,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 3,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-c2d74b5319fd",
+      "name": "백호검무",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-3010c6e04167",
+      "name": "이기어검",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 2,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-455a474f5eac",
+      "name": "부동력",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "REFERENCE_RETAINED": 3
+      },
+      "compiled_kind": "status",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-6e661d0eb3ac",
+      "name": "기문방술",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 1,
+        "ADAPTED": 2,
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-b50e8ad9811c",
+      "name": "지영 옥무",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADAPTED": 2,
+        "ADOPTED": 1
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-b27d148b675a",
+      "name": "무형검",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-455068ab7a74",
+      "name": "태양의기원",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 2,
+        "REFERENCE_RETAINED": 1,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "heal",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-e62a565a9ff3",
+      "name": "삼매진화",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-71dc33bd6d48",
+      "name": "호체주술",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "REFERENCE_RETAINED": 2
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-6bb835bb0f73",
+      "name": "마기지체",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "REFERENCE_RETAINED": 4
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-bc45b79ff4fb",
+      "name": "지폭지술",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 2,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-2559df84b7d3",
+      "name": "노도성황",
+      "matched_effect_records": 1,
+      "selected_fields": 1,
+      "dispositions": {
+        "ADAPTED": 1
+      },
+      "compiled_kind": "status",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-5f0e058d1a0e",
+      "name": "백호의희원",
+      "matched_effect_records": 1,
+      "selected_fields": 5,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 4
+      },
+      "compiled_kind": "heal",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-e5c053b3dff3",
+      "name": "반탄공",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 1,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-c7bae046ed15",
+      "name": "신령의기원",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADOPTED": 2
+      },
+      "compiled_kind": "heal",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-b79ab9097f2f",
+      "name": "백호의희원'첨",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADAPTED": 2,
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "heal",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-5b77686db683",
+      "name": "신령지익",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "REFERENCE_RETAINED": 3,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-01899ae631a4",
+      "name": "파력무참",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "REFERENCE_RETAINED": 2,
+        "ADAPTED": 2
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-32c49870aa62",
+      "name": "누리의기원",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 3
+      },
+      "compiled_kind": "heal",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-395ea3235cbe",
+      "name": "대지의기원",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADOPTED": 1,
+        "ADAPTED": 1,
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "heal",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-4b9a8aa02632",
+      "name": "누리의빛",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADAPTED": 3,
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-a6afe4d113cf",
+      "name": "금수",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADOPTED": 1,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-3f305f236c54",
+      "name": "누리의힘",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 2,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-a0ecb726cd9d",
+      "name": "대지의빛",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADAPTED": 3,
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-0eae7fde3f73",
+      "name": "화염주(화)",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADOPTED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-44a3befb24c4",
+      "name": "자무주(수)",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADOPTED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-cad1244849ae",
+      "name": "백열주(지)",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADOPTED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-8e84e7167ae3",
+      "name": "뢰진주 (풍뢰)",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADOPTED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-0534ac17e02b",
+      "name": "동해의기원",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 2,
+        "REFERENCE_RETAINED": 1,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "heal",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-d973637855cf",
+      "name": "무영보법",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADAPTED": 1,
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-24840b190c5a",
+      "name": "경수",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADOPTED": 1,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-032367659785",
+      "name": "바다의 빛",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADAPTED": 3
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-784691681bb7",
+      "name": "이중공격",
+      "matched_effect_records": 1,
+      "selected_fields": 1,
+      "dispositions": {
+        "ADAPTED": 1
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-b35eb75382e6",
+      "name": "야수",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADOPTED": 1,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-21fea0f07142",
+      "name": "투명",
+      "matched_effect_records": 1,
+      "selected_fields": 6,
+      "dispositions": {
+        "ADOPTED": 2,
+        "REFERENCE_RETAINED": 3,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-a24c6e3b6dd8",
+      "name": "출두",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADAPTED": 3
+      },
+      "compiled_kind": "return",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-43232fcf60d7",
+      "name": "화영열주 (화)",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADOPTED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-d108e5bca690",
+      "name": "자영무주 (수)",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADOPTED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-76c080f529bf",
+      "name": "백령주(지)",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADOPTED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-ff07fa3d20c0",
+      "name": "뢰격주 (풍뢰)",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADOPTED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-46ec397bde14",
+      "name": "비영승보",
+      "matched_effect_records": 1,
+      "selected_fields": 6,
+      "dispositions": {
+        "ADOPTED": 1,
+        "ADAPTED": 1,
+        "REFERENCE_RETAINED": 4
+      },
+      "compiled_kind": "blink",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-eca6a5b6a9fa",
+      "name": "맹수",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADOPTED": 1,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-d0d06610a9a3",
+      "name": "망각",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "REFERENCE_RETAINED": 1,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "status",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-6a929977b704",
+      "name": "귀환",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADAPTED": 2,
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "return",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-1831242cd7eb",
+      "name": "천공의 기원",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 2,
+        "REFERENCE_RETAINED": 1,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "heal",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-b92828e376a8",
+      "name": "필살검무",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-772367fd21b4",
+      "name": "소환",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADAPTED": 3
+      },
+      "compiled_kind": "summon",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-03d224759cbf",
+      "name": "삼중공격",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "REFERENCE_RETAINED": 1,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-d2a224851dd4",
+      "name": "화열참주 (화)",
+      "matched_effect_records": 1,
+      "selected_fields": 1,
+      "dispositions": {
+        "ADOPTED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-8d24a0cfcf1c",
+      "name": "자천무주 (수)",
+      "matched_effect_records": 1,
+      "selected_fields": 1,
+      "dispositions": {
+        "ADOPTED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-dfd7c77942ff",
+      "name": "백열참주 (지)",
+      "matched_effect_records": 1,
+      "selected_fields": 1,
+      "dispositions": {
+        "ADOPTED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-539624b2bf80",
+      "name": "뢰격참주 (풍뢰)",
+      "matched_effect_records": 1,
+      "selected_fields": 1,
+      "dispositions": {
+        "ADOPTED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-30bb18a7d057",
+      "name": "노획",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADOPTED": 2,
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "loot",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-9b973094a63e",
+      "name": "진화열참주 (화)",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADOPTED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-08bda2486123",
+      "name": "진자천무주 (수)",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADOPTED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-57466f28cb05",
+      "name": "진백열참주 (지)",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADOPTED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-ea028e4a3a13",
+      "name": "진뢰격참주 (풍뢰)",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADOPTED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-5043e6d34a70",
+      "name": "흡성대법",
+      "matched_effect_records": 1,
+      "selected_fields": 5,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 4
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-2887a9284007",
+      "name": "사자후 도적",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADAPTED": 2
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-806203718177",
+      "name": "분신",
+      "matched_effect_records": 1,
+      "selected_fields": 1,
+      "dispositions": {
+        "ADAPTED": 1
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-4eeca26285d6",
+      "name": "누리의기원",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 3
+      },
+      "compiled_kind": "heal",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-3559b12ed6a7",
+      "name": "화염주(화)",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADOPTED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-9fa71eae9c36",
+      "name": "자무주(수)",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADOPTED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-a1b768df5f76",
+      "name": "백열주(지)",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADOPTED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-f0fcaedd0fba",
+      "name": "뢰진주 (풍뢰)",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADOPTED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-3b68fb92fcdc",
+      "name": "대지의기원",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADOPTED": 1,
+        "ADAPTED": 1,
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "heal",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-0def023d51d0",
+      "name": "무장",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "REFERENCE_RETAINED": 2,
+        "ADAPTED": 2
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-8cce0f79e2c2",
+      "name": "귀환",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADAPTED": 2
+      },
+      "compiled_kind": "return",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-d616d37f5b7a",
+      "name": "화염주첨 (화)",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "REFERENCE_RETAINED": 3,
+        "ADOPTED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-68079ab30294",
+      "name": "자무주첨 (수)",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "REFERENCE_RETAINED": 3,
+        "ADOPTED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-abc1ce9ac7d7",
+      "name": "백열주첨 (지)",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "REFERENCE_RETAINED": 3,
+        "ADOPTED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-7fd2a368cadf",
+      "name": "뢰진주첨 (풍뢰)",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "REFERENCE_RETAINED": 3,
+        "ADOPTED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-f256051ce2c8",
+      "name": "바다의기원",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADOPTED": 2,
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "heal",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-c2825b2dab80",
+      "name": "화영열주 (화)",
+      "matched_effect_records": 1,
+      "selected_fields": 1,
+      "dispositions": {
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-24bed760289e",
+      "name": "자영무주 (수)",
+      "matched_effect_records": 1,
+      "selected_fields": 1,
+      "dispositions": {
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-1802948bd89e",
+      "name": "백령주(지)",
+      "matched_effect_records": 1,
+      "selected_fields": 1,
+      "dispositions": {
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-e579012ca1e0",
+      "name": "뢰격주 (풍뢰)",
+      "matched_effect_records": 1,
+      "selected_fields": 1,
+      "dispositions": {
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-1aa890f4e435",
+      "name": "누리의힘",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 2
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-2a81ef1e699c",
+      "name": "동해의기원",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 2,
+        "REFERENCE_RETAINED": 1,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "heal",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-a0383907fea9",
+      "name": "대지의힘",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 2,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-8655189ede6f",
+      "name": "출두",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADAPTED": 3
+      },
+      "compiled_kind": "return",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-b6ad73505d85",
+      "name": "하늘의기원",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADOPTED": 2,
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "heal",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-244a416223d6",
+      "name": "화영열주첨(화)",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "REFERENCE_RETAINED": 3,
+        "ADOPTED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-3e3c1d13ebb1",
+      "name": "자영무주첨(수)",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "REFERENCE_RETAINED": 3,
+        "ADOPTED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-9c56730ff85e",
+      "name": "백령주첨 (지)",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "REFERENCE_RETAINED": 3,
+        "ADOPTED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-f3a488297810",
+      "name": "뢰격주첨 (풍뢰)",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "REFERENCE_RETAINED": 3,
+        "ADOPTED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-19bd83b56202",
+      "name": "해독",
+      "matched_effect_records": 1,
+      "selected_fields": 1,
+      "dispositions": {
+        "ADAPTED": 1
+      },
+      "compiled_kind": "cleanse",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-985c5fc4f711",
+      "name": "천공의기원",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 2,
+        "REFERENCE_RETAINED": 1,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "heal",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-5b6b8028db27",
+      "name": "소환",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADAPTED": 3
+      },
+      "compiled_kind": "summon",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-6735e0dc2c95",
+      "name": "활력",
+      "matched_effect_records": 1,
+      "selected_fields": 1,
+      "dispositions": {
+        "ADAPTED": 1
+      },
+      "compiled_kind": "cleanse",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-be084a2c96aa",
+      "name": "화열참주 (화)",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-129d21f8dd60",
+      "name": "자천무주 (수)",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-f3322de86160",
+      "name": "백열참주 (지)",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-bb1deb360b87",
+      "name": "뢰격참주 (풍뢰)",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-a529a55cc0d2",
+      "name": "보호",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADOPTED": 2,
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-a55e92eecb65",
+      "name": "공력증가",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 3,
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "restore_mp",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-b136d2da2590",
+      "name": "구름의 기원",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 2,
+        "REFERENCE_RETAINED": 1,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "heal",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-2f7d824bdf16",
+      "name": "화열참주첨(화)",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 2,
+        "REFERENCE_RETAINED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-b2a3bf50cadb",
+      "name": "자천무주첨(수)",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 2,
+        "REFERENCE_RETAINED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-002326c4b3b5",
+      "name": "백열참주첨(지)",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 2,
+        "REFERENCE_RETAINED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-dc13ac09eb29",
+      "name": "뢰격참주첨(풍뢰)",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 2,
+        "REFERENCE_RETAINED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-b24e3a79dfb4",
+      "name": "야수",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADOPTED": 1,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-fcee9a4e9bbd",
+      "name": "퇴마주",
+      "matched_effect_records": 1,
+      "selected_fields": 1,
+      "dispositions": {
+        "ADAPTED": 1
+      },
+      "compiled_kind": "cleanse",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-005b271e68c7",
+      "name": "진화열참주(화)",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-069a6e690994",
+      "name": "진자천무주(수)",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-5141ceb34994",
+      "name": "진백열참주(지)",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-f4462efdee0f",
+      "name": "진뢰격참주(풍뢰)",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-f26ca2744d5f",
+      "name": "맹수",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADOPTED": 1,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-1ced02adeb42",
+      "name": "중독",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "REFERENCE_RETAINED": 3
+      },
+      "compiled_kind": "status",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-6200a295efed",
+      "name": "저주",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 2,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "debuff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-3f32fc8b60bd",
+      "name": "마비",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "REFERENCE_RETAINED": 3
+      },
+      "compiled_kind": "status",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-437e3588e704",
+      "name": "절망",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "REFERENCE_RETAINED": 2,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "status",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-bec97021da77",
+      "name": "진화열참주첨(화)",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-010d0ceb6cda",
+      "name": "진자천무주첨(수)",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-a794ff798069",
+      "name": "진백열참주첨(지)",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-456feb5e9260",
+      "name": "진뢰격참주첨(풍뢰)",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-0c9704f73c74",
+      "name": "혼돈",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "REFERENCE_RETAINED": 3
+      },
+      "compiled_kind": "status",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-d98479e2ae43",
+      "name": "극진화열참주(화)",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 2,
+        "REFERENCE_RETAINED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-02bc5399ff53",
+      "name": "극진자천무주(수)",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 2,
+        "REFERENCE_RETAINED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-5cebb726a7d3",
+      "name": "극진백열참주(지)",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 2,
+        "REFERENCE_RETAINED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-ef058dc8385f",
+      "name": "극진뢰격참주(풍뢰)",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 2,
+        "REFERENCE_RETAINED": 2
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-ef112992546e",
+      "name": "극진화열참주첨(화)",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "REFERENCE_RETAINED": 2,
+        "ADOPTED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-1ae93a3abb33",
+      "name": "극진자천무주첨(수)",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "REFERENCE_RETAINED": 2,
+        "ADOPTED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-87646590e5a7",
+      "name": "극진백열참주첨",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "REFERENCE_RETAINED": 2,
+        "ADOPTED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-008910c0424f",
+      "name": "극진뢰격참주첨",
+      "matched_effect_records": 1,
+      "selected_fields": 3,
+      "dispositions": {
+        "REFERENCE_RETAINED": 2,
+        "ADOPTED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-5f746aa0d6f7",
+      "name": "사자후 술사",
+      "matched_effect_records": 1,
+      "selected_fields": 2,
+      "dispositions": {
+        "ADAPTED": 2
+      },
+      "compiled_kind": "buff",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    },
+    {
+      "skill_id": "KRO-1cf4e4e417ed",
+      "name": "헬파이어",
+      "matched_effect_records": 1,
+      "selected_fields": 4,
+      "dispositions": {
+        "ADOPTED": 1,
+        "REFERENCE_RETAINED": 2,
+        "ADAPTED": 1
+      },
+      "compiled_kind": "damage",
+      "runtime_test": "NOT_RUN_IN_THIS_REPORT"
+    }
+  ]
+}

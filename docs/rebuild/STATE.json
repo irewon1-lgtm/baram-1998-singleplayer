@@ -1,1 +1,221 @@
-{"schema":"baram.rebuild.current-state/2","plan_id":"BARAM_REBUILD_V2_RESOURCE_FIRST_20261016","plan_version":"2.0","approved_date":"2026-10-16","timezone":"Asia/Seoul","repository":"irewon1-lgtm/baram-1998-singleplayer","active_branch":"work/rebuild-p3-remediation-20261016","entrypoint":"AGENTS.md","master_plan":"docs/rebuild/MASTER_PLAN.md","status":"PLAN_V2_FIXED_GAME_UNCHANGED","implementation_status":"EXISTING_P3_PARTIAL","handoff_commit":"d124aa6c23c753f1fa1edd810b0b0386e3b80315","app_behavior_commit":"38c6e9ee536c251dc85fe8c5b76344ac9da1dbff","current_phase":"B1","current_phase_execution":"NOT_STARTED_IN_PLAN_SESSION","authorization":{"goal_and_plan":"USER_APPROVED","ordered_followup_work":"B1_THROUGH_B6_WITHIN_FREE_SCOPE","this_session":"PLAN_POLICY_SIMULATION_AND_DOCUMENT_CANONICALIZATION","game_implementation_run_this_session":false,"app_build_run_this_session":false,"main_merge_or_production_publish":false,"new_paid_resources":false},"goal":{"exact_historical_match_required":false,"resource_first":true,"source_ladder":["LEGACY_VERIFIED","LEGACY_RECONSTRUCTED","MODERN_BARAM_ADAPTED","OTHER_GAME_ADAPTED","INFERRED"],"functional_failures_may_be_waived":false,"historical_uncertainty_blocks_reconstruction":false,"keep":["offline_singleplayer","Windows","Android_phone_tablet","four_jobs","level_1_99_and_selected_advancement","classic_four_panels","Korean_UI","same_account_sequential_continuation","existing_assets_saves_keys"],"generation_scope":"G1_ID_SET_TO_BE_FIXED_AT_B2_WITH_NO_SILENT_REQUIRED_FEATURE_DROPS"},"source_of_current_evidence":{"defects":"docs/rebuild/p3-remediation/DEFECTS.csv","bindings":"docs/rebuild/p3-remediation/P4_HANDOFF.json","delivery":"docs/rebuild/p3-remediation/DELIVERY.json","results":"docs/rebuild/p3-remediation/RESULTS.md","scope":"PREVIOUS_REPORTED_EVIDENCE_NOT_REEXECUTED"},"observed_counts":{"active":{"maps":11,"npcs":9,"items":8,"monsters":2,"skills":10},"deferred":{"skill_rows":178,"npc_contract_rows":15},"note":"Do not add heterogeneous row counts or compute a total completion percentage."},"retained_actual_status":{"Android":"REPORTED_RENDER_FAIL_ROOT_CAUSE_UNRESOLVED","Windows_native":"NOT_RUN","Galaxy":"NOT_RUN","OS_Korean_IME":"NOT_RUN","physical_listening":"NOT_RUN","same_account_roundtrip":"NOT_IMPLEMENTED_OR_VERIFIED","original_city_grid":"UNRESOLVED_RECONSTRUCTION_NOW_AUTHORIZED","old_Android_save_automatic_migration":"NOT_VERIFIED","performance":"PRIOR_HOST_ONLY_P99_124MS_NOT_DEVICE_PASS"},"defect_policy_changes":{"P3-FIX-09":{"previous":"BLOCKED_ORIGINAL_MAP_GRID_CORRESPONDENCE","current_work":"RECONSTRUCTION_QUEUED_B2_B4","closed":false},"P3-FIX-19":{"previous":"ORIGINAL_MASK_FAILURE_HISTORY","current_work":"RECONSTRUCTED_UI_ALLOWED_RETAIN_DECODER_FAILURE_EVIDENCE","closed_by_new_plan":false},"P3-FIX-22":{"previous":"DEFER_P4_P5","current_work":"ACTIVE_SCOPE_B3_B4","closed":false},"P3-FIX-21":{"previous":"DEFER_P6_AUTH","current_work":"EARLY_ENVIRONMENT_CHECK_B1_IMPLEMENT_VERIFY_B5_B6","closed":false},"all_other_defects":"Retain original IDs and evidence. Do not reset or promote their verdicts from this plan."},"phases":[{"id":"B0","status":"PLAN_AND_MODEL_COMPLETE_GAME_UNCHANGED"},{"id":"B1","status":"QUEUED"},{"id":"B2","status":"QUEUED"},{"id":"B3","status":"QUEUED"},{"id":"B4","status":"QUEUED"},{"id":"B5","status":"QUEUED"},{"id":"B6","status":"QUEUED"}],"next_action":{"owner":"Work","phase":"B1","action":"Verify baseline and current APK bytes, compare in the same available Android environment; isolate render/code/OS failures; check native Windows/save/signing/free sync prerequisites.","on_environment_block":"Record per-platform evidence and required environment, stop unchanged retries, continue independent B2 source/contracts work.","do_not_repeat":"Full P0/P1/P2 inventory, unchanged parsers, SDK setup, old long natural journeys with identical fingerprints.","resume_from":"Latest active branch HEAD and this next_action, not the old planning branch."},"retry_policy":{"deterministic_unchanged_failure":"CHANGE_METHOD","max_same_condition_transient_failures":2,"fingerprint":["source","code","configuration","environment","test_scope"],"research":"After two distinct unsuccessful methods for the same gap group, use the next source tier; keep future new-evidence candidates.","changed_evidence_allows_new_attempt":true},"gates":{"historical_exactness":"NOT_A_RELEASE_GATE","fallback_route":"NOT_IMPLEMENTATION_COMPLETION","content":"G1 required IDs bound and functional with normal acquisition/use paths","platform_delivery":"Native visible UI, normal input/play/save/restart for that exact artifact; NOT_RUN is not PASS","replacement_update":"Verified signing/package/save migration and rollback evidence","full_goal":"All contracted platform and sequential-account requirements actually verified; otherwise scope-qualified PARTIAL"},"simulation":{"path":"docs/rebuild/PLAN_SIMULATION.json","script":"tools/rebuild/simulate_plan.py","result":"PASS_ABSTRACT_POLICY_MODEL_ONLY","states":4096,"scenario_tests":50,"orders_checked":40320,"admissible_orders":5,"game_tests_performed":0,"real_token_time_or_cost_savings_measured":false},"historical":{"archive_directory":"docs/rebuild/history/v1","source_commit":"d124aa6c23c753f1fa1edd810b0b0386e3b80315","preserved_blobs":{"AGENTS.md":"be3d85b4e287040bd758c0fe086092173e7b6800","docs/rebuild/STATE.json":"8db17a2bc2a66d7ee42b6ca145e62ad4bed49044","docs/rebuild/MASTER_PLAN.md":"d4116a5321bffa149873bce5456d0f1ca913a392"},"authority":"Historical STEP/WORK_ORDER/RESULTS/STATE_* are evidence of their past tasks, not current restrictions."},"publication":{"method":"Atomic documentation/model commit on existing active Work branch, expected-HEAD lease, no force push","verification":"Re-query containing commit and active branch before handoff. Never reset to this baseline."}}
+{
+  "schema": "baram.rebuild.current-state/2",
+  "plan_id": "BARAM_REBUILD_V2_RESOURCE_FIRST_20261016",
+  "plan_version": "2.0",
+  "approved_date": "2026-10-16",
+  "timezone": "Asia/Seoul",
+  "repository": "irewon1-lgtm/baram-1998-singleplayer",
+  "active_branch": "work/rebuild-p3-remediation-20261016",
+  "entrypoint": "AGENTS.md",
+  "master_plan": "docs/rebuild/MASTER_PLAN.md",
+  "status": "V2_G1_CODE_CONTENT_VERIFIED_NATIVE_PLATFORM_GATES_PENDING",
+  "implementation_status": "G1_IMPLEMENTED_WITH_RECONSTRUCTED_FIELDS",
+  "handoff_commit": "d124aa6c23c753f1fa1edd810b0b0386e3b80315",
+  "app_behavior_commit": "38c6e9ee536c251dc85fe8c5b76344ac9da1dbff",
+  "current_phase": "B6",
+  "current_phase_execution": "FINAL_CANDIDATE_EXPORT_AND_EXPORTED_PACK_VERIFICATION",
+  "authorization": {
+    "goal_and_plan": "USER_APPROVED",
+    "ordered_followup_work": "B1_THROUGH_B6_WITHIN_FREE_SCOPE",
+    "this_session": "APPROVED_FOLLOWUP_B1_THROUGH_B6",
+    "game_implementation_run_this_session": true,
+    "app_build_run_this_session": false,
+    "main_merge_or_production_publish": false,
+    "new_paid_resources": false
+  },
+  "goal": {
+    "exact_historical_match_required": false,
+    "resource_first": true,
+    "source_ladder": [
+      "LEGACY_VERIFIED",
+      "LEGACY_RECONSTRUCTED",
+      "MODERN_BARAM_ADAPTED",
+      "OTHER_GAME_ADAPTED",
+      "INFERRED"
+    ],
+    "functional_failures_may_be_waived": false,
+    "historical_uncertainty_blocks_reconstruction": false,
+    "keep": [
+      "offline_singleplayer",
+      "Windows",
+      "Android_phone_tablet",
+      "four_jobs",
+      "level_1_99_and_selected_advancement",
+      "classic_four_panels",
+      "Korean_UI",
+      "same_account_sequential_continuation",
+      "existing_assets_saves_keys"
+    ],
+    "generation_scope": "G1_ID_SET_TO_BE_FIXED_AT_B2_WITH_NO_SILENT_REQUIRED_FEATURE_DROPS"
+  },
+  "source_of_current_evidence": {
+    "defects": "docs/rebuild/p3-remediation/DEFECTS.csv",
+    "bindings": "docs/rebuild/p3-remediation/P4_HANDOFF.json",
+    "delivery": "docs/rebuild/p3-remediation/DELIVERY.json",
+    "results": "docs/rebuild/p3-remediation/RESULTS.md",
+    "scope": "PREVIOUS_REPORTED_EVIDENCE_NOT_REEXECUTED"
+  },
+  "observed_counts": {
+    "active": {
+      "maps": 11,
+      "npcs": 9,
+      "items": 8,
+      "monsters": 2,
+      "skills": 10
+    },
+    "deferred": {
+      "skill_rows": 178,
+      "npc_contract_rows": 15
+    },
+    "note": "Do not add heterogeneous row counts or compute a total completion percentage.",
+    "G1": {
+      "maps": 76,
+      "monster_stable_ids": 346,
+      "monster_exact_semantics": 333,
+      "items": 593,
+      "skills": 190,
+      "npcs": 24,
+      "quests": 52,
+      "recipes": 9,
+      "advancements": 13,
+      "training_rules": 7
+    }
+  },
+  "retained_actual_status": {
+    "Android": "REPORTED_RENDER_FAIL_ROOT_CAUSE_UNRESOLVED",
+    "Windows_native": "NOT_RUN",
+    "Galaxy": "NOT_RUN",
+    "OS_Korean_IME": "NOT_RUN",
+    "physical_listening": "NOT_RUN",
+    "same_account_roundtrip": "NOT_IMPLEMENTED_OR_VERIFIED",
+    "original_city_grid": "UNRESOLVED_RECONSTRUCTION_NOW_AUTHORIZED",
+    "old_Android_save_automatic_migration": "NOT_VERIFIED",
+    "performance": "PRIOR_HOST_ONLY_P99_124MS_NOT_DEVICE_PASS"
+  },
+  "defect_policy_changes": {
+    "P3-FIX-09": {
+      "previous": "BLOCKED_ORIGINAL_MAP_GRID_CORRESPONDENCE",
+      "current_work": "RECONSTRUCTION_QUEUED_B2_B4",
+      "closed": false
+    },
+    "P3-FIX-19": {
+      "previous": "ORIGINAL_MASK_FAILURE_HISTORY",
+      "current_work": "RECONSTRUCTED_UI_ALLOWED_RETAIN_DECODER_FAILURE_EVIDENCE",
+      "closed_by_new_plan": false
+    },
+    "P3-FIX-22": {
+      "previous": "DEFER_P4_P5",
+      "current_work": "ACTIVE_SCOPE_B3_B4",
+      "closed": false
+    },
+    "P3-FIX-21": {
+      "previous": "DEFER_P6_AUTH",
+      "current_work": "EARLY_ENVIRONMENT_CHECK_B1_IMPLEMENT_VERIFY_B5_B6",
+      "closed": false
+    },
+    "all_other_defects": "Retain original IDs and evidence. Do not reset or promote their verdicts from this plan."
+  },
+  "phases": [
+    {
+      "id": "B0",
+      "status": "REUSED_PLAN_FIXED"
+    },
+    {
+      "id": "B1",
+      "status": "DIAGNOSIS_COMPLETE_PLATFORM_BLOCKS_SEPARATE"
+    },
+    {
+      "id": "B2",
+      "status": "SOURCE_SCOPE_FROZEN_FINAL_RUNTIME_BINDINGS_PENDING"
+    },
+    {
+      "id": "B3",
+      "status": "AFFECTED_ENGINE_EXPANDED_FINAL_TESTS_PENDING"
+    },
+    {
+      "id": "B4",
+      "status": "INTEGRATION_SOURCE_FIELDS_AND_ASSETS"
+    },
+    {
+      "id": "B5",
+      "status": "PRELIMINARY_ACTUAL_GUI_AND_ENGINE_TESTS_FINAL_CANDIDATE_PENDING"
+    },
+    {
+      "id": "B6",
+      "status": "TOOLCHAIN_AND_RETAINED_SIGNER_READY_BUILD_PENDING"
+    }
+  ],
+  "next_action": {
+    "owner": "Work",
+    "phase": "B6",
+    "action": "Export current verified G1 source with retained Android signer and exact private r3 input; test exact final Windows PCK under Linux GUI/ordinary process and APK parity; keep native Windows/Android/IME/listening/same-account sync blocked. Save delivery/evidence IDs and re-query current remote HEAD.",
+    "on_environment_block": "Native Android/Galaxy/Windows/IME/audio/same-account sync remain separately BLOCKED; no blind platform PASS.",
+    "do_not_repeat": "No full inventory/SDK/parser reset; reuse verified toolchain and unchanged evidence; only changed-source affected final suites.",
+    "resume_from": "This active branch current source and docs/rebuild/v2; private input and signer IDs preserved in delivery records. Do not reset historical source."
+  },
+  "retry_policy": {
+    "deterministic_unchanged_failure": "CHANGE_METHOD",
+    "max_same_condition_transient_failures": 2,
+    "fingerprint": [
+      "source",
+      "code",
+      "configuration",
+      "environment",
+      "test_scope"
+    ],
+    "research": "After two distinct unsuccessful methods for the same gap group, use the next source tier; keep future new-evidence candidates.",
+    "changed_evidence_allows_new_attempt": true
+  },
+  "gates": {
+    "historical_exactness": "NOT_A_RELEASE_GATE",
+    "fallback_route": "NOT_IMPLEMENTATION_COMPLETION",
+    "content": "G1 required IDs bound and functional with normal acquisition/use paths",
+    "platform_delivery": "Native visible UI, normal input/play/save/restart for that exact artifact; NOT_RUN is not PASS",
+    "replacement_update": "Verified signing/package/save migration and rollback evidence",
+    "full_goal": "All contracted platform and sequential-account requirements actually verified; otherwise scope-qualified PARTIAL"
+  },
+  "simulation": {
+    "path": "docs/rebuild/PLAN_SIMULATION.json",
+    "script": "tools/rebuild/simulate_plan.py",
+    "result": "PASS_ABSTRACT_POLICY_MODEL_ONLY",
+    "states": 4096,
+    "scenario_tests": 50,
+    "orders_checked": 40320,
+    "admissible_orders": 5,
+    "game_tests_performed": 0,
+    "real_token_time_or_cost_savings_measured": false
+  },
+  "historical": {
+    "archive_directory": "docs/rebuild/history/v1",
+    "source_commit": "d124aa6c23c753f1fa1edd810b0b0386e3b80315",
+    "preserved_blobs": {
+      "AGENTS.md": "be3d85b4e287040bd758c0fe086092173e7b6800",
+      "docs/rebuild/STATE.json": "8db17a2bc2a66d7ee42b6ca145e62ad4bed49044",
+      "docs/rebuild/MASTER_PLAN.md": "d4116a5321bffa149873bce5456d0f1ca913a392"
+    },
+    "authority": "Historical STEP/WORK_ORDER/RESULTS/STATE_* are evidence of their past tasks, not current restrictions."
+  },
+  "publication": {
+    "method": "Atomic documentation/model commit on existing active Work branch, expected-HEAD lease, no force push",
+    "verification": "Re-query containing commit and active branch before handoff. Never reset to this baseline."
+  },
+  "execution_20261017": {
+    "baseline_head": "39c7e4a2fe5f555b5d32a1e973930f3671d508ef",
+    "baseline_apk_sha256": "a30ab55f633a4d35047bc38ea591a087e070c109d1445eea19c39e4da8ce3789",
+    "prior_repair_apk_sha256": "2dfa25177df487ceb04067fb61efbb6e59a9fd0dd2e6d2a0704a4456fa811141",
+    "runtime_source_zip_sha256": "b97c533e5b979abc4d68470314b37e012898c97c450515c9b9364644c9543461",
+    "new_paid_resources": false,
+    "native_platform_verification": "BLOCKED_NO_ANDROID_DEVICE_OR_NATIVE_WINDOWS",
+    "sync": "BLOCKED_NO_APPROVED_FREE_AUTHENTICATED_SYNC_ENDPOINT",
+    "evidence": [
+      "docs/rebuild/v2/B1_DIAGNOSIS.json",
+      "docs/rebuild/v2/G1_CONTRACT.json",
+      "docs/rebuild/v2/SAVE_MIGRATION.md"
+    ],
+    "initial_generation": "Kept immutable; identified haste, equipment/effect field usage and save bank integration failures corrected before final freeze. Initial fixture/UI failures retained separately.",
+    "final_runtime_manifest_sha256": "6ffdfc0cbad388635dd641579adfdb12ad0539726d13e8fdfb7c4f0b4227d1a9",
+    "final_engine_sha256": "4ea4b760f4cdce69db6c8d12a4bfde79f798e0c7d5f3b8e9948725cc2cca3dd0",
+    "runtime_generation": "WORK-V2-G1-20261017",
+    "content_note": "Map geometry and missing mechanics reconstructed, source quantities not unique species count; current G1 every ID actual closure tests separate from native platform gates."
+  }
+}

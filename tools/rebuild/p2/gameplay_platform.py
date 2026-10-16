@@ -354,8 +354,11 @@ def android_gameplay(args: argparse.Namespace) -> int:
                 receipt["result"] = "FAIL_DEFAULT_PROCESS_ABSENT"
                 return 1
             normalized = [re.sub(r"[^a-z]", "", s.lower()) for s in stages]
-            if "firstframe" in normalized and time.monotonic() - started >= 5:
-                receipt["default_mode"] = "PASS_NORMAL_LAUNCH_FIRST_FRAME_STAYS_RUNNING"
+            # Historical APKs called this first_frame, but emitted it from
+            # _process before drawing. Retain recognition without promoting
+            # either spelling to visible presentation or enabling blind taps.
+            if live and ({"firstframe", "processready"} & set(normalized)) and time.monotonic() - started >= 5:
+                receipt["default_mode"] = "LOG_ONLY_PROCESS_READY_STAYS_RUNNING"
                 receipt["default_stages"] = stages
                 break
             if len(polls) == 2:
@@ -368,14 +371,32 @@ def android_gameplay(args: argparse.Namespace) -> int:
                         break
             time.sleep(2)
         else:
-            receipt["result"] = "FAIL_DEFAULT_FIRST_FRAME_TIMEOUT"
+            receipt["result"] = "FAIL_DEFAULT_PROCESS_READY_TIMEOUT"
             receipt["default_stages"] = stages
             return 1
         capture("default-first-frame")
         handle_observed_systemui_dialog()
         overlay = receipt.get("environment_dialog", "")
         if overlay and overlay != "SYSTEM_UI_ANR_WAIT_SELECTED_DIALOG_CLOSED":
-            receipt["default_mode"] = "APP_FIRST_FRAME_BEHIND_UNRESOLVED_ENVIRONMENT_DIALOG"
+            receipt["default_mode"] = "LOG_ONLY_PROCESS_READY_BEHIND_ENVIRONMENT_DIALOG"
+        # PNG signature/pixel variation or a game-side draw callback cannot
+        # prove that this is the visible game menu (it may be wallpaper/ANR).
+        # Preserve screenshots for review and stop before automated input.
+        # A future presentation validator must establish the expected menu in
+        # the current app window before the ordinary-input/smoke path resumes.
+        screen_path = args.output / "screen-default-first-frame.png"
+        receipt["presentation"] = {
+            "status": "NOT_VERIFIED",
+            "process_checkpoint_is_visible_frame": False,
+            "screenshot": str(screen_path),
+            "screenshot_captured": screen_path.is_file(),
+            "screenshot_sha256": digest(screen_path) if screen_path.is_file() else None,
+            "reason": "Visible expected menu and unobscured app bounds require screenshot verification; initialization logs alone are insufficient.",
+        }
+        if receipt["presentation"]["status"] != "PASS_VISIBLE_MENU":
+            receipt["result"] = "PARTIAL_DEFAULT_PRESENTATION_UNVERIFIED"
+            receipt["ordinary_input_probe"] = {"status": "NOT_RUN", "reason": "Presentation gate pending; no blind taps."}
+            return 1
         if not args.smoke and not args.ui_probe:
             receipt["result"] = "PASS_DEFAULT_BOOT_ONLY" if receipt["default_mode"].startswith("PASS_") else "PARTIAL_DEFAULT_ENVIRONMENT_OVERLAY"
             return 0 if receipt["default_mode"].startswith("PASS_") else 1

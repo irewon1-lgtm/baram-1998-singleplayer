@@ -1,0 +1,124 @@
+{
+  "schema": "baram.v2.b1-diagnosis/1",
+  "recorded_at": "2026-10-16T22:23:30.791131+00:00",
+  "source_head": "39c7e4a2fe5f555b5d32a1e973930f3671d508ef",
+  "phase": "B1",
+  "overall": "PARTIAL_DIAGNOSTIC_FIX_NATIVE_PLATFORM_RETEST_BLOCKED",
+  "scope": "Historical raw evidence inspection, diagnostic code correction, simulated ADB tests, real Godot headless probe. Not new Android, Windows or Galaxy execution.",
+  "criteria_before_tests": [
+    "Log-only first_frame/process_ready checkpoints must not produce visible menu PASS.",
+    "A blank or missing screenshot must not authorize blind input.",
+    "A missing current PID or missing ready checkpoint must not be accepted.",
+    "Headless renderer probe must report BLOCKED instead of framebuffer/presentation PASS."
+  ],
+  "historical_observations": {
+    "evidence_archive": "baram-P3-repair-EVIDENCE-38c6e9ee.zip",
+    "evidence_library_id": "libfile_f9aeb65add708191ada4a47cb4f7498a",
+    "raw_paths": {
+      "history/android-final38-indirect/RESULTS.json": "607dd80211fd18248c929d7cb68fee2b45cc59dfd839049dee0c784acd7aa7bf",
+      "history/android-final38-indirect/checkpoints.jsonl": "7753dcf707fd08e4c7a898bcc2cb38fa758860ade1c49ef0a68b795d732c979f",
+      "history/android-final38-indirect/01-menu.png": "9ddf73b3b722fe1a4b111d198cecff2b476fac738e5f67249eb34bfd5402a80c",
+      "history/android-final38-indirect/emulator.log": "f0ef88103e6ceee8dfd010d1cf9c63efa6bba32fcb2844808cd2260fa5639ae8",
+      "checks/android29/RESULTS.json": "d2cd370506080ef18f6644248c96d933d2e7b5ec90e3c96ed1239c4d2d2c762b"
+    },
+    "observed": [
+      "Android29 indirect APK installed; engine, manifest without game_errors, scene, first_frame and ui_layout checkpoints were written.",
+      "01-menu.png visually inspected: app area is uniform dark clear color, no menu controls visible.",
+      "Indirect emulator reports SwiftShader OpenGL ES 3.0 and seven glGetProgramiv error 0x501 lines; System UI ANR intervention also recorded.",
+      "Direct backend report timed out at installed APK sha256sum and logcat. It is not a measured renderer result.",
+      "An _process checkpoint occurs before render completion, so its historical first_frame label is not presentation evidence."
+    ],
+    "root_cause": "UNRESOLVED: host GLES/compositor failure and app rendering regression remain hypotheses until same-environment exact APK comparison; no game-only root cause established.",
+    "comparator": {
+      "filename": "baram-P3-Android-4d6392c8.apk",
+      "sha256": "a30ab55f633a4d35047bc38ea591a087e070c109d1445eea19c39e4da8ce3789",
+      "library_id": "libfile_d5c12fa557c481919f79d443eb085c29",
+      "prior_result": "Historical API29 TCG ordinary creation, movement, save and restart recorded. Not a current same-environment comparison."
+    },
+    "failed_apk": {
+      "filename": "baram-P3-repair-Android-38c6e9ee.apk",
+      "sha256": "2dfa25177df487ceb04067fb61efbb6e59a9fd0dd2e6d2a0704a4456fa811141"
+    }
+  },
+  "changes": [
+    {
+      "path": "tools/rebuild/p2/gameplay_platform.py",
+      "change": "Recognize historical first_frame and new process_ready as LOG_ONLY_PROCESS_READY_STAYS_RUNNING, require current live PID, preserve screenshot/hash, return PARTIAL_DEFAULT_PRESENTATION_UNVERIFIED and NOT_RUN input/smoke until visible menu verified."
+    },
+    {
+      "path": "rebuild/p2/ui/gameplay.gd",
+      "change": "Only readiness checkpoint block renamed first_frame to process_ready with explicit process/layout-only scope; no rendering claim."
+    },
+    {
+      "path": "tools/rebuild/v2/renderer_probe.gd",
+      "change": "Asset-independent red/green/blue ColorRect and Label probe, after-frame pixel readback and PNG/JSON receipt, strict headless BLOCKED and no evidence overwrite."
+    }
+  ],
+  "tests": [
+    {
+      "command": "python3 -m unittest discover -s tools/rebuild/v2 -p test_platform_diagnostics.py -v",
+      "execution": "NEW_SIMULATED_ADB",
+      "status": "PASS",
+      "tests": 5,
+      "exit_code": 0,
+      "log": "test_dead_process_is_a_failure_even_with_checkpoint (test_platform_diagnostics.AndroidPresentationGate.test_dead_process_is_a_failure_even_with_checkpoint) ... ok\ntest_failed_screencap_does_not_allow_input_or_boot_pass (test_platform_diagnostics.AndroidPresentationGate.test_failed_screencap_does_not_allow_input_or_boot_pass) ... ok\ntest_historical_first_frame_and_blank_png_are_not_visible_ui_pass (test_platform_diagnostics.AndroidPresentationGate.test_historical_first_frame_and_blank_png_are_not_visible_ui_pass) ... ok\ntest_missing_checkpoint_is_not_replaced_by_successful_screencap (test_platform_diagnostics.AndroidPresentationGate.test_missing_checkpoint_is_not_replaced_by_successful_screencap) ... ok\ntest_new_process_ready_is_recognized_without_claiming_presentation (test_platform_diagnostics.AndroidPresentationGate.test_new_process_ready_is_recognized_without_claiming_presentation) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.068s\n\nOK\n"
+    },
+    {
+      "command": "python3 -m unittest discover -s tools/rebuild/p2 -p test_gameplay_platform.py -v",
+      "execution": "NEW_SYNTHETIC_EXPORT_SAFETY",
+      "status": "PASS",
+      "tests": 6,
+      "exit_code": 0
+    },
+    {
+      "command": "BARAM_RENDERER_PROBE_OUTPUT=<fresh isolated directory> Godot_v4.6.3-stable_linux.x86_64 --headless --path rebuild/p2 --script tools/rebuild/v2/renderer_probe.gd",
+      "execution": "NEW_REAL_GODOT_HEADLESS",
+      "status": "BLOCKED_NO_DISPLAY",
+      "exit_code": 2,
+      "receipt": {
+        "schema": "baram.renderer-probe/1",
+        "engine": "4.6.3-stable (official)",
+        "os": "Linux",
+        "display": "headless",
+        "status": "BLOCKED_NO_DISPLAY",
+        "OS_visible_presentation": "NOT_RUN"
+      }
+    }
+  ],
+  "resolved_test_failures": [
+    "Initial mock launch response was empty, correctly rejected by existing am-launch validation; fixture corrected to ordinary nonempty Status: ok.",
+    "Then dead-PID regression failed because ready checkpoint could terminate polling after the first missing PID. Fixed readiness acceptance to require live PID; affected tests rerun and pass."
+  ],
+  "environment": {
+    "host": "Linux",
+    "PATH_tools": {
+      "adb": null,
+      "emulator": null,
+      "Xvfb": null,
+      "wine": null,
+      "wine64": null
+    },
+    "dev_kvm": false,
+    "note": "Snapshot at recorded_at; coordinator may provision Xvfb separately. No repeated Android SDK installation or emulator boot attempted."
+  },
+  "platform_status": {
+    "Android_same_environment_comparison": "BLOCKED_NO_ANDROID_RUNTIME",
+    "Windows_native": "BLOCKED_NO_WINDOWS_HOST",
+    "Galaxy": "NOT_RUN",
+    "OS_Korean_IME": "NOT_RUN",
+    "physical_listening": "NOT_RUN",
+    "same_account_roundtrip": "NOT_IMPLEMENTED_NO_FREE_ENDPOINT_CONFIGURED"
+  },
+  "preservation": {
+    "old_reports": "UNCHANGED",
+    "old_results": "NOT_REWRITTEN",
+    "original_apps_keys_saves": "NOT_OPENED_OR_CHANGED",
+    "STATE": "NOT_CHANGED_BY_THIS_SUBTASK"
+  },
+  "next": [
+    "On a usable Android runtime, compare exact historical and repair APKs under identical OS/GPU/configuration and record visible menus plus complete logs.",
+    "If both fail, export/run the minimal renderer probe under that same Android environment; if only repair fails, bisect its UI/draw changes.",
+    "Review external screenshot and unobscured app bounds before implementing presentation validation and resuming automated input. Framebuffer readback alone cannot certify OS presentation.",
+    "Continue independent B2 work while native device/environment gates remain blocked."
+  ]
+}

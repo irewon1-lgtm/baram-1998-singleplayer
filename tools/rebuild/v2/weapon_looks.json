@@ -1,0 +1,976 @@
+{
+  "schema": "baram.v2.weapon-morphology-selection/1",
+  "status": "VISUALLY_SELECTED_NATIVE_PART_STYLES_NOT_HISTORICAL_ITEM_IDS",
+  "source": {
+    "dat_sha256": "f8271a52d8dbde5601a0c7bf7460052376b2651930b6bc004eeb1ed20357bfc7",
+    "reader_sha256": "f5152ae3473b3e2f2d120b8c1b8679529428d2bd09f9024528d71aa9a9be86e2",
+    "normalized_parts_sha256": "b1e5086da6ebad28ecc76e7ee387fc7077d5d6f5854f710638b951617c603726"
+  },
+  "contact_sheets": {
+    "swords-045-089.png": "1edd1086471aefd7ad8d1a9aaa57cf15ddb683322cfa944406c2854f3baf9cb3",
+    "swords-000-044.png": "2c8411513b1ce20a2c3584f4d967cc2147dcd1a67375eb620930211fe7de2aa8"
+  },
+  "styles": {
+    "sword": {
+      "part_id": 1,
+      "icon_part_id": 1,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette."
+    },
+    "wooden_sword": {
+      "part_id": 60,
+      "icon_part_id": 2,
+      "rationale": "Brown broad wooden practice blade; visual selection for wooden/bamboo training swords."
+    },
+    "greatsword": {
+      "part_id": 63,
+      "icon_part_id": 59,
+      "rationale": "Very broad rectangular silver blade, clearly different from starter sword."
+    },
+    "curved_sword": {
+      "part_id": 16,
+      "icon_part_id": 45,
+      "rationale": "Broad curved pale blade, selected for saber/scimitar-type Korean blade names."
+    },
+    "staff": {
+      "part_id": 12,
+      "icon_part_id": 60,
+      "rationale": "Long shaft topped with a round purple orb; caster staff silhouette."
+    },
+    "wooden_staff": {
+      "part_id": 15,
+      "icon_part_id": 60,
+      "rationale": "Brown crook-topped rod; distinct natural staff silhouette."
+    },
+    "spear": {
+      "part_id": 18,
+      "icon_part_id": 3,
+      "rationale": "Long shaft with multiple pointed prongs; polearm/trident silhouette."
+    },
+    "axe": {
+      "part_id": 58,
+      "icon_part_id": 11,
+      "rationale": "Wide double-headed axe profile with short shaft."
+    },
+    "bow": {
+      "part_id": 59,
+      "icon_part_id": 4,
+      "rationale": "Tall curved bow held upright; distinct arch shape."
+    },
+    "dagger": {
+      "part_id": 7,
+      "icon_part_id": 1,
+      "rationale": "Short curved blue blade; short-blade silhouette."
+    },
+    "claw": {
+      "part_id": 64,
+      "icon_part_id": 36,
+      "rationale": "Three pale parallel prongs protrude from hand; claw-like silhouette."
+    },
+    "fan": {
+      "part_id": 52,
+      "icon_part_id": 37,
+      "rationale": "Short pink flared fan-like object held in hand; compact caster-fan silhouette."
+    },
+    "club": {
+      "part_id": 22,
+      "icon_part_id": 18,
+      "rationale": "Long dark broad blunt club; distinct blunt weapon."
+    },
+    "magic_sword": {
+      "part_id": 9,
+      "icon_part_id": 58,
+      "rationale": "Blade with pale lightning-shaped edge; visibly magical blade selection."
+    },
+    "flame_sword": {
+      "part_id": 4,
+      "icon_part_id": 58,
+      "rationale": "Bright orange flame-shaped blade; fiery weapon silhouette."
+    },
+    "ornate_staff": {
+      "part_id": 73,
+      "icon_part_id": 34,
+      "rationale": "Large circular sun/star ornament on long shaft; high-tier staff shape."
+    },
+    "torch": {
+      "part_id": 87,
+      "icon_part_id": 58,
+      "rationale": "Bright fiery orb on a handheld stem; explicit torch-like reconstruction, not recovered original torch identity."
+    }
+  },
+  "entity_bindings": {
+    "KRO-ITEM-ba73351fba004e": {
+      "name": "용량제일봉",
+      "style": "staff",
+      "part_id": 12,
+      "icon_part_id": 60,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long shaft topped with a round purple orb; caster staff silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-b548c06b832246": {
+      "name": "용검제일봉",
+      "style": "staff",
+      "part_id": 12,
+      "icon_part_id": 60,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long shaft topped with a round purple orb; caster staff silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-6293752e1bb092": {
+      "name": "환두대검",
+      "style": "greatsword",
+      "part_id": 63,
+      "icon_part_id": 59,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Very broad rectangular silver blade, clearly different from starter sword. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-495cf7477f6d67": {
+      "name": "진성검",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-1ff1b5bb706b44": {
+      "name": "가시철도",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-9c5cadb0de7fdb": {
+      "name": "백진도",
+      "style": "magic_sword",
+      "part_id": 9,
+      "icon_part_id": 58,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Blade with pale lightning-shaped edge; visibly magical blade selection. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-350c04be0dcad7": {
+      "name": "대마혼봉",
+      "style": "staff",
+      "part_id": 12,
+      "icon_part_id": 60,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long shaft topped with a round purple orb; caster staff silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-c825258bcc90f9": {
+      "name": "용설봉",
+      "style": "staff",
+      "part_id": 12,
+      "icon_part_id": 60,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long shaft topped with a round purple orb; caster staff silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-50dc1606604550": {
+      "name": "삼촉현선",
+      "style": "fan",
+      "part_id": 52,
+      "icon_part_id": 37,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Short pink flared fan-like object held in hand; compact caster-fan silhouette. Source name determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-c1cf971d8b31dc": {
+      "name": "진선장",
+      "style": "staff",
+      "part_id": 12,
+      "icon_part_id": 60,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long shaft topped with a round purple orb; caster staff silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-a2a10a9b58150b": {
+      "name": "칠교칠선",
+      "style": "fan",
+      "part_id": 52,
+      "icon_part_id": 37,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Short pink flared fan-like object held in hand; compact caster-fan silhouette. Source name determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-fc093268820ceb": {
+      "name": "인풍죽선",
+      "style": "fan",
+      "part_id": 52,
+      "icon_part_id": 37,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Short pink flared fan-like object held in hand; compact caster-fan silhouette. Source name determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-53e06de5e6de61": {
+      "name": "천풍선",
+      "style": "fan",
+      "part_id": 52,
+      "icon_part_id": 37,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Short pink flared fan-like object held in hand; compact caster-fan silhouette. Source name determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-c32a36dd393d0a": {
+      "name": "오뢰창",
+      "style": "spear",
+      "part_id": 18,
+      "icon_part_id": 3,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long shaft with multiple pointed prongs; polearm/trident silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-22cf69af85d1f8": {
+      "name": "오선창",
+      "style": "spear",
+      "part_id": 18,
+      "icon_part_id": 3,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long shaft with multiple pointed prongs; polearm/trident silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-7d2075f3e4cc42": {
+      "name": "오귀창",
+      "style": "spear",
+      "part_id": 18,
+      "icon_part_id": 3,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long shaft with multiple pointed prongs; polearm/trident silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-5064f353ad19e5": {
+      "name": "단사모",
+      "style": "spear",
+      "part_id": 18,
+      "icon_part_id": 3,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long shaft with multiple pointed prongs; polearm/trident silhouette. Source name determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-c52c8180b72a4f": {
+      "name": "낭아봉",
+      "style": "club",
+      "part_id": 22,
+      "icon_part_id": 18,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long dark broad blunt club; distinct blunt weapon. Source name determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-c08f9bed17270a": {
+      "name": "영롱비창",
+      "style": "spear",
+      "part_id": 18,
+      "icon_part_id": 3,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long shaft with multiple pointed prongs; polearm/trident silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-d4a242bdcda72a": {
+      "name": "월아검",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-6f34a91aea7f46": {
+      "name": "이가닌자의검",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-cfd0dc8e7f9bdd": {
+      "name": "요존도",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-6753f097c1df1c": {
+      "name": "태존도",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-69246403ec9617": {
+      "name": "횃불",
+      "style": "torch",
+      "part_id": 87,
+      "icon_part_id": 58,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Bright fiery orb on a handheld stem; explicit torch-like reconstruction, not recovered original torch identity. Source name determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-7bb6e6fcb13cf6": {
+      "name": "곤봉",
+      "style": "club",
+      "part_id": 22,
+      "icon_part_id": 18,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long dark broad blunt club; distinct blunt weapon. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-eb113610cee35e": {
+      "name": "무라사메",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-be19434c5b2ee6": {
+      "name": "목도",
+      "style": "wooden_sword",
+      "part_id": 60,
+      "icon_part_id": 2,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Brown broad wooden practice blade; visual selection for wooden/bamboo training swords. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-89a184f51172c1": {
+      "name": "목검",
+      "style": "wooden_sword",
+      "part_id": 60,
+      "icon_part_id": 2,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Brown broad wooden practice blade; visual selection for wooden/bamboo training swords. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-796e2a7fa45753": {
+      "name": "사두목도",
+      "style": "wooden_sword",
+      "part_id": 60,
+      "icon_part_id": 2,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Brown broad wooden practice blade; visual selection for wooden/bamboo training swords. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-963644fd8c55d5": {
+      "name": "사두목검",
+      "style": "wooden_sword",
+      "part_id": 60,
+      "icon_part_id": 2,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Brown broad wooden practice blade; visual selection for wooden/bamboo training swords. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-b066890327dadb": {
+      "name": "도씨검",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-5f5f0a6736e6fa": {
+      "name": "장창",
+      "style": "spear",
+      "part_id": 18,
+      "icon_part_id": 3,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long shaft with multiple pointed prongs; polearm/trident silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-8b055e9b415dc1": {
+      "name": "삼지창",
+      "style": "spear",
+      "part_id": 18,
+      "icon_part_id": 3,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long shaft with multiple pointed prongs; polearm/trident silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-ee43eaf607ccb4": {
+      "name": "철단도",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-f753979bbe3681": {
+      "name": "철도",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-78ea59bb3a7eca": {
+      "name": "철검",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-1d2eac54f3a0f5": {
+      "name": "얼음칼",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-5d6a2e16c7d1d1": {
+      "name": "진명삼지창",
+      "style": "spear",
+      "part_id": 18,
+      "icon_part_id": 3,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long shaft with multiple pointed prongs; polearm/trident silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-6d43f4a9fe7446": {
+      "name": "현랑부",
+      "style": "axe",
+      "part_id": 58,
+      "icon_part_id": 11,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Wide double-headed axe profile with short shaft. Source name determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-f62cc3a8993922": {
+      "name": "백현모",
+      "style": "spear",
+      "part_id": 18,
+      "icon_part_id": 3,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long shaft with multiple pointed prongs; polearm/trident silhouette. Source name determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-2a29e61e8de9f7": {
+      "name": "백화검",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-1d8947cce82d85": {
+      "name": "백화별검",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-ed52576b6241ce": {
+      "name": "진백화검",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-327ef85e535c23": {
+      "name": "방천화극",
+      "style": "spear",
+      "part_id": 18,
+      "icon_part_id": 3,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long shaft with multiple pointed prongs; polearm/trident silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-f20107f93e91bf": {
+      "name": "운의제일검",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-e8dd854e965df3": {
+      "name": "운의제이검",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-3202e4b495a9f6": {
+      "name": "풍의제일검",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-1db9e7a7262196": {
+      "name": "풍의제이검",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-c8bd69e680a129": {
+      "name": "도깨비방망이",
+      "style": "wooden_staff",
+      "part_id": 15,
+      "icon_part_id": 60,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Brown crook-topped rod; distinct natural staff silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-3c40c0a7d540e2": {
+      "name": "뢰진도",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-0efbeaa42ed0ca": {
+      "name": "뇌진도",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-aea605daaefe88": {
+      "name": "상아검",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-679dd7667d6366": {
+      "name": "현철중검",
+      "style": "greatsword",
+      "part_id": 63,
+      "icon_part_id": 59,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Very broad rectangular silver blade, clearly different from starter sword. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-11466582573efc": {
+      "name": "환두대도",
+      "style": "curved_sword",
+      "part_id": 16,
+      "icon_part_id": 45,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Broad curved pale blade, selected for saber/scimitar-type Korean blade names. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-064babaf513bd0": {
+      "name": "아광검",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-6aaecceb14d671": {
+      "name": "진아광검",
+      "style": "magic_sword",
+      "part_id": 9,
+      "icon_part_id": 58,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Blade with pale lightning-shaped edge; visibly magical blade selection. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-c9bf9ae691ccdf": {
+      "name": "용마제일검",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-99362a13fd3a63": {
+      "name": "녹슨단검",
+      "style": "dagger",
+      "part_id": 7,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Short curved blue blade; short-blade silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-15c4f0954a473c": {
+      "name": "야월도",
+      "style": "curved_sword",
+      "part_id": 16,
+      "icon_part_id": 45,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Broad curved pale blade, selected for saber/scimitar-type Korean blade names. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-d74e4f0bc00e90": {
+      "name": "가시철단도",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-a405213890bd10": {
+      "name": "일월대도",
+      "style": "curved_sword",
+      "part_id": 16,
+      "icon_part_id": 45,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Broad curved pale blade, selected for saber/scimitar-type Korean blade names. Source name determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-d5f4b74beaeb4d": {
+      "name": "용천제일검",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-860d4620523011": {
+      "name": "영혼마령봉",
+      "style": "staff",
+      "part_id": 12,
+      "icon_part_id": 60,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long shaft topped with a round purple orb; caster staff silhouette. Source name determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-d25d5ea7743cb8": {
+      "name": "대마령봉",
+      "style": "staff",
+      "part_id": 12,
+      "icon_part_id": 60,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long shaft topped with a round purple orb; caster staff silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-5559ce28c9fc00": {
+      "name": "술사별봉",
+      "style": "staff",
+      "part_id": 12,
+      "icon_part_id": 60,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long shaft topped with a round purple orb; caster staff silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-1626587b0529e5": {
+      "name": "용랑제일봉",
+      "style": "staff",
+      "part_id": 12,
+      "icon_part_id": 60,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long shaft topped with a round purple orb; caster staff silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-87a422f19a77b2": {
+      "name": "해골죽장",
+      "style": "staff",
+      "part_id": 12,
+      "icon_part_id": 60,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long shaft topped with a round purple orb; caster staff silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-846970094f2fd7": {
+      "name": "삼촉현창",
+      "style": "spear",
+      "part_id": 18,
+      "icon_part_id": 3,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long shaft with multiple pointed prongs; polearm/trident silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-961ed00fe1d0d3": {
+      "name": "꼬마별봉",
+      "style": "staff",
+      "part_id": 12,
+      "icon_part_id": 60,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long shaft topped with a round purple orb; caster staff silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-7d98630914b624": {
+      "name": "진꼬마별봉",
+      "style": "staff",
+      "part_id": 12,
+      "icon_part_id": 60,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long shaft topped with a round purple orb; caster staff silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-51caa339bdb900": {
+      "name": "용겸제일봉",
+      "style": "staff",
+      "part_id": 12,
+      "icon_part_id": 60,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long shaft topped with a round purple orb; caster staff silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-c693020a1481d1": {
+      "name": "환두대검",
+      "style": "greatsword",
+      "part_id": 63,
+      "icon_part_id": 59,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Very broad rectangular silver blade, clearly different from starter sword. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-25ece07be7f102": {
+      "name": "진성검",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-f145ccec8dcd6c": {
+      "name": "가시철도",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-a57595015ff706": {
+      "name": "백진도",
+      "style": "magic_sword",
+      "part_id": 9,
+      "icon_part_id": 58,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Blade with pale lightning-shaped edge; visibly magical blade selection. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-18bd574c642bb8": {
+      "name": "대마혼봉",
+      "style": "staff",
+      "part_id": 12,
+      "icon_part_id": 60,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long shaft topped with a round purple orb; caster staff silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-c4b2491ce7d44e": {
+      "name": "용설봉",
+      "style": "staff",
+      "part_id": 12,
+      "icon_part_id": 60,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long shaft topped with a round purple orb; caster staff silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-7a87c00aaac78b": {
+      "name": "삼촉현선",
+      "style": "fan",
+      "part_id": 52,
+      "icon_part_id": 37,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Short pink flared fan-like object held in hand; compact caster-fan silhouette. Source name determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-bbf97ae3e9cefe": {
+      "name": "진선장",
+      "style": "staff",
+      "part_id": 12,
+      "icon_part_id": 60,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long shaft topped with a round purple orb; caster staff silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-d5b00878fce157": {
+      "name": "칠교칠선",
+      "style": "fan",
+      "part_id": 52,
+      "icon_part_id": 37,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Short pink flared fan-like object held in hand; compact caster-fan silhouette. Source name determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-1b372e7e78b543": {
+      "name": "인풍죽선",
+      "style": "fan",
+      "part_id": 52,
+      "icon_part_id": 37,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Short pink flared fan-like object held in hand; compact caster-fan silhouette. Source name determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-32ffde5be7c983": {
+      "name": "천풍선",
+      "style": "fan",
+      "part_id": 52,
+      "icon_part_id": 37,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Short pink flared fan-like object held in hand; compact caster-fan silhouette. Source name determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-a04f02087e4930": {
+      "name": "오뢰창",
+      "style": "spear",
+      "part_id": 18,
+      "icon_part_id": 3,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long shaft with multiple pointed prongs; polearm/trident silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-23c38a0c7b51c5": {
+      "name": "오선창",
+      "style": "spear",
+      "part_id": 18,
+      "icon_part_id": 3,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long shaft with multiple pointed prongs; polearm/trident silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-13149980126e72": {
+      "name": "오귀창",
+      "style": "spear",
+      "part_id": 18,
+      "icon_part_id": 3,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long shaft with multiple pointed prongs; polearm/trident silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-5fd4a743960633": {
+      "name": "단사모",
+      "style": "spear",
+      "part_id": 18,
+      "icon_part_id": 3,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long shaft with multiple pointed prongs; polearm/trident silhouette. Source name determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-193fe5270fd7b3": {
+      "name": "낭아봉",
+      "style": "club",
+      "part_id": 22,
+      "icon_part_id": 18,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long dark broad blunt club; distinct blunt weapon. Source name determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-7edb87e93f32db": {
+      "name": "영롱비창",
+      "style": "spear",
+      "part_id": 18,
+      "icon_part_id": 3,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long shaft with multiple pointed prongs; polearm/trident silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-fe808dd77a91ac": {
+      "name": "월아검",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-503a5744e7495a": {
+      "name": "이가닌자의검",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-089c1e90866ecc": {
+      "name": "요존도",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-f4cf2dd760d8db": {
+      "name": "태존도",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-2d61eaac9deb5d": {
+      "name": "횃불",
+      "style": "torch",
+      "part_id": 87,
+      "icon_part_id": 58,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Bright fiery orb on a handheld stem; explicit torch-like reconstruction, not recovered original torch identity. Source name determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-a1769362650014": {
+      "name": "곤봉",
+      "style": "club",
+      "part_id": 22,
+      "icon_part_id": 18,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Long dark broad blunt club; distinct blunt weapon. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    },
+    "KRO-ITEM-bb2ba153d6e977": {
+      "name": "무라사메",
+      "style": "sword",
+      "part_id": 1,
+      "icon_part_id": 1,
+      "source_tier": "LEGACY_RECONSTRUCTED",
+      "historical_entity_sprite_id_proven": false,
+      "rationale": "Straight short steel blade held beside body; general sword silhouette. Source name/job determines category; exact original item-to-native-sword ID is not proven."
+    }
+  },
+  "method": "All90 native Sword parts composed with existing KR491/P2 body0+head0 east/south standing motion and visually inspected. Different styles use original pixels and established actor_frame pipeline for four directions/action/body variants. Name-to-style selection is a documented reconstruction; no claim of recovered original server appearance IDs. Bow style does not imply new ranged attack semantics without a separately supported executor.",
+  "validation": {
+    "selected_source_weapons": 95,
+    "used_styles": {
+      "staff": 16,
+      "greatsword": 3,
+      "sword": 33,
+      "magic_sword": 3,
+      "fan": 8,
+      "spear": 16,
+      "club": 4,
+      "torch": 2,
+      "wooden_sword": 4,
+      "axe": 1,
+      "wooden_staff": 1,
+      "curved_sword": 3,
+      "dagger": 1
+    }
+  }
+}

@@ -21,6 +21,7 @@ var creation: VBoxContainer
 var names: OptionButton
 var name_input: LineEdit
 var guardian: OptionButton
+var nationality: OptionButton
 var appearance: OptionButton
 var message: Label
 var status: Label
@@ -29,12 +30,14 @@ var panels: TabContainer
 var bag
 var equipment
 var skills
+var skill_description: Label
 var attributes: RichTextLabel
 var dialogue: PanelContainer
 var dialogue_body: VBoxContainer
 var direction_picker: OptionButton
 var audio: Array = []
 var active_effects: Array = []
+var projectiles: Array = []
 var floating: Array = []
 var selected_target := ""
 var current_npc := ""
@@ -87,6 +90,10 @@ var keyboard_moves: Dictionary = {}
 var history: RichTextLabel
 var was_portrait:=false
 var touch_action_buttons: Array[Button] = []
+var dialogue_page := 0
+const DIALOGUE_PAGE_SIZE := 10
+var dialogue_rows: Array = []
+var weapon_name_input: LineEdit
 
 func checkpoint(stage: String, details: Dictionary = {}) -> void:
 	var value := {"stage":stage,"ticks_ms":Time.get_ticks_msec(),"pid":OS.get_process_id(),"platform":OS.get_name(),"details":details}
@@ -133,11 +140,14 @@ func _ready() -> void:
 	checkpoint("scene", {"mode":"ordinary_play" if not smoke else "explicit_smoke"})
 	if smoke: _run_smoke.call_deferred()
 
-func _button(parent: Node, title: String, action: Callable) -> Button:
+func _button(parent: Node, title: String, action: Callable, native_multitouch: bool = true) -> Button:
 	var button := Button.new()
 	button.text = title
 	button.custom_minimum_size.y = 34
 	button.pressed.connect(action)
+	if not native_multitouch:
+		parent.add_child(button)
+		return button
 	# Native Button mouse emulation only covers one finger. Handle each real
 	# screen-touch here so a second finger can attack while the stick is held.
 	var touches: Dictionary = {}
@@ -188,7 +198,7 @@ func _build_ui() -> void:
 	add_child(margin)
 	var root:=VBoxContainer.new();root.add_theme_constant_override("separation",5);margin.add_child(root)
 	var title:=HBoxContainer.new();root.add_child(title)
-	var heading:=_label(title,"바람의나라 · 첫 걸음")
+	var heading:=_label(title,"바람의나라 · 모험의 길")
 	heading.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	heading.add_theme_color_override("font_color",Color("dbc292"))
 	panel_toggle=_button(title,"물품 · 기술 · 장비 · 능력치",_toggle_panels)
@@ -199,10 +209,13 @@ func _build_ui() -> void:
 	_button(menu,"이어 하기",_continue_character)
 	_button(menu,"새 캐릭터",_show_creation)
 	creation=VBoxContainer.new();menu.add_child(creation)
-	_label(creation,"이름 (한글·영문·숫자 2~12자) · 고구려 평민 Lv1")
+	_label(creation,"이름 (한글·영문·숫자 2~12자) · 평민 Lv1")
 	name_input=LineEdit.new();name_input.placeholder_text="캐릭터 이름";name_input.max_length=12
 	name_input.virtual_keyboard_enabled=true;name_input.custom_minimum_size.y=40
 	creation.add_child(name_input)
+	nationality=OptionButton.new()
+	for value in ["고구려","부여"]: nationality.add_item(value)
+	creation.add_child(nationality)
 	guardian=OptionButton.new()
 	for value in ["주작","청룡","백호","현무"]: guardian.add_item(value)
 	creation.add_child(guardian)
@@ -230,7 +243,10 @@ func _build_ui() -> void:
 	_button(bag_box,"가까운 상인에게 판매 (1개)",_sell_selected)
 	var skill_box:=VBoxContainer.new();skill_box.name="기술";panels.add_child(skill_box)
 	skills=ClassicList.new();skills.size_flags_vertical=Control.SIZE_EXPAND_FILL;skill_box.add_child(skills)
-	skills.item_selected.connect(func(_index): _stop_motion())
+	skills.item_selected.connect(func(_index): _stop_motion();_describe_skill())
+	skill_description=_label(skill_box,"")
+	skill_description.add_theme_color_override("font_color",Color("302012"))
+	skill_description.add_theme_font_size_override("font_size",13)
 	direction_picker=OptionButton.new()
 	for value in ["동","서","남","북"]: direction_picker.add_item(value)
 	skill_box.add_child(direction_picker)
@@ -272,6 +288,7 @@ func _build_ui() -> void:
 	_button(actions,"저장 · 처음으로",_return_menu)
 	dialogue=Paper.new();dialogue.custom_minimum_size=Vector2(440,280);add_child(dialogue)
 	var dialogue_scroll:=ScrollContainer.new();dialogue_scroll.custom_minimum_size=Vector2(0,240)
+	dialogue_scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
 	dialogue.add_child(dialogue_scroll)
 	dialogue_body=VBoxContainer.new();dialogue_body.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	dialogue_scroll.add_child(dialogue_body);dialogue.hide()
@@ -348,6 +365,9 @@ func _refresh_characters() -> void:
 				var c: Dictionary = saved.payload.character
 				names.add_item(str(c.name)+" · Lv"+str(c.level)+" "+_job_name(str(c.job)))
 				names.set_item_metadata(names.item_count-1,path)
+			else:
+				names.add_item("보존된 진행 · 확인 필요 ("+str(saved.status)+")")
+				names.set_item_metadata(names.item_count-1,path)
 	if names.item_count == 0: names.add_item("아직 캐릭터가 없습니다")
 
 func _create_character() -> void:
@@ -355,7 +375,7 @@ func _create_character() -> void:
 	var path := "user://gameplay-p3/characters/"+(OWNER+":"+name).sha256_text().substr(0,24)+".json"
 	if FileAccess.file_exists(path): message.text="같은 이름의 캐릭터가 있습니다. 이어 하기를 사용하세요."; return
 	game.state = {}
-	var result: Dictionary = game.create_character(name,OWNER,{"guardian":guardian.get_item_text(guardian.selected),"appearance":{"variant":appearance.selected}})
+	var result: Dictionary = game.create_character(name,OWNER,{"nationality":nationality.get_item_text(nationality.selected),"guardian":guardian.get_item_text(guardian.selected),"appearance":{"variant":appearance.selected}})
 	if result.status != "OK": message.text="이름을 확인하세요: "+str(result.reason); return
 	save_path = path
 	if not _save(): game.state={}; return
@@ -440,8 +460,12 @@ func _consume_events(events: Array) -> void:
 		if event_log.size()>200: event_log.pop_front()
 		var type := str(event.type)
 		if event.get("sound_id") != null: _sound(str(event.sound_id))
-		if event.get("effect_id") != null:
+		if event.get("effect_id") != null and type!="projectile_started":
 			active_effects.append({"id":str(event.effect_id),"at":clock,"map_id":event.get("map_id",game.state.character.map_id),"x":event.get("x",game.state.character.x),"y":event.get("y",game.state.character.y)})
+		if type=="projectile_started":
+			var projectile: Dictionary=event.duplicate(true)
+			projectile.at=clock;projectiles.append(projectile)
+			if projectiles.size()>64: projectiles.pop_front()
 		if type in ["moved","monster_moved"]:
 			var visual_id:="player" if type=="moved" else str(event.target_id)
 			var from:=Vector2(float(event.from.x),float(event.from.y))
@@ -456,6 +480,16 @@ func _consume_events(events: Array) -> void:
 			var dx:=int(event.x)-int(event.from.x); var dy:=int(event.y)-int(event.from.y)
 			actor_directions[id]=1 if dx>0 else 3 if dx<0 else 2 if dy>0 else 0
 			actor_walk_until[id]=clock+0.3
+		if type=="player_inspected":
+			side.show();panels.current_tab=0 if "inventory" in event.get("fields",[]) else 3
+			message.text="물품과 능력을 확인했습니다. 오른쪽 패널을 확인하세요."
+		if type=="nearby_revealed":
+			var found: PackedStringArray=[]
+			for point in event.get("positions",[]):
+				var monster: Dictionary=game.state.monsters.get(str(point.id),{})
+				var definition: Dictionary=content.data.monsters.get(str(monster.get("monster_id","")),{})
+				found.append(str(definition.get("name","기척"))+" ("+str(int(point.x))+", "+str(int(point.y))+")")
+			message.text="주변 기척: "+(" · ".join(found) if not found.is_empty() else "없음")
 		if type == "monster_died" and selected_target==str(event.get("target_id","")): selected_target=""
 		if type == "dialogue": _show_dialogue(str(event.npc_id))
 		if type == "map_changed":
@@ -465,7 +499,7 @@ func _consume_events(events: Array) -> void:
 		if event.get("sound_id")==null and type in ["picked_up","bought","sold","equipped","unequipped","player_died"]:
 			var key:=str({"picked_up":"pickup","bought":"transaction","sold":"transaction","equipped":"equip","unequipped":"equip","player_died":"death"}[type])
 			_sound(str(content.data.config.get("audio",{}).get(key,{"pickup":2,"transaction":12,"equip":13,"death":10}[key])))
-		if type in ["level_up","job_changed","skill_learned","bought","sold","equipped","unequipped","healed","resurrected","player_died","item_used"]:
+		if type in ["level_up","job_changed","skill_learned","bought","sold","equipped","unequipped","healed","resurrected","player_died","item_used","quest_accepted","quest_completed","crafted","advanced","summoned","item_identified","revived","trained","stored","withdrawn","weapon_named"]:
 			message.text = _event_text(event)
 		if type == "monster_hit":
 			floating.append({"text":"-"+str(event.damage),"x":event.x,"y":event.y,"at":clock})
@@ -486,7 +520,8 @@ func _process(delta: float) -> void:
 	clock+=delta;panel_clock+=delta;render_accumulator+=delta
 	if frame_samples.size()<40000: frame_samples.append(delta*1000.0)
 	if not frame_checkpoint and is_instance_valid(view) and startup_error.is_empty():
-		frame_checkpoint=true;checkpoint("first_frame",{"mode":"menu","viewport":[size.x,size.y]})
+		# A process callback is not evidence that the OS presented a visible frame.
+		frame_checkpoint=true;checkpoint("process_ready",{"mode":"menu","viewport":[size.x,size.y],"scope":"process_and_layout_only_not_visible_presentation"})
 		_layout_checkpoint.call_deferred()
 	if game.state.is_empty() or not play.visible or save_failure: return
 	if message.text!=last_message:
@@ -641,30 +676,126 @@ func _click_world(tile: Vector2i) -> void:
 		_navigate(Vector2i(monster.x,monster.y),1,{"type":"attack","target_id":nearest});return
 	_navigate(tile)
 
-func _show_dialogue(id: String) -> void:
+func _item_title(instance: Dictionary) -> String:
+	var original:=str(content.data.items.get(str(instance.item_id),{}).get("name",instance.item_id))
+	return str(instance.custom_name)+" ("+original+")" if not str(instance.get("custom_name","")).is_empty() else original
+
+func _material_text(materials: Dictionary) -> String:
+	var text := ""
+	for item_id in materials:
+		text += " "+str(content.data.items.get(item_id,{}).get("name",item_id))+"×"+str(int(materials[item_id]))
+	return text
+
+func _quest_objectives(quest_id: String) -> String:
+	var quest: Dictionary=content.data.get("quests",{}).get(quest_id,{})
+	var progress: Dictionary=game.state.quests.get(quest_id,{}).get("progress",{})
+	var parts: PackedStringArray=[]
+	for objective in quest.get("objectives",[]):
+		var id:=str(objective.id);var kind:=str(objective.kind)
+		var collection: Dictionary=content.data.get({"collect":"items","kill":"monsters","visit":"maps"}.get(kind,""),{})
+		var name:=str(collection.get(id,{}).get("name",id))
+		var count:=game.item_count(id) if kind=="collect" else int(progress.get(kind+":"+id,0))
+		parts.append(name+" "+str(count)+"/"+str(int(objective.get("count",1))))
+	return " · ".join(parts)
+
+func _show_dialogue(id: String, page: int = 0) -> void:
+	if not content.data.npcs.has(id): return
 	current_npc=id;_stop_motion()
-	for child in dialogue_body.get_children(): dialogue_body.remove_child(child);child.queue_free()
+	dialogue_rows.clear()
 	var npc: Dictionary = content.data.npcs[id]
-	_label(dialogue_body,str(npc.name)+"\n"+str(npc.get("dialogue",{}).get("greeting","")))
-	for item_id in npc.get("shop",{}):
+	if "change_job" in npc.get("services",[]):
+		dialogue_rows.append({"label":str(npc.get("job",""))+" 전직 · Lv5","command":{"type":"change_job","npc_id":id,"job":npc.job}})
+	if "heal" in npc.get("services",[]):
+		dialogue_rows.append({"label":"치료 · "+str(npc.get("heal_cost",content.data.config.get("heal_price",5)))+"전","command":{"type":"heal","npc_id":id}})
+	for training_id in content.data.get("training_rules",{}):
+		var training: Dictionary=content.data.training_rules[training_id]
+		if id not in training.get("teacher_ids",[]) or int(game.state.character.level)<int(training.get("minimum_level",90)): continue
+		var stat_name:=str({"strength":"힘","dexterity":"민첩","intelligence":"지력","hp_max":"최대 체력","mp_max":"최대 마력"}.get(str(training.stat),str(training.stat)))
+		dialogue_rows.append({"label":"단련 · "+stat_name+" +"+str(int(training.get("increase",1)))+" / 경험치 "+str(int(training.get("xp_cost",0)))+" · Lv"+str(int(training.get("minimum_level",90))),"command":{"type":"train","npc_id":id,"training_id":str(training_id)}})
+	if "storage" in npc.get("services",[]):
+		for instance in game.state.inventory:
+			dialogue_rows.append({"label":"맡기기 · "+_item_title(instance)+" ×"+str(int(instance.quantity)),"command":{"type":"store_deposit","npc_id":id,"instance_id":str(instance.instance_id)},"disabled":instance.instance_id in game.state.equipment.values()})
+		for instance in game.state.get("bank_inventory",[]):
+			dialogue_rows.append({"label":"찾기 · "+_item_title(instance)+" ×"+str(int(instance.quantity)),"command":{"type":"store_withdraw","npc_id":id,"instance_id":str(instance.instance_id)}})
+	if "weapon_naming" in npc.get("services",[]):
+		for instance in game.state.inventory:
+			if content.data.items[instance.item_id].get("slot","")!="weapon": continue
+			dialogue_rows.append({"label":"무기 이름 붙이기 · "+_item_title(instance)+" / "+str(int(npc.get("naming_cost",20)))+"전","command":{"type":"rename_weapon","npc_id":id,"instance_id":str(instance.instance_id)}})
+	var stock: Array = npc.get("shop",{}).keys()
+	stock.sort_custom(func(a,b):
+		var x: Dictionary=content.data.items[a];var y: Dictionary=content.data.items[b]
+		return int(x.get("required_level",1))<int(y.get("required_level",1)) if int(x.get("required_level",1))!=int(y.get("required_level",1)) else str(x.name)<str(y.name))
+	for item_id in stock:
 		var trade: Dictionary = npc.shop[item_id]
 		if trade.get("buy_price")==null: continue
-		var bound_id := str(item_id)
-		var price := str(trade.buy_price)
-		_button(dialogue_body,str(content.data.items[item_id].name)+" 구매 · "+price+"전",func(): _dispatch({"type":"buy","npc_id":id,"item_id":bound_id,"quantity":1}))
-	if "change_job" in npc.get("services",[]):
-		_button(dialogue_body,str(npc.get("job",""))+" 전직 · Lv5",func(): _dispatch({"type":"change_job","npc_id":id,"job":npc.job}))
+		var item: Dictionary=content.data.items[item_id]
+		dialogue_rows.append({"label":str(item.name)+" 구매 · "+str(int(trade.buy_price))+"전 · Lv"+str(int(item.get("required_level",1))),"command":{"type":"buy","npc_id":id,"item_id":str(item_id),"quantity":1}})
 	if "teach_skill" in npc.get("services",[]):
+		var offered: Array=[]
 		for skill_id in content.data.skills:
-			var skill: Dictionary = content.data.skills[skill_id]
-			if id not in skill.get("teacher_ids",[]): continue
-			var bound_skill := str(skill_id)
-			var costs := ""
-			for material in skill.get("ingredients",{}): costs += " "+str(content.data.items[material].name)+"×"+str(skill.ingredients[material])
-			_button(dialogue_body,str(skill.name)+" 학습 · Lv"+str(skill.learn_level)+" / "+str(skill.get("learn_money",0))+"전"+costs,func(): _dispatch({"type":"learn","npc_id":id,"skill_id":bound_skill}))
-	if "heal" in npc.get("services",[]): _button(dialogue_body,"치료 · "+str(npc.get("heal_cost",content.data.config.get("heal_price",5)))+"전",func(): _dispatch({"type":"heal","npc_id":id}))
-	_button(dialogue_body,"닫기 / 취소",func(): _dispatch({"type":"cancel"}); dialogue.hide())
+			var skill: Dictionary=content.data.skills[skill_id]
+			if id in skill.get("teacher_ids",[]): offered.append(skill_id)
+		offered.sort_custom(func(a,b):
+			var x: Dictionary=content.data.skills[a];var y: Dictionary=content.data.skills[b]
+			return int(x.learn_level)<int(y.learn_level) if int(x.learn_level)!=int(y.learn_level) else str(x.name)<str(y.name))
+		for skill_id in offered:
+			var skill: Dictionary=content.data.skills[skill_id]
+			var learned: bool=skill_id in game.state.skills
+			var rank := str(skill.get("required_advancement",skill.get("advancement_rank",0)))
+			var rank_text := " · 승급 "+rank if rank not in ["0",""] else ""
+			dialogue_rows.append({"label":str(skill.name)+(" [배움]" if learned else " 학습")+" · Lv"+str(int(skill.learn_level))+rank_text+" / "+str(int(skill.get("learn_money",0)))+"전"+_material_text(skill.get("ingredients",{})),"command":{"type":"learn","npc_id":id,"skill_id":str(skill_id)},"disabled":learned})
+	for quest_id in content.data.get("quests",{}):
+		var quest: Dictionary=content.data.quests[quest_id]
+		if str(quest.get("npc_id",quest.get("giver_id","")))!=id: continue
+		var progress: Variant=game.state.quests.get(quest_id,{})
+		var phase := str(progress.get("status","")) if typeof(progress)==TYPE_DICTIONARY else str(progress)
+		var complete: bool=phase in ["complete","completed","COMPLETE","COMPLETED"]
+		var active: bool=not phase.is_empty() and phase not in ["available","AVAILABLE"]
+		var command_type := "quest_complete" if active else "quest_accept"
+		dialogue_rows.append({"label":"의뢰 · "+str(quest.get("name",quest_id))+(" [완료]" if complete else " 보고" if active else " 받기")+"\n"+_quest_objectives(str(quest_id)),"command":{"type":command_type,"npc_id":id,"quest_id":str(quest_id)},"disabled":complete})
+	for recipe_id in content.data.get("recipes",{}):
+		var recipe: Dictionary=content.data.recipes[recipe_id]
+		if str(recipe.get("npc_id",""))!=id: continue
+		var out_id := str(recipe.get("output_item",recipe.get("output_item_id",recipe.get("item_id",""))))
+		var title := str(recipe.get("name",recipe_id))
+		if recipe.has("results"): title=_material_text(recipe.results).strip_edges()
+		dialogue_rows.append({"label":"조합 · "+title+" / "+str(int(recipe.get("money",recipe.get("cost",0))))+"전"+_material_text(recipe.get("ingredients",{})),"command":{"type":"craft","npc_id":id,"recipe_id":str(recipe_id)}})
+	for advancement_id in content.data.get("advancements",{}):
+		var advancement: Dictionary=content.data.advancements[advancement_id]
+		if id not in advancement.get("teacher_ids",[]): continue
+		dialogue_rows.append({"label":"승급 · "+str(advancement.get("title",advancement.get("name",advancement_id)))+" / Lv"+str(int(advancement.get("minimum_level",99)))+" / "+str(int(advancement.get("money",advancement.get("cost",0))))+"전"+_material_text(advancement.get("ingredients",{})),"command":{"type":"advance","npc_id":id,"advancement_id":str(advancement_id)}})
+	dialogue_page=clampi(page,0,maxi(0,int((dialogue_rows.size()-1)/DIALOGUE_PAGE_SIZE)))
+	_render_dialogue_page()
 	dialogue.show()
+
+func _render_dialogue_page() -> void:
+	for child in dialogue_body.get_children(): dialogue_body.remove_child(child);child.queue_free()
+	var npc: Dictionary=content.data.npcs[current_npc]
+	_label(dialogue_body,str(npc.name)+"\n"+str(npc.get("dialogue",{}).get("greeting","")))
+	weapon_name_input=null
+	if "weapon_naming" in npc.get("services",[]):
+		weapon_name_input=LineEdit.new();weapon_name_input.placeholder_text="새 무기 이름 · 2~12자";weapon_name_input.max_length=12
+		weapon_name_input.custom_minimum_size.y=38;dialogue_body.add_child(weapon_name_input)
+	var start := dialogue_page*DIALOGUE_PAGE_SIZE
+	for index in range(start,mini(start+DIALOGUE_PAGE_SIZE,dialogue_rows.size())):
+		var row: Dictionary=dialogue_rows[index]
+		var command: Dictionary=row.command.duplicate(true)
+		var action:=func():
+			if str(command.type)=="rename_weapon" and is_instance_valid(weapon_name_input): command.name=weapon_name_input.text.strip_edges()
+			var result: Dictionary=_dispatch(command)
+			if result.get("changed",false): _show_dialogue(current_npc,dialogue_page)
+		var button:=_button(dialogue_body,str(row.label),action,false)
+		button.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+		button.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		button.disabled=bool(row.get("disabled",false))
+	if dialogue_rows.size()>DIALOGUE_PAGE_SIZE:
+		var pages:=HBoxContainer.new();dialogue_body.add_child(pages)
+		var previous:=_button(pages,"이전",func(): dialogue_page-=1;_render_dialogue_page())
+		previous.disabled=dialogue_page==0
+		_label(pages,str(dialogue_page+1)+" / "+str(ceili(float(dialogue_rows.size())/DIALOGUE_PAGE_SIZE)))
+		var next:=_button(pages,"다음",func(): dialogue_page+=1;_render_dialogue_page())
+		next.disabled=start+DIALOGUE_PAGE_SIZE>=dialogue_rows.size()
+	_button(dialogue_body,"닫기 / 취소",func(): _dispatch({"type":"cancel"}); dialogue.hide())
 
 func _show_map() -> void:
 	_stop_motion()
@@ -703,7 +834,9 @@ func _use_selected_item() -> void:
 	var id := _selection(bag); var instance := _instance(id)
 	if instance.is_empty(): return
 	var definition: Dictionary = content.data.items[instance.item_id]
-	_dispatch({"type":"equip" if not str(definition.get("slot","")).is_empty() else "use_item","instance_id":id})
+	var command := {"type":"equip" if not str(definition.get("slot","")).is_empty() else "use_item","instance_id":id}
+	if definition.get("action_type","")=="return": command.direction=direction_picker.get_item_text(direction_picker.selected)
+	_dispatch(command)
 
 func _sell_selected() -> void:
 	var id := _selection(bag); var npc := _nearest_npc()
@@ -727,10 +860,25 @@ func _cast_selected() -> void:
 
 func _cast(id: String) -> void:
 	var target:=selected_target
-	if content.data.skills[id].kind=="damage" and game._target(target,int(content.data.skills[id].get("range",4))).is_empty(): target=game.attack_target(int(content.data.skills[id].get("range",4)))
+	var definition: Dictionary=content.data.skills[id]
+	if definition.kind in ["damage","debuff","status","blink"] and str(definition.get("target","enemy"))!="self" and game._target(target,int(definition.get("range",4))).is_empty(): target=game.attack_target(int(definition.get("range",4)))
 	var cmd := {"type":"cast","skill_id":id,"target_id":target}
-	if content.data.skills[id].kind=="return": cmd.direction=direction_picker.get_item_text(direction_picker.selected)
+	if definition.kind=="return": cmd.direction=direction_picker.get_item_text(direction_picker.selected)
+	if definition.kind=="identify":
+		cmd.instance_id=_selection(bag)
+		if str(cmd.instance_id).is_empty(): message.text="물품 패널에서 감정할 물건을 먼저 고르세요.";return
 	_dispatch(cmd)
+
+func _describe_skill() -> void:
+	if not is_instance_valid(skill_description): return
+	var id:=_selection(skills)
+	if id.is_empty(): skill_description.text="기술을 선택하면 효과와 소모를 확인할 수 있습니다.";return
+	var skill: Dictionary=content.data.skills[id]
+	var kind:=str(skill.kind)
+	var label:=str({"damage":"공격","heal":"회복","buff":"강화","debuff":"약화","status":"상태이상","return":"귀환","shrine":"성황당 이동","identify":"감정","restore_mp":"마력 회복","summon":"소환","cleanse":"상태 회복","revive":"부활","loot":"전리품 수집","blink":"접근 이동"}.get(kind,kind))
+	skill_description.text=label+" · 마력 "+str(int(skill.get("mp_cost",0)))+" / 체력 "+str(int(skill.get("hp_cost",0)))+" · 재사용 "+str(snappedf(float(skill.get("cooldown",0)),0.1))+"초"
+	if kind in ["damage","heal","restore_mp"]:skill_description.text+=" · 위력 "+str(int(skill.get("power",0)))
+	if not str(skill.get("status","")).is_empty(): skill_description.text+=" · "+str({"stealth":"투명","paralysis":"마비","poison":"중독","slow":"감속","silence":"침묵","blindness":"실명","haste":"가속","protection":"보호"}.get(str(skill.status),str(skill.status)))
 
 func _refresh_panels() -> void:
 	if game.state.is_empty(): return
@@ -739,17 +887,22 @@ func _refresh_panels() -> void:
 	bag.clear(); equipment.clear(); skills.clear()
 	for item in game.state.inventory:
 		var def: Dictionary = content.data.items[item.item_id]
-		bag.add_item(str(def.name)+" ×"+str(int(item.quantity))+(" [착용]" if item.instance_id in game.state.equipment.values() else ""),content.icon(str(item.item_id)))
+		bag.add_item(_item_title(item)+" ×"+str(int(item.quantity))+(" [착용]" if item.instance_id in game.state.equipment.values() else ""),content.icon(str(item.item_id)))
 		var index: int = bag.item_count-1
 		bag.set_item_metadata(index,item.instance_id)
-		bag.set_item_tooltip(index,str(def.name)+" · 내구 "+str(item.durability)+" · "+str(def.get("fact_status","RECONSTRUCTED")))
+		bag.set_item_tooltip(index,str(def.name)+" · 내구 "+str(item.durability)+" · Lv"+str(int(def.get("required_level",1)))+" · 공격 "+str(int(def.get("attack",0)))+" · 방어 "+str(int(def.get("defense",0))))
 		if item.instance_id==previous_bag: bag.select(index)
-	for slot in ["weapon","armor"]:
+	var slots: Array=["weapon","armor"]
+	for item in content.data.items.values():
+		var slot_name:=str(item.get("slot",""))
+		if not slot_name.is_empty() and slot_name not in slots: slots.append(slot_name)
+	var slot_labels := {"weapon":"무기","armor":"갑옷","helmet":"투구","head":"투구","shield":"방패","ring":"반지","accessory":"보조","necklace":"목걸이","boots":"신발","left_hand":"왼손","right_hand":"오른손"}
+	for slot in slots:
 		if not game.state.equipment.has(slot):
-			equipment.add_item(("무기" if slot=="weapon" else "갑옷")+": 없음");equipment.set_item_metadata(equipment.item_count-1,slot);continue
+			equipment.add_item(str(slot_labels.get(slot,slot))+": 없음");equipment.set_item_metadata(equipment.item_count-1,slot);continue
 		var item := _instance(str(game.state.equipment[slot]))
 		if item.is_empty(): continue
-		equipment.add_item(("무기" if slot=="weapon" else "갑옷")+": "+str(content.data.items[item.item_id].name)+" · 내구"+str(int(item.durability)),content.icon(str(item.item_id)))
+		equipment.add_item(str(slot_labels.get(slot,slot))+": "+_item_title(item)+" · 내구"+str(int(item.durability)),content.icon(str(item.item_id)))
 		equipment.set_item_metadata(equipment.item_count-1,slot)
 		if slot==previous_equipment: equipment.select(equipment.item_count-1)
 	for id in game.state.skills:
@@ -760,8 +913,17 @@ func _refresh_panels() -> void:
 		skills.add_item(key+str(def.name)+" · MP "+str(def.get("mp_cost",0)))
 		skills.set_item_metadata(skills.item_count-1,id)
 		if id==previous_skill: skills.select(skills.item_count-1)
+	_describe_skill()
 	var derived: Dictionary = game.derived_stats()
-	attributes.text="이름  "+str(c.name)+"\n국적  "+str(c.get("nationality","고구려"))+"\n수호  "+str(c.get("guardian","주작"))+"\n직업  "+_job_name(str(c.job))+"\n레벨  "+str(c.level)+"\n경험치  "+str(c.xp)+"\n체력  "+str(c.hp)+" / "+str(c.hp_max)+"\n마력  "+str(c.mp)+" / "+str(c.mp_max)+"\n공격  "+str(derived.attack)+"\n방어  "+str(derived.defense)+"\n금전  "+str(c.money)+"전\n사냥  "+str(game.state.stats.kills)+"마리\n좌표  "+str(c.x)+", "+str(c.y)+"\n\n오프라인 로컬 진행\n원작 미확정 실행값은 재구성 규칙입니다."
+	attributes.text="이름  "+str(c.name)+"\n국적  "+str(c.get("nationality","고구려"))+"\n수호  "+str(c.get("guardian","주작"))+"\n직업  "+_job_name(str(c.job))+"\n레벨  "+str(c.level)+"\n경험치  "+str(c.xp)+"\n체력  "+str(c.hp)+" / "+str(c.hp_max)+"\n마력  "+str(c.mp)+" / "+str(c.mp_max)+"\n공격  "+str(derived.attack)+"\n방어  "+str(derived.defense)+"\n힘 / 민첩 / 지력  "+str(int(derived.get("strength",0)))+" / "+str(int(derived.get("dexterity",0)))+" / "+str(int(derived.get("intelligence",0)))+"\n금전  "+str(c.money)+"전\n사냥  "+str(game.state.stats.kills)+"마리\n좌표  "+str(c.x)+", "+str(c.y)+"\n승급  "+str(c.get("title","없음"))+"\n의뢰  "+str(game.state.quests.size())+"건"
+	for quest_id in game.state.quests:
+		var quest: Dictionary=content.data.get("quests",{}).get(quest_id,{})
+		var completed: bool=str(game.state.quests[quest_id].get("status",""))=="completed"
+		attributes.text+="\n\n"+str(quest.get("name",quest_id))+(" [완료]" if completed else "\n"+_quest_objectives(str(quest_id)))
+	if not game.state.get("buffs",{}).is_empty():
+		attributes.text+="\n\n적용 중인 기술"
+		for buff_id in game.state.buffs:
+			attributes.text+="\n"+str(content.data.skills.get(str(buff_id),{}).get("name",buff_id))
 	_refresh_equipment_preview()
 	_refresh_vitals()
 	last_state_revision=int(game.state.revision)
@@ -774,6 +936,9 @@ func _refresh_vitals() -> void:
 	last_state_revision=int(game.state.revision)
 
 func _look_player() -> String:
+	for buff in game.state.get("buffs",{}).values():
+		var form_id:=str(buff.get("form_monster_id",""))
+		if content.data.monsters.has(form_id): return str(content.data.monsters[form_id].get("look_id",content.data.monsters[form_id].get("look","")))
 	var armor := false
 	var weapon_graphics: Dictionary = {}
 	for instance_id in game.state.equipment.values():
@@ -782,7 +947,7 @@ func _look_player() -> String:
 		var def: Dictionary = content.data.items[item.item_id]
 		if int(def.get("durability",0))>0 and int(item.durability)<=0: continue
 		if def.get("slot")=="weapon": weapon_graphics=content.actors.get("item_equipment_graphics",{}).get(str(item.item_id),{})
-		if str(item.item_id)=="gp:item:novice_armor": armor=true
+		if def.get("slot")=="armor" and int(def.get("defense",0))>0: armor=true
 	var look := str(weapon_graphics.get("armored_player_look" if armor else "player_look","player_armor" if armor else "player_base"))
 	if int(game.state.character.appearance.get("variant",0))==1: look+="_alt"
 	return look
@@ -855,6 +1020,12 @@ func _render_world() -> void:
 		var layer := _actor_layer(str(def.get("look_id",def.get("appearance_id","rabbit"))),animation,int(actor_directions.get(id,2)),at.x,at.y)
 		if not layer.is_empty(): sorted.append(layer)
 		labels.append({"x":at.x*24+12,"y":at.y*24+24,"text":str(def.name)+( " ◇" if id==selected_target else ""),"hp":monster.hp,"hp_max":def.hp,"color":"f0e8c7"})
+	for summon in game.state.get("summons",[]):
+		if str(summon.map_id)!=str(c.map_id): continue
+		var definition: Dictionary=content.data.monsters.get(str(summon.monster_id),{})
+		var ally:=_actor_layer(str(definition.get("look_id",definition.get("look",""))),"standing",int(c.direction),float(summon.x),float(summon.y))
+		if not ally.is_empty(): sorted.append(ally)
+		labels.append({"x":int(summon.x)*24+12,"y":int(summon.y)*24+24,"text":str(definition.get("name","동료"))+" · 동료","color":"84dfab"})
 	for loot in game.state.loot:
 		if loot.map_id!=c.map_id: continue
 		var icon: Dictionary=content.actors.get("icons",{}).get(str(loot.get("item_id","")),{})
@@ -864,7 +1035,10 @@ func _render_world() -> void:
 			sorted.append({"path":path,"x":int(loot.x)*24+2,"y":int(loot.y)*24+8,"depth_y":int(loot.y)*24+23})
 		labels.append({"x":int(loot.x)*24+12,"y":int(loot.y)*24+50,"text":"전리품 · Z","color":"d3c480"})
 	var player := _actor_layer(_look_player(),character_animation if clock<animation_until else "standing",int(c.direction),player_position.x,player_position.y)
-	if not player.is_empty(): player.opacity=0.4 if c.dead else 1.0; sorted.append(player)
+	var stealthed := false
+	for buff in game.state.get("buffs",{}).values():
+		if str(buff.get("status",""))=="stealth": stealthed=true
+	if not player.is_empty(): player.opacity=0.4 if c.dead or stealthed else 1.0; sorted.append(player)
 	labels.append({"x":player_position.x*24+12,"y":player_position.y*24+24,"text":c.name,"color":"a9e8bd"})
 	sorted.sort_custom(func(a,b): return float(a.get("depth_y",a.y))<float(b.get("depth_y",b.y)))
 	layers.append_array(sorted)
@@ -877,6 +1051,18 @@ func _render_world() -> void:
 		var sample: Dictionary=Effect.layers(definition,clock-float(active.at),Vector2(float(active.x)*24+12,float(active.y)*24+24))
 		if sample.finished: active_effects.remove_at(i)
 		else: layers.append_array(sample.back); layers.append_array(sample.front)
+	for index in range(projectiles.size()-1,-1,-1):
+		var projectile: Dictionary=projectiles[index]
+		var elapsed := clock-float(projectile.at)
+		var duration := maxf(float(projectile.get("duration",0.2)),0.05)
+		if elapsed>duration or str(projectile.map_id)!=str(c.map_id): projectiles.remove_at(index);continue
+		var from:=Vector2(float(projectile.from_x)*24+12,float(projectile.from_y)*24+12)
+		var to:=Vector2(float(projectile.to_x)*24+12,float(projectile.to_y)*24+12)
+		var position:=from.lerp(to,clampf(elapsed/duration,0,1))
+		var effect: Dictionary=content.effects.get(str(projectile.get("effect_id","")),{})
+		if not effect.is_empty():
+			var sample: Dictionary=Effect.layers(effect,0.02,position)
+			layers.append_array(sample.back);layers.append_array(sample.front)
 	view.labels=labels
 	view.configure(layers,Vector2(int(map.width)*24,int(map.height)*24),camera,world_zoom)
 
@@ -896,10 +1082,21 @@ func _event_text(event: Dictionary) -> String:
 		"healed": return "치료했습니다."
 		"resurrected": return "마을에서 부활했습니다."
 		"item_used": return "아이템을 사용했습니다."
+		"quest_accepted": return "의뢰를 받았습니다. 목표를 달성한 뒤 다시 대화하세요."
+		"quest_completed": return "의뢰를 완료하고 보상을 받았습니다."
+		"crafted": return "재료를 조합했습니다. 물품 패널을 확인하세요."
+		"advanced": return "승급했습니다. 사범에게 새로운 기술을 배울 수 있습니다."
+		"summoned": return "동료를 소환했습니다."
+		"item_identified": return "물건을 감정했습니다."
+		"revived": return "다시 일어났습니다."
+		"trained": return "경험치를 사용해 능력을 단련했습니다."
+		"stored": return "물건을 맡겼습니다."
+		"withdrawn": return "맡긴 물건을 찾았습니다."
+		"weapon_named": return "무기에 이름을 붙였습니다."
 	return str(event.type)
 
 func _reason(reason: String) -> String:
-	return {"NO_NEARBY_TARGET":"전방이나 바로 옆에 공격할 몬스터가 없습니다.","ACTION_COOLDOWN":"다음 공격을 준비하고 있습니다.","BLOCKED_TILE":"길이 막혔습니다.","NPC_OUT_OF_REACH":"NPC 가까이 걸어가세요.","TARGET_OUT_OF_REACH":"공격할 대상 가까이 가세요.","INSUFFICIENT_MONEY":"금전이 부족합니다.","INSUFFICIENT_MATERIALS":"학습 재료가 부족합니다.","LEVEL_TOO_LOW":"필요한 레벨에 도달하지 않았습니다.","WRONG_JOB_TEACHER":"현재 직업의 사범에게 배우세요.","INSUFFICIENT_HP_MP":"체력 또는 마력이 부족합니다.","SKILL_NOT_LEARNED":"아직 배우지 않은 기술입니다.","JOB_CHANGE_REQUIRED":"먼저 Lv5에 사범에게 전직하세요.","ALREADY_LEARNED":"이미 배운 기술입니다.","BLOCKED":"지나갈 수 없는 곳입니다.","CHARACTER_DEAD":"귀신 상태입니다. 부활하세요."}.get(reason,reason)
+	return {"NO_NEARBY_TARGET":"전방이나 바로 옆에 공격할 몬스터가 없습니다.","ACTION_COOLDOWN":"다음 공격을 준비하고 있습니다.","BLOCKED_TILE":"길이 막혔습니다.","NPC_OUT_OF_REACH":"NPC 가까이 걸어가세요.","TARGET_OUT_OF_REACH":"공격할 대상 가까이 가세요.","INSUFFICIENT_MONEY":"금전이 부족합니다.","INSUFFICIENT_MATERIALS":"학습 재료가 부족합니다.","LEVEL_TOO_LOW":"필요한 레벨에 도달하지 않았습니다.","WRONG_JOB_TEACHER":"현재 직업의 사범에게 배우세요.","INSUFFICIENT_HP_MP":"체력 또는 마력이 부족합니다.","SKILL_NOT_LEARNED":"아직 배우지 않은 기술입니다.","JOB_CHANGE_REQUIRED":"먼저 Lv5에 사범에게 전직하세요.","ALREADY_LEARNED":"이미 배운 기술입니다.","BLOCKED":"지나갈 수 없는 곳입니다.","CHARACTER_DEAD":"귀신 상태입니다. 부활하세요.","ADVANCEMENT_REQUIRED":"먼저 사범에게 필요한 승급을 마치세요.","WRONG_JOB":"현재 직업으로 사용할 수 없습니다.","QUEST_NOT_READY":"의뢰 목표를 아직 달성하지 못했습니다.","QUEST_OBJECTIVE_INCOMPLETE":"의뢰 목표를 아직 달성하지 못했습니다.","ADVANCEMENT_ORDER_REQUIRED":"이전 승급부터 차례로 마치세요.","INSUFFICIENT_MONEY_OR_MATERIALS":"금전 또는 재료가 부족합니다.","EXIT_LEVEL_REQUIRED":"이 사냥터에 들어갈 레벨이 부족합니다.","HP_ALREADY_FULL":"이미 체력이 가득합니다.","MP_ALREADY_FULL":"이미 마력이 가득합니다.","WRONG_GUARDIAN":"선택한 수호신의 기술을 배우세요.","INSUFFICIENT_XP":"단련에 사용할 경험치가 부족합니다.","STAT_REQUIREMENT":"장비에 필요한 능력치가 부족합니다.","INVALID_WEAPON_NAME":"무기 이름은 한글·영문·숫자 2~12자로 입력하세요.","INVALID_CUSTOM_NAME":"무기 이름은 한글·영문·숫자 2~12자로 입력하세요.","NAME_UNCHANGED":"이미 같은 이름입니다.","INSUFFICIENT_STATS":"장비에 필요한 능력치가 부족합니다.","BANK_FULL":"맡길 공간이 부족합니다.","UNEQUIP_FIRST":"먼저 장비를 해제하세요.","QUEST_ALREADY_COMPLETED":"이미 마친 의뢰입니다.","RECIPE_MATERIALS_REQUIRED":"조합 재료가 부족합니다.","INVENTORY_FULL":"물품 공간이 부족합니다.","NPC_SERVICE_REQUIRED":"이 서비스를 제공하는 NPC에게 가세요.","INSUFFICIENT_INGREDIENTS":"필요한 재료가 부족합니다.","ADVANCEMENT_LEVEL_REQUIRED":"승급에 필요한 레벨에 도달하지 않았습니다.","QUEST_ALREADY_ACCEPTED":"이미 받은 의뢰입니다.","NOTHING_TO_IDENTIFY":"감정할 물건을 선택하세요.","STATUS_SILENCED":"침묵 상태에서는 기술을 쓸 수 없습니다.","STATUS_PARALYZED":"마비가 풀릴 때까지 기다리세요."}.get(reason,reason)
 
 func _run_smoke() -> void:
 	await get_tree().process_frame

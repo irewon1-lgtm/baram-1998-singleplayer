@@ -12,6 +12,7 @@ const PHASES := ["after_pending_write", "after_pending_verify", "after_backup_wr
 var base = BaseStore.new()
 var phase_observer: Callable
 var fault_phase := ""
+const MIGRATION_PHASES := ["after_migration_source_preserved", "after_migration_backup_preserved"]
 
 func result(status: String, reason: String = "", revision: int = -1) -> Dictionary:
 	return {"status":status,"reason":reason,"revision":revision}
@@ -58,6 +59,89 @@ func _valid_compat(value: Variant) -> bool:
 			if value[key].is_empty() or value[key].length()>128: return false
 		elif not _int(value[key],0,MAX_SAFE_INTEGER): return false
 	return true
+
+func _migration_contract(document: Dictionary, content: Dictionary) -> Dictionary:
+	# An ID set/rules change is never made compatible by a checksum alone. The
+	# new content must explicitly pin the complete shipped source generation.
+	var accepted: Variant=content.get("accepted_compatibility",[])
+	if typeof(accepted)!=TYPE_ARRAY or accepted.size()>128: return {}
+	for row in accepted:
+		if typeof(row)!=TYPE_DICTIONARY or not row.has_all(["profile","compatibility","manifest_sha256"]): continue
+		if row.size()!=3 and not (row.size()==4 and row.has("map_transforms")): continue
+		if not _valid_compat(row.compatibility): continue
+		if row.profile==document.profile and row.manifest_sha256==document.manifest_sha256 and _canonical(row.compatibility)==_canonical(document.compatibility):
+			return row.duplicate(true)
+	return {}
+
+func _transform_position(position: Dictionary, transforms: Dictionary, x_key: String="x", y_key: String="y") -> bool:
+	if not position.has_all(["map_id",x_key,y_key]): return false
+	if not transforms.has(str(position.map_id)): return true
+	var transform: Variant=transforms[str(position.map_id)]
+	if not base._keys(transform,["to_map_id","dx","dy"]) or not _id(transform.to_map_id) or not _int(transform.dx,-65535,65535) or not _int(transform.dy,-65535,65535): return false
+	if not _int(position[x_key],0,65535) or not _int(position[y_key],0,65535): return false
+	position[x_key]=int(position[x_key])+int(transform.dx)
+	position[y_key]=int(position[y_key])+int(transform.dy)
+	position.map_id=transform.to_map_id
+	return true
+
+func _migrate_payload(payload: Dictionary, contract: Dictionary, content: Dictionary) -> Dictionary:
+	var candidate: Dictionary=payload.duplicate(true)
+	var transforms: Variant=contract.get("map_transforms",{})
+	if typeof(transforms)!=TYPE_DICTIONARY: return result("DEFERRED","migration.map_transforms")
+	if not transforms.is_empty():
+		if typeof(candidate.get("character"))!=TYPE_DICTIONARY or not _transform_position(candidate.character,transforms): return result("DEFERRED","migration.character_position")
+		if typeof(candidate.get("loot"))!=TYPE_ARRAY or typeof(candidate.get("monsters"))!=TYPE_DICTIONARY or typeof(candidate.get("pending_actions"))!=TYPE_ARRAY: return result("INVALID_STATE","migration.payload_shape")
+		for loot in candidate.loot:
+			if typeof(loot)!=TYPE_DICTIONARY or not _transform_position(loot,transforms): return result("DEFERRED","migration.loot_position")
+		for monster in candidate.monsters.values():
+			if typeof(monster)!=TYPE_DICTIONARY: return result("INVALID_STATE","migration.monster_shape")
+			# Current and home cells share the old map: transform both before
+			# replacing map_id, rather than accidentally applying offsets twice.
+			var home: Dictionary={"map_id":monster.get("map_id"),"x":monster.get("spawn_x"),"y":monster.get("spawn_y")}
+			if not _transform_position(home,transforms) or not _transform_position(monster,transforms): return result("DEFERRED","migration.monster_position")
+			monster.spawn_x=home.x; monster.spawn_y=home.y
+		if candidate.has("summons"):
+			if typeof(candidate.summons)!=TYPE_ARRAY: return result("INVALID_STATE","migration.summons_type")
+			for summon in candidate.summons:
+				if typeof(summon)!=TYPE_DICTIONARY or not _transform_position(summon,transforms): return result("DEFERRED","migration.summon_position")
+		for action in candidate.pending_actions:
+			if typeof(action)!=TYPE_DICTIONARY: return result("INVALID_STATE","migration.action_shape")
+			if transforms.has(str(action.get("map_id",""))):
+				var point: Dictionary={"map_id":action.map_id,"x":action.get("x",0),"y":action.get("y",0)}
+				if not _transform_position(point,transforms): return result("DEFERRED","migration.action_position")
+				action.map_id=point.map_id
+				if action.has("x"): action.x=point.x
+				if action.has("y"): action.y=point.y
+			var destination: Variant=action.get("destination",{})
+			if typeof(destination)!=TYPE_DICTIONARY: return result("INVALID_STATE","migration.action_destination_type")
+			if not destination.is_empty() and not _transform_position(destination,transforms): return result("DEFERRED","migration.action_destination")
+	# Existing living/dead monster instances keep their IDs, HP, cells and
+	# timers. Only absent content-generation spawns are initialized normally.
+	if typeof(candidate.get("monsters"))!=TYPE_DICTIONARY: return result("INVALID_STATE","migration.monsters")
+	var engine=GameState.new()
+	if not engine.configure(content): return result("INVALID_CONTENT","migration.configure")
+	engine.state={"monsters":{}}
+	engine._spawn_all()
+	var added: Array=[]
+	for id in engine.state.monsters:
+		if not candidate.monsters.has(id):
+			candidate.monsters[id]=engine.state.monsters[id].duplicate(true)
+			added.append(id)
+	return {"status":"OK","payload":candidate,"added_spawns":added}
+
+func _preserve_migration_source(path: String) -> Dictionary:
+	if not _path(path) or not FileAccess.file_exists(path): return result("UNSAFE_PATH","migration_source")
+	var bytes:=FileAccess.get_file_as_bytes(path)
+	var hasher:=HashingContext.new()
+	hasher.start(HashingContext.HASH_SHA256)
+	hasher.update(bytes)
+	var archive:=path+".pre-migration-"+hasher.finish().hex_encode()
+	if not _path(path) or not _path(archive): return result("UNSAFE_PATH","migration_archive")
+	if FileAccess.file_exists(archive):
+		if FileAccess.get_file_as_bytes(archive)!=bytes: return result("PRESERVATION_CONFLICT","migration_archive")
+	elif DirAccess.copy_absolute(path,archive)!=OK: return result("PRESERVATION_FAILED","migration_copy")
+	if FileAccess.get_file_as_bytes(archive)!=bytes or FileAccess.get_file_as_bytes(path)!=bytes: return result("PRESERVATION_FAILED","migration_verify")
+	return {"status":"OK","archive":archive}
 
 func _phase(name: String) -> bool:
 	if phase_observer.is_valid(): phase_observer.call(name)
@@ -122,11 +206,24 @@ func _decode(text: String, owner: String, content: Dictionary) -> Dictionary:
 	if doc.profile != content.get("profile",""): return result("DEFERRED","profile")
 	var compat := _compat(content)
 	if not _valid_compat(doc.compatibility) or not _valid_compat(compat): return result("DEFERRED","compatibility_missing")
+	var contract: Dictionary={}
+	var requires_migration:=false
 	for key in ["schema","rules","idset"]:
-		if doc.compatibility.get(key) != compat[key]: return result("DEFERRED","compatibility."+key)
-	var valid: Dictionary = validate_payload(doc.payload,owner,content)
+		if doc.compatibility.get(key) != compat[key]:
+			contract=_migration_contract(doc,content)
+			if contract.is_empty(): return result("DEFERRED","compatibility."+key)
+			requires_migration=true
+	var candidate: Dictionary=doc.payload.duplicate(true)
+	var added_spawns: Array=[]
+	if requires_migration:
+		var migrated:=_migrate_payload(candidate,contract,content)
+		if migrated.status!="OK": return migrated
+		candidate=migrated.payload
+		added_spawns=migrated.added_spawns
+	var valid: Dictionary = validate_payload(candidate,owner,content)
 	if valid.status != "OK": return valid
-	return {"status":"OK","reason":"","revision":int(doc.revision),"payload":doc.payload.duplicate(true),"document":doc,"geometry_changed":doc.compatibility.get("map_geometry") != compat.map_geometry,"manifest_changed":doc.manifest_sha256 != content.get("manifest_sha256","")}
+	var geometry_changed: bool=doc.compatibility.get("map_geometry") != compat.map_geometry
+	return {"status":"OK","reason":"MIGRATION_AVAILABLE" if requires_migration else "","revision":int(doc.revision),"payload":candidate,"document":doc,"geometry_changed":geometry_changed,"manifest_changed":doc.manifest_sha256 != content.get("manifest_sha256",""),"migration_required":requires_migration or geometry_changed,"added_spawns":added_spawns}
 
 func _read_one(path: String, owner: String, content: Dictionary) -> Dictionary:
 	if not _path(path): return result("UNSAFE_PATH")
@@ -166,14 +263,19 @@ func write_game(path: String, payload: Dictionary, owner: String, content: Dicti
 	if text.to_utf8_buffer().size() > MAX_BYTES: return result("SAVE_SIZE_LIMIT")
 	var previous := ""
 	var previous_revision := -1
+	var migration_sources: Array[String]=[]
+	var primary_requires_migration:=false
 	if FileAccess.file_exists(path+".backup"):
 		var backup := _read_one(path+".backup",owner,content)
 		if backup.status != "OK": return result("EXISTING_SAVE_NOT_WRITABLE","backup."+backup.status)
+		if backup.get("migration_required",false): migration_sources.append(path+".backup")
 		previous=FileAccess.get_file_as_string(path+".backup")
 		previous_revision=backup.revision
 	if FileAccess.file_exists(path):
 		var current := _read_one(path,owner,content)
 		if current.status == "OK":
+			primary_requires_migration=bool(current.get("migration_required",false))
+			if primary_requires_migration: migration_sources.append(path)
 			previous=FileAccess.get_file_as_string(path)
 			previous_revision=current.revision
 		elif current.status in ["CORRUPT","CHECKSUM_MISMATCH","INVALID_STATE"] and not previous.is_empty():
@@ -191,8 +293,17 @@ func write_game(path: String, payload: Dictionary, owner: String, content: Dicti
 	if previous_revision == int(payload.revision):
 		var old := _decode(previous,owner,content)
 		if old.status != "OK" or _canonical(old.payload) != _canonical(payload): return result("REVISION_CONFLICT")
-		if FileAccess.file_exists(path) and _read_one(path,owner,content).status == "OK": return {"status":"SAVED","reason":"IDENTICAL_SNAPSHOT","revision":int(payload.revision),"bytes":text.to_utf8_buffer().size()}
+		if FileAccess.file_exists(path) and _read_one(path,owner,content).status == "OK" and not primary_requires_migration: return {"status":"SAVED","reason":"IDENTICAL_SNAPSHOT","revision":int(payload.revision),"bytes":text.to_utf8_buffer().size()}
 	if DirAccess.make_dir_recursive_absolute(path.get_base_dir()) != OK: return result("WRITE_FAILED","directory")
+	var preserved_migration_sources: Array=[]
+	# Preserve source bytes before even writing the migrated candidate. Backups
+	# may later rotate, but these content-addressed archives are never rotated.
+	for source in migration_sources:
+		var preserved:=_preserve_migration_source(source)
+		if preserved.status!="OK": return preserved
+		preserved_migration_sources.append(preserved.archive)
+		var phase_name:="after_migration_source_preserved" if source==path else "after_migration_backup_preserved"
+		if _phase(phase_name): return result("INJECTED_FAILURE",phase_name)
 	if not base._write(path+".pending",text): return result("WRITE_FAILED","pending")
 	if _phase("after_pending_write"): return result("INJECTED_FAILURE","after_pending_write")
 	if _read_one(path+".pending",owner,content).status != "OK": return result("VERIFY_FAILED","pending")
@@ -209,12 +320,16 @@ func write_game(path: String, payload: Dictionary, owner: String, content: Dicti
 	if not _path(path+".pending") or not _path(path): return result("UNSAFE_PATH","primary_replace")
 	if DirAccess.rename_absolute(path+".pending",path) != OK: return result("REPLACE_FAILED","primary")
 	if _phase("after_primary_replace"): return result("COMMITTED_ACK_LOST","after_primary_replace",int(payload.revision))
-	return {"status":"SAVED","reason":"","revision":int(payload.revision),"bytes":text.to_utf8_buffer().size()}
+	return {"status":"SAVED","reason":"MIGRATED" if not preserved_migration_sources.is_empty() else "","revision":int(payload.revision),"bytes":text.to_utf8_buffer().size(),"preserved_migration_sources":preserved_migration_sources}
 
 func validate_payload(payload: Dictionary, owner: String, content: Dictionary) -> Dictionary:
 	if not _id(owner) or not _plain(payload): return result("INVALID_STATE","owner_or_json_types")
 	var fields := ["schema","profile","character","inventory","equipment","skills","hotkeys","quests","loot","monsters","buffs","cooldowns","revision","rng_state","applied_request_ids","request_watermarks","sim_time","time_accumulator","pending_actions","next_instance_id","next_loot_id","stats","shop_purchases"]
-	if not base._keys(payload,fields): return result("INVALID_STATE","payload.shape")
+	if not payload.has_all(fields): return result("INVALID_STATE","payload.shape")
+	for key in payload:
+		if key not in fields and key not in ["summons","bank_inventory"]: return result("INVALID_STATE","payload.unknown_field")
+	if payload.has("summons") and typeof(payload.summons)!=TYPE_ARRAY: return result("INVALID_STATE","summons.type")
+	if payload.has("bank_inventory") and typeof(payload.bank_inventory)!=TYPE_ARRAY: return result("INVALID_STATE","bank_inventory.type")
 	for key in ["character","equipment","hotkeys","quests","monsters","buffs","cooldowns","request_watermarks","stats","shop_purchases"]:
 		if typeof(payload[key]) != TYPE_DICTIONARY: return result("INVALID_STATE",key+".type")
 	for key in ["inventory","skills","loot","applied_request_ids","pending_actions"]:
@@ -232,7 +347,7 @@ func validate_payload(payload: Dictionary, owner: String, content: Dictionary) -
 	var engine = GameState.new()
 	if not engine.configure(content): return result("INVALID_CONTENT",JSON.stringify(engine.errors))
 	# Protect the authoritative validator's typed accesses from malformed structures.
-	for row in payload.inventory:
+	for row in payload.inventory+payload.get("bank_inventory",[]):
 		if typeof(row) != TYPE_DICTIONARY or not row.has_all(["instance_id","item_id","quantity","durability"]): return result("INVALID_STATE","inventory.shape")
 		if not content.items.has(row.item_id): return result("DEFERRED","inventory.item_reference")
 	for row in payload.loot:
@@ -256,8 +371,9 @@ func validate_payload(payload: Dictionary, owner: String, content: Dictionary) -
 	var authoritative: Dictionary=engine.validate_payload(payload,owner)
 	if authoritative.status != "OK": return result(authoritative.status,authoritative.get("reason",""))
 	var instances := {}
-	for row in payload.inventory:
+	for row in payload.inventory+payload.get("bank_inventory",[]):
 		if not _id(row.instance_id) or not _id(row.item_id): return result("INVALID_STATE","inventory.id")
+		if instances.has(row.instance_id): return result("INVALID_STATE","inventory_or_bank.duplicate_id")
 		instances[row.instance_id]=true
 	for slot in payload.equipment:
 		var id: String=str(payload.equipment[slot])

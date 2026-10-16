@@ -23,7 +23,9 @@ func clear() -> void:
 func add_item(title: String, icon: Texture2D = null) -> void:
 	var index := entries.size()
 	var button := Button.new()
-	button.text = String.chr(97+index)+":  "+title
+	button.text = (String.chr(97+index) if index<26 else str(index+1))+":  "+title
+	button.clip_text=true
+	button.tooltip_text=title
 	button.icon=icon; button.expand_icon=true
 	button.add_theme_constant_override("icon_max_width",28)
 	button.custom_minimum_size=Vector2(0,38)
