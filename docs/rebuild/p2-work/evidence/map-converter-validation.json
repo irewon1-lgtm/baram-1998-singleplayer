@@ -1,0 +1,47 @@
+{
+  "scope": "KR125 map converter actual original-input and copied-corruption validation; no original runtime or target-era correctness claim",
+  "tests": [
+    {
+      "test": "required_map4_original_out_of_range_preserved",
+      "status": "PASS",
+      "scope": "expected fail-closed rejection",
+      "observed": "Cell22 object 3840 out of OTB bounds"
+    },
+    {
+      "test": "required_map3_original_extra_byte_not_truncated",
+      "status": "PASS",
+      "scope": "expected fail-closed rejection",
+      "observed": "Map size 16385 is not one exact 64x64 storage chunk"
+    },
+    {
+      "test": "required_map1_truncated_copy",
+      "status": "PASS",
+      "scope": "expected fail-closed rejection",
+      "observed": "Map size 16383 is not one exact 64x64 storage chunk"
+    },
+    {
+      "test": "required_map1_missing_object_reference_copy",
+      "status": "PASS",
+      "scope": "expected fail-closed rejection",
+      "observed": "Cell0 object 2000 out of OTB bounds"
+    },
+    {
+      "test": "required_otb_truncated_copy",
+      "status": "PASS",
+      "scope": "expected fail-closed rejection",
+      "observed": "OTB object1999 payload bounds"
+    },
+    {
+      "test": "exe_direction_arrays_match_declared_NESW",
+      "status": "PASS",
+      "scope": "independent original executable bytes"
+    },
+    {
+      "test": "all_runtime_package_artifact_dependencies_exist_and_match_hash",
+      "status": "PASS",
+      "checked_artifacts": 54,
+      "mismatch": []
+    }
+  ],
+  "failed": 0
+}

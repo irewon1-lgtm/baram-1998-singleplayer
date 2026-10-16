@@ -1,0 +1,49 @@
+{
+  "schema": "baram.work.p2.state/1",
+  "task_id": "BARAM_REBUILD_WORK_P2_TAKEOVER_001",
+  "branch": "work/rebuild-runtime-20261016",
+  "current_step": "PLATFORM_EXECUTION_AND_DELIVERY",
+  "G0": "BLOCKED_FULL42_INPUTS",
+  "P2": {
+    "P2-01": "PARTIAL_KR125_MAP_RENDER3_STATIC_COLLISION_RULES_EXECUTED_EXITS_RETURN_UNRESOLVED",
+    "P2-02": "PARTIAL_KR491_ORIGINAL_COMPOSITION_MOTION_VISUALLY_INFERRED_MASK3_FAIL",
+    "P2-03": "PARTIAL_EFFECT0_FRAME_PREVIEW_WAV001_MIX_CAPTURE_FULL_COMMANDS_BLOCKED",
+    "P2-04": "PARTIAL_VALID_ORIGINAL_CREATION_BITMAPS_NATIVE_IME_NOT_RUN",
+    "P2-05": "LINUX_ORIGINAL_ID_OFFLINE_SAVE_PASS_NATIVE_WINDOWS_ANDROID_PENDING",
+    "P2-06": "BLOCKED_NO_FREE_TEST_AUTH_ENDPOINT"
+  },
+  "P3": "NOT_STARTED_NOT_AUTHORIZED",
+  "resume": "Check remote HEAD and this state; continue from original consumer runtime integration; do not redo matching delivery audit",
+  "owned_paths": [
+    "rebuild/p2/**",
+    "tools/rebuild/p2/**",
+    "docs/rebuild/p2-work/**"
+  ],
+  "historical_failures_preserved": [
+    "NA154",
+    "Wine12",
+    "mask2 pending reproduction"
+  ],
+  "test_plan": [
+    {
+      "unit": "baseline",
+      "expected": "Godot4.6.3 smoke starts existing project; no original claims"
+    },
+    {
+      "unit": "map",
+      "expected": "all selected native MAP/tile/object refs decoded and same IDs observed in actual Godot render; collision/exits independent and blocked if unknown"
+    },
+    {
+      "unit": "character/effect",
+      "expected": "original part/EPF/PAL refs consumed; unsupported commands fail closed; historical timing separate"
+    },
+    {
+      "unit": "save/platform",
+      "expected": "same project includes source IDs and offline saves; actual Windows/Android distinguished from Linux and build-only"
+    }
+  ],
+  "status": "PARTIAL_ORIGINAL_ASSETS_CONNECTED",
+  "input_generation": "WORK-P2-GEN002",
+  "source_snapshot_note": "Work source checkpoint; final native execution still pending",
+  "next_resume": "Read this state and platform receipts; run only final current-source platform checks; finish source delivery and P3 decision. No P0/P1 repeat."
+}

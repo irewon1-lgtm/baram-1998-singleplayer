@@ -4,7 +4,7 @@ config_version=5
 [application]
 config/name="Baram P2 Inspection"
 config/use_custom_user_dir=true
-config/custom_user_dir_name="baram_rebuild_p2_001"
+config/custom_user_dir_name="baram_rebuild_work_p2_001"
 run/main_scene="res://inspection.tscn"
 
 [display]

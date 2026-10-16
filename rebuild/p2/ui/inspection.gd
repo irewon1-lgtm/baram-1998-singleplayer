@@ -12,6 +12,7 @@ var frame_us: Array[int] = []
 var started_us := Time.get_ticks_usec()
 var ready_us := 0
 var completed := false
+var original_inspection: Control
 
 func _ready() -> void:
 	# Use installed system fonts only; no font is bundled in EXE/APK/artifacts.
@@ -59,6 +60,17 @@ func _ready() -> void:
 	bottom.text = "오프라인 검수 | G0 BLOCKED | Windows/Android IME NOT_RUN"
 	layout.add_child(bottom)
 	ready_us = Time.get_ticks_usec()
+	var runtime_path := OS.get_environment("BARAM_P2_RUNTIME")
+	for argument in OS.get_cmdline_user_args():
+		if argument.begins_with("--p2-runtime="):
+			runtime_path = argument.trim_prefix("--p2-runtime=")
+	if runtime_path.is_empty() and FileAccess.file_exists("res://private_runtime/runtime.json"):
+		runtime_path = "res://private_runtime"
+	if not runtime_path.is_empty():
+		margin.hide()
+		original_inspection = preload("res://ui/original_inspection.gd").new()
+		original_inspection.setup(runtime_path, state)
+		add_child(original_inspection)
 	if "--p2-smoke" in OS.get_cmdline_user_args() or OS.has_feature("p2_smoke"):
 		_run_smoke.call_deferred()
 

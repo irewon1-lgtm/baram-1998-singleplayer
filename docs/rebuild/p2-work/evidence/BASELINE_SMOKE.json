@@ -1,0 +1,59 @@
+{
+  "platform": "Linux",
+  "engine": "4.6.3-stable (official)",
+  "checks": [
+    {
+      "id": "four_panels",
+      "pass": true
+    },
+    {
+      "id": "panel_0",
+      "pass": true
+    },
+    {
+      "id": "panel_1",
+      "pass": true
+    },
+    {
+      "id": "panel_2",
+      "pass": true
+    },
+    {
+      "id": "panel_3",
+      "pass": true
+    },
+    {
+      "id": "input_adapter_synthetic_key",
+      "pass": true
+    },
+    {
+      "id": "synthetic_simultaneous_actions",
+      "pass": true
+    },
+    {
+      "id": "release_one_action_keeps_other",
+      "pass": true
+    },
+    {
+      "id": "focus_loss_clears_held",
+      "pass": true
+    },
+    {
+      "id": "missing_original_visible",
+      "pass": true
+    },
+    {
+      "id": "unicode_direct_injection_only",
+      "pass": true
+    }
+  ],
+  "original_assets_consumed": 0,
+  "IME": "NOT_RUN",
+  "authentication": "NOT_RUN",
+  "save_tests": {
+    "checks": 85,
+    "failures": 0,
+    "status": "PASS"
+  },
+  "scope": "NEW_ENVIRONMENT_MINIMUM_SMOKE; historical same-code tests reused separately; original assets 0"
+}

@@ -1,0 +1,115 @@
+name: Work P2 isolated native Windows
+on:
+  push:
+    branches: [work/rebuild-runtime-20261016]
+    paths: ['docs/rebuild/p2-work/platform/NATIVE_REQUEST.json']
+permissions:
+  contents: read
+concurrency:
+  group: work-p2-native-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  windows:
+    if: github.event.repository.private == false
+    runs-on: windows-latest
+    timeout-minutes: 40
+    environment: baram-windows-private
+    env:
+      PYTHONUTF8: '1'
+      GH_TOKEN: ${{ secrets.BARAM_PRIVATE_REPO_TOKEN }}
+      PRIVATE_REPO: irewon1-lgtm/baram-windows-private
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          path: source
+          persist-credentials: false
+      - name: Read pinned private input request and confirm private vault
+        id: request
+        shell: pwsh
+        run: |
+          $request = Get-Content source/docs/rebuild/p2-work/platform/NATIVE_REQUEST.json -Raw | ConvertFrom-Json
+          if ($request.schema -ne 'baram.work.p2.native_request/1') { throw 'Unexpected request schema' }
+          if ($request.runtime_zip_sha256 -notmatch '^[0-9a-f]{64}$') { throw 'Exact runtime SHA required' }
+          if ($request.vault_ref -notmatch '^work/rebuild-p2-inputs-[a-zA-Z0-9_-]+$') { throw 'Isolated private ref required' }
+          if ($request.runtime_zip_path -notmatch '^p2-work/[a-zA-Z0-9_/-]+\.zip$' -or $request.runtime_zip_path.Contains('..')) { throw 'Unsafe private input path' }
+          $vault = gh api "repos/$env:PRIVATE_REPO" | ConvertFrom-Json
+          if (-not $vault.private) { throw 'Private source vault required' }
+          "vault_ref=$($request.vault_ref)" >> $env:GITHUB_OUTPUT
+          "zip_path=$($request.runtime_zip_path)" >> $env:GITHUB_OUTPUT
+          "zip_sha256=$($request.runtime_zip_sha256)" >> $env:GITHUB_OUTPUT
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ env.PRIVATE_REPO }}
+          ref: ${{ steps.request.outputs.vault_ref }}
+          token: ${{ secrets.BARAM_PRIVATE_REPO_TOKEN }}
+          path: vault
+          persist-credentials: false
+      - name: Restore exact private runtime generation
+        shell: pwsh
+        env:
+          ZIP_PATH: ${{ steps.request.outputs.zip_path }}
+          ZIP_SHA256: ${{ steps.request.outputs.zip_sha256 }}
+        run: |
+          $zip = Join-Path vault $env:ZIP_PATH
+          if ((Get-FileHash $zip -Algorithm SHA256).Hash.ToLower() -ne $env:ZIP_SHA256) { throw 'Private runtime zip mismatch' }
+          python -c "import os,pathlib,zipfile; z=zipfile.ZipFile(pathlib.Path('vault')/os.environ['ZIP_PATH']); assert all(not pathlib.PurePosixPath(i.filename).is_absolute() and '..' not in pathlib.PurePosixPath(i.filename).parts and not ((i.external_attr>>16)&0o170000)==0o120000 for i in z.infolist()); z.extractall('private-runtime')"
+          if ($LASTEXITCODE) { throw 'Private runtime restore failure' }
+      - name: Install pinned Godot and official templates
+        shell: pwsh
+        run: |
+          Invoke-WebRequest 'https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_win64.exe.zip' -OutFile editor.zip
+          if ((Get-FileHash editor.zip -Algorithm SHA256).Hash.ToLower() -ne 'e39986a178d585ce7ac198fb8de6ea436366dc0cc00e594810c2e3e104c04b90') { throw 'Pinned editor hash mismatch' }
+          Expand-Archive editor.zip editor
+          Invoke-WebRequest 'https://github.com/godotengine/godot-builds/releases/download/4.6.3-stable/Godot_v4.6.3-stable_export_templates.tpz' -OutFile templates.tpz
+          if ((Get-FileHash templates.tpz -Algorithm SHA256).Hash.ToLower() -ne '3fbe2c0e2dec9d537ab9ec97bcf8da91dcf23357fc51f67092dd068d839290a8') { throw 'Pinned templates hash mismatch' }
+          python -c "import zipfile; z=zipfile.ZipFile('templates.tpz'); [z.extract(n) for n in ['templates/windows_debug_x86_64.exe','templates/windows_release_x86_64.exe','templates/version.txt']]"
+          python -m pip install cryptography==46.0.3
+      - name: Export isolated project and run unchanged storage assertions on Windows
+        id: native
+        shell: pwsh
+        run: |
+          $godot = (Get-ChildItem editor -Filter '*console.exe' | Select-Object -First 1).FullName
+          python source/tools/rebuild/p2/work_platform.py export --godot "$godot" --templates "$PWD/templates" --runtime "$PWD/private-runtime" --target Windows --output "$PWD/private-output/build"
+          if ($LASTEXITCODE) { throw 'Work P2 export failed' }
+          $exe = "$PWD/private-output/build/baram-p2-work-inspection.exe"
+          $hash = (Get-FileHash $exe -Algorithm SHA256).Hash.ToLower()
+          python source/tools/rebuild/p2/work_platform.py native-run --exe "$exe" --exe-sha256 "$hash" --output "$PWD/private-output/execution"
+          $nativeResult = $LASTEXITCODE
+          New-Item -ItemType Directory private-output/native-storage -Force | Out-Null
+          & $godot --headless --path "$PWD/source/rebuild/p2" --script "$PWD/source/tools/rebuild/p2/test_save.gd" -- --root "$PWD/private-output/native-storage" *> private-output/native-storage.log
+          $storageResult = $LASTEXITCODE
+          New-Item -ItemType Directory public-metadata -Force | Out-Null
+          Copy-Item private-output/execution/RUN_RECEIPT.json public-metadata/native-run.json
+          python -c "import json,pathlib; p=pathlib.Path('private-output/build/EXPORT_RECEIPT.json'); x=json.loads(p.read_text()); y={k:x.get(k) for k in ['schema','target','engine','custom_user_dir','result','execution','artifact','sources_unchanged','runtime_unchanged']}; pathlib.Path('public-metadata/export.json').write_text(json.dumps(y,indent=2))"
+          python -c "import json,pathlib; p=pathlib.Path('private-output/native-storage/results.json'); pathlib.Path('public-metadata/native-storage.json').write_text(p.read_text()) if p.is_file() else None"
+          if ($storageResult) { throw 'Unchanged native storage suite failed; original assertions retained' }
+          if ($nativeResult) { throw 'Native Windows assertion or execution failure; sealed evidence is retained' }
+      - name: Encrypt private binaries and visual/audio evidence to the session public key
+        if: always()
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory private-output -Force | Out-Null
+          New-Item -ItemType Directory private-deliverables -Force | Out-Null
+          Copy-Item private-output/build/*.exe private-deliverables/ -ErrorAction SilentlyContinue
+          Copy-Item private-output/build/*.json private-deliverables/ -ErrorAction SilentlyContinue
+          Copy-Item private-output/build/*.log private-deliverables/ -ErrorAction SilentlyContinue
+          Copy-Item private-output/execution private-deliverables/ -Recurse -ErrorAction SilentlyContinue
+          Copy-Item private-output/native-storage private-deliverables/ -Recurse -ErrorAction SilentlyContinue
+          Copy-Item private-output/native-storage.log private-deliverables/ -ErrorAction SilentlyContinue
+          python source/tools/rebuild/p2/work_platform.py seal --source private-deliverables --public-key source/docs/rebuild/p2-work/platform/NATIVE_PUBLIC_KEY.pem --output work-p2-native.sealed
+          if ($LASTEXITCODE) { throw 'Private evidence encryption failed; no plaintext artifact upload permitted' }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: work-p2-native-encrypted
+          path: work-p2-native.sealed
+          if-no-files-found: error
+          retention-days: 1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: work-p2-native-public-metadata
+          path: public-metadata/*.json
+          if-no-files-found: warn
+          retention-days: 1
