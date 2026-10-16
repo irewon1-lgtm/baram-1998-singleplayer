@@ -160,10 +160,19 @@ def asset_universes(runtime: Path, inputs: dict, normalized: Path, observations:
     chunk_rows = [{"content_id": "KR125:storage_chunk:" + str(x.get("inspection_id", x["native_id"])), "native_map_id": x["native_id"], "inspection_id": x.get("inspection_id", x["native_id"]), "chunk_index": x.get("storage_chunk_index", 0), "use_status": "EXERCISED" if str(x.get("inspection_id", x["native_id"])) in chunk_obs or (not x.get("inspection_id") and str(x["native_id"]) in map_obs) else "BOUND"} for x in maps["maps"]]
     result["map_storage_chunks"] = {"known_denominator": len(chunk_rows), "global_target_denominator": "UNKNOWN", "use_status_counts": dict(collections.Counter(x["use_status"] for x in chunk_rows)), "records": chunk_rows, "scope": "isolated64x64 disk chunks; never count as separate historical maps/cities"}
     result["work_candidates"] = {"known_denominator": len(candidates), "global_target_denominator": "NOT_APPLICABLE", "counting_rule": "unique candidate_id only; event/receipt rows excluded", "ids": sorted(candidates), "guard_ids": sorted(k for k, v in candidates.items() if v.get("P2_selection") == "INSPECTION_GUARD"), "historical_feature_completion": 0}
+    if (runtime / "rules/priority_rules.json").is_file():
+        rules = load(runtime / "rules/priority_rules.json")
+        decisions = rules.get("work_batch_decisions", [])
+        if {x["candidate_id"] for x in decisions} != set(candidates):
+            raise ValueError("After Work decision population differs from original159 candidates")
+        result["work_candidates"].update({"current_decision_counts": dict(collections.Counter(x["status"] for x in decisions)), "current_decisions": decisions, "selected_relations_are_reconstructed_not_full_features": True})
     core = json.loads(inputs["bytes"]["docs/rebuild/p1_5/research_official_core.json"])
     review = json.loads(inputs["bytes"]["docs/rebuild/p1_5/official_independent_review.json"])
     conflicts = review["cross_era_conflicts"]
     result["cross_era_conflicts"] = {"known_denominator": len(conflicts), "scope": "independent review: both-epoch explicit skill material/money differences", "additional_epoch_differences": len(core["epoch_conflicts"]), "additional_scope": "all published region/XP/item/ingredient/money differences; not15 equivalent conflicts", "records": conflicts}
+    if (runtime / "rules/priority_rules.json").is_file():
+        selected_conflicts = load(runtime / "rules/priority_rules.json").get("conflicts", [])
+        result["cross_era_conflicts"].update({"working_profile_selected": len(selected_conflicts), "historical_truth_resolved": 0, "selected_ids": [x["conflict_id"] for x in selected_conflicts], "source_epoch_variants_preserved": True})
     return result
 
 
@@ -183,14 +192,131 @@ def cause_for(area: str, target: str) -> tuple[str, str]:
     return "SELECTED_NOT_BOUND", "자료는 있지만 기술 수정 필요"
 
 
+def observations_from_report(runtime: Path, receipt: Path) -> dict:
+    """Read exact render/output evidence; decoder/list presence is not playback."""
+    report = load(receipt)
+    checks = {x["id"]: x for x in report.get("checks", [])}
+    passed = {k: v for k, v in checks.items() if v.get("status") == "PASS"}
+    assets, index = load(runtime / "kr491/kr491_runtime.json"), load(runtime / "maps/index.json")
+    if report.get("generation") != load(runtime / "runtime.json").get("generation"):
+        raise ValueError("Runtime report generation differs from measured runtime")
+    chunks = {str(x.get("inspection_id", x["native_id"])): x["native_id"] for x in index["maps"]}
+    drawn_chunks = {str(c.get("details")) for key, c in passed.items() if key.startswith("map_draw_") or key.startswith("map_render_")}
+    drawn_chunks &= set(chunks)
+    effect_ids = [x["id"] for x in assets["effects"] if "effect_render_" + str(x["id"]) in passed and passed["effect_render_" + str(x["id"])].get("details", {}).get("paths") and "effect_finished_" + str(x["id"]) in passed]
+    sound_ids = [x["source_id"] for i, x in enumerate(assets["sounds"]) if "wav_mix_" + str(i) in passed and passed["wav_mix_" + str(i)].get("details", {}).get("peak", 0) > 0.0001]
+    icon_ids = [key.removeprefix("icon_render_") for key in passed if key.startswith("icon_render_") and len(passed[key].get("details", {}).get("drawn", [])) == 3]
+    fields = {}
+    def observed(fid: str, use: str, scope: str) -> None:
+        fields[fid] = {"use_status": use, "test_status": "PASS", "evidence": str(receipt), "scope": scope}
+    if drawn_chunks:
+        observed("GAP-H-tiles_objects", "EXERCISED", "actual storage chunk draw calls; city/exits/occlusion semantics unknown")
+        observed("GAP-H-dimensions", "EXERCISED", "64x64 storage only; active world dimensions unknown")
+    if effect_ids:
+        observed("GAP-G-sequence_frames", "EXERCISED", "representative visible previews; fragment and reconstructed semantics separate")
+    if sound_ids:
+        observed("GAP-G-actual_audio_output", "EXERCISED", "representative mixer output captured; no hardware listening or skill call timing")
+    if "independent_wav_selector_163" in passed:
+        observed("GAP-G-wave_metadata", "BOUND", "163 independent IDs selectable and actual decoder checked; only sampled output exercised")
+    if icon_ids:
+        observed("GAP-I-actual_icons", "EXERCISED", "105 known document icon bindings in three inspection roles;377 missing2001 icons remain")
+    if "same_item_state_equipment_stats" in passed:
+        observed("GAP-I-equipped_appearance", "EXERCISED", "thumbnail and displayed stats share selected item state; body/weapon sprite identity unresolved")
+    if "skills_bound" in passed:
+        for name in ["four_job_learning", "learn_materials", "learn_money"]:
+            observed("GAP-E-" + name, "BOUND", "188 skill entries displayed; independent contract tests and P3 live learning are separate")
+    if "npcs_bound_distinct_stocks" in passed:
+        for name in ["name", "region", "building", "service"]:
+            observed("GAP-A-" + name, "BOUND", "22 distinct NPC service contracts displayed; NPC appearance and world coordinates unresolved")
+    save_checks = {
+        "schema": "original_native_ids_save_roundtrip", "payload_integrity": "original_native_ids_save_roundtrip",
+        "atomic_backup_recovery": "original_native_id_backup_created", "coordinate_validity": "map_version_only_keeps_character_and_loot_coordinates",
+        "explicit_migration": "unmapped_coordinate_change_defers_and_preserves_source", "preserve_on_failure": "unmapped_coordinate_change_defers_and_preserves_source",
+    }
+    for field, check in save_checks.items():
+        if check in passed:
+            observed("GAP-J-" + field, "EXERCISED", "current Linux isolated original-ID fixture only; full safety suite/platforms remain separate")
+    return {"schema": "baram.priority.coverage-observations/1", "receipt": str(receipt), "receipt_sha256": sha(receipt), "generation": report.get("generation"), "platform": report.get("platform"), "checks": len(checks), "pass": len(passed), "failures": [x for x in checks.values() if x.get("status") != "PASS"], "assets": {"effect_ids_exercised": effect_ids, "sound_ids_exercised": sound_ids, "map_ids_exercised": sorted({chunks[x] for x in drawn_chunks}), "map_inspection_ids_exercised": sorted(drawn_chunks), "icon_ids_exercised": icon_ids}, "fields": fields, "interpretation": {"blocked_effect72_is_negative_test_not_played": True, "wav_decode_only_is_not_output": True, "hardware_listening": "NOT_RUN", "full_original_semantics": "NOT_VERIFIED"}}
+
+
+def build_selections(repo: Path, runtime: Path, report: Path, rules_report: Path, output: Path) -> dict:
+    """Join source selections with exact observations; keep unbound rows visible."""
+    observations = observations_from_report(runtime, report)
+    rules_test = load(rules_report)
+    if rules_test.get("status") != "PASS" or rules_test.get("failures") != 0 or rules_test.get("platform") != "Linux":
+        raise ValueError("Read-only rule consumption has no valid exact Linux receipt")
+    rules = load(runtime / "rules/priority_rules.json")
+    source_rules = jsonl(repo / "docs/rebuild/priority-fill/RULE_SELECTIONS.jsonl")
+    rows = []
+    skill_ids = {x["id"] for x in rules["skills"]}
+    npc_ids = {x["id"] for x in rules["npcs"]}
+    rule_evidence = {"path": str(rules_report), "sha256": sha(rules_report), "scope": "read-only job/level/material data and NPC service contracts; transactions/placement disabled"}
+    gui_evidence = {"path": str(report), "sha256": sha(report), "scope": "actual Linux GUI; decoder, draw calls and sampled mixer output distinguished"}
+    for old in source_rules:
+        row = dict(old)
+        if row.get("fact_status") == "ORIGINAL_VERIFIED" and (row["content_id"] in skill_ids or row["content_id"] in npc_ids):
+            row["runtime_status"] = "EXERCISED"
+            row["test_evidence"] = [rule_evidence]
+            row["runtime_scope"] = "P2_READ_ONLY_LEARNING_OR_NPC_CONTRACT; NO_P3_TRANSACTIONS"
+            row["gap_ids"] = ["GAP-E-four_job_learning", "GAP-E-learn_materials", "GAP-E-learn_money"] if row["content_id"] in skill_ids else ["GAP-A-name", "GAP-A-region", "GAP-A-building", "GAP-A-service", "GAP-E-shop_stock_buy_sell_limit"]
+            row["area"] = "E" if row["content_id"] in skill_ids else "A"
+        else:
+            row["runtime_status"] = "SELECTED"
+            row["runtime_scope"] = "METADATA_LOADED_ONLY; NO_SPECIFIC_GAMEPLAY_FIELD_CONSUMER"
+            row["test_evidence"] = []
+        rows.append(row)
+    icon_ids = set(observations["assets"]["icon_ids_exercised"])
+    for old in jsonl(repo / "docs/rebuild/priority-fill/ICON_SELECTIONS.jsonl"):
+        row = dict(old)
+        icon = row["selected_value"]["icon_id"]
+        row.update(area="I", runtime_status="EXERCISED" if icon in icon_ids else "BOUND", test_evidence=[{**gui_evidence, "check_id": "icon_render_" + icon}] if icon in icon_ids else [], gap_ids=["GAP-I-actual_icons"], runtime_scope="THREE_INSPECTION_THUMBNAILS; EQUIPPED_BODY_SPRITE_ID_UNRESOLVED", view_role_fact_status="RECONSTRUCTED")
+        rows.append(row)
+    index = load(runtime / "maps/index.json")
+    observed_maps = set(observations["assets"]["map_ids_exercised"])
+    by_map = collections.defaultdict(list)
+    for chunk in index["maps"]:
+        by_map[chunk["native_id"]].append(chunk)
+    inventory = {x["native_id"]: x for x in index["map_inventory"]}
+    for native_id, chunks in sorted(by_map.items()):
+        value = {"inspection_chunk_ids": [x["inspection_id"] for x in chunks], "storage_grid": [64, 64], "world_chunk_topology": None, "city": None, "exits": None, "return_points": None}
+        rows.append({"field_id": f"KR125:map:{native_id}:storage_chunks", "content_id": f"KR125:map:{native_id}", "profile": "KR125_STORAGE_DIAGNOSTIC", "selected_value": value, "unit": "source_storage_chunks_not_historical_maps", "source_tier": 1, "source_id": "LIB-009", "source_pointer": {"member": inventory[native_id]["member"], "sha256": inventory[native_id]["sha256"], "runtime_index": "maps/index.json", "inspection_ids": value["inspection_chunk_ids"]}, "era_match": "KR1.25_BYTES; TARGET_1998_2001_CITY_EQUIVALENCE_UNKNOWN", "selection_reason": "Exact source storage blocks and references validate; no invented world join/city/exits", "alternatives": [], "fact_status": "ORIGINAL_VERIFIED", "fact_scope": "KR125 storage byte structure and bitmap references only; not target-era geography", "runtime_status": "EXERCISED" if native_id in observed_maps else "BOUND", "runtime_scope": "ISOLATED64x64_STORAGE_CHUNK_DRAW; NO_WORLD_GAMEPLAY", "test_evidence": [gui_evidence] if native_id in observed_maps else [], "area": "H", "gap_ids": ["GAP-H-tiles_objects", "GAP-H-dimensions"]})
+    assets = load(runtime / "kr491/kr491_runtime.json")
+    effect_ids = set(observations["assets"]["effect_ids_exercised"])
+    for index, effect in enumerate(assets["effects"]):
+        preview = effect.get("priority_preview", {})
+        if not preview.get("available"):
+            continue
+        rows.append({"field_id": effect["source_id"] + ":inspection_preview", "content_id": effect["source_id"], "profile": "KR491_NEUTRAL_RESOURCE_PREVIEW", "selected_value": {"private_json_pointer": f"kr491/kr491_runtime.json#/effects/{index}/priority_preview", "whole_sequence": preview["whole_sequence_available"], "fragment_only": not preview["whole_sequence_available"]}, "unit": "bounded_neutral_frame_preview", "source_tier": 7, "bitmap_source_tier": 1, "source_id": "LIB-010", "source_pointer": effect["source"], "era_match": "KR491_RESOURCE; TARGET_ERA_COMMAND_TIMING_UNPROVEN", "selection_reason": "Preserve source images; neutral source-over/Light-disabled/no-repeat rendering is explicit reconstruction; sentinel spans are not silently skipped", "alternatives": [{"original_command_semantics": "UNRESOLVED", "raw_effect_preserved": True}], "fact_status": "RECONSTRUCTED", "bitmap_fact_status": "ORIGINAL_VERIFIED", "runtime_status": "EXERCISED" if effect["id"] in effect_ids else "BOUND", "runtime_scope": "WHOLE_NEUTRAL_PREVIEW" if preview["whole_sequence_available"] else "VALID_FRAGMENT_ONLY_NOT_COMPLETE_EFFECT", "test_evidence": [gui_evidence] if effect["id"] in effect_ids else [], "area": "G", "gap_ids": ["GAP-G-sequence_frames", "GAP-G-repeat_alpha_light"]})
+    sounds = set(observations["assets"]["sound_ids_exercised"])
+    for sound in assets["sounds"]:
+        rows.append({"field_id": sound["source_id"] + ":independent_catalog", "content_id": sound["source_id"], "profile": "KR491_SOUND_RESOURCE_DIAGNOSTIC", "selected_value": {"member": sound["member"], "pcm_sha256": sound["pcm_sha256"]}, "unit": "original_sound_ID_PCM", "source_tier": 1, "source_id": "LIB-010", "source_pointer": {"container": "NWind.snd", "member": sound["member"], "sha256": sound["sha256"], "member_byte_offset": sound["member_byte_offset"]}, "era_match": "KR491_RESOURCE; TARGET_ERA_SKILL_CALL_UNKNOWN", "selection_reason": "Preserve all163 IDs including identical waveforms; independent searchable selector consumes exact original WAV", "alternatives": [], "fact_status": "ORIGINAL_VERIFIED", "fact_scope": "original KR491 resource PCM and ID only; not original skill invocation", "runtime_status": "EXERCISED" if sound["source_id"] in sounds else "BOUND", "runtime_scope": "MIXER_OUTPUT_CAPTURED_NO_HARDWARE_LISTENING" if sound["source_id"] in sounds else "INDEPENDENT_SELECTOR_AND_ACTUAL_GODOT_DECODER_ONLY", "test_evidence": [gui_evidence], "area": "G", "gap_ids": ["GAP-G-wave_metadata"] + (["GAP-G-actual_audio_output"] if sound["source_id"] in sounds else [])})
+    required = {"field_id", "content_id", "profile", "selected_value", "unit", "source_tier", "source_id", "source_pointer", "era_match", "selection_reason", "alternatives", "fact_status", "runtime_status", "test_evidence"}
+    for row in rows:
+        if required - row.keys():
+            raise ValueError("Incomplete selected record: " + row.get("field_id", "UNKNOWN"))
+    output.write_text("".join(json.dumps(x, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n" for x in rows))
+    return {"rows": len(rows), "unique_content_ids": len({x["content_id"] for x in rows}), "facts": dict(collections.Counter(x["fact_status"] for x in rows)), "use": dict(collections.Counter(x["runtime_status"] for x in rows))}
+
+
 def make_coverage(args: argparse.Namespace) -> dict:
     inputs = baseline_inputs(args.repo, args.baseline_ref)
     gaps = list(csv.DictReader(io.StringIO(inputs["bytes"]["docs/rebuild/p1_5/gaps_by_feature.csv"].decode("utf-8-sig"))))
     reqs = list(csv.DictReader(io.StringIO(inputs["bytes"]["docs/rebuild/p1_5/requirements_delta.csv"].decode("utf-8-sig"))))
     bindings = [json.loads(x) for x in inputs["bytes"]["docs/rebuild/p1_5/field_bindings.jsonl"].decode().splitlines() if x.strip()]
     corpus = corpus_summary(args.normalized)
-    observations = load(args.observations) if args.observations else {}
-    if args.mode == "BASELINE" and not args.observations:
+    observations = observations_from_report(args.runtime, args.runtime_report) if args.runtime_report else load(args.observations) if args.observations else {}
+    if args.unchanged_regression_report:
+        regression = load(args.unchanged_regression_report)
+        if regression.get("generation") != "WORK-P2-GEN003" or any(x.get("status") != "PASS" for x in regression.get("checks", [])):
+            raise ValueError("Unchanged source regression must be exact GEN003 and all executed checks PASS")
+        observations.setdefault("supporting_regressions", []).append({"path": str(args.unchanged_regression_report), "sha256": sha(args.unchanged_regression_report), "scope": "same current code; unchanged GEN003 original motion/creation/save components only", "checks": len(regression["checks"])})
+        for field in ["direction_order", "frame_start_end", "origin_offset", "palette", "front_back_layer", "body_weapon_alignment", "existent_action_set"]:
+            observations.setdefault("fields", {})["GAP-F-" + field] = {"use_status": "EXERCISED", "test_status": "PASS", "evidence": str(args.unchanged_regression_report), "scope": "current-code unchanged GEN003 directional composition regression; original timing and semantic identity remain inferred"}
+        for fid in ["GAP-I-background_buttons", "GAP-J-owner_stable_id_bounds"]:
+            observations.setdefault("fields", {})[fid] = {"use_status": "EXERCISED", "test_status": "PASS", "evidence": str(args.unchanged_regression_report), "scope": "current-code unchanged GEN003 source image or isolated storage subset; full platform/IME/gameplay not certified"}
+    if args.observations_output:
+        args.observations_output.write_text(json.dumps(observations, ensure_ascii=False, indent=2) + "\n")
+    if args.mode == "BASELINE" and not args.observations and not args.runtime_report:
         # Reuse the unchanged GEN003 receipt only for its exact documented scope.
         # The original runtime ZIP/manifest hashes are verified by the receiver.
         observed_subset_fields = {
@@ -230,13 +356,13 @@ def make_coverage(args: argparse.Namespace) -> dict:
             state = "BOUND"
         field_observation = observations.get("fields", {}).get(fid, {})
         if field_observation:
-            state = field_observation.get("use_status", state)
+            state = max([state, field_observation.get("use_status", state)], key=USES.index)
             test = field_observation.get("test_status", test)
         if area == "J" and target == "android":
             test = "FAIL"
         elif cause == "ENVIRONMENT_BLOCKED":
             test = "BLOCKED"
-        fields.append({"field_id": fid, "area": area, "feature": old["feature"], "target_field": target, "requirement_ids": rq_ids, "binding_ids": bnds, "fact_status": "UNKNOWN", "use_status": state, "test_status": test, "test_scope": "supporting subset only; entire historical field is not complete", "known_scope_complete": False, "global_target_denominator": "UNKNOWN", "known_entity_scope": old["known_entity_scope"], "cause_code": cause, "remaining_category": bucket, "information_missing": old["next_action"], "supporting_selection_ids": [x["field_id"] for x in selected], "supporting_selection_fact_counts": dict(collections.Counter(fact(x.get("fact_status", "UNKNOWN")) for x in selected)), "source_tiers_attempted": "1: KR official source/client existing corpus;2/3: existing P1.5 research;4: fixed P1998/RTK tools; no new search claimed", "next_specific_material": evidence + "; field=" + target, "next_action": next_action + "; " + old["next_action"], "substitution_allowed": "YES_RECONSTRUCTED_EXCEPT_TECHNICAL_SAFETY", "risk": "HIGH" if area in {"H", "J"} or target in {"probability_model", "success_rate", "delay_raw_unit", "impact"} else "MEDIUM", "next_owner": owner, "implementation_stage": phase, "observation": field_observation})
+        fields.append({"field_id": fid, "area": area, "feature": old["feature"], "target_field": target, "requirement_ids": rq_ids, "binding_ids": bnds, "fact_status": "UNKNOWN", "fact_status_scope": "unresolved remainder of this global field type; actual selected facts have row-specific statuses", "use_status": state, "test_status": test, "test_scope": "supporting subset only; entire historical field is not complete", "support_scope": field_observation.get("scope", "Exact supporting_selection_ids only; no entire-field claim"), "remaining_scope": "unidentified/unbound/unobserved remainder outside the supporting subset; global original entity denominator UNKNOWN", "partial": True, "known_scope_complete": False, "global_target_denominator": "UNKNOWN", "known_entity_scope": old["known_entity_scope"], "cause_code": cause, "cause_scope": "remaining scope only, not a failure or contradiction of the bound/exercised supporting records", "remaining_category": bucket, "information_missing": old["next_action"], "supporting_selection_ids": [x["field_id"] for x in selected], "supporting_selection_fact_counts": dict(collections.Counter(fact(x.get("fact_status", "UNKNOWN")) for x in selected)), "source_tiers_attempted": "1: KR official source/client existing corpus;2/3: existing P1.5 research;4: fixed P1998/RTK tools; no new search claimed", "next_specific_material": evidence + "; field=" + target, "next_action": next_action + "; " + old["next_action"], "substitution_allowed": "YES_RECONSTRUCTED_EXCEPT_TECHNICAL_SAFETY", "risk": "HIGH" if area in {"H", "J"} or target in {"probability_model", "success_rate", "delay_raw_unit", "impact"} else "MEDIUM", "next_owner": owner, "implementation_stage": phase, "observation": field_observation})
     areas = {}
     for area, label in AREAS.items():
         rows = [x for x in fields if x["area"] == area]
@@ -249,11 +375,11 @@ def make_coverage(args: argparse.Namespace) -> dict:
         "kr491_masks": {"status": "FAIL", "ids": ["DLGLOGIN", "DLGNEW01", "DLGPASS"], "failed_items": 3, "evidence": "docs/rebuild/p2-work/UI_PALETTE_DIAGNOSIS.json", "updated_by_this_data_selection": False},
         "na_source_references": {"status": "FAIL", "failed_edges": 154, "evidence": "docs/rebuild/p1_5/import_reference_failures.json", "updated_by_this_data_selection": False},
     }
-    return {"schema": "baram.priority.coverage/1", "measurement": args.mode, "baseline_ref": args.baseline_ref, "runtime_generation": load(args.runtime / "runtime.json")["generation"], "runtime_manifest_sha256": sha(args.runtime / "runtime.json"), "status": "PARTIAL", "population_contract": {"requirement_ids": len(reqs), "binding_groups": len(bindings), "gap_field_types": len(fields), "original_game_total_entities": "UNKNOWN", "restoration_percentage": "NOT_COMPUTABLE", "A_J_labels": "Preserved from actual P1.5 field ledger; not prose enumeration order", "selections_are_field_records_not_complete_game_entities": True}, "baseline_inputs": inputs["fingerprints"], "source_corpus": corpus["summary"], "active_profile_selection_counts": dict(active), "active_profile_use_counts": dict(active_use), "selected_not_bound": sum(x.get("runtime_status", "SELECTED") == "SELECTED" for x in selections), "bound_not_exercised": sum(x.get("runtime_status") == "BOUND" for x in selections), "areas": areas, "fields": fields, "requirements": [{"requirement_id": x["requirement_id"], "area": CATEGORY_AREA.get(x["category"], "J"), "category": x["category"], "required_behavior": x["canonical_requirement"], "test_status": "NOT_RUN", "scope": "Full requirement not certified by P2 asset inspection", "test_ids": [x["normal_test_id"], x["failure_test_id"], x["cancel_test_id"]]} for x in reqs], "asset_universes": universes, "historical_failures_preserved": historical, "new_observation_receipt": {"path": str(args.observations) if args.observations else None, "sha256": sha(args.observations) if args.observations else None}, "unknowns_are_not_removed": True}
+    return {"schema": "baram.priority.coverage/1", "measurement": args.mode, "baseline_ref": args.baseline_ref, "runtime_generation": load(args.runtime / "runtime.json")["generation"], "runtime_manifest_sha256": sha(args.runtime / "runtime.json"), "status": "PARTIAL", "population_contract": {"requirement_ids": len(reqs), "binding_groups": len(bindings), "gap_field_types": len(fields), "original_game_total_entities": "UNKNOWN", "restoration_percentage": "NOT_COMPUTABLE", "A_J_labels": "Preserved from actual P1.5 field ledger; not prose enumeration order", "selections_are_field_records_not_complete_game_entities": True, "active_selection_rows": len(selections), "unique_active_content_ids": len({x["content_id"] for x in selections}), "selection_count_unit": "unique(field_id,content_id) selection records; composite values are not atomized, conflict fields can share source content IDs"}, "baseline_inputs": inputs["fingerprints"], "source_corpus": corpus["summary"], "active_profile_selection_counts": dict(active), "active_profile_use_counts": dict(active_use), "selected_not_bound": sum(x.get("runtime_status", "SELECTED") == "SELECTED" for x in selections), "bound_not_exercised": sum(x.get("runtime_status") == "BOUND" for x in selections), "areas": areas, "fields": fields, "requirements": [{"requirement_id": x["requirement_id"], "area": CATEGORY_AREA.get(x["category"], "J"), "category": x["category"], "required_behavior": x["canonical_requirement"], "test_status": "NOT_RUN", "scope": "Full requirement not certified by P2 asset inspection", "test_ids": [x["normal_test_id"], x["failure_test_id"], x["cancel_test_id"]]} for x in reqs], "asset_universes": universes, "historical_failures_preserved": historical, "new_observation_receipt": {"path": str(args.runtime_report or args.observations) if (args.runtime_report or args.observations) else None, "sha256": sha(args.runtime_report or args.observations) if (args.runtime_report or args.observations) else None}, "unknowns_are_not_removed": True}
 
 
 def write_gaps(path: Path, coverage: dict) -> None:
-    columns = ["field_id", "area", "feature", "target_field", "requirement_ids", "binding_ids", "fact_status", "use_status", "test_status", "cause_code", "remaining_category", "information_missing", "source_tiers_attempted", "next_specific_material", "next_action", "substitution_allowed", "risk", "next_owner", "implementation_stage"]
+    columns = ["field_id", "area", "feature", "target_field", "requirement_ids", "binding_ids", "fact_status", "use_status", "test_status", "support_scope", "remaining_scope", "partial", "known_scope_complete", "cause_code", "cause_scope", "remaining_category", "information_missing", "source_tiers_attempted", "next_specific_material", "next_action", "substitution_allowed", "risk", "next_owner", "implementation_stage"]
     with path.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, columns)
         writer.writeheader()
@@ -271,6 +397,12 @@ def write_gaps(path: Path, coverage: dict) -> None:
                 writer.writerow({"field_id": "ASSET-" + item["content_id"], "area": area, "feature": kind, "fact_status": item["fact_status"], "use_status": item["use_status"], "test_status": item["test_status"], "cause_code": cause, "remaining_category": item["remaining_category"], "information_missing": json.dumps(item.get("reason", "Not individually exercised; global identity/semantic scope remains separate"), ensure_ascii=False), "source_tiers_attempted": "1: existing original bytes + source records;4: fixed parser", "next_specific_material": material + "; exactID=" + item["content_id"], "next_action": action, "substitution_allowed": "YES_RECONSTRUCTED_EXCEPT_TECHNICAL_SAFETY", "risk": "HIGH" if cause == "DECODE_FAILED" else "MEDIUM", "next_owner": owner, "implementation_stage": stage})
         for item in coverage["asset_universes"]["working2001_item_image_gaps"]["records"]:
             writer.writerow({"field_id": "item.icon." + item["content_id"], "area": "I", "feature": "2001 item named image", "fact_status": "UNKNOWN", "use_status": "DISCOVERED", "test_status": "BLOCKED", "cause_code": item["cause_code"], "remaining_category": "추가 원문 탐색 필요", "information_missing": item["cause_scope"], "source_tiers_attempted": "1: existing official document/image corpus", "next_specific_material": "kr_official_items.jsonl:" + item["content_id"] + "; source=" + "|".join(item["source_ids"]) + "; image_links actual archived bytes", "next_action": "Check exact linked image in existing PRIVATE_IMAGE_INDEX first; acquire only missing eligible bytes and preserve every failed response", "substitution_allowed": "NO_SHARED_FALLBACK", "risk": "MEDIUM", "next_owner": "Work: item icons", "implementation_stage": "P2"})
+        for candidate in coverage["asset_universes"]["work_candidates"].get("current_decisions", []):
+            status = candidate["status"]
+            if status not in {"NOT_SELECTED_OUT_PROFILE", "HYPOTHESIS_ONLY", "CONFLICT_UNSELECTED"}:
+                continue
+            cause = {"NOT_SELECTED_OUT_PROFILE": "OUT_OF_ERA", "HYPOTHESIS_ONLY": "SOURCE_MISSING", "CONFLICT_UNSELECTED": "CONFLICT_UNSELECTED"}[status]
+            writer.writerow({"field_id": "WORK-" + candidate["candidate_id"], "area": area_of({"field_path": candidate.get("field", "")}), "feature": "Work candidate disposition", "target_field": candidate.get("field", ""), "fact_status": "CONFLICT" if status == "CONFLICT_UNSELECTED" else "UNKNOWN", "use_status": "IDENTIFIED", "test_status": "NOT_RUN", "cause_code": cause, "remaining_category": "다른 시대라 의도적 제외" if cause == "OUT_OF_ERA" else "추가 원문 탐색 필요", "information_missing": candidate.get("reason", "") + "; OUT_OF_ERA here means outside provisional2001 profile only; source2000 remains inside overall1998-2001 goal", "source_tiers_attempted": "existing B001/B002 candidate source", "next_specific_material": candidate["candidate_id"] + "; field=" + candidate.get("field", "") + "; profile=" + str(candidate.get("source_profile")), "next_action": "Preserve candidate and2000 variant; obtain compatible2001 field source or evaluate alternative profile separately", "substitution_allowed": "ONLY_EXPLICIT_RECONSTRUCTION_NEW_OVERLAY", "risk": "MEDIUM", "next_owner": "Work: source/rules", "implementation_stage": "P2 contract"})
 
 
 def main() -> None:
@@ -282,11 +414,25 @@ def main() -> None:
     parser.add_argument("--mode", choices=["BASELINE", "AFTER"], required=True)
     parser.add_argument("--selections", type=Path)
     parser.add_argument("--observations", type=Path)
+    parser.add_argument("--runtime-report", type=Path)
+    parser.add_argument("--observations-output", type=Path)
+    parser.add_argument("--selection-output", type=Path)
+    parser.add_argument("--rules-runtime-report", type=Path)
+    parser.add_argument("--unchanged-regression-report", type=Path)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--gaps-output", type=Path)
     args = parser.parse_args()
     if args.mode == "BASELINE" and args.selections:
         parser.error("Baseline cannot read a new selection ledger")
+    if args.mode == "BASELINE" and args.runtime_report:
+        parser.error("Baseline must preserve the unchanged historical receipt")
+    if args.observations and args.runtime_report:
+        parser.error("Choose an observation receipt or derive it from one exact runtime report")
+    if args.selection_output:
+        if args.mode != "AFTER" or not args.runtime_report or not args.rules_runtime_report or args.selections:
+            parser.error("Selection compilation requires AFTER + runtime/rule reports; do not pass an existing selection ledger")
+        print(json.dumps({"selection_compilation": build_selections(args.repo, args.runtime, args.runtime_report, args.rules_runtime_report, args.selection_output)}, ensure_ascii=False))
+        args.selections = args.selection_output
     result = make_coverage(args)
     baseline_path = args.repo / "docs/rebuild/priority-fill/BASELINE_COVERAGE.json"
     if args.mode == "AFTER" and baseline_path.is_file():

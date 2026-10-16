@@ -9,6 +9,9 @@ var errors: Array[String] = []
 var consumed: Dictionary = {}
 var textures: Dictionary = {}
 var priority: Dictionary = {}
+const MAX_TEXTURE_PIXELS := 16 * 1024 * 1024
+var texture_pixels := 0
+var texture_order: Array[String] = []
 
 func safe(relative: String) -> bool:
 	if relative.is_empty() or relative.is_absolute_path() or ".." in relative.split("/") or "\\" in relative:
@@ -90,6 +93,8 @@ func texture(relative: String) -> Texture2D:
 	if not safe(relative):
 		return null
 	if textures.has(relative):
+		texture_order.erase(relative)
+		texture_order.append(relative)
 		return textures[relative]
 	var path := root.path_join(relative)
 	var result: Texture2D
@@ -102,7 +107,18 @@ func texture(relative: String) -> Texture2D:
 	if result == null:
 		errors.append("TEXTURE_DECODE: " + relative)
 		return null
+	var pixels := result.get_width() * result.get_height()
+	if pixels > MAX_TEXTURE_PIXELS:
+		errors.append("TEXTURE_PIXEL_LIMIT: " + relative)
+		return null
+	while texture_pixels + pixels > MAX_TEXTURE_PIXELS and not texture_order.is_empty():
+		var evicted: String = texture_order.pop_front()
+		var previous: Texture2D = textures[evicted]
+		texture_pixels -= previous.get_width() * previous.get_height()
+		textures.erase(evicted)
 	textures[relative] = result
+	texture_order.append(relative)
+	texture_pixels += pixels
 	consumed[relative] = true
 	return result
 

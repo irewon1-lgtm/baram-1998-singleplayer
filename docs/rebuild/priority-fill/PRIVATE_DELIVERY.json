@@ -1,0 +1,40 @@
+{
+  "files": [
+    {
+      "filename": "BARAM_PRIORITY_FILL_RESULTS_20261016.html",
+      "library_file_id": "libfile_39204bc65de0819189223e8791ba3bd1",
+      "file_id": "file_000000000bf081f7acd7ccf97b6ae2d0",
+      "version": 0,
+      "bytes": 1117388,
+      "sha256": "162ee2ab51630d8912a1fde6f05c20ccc90f7f62c19e0866ed6f65fd7d0d58d9",
+      "private_only": true,
+      "local_metadata_applied": true
+    },
+    {
+      "filename": "BARAM_PRIORITY_RUNTIME_EVIDENCE_20261016.zip",
+      "library_file_id": "libfile_cac93099c2448191b2e2d254c940815b",
+      "file_id": "file_00000000dd588210b39c3a3c8ba82d33",
+      "version": 0,
+      "bytes": 3859621,
+      "sha256": "6f17b5586f787cd3d6a1177e993d2d6f69139b7c2ba14837f30dedfebf55dd28",
+      "private_only": true,
+      "local_metadata_applied": true
+    },
+    {
+      "filename": "BARAM_PRIORITY_PRIVATE_RUNTIME_GEN002.zip",
+      "library_file_id": "libfile_7c21f5ded6c08191834e89699244682f",
+      "file_id": "file_00000000dc5481f7b7af7cc62705077e",
+      "version": 0,
+      "bytes": 67779597,
+      "sha256": "6d9ea0d67116b40287eb4b02e61aac8e1fe86afb48603261450175938d0fb173",
+      "private_only": true,
+      "local_metadata_applied": true
+    }
+  ],
+  "runtime_manifest_sha256": "812e4bd6397cf540af203ca6644aea99b898532e071f0637cfdcbba8d144e286",
+  "runtime_generation": "WORK-PRIORITY-GEN002",
+  "actual_clean_restore": "docs/rebuild/priority-fill/RESTORE_RECEIPT.json",
+  "download_by_user": "NOT_OBSERVED",
+  "new_binary_exports": "NOT_RUN",
+  "originals_and_old_generations": "PRESERVED"
+}

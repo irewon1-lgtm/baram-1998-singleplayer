@@ -1,0 +1,88 @@
+{
+  "checks": [
+    {
+      "id": "load_private_frozen_profile",
+      "result": "PASS"
+    },
+    {
+      "id": "188_skill_rows_actually_consumed",
+      "result": "PASS"
+    },
+    {
+      "id": "wrong_job_refused_all_specific_job_skills",
+      "result": "PASS"
+    },
+    {
+      "id": "below_level_refused_all_skills",
+      "result": "PASS"
+    },
+    {
+      "id": "matching_job_level_is_blocked_transaction",
+      "result": "PASS"
+    },
+    {
+      "id": "commoner_refused_all_skills",
+      "result": "PASS"
+    },
+    {
+      "id": "unknown_skill_blocked",
+      "result": "PASS"
+    },
+    {
+      "id": "new_character_level1_commoner_empty_skills",
+      "result": "PASS"
+    },
+    {
+      "id": "four_job_transition_level4_refuse_level5_contract_only",
+      "result": "PASS"
+    },
+    {
+      "id": "22_distinct_npc_records_consumed",
+      "result": "PASS"
+    },
+    {
+      "id": "vendor_stocks_differ",
+      "result": "PASS"
+    },
+    {
+      "id": "unknown_prices_and_npc_coordinates_not_activated",
+      "result": "PASS"
+    },
+    {
+      "id": "same_capture_stock_alias_only",
+      "result": "PASS"
+    },
+    {
+      "id": "buy_only_item_not_added_to_sale_stock",
+      "result": "PASS"
+    },
+    {
+      "id": "unknown_npc_blocked",
+      "result": "PASS"
+    },
+    {
+      "id": "read_only_no_rule_state_mutation",
+      "result": "PASS"
+    },
+    {
+      "id": "missing_rule_file_fails_closed",
+      "result": "PASS"
+    }
+  ],
+  "engine": {
+    "build": "official",
+    "hash": "7d41c59c457bd5a245092b4e7eb2d833e3b3f8c3",
+    "hex": 263683,
+    "major": 4,
+    "minor": 6,
+    "patch": 3,
+    "status": "stable",
+    "string": "4.6.3-stable (official)",
+    "timestamp": 0
+  },
+  "failures": 0,
+  "platform": "Linux",
+  "schema": "baram.priority_rules.godot_evidence/1",
+  "scope": "Actual private rule JSON loaded and read-only P2 contracts; no P3 transactions or native Windows/Android claim",
+  "status": "PASS"
+}

@@ -34,7 +34,8 @@ def main(a):
         if not all(receipt['servers_alive']):
             receipt['result']='BLOCKED_VIRTUAL_SERVERS'
         else:
-            cmd=[str(a.godot.resolve()),'--path',str(a.project.resolve()),'--rendering-method','gl_compatibility','--','--p2-priority-smoke']
+            flag='--p2-priority-smoke' if a.smoke=='priority' else '--p2-original-smoke'
+            cmd=[str(a.godot.resolve()),'--path',str(a.project.resolve()),'--rendering-method','gl_compatibility','--',flag]
             receipt['application']=run_logged(cmd,out/'application.log',env,a.timeout)
             receipt['result']='EXIT_'+str(receipt['application']['exit_code'])
             report=out/'priority-smoke.json'
@@ -55,4 +56,5 @@ if __name__=='__main__':
     p=argparse.ArgumentParser()
     for key in ['project','runtime','godot','system-root','output']:p.add_argument('--'+key,type=Path,required=True)
     p.add_argument('--timeout',type=int,default=120)
+    p.add_argument('--smoke',choices=['priority','original'],default='priority')
     raise SystemExit(main(p.parse_args()))

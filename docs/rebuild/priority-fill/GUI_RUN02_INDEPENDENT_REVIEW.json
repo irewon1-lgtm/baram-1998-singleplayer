@@ -1,0 +1,84 @@
+{
+  "schema": "baram.priority.gui-independent-review/1",
+  "run": "gui-run02",
+  "review": "READ_ONLY_ACTUAL_RECEIPT_REPORT_AND_LOG",
+  "input_generation": "WORK-PRIORITY-GEN002",
+  "application_result": "EXIT_1",
+  "application_exit": 1,
+  "seconds": 14.351,
+  "source_unchanged": true,
+  "runtime_unchanged": true,
+  "checks": 551,
+  "failed_checks": [
+    {
+      "details": {
+        "hardware_listening": "NOT_RUN",
+        "peak": 0.0
+      },
+      "id": "wav_mix_0",
+      "status": "FAIL"
+    },
+    {
+      "details": {
+        "hardware_listening": "NOT_RUN",
+        "peak": 0.0
+      },
+      "id": "wav_mix_81",
+      "status": "FAIL"
+    },
+    {
+      "details": {
+        "hardware_listening": "NOT_RUN",
+        "peak": 0.0
+      },
+      "id": "wav_mix_162",
+      "status": "FAIL"
+    }
+  ],
+  "overall": "FAIL",
+  "script_error_lines": 0,
+  "unicode_warning_lines": 90,
+  "audio_mix_peak": 0.0,
+  "audio_captured_frames": 177664,
+  "sound_play_events": [
+    {
+      "details": {
+        "effect_binding": "UNKNOWN",
+        "member": "001.wav",
+        "sound_index": 0
+      },
+      "event": "priority_wav_preview",
+      "us": 811633
+    },
+    {
+      "details": {
+        "effect_binding": "UNKNOWN",
+        "member": "085.wav",
+        "sound_index": 81
+      },
+      "event": "priority_wav_preview",
+      "us": 836359
+    },
+    {
+      "details": {
+        "effect_binding": "UNKNOWN",
+        "member": "412.wav",
+        "sound_index": 162
+      },
+      "event": "priority_wav_preview",
+      "us": 1091707
+    }
+  ],
+  "adjacent_sound_play_wall_us": [
+    24726,
+    255348
+  ],
+  "timing_inference": "First nominal250ms SceneTreeTimer wait occupied24.7ms wall clock between001and085 play events. Large startup frame delta is a hypothesis; output/capture cause remains unproven. Next run should record playback state and use bounded real wall-clock frame polling without reducing nonzero-mix threshold.",
+  "evidence_sha256": {
+    "RUN_RECEIPT.json": "de68e240d55d969d45e50547c0529b2026486031294f781cd296a4c4761ad365",
+    "priority-smoke.json": "95dd1dde2b0a48292dc19ef5f4b22c01f9201c2f2a4a19f1983abeaa5658fc48",
+    "application.log": "b1377558ee436ccff737da3f088ca107b8045d994f063a2a96374711f0d6d0a2"
+  },
+  "native_android_windows_galaxy": "NOT_RUN",
+  "hardware_listening": "NOT_RUN"
+}

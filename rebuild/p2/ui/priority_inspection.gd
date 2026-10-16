@@ -73,6 +73,11 @@ func _center_map() -> void:
 	if typeof(bounds) == TYPE_ARRAY and bounds.size() == 4:
 		probe = Vector2i(int((bounds[0]+bounds[2])/2),int((bounds[1]+bounds[3])/2))
 
+func _select_item(index: int) -> void:
+	super._select_item(index)
+	if selector != null and index >= 0 and index < selector.item_count:
+		selector.select(index)
+
 func _filter_sounds(query: String) -> void:
 	sound_selector.clear()
 	var all_sounds: Array = content.kr491.get("sounds", [])
@@ -139,7 +144,11 @@ func _render() -> void:
 		var current: Dictionary = entries[selection % entries.size()] if not entries.is_empty() else {}
 		canvas.configure([],Vector2(512,512),Vector2(256,250),1.0)
 		var contract: Dictionary = contracts.learning_contract(str(current.get("id","")), str(state.character.actual_job),int(state.character.level)) if mode == 5 else contracts.npc_contract(str(current.get("id","")))
-		info.text = "%s\n%s\n현재 검수 상태의 조건: %s\n2001 공식 가이드 작업용 프로필 · 실제 전투/거래/배치는 P3 미구현" % [current.get("name",""),JSON.stringify(current.get("value",{})),JSON.stringify(contract)]
+		var value: Dictionary = current.get("value",{})
+		if mode == 5:
+			info.text = "%s · 직업 %s · 학습 레벨 %s\n필요금액 %s · 재료 %s\n현재 평민 Lv1 조건: %s · 기술 부여/거래는 P3 미구현" % [current.get("name",""),value.get("job","미확정"),value.get("learn_level","미확정"),JSON.stringify(value.get("learn_money")),JSON.stringify(value.get("ingredients",[])),contract.get("status","미확정")]
+		else:
+			info.text = "%s · %s\n서비스: %s · 판매: %s\n매입 전용: %s · 가격/좌표/외형 미확정\n2001 공식 가이드 작업용 · 실제 거래/배치는 P3 미구현" % [current.get("name",""),value.get("location_label_documented","미확정"),str(value.get("services",[])),str(value.get("sale_tokens",[])),str(value.get("buy_only_tokens",[]))]
 	else:
 		super._render()
 	if priority_ready:
@@ -166,8 +175,11 @@ func _run_priority_smoke() -> void:
 		sound_selection = i
 		_play_sound()
 		await get_tree().create_timer(0.25).timeout
-		_check("wav_mix_"+str(i),audio_peak > 0.0001,{"peak":audio_peak,"hardware_listening":"NOT_RUN"})
+		_log("audio_probe_quarter_second",{"id":i,"peak":audio_peak,"playing":player.playing,"position":player.get_playback_position(),"length":player.stream.get_length(),"driver":AudioServer.get_driver_name(),"bus":player.bus,"bus_peak_db":AudioServer.get_bus_peak_volume_left_db(AudioServer.get_bus_index(player.bus),0),"captured_frames":audio_samples.size()})
+		await get_tree().create_timer(0.75).timeout
+		_check("wav_mix_"+str(i),audio_peak > 0.0001,{"peak":audio_peak,"playing":player.playing,"position":player.get_playback_position(),"captured_frames":audio_samples.size(),"hardware_listening":"NOT_RUN"})
 		player.stop()
+	_save_audio()
 	_select_mode(2)
 	for id in [0,1,70,72,91,127]:
 		_select_item(id)
@@ -182,13 +194,20 @@ func _run_priority_smoke() -> void:
 	_select_mode(4)
 	for i in range(icons.size()):
 		_select_item(i)
-		await get_tree().process_frame
+		await RenderingServer.frame_post_draw
 		_check("icon_render_"+str(icons[i].id),canvas.last_drawn.size() == 3,{"item_id":icons[i].item_id,"drawn":canvas.last_drawn})
 	_select_item(0)
 	_select_inspection_item()
 	await get_tree().process_frame
 	_check("same_item_state_equipment_stats",not selected_icon.is_empty() and state.equipment.get("inspection_item_id") == selected_icon.get("item_id"))
 	await _capture("-items")
+	var tabs: TabContainer = panel_labels[2].get_parent().get_parent()
+	for tab in [2,3]:
+		tabs.current_tab = tab
+		await RenderingServer.frame_post_draw
+		_check("selected_item_panel_"+str(tab),str(selected_icon.item_id) in panel_labels[tab].text)
+		await _capture("-item-panel-"+str(tab))
+	tabs.current_tab = 0
 	_select_mode(5)
 	await get_tree().process_frame
 	_check("skills_bound",_list().size() == 188)
@@ -198,6 +217,12 @@ func _run_priority_smoke() -> void:
 	_check("npcs_bound_distinct_stocks",_list().size() == 22)
 	await _capture("-npcs")
 	_select_mode(0)
+	# Exhaustive actual asset draw checks; world topology remains unproven.
+	for i in range(_list().size()):
+		_select_item(i)
+		await RenderingServer.frame_post_draw
+		_check("map_draw_"+str(_list()[i].get("inspection_id")),not canvas.last_drawn.is_empty(),_list()[i].get("inspection_id"))
+	_check("bounded_texture_cache",content.texture_pixels <= content.MAX_TEXTURE_PIXELS,{"pixels":content.texture_pixels,"limit":content.MAX_TEXTURE_PIXELS})
 	for i in [0, 15, 48, min(54,_list().size()-1),_list().size()-1]:
 		_select_item(i)
 		await get_tree().create_timer(0.1).timeout

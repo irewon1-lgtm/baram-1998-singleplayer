@@ -1,0 +1,23 @@
+{
+  "status": "PASS_STATIC_DEPENDENCY_SCOPE",
+  "generation": "WORK-PRIORITY-GEN002",
+  "files": 4236,
+  "pngs_decoded": 3814,
+  "map_chunks": 250,
+  "native_map_ids": 198,
+  "icon_candidates": 105,
+  "effects": 128,
+  "wav_ids": 163,
+  "runtime_sha256": "812e4bd6397cf540af203ca6644aea99b898532e071f0637cfdcbba8d144e286",
+  "fingerprint": "f13f520ef5ebeab4041035b2673a395af1fcd5fbdc7aa733f290a353bbc60f11",
+  "components": {
+    "parent_runtime": "ddf88ca05f63ab67c73f12f474005310eed39b31996f8d6c70b9015703922973",
+    "maps": "71f6b13c96ee80fa5d7d0cc6ca6b05fdb725df56d06e456da742fafd37c89df5",
+    "icons": "1bb748d524f6c38da93210b5d14a85652acad8e0fcd1de603b92f0cbd7ec1f57",
+    "rules": "926023504351ba128d4cbf96a1ddd842ee2817c9878ff04a537ee11119f5cb04",
+    "effects": "94bd8392fead9fe34080c91e79fb6d37e342cd26dbac9296246908e1f75f8cc8",
+    "assembler": "e9022e3cccaffcb228eb4b1c05f422f6b38d3863bc881c3d0a1dc8b65470173e"
+  },
+  "runtime_execution": "NOT_RUN_BY_ASSEMBLER",
+  "parent_unchanged": true
+}

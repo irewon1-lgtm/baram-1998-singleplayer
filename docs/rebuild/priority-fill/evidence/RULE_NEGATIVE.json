@@ -1,0 +1,32 @@
+{
+  "schema": "baram.priority_rules.negative_contracts/1",
+  "rule_sha256": "926023504351ba128d4cbf96a1ddd842ee2817c9878ff04a537ee11119f5cb04",
+  "checks": [
+    {
+      "id": "wrong_profile_rejected",
+      "result": "PASS"
+    },
+    {
+      "id": "duplicate_skill_id_rejected",
+      "result": "PASS"
+    },
+    {
+      "id": "changed_conflict_value_rejected",
+      "result": "PASS"
+    },
+    {
+      "id": "p3_mutation_enabled_rejected",
+      "result": "PASS"
+    },
+    {
+      "id": "jinma_price_silent_selection_rejected",
+      "result": "PASS"
+    },
+    {
+      "id": "modified_core_zip_rejected_before_decode",
+      "result": "PASS"
+    }
+  ],
+  "failures": 0,
+  "scope": "Mutations of actual selected data copy and actual core ZIP byte; originals preserved"
+}

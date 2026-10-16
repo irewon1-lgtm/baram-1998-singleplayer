@@ -1,0 +1,139 @@
+{
+  "schema": "baram.priority.gui-independent-review/1",
+  "run": "gui-run03",
+  "review": "READ_ONLY_ACTUAL_RECEIPT_REPORT_AND_LOG",
+  "input_generation": "WORK-PRIORITY-GEN002",
+  "application_result": "EXIT_0",
+  "application_exit": 0,
+  "seconds": 16.434,
+  "source_unchanged": true,
+  "runtime_unchanged": true,
+  "checks": 552,
+  "failed_checks": [],
+  "overall_for_executed_linux_inspection_scope": "PASS",
+  "script_error_lines": 0,
+  "unicode_warning_lines": 90,
+  "audio_mix_peak": 0.992680132389069,
+  "audio_captured_frames": 177664,
+  "audio_check_results": [
+    {
+      "details": {
+        "captured_frames": 1536,
+        "hardware_listening": "NOT_RUN",
+        "peak": 0.0298244506120682,
+        "playing": true,
+        "position": 0.0464399084448814
+      },
+      "id": "wav_mix_0",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "captured_frames": 44544,
+        "hardware_listening": "NOT_RUN",
+        "peak": 0.787682712078094,
+        "playing": true,
+        "position": 1.02167797088623
+      },
+      "id": "wav_mix_81",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "captured_frames": 44544,
+        "hardware_listening": "NOT_RUN",
+        "peak": 0.992680132389069,
+        "playing": true,
+        "position": 1.02167797088623
+      },
+      "id": "wav_mix_162",
+      "status": "PASS"
+    }
+  ],
+  "sound_play_and_probe_events": [
+    {
+      "details": {
+        "effect_binding": "UNKNOWN",
+        "member": "001.wav",
+        "sound_index": 0
+      },
+      "event": "priority_wav_preview",
+      "us": 819671
+    },
+    {
+      "details": {
+        "bus": "P2OriginalCapture",
+        "bus_peak_db": -200.0,
+        "captured_frames": 0,
+        "driver": "PulseAudio",
+        "id": 0,
+        "length": 1.47873015873016,
+        "peak": 0.0,
+        "playing": true,
+        "position": 0.0116099771112204
+      },
+      "event": "audio_probe_quarter_second",
+      "us": 842960
+    },
+    {
+      "details": {
+        "effect_binding": "UNKNOWN",
+        "member": "085.wav",
+        "sound_index": 81
+      },
+      "event": "priority_wav_preview",
+      "us": 1595998
+    },
+    {
+      "details": {
+        "bus": "P2OriginalCapture",
+        "bus_peak_db": -5.38073110580444,
+        "captured_frames": 10752,
+        "driver": "PulseAudio",
+        "id": 81,
+        "length": 2.50775510204082,
+        "peak": 0.690603375434875,
+        "playing": true,
+        "position": 0.255419492721558
+      },
+      "event": "audio_probe_quarter_second",
+      "us": 1848926
+    },
+    {
+      "details": {
+        "effect_binding": "UNKNOWN",
+        "member": "412.wav",
+        "sound_index": 162
+      },
+      "event": "priority_wav_preview",
+      "us": 2616638
+    },
+    {
+      "details": {
+        "bus": "P2OriginalCapture",
+        "bus_peak_db": -4.15581846237183,
+        "captured_frames": 10752,
+        "driver": "PulseAudio",
+        "id": 162,
+        "length": 3.02439909297052,
+        "peak": 0.732978343963623,
+        "playing": true,
+        "position": 0.255419492721558
+      },
+      "event": "audio_probe_quarter_second",
+      "us": 2857193
+    }
+  ],
+  "confirmed_timing_issue": "First nominal250ms SceneTreeTimer probe occurred23289us after001 play call; actualplayback_position=.01161seconds,capturedframes0. After the separately added750ms wait the nonzero-mix assertion passed. Other IDs show actualnonzero mix. Original250ms test did not guarantee a250ms real wall-clock observation at startup.",
+  "source_fix_scope": "Added output observation interval and diagnostics; no audio source content or nonzero threshold weakened. Root owns source modification.",
+  "historical_failure": "gui-run02 EXIT_1 and its3 zero-mix failures remain preserved; no Android orWindows status changed.",
+  "evidence_sha256": {
+    "RUN_RECEIPT.json": "0f993cf24ae44bd92daeb6311ff5a1fc19dfb1ff39ca247831fda5db901c5b6c",
+    "priority-smoke.json": "51f72d9b99b0215b227eb3da07c76a294ed0f3c8ce700531a3aa2dc84ee98042",
+    "application.log": "97f148db8ecbd4151ffe2f3885d7520bc7599e4b832d17e6a82e1c234f8a4288"
+  },
+  "native_android_windows_galaxy": "NOT_RUN",
+  "hardware_listening": "NOT_RUN",
+  "standalone_probe_created": false,
+  "reason_no_additional_probe": "Conditional request was only if3 audio outputs remainedzero; actualnewrun recorded nonzero outputs."
+}
