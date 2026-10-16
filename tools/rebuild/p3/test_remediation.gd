@@ -53,6 +53,8 @@ func run() -> void:
  check("focus_loss_clears_all_intents",app.path.is_empty() and app.keyboard_moves.is_empty() and app.movement==Vector2i.ZERO)
  # Fixture: position next to a real existing spawn. No target ID is supplied to attack.
  app.smoke=true;app.game.state.pending_actions=[];app.game.state.cooldowns={}
+ app.game.state.rng_state=12345
+ for fixture_monster in app.game.state.monsters.values():fixture_monster.ai_at=100.0
  var target_id:=""
  for id in app.game.state.monsters:
   var m: Dictionary=app.game.state.monsters[id]

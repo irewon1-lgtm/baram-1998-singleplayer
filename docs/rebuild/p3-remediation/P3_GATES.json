@@ -1,0 +1,96 @@
+{
+  "overall": "PARTIAL_DEVICE_GATE_PENDING",
+  "source_commit": "38c6e9ee536c251dc85fe8c5b76344ac9da1dbff",
+  "gates": [
+    {
+      "id": "P3-01",
+      "status": "PARTIAL_IME_NOT_RUN",
+      "notes": "일반 Lv1 생성/문자 표시 확인; OS 한글 IME 미실행"
+    },
+    {
+      "id": "P3-02",
+      "status": "PARTIAL_DEVICE_GATE_PENDING",
+      "notes": "새 입력/이동/보간 GUI 검증; 실제 Galaxy 대기"
+    },
+    {
+      "id": "P3-03",
+      "status": "PARTIAL_ORIGINALITY",
+      "notes": "11지역 경로·출구 기능 확인; 원작 배치 복원 미완료"
+    },
+    {
+      "id": "P3-04",
+      "status": "PASS_AUTOMATED_SCOPE",
+      "notes": "자연 몬스터 AI/사망/재생성 동선, 구 미변경 엔진 증거 한정 재사용"
+    },
+    {
+      "id": "P3-05",
+      "status": "PASS_GUI_AUTOMATED_SCOPE",
+      "notes": "미선택 공격·피해·죽음·XP·드롭·줍기, 손 조작 승인은 대기"
+    },
+    {
+      "id": "P3-06",
+      "status": "PASS_GUI_AUTOMATED_SCOPE",
+      "notes": "자연 전리품 판매와 목검 구매, 9NPC UI"
+    },
+    {
+      "id": "P3-07",
+      "status": "PASS_GUI_AUTOMATED_SCOPE",
+      "notes": "전신/착용/수치/필드/저장; 원작 시각 승인 대기"
+    },
+    {
+      "id": "P3-08",
+      "status": "PASS_GUI_AUTOMATED_SCOPE",
+      "notes": "무지급 자연 성장 후 주술사 전직"
+    },
+    {
+      "id": "P3-09",
+      "status": "PASS_NATURAL_AND_EXPLICIT_FIXTURES",
+      "notes": "주술사 자연 학습 + 타 직업 10기술 GUI fixture 구분"
+    },
+    {
+      "id": "P3-10",
+      "status": "PARTIAL_DEVICE_MEDIA_PENDING",
+      "notes": "4패널/단축키/MP/효과/가상음향; 실청취 미실행"
+    },
+    {
+      "id": "P3-11",
+      "status": "PASS_GUI_AUTOMATED_SCOPE",
+      "notes": "실제 학습한 비영사천문 귀환 + 출구 방향 수정"
+    },
+    {
+      "id": "P3-12",
+      "status": "PASS_GUI_AUTOMATED_SCOPE",
+      "notes": "3866 자연 속행 사망3회/부활 증거 한정 REUSE; 최종 fresh는 사망0"
+    },
+    {
+      "id": "P3-13",
+      "status": "PASS_AFFECTED_SCOPE",
+      "notes": "아이콘/장비/기술/상태·자산 참조오류0; 저장파서 불변"
+    },
+    {
+      "id": "P3-14",
+      "status": "PASS_AFFECTED_SCOPE_REUSE_SAFETY",
+      "notes": "구 자연 저장 복사 호환, 신규 영향 저장. 파서 불변83검사 재실행 안 함"
+    },
+    {
+      "id": "P3-15",
+      "status": "PARTIAL_PLATFORM_RESTART",
+      "notes": "최종 pack 새 프로세스 이어하기 일치; 기기별 강제종료/저장중 kill 미실행"
+    },
+    {
+      "id": "P3-16",
+      "status": "PARTIAL_PLATFORM",
+      "notes": "Android: PARTIAL_INSTALL_ENGINE_START_RENDER_FAIL; Galaxy/native Windows/OS IME/실청취 NOT_RUN"
+    },
+    {
+      "id": "P3-17",
+      "status": "DEFER_P6_AUTH",
+      "notes": "오프라인이며 인증 왕복 미구현"
+    },
+    {
+      "id": "P3-18",
+      "status": "PARTIAL_DELIVERY_DEVICE_GATES",
+      "notes": "새 설치본+검증/비교/영상 비공개 전달; 전체 P3 PASS 아님"
+    }
+  ]
+}

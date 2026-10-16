@@ -1,0 +1,209 @@
+{
+  "schema": "baram.repair.delivery/1",
+  "task": "BARAM_REBUILD_WORK_P3_REPAIR_001",
+  "overall": "PARTIAL_DEVICE_GATE_PENDING",
+  "app_source_commit": "38c6e9ee536c251dc85fe8c5b76344ac9da1dbff",
+  "branch": "work/rebuild-p3-remediation-20261016",
+  "files": [
+    {
+      "name": "baram-P3-repair-Android-38c6e9ee.apk",
+      "library_file_id": "libfile_9d0bc8ac18f48191a086ac1c3dcc9ce3",
+      "file_id": "file_00000000840881f5896136187904e748",
+      "private_path": "/baram-P3-repair-Android-38c6e9ee.apk",
+      "version": 0,
+      "bytes": 58047133,
+      "sha256": "2dfa25177df487ceb04067fb61efbb6e59a9fd0dd2e6d2a0704a4456fa811141"
+    },
+    {
+      "name": "baram-P3-repair-Windows64-38c6e9ee.zip",
+      "library_file_id": "libfile_99f40b1cb8e48191a6abfc884722b066",
+      "file_id": "file_00000000e8fc81f598e8eae926eeee23",
+      "private_path": "/baram-P3-repair-Windows64-38c6e9ee.zip",
+      "version": 0,
+      "bytes": 34913837,
+      "sha256": "3af85c65ceecca133449a644e2b619515fb61d8768be10d79513d80674b35f9e"
+    },
+    {
+      "name": "BARAM_P3_REPAIR_REPORT.html",
+      "library_file_id": "libfile_9501d8120cb4819180ed77ddc6928715",
+      "file_id": "file_00000000389c81f59130db9c57959178",
+      "private_path": "/BARAM_P3_REPAIR_REPORT.html",
+      "version": 0,
+      "bytes": 4372198,
+      "sha256": "9237e69dc4caeeb0ed349c353f6a6016a92ad276e9249470210343e7eff6e3e9"
+    },
+    {
+      "name": "baram-P3-repair-GUI-operator-video.mp4",
+      "library_file_id": "libfile_e5faea3e25d08191b04228307a613f93",
+      "file_id": "file_00000000ffd081f5b08a29538b4b4852",
+      "private_path": "/baram-P3-repair-GUI-operator-video.mp4",
+      "version": 0,
+      "bytes": 10851433,
+      "sha256": "7d800f7c402defe1c8df5a1bfa3410443bbf959c5f5120dcc5db70169582d82a"
+    },
+    {
+      "name": "baram-P3-repair-EVIDENCE-38c6e9ee.zip",
+      "library_file_id": "libfile_f9aeb65add708191ada4a47cb4f7498a",
+      "file_id": "file_00000000215081f5803e0860e6e22a2f",
+      "private_path": "/baram-P3-repair-EVIDENCE-38c6e9ee.zip",
+      "version": 0,
+      "bytes": 10505991,
+      "sha256": "5fde7461c7b68adc3ef8bedf42912ec69951126b6b88b62572c5b587f849bd94"
+    },
+    {
+      "name": "baram-P3-repair-SOURCE-38c6e9ee.zip",
+      "library_file_id": "libfile_34b69c8144c481919fb65790259d448d",
+      "file_id": "file_00000000019c81f5aaab82c39abb2964",
+      "private_path": "/baram-P3-repair-SOURCE-38c6e9ee.zip",
+      "version": 0,
+      "bytes": 342085,
+      "sha256": "d1bf241588a122868ec389cef9785d01acc9c9388b0203b6f0a983487b5613aa"
+    },
+    {
+      "name": "baram-P3-repair-full-GUI-run-38c6e9ee.mp4",
+      "library_file_id": "libfile_56e3c3fb8f148191b68de7107f7f82f1",
+      "file_id": "file_00000000cf0c81f5bdde484b9c788aa7",
+      "private_path": "/baram-P3-repair-full-GUI-run-38c6e9ee.mp4",
+      "version": 0,
+      "bytes": 190702227,
+      "sha256": "11f335101910bc7a778062dbeaa7262b6b8cf3271122de2ee070e7d910d348e9"
+    },
+    {
+      "name": "READ_FIRST.txt",
+      "library_file_id": "libfile_9041e86670988191881514e5d0a05c3b",
+      "file_id": "file_000000005be481f58796d6710e98aa7b",
+      "private_path": "/READ_FIRST.txt",
+      "version": 0,
+      "bytes": 2607,
+      "sha256": "042b3bda99003d54361c061b1d33a42130c26b21a4fa94ee1dae488f2dab4691"
+    }
+  ],
+  "upload_results": "9/9 succeeded; eight user deliverables listed, separate new synthetic signing resume material kept private and omitted from git",
+  "source_archive_note": "Archive contains the app and verification checkpoint before upload IDs existed; this remote DELIVERY/STATE is the latest delivery record. No binary rebuild after verification.",
+  "platform_results": {
+    "final_clean_zip_embedded_PCK_GUI": {
+      "status": "PASS",
+      "checks": 23,
+      "native_Windows": false
+    },
+    "affected_engine": {
+      "status": "PASS_REUSE_UNCHANGED_3866",
+      "checks": 30,
+      "reason": "state/gameplay_state.gd and storage hashes unchanged since 38662f3e; final code only extended touch callback handling"
+    },
+    "NPC_and_skill_GUI": {
+      "status": "PASS",
+      "checks": 52,
+      "fixtures_explicit": true
+    },
+    "touch_edges": {
+      "status": "PASS",
+      "checks": 13
+    },
+    "viewport_layout": {
+      "status": "PASS",
+      "checks": 12,
+      "source": "93e8657f, unchanged layout functions at 38c6e9ee; not physical devices"
+    },
+    "natural_earned_journey": {
+      "first_600s": "PARTIAL_OPERATOR_ROUTE_ERROR_AND_COMPARE_RACE; original FAIL kept",
+      "final_420s_fresh_start": "PASS_PLAY_SAVE",
+      "kills_total": 128,
+      "items_picked_up_total": 94,
+      "level": 10,
+      "job": "주술사",
+      "return_learned": true,
+      "damage_cast": true,
+      "new_process_menu_continue": "PASS",
+      "no_progress_grants": true,
+      "raw_first_milestone_label_note": "Copied milestone label refers to resume; actual app checkpoint creates fresh Lv1 character. See ANALYSIS.json."
+    },
+    "Android29": {
+      "status": "PARTIAL_INSTALL_ENGINE_START_RENDER_FAIL",
+      "scope": "Same final APK 38c6e9ee, actual Android29 AOSP software TCG; not Galaxy",
+      "apk_sha256": "2dfa25177df487ceb04067fb61efbb6e59a9fd0dd2e6d2a0704a4456fa811141",
+      "checks": [
+        {
+          "id": "installed_exact_final_APK_indirect_backend",
+          "status": "PASS",
+          "evidence": "history/android-final38-indirect/RESULTS.json"
+        },
+        {
+          "id": "Android_engine_manifest_and_menu_layout_checkpoint",
+          "status": "PASS_LOG_ONLY",
+          "evidence": "history/android-final38-indirect/checkpoints.jsonl"
+        },
+        {
+          "id": "Android_visible_menu",
+          "status": "FAIL_INDIRECT_RENDER",
+          "evidence": "history/android-final38-indirect/01-menu.png"
+        },
+        {
+          "id": "Android_touch_move_hunt_save_restart",
+          "status": "NOT_RUN",
+          "reason": "Stopped on blank viewport; no blind taps or invented UI PASS"
+        },
+        {
+          "id": "direct_backend_alternative",
+          "status": "FAIL_ENVIRONMENT_ADB_TIMEOUT",
+          "evidence": "checks/android29/RESULTS.json"
+        }
+      ],
+      "reason": "Final APK installed/hash-matched and engine/manifest/menu logs reached under indirect backend, but viewport was blank and emulator GLES errors logged. Direct backend alternative installed but ADB SHA read and logcat timed out. OS System UI ANRs observed. Render cause not conclusively isolated; actual Galaxy behavior unknown.",
+      "full_manual_journey": "NOT_RUN",
+      "Galaxy": "NOT_RUN",
+      "OS_Korean_IME": "NOT_RUN",
+      "native_Windows": "NOT_RUN",
+      "raw_failure_reports_preserved": true
+    },
+    "Android30": "BLOCKED_OS_ANR_BEFORE_APP; install outcome unverified",
+    "Galaxy": "NOT_RUN",
+    "native_Windows": "NOT_RUN",
+    "OS_Korean_IME": "NOT_RUN",
+    "virtual_audio": {
+      "status": "PASS_VIRTUAL_AUDIO_OUTPUT",
+      "scope": "Final 38c6e9ee clean ZIP embedded PCK, Linux PulseAudio virtual sink, normal fresh-character hunting. Not physical listening.",
+      "sample_range_seconds": [
+        10,
+        20
+      ],
+      "samples": 480019,
+      "peak": 0.5635150671005249,
+      "rms": 0.05199700593948364,
+      "nonzero_samples": 212608,
+      "source_video_sha256": "11f335101910bc7a778062dbeaa7262b6b8cf3271122de2ee070e7d910d348e9"
+    },
+    "physical_listening": "NOT_RUN",
+    "performance": {
+      "scope": "HOST_ONLY_NOT_GALAXY_PASS",
+      "last": {
+        "run": "checks/final-journey/app.log",
+        "frames": 24805,
+        "input_command_p95_ms": 190.0,
+        "input_latency_scope": "input to accepted command; presentation requires frame/video correlation",
+        "max_process_ms": 369.799,
+        "memory_static_bytes": 67872394,
+        "p50_ms": 13.8888888888889,
+        "p95_ms": 26.6309999999967,
+        "p99_ms": 124.124666666667,
+        "scope": "observed host only; not Galaxy certification",
+        "texture_pixels": 3605131
+      }
+    }
+  },
+  "originality": "BLOCKED_ORIGINAL_MAP_GRID_CORRESPONDENCE; panels code-reconstructed with real original icons/sprites, no mask-decoder PASS",
+  "install_policy": {
+    "Android": "New parallel package com.irewon.baram.p3repair20261016, version0.1.1-p3-repair/code2, minAPI24, arm64/x86_64. Prior app/key/save untouched; old Android save migration not verified.",
+    "Windows": "Extract all into new folder; different custom save directory baram_rebuild_p3repair_001. Native execution NOT_RUN.",
+    "video": "Actual Linux GUI running final extracted Windows game PCK, automatic InputEvent operator, normal time with labeled cuts. Full 420-second raw recording separate. Not manual Galaxy/native Windows."
+  },
+  "remaining": [
+    "Android emulator menu presentation blank under indirect backend; direct backend ADB hash read timed out; no KVM, System UI ANR and host GLES errors. Final APK install/hash and Android engine/menu checkpoint exist; Android touch/play/save NOT_RUN.",
+    "Actual Galaxy, OS Korean IME, physical listening, native Windows and physical input/presentation latency NOT_RUN.",
+    "Original domestic-city/map cell correspondence and geometry repair remain BLOCKED_ORIGINAL_MAP_GRID_CORRESPONDENCE; current 11 maps RECONSTRUCTED.",
+    "Host p99 frame124.12ms, no overall performance PASS.",
+    "User-reported symptoms require user validation of new APK; P6 authentication and P4/P5 deferred content stay separate."
+  ],
+  "preservation": "Original runtime/content/converters/storage modules and old99/83/131 results preserved, main/other branches/common STATE unchanged; no paid service",
+  "remote_final_verification": "The containing commit must be re-fetched through GitHub and compared to current Work branch head; final response records the observed SHA."
+}
