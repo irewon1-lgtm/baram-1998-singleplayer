@@ -727,7 +727,7 @@
   "profile_dispatch_required": true,
   "profile_conflicts": "research_official_core.json epoch_conflicts; independent review",
   "original_resources_public": false,
-  "private_handoff": "Current verified package ID/SHA in DELIVERY_RECHECK_RECEIPT.json; earlier DELIVERY_RECEIPT.json remains historical",
+  "private_handoff": "Exact current file ID/version/hash in DELIVERY_RECHECK_RECEIPT.json outside the archive to avoid a self-referential hash; previous DELIVERY_RECEIPT.json is historical.",
   "reference_package": {
     "path": "inputs/reference_sources.zip",
     "sha256": "6e922fc3725c52e9bad3dd45924756c57e01781a36c9fd9b8eb35cd81291c508",
@@ -813,6 +813,10 @@
       "sha256": "4440e3f3ccfa07312c7b0a15c71398e694365ad3c375c5f1a0c1f933e3b1c620"
     },
     {
+      "path": "tools/rebuild/p1_5/split_delivery.py",
+      "sha256": "6df1d5e7f9c649178be77d6aba69231eee5ba0afd2f444b90f5348b83d72a861"
+    },
+    {
       "path": "tools/rebuild/p1_5/test_import_dry_run.py",
       "sha256": "e7d45d4a3b3247232553a95d36723910d8bd974cbf30f74b5c914b4f5cc4c900"
     },
@@ -827,6 +831,10 @@
     {
       "path": "tools/rebuild/p1_5/validate_na_references.py",
       "sha256": "55c387b38b9c7f50245a84a69bd89bb5126e04d6cd5d28ef19034ef87dbfb961"
+    },
+    {
+      "path": "tools/rebuild/p1_5/verify_delivery_set.py",
+      "sha256": "4d6ac60377027fe3e4e7b96e72bdfd2a11d5b32e67d1a4a1988968e873391100"
     }
   ]
 }

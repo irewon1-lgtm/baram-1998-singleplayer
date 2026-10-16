@@ -5,7 +5,7 @@
 ## G0 — 수신 환경에서 먼저 확인할 것
 
 1. 계획 브랜치의 최신 커밋을 읽고 인계 기준으로 reset하지 않는다. 과거 P0/P1 원장과 실패 기록을 유지한다.
-2. `INPUT_MANIFEST.json`의 Library 원본 ID·SHA와 비공개 인계 묶음의 상대 경로·SHA를 실제 바이트에 대조한다. 현재 Work의 42개 원본/2,204개 멤버 접근 성공은 다음 Codex 환경의 접근 성공이 아니다. 원본은 공개 Git에 없다.
+2. 현재 전달본은 `DELIVERY_RECHECK_RECEIPT.json`의 core 최신 버전과 동일한 참고 소스3분할이다. 이전 `DELIVERY_RECEIPT.json`은 과거 기록이다. `verify_delivery_set.py`로 전체 파일을 검증하고 reference ZIP을 `<extracted-handoff>/inputs/reference_sources.zip`에 복원한다. 그 뒤 `INPUT_MANIFEST.json`의 Library 원본 ID·SHA와 비공개 인계 묶음의 상대 경로·SHA를 실제 바이트에 대조한다. 현재 Work의 42개 원본/2,204개 멤버 접근 성공은 다음 Codex 환경의 접근 성공이 아니다. 원본은 공개 Git에 없다.
 3. 비공개 데이터는 `selected_content/` 아래 원래 상대 경로로 읽는다. 공개 catalog는 원문 데이터의 대체물이 아니다. 데이터가 없으면 누락으로 표시하고 기본값을 생성하지 않는다.
 4. 정적 컨테이너 재현은 원본 사본에 `recheck_archives.py`를 사용한다. `--legacy-parser-dir`의 세 reader 파일은 원장 SHA로 고정한다. 원본 파일명은 보관 파일명 그대로 사용하고 결과는 별도 private-work에 쓴다. 도구가 만든 `input_map.json`은 현재 환경의 경로 지도일 뿐 지속 식별자가 아니다.
 5. 기존 전체 원장 검사는 `validate_step01.py --input-map <현재경로지도> --output <새결과>`로 수행한다. 과거 VALIDATION은 덮어쓰지 않는다. `prepare_handoff_inputs.py`의 기존 원장 전용 경로표(정확히2,489 ID)를 사용한다. 신규 자료까지 포함한 import용 경로표를 이전 원장에 넘기면 알려지지 않은 ID로 거부되는 것이 맞다. `--scope-input` 통과가 전체 통과를 대신하지 않는다. 필수 누락은 BLOCKED, 바이트/형식/참조/지문 불일치는 FAIL, 미실행은 NOT_RUN이다.

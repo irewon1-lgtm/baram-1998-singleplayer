@@ -120,7 +120,7 @@
   },
   "remote_publication_and_persistent_delivery": {
     "status": "RECORDED_IN_EXTERNAL_RECEIPT_AFTER_PACKAGING",
-    "receipt": "DELIVERY_RECEIPT.json; package_security_delivery.json"
+    "receipt": "DELIVERY_RECHECK_RECEIPT.json (current); DELIVERY_RECEIPT.json (historical)"
   },
   "historical_accuracy": "PARTIAL; field-scoped facts only, default profile null and explicit epoch dispatch required",
   "new_game_binding": "NOT_STARTED",
@@ -211,10 +211,20 @@
     },
     {
       "path": "handoff_input_contract.json",
-      "sha256": "68cd9809aec51254b8114829f654dd9e66b715d93e32142f883d6571ece475a2",
-      "bytes": 10240
+      "sha256": "ddd7329234d566780a8f6c947bc260c8bf2179984e5f2a2481c86887f89e7ee2",
+      "bytes": 6964
     }
   ],
   "execution_evidence_policy": "Actual commands/config/parser/input fingerprints and per-case observed exits are in linked evidence; 450 requirement designs are not executed tests.",
-  "input_manifest_sha256": "679d5ced52dd6168c4c855e357825c7477e7137ba3bf0695108697083522d2ea"
+  "input_manifest_sha256": "79c96fbf477404485eb28c6fe9537a025beb64ae98d45560bc32d5e74fe6fc43",
+  "resumed_static_recheck": {
+    "evidence": "resumed_static_recheck_summary.json",
+    "byte_gate": "PASS2489/2489 exit0",
+    "normalized_integrity": "PASS44796rows/1241sourcehashes",
+    "source_reference_graph": "FAIL154 exit1",
+    "semantic_readiness": "BLOCKED",
+    "runtime_tests": "NOT_RUN",
+    "Codex_G0": "NOT_RUN",
+    "old_execution_evidence_preserved": true
+  }
 }

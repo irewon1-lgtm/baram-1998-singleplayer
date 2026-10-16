@@ -1,0 +1,80 @@
+{
+  "schema": "baram.p1_5.resumed_static_recheck/1",
+  "recorded_at_utc": "2026-10-16T00:33:41.120163+00:00",
+  "task_result": "PARTIAL",
+  "scope": "Only outstanding clean-directory byte gate and normalized import from existing resolver receipt. No new research, regression reruns, external source execution or runtime tests.",
+  "byte_gate": {
+    "result": "PASS",
+    "expected": 2489,
+    "read": 2489,
+    "passed": 2489,
+    "exit_code": 0,
+    "evidence": "evidence/resume/step01_validation.json",
+    "sha256": "c22adb43b885d215a7a9e6d1233a8dcffae289ee4a07ec9cd626cfae6148a23c",
+    "validator_sha256": "e10e1dd0840eab39c3757313b533e5e6e0d75d2f0b5ca3508aad44919bfe87eb",
+    "parser_version": "baram-static-integrity-reader/2.0",
+    "config_sha256": "f538a0c24dd335a4e5996c4198dec58879790ef1e74d66e631b300d9da430af2"
+  },
+  "normalized_import": {
+    "result": "FAIL",
+    "integrity_result": "PASS",
+    "source_reference_result": "FAIL",
+    "semantic_readiness_result": "BLOCKED",
+    "files_read": 37,
+    "rows_read": 44796,
+    "unique_record_ids": 44796,
+    "source_byte_hashes_read": 1241,
+    "zero_defaults_inserted": 0,
+    "exit_code": 1,
+    "reference_failures": [
+      {
+        "check": "area_spawn_to_monster",
+        "counts": {
+          "PASS": 2592,
+          "FAIL": 24
+        }
+      },
+      {
+        "check": "drop_to_item",
+        "counts": {
+          "PASS": 922,
+          "FAIL": 8
+        }
+      },
+      {
+        "check": "drop_to_monster",
+        "counts": {
+          "PASS": 375,
+          "FAIL": 7
+        }
+      },
+      {
+        "check": "skill_to_job",
+        "counts": {
+          "PASS": 1600,
+          "FAIL": 115
+        }
+      }
+    ],
+    "total_reference_failures": 154,
+    "evidence": "evidence/resume/import_validation.json",
+    "sha256": "b78d8543e8a75eda2446d790d2604d738b57e53e97b0826b959d9ec7859c92b3",
+    "validator_sha256": "66a6b9286b824751e890376f87e8a908498a3a319f2e457e744de30350a8632f"
+  },
+  "fingerprint_comparison_with_previous_results": {
+    "byte_validator_same": true,
+    "byte_parser_same": true,
+    "byte_config_same": true,
+    "byte_input_fingerprints_same": true,
+    "import_validator_same": true,
+    "import_source_registry_same": true,
+    "normalized_file_hash_set_same": true
+  },
+  "runtime_tests": "NOT_RUN",
+  "reference_server_execution": "NOT_RUN",
+  "Codex_receiver_G0": "NOT_RUN",
+  "commands_and_logs": [
+    "evidence/resume/whole_byte_gate.execution.json",
+    "evidence/resume/normalized_import.execution.json"
+  ]
+}

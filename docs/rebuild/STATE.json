@@ -97,13 +97,13 @@
     "next_resume": {
       "owner": "Codex P2 technical integrator after separate instruction",
       "entrypoint": "docs/rebuild/p1_5/NEXT_P2_DELTA.md",
-      "step": "G0 exact persistent input/hash gate; then P2-01..06 individually",
+      "step": "Read current DELIVERY_RECHECK_RECEIPT, restore current core plus3unchanged reference parts, verify42originals then exact G0. P2 remains separately instructed.",
       "must_not_repeat": "Matching prior byte/parser/config/scope results; P0/P1 inventory and completed P1.5 research",
       "game_tests": "NOT_RUN",
       "receiver_g0": "NOT_RUN",
       "p2_authorized": false
     },
-    "remote_publication": "Final result commit and remote tree comparison will be recorded in separate delivery receipt to avoid self-referential commit hash"
+    "remote_publication": "Current content and delivery requery recorded in external DELIVERY_RECHECK_RECEIPT.json; older receipt remains historical."
   },
   "historical_planning_record": {
     "status": "PLAN_RECORDED",
@@ -137,7 +137,7 @@
   "next_resume": {
     "owner": "Codex P2 technical integrator after separate instruction",
     "entrypoint": "docs/rebuild/p1_5/NEXT_P2_DELTA.md",
-    "step": "G0 exact persistent input/hash gate; then P2-01..06 individually",
+    "step": "Read current DELIVERY_RECHECK_RECEIPT, restore current core plus3unchanged reference parts, verify42originals then exact G0. P2 remains separately instructed.",
     "must_not_repeat": "Matching prior byte/parser/config/scope results; P0/P1 inventory and completed P1.5 research",
     "game_tests": "NOT_RUN",
     "receiver_g0": "NOT_RUN",
@@ -186,7 +186,7 @@
     "scope": "Independent AI review of deliverables, not historical gameplay or human acceptance"
   },
   "p1_5": {
-    "status": "PARTIAL_VALIDATED_PENDING_DELIVERY",
+    "status": "PARTIAL_VALIDATED_FINALIZING_DELIVERY",
     "read_intake": [
       "AGENTS.md",
       "MASTER_PLAN.md",
@@ -197,7 +197,7 @@
       "BARAM_P0P1_독립감사_20261016.md",
       "BARAM_P1_5_자료공백_보완계획_20261016.md"
     ],
-    "latest_checkpoint": "All10domains frozen, fullbyte2489PASS and clean44796rowimport integrityPASS/source154FAIL reproduced; safe ZIP/remote/persistent receipt next",
+    "latest_checkpoint": "Completed outstanding clean receiver byte gate2489PASS and importer44796integrityPASS/source154FAIL; current resolver3565IDs/3038hashes. Finalizing corrected contract and durable package.",
     "runtime_tests": "NOT_RUN",
     "p2_executed": false,
     "originals_preserved": true,
@@ -209,7 +209,7 @@
     "source_metadata_file": "docs/rebuild/p1_5/sources_delta.jsonl",
     "requirement_delta_file": "docs/rebuild/p1_5/requirements_delta.csv",
     "historical_result": "PARTIAL",
-    "next_resume": "Save public findings with remote tree verification; build/audit/persist privatehandoff; record external receipt. P2 remains unexecuted.",
+    "next_resume": "Current DELIVERY_RECHECK_RECEIPT and NEXT_P2_DELTA G0 after separate P2 instruction. Do not repeat matching research.",
     "normalized_row_count_working_snapshot": 44796,
     "new_critical_source_byte_reads": 431,
     "historical_default_profile": null,
@@ -246,7 +246,8 @@
       "docs/rebuild/p1_5/INPUT_MANIFEST.json"
     ],
     "clean_handoff": "PASS_REPRODUCTION_SCOPE; CodexG0 NOT_RUN",
-    "input_manifest_sha256": "679d5ced52dd6168c4c855e357825c7477e7137ba3bf0695108697083522d2ea"
+    "input_manifest_sha256": "79c96fbf477404485eb28c6fe9537a025beb64ae98d45560bc32d5e74fe6fc43",
+    "resume_validation": "docs/rebuild/p1_5/resumed_static_recheck_summary.json"
   },
   "historical_p0p1_source_limitations": [
     "KR125 MAP218 present but target1998-2001 geometry correspondence not confirmed; inspectedKR491CAB/DAT contain noMAP",
@@ -257,5 +258,6 @@
     "Private source paths are session-local copies; future Codex byte access must use knownLibraryIDs/hash or existing private handoff",
     "NativeWindows/Galaxy and free authenticated service availability unverified; emulator/file transfer not substitutes",
     "NA installerpayloads,5auxiliaryCAB and403/blockedweb sources remain uninspected/undecoded"
-  ]
+  ],
+  "current_remote_resume_sha": "9b9abf5928814ea5099b067330c9a18a37024102"
 }
