@@ -1,0 +1,198 @@
+{
+  "scope": "independent full PNG structure and checksum verify of v1, separate from file hash matches",
+  "png_checked": 1620,
+  "failed_count": 4,
+  "failures": [
+    {
+      "path": "map-0-chunk-29-floor.png",
+      "sha256": "d89c7fe8fa19fc062fa448a6580e456227ba06b361d898e74ab6c09ed39ba9f0",
+      "bytes": 327769,
+      "verify_error": "broken PNG file (incomplete checksum in b'IDAT')",
+      "decode_result": "image file is truncated",
+      "chunks": [
+        {
+          "type": "IHDR",
+          "length": 13,
+          "offset": 8,
+          "stored_crc": "0xb0ee836b",
+          "calculated_crc": "0xb0ee836b",
+          "match": true
+        },
+        {
+          "type": "IDAT",
+          "length": 65536,
+          "offset": 33,
+          "stored_crc": "0x2c2065a1",
+          "calculated_crc": "0x2c2065a1",
+          "match": true
+        },
+        {
+          "type": "IDAT",
+          "length": 65536,
+          "offset": 65581,
+          "stored_crc": "0x7c59f569",
+          "calculated_crc": "0x7c59f569",
+          "match": true
+        },
+        {
+          "type": "IDAT",
+          "length": 65536,
+          "offset": 131129,
+          "stored_crc": "0x1f8d12b6",
+          "calculated_crc": "0x1f8d12b6",
+          "match": true
+        },
+        {
+          "type": "IDAT",
+          "length": 65536,
+          "offset": 196677,
+          "stored_crc": "0x926d1245",
+          "calculated_crc": "0x926d1245",
+          "match": true
+        },
+        {
+          "type": "IDAT",
+          "declared_payload_length": 65536,
+          "actual_payload_length": 65536,
+          "offset": 262225,
+          "available_trailing_bytes": 0,
+          "status": "TRUNCATED_BEFORE_CRC_OR_PAYLOAD"
+        }
+      ]
+    },
+    {
+      "path": "map-226-floor.png",
+      "sha256": "bff90bd9c92a9fb3304507b637cd11a93e679dd9df8ce55529b0e736ffcaf920",
+      "bytes": 131125,
+      "verify_error": "broken PNG file (incomplete checksum in b'IDAT')",
+      "decode_result": "image file is truncated",
+      "chunks": [
+        {
+          "type": "IHDR",
+          "length": 13,
+          "offset": 8,
+          "stored_crc": "0xb0ee836b",
+          "calculated_crc": "0xb0ee836b",
+          "match": true
+        },
+        {
+          "type": "IDAT",
+          "length": 65536,
+          "offset": 33,
+          "stored_crc": "0xc5228bbe",
+          "calculated_crc": "0xc5228bbe",
+          "match": true
+        },
+        {
+          "type": "IDAT",
+          "declared_payload_length": 65536,
+          "actual_payload_length": 65536,
+          "offset": 65581,
+          "available_trailing_bytes": 0,
+          "status": "TRUNCATED_BEFORE_CRC_OR_PAYLOAD"
+        }
+      ]
+    },
+    {
+      "path": "map-0-chunk-20-floor.png",
+      "sha256": "32d1d4cc4f936f978ea2deff54460179dbca5de024bc1194102118e828e5cb53",
+      "bytes": 393317,
+      "verify_error": "broken PNG file (incomplete checksum in b'IDAT')",
+      "decode_result": "image file is truncated",
+      "chunks": [
+        {
+          "type": "IHDR",
+          "length": 13,
+          "offset": 8,
+          "stored_crc": "0xb0ee836b",
+          "calculated_crc": "0xb0ee836b",
+          "match": true
+        },
+        {
+          "type": "IDAT",
+          "length": 65536,
+          "offset": 33,
+          "stored_crc": "0x4dcf3646",
+          "calculated_crc": "0x4dcf3646",
+          "match": true
+        },
+        {
+          "type": "IDAT",
+          "length": 65536,
+          "offset": 65581,
+          "stored_crc": "0x430dd739",
+          "calculated_crc": "0x430dd739",
+          "match": true
+        },
+        {
+          "type": "IDAT",
+          "length": 65536,
+          "offset": 131129,
+          "stored_crc": "0xe2d45463",
+          "calculated_crc": "0xe2d45463",
+          "match": true
+        },
+        {
+          "type": "IDAT",
+          "length": 65536,
+          "offset": 196677,
+          "stored_crc": "0xd17865d7",
+          "calculated_crc": "0xd17865d7",
+          "match": true
+        },
+        {
+          "type": "IDAT",
+          "length": 65536,
+          "offset": 262225,
+          "stored_crc": "0x8a047116",
+          "calculated_crc": "0x8a047116",
+          "match": true
+        },
+        {
+          "type": "IDAT",
+          "declared_payload_length": 65536,
+          "actual_payload_length": 65536,
+          "offset": 327773,
+          "available_trailing_bytes": 0,
+          "status": "TRUNCATED_BEFORE_CRC_OR_PAYLOAD"
+        }
+      ]
+    },
+    {
+      "path": "map-0-chunk-15-floor.png",
+      "sha256": "c48e87416f172d83d56ce4b31261d8b0e1ce6c8a489f464494ee66fd1622ebb2",
+      "bytes": 131125,
+      "verify_error": "broken PNG file (incomplete checksum in b'IDAT')",
+      "decode_result": "image file is truncated",
+      "chunks": [
+        {
+          "type": "IHDR",
+          "length": 13,
+          "offset": 8,
+          "stored_crc": "0xb0ee836b",
+          "calculated_crc": "0xb0ee836b",
+          "match": true
+        },
+        {
+          "type": "IDAT",
+          "length": 65536,
+          "offset": 33,
+          "stored_crc": "0xd19b797f",
+          "calculated_crc": "0xd19b797f",
+          "match": true
+        },
+        {
+          "type": "IDAT",
+          "declared_payload_length": 65536,
+          "actual_payload_length": 65536,
+          "offset": 65581,
+          "available_trailing_bytes": 0,
+          "status": "TRUNCATED_BEFORE_CRC_OR_PAYLOAD"
+        }
+      ]
+    }
+  ],
+  "status": "FAIL",
+  "cause": "PNG_WRITE_TRUNCATION_OBSERVED; underlying file/Pillow/environment cause UNKNOWN",
+  "next": "Fresh v2 memory PNG encode and verify, fsync atomic writes and post-write full PNG verification; preserve v1 and source originals"
+}

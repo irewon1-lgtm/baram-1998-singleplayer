@@ -1,0 +1,4235 @@
+{
+  "schema": "baram.priority.icons/1",
+  "result": "PARTIAL",
+  "source_fingerprints": {
+    "bindings": "f5cfb6565437c20ac190c9775f17883d7893b9159e6d0c8073bb5039790d94b3",
+    "items": "fba69ec5c19236bbcf8615cea64753f1536832e8f994e41cac51337ff2440f15",
+    "tool": "1f6c6e6aa998ffb7d43e24459bb399342ad55a434d659b7b35e7eada8401d49b"
+  },
+  "input": {
+    "official_binding_candidates": 105,
+    "distinct_source_images": 93,
+    "parent_2000_item_rows": 105,
+    "all_2001_document_item_rows": 477
+  },
+  "static_results": {
+    "raw_parent_name_image_links_verified": 105,
+    "source_images_hash_and_png_pixel_roundtrip_pass": 93,
+    "working_2001_named_image_suffix_joins": 100,
+    "source2000_variant_only": 5,
+    "source_html_files_hash_checked": 12,
+    "working2001_images_unfilled": 377,
+    "equipment_composition_ids_resolved": 0,
+    "shared_fallbacks": 0,
+    "runtime_exercised": 0
+  },
+  "source_item_kind_counts": {
+    "armour_or_accessory": 59,
+    "consumable_or_quest_item": 46
+  },
+  "output_manifest": {
+    "file": "icons.json",
+    "sha256": "1bb748d524f6c38da93210b5d14a85652acad8e0fcd1de603b92f0cbd7ec1f57",
+    "private_only": true
+  },
+  "variant_only": [
+    {
+      "field_id": "item.icon.KRO-ICON-aae9b45b033c54",
+      "content_id": "KRO-ITEM-36d2a69ca8aaa3",
+      "reason": "OUT_OF_SELECTED_PROFILE",
+      "next": "2001 named item row and exact image URL/bytes required; source2000 variant remains inspectable"
+    },
+    {
+      "field_id": "item.icon.KRO-ICON-c1e19fe3a049ce",
+      "content_id": "KRO-ITEM-6f2ccc22622518",
+      "reason": "OUT_OF_SELECTED_PROFILE",
+      "next": "2001 named item row and exact image URL/bytes required; source2000 variant remains inspectable"
+    },
+    {
+      "field_id": "item.icon.KRO-ICON-f826ea825fb01e",
+      "content_id": "KRO-ITEM-6c8be77cc6022f",
+      "reason": "OUT_OF_SELECTED_PROFILE",
+      "next": "2001 named item row and exact image URL/bytes required; source2000 variant remains inspectable"
+    },
+    {
+      "field_id": "item.icon.KRO-ICON-19c43559a8c966",
+      "content_id": "KRO-ITEM-995567c3bc33c4",
+      "reason": "OUT_OF_SELECTED_PROFILE",
+      "next": "2001 named item row and exact image URL/bytes required; source2000 variant remains inspectable"
+    },
+    {
+      "field_id": "item.icon.KRO-ICON-578a2f802a057d",
+      "content_id": "KRO-ITEM-abc0cb0b1a967a",
+      "reason": "OUT_OF_SELECTED_PROFILE",
+      "next": "2001 named item row and exact image URL/bytes required; source2000 variant remains inspectable"
+    }
+  ],
+  "remaining_working2001_image_gaps": [
+    {
+      "field_id": "item.icon.KRO-ITEM-95ea7b64615280",
+      "content_id": "KRO-ITEM-95ea7b64615280",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7892029989a1",
+      "source_pointer": {
+        "line": 72,
+        "sha256": "09a5d8685ef00ce929df4a04c83e93d8b25021dd8c5c17097c765ca76a57599e"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-c6ac2f66ba8798",
+      "content_id": "KRO-ITEM-c6ac2f66ba8798",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7892029989a1",
+      "source_pointer": {
+        "line": 81,
+        "sha256": "09a5d8685ef00ce929df4a04c83e93d8b25021dd8c5c17097c765ca76a57599e"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-8cebf18f8ab4e4",
+      "content_id": "KRO-ITEM-8cebf18f8ab4e4",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7892029989a1",
+      "source_pointer": {
+        "line": 90,
+        "sha256": "09a5d8685ef00ce929df4a04c83e93d8b25021dd8c5c17097c765ca76a57599e"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-2bced46e39e8ea",
+      "content_id": "KRO-ITEM-2bced46e39e8ea",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7892029989a1",
+      "source_pointer": {
+        "line": 99,
+        "sha256": "09a5d8685ef00ce929df4a04c83e93d8b25021dd8c5c17097c765ca76a57599e"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-ae08d62db94b46",
+      "content_id": "KRO-ITEM-ae08d62db94b46",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7892029989a1",
+      "source_pointer": {
+        "line": 108,
+        "sha256": "09a5d8685ef00ce929df4a04c83e93d8b25021dd8c5c17097c765ca76a57599e"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-6beb4b4bc823b7",
+      "content_id": "KRO-ITEM-6beb4b4bc823b7",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7892029989a1",
+      "source_pointer": {
+        "line": 117,
+        "sha256": "09a5d8685ef00ce929df4a04c83e93d8b25021dd8c5c17097c765ca76a57599e"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-93c58efa0b8b45",
+      "content_id": "KRO-ITEM-93c58efa0b8b45",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7892029989a1",
+      "source_pointer": {
+        "line": 126,
+        "sha256": "09a5d8685ef00ce929df4a04c83e93d8b25021dd8c5c17097c765ca76a57599e"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-bc93e23afe4bbe",
+      "content_id": "KRO-ITEM-bc93e23afe4bbe",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7892029989a1",
+      "source_pointer": {
+        "line": 135,
+        "sha256": "09a5d8685ef00ce929df4a04c83e93d8b25021dd8c5c17097c765ca76a57599e"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-13b6dfaf6d1cac",
+      "content_id": "KRO-ITEM-13b6dfaf6d1cac",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7892029989a1",
+      "source_pointer": {
+        "line": 144,
+        "sha256": "09a5d8685ef00ce929df4a04c83e93d8b25021dd8c5c17097c765ca76a57599e"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-38b951e6f8efc8",
+      "content_id": "KRO-ITEM-38b951e6f8efc8",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7892029989a1",
+      "source_pointer": {
+        "line": 153,
+        "sha256": "09a5d8685ef00ce929df4a04c83e93d8b25021dd8c5c17097c765ca76a57599e"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-e40c15b28a2320",
+      "content_id": "KRO-ITEM-e40c15b28a2320",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7892029989a1",
+      "source_pointer": {
+        "line": 162,
+        "sha256": "09a5d8685ef00ce929df4a04c83e93d8b25021dd8c5c17097c765ca76a57599e"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-bb4cbb7af0c38a",
+      "content_id": "KRO-ITEM-bb4cbb7af0c38a",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-31985f864b6a",
+      "source_pointer": {
+        "line": 72,
+        "sha256": "956872c83a9e1184454573561d7ff2d608730dd28a4b87f76d069562e87eba31"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-369f37bc7bf44e",
+      "content_id": "KRO-ITEM-369f37bc7bf44e",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-31985f864b6a",
+      "source_pointer": {
+        "line": 81,
+        "sha256": "956872c83a9e1184454573561d7ff2d608730dd28a4b87f76d069562e87eba31"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-67ab037f28f929",
+      "content_id": "KRO-ITEM-67ab037f28f929",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-31985f864b6a",
+      "source_pointer": {
+        "line": 90,
+        "sha256": "956872c83a9e1184454573561d7ff2d608730dd28a4b87f76d069562e87eba31"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-527761c12640e0",
+      "content_id": "KRO-ITEM-527761c12640e0",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-31985f864b6a",
+      "source_pointer": {
+        "line": 99,
+        "sha256": "956872c83a9e1184454573561d7ff2d608730dd28a4b87f76d069562e87eba31"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-6293752e1bb092",
+      "content_id": "KRO-ITEM-6293752e1bb092",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-1ba55d9def1a",
+      "source_pointer": {
+        "line": 69,
+        "sha256": "32702cb2cd841d3f6c87bef5309f2e3fcd8faf5f27fdb48ae7ea10853bc90f57"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-495cf7477f6d67",
+      "content_id": "KRO-ITEM-495cf7477f6d67",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-1ba55d9def1a",
+      "source_pointer": {
+        "line": 78,
+        "sha256": "32702cb2cd841d3f6c87bef5309f2e3fcd8faf5f27fdb48ae7ea10853bc90f57"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-1ff1b5bb706b44",
+      "content_id": "KRO-ITEM-1ff1b5bb706b44",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-1ba55d9def1a",
+      "source_pointer": {
+        "line": 87,
+        "sha256": "32702cb2cd841d3f6c87bef5309f2e3fcd8faf5f27fdb48ae7ea10853bc90f57"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-9c5cadb0de7fdb",
+      "content_id": "KRO-ITEM-9c5cadb0de7fdb",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-1ba55d9def1a",
+      "source_pointer": {
+        "line": 96,
+        "sha256": "32702cb2cd841d3f6c87bef5309f2e3fcd8faf5f27fdb48ae7ea10853bc90f57"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-350c04be0dcad7",
+      "content_id": "KRO-ITEM-350c04be0dcad7",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-1ba55d9def1a",
+      "source_pointer": {
+        "line": 105,
+        "sha256": "32702cb2cd841d3f6c87bef5309f2e3fcd8faf5f27fdb48ae7ea10853bc90f57"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-c825258bcc90f9",
+      "content_id": "KRO-ITEM-c825258bcc90f9",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-1ba55d9def1a",
+      "source_pointer": {
+        "line": 114,
+        "sha256": "32702cb2cd841d3f6c87bef5309f2e3fcd8faf5f27fdb48ae7ea10853bc90f57"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-50dc1606604550",
+      "content_id": "KRO-ITEM-50dc1606604550",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-1ba55d9def1a",
+      "source_pointer": {
+        "line": 123,
+        "sha256": "32702cb2cd841d3f6c87bef5309f2e3fcd8faf5f27fdb48ae7ea10853bc90f57"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-c1cf971d8b31dc",
+      "content_id": "KRO-ITEM-c1cf971d8b31dc",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-1ba55d9def1a",
+      "source_pointer": {
+        "line": 132,
+        "sha256": "32702cb2cd841d3f6c87bef5309f2e3fcd8faf5f27fdb48ae7ea10853bc90f57"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-a2a10a9b58150b",
+      "content_id": "KRO-ITEM-a2a10a9b58150b",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-1ba55d9def1a",
+      "source_pointer": {
+        "line": 141,
+        "sha256": "32702cb2cd841d3f6c87bef5309f2e3fcd8faf5f27fdb48ae7ea10853bc90f57"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-fc093268820ceb",
+      "content_id": "KRO-ITEM-fc093268820ceb",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-1ba55d9def1a",
+      "source_pointer": {
+        "line": 150,
+        "sha256": "32702cb2cd841d3f6c87bef5309f2e3fcd8faf5f27fdb48ae7ea10853bc90f57"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-53e06de5e6de61",
+      "content_id": "KRO-ITEM-53e06de5e6de61",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-1ba55d9def1a",
+      "source_pointer": {
+        "line": 159,
+        "sha256": "32702cb2cd841d3f6c87bef5309f2e3fcd8faf5f27fdb48ae7ea10853bc90f57"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-c32a36dd393d0a",
+      "content_id": "KRO-ITEM-c32a36dd393d0a",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-1ba55d9def1a",
+      "source_pointer": {
+        "line": 168,
+        "sha256": "32702cb2cd841d3f6c87bef5309f2e3fcd8faf5f27fdb48ae7ea10853bc90f57"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-22cf69af85d1f8",
+      "content_id": "KRO-ITEM-22cf69af85d1f8",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-1ba55d9def1a",
+      "source_pointer": {
+        "line": 177,
+        "sha256": "32702cb2cd841d3f6c87bef5309f2e3fcd8faf5f27fdb48ae7ea10853bc90f57"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-7d2075f3e4cc42",
+      "content_id": "KRO-ITEM-7d2075f3e4cc42",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-1ba55d9def1a",
+      "source_pointer": {
+        "line": 186,
+        "sha256": "32702cb2cd841d3f6c87bef5309f2e3fcd8faf5f27fdb48ae7ea10853bc90f57"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-5064f353ad19e5",
+      "content_id": "KRO-ITEM-5064f353ad19e5",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-1ba55d9def1a",
+      "source_pointer": {
+        "line": 195,
+        "sha256": "32702cb2cd841d3f6c87bef5309f2e3fcd8faf5f27fdb48ae7ea10853bc90f57"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-c52c8180b72a4f",
+      "content_id": "KRO-ITEM-c52c8180b72a4f",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-1ba55d9def1a",
+      "source_pointer": {
+        "line": 204,
+        "sha256": "32702cb2cd841d3f6c87bef5309f2e3fcd8faf5f27fdb48ae7ea10853bc90f57"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-c08f9bed17270a",
+      "content_id": "KRO-ITEM-c08f9bed17270a",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-1ba55d9def1a",
+      "source_pointer": {
+        "line": 213,
+        "sha256": "32702cb2cd841d3f6c87bef5309f2e3fcd8faf5f27fdb48ae7ea10853bc90f57"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-d4a242bdcda72a",
+      "content_id": "KRO-ITEM-d4a242bdcda72a",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-1ba55d9def1a",
+      "source_pointer": {
+        "line": 222,
+        "sha256": "32702cb2cd841d3f6c87bef5309f2e3fcd8faf5f27fdb48ae7ea10853bc90f57"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-6f34a91aea7f46",
+      "content_id": "KRO-ITEM-6f34a91aea7f46",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-89ba788efd6a",
+      "source_pointer": {
+        "line": 69,
+        "sha256": "0c2462707eaf64d0f8642bab0f389f8343cfbf5e0e4c37719639f1c1e4bbb6e7"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-cfd0dc8e7f9bdd",
+      "content_id": "KRO-ITEM-cfd0dc8e7f9bdd",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-89ba788efd6a",
+      "source_pointer": {
+        "line": 78,
+        "sha256": "0c2462707eaf64d0f8642bab0f389f8343cfbf5e0e4c37719639f1c1e4bbb6e7"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-6753f097c1df1c",
+      "content_id": "KRO-ITEM-6753f097c1df1c",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-89ba788efd6a",
+      "source_pointer": {
+        "line": 87,
+        "sha256": "0c2462707eaf64d0f8642bab0f389f8343cfbf5e0e4c37719639f1c1e4bbb6e7"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-69246403ec9617",
+      "content_id": "KRO-ITEM-69246403ec9617",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-89ba788efd6a",
+      "source_pointer": {
+        "line": 96,
+        "sha256": "0c2462707eaf64d0f8642bab0f389f8343cfbf5e0e4c37719639f1c1e4bbb6e7"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-7bb6e6fcb13cf6",
+      "content_id": "KRO-ITEM-7bb6e6fcb13cf6",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-89ba788efd6a",
+      "source_pointer": {
+        "line": 105,
+        "sha256": "0c2462707eaf64d0f8642bab0f389f8343cfbf5e0e4c37719639f1c1e4bbb6e7"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-eb113610cee35e",
+      "content_id": "KRO-ITEM-eb113610cee35e",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-89ba788efd6a",
+      "source_pointer": {
+        "line": 114,
+        "sha256": "0c2462707eaf64d0f8642bab0f389f8343cfbf5e0e4c37719639f1c1e4bbb6e7"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-af3911cd5f37e2",
+      "content_id": "KRO-ITEM-af3911cd5f37e2",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-a4960ee3ebe7",
+      "source_pointer": {
+        "line": 111,
+        "sha256": "31c19fd1d8f7d9d3a81cd361d49745a26ef4f473bfe266a7f87dd22f17138eb4"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-e842a11b765953",
+      "content_id": "KRO-ITEM-e842a11b765953",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-a4960ee3ebe7",
+      "source_pointer": {
+        "line": 133,
+        "sha256": "31c19fd1d8f7d9d3a81cd361d49745a26ef4f473bfe266a7f87dd22f17138eb4"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-993d420a3e6265",
+      "content_id": "KRO-ITEM-993d420a3e6265",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-a4960ee3ebe7",
+      "source_pointer": {
+        "line": 144,
+        "sha256": "31c19fd1d8f7d9d3a81cd361d49745a26ef4f473bfe266a7f87dd22f17138eb4"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-fa0d9c73a45022",
+      "content_id": "KRO-ITEM-fa0d9c73a45022",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-a4960ee3ebe7",
+      "source_pointer": {
+        "line": 166,
+        "sha256": "31c19fd1d8f7d9d3a81cd361d49745a26ef4f473bfe266a7f87dd22f17138eb4"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-78ee4d5bebe7ac",
+      "content_id": "KRO-ITEM-78ee4d5bebe7ac",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-a4960ee3ebe7",
+      "source_pointer": {
+        "line": 207,
+        "sha256": "31c19fd1d8f7d9d3a81cd361d49745a26ef4f473bfe266a7f87dd22f17138eb4"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-bbefa2878a07f2",
+      "content_id": "KRO-ITEM-bbefa2878a07f2",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-a4960ee3ebe7",
+      "source_pointer": {
+        "line": 268,
+        "sha256": "31c19fd1d8f7d9d3a81cd361d49745a26ef4f473bfe266a7f87dd22f17138eb4"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-54620b8fae3aba",
+      "content_id": "KRO-ITEM-54620b8fae3aba",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-a4960ee3ebe7",
+      "source_pointer": {
+        "line": 278,
+        "sha256": "31c19fd1d8f7d9d3a81cd361d49745a26ef4f473bfe266a7f87dd22f17138eb4"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-f166a66ef1550e",
+      "content_id": "KRO-ITEM-f166a66ef1550e",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-eaf214ac2f1a",
+      "source_pointer": {
+        "line": 242,
+        "sha256": "99bfd56a56c20afcfdff916be4738369270d855adbb48c633a1a73712a671b9f"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-49f6bc1917881e",
+      "content_id": "KRO-ITEM-49f6bc1917881e",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-eaf214ac2f1a",
+      "source_pointer": {
+        "line": 251,
+        "sha256": "99bfd56a56c20afcfdff916be4738369270d855adbb48c633a1a73712a671b9f"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-e920420380f461",
+      "content_id": "KRO-ITEM-e920420380f461",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-eaf214ac2f1a",
+      "source_pointer": {
+        "line": 265,
+        "sha256": "99bfd56a56c20afcfdff916be4738369270d855adbb48c633a1a73712a671b9f"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-d246f9b24287cf",
+      "content_id": "KRO-ITEM-d246f9b24287cf",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-eaf214ac2f1a",
+      "source_pointer": {
+        "line": 289,
+        "sha256": "99bfd56a56c20afcfdff916be4738369270d855adbb48c633a1a73712a671b9f"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-84f3f2f92dbb0a",
+      "content_id": "KRO-ITEM-84f3f2f92dbb0a",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-eaf214ac2f1a",
+      "source_pointer": {
+        "line": 300,
+        "sha256": "99bfd56a56c20afcfdff916be4738369270d855adbb48c633a1a73712a671b9f"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-c5fd85d966349b",
+      "content_id": "KRO-ITEM-c5fd85d966349b",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-eaf214ac2f1a",
+      "source_pointer": {
+        "line": 311,
+        "sha256": "99bfd56a56c20afcfdff916be4738369270d855adbb48c633a1a73712a671b9f"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-83fff4a0c38f9f",
+      "content_id": "KRO-ITEM-83fff4a0c38f9f",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-eaf214ac2f1a",
+      "source_pointer": {
+        "line": 321,
+        "sha256": "99bfd56a56c20afcfdff916be4738369270d855adbb48c633a1a73712a671b9f"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-4e18148c7ee6ac",
+      "content_id": "KRO-ITEM-4e18148c7ee6ac",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-eaf214ac2f1a",
+      "source_pointer": {
+        "line": 331,
+        "sha256": "99bfd56a56c20afcfdff916be4738369270d855adbb48c633a1a73712a671b9f"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-45cfe6d0d48416",
+      "content_id": "KRO-ITEM-45cfe6d0d48416",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-eaf214ac2f1a",
+      "source_pointer": {
+        "line": 341,
+        "sha256": "99bfd56a56c20afcfdff916be4738369270d855adbb48c633a1a73712a671b9f"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-3e1448a0741942",
+      "content_id": "KRO-ITEM-3e1448a0741942",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-eaf214ac2f1a",
+      "source_pointer": {
+        "line": 351,
+        "sha256": "99bfd56a56c20afcfdff916be4738369270d855adbb48c633a1a73712a671b9f"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-0fab0da44aad3e",
+      "content_id": "KRO-ITEM-0fab0da44aad3e",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-eaf214ac2f1a",
+      "source_pointer": {
+        "line": 361,
+        "sha256": "99bfd56a56c20afcfdff916be4738369270d855adbb48c633a1a73712a671b9f"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-49921990e59385",
+      "content_id": "KRO-ITEM-49921990e59385",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-eaf214ac2f1a",
+      "source_pointer": {
+        "line": 371,
+        "sha256": "99bfd56a56c20afcfdff916be4738369270d855adbb48c633a1a73712a671b9f"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-9c9f36c06e10ab",
+      "content_id": "KRO-ITEM-9c9f36c06e10ab",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-eaf214ac2f1a",
+      "source_pointer": {
+        "line": 381,
+        "sha256": "99bfd56a56c20afcfdff916be4738369270d855adbb48c633a1a73712a671b9f"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-32c10ea7842860",
+      "content_id": "KRO-ITEM-32c10ea7842860",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-eaf214ac2f1a",
+      "source_pointer": {
+        "line": 391,
+        "sha256": "99bfd56a56c20afcfdff916be4738369270d855adbb48c633a1a73712a671b9f"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-b38d88dcac300c",
+      "content_id": "KRO-ITEM-b38d88dcac300c",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-eaf214ac2f1a",
+      "source_pointer": {
+        "line": 402,
+        "sha256": "99bfd56a56c20afcfdff916be4738369270d855adbb48c633a1a73712a671b9f"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-7d1f8c21ba24f0",
+      "content_id": "KRO-ITEM-7d1f8c21ba24f0",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-eaf214ac2f1a",
+      "source_pointer": {
+        "line": 413,
+        "sha256": "99bfd56a56c20afcfdff916be4738369270d855adbb48c633a1a73712a671b9f"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-51f7ef6ff39249",
+      "content_id": "KRO-ITEM-51f7ef6ff39249",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-eaf214ac2f1a",
+      "source_pointer": {
+        "line": 424,
+        "sha256": "99bfd56a56c20afcfdff916be4738369270d855adbb48c633a1a73712a671b9f"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-b645d068774390",
+      "content_id": "KRO-ITEM-b645d068774390",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-eaf214ac2f1a",
+      "source_pointer": {
+        "line": 435,
+        "sha256": "99bfd56a56c20afcfdff916be4738369270d855adbb48c633a1a73712a671b9f"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-e4365112c942be",
+      "content_id": "KRO-ITEM-e4365112c942be",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-eaf214ac2f1a",
+      "source_pointer": {
+        "line": 446,
+        "sha256": "99bfd56a56c20afcfdff916be4738369270d855adbb48c633a1a73712a671b9f"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-a5008839927037",
+      "content_id": "KRO-ITEM-a5008839927037",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-eaf214ac2f1a",
+      "source_pointer": {
+        "line": 457,
+        "sha256": "99bfd56a56c20afcfdff916be4738369270d855adbb48c633a1a73712a671b9f"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-4c1b273af00096",
+      "content_id": "KRO-ITEM-4c1b273af00096",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-eaf214ac2f1a",
+      "source_pointer": {
+        "line": 468,
+        "sha256": "99bfd56a56c20afcfdff916be4738369270d855adbb48c633a1a73712a671b9f"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-8ec47bf71bfb05",
+      "content_id": "KRO-ITEM-8ec47bf71bfb05",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-eaf214ac2f1a",
+      "source_pointer": {
+        "line": 479,
+        "sha256": "99bfd56a56c20afcfdff916be4738369270d855adbb48c633a1a73712a671b9f"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-abc08c87c757e9",
+      "content_id": "KRO-ITEM-abc08c87c757e9",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-eaf214ac2f1a",
+      "source_pointer": {
+        "line": 490,
+        "sha256": "99bfd56a56c20afcfdff916be4738369270d855adbb48c633a1a73712a671b9f"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-f5fee1033a530a",
+      "content_id": "KRO-ITEM-f5fee1033a530a",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-eaf214ac2f1a",
+      "source_pointer": {
+        "line": 500,
+        "sha256": "99bfd56a56c20afcfdff916be4738369270d855adbb48c633a1a73712a671b9f"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-50901d79615a4a",
+      "content_id": "KRO-ITEM-50901d79615a4a",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-eaf214ac2f1a",
+      "source_pointer": {
+        "line": 514,
+        "sha256": "99bfd56a56c20afcfdff916be4738369270d855adbb48c633a1a73712a671b9f"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-c97ed4d760d2b2",
+      "content_id": "KRO-ITEM-c97ed4d760d2b2",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 52,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-97a775ca03754e",
+      "content_id": "KRO-ITEM-97a775ca03754e",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 63,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-4275d96d007659",
+      "content_id": "KRO-ITEM-4275d96d007659",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 73,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-2ca5784bcb4f9e",
+      "content_id": "KRO-ITEM-2ca5784bcb4f9e",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 83,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-f6e051aa2920c0",
+      "content_id": "KRO-ITEM-f6e051aa2920c0",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 93,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-f80bb5dde22679",
+      "content_id": "KRO-ITEM-f80bb5dde22679",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 103,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-992a7776897282",
+      "content_id": "KRO-ITEM-992a7776897282",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 113,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-39f6d3462eddd3",
+      "content_id": "KRO-ITEM-39f6d3462eddd3",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 123,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-cd4c7326324f37",
+      "content_id": "KRO-ITEM-cd4c7326324f37",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 133,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-4b581b64c09af3",
+      "content_id": "KRO-ITEM-4b581b64c09af3",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 145,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-a87ccf768b627d",
+      "content_id": "KRO-ITEM-a87ccf768b627d",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 156,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-866d6a7b8a412e",
+      "content_id": "KRO-ITEM-866d6a7b8a412e",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 166,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-8b8ebc531d0111",
+      "content_id": "KRO-ITEM-8b8ebc531d0111",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 176,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-e383f4a19b4ad8",
+      "content_id": "KRO-ITEM-e383f4a19b4ad8",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 187,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-ac8c15e3a01527",
+      "content_id": "KRO-ITEM-ac8c15e3a01527",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 198,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-b956e7ea486d60",
+      "content_id": "KRO-ITEM-b956e7ea486d60",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 209,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-e9f6bf4409ba6b",
+      "content_id": "KRO-ITEM-e9f6bf4409ba6b",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 219,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-22143563c3372e",
+      "content_id": "KRO-ITEM-22143563c3372e",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 229,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-a36209fdb92da2",
+      "content_id": "KRO-ITEM-a36209fdb92da2",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 239,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-4ac28550050758",
+      "content_id": "KRO-ITEM-4ac28550050758",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 250,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-4ad08101949f7f",
+      "content_id": "KRO-ITEM-4ad08101949f7f",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 260,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-85d114f710af9f",
+      "content_id": "KRO-ITEM-85d114f710af9f",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 269,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-9fd3032b696ff7",
+      "content_id": "KRO-ITEM-9fd3032b696ff7",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 279,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-4a7fcf64069bfb",
+      "content_id": "KRO-ITEM-4a7fcf64069bfb",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 302,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-b00a6dbe18a65a",
+      "content_id": "KRO-ITEM-b00a6dbe18a65a",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 313,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-6c461203f8d2cc",
+      "content_id": "KRO-ITEM-6c461203f8d2cc",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 323,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-61a99d71d1e39f",
+      "content_id": "KRO-ITEM-61a99d71d1e39f",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 333,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-f97103bd0ef59a",
+      "content_id": "KRO-ITEM-f97103bd0ef59a",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 343,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-53589ed9cf55aa",
+      "content_id": "KRO-ITEM-53589ed9cf55aa",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 353,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-cf9669460943ad",
+      "content_id": "KRO-ITEM-cf9669460943ad",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 363,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-6d60392cb92a16",
+      "content_id": "KRO-ITEM-6d60392cb92a16",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 373,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-3c1e4e51f0e6f1",
+      "content_id": "KRO-ITEM-3c1e4e51f0e6f1",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 383,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-373c7c89415d68",
+      "content_id": "KRO-ITEM-373c7c89415d68",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 395,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-307bf688873eaa",
+      "content_id": "KRO-ITEM-307bf688873eaa",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 406,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-dbca0cab04fa80",
+      "content_id": "KRO-ITEM-dbca0cab04fa80",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 416,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-08227c2905f367",
+      "content_id": "KRO-ITEM-08227c2905f367",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 426,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-23364623ab58c8",
+      "content_id": "KRO-ITEM-23364623ab58c8",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 437,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-7734243d8b5af6",
+      "content_id": "KRO-ITEM-7734243d8b5af6",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 448,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-6cd7b178f05f58",
+      "content_id": "KRO-ITEM-6cd7b178f05f58",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 459,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-4165d768e06b61",
+      "content_id": "KRO-ITEM-4165d768e06b61",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 469,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-fab62ae430df8e",
+      "content_id": "KRO-ITEM-fab62ae430df8e",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 479,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-b53ac87d1661de",
+      "content_id": "KRO-ITEM-b53ac87d1661de",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 489,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-cc8ac906beff1b",
+      "content_id": "KRO-ITEM-cc8ac906beff1b",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 500,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-f9a2b12026849c",
+      "content_id": "KRO-ITEM-f9a2b12026849c",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 510,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-aaaa5fde74b1fa",
+      "content_id": "KRO-ITEM-aaaa5fde74b1fa",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 521,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-284cf755fcbae4",
+      "content_id": "KRO-ITEM-284cf755fcbae4",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-288b13c6c478",
+      "source_pointer": {
+        "line": 531,
+        "sha256": "a561dfe0018416043d730ce503efe02620d8c6f16f125e83196d4b5320e0cae0"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-3ef13c66e0c0d4",
+      "content_id": "KRO-ITEM-3ef13c66e0c0d4",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2431066bc9df",
+      "source_pointer": {
+        "line": 230,
+        "sha256": "a178365ef1472b9c648e7b39d31b084102ab6139f5acd768409597b783c1ece6"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-fc2e3568a13a64",
+      "content_id": "KRO-ITEM-fc2e3568a13a64",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2431066bc9df",
+      "source_pointer": {
+        "line": 239,
+        "sha256": "a178365ef1472b9c648e7b39d31b084102ab6139f5acd768409597b783c1ece6"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-f2a333c820ef39",
+      "content_id": "KRO-ITEM-f2a333c820ef39",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2431066bc9df",
+      "source_pointer": {
+        "line": 252,
+        "sha256": "a178365ef1472b9c648e7b39d31b084102ab6139f5acd768409597b783c1ece6"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-aba97058a7d9a9",
+      "content_id": "KRO-ITEM-aba97058a7d9a9",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2431066bc9df",
+      "source_pointer": {
+        "line": 280,
+        "sha256": "a178365ef1472b9c648e7b39d31b084102ab6139f5acd768409597b783c1ece6"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-62c8e4ee19e53e",
+      "content_id": "KRO-ITEM-62c8e4ee19e53e",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2431066bc9df",
+      "source_pointer": {
+        "line": 290,
+        "sha256": "a178365ef1472b9c648e7b39d31b084102ab6139f5acd768409597b783c1ece6"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-778602c6cc5696",
+      "content_id": "KRO-ITEM-778602c6cc5696",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2431066bc9df",
+      "source_pointer": {
+        "line": 300,
+        "sha256": "a178365ef1472b9c648e7b39d31b084102ab6139f5acd768409597b783c1ece6"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-25f348151f3240",
+      "content_id": "KRO-ITEM-25f348151f3240",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2431066bc9df",
+      "source_pointer": {
+        "line": 310,
+        "sha256": "a178365ef1472b9c648e7b39d31b084102ab6139f5acd768409597b783c1ece6"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-55fcc2874ca72e",
+      "content_id": "KRO-ITEM-55fcc2874ca72e",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2431066bc9df",
+      "source_pointer": {
+        "line": 320,
+        "sha256": "a178365ef1472b9c648e7b39d31b084102ab6139f5acd768409597b783c1ece6"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-d2c66c68f28932",
+      "content_id": "KRO-ITEM-d2c66c68f28932",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2431066bc9df",
+      "source_pointer": {
+        "line": 330,
+        "sha256": "a178365ef1472b9c648e7b39d31b084102ab6139f5acd768409597b783c1ece6"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-6a73ccc26fa709",
+      "content_id": "KRO-ITEM-6a73ccc26fa709",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2431066bc9df",
+      "source_pointer": {
+        "line": 340,
+        "sha256": "a178365ef1472b9c648e7b39d31b084102ab6139f5acd768409597b783c1ece6"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-c61d44bbd954cd",
+      "content_id": "KRO-ITEM-c61d44bbd954cd",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2431066bc9df",
+      "source_pointer": {
+        "line": 350,
+        "sha256": "a178365ef1472b9c648e7b39d31b084102ab6139f5acd768409597b783c1ece6"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-586ce4aa3cbaea",
+      "content_id": "KRO-ITEM-586ce4aa3cbaea",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2431066bc9df",
+      "source_pointer": {
+        "line": 360,
+        "sha256": "a178365ef1472b9c648e7b39d31b084102ab6139f5acd768409597b783c1ece6"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-fd9d89ffa9913f",
+      "content_id": "KRO-ITEM-fd9d89ffa9913f",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2431066bc9df",
+      "source_pointer": {
+        "line": 370,
+        "sha256": "a178365ef1472b9c648e7b39d31b084102ab6139f5acd768409597b783c1ece6"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-015eb62461690d",
+      "content_id": "KRO-ITEM-015eb62461690d",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2431066bc9df",
+      "source_pointer": {
+        "line": 380,
+        "sha256": "a178365ef1472b9c648e7b39d31b084102ab6139f5acd768409597b783c1ece6"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-79ad5fa4edc164",
+      "content_id": "KRO-ITEM-79ad5fa4edc164",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2431066bc9df",
+      "source_pointer": {
+        "line": 390,
+        "sha256": "a178365ef1472b9c648e7b39d31b084102ab6139f5acd768409597b783c1ece6"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-80cc699239ae5c",
+      "content_id": "KRO-ITEM-80cc699239ae5c",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2431066bc9df",
+      "source_pointer": {
+        "line": 400,
+        "sha256": "a178365ef1472b9c648e7b39d31b084102ab6139f5acd768409597b783c1ece6"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-cf9f91259123e7",
+      "content_id": "KRO-ITEM-cf9f91259123e7",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2431066bc9df",
+      "source_pointer": {
+        "line": 410,
+        "sha256": "a178365ef1472b9c648e7b39d31b084102ab6139f5acd768409597b783c1ece6"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-ba88fd279dfd7b",
+      "content_id": "KRO-ITEM-ba88fd279dfd7b",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2431066bc9df",
+      "source_pointer": {
+        "line": 420,
+        "sha256": "a178365ef1472b9c648e7b39d31b084102ab6139f5acd768409597b783c1ece6"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-e6dbe7e88a0405",
+      "content_id": "KRO-ITEM-e6dbe7e88a0405",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2431066bc9df",
+      "source_pointer": {
+        "line": 430,
+        "sha256": "a178365ef1472b9c648e7b39d31b084102ab6139f5acd768409597b783c1ece6"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-d6ca4a44491762",
+      "content_id": "KRO-ITEM-d6ca4a44491762",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2431066bc9df",
+      "source_pointer": {
+        "line": 440,
+        "sha256": "a178365ef1472b9c648e7b39d31b084102ab6139f5acd768409597b783c1ece6"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-2d0a087eb1cd79",
+      "content_id": "KRO-ITEM-2d0a087eb1cd79",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2431066bc9df",
+      "source_pointer": {
+        "line": 450,
+        "sha256": "a178365ef1472b9c648e7b39d31b084102ab6139f5acd768409597b783c1ece6"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-e06c55e1f94b37",
+      "content_id": "KRO-ITEM-e06c55e1f94b37",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2431066bc9df",
+      "source_pointer": {
+        "line": 460,
+        "sha256": "a178365ef1472b9c648e7b39d31b084102ab6139f5acd768409597b783c1ece6"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-f4f3fa56f4e52c",
+      "content_id": "KRO-ITEM-f4f3fa56f4e52c",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2431066bc9df",
+      "source_pointer": {
+        "line": 469,
+        "sha256": "a178365ef1472b9c648e7b39d31b084102ab6139f5acd768409597b783c1ece6"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-03a7b45e9d5490",
+      "content_id": "KRO-ITEM-03a7b45e9d5490",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2431066bc9df",
+      "source_pointer": {
+        "line": 482,
+        "sha256": "a178365ef1472b9c648e7b39d31b084102ab6139f5acd768409597b783c1ece6"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-ad914ffa5963f0",
+      "content_id": "KRO-ITEM-ad914ffa5963f0",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2a467297fc0b",
+      "source_pointer": {
+        "line": 109,
+        "sha256": "29e5c81896610e9be8f11f6caafc735ca19069f5c25b9efe2e1aed042f3ff349"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-8f50b43a32e601",
+      "content_id": "KRO-ITEM-8f50b43a32e601",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2a467297fc0b",
+      "source_pointer": {
+        "line": 119,
+        "sha256": "29e5c81896610e9be8f11f6caafc735ca19069f5c25b9efe2e1aed042f3ff349"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-2111ff819828b0",
+      "content_id": "KRO-ITEM-2111ff819828b0",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2a467297fc0b",
+      "source_pointer": {
+        "line": 129,
+        "sha256": "29e5c81896610e9be8f11f6caafc735ca19069f5c25b9efe2e1aed042f3ff349"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-4111eef7e8e2bc",
+      "content_id": "KRO-ITEM-4111eef7e8e2bc",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2a467297fc0b",
+      "source_pointer": {
+        "line": 139,
+        "sha256": "29e5c81896610e9be8f11f6caafc735ca19069f5c25b9efe2e1aed042f3ff349"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-57a7c22818c421",
+      "content_id": "KRO-ITEM-57a7c22818c421",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2a467297fc0b",
+      "source_pointer": {
+        "line": 149,
+        "sha256": "29e5c81896610e9be8f11f6caafc735ca19069f5c25b9efe2e1aed042f3ff349"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-b40c443bd81b85",
+      "content_id": "KRO-ITEM-b40c443bd81b85",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2a467297fc0b",
+      "source_pointer": {
+        "line": 158,
+        "sha256": "29e5c81896610e9be8f11f6caafc735ca19069f5c25b9efe2e1aed042f3ff349"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-f1011bb4673813",
+      "content_id": "KRO-ITEM-f1011bb4673813",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2a467297fc0b",
+      "source_pointer": {
+        "line": 170,
+        "sha256": "29e5c81896610e9be8f11f6caafc735ca19069f5c25b9efe2e1aed042f3ff349"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-6f0d76611569b8",
+      "content_id": "KRO-ITEM-6f0d76611569b8",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2a467297fc0b",
+      "source_pointer": {
+        "line": 197,
+        "sha256": "29e5c81896610e9be8f11f6caafc735ca19069f5c25b9efe2e1aed042f3ff349"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-6fb30eb75c566d",
+      "content_id": "KRO-ITEM-6fb30eb75c566d",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2a467297fc0b",
+      "source_pointer": {
+        "line": 208,
+        "sha256": "29e5c81896610e9be8f11f6caafc735ca19069f5c25b9efe2e1aed042f3ff349"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-d7988a3ddd1e22",
+      "content_id": "KRO-ITEM-d7988a3ddd1e22",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2a467297fc0b",
+      "source_pointer": {
+        "line": 219,
+        "sha256": "29e5c81896610e9be8f11f6caafc735ca19069f5c25b9efe2e1aed042f3ff349"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-0cf6153f0aa9e0",
+      "content_id": "KRO-ITEM-0cf6153f0aa9e0",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2a467297fc0b",
+      "source_pointer": {
+        "line": 230,
+        "sha256": "29e5c81896610e9be8f11f6caafc735ca19069f5c25b9efe2e1aed042f3ff349"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-91bdae27423120",
+      "content_id": "KRO-ITEM-91bdae27423120",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2a467297fc0b",
+      "source_pointer": {
+        "line": 240,
+        "sha256": "29e5c81896610e9be8f11f6caafc735ca19069f5c25b9efe2e1aed042f3ff349"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-781e39f3f2c366",
+      "content_id": "KRO-ITEM-781e39f3f2c366",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2a467297fc0b",
+      "source_pointer": {
+        "line": 251,
+        "sha256": "29e5c81896610e9be8f11f6caafc735ca19069f5c25b9efe2e1aed042f3ff349"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-dda1e650de2cdd",
+      "content_id": "KRO-ITEM-dda1e650de2cdd",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2a467297fc0b",
+      "source_pointer": {
+        "line": 262,
+        "sha256": "29e5c81896610e9be8f11f6caafc735ca19069f5c25b9efe2e1aed042f3ff349"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-371e1366ee05fa",
+      "content_id": "KRO-ITEM-371e1366ee05fa",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2a467297fc0b",
+      "source_pointer": {
+        "line": 273,
+        "sha256": "29e5c81896610e9be8f11f6caafc735ca19069f5c25b9efe2e1aed042f3ff349"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-3d451016fb377e",
+      "content_id": "KRO-ITEM-3d451016fb377e",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2a467297fc0b",
+      "source_pointer": {
+        "line": 283,
+        "sha256": "29e5c81896610e9be8f11f6caafc735ca19069f5c25b9efe2e1aed042f3ff349"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-a3c1c61788655c",
+      "content_id": "KRO-ITEM-a3c1c61788655c",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2a467297fc0b",
+      "source_pointer": {
+        "line": 293,
+        "sha256": "29e5c81896610e9be8f11f6caafc735ca19069f5c25b9efe2e1aed042f3ff349"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-a9316471244a82",
+      "content_id": "KRO-ITEM-a9316471244a82",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2a467297fc0b",
+      "source_pointer": {
+        "line": 303,
+        "sha256": "29e5c81896610e9be8f11f6caafc735ca19069f5c25b9efe2e1aed042f3ff349"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-b8f400cc8c0850",
+      "content_id": "KRO-ITEM-b8f400cc8c0850",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2a467297fc0b",
+      "source_pointer": {
+        "line": 312,
+        "sha256": "29e5c81896610e9be8f11f6caafc735ca19069f5c25b9efe2e1aed042f3ff349"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-c422360da6df95",
+      "content_id": "KRO-ITEM-c422360da6df95",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2a467297fc0b",
+      "source_pointer": {
+        "line": 324,
+        "sha256": "29e5c81896610e9be8f11f6caafc735ca19069f5c25b9efe2e1aed042f3ff349"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-573dce6a90a382",
+      "content_id": "KRO-ITEM-573dce6a90a382",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 60,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-32b10728b34d67",
+      "content_id": "KRO-ITEM-32b10728b34d67",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 69,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-5264c2fba1bc84",
+      "content_id": "KRO-ITEM-5264c2fba1bc84",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 78,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-603bf82005d7f2",
+      "content_id": "KRO-ITEM-603bf82005d7f2",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 88,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-af830a5910baac",
+      "content_id": "KRO-ITEM-af830a5910baac",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 98,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-f46d522d38a9af",
+      "content_id": "KRO-ITEM-f46d522d38a9af",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 107,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-915d049ca7c033",
+      "content_id": "KRO-ITEM-915d049ca7c033",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 117,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-d8f5c01bd732db",
+      "content_id": "KRO-ITEM-d8f5c01bd732db",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 126,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-107eb3e8e4eaae",
+      "content_id": "KRO-ITEM-107eb3e8e4eaae",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 136,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-d5345637ea972e",
+      "content_id": "KRO-ITEM-d5345637ea972e",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 146,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-458d6d98d351fc",
+      "content_id": "KRO-ITEM-458d6d98d351fc",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 156,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-e0bcb18c44643b",
+      "content_id": "KRO-ITEM-e0bcb18c44643b",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 165,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-7578da25265c27",
+      "content_id": "KRO-ITEM-7578da25265c27",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 175,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-a4cc2959945ef0",
+      "content_id": "KRO-ITEM-a4cc2959945ef0",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 185,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-6ce48938c18d8b",
+      "content_id": "KRO-ITEM-6ce48938c18d8b",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 195,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-061c73947435f6",
+      "content_id": "KRO-ITEM-061c73947435f6",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 205,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-5eb61e1035a560",
+      "content_id": "KRO-ITEM-5eb61e1035a560",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 215,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-90329596aed4f8",
+      "content_id": "KRO-ITEM-90329596aed4f8",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 225,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-8e7a35f9dc2fe8",
+      "content_id": "KRO-ITEM-8e7a35f9dc2fe8",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 235,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-e4fbc2a1edd26a",
+      "content_id": "KRO-ITEM-e4fbc2a1edd26a",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 245,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-ae90fea425bbd3",
+      "content_id": "KRO-ITEM-ae90fea425bbd3",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 255,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-5a04c43d259be8",
+      "content_id": "KRO-ITEM-5a04c43d259be8",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 265,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-95eb534312bf56",
+      "content_id": "KRO-ITEM-95eb534312bf56",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 275,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-f4440f450866e1",
+      "content_id": "KRO-ITEM-f4440f450866e1",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 285,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-4f0f11dc7f754b",
+      "content_id": "KRO-ITEM-4f0f11dc7f754b",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 295,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-7a12d8ad6d9eaa",
+      "content_id": "KRO-ITEM-7a12d8ad6d9eaa",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 304,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-9f32890c3613ed",
+      "content_id": "KRO-ITEM-9f32890c3613ed",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 315,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-0fd74422a9e8c4",
+      "content_id": "KRO-ITEM-0fd74422a9e8c4",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 324,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-856796eab60afa",
+      "content_id": "KRO-ITEM-856796eab60afa",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 334,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-ae9c8ed5a84a33",
+      "content_id": "KRO-ITEM-ae9c8ed5a84a33",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 343,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-4feb950072f24a",
+      "content_id": "KRO-ITEM-4feb950072f24a",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 352,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-1db30c16e6180a",
+      "content_id": "KRO-ITEM-1db30c16e6180a",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 361,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-8882b1b86ef50d",
+      "content_id": "KRO-ITEM-8882b1b86ef50d",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 371,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-539371dcc32b4d",
+      "content_id": "KRO-ITEM-539371dcc32b4d",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 381,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-bc14985531b431",
+      "content_id": "KRO-ITEM-bc14985531b431",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 390,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-9cbf32d4a5aa36",
+      "content_id": "KRO-ITEM-9cbf32d4a5aa36",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 400,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-1148271f854b62",
+      "content_id": "KRO-ITEM-1148271f854b62",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 409,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-ddf9432787d33c",
+      "content_id": "KRO-ITEM-ddf9432787d33c",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-47db11b99913",
+      "source_pointer": {
+        "line": 419,
+        "sha256": "fab184ebf5b71c5cf1c839fa977fe8765d8240727ea9ef7765c19a87b7af7405"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-6a5ecdf07f13c7",
+      "content_id": "KRO-ITEM-6a5ecdf07f13c7",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-8fd66a29e87e",
+      "source_pointer": {
+        "line": 61,
+        "sha256": "6123d8d8c4ae63770a972fba4893195f0f702cbc8ed5b3cf07db3de350016151"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-8bc64ee0b70fd7",
+      "content_id": "KRO-ITEM-8bc64ee0b70fd7",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-8fd66a29e87e",
+      "source_pointer": {
+        "line": 70,
+        "sha256": "6123d8d8c4ae63770a972fba4893195f0f702cbc8ed5b3cf07db3de350016151"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-2e592291f8183e",
+      "content_id": "KRO-ITEM-2e592291f8183e",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-8fd66a29e87e",
+      "source_pointer": {
+        "line": 79,
+        "sha256": "6123d8d8c4ae63770a972fba4893195f0f702cbc8ed5b3cf07db3de350016151"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-e40a76ed0d90f6",
+      "content_id": "KRO-ITEM-e40a76ed0d90f6",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-8fd66a29e87e",
+      "source_pointer": {
+        "line": 88,
+        "sha256": "6123d8d8c4ae63770a972fba4893195f0f702cbc8ed5b3cf07db3de350016151"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-7be89595827047",
+      "content_id": "KRO-ITEM-7be89595827047",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-8fd66a29e87e",
+      "source_pointer": {
+        "line": 97,
+        "sha256": "6123d8d8c4ae63770a972fba4893195f0f702cbc8ed5b3cf07db3de350016151"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-51465f323e657f",
+      "content_id": "KRO-ITEM-51465f323e657f",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-8fd66a29e87e",
+      "source_pointer": {
+        "line": 106,
+        "sha256": "6123d8d8c4ae63770a972fba4893195f0f702cbc8ed5b3cf07db3de350016151"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-7f1e1baad08aa3",
+      "content_id": "KRO-ITEM-7f1e1baad08aa3",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-8fd66a29e87e",
+      "source_pointer": {
+        "line": 115,
+        "sha256": "6123d8d8c4ae63770a972fba4893195f0f702cbc8ed5b3cf07db3de350016151"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-d31e1af1a75bc5",
+      "content_id": "KRO-ITEM-d31e1af1a75bc5",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-8fd66a29e87e",
+      "source_pointer": {
+        "line": 124,
+        "sha256": "6123d8d8c4ae63770a972fba4893195f0f702cbc8ed5b3cf07db3de350016151"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-f9e38a34423d64",
+      "content_id": "KRO-ITEM-f9e38a34423d64",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-8fd66a29e87e",
+      "source_pointer": {
+        "line": 133,
+        "sha256": "6123d8d8c4ae63770a972fba4893195f0f702cbc8ed5b3cf07db3de350016151"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-6e873727596e27",
+      "content_id": "KRO-ITEM-6e873727596e27",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-8fd66a29e87e",
+      "source_pointer": {
+        "line": 142,
+        "sha256": "6123d8d8c4ae63770a972fba4893195f0f702cbc8ed5b3cf07db3de350016151"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-c5262026bdc0f0",
+      "content_id": "KRO-ITEM-c5262026bdc0f0",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-8fd66a29e87e",
+      "source_pointer": {
+        "line": 151,
+        "sha256": "6123d8d8c4ae63770a972fba4893195f0f702cbc8ed5b3cf07db3de350016151"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-b0d67bb9462760",
+      "content_id": "KRO-ITEM-b0d67bb9462760",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-4e137f2484cc",
+      "source_pointer": {
+        "line": 61,
+        "sha256": "3575f761a67a20d56f58181fc26b5fee324c9f65b54878afb8b5688db96fb0a8"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-11dee4e66b05b3",
+      "content_id": "KRO-ITEM-11dee4e66b05b3",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-4e137f2484cc",
+      "source_pointer": {
+        "line": 70,
+        "sha256": "3575f761a67a20d56f58181fc26b5fee324c9f65b54878afb8b5688db96fb0a8"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-66d65cae7c8627",
+      "content_id": "KRO-ITEM-66d65cae7c8627",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-4e137f2484cc",
+      "source_pointer": {
+        "line": 79,
+        "sha256": "3575f761a67a20d56f58181fc26b5fee324c9f65b54878afb8b5688db96fb0a8"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-6ba0230334684a",
+      "content_id": "KRO-ITEM-6ba0230334684a",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-4e137f2484cc",
+      "source_pointer": {
+        "line": 88,
+        "sha256": "3575f761a67a20d56f58181fc26b5fee324c9f65b54878afb8b5688db96fb0a8"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-cb2537570b58dd",
+      "content_id": "KRO-ITEM-cb2537570b58dd",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-a7eab177dc47",
+      "source_pointer": {
+        "line": 75,
+        "sha256": "490a23b40c59ab4a75478b6e43a24fcaecf574dcd7d934a430c2f6c77fa14cf7"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-3fc9a66c97faec",
+      "content_id": "KRO-ITEM-3fc9a66c97faec",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-a7eab177dc47",
+      "source_pointer": {
+        "line": 128,
+        "sha256": "490a23b40c59ab4a75478b6e43a24fcaecf574dcd7d934a430c2f6c77fa14cf7"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-9c19c21786e16e",
+      "content_id": "KRO-ITEM-9c19c21786e16e",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-a7eab177dc47",
+      "source_pointer": {
+        "line": 150,
+        "sha256": "490a23b40c59ab4a75478b6e43a24fcaecf574dcd7d934a430c2f6c77fa14cf7"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-120fdb485c7407",
+      "content_id": "KRO-ITEM-120fdb485c7407",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-a7eab177dc47",
+      "source_pointer": {
+        "line": 161,
+        "sha256": "490a23b40c59ab4a75478b6e43a24fcaecf574dcd7d934a430c2f6c77fa14cf7"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-d7f14b05e3c362",
+      "content_id": "KRO-ITEM-d7f14b05e3c362",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-a7eab177dc47",
+      "source_pointer": {
+        "line": 172,
+        "sha256": "490a23b40c59ab4a75478b6e43a24fcaecf574dcd7d934a430c2f6c77fa14cf7"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-903cb697960648",
+      "content_id": "KRO-ITEM-903cb697960648",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-a7eab177dc47",
+      "source_pointer": {
+        "line": 183,
+        "sha256": "490a23b40c59ab4a75478b6e43a24fcaecf574dcd7d934a430c2f6c77fa14cf7"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-c057d134db163b",
+      "content_id": "KRO-ITEM-c057d134db163b",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-a7eab177dc47",
+      "source_pointer": {
+        "line": 222,
+        "sha256": "490a23b40c59ab4a75478b6e43a24fcaecf574dcd7d934a430c2f6c77fa14cf7"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-a4164f0d22fdb2",
+      "content_id": "KRO-ITEM-a4164f0d22fdb2",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-a7eab177dc47",
+      "source_pointer": {
+        "line": 240,
+        "sha256": "490a23b40c59ab4a75478b6e43a24fcaecf574dcd7d934a430c2f6c77fa14cf7"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-098b85bee3a0a4",
+      "content_id": "KRO-ITEM-098b85bee3a0a4",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-a7eab177dc47",
+      "source_pointer": {
+        "line": 364,
+        "sha256": "490a23b40c59ab4a75478b6e43a24fcaecf574dcd7d934a430c2f6c77fa14cf7"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-3d3f46d82e0aa1",
+      "content_id": "KRO-ITEM-3d3f46d82e0aa1",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-a7eab177dc47",
+      "source_pointer": {
+        "line": 398,
+        "sha256": "490a23b40c59ab4a75478b6e43a24fcaecf574dcd7d934a430c2f6c77fa14cf7"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-3803a2f2e0787e",
+      "content_id": "KRO-ITEM-3803a2f2e0787e",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-a7eab177dc47",
+      "source_pointer": {
+        "line": 415,
+        "sha256": "490a23b40c59ab4a75478b6e43a24fcaecf574dcd7d934a430c2f6c77fa14cf7"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-d1670c10ba1d91",
+      "content_id": "KRO-ITEM-d1670c10ba1d91",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-a7eab177dc47",
+      "source_pointer": {
+        "line": 471,
+        "sha256": "490a23b40c59ab4a75478b6e43a24fcaecf574dcd7d934a430c2f6c77fa14cf7"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-141bfbda2f619e",
+      "content_id": "KRO-ITEM-141bfbda2f619e",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-a7eab177dc47",
+      "source_pointer": {
+        "line": 479,
+        "sha256": "490a23b40c59ab4a75478b6e43a24fcaecf574dcd7d934a430c2f6c77fa14cf7"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-09ebaeb6397d00",
+      "content_id": "KRO-ITEM-09ebaeb6397d00",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 74,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-b8bb293333e15e",
+      "content_id": "KRO-ITEM-b8bb293333e15e",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 82,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-7517dc922be96f",
+      "content_id": "KRO-ITEM-7517dc922be96f",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 89,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-96961378b76152",
+      "content_id": "KRO-ITEM-96961378b76152",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 98,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-d910713dffb2ba",
+      "content_id": "KRO-ITEM-d910713dffb2ba",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 106,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-198ac033e57ef5",
+      "content_id": "KRO-ITEM-198ac033e57ef5",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 114,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-b66d641f4ff37b",
+      "content_id": "KRO-ITEM-b66d641f4ff37b",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 122,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-6f446e35fd00fa",
+      "content_id": "KRO-ITEM-6f446e35fd00fa",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 130,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-ff854427f217d0",
+      "content_id": "KRO-ITEM-ff854427f217d0",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 139,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-48f82f351c01cd",
+      "content_id": "KRO-ITEM-48f82f351c01cd",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 148,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-0642bb39d96e97",
+      "content_id": "KRO-ITEM-0642bb39d96e97",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 157,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-9ae7129069628b",
+      "content_id": "KRO-ITEM-9ae7129069628b",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 166,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-50d28676a7c7be",
+      "content_id": "KRO-ITEM-50d28676a7c7be",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 184,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-9b0315683a8906",
+      "content_id": "KRO-ITEM-9b0315683a8906",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 192,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-76b8e06d0ab195",
+      "content_id": "KRO-ITEM-76b8e06d0ab195",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 201,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-935836c3bb52c7",
+      "content_id": "KRO-ITEM-935836c3bb52c7",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 210,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-b203b063cf411e",
+      "content_id": "KRO-ITEM-b203b063cf411e",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 218,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-e540569cf2f77a",
+      "content_id": "KRO-ITEM-e540569cf2f77a",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 235,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-7a92ce68b1767a",
+      "content_id": "KRO-ITEM-7a92ce68b1767a",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 243,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-b687847579138d",
+      "content_id": "KRO-ITEM-b687847579138d",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 268,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-9ec709268cac8d",
+      "content_id": "KRO-ITEM-9ec709268cac8d",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 292,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-39943ae5113d82",
+      "content_id": "KRO-ITEM-39943ae5113d82",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 301,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-11abcb7208fe2e",
+      "content_id": "KRO-ITEM-11abcb7208fe2e",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 309,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-0b0eb4c4d89152",
+      "content_id": "KRO-ITEM-0b0eb4c4d89152",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 335,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-c50c8bda39116a",
+      "content_id": "KRO-ITEM-c50c8bda39116a",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 343,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-3b04b7499f264f",
+      "content_id": "KRO-ITEM-3b04b7499f264f",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 354,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-254fee8d880ea9",
+      "content_id": "KRO-ITEM-254fee8d880ea9",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 365,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-ef711a4f8eabf2",
+      "content_id": "KRO-ITEM-ef711a4f8eabf2",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 373,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-cbb12a848bb382",
+      "content_id": "KRO-ITEM-cbb12a848bb382",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 380,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-db45e9d7120bfa",
+      "content_id": "KRO-ITEM-db45e9d7120bfa",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 388,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-cdee94a558c67f",
+      "content_id": "KRO-ITEM-cdee94a558c67f",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 398,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-7670804897b9a4",
+      "content_id": "KRO-ITEM-7670804897b9a4",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 408,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-c2b87e9b4a661a",
+      "content_id": "KRO-ITEM-c2b87e9b4a661a",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 416,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-ac14533c44ed1f",
+      "content_id": "KRO-ITEM-ac14533c44ed1f",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 424,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-efb61c583dcfa4",
+      "content_id": "KRO-ITEM-efb61c583dcfa4",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 432,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-aa1b9a7214bc88",
+      "content_id": "KRO-ITEM-aa1b9a7214bc88",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 440,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-a739b28d3569bb",
+      "content_id": "KRO-ITEM-a739b28d3569bb",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 448,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-5f0643a174c387",
+      "content_id": "KRO-ITEM-5f0643a174c387",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 456,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-fa52fc5d973193",
+      "content_id": "KRO-ITEM-fa52fc5d973193",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 464,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-52304abbfc1587",
+      "content_id": "KRO-ITEM-52304abbfc1587",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 472,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-2cdf20521e3797",
+      "content_id": "KRO-ITEM-2cdf20521e3797",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 480,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-6e205f29b65bb8",
+      "content_id": "KRO-ITEM-6e205f29b65bb8",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 488,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-7c62b24d0dd205",
+      "content_id": "KRO-ITEM-7c62b24d0dd205",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 496,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-421ff78f8c064a",
+      "content_id": "KRO-ITEM-421ff78f8c064a",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 504,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-270190cd085716",
+      "content_id": "KRO-ITEM-270190cd085716",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 511,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-0c51e5a2d0be3a",
+      "content_id": "KRO-ITEM-0c51e5a2d0be3a",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 518,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-265a90cf89d482",
+      "content_id": "KRO-ITEM-265a90cf89d482",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 534,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-9274602db21193",
+      "content_id": "KRO-ITEM-9274602db21193",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 551,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-505d57801cd5bf",
+      "content_id": "KRO-ITEM-505d57801cd5bf",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 559,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-bcee88aa3e8d1d",
+      "content_id": "KRO-ITEM-bcee88aa3e8d1d",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 567,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-e5c452bba4ab2b",
+      "content_id": "KRO-ITEM-e5c452bba4ab2b",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 575,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-ba7f8fc1752160",
+      "content_id": "KRO-ITEM-ba7f8fc1752160",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 583,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-b09512631ece9b",
+      "content_id": "KRO-ITEM-b09512631ece9b",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 591,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-ca69fc6df40f6c",
+      "content_id": "KRO-ITEM-ca69fc6df40f6c",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 599,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-8e86a563e48641",
+      "content_id": "KRO-ITEM-8e86a563e48641",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 607,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-4fda702638dca2",
+      "content_id": "KRO-ITEM-4fda702638dca2",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 615,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-aa537d03977319",
+      "content_id": "KRO-ITEM-aa537d03977319",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 623,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-35cf49ccf9218d",
+      "content_id": "KRO-ITEM-35cf49ccf9218d",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 631,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-31a8e3cb16a4f6",
+      "content_id": "KRO-ITEM-31a8e3cb16a4f6",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 639,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-95ad187a4a8fa8",
+      "content_id": "KRO-ITEM-95ad187a4a8fa8",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 647,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-f522ccdef3aadf",
+      "content_id": "KRO-ITEM-f522ccdef3aadf",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 655,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-e56df25713e415",
+      "content_id": "KRO-ITEM-e56df25713e415",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 662,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-facaf0ff8e2e3e",
+      "content_id": "KRO-ITEM-facaf0ff8e2e3e",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 670,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-ac79f2f73fdfe3",
+      "content_id": "KRO-ITEM-ac79f2f73fdfe3",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 678,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-9cbe44ea6bbdb3",
+      "content_id": "KRO-ITEM-9cbe44ea6bbdb3",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 686,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-e9f710222ef770",
+      "content_id": "KRO-ITEM-e9f710222ef770",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 693,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-d69dfa01892b4b",
+      "content_id": "KRO-ITEM-d69dfa01892b4b",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 701,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-f01561f4cdaac4",
+      "content_id": "KRO-ITEM-f01561f4cdaac4",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 709,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-c1cfca0467ef29",
+      "content_id": "KRO-ITEM-c1cfca0467ef29",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 717,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-b0a361f692cf51",
+      "content_id": "KRO-ITEM-b0a361f692cf51",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 725,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-d6cb4ec8e472c8",
+      "content_id": "KRO-ITEM-d6cb4ec8e472c8",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 733,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-53f3c4d5146535",
+      "content_id": "KRO-ITEM-53f3c4d5146535",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 741,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-d3908e7d2c70a0",
+      "content_id": "KRO-ITEM-d3908e7d2c70a0",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 749,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-864e6a746c2d02",
+      "content_id": "KRO-ITEM-864e6a746c2d02",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 757,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-7cd4f0d7d3a2d8",
+      "content_id": "KRO-ITEM-7cd4f0d7d3a2d8",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 765,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-1e097f4e2b1a99",
+      "content_id": "KRO-ITEM-1e097f4e2b1a99",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 773,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-fc1a9052783443",
+      "content_id": "KRO-ITEM-fc1a9052783443",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 781,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-9c0df27898e2ba",
+      "content_id": "KRO-ITEM-9c0df27898e2ba",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 789,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-9d866c49e46c67",
+      "content_id": "KRO-ITEM-9d866c49e46c67",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 797,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-d1fca114d8779a",
+      "content_id": "KRO-ITEM-d1fca114d8779a",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 804,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-5de643c23bf1f8",
+      "content_id": "KRO-ITEM-5de643c23bf1f8",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-2d0eb6d73788",
+      "source_pointer": {
+        "line": 812,
+        "sha256": "68f53a5bec236c0d5cd0c048e3a39224a584ef6eeac1c7279e96d07802f9199b"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-be19434c5b2ee6",
+      "content_id": "KRO-ITEM-be19434c5b2ee6",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7eee1d661c10",
+      "source_pointer": {
+        "line": 60,
+        "sha256": "daf22a0d8f77451b51bbd1a5a4672ff5b8122d3f55d312db8e25b86348961cae"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-89a184f51172c1",
+      "content_id": "KRO-ITEM-89a184f51172c1",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7eee1d661c10",
+      "source_pointer": {
+        "line": 71,
+        "sha256": "daf22a0d8f77451b51bbd1a5a4672ff5b8122d3f55d312db8e25b86348961cae"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-796e2a7fa45753",
+      "content_id": "KRO-ITEM-796e2a7fa45753",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7eee1d661c10",
+      "source_pointer": {
+        "line": 80,
+        "sha256": "daf22a0d8f77451b51bbd1a5a4672ff5b8122d3f55d312db8e25b86348961cae"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-963644fd8c55d5",
+      "content_id": "KRO-ITEM-963644fd8c55d5",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7eee1d661c10",
+      "source_pointer": {
+        "line": 89,
+        "sha256": "daf22a0d8f77451b51bbd1a5a4672ff5b8122d3f55d312db8e25b86348961cae"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-b066890327dadb",
+      "content_id": "KRO-ITEM-b066890327dadb",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7eee1d661c10",
+      "source_pointer": {
+        "line": 98,
+        "sha256": "daf22a0d8f77451b51bbd1a5a4672ff5b8122d3f55d312db8e25b86348961cae"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-5f5f0a6736e6fa",
+      "content_id": "KRO-ITEM-5f5f0a6736e6fa",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7eee1d661c10",
+      "source_pointer": {
+        "line": 107,
+        "sha256": "daf22a0d8f77451b51bbd1a5a4672ff5b8122d3f55d312db8e25b86348961cae"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-8b055e9b415dc1",
+      "content_id": "KRO-ITEM-8b055e9b415dc1",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7eee1d661c10",
+      "source_pointer": {
+        "line": 116,
+        "sha256": "daf22a0d8f77451b51bbd1a5a4672ff5b8122d3f55d312db8e25b86348961cae"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-ee43eaf607ccb4",
+      "content_id": "KRO-ITEM-ee43eaf607ccb4",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7eee1d661c10",
+      "source_pointer": {
+        "line": 125,
+        "sha256": "daf22a0d8f77451b51bbd1a5a4672ff5b8122d3f55d312db8e25b86348961cae"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-f753979bbe3681",
+      "content_id": "KRO-ITEM-f753979bbe3681",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7eee1d661c10",
+      "source_pointer": {
+        "line": 135,
+        "sha256": "daf22a0d8f77451b51bbd1a5a4672ff5b8122d3f55d312db8e25b86348961cae"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-78ea59bb3a7eca",
+      "content_id": "KRO-ITEM-78ea59bb3a7eca",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7eee1d661c10",
+      "source_pointer": {
+        "line": 144,
+        "sha256": "daf22a0d8f77451b51bbd1a5a4672ff5b8122d3f55d312db8e25b86348961cae"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-1d2eac54f3a0f5",
+      "content_id": "KRO-ITEM-1d2eac54f3a0f5",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7eee1d661c10",
+      "source_pointer": {
+        "line": 153,
+        "sha256": "daf22a0d8f77451b51bbd1a5a4672ff5b8122d3f55d312db8e25b86348961cae"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-5d6a2e16c7d1d1",
+      "content_id": "KRO-ITEM-5d6a2e16c7d1d1",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7eee1d661c10",
+      "source_pointer": {
+        "line": 163,
+        "sha256": "daf22a0d8f77451b51bbd1a5a4672ff5b8122d3f55d312db8e25b86348961cae"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-6d43f4a9fe7446",
+      "content_id": "KRO-ITEM-6d43f4a9fe7446",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7eee1d661c10",
+      "source_pointer": {
+        "line": 173,
+        "sha256": "daf22a0d8f77451b51bbd1a5a4672ff5b8122d3f55d312db8e25b86348961cae"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-f62cc3a8993922",
+      "content_id": "KRO-ITEM-f62cc3a8993922",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7eee1d661c10",
+      "source_pointer": {
+        "line": 183,
+        "sha256": "daf22a0d8f77451b51bbd1a5a4672ff5b8122d3f55d312db8e25b86348961cae"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-2a29e61e8de9f7",
+      "content_id": "KRO-ITEM-2a29e61e8de9f7",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7eee1d661c10",
+      "source_pointer": {
+        "line": 194,
+        "sha256": "daf22a0d8f77451b51bbd1a5a4672ff5b8122d3f55d312db8e25b86348961cae"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-1d8947cce82d85",
+      "content_id": "KRO-ITEM-1d8947cce82d85",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7eee1d661c10",
+      "source_pointer": {
+        "line": 205,
+        "sha256": "daf22a0d8f77451b51bbd1a5a4672ff5b8122d3f55d312db8e25b86348961cae"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-ed52576b6241ce",
+      "content_id": "KRO-ITEM-ed52576b6241ce",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7eee1d661c10",
+      "source_pointer": {
+        "line": 214,
+        "sha256": "daf22a0d8f77451b51bbd1a5a4672ff5b8122d3f55d312db8e25b86348961cae"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-327ef85e535c23",
+      "content_id": "KRO-ITEM-327ef85e535c23",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7eee1d661c10",
+      "source_pointer": {
+        "line": 223,
+        "sha256": "daf22a0d8f77451b51bbd1a5a4672ff5b8122d3f55d312db8e25b86348961cae"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-f20107f93e91bf",
+      "content_id": "KRO-ITEM-f20107f93e91bf",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7eee1d661c10",
+      "source_pointer": {
+        "line": 232,
+        "sha256": "daf22a0d8f77451b51bbd1a5a4672ff5b8122d3f55d312db8e25b86348961cae"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-e8dd854e965df3",
+      "content_id": "KRO-ITEM-e8dd854e965df3",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7eee1d661c10",
+      "source_pointer": {
+        "line": 241,
+        "sha256": "daf22a0d8f77451b51bbd1a5a4672ff5b8122d3f55d312db8e25b86348961cae"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-3202e4b495a9f6",
+      "content_id": "KRO-ITEM-3202e4b495a9f6",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7eee1d661c10",
+      "source_pointer": {
+        "line": 250,
+        "sha256": "daf22a0d8f77451b51bbd1a5a4672ff5b8122d3f55d312db8e25b86348961cae"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-1db9e7a7262196",
+      "content_id": "KRO-ITEM-1db9e7a7262196",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7eee1d661c10",
+      "source_pointer": {
+        "line": 259,
+        "sha256": "daf22a0d8f77451b51bbd1a5a4672ff5b8122d3f55d312db8e25b86348961cae"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-c8bd69e680a129",
+      "content_id": "KRO-ITEM-c8bd69e680a129",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7eee1d661c10",
+      "source_pointer": {
+        "line": 268,
+        "sha256": "daf22a0d8f77451b51bbd1a5a4672ff5b8122d3f55d312db8e25b86348961cae"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-3c40c0a7d540e2",
+      "content_id": "KRO-ITEM-3c40c0a7d540e2",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7eee1d661c10",
+      "source_pointer": {
+        "line": 277,
+        "sha256": "daf22a0d8f77451b51bbd1a5a4672ff5b8122d3f55d312db8e25b86348961cae"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-0efbeaa42ed0ca",
+      "content_id": "KRO-ITEM-0efbeaa42ed0ca",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7eee1d661c10",
+      "source_pointer": {
+        "line": 286,
+        "sha256": "daf22a0d8f77451b51bbd1a5a4672ff5b8122d3f55d312db8e25b86348961cae"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-aea605daaefe88",
+      "content_id": "KRO-ITEM-aea605daaefe88",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-7eee1d661c10",
+      "source_pointer": {
+        "line": 295,
+        "sha256": "daf22a0d8f77451b51bbd1a5a4672ff5b8122d3f55d312db8e25b86348961cae"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-679dd7667d6366",
+      "content_id": "KRO-ITEM-679dd7667d6366",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-b5bb214b5d9b",
+      "source_pointer": {
+        "line": 59,
+        "sha256": "1281cf21cb18980d3b8ac6a4be7d04af5f624c8a00ef8f44e7e3271ba6067353"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-11466582573efc",
+      "content_id": "KRO-ITEM-11466582573efc",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-b5bb214b5d9b",
+      "source_pointer": {
+        "line": 69,
+        "sha256": "1281cf21cb18980d3b8ac6a4be7d04af5f624c8a00ef8f44e7e3271ba6067353"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-064babaf513bd0",
+      "content_id": "KRO-ITEM-064babaf513bd0",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-b5bb214b5d9b",
+      "source_pointer": {
+        "line": 80,
+        "sha256": "1281cf21cb18980d3b8ac6a4be7d04af5f624c8a00ef8f44e7e3271ba6067353"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-6aaecceb14d671",
+      "content_id": "KRO-ITEM-6aaecceb14d671",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-b5bb214b5d9b",
+      "source_pointer": {
+        "line": 89,
+        "sha256": "1281cf21cb18980d3b8ac6a4be7d04af5f624c8a00ef8f44e7e3271ba6067353"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-c9bf9ae691ccdf",
+      "content_id": "KRO-ITEM-c9bf9ae691ccdf",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-b5bb214b5d9b",
+      "source_pointer": {
+        "line": 98,
+        "sha256": "1281cf21cb18980d3b8ac6a4be7d04af5f624c8a00ef8f44e7e3271ba6067353"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-99362a13fd3a63",
+      "content_id": "KRO-ITEM-99362a13fd3a63",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-b5bb214b5d9b",
+      "source_pointer": {
+        "line": 127,
+        "sha256": "1281cf21cb18980d3b8ac6a4be7d04af5f624c8a00ef8f44e7e3271ba6067353"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-15c4f0954a473c",
+      "content_id": "KRO-ITEM-15c4f0954a473c",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-b5bb214b5d9b",
+      "source_pointer": {
+        "line": 137,
+        "sha256": "1281cf21cb18980d3b8ac6a4be7d04af5f624c8a00ef8f44e7e3271ba6067353"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-d74e4f0bc00e90",
+      "content_id": "KRO-ITEM-d74e4f0bc00e90",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-b5bb214b5d9b",
+      "source_pointer": {
+        "line": 148,
+        "sha256": "1281cf21cb18980d3b8ac6a4be7d04af5f624c8a00ef8f44e7e3271ba6067353"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-a405213890bd10",
+      "content_id": "KRO-ITEM-a405213890bd10",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-b5bb214b5d9b",
+      "source_pointer": {
+        "line": 159,
+        "sha256": "1281cf21cb18980d3b8ac6a4be7d04af5f624c8a00ef8f44e7e3271ba6067353"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-d5f4b74beaeb4d",
+      "content_id": "KRO-ITEM-d5f4b74beaeb4d",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-b5bb214b5d9b",
+      "source_pointer": {
+        "line": 168,
+        "sha256": "1281cf21cb18980d3b8ac6a4be7d04af5f624c8a00ef8f44e7e3271ba6067353"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-860d4620523011",
+      "content_id": "KRO-ITEM-860d4620523011",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-b5bb214b5d9b",
+      "source_pointer": {
+        "line": 198,
+        "sha256": "1281cf21cb18980d3b8ac6a4be7d04af5f624c8a00ef8f44e7e3271ba6067353"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-d25d5ea7743cb8",
+      "content_id": "KRO-ITEM-d25d5ea7743cb8",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-b5bb214b5d9b",
+      "source_pointer": {
+        "line": 210,
+        "sha256": "1281cf21cb18980d3b8ac6a4be7d04af5f624c8a00ef8f44e7e3271ba6067353"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-5559ce28c9fc00",
+      "content_id": "KRO-ITEM-5559ce28c9fc00",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-b5bb214b5d9b",
+      "source_pointer": {
+        "line": 221,
+        "sha256": "1281cf21cb18980d3b8ac6a4be7d04af5f624c8a00ef8f44e7e3271ba6067353"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-1626587b0529e5",
+      "content_id": "KRO-ITEM-1626587b0529e5",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-b5bb214b5d9b",
+      "source_pointer": {
+        "line": 230,
+        "sha256": "1281cf21cb18980d3b8ac6a4be7d04af5f624c8a00ef8f44e7e3271ba6067353"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-87a422f19a77b2",
+      "content_id": "KRO-ITEM-87a422f19a77b2",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-b5bb214b5d9b",
+      "source_pointer": {
+        "line": 260,
+        "sha256": "1281cf21cb18980d3b8ac6a4be7d04af5f624c8a00ef8f44e7e3271ba6067353"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-846970094f2fd7",
+      "content_id": "KRO-ITEM-846970094f2fd7",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-b5bb214b5d9b",
+      "source_pointer": {
+        "line": 272,
+        "sha256": "1281cf21cb18980d3b8ac6a4be7d04af5f624c8a00ef8f44e7e3271ba6067353"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-961ed00fe1d0d3",
+      "content_id": "KRO-ITEM-961ed00fe1d0d3",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-b5bb214b5d9b",
+      "source_pointer": {
+        "line": 283,
+        "sha256": "1281cf21cb18980d3b8ac6a4be7d04af5f624c8a00ef8f44e7e3271ba6067353"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-7d98630914b624",
+      "content_id": "KRO-ITEM-7d98630914b624",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-b5bb214b5d9b",
+      "source_pointer": {
+        "line": 293,
+        "sha256": "1281cf21cb18980d3b8ac6a4be7d04af5f624c8a00ef8f44e7e3271ba6067353"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-51caa339bdb900",
+      "content_id": "KRO-ITEM-51caa339bdb900",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-b5bb214b5d9b",
+      "source_pointer": {
+        "line": 304,
+        "sha256": "1281cf21cb18980d3b8ac6a4be7d04af5f624c8a00ef8f44e7e3271ba6067353"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-c693020a1481d1",
+      "content_id": "KRO-ITEM-c693020a1481d1",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-e06ce986f6fe",
+      "source_pointer": {
+        "line": 60,
+        "sha256": "90ed29562d9ca240dfa9c11e629932ad820cebd67b374320e68a8bfa6ea0425e"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-25ece07be7f102",
+      "content_id": "KRO-ITEM-25ece07be7f102",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-e06ce986f6fe",
+      "source_pointer": {
+        "line": 69,
+        "sha256": "90ed29562d9ca240dfa9c11e629932ad820cebd67b374320e68a8bfa6ea0425e"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-f145ccec8dcd6c",
+      "content_id": "KRO-ITEM-f145ccec8dcd6c",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-e06ce986f6fe",
+      "source_pointer": {
+        "line": 78,
+        "sha256": "90ed29562d9ca240dfa9c11e629932ad820cebd67b374320e68a8bfa6ea0425e"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-a57595015ff706",
+      "content_id": "KRO-ITEM-a57595015ff706",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-e06ce986f6fe",
+      "source_pointer": {
+        "line": 87,
+        "sha256": "90ed29562d9ca240dfa9c11e629932ad820cebd67b374320e68a8bfa6ea0425e"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-18bd574c642bb8",
+      "content_id": "KRO-ITEM-18bd574c642bb8",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-e06ce986f6fe",
+      "source_pointer": {
+        "line": 96,
+        "sha256": "90ed29562d9ca240dfa9c11e629932ad820cebd67b374320e68a8bfa6ea0425e"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-c4b2491ce7d44e",
+      "content_id": "KRO-ITEM-c4b2491ce7d44e",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-e06ce986f6fe",
+      "source_pointer": {
+        "line": 105,
+        "sha256": "90ed29562d9ca240dfa9c11e629932ad820cebd67b374320e68a8bfa6ea0425e"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-7a87c00aaac78b",
+      "content_id": "KRO-ITEM-7a87c00aaac78b",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-e06ce986f6fe",
+      "source_pointer": {
+        "line": 114,
+        "sha256": "90ed29562d9ca240dfa9c11e629932ad820cebd67b374320e68a8bfa6ea0425e"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-bbf97ae3e9cefe",
+      "content_id": "KRO-ITEM-bbf97ae3e9cefe",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-e06ce986f6fe",
+      "source_pointer": {
+        "line": 123,
+        "sha256": "90ed29562d9ca240dfa9c11e629932ad820cebd67b374320e68a8bfa6ea0425e"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-d5b00878fce157",
+      "content_id": "KRO-ITEM-d5b00878fce157",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-e06ce986f6fe",
+      "source_pointer": {
+        "line": 132,
+        "sha256": "90ed29562d9ca240dfa9c11e629932ad820cebd67b374320e68a8bfa6ea0425e"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-1b372e7e78b543",
+      "content_id": "KRO-ITEM-1b372e7e78b543",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-e06ce986f6fe",
+      "source_pointer": {
+        "line": 141,
+        "sha256": "90ed29562d9ca240dfa9c11e629932ad820cebd67b374320e68a8bfa6ea0425e"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-32ffde5be7c983",
+      "content_id": "KRO-ITEM-32ffde5be7c983",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-e06ce986f6fe",
+      "source_pointer": {
+        "line": 150,
+        "sha256": "90ed29562d9ca240dfa9c11e629932ad820cebd67b374320e68a8bfa6ea0425e"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-a04f02087e4930",
+      "content_id": "KRO-ITEM-a04f02087e4930",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-e06ce986f6fe",
+      "source_pointer": {
+        "line": 159,
+        "sha256": "90ed29562d9ca240dfa9c11e629932ad820cebd67b374320e68a8bfa6ea0425e"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-23c38a0c7b51c5",
+      "content_id": "KRO-ITEM-23c38a0c7b51c5",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-e06ce986f6fe",
+      "source_pointer": {
+        "line": 168,
+        "sha256": "90ed29562d9ca240dfa9c11e629932ad820cebd67b374320e68a8bfa6ea0425e"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-13149980126e72",
+      "content_id": "KRO-ITEM-13149980126e72",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-e06ce986f6fe",
+      "source_pointer": {
+        "line": 177,
+        "sha256": "90ed29562d9ca240dfa9c11e629932ad820cebd67b374320e68a8bfa6ea0425e"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-5fd4a743960633",
+      "content_id": "KRO-ITEM-5fd4a743960633",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-e06ce986f6fe",
+      "source_pointer": {
+        "line": 186,
+        "sha256": "90ed29562d9ca240dfa9c11e629932ad820cebd67b374320e68a8bfa6ea0425e"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-193fe5270fd7b3",
+      "content_id": "KRO-ITEM-193fe5270fd7b3",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-e06ce986f6fe",
+      "source_pointer": {
+        "line": 195,
+        "sha256": "90ed29562d9ca240dfa9c11e629932ad820cebd67b374320e68a8bfa6ea0425e"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-7edb87e93f32db",
+      "content_id": "KRO-ITEM-7edb87e93f32db",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-e06ce986f6fe",
+      "source_pointer": {
+        "line": 204,
+        "sha256": "90ed29562d9ca240dfa9c11e629932ad820cebd67b374320e68a8bfa6ea0425e"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-fe808dd77a91ac",
+      "content_id": "KRO-ITEM-fe808dd77a91ac",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-e06ce986f6fe",
+      "source_pointer": {
+        "line": 213,
+        "sha256": "90ed29562d9ca240dfa9c11e629932ad820cebd67b374320e68a8bfa6ea0425e"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-503a5744e7495a",
+      "content_id": "KRO-ITEM-503a5744e7495a",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-c58e2ad668e7",
+      "source_pointer": {
+        "line": 60,
+        "sha256": "830bc143b6e26ccbe38b48ef07a25988ff7b7d3745b155c7e44f110c8b81ed17"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-089c1e90866ecc",
+      "content_id": "KRO-ITEM-089c1e90866ecc",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-c58e2ad668e7",
+      "source_pointer": {
+        "line": 69,
+        "sha256": "830bc143b6e26ccbe38b48ef07a25988ff7b7d3745b155c7e44f110c8b81ed17"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-f4cf2dd760d8db",
+      "content_id": "KRO-ITEM-f4cf2dd760d8db",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-c58e2ad668e7",
+      "source_pointer": {
+        "line": 78,
+        "sha256": "830bc143b6e26ccbe38b48ef07a25988ff7b7d3745b155c7e44f110c8b81ed17"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-2d61eaac9deb5d",
+      "content_id": "KRO-ITEM-2d61eaac9deb5d",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-c58e2ad668e7",
+      "source_pointer": {
+        "line": 87,
+        "sha256": "830bc143b6e26ccbe38b48ef07a25988ff7b7d3745b155c7e44f110c8b81ed17"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-a1769362650014",
+      "content_id": "KRO-ITEM-a1769362650014",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-c58e2ad668e7",
+      "source_pointer": {
+        "line": 96,
+        "sha256": "830bc143b6e26ccbe38b48ef07a25988ff7b7d3745b155c7e44f110c8b81ed17"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    },
+    {
+      "field_id": "item.icon.KRO-ITEM-bb2ba153d6e977",
+      "content_id": "KRO-ITEM-bb2ba153d6e977",
+      "reason": "ACCESS_BLOCKED_OR_NOT_ACQUIRED",
+      "source_id": "P15-ARC-c58e2ad668e7",
+      "source_pointer": {
+        "line": 105,
+        "sha256": "830bc143b6e26ccbe38b48ef07a25988ff7b7d3745b155c7e44f110c8b81ed17"
+      },
+      "required": "Exact linked archived official image bytes in kr_official_items.image_links; no shared fallback"
+    }
+  ],
+  "runtime": {
+    "status": "NOT_RUN",
+    "owner": "P2 runtime integration",
+    "required": "Bind icons.json to actual inspector state and verify representative inventory/equipment/field thumbnails; missing ID must reject"
+  },
+  "limits": [
+    "100 working joins are CORROBORATED cross-capture mappings, not direct 2001 image associations",
+    "Source illustrations do not establish in-client EPF/frame/palette/equipped appearance IDs",
+    "477 2001 document rows are a capture namespace, not total game item population",
+    "Price column remains unspecified listed price; absent stats remain null"
+  ],
+  "negative_tests": [
+    {
+      "test": "corrupt_source_image_refused",
+      "result": "PASS",
+      "observed": "Image SHA mismatch: KRO-ICON-8931a258ce81f1",
+      "original_source_mutated": false
+    }
+  ]
+}

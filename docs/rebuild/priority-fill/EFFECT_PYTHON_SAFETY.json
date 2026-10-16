@@ -1,0 +1,9 @@
+{
+  "scope": "selection safety regressions; source metadata fixtures, no runtime rendering claim",
+  "tests_run": 8,
+  "failures": 0,
+  "errors": 0,
+  "status": "PASS",
+  "command": "python3 -m unittest discover -s tools/rebuild/p2 -p test_priority_effects.py -v",
+  "code_sha256": "04d88de3516370d01fc3a776427c5ab117d93af7d0bc865a0f8e88a9df638655"
+}

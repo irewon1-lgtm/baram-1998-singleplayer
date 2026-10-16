@@ -1,0 +1,3728 @@
+{
+  "checks": [
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_000_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_000_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_000_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_001_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_001_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_001_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_002_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_002_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_002_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_003_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_003_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_003_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_004_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_004_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_004_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_005_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_005_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_005_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_006_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_006_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_006_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_007_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_007_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_007_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_008_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_008_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_008_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_009_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_009_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_009_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_010_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_010_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_010_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_011_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_011_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_011_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_012_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_012_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_012_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_013_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_013_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_013_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_014_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_014_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_014_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_015_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_015_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_015_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_016_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_016_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_016_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_017_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_017_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_017_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_018_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_018_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_018_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_019_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_019_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_019_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_020_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_020_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_020_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_021_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_021_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_021_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_022_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_022_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_022_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_023_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_023_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_023_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_024_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_024_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_024_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_025_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_025_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_025_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_026_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_026_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_026_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_027_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_027_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_027_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_028_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_028_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_028_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_029_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_029_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_029_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_030_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_030_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_030_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_031_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_031_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_031_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_032_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_032_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_032_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_033_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_033_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_033_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_034_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_034_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_034_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_035_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_035_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_035_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_036_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_036_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_036_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_037_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_037_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_037_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_038_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_038_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_038_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_039_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_039_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_039_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_040_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_040_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_040_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_041_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_041_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_041_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_042_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_042_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_042_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_043_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_043_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_043_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_044_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_044_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_044_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_045_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_045_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_045_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_046_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_046_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_046_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_047_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_047_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_047_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_048_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_048_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_048_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_049_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_049_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_049_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_050_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_050_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_050_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_051_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_051_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_051_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_052_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_052_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_052_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_053_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_053_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_053_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_054_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_054_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_054_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_055_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_055_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_055_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_056_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_056_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_056_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_057_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_057_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_057_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_058_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_058_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_058_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_059_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_059_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_059_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_060_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_060_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_060_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_061_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_061_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_061_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_062_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_062_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_062_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_063_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_063_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_063_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_064_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_064_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_064_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_065_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_065_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_065_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_066_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_066_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_066_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_067_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_067_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_067_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_068_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_068_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_068_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_069_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_069_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_069_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_VALID_FRAGMENT_ONLY"
+      },
+      "id": "effect_070_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_070_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_070_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_VALID_FRAGMENT_ONLY"
+      },
+      "id": "effect_071_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_071_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_071_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [
+          "EFFECT_PREVIEW_NOT_SELECTED"
+        ],
+        "scope": "BLOCKED"
+      },
+      "id": "effect_072_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_073_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_073_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_073_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_074_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_074_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_074_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_075_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_075_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_075_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_076_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_076_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_076_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_077_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_077_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_077_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_078_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_078_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_078_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_079_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_079_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_079_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_080_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_080_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_080_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_081_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_081_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_081_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_082_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_082_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_082_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_083_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_083_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_083_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_084_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_084_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_084_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_085_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_085_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_085_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_086_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_086_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_086_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_087_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_087_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_087_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_088_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_088_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_088_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_089_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_089_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_089_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_090_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_090_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_090_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_VALID_FRAGMENT_ONLY"
+      },
+      "id": "effect_091_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_091_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_091_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_092_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_092_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_092_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_093_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_093_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_093_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_094_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_094_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_094_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_095_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_095_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_095_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_VALID_FRAGMENT_ONLY"
+      },
+      "id": "effect_096_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_096_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_096_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_097_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_097_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_097_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_098_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_098_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_098_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_VALID_FRAGMENT_ONLY"
+      },
+      "id": "effect_099_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_099_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_099_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_100_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_100_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_100_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_101_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_101_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_101_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_102_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_102_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_102_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_103_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_103_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_103_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_VALID_FRAGMENT_ONLY"
+      },
+      "id": "effect_104_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_104_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_104_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_105_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_105_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_105_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_VALID_FRAGMENT_ONLY"
+      },
+      "id": "effect_106_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_106_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_106_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_107_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_107_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_107_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_108_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_108_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_108_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_109_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_109_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_109_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_110_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_110_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_110_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_111_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_111_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_111_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_112_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_112_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_112_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_113_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_113_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_113_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_114_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_114_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_114_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_115_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_115_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_115_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_VALID_FRAGMENT_ONLY"
+      },
+      "id": "effect_116_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_116_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_116_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_117_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_117_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_117_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_118_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_118_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_118_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_119_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_119_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_119_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_120_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_120_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_120_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_121_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_121_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_121_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_122_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_122_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_122_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_123_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_123_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_123_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_124_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_124_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_124_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_125_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_125_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_125_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_126_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_126_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_126_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": {
+        "errors": [],
+        "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+      },
+      "id": "effect_127_available_contract",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_127_no_negative_frame",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "effect_127_bounded_finish",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "negative_mutation_no_frame_zero_fallback",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "empty_path_no_fallback",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "zero_duration_no_fallback",
+      "status": "PASS"
+    },
+    {
+      "details": null,
+      "id": "negative_elapsed_rejected",
+      "status": "PASS"
+    }
+  ],
+  "engine": "4.6.3-stable (official)",
+  "fragment_previews": 8,
+  "observed_layer_references": [
+    {
+      "fragment_id": null,
+      "id": 0.0,
+      "original_frames": [
+        0.0
+      ],
+      "paths": [
+        "kr491/images/effect-00000-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 1.0,
+      "original_frames": [
+        51.0,
+        12.0
+      ],
+      "paths": [
+        "kr491/images/effect-00051-effect-0.png",
+        "kr491/images/effect-00012-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 2.0,
+      "original_frames": [
+        25.0
+      ],
+      "paths": [
+        "kr491/images/effect-00025-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 3.0,
+      "original_frames": [
+        35.0
+      ],
+      "paths": [
+        "kr491/images/effect-00035-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 4.0,
+      "original_frames": [
+        43.0
+      ],
+      "paths": [
+        "kr491/images/effect-00043-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 5.0,
+      "original_frames": [
+        64.0
+      ],
+      "paths": [
+        "kr491/images/effect-00064-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 6.0,
+      "original_frames": [
+        71.0
+      ],
+      "paths": [
+        "kr491/images/effect-00071-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 7.0,
+      "original_frames": [
+        78.0
+      ],
+      "paths": [
+        "kr491/images/effect-00078-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 8.0,
+      "original_frames": [
+        84.0
+      ],
+      "paths": [
+        "kr491/images/effect-00084-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 9.0,
+      "original_frames": [
+        91.0
+      ],
+      "paths": [
+        "kr491/images/effect-00091-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 10.0,
+      "original_frames": [
+        99.0
+      ],
+      "paths": [
+        "kr491/images/effect-00099-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 11.0,
+      "original_frames": [
+        108.0
+      ],
+      "paths": [
+        "kr491/images/effect-00108-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 12.0,
+      "original_frames": [
+        117.0
+      ],
+      "paths": [
+        "kr491/images/effect-00117-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 13.0,
+      "original_frames": [
+        123.0
+      ],
+      "paths": [
+        "kr491/images/effect-00123-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 14.0,
+      "original_frames": [
+        133.0
+      ],
+      "paths": [
+        "kr491/images/effect-00133-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 15.0,
+      "original_frames": [
+        138.0
+      ],
+      "paths": [
+        "kr491/images/effect-00138-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 16.0,
+      "original_frames": [
+        143.0
+      ],
+      "paths": [
+        "kr491/images/effect-00143-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 17.0,
+      "original_frames": [
+        150.0
+      ],
+      "paths": [
+        "kr491/images/effect-00150-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 18.0,
+      "original_frames": [
+        160.0
+      ],
+      "paths": [
+        "kr491/images/effect-00160-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 19.0,
+      "original_frames": [
+        170.0
+      ],
+      "paths": [
+        "kr491/images/effect-00170-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 20.0,
+      "original_frames": [
+        177.0
+      ],
+      "paths": [
+        "kr491/images/effect-00177-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 21.0,
+      "original_frames": [
+        184.0
+      ],
+      "paths": [
+        "kr491/images/effect-00184-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 22.0,
+      "original_frames": [
+        194.0
+      ],
+      "paths": [
+        "kr491/images/effect-00194-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 23.0,
+      "original_frames": [
+        204.0
+      ],
+      "paths": [
+        "kr491/images/effect-00204-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 24.0,
+      "original_frames": [
+        214.0
+      ],
+      "paths": [
+        "kr491/images/effect-00214-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 25.0,
+      "original_frames": [
+        224.0
+      ],
+      "paths": [
+        "kr491/images/effect-00224-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 26.0,
+      "original_frames": [
+        236.0
+      ],
+      "paths": [
+        "kr491/images/effect-00236-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 27.0,
+      "original_frames": [
+        242.0
+      ],
+      "paths": [
+        "kr491/images/effect-00242-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 28.0,
+      "original_frames": [
+        248.0
+      ],
+      "paths": [
+        "kr491/images/effect-00248-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 29.0,
+      "original_frames": [
+        255.0
+      ],
+      "paths": [
+        "kr491/images/effect-00255-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 30.0,
+      "original_frames": [
+        264.0
+      ],
+      "paths": [
+        "kr491/images/effect-00264-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 31.0,
+      "original_frames": [
+        271.0
+      ],
+      "paths": [
+        "kr491/images/effect-00271-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 32.0,
+      "original_frames": [
+        275.0
+      ],
+      "paths": [
+        "kr491/images/effect-00275-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 33.0,
+      "original_frames": [
+        284.0
+      ],
+      "paths": [
+        "kr491/images/effect-00284-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 34.0,
+      "original_frames": [
+        292.0
+      ],
+      "paths": [
+        "kr491/images/effect-00292-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 35.0,
+      "original_frames": [
+        304.0
+      ],
+      "paths": [
+        "kr491/images/effect-00304-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 36.0,
+      "original_frames": [
+        316.0
+      ],
+      "paths": [
+        "kr491/images/effect-00316-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 37.0,
+      "original_frames": [
+        328.0
+      ],
+      "paths": [
+        "kr491/images/effect-00328-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 38.0,
+      "original_frames": [
+        340.0
+      ],
+      "paths": [
+        "kr491/images/effect-00340-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 39.0,
+      "original_frames": [
+        356.0
+      ],
+      "paths": [
+        "kr491/images/effect-00356-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 40.0,
+      "original_frames": [
+        365.0
+      ],
+      "paths": [
+        "kr491/images/effect-00365-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 41.0,
+      "original_frames": [
+        375.0
+      ],
+      "paths": [
+        "kr491/images/effect-00375-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 42.0,
+      "original_frames": [
+        385.0
+      ],
+      "paths": [
+        "kr491/images/effect-00385-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 43.0,
+      "original_frames": [
+        397.0
+      ],
+      "paths": [
+        "kr491/images/effect-00397-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 44.0,
+      "original_frames": [
+        8.0
+      ],
+      "paths": [
+        "kr491/images/effect-00008-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 45.0,
+      "original_frames": [
+        410.0
+      ],
+      "paths": [
+        "kr491/images/effect-00410-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 46.0,
+      "original_frames": [
+        418.0
+      ],
+      "paths": [
+        "kr491/images/effect-00418-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 47.0,
+      "original_frames": [
+        427.0
+      ],
+      "paths": [
+        "kr491/images/effect-00427-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 48.0,
+      "original_frames": [
+        435.0
+      ],
+      "paths": [
+        "kr491/images/effect-00435-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 49.0,
+      "original_frames": [
+        445.0
+      ],
+      "paths": [
+        "kr491/images/effect-00445-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 50.0,
+      "original_frames": [
+        455.0
+      ],
+      "paths": [
+        "kr491/images/effect-00455-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 51.0,
+      "original_frames": [
+        465.0
+      ],
+      "paths": [
+        "kr491/images/effect-00465-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 52.0,
+      "original_frames": [
+        475.0
+      ],
+      "paths": [
+        "kr491/images/effect-00475-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 53.0,
+      "original_frames": [
+        485.0
+      ],
+      "paths": [
+        "kr491/images/effect-00485-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 54.0,
+      "original_frames": [
+        496.0
+      ],
+      "paths": [
+        "kr491/images/effect-00496-effect-0.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 55.0,
+      "original_frames": [
+        507.0
+      ],
+      "paths": [
+        "kr491/images/effect-00507-effect-1.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 56.0,
+      "original_frames": [
+        536.0
+      ],
+      "paths": [
+        "kr491/images/effect-00536-effect-1.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 57.0,
+      "original_frames": [
+        560.0
+      ],
+      "paths": [
+        "kr491/images/effect-00560-effect-1.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 58.0,
+      "original_frames": [
+        570.0
+      ],
+      "paths": [
+        "kr491/images/effect-00570-effect-1.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 59.0,
+      "original_frames": [
+        587.0
+      ],
+      "paths": [
+        "kr491/images/effect-00587-effect-1.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 60.0,
+      "original_frames": [
+        598.0
+      ],
+      "paths": [
+        "kr491/images/effect-00598-effect-1.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 61.0,
+      "original_frames": [
+        605.0
+      ],
+      "paths": [
+        "kr491/images/effect-00605-effect-2.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 62.0,
+      "original_frames": [
+        614.0
+      ],
+      "paths": [
+        "kr491/images/effect-00614-effect-2.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 63.0,
+      "original_frames": [
+        622.0
+      ],
+      "paths": [
+        "kr491/images/effect-00622-effect-2.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 64.0,
+      "original_frames": [
+        630.0
+      ],
+      "paths": [
+        "kr491/images/effect-00630-effect-2.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 65.0,
+      "original_frames": [
+        638.0
+      ],
+      "paths": [
+        "kr491/images/effect-00638-effect-2.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 66.0,
+      "original_frames": [
+        646.0
+      ],
+      "paths": [
+        "kr491/images/effect-00646-effect-2.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 67.0,
+      "original_frames": [
+        654.0
+      ],
+      "paths": [
+        "kr491/images/effect-00654-effect-2.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 68.0,
+      "original_frames": [
+        665.0
+      ],
+      "paths": [
+        "kr491/images/effect-00665-effect-2.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 69.0,
+      "original_frames": [
+        675.0
+      ],
+      "paths": [
+        "kr491/images/effect-00675-effect-2.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": "front:0-10",
+      "id": 70.0,
+      "original_frames": [
+        687.0
+      ],
+      "paths": [
+        "kr491/images/effect-00687-effect-2.png"
+      ],
+      "scope": "RECONSTRUCTED_VALID_FRAGMENT_ONLY"
+    },
+    {
+      "fragment_id": "front:0-15",
+      "id": 71.0,
+      "original_frames": [
+        701.0
+      ],
+      "paths": [
+        "kr491/images/effect-00701-effect-2.png"
+      ],
+      "scope": "RECONSTRUCTED_VALID_FRAGMENT_ONLY"
+    },
+    {
+      "fragment_id": null,
+      "id": 73.0,
+      "original_frames": [
+        721.0
+      ],
+      "paths": [
+        "kr491/images/effect-00721-effect-2.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 74.0,
+      "original_frames": [
+        732.0
+      ],
+      "paths": [
+        "kr491/images/effect-00732-effect-3.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 75.0,
+      "original_frames": [
+        745.0
+      ],
+      "paths": [
+        "kr491/images/effect-00745-effect-3.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 76.0,
+      "original_frames": [
+        757.0
+      ],
+      "paths": [
+        "kr491/images/effect-00757-effect-3.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 77.0,
+      "original_frames": [
+        775.0
+      ],
+      "paths": [
+        "kr491/images/effect-00775-effect-3.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 78.0,
+      "original_frames": [
+        791.0
+      ],
+      "paths": [
+        "kr491/images/effect-00791-effect-3.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 79.0,
+      "original_frames": [
+        800.0
+      ],
+      "paths": [
+        "kr491/images/effect-00800-effect-4.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 80.0,
+      "original_frames": [
+        840.0
+      ],
+      "paths": [
+        "kr491/images/effect-00840-effect-5.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 81.0,
+      "original_frames": [
+        880.0
+      ],
+      "paths": [
+        "kr491/images/effect-00880-effect-6.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 82.0,
+      "original_frames": [
+        931.0
+      ],
+      "paths": [
+        "kr491/images/effect-00931-effect-6.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 83.0,
+      "original_frames": [
+        920.0
+      ],
+      "paths": [
+        "kr491/images/effect-00920-effect-6.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 84.0,
+      "original_frames": [
+        971.0
+      ],
+      "paths": [
+        "kr491/images/effect-00971-effect-7.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 85.0,
+      "original_frames": [
+        981.0
+      ],
+      "paths": [
+        "kr491/images/effect-00981-effect-7.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 86.0,
+      "original_frames": [
+        1006.0
+      ],
+      "paths": [
+        "kr491/images/effect-01006-effect-7.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 87.0,
+      "original_frames": [
+        1021.0
+      ],
+      "paths": [
+        "kr491/images/effect-01021-effect-7.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 88.0,
+      "original_frames": [
+        1032.0
+      ],
+      "paths": [
+        "kr491/images/effect-01032-effect-7.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 89.0,
+      "original_frames": [
+        1038.0
+      ],
+      "paths": [
+        "kr491/images/effect-01038-effect-7.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 90.0,
+      "original_frames": [
+        1049.0
+      ],
+      "paths": [
+        "kr491/images/effect-01049-effect-7.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": "front:1-7",
+      "id": 91.0,
+      "original_frames": [
+        1059.0
+      ],
+      "paths": [
+        "kr491/images/effect-01059-effect-7.png"
+      ],
+      "scope": "RECONSTRUCTED_VALID_FRAGMENT_ONLY"
+    },
+    {
+      "fragment_id": null,
+      "id": 92.0,
+      "original_frames": [
+        1071.0
+      ],
+      "paths": [
+        "kr491/images/effect-01071-effect-7.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 93.0,
+      "original_frames": [
+        1101.0
+      ],
+      "paths": [
+        "kr491/images/effect-01101-effect-7.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 94.0,
+      "original_frames": [
+        1111.0
+      ],
+      "paths": [
+        "kr491/images/effect-01111-effect-7.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 95.0,
+      "original_frames": [
+        1125.0
+      ],
+      "paths": [
+        "kr491/images/effect-01125-effect-7.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": "front:0-15",
+      "id": 96.0,
+      "original_frames": [
+        1144.0
+      ],
+      "paths": [
+        "kr491/images/effect-01144-effect-7.png"
+      ],
+      "scope": "RECONSTRUCTED_VALID_FRAGMENT_ONLY"
+    },
+    {
+      "fragment_id": null,
+      "id": 97.0,
+      "original_frames": [
+        1159.0
+      ],
+      "paths": [
+        "kr491/images/effect-01159-effect-7.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 98.0,
+      "original_frames": [
+        1179.0
+      ],
+      "paths": [
+        "kr491/images/effect-01179-effect-7.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": "front:1-11",
+      "id": 99.0,
+      "original_frames": [
+        1207.0
+      ],
+      "paths": [
+        "kr491/images/effect-01207-effect-7.png"
+      ],
+      "scope": "RECONSTRUCTED_VALID_FRAGMENT_ONLY"
+    },
+    {
+      "fragment_id": null,
+      "id": 100.0,
+      "original_frames": [
+        1213.0
+      ],
+      "paths": [
+        "kr491/images/effect-01213-effect-7.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 101.0,
+      "original_frames": [
+        1220.0
+      ],
+      "paths": [
+        "kr491/images/effect-01220-effect-7.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 102.0,
+      "original_frames": [
+        1224.0
+      ],
+      "paths": [
+        "kr491/images/effect-01224-effect-7.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 103.0,
+      "original_frames": [
+        1234.0
+      ],
+      "paths": [
+        "kr491/images/effect-01234-effect-7.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": "front:0-5",
+      "id": 104.0,
+      "original_frames": [
+        1249.0
+      ],
+      "paths": [
+        "kr491/images/effect-01249-effect-7.png"
+      ],
+      "scope": "RECONSTRUCTED_VALID_FRAGMENT_ONLY"
+    },
+    {
+      "fragment_id": null,
+      "id": 105.0,
+      "original_frames": [
+        1261.0
+      ],
+      "paths": [
+        "kr491/images/effect-01261-effect-7.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": "front:0-7",
+      "id": 106.0,
+      "original_frames": [
+        1281.0
+      ],
+      "paths": [
+        "kr491/images/effect-01281-effect-7.png"
+      ],
+      "scope": "RECONSTRUCTED_VALID_FRAGMENT_ONLY"
+    },
+    {
+      "fragment_id": null,
+      "id": 107.0,
+      "original_frames": [
+        1293.0
+      ],
+      "paths": [
+        "kr491/images/effect-01293-effect-7.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 108.0,
+      "original_frames": [
+        1305.0
+      ],
+      "paths": [
+        "kr491/images/effect-01305-effect-7.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 109.0,
+      "original_frames": [
+        1314.0
+      ],
+      "paths": [
+        "kr491/images/effect-01314-effect-7.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 110.0,
+      "original_frames": [
+        1333.0
+      ],
+      "paths": [
+        "kr491/images/effect-01333-effect-7.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 111.0,
+      "original_frames": [
+        1351.0
+      ],
+      "paths": [
+        "kr491/images/effect-01351-effect-8.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 112.0,
+      "original_frames": [
+        1361.0
+      ],
+      "paths": [
+        "kr491/images/effect-01361-effect-8.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 113.0,
+      "original_frames": [
+        1375.0
+      ],
+      "paths": [
+        "kr491/images/effect-01375-effect-8.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 114.0,
+      "original_frames": [
+        1391.0
+      ],
+      "paths": [
+        "kr491/images/effect-01391-effect-9.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 115.0,
+      "original_frames": [
+        1411.0
+      ],
+      "paths": [
+        "kr491/images/effect-01411-effect-9.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": "front:0-5",
+      "id": 116.0,
+      "original_frames": [
+        1413.0
+      ],
+      "paths": [
+        "kr491/images/effect-01413-effect-10.png"
+      ],
+      "scope": "RECONSTRUCTED_VALID_FRAGMENT_ONLY"
+    },
+    {
+      "fragment_id": null,
+      "id": 117.0,
+      "original_frames": [
+        1432.0
+      ],
+      "paths": [
+        "kr491/images/effect-01432-effect-11.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 118.0,
+      "original_frames": [
+        1467.0
+      ],
+      "paths": [
+        "kr491/images/effect-01467-effect-11.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 119.0,
+      "original_frames": [
+        1485.0
+      ],
+      "paths": [
+        "kr491/images/effect-01485-effect-11.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 120.0,
+      "original_frames": [
+        1495.0
+      ],
+      "paths": [
+        "kr491/images/effect-01495-effect-11.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 121.0,
+      "original_frames": [
+        1509.0
+      ],
+      "paths": [
+        "kr491/images/effect-01509-effect-11.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 122.0,
+      "original_frames": [
+        1517.0
+      ],
+      "paths": [
+        "kr491/images/effect-01517-effect-11.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 123.0,
+      "original_frames": [
+        1529.0
+      ],
+      "paths": [
+        "kr491/images/effect-01529-effect-11.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 124.0,
+      "original_frames": [
+        1556.0
+      ],
+      "paths": [
+        "kr491/images/effect-01556-effect-11.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 125.0,
+      "original_frames": [
+        1576.0
+      ],
+      "paths": [
+        "kr491/images/effect-01576-effect-11.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 126.0,
+      "original_frames": [
+        1584.0
+      ],
+      "paths": [
+        "kr491/images/effect-01584-effect-11.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    },
+    {
+      "fragment_id": null,
+      "id": 127.0,
+      "original_frames": [
+        1591.0
+      ],
+      "paths": [
+        "kr491/images/effect-01591-effect-12.png"
+      ],
+      "scope": "RECONSTRUCTED_NEUTRAL_SINGLE_TRAVERSAL"
+    }
+  ],
+  "pixel_render": "NOT_ASSESSED",
+  "platform": "Linux",
+  "schema": "baram.priority.effects-gdscript-test/1",
+  "scope": "Real engine helper selection, termination and fail-closed execution; pixel rendering NOT_ASSESSED",
+  "whole_previews": 119
+}

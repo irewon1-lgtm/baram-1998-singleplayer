@@ -8,6 +8,7 @@ var policy: Dictionary = {}
 var errors: Array[String] = []
 var consumed: Dictionary = {}
 var textures: Dictionary = {}
+var priority: Dictionary = {}
 
 func safe(relative: String) -> bool:
 	if relative.is_empty() or relative.is_absolute_path() or ".." in relative.split("/") or "\\" in relative:
@@ -53,6 +54,11 @@ func open_generation(path: String) -> bool:
 	maps = read_json("maps/index.json")
 	var loaded_maps: Array = []
 	for entry in maps.get("maps", []):
+		if maps.get("load_mode", "") == "LAZY_VALIDATED_INDEX":
+			var lazy: Dictionary = entry.duplicate(true)
+			lazy["lazy_json"] = "maps/" + str(entry.get("json", ""))
+			loaded_maps.append(lazy)
+			continue
 		var value := read_json("maps/"+str(entry.get("json", "")))
 		if value.is_empty():
 			errors.append("EMPTY_MAP_UNIT")
@@ -61,9 +67,24 @@ func open_generation(path: String) -> bool:
 	maps["maps"] = loaded_maps
 	kr491 = read_json("kr491/kr491_runtime.json")
 	policy = read_json("work_batch_policy.json")
+	if manifest.has("priority_index"):
+		priority = read_json(str(manifest.priority_index))
 	if maps.get("maps",[]).is_empty() or kr491.get("parts",{}).is_empty() or kr491.get("effects",[]).is_empty() or kr491.get("sounds",[]).is_empty():
 		errors.append("EMPTY_REQUIRED_UNIT")
 	return errors.is_empty()
+
+func map_at(index: int) -> Dictionary:
+	var entries: Array = maps.get("maps", [])
+	if index < 0 or index >= entries.size():
+		errors.append("MAP_INDEX_BOUNDS")
+		return {}
+	var entry: Dictionary = entries[index]
+	if entry.has("lazy_json"):
+		var value := read_json(str(entry.lazy_json))
+		if value.is_empty(): return {}
+		entries[index] = value
+		return value
+	return entry
 
 func texture(relative: String) -> Texture2D:
 	if not safe(relative):

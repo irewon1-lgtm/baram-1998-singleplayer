@@ -1,0 +1,13 @@
+{
+  "schema": "baram.priority.android-harness-test/1",
+  "scope": "Synthetic adb command and receipt fixtures only; no SDK/device/APK execution",
+  "tests_run": 6,
+  "failures": 0,
+  "errors": 0,
+  "status": "PASS",
+  "command": "python3 -m unittest discover -s tools/rebuild/p2 -p test_android_diagnostics.py -v",
+  "code_sha256": "3cd35620ef56cf19ae1ec20f8b161d9c3182b693db34ab8730901892988c8401",
+  "test_sha256": "874f25c1d518ee05308de6d266641f364efa0bc473b4ef11adb3a974fb02cc81",
+  "test_assertion_correction": "Initial test mistook adb device-selection -s before logcat for a logcat tag filter. Corrected assertion to inspect only arguments after logcat; required unfiltered logging unchanged.",
+  "log": "test_engine_progress_requires_current_pid_and_engine_tag (test_android_diagnostics.AndroidDiagnostics.test_engine_progress_requires_current_pid_and_engine_tag) ... ok\ntest_launch_and_pid_parse_fail_closed (test_android_diagnostics.AndroidDiagnostics.test_launch_and_pid_parse_fail_closed) ... ok\ntest_live_process_without_engine_progress_stops_at_startup_checkpoint (test_android_diagnostics.AndroidDiagnostics.test_live_process_without_engine_progress_stops_at_startup_checkpoint) ... {\"result\": \"FAIL_STARTUP_NO_ENGINE_SIGNAL\", \"receipt\": \"/tmp/tmp8v_4tyuu/output/RUN_RECEIPT.json\"}\nok\ntest_poll_timeout_is_recorded_and_final_diagnostics_still_written (test_android_diagnostics.AndroidDiagnostics.test_poll_timeout_is_recorded_and_final_diagnostics_still_written) ... {\"result\": \"FAIL_REPORT_POLL_TIMEOUT\", \"receipt\": \"/tmp/tmpxl_9l24c/output/RUN_RECEIPT.json\"}\nok\ntest_process_exit_stops_after_two_failed_polls_and_keeps_stderr (test_android_diagnostics.AndroidDiagnostics.test_process_exit_stops_after_two_failed_polls_and_keeps_stderr) ... {\"result\": \"FAIL_NO_PACKAGE_PROCESS\", \"receipt\": \"/tmp/tmp3woqc9x8/output/RUN_RECEIPT.json\"}\nok\ntest_shell_zero_launch_error_stops_without_report_poll (test_android_diagnostics.AndroidDiagnostics.test_shell_zero_launch_error_stops_without_report_poll) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.057s\n\nOK\n"
+}

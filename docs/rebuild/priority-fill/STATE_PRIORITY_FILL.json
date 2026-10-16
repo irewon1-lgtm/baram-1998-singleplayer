@@ -1,0 +1,22 @@
+{
+  "task_id": "BARAM_REBUILD_WORK_PRIORITY_FILL_001",
+  "branch": "work/rebuild-priority-fill-20261016",
+  "baseline_head": "dbb88a12d95b369c312b66ec86b7c19182e2481e",
+  "status": "IN_PROGRESS",
+  "step": "P2_BINDINGS_IMPLEMENTED_RUNTIME_PENDING",
+  "generation": "WORK-PRIORITY-GEN002_PENDING",
+  "preserved": [
+    "common plan/state",
+    "GEN003",
+    "originals",
+    "existing game/saves",
+    "B001/B002",
+    "Android FAIL_NO_REPORT",
+    "Windows BLOCKED",
+    "Wine12FAIL",
+    "mask3FAIL"
+  ],
+  "known_current_failure": "New map-v1 4 PNG truncated; assembler rejected. map-v2 regeneration pending",
+  "next": "Use final map-v2 and rule-v3, new generation, actual GUI impact run and residual coverage",
+  "P3": "NOT_AUTHORIZED_NOT_STARTED"
+}

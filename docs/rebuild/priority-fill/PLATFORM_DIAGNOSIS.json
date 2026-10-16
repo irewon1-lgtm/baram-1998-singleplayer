@@ -1,0 +1,252 @@
+{
+  "schema": "baram.priority.platform-diagnosis/1",
+  "task_id": "BARAM_REBUILD_WORK_PRIORITY_FILL_001",
+  "review_kind": "READ_ONLY_HISTORICAL_EVIDENCE_AND_CURRENT_HARNESS_STATIC_DIAGNOSIS",
+  "new_platform_execution": "NOT_RUN",
+  "old_failure_records_modified": false,
+  "evidence": {
+    "android_run": {
+      "path": "RUN_RECEIPT.json",
+      "sha256": "6709bf11c0abd5daca30d8a3551fbbc16837c429f0e592596ab93d5997ee764c"
+    },
+    "android_scope": {
+      "path": "FINAL_SCOPE_RECEIPT.json",
+      "sha256": "44ada4d9493458d098560cb58acf519efbd1a43bc534b9e374a0a36f0c2db5c2"
+    },
+    "android_log": {
+      "path": "logcat.log",
+      "sha256": "eec4f1009d0dd116acceb298b2bef09223baadd7400c5d380ba059eb3f5647e3"
+    },
+    "android_static": {
+      "path": "ANDROID_STATIC_COMPARISON.json",
+      "sha256": "502e95a9801502b34dad1e8a7084efdfc28b7eb135772b849f704093725221b7"
+    },
+    "windows_blocker": {
+      "path": "WINDOWS_NATIVE_BLOCKER.json",
+      "sha256": "c780d603cb073bb0b1dadf123683d3bcbefad1f6b8f4b44c00671af330047b25"
+    },
+    "wine_diagnosis": {
+      "path": "WINE_STORAGE_DIAGNOSIS.json",
+      "sha256": "039f7a8745094a21c0d88a1129879c7adc69ce724400d05a60d12acc73716a94"
+    },
+    "wine_result": {
+      "path": "WINDOWS_WINE_UI_FINAL.json",
+      "sha256": "4eef606587bacf5f0e8f5cb5c09f3739c08b61e4318716dcddeb10a3dc67cb2f"
+    },
+    "mask_regression": {
+      "path": "mask_regression.json",
+      "sha256": "9d7af14397ed1f4bb49fcf80429440cf9199f1771913bf5eeae93349b32cadf8"
+    }
+  },
+  "android": {
+    "preserved_status": "FAIL_NO_REPORT",
+    "generation": "WORK-P2-GEN003",
+    "apk_sha256": "e319415c905084e1bcde50cc96b30e06be4b5a626117cc27b01546ddd6c0353b",
+    "confirmed": [
+      {
+        "observation": "APK package inspection/signature verification/install commands succeeded; launch shell command returned0. This proves installation and command acceptance only.",
+        "evidence": "android_run"
+      },
+      {
+        "observation": "No app result/screenshots/audio/save evidence was received in480seconds;0 checks observed.",
+        "evidence": "android_scope"
+      },
+      {
+        "observation": "Restored logcat digest matches RUN_RECEIPT exactly. It contains2 AndroidRuntime VM-exit lines and0 Godot lines. No Java exception/native stack or renderer state is recorded.",
+        "log_sha256_match": true,
+        "godot_line_count": 0,
+        "androidruntime_line_count": 2,
+        "evidence": "android_log"
+      },
+      {
+        "observation": "Historical static comparison reports AndroidManifest and19 nativeJava/dex/engine members identical acrossGEN002/GEN003; GDScript/palette/input metadata and test key changed. Raw pair comparison is not rerun here.",
+        "evidence": "android_static",
+        "verification_scope": "PRIOR_RESULT_READ_ONLY"
+      },
+      {
+        "observation": "Reviewed pre-patch android_run invokes am start without-W, records shell exit but does not validate launch response. Failed report-poll return code/stderr are discarded. Final logcat filter excludes ActivityManager,ActivityTaskManager,EGL,linker,DEBUG,lmkd and process state.",
+        "evidence": "tools/rebuild/p2/work_platform.py::android_run",
+        "classification": "CONFIRMED_DIAGNOSTIC_GAP_NOT_APP_ROOT_CAUSE"
+      }
+    ],
+    "root_cause": "UNKNOWN_INSUFFICIENT_LAUNCH_PROCESS_RENDER_STORAGE_EVIDENCE",
+    "unproven_hypotheses": [
+      {
+        "hypothesis": "Activity launch did not create or retain a running Godot process.",
+        "needed": "am start-W stdout/stderr, resolved activity,dumpsys activity activities,pidof,unfiltered logcat process death/ActivityManager evidence"
+      },
+      {
+        "hypothesis": "Software emulator renderer/startup/resource import stalls or fails before script entry.",
+        "needed": "Full logcat includingEGL/ANGLE/OpenGL/linker/DEBUG and screen capture, firstGodot line/first script timestamp"
+      },
+      {
+        "hypothesis": "Report lookup/writing permission or path mismatch prevents receipt.",
+        "needed": "Record OS.get_user_data_dir/globalized report path plus run-as pwd/find files and app FileAccess error; poll stderr retained"
+      },
+      {
+        "hypothesis": "GDScript/content resource load fails before completing smoke.",
+        "needed": "Engine/script stack and stage markers; same APK source hash matched to parse/import logs"
+      }
+    ],
+    "next_minimum_conditions": [
+      "An isolated emulator/device andAndroidSDK/adb exist; exact newAPK SHA/package remain pinned; no existing game/save/key is used.",
+      "Collect unfiltered logcat-b all from before launch, am start-W response, process/activity state and screenshot at short staged checkpoints; stop early on confirmed launch failure,process death,ANR or script error.",
+      "Expose report target path and stage markers before source load; retain failed poll exit/stderr; fetch isolated files only. Do not merely repeat480seconds.",
+      "After identified cause is minimally fixed, rerun changed-scope app checks and separately report first frame,audio mix/save/check counts. ActualGalaxy/IME/hardware hearing remainNOT_RUN until observed."
+    ],
+    "current_environment": "command -v adb returned no executable; no adb/emulator/aapt/apksigner found under runtime-tools. No current AndroidSDK is available; no retry performed; no new Android PASS.",
+    "harness_observability_fix": {
+      "files": [
+        "tools/rebuild/p2/work_platform.py",
+        "tools/rebuild/p2/test_android_diagnostics.py"
+      ],
+      "status": "IMPLEMENTED_SYNTHETIC6_PASS_ANDROID_NOT_RUN",
+      "app_root_cause_fixed": false,
+      "changes": [
+        "am start-W launch response validated even with shell0; immediate explicit launch errors stop.",
+        "Unfiltered logcat-b all plus activity/window state, own-package userdata root/file listing and diagnostic screenshots.",
+        "Every report-poll failure exit/stderr retained; adb report timeout stops with a final diagnostic receipt.",
+        "Stop after two missing-package PID polls, distinguishing never observed from previously live; stop missing engine startup signal after45seconds.",
+        "Godot progress signal must match current package PID and engine tag/banner; launcher text does not qualify.",
+        "Default total report wait120seconds;20second diagnostic checkpoints replace blind480second waiting. Screenshot checkpoints are not first-frame correctness PASS."
+      ],
+      "tests_evidence": "docs/rebuild/priority-fill/ANDROID_HARNESS_TESTS.json",
+      "next_command_template": [
+        "python3",
+        "tools/rebuild/p2/work_platform.py",
+        "android-run",
+        "--android-sdk",
+        "<isolated_android_sdk>",
+        "--apk",
+        "<fresh_priority_apk>",
+        "--apk-sha256",
+        "<exact_fresh_apk_sha256>",
+        "--serial",
+        "<isolated_device_serial>",
+        "--emulator",
+        "--adb-port",
+        "5041",
+        "--startup-timeout",
+        "45",
+        "--timeout",
+        "120",
+        "--output",
+        "<new_private_diagnostic_directory>"
+      ]
+    }
+  },
+  "windows_native": {
+    "preserved_status": "BLOCKED_ENVIRONMENT_BRANCH_RULE",
+    "confirmed_reason": "Branch work/rebuild-runtime-20261016 is not allowed to deploy to baram-windows-private due to environment protection rules.",
+    "runner_started": false,
+    "executed_steps": 0,
+    "code_failure_claim": false,
+    "protection_changed": false,
+    "next_minimum_conditions": [
+      "Use a nativeWindows environment already permitted for the newWork branch, or an explicitly supplied nativeWindows host. Do not weaken environment protection rules.",
+      "Pin fresh priority runtime/code/EXE hashes and private input generation; run windowed first, headless only as separately labeled storage/OS evidence.",
+      "Require actual report/checks/save roundtrip plus visible first frame; export success andLinux results cannot replace native execution."
+    ],
+    "historical_request_note": "Restored NATIVE_REQUEST referencesGEN002. A future run must pin the new priority generation; do not blindly reuse its old vault input."
+  },
+  "wine_storage": {
+    "preserved_status": "FAIL",
+    "checks": 85,
+    "failed_checks": 12,
+    "failed_test_ids": [
+      "native_userdata_backend_detects_globalized_fixture_link",
+      "symlink_target_rejected_.pending",
+      "symlink_target_preserved_.pending",
+      "symlink_target_rejected_.backup.pending",
+      "symlink_target_preserved_.backup.pending",
+      "symlink_target_rejected_.backup",
+      "symlink_target_preserved_.backup",
+      "symlink_target_rejected_",
+      "symlink_target_preserved_",
+      "symlink_ancestor_rejected",
+      "corrupt_copy_symlink_rejected",
+      "corrupt_copy_symlink_preserves_all_sources"
+    ],
+    "separate_not_run": 22,
+    "prior_confirmed_diagnosis": "Wine 10.0 CreateSymbolicLinkW is a stub that returns TRUE without creating a symbolic link. Godot create_link therefore returned OK although no link existed. Subsequent ordinary-file writes did not exercise actual symlink protection.",
+    "diagnosis_reexecuted": false,
+    "next_minimum_conditions": "Execute unchanged protection assertions on nativeWindows with real symbolic-link capability. Verify fixture link actually exists and is_link detects it before interpreting safety cases. Preserve all12 recordedFAILs; unsupportedWine capability is not a savePASS."
+  },
+  "masks": {
+    "preserved_status": "BLOCKED_ORIGINAL_MASK",
+    "failed_original_ids": [
+      "DLGLOGIN.epf:0",
+      "DLGNEW01.epf:0",
+      "DLGPASS.epf:0"
+    ],
+    "confirmed_from_existing_diagnostic": [
+      {
+        "id": "DLGLOGIN.epf:0",
+        "width": 316,
+        "height": 187,
+        "invalid_rows": 187,
+        "first_bad_row": {
+          "row": 0,
+          "mask_payload_offset": 59092,
+          "raw_runs": [
+            19,
+            255,
+            255,
+            151,
+            22
+          ],
+          "decoded_width": 318,
+          "expected_width": 316
+        },
+        "source_pixels_preserved": true
+      },
+      {
+        "id": "DLGNEW01.epf:0",
+        "width": 316,
+        "height": 202,
+        "invalid_rows": 202,
+        "first_bad_row": {
+          "row": 0,
+          "mask_payload_offset": 63832,
+          "raw_runs": [
+            19,
+            255,
+            255,
+            151,
+            22
+          ],
+          "decoded_width": 318,
+          "expected_width": 316
+        },
+        "source_pixels_preserved": true
+      },
+      {
+        "id": "DLGPASS.epf:0",
+        "width": 316,
+        "height": 202,
+        "invalid_rows": 202,
+        "first_bad_row": {
+          "row": 0,
+          "mask_payload_offset": 63832,
+          "raw_runs": [
+            19,
+            255,
+            255,
+            151,
+            22
+          ],
+          "decoded_width": 318,
+          "expected_width": 316
+        },
+        "source_pixels_preserved": true
+      }
+    ],
+    "diagnosis_reexecuted": false,
+    "global_ff126_change": "REJECTED_PRIOR_REGRESSION_WOULD_CORRUPT_VALID_NEWUSER",
+    "next_minimum_conditions": [
+      "Inspect originalKR491 EXE mask decoder/control-byte behavior for the3 exact UI members or obtain a byte-verified alternate same-build original.",
+      "Any local repair must write a separately tagged reconstruction and pass all prior validEPF frame/mask regressions, includingNEWUSER full-width640; original bytes unchanged.",
+      "Do not clip run widths, substitute frame0/blank images or call alternateDLGNEW02 output proof that these3 original masks were repaired."
+    ]
+  }
+}

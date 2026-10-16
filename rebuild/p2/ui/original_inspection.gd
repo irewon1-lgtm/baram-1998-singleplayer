@@ -517,7 +517,7 @@ func _run_map_checks() -> void:
 
 func _run_original_save() -> void:
 	var map: Dictionary = content.maps.maps[0]
-	var map_id := "kr125:map-"+str(map.native_id)
+	var map_id := str(map.get("inspection_id", "kr125:map-"+str(map.native_id)))
 	var version: String = map.source_map_sha256
 	var owner := "local-account:work-p2-fixture"
 	var manifest_sha: String = content.manifest.get("fingerprint","")

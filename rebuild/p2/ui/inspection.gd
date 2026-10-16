@@ -17,7 +17,7 @@ var original_inspection: Control
 func _ready() -> void:
 	# Use installed system fonts only; no font is bundled in EXE/APK/artifacts.
 	var system_font := SystemFont.new()
-	system_font.font_names = PackedStringArray(["Noto Sans CJK KR", "Malgun Gothic", "sans-serif"])
+	system_font.font_names = PackedStringArray(["Noto Sans CJK KR", "Malgun Gothic", "NanumGothic", "sans-serif"])
 	var inspection_theme := Theme.new()
 	inspection_theme.default_font = system_font
 	inspection_theme.default_font_size = 19
@@ -68,7 +68,7 @@ func _ready() -> void:
 		runtime_path = "res://private_runtime"
 	if not runtime_path.is_empty():
 		margin.hide()
-		original_inspection = preload("res://ui/original_inspection.gd").new()
+		original_inspection = preload("res://ui/priority_inspection.gd").new()
 		original_inspection.setup(runtime_path, state)
 		add_child(original_inspection)
 	if "--p2-smoke" in OS.get_cmdline_user_args() or OS.has_feature("p2_smoke"):

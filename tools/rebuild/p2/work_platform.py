@@ -186,6 +186,24 @@ def android_run(args: argparse.Namespace) -> int:
         commands.append(value)
         save()
         return value
+    def snapshot_state(label: str, screenshot: bool = False) -> None:
+        # The result remains private. Do not filter away ActivityManager, native
+        # loader, graphics, ANR or low-memory-killer evidence as GEN003 did.
+        run(base + ["logcat", "-d", "-b", "all", "-v", "threadtime", "-t", "12000"], "logcat-" + label, 20)
+        run(base + ["shell", "dumpsys", "activity", "activities"], "activity-" + label, 20)
+        run(base + ["shell", "dumpsys", "window", "windows"], "window-" + label, 20)
+        run(base + ["shell", "run-as", PACKAGE, "pwd"], "userdata-root-" + label, 20)
+        run(base + ["shell", "run-as", PACKAGE, "find", "files", "-maxdepth", "3", "-type", "f"], "isolated-files-" + label, 20)
+        if screenshot:
+            entry = run(base + ["exec-out", "screencap", "-p"], "screen-" + label, 20)
+            path = Path(entry["log"])
+            if entry["exit_code"] == 0 and path.read_bytes().startswith(b"\x89PNG\r\n\x1a\n"):
+                png = args.output / ("screen-" + label + ".png")
+                path.rename(png)
+                entry["log"] = str(png)
+                receipt.setdefault("diagnostic_screenshots", []).append({"path": str(png), "sha256": digest(png),
+                    "scope": "Device screen at diagnostic checkpoint; Godot first-frame correctness NOT_ASSESSED"})
+                save()
     save()
     badge = run([str(tools / "aapt"), "dump", "badging", str(args.apk)], "package")
     if badge["exit_code"] or ("package: name='" + PACKAGE + "'") not in Path(badge["log"]).read_text():
@@ -203,11 +221,39 @@ def android_run(args: argparse.Namespace) -> int:
     # The app is the new Work-only package, with its own synthetic test state.
     run(base + ["shell", "am", "force-stop", PACKAGE], "force-stop")
     run(base + ["shell", "run-as", PACKAGE, "rm", "-f", "files/work-original-smoke.json"], "remove-stale-report")
-    run(base + ["shell", "am", "start", "-n", PACKAGE + "/com.godot.game.GodotAppLauncher"], "launch")
+    snapshot_state("before-launch")
+    launch = run(base + ["shell", "am", "start", "-W", "-n", PACKAGE + "/com.godot.game.GodotAppLauncher"], "launch", 90)
+    launch_text = Path(launch["log"]).read_text(errors="replace")
+    launch_problem = android_launch_problem(launch["exit_code"], launch_text)
+    if launch_problem:
+        receipt["result"] = "FAIL_LAUNCH"
+        receipt["failure_reason"] = launch_problem
+        snapshot_state("launch-failure", screenshot=True)
+        save()
+        return 1
+    receipt["launch_wait_status"] = "AM_START_WAIT_RETURNED_WITHOUT_REPORTED_ERROR"
     deadline = time.monotonic() + args.timeout
+    startup_deadline = time.monotonic() + args.startup_timeout
     report = None
+    poll_receipts = []
+    receipt["report_poll_evidence"] = "REPORT_POLLS.json"
+    missing_process_polls = 0
+    package_process_seen = False
+    next_checkpoint = time.monotonic()
+    first_engine_signal = False
     while time.monotonic() < deadline:
-        attempt = subprocess.run(base + ["exec-out", "run-as", PACKAGE, "cat", "files/work-original-smoke.json"], capture_output=True, timeout=15)
+        try:
+            attempt = subprocess.run(base + ["exec-out", "run-as", PACKAGE, "cat", "files/work-original-smoke.json"], capture_output=True, timeout=15)
+        except subprocess.TimeoutExpired as exc:
+            poll_receipts.append({"poll": len(poll_receipts), "returncode": None, "result": "TIMEOUT",
+                                  "stdout_bytes": len(exc.stdout or b""), "stderr": (exc.stderr or b"").decode(errors="replace")[:4096]})
+            dump(args.output / "REPORT_POLLS.json", {"schema": "baram.work.p2.android-report-polls/1", "polls": poll_receipts})
+            receipt["result"] = "FAIL_REPORT_POLL_TIMEOUT"
+            receipt["failure_reason"] = "ADB report poll timed out; inspect final process/activity/device diagnostics before retry."
+            break
+        poll_receipts.append({"poll": len(poll_receipts), "returncode": attempt.returncode,
+                              "stdout_bytes": len(attempt.stdout), "stderr": attempt.stderr.decode(errors="replace")[:4096]})
+        dump(args.output / "REPORT_POLLS.json", {"schema": "baram.work.p2.android-report-polls/1", "polls": poll_receipts})
         try:
             parsed = json.loads(attempt.stdout)
             if isinstance(parsed, dict) and parsed.get("schema"):
@@ -216,10 +262,34 @@ def android_run(args: argparse.Namespace) -> int:
                 break
         except (ValueError, UnicodeError):
             pass
+        process = run(base + ["shell", "pidof", PACKAGE], "process-%03d" % len(poll_receipts), 15)
+        process_text = Path(process["log"]).read_text(errors="replace")
+        if android_process_live(process["exit_code"], process_text):
+            missing_process_polls = 0
+            package_process_seen = True
+        else:
+            missing_process_polls += 1
+        if missing_process_polls >= 2:
+            receipt["result"] = "FAIL_PROCESS_EXIT_NO_REPORT" if package_process_seen else "FAIL_NO_PACKAGE_PROCESS"
+            receipt["failure_reason"] = "No package PID on two consecutive report polls; no app result was received."
+            break
+        if time.monotonic() >= next_checkpoint:
+            label = "checkpoint-%03d" % len(poll_receipts)
+            snapshot_state(label, screenshot=True)
+            text = (args.output / ("logcat-" + label + ".log")).read_text(errors="replace")
+            # This is only a startup progress signal, not a render/test PASS.
+            first_engine_signal = first_engine_signal or android_engine_signal(text, process_text)
+            receipt["engine_log_signal_seen"] = first_engine_signal
+            next_checkpoint = time.monotonic() + 20
+        if not first_engine_signal and time.monotonic() >= startup_deadline:
+            receipt["result"] = "FAIL_STARTUP_NO_ENGINE_SIGNAL"
+            receipt["failure_reason"] = "Package process exists but no Godot startup log/report was observed within the diagnostic startup limit; inspect full logs/screens before retry."
+            break
         time.sleep(2)
-    run(base + ["logcat", "-d", "-t", "4000", "-s", "godot:V", "AndroidRuntime:V"], "logcat")
+    snapshot_state("final", screenshot=report is None)
     if report is None:
-        receipt["result"] = "FAIL_NO_REPORT"
+        if receipt["result"] == "RUNNING":
+            receipt["result"] = "FAIL_NO_REPORT_WITH_DIAGNOSTICS"
     else:
         receipt["app_report_sha256"] = digest(args.output / "work-original-smoke.json")
         receipt["app_result"] = report.get("result", "UNKNOWN")
@@ -242,6 +312,31 @@ def android_run(args: argparse.Namespace) -> int:
     save()
     print(json.dumps({"result": receipt["result"], "receipt": str(args.output / "RUN_RECEIPT.json")}))
     return 0 if report is not None else 1
+
+
+def android_launch_problem(exit_code: int | None, text: str) -> str | None:
+    """am can return shell0 while reporting a launch error; never call that PASS."""
+    if exit_code != 0:
+        return "AM_START_FAILED_OR_TIMED_OUT"
+    if re.search(r"(?im)^\s*(?:error(?:\s+type\s+\d+)?\s*:|exception\b|status:\s*(?:timeout|error)|.*(?:permission denial|activity class .* does not exist))", text):
+        return "AM_START_REPORTED_ERROR"
+    if not text.strip():
+        return "AM_START_EMPTY_RESPONSE"
+    return None
+
+
+def android_process_live(exit_code: int | None, text: str) -> bool:
+    return exit_code == 0 and bool(re.fullmatch(r"\s*\d+(?:\s+\d+)*\s*", text))
+
+
+def android_engine_signal(logcat: str, process_text: str) -> bool:
+    """Require the current package PID and an engine tag/banner, not launcher text."""
+    pids = set(process_text.split())
+    for line in logcat.splitlines():
+        parsed = re.match(r"^\S+\s+\S+\s+(\d+)\s+\d+\s+[VDIWEF]\s+([^:]+):\s*(.*)$", line)
+        if parsed and parsed[1] in pids and (parsed[2].strip().lower() == "godot" or parsed[3].startswith("Godot Engine")):
+            return True
+    return False
 
 
 def linux_run(args: argparse.Namespace) -> int:
@@ -412,7 +507,8 @@ def main() -> int:
     android.add_argument("--adb-port", type=int, default=5041)
     android.add_argument("--emulator", action="store_true")
     android.add_argument("--output", type=Path, required=True)
-    android.add_argument("--timeout", type=int, default=300)
+    android.add_argument("--timeout", type=int, default=120)
+    android.add_argument("--startup-timeout", type=int, default=45)
     linux = sub.add_parser("linux-run")
     linux.add_argument("--project", type=Path, default=ROOT / "rebuild/p2")
     linux.add_argument("--godot", type=Path, required=True)
