@@ -1,0 +1,193 @@
+{
+  "schema": "baram.p2.g0-audit/1",
+  "task_id": "BARAM_REBUILD_CODEX_P2_001",
+  "recorded_at_utc": "2026-10-16T02:08:00.035713+00:00",
+  "checkout": "/workspace/baram-p2-codex",
+  "branch": "codex/rebuild-p2-20261016",
+  "head_when_audit_started": "81976dcc38d75312375710358a02cf0729e6880d",
+  "head_at_summary": "81976dcc38d75312375710358a02cf0729e6880d",
+  "input_manifest_sha256": "124573e4a57d7ff759501315bf9a101fcd8a3959944f25006120b3e14c02a1d5",
+  "tool_fingerprints": [
+    {
+      "path": "tools/rebuild/p1_5/verify_delivery_set.py",
+      "bytes": 6156,
+      "sha256": "4d6ac60377027fe3e4e7b96e72bdfd2a11d5b32e67d1a4a1988968e873391100",
+      "matches_manifest": true
+    },
+    {
+      "path": "tools/rebuild/p1_5/recheck_archives.py",
+      "bytes": 8070,
+      "sha256": "4440e3f3ccfa07312c7b0a15c71398e694365ad3c375c5f1a0c1f933e3b1c620",
+      "matches_manifest": true
+    },
+    {
+      "path": "tools/rebuild/p1_5/prepare_handoff_inputs.py",
+      "bytes": 21295,
+      "sha256": "6553d77735c58ea5744312c569407c6428ae023b3c6f4f94eae558eb5654edc0",
+      "matches_manifest": true
+    },
+    {
+      "path": "tools/rebuild/step01/validate_step01.py",
+      "bytes": 26907,
+      "sha256": "e10e1dd0840eab39c3757313b533e5e6e0d75d2f0b5ca3508aad44919bfe87eb",
+      "matches_manifest": "Not individually declared in P1.5 INPUT_MANIFEST; actual fingerprint recorded"
+    },
+    {
+      "path": "tools/rebuild/p1_5/import_dry_run.py",
+      "bytes": 47390,
+      "sha256": "66a6b9286b824751e890376f87e8a908498a3a319f2e457e744de30350a8632f",
+      "matches_manifest": true
+    },
+    {
+      "path": "tools/rebuild/p1_5/audit_handoff_package.py",
+      "bytes": 23756,
+      "sha256": "cb4f8d20779d98f6f3b4fb1cd91888dd7370c23593f819a63dc45c34beb33750",
+      "matches_manifest": true
+    },
+    {
+      "path": "tools/rebuild/p1_5/test_validator_regression.py",
+      "bytes": 13358,
+      "sha256": "7190b222529a2eb1f8d45363816c5db7b575506644298f4115438387d72de405",
+      "matches_manifest": true
+    },
+    {
+      "path": "tools/rebuild/p1_5/test_import_dry_run.py",
+      "bytes": 6426,
+      "sha256": "e7d45d4a3b3247232553a95d36723910d8bd974cbf30f74b5c914b4f5cc4c900",
+      "matches_manifest": true
+    }
+  ],
+  "input_access": {
+    "library_mount_files": 0,
+    "shared_mount_files": 0,
+    "attachments_files": 1,
+    "attachment_is_instruction_only": true,
+    "matching_transfer_files_elsewhere_in_workspace": 0,
+    "callable_library_file_service_connector": false,
+    "sediment_download_tool_compatible_with_recorded_file_ids": "NOT_ESTABLISHED; tool explicitly excludes File Service IDs",
+    "delivery_files_missing": 4,
+    "frozen_originals_missing": 42,
+    "private_normalized_jsonl_missing": 34,
+    "normalized_json_public_reference_save_contracts": "Available; not substitute for private data",
+    "work_batch": "B001 public metadata read; private ZIP and seven member bytes missing",
+    "audit_only_inputs": {
+      "schema": "baram.p2.audit-only-cache/1",
+      "inputs": [
+        {
+          "source_id": "EXT-SRV-RTK-DOCKER-COMPOSE-YML",
+          "repository": "unkmc/RTK-Server",
+          "commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+          "expected_bytes": 929,
+          "private_cache_path": "/workspace/p2-private/g0-audit/audit-only/audit-input-1.bin",
+          "execution": "NOT_RUN",
+          "content_and_hashes_printed": false,
+          "result": "PASS_EXACT_PIN",
+          "actual_bytes": 929
+        },
+        {
+          "source_id": "P15-NA-RTK-a572a5da03a2",
+          "repository": "unkmc/RTK-Server",
+          "commit": "e6fa54dc3ec0de1e8a7dbbc5323299eadcf7bef6",
+          "expected_bytes": 2143739,
+          "private_cache_path": "/workspace/p2-private/g0-audit/audit-only/audit-input-2.bin",
+          "execution": "NOT_RUN",
+          "content_and_hashes_printed": false,
+          "result": "PASS_EXACT_PIN",
+          "actual_bytes": 2143739
+        }
+      ],
+      "never_run": true,
+      "source_hashes_not_reported": true
+    }
+  },
+  "g0": {
+    "transport": "BLOCKED_MISSING_CORE_PARTS",
+    "byte_integrity": "BLOCKED_MISSING42_ORIGINALS_AND_NESTED_BYTES",
+    "normalized_integrity": "BLOCKED_PRIVATE_SELECTED_CONTENT_MISSING",
+    "reference_linkage": "NOT_RUN_CURRENT_IMPORT; historical154FAIL preserved and diagnostic IDs compared",
+    "historical_meaning": "BLOCKED_INPUT_AND_EXISTING_UNCERTAINTY",
+    "full_result": "BLOCKED",
+    "actual_missing_core_verify": {
+      "result": "BLOCKED",
+      "reason": "[Errno 2] No such file or directory: '/workspace/p2-private/g0-audit/delivery/BARAM_P1_5_handoff_20261016.zip'",
+      "runtime": "NOT_RUN",
+      "observed_exit_code": 1
+    },
+    "exact_map_scopes": {
+      "whole_byte_ledger_ids": 2489,
+      "full_import_ids": 3565,
+      "do_not_mix": true
+    }
+  },
+  "actual_executions": [
+    {
+      "id": "validator_regression",
+      "command": "PYTHONDONTWRITEBYTECODE=1 python tools/rebuild/p1_5/test_validator_regression.py --output /workspace/p2-private/g0-audit/evidence/validator_regression.json",
+      "exit_code": 0,
+      "stdout": "{\"result\": \"PASS\", \"cases\": 25, \"case_results\": {\"PASS\": 25}, \"actual_repo\": \"BLOCKED\", \"metadata\": \"PASS\", \"historical_preserved\": true}\n"
+    },
+    {
+      "id": "importer_regression",
+      "command": "PYTHONDONTWRITEBYTECODE=1 python tools/rebuild/p1_5/test_import_dry_run.py --output /workspace/p2-private/g0-audit/evidence/importer_regression.json",
+      "exit_code": 0,
+      "stdout": "{\"result\": \"PASS\", \"cases\": 18, \"case_results\": [\"PASS\", \"PASS\", \"PASS\", \"PASS\", \"PASS\", \"PASS\", \"PASS\", \"PASS\", \"PASS\", \"PASS\", \"PASS\", \"PASS\", \"PASS\", \"PASS\", \"PASS\", \"PASS\", \"PASS\", \"PASS\"]}\n"
+    },
+    {
+      "id": "package_guards",
+      "command": "PYTHONDONTWRITEBYTECODE=1 python tools/rebuild/p1_5/audit_handoff_package.py --repo /workspace/baram-p2-codex --self-test --output /workspace/p2-private/g0-audit/evidence/package_guards.json",
+      "exit_code": 2,
+      "stdout": "{\"scope_result\": \"PARTIAL\", \"public_files_checked\": 72, \"public_result\": \"PASS\", \"outer_package_result\": \"NOT_RUN\", \"reference_result\": \"NOT_RUN\", \"secret_values_printed\": false}\n"
+    },
+    {
+      "id": "resolver_self_test",
+      "command": "PYTHONDONTWRITEBYTECODE=1 python tools/rebuild/p1_5/prepare_handoff_inputs.py --self-test",
+      "exit_code": 0,
+      "stdout": "{\"result\": \"PASS\", \"self_test\": \"exact identity despite rename; corruption and missing inputs; traversal and symlink rejection\", \"runtime_tests\": \"NOT_RUN\"}\n"
+    },
+    {
+      "id": "missing_delivery",
+      "command": "PYTHONDONTWRITEBYTECODE=1 python tools/rebuild/p1_5/verify_delivery_set.py --core /workspace/p2-private/g0-audit/delivery/BARAM_P1_5_handoff_20261016.zip --parts-dir /workspace/p2-private/g0-audit/delivery --restore-reference-to /workspace/p2-private/g0-audit/extracted/inputs/reference_sources.zip --output /workspace/p2-private/g0-audit/evidence/missing_delivery.json",
+      "exit_code": 1,
+      "stdout": "{\"result\": \"BLOCKED\", \"reason\": \"[Errno 2] No such file or directory: '/workspace/p2-private/g0-audit/delivery/BARAM_P1_5_handoff_20261016.zip'\", \"runtime\": \"NOT_RUN\", \"observed_exit_code\": 1}\n"
+    }
+  ],
+  "synthetic_regression_results": {
+    "validator": {
+      "cases": 25,
+      "result": "PASS",
+      "exit_code": 0
+    },
+    "importer": {
+      "cases": 18,
+      "result": "PASS",
+      "exit_code": 0
+    },
+    "package_guards": {
+      "cases": 20,
+      "result": "PASS",
+      "whole_command_result": "PARTIAL",
+      "whole_command_exit_code": 2,
+      "public_files_checked": 72,
+      "actual_outer_and_reference": "NOT_RUN"
+    },
+    "resolver_self_test": {
+      "result": "PASS",
+      "exit_code": 0
+    }
+  },
+  "independent_opportunities": [
+    "P2-04 local creation/validation contract and synthetic state-machine controls; original Korean creation UI and actual IME remain blocked/unrun",
+    "P2-05 new common save/cache/UI modules may be tested with explicitly synthetic fixtures and platform builds; historical assets stay required for actual visual fidelity",
+    "P2-06 local CAS/revision/conflict behavior can be tested synthetically; not authenticated PC/Android roundtrip"
+  ],
+  "asset_dependent_units": {
+    "P2-01": "Required LIB-009/010 and selected official map evidence absent; no Korean map render/exit fidelity PASS",
+    "P2-02": "KR491 source bytes and normalized rows absent; no actual mask reproduction/composition PASS",
+    "P2-03": "Actual Effect128/WAV163 source bytes absent; no actual decoding/consumption/output PASS"
+  },
+  "historical_failure_diagnostic": "evidence/known_154_diagnostic_comparison.json",
+  "missing_inputs": "MISSING_INPUTS.json",
+  "source_executable_execution": "NOT_RUN",
+  "sensitive_hashes_and_content_in_summary": false,
+  "tracked_files_modified_by_this_agent": false
+}
