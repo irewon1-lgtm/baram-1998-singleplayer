@@ -1,0 +1,87 @@
+{
+  "schema": "baram.v2.g1-delivery/1",
+  "date": "2026-10-17",
+  "timezone": "Asia/Seoul",
+  "status": "DELIVERED_CANDIDATES_NATIVE_RELEASE_GATES_PENDING",
+  "app_source_commit": "c9fe92886cb738708b189bd14f0c40299ddef301",
+  "branch": "work/rebuild-p3-remediation-20261016",
+  "artifacts": [
+    {
+      "library_file_id": "libfile_8d0a849fcbc081918e83a81b4389848b",
+      "file_id": "file_00000000623081f5872e502a1ec967a7",
+      "file_name": "baram-V2-G1-Android-c9fe9288-candidate.apk",
+      "path": "/baram-V2-G1-Android-c9fe9288-candidate.apk",
+      "current_version_number": 0,
+      "bytes": 65168379,
+      "sha256": "54316901c31bef6e748bcd2935dbe6812f811f307e11f2d1f72fb2a3294fc970"
+    },
+    {
+      "library_file_id": "libfile_8493b04f7a90819180433bd42580920f",
+      "file_id": "file_00000000a17c81f58fd56cb1997c083b",
+      "file_name": "baram-V2-G1-Windows64-c9fe9288-candidate.zip",
+      "path": "/baram-V2-G1-Windows64-c9fe9288-candidate.zip",
+      "current_version_number": 0,
+      "bytes": 38533242,
+      "sha256": "256d51d9c9ca4bb819489d19483fabbfbe11cc87e3ccb8ff1d476c4df56adc67"
+    },
+    {
+      "library_file_id": "libfile_ab9568c0e4848191aafe67c80f370ac0",
+      "file_id": "file_0000000083d881f5ac45cadb54995c07",
+      "file_name": "BARAM_V2_G1_RESULTS_20261017.html",
+      "path": "/BARAM_V2_G1_RESULTS_20261017.html",
+      "current_version_number": 0,
+      "bytes": 773436,
+      "sha256": "aafeae71a195d295f50fb9211a80381232458d578af65f4d73bbd4cbc837b844"
+    },
+    {
+      "library_file_id": "libfile_57e814babf4c8191841da680df0fa541",
+      "file_id": "file_000000009e7081f5bd901c710774f399",
+      "file_name": "BARAM_V2_G1_EVIDENCE_20261017.zip",
+      "path": "/BARAM_V2_G1_EVIDENCE_20261017.zip",
+      "current_version_number": 0,
+      "bytes": 4146203,
+      "sha256": "f619b7558db4bf4f7a8dc0447f2c56f7f4b0332827e066da923e06f7d729e82c"
+    },
+    {
+      "library_file_id": "libfile_020c331e8a6c81919aa6e2d5605f2832",
+      "file_id": "file_00000000661081f595e202741125275b",
+      "file_name": "baram-V2-G1-private-runtime-c9fe9288.zip",
+      "path": "/baram-V2-G1-private-runtime-c9fe9288.zip",
+      "current_version_number": 0,
+      "bytes": 8896852,
+      "sha256": "3787739c708a2f62be03ee8f3fe9f0a18244402438751f03c8a6e09a95bd230b"
+    },
+    {
+      "library_file_id": "libfile_f4841caffc488191bdfd14b21b9d2475",
+      "file_id": "file_000000002e3c81f5999de4d8da32f9db",
+      "file_name": "BARAM_V2_G1_README_20261017.txt",
+      "path": "/BARAM_V2_G1_README_20261017.txt",
+      "current_version_number": 0,
+      "bytes": 1187,
+      "sha256": "f1322eb58267ee2526c35115bbaa80e213fcaa2befe488c3cc537b6998404293"
+    }
+  ],
+  "verification": "docs/rebuild/v2/VERIFICATION.json",
+  "results": "docs/rebuild/v2/RESULTS.md",
+  "single_defect_ledger": "docs/rebuild/p3-remediation/DEFECTS.csv",
+  "snapshot_provenance": "docs/rebuild/v2/EXPORT_INPUT_PROVENANCE.json",
+  "old_defects_preservation": "docs/rebuild/v2/DEFECTS_PRESERVATION.json",
+  "evidence_paths": "Archive INDEX.json maps normalized reports, exact raw logs, prior failures, screenshots and build receipts. CSV tests/* references identify original host evidence; archive member paths are in INDEX.json.",
+  "original_assets_publication": "Original raster/audio runtime delivered privately; excluded from GitHub. No signing private key in these artifacts.",
+  "signer_resume": "Reuse existing private signer record identified by docs/rebuild/p3-remediation/DELIVERY.json and original private handoff. Do not replace key.",
+  "installation": {
+    "Android": "Same P3 repair package only: preserve existing app, install as update; code3/signer match. Real-device update/save retention NOT_RUN; old different-package automatic migration NOT_VERIFIED.",
+    "Windows": "Extract entire ZIP into a new directory; native EXE execution NOT_RUN."
+  },
+  "remaining": [
+    "Exact APK native Galaxy visible frame/play/save/IME/touch/performance/audio and repair-package update",
+    "Exact ZIP native Windows visible normal play/save/restart",
+    "Physical resize/portrait behavior not proven by forced logical viewport tests",
+    "Authenticated same-account Windows→Android→Windows continuation not implemented"
+  ],
+  "next_action": "Continue STATE.json native gates using these exact hashes; no inventory/SDK/export reset without a changed input or reproduced defect.",
+  "publication": {
+    "mode": "Existing Work branch only; expected-head lease; no force push/main merge/production deployment",
+    "app_source_and_runtime_unchanged_after_export": true
+  }
+}

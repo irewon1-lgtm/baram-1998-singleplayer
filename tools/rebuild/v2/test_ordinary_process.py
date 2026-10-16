@@ -13,7 +13,7 @@ def main():
  p=argparse.ArgumentParser()
  p.add_argument('--godot',required=True,type=Path);p.add_argument('--project',type=Path)
  p.add_argument('--runtime',type=Path);p.add_argument('--pack',type=Path)
- p.add_argument('--output',type=Path,required=True);p.add_argument('--user-dir',default='baram_rebuild_gameplay_001')
+ p.add_argument('--output',type=Path,required=True);p.add_argument('--user-dir',default='baram_rebuild_gameplay_001');p.add_argument('--xdotool',type=Path,required=True)
  a=p.parse_args();o=a.output.resolve()
  if o.exists():raise ValueError('Fresh evidence directory required')
  o.mkdir(parents=True)
@@ -36,11 +36,23 @@ def main():
  def capture(name):
   r=subprocess.run(['ffmpeg','-loglevel','error','-y','-f','x11grab','-video_size','1600x1000','-i',e['DISPLAY'],'-frames:v','1',str(o/(name+'.png'))],env=e,capture_output=True,timeout=20)
   check(name+':external_window_capture',r.returncode==0,r.stderr.decode()[:200])
+ def attach_input():
+  instance=X11(e)
+  def run(*args):subprocess.run([str(a.xdotool.resolve()),*map(str,args)],env=e,check=True,capture_output=True,timeout=10)
+  def focus():run('windowfocus','--sync',instance.window)
+  def click(rect):
+   focus();run('mousemove','--window',instance.window,int(rect[0]+rect[2]/2),int(rect[1]+rect[3]/2));run('click','1');time.sleep(.25)
+  def key(name,hold=.05):
+   focus();run('keydown','--clearmodifiers',name);time.sleep(hold);run('keyup',name);time.sleep(.05)
+  def text(value):focus();run('type','--clearmodifiers','--delay','30',value)
+  instance.click=click;instance.key=key;instance.text=text
+  return instance
+ result['input_method']='XTEST through xdotool with explicit focus before each action; XSendEvent-only prior attempt retained as failed input method'
  process=None;x=None
  try:
   with (o/'ordinary.log').open('wb') as log:
    process=subprocess.Popen(command,env=e,stdout=log,stderr=subprocess.STDOUT)
-   wait_stage('ui_layout');x=X11(e);capture('01-menu')
+   wait_stage('ui_layout');x=attach_input();capture('01-menu')
    x.click(control(cpath,'새 캐릭터'));time.sleep(.25);x.text('cancelv2');x.click(control(cpath,'취소'))
    check('cancel_creates_no_save',not list(saves.glob('*.json')))
    x.click(control(cpath,'새 캐릭터'));time.sleep(.25);x.text('v2player');x.click(control(cpath,'만들고 시작'))
@@ -58,7 +70,7 @@ def main():
   since=len(checkpoints(cpath))
   with (o/'restart.log').open('wb') as log:
    process=subprocess.Popen(command,env=e,stdout=log,stderr=subprocess.STDOUT)
-   wait_stage('ui_layout',since);x=X11(e);x.click(control(cpath,'이어 하기'));rows=wait_stage('loaded',since)
+   wait_stage('ui_layout',since);x=attach_input();x.click(control(cpath,'이어 하기'));rows=wait_stage('loaded',since)
    loaded=[r for r in rows[since:] if r.get('stage')=='loaded'][-1]['details']['character']
    check('new_process_load_exact_saved_character',loaded==after['character'],loaded)
    time.sleep(.5)

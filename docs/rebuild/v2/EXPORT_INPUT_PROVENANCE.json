@@ -1,0 +1,27 @@
+{
+  "schema": "baram.v2.export-input-provenance/1",
+  "source_commit": "c9fe92886cb738708b189bd14f0c40299ddef301",
+  "checks": [
+    {
+      "id": "source_snapshot_parity",
+      "status": "PASS",
+      "files": 49
+    },
+    {
+      "id": "source_snapshot_actual_files_unchanged",
+      "status": "PASS",
+      "mismatches": []
+    },
+    {
+      "id": "runtime_snapshot_parity",
+      "status": "PASS",
+      "files": 3411
+    },
+    {
+      "id": "runtime_snapshot_actual_files_unchanged",
+      "status": "PASS",
+      "mismatches": []
+    }
+  ],
+  "scope": "Actual retained input file snapshot comparison; no platform execution"
+}

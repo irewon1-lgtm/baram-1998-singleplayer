@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "scope": "Only three v2 columns appended; 22 IDs/order and all14 historical fields byte-prefix/parsed-value preserved",
+  "rows": 22,
+  "original_columns": 14,
+  "new_columns": [
+    "v2_status",
+    "v2_evidence",
+    "v2_remaining"
+  ],
+  "original_csv_sha256": "d671b1ca81f78758dd2449fdafe8666177e78c007c6287e2f85dcbcfb1f79865",
+  "updated_csv_sha256": "713557fc04d61f00437f7c27fd81166a6d1202e4ccecfe599c02b38f453e17dd",
+  "historical_projection_sha256": "05f1a54c321eaa0f38ce6d70fc8bfad91e184eeb079c53ce1cb6b4754066bbfa",
+  "original_verdicts_preserved": true,
+  "app_source_modified_by_this_subtask": false,
+  "source_commit": "c9fe92886cb738708b189bd14f0c40299ddef301",
+  "runtime_manifest_sha256": "6ffdfc0cbad388635dd641579adfdb12ad0539726d13e8fdfb7c4f0b4227d1a9",
+  "statuses": {
+    "HOST_UI_PARTIAL_PORTRAIT_CLIPPING": 1,
+    "HOST_EQUIPMENT_PASS_NATIVE_DEVICE_NOT_RUN": 1,
+    "HOST_INPUTEVENT_PASS_ANDROID_NOT_RUN": 1,
+    "HOST_NAVIGATION_PASS_ANDROID_NOT_RUN": 1,
+    "HOST_MOVEMENT_PASS_ANDROID_NOT_RUN": 1,
+    "HOST_FRAMEBUFFER_PASS_30FPS_NOT_RUN": 1,
+    "HOST_COMBAT_PASS_NATIVE_NOT_RUN": 1,
+    "HOST_TARGETING_PASS_NATIVE_TOUCH_NOT_RUN": 1,
+    "RECONSTRUCTED_G1_MAPS_HOST_PASS": 1,
+    "HOST_TRANSITIONS_SAVE_PASS_NATIVE_NOT_RUN": 1,
+    "HOST_NPC_TRADE_LEARNING_PASS_NATIVE_NOT_RUN": 1,
+    "HOST_ITEM_EQUIPMENT_PASS_NATIVE_NOT_RUN": 1,
+    "HOST_G1_SKILL_ACTIONS_PASS_NATIVE_NOT_RUN": 1,
+    "NOT_RUN_OS_KOREAN_IME": 1,
+    "BLOCKED_NATIVE_ANDROID_GALAXY": 1,
+    "BLOCKED_NATIVE_WINDOWS": 1,
+    "HOST_SAVE_MIGRATION_PASS_PLATFORM_UPDATE_NOT_RUN": 1,
+    "HOST_EFFECT_EVENTS_PASS_PHYSICAL_AUDIO_NOT_RUN": 1,
+    "RECONSTRUCTED_UI_HOST_PASS_HISTORY_PRESERVED": 1,
+    "CANDIDATE_PARITY_HOST_PASS_NATIVE_NOT_RUN": 1,
+    "NOT_IMPLEMENTED_ACCOUNT_SYNC": 1,
+    "G1_CONTENT_HOST_PASS_NATIVE_LONGPLAY_NOT_RUN": 1
+  },
+  "known_host_visual_limitation": "Actual portrait surface clips some panels; logical bounds and nonempty capture are not physical multi-resolution PASS"
+}

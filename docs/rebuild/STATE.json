@@ -8,18 +8,18 @@
   "active_branch": "work/rebuild-p3-remediation-20261016",
   "entrypoint": "AGENTS.md",
   "master_plan": "docs/rebuild/MASTER_PLAN.md",
-  "status": "V2_G1_CODE_CONTENT_VERIFIED_NATIVE_PLATFORM_GATES_PENDING",
-  "implementation_status": "G1_IMPLEMENTED_WITH_RECONSTRUCTED_FIELDS",
+  "status": "PARTIAL_NATIVE_PLATFORM_AND_SYNC_GATES_PENDING",
+  "implementation_status": "G1_CONTENT_ENGINE_HOST_GUI_SCOPE_VERIFIED",
   "handoff_commit": "d124aa6c23c753f1fa1edd810b0b0386e3b80315",
-  "app_behavior_commit": "38c6e9ee536c251dc85fe8c5b76344ac9da1dbff",
+  "app_behavior_commit": "c9fe92886cb738708b189bd14f0c40299ddef301",
   "current_phase": "B6",
-  "current_phase_execution": "FINAL_CANDIDATE_EXPORT_AND_EXPORTED_PACK_VERIFICATION",
+  "current_phase_execution": "CANDIDATES_DELIVERED_NATIVE_AND_SYNC_GATES_PENDING",
   "authorization": {
     "goal_and_plan": "USER_APPROVED",
     "ordered_followup_work": "B1_THROUGH_B6_WITHIN_FREE_SCOPE",
     "this_session": "APPROVED_FOLLOWUP_B1_THROUGH_B6",
     "game_implementation_run_this_session": true,
-    "app_build_run_this_session": false,
+    "app_build_run_this_session": true,
     "main_merge_or_production_publish": false,
     "new_paid_resources": false
   },
@@ -46,26 +46,28 @@
       "same_account_sequential_continuation",
       "existing_assets_saves_keys"
     ],
-    "generation_scope": "G1_ID_SET_TO_BE_FIXED_AT_B2_WITH_NO_SILENT_REQUIRED_FEATURE_DROPS"
+    "generation_scope": "G1_FIXED_CONTRACT_76_MAPS_593_ITEMS_190_SKILLS_346_MONSTER_IDS_24_NPCS"
   },
   "source_of_current_evidence": {
     "defects": "docs/rebuild/p3-remediation/DEFECTS.csv",
-    "bindings": "docs/rebuild/p3-remediation/P4_HANDOFF.json",
-    "delivery": "docs/rebuild/p3-remediation/DELIVERY.json",
-    "results": "docs/rebuild/p3-remediation/RESULTS.md",
-    "scope": "PREVIOUS_REPORTED_EVIDENCE_NOT_REEXECUTED"
+    "verification": "docs/rebuild/v2/VERIFICATION.json",
+    "delivery": "docs/rebuild/v2/DELIVERY.json",
+    "results": "docs/rebuild/v2/RESULTS.md",
+    "historical_evidence": "docs/rebuild/p3-remediation/",
+    "scope": "EXECUTED_FINAL_G1_HOST_TESTS_WITH_SEPARATE_NATIVE_AND_SYNC_GATES"
   },
   "observed_counts": {
     "active": {
-      "maps": 11,
-      "npcs": 9,
-      "items": 8,
-      "monsters": 2,
-      "skills": 10
-    },
-    "deferred": {
-      "skill_rows": 178,
-      "npc_contract_rows": 15
+      "maps": 76,
+      "monster_stable_ids": 346,
+      "monster_exact_semantics": 333,
+      "items": 593,
+      "skills": 190,
+      "npcs": 24,
+      "quests": 52,
+      "recipes": 9,
+      "advancements": 13,
+      "training_rules": 7
     },
     "note": "Do not add heterogeneous row counts or compute a total completion percentage.",
     "G1": {
@@ -79,24 +81,36 @@
       "recipes": 9,
       "advancements": 13,
       "training_rules": 7
+    },
+    "previous_active_before_G1": {
+      "maps": 11,
+      "npcs": 9,
+      "items": 8,
+      "monsters": 2,
+      "skills": 10
+    },
+    "deferred_before_G1": {
+      "skill_rows": 178,
+      "npc_contract_rows": 15
     }
   },
   "retained_actual_status": {
-    "Android": "REPORTED_RENDER_FAIL_ROOT_CAUSE_UNRESOLVED",
-    "Windows_native": "NOT_RUN",
+    "Android": "FINAL_CANDIDATE_EXPORTED_NATIVE_VISIBLE_PLAY_NOT_RUN_PRIOR_RENDER_FAILURE_RETAINED",
+    "Windows_native": "FINAL_CANDIDATE_EXPORTED_NATIVE_NOT_RUN",
     "Galaxy": "NOT_RUN",
     "OS_Korean_IME": "NOT_RUN",
     "physical_listening": "NOT_RUN",
-    "same_account_roundtrip": "NOT_IMPLEMENTED_OR_VERIFIED",
+    "same_account_roundtrip": "NOT_IMPLEMENTED_NO_APPROVED_FREE_AUTHENTICATED_SYNC_ENDPOINT",
     "original_city_grid": "UNRESOLVED_RECONSTRUCTION_NOW_AUTHORIZED",
     "old_Android_save_automatic_migration": "NOT_VERIFIED",
-    "performance": "PRIOR_HOST_ONLY_P99_124MS_NOT_DEVICE_PASS"
+    "performance": "FINAL_DEVICE_30FPS_NOT_RUN_PRIOR_HOST_ONLY_P99_RETAINED"
   },
   "defect_policy_changes": {
     "P3-FIX-09": {
       "previous": "BLOCKED_ORIGINAL_MAP_GRID_CORRESPONDENCE",
-      "current_work": "RECONSTRUCTION_QUEUED_B2_B4",
-      "closed": false
+      "current_work": "V2_RECONSTRUCTED_76_MAPS_152_EXITS_HOST_ACTIONS_VERIFIED",
+      "closed": false,
+      "remaining": "Native platform verification; exact historical grid is no longer required"
     },
     "P3-FIX-19": {
       "previous": "ORIGINAL_MASK_FAILURE_HISTORY",
@@ -105,12 +119,13 @@
     },
     "P3-FIX-22": {
       "previous": "DEFER_P4_P5",
-      "current_work": "ACTIVE_SCOPE_B3_B4",
-      "closed": false
+      "current_work": "G1_ALL_IDS_BOUND_AND_HOST_ACTION_TESTED",
+      "closed": false,
+      "remaining": "Native platforms and practical end-to-end whole-game play"
     },
     "P3-FIX-21": {
       "previous": "DEFER_P6_AUTH",
-      "current_work": "EARLY_ENVIRONMENT_CHECK_B1_IMPLEMENT_VERIFY_B5_B6",
+      "current_work": "NOT_IMPLEMENTED_AUTHENTICATED_FREE_SYNC_ENDPOINT_UNAVAILABLE",
       "closed": false
     },
     "all_other_defects": "Retain original IDs and evidence. Do not reset or promote their verdicts from this plan."
@@ -126,32 +141,32 @@
     },
     {
       "id": "B2",
-      "status": "SOURCE_SCOPE_FROZEN_FINAL_RUNTIME_BINDINGS_PENDING"
+      "status": "G1_CONTRACT_FROZEN_ALL_BINDINGS_STATIC_AUDIT_PASS"
     },
     {
       "id": "B3",
-      "status": "AFFECTED_ENGINE_EXPANDED_FINAL_TESTS_PENDING"
+      "status": "G1_ENGINE_ACTIONS_ALL_IDS_AND_REGRESSION_PASS"
     },
     {
       "id": "B4",
-      "status": "INTEGRATION_SOURCE_FIELDS_AND_ASSETS"
+      "status": "G1_R3_CONTENT_ASSETS_INTEGRATED"
     },
     {
       "id": "B5",
-      "status": "PRELIMINARY_ACTUAL_GUI_AND_ENGINE_TESTS_FINAL_CANDIDATE_PENDING"
+      "status": "HOST_FUNCTIONAL_TESTS_COMPLETE_LAYOUT_AND_NATIVE_GATES_RETAINED"
     },
     {
       "id": "B6",
-      "status": "TOOLCHAIN_AND_RETAINED_SIGNER_READY_BUILD_PENDING"
+      "status": "CANDIDATES_DELIVERED_NATIVE_RELEASE_GATE_PENDING"
     }
   ],
   "next_action": {
     "owner": "Work",
-    "phase": "B6",
-    "action": "Export current verified G1 source with retained Android signer and exact private r3 input; test exact final Windows PCK under Linux GUI/ordinary process and APK parity; keep native Windows/Android/IME/listening/same-account sync blocked. Save delivery/evidence IDs and re-query current remote HEAD.",
-    "on_environment_block": "Native Android/Galaxy/Windows/IME/audio/same-account sync remain separately BLOCKED; no blind platform PASS.",
+    "phase": "B5_B6_NATIVE_GATES",
+    "action": "Use the exact delivered c9fe9288 APK on Galaxy and ZIP on native Windows: visible first menu/frame, Korean creation/IME, normal hunting/input, save/restart, Android same-repair-package update and retained save, device frame time/audio. Implement and verify authenticated Windows→Android→Windows continuation only with an approved accessible free endpoint. Current G1 source/content/host tests and candidates are already complete; do not restart inventory, parser, SDK or exports without a changed input or reproduced defect.",
+    "on_environment_block": "Keep native Android/Galaxy/Windows/IME/audio/performance NOT_RUN and account sync NOT_IMPLEMENTED. Deliver candidates and evidence without claiming full-goal PASS.",
     "do_not_repeat": "No full inventory/SDK/parser reset; reuse verified toolchain and unchanged evidence; only changed-source affected final suites.",
-    "resume_from": "This active branch current source and docs/rebuild/v2; private input and signer IDs preserved in delivery records. Do not reset historical source."
+    "resume_from": "Current branch HEAD; app behavior c9fe92886cb738708b189bd14f0c40299ddef301; docs/rebuild/v2/DELIVERY.json identifies exact candidate/runtime/evidence artifacts. Retained private signer remains in existing private handoff, not GitHub or new public files."
   },
   "retry_policy": {
     "deterministic_unchanged_failure": "CHANGE_METHOD",
@@ -197,7 +212,7 @@
   },
   "publication": {
     "method": "Atomic documentation/model commit on existing active Work branch, expected-HEAD lease, no force push",
-    "verification": "Re-query containing commit and active branch before handoff. Never reset to this baseline."
+    "verification": "Read branch after final expected-HEAD update; app behavior remains c9fe9288; next HEAD contains evidence/state only."
   },
   "execution_20261017": {
     "baseline_head": "39c7e4a2fe5f555b5d32a1e973930f3671d508ef",
@@ -210,12 +225,20 @@
     "evidence": [
       "docs/rebuild/v2/B1_DIAGNOSIS.json",
       "docs/rebuild/v2/G1_CONTRACT.json",
-      "docs/rebuild/v2/SAVE_MIGRATION.md"
+      "docs/rebuild/v2/SAVE_MIGRATION.md",
+      "docs/rebuild/v2/VERIFICATION.json",
+      "docs/rebuild/v2/RESULTS.md",
+      "docs/rebuild/v2/DELIVERY.json"
     ],
     "initial_generation": "Kept immutable; identified haste, equipment/effect field usage and save bank integration failures corrected before final freeze. Initial fixture/UI failures retained separately.",
     "final_runtime_manifest_sha256": "6ffdfc0cbad388635dd641579adfdb12ad0539726d13e8fdfb7c4f0b4227d1a9",
     "final_engine_sha256": "4ea4b760f4cdce69db6c8d12a4bfde79f798e0c7d5f3b8e9948725cc2cca3dd0",
     "runtime_generation": "WORK-V2-G1-20261017",
-    "content_note": "Map geometry and missing mechanics reconstructed, source quantities not unique species count; current G1 every ID actual closure tests separate from native platform gates."
+    "content_note": "Map geometry and missing mechanics reconstructed, source quantities not unique species count; current G1 every ID actual closure tests separate from native platform gates.",
+    "final_app_source_commit": "c9fe92886cb738708b189bd14f0c40299ddef301",
+    "host_gui_layout_limit": "89 logged PASS =74 GUI/fixture +12 logical panel bounds +3 nonempty framebuffers. Physical capture1100x720 valid;1600x900 request gives1375x900;600x960 request gives600x392. No full portrait/resolution PASS.",
+    "export_source_provenance": "Export git_head_at_export39c7 predates local ref advancement. Actual49 source/3411 runtime snapshot file hashes match published app sourcec9fe and shared fingerprint0f5a5259. No app/runtime modifications after candidate creation.",
+    "delivery": "docs/rebuild/v2/DELIVERY.json",
+    "delivered_file_count": 6
   }
 }

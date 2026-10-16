@@ -1,0 +1,167 @@
+{
+  "schema": "baram.v2.final-verification/1",
+  "date": "2026-10-17",
+  "timezone": "Asia/Seoul",
+  "overall": "PARTIAL_NATIVE_PLATFORM_AND_SYNC_GATES_PENDING",
+  "source_commit": "c9fe92886cb738708b189bd14f0c40299ddef301",
+  "branch": "work/rebuild-p3-remediation-20261016",
+  "engine_source_sha256": "4ea4b760f4cdce69db6c8d12a4bfde79f798e0c7d5f3b8e9948725cc2cca3dd0",
+  "runtime_manifest_sha256": "6ffdfc0cbad388635dd641579adfdb12ad0539726d13e8fdfb7c4f0b4227d1a9",
+  "gameplay_content_sha256": "2214d1050bca3d5490793901971000b6d00de7bcdb740e9895dee850360a598c",
+  "source_content_fingerprint": "0f5a52596dc7352dfb3681e1c8d327acdee58ec1b3322a080989749b3dfdd25b",
+  "counts": {
+    "maps": 76,
+    "exits": 152,
+    "monster_stable_ids": 346,
+    "monster_distinct_semantics": 333,
+    "items": 593,
+    "skills": 190,
+    "npcs": 24,
+    "quests": 52,
+    "recipes": 9,
+    "advancements": 13,
+    "training_rules": 7
+  },
+  "tests": [
+    {
+      "id": "G1_content_compiler",
+      "checks": 3296,
+      "failures": 0,
+      "status": "STATIC_PASS",
+      "scope": "Structural compilation; no runtime or native platform claim"
+    },
+    {
+      "id": "G1_independent_audit",
+      "status": "STATIC_PASS",
+      "report": "G1_R3_CONTRACT_AUDIT.json",
+      "scope": "All-ID binding, acquisition rules and 76-map graph; actual runtime coverage separate"
+    },
+    {
+      "id": "engine_actions",
+      "checks": 1323,
+      "failures": 0,
+      "status": "PASS",
+      "report": "baram-b3-g1-r3-actions-final.json",
+      "scope": "Linux Godot explicit combat/action fixtures"
+    },
+    {
+      "id": "G1_all_id_actions",
+      "checks": 3655,
+      "failures": 0,
+      "status": "PASS",
+      "report": "baram-b3-g1-r3-closure-final.json",
+      "scope": "All 593 item,190 skill,346 monster IDs,76 maps/152 exits,24 NPC actions with explicit level/money/RNG/material fixtures"
+    },
+    {
+      "id": "engine_regression",
+      "checks": 131,
+      "failures": 0,
+      "status": "PASS",
+      "report": "baram-b3-engine-regression-final.json",
+      "scope": "Linux Godot fixture regression"
+    },
+    {
+      "id": "save_migration",
+      "checks": 90,
+      "failures": 0,
+      "status": "PASS",
+      "report": "save-migration-G1-r3-4ea4-final.json",
+      "scope": "Stable IDs, immutable pre-migration backup, corrupt/unknown data handling"
+    },
+    {
+      "id": "save_regression",
+      "checks": 83,
+      "failures": 0,
+      "status": "PASS",
+      "report": "save-regression-G1-r3-4ea4-final.json",
+      "scope": "Host disk/save validation; no Android package-to-package auto migration claim"
+    },
+    {
+      "id": "natural_early_progression",
+      "checks": 94,
+      "failures": 0,
+      "status": "REUSED_AFTER_IMPACT_CHECK",
+      "report": "progression-G1-r3-final.json",
+      "scope": "5955 ordinary engine commands, four jobs naturally change at level5 and end8/9/9/9. Accelerated time; not GUI/hardware/1–99 completion. Executed on engine02e675a8; final cleanse-only guard change proven outside observed trace by 11-condition impact report"
+    },
+    {
+      "id": "final_pack_GUI",
+      "checks": 89,
+      "failures": 0,
+      "status": "PASS_SCOPE_LIMITED",
+      "report": "final-pack-ui/UI_RESULTS.json",
+      "scope": "Final Windows PCK under Linux software OpenGL, actual dialogs/buttons and fixtures.1100x720 capture valid. Requested1600x900 physicalcapture1375x900; requested600x960 capture600x392. Larger/portrait screenshots are not full physical-layout verification",
+      "check_breakdown": {
+        "GUI_and_fixtures": 74,
+        "logical_panel_bounds": 12,
+        "nonempty_framebuffers": 3
+      }
+    },
+    {
+      "id": "final_pack_input_events",
+      "checks": 13,
+      "failures": 0,
+      "status": "PASS",
+      "report": "final-pack-input/INPUT_EDGES.json",
+      "scope": "Godot InputEvent injection under Linux; not Android OS/physical multitouch"
+    },
+    {
+      "id": "final_pack_ordinary_restart",
+      "checks": 10,
+      "failures": 0,
+      "status": "PASS",
+      "report": "final-pack-ordinary-xtest/ORDINARY_PROCESS.json",
+      "scope": "Linux actual window and XTEST ordinary create/move/save/quit/relaunch/continue. Earlier XSendEvent-only postrestart input failure preserved; exact unchanged pack passed with XTEST"
+    },
+    {
+      "id": "APK_Windows_compiled_parity",
+      "checks": 11,
+      "failures": 0,
+      "status": "PASS",
+      "report": "FINAL_PACK_PARITY.json",
+      "scope": "Actual APK and Windows PCK compiled scripts/input manifest byte parity; no native execution claim"
+    }
+  ],
+  "gates": {
+    "Android_native_visible_play_save": "NOT_RUN",
+    "Galaxy_phone_tablet": "NOT_RUN",
+    "Windows_native_EXE": "NOT_RUN",
+    "OS_Korean_IME": "NOT_RUN",
+    "device_30FPS": "NOT_RUN",
+    "physical_audio": "NOT_RUN",
+    "same_account_Windows_Android_Windows": "NOT_IMPLEMENTED_NO_APPROVED_FREE_AUTHENTICATED_ENDPOINT",
+    "full_natural_level1_99": "NOT_RUN",
+    "old_different_package_automatic_save_migration": "NOT_VERIFIED"
+  },
+  "provenance_limits": [
+    "Geometry/navigation are reconstructed using available source assets. No exact historical city-cell matching claim.",
+    "Source skill effect fields190/190 associated:559 fields/114 types,199 adopted/137 adapted/223 reference-retained; not all historical formula semantics reproduced.",
+    "Source monster IDs346 reduce to333 exact semantic definitions; IDs are not confirmed unique species.",
+    "Windows and Android exports each contain49 source and3411 runtime snapshot files. git_head_at_export records39c7e4a2 before local ref advancement; source_commitc9fe9288 is bound by actual per-file snapshot and unchanged source/content hashes.",
+    "Nonfatal export diagnostics:18 Unicode warnings on each import exit; Android project icon unspecified. No script parse failure in final export.",
+    "Readiness log is process readiness, not proof of a rendered Android frame. Prior black-screen evidence retained; native renderer issue unresolved until exact APK tested."
+  ],
+  "artifacts": [
+    {
+      "platform": "Android",
+      "filename": "baram-V2-G1-Android-c9fe9288-candidate.apk",
+      "bytes": 65168379,
+      "sha256": "54316901c31bef6e748bcd2935dbe6812f811f307e11f2d1f72fb2a3294fc970",
+      "native_execution": "NOT_RUN"
+    },
+    {
+      "platform": "Windows",
+      "filename": "baram-V2-G1-Windows64-c9fe9288-candidate.zip",
+      "bytes": 38533242,
+      "sha256": "256d51d9c9ca4bb819489d19483fabbfbe11cc87e3ccb8ff1d476c4df56adc67",
+      "native_execution": "NOT_RUN"
+    },
+    {
+      "platform": "private_runtime",
+      "filename": "baram-V2-G1-private-runtime-c9fe9288.zip",
+      "bytes": 8896852,
+      "sha256": "3787739c708a2f62be03ee8f3fe9f0a18244402438751f03c8a6e09a95bd230b",
+      "contains": "Final G1 assets and generated content; no signing key"
+    }
+  ]
+}
