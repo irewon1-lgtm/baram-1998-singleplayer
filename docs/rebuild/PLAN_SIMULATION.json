@@ -1,0 +1,389 @@
+{
+  "schema": "baram.plan.policy-simulation/2",
+  "plan_id": "BARAM_REBUILD_V2_RESOURCE_FIRST_20261016",
+  "scope": "EXECUTED_ABSTRACT_POLICY_MODEL_NOT_GAME_TEST",
+  "basis": {
+    "source_commit": "d124aa6c23c753f1fa1edd810b0b0386e3b80315",
+    "git_blob_inputs": {
+      "AGENTS.md": "be3d85b4e287040bd758c0fe086092173e7b6800",
+      "docs/rebuild/STATE.json": "8db17a2bc2a66d7ee42b6ca145e62ad4bed49044",
+      "docs/rebuild/MASTER_PLAN.md": "d4116a5321bffa149873bce5456d0f1ca913a392",
+      "docs/rebuild/p3-remediation/P4_HANDOFF.json": "98f7d8d826ce5aee4cc6dce4ffb4be17db071a7d",
+      "docs/rebuild/p3-remediation/RESULTS.md": "374d479af6c59b1dadd3d4d8b4eca80ff1739362"
+    },
+    "observed_active_counts": {
+      "maps": 11,
+      "npcs": 9,
+      "items": 8,
+      "monsters": 2,
+      "skills": 10
+    },
+    "observed_deferred_counts": {
+      "skill_rows": 178,
+      "npc_contract_rows": 15
+    },
+    "note": "Counts from handoff. No claim that simulated routes implement these entities."
+  },
+  "execution": {
+    "python": "3.13.5",
+    "state_space_size": 4096,
+    "boolean_dimensions": [
+      "legacy_exact",
+      "legacy_basis",
+      "modern",
+      "other",
+      "implemented",
+      "function_test_run",
+      "function_test_passed",
+      "android_available",
+      "android_test_run",
+      "android_test_passed",
+      "windows_available",
+      "windows_test_run"
+    ],
+    "selected_source_counts": {
+      "LEGACY_VERIFIED": 2048,
+      "LEGACY_RECONSTRUCTED": 1024,
+      "MODERN_BARAM_ADAPTED": 512,
+      "OTHER_GAME_ADAPTED": 256,
+      "INFERRED": 256
+    },
+    "function_verdict_distribution": {
+      "NOT_IMPLEMENTED": 2048,
+      "NOT_RUN": 1024,
+      "FAIL": 512,
+      "PASS": 512
+    },
+    "policy_comparison": {
+      "WAIT_EXACT": {
+        "avoidable_source_stalls": 2048,
+        "higher_priority_source_ignored": 0,
+        "independent_content_blocked_by_android": 0,
+        "false_platform_pass": 0
+      },
+      "INFER_IMMEDIATELY": {
+        "avoidable_source_stalls": 0,
+        "higher_priority_source_ignored": 3840,
+        "independent_content_blocked_by_android": 0,
+        "false_platform_pass": 0
+      },
+      "FALLBACK_GLOBAL_PLATFORM_GATE": {
+        "avoidable_source_stalls": 0,
+        "higher_priority_source_ignored": 0,
+        "independent_content_blocked_by_android": 2048,
+        "false_platform_pass": 0
+      },
+      "BOUNDED_DEPENDENCY": {
+        "avoidable_source_stalls": 0,
+        "higher_priority_source_ignored": 0,
+        "independent_content_blocked_by_android": 0,
+        "false_platform_pass": 0
+      }
+    },
+    "violations": [],
+    "scenario_tests": [
+      {
+        "id": "tier_LEGACY_VERIFIED",
+        "passed": true
+      },
+      {
+        "id": "tier_LEGACY_RECONSTRUCTED",
+        "passed": true
+      },
+      {
+        "id": "tier_MODERN_BARAM_ADAPTED",
+        "passed": true
+      },
+      {
+        "id": "tier_OTHER_GAME_ADAPTED",
+        "passed": true
+      },
+      {
+        "id": "tier_INFERRED",
+        "passed": true
+      },
+      {
+        "id": "missing_original_is_not_runtime_pass",
+        "passed": true
+      },
+      {
+        "id": "unrun_test_stays_not_run",
+        "passed": true
+      },
+      {
+        "id": "failed_runtime_stays_fail",
+        "passed": true
+      },
+      {
+        "id": "android_black_screen_not_pass",
+        "passed": true
+      },
+      {
+        "id": "no_galaxy_not_pass",
+        "passed": true
+      },
+      {
+        "id": "same_failure_not_infinite",
+        "passed": true
+      },
+      {
+        "id": "deterministic_failure_change_method",
+        "passed": true
+      },
+      {
+        "id": "changed_input_retested",
+        "passed": true
+      },
+      {
+        "id": "transient_retry_bounded",
+        "passed": true
+      },
+      {
+        "id": "identical_success_reusable",
+        "passed": true
+      },
+      {
+        "id": "identical_failure_not_reusable_as_pass",
+        "passed": true
+      },
+      {
+        "id": "fingerprint_change_source",
+        "passed": true
+      },
+      {
+        "id": "fingerprint_change_code",
+        "passed": true
+      },
+      {
+        "id": "fingerprint_change_config",
+        "passed": true
+      },
+      {
+        "id": "fingerprint_change_environment",
+        "passed": true
+      },
+      {
+        "id": "fingerprint_change_scope",
+        "passed": true
+      },
+      {
+        "id": "resume_after_0",
+        "passed": true
+      },
+      {
+        "id": "resume_after_1",
+        "passed": true
+      },
+      {
+        "id": "resume_after_2",
+        "passed": true
+      },
+      {
+        "id": "resume_after_3",
+        "passed": true
+      },
+      {
+        "id": "resume_after_4",
+        "passed": true
+      },
+      {
+        "id": "resume_after_5",
+        "passed": true
+      },
+      {
+        "id": "resume_after_6",
+        "passed": true
+      },
+      {
+        "id": "resume_after_7",
+        "passed": true
+      },
+      {
+        "id": "migration_False_False",
+        "passed": true
+      },
+      {
+        "id": "migration_False_True",
+        "passed": true
+      },
+      {
+        "id": "migration_True_False",
+        "passed": true
+      },
+      {
+        "id": "migration_True_True",
+        "passed": true
+      },
+      {
+        "id": "old_save_not_mutated",
+        "passed": true
+      },
+      {
+        "id": "authority_order_V1",
+        "passed": true
+      },
+      {
+        "id": "authority_order_BARAM_REBUILD_V2_RESOURCE_FIRST_20261016",
+        "passed": true
+      },
+      {
+        "id": "multiple_current_masters_rejected",
+        "passed": true
+      },
+      {
+        "id": "black_screen_blocks_android_release",
+        "passed": true
+      },
+      {
+        "id": "native_unrun_blocks_release",
+        "passed": true
+      },
+      {
+        "id": "migration_unverified_blocks_replacement",
+        "passed": true
+      },
+      {
+        "id": "fatal_error_blocks_release",
+        "passed": true
+      },
+      {
+        "id": "all_required_evidence_allows_release",
+        "passed": true
+      },
+      {
+        "id": "chosen_diagnoses_platform_early",
+        "passed": true
+      },
+      {
+        "id": "no_admissible_bulk_before_contracts",
+        "passed": true
+      },
+      {
+        "id": "no_admissible_release_before_integration",
+        "passed": true
+      },
+      {
+        "id": "mutation_rejected_always_infer",
+        "passed": true
+      },
+      {
+        "id": "mutation_rejected_always_platform_pass",
+        "passed": true
+      },
+      {
+        "id": "mutation_rejected_always_reuse_changed_evidence",
+        "passed": true
+      },
+      {
+        "id": "mutation_rejected_always_restart_from_B0",
+        "passed": true
+      },
+      {
+        "id": "mutation_rejected_always_promote_invalid_save",
+        "passed": true
+      }
+    ],
+    "scenario_passed": 50,
+    "scenario_total": 50,
+    "mutation_counterexamples": {
+      "always_infer": 15,
+      "always_platform_pass": 7,
+      "always_reuse_changed_evidence": 5,
+      "always_restart_from_B0": 7,
+      "always_promote_invalid_save": 3
+    },
+    "permutations_checked": 40320,
+    "admissible_orders": [
+      [
+        "authority",
+        "platform_diagnosis",
+        "source_route",
+        "contracts",
+        "shared_actions",
+        "bulk_import",
+        "integration_test",
+        "deliver"
+      ],
+      [
+        "authority",
+        "source_route",
+        "platform_diagnosis",
+        "contracts",
+        "shared_actions",
+        "bulk_import",
+        "integration_test",
+        "deliver"
+      ],
+      [
+        "authority",
+        "source_route",
+        "contracts",
+        "platform_diagnosis",
+        "shared_actions",
+        "bulk_import",
+        "integration_test",
+        "deliver"
+      ],
+      [
+        "authority",
+        "source_route",
+        "contracts",
+        "shared_actions",
+        "platform_diagnosis",
+        "bulk_import",
+        "integration_test",
+        "deliver"
+      ],
+      [
+        "authority",
+        "source_route",
+        "contracts",
+        "shared_actions",
+        "bulk_import",
+        "platform_diagnosis",
+        "integration_test",
+        "deliver"
+      ]
+    ],
+    "selected_order": [
+      "authority",
+      "platform_diagnosis",
+      "source_route",
+      "contracts",
+      "shared_actions",
+      "bulk_import",
+      "integration_test",
+      "deliver"
+    ]
+  },
+  "limitations": [
+    "No APK/EXE/gameplay, real save files, IME, audio or device benchmarks executed.",
+    "Availability and pass bits are synthetic states, not observed probabilities.",
+    "A fallback route is a work decision; it is not source acquisition or feature completion.",
+    "No real token/cost/time measurements; no global or empirical optimality claim.",
+    "Selection is a risk-ordering preference among dependency-valid plans, not a speed proof."
+  ],
+  "model_result": "PASS",
+  "active_document_checks": {
+    "plan_id_equal": true,
+    "single_entrypoint": true,
+    "single_current_master": true,
+    "exactness_not_gate": true,
+    "fallback_order_equal": true,
+    "preserve_game_partial": true,
+    "no_game_test_claim": true,
+    "old_restrictions_archived": true,
+    "next_step_B1": true,
+    "bulk_scope_not_deferred": true,
+    "map_not_fake_fixed": true,
+    "platform_unrun_retained": true,
+    "main_not_authorized": true,
+    "phase_ids_present": true
+  },
+  "active_document_hashes": {
+    "AGENTS.md": "2db301042fa05e28b5988f620c3408e594ea40915ea876a752f5ecd2f0f72b92",
+    "docs/rebuild/MASTER_PLAN.md": "a30ce9af74f69de21516f1e71505d4df9f0b72add79018bc8e828c27ea79558c",
+    "docs/rebuild/STATE.json": "3fa8700fe44700e46e29155e06524ef5470b896060a200cdff55fc76ba1fa717"
+  },
+  "script_sha256": "5a2e4ee1c6ebd03147713a7399193a660c5244be2ae57e4d16b2965a38b69111"
+}

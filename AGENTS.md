@@ -1,24 +1,20 @@
-# Rebuild planning entrypoint
+# 바람의나라 — 현재 작업 시작점
 
-## Read before working
-1. `docs/rebuild/MASTER_PLAN.md`
-2. `docs/rebuild/STATE.json`
-3. Actual remote branch/ref and accessible original files for the authorized task.
+정본 계획 ID: `BARAM_REBUILD_V2_RESOURCE_FIRST_20261016` / 버전 2.0
+정본 작업 브랜치: `work/rebuild-p3-remediation-20261016`
 
-The user decided on 2026-10-15 to rebuild the game from scratch while preserving and reusing source material and verified components. The former instruction to repair only the existing runtime is superseded FOR THE NEW PROJECT. Existing code branches, original assets, installed builds and saves must remain intact.
+## 이 파일에서 시작한다
+1. 이 브랜치의 실제 최신 원격 HEAD를 확인한다. 인계 SHA로 reset하지 않는다.
+2. `docs/rebuild/MASTER_PLAN.md`를 현재 목표·범위·수행 규칙의 유일한 정본으로 읽는다.
+3. `docs/rebuild/STATE.json`에서 현재 단계, 실제 증거, next_action을 읽고 이어간다.
+4. 해당 단계에 필요한 기존 소스·자료·증거만 읽는다. 전체 과거 보고서를 매번 재독하지 않는다.
 
-Current authorization (user task BARAM_REBUILD_P0P1_001, 2026-10-15) is P0/P1 SOURCE PREPARATION: preserve and inventory originals; inspect source/documentation and archives statically; reconcile requirements, evidence, conflicts and unused materials; prepare the Codex P2 handoff. Small inventory/reference-validation scripts and safe existing static data tools are permitted. No game implementation or repair, original-asset republishing, reference server execution, APK/EXE builds, paid infrastructure, deployment or merging into main is authorized. P2 is a handoff target, not permission to execute it. See STATE authorization_history; the MASTER_PLAN planning-turn authorization is historical.
+## 현재 목표
+확보 가능한 자료를 최대한 활용해 플레이 가능한 게임을 완성한다. 옛 특정 버전과 완벽히 일치할 필요는 없다. 자료가 부족하면 기존 자료 기반 재구성 → 최신/후대 한국 바람의나라 자료 적용 → 타 게임 자료의 적합한 차용 → 근거를 기록한 추론 순서로 구현한다. 자료의 정확성 미확정을 기능 미구현의 영구 핑계로 쓰지 않는다. 재구성 허용은 검은 화면·저장 손상·미작동 기술·미실행 PASS 허용이 아니다.
 
-This branch is `planning/rebuild-20261015`. `main` and existing development/content branches are not the new runtime baseline and must not be reset or overwritten. Do not import old `main.gd` files wholesale. Reuse narrow, verified components only after the plan's compatibility checks.
+## 권한과 과거 기록
+사용자는 2026-10-16 목표 변경, 단일 시작점, 의존성에 따른 순차 진행과 반복 차단을 승인했다. 후속 Work는 MASTER_PLAN의 B1~B6 범위에서 구현·연결·시험·후보 빌드를 수행한다. 현재 정본 고정 작업은 계획·모델 시험·문서 교체이며 게임 기능을 새로 실행/완성했다는 뜻은 아니다.
 
-Preserve these essentials: Korean 1998–2001 experience, user-provided UI references, Windows plus Android phone/tablet, shared rules/content/save format, offline play and same-account sequential continuation, free-only execution, original-versus-reconstructed provenance, no unexecuted PASS.
+`docs/rebuild/history/v1/`의 세 파일과 모든 과거 STEP/WORK_ORDER/RESULTS/STATE_* 문서는 당시 작업의 기록이다. 과거의 자료 전용·P3만 허용·P4/P5 유보·완전 고증 대기 문구는 현재 권한을 제한하지 않는다. 과거 증거와 실패는 삭제하거나 새 PASS로 바꾸지 않는다.
 
-Progression: broad source inventory and reconciliation → risk prototypes on both platforms → login/creation-to-save playable slice → bulk content import → complete systems/content → full synchronization/update verification → integrated playtests. Source acquisition may proceed in parallel; one owner integrates runtime changes. Do not postpone all runtime validation until the end.
-
-Keep the five user questions and old failure cases in MASTER_PLAN visible. Update STATE with real evidence and next actions at meaningful checkpoints. Reuse prior results only when their input hashes, versions and validation scope still match. Do not promise asynchronous/background progress.
-
-
-## Current P1.5 execution (2026-10-16)
-User task `BARAM_REBUILD_P1_5_001` explicitly authorizes `STEP015_WORK_INSTRUCTIONS.md` sections 0–12. Continue from `docs/rebuild/p1_5/` and STATE; P0/P1 historical records stay unchanged. Static source processing, evidence selection, validator fixes and handoff only. Runtime/reference server/build/deploy/P2 remain unauthorized in this task.
-
-P1.5 resume: read `docs/rebuild/p1_5/REPORT.md`, `VALIDATION.json`, `INPUT_MANIFEST.json`, and the external `DELIVERY_RECHECK_RECEIPT.json` (current). Known NA source reference failures must remain visible. Normalized data is private; public catalogs are not data substitutes. Codex receiver G0 and all P2/runtime/device/auth tests remain NOT_RUN.
+원본·기존 앱·사용자 저장·키·main 및 다른 브랜치는 보존한다. 무료 범위, 출처 기록, 실제 기기별 판정 분리, 미실행 PASS 금지를 유지한다. 유료 자원 생성·main 병합·운영 공개 배포는 이 계획의 자동 승인 범위가 아니다. 다른 작업 브랜치를 만드는 경우에도 현재 정본에서 분기하고 단일 STATE의 active_branch를 명시적으로 인계한다.
