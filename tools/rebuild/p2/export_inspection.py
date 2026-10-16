@@ -50,7 +50,8 @@ def main():
         # Editor settings need only non-secret tool locations; key stays in env.
         settings.write_text('[gd_resource type="EditorSettings" format=3]\n\n[resource]\n'
                             'export/android/java_sdk_path = "/usr/lib/jvm/java-21-openjdk-amd64"\n'
-                            'export/android/android_sdk_path = "/workspace/p2-private/toolchain/android-sdk"\n')
+                            'export/android/android_sdk_path = "/workspace/p2-private/toolchain/android-sdk"\n'
+                            'export/android/shutdown_adb_on_exit = false\n')
     suffix = ".exe" if args.target == "Windows" else ".apk"
     output = args.output_dir / ("baram-p2-inspection" + suffix)
     def source_snapshot():

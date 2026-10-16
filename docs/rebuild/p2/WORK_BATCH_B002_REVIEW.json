@@ -1,0 +1,1395 @@
+{
+  "schema": "baram.p2.work_batch_review/1",
+  "status": "DEFERRED",
+  "metadata_result": "PASS",
+  "private_payload_result": "NOT_RUN_MISSING_BYTES",
+  "adoption": "NOT_STARTED",
+  "adopted_fields": [],
+  "exercised_fields": [],
+  "errors": [],
+  "blockers": [
+    "Original private batch ZIP is not available at an explicit local path; Library ID is not bytes.",
+    "Metadata-only review cannot establish receipt; heterogeneous private record/value/source dependency contracts need a separate complete validation.",
+    "Original selected record bytes are required to validate the reference closure.",
+    "Frozen dependency private bytes/G0 scope are not verified in this receiver."
+  ],
+  "batch_id": "B002",
+  "work_commit": "a74f4dd5322c67ec5ab5ee2b49d9f08299846f49",
+  "historical_accuracy": "NOT_ASSESSED",
+  "runtime": "NOT_RUN",
+  "metadata_files": {
+    "manifest": {
+      "bytes": 11568,
+      "sha256": "d965e4041ca0eccfd4d689510679a0e96fbb5483ed4ab986b8cea689397aa89d"
+    },
+    "ready": {
+      "bytes": 1163,
+      "sha256": "33757ccfb66c9f5cc7e048947fdb7a0f402a750af4c6f5e9b4fd4417bae9ce2b"
+    },
+    "validation": {
+      "bytes": 3081,
+      "sha256": "d2da645ed028098bde5e968331c4dbc031edaa4b9e332f4466cd94536f426e2f"
+    },
+    "candidates": {
+      "bytes": 665689,
+      "sha256": "4e6f5ac1f4d1ef2c9c4ef0cc02e5123f441dd4c19ba0b65ac29eccb28eddd025"
+    }
+  },
+  "review_mode": "METADATA_ONLY_NO_RECEIPT",
+  "candidate_metadata_result": "PASS_SHARED_FIELDS_AND_DECLARED_LOCATORS_ONLY",
+  "candidate_reference_contract_result": "NOT_RUN_HETEROGENEOUS_PRIVATE_REFERENCE_CONTRACTS",
+  "candidate_schema_counts": {
+    "UNDECLARED": 150,
+    "baram.work.field-candidate/1": 4
+  },
+  "candidate_contract_issues": [
+    {
+      "candidate_id": "WDELTA-NA-SPOTTRAPS-CONFLICT",
+      "issue": "expected existing value/hash contract is absent"
+    }
+  ],
+  "candidate_checks": [
+    {
+      "candidate_id": "WSD-GE-25c99f917c506e83",
+      "field": "monster.ai.aggression",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-d26a6120993e9b12",
+      "field": "monster.ai.flee_condition",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-09cddacd710bd5bc",
+      "field": "monster.ai.attack_behavior",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-e75d3ee3fb7082ec",
+      "field": "monster.ai.named_spell",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-74a5ca57affaaed4",
+      "field": "monster.ai.named_spell",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-ba6f4684cc375a97",
+      "field": "monster.ai.attack_behavior",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-cb9947fe0f0598f2",
+      "field": "monster.ai.attack_behavior",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-4c41733813888dcf",
+      "field": "monster.ai.area_attack_description",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-da7af7402e8e9b72",
+      "field": "monster.ai.area_attack_description",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-540e291efdb04ff1",
+      "field": "monster.ai.area_attack_description",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-776b5e9267d097e6",
+      "field": "monster.ai.area_attack_description",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-0067bd445cfc14c7",
+      "field": "monster.ai.area_attack_description",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-c1c3fda7794cdb56",
+      "field": "monster.ai.aggression",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-9a07d527ff7a3450",
+      "field": "monster.ai.flee_condition",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-35c6a8a8878ad066",
+      "field": "monster.ai.attack_behavior",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-b84cfce1a142ba85",
+      "field": "monster.ai.named_spell",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-64d679d085a43228",
+      "field": "monster.ai.named_spell",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-34a6e202dcd99754",
+      "field": "monster.ai.attack_behavior",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-43d8d0ce9c56f3d4",
+      "field": "monster.ai.attack_behavior",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-b9fc67b40d324267",
+      "field": "monster.ai.area_attack_description",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-dc5fba1914d5f247",
+      "field": "monster.ai.area_attack_description",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-6f86de484e5fbd32",
+      "field": "monster.ai.area_attack_description",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-ec417daeeab1d97f",
+      "field": "monster.ai.area_attack_description",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-43833175a615e90c",
+      "field": "monster.ai.area_attack_description",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-14218e53e65b4825",
+      "field": "shop.stock_relation.npc_sells.동동주",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-4713170d774028f8",
+      "field": "shop.stock_relation.npc_sells.노란비서",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-95d3011844cf2c1b",
+      "field": "shop.stock_relation.npc_sells.막걸리",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-1c6b788b3066d731",
+      "field": "shop.stock_relation.npc_sells.파란색반지",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-274e1796305e8e41",
+      "field": "shop.stock_relation.npc_sells.보라색반지",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-0f326f104eb844f9",
+      "field": "shop.stock_relation.npc_sells.흑심반지",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-eac8bc9cde0eb823",
+      "field": "shop.stock_relation.npc_sells.퇴마반지",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-5b02e008661d4c51",
+      "field": "shop.stock_relation.npc_sells.붉은색반지",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-9816a070708ca14b",
+      "field": "shop.stock_relation.npc_sells.파란열쇠",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-4b2fc4610735d20f",
+      "field": "shop.stock_relation.npc_buys_only.호박",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-1111a61aab0288b1",
+      "field": "shop.stock_relation.npc_buys_only.진호박",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-9edb962f3679370c",
+      "field": "shop.stock_relation.npc_sells.목검",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-5f777afebeab51ca",
+      "field": "shop.stock_relation.npc_sells.사두목도",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-aefb9f2d91311532",
+      "field": "shop.stock_relation.npc_sells.사두목검",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-242cab442a6d793b",
+      "field": "shop.stock_relation.npc_sells.도씨검",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-18ff83dbd8674d9c",
+      "field": "shop.stock_relation.npc_sells.장창",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-424aa07f83138812",
+      "field": "shop.stock_relation.npc_sells.활",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-eb70def11db3a29b",
+      "field": "shop.stock_relation.npc_sells.나무화살통",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-eed875496ba37987",
+      "field": "shop.stock_relation.npc_sells.나무방패",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-78ebc5448d9eea51",
+      "field": "shop.stock_relation.npc_sells.선류",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 3,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-1722f6a29d9d68eb",
+      "field": "shop.stock_relation.npc_sells.속삭임팔지",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-3e3654bb915e2826",
+      "field": "shop.stock_relation.npc_sells.현철장갑",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 3,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-6748eb75ef684f1b",
+      "field": "shop.stock_relation.npc_sells.진마반지",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 3,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-61bb390b2341732a",
+      "field": "shop.stock_relation.npc_buys_only.철단도",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-2d3ef5c34438281b",
+      "field": "shop.stock_relation.npc_buys_only.야월도",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-7efd1edebf1b395b",
+      "field": "shop.stock_relation.npc_buys_only.철도",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-ab51ce220d0ef08c",
+      "field": "shop.stock_relation.npc_buys_only.철검",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-8c3d2d9e4a69bc22",
+      "field": "shop.stock_relation.npc_buys_only.현철중검",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-1b4ea035338c2b59",
+      "field": "shop.stock_relation.npc_buys_only.해골죽장",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-d5e0b807cad1e215",
+      "field": "shop.stock_relation.npc_buys_only.영혼마령봉",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-ff9ac8556ce905d4",
+      "field": "shop.stock_relation.npc_sells.노란시약",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-ade70464d2ec7ac8",
+      "field": "shop.stock_relation.npc_sells.파란시약",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-564da147d4210f52",
+      "field": "shop.stock_relation.npc_sells.보라시약",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-d57fe3379cbd64ad",
+      "field": "shop.stock_relation.npc_sells.갈색시약",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-fb7f86f78ec96043",
+      "field": "shop.stock_relation.npc_sells.빨간시약",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-92a9bfe8daae8a1a",
+      "field": "shop.stock_relation.npc_sells.초록시약",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-3c3f30a492f10897",
+      "field": "shop.stock_relation.npc_sells.청색시약",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-9b8700f605f51421",
+      "field": "shop.stock_relation.npc_sells.하얀시약",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-bfd0c42394e0b54e",
+      "field": "shop.stock_relation.npc_sells.철단도",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-ef78927b690841f6",
+      "field": "shop.stock_relation.npc_sells.철도",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-db3895e3c2a512af",
+      "field": "shop.stock_relation.npc_sells.승선권",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-8967b76ceae160c8",
+      "field": "shop.stock_relation.npc_sells.1등승선권",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-a2dab8412fa6b415",
+      "field": "shop.stock_relation.npc_sells.동동주",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-996db3cf32f99137",
+      "field": "shop.stock_relation.npc_sells.노란비서",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-f29978cb87597287",
+      "field": "shop.stock_relation.npc_sells.막걸리",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-93a21bf2f6768d08",
+      "field": "shop.stock_relation.npc_sells.파란색반지",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-247abebcdd8b40e1",
+      "field": "shop.stock_relation.npc_sells.보라색반지",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-eec0e02479c23da7",
+      "field": "shop.stock_relation.npc_sells.흑심반지",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-b6f4ac35b13218ca",
+      "field": "shop.stock_relation.npc_sells.퇴마반지",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-5d6a39b6dac9eeaa",
+      "field": "shop.stock_relation.npc_sells.붉은색반지",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 3,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-ea174fad00bb3c3a",
+      "field": "shop.stock_relation.npc_sells.파란열쇠",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-8b16b885a857cac5",
+      "field": "shop.stock_relation.npc_buys_only.호박",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-094bf2321416840e",
+      "field": "shop.stock_relation.npc_buys_only.진호박",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-c1639c1e134df71a",
+      "field": "shop.stock_relation.npc_sells.목검",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-8332f9cd02b0121b",
+      "field": "shop.stock_relation.npc_sells.사두목도",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-fc43f3e154348d71",
+      "field": "shop.stock_relation.npc_sells.사두목검",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-197e13972ace9af7",
+      "field": "shop.stock_relation.npc_sells.도씨검",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-9715e0381e06091a",
+      "field": "shop.stock_relation.npc_sells.장창",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-a38b1ffdfa849b56",
+      "field": "shop.stock_relation.npc_buys_only.철단도",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-6a8e1ca74fdd1e9f",
+      "field": "shop.stock_relation.npc_buys_only.야월도",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-8a2a622688792560",
+      "field": "shop.stock_relation.npc_buys_only.철도",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-c11ce9ff1b24475f",
+      "field": "shop.stock_relation.npc_buys_only.철검",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-bc16aaef459d83a6",
+      "field": "shop.stock_relation.npc_buys_only.현철중검",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-43e148a7f4b962a1",
+      "field": "shop.stock_relation.npc_buys_only.해골죽장",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-fa0413c3cfbd7e05",
+      "field": "shop.stock_relation.npc_buys_only.영혼마령봉",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-1390b0944821e2a6",
+      "field": "shop.stock_relation.npc_sells.노란시약",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-e151f83afd89eac4",
+      "field": "shop.stock_relation.npc_sells.파란시약",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-246ba8b69df8b4e4",
+      "field": "shop.stock_relation.npc_sells.보라시약",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-23fabd92896e3cbb",
+      "field": "shop.stock_relation.npc_sells.갈색시약",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-a75d3bad9baa5dfa",
+      "field": "shop.stock_relation.npc_sells.빨간시약",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-363e6cb2d319540b",
+      "field": "shop.stock_relation.npc_sells.초록시약",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-40c9727f5a219e49",
+      "field": "shop.stock_relation.npc_sells.청색시약",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-21ce00e35bff99de",
+      "field": "shop.stock_relation.npc_sells.하얀시약",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-87d5836f12f78fc9",
+      "field": "shop.stock_relation.npc_sells.철단도",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-21c1079139e3d0d8",
+      "field": "shop.stock_relation.npc_sells.철도",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-5025dfa8762cf432",
+      "field": "skill.learning.teacher_and_material_relations",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 4,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-8cb09e70065f6dde",
+      "field": "skill.learning.teacher_and_material_relations",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 4,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-4374b71ea7f0f5a6",
+      "field": "skill.learning.teacher_and_material_relations",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 4,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-0fa074332f6ad3bd",
+      "field": "skill.learning.teacher_and_material_relations",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 4,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-9b4b6ff9df1a8506",
+      "field": "skill.learning.teacher_and_material_relations",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 4,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-5a86ad446a1348f3",
+      "field": "skill.learning.teacher_and_material_relations",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 4,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-f278341f784f2b85",
+      "field": "skill.learning.teacher_and_material_relations",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 4,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-82070c09e89cf2f7",
+      "field": "skill.learning.teacher_and_material_relations",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 4,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-8a0dac694cd421ec",
+      "field": "item.listed_price.same_profile_conflict",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-41eb25f4781ad73d",
+      "field": "craft.npc_location_to_named_service_candidate",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-6fea4155a1c220d5",
+      "field": "craft.npc_location_to_named_service_candidate",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-a0564e23a214bf63",
+      "field": "craft.npc_location_to_named_service_candidate",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-2b6e5fafbfbc181e",
+      "field": "craft.npc_location_to_named_service_candidate",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-1ef46d7ebf6c7003",
+      "field": "monster.drop_item_relation.도토리",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-c9a015104c2c9b96",
+      "field": "monster.drop_item_relation.토끼고기",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-bbc8e67615b219d7",
+      "field": "monster.drop_item_relation.쥐고기",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-fae06cc435ba8758",
+      "field": "monster.drop_item_relation.산삼",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-5a111aebaa1ae4ba",
+      "field": "monster.drop_item_relation.좋은뱀고기",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-34bf0539f834eaa0",
+      "field": "monster.drop_item_relation.호랑이가죽",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-8540b744ed4a7e08",
+      "field": "monster.drop_item_relation.여우모피",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-c124f48f31198964",
+      "field": "monster.drop_item_relation.도토리",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-8e1f35c484390042",
+      "field": "monster.drop_item_relation.토끼고기",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-8d311d4aa9837b2e",
+      "field": "monster.drop_item_relation.쥐고기",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-a60ca879a498a152",
+      "field": "monster.drop_item_relation.산삼",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-4dee608ce8bf6196",
+      "field": "monster.drop_item_relation.좋은뱀고기",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-bc3392ba604d365b",
+      "field": "monster.drop_item_relation.호랑이가죽",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WSD-GE-4bc2d66ac3a575f4",
+      "field": "monster.drop_item_relation.여우모피",
+      "profile_id": "KR_GUIDE_2001_SNAPSHOT",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WD-MN-001",
+      "field": "map.reference_identity_and_profile_constraint",
+      "profile_id": "UNRESOLVED_POSSIBLE_KR_4_70_NEW_GUKNAE",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WD-MN-002",
+      "field": "npc.named_screenshot_appearance",
+      "profile_id": "KR_GUIDE_2001_SCREENSHOT_REFERENCE",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WD-MN-003",
+      "field": "npc.dialogue.transaction_result_branch",
+      "profile_id": "KR_GUIDE_2001_SCREENSHOT_REFERENCE",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WD-MN-004",
+      "field": "npc.resurrection_attendant_screen_appearance",
+      "profile_id": "KR_GUIDE_2001_SCREENSHOT_REFERENCE",
+      "original_record_references": 2,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "SD-UI-001",
+      "field": "ui.connection_setup.documented_methods",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 0,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "SD-UI-002",
+      "field": "ui.historical_agreement.documented_keys",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 0,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "SD-UI-003",
+      "field": "ui.main_menu.documented_actions",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 0,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "SD-UI-004",
+      "field": "ui.main_menu.visible_actions",
+      "profile_id": "KR_PRESS_IMAGE_CLAIMED_2001_UNCONFIRMED",
+      "original_record_references": 0,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "SD-UI-005",
+      "field": "tutorial.documented_initial_gifts",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 0,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "SD-UI-006",
+      "field": "resurrection.documented_player_commands.target_era_corroboration",
+      "profile_id": "KR_GUIDE_2000_SNAPSHOT",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "SD-ARC-001",
+      "field": "reference.museum1996.input_era_mix",
+      "profile_id": "REFERENCE_2014_RESTORATION_ONLY",
+      "original_record_references": 0,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "SD-ARC-002",
+      "field": "reference.museum1996.map_delivery_history",
+      "profile_id": "REFERENCE_2014_RESTORATION_ONLY",
+      "original_record_references": 0,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "SD-ARC-003",
+      "field": "reference.museum1996.creation_save_scope",
+      "profile_id": "REFERENCE_2014_RESTORATION_ONLY",
+      "original_record_references": 0,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "SD-ARC-004",
+      "field": "source_catalog.guidebook.edition_disambiguation",
+      "profile_id": "BIBLIOGRAPHY_ONLY_NO_GAME_ADOPTION",
+      "original_record_references": 0,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WDELTA-NA-GRANT-blood_oath",
+      "field": "NA_reference.skill.acquisition_route",
+      "profile_id": "NA_REFERENCE_ONLY",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WDELTA-NA-GRANT-fascinate",
+      "field": "NA_reference.skill.acquisition_route",
+      "profile_id": "NA_REFERENCE_ONLY",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WDELTA-NA-GRANT-fissure",
+      "field": "NA_reference.skill.acquisition_route",
+      "profile_id": "NA_REFERENCE_ONLY",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WDELTA-NA-GRANT-greater_blessing",
+      "field": "NA_reference.skill.acquisition_route",
+      "profile_id": "NA_REFERENCE_ONLY",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WDELTA-NA-GRANT-lava_surge",
+      "field": "NA_reference.skill.acquisition_route",
+      "profile_id": "NA_REFERENCE_ONLY",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WDELTA-NA-GRANT-magis_bane",
+      "field": "NA_reference.skill.acquisition_route",
+      "profile_id": "NA_REFERENCE_ONLY",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WDELTA-NA-GRANT-propose",
+      "field": "NA_reference.skill.acquisition_route",
+      "profile_id": "NA_REFERENCE_ONLY",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WDELTA-NA-GRANT-restore_poet",
+      "field": "NA_reference.skill.acquisition_route",
+      "profile_id": "NA_REFERENCE_ONLY",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WDELTA-NA-GRANT-sages_wisdom",
+      "field": "NA_reference.skill.acquisition_route",
+      "profile_id": "NA_REFERENCE_ONLY",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WDELTA-NA-GRANT-serpents_fury",
+      "field": "NA_reference.skill.acquisition_route",
+      "profile_id": "NA_REFERENCE_ONLY",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WDELTA-NA-GRANT-spirit_fury",
+      "field": "NA_reference.skill.acquisition_route",
+      "profile_id": "NA_REFERENCE_ONLY",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WDELTA-NA-GRANT-spot_traps",
+      "field": "NA_reference.skill.acquisition_route",
+      "profile_id": "NA_REFERENCE_ONLY",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WDELTA-NA-GRANT-survive",
+      "field": "NA_reference.skill.acquisition_route",
+      "profile_id": "NA_REFERENCE_ONLY",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WDELTA-NA-SPOTTRAPS-CONFLICT",
+      "field": "NA_reference.source_comment_conflict",
+      "profile_id": "NA_REFERENCE_ONLY",
+      "original_record_references": 1,
+      "status": "DEFERRED"
+    }
+  ],
+  "zip_identity": {
+    "bytes": 613492,
+    "sha256": "dc87687e7260ee4f0c3777bbb46559a67be64f7050195baf6650a29d1c068aee",
+    "library_file_id": "libfile_b231096282808191bd9f316beec877a2",
+    "file_id": "file_000000004ac08207ac644451b42ece4e",
+    "version": 0
+  },
+  "payload_manifest_files": 28,
+  "accessible_payload_files": [
+    "FIELD_CANDIDATES.jsonl"
+  ],
+  "unverified_original_record_ids": [
+    "KRF-17ed0cbff8f6",
+    "KRF-4a1ba1ed80ac",
+    "KRF-RECON-03768ebe",
+    "KRF-WEB-37d74fcbae90",
+    "KRO-00f1f40120ac",
+    "KRO-041db4baede3",
+    "KRO-054376a9f92f",
+    "KRO-08d83d407de7",
+    "KRO-16eb3b63f989",
+    "KRO-1898c8bc65cc",
+    "KRO-199145f0bd77",
+    "KRO-1cc960f8ce26",
+    "KRO-22acacb29670",
+    "KRO-2dce0e579156",
+    "KRO-32c49870aa62",
+    "KRO-37b755a5e11f",
+    "KRO-38ba575c8b27",
+    "KRO-4378a6f36105",
+    "KRO-482209e22208",
+    "KRO-4a91c215e7ac",
+    "KRO-4eeca26285d6",
+    "KRO-505b83a56a47",
+    "KRO-50723002e976",
+    "KRO-5efc25af2a75",
+    "KRO-5fbc423f45db",
+    "KRO-62769e97ce90",
+    "KRO-6ced730ed9ad",
+    "KRO-77f964c0bd64",
+    "KRO-7cef8b821a95",
+    "KRO-85cc6d558ac8",
+    "KRO-94c6bc6e84e3",
+    "KRO-9653b6bbccad",
+    "KRO-9724eea81dee",
+    "KRO-98883128f7f6",
+    "KRO-CRAFTING_FACT-9e6e75d2e58199",
+    "KRO-CRAFTING_FACT-a11765c7fd818b",
+    "KRO-CRAFTING_FACT-c7847b35199d87",
+    "KRO-CRAFTING_FACT-e682100c0f6cc3",
+    "KRO-FACILITY_RULE-133650edd6c0f5",
+    "KRO-FULLMAP-0579ce2fedc9",
+    "KRO-ITEM-02355e84ae561f",
+    "KRO-ITEM-04af8a08c8c394",
+    "KRO-ITEM-098b85bee3a0a4",
+    "KRO-ITEM-13da4dcfe86a58",
+    "KRO-ITEM-141bfbda2f619e",
+    "KRO-ITEM-15c4f0954a473c",
+    "KRO-ITEM-1ae41a48775a4e",
+    "KRO-ITEM-1d5574097ab45e",
+    "KRO-ITEM-1d7357803df70f",
+    "KRO-ITEM-1dd4e3b9da6021",
+    "KRO-ITEM-1ec5d43f9e157e",
+    "KRO-ITEM-2176666d61b645",
+    "KRO-ITEM-223fba1b23b5a9",
+    "KRO-ITEM-29c43190955429",
+    "KRO-ITEM-2b6b677bc808ba",
+    "KRO-ITEM-31d1b3cb170b4c",
+    "KRO-ITEM-32903d69e30a35",
+    "KRO-ITEM-34e9f650ef1811",
+    "KRO-ITEM-36784e3c1f04bb",
+    "KRO-ITEM-3803a2f2e0787e",
+    "KRO-ITEM-38d0ec4ac11018",
+    "KRO-ITEM-3b04b7499f264f",
+    "KRO-ITEM-3c0ec0ac85f153",
+    "KRO-ITEM-3c3cfefb4f7845",
+    "KRO-ITEM-3f34561eac62eb",
+    "KRO-ITEM-49f6bc1917881e",
+    "KRO-ITEM-4c60f6e3df3f94",
+    "KRO-ITEM-4f108a7d324f93",
+    "KRO-ITEM-57354408935aa8",
+    "KRO-ITEM-5f5f0a6736e6fa",
+    "KRO-ITEM-60c592956f64a6",
+    "KRO-ITEM-62b3e495ba4fb5",
+    "KRO-ITEM-679dd7667d6366",
+    "KRO-ITEM-77223e0ca1e7ce",
+    "KRO-ITEM-78ea59bb3a7eca",
+    "KRO-ITEM-796e2a7fa45753",
+    "KRO-ITEM-860a0f3fc0e42d",
+    "KRO-ITEM-860d4620523011",
+    "KRO-ITEM-87a422f19a77b2",
+    "KRO-ITEM-89a184f51172c1",
+    "KRO-ITEM-8e2a72563c04d1",
+    "KRO-ITEM-95f75397b550eb",
+    "KRO-ITEM-963644fd8c55d5",
+    "KRO-ITEM-9f2490f8ea3721",
+    "KRO-ITEM-a88d59f585f972",
+    "KRO-ITEM-b066890327dadb",
+    "KRO-ITEM-b40c443bd81b85",
+    "KRO-ITEM-b8f400cc8c0850",
+    "KRO-ITEM-bdceac449fa554",
+    "KRO-ITEM-bfdd1e3a64251e",
+    "KRO-ITEM-c4869f5e4594eb",
+    "KRO-ITEM-c50c8bda39116a",
+    "KRO-ITEM-c773d6b6702c2a",
+    "KRO-ITEM-cafa0926dece9e",
+    "KRO-ITEM-ce8f038437e94b",
+    "KRO-ITEM-d014479f98a86d",
+    "KRO-ITEM-d0b4a16f597b1a",
+    "KRO-ITEM-d123784ca86cb4",
+    "KRO-ITEM-d534d8a3ea4617",
+    "KRO-ITEM-d7931c882422cc",
+    "KRO-ITEM-dc6c27cd8a694f",
+    "KRO-ITEM-dc822fd0c5349b",
+    "KRO-ITEM-de000518c7a9df",
+    "KRO-ITEM-e1205485ae624d",
+    "KRO-ITEM-e794148b44be93",
+    "KRO-ITEM-ee43eaf607ccb4",
+    "KRO-ITEM-efaf40fee73355",
+    "KRO-ITEM-f108232fc11fcc",
+    "KRO-ITEM-f24d784a10dba6",
+    "KRO-ITEM-f4f3fa56f4e52c",
+    "KRO-ITEM-f5fee1033a530a",
+    "KRO-ITEM-f753979bbe3681",
+    "KRO-ITEM-f88f0222dbf6c3",
+    "KRO-ITEM-f8c50c889d9af0",
+    "KRO-ITEM-fa8ba5aef38eba",
+    "KRO-ITEM-fc2e3568a13a64",
+    "KRO-ITEM-fd00120152e9c2",
+    "KRO-NPC_SERVICE-046a4ac7528cae",
+    "KRO-NPC_SERVICE-09df887c0d7548",
+    "KRO-NPC_SERVICE-1e329bf1dc2165",
+    "KRO-NPC_SERVICE-1fbe93b95e5d54",
+    "KRO-NPC_SERVICE-22182d98f2bc40",
+    "KRO-NPC_SERVICE-282fc0be464fb9",
+    "KRO-NPC_SERVICE-29e1935576a175",
+    "KRO-NPC_SERVICE-42b4704cb5c0d5",
+    "KRO-NPC_SERVICE-5682e7142da760",
+    "KRO-NPC_SERVICE-79cb83cdf4c0e6",
+    "KRO-NPC_SERVICE-98617ef3aca2e2",
+    "KRO-NPC_SERVICE-995b7d5128887e",
+    "KRO-NPC_SERVICE-adeaf8a2412aa3",
+    "KRO-NPC_SERVICE-b1176f92bc9e27",
+    "KRO-NPC_SERVICE-b7fece6cc5c363",
+    "KRO-NPC_SERVICE-bf0ec9fee08fbb",
+    "KRO-NPC_SERVICE-c46a2b99182345",
+    "KRO-NPC_SERVICE-d276c50324a779",
+    "KRO-NPC_SERVICE-d7de587b4e9f3c",
+    "KRO-NPC_SERVICE-e8259feff0590d",
+    "KRO-NPC_SERVICE-eca095426bbba5",
+    "KRO-NPC_SERVICE-ee36fbbe494748",
+    "KRO-NPC_SERVICE-fb21a655dc2c1f",
+    "KRO-NPC_SERVICE-fc94e72aaceac4",
+    "KRO-a278e4d3cd81",
+    "KRO-b1a220f4f597",
+    "KRO-b8dd4e0302ec",
+    "KRO-bf616d6ac863",
+    "KRO-c94649259a86",
+    "KRO-cd25270124f9",
+    "KRO-d15a9ee826b3",
+    "KRO-d21397899bf0",
+    "KRO-dc9d892db2fe",
+    "KRO-e10c576fba91",
+    "KRO-e3632e9450cc",
+    "KRO-e862d35895b2",
+    "KRO-f26f77613d89",
+    "KRO-f5ba0fc93f3f",
+    "NA-RTK-SQL-Spells-O1959068",
+    "NA-RTK-SQL-Spells-O1959193",
+    "NA-RTK-SQL-Spells-O1959307",
+    "NA-RTK-SQL-Spells-O1959361",
+    "NA-RTK-SQL-Spells-O1989544",
+    "NA-RTK-SQL-Spells-O2000121",
+    "NA-RTK-SQL-Spells-O2007196",
+    "NA-RTK-SQL-Spells-O2007266",
+    "NA-RTK-SQL-Spells-O2007342",
+    "NA-RTK-SQL-Spells-O2007411",
+    "NA-RTK-SQL-Spells-O2007484",
+    "NA-RTK-SQL-Spells-O2007547",
+    "NA-RTK-SQL-Spells-O2007621"
+  ],
+  "missing_private_files": [
+    "README.md",
+    "SOURCES.jsonl",
+    "archives_ui/payload/download.html",
+    "archives_ui/payload/existing_source_excerpt.jsonl",
+    "archives_ui/payload/ndc2014_0080.html",
+    "archives_ui/payload/ndc2016_0082.html",
+    "archives_ui/payload/nlbib23946242.html",
+    "archives_ui/payload/nlbib25737613.html",
+    "archives_ui/payload/oasis_total_name.html",
+    "archives_ui/payload/press_login2001.html",
+    "archives_ui/payload/press_login2001.jpg",
+    "archives_ui/payload/transcript_locators.json",
+    "archives_ui/payload/ui_ba_01.gif",
+    "archives_ui/payload/ui_ba_02.gif",
+    "archives_ui/payload/ui_ba_03.gif",
+    "archives_ui/payload/ui_ba_04.gif",
+    "archives_ui/payload/yes2001.html",
+    "audit/B001_EVIDENCE_RECHECK.json",
+    "audit/B001_INDEPENDENT_AUDIT.json",
+    "audit/EVIDENCE_GUARD_REGRESSION.json",
+    "audit/GAMEPLAY_ECONOMY_INDEPENDENT_AUDIT.json",
+    "gameplay_economy/field_candidates.private.jsonl",
+    "maps_npc/additional_receipts.json",
+    "maps_npc/cdx_exact_2.json",
+    "maps_npc/cdx_exact_receipts.json",
+    "maps_npc/semantic_records.jsonl",
+    "na_reference/grant_routes.json"
+  ],
+  "execution": {
+    "code_sha_at_execution": "c6ee7d660a32e155388d54366a81655ffd49d97c",
+    "python": "3.12.14",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "command": [
+      "python3",
+      "tools/rebuild/p2/receive_work_batch.py",
+      "--manifest",
+      "/workspace/p2-private/work-batches/B002-public/handoff/B002/MANIFEST.json",
+      "--ready",
+      "/workspace/p2-private/work-batches/B002-public/handoff/B002/READY.md",
+      "--validation",
+      "/workspace/p2-private/work-batches/B002-public/handoff/B002/VALIDATION.json",
+      "--candidates",
+      "/workspace/p2-private/work-batches/B002-public/FIELD_CANDIDATES.jsonl",
+      "--policy",
+      "/workspace/p2-private/work-batches/B002-public/RECEIVER_POLICY.json"
+    ],
+    "exit_code": 2,
+    "private_log": "/workspace/p2-private/logs/work-receiver/B002-review.log",
+    "policy_private_path": "/workspace/p2-private/work-batches/B002-public/RECEIVER_POLICY.json",
+    "policy_sha256": "51e6b9eff182e37649f0251ac4529a3b7a9ef8c0279fc9052ef6853cd4a465ff",
+    "receiver_source_sha256": "8538843949b58926941c00e37e3405d75fe9b646b88a90fa0a28c3efd590bb16"
+  },
+  "guard_tests": {
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools/rebuild/p2",
+      "-p",
+      "test_receive_work_batch.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "tests": 42,
+    "scope": "Synthetic receiver rejection guards, metadata-only nonreceipt and cache invalidation only; not original data or runtime P2 PASS.",
+    "private_log": "/workspace/p2-private/logs/work-receiver/tests-B002-metadata-mode.log"
+  },
+  "public_candidate_selection": {
+    "work_commit": "a74f4dd5322c67ec5ab5ee2b49d9f08299846f49",
+    "source_path": "content-work/rebuild-source-delta-20261016/field_candidates.jsonl",
+    "all_public_rows": 159,
+    "batch_manifest_candidate_ids": 154,
+    "selection": "Preserve original JSONL byte lines whose candidate_id belongs to B002 manifest; exact resulting byte length and SHA256 match B002 FIELD_CANDIDATES.jsonl pin.",
+    "result": "PASS_PUBLIC_METADATA_BYTES_ONLY"
+  },
+  "work_state_pin": {
+    "bytes": 4191,
+    "sha256": "62234eef67d27ffba4117e2de2ddb5a80d49d7673ff0ebf5f84c33247ea3cd2c",
+    "zip_identity_crosscheck": "READY and published_batches B002 match independently supplied file ID/version/length/SHA256."
+  }
+}

@@ -1,0 +1,487 @@
+{
+  "schema": "baram.p2.platform_capabilities/1",
+  "task_id": "BARAM_REBUILD_CODEX_P2_001",
+  "observed_at_utc": "2026-10-16T02:14:40Z",
+  "scope": "Capability observations only; installation, export, native execution, IME and Galaxy gameplay require separate run evidence.",
+  "probe_sha256": "498da94e53f86f7c87d9be47f972e19e3e59d01791c3142b5efdb6709f50f1e0",
+  "code_sha_receipt": {
+    "command": [
+      "git",
+      "-C",
+      "/workspace/baram-p2-codex",
+      "rev-parse",
+      "HEAD"
+    ],
+    "resolved_path": "/usr/local/bin/git",
+    "status": "AVAILABLE",
+    "exit_code": 0,
+    "duration_ms": 2,
+    "output": "5e522f4ad2e534c24c04ebc8e6e60e11adf0dfc9",
+    "output_truncated": false
+  },
+  "system": {
+    "os": "Linux",
+    "machine": "x86_64",
+    "release": "6.18.44",
+    "cpus": 5,
+    "memory_bytes": {
+      "MemTotal": 35743784960,
+      "MemAvailable": 32171347968
+    },
+    "workspace_free_bytes": 19789553664
+  },
+  "tools": {
+    "godot": {
+      "command": [
+        "godot",
+        "--version"
+      ],
+      "resolved_path": "/usr/local/bin/godot",
+      "status": "AVAILABLE",
+      "exit_code": 0,
+      "duration_ms": 25,
+      "output": "4.6.3.stable.official.7d41c59c4",
+      "output_truncated": false
+    },
+    "java": {
+      "command": [
+        "java",
+        "-version"
+      ],
+      "resolved_path": "/usr/bin/java",
+      "status": "AVAILABLE",
+      "exit_code": 0,
+      "duration_ms": 32,
+      "output": "openjdk version \"21.0.12.1\" 2026-08-18\nOpenJDK Runtime Environment (build 21.0.12.1+1-1-deb13u1-Debian)\nOpenJDK 64-Bit Server VM (build 21.0.12.1+1-1-deb13u1-Debian, mixed mode, sharing)",
+      "output_truncated": false
+    },
+    "javac": {
+      "command": [
+        "javac",
+        "-version"
+      ],
+      "status": "UNAVAILABLE",
+      "exit_code": null
+    },
+    "gradle": {
+      "command": [
+        "gradle",
+        "--version"
+      ],
+      "status": "UNAVAILABLE",
+      "exit_code": null
+    },
+    "adb": {
+      "command": [
+        "adb",
+        "version"
+      ],
+      "status": "UNAVAILABLE",
+      "exit_code": null
+    },
+    "emulator": {
+      "command": [
+        "emulator",
+        "-version"
+      ],
+      "status": "UNAVAILABLE",
+      "exit_code": null
+    },
+    "sdkmanager": {
+      "command": [
+        "sdkmanager",
+        "--version"
+      ],
+      "status": "UNAVAILABLE",
+      "exit_code": null
+    },
+    "wine": {
+      "command": [
+        "wine",
+        "--version"
+      ],
+      "status": "UNAVAILABLE",
+      "exit_code": null
+    },
+    "dotnet": {
+      "command": [
+        "dotnet",
+        "--info"
+      ],
+      "status": "UNAVAILABLE",
+      "exit_code": null
+    },
+    "docker": {
+      "command": [
+        "docker",
+        "version",
+        "--format",
+        "{{.Client.Version}} {{if .Server}}{{.Server.Version}}{{end}}"
+      ],
+      "resolved_path": "/usr/local/bin/docker",
+      "status": "AVAILABLE",
+      "exit_code": 0,
+      "duration_ms": 24,
+      "output": "28.4.0 28.4.0",
+      "output_truncated": false
+    },
+    "ffmpeg": {
+      "command": [
+        "ffmpeg",
+        "-version"
+      ],
+      "resolved_path": "/usr/bin/ffmpeg",
+      "status": "AVAILABLE",
+      "exit_code": 0,
+      "duration_ms": 83,
+      "output": "ffmpeg version 7.1.5-0+deb13u1 Copyright (c) 2000-2026 the FFmpeg developers\nbuilt with gcc 14 (Debian 14.2.0-19)\nconfiguration: --prefix=/usr --extra-version=0+deb13u1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-libmfx --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared\nlibavutil      59. 39.100 / 59. 39.100\nlibavcodec     61. 19.101 / 61. 19.101\nlibavformat    61.  7.103 / 61.  7.103\nlibavdevice    61.  3.100 / 61.  3.100\nlibavfilter    10.  5.100 / 10.  5.100\nlibswscale      8.  3.100 /  8.  3.100\nlibswresample   5.  3.100 /  5.  3.100\nlibpostproc    58.  3.100 / 58.  3.100",
+      "output_truncated": false
+    },
+    "apksigner": {
+      "command": [
+        "apksigner",
+        "--version"
+      ],
+      "status": "UNAVAILABLE",
+      "exit_code": null
+    },
+    "Xvfb": {
+      "resolved_path": null,
+      "status": "UNAVAILABLE"
+    },
+    "xvfb-run": {
+      "resolved_path": null,
+      "status": "UNAVAILABLE"
+    },
+    "pulseaudio": {
+      "resolved_path": null,
+      "status": "UNAVAILABLE"
+    },
+    "pactl": {
+      "resolved_path": null,
+      "status": "UNAVAILABLE"
+    },
+    "keytool": {
+      "resolved_path": "/usr/bin/keytool",
+      "status": "AVAILABLE"
+    },
+    "jarsigner": {
+      "resolved_path": null,
+      "status": "UNAVAILABLE"
+    },
+    "zipalign": {
+      "resolved_path": null,
+      "status": "UNAVAILABLE"
+    },
+    "aapt2": {
+      "resolved_path": null,
+      "status": "UNAVAILABLE"
+    },
+    "private_wine": {
+      "command": [
+        "/workspace/p2-private/toolchain/debian-root/usr/lib/wine/wine64",
+        "--version"
+      ],
+      "resolved_path": "/workspace/p2-private/toolchain/debian-root/usr/lib/wine/wine64",
+      "status": "AVAILABLE",
+      "exit_code": 0,
+      "duration_ms": 2,
+      "output": "wine-10.0 (Debian 10.0~repack-6)",
+      "output_truncated": false
+    },
+    "private_emulator": {
+      "command": [
+        "/workspace/p2-private/toolchain/android-sdk/emulator/emulator",
+        "-version"
+      ],
+      "resolved_path": "/workspace/p2-private/toolchain/android-sdk/emulator/emulator",
+      "status": "AVAILABLE",
+      "exit_code": 0,
+      "duration_ms": 78,
+      "output": "Android emulator version 37.2.12.0 (build_id 16428233) (CL:N/A)\nCopyright (C) 2006-2024 The Android Open Source Project and many others.\nThis program is a derivative of the QEMU CPU emulator (www.qemu.org).\n\n  This software is licensed under the terms of the GNU General Public\n  License version 2, as published by the Free Software Foundation, and\n  may be copied, distributed, and modified under those terms.\n\n  This program is distributed in the hope that it will be useful,\n  but WITHOUT ANY WARRANTY; without even the implied warranty of\n  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n  GNU General Public License for more details.",
+      "output_truncated": false
+    },
+    "private_Xvfb": {
+      "path": "/workspace/p2-private/toolchain/debian-root/usr/bin/Xvfb",
+      "status": "AVAILABLE"
+    },
+    "selected_display": {
+      "command": [
+        "env",
+        "DISPLAY=:91",
+        "xdpyinfo"
+      ],
+      "resolved_path": "/usr/bin/env",
+      "status": "AVAILABLE",
+      "exit_code": 0,
+      "duration_ms": 4,
+      "output": "name of display:    :91\nversion number:    11.0\nvendor string:    The X.Org Foundation\nvendor release number:    12101016\nX.Org version: 21.1.16\nmaximum request size:  16777212 bytes\nmotion buffer size:  256\nbitmap unit, bit order, padding:    32, LSBFirst, 32\nimage byte order:    LSBFirst\nnumber of supported pixmap formats:    6\nsupported pixmap formats:\n    depth 1, bits_per_pixel 1, scanline_pad 32\n    depth 4, bits_per_pixel 8, scanline_pad 32\n    depth 8, bits_per_pixel 8, scanline_pad 32\n    depth 16, bits_per_pixel 16, scanline_pad 32\n    depth 24, bits_per_pixel 32, scanline_pad 32\n    depth 32, bits_per_pixel 32, scanline_pad 32\nkeycode range:    minimum 8, maximum 255\nfocus:  PointerRoot\nnumber of extensions:    23\n    BIG-REQUESTS\n    Composite\n    DAMAGE\n    DOUBLE-BUFFER\n    GLX\n    Generic Event Extension\n    MIT-SCREEN-SAVER\n    MIT-SHM\n    Present\n    RANDR\n    RECORD\n    RENDER\n    SECURITY\n    SHAPE\n    SYNC\n    X-Resource\n    XC-MISC\n    XFIXES\n    XINERAMA\n    XInputExtension\n    XKEYBOARD\n    XTEST\n    XVideo\ndefault screen number:    0\nnumber of screens:    1\n\nscreen #0:\n  dimensions:    1280x800 pixels (325x203 millimeters)\n  resolution:    100x100 dots per inch\n  depths (6):    24, 1, 4, 8, 16, 32\n  root window id:    0x21f\n  depth of root window:    24 planes\n  number of colormaps:    minimum 1, maximum 1\n  default colormap:    0x20\n  default number of colormap cells:    256\n  preallocated pixels:    black 0, white 16777215\n  options:    backing-store WHEN MAPPED, save-unders NO\n  largest cursor:    1280x800\n  current input event mask:    0x0\n  number of visuals:    100\n  default visual id:  0x21\n  visual:\n    visual id:    0x21\n    class:    TrueColor\n    depth:    24 planes\n    available colormap entries:    256 per subfield\n    red, green, blue masks:    0xff0000, 0xff00, 0xff\n    significant bits in color specification:    8 bits\n  visual:\n    visual id:    0x22\n    class:    DirectColor\n    depth:    24 planes\n    available colormap entries:    256 per subfield\n    red, green, blue masks:    0xff0000, 0xff00, 0xff\n    significant bits in color specification:    8 bits\n  visual:\n    visual id:    0x1bd\n    class:    TrueColor\n    depth:    24 planes\n    available colormap entries:    256 per subfield\n    red, green, blue masks:    0xff0000, 0xff00, 0xff\n    significant bits in color specification:    8 bits\n  visual:\n    visual id:    0x1be\n    class:    TrueColor\n    depth:    24 planes\n    available colormap entries:    256 per subfield\n    red, green, blue masks:    0xff0000, 0xff00, 0xff\n    significant bits in color specification:    8 bits\n  visual:\n    visual id:    0x1bf\n    class:    TrueColor\n    depth:    24 planes\n    available colormap entries:    256 per subfield\n    red, green, blue masks:    0xff0000, 0xff00, 0xff\n    significant bits in color specification:    8 bits\n  visual:\n    visual id:    0x1c0\n    class:    TrueColor\n    depth:    24 planes\n    available colormap entries:    256 per subfield\n    red, green, blue masks:    0xff0000, 0xff00, 0xff\n    significant bits in color specification:    8 bits\n  visual:\n    visual id:    0x1c1\n    class:    TrueColor\n    depth:    24 planes\n    available colormap entries:    256 per subfield\n    red, green, blue masks:    0xff0000, 0xff00, 0xff\n    significant bits in color specification:    8 bits\n  visual:\n    visual id:    0x1c2\n    class:    TrueColor\n    depth:    24 planes\n    available colormap entries:    256 per subfield\n    red, green, blue masks:    0xff0000, 0xff00, 0xff\n    significant bits in color specification:    8 bits\n  visual:\n    visual id:    0x1c3\n    class:    TrueColor\n    depth:    24 planes\n    available colormap entries:    256 per subfield\n    red, green, blue masks:    0xff0000, 0xff00, 0xff\n    significant bits in color specification:    8 bits\n  visual:\n    visual id:    0x1c4\n    class:    TrueColor\n    depth:    24 planes\n    available colormap entries:    256 per subfield\n    red, green, blue masks:   ",
+      "output_truncated": true
+    },
+    "/workspace/p2-private/toolchain/android-sdk/platform-tools/adb": {
+      "command": [
+        "/workspace/p2-private/toolchain/android-sdk/platform-tools/adb",
+        "version"
+      ],
+      "resolved_path": "/workspace/p2-private/toolchain/android-sdk/platform-tools/adb",
+      "status": "AVAILABLE",
+      "exit_code": 0,
+      "duration_ms": 2,
+      "output": "Android Debug Bridge version 1.0.41\nVersion 37.0.1-15733141\nInstalled as /workspace/p2-private/toolchain/android-sdk/platform-tools/adb\nRunning on Linux 6.18.44 (x86_64)",
+      "output_truncated": false
+    },
+    "/workspace/p2-private/toolchain/android-sdk/build-tools/35.0.1/apksigner": {
+      "command": [
+        "/workspace/p2-private/toolchain/android-sdk/build-tools/35.0.1/apksigner",
+        "--version"
+      ],
+      "resolved_path": "/workspace/p2-private/toolchain/android-sdk/build-tools/35.0.1/apksigner",
+      "status": "AVAILABLE",
+      "exit_code": 0,
+      "duration_ms": 56,
+      "output": "0.9",
+      "output_truncated": false
+    }
+  },
+  "toolchain_artifacts": [
+    {
+      "path": "/workspace/p2-private/toolchain/godot-4.6.3/SHA512-SUMS.txt",
+      "size_bytes": 4965,
+      "sha256": "5938e1c970f85affe74d5be5e1d50b8c681401e0798a99ee0daef5739f567254"
+    },
+    {
+      "path": "/workspace/p2-private/toolchain/godot-4.6.3/Godot_v4.6.3-stable_export_templates.tpz",
+      "size_bytes": 1255918323,
+      "sha256": "3fbe2c0e2dec9d537ab9ec97bcf8da91dcf23357fc51f67092dd068d839290a8"
+    },
+    {
+      "path": "/workspace/p2-private/toolchain/android-downloads/repository2-1.xml",
+      "size_bytes": 377036,
+      "sha256": "9c6014fd13f460b2eff2a241f1fa4f8881a8a2c4ed8c2a6a2886697c660b4af8"
+    },
+    {
+      "path": "/workspace/p2-private/toolchain/android-downloads/build-tools_r35.0.1_linux.zip",
+      "size_bytes": 61959297,
+      "sha256": "5993499f3229a021b89f87088c57242aeefaa62316bf3d69da7de40bfd5350f1"
+    },
+    {
+      "path": "/workspace/p2-private/toolchain/android-downloads/emulator-linux_x64-16428233.zip",
+      "size_bytes": 349654171,
+      "sha256": "b08fc43d8608d2955f607f1b287beb525041e730086bdca3af152accac3af9c1"
+    },
+    {
+      "path": "/workspace/p2-private/toolchain/android-downloads/platform-tools_r37.0.1-linux.zip",
+      "size_bytes": 9054187,
+      "sha256": "d230f13842f60f782a8645f9c813f8f845bf36089ea7289f28c48f17979313f1"
+    },
+    {
+      "path": "/workspace/p2-private/toolchain/android-downloads/x86_64-29_r08-linux.zip",
+      "size_bytes": 689676765,
+      "sha256": "b5c3fda1f4b4931c30518d342e4ad5f7464945e0cdced3538d4ff2e12f7bf201"
+    },
+    {
+      "path": "/workspace/p2-private/toolchain/godot-4.6.3/templates/version.txt",
+      "size_bytes": 13,
+      "sha256": "4855bd38072b77c73c45739cf6a6787d7df790a368b0a437102f352650e6186b"
+    }
+  ],
+  "toolchain_installation_receipts": [
+    {
+      "path": "/workspace/p2-private/toolchain/android-downloads/INSTALL_RECEIPT.json",
+      "sha256": "6aed8f125dbfd8b5997b70283b0933346f14d4814f51f05c478356b49b3e09fc",
+      "receipt": [
+        {
+          "package": "build-tools;35.0.1",
+          "source": "https://dl.google.com/android/repository/build-tools_r35.0.1_linux.zip",
+          "manifest_sha256": "9c6014fd13f460b2eff2a241f1fa4f8881a8a2c4ed8c2a6a2886697c660b4af8",
+          "expected_sha1": "e009a9b188cfeb1d2b4c318ab5cb4f1ddc368861",
+          "actual_sha1": "e009a9b188cfeb1d2b4c318ab5cb4f1ddc368861",
+          "bytes": 61959297,
+          "sha256": "5993499f3229a021b89f87088c57242aeefaa62316bf3d69da7de40bfd5350f1",
+          "extraction_path": "/workspace/p2-private/toolchain/android-sdk/build-tools/35.0.1",
+          "result": "VERIFIED_AND_EXTRACTED",
+          "recorded_utc": "2026-10-16T02:08:38Z"
+        },
+        {
+          "package": "platform-tools",
+          "source": "https://dl.google.com/android/repository/platform-tools_r37.0.1-linux.zip",
+          "manifest_sha256": "9c6014fd13f460b2eff2a241f1fa4f8881a8a2c4ed8c2a6a2886697c660b4af8",
+          "expected_sha1": "477254aa5f903c15cf51001717bdf347fb6b53e0",
+          "actual_sha1": "477254aa5f903c15cf51001717bdf347fb6b53e0",
+          "bytes": 9054187,
+          "sha256": "d230f13842f60f782a8645f9c813f8f845bf36089ea7289f28c48f17979313f1",
+          "extraction_path": "/workspace/p2-private/toolchain/android-sdk/platform-tools",
+          "result": "VERIFIED_AND_EXTRACTED",
+          "recorded_utc": "2026-10-16T02:08:39Z"
+        }
+      ]
+    },
+    {
+      "path": "/workspace/p2-private/toolchain/android-downloads/EMULATOR_INSTALL_RECEIPT.json",
+      "sha256": "8c4380307c51cfc05e591f83b2818053ec284f1dfa20846d59bfe1eadcfa9cf4",
+      "receipt": [
+        {
+          "package": "emulator",
+          "source": "https://dl.google.com/android/repository/emulator-linux_x64-16428233.zip",
+          "manifest_sha256": "9c6014fd13f460b2eff2a241f1fa4f8881a8a2c4ed8c2a6a2886697c660b4af8",
+          "expected_sha1": "cd7362ea55dfb86a418958138dc396e74165dd01",
+          "actual_sha1": "cd7362ea55dfb86a418958138dc396e74165dd01",
+          "bytes": 349654171,
+          "sha256": "b08fc43d8608d2955f607f1b287beb525041e730086bdca3af152accac3af9c1",
+          "extraction_path": "/workspace/p2-private/toolchain/android-sdk/emulator",
+          "result": "VERIFIED_AND_EXTRACTED",
+          "recorded_utc": "2026-10-16T02:09:53Z"
+        },
+        {
+          "package": "system-images;android-29;default;x86_64",
+          "source": "https://dl.google.com/android/repository/sys-img/android/x86_64-29_r08-linux.zip",
+          "manifest_sha256": "ebf2d810d9e0c0b511ae49ee6e8c671a8fa67d210d06f5e3e068f83244ece435",
+          "expected_sha1": "e4b798d6fcddff90d528d74ef22ce3dd4a2ca798",
+          "actual_sha1": "e4b798d6fcddff90d528d74ef22ce3dd4a2ca798",
+          "bytes": 689676765,
+          "sha256": "b5c3fda1f4b4931c30518d342e4ad5f7464945e0cdced3538d4ff2e12f7bf201",
+          "extraction_path": "/workspace/p2-private/toolchain/android-sdk/system-images/android-29/default/x86_64",
+          "result": "VERIFIED_AND_EXTRACTED",
+          "recorded_utc": "2026-10-16T02:10:27Z"
+        }
+      ]
+    },
+    {
+      "path": "/workspace/p2-private/toolchain/apt/INSTALL_RECEIPT.json",
+      "sha256": "26a98e84d83da6171915a414b2319297614848dae2de8f23f7eca5b47a884ad2",
+      "receipt": [
+        {
+          "package_archive": "libcapi20-3t64_1%3a3.27-3.2+b1_amd64.deb",
+          "size_bytes": 28656,
+          "sha256": "efaeffb50075c62048050c1e9eb75dc400ec276dbc08bba00c78f6473a3f5aa9",
+          "validation": "apt-get download-only authenticated using Debian InRelease and package index SHA256",
+          "extracted_prefix": "/workspace/p2-private/toolchain/debian-root"
+        },
+        {
+          "package_archive": "libpcap0.8t64_1.10.5-2_amd64.deb",
+          "size_bytes": 168608,
+          "sha256": "6a756d536a5b0cd3ef92f19ff9f22ed80c66baadbc0fe55d599f4aa0c27d3f86",
+          "validation": "apt-get download-only authenticated using Debian InRelease and package index SHA256",
+          "extracted_prefix": "/workspace/p2-private/toolchain/debian-root"
+        },
+        {
+          "package_archive": "libwine_10.0~repack-6_amd64.deb",
+          "size_bytes": 111365028,
+          "sha256": "702c99d2fbaef2a4966667e0cdabd477ed1754c1b3b5d4476606eaf5fd6e1444",
+          "validation": "apt-get download-only authenticated using Debian InRelease and package index SHA256",
+          "extracted_prefix": "/workspace/p2-private/toolchain/debian-root"
+        },
+        {
+          "package_archive": "libxkbregistry0_1.7.0-2_amd64.deb",
+          "size_bytes": 15660,
+          "sha256": "e9b5a7051efa2b299348b4f6b1ebc1416f2523c4224af495d9cca4adbb22183a",
+          "validation": "apt-get download-only authenticated using Debian InRelease and package index SHA256",
+          "extracted_prefix": "/workspace/p2-private/toolchain/debian-root"
+        },
+        {
+          "package_archive": "libz-mingw-w64_1.3.1+dfsg-2_all.deb",
+          "size_bytes": 158548,
+          "sha256": "c4e6d6bfabe8b6d12c797736a3d762d83513b49f488d1aaf61d4526387a2dd3e",
+          "validation": "apt-get download-only authenticated using Debian InRelease and package index SHA256",
+          "extracted_prefix": "/workspace/p2-private/toolchain/debian-root"
+        },
+        {
+          "package_archive": "wine64_10.0~repack-6_amd64.deb",
+          "size_bytes": 272800,
+          "sha256": "4cdf8319d873c13210815c1aac18859a56ea21b0b2d35a3388dab881464ed488",
+          "validation": "apt-get download-only authenticated using Debian InRelease and package index SHA256",
+          "extracted_prefix": "/workspace/p2-private/toolchain/debian-root"
+        },
+        {
+          "package_archive": "xvfb_2%3a21.1.16-1.3+deb13u3_amd64.deb",
+          "size_bytes": 3198040,
+          "sha256": "365da2b6c93339f34337c434a9489bb6411a240fa47b9f49693d3091745f28c2",
+          "validation": "apt-get download-only authenticated using Debian InRelease and package index SHA256",
+          "extracted_prefix": "/workspace/p2-private/toolchain/debian-root"
+        }
+      ]
+    },
+    {
+      "path": "/workspace/p2-private/toolchain/TOOLCHAIN_ADAPTATIONS.json",
+      "sha256": "d0c094845ea2efb33caf74bc0a87e3878ae89dc0e6b81e2f6d37d8d7acc10e69",
+      "receipt": {
+        "scope": "Private rootless Wine installation adapters only; authenticated Debian package archives remain unchanged",
+        "adaptations": [
+          {
+            "path": "/workspace/p2-private/toolchain/debian-root/usr/lib/wine/wineserver",
+            "reason": "Debian wrapper hardcodes /usr/lib/wine; private wrapper redirects to verified extracted sibling wineserver64",
+            "sha256": "e8b21cc11ca24f3bd502b3508c1f45a3a266fb9d26ba189507ab6a3ea2b7231d",
+            "upstream_preserved": "/workspace/p2-private/toolchain/debian-root/usr/lib/wine/wineserver.upstream",
+            "upstream_sha256": "a0d0ce13ed039949a30dc261cf93f4d6c4606cab5783980cd42f476dfb3b881a"
+          },
+          {
+            "path": "/workspace/p2-private/toolchain/debian-root/usr/share/wine/wine",
+            "type": "symlink",
+            "target": ".",
+            "reason": "Wine server compiled DATADIR doubles wine subdirectory; relative fallback must resolve in rootless prefix"
+          },
+          {
+            "path": "/workspace/p2-private/wine-p2-v2/drive_c/windows/system32/zlib1.dll",
+            "type": "byte_copy_from_verified_dependency",
+            "source": "/workspace/p2-private/toolchain/debian-root/usr/x86_64-w64-mingw32/lib/zlib1.dll",
+            "source_sha256": "c17c73cb781ed3b14f7a9b5b28bf59a7ff45af2b8f3f869bd40ef219c2f57688",
+            "destination_sha256": "c17c73cb781ed3b14f7a9b5b28bf59a7ff45af2b8f3f869bd40ef219c2f57688",
+            "reason": "Debian normal post-install places zlib1.dll; rootless extraction does not run maintainer scripts"
+          }
+        ],
+        "validation": {
+          "wine_cmd_ver_exit_code": 0,
+          "observed_output": "Microsoft Windows 10.0.19043",
+          "interpretation": "Wine compatibility environment only, not native Windows"
+        },
+        "failed_prefix_preserved": "/workspace/p2-private/wine-p2",
+        "working_prefix": "/workspace/p2-private/wine-p2-v2"
+      }
+    }
+  ],
+  "presence_only_environment": {
+    "DISPLAY": false,
+    "WAYLAND_DISPLAY": false,
+    "ANDROID_HOME": false,
+    "ANDROID_SDK_ROOT": false,
+    "JAVA_HOME": false,
+    "PULSE_SERVER": false
+  },
+  "device_paths": {
+    "/dev/kvm": false,
+    "/dev/dri": false,
+    "/dev/snd": false,
+    "/dev/bus/usb": false
+  },
+  "android_devices": {
+    "command": [
+      "/workspace/p2-private/toolchain/android-sdk/platform-tools/adb",
+      "devices"
+    ],
+    "status": "OBSERVED",
+    "exit_code": 0,
+    "state_counts": {
+      "device": 1
+    },
+    "authorized_devices": 1,
+    "device_identifiers_recorded": false
+  },
+  "pinned_engine": {
+    "required": "4.6.3.stable.official.7d41c59c4",
+    "observed_matches": true
+  },
+  "platform_execution": {
+    "linux": "NOT_RUN_BY_PROBE",
+    "windows_native": "NOT_RUN",
+    "windows_wine": "NOT_RUN_BY_PROBE",
+    "android_emulator": "NOT_RUN_BY_PROBE",
+    "galaxy_tab_s10_fe": "NOT_RUN",
+    "actual_ime": "NOT_RUN"
+  },
+  "constraints": [
+    "No native Windows host was observed by this local probe.",
+    "Wine execution, if later run, is compatibility-layer evidence and must be reported separately from native Windows.",
+    "Android emulator absence or missing KVM does not establish that software emulation is impossible.",
+    "No credential values, device identifiers, existing saves or signing-key contents are read or recorded."
+  ]
+}

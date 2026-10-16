@@ -134,7 +134,7 @@
     "cd16d538439ef2ac4ce621b079e92c0c3a275865ead0497dca6996646ebe0abd"
   ],
   "execution": {
-    "code_sha_at_execution": "ef89a06bb0424ea87336b4e3b7fb77dd7d39ee17",
+    "code_sha_at_execution": "5e522f4ad2e534c24c04ebc8e6e60e11adf0dfc9",
     "python": "3.12.14",
     "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
     "command": [
@@ -152,10 +152,10 @@
       "/workspace/p2-private/work-batches/B001-public/RECEIVER_POLICY.json"
     ],
     "exit_code": 2,
-    "private_log": "/workspace/p2-private/logs/work-receiver/B001-review.log",
+    "private_log": "/workspace/p2-private/logs/work-receiver/B001-review-source-closure-after-fix.log",
     "policy_private_path": "/workspace/p2-private/work-batches/B001-public/RECEIVER_POLICY.json",
     "policy_sha256": "d3cfd809151fbd0aca6f3592f4509352abacf41eaa486826da49de691d77a76d",
-    "receiver_source_sha256": "33b43f364a388eb4a548fd2b9caa894d1a039c1655956903c2352bba24aedc00"
+    "receiver_source_sha256": "fe5b2f90cd41c00535973f407b3ed766323c48cf85f5f0bd91334d66c2edbbfc"
   },
   "guard_tests": {
     "command": [
@@ -170,8 +170,15 @@
       "-v"
     ],
     "exit_code": 0,
-    "tests": 36,
+    "tests": 37,
     "scope": "Synthetic receiver rejection guards and cache invalidation only; not original data or runtime P2 PASS.",
-    "private_log": "/workspace/p2-private/logs/work-receiver/tests.log"
+    "private_log": "/workspace/p2-private/logs/work-receiver/tests-source-closure-after-fix.log"
+  },
+  "regression_fix": {
+    "issue": "SOURCES-only prior input was declared but not included in the unverified byte dependency closure.",
+    "before_fix_test": "test_sources_only_prior_input_requires_verified_bytes",
+    "before_fix_result": "FAIL: incorrectly RECEIVED with unverified source-only dependency",
+    "before_fix_log": "/workspace/p2-private/logs/work-receiver/source-closure-before-fix.log",
+    "after_fix_result": "PASS: DEFERRED until source-only original SHA is verified; RECEIVED after complete verified dependency closure"
   }
 }

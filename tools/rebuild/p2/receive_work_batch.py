@@ -105,7 +105,7 @@ def parse_ready(data: bytes):
     text = data.decode("utf-8")
     fields = {}
     for key, pattern in {
-        "bytes": r"^길이:\s*(\d+)\s*$",
+        "bytes": r"^길이:\s*(\d+)(?:\s+bytes)?\s*$",
         "sha256": r"^SHA256:\s*([a-f0-9]{64})\s*$",
         "library_file_id": r"^지속 파일 ID:\s*(libfile_[a-f0-9]+)\s*$",
         "file_id": r"^파일 ID:\s*(file_[a-f0-9]+)\s*$",
@@ -184,6 +184,81 @@ def inspect_zip(path, expected_identity, table, manifest_bytes, validation_bytes
     return payload
 
 
+def review_candidate_metadata(result, *, manifest, candidates, table, raw, ready, policy, zip_path, limits):
+    """Review heterogeneous public proposals without accepting their contracts.
+
+    This mode is deliberately unable to return RECEIVED. B002 introduces other
+    candidate shapes; checking shared metadata does not establish their private
+    record/value/reference semantics or silently adapt them to the B001 importer.
+    """
+    unknown_records, schemas, contract_issues, summaries = set(), {}, [], []
+    expected_paths = policy.get("expected_hashes_by_path", {})
+    for row in candidates:
+        cid = row["candidate_id"]
+        schema = row.get("schema") or "UNDECLARED"
+        schemas[schema] = schemas.get(schema, 0) + 1
+        require(row.get("selected_for_build") is False, "candidate already marked adopted")
+        require(row.get("global_default_selected", False) is False, "candidate selects global profile")
+        require(row.get("profile_id") in policy["profiles"], "candidate profile mismatch")
+        require(bool(row.get("codex_tests")) and bool(row.get("field")), "candidate observations/field missing")
+        require(bool(row.get("binding_ids")) and set(row["binding_ids"]) <= set(policy["valid_binding_ids"]), "candidate unknown binding")
+        require(bool(row.get("requirement_ids")) and set(row["requirement_ids"]) <= set(policy["valid_requirement_ids"]), "candidate unknown requirement")
+        for key in ("base_p1_5_sha", "baseline_p1_5_sha"):
+            if key in row:
+                require(row[key] == policy["base_p1_5_sha"], "candidate baseline conflict")
+        if "baseline_input_manifest_sha256" in row:
+            require(row["baseline_input_manifest_sha256"] == policy["input_manifest_sha256"], "candidate manifest conflict")
+        if "task_id" in row:
+            require(row["task_id"] == manifest["task_id"], "candidate task conflict")
+        refs = row.get("existing_record_ids")
+        require(isinstance(refs, list) and len(refs) == len(set(refs)), "missing/duplicate original record reference list")
+        unknown_records |= set(refs) - set(policy.get("verified_record_ids", []))
+        require(isinstance(row.get("payload_refs"), list) and set(row["payload_refs"]) <= table.keys(), "candidate missing payload reference")
+        for evidence in row.get("evidence_refs", []):
+            name = evidence["path"]
+            require(name in table and {k: evidence[k] for k in ("bytes", "sha256")} == table[name], "candidate evidence identity conflict")
+        if "private_value" in row:
+            value = row["private_value"]
+            require(value["path"] in table and value["candidate_id"] == cid, "candidate private record locator conflict")
+            require(re.fullmatch("[a-f0-9]{64}", value["record_canonical_sha256"]), "candidate private record hash invalid")
+        if "private_record_locator" in row:
+            name, _, record = row["private_record_locator"].partition("#")
+            require(name in table and record == cid, "candidate semantic record locator conflict")
+            require(row["private_semantic_file_sha256"] == table[name]["sha256"], "candidate semantic identity conflict")
+        old = row.get("old_value_or_hash")
+        if isinstance(old, dict):
+            if "base_manifest_sha256" in old:
+                require(old["base_manifest_sha256"] == policy["input_manifest_sha256"], "candidate prior manifest conflict")
+            for name, expected in old.get("expected_input_hashes", {}).items():
+                require(name in expected_paths and expected == expected_paths[name], "candidate prior input hash conflict")
+        else:
+            contract_issues.append({"candidate_id": cid, "issue": "expected existing value/hash contract is absent"})
+        summaries.append({"candidate_id": cid, "field": row["field"], "profile_id": row["profile_id"],
+                          "original_record_references": len(refs), "status": "DEFERRED"})
+    result.update({"review_mode": "METADATA_ONLY_NO_RECEIPT", "metadata_result": "PASS",
+                   "candidate_metadata_result": "PASS_SHARED_FIELDS_AND_DECLARED_LOCATORS_ONLY",
+                   "candidate_reference_contract_result": "NOT_RUN_HETEROGENEOUS_PRIVATE_REFERENCE_CONTRACTS",
+                   "candidate_schema_counts": schemas, "candidate_contract_issues": contract_issues,
+                   "candidate_checks": summaries, "zip_identity": ready, "payload_manifest_files": len(table),
+                   "accessible_payload_files": ["FIELD_CANDIDATES.jsonl"],
+                   "unverified_original_record_ids": sorted(unknown_records)})
+    if zip_path is None or not Path(zip_path).exists():
+        result["private_payload_result"] = "NOT_RUN_MISSING_BYTES"
+        result["missing_private_files"] = [name for name in table if name != "FIELD_CANDIDATES.jsonl"]
+        result["blockers"].append("Original private batch ZIP is not available at an explicit local path; Library ID is not bytes.")
+    else:
+        inspect_zip(zip_path, {k: ready[k] for k in ("bytes", "sha256")}, table, raw["manifest"], raw["validation"], limits)
+        result["private_payload_result"] = "PASS_BYTES_AND_FORMATS_ONLY"
+        result["accessible_payload_files"] = list(table)
+    result["blockers"].append("Metadata-only review cannot establish receipt; heterogeneous private record/value/source dependency contracts need a separate complete validation.")
+    if unknown_records:
+        result["blockers"].append("Original selected record bytes are required to validate the reference closure.")
+    if manifest["dependencies"] != policy.get("verified_dependencies", []):
+        result["blockers"].append("Frozen dependency private bytes/G0 scope are not verified in this receiver.")
+    result["status"] = "DEFERRED"
+    return result
+
+
 def review(*, manifest_path, ready_path, validation_path, candidates_path, policy, zip_path=None, limits=Limits()):
     result = {"schema": "baram.p2.work_batch_review/1", "status": "REJECTED",
               "metadata_result": "NOT_RUN", "private_payload_result": "NOT_RUN",
@@ -224,6 +299,11 @@ def review(*, manifest_path, ready_path, validation_path, candidates_path, polic
         require(set(manifest["affected_bindings"]) <= set(policy["valid_binding_ids"]), "unknown affected binding")
         require(len({r["candidate_id"] for r in candidates}) == len(candidates) > 0, "empty/duplicate candidates")
         require({r["candidate_id"] for r in candidates} == set(manifest["candidate_ids"]), "candidate ID set mismatch")
+        mode = policy.get("review_mode", "full_receipt")
+        require(mode in {"full_receipt", "metadata_only"}, "unknown review mode")
+        if mode == "metadata_only":
+            return review_candidate_metadata(result, manifest=manifest, candidates=candidates, table=table,
+                                             raw=raw, ready=ready, policy=policy, zip_path=zip_path, limits=limits)
         unknown_records, unknown_hashes, summaries = set(), set(), []
         for row in candidates:
             cid = row["candidate_id"]
@@ -270,6 +350,7 @@ def review(*, manifest_path, ready_path, validation_path, candidates_path, polic
                 hashes = source["input_source_sha256"]
                 require(isinstance(hashes, dict) and bool(hashes), "source input identities missing")
                 require(set(hashes.values()) <= set(policy["declared_prior_hashes"]), "source prior input hash conflict")
+                unknown_hashes |= set(hashes.values()) - set(policy.get("verified_prior_hashes", []))
             result["private_payload_result"] = "PASS_BYTES_AND_FORMATS"
             result["accessible_payload_files"] = list(table)
         if unknown_records:

@@ -9,7 +9,7 @@ import unittest
 import zipfile
 
 from cache_fingerprint import COMPONENTS, fingerprint
-from receive_work_batch import Limits, identity, review, safe_name, Rejected
+from receive_work_batch import Limits, identity, parse_ready, review, safe_name, Rejected
 
 
 def encoded(value):
@@ -251,6 +251,61 @@ class ReceiverTests(unittest.TestCase):
         self.payload["SOURCES.jsonl"] = encoded(self.source)
         self.refresh()
         self.assertRejected("source prior input hash conflict")
+
+    def test_sources_only_prior_input_requires_verified_bytes(self):
+        # This dependency exists only in SOURCES, not in candidate old hashes.
+        # Matching the declared catalog hash cannot establish byte receipt.
+        source_only_hash = "f" * 64
+        self.source["input_source_sha256"]["source_only_original"] = source_only_hash
+        self.policy["declared_prior_hashes"].append(source_only_hash)
+        self.payload["SOURCES.jsonl"] = encoded(self.source)
+        self.refresh()
+        result = self.run_review()
+        self.assertEqual(result["status"], "DEFERRED", result)
+        self.assertEqual(result["private_payload_result"], "PASS_BYTES_AND_FORMATS")
+        self.assertIn(source_only_hash, result["unverified_prior_hashes"])
+        self.policy["verified_prior_hashes"].append(source_only_hash)
+        self.assertEqual(self.run_review()["status"], "RECEIVED")
+
+    def test_metadata_only_never_receives_even_with_complete_zip(self):
+        self.policy["review_mode"] = "metadata_only"
+        result = self.run_review()
+        self.assertEqual(result["status"], "DEFERRED")
+        self.assertEqual(result["private_payload_result"], "PASS_BYTES_AND_FORMATS_ONLY")
+        self.assertEqual(result["adopted_fields"], [])
+
+    def test_mixed_candidate_metadata_does_not_relax_full_receipt(self):
+        del self.candidate["schema"]
+        self.candidate["source_locator"] = []
+        self.candidate["old_value_or_hash"] = None
+        self.candidate["payload_refs"] = []
+        self.refresh()
+        self.assertRejected("candidate schema")
+        self.policy["review_mode"] = "metadata_only"
+        result = self.run_review(with_zip=False)
+        self.assertEqual(result["status"], "DEFERRED")
+        self.assertEqual(result["candidate_schema_counts"], {"UNDECLARED": 1})
+        self.assertEqual(len(result["candidate_contract_issues"]), 1)
+        self.assertEqual(result["private_payload_result"], "NOT_RUN_MISSING_BYTES")
+
+    def test_metadata_only_rejects_evidence_identity_conflict(self):
+        self.policy["review_mode"] = "metadata_only"
+        self.candidate["evidence_refs"] = [{"path": "motion_sound/timing.json", "sha256": "0" * 64, "bytes": 1}]
+        self.refresh()
+        self.assertRejected("candidate evidence identity conflict")
+
+    def test_metadata_only_rejects_prior_input_hash_conflict(self):
+        self.policy["review_mode"] = "metadata_only"
+        self.policy["expected_hashes_by_path"] = {"prior.jsonl": self.old_hash}
+        self.candidate["old_value_or_hash"] = {"expected_input_hashes": {"prior.jsonl": "0" * 64}, "expected_value": None}
+        self.refresh()
+        self.assertRejected("candidate prior input hash conflict")
+
+    def test_ready_explicit_bytes_suffix(self):
+        data = self.paths["ready_path"].read_bytes()
+        data = data.replace(("길이: " + str(self.policy["zip"]["bytes"])).encode(),
+                            ("길이: " + str(self.policy["zip"]["bytes"]) + " bytes").encode())
+        self.assertEqual(parse_ready(data), self.policy["zip"])
 
     def test_zero_time_budget_cannot_pass(self):
         result = self.run_review(limits=Limits(seconds=0))
