@@ -1,0 +1,90 @@
+{
+  "task_id": "BARAM_REBUILD_CODEX_P2_001",
+  "base_plan_sha": "590bd626b63cebf6d858c8e9c1c9ce822ea0ec94",
+  "handoff_sha": "590bd626b63cebf6d858c8e9c1c9ce822ea0ec94",
+  "work_head": "2eb791f20335a8ccda2a597897a73e8349b63274",
+  "worktree": "/workspace/baram-p2-codex",
+  "original_checkout_unchanged": "/workspace/baram-1998-singleplayer",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "ad9dc1f45c4a2168dcfb0097dd31a2c316373f3b89b26a14856a1f7597a2ecf2",
+      "bytes": 3226
+    },
+    {
+      "path": "docs/rebuild/MASTER_PLAN.md",
+      "sha256": "e697da870af004486d1dea7032cf676eef583237b91ec0ddbc4028f492e3005a",
+      "bytes": 36490
+    },
+    {
+      "path": "docs/rebuild/STATE.json",
+      "sha256": "01c1548f6cadfcd82e59148d4212b5fd0957af43e1913369ca0c8a7b3f7025c9",
+      "bytes": 15148
+    },
+    {
+      "path": "docs/rebuild/step01/NEXT_P2.md",
+      "sha256": "0b41b135c4acb2d125cb0c057458f9e714a74901cc800aeb72ee2f4d760183fa",
+      "bytes": 10833
+    },
+    {
+      "path": "docs/rebuild/p1_5/REPORT.md",
+      "sha256": "bf4d56c90921f4575573a1c4e04da0e84f828334e01ed8ac94d854ef12cd3919",
+      "bytes": 15898
+    },
+    {
+      "path": "docs/rebuild/p1_5/NEXT_P2_DELTA.md",
+      "sha256": "a37ae85d53e284860cdad8ba10a720f04bf142323dd4850fe6679c896ce1ac4d",
+      "bytes": 11597
+    },
+    {
+      "path": "docs/rebuild/p1_5/DELIVERY_RECHECK_RECEIPT.json",
+      "sha256": "db32dc9045944d723fc38650e457db00d228bd2ec10eeaa56c29ec0bafbfaf4f",
+      "bytes": 13306
+    },
+    {
+      "path": "docs/rebuild/p1_5/INPUT_MANIFEST.json",
+      "sha256": "124573e4a57d7ff759501315bf9a101fcd8a3959944f25006120b3e14c02a1d5",
+      "bytes": 32233
+    },
+    {
+      "path": "docs/rebuild/p1_5/handoff_input_contract.json",
+      "sha256": "ddd7329234d566780a8f6c947bc260c8bf2179984e5f2a2481c86887f89e7ee2",
+      "bytes": 6964
+    },
+    {
+      "path": "docs/rebuild/p1_5/VALIDATION.json",
+      "sha256": "f1c771e6318a9315c13d59d14c7fb78f0986a1451158ec4b72f12f6f73dff81a",
+      "bytes": 8253
+    },
+    {
+      "path": "docs/rebuild/p1_5/SECURITY.md",
+      "sha256": "11a439fb7caf9709086676da1ced143e0cd6599781e2078a83fc2cb109d94a1d",
+      "bytes": 6500
+    },
+    {
+      "path": "docs/rebuild/p1_5/requirements_delta.csv",
+      "sha256": "6aa76a6ab4484ef236ddce0ee1d3c1f56527f544dfd6f208a6e62438b09e0c83",
+      "bytes": 277359
+    },
+    {
+      "path": "docs/rebuild/p1_5/gaps_by_feature.csv",
+      "sha256": "384d72b069aacb8b32993d4216ee16cc582e6e5d62388207d58c7e2affa97bbe",
+      "bytes": 74249
+    },
+    {
+      "path": "docs/rebuild/p1_5/field_bindings.jsonl",
+      "sha256": "59799f0969621e8e1490041af2277b78c402cb24b2cbc522634386e7dac74602",
+      "bytes": 127782
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/catalog.json",
+      "sha256": "a6085079214dff200988201c95b75697b76e7a8f1651cd1841bc00b0e8580e49",
+      "bytes": 14388
+    },
+    {
+      "path": "docs/rebuild/p1_5/selected_content/save_contracts.json",
+      "sha256": "28b88bde1f543ef6a811d17af08427af94961c0ce88bd4b7a3f34ed8be05752c",
+      "bytes": 23724
+    }
+  ]
+}

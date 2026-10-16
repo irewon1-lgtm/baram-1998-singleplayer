@@ -1,0 +1,57 @@
+{
+  "schema": "baram.p2.state/1",
+  "task_id": "BARAM_REBUILD_CODEX_P2_001",
+  "branch": "codex/rebuild-p2-20261016",
+  "base_plan_sha": "590bd626b63cebf6d858c8e9c1c9ce822ea0ec94",
+  "status": "IN_PROGRESS",
+  "authorization_history": [
+    {
+      "source": "current user request and attached sections1-10",
+      "scope": [
+        "G0",
+        "P2-01",
+        "P2-02",
+        "P2-03",
+        "P2-04",
+        "P2-05",
+        "P2-06"
+      ],
+      "preserves_prior_authorization_records": true,
+      "excludes": [
+        "P3",
+        "P4",
+        "production",
+        "main merge",
+        "paid resources"
+      ]
+    }
+  ],
+  "owned_paths": [
+    "rebuild/p2/**",
+    "tools/rebuild/p2/**",
+    "docs/rebuild/p2/**"
+  ],
+  "conditional_paths": [
+    "tools/rebuild/p1_5/**",
+    "tools/rebuild/step01/validate_step01.py",
+    ".github/workflows/rebuild-p2-*.yml"
+  ],
+  "work_requests": "docs/rebuild/p2/WORK_REQUESTS.jsonl",
+  "work_receipts": "docs/rebuild/p2/WORK_BATCH_RECEIPTS.jsonl",
+  "current_step": "G0_ACCESS_AND_INDEPENDENT_PLATFORM_PROBE",
+  "profile": {
+    "default": null,
+    "explicit_per_test": true
+  },
+  "G0": "IN_PROGRESS",
+  "P2": {
+    "P2-01": "NOT_RUN",
+    "P2-02": "NOT_RUN",
+    "P2-03": "NOT_RUN",
+    "P2-04": "NOT_RUN",
+    "P2-05": "NOT_RUN",
+    "P2-06": "NOT_RUN"
+  },
+  "P3": "NOT_AUTHORIZED",
+  "next_resume": "Read latest STATE_CODEX and completed execution receipts; resume unfinished tests only."
+}
