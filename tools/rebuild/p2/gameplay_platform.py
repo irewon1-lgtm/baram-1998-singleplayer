@@ -317,6 +317,10 @@ def android_gameplay(args: argparse.Namespace) -> int:
             if not re.fullmatch(r"/data/app/[A-Za-z0-9_./=+-]+/base\.apk",remote):
                 receipt["result"]="FAIL_INSTALLED_APK_LOCATION";return 1
             observed=run(base+["shell","sha256sum",remote],"installed-apk-sha256",30)
+            if observed['exit_code'] is None:
+                receipt['result']='BLOCKED_INSTALLED_APK_HASH_TIMEOUT';return 1
+            if observed['exit_code']!=0:
+                receipt['result']='BLOCKED_INSTALLED_APK_HASH_COMMAND';return 1
             if not Path(observed["log"]).read_text().startswith(args.apk_sha256+" "):
                 receipt["result"]="FAIL_INSTALLED_APK_HASH";return 1
             receipt["installation"]="REUSED_EXACT_INSTALLED_APK_SHA256"
@@ -377,7 +381,10 @@ def android_gameplay(args: argparse.Namespace) -> int:
             return 0 if receipt["default_mode"].startswith("PASS_") else 1
         if args.ui_probe:
             from gameplay_android_input import probe
-            receipt["ordinary_input_probe"] = probe(base, PACKAGE, userdata, args.output, run, read_private, launch, capture)
+            # A sibling proof can resume an interrupted ordinary-input checkpoint
+            # without recreating characters or re-counting completed checks.
+            resume = args.output.with_suffix(".resume.json")
+            receipt["ordinary_input_probe"] = probe(base, PACKAGE, userdata, args.output, run, read_private, launch, capture, resume if resume.is_file() else None)
             save()
         if not args.smoke:
             receipt['result']='PASS_SAME_APK_DEFAULT_AND_ORDINARY_INPUT' if receipt.get('ordinary_input_probe',{}).get('status')=='PASS' else 'PARTIAL_ANDROID_ORDINARY_INPUT'

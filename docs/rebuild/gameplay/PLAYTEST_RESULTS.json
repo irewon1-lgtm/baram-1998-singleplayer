@@ -1,0 +1,260 @@
+{
+  "schema": "baram.gameplay.p3-matrix/1",
+  "overall": "PARTIAL",
+  "results": [
+    {
+      "id": "P3-01",
+      "status": "PARTIAL_IME_NOT_RUN",
+      "notes": "일반 메뉴 생성 취소→ASCII 캐릭터 생성(실제 X11 이벤트), 한글 이름은 명령 문자열 시험. 평민Lv1·기술0.",
+      "evidence": [
+        {
+          "path": "evidence/gameplay/gui-final-pressfix/RUN_RECEIPT.json",
+          "sha256": "121fee8353c20eed83e9ec5f8b5cf08b78eb9ab1d1c0f98dfe228cf26288f317"
+        }
+      ],
+      "source_commit": "4d6392c875f44219f0b0f26a1415e887365406c2",
+      "runtime_manifest_sha256": "70f4a32045242ce176e9d66f13791179cac67dd974de318dd77c7c1374a7455c"
+    },
+    {
+      "id": "P3-02",
+      "status": "PASS_LOCAL",
+      "notes": "실제 OS 방향키 이동·해제, 네 방향 자연명령·충돌/가림 그림·발 기준.",
+      "evidence": [
+        {
+          "path": "evidence/gameplay/world-final-v2.json",
+          "sha256": "c95e4d9609363f77d6191c5dc7ef6e62411f16edd5bd0d5b860b8cc4c0f51062"
+        },
+        {
+          "path": "evidence/gameplay/gui-final-pressfix/RUN_RECEIPT.json",
+          "sha256": "121fee8353c20eed83e9ec5f8b5cf08b78eb9ab1d1c0f98dfe228cf26288f317"
+        }
+      ],
+      "source_commit": "4d6392c875f44219f0b0f26a1415e887365406c2",
+      "runtime_manifest_sha256": "70f4a32045242ce176e9d66f13791179cac67dd974de318dd77c7c1374a7455c"
+    },
+    {
+      "id": "P3-03",
+      "status": "PASS_LOCAL",
+      "notes": "실제 정의11지역 출구 왕복/9NPC 도달 명령 시험; 별도 원작 지형 복원 PASS 아님.",
+      "evidence": [
+        {
+          "path": "evidence/gameplay/world-final-v2.json",
+          "sha256": "c95e4d9609363f77d6191c5dc7ef6e62411f16edd5bd0d5b860b8cc4c0f51062"
+        },
+        {
+          "path": "evidence/gameplay/gui-world-final/gameplay-smoke.json",
+          "sha256": "968e11dec5853908ac74926c8fa39f01ab87728dc60d5da29d33b2ec8bffadd2"
+        }
+      ],
+      "source_commit": "4d6392c875f44219f0b0f26a1415e887365406c2",
+      "runtime_manifest_sha256": "70f4a32045242ce176e9d66f13791179cac67dd974de318dd77c7c1374a7455c"
+    },
+    {
+      "id": "P3-04",
+      "status": "PASS_LOCAL",
+      "notes": "분산스폰64, AI 이동·피격·사망·리스폰 세대. 원작 밀도 미확정.",
+      "evidence": [
+        {
+          "path": "evidence/gameplay/world-final-v2.json",
+          "sha256": "c95e4d9609363f77d6191c5dc7ef6e62411f16edd5bd0d5b860b8cc4c0f51062"
+        }
+      ],
+      "source_commit": "4d6392c875f44219f0b0f26a1415e887365406c2",
+      "runtime_manifest_sha256": "70f4a32045242ce176e9d66f13791179cac67dd974de318dd77c7c1374a7455c"
+    },
+    {
+      "id": "P3-05",
+      "status": "PASS_LOCAL",
+      "notes": "지연 명중·HP·XP·드롭과 중복 보상 거부, 자연104킬/915XP.",
+      "evidence": [
+        {
+          "path": "evidence/gameplay/journey-final-v3.json",
+          "sha256": "2ff0bc2a6ca1c8179756ecb36d0ec16902a4868964e25ef43b3709c448e40f6b"
+        }
+      ],
+      "source_commit": "4d6392c875f44219f0b0f26a1415e887365406c2",
+      "runtime_manifest_sha256": "70f4a32045242ce176e9d66f13791179cac67dd974de318dd77c7c1374a7455c"
+    },
+    {
+      "id": "P3-06",
+      "status": "PASS_LOCAL",
+      "notes": "실제 전리품 판매→목검 구매; 부족·취소·재전송·가방포화 상태변경0 시험.",
+      "evidence": [
+        {
+          "path": "evidence/gameplay/journey-final-v3.json",
+          "sha256": "2ff0bc2a6ca1c8179756ecb36d0ec16902a4868964e25ef43b3709c448e40f6b"
+        }
+      ],
+      "source_commit": "4d6392c875f44219f0b0f26a1415e887365406c2",
+      "runtime_manifest_sha256": "70f4a32045242ce176e9d66f13791179cac67dd974de318dd77c7c1374a7455c"
+    },
+    {
+      "id": "P3-07",
+      "status": "PASS_LOCAL",
+      "notes": "장비 아이콘·필드 외형·같은 능력치, 파손 효과 배제·실제 수리비 소모. 자연 최종 초보옷 파손은 숨기지 않음.",
+      "evidence": [
+        {
+          "path": "evidence/gameplay/journey-final-v3.json",
+          "sha256": "2ff0bc2a6ca1c8179756ecb36d0ec16902a4868964e25ef43b3709c448e40f6b"
+        }
+      ],
+      "source_commit": "4d6392c875f44219f0b0f26a1415e887365406c2",
+      "runtime_manifest_sha256": "70f4a32045242ce176e9d66f13791179cac67dd974de318dd77c7c1374a7455c"
+    },
+    {
+      "id": "P3-08",
+      "status": "PASS_NATURAL",
+      "notes": "정상 명령으로 평민Lv1→Lv5(90XP), Lv5 주술사 전직. 돈/XP/재료 직접 지급0.",
+      "evidence": [
+        {
+          "path": "evidence/gameplay/journey-final-v3.json",
+          "sha256": "2ff0bc2a6ca1c8179756ecb36d0ec16902a4868964e25ef43b3709c448e40f6b"
+        }
+      ],
+      "source_commit": "4d6392c875f44219f0b0f26a1415e887365406c2",
+      "runtime_manifest_sha256": "70f4a32045242ce176e9d66f13791179cac67dd974de318dd77c7c1374a7455c"
+    },
+    {
+      "id": "P3-09",
+      "status": "PASS / BRANCH_FIXTURES",
+      "notes": "주술사 자연 진행; 전사Lv10·도적Lv8·도사Lv5는 명시된 분기 fixture로 전직/학습/회복 시전 시험.",
+      "evidence": [
+        {
+          "path": "evidence/gameplay/journey-final-v3.json",
+          "sha256": "2ff0bc2a6ca1c8179756ecb36d0ec16902a4868964e25ef43b3709c448e40f6b"
+        }
+      ],
+      "source_commit": "4d6392c875f44219f0b0f26a1415e887365406c2",
+      "runtime_manifest_sha256": "70f4a32045242ce176e9d66f13791179cac67dd974de318dd77c7c1374a7455c"
+    },
+    {
+      "id": "P3-10",
+      "status": "PASS_LOCAL",
+      "notes": "자연 학습·실제 MP/HP/대상 변경·유한 효과·가상음향. 최종 내장 pack과 자연 저장을 사용한 InputEvent 단축키/4패널14검사 PASS. 실제 IME/물리 청취와 구분.",
+      "evidence": [
+        {
+          "path": "evidence/gameplay/gui-final-pressfix/gameplay-smoke.json",
+          "sha256": "62b4102d7cf0a5a8c1b68eae8974f089f8071c758af564cf578f7e9aabc0677e"
+        },
+        {
+          "path": "evidence/gameplay/gui-hotkeys-pressfix/gameplay-smoke.json",
+          "sha256": "5138f6509180cbd7925fa29c493a2bf93ae645a3e8c3ec8c6378a5658b1497d4"
+        }
+      ],
+      "source_commit": "4d6392c875f44219f0b0f26a1415e887365406c2",
+      "runtime_manifest_sha256": "70f4a32045242ce176e9d66f13791179cac67dd974de318dd77c7c1374a7455c"
+    },
+    {
+      "id": "P3-11",
+      "status": "PASS_LOCAL",
+      "notes": "동·서·남·북 네 귀환 목적지/좌표가 다르고 유효. 잘못된 방향 무소모.",
+      "evidence": [
+        {
+          "path": "evidence/gameplay/journey-final-v3.json",
+          "sha256": "2ff0bc2a6ca1c8179756ecb36d0ec16902a4868964e25ef43b3709c448e40f6b"
+        },
+        {
+          "path": "evidence/gameplay/gui-hotkeys-pressfix/gameplay-smoke.json",
+          "sha256": "5138f6509180cbd7925fa29c493a2bf93ae645a3e8c3ec8c6378a5658b1497d4"
+        }
+      ],
+      "source_commit": "4d6392c875f44219f0b0f26a1415e887365406c2",
+      "runtime_manifest_sha256": "70f4a32045242ce176e9d66f13791179cac67dd974de318dd77c7c1374a7455c"
+    },
+    {
+      "id": "P3-12",
+      "status": "PASS_LOCAL",
+      "notes": "자연1회 사망/부활 + 격리시험. 귀신 이동 거부, 부활 상태·진행 보존.",
+      "evidence": [
+        {
+          "path": "evidence/gameplay/journey-final-v3.json",
+          "sha256": "2ff0bc2a6ca1c8179756ecb36d0ec16902a4868964e25ef43b3709c448e40f6b"
+        }
+      ],
+      "source_commit": "4d6392c875f44219f0b0f26a1415e887365406c2",
+      "runtime_manifest_sha256": "70f4a32045242ce176e9d66f13791179cac67dd974de318dd77c7c1374a7455c"
+    },
+    {
+      "id": "P3-13",
+      "status": "PASS_LOCAL",
+      "notes": "새 프로세스 전체 저장 표현/진행 동일, 실제 일반 UI 이어하기 후 ui 순번3→5로 추가 이동/재저장.",
+      "evidence": [
+        {
+          "path": "evidence/gameplay/gui-final-pressfix/RUN_RECEIPT.json",
+          "sha256": "121fee8353c20eed83e9ec5f8b5cf08b78eb9ab1d1c0f98dfe228cf26288f317"
+        },
+        {
+          "path": "evidence/gameplay/journey-final-v3.json.reload.json",
+          "sha256": "f1c448504ce1aa5322bb0c7ac5b77274ec838f28f6ec21428e752066fa7e2772"
+        }
+      ],
+      "source_commit": "4d6392c875f44219f0b0f26a1415e887365406c2",
+      "runtime_manifest_sha256": "70f4a32045242ce176e9d66f13791179cac67dd974de318dd77c7c1374a7455c"
+    },
+    {
+      "id": "P3-14",
+      "status": "PASS_LOCAL",
+      "notes": "저장83회귀: 실제7자식프로세스 강제종료·원자교체·손상/백업/심볼릭링크/소유자/과대파일/소수타이머.",
+      "evidence": [
+        {
+          "path": "evidence/gameplay/save-final-v6.json",
+          "sha256": "bcb82ad1efd14f9b02029b09715a48ee8d77d412268cd8d98a829df8567136c0"
+        }
+      ],
+      "source_commit": "4d6392c875f44219f0b0f26a1415e887365406c2",
+      "runtime_manifest_sha256": "70f4a32045242ce176e9d66f13791179cac67dd974de318dd77c7c1374a7455c"
+    },
+    {
+      "id": "P3-15",
+      "status": "PASS_LOCAL",
+      "notes": "그림 변경 허용; 좌표/ID/규칙 불일치는 DEFERRED로 원본·보류 보존, 입구 이동 없음.",
+      "evidence": [
+        {
+          "path": "evidence/gameplay/save-final-v6.json",
+          "sha256": "bcb82ad1efd14f9b02029b09715a48ee8d77d412268cd8d98a829df8567136c0"
+        }
+      ],
+      "source_commit": "4d6392c875f44219f0b0f26a1415e887365406c2",
+      "runtime_manifest_sha256": "70f4a32045242ce176e9d66f13791179cac67dd974de318dd77c7c1374a7455c"
+    },
+    {
+      "id": "P3-16",
+      "status": "PARTIAL_PLATFORM",
+      "notes": "Android 동일 최종 APK:06 생성/터치이동/저장·명시smoke5 PASS;09는06의 앞3개 검사를 REUSED하고 같은 캐릭터의 실제 새 프로세스 복구·후속 이동/재저장2개만 새로 PASS.07 디스크 부족·08 해시명령 timeout 실패 보존. nativeWindows/Galaxy·IME·청취·실기기 성능은 미완료.",
+      "evidence": [
+        {
+          "path": "private/gameplay-platform/final-android-run09/RUN_RECEIPT.json",
+          "sha256": "7d3991dd9a87c20dd3e5e6790d6da309631b4be12ae5275aff9a4ac87c979100"
+        },
+        {
+          "path": "private/gameplay-platform/final-android-run06/RUN_RECEIPT.json",
+          "sha256": "f23952b23c337f90b28716e428431ba30a38b4d5cb541514cd8d0dd539b5b07a"
+        },
+        {
+          "path": "evidence/gameplay/package-pressfix-receipt.json",
+          "sha256": "5c456ac88eec17e4c8d6293f24eb322e35a0039ac4213bf5a49c2037cb76f35e"
+        }
+      ],
+      "source_commit": "4d6392c875f44219f0b0f26a1415e887365406c2",
+      "runtime_manifest_sha256": "70f4a32045242ce176e9d66f13791179cac67dd974de318dd77c7c1374a7455c"
+    },
+    {
+      "id": "P3-17",
+      "status": "BLOCKED_AUTH_ENVIRONMENT",
+      "notes": "오프라인 로컬 프로필만 구현. 기존 무료 인증 왕복 환경 미연결. 파일복사를 계정 연동으로 세지 않음.",
+      "evidence": [],
+      "source_commit": "4d6392c875f44219f0b0f26a1415e887365406c2",
+      "runtime_manifest_sha256": "70f4a32045242ce176e9d66f13791179cac67dd974de318dd77c7c1374a7455c"
+    },
+    {
+      "id": "P3-18",
+      "status": "PASS_PRIVATE_DELIVERY",
+      "notes": "설치본·입력·소스·영상·HTML·증거7파일 저장 성공. 파일별 길이/SHA와 실제 저장 ID는 DELIVERY.json. 증거 ZIP은 전달 전 스냅샷이며 사용자 다운로드 관찰은 NOT_OBSERVED.",
+      "evidence": [],
+      "source_commit": "4d6392c875f44219f0b0f26a1415e887365406c2",
+      "runtime_manifest_sha256": "70f4a32045242ce176e9d66f13791179cac67dd974de318dd77c7c1374a7455c"
+    }
+  ],
+  "environment": "Godot4.6.3/Linux Xvfb/Pulse; Android API29 x86_64 TCG emulator",
+  "reuse": "P2 results not recounted; engine131 source-hash matched. Geography screenshots from gui-world-final reuse unchanged renderer/content; final UI comes from gui-final-pressfix/gui-packed-pressfix."
+}

@@ -6,7 +6,7 @@ import secrets
 import time
 from PIL import Image, ImageChops
 
-def probe(base, package, userdata, output, run, read_private, launch, capture):
+def probe(base, package, userdata, output, run, read_private, launch, capture, resume_proof=None):
     proof={'scope':'Android emulator ADB touch/ASCII string injection, not physical Galaxy or actual IME','checks':[]}
     shot=output/'screen-after-systemui-wait.png'
     if not shot.exists(): shot=output/'screen-default-first-frame.png'
@@ -70,41 +70,77 @@ def probe(base, package, userdata, output, run, read_private, launch, capture):
         run(base+['shell','input','swipe',str(x),str(y),str(x),str(y),'6000'],'ui-hold-%02d'%counter,30)
         time.sleep(2)
     try:
-        tap('새 캐릭터')
-        # ADB tap returns before a slow TCG app processes its focus event.
-        # Wait for the observed creation layout and explicitly focus its field.
-        tap('name_input')
-        name='and'+secrets.token_hex(4)
-        run(base+['shell','input','text',name],'ui-ascii-name',30)
-        capture('ordinary-name-entered')
-        # The captured emulator form has no soft keyboard overlay. Do not send
-        # Back speculatively: the observed run03 Back event closed the activity.
-        tap('만들고 시작');time.sleep(1)
-        path=userdata+'/gameplay-p3/characters/'+hashlib.sha256(('local-profile:default:'+name).encode()).hexdigest()[:24]+'.json'
-        raw=b''
-        for attempt in range(8):
+        if resume_proof is not None:
+            previous=json.loads(Path(resume_proof).read_text())
+            current=json.loads((output/'RUN_RECEIPT.json').read_text())
+            if previous['apk_sha256'] != current['apk_sha256']:
+                raise RuntimeError('Resume proof APK does not match installed tested APK')
+            old=previous['ordinary_input_probe']
+            if len(old['checks'])<3 or not all(c['pass'] for c in old['checks'][:3]):
+                raise RuntimeError('Resume requires actual completed creation/movement/save checks')
+            proof['checks']=old['checks'][:3]
+            proof['reused_creation_movement_save_evidence']=str(resume_proof)
+            before={'character':old['before']}
+            name=old['saved']['name']
+            path=userdata+'/gameplay-p3/characters/'+hashlib.sha256(('local-profile:default:'+name).encode()).hexdigest()[:24]+'.json'
             raw,_=read_private(path)
-            if raw.strip():break
-            time.sleep(1)
-        before=json.loads(raw)['payload']
-        proof['before']=before['character']
-        proof['checks'].append({'id':'ordinary_touch_creation_commoner','pass':before['character']['job']=='commoner' and before['character']['level']==1 and before['skills']==[]})
-        control('공격');control('기술')
-        proof['checks'].append({'id':'mobile_action_controls_onscreen','pass':True})
-        hold('→');tap('저장하고 처음으로')
-        saved=wait_saved(path,lambda s:s['character']['x']>before['character']['x'])
-        proof['saved']=saved['character']
-        proof['checks'].append({'id':'ordinary_touch_moves_and_saves','pass':saved['character']['x']>before['character']['x']})
-        capture('ordinary-moved-saved')
-        previous_pid=rows()[-1]['pid']
-        run(base+['shell','am','force-stop',package],'ui-stop-after-save',30)
-        if not launch('ordinary-ui-restart'):raise RuntimeError('Ordinary restart failed')
-        deadline=time.monotonic()+90
-        while time.monotonic()<deadline:
-            history=rows()
-            if history and history[0].get('pid')!=previous_pid and any(r.get('stage')=='ui_layout' for r in history):break
-            time.sleep(2)
-        else:raise RuntimeError('Restart produced no fresh process layout within90s')
+            saved=json.loads(raw)['payload']
+            if saved['character'] != old['saved']:
+                raise RuntimeError('Saved character differs from stopped checkpoint; never silently replace it')
+            proof.update(before=before['character'],saved=saved['character'])
+        else:
+            tap('새 캐릭터')
+            # ADB tap returns before a slow TCG app processes its focus event.
+            # Wait for the observed creation layout and explicitly focus its field.
+            tap('name_input')
+            name='and'+secrets.token_hex(4)
+            run(base+['shell','input','text',name],'ui-ascii-name',30)
+            capture('ordinary-name-entered')
+            # The captured emulator form has no soft keyboard overlay. Do not send
+            # Back speculatively: the observed run03 Back event closed the activity.
+            tap('만들고 시작');time.sleep(1)
+            path=userdata+'/gameplay-p3/characters/'+hashlib.sha256(('local-profile:default:'+name).encode()).hexdigest()[:24]+'.json'
+            raw=b''
+            for attempt in range(8):
+                raw,_=read_private(path)
+                if raw.strip():break
+                time.sleep(1)
+            before=json.loads(raw)['payload']
+            proof['before']=before['character']
+            proof['checks'].append({'id':'ordinary_touch_creation_commoner','pass':before['character']['job']=='commoner' and before['character']['level']==1 and before['skills']==[]})
+            control('공격');control('기술')
+            proof['checks'].append({'id':'mobile_action_controls_onscreen','pass':True})
+            hold('→');tap('저장하고 처음으로')
+            saved=wait_saved(path,lambda s:s['character']['x']>before['character']['x'])
+            proof['saved']=saved['character']
+            proof['checks'].append({'id':'ordinary_touch_moves_and_saves','pass':saved['character']['x']>before['character']['x']})
+            capture('ordinary-moved-saved')
+            previous_pid=rows()[-1]['pid']
+            run(base+['shell','am','force-stop',package],'ui-stop-after-save',30)
+            if not launch('ordinary-ui-restart'):raise RuntimeError('Ordinary restart failed')
+            deadline=time.monotonic()+90
+            while time.monotonic()<deadline:
+                history=rows()
+                if history and history[0].get('pid')!=previous_pid and any(r.get('stage')=='ui_layout' for r in history):break
+                time.sleep(2)
+            else:raise RuntimeError('Restart produced no fresh process layout within90s')
+        # Earlier diagnostic characters are preserved. Select this run's actual
+        # character through the ordinary drop-down instead of assuming slot0.
+        listing=run(base+['shell','run-as',package,'ls',userdata+'/gameplay-p3/characters'],'ui-profile-list',30)
+        names=sorted(n for n in Path(listing['log']).read_text().splitlines() if len(n)==29 and n.endswith('.json') and all(c in '0123456789abcdef' for c in n[:-5]))
+        target=Path(path).name
+        if target not in names:raise RuntimeError('Created character missing from preserved profile list')
+        index=names.index(target)
+        option=next(c for c in rows()[-1]['details']['controls'] if c['class']=='OptionButton')
+        if not option['text'].startswith(name+' · '):
+            tap(option['text'])
+            capture('ordinary-profile-selection')
+            run(base+['shell','input','keyevent','122']+['20']*index+['66'],'ui-select-created-profile',30)
+            # Godot's popup closes asynchronously on this TCG emulator. Keep
+            # Continue separate from the closing event; run06 captured this race.
+            time.sleep(4)
+            capture('ordinary-profile-selected')
+        proof['profile_selection']={'filename':target,'index':index,'preserved_profiles':len(names),'already_selected':option['text'].startswith(name+' · ')}
         tap('이어 하기');time.sleep(1)
         control('공격') # restored gameplay, not the old menu frame
         history=rows();loaded=[r['details']['character'] for r in history if r.get('stage')=='loaded'][-1]

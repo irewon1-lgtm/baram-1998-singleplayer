@@ -78,21 +78,143 @@
     "adb_port": 5043,
     "new_package": "com.irewon.baram.gameplay20261016",
     "custom_userdata": "baram_rebuild_gameplay_001",
-    "app_export": "NOT_RUN_FINAL_SOURCE_RUNTIME_PENDING",
-    "actual_app_smoke": "NOT_RUN_FINAL_APK_PENDING",
-    "ordinary_app_mode": "DEFAULT_PLAY_CONFIGURED_EXECUTION_PENDING",
+    "app_export": "PASS_EXPORT_ONLY",
+    "actual_app_smoke": "REUSED_PASS_SAME_APK_RUN06",
+    "ordinary_app_mode": "PASS_NORMAL_LAUNCH_FIRST_FRAME_STAYS_RUNNING",
     "Galaxy": "NOT_RUN",
     "IME": "NOT_RUN",
     "boot_evidence": {
       "path": "private/gameplay-platform/BOOT_RECEIPT.json",
-      "sha256": "4f7f6776eb461da3fa0e7ffb3fb8cbbd544daaba06e17af468038e997102b23e"
+      "sha256": "ac457e9ab5220bda470fcb9f12deab2d2ead93d9119d36ea579a902ea1253378"
     },
     "smoke_optin": "Same ordinary APK uses explicit debug-only one-shot user://gameplay-test-request.json, consumed/deleted before smoke. No exported-Activity command-line security changed.",
     "source_proof": "GodotActivity.kt@4.6.3-stable sanitizeLaunchIntent/retrieveCommandLineParamsFromLaunchIntent strip exported-activity extras",
-    "old_GEN003_result": "FAIL_NO_REPORT_PRESERVED"
+    "old_GEN003_result": "FAIL_NO_REPORT_PRESERVED",
+    "ordinary_touch_probe": {
+      "scope": "Android emulator ADB touch/ASCII string injection, not physical Galaxy or actual IME",
+      "checks": [
+        {
+          "id": "ordinary_touch_creation_commoner",
+          "pass": true
+        },
+        {
+          "id": "mobile_action_controls_onscreen",
+          "pass": true
+        },
+        {
+          "id": "ordinary_touch_moves_and_saves",
+          "pass": true
+        },
+        {
+          "id": "ordinary_android_process_restart_same_progress",
+          "pass": true
+        },
+        {
+          "id": "post_restart_touch_nonce_and_save",
+          "pass": true
+        }
+      ],
+      "observed_app_bounds": [
+        173,
+        36,
+        1108,
+        648
+      ],
+      "reused_creation_movement_save_evidence": "/workspace/scratch/f9c02bf96510/private/gameplay-platform/final-android-run09.resume.json",
+      "before": {
+        "appearance": {
+          "variant": 0
+        },
+        "dead": false,
+        "desired_job": null,
+        "direction": 2,
+        "guardian": "주작",
+        "hp": 50,
+        "hp_max": 50,
+        "id": "character:00b4fad2a6c8ff8f55d3",
+        "job": "commoner",
+        "level": 1,
+        "map_id": "gp:map:domestic_city",
+        "money": 0,
+        "mp": 25,
+        "mp_max": 25,
+        "name": "and4e03b4ea",
+        "nationality": "고구려",
+        "owner_id": "local-profile:default",
+        "x": 32,
+        "xp": 0,
+        "y": 36
+      },
+      "saved": {
+        "appearance": {
+          "variant": 0
+        },
+        "dead": false,
+        "desired_job": null,
+        "direction": 1,
+        "guardian": "주작",
+        "hp": 50,
+        "hp_max": 50,
+        "id": "character:00b4fad2a6c8ff8f55d3",
+        "job": "commoner",
+        "level": 1,
+        "map_id": "gp:map:domestic_city",
+        "money": 0,
+        "mp": 25,
+        "mp_max": 25,
+        "name": "and4e03b4ea",
+        "nationality": "고구려",
+        "owner_id": "local-profile:default",
+        "x": 40,
+        "xp": 0,
+        "y": 36
+      },
+      "profile_selection": {
+        "filename": "00b4fad2a6c8ff8f55d3927e.json",
+        "index": 0,
+        "preserved_profiles": 3,
+        "already_selected": true
+      },
+      "after": {
+        "appearance": {
+          "variant": 0
+        },
+        "dead": false,
+        "desired_job": null,
+        "direction": 3,
+        "guardian": "주작",
+        "hp": 50,
+        "hp_max": 50,
+        "id": "character:00b4fad2a6c8ff8f55d3",
+        "job": "commoner",
+        "level": 1,
+        "map_id": "gp:map:domestic_city",
+        "money": 0,
+        "mp": 25,
+        "mp_max": 25,
+        "name": "and4e03b4ea",
+        "nationality": "고구려",
+        "owner_id": "local-profile:default",
+        "x": 37,
+        "xp": 0,
+        "y": 36
+      },
+      "watermarks": [
+        {
+          "ui": 8
+        },
+        {
+          "ui": 11
+        }
+      ],
+      "status": "PASS"
+    },
+    "final_apk_sha256": "a30ab55f633a4d35047bc38ea591a087e070c109d1445eea19c39e4da8ce3789",
+    "final_receipt": "private/gameplay-platform/final-android-run09/RUN_RECEIPT.json",
+    "runtime_cache_recovery": "Host ENOSPC from workspace sync temporary AVD copies; canonical virtual disk preserved and active cache relocated outside synced tree; Android08 resumes06 checkpoint,07 failure preserved."
   },
   "windows": {
-    "build": "NOT_RUN_FINAL_SOURCE_RUNTIME_PENDING",
+    "build": "PASS_EXPORT_ONLY",
     "native_execution": "NOT_RUN_ENVIRONMENT_BLOCKED",
     "reason": "Current host Linux; historical protected environment rejected Work branch before runner start. No protection changes, branch-name bypass or paid/unknown-cost Actions triggered.",
     "historical_native_evidence": "docs/rebuild/p2-work/platform/WINDOWS_NATIVE_BLOCKER.json",
@@ -101,7 +223,7 @@
   },
   "exporter": {
     "path": "tools/rebuild/p2/gameplay_platform.py",
-    "source_sha256": "ead93288b1f4320cfd99e1060e866fcf1633e155178259602d798afc21f14038",
+    "source_sha256": "694982570c5149dc4fa6b112ff04caef7eb535a82751b27103d81518f55ca4ee",
     "test_command": "python3 -m unittest discover -s tools/rebuild/p2 -p test_gameplay_platform.py -v",
     "synthetic_tests": {
       "run": 6,
@@ -111,48 +233,14 @@
     }
   },
   "next_command": {
-    "Windows": [
-      "python3",
-      "tools/rebuild/p2/gameplay_platform.py",
-      "export",
-      "--project",
-      "rebuild/p2",
-      "--runtime",
-      "<frozen_WORK_GAMEPLAY_generation>",
-      "--godot",
-      "/workspace/scratch/f9c02bf96510/runtime-tools/godot-pinned",
-      "--templates",
-      "/workspace/scratch/f9c02bf96510/runtime-tools/gameplay/templates",
-      "--target",
-      "Windows",
-      "--output",
-      "<new_private_windows_build_dir>"
-    ],
-    "Android": [
-      "python3",
-      "tools/rebuild/p2/gameplay_platform.py",
-      "export",
-      "--project",
-      "rebuild/p2",
-      "--runtime",
-      "<frozen_WORK_GAMEPLAY_generation>",
-      "--godot",
-      "/workspace/scratch/f9c02bf96510/runtime-tools/godot-pinned",
-      "--templates",
-      "/workspace/scratch/f9c02bf96510/runtime-tools/gameplay/templates",
-      "--target",
-      "Android",
-      "--android-sdk",
-      "/workspace/scratch/f9c02bf96510/runtime-tools/gameplay/android-sdk",
-      "--java-home",
-      "/usr/lib/jvm/java-17-openjdk-amd64",
-      "--signing-root",
-      "/workspace/scratch/f9c02bf96510/private/gameplay-platform/new-synthetic-signing",
-      "--output",
-      "<new_private_android_build_dir>"
-    ]
+    "resume": "See STATE_GAMEPLAY.json next_exact_commands; do not repeat finished exports."
   },
   "new_cost": 0,
   "production_deployment": "NOT_RUN",
-  "authentication": "BLOCKED_NO_APPROVED_FREE_ENDPOINT"
+  "authentication": "BLOCKED_NO_APPROVED_FREE_ENDPOINT",
+  "performance": {
+    "native_target_p95_p99_memory": "NOT_RUN",
+    "Galaxy": "NOT_RUN",
+    "emulator_is_not_target_hardware": true
+  }
 }

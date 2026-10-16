@@ -1,10 +1,10 @@
 # P3 실제 시험 결과
 
-최종 앱 코드 고정 원격 `94bb1a5b8facf3c12219230e3d154a84bc65de75` (로컬 111b386와 tree 동일). 이후 문서/도구 수정은 앱 소스와 입력을 바꾸지 않는다. Linux Godot4.6.3 + Xvfb/Pulse 가상 출력이다. 실제 IME·물리 청취·Galaxy/Windows 시험과 구분한다.
+최종 앱 코드 고정 원격 `4d6392c875f44219f0b0f26a1415e887365406c2` (로컬 f24ba5f와 tree 동일). 이후 문서/도구 수정은 앱 소스와 입력을 바꾸지 않는다. Linux Godot4.6.3 + Xvfb/Pulse 가상 출력이다. 실제 IME·물리 청취·Galaxy/Windows 시험과 구분한다.
 
 | 기준 | 판정 | 증거 범위/제한 |
 |---|---|---|
-|P3-01|PASS / IME NOT_RUN|일반 메뉴 생성 취소→ASCII 캐릭터 생성(실제 X11 이벤트), 한글 이름은 명령 문자열 시험. 평민Lv1·기술0.|
+|P3-01|PARTIAL_IME_NOT_RUN|일반 메뉴 생성 취소→ASCII 캐릭터 생성(실제 X11 이벤트), 한글 이름은 명령 문자열 시험. 평민Lv1·기술0.|
 |P3-02|PASS_LOCAL|실제 OS 방향키 이동·해제, 네 방향 자연명령·충돌/가림 그림·발 기준.|
 |P3-03|PASS_LOCAL|실제 정의11지역 출구 왕복/9NPC 도달 명령 시험; 별도 원작 지형 복원 PASS 아님.|
 |P3-04|PASS_LOCAL|분산스폰64, AI 이동·피격·사망·리스폰 세대. 원작 밀도 미확정.|
@@ -19,12 +19,16 @@
 |P3-13|PASS_LOCAL|새 프로세스 전체 저장 표현/진행 동일, 실제 일반 UI 이어하기 후 ui 순번3→5로 추가 이동/재저장.|
 |P3-14|PASS_LOCAL|저장83회귀: 실제7자식프로세스 강제종료·원자교체·손상/백업/심볼릭링크/소유자/과대파일/소수타이머.|
 |P3-15|PASS_LOCAL|그림 변경 허용; 좌표/ID/규칙 불일치는 DEFERRED로 원본·보류 보존, 입구 이동 없음.|
-|P3-16|PARTIAL_PLATFORM|Windows/Android 빌드 생성; Android 현재 RUNNING; native Windows/Galaxy는 별도 미실행.|
+|P3-16|PARTIAL_PLATFORM|Android 동일 최종 APK:06 생성/터치이동/저장·명시smoke5 PASS;09는06의 앞3개 검사를 REUSED하고 같은 캐릭터의 실제 새 프로세스 복구·후속 이동/재저장2개만 새로 PASS.07 디스크 부족·08 해시명령 timeout 실패 보존. nativeWindows/Galaxy·IME·청취·실기기 성능은 미완료.|
 |P3-17|BLOCKED_AUTH_ENVIRONMENT|오프라인 로컬 프로필만 구현. 기존 무료 인증 왕복 환경 미연결. 파일복사를 계정 연동으로 세지 않음.|
-|P3-18|DELIVERY_IN_PROGRESS|최종 APK/Windows ZIP/입력/소스 해시·동영상·증거 비공개 전달 영수증은 DELIVERY에서 별도 기록.|
+|P3-18|PASS_PRIVATE_DELIVERY|7파일 실제 저장 성공. 최종 길이/SHA/저장 영수증은 DELIVERY.json. 사용자 다운로드 관찰은 미실행.|
 
 엔진 격리131/131은 source SHA 동일로 REUSED. 최종 자연/직업/저장 종단99/99, 최종 저장 회귀83/83, Linux GUI 자연2172명령 결과 불일치0, 최종 엔진/GUI 전체 상태 차이0. 일반 실행 마우스/키 이벤트4항목 + 새프로세스 이어하기2항목 PASS. 이전 P2 554/47/386/17은 새 P3 검사로 합산하지 않았다.
 
 자연 대표는 토끼/다람쥐104마리,915XP,88개 줍기,1회 사망/부활, Lv10까지 진행했다. Lv5 전직 후 기술별 재료(도토리30·토끼고기20)를 정상 사냥으로 모았다. 첫 기술 조건이 Lv5/6이어도 실제 학습 당시에는 Lv10이었다. 목검 수리150전은 추가 도토리30개 판매로 지불했다. 가속 명령 재생 영상은 자연 상태 명령의 시각화이며 사람의 실시간 수동 플레이/실제 IME 시험으로 부풀리지 않는다.
 
 실패 이력: 최초 실제 GUI 저장은 소수 타이머 JSON 재해석 체크섬 때문에 VERIFY_FAILED. P3 전용 마이크로초 직렬화 후 관련 회귀·자연종단·일반 UI 재시작을 재시험했다. 최초 상대 경로 exporter 실패는 출력 경로 절대화 후 새 빌드로 해결했다. 과거 Android GEN003 FAIL_NO_REPORT, Wine 저장12 FAIL, 마스크3 FAIL, 북미154 FAIL은 그대로 보존한다.
+
+최종 추가 증거: gui-hotkeys-pressfix는 최종 Windows 내장 pack에서 실제 자연 저장을 읽고 InputEvent 단축키/패널14검사를 통과했다. 이전02/03 실패도 보존한다. Android 최종 run09는 같은 APK로 PASS_SAME_APK_DEFAULT_AND_ORDINARY_INPUT; 일반 터치 결과는 별도 영수증의 ordinary_input_probe에 있다. 모든 Android 동선의 수동 플레이나 Galaxy 성능 검증으로 확대하지 않는다.
+
+최종 앱 763개 포함물은 Android/Windows 각각 실제 내장 pack에서 확인했다. 전체 활성6효과/16음향 중 모든 개별 사건의 렌더/청취를 완료했다고 하지 않는다. GUI 자연 재생에서 실제 소비된 그림/효과/음향은 gui-final-pressfix/gameplay-smoke.json의 consumed에 있다. 가상 녹음 신호는 확인했으며 물리 청취는 미실행이다. 실제 Windows/Galaxy 프레임 p95/p99·메모리 및 실제 IME는 미실행이다.

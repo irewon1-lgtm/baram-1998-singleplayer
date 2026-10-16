@@ -2,10 +2,10 @@
   "task_id": "BARAM_REBUILD_WORK_P3_PLAYABLE_001",
   "branch": "work/rebuild-p3-playable-20261016",
   "baseline_sha": "511b98bc81801e89c3fde8b5344d233aaa0c8a79",
-  "status": "IN_PROGRESS",
-  "current_step": "W5_ANDROID_W6_DELIVERY",
-  "source_commit": "94bb1a5b8facf3c12219230e3d154a84bc65de75",
-  "source_tree": "942e10e59a07de4e51fe5e4c0d49fd0a61441c67",
+  "status": "PARTIAL",
+  "current_step": "LOCAL_P3_AND_PRIVATE_DELIVERY_VERIFIED_PLATFORM_GATES_REMAIN",
+  "source_commit": "4d6392c875f44219f0b0f26a1415e887365406c2",
+  "source_tree": "8c397691c15fbb23bc45f73252f57cec2b33645d",
   "source_project_files": {
     "inspection.tscn": "2b218968d812d1ff322638428a4bc85920d1996b180b6b383e7e01df5df7e5c4",
     "project.godot": "3a0c4135f275353a718961710e46f953391752a5b2508b623fcc7295c5e3c18a",
@@ -13,7 +13,7 @@
     "README.md": "0687451467ceb59b42e092bcb737a7c5f00d68c23795c351f8de5cfcf349229a",
     "export_presets.cfg": "2b8a8a9bbd8de76ef1ed7d2e0d0ebccf5252bd581080bfc11aa7c63988ebbdb3",
     "ui/original_inspection.gd": "43d352700e3b122e76861764116850d4225a66187363ef34a34c63eaf1a4b7a8",
-    "ui/gameplay.gd": "32b9f1fcd2b34d268c743538c23e9f9914962059e6145f07f01c2542394687ef",
+    "ui/gameplay.gd": "181b77ec0cc7e1b506227fdcba77a50430ecf4f36eba6f8b50278c942011e4be",
     "ui/inspection.gd": "7723983f94857f99ca87356294c7ba15e6b2123250eebd9c28b70766f4cb26b6",
     "ui/inspection.gd.uid": "add58e6bf30d786c35df024772a90881672606d9dc7daff84a92097acc7bd612",
     "ui/original_inspection.gd.uid": "25a4b9ecfdc7700dd89913ce43eb991a4a82be698cfe2c2f25c78de97de13317",
@@ -52,28 +52,53 @@
   "runtime_manifest_sha256": "70f4a32045242ce176e9d66f13791179cac67dd974de318dd77c7c1374a7455c",
   "input_fingerprint": "ea0ecab2dec47cf2a2307d7a57242301cc345a61493aaaefb49367b87f1a722d",
   "completed": {
-    "natural_journey": "PASS99/99",
-    "save": "PASS83/83",
+    "natural_journey": "REUSED_PASS99/99_SAME_LOGIC_INPUT; finalGUI2172commandsPASS",
+    "save": "REUSED_PASS83/83_SAME_STORE_STATE_AND_INPUT_SHA",
     "engine": "REUSED131/131sameSHA",
     "Linux_GUI": "PASS2172normalcommands0mismatch; ordinaryinput+processrestartPASS",
     "Windows_build": "PASS_EXPORT_ONLY",
-    "Android_build": "PASS_EXPORT_ONLY"
+    "Android_build": "PASS_EXPORT_ONLY",
+    "Android_emulator": "PASS_SAME_APK_DEFAULT_AND_ORDINARY_INPUT",
+    "Android_production_smoke": "REUSED_RUN06_SAME_APK_5_CHECKS_PASS",
+    "Android_ordinary_resume": "RUN07_RESUME_ONLY; creation/move/save from run06 not re-counted",
+    "Linux_hotkeys": "REUSED_PASS14/14_FINAL_PACK_WITH_NATURAL_SAVE_SAME_APP_AND_INPUT",
+    "pack_inclusion": "PASS763_FILES_BOTH_FINAL_ARTIFACTS",
+    "private_delivery": "PASS7_FILES_WITH_IDENTITIES_AND_HASHES"
   },
   "pending": {
-    "Android": "run04: touch creation/movement/save observed, process restart phase running",
+    "Android": "NATIVE_GALAXY_AND_FULL_MANUAL_JOURNEY_NOT_RUN",
     "native_Windows": "BLOCKED_EXISTING_ENVIRONMENT_BRANCH_RULE_NO_BYPASS",
     "Galaxy": "NOT_RUN_NO_DEVICE",
     "authentication": "BLOCKED_AUTH_ENVIRONMENT",
-    "private_delivery": "5_FINAL_ARTIFACTS_SAVED; final report/evidence pending"
+    "private_delivery": "NONE;7_FILES_SAVED",
+    "actual_IME": "NOT_RUN",
+    "physical_audio": "NOT_RUN",
+    "target_performance_p95_p99_memory": "NOT_RUN_NO_NATIVE_TARGET_ENVIRONMENT"
   },
   "next_exact_commands": [
-    "Read /workspace/scratch/f9c02bf96510/private/gameplay-platform/final-android-run04/RUN_RECEIPT.json. Same APK SHA5d6c6e95937f78ce55591985769fdecc6f6e591c2892b69a7bef1c4b6c9bebed. Do not restart source research or rebuild unchanged APK.",
-    "Finalize RESULTS/PLAYTEST_RESULTS/DELIVERY from observed Android outcome, save HTML/evidence, commit and remote CAS requery."
+    "Do not repeat source collection, builds, Linux final GUI, same-APK Android06/09 or existing saves131/83/99 with unchanged relevant fingerprints.",
+    "Native Windows: use existing approved baram-windows-private after branch authorization; run delivered EXE and storage tests without bypassing link fixtures or protection.",
+    "Galaxy: install delivered APK alongside old game; verify actual Korean IME, full manual journey, touch/sound, long-run p95/p99/memory and saved restart.",
+    "Authentication: connect approved existing free endpoint, then actually test same-account PC→Android→PC. Offline profiles/file copies are not sync.",
+    "P4/P5 not started. Extend the same state/content/save architecture only with new authorization; do not reset to old source research."
   ],
   "failure_history": [
     "GUI1/2 fractional timer VERIFY_FAILED→fixed; finalGUI PASS",
-    "relative exporter output failure→absolute-pathfix; finalexportsPASS"
+    "relative exporter output failure→absolute-pathfix; finalexportsPASS",
+    "Android08 existing-APK hash command timed out30.01s with no hash output; not evidence of mismatched APK.09 uses explicit same signed APK replacement preserving data.",
+    "Android07 host ENOSPC and truncated receipt preserved;18GB sync temporary AVD copies removed, canonical disk retained, active cache relocated. qemu-img corrupt:false;08 resumes06 exact character without creation/smoke repeat.",
+    "Android run02/03 ordinary input FAIL preserved; run03 screen shows no keyboard, speculative BACK closed activity. Run04 omits this speculative event; run05 waits actual frames/new process checkpoints; APK unchanged.",
+    "Linux hotkeys final02/03 failed receipts preserved; final04 waits saved return cooldown and passes14/14 without app change."
   ],
   "new_authorization": "P3 actual mutations/builds allowed, P2 history preserved",
-  "P4_P5": "DEFER_OUT_OF_P3"
+  "P4_P5": "DEFER_OUT_OF_P3",
+  "steps": {
+    "W0": "VERIFIED_REUSED_BASELINE",
+    "W1": "VERIFIED_LOCAL",
+    "W2": "VERIFIED_RECONSTRUCTED_WORLD",
+    "W3": "VERIFIED_LOCAL",
+    "W4": "VERIFIED_LOCAL",
+    "W5": "PARTIAL_PLATFORM_IME_AUTH",
+    "W6": "VERIFIED_PRIVATE_DELIVERY"
+  }
 }
