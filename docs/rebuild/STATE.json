@@ -246,7 +246,7 @@
       "docs/rebuild/p1_5/INPUT_MANIFEST.json"
     ],
     "clean_handoff": "PASS_REPRODUCTION_SCOPE; CodexG0 NOT_RUN",
-    "input_manifest_sha256": "79c96fbf477404485eb28c6fe9537a025beb64ae98d45560bc32d5e74fe6fc43",
+    "input_manifest_sha256": "124573e4a57d7ff759501315bf9a101fcd8a3959944f25006120b3e14c02a1d5",
     "resume_validation": "docs/rebuild/p1_5/resumed_static_recheck_summary.json"
   },
   "historical_p0p1_source_limitations": [

@@ -47,7 +47,7 @@ def main():
         note = src.read('READ_FIRST.md').decode()
         note += ('\n## Delivery in four files\n\n'
                  'This ZIP contains all35 normalized files, code, reports and visual evidence. The large reference archive is an external exact-byte input.\n'
-                 'Download the three BARAM_P1_5_reference_sources.zip.part001..003 files by IDs in the repository DELIVERY_RECEIPT.json.\n'
+                 'Download the three BARAM_P1_5_reference_sources.zip.part001..003 files by IDs in the repository DELIVERY_RECHECK_RECEIPT.json (current core version and hashes).\n'
                  'Join them in numeric order as inputs/reference_sources.zip. Compare every part SHA and the full SHA below before opening.\n'
                  'The full original reference archive SHA256 is ' + expected['sha256'] + '.\n'
                  'Its expected byte length is ' + str(expected['bytes']) + '.\n'

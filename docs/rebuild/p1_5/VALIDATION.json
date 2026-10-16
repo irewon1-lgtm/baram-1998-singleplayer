@@ -216,7 +216,7 @@
     }
   ],
   "execution_evidence_policy": "Actual commands/config/parser/input fingerprints and per-case observed exits are in linked evidence; 450 requirement designs are not executed tests.",
-  "input_manifest_sha256": "79c96fbf477404485eb28c6fe9537a025beb64ae98d45560bc32d5e74fe6fc43",
+  "input_manifest_sha256": "124573e4a57d7ff759501315bf9a101fcd8a3959944f25006120b3e14c02a1d5",
   "resumed_static_recheck": {
     "evidence": "resumed_static_recheck_summary.json",
     "byte_gate": "PASS2489/2489 exit0",
