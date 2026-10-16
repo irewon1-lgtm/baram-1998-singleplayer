@@ -1,0 +1,177 @@
+{
+  "schema": "baram.p2.work_batch_review/1",
+  "status": "DEFERRED",
+  "metadata_result": "PASS",
+  "private_payload_result": "NOT_RUN_MISSING_BYTES",
+  "adoption": "NOT_STARTED",
+  "adopted_fields": [],
+  "exercised_fields": [],
+  "errors": [],
+  "blockers": [
+    "Original private batch ZIP is not available at an explicit local path; Library ID is not bytes.",
+    "Original selected record bytes are required to validate the reference closure.",
+    "Catalog/prior-report hash declarations match, but required old input bytes are not verified.",
+    "Frozen dependency private bytes/G0 scope are not verified in this receiver."
+  ],
+  "batch_id": "B001",
+  "work_commit": "2eb791f20335a8ccda2a597897a73e8349b63274",
+  "historical_accuracy": "NOT_ASSESSED",
+  "runtime": "NOT_RUN",
+  "metadata_files": {
+    "manifest": {
+      "bytes": 3254,
+      "sha256": "db14b1c67f199f92eefa1cffa80cf4229544b7113f891925bcbed3f9129a0946"
+    },
+    "ready": {
+      "bytes": 782,
+      "sha256": "71b431e6cb290089015cc4f2f0c562538b987526d8eb65385cd933c454a6a1b4"
+    },
+    "validation": {
+      "bytes": 2453,
+      "sha256": "309b266a9dcdaab4d9046f98a415f3f9036150cde33550b2f2b28c9dabe7e902"
+    },
+    "candidates": {
+      "bytes": 15294,
+      "sha256": "6041d5e1d694ebb3d03eb400dfef9b1854a888fed4475ebdc08ace9ad9e2ad6e"
+    }
+  },
+  "candidate_checks": [
+    {
+      "candidate_id": "WD-MS-001",
+      "field": "delay_raw_unit",
+      "profile_id": "KR491_CLIENT_RESOURCE_WITH_PER_IMAGE_ARCHIVE_PROFILE",
+      "original_record_references": 13,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WD-MS-002",
+      "field": "guide_to_client_sequence",
+      "profile_id": "KR491_CLIENT_RESOURCE_vs_KR_GUIDE_CAPTURE_20010816023648",
+      "original_record_references": 5,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WD-MS-003",
+      "field": "guide_to_client_sequence",
+      "profile_id": "KR491_CLIENT_RESOURCE_vs_KR_GUIDE_CAPTURE_20010816003523",
+      "original_record_references": 6,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WD-MS-004",
+      "field": "guide_to_client_sequence",
+      "profile_id": "KR491_CLIENT_RESOURCE_vs_KR_GUIDE_CAPTURE_20010816010111",
+      "original_record_references": 8,
+      "status": "DEFERRED"
+    },
+    {
+      "candidate_id": "WD-MS-005",
+      "field": "guide_to_client_sequence",
+      "profile_id": "KR491_CLIENT_RESOURCE_vs_KR_GUIDE_CAPTURE_20010816023829",
+      "original_record_references": 4,
+      "status": "DEFERRED"
+    }
+  ],
+  "zip_identity": {
+    "bytes": 19352,
+    "sha256": "b61c169c899853c0a90849f81174d76c8503e6827ef3244ca489aff2b721e6af",
+    "library_file_id": "libfile_9f81524ef6708191b09b4150a8ac908e",
+    "file_id": "file_00000000b4808206a03cce4ddad80bc4",
+    "version": 0
+  },
+  "payload_manifest_files": 7,
+  "accessible_payload_files": [
+    "FIELD_CANDIDATES.jsonl"
+  ],
+  "missing_private_files": [
+    "README.md",
+    "SOURCES.jsonl",
+    "motion_sound/VALIDATION_MOTION.json",
+    "motion_sound/gif_sequence_discrepancies.json",
+    "motion_sound/gif_timing_evidence.json",
+    "motion_sound/summary.json"
+  ],
+  "unverified_original_record_ids": [
+    "KR491:effect_sequence:0",
+    "KR491:effect_sequence:1",
+    "KR491:effect_sequence:10",
+    "KR491:effect_sequence:2",
+    "KR491:effect_sequence:38",
+    "KR491:effect_sequence:4",
+    "KR491:effect_sequence:44",
+    "KR491:effect_sequence:45",
+    "KR491:effect_sequence:5",
+    "KR491:effect_sequence:56",
+    "KR491:effect_sequence:6",
+    "KR491:effect_sequence:64",
+    "KR491:effect_sequence:65",
+    "KR491:effect_sequence:67",
+    "KR491:effect_sequence:68",
+    "KR491:effect_sequence:7",
+    "KR491:effect_sequence:9",
+    "KR491:guide_image:P15-ARIMG-82708b093b28:KRO-17c8793ab22b",
+    "KR491:guide_image:P15-ARIMG-82708b093b28:KRO-7139a2513c5d",
+    "KR491:guide_image:P15-ARIMG-82708b093b28:KRO-9d6d81e73179",
+    "KR491:guide_image:P15-ARIMG-82708b093b28:KRO-d93da00b1518",
+    "KR491:guide_image:P15-ARIMG-82708b093b28:KRO-f76291c4bb71",
+    "KR491:guide_image:P15-ARIMG-9fea529308b2:KRO-0eae7fde3f73",
+    "KR491:guide_image:P15-ARIMG-9fea529308b2:KRO-3559b12ed6a7",
+    "KR491:guide_image:P15-ARIMG-9fea529308b2:KRO-661caabd8a2e",
+    "KR491:guide_image:P15-ARIMG-9fea529308b2:KRO-d616d37f5b7a",
+    "KR491:guide_image:P15-ARIMG-d8a35803b6cf:KRO-1877c729a561",
+    "KR491:guide_image:P15-ARIMG-d8a35803b6cf:KRO-3f305f236c54",
+    "KR491:guide_image:P15-ARIMG-d8a35803b6cf:KRO-51a6a907dcce",
+    "KR491:guide_image:P15-ARIMG-d8a35803b6cf:KRO-57e953a2574e",
+    "KR491:guide_image:P15-ARIMG-d8a35803b6cf:KRO-806203718177",
+    "KR491:guide_image:P15-ARIMG-d8a35803b6cf:KRO-a529a55cc0d2",
+    "KR491:guide_image:P15-ARIMG-d8a35803b6cf:KRO-a55e92eecb65",
+    "KR491:guide_image:P15-ARIMG-ffa43c98a126:KRO-244a416223d6",
+    "KR491:guide_image:P15-ARIMG-ffa43c98a126:KRO-43232fcf60d7",
+    "KR491:guide_image:P15-ARIMG-ffa43c98a126:KRO-c2825b2dab80"
+  ],
+  "unverified_prior_hashes": [
+    "1a269e602493b04a4ae6b96160d480e16dad7e82ba98344e277396f692036961",
+    "cd16d538439ef2ac4ce621b079e92c0c3a275865ead0497dca6996646ebe0abd"
+  ],
+  "execution": {
+    "code_sha_at_execution": "ef89a06bb0424ea87336b4e3b7fb77dd7d39ee17",
+    "python": "3.12.14",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "command": [
+      "python3",
+      "tools/rebuild/p2/receive_work_batch.py",
+      "--manifest",
+      "/workspace/p2-private/work-batches/B001-public/handoff/B001/MANIFEST.json",
+      "--ready",
+      "/workspace/p2-private/work-batches/B001-public/handoff/B001/READY.md",
+      "--validation",
+      "/workspace/p2-private/work-batches/B001-public/handoff/B001/VALIDATION.json",
+      "--candidates",
+      "/workspace/p2-private/work-batches/B001-public/field_candidates.jsonl",
+      "--policy",
+      "/workspace/p2-private/work-batches/B001-public/RECEIVER_POLICY.json"
+    ],
+    "exit_code": 2,
+    "private_log": "/workspace/p2-private/logs/work-receiver/B001-review.log",
+    "policy_private_path": "/workspace/p2-private/work-batches/B001-public/RECEIVER_POLICY.json",
+    "policy_sha256": "d3cfd809151fbd0aca6f3592f4509352abacf41eaa486826da49de691d77a76d",
+    "receiver_source_sha256": "33b43f364a388eb4a548fd2b9caa894d1a039c1655956903c2352bba24aedc00"
+  },
+  "guard_tests": {
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tools/rebuild/p2",
+      "-p",
+      "test_receive_work_batch.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "tests": 36,
+    "scope": "Synthetic receiver rejection guards and cache invalidation only; not original data or runtime P2 PASS.",
+    "private_log": "/workspace/p2-private/logs/work-receiver/tests.log"
+  }
+}

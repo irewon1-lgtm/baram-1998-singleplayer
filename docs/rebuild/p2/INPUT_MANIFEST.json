@@ -1,0 +1,77 @@
+{
+  "schema": "baram.p2.input_manifest/1",
+  "generation": "P2-GEN001-INFRASTRUCTURE",
+  "task_id": "BARAM_REBUILD_CODEX_P2_001",
+  "base_p1_5_manifest_sha256": "124573e4a57d7ff759501315bf9a101fcd8a3959944f25006120b3e14c02a1d5",
+  "default_historical_profile": null,
+  "profiles": {
+    "P2_INFRASTRUCTURE_ONLY": "NO_HISTORICAL_CONTENT",
+    "synthetic-storage-fixture-v1": "SYNTHETIC_NON_ORIGINAL_SAVE_SCHEMA"
+  },
+  "available_public_contracts": [
+    {
+      "path": "docs/rebuild/p1_5/selected_content/save_contracts.json",
+      "sha256": "28b88bde1f543ef6a811d17af08427af94961c0ce88bd4b7a3f34ed8be05752c",
+      "bytes": 23724,
+      "used_for": "contract_design_not_original_value_substitute"
+    },
+    {
+      "path": "docs/rebuild/p1_5/requirements_delta.csv",
+      "sha256": "6aa76a6ab4484ef236ddce0ee1d3c1f56527f544dfd6f208a6e62438b09e0c83",
+      "bytes": 277359,
+      "used_for": "contract_design_not_original_value_substitute"
+    },
+    {
+      "path": "docs/rebuild/p1_5/gaps_by_feature.csv",
+      "sha256": "384d72b069aacb8b32993d4216ee16cc582e6e5d62388207d58c7e2affa97bbe",
+      "bytes": 74249,
+      "used_for": "contract_design_not_original_value_substitute"
+    },
+    {
+      "path": "docs/rebuild/p1_5/field_bindings.jsonl",
+      "sha256": "59799f0969621e8e1490041af2277b78c402cb24b2cbc522634386e7dac74602",
+      "bytes": 127782,
+      "used_for": "contract_design_not_original_value_substitute"
+    }
+  ],
+  "private_selected_content_received": 0,
+  "original_client_assets_consumed": 0,
+  "audit_only2": "Acquired privately exact fixed pins; no runtime/input-package use; hashes omitted from this public manifest",
+  "work_adopted_batches": [],
+  "work_deferred_batches": [
+    "B001"
+  ],
+  "required_missing": "MISSING_INPUTS.json",
+  "independence": {
+    "save_fixture_suite": {
+      "dependencies": [
+        "new storage/save_store.gd",
+        "new synthetic fixture",
+        "Godot4.6.3"
+      ],
+      "originals_required": false,
+      "NA154_graph_dependency": false,
+      "reason": "No source normalized entity table, monster spawn/drop/job lookup, Korean map/effect/audio is used; fixture namespace cannot be selected as historical profile"
+    },
+    "inspection_ui": {
+      "dependencies": [
+        "new UI/input/state/render scripts",
+        "systemfont",
+        "Godot4.6.3"
+      ],
+      "original_assets_required": false,
+      "reason": "Displays missing-input diagnostics without stand-in art or reconstructed content"
+    },
+    "reference_login": "Separate unit receipt REFERENCE_RESULTS.json; never promotes overall G0"
+  },
+  "cache_components": [
+    "input",
+    "parser",
+    "converter",
+    "config",
+    "profile",
+    "schema",
+    "mapping"
+  ],
+  "input_generation_frozen_during_tests": true
+}

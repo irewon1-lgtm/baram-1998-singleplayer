@@ -1,0 +1,65 @@
+{
+  "schema": "baram.p2.save-module-provenance/1",
+  "classification": "SYNTHETIC_STORAGE_TECHNICAL_TEST_NOT_ORIGINAL_GAME_FORMAT",
+  "reused_source": {
+    "source_id": "OLD-SAVE-STORE",
+    "commit": "ac08964cbbc2ae1a6499a760de7d6b81c45c3f27",
+    "path": "game/save_store.gd",
+    "size_bytes": 6807,
+    "sha256": "57b0fc0aabbab3bd0ca7568d87ace999bc3daeef7255e502bd71d8d317e09bc9",
+    "actual_byte_check": "MATCH_PINNED_P1_5_CONTRACT",
+    "inspection": "Read full source in private cache; no original user saves opened",
+    "reuse_kind": "Algorithm pattern only; new typed validation/canonical envelope implementation. No wholesale source copy.",
+    "reused_pattern": [
+      "bounded read",
+      "temporary write and verify",
+      "previous valid backup and verify",
+      "rename replacement",
+      "future schema refuses fallback",
+      "preserve corrupt primary before explicit repair"
+    ],
+    "changed_contract": [
+      "digest covers all metadata and payload",
+      "deep owner/character/stable-ID/equipment/map validation",
+      "map update returns DEFERRED without fabricated coordinates",
+      "phase observer enables process termination tests"
+    ]
+  },
+  "contract_input": {
+    "path": "docs/rebuild/p1_5/selected_content/save_contracts.json",
+    "sha256": "28b88bde1f543ef6a811d17af08427af94961c0ce88bd4b7a3f34ed8be05752c",
+    "consumed_content_ids": [
+      "SAVE-P15-ENVELOPE",
+      "SAVE-P15-ATOMIC",
+      "SAVE-P15-RECOVERY",
+      "SAVE-P15-IMPORT"
+    ],
+    "not_implemented": [
+      "authenticated ownership",
+      "server revision/CAS/lease",
+      "actual legacy save migration",
+      "historical original game save compatibility"
+    ]
+  },
+  "requirements": [
+    "RQ-098",
+    "RQ-099",
+    "RQ-100 (fixture subset)",
+    "RQ-101 (no network storage component only)",
+    "RQ-102 (process termination subset, not Android lifecycle)",
+    "RQ-103",
+    "RQ-104 (no real old save migration)",
+    "RQ-105",
+    "RQ-106"
+  ],
+  "input_dependency_scope": "All generated fixture IDs, map dimensions, equipment, names and quantities are explicitly synthetic. No missing P1.5 private data or NA reference rows are dependencies. Entire G0 remains separately judged.",
+  "limits": {
+    "maximum_save_bytes": 1048576,
+    "maximum_json_depth": 24,
+    "maximum_collection_entries": 1024,
+    "maximum_exact_integer": 9007199254740991,
+    "durability": "FileAccess.flush + same-directory rename observed per target runtime. No fsync directory/power-loss durability claim. No true disk-full hardware test.",
+    "checksum": "Accidental corruption only; not a signature or account authentication.",
+    "migration": "Only same stable map with still-valid coordinates can be updated. Otherwise DEFERRED and source retained. No old map coordinate transformation invented."
+  }
+}
