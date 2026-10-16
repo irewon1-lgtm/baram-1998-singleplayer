@@ -203,6 +203,15 @@ func decode(text: String, expected_owner: String, catalog: Dictionary) -> Dictio
 		result.state = document
 	return result
 
+func native_directory(path: String) -> DirAccess:
+	# Android maps absolute ACCESS_FILESYSTEM paths to its Java provider, whose
+	# DirAccess lacks symlink operations. Keep the native USERDATA backend while
+	# selecting a caller-owned absolute directory. This also works on desktop.
+	var directory := DirAccess.open("user://")
+	if directory == null or directory.change_dir(ProjectSettings.globalize_path(path)) != OK:
+		return null
+	return directory
+
 func _path_has_link(path: String) -> bool:
 	# Godot has no no-follow/exclusive-open API. Reject pre-existing symlinks in
 	# the entire path before reads/writes and recheck before replacement. Caller
@@ -211,12 +220,16 @@ func _path_has_link(path: String) -> bool:
 	var current: String = ProjectSettings.globalize_path(path).simplify_path()
 	if not current.is_absolute_path():
 		return true
+	# Do not reopen an absolute parent with DirAccess.open(): on Android that
+	# silently changes to a provider whose default is_link() always returns false.
+	var directory := DirAccess.open("user://")
+	if directory == null:
+		return true
 	for depth in range(256):
 		var parent: String = current.get_base_dir()
 		if parent == current or current.is_empty():
 			return false
-		var directory := DirAccess.open(parent)
-		if directory != null and directory.is_link(current):
+		if directory.change_dir(parent) == OK and directory.is_link(current):
 			return true
 		current = parent
 	return true

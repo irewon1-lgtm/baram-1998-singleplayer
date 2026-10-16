@@ -73,5 +73,50 @@
       "output_sha256": "b0533566a2c84d87dfff1f450f24ce20a2fb0299c978e7566df7754fdf290c56"
     }
   ],
-  "expected_failure_is_not_save_data_PASS": true
+  "expected_failure_is_not_save_data_PASS": true,
+  "native_backend_correction_executions": [
+    {
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        "/workspace/baram-p2-codex/rebuild/p2",
+        "--script",
+        "/workspace/baram-p2-codex/tools/rebuild/p2/test_save.gd",
+        "--",
+        "--root",
+        "/workspace/p2-private/save-tests/run-10-native-backend-full"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 3.324,
+      "code_git_head": "834e9c57c89c0ae11d9d8c563a00571f89ccc4fb",
+      "code_fingerprints": {
+        "rebuild/p2/storage/save_store.gd": "54c72522afadf5f14d53f55ba57bddf745a8837ce9b11a60511960694c097c0a",
+        "rebuild/p2/storage/save_self_test.gd": "3de2bdd56f17c3d6af8cd28319b077d9f7132a48e5bbc677851b8ff0f92d64de"
+      },
+      "output_sha256": "1fbce8860beefeba718b7da58b55f415193018ff6c48d1f192aad12c131ad559"
+    },
+    {
+      "command": [
+        "godot",
+        "--headless",
+        "--path",
+        "/workspace/baram-p2-codex/rebuild/p2",
+        "--script",
+        "/workspace/baram-p2-codex/tools/rebuild/p2/test_save.gd",
+        "--",
+        "--root",
+        "/workspace/p2-private/save-tests/run-11-native-backend-local",
+        "--local-only"
+      ],
+      "exit_code": 0,
+      "elapsed_s": 0.255,
+      "code_git_head": "834e9c57c89c0ae11d9d8c563a00571f89ccc4fb",
+      "code_fingerprints": {
+        "rebuild/p2/storage/save_store.gd": "54c72522afadf5f14d53f55ba57bddf745a8837ce9b11a60511960694c097c0a",
+        "rebuild/p2/storage/save_self_test.gd": "3de2bdd56f17c3d6af8cd28319b077d9f7132a48e5bbc677851b8ff0f92d64de"
+      },
+      "output_sha256": "daac51b6874ee3e9296a8c251e0691cc226b9c564fe9b675a1aa789acb590b70"
+    }
+  ]
 }

@@ -279,20 +279,28 @@ func run_tests() -> void:
 		var unrelated_path: String = symlink_path.get_base_dir().path_join("unrelated-fixture.txt")
 		put(unrelated_path, "unrelated synthetic data must remain byte-identical")
 		var link_path: String = symlink_path + suffix
-		var directory := DirAccess.open(symlink_path.get_base_dir())
-		var link_result: Error = directory.create_link(unrelated_path, link_path)
+		var directory = store.native_directory(symlink_path.get_base_dir())
+		if directory == null:
+			check("native_userdata_directory_access_" + suffix, false)
+			continue
+		var absolute_source: String = ProjectSettings.globalize_path(unrelated_path)
+		var absolute_link: String = ProjectSettings.globalize_path(link_path)
+		var link_result: Error = directory.create_link(absolute_source, absolute_link)
 		if link_result != OK:
 			skip("symlink_target_rejected_" + suffix, "Platform could not create synthetic symlink: " + str(link_result))
 			continue
+		if suffix == ".pending":
+			var filesystem_directory := DirAccess.open(ProjectSettings.globalize_path(symlink_path.get_base_dir()))
+			check("native_userdata_backend_detects_globalized_fixture_link", directory.is_link(absolute_link), {"native_userdata_is_link": directory.is_link(absolute_link), "absolute_filesystem_is_link": filesystem_directory.is_link(absolute_link) if filesystem_directory != null else "UNAVAILABLE"})
 		var write_result: Dictionary = store.write_state(symlink_path, state, OWNER, cat)
 		check("symlink_target_rejected_" + suffix, write_result.status == "UNSAFE_PATH_LINK", write_result)
-		check("symlink_target_preserved_" + suffix, FileAccess.get_file_as_string(unrelated_path) == "unrelated synthetic data must remain byte-identical" and directory.is_link(link_path))
+		check("symlink_target_preserved_" + suffix, FileAccess.get_file_as_string(unrelated_path) == "unrelated synthetic data must remain byte-identical" and directory.is_link(absolute_link))
 	var ancestor_base: String = fresh("symlink-parent").get_base_dir()
 	var ancestor_target: String = ancestor_base.path_join("unrelated-directory")
 	DirAccess.make_dir_recursive_absolute(ancestor_target)
 	var ancestor_link: String = ancestor_base.path_join("linked-parent")
-	var ancestor_directory := DirAccess.open(ancestor_base)
-	var ancestor_result: Error = ancestor_directory.create_link(ancestor_target, ancestor_link)
+	var ancestor_directory = store.native_directory(ancestor_base)
+	var ancestor_result: Error = ancestor_directory.create_link(ProjectSettings.globalize_path(ancestor_target), ProjectSettings.globalize_path(ancestor_link)) if ancestor_directory != null else ERR_CANT_OPEN
 	if ancestor_result == OK:
 		check("symlink_ancestor_rejected", store.write_state(ancestor_link.path_join("save.json"), state, OWNER, cat).status == "UNSAFE_PATH_LINK")
 		check("symlink_ancestor_directory_preserved", DirAccess.get_files_at(ancestor_target).is_empty())
@@ -305,8 +313,8 @@ func run_tests() -> void:
 	var corrupt_target: String = corrupt_link_path.get_base_dir().path_join("unrelated-fixture.txt")
 	put(corrupt_target, "unrelated corrupt-copy target")
 	var corrupt_sidecar: String = corrupt_link_path + ".corrupt-" + corrupt_text.sha256_text()
-	var corrupt_directory := DirAccess.open(corrupt_link_path.get_base_dir())
-	var corrupt_link_result: Error = corrupt_directory.create_link(corrupt_target, corrupt_sidecar)
+	var corrupt_directory = store.native_directory(corrupt_link_path.get_base_dir())
+	var corrupt_link_result: Error = corrupt_directory.create_link(ProjectSettings.globalize_path(corrupt_target), ProjectSettings.globalize_path(corrupt_sidecar)) if corrupt_directory != null else ERR_CANT_OPEN
 	if corrupt_link_result == OK:
 		check("corrupt_copy_symlink_rejected", store.write_state(corrupt_link_path, fixture(2), OWNER, cat).status == "UNSAFE_PATH_LINK")
 		check("corrupt_copy_symlink_preserves_all_sources", FileAccess.get_file_as_string(corrupt_target) == "unrelated corrupt-copy target" and FileAccess.get_file_as_string(corrupt_link_path) == corrupt_text and FileAccess.get_file_as_string(corrupt_link_path + ".backup") == encoded)
