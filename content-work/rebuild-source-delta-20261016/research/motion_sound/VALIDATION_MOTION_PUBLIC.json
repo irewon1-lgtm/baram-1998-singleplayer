@@ -1,0 +1,51 @@
+{
+  "scope": "Work-only new GIF container metadata and existing-row discrepancy analysis. Historical/game/runtime PASS not implied. Fixed byte comparison from P1.5 reused, not recomputed.",
+  "script_sha256": "1b96692e1e91be93a147148aa35919e005ed41c18553125afea8bb1262ce5c3e",
+  "normal_records": 17,
+  "checks": [
+    {
+      "case": "FIXED_SUBSET_COPY_SUCCESS",
+      "expected_exit": 0,
+      "actual_exit": 0,
+      "pass": true,
+      "outputs_equal": true
+    },
+    {
+      "case": "CORRUPTED_GIF_COPY_REJECTED",
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "pass": true,
+      "reason": "input SHA256 mismatch"
+    },
+    {
+      "case": "MISSING_GIF_COPY_REJECTED",
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "pass": true,
+      "reason": "missing input"
+    }
+  ],
+  "all_pass": true,
+  "inputs_parent_sha256": {
+    "evidence/guide_effect_comparison.json": "cd16d538439ef2ac4ce621b079e92c0c3a275865ead0497dca6996646ebe0abd",
+    "docs/rebuild/p1_5/selected_content/kr_asset_effect_sequences.jsonl": "1a269e602493b04a4ae6b96160d480e16dad7e82ba98344e277396f692036961",
+    "docs/rebuild/p1_5/selected_content/kr_asset_guide_effects.jsonl": "63d8fb07e70a72ee3c1a94999c76aac5959edd67fef12d9e3adf99bd2efca7d7"
+  },
+  "output_files": [
+    {
+      "path": "gif_sequence_discrepancies.json",
+      "bytes": 22351,
+      "sha256": "dd947a85548382d5d6455e608fa3128145cfe5d03db2ccf7e7272fc9bca6eb52"
+    },
+    {
+      "path": "gif_timing_evidence.json",
+      "bytes": 116302,
+      "sha256": "714e850eb34e5af3e131ceb0f17108319972583e133f0762f83093995e1279d1"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 340,
+      "sha256": "01402d3e6318d5f12595d904c6785a69a37700409817b60ef9d45732ce62cb4e"
+    }
+  ]
+}

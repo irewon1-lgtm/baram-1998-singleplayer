@@ -1,0 +1,4 @@
+area,target_field,binding_ids,prior_status,new_status,candidate_ids,remaining
+F/G,delay_raw_unit,BND-022;BND-023;BND-024,RUNTIME_OBSERVATION_NEEDED,RUNTIME_OBSERVATION_NEEDED_WITH_STATIC_COUNTEREXAMPLES,WD-MS-001,Client Delay unit unknown; exact RGB guide image does not establish elapsed time.
+G,guide_to_client_sequence,BND-023;BND-025,UNBOUND,PRECISE_PARTIAL_LAYER_OR_VARIANT_EVIDENCE_READY_NOT_IDENTIFIED,WD-MS-002;WD-MS-003;WD-MS-004;WD-MS-005,Complete visual sequence/cast/audio/runtime timing unresolved; no source replacement.
+G,sound_id;impact;actual_audio_output;next_action_time,BND-023;BND-024,UNKNOWN,UNCHANGED_EXECUTION_OBSERVATION_REQUIRED,WD-MS-001,No verified KR sound binding or hit/action timing from static GIFs or NA audit.

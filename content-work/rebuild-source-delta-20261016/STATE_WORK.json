@@ -1,0 +1,75 @@
+{
+  "schema": "baram.work_source_delta.state/1",
+  "task_id": "BARAM_REBUILD_WORK_SOURCE_DELTA_001",
+  "branch": "work/rebuild-source-delta-20261016",
+  "base_plan_sha": "590bd626b63cebf6d858c8e9c1c9ce822ea0ec94",
+  "p1_5_sha": "590bd626b63cebf6d858c8e9c1c9ce822ea0ec94",
+  "input_manifest_sha256": "124573e4a57d7ff759501315bf9a101fcd8a3959944f25006120b3e14c02a1d5",
+  "profiles": {
+    "default": null,
+    "dispatch_required": true
+  },
+  "snapshot_verified": {
+    "matching_remote_blobs": 102,
+    "mismatches": 0,
+    "method": "git blob SHA1 compared against remote recursive tree"
+  },
+  "remote_codex_records": {
+    "checked_utc": "2026-10-16T01:53:42.061036+00:00",
+    "scope": "All16remote branches; planning tree135entries; codex/game-core HEADac08964c dated2026-10-15",
+    "requests": [],
+    "receipt": "UNACKNOWLEDGED",
+    "p2_branch": "UNCONFIRMED"
+  },
+  "read_only_root": "/workspace/scratch/3624c67f59e8/work-source-delta/docs/rebuild",
+  "allowed_prefix": "content-work/rebuild-source-delta-20261016/",
+  "stages": [
+    {
+      "step": "intake",
+      "expected": "Latest remote snapshot, required docs, fixed manifest fingerprint, isolated directory",
+      "status": "PASS"
+    },
+    {
+      "step": "research",
+      "expected": "New or newly interpreted evidence tied to stable IDs and preserved sources",
+      "status": "IN_PROGRESS"
+    },
+    {
+      "step": "batch_validation",
+      "expected": "Nonzero required file set, allbytes/hashes/formats/references, positive and reject cases",
+      "status": "NOT_RUN"
+    },
+    {
+      "step": "publication",
+      "expected": "Dedicated branch-only diff, actual saved ZIP identity and exact remote requery",
+      "status": "NOT_RUN"
+    }
+  ],
+  "completed": [
+    "B001 motion metadata and exact discrepancy evidence, validation, immutable ZIP saved"
+  ],
+  "in_progress": [
+    "maps_npc",
+    "motion_sound",
+    "gameplay_economy",
+    "archives_ui",
+    "NA reference-failure interpretation"
+  ],
+  "published_batches": [
+    {
+      "batch": "B001",
+      "files": 7,
+      "candidates": 5,
+      "zip_bytes": 19352,
+      "zip_sha256": "b61c169c899853c0a90849f81174d76c8503e6827ef3244ca489aff2b721e6af",
+      "zip_path": "/workspace/scratch/3624c67f59e8/delivery/BARAM_WORK_SOURCE_DELTA_B001_20261016.zip",
+      "guard_cases": 5,
+      "library_file_id": "libfile_9f81524ef6708191b09b4150a8ac908e",
+      "file_id": "file_00000000b4808206a03cce4ddad80bc4",
+      "version": 0,
+      "receipt": "UNACKNOWLEDGED"
+    }
+  ],
+  "runtime_tests": "NOT_RUN",
+  "next_action": "Finish maps/NPC, Korean gameplay/economy and archive/UI delta without rewriting B001; publish next batch."
+}

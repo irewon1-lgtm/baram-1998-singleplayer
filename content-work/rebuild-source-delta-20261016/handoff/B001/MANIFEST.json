@@ -1,0 +1,121 @@
+{
+  "schema": "baram.work_source_delta.batch/1",
+  "task_id": "BARAM_REBUILD_WORK_SOURCE_DELTA_001",
+  "batch_id": "B001",
+  "base_p1_5_sha": "590bd626b63cebf6d858c8e9c1c9ce822ea0ec94",
+  "input_manifest_sha256": "124573e4a57d7ff759501315bf9a101fcd8a3959944f25006120b3e14c02a1d5",
+  "profile_dispatch_required": true,
+  "default_build_profile_id": null,
+  "profiles": [
+    "KR491_CLIENT_RESOURCE_WITH_PER_IMAGE_ARCHIVE_PROFILE",
+    "KR491_CLIENT_RESOURCE_vs_KR_GUIDE_CAPTURE_20010816003523",
+    "KR491_CLIENT_RESOURCE_vs_KR_GUIDE_CAPTURE_20010816010111",
+    "KR491_CLIENT_RESOURCE_vs_KR_GUIDE_CAPTURE_20010816023648",
+    "KR491_CLIENT_RESOURCE_vs_KR_GUIDE_CAPTURE_20010816023829"
+  ],
+  "files": [
+    {
+      "path": "FIELD_CANDIDATES.jsonl",
+      "bytes": 15294,
+      "sha256": "6041d5e1d694ebb3d03eb400dfef9b1854a888fed4475ebdc08ace9ad9e2ad6e"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2057,
+      "sha256": "9ac94544b815ff6023e4e339023943d89bd2b25b5d100c508d387b6248cf4a16"
+    },
+    {
+      "path": "SOURCES.jsonl",
+      "bytes": 1701,
+      "sha256": "80869338421fb1671839da802efe2d87807922c21350087fbdc2d6fd5d1e46dc"
+    },
+    {
+      "path": "motion_sound/VALIDATION_MOTION.json",
+      "bytes": 1744,
+      "sha256": "498a5f6ea438d5daf3ac178c1d13be42b6ab37a866b468ea1043306d5902208c"
+    },
+    {
+      "path": "motion_sound/gif_sequence_discrepancies.json",
+      "bytes": 22351,
+      "sha256": "dd947a85548382d5d6455e608fa3128145cfe5d03db2ccf7e7272fc9bca6eb52"
+    },
+    {
+      "path": "motion_sound/gif_timing_evidence.json",
+      "bytes": 116302,
+      "sha256": "714e850eb34e5af3e131ceb0f17108319972583e133f0762f83093995e1279d1"
+    },
+    {
+      "path": "motion_sound/summary.json",
+      "bytes": 340,
+      "sha256": "01402d3e6318d5f12595d904c6785a69a37700409817b60ef9d45732ce62cb4e"
+    }
+  ],
+  "candidate_ids": [
+    "WD-MS-001",
+    "WD-MS-002",
+    "WD-MS-003",
+    "WD-MS-004",
+    "WD-MS-005"
+  ],
+  "valid_binding_ids": [
+    "BND-001",
+    "BND-002",
+    "BND-003",
+    "BND-004",
+    "BND-005",
+    "BND-006",
+    "BND-007",
+    "BND-008",
+    "BND-009",
+    "BND-010",
+    "BND-011",
+    "BND-012",
+    "BND-013",
+    "BND-014",
+    "BND-015",
+    "BND-016",
+    "BND-017",
+    "BND-018",
+    "BND-019",
+    "BND-020",
+    "BND-021",
+    "BND-022",
+    "BND-023",
+    "BND-024",
+    "BND-025",
+    "BND-026",
+    "BND-027",
+    "BND-028",
+    "BND-029",
+    "BND-030",
+    "BND-031",
+    "BND-032",
+    "BND-033",
+    "BND-034",
+    "BND-035"
+  ],
+  "affected_bindings": [
+    "BND-022",
+    "BND-023",
+    "BND-024",
+    "BND-025"
+  ],
+  "affected_p2_units": [
+    "P2-02",
+    "P2-03"
+  ],
+  "dependencies": [
+    {
+      "kind": "frozen_P1_5",
+      "sha": "590bd626b63cebf6d858c8e9c1c9ce822ea0ec94",
+      "core_library_id": "libfile_5625c3d22e548191bb3c06296c42bf6c",
+      "core_version": 1,
+      "core_sha256": "f9fa57ea09f2755d5038cb7208258e3c5b44f6dddea77ebf66dfd6129ef8233c"
+    }
+  ],
+  "supersedes": [],
+  "replacement_policy": "PROPOSAL_ONLY. Expected current values/hashes in candidates. No mutation to frozen or active inputs. Adopt only at Codex test boundary.",
+  "codex_receipt": "UNACKNOWLEDGED",
+  "runtime": "NOT_RUN",
+  "created_at_utc": "2026-10-16T02:00:33.213143+00:00"
+}
