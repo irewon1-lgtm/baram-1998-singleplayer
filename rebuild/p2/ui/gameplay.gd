@@ -477,6 +477,7 @@ func _process(delta: float) -> void:
 		if chat_log.size()>32: chat_log.pop_front()
 		history.text="\n".join(chat_log)
 	if not smoke:
+		autosave+=delta
 		tick_accumulator+=minf(delta,0.5)
 		if tick_accumulator>=0.05:
 			var before: Dictionary=game.state
@@ -487,7 +488,6 @@ func _process(delta: float) -> void:
 				if str(event.type) in ["monster_died","skill_applied","player_died","level_up"]: critical=true
 			if critical and not _save(): game.state=before
 			else: _consume_events(result.get("events",[]))
-			autosave+=delta
 			if autosave>=3.0: autosave=0;_save()
 			if not dialogue.visible: _advance_movement()
 	if panel_clock>=0.2:
