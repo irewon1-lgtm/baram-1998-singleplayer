@@ -83,13 +83,14 @@
     },
     {
       "filename": "BARAM_P3_PLAYABLE_EVIDENCE_20261016.zip",
-      "bytes": 19170514,
-      "sha256": "8cead958f6ed4f90acfc6314a269be3ceb4ec97b08b30540b52c0f7c04fd3493",
+      "bytes": 19416344,
+      "sha256": "5022c31b1d27245190fbfb0e76f44cce96ba4f0bf1198eeb1fe5271d908f95e3",
       "local_path": "/workspace/scratch/f9c02bf96510/delivery/p3/BARAM_P3_PLAYABLE_EVIDENCE_20261016.zip",
       "library_file_id": "libfile_50d6630556c8819182841bb90173298e",
-      "file_id": "file_00000000191c81f9bb2bf26340e3a79b",
+      "file_id": "file_00000000a45482109a6cf3ef179970ed",
       "save_receipt": "SUCCEEDED",
-      "local_metadata_applied": true
+      "local_metadata_applied": true,
+      "current_version_number": 1
     }
   ],
   "private_only": true,
@@ -138,5 +139,13 @@
       "user_download_observation": "NOT_OBSERVED"
     }
   ],
-  "archive_phase": "Evidence ZIP contains pre-transfer matrix snapshot; final P3-18 receipt is this DELIVERY.json and current PLAYTEST_RESULTS.json."
+  "archive_phase": "Evidence ZIP contains pre-transfer matrix snapshot; final P3-18 receipt is this DELIVERY.json and current PLAYTEST_RESULTS.json.",
+  "evidence_trace_correction": {
+    "path": "evidence/gameplay/journey-final-v3.commands.json",
+    "sha256": "29abaa87ff233d3e3a40b0138dadc77ad003bcd1ae51bfda8212607c2841994f",
+    "reason": "Fixed evidence packaging path only; source/runtime and executed results unchanged. Original draft used nonexistent journey-final-v3.json.commands.json.",
+    "library_identity_preserved": true,
+    "replacement_receipt": "SUCCEEDED_VERSION_1",
+    "new_test_count": 0
+  }
 }
