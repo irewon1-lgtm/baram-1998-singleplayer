@@ -103,7 +103,11 @@ func _run_smoke() -> void:
 	checks.append({"id":"unicode_direct_injection_only", "pass":name_entry.text == "한글 검수"})
 	# Same storage implementation and synthetic contract on every exported target.
 	# Process-kill cases are explicitly NOT_RUN here; the standalone runner adds them.
-	var save_report: Dictionary = SaveTests.new().run("user://p2-save-fixture-tests")
+	# Preserve every earlier run. Native symlink targets must receive real paths,
+	# not a user:// URI that the operating system could store literally.
+	var run_id := "%s-%s" % [OS.get_process_id(), Crypto.new().generate_random_bytes(8).hex_encode()]
+	var fixture_root := ProjectSettings.globalize_path("user://p2-save-fixture-tests/run-" + run_id)
+	var save_report: Dictionary = SaveTests.new().run(fixture_root)
 	for index in range(180):
 		tabs.current_tab = index % 4
 		await get_tree().process_frame
@@ -114,6 +118,7 @@ func _run_smoke() -> void:
 	var report := {"schema":"baram.p2.ui_smoke/1", "platform":OS.get_name(), "engine":Engine.get_version_info().string, "profile":state.profile_id, "rendering":rendering, "checks":checks, "script_ready_us":ready_us-started_us, "smoke_elapsed_us":Time.get_ticks_usec()-started_us, "sampled_frames":ordered.size(), "frame_us_p95":ordered[int((ordered.size()-1)*0.95)], "frame_us_p99":ordered[int((ordered.size()-1)*0.99)], "memory_static_bytes":OS.get_static_memory_usage(), "original_assets_consumed":0, "IME":"NOT_RUN", "physical_input":"NOT_RUN", "authentication":"NOT_RUN"}
 	var output := OS.get_environment("BARAM_P2_REPORT")
 	report["save_tests"] = save_report
+	report["fixture_root"] = fixture_root
 	if output.is_empty():
 		output = "user://ui-smoke.json"
 	var file := FileAccess.open(output, FileAccess.WRITE)
