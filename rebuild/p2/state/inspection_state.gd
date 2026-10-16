@@ -14,3 +14,6 @@ func switch_panel(index: int) -> void:
 func clear_input() -> void:
 	held_actions.clear()
 	input_generation += 1
+
+## New controlled inspection character; HP and gameplay item/stat bindings unresolved.
+var character: Dictionary = {"actual_job":"commoner", "job_title":"평민", "desired_job":null, "level":1, "learned_attack_skills":[], "stat_values":"UNKNOWN"}

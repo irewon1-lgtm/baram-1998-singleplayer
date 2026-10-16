@@ -1,0 +1,57 @@
+{
+  "schema": "baram.p2.kr491-ui-palette-correction/1",
+  "status": "STATIC_BINDING_VERIFIED_CANDIDATE_RENDERED_RUNTIME_PENDING",
+  "parent_runtime_sha256": "d46a3ac5cc3d0d3a0e878d38199290347f7b9ebeb8f42e945dab75e9d8dd76cd",
+  "correction_script_sha256": "3d70905e53bb27912600cd8bf5a97804c42c96059761ec49ba7ac091a59b2b6c",
+  "original_exe_sha256": "f88846f2d3ce394d8dcc6e55288b8977ff3d34e160a4029337bdaccee84475ea",
+  "original_dat_sha256": "f8271a52d8dbde5601a0c7bf7460052376b2651930b6bc004eeb1ed20357bfc7",
+  "source_sprite": "DLGNEW02.epf:0",
+  "wrong_palette": "DlgLogin.pal:0",
+  "correct_palette": "Baram.pal:0",
+  "new_palette_sha256": "3bba3624849aabe738d344c949343780f05f3b29978c93fd1d785e81af3fce5d",
+  "root_cause": "incorrect inferred palette binding; not EPF compression or encryption",
+  "original_static_evidence": [
+    {
+      "virtual_address": "0x44649a..0x4464ad",
+      "meaning": "DLGNEW02 constructor passes palette argument NULL"
+    },
+    {
+      "virtual_address": "0x419727..0x419748",
+      "meaning": "NULL palette name defaults to BARAM.PAL string at0x4e7414"
+    },
+    {
+      "virtual_address": "0x4197fd..0x41980f",
+      "meaning": "draw path obtains palette from the constructor field"
+    }
+  ],
+  "unchanged": [
+    "source EPF bytes",
+    "pixel indices",
+    "mask alpha",
+    "frame rectangle",
+    "all other UI and assets"
+  ],
+  "mask3_status": "BLOCKED_UNCHANGED; palette correction does not repair DLGLOGIN/DLGNEW01/DLGPASS masks",
+  "historical_1998_2001_match": "UNVERIFIED",
+  "original_ui_flow": "NOT_IMPLEMENTED",
+  "inherited_files_changed": [
+    "kr491_runtime.json",
+    "BUILD_RESULT.json"
+  ],
+  "png_verified": 2100,
+  "parent_frozen_preserved": true,
+  "corrected_png_sha256": "3a2471431cb26e3a389b372a871f9f65ab7ae80c592c8e67140e6d232d8751f8",
+  "parent_png_sha256": "b9025b5fc531f0b6855ae7abe8925055dcc028001f6c292449d0a5c67ebfa49b",
+  "influence_checks": {
+    "same_rectangle": [
+      402,
+      373
+    ],
+    "same_alpha": true,
+    "old_generation_runtime_sha256": "d46a3ac5cc3d0d3a0e878d38199290347f7b9ebeb8f42e945dab75e9d8dd76cd",
+    "new_generation_runtime_sha256": "338c7f7e0ef019c7396768a5ef02f9ae80d7e944e6e51efc5d5689562f4cf6b4",
+    "png_verified": 2100,
+    "original_mask3_failures_preserved": true,
+    "p2_runtime_gen003": "NOT_RUN_BY_DIAGNOSIS_AGENT"
+  }
+}

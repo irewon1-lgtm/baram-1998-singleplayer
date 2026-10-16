@@ -1,0 +1,134 @@
+{
+  "schema": "baram.work.p2.input_manifest/1",
+  "generation": "WORK-P2-GEN003",
+  "inputs": [
+    {
+      "size_bytes": 26556803,
+      "sha256": "f11e448db6478b1aca3a7dd47403bdef00cf873b203b14629b0215632190532f",
+      "persistent_origin": {
+        "library_file_id": "libfile_8c9b5125c46c8191b3e21428f6b2b1a4",
+        "library_path": "/Baram1998Assets/KR_4.91_491v.zip"
+      }
+    },
+    {
+      "size_bytes": 40576768,
+      "sha256": "67c0a3a9469bd2bf905e8cd6d83f595c1f2bd8dee36e2545d8279959bacae2c9",
+      "persistent_origin": {
+        "library_file_id": "libfile_6a18240b68c88191bf3df12b49e58025",
+        "file_id": "file_00000000258081f8b713c40d67180aa4",
+        "library_path": "/BARAM_P1_5_reference_sources.zip.part003",
+        "version": 0
+      }
+    },
+    {
+      "size_bytes": 41943040,
+      "sha256": "79ad49d06b62f8d40c0141a34346c8f8d2502a691cdd5cf58bb42fb18611e941",
+      "persistent_origin": {
+        "library_file_id": "libfile_9dde919394388191a9c1943fb5908035",
+        "file_id": "file_000000002f5482309a19ffe94183ab69",
+        "library_path": "/BARAM_P1_5_reference_sources.zip.part002",
+        "version": 0
+      }
+    },
+    {
+      "size_bytes": 28665916,
+      "sha256": "f9fa57ea09f2755d5038cb7208258e3c5b44f6dddea77ebf66dfd6129ef8233c",
+      "persistent_origin": {
+        "library_file_id": "libfile_5625c3d22e548191bb3c06296c42bf6c",
+        "file_id": "file_00000000df988209b8efa7d8f5bb576b",
+        "library_path": "/BARAM_P1_5_handoff_20261016.zip",
+        "version": 1
+      }
+    },
+    {
+      "size_bytes": 41943040,
+      "sha256": "b7bb487c336c185ef2256539a490d85b77519a78cfb19cd08ae536c8eba655cb",
+      "persistent_origin": {
+        "library_file_id": "libfile_036902e5f5d88191b4d9080d1646855c",
+        "file_id": "file_00000000db40820d921c884a274ee119",
+        "library_path": "/BARAM_P1_5_reference_sources.zip.part001",
+        "version": 0
+      }
+    },
+    {
+      "size_bytes": 613492,
+      "sha256": "dc87687e7260ee4f0c3777bbb46559a67be64f7050195baf6650a29d1c068aee",
+      "persistent_origin": {
+        "library_file_id": "libfile_b231096282808191bd9f316beec877a2",
+        "version": 0
+      }
+    },
+    {
+      "size_bytes": 19352,
+      "sha256": "b61c169c899853c0a90849f81174d76c8503e6827ef3244ca489aff2b721e6af",
+      "persistent_origin": {
+        "library_file_id": "libfile_9f81524ef6708191b09b4150a8ac908e",
+        "version": 0
+      }
+    },
+    {
+      "source_id": "LIB-009",
+      "filename": "KR_1.25_winbaram.zip",
+      "size_bytes": 2207781,
+      "sha256": "62642ca3ef492f58947abb2c17cbae5b5a60d5f96fd146704b7d99d1aad3bcef",
+      "persistent_origin": {
+        "library_file_id": "libfile_135f7d90220c81919353822363ea2395",
+        "version": 0
+      },
+      "used": true,
+      "unused_reason": null
+    },
+    {
+      "source_id": "LIB-018",
+      "filename": "baram_tile_atlases_PRIVATE.zip",
+      "size_bytes": 7008649,
+      "sha256": "18581f104aa725eb615a205d428a10b46bd670b956876b99fa92ce32ebdc1514",
+      "persistent_origin": {
+        "library_file_id": "libfile_60297b3e1ec081918c1dd21d413fc316",
+        "version": 0
+      },
+      "used": false,
+      "unused_reason": "KR125 uses its own verified tiles and palette; undated editor atlas not mixed into original map"
+    }
+  ],
+  "base_p1_5_manifest_sha256": "124573e4a57d7ff759501315bf9a101fcd8a3959944f25006120b3e14c02a1d5",
+  "runtime_manifest_sha256": "ddf88ca05f63ab67c73f12f474005310eed39b31996f8d6c70b9015703922973",
+  "runtime_fingerprint": "8f9aa73bbea36376ebef1e04d2755c2c80f02135d06bcd6d123a52640975adba",
+  "runtime_files": 2322,
+  "cache_components": {
+    "input": "4f370acf04b1f72840dbb916c5ca64b8b01a8d6ca3b7380155ccf52b9f36e532",
+    "parser": "3be600be55462419a87ac60e541f59428266501733ac105530bd33a0e2ce06b2",
+    "converter": "fb691d0fa593c6ec73f751eb6a5a9ffd5b0ec7bb327bb2b2f98ef1e6c032fee8",
+    "config": "88293dc08b4c441803faf7fad50f5fca47dd70e9aee62877c9a5cf59dab80368",
+    "profile": "eb2eeab6ceffb78ef93507842b10562eb925b100d60923c15956869b7eebee80",
+    "schema": "3273231e4390997db79af1892c0524655f0b7168f28432f01be2d7a3b1a01dc8",
+    "mapping": "2deed3a4b28967d7903253a44fd2833e2c33341fc330f227cc4ac2081de79494"
+  },
+  "default_historical_profile": null,
+  "generation_switches": [
+    {
+      "from": "GEN001",
+      "to": "GEN002",
+      "boundary": "before final platform runs",
+      "reason": "Full EPF image-reference verifier added before freeze; payload values unchanged; constructor fingerprint differs"
+    },
+    {
+      "from": "GEN002",
+      "to": "GEN003",
+      "boundary": "after GEN002 platform trials; before final GEN003 Linux/exports",
+      "reason": "DLGNEW02 palette inferred incorrectly; original EXE static binding proves BARAM.PAL. Preserve wrong prior generation; correct one UI palette."
+    }
+  ],
+  "persistent_derived_runtime": {
+    "private_repository": "irewon1-lgtm/baram-windows-private",
+    "branch": "work/rebuild-p2-inputs-gen003-20261016",
+    "commit": "eee75026c9ac50bb10c9c78dab986170d279ab38",
+    "path": "p2-work/WORK-P2-GEN003/runtime.zip",
+    "sha256": "e3468bd90333967e28cdadc35604098a7d2bf8403b73a4ef8435a119bf96e5b9",
+    "bytes": 7847930,
+    "github_connector_binary_read": "BLOCKED_UTF8_DECODER; private authenticated Git checkout is possible in allowed environments; private Library artifact route will be recorded after save"
+  },
+  "full_original42_gate": "BLOCKED_NOT_FULLY_VERIFIED",
+  "sensitive_audit2": "Not in runtime dependency closure; not newly retrieved or executed",
+  "font_policy": "System fonts only; none in package"
+}

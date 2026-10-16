@@ -1,0 +1,72 @@
+{
+  "schema": "baram.work.p2.g0/1",
+  "overall": "BLOCKED_FULL42_SCOPE",
+  "transport": {
+    "result": "PASS_DELIVERY_SET_SCOPE",
+    "core_files_checked": 879,
+    "normalized_files": 35,
+    "normalized_rows": 44796,
+    "required_parts": 3,
+    "parts_read": 3,
+    "reference_sha256": "6e922fc3725c52e9bad3dd45924756c57e01781a36c9fd9b8eb35cd81291c508",
+    "reference_bytes": 124462848,
+    "restored_reference": "PASS_NEW_FILE",
+    "runtime": "NOT_RUN",
+    "Codex_G0": "NOT_RUN",
+    "observed_exit_code": 0
+  },
+  "normalized_integrity": {
+    "result": "PASS_DELIVERY_SCOPE",
+    "actual_files": 35,
+    "actual_rows": 44796,
+    "full_import_and_reference_resolution": "NOT_RUN_MISSING_WHOLE_REFERENCE_CLOSURE"
+  },
+  "original_integrity": {
+    "verified_original_archives": 3,
+    "declared_original_archives": 42,
+    "full_required_set_preserved": true
+  },
+  "historical_na_sourcegraph": {
+    "status": "FAIL_HISTORICAL_PRESERVED",
+    "edges": 154,
+    "current_full_import": "NOT_RUN",
+    "deletions_or_null_defaults": 0
+  },
+  "units": {
+    "KR125-render": {
+      "dependency_closure": "PASS_FOR_MAP1_99_100_AND_OWN_DAT_TILES_OBJECTS_PALETTE_EXE_STATIC_RULES",
+      "source_id": "LIB-009",
+      "structural_valid_maps": 196,
+      "maps_blocked": 22,
+      "rendered_maps": [
+        1,
+        99,
+        100
+      ],
+      "historical_target_era_match": "BLOCKED_UNKNOWN",
+      "city_name_assignment": null,
+      "actual_original_client_execution": "NOT_RUN"
+    },
+    "KR491-assets": {
+      "dependency_closure": "PASS_SELECTED_BODY_HEAD_SWORD_SHIELD_EFFECT_WAV_AND_VALID_UI_BYTES",
+      "source_id": "LIB-010",
+      "EPF_regression_frames": 27886,
+      "decoded_frames": 27883,
+      "mask_source_failures": [
+        "DLGLOGIN",
+        "DLGNEW01",
+        "DLGPASS"
+      ],
+      "PNG_files": 2099,
+      "WAV_files": 163,
+      "effect_sequences": 128,
+      "negative_sentinels": 17,
+      "safe_frame_slideshows": 25,
+      "full_effect_command_interpretation": "BLOCKED_UNKNOWN",
+      "creation_visual_fidelity": "PARTIAL_CORRECTED_DLGNEW02_BARAM_PAL_STATIC_BINDING_AND_GEN003_GUI_OBSERVED; FLOW_NOT_IMPLEMENTED",
+      "motion_meanings": "VISUALLY_INFERRED_NOT_ORIGINAL_SEMANTIC_PASS",
+      "PNG_files_on_disk": 2100
+    }
+  },
+  "no_global_fallbacks": true
+}

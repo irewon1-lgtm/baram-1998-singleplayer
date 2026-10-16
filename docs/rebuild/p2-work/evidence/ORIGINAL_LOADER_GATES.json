@@ -1,0 +1,59 @@
+{
+  "checks": [
+    {
+      "id": "zero_required_inputs",
+      "meaning": "Invalid generation was refused; not a data PASS",
+      "rejection_errors": [
+        "EMPTY_REQUIRED_FILE_SET"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "wrong_schema",
+      "meaning": "Invalid generation was refused; not a data PASS",
+      "rejection_errors": [
+        "UNSUPPORTED_RUNTIME_SCHEMA"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "missing_hash_target",
+      "meaning": "Invalid generation was refused; not a data PASS",
+      "rejection_errors": [
+        "HASH_MISMATCH_OR_MISSING: absent.png"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "tampered",
+      "meaning": "Invalid generation was refused; not a data PASS",
+      "rejection_errors": [
+        "HASH_MISMATCH_OR_MISSING: maps/index.json"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "path_traversal",
+      "meaning": "Invalid generation was refused; not a data PASS",
+      "rejection_errors": [
+        "UNSAFE_ASSET_PATH: ../elsewhere.png"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "empty_map_graph",
+      "meaning": "Invalid generation was refused; not a data PASS",
+      "rejection_errors": [
+        "EMPTY_REQUIRED_UNIT"
+      ],
+      "status": "PASS"
+    },
+    {
+      "id": "selected_texture_traversal",
+      "status": "PASS"
+    }
+  ],
+  "failures": 0,
+  "real_original_runtime_scope": "Separate platform receipts",
+  "schema": "baram.work.p2.original-gates/1"
+}

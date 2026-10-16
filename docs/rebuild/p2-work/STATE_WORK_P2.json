@@ -2,27 +2,30 @@
   "schema": "baram.work.p2.state/1",
   "task_id": "BARAM_REBUILD_WORK_P2_TAKEOVER_001",
   "branch": "work/rebuild-runtime-20261016",
-  "current_step": "PLATFORM_EXECUTION_AND_DELIVERY",
+  "current_step": "FINAL_ANDROID_EXECUTION_AND_PRIVATE_DELIVERY",
   "G0": "BLOCKED_FULL42_INPUTS",
   "P2": {
     "P2-01": "PARTIAL_KR125_MAP_RENDER3_STATIC_COLLISION_RULES_EXECUTED_EXITS_RETURN_UNRESOLVED",
     "P2-02": "PARTIAL_KR491_ORIGINAL_COMPOSITION_MOTION_VISUALLY_INFERRED_MASK3_FAIL",
     "P2-03": "PARTIAL_EFFECT0_FRAME_PREVIEW_WAV001_MIX_CAPTURE_FULL_COMMANDS_BLOCKED",
     "P2-04": "PARTIAL_VALID_ORIGINAL_CREATION_BITMAPS_NATIVE_IME_NOT_RUN",
-    "P2-05": "LINUX_ORIGINAL_ID_OFFLINE_SAVE_PASS_NATIVE_WINDOWS_ANDROID_PENDING",
+    "P2-05": "PARTIAL_LINUX47_PASS_GEN002_ANDROID46_PASS_GEN003_ANDROID_PENDING_WINDOWS_NATIVE_BLOCKED_BRANCH_RULE",
     "P2-06": "BLOCKED_NO_FREE_TEST_AUTH_ENDPOINT"
   },
   "P3": "NOT_STARTED_NOT_AUTHORIZED",
-  "resume": "Check remote HEAD and this state; continue from original consumer runtime integration; do not redo matching delivery audit",
+  "resume": "Do not redo source acquisition or Linux47; inspect android-gen003-final receipt, then finish artifact saves and remote receipt",
   "owned_paths": [
     "rebuild/p2/**",
     "tools/rebuild/p2/**",
     "docs/rebuild/p2-work/**"
   ],
   "historical_failures_preserved": [
-    "NA154",
-    "Wine12",
-    "mask2 pending reproduction"
+    "NA154 source graph FAIL",
+    "Wine12 storage FAIL",
+    "mask2 reproduced plus DLGPASS same-width mismatch, 3 blocked",
+    "GEN002 noisy UI palette and pre-correction logs",
+    "native Windows environment branch rule rejection",
+    "stale Android AVD lock diagnosis"
   ],
   "test_plan": [
     {
@@ -43,7 +46,7 @@
     }
   ],
   "status": "PARTIAL_ORIGINAL_ASSETS_CONNECTED",
-  "input_generation": "WORK-P2-GEN002",
-  "source_snapshot_note": "Work source checkpoint; final native execution still pending",
+  "input_generation": "WORK-P2-GEN003",
+  "source_snapshot_note": "GEN003 app source is frozen; Linux47 PASS; Windows/Android exports PASS. Final Android actual run pending after isolated stale AVD-lock diagnosis.",
   "next_resume": "Read this state and platform receipts; run only final current-source platform checks; finish source delivery and P3 decision. No P0/P1 repeat."
 }

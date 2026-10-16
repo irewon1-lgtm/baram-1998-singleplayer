@@ -314,13 +314,15 @@ def build(args):
                        "audio_device_output": "NOT_RUN", "hardware_listening": "NOT_RUN",
                        "skill_id": None, "effect_id": None})
 
-    # Valid source-defined UI frames only. Palette reuse is identified as a
-    # candidate, never promoted to a verified historical UI call.
+    # Source-defined UI frames. DLGNEW02 uses BARAM.PAL: KR491 original
+    # Winbaram.exe call 0x44649a -> constructor 0x4196c0 passes palette=NULL;
+    # 0x419727..0x419744 resolves NULL to BARAM.PAL. See UI_PALETTE_DIAGNOSIS.json.
+    # This static binding is independent of the P1.5 EPF reader.
     ui = []
-    for stem, palstem in [("DLGNEW02", "DLGLOGIN"), ("NEWUSER", "NEWUSER"), ("TITLE", "TITLE")]:
+    for stem, palstem in [("DLGNEW02", "Baram"), ("NEWUSER", "NEWUSER"), ("TITLE", "TITLE")]:
         for i in range(epf(stem).count):
             ui.append({"name": stem, "frame": i, "image": image(stem, i, 0, palstem),
-                       "palette_binding": "original matching PAL" if stem == palstem else "INFERRED matching login palette; border pixels shared",
+                       "palette_binding": "original matching PAL" if stem == palstem else "ORIGINAL_BINARY_STATIC_BINDING: KR491 Winbaram.exe 0x44649a -> 0x4196c0 -> BARAM.PAL default",
                        "historical_flow_binding": "UNKNOWN"})
 
     mask_report = {"schema": "baram.p2.kr491-mask-regression/1", "families": regression,

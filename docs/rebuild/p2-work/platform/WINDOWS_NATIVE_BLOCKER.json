@@ -1,0 +1,16 @@
+{
+  "schema": "baram.work.p2.windows-native/1",
+  "status": "BLOCKED_ENVIRONMENT_BRANCH_RULE",
+  "workflow_run_id": 38852719195,
+  "code_commit": "e0263491c07cdce6c9073486e09d72867f032545",
+  "runner_job_id": 116817290700,
+  "runner_started": false,
+  "executed_steps": 0,
+  "native_app_execution": "NOT_RUN",
+  "native_storage_test": "NOT_RUN",
+  "reason": "Branch work/rebuild-runtime-20261016 is not allowed to deploy to baram-windows-private due to environment protection rules.",
+  "rules_changed": false,
+  "workflow_logs": "No job log exists because runner never started",
+  "source_code_failure_claim": false,
+  "minimum_resume_condition": "Authorize this branch in the existing test environment, then trigger the same pinned private-input workflow. No paid resource or main/other branch write is required."
+}

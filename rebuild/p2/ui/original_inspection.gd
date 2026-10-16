@@ -122,7 +122,7 @@ func _ready() -> void:
 	info.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	box.add_child(info)
 	status = Label.new()
-	status.text = "평민 Lv1 · 미학습 공격기술 0 · 희망직업 미선택 · 오프라인 검수"
+	status.text = "%s Lv%s · 미학습 공격기술 %s · 희망직업 미선택 · 오프라인 검수" % [state.character.job_title,state.character.level,state.character.learned_attack_skills.size()]
 	box.add_child(status)
 	player = AudioStreamPlayer.new()
 	add_child(player)
@@ -141,10 +141,10 @@ func _ready() -> void:
 		_run_original_smoke.call_deferred()
 
 func _log(kind: String, details: Dictionary = {}) -> void:
-	events.append({"event":kind, "us":Time.get_ticks_usec()-start_us, "details":details})
+	events.append({"event":kind, "us":Time.get_ticks_usec()-start_us, "details":details.duplicate(true)})
 
 func _check(id: String, good: bool, details: Variant = "") -> void:
-	checks.append({"id":id, "status":"PASS" if good else "FAIL", "details":details})
+	checks.append({"id":id, "status":"PASS" if good else "FAIL", "details":details.duplicate(true) if typeof(details) in [TYPE_DICTIONARY,TYPE_ARRAY] else details})
 
 func _list() -> Array:
 	match mode:
@@ -330,9 +330,9 @@ func _render() -> void:
 		info.text = "원본 생성UI %s · 정상 해독 프레임만 · 원본 마스크 3개 실패 보존 · 한국 IME/선택순서 미확정" % current.get("name")
 	preview.configure(_character_layers(),Vector2(512,512),Vector2(256,250),2.0)
 	panel_labels[0].text = "물품\n원본 이름↔아이콘 대응은 미확정\n다른 아이콘으로 대체하지 않음"
-	panel_labels[1].text = "기술\n평민 Lv1\n미학습 공격기술 0\n공격/시전 버튼은 원본 외형 검수"
+	panel_labels[1].text = "기술\n%s Lv%s\n미학습 공격기술 %s\n공격/시전 버튼은 원본 외형 검수" % [state.character.job_title,state.character.level,state.character.learned_attack_skills.size()]
 	panel_labels[2].text = "장비 검수\n원본 부품 조합: %s\n장착: %s\n필드·미리보기: 같은 상태/합성기\n능력치/아이템 의미 미확정" % [variant_index,equipment_enabled]
-	panel_labels[3].text = "능력치\n실제직업: 평민\n희망직업: 미선택\n레벨: 1\n외형검수가 능력치를 바꾸지 않음"
+	panel_labels[3].text = "능력치\n실제직업: %s\n희망직업: 미선택\n레벨: %s\n능력치 수치: 미확정" % [state.character.job_title,state.character.level]
 
 func _process(delta: float) -> void:
 	if timers.size()<10000: timers.append(delta)
@@ -458,9 +458,11 @@ func _run_original_smoke() -> void:
 	await get_tree().create_timer(1.2).timeout
 	_check("oneshot_effect_finishes_without_residue",effect_drawn_paths.is_empty())
 	_select_item(0)
+	_play_sound()
 	await get_tree().create_timer(0.2).timeout
+	_check("wav_preview_active_before_cancel",player.playing)
 	_select_mode(0)
-	_check("mode_change_cancels_effect_and_audio",not player.playing)
+	_check("mode_change_cancels_effect_and_audio",not player.playing and canvas.layers.all(func(layer: Dictionary) -> bool: return not str(layer.get("path","")).contains("/effect-")))
 	_select_mode(2)
 	_play_sound()
 	await get_tree().create_timer(1.2).timeout
@@ -530,7 +532,7 @@ func _run_original_save() -> void:
 	var written: Dictionary = store.write_state(test_save_path,test_save,owner,save_catalog)
 	var loaded: Dictionary = store.read_one(test_save_path,owner,save_catalog)
 	_check("original_native_ids_save_roundtrip",written.status=="SAVED" and loaded.status=="OK" and store.canonical(loaded.get("state",{}))==store.canonical(test_save))
-	_check("unlearned_new_character_skills_empty",test_save.payload.skills.is_empty() and test_save.payload.character.level==1)
+	_check("unlearned_new_character_skills_empty",test_save.payload.skills.is_empty() and test_save.payload.character.level==state.character.level and state.character.level==1 and state.character.actual_job=="commoner" and state.character.desired_job==null and state.character.learned_attack_skills.is_empty())
 	var newer_catalog: Dictionary = save_catalog.duplicate(true)
 	newer_catalog.maps[map_id].version = "inspection-map-version-only-change"
 	var plan: Dictionary = store.plan_map_update(test_save,owner,save_catalog,newer_catalog)
