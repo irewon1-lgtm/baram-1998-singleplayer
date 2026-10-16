@@ -1,0 +1,1108 @@
+{
+  "schema": "baram.gameplay.bindings/1",
+  "source_code_commit": "716febebcf4add8168fed32cbbe32f8860b6c0d3",
+  "runtime_manifest_sha256": "70f4a32045242ce176e9d66f13791179cac67dd974de318dd77c7c1374a7455c",
+  "content_sha256": "30e75ef2f490728c12c17faef3853aabcf132a96f1968e968e475dd94c1ef064",
+  "input_parent": {
+    "rules_profile": "KR_GUIDE_2001_WORKING_PROVISIONAL",
+    "rules_sha256": "926023504351ba128d4cbf96a1ddd842ee2817c9878ff04a537ee11119f5cb04",
+    "parent_runtime_sha256": "812e4bd6397cf540af203ca6644aea99b898532e071f0637cfdcbba8d144e286",
+    "kr125_zip_sha256": "62642ca3ef492f58947abb2c17cbae5b5a60d5f96fd146704b7d99d1aad3bcef",
+    "kr491_usage": "Original KR4.91 sprites/effects/sounds as separate resource-version with reconstruction of semantics",
+    "world_geometry_fact_status": "RECONSTRUCTED",
+    "monster_2001_selection": "Published2001squirrelXP10 selected instead of2000XP5; rabbitXP5 retained",
+    "source_value_policy": "Preserve original source_value; effective fields separately tagged; no historical precision claim for reconstructed positions/timing/drop probabilities",
+    "balance_fields": [
+      "xp_thresholds",
+      "start_hp_mp_money",
+      "monster_hp_attack_intervals",
+      "drop_model",
+      "vendor_direction_assignment_and_bid_ask",
+      "repair/death/heal policy",
+      "skill_mp_power_range_timeline",
+      "basic_attack_and_UI_sound_effect_bindings"
+    ],
+    "building_bindings": [
+      {
+        "field": "maps.gp:map:domestic_city.building.주막",
+        "source_id": "LIB-009!0.map!storage_chunk15",
+        "source_rect": [
+          10,
+          4,
+          20,
+          10
+        ],
+        "effective_rect": [
+          4,
+          5,
+          20,
+          10
+        ],
+        "fact_status": "RECONSTRUCTED",
+        "reason": "Visible Korean architecture fragments reused; new facility association/coordinates, not original city identity"
+      },
+      {
+        "field": "maps.gp:map:domestic_city.building.대장간",
+        "source_id": "LIB-009!0.map!storage_chunk15",
+        "source_rect": [
+          10,
+          17,
+          17,
+          14
+        ],
+        "effective_rect": [
+          40,
+          5,
+          17,
+          14
+        ],
+        "fact_status": "RECONSTRUCTED",
+        "reason": "Visible Korean architecture fragments reused; new facility association/coordinates, not original city identity"
+      },
+      {
+        "field": "maps.gp:map:domestic_city.building.전사길드",
+        "source_id": "LIB-009!0.map!storage_chunk15",
+        "source_rect": [
+          10,
+          17,
+          17,
+          14
+        ],
+        "effective_rect": [
+          4,
+          40,
+          17,
+          14
+        ],
+        "fact_status": "RECONSTRUCTED",
+        "reason": "Visible Korean architecture fragments reused; new facility association/coordinates, not original city identity"
+      },
+      {
+        "field": "maps.gp:map:domestic_city.building.주술사길드",
+        "source_id": "LIB-009!0.map!storage_chunk15",
+        "source_rect": [
+          10,
+          17,
+          17,
+          14
+        ],
+        "effective_rect": [
+          40,
+          40,
+          17,
+          14
+        ],
+        "fact_status": "RECONSTRUCTED",
+        "reason": "Visible Korean architecture fragments reused; new facility association/coordinates, not original city identity"
+      },
+      {
+        "field": "maps.gp:map:domestic_city.building.도적길드",
+        "source_id": "LIB-009!0.map!storage_chunk15",
+        "source_rect": [
+          10,
+          4,
+          20,
+          10
+        ],
+        "effective_rect": [
+          3,
+          23,
+          20,
+          10
+        ],
+        "fact_status": "RECONSTRUCTED",
+        "reason": "Visible Korean architecture fragments reused; new facility association/coordinates, not original city identity"
+      },
+      {
+        "field": "maps.gp:map:domestic_city.building.도사길드",
+        "source_id": "LIB-009!0.map!storage_chunk15",
+        "source_rect": [
+          10,
+          4,
+          20,
+          10
+        ],
+        "effective_rect": [
+          40,
+          23,
+          20,
+          10
+        ],
+        "fact_status": "RECONSTRUCTED",
+        "reason": "Visible Korean architecture fragments reused; new facility association/coordinates, not original city identity"
+      }
+    ],
+    "source_city_map_candidates": [
+      "KRO-FULLMAP-0579ce2fedc9",
+      "KRO-FULLMAP-7dd51290d10b"
+    ]
+  },
+  "effective_field_slots": {
+    "RECONSTRUCTED": 107,
+    "BALANCE_ESTIMATE": 47,
+    "ORIGINAL_VERIFIED": 45,
+    "RECONSTRUCTED_ALIAS": 10,
+    "CORROBORATED": 10
+  },
+  "units": [
+    {
+      "kind": "maps",
+      "id": "gp:map:domestic_city",
+      "name": "국내성 · 작업용 재구성",
+      "fact_status": "RECONSTRUCTED",
+      "original_native_id": null,
+      "source_ids": [],
+      "effective_field_status": {},
+      "look_id": null,
+      "runtime_enabled": true
+    },
+    {
+      "kind": "maps",
+      "id": "gp:map:tavern",
+      "name": "주막",
+      "fact_status": "RECONSTRUCTED",
+      "original_native_id": null,
+      "source_ids": [],
+      "effective_field_status": {},
+      "look_id": null,
+      "runtime_enabled": true
+    },
+    {
+      "kind": "maps",
+      "id": "gp:map:forge",
+      "name": "대장간",
+      "fact_status": "RECONSTRUCTED",
+      "original_native_id": null,
+      "source_ids": [],
+      "effective_field_status": {},
+      "look_id": null,
+      "runtime_enabled": true
+    },
+    {
+      "kind": "maps",
+      "id": "gp:map:warrior_guild",
+      "name": "전사길드",
+      "fact_status": "RECONSTRUCTED",
+      "original_native_id": null,
+      "source_ids": [],
+      "effective_field_status": {},
+      "look_id": null,
+      "runtime_enabled": true
+    },
+    {
+      "kind": "maps",
+      "id": "gp:map:mage_guild",
+      "name": "주술사길드",
+      "fact_status": "RECONSTRUCTED",
+      "original_native_id": null,
+      "source_ids": [],
+      "effective_field_status": {},
+      "look_id": null,
+      "runtime_enabled": true
+    },
+    {
+      "kind": "maps",
+      "id": "gp:map:rogue_guild",
+      "name": "도적길드",
+      "fact_status": "RECONSTRUCTED",
+      "original_native_id": null,
+      "source_ids": [],
+      "effective_field_status": {},
+      "look_id": null,
+      "runtime_enabled": true
+    },
+    {
+      "kind": "maps",
+      "id": "gp:map:poet_guild",
+      "name": "도사길드",
+      "fact_status": "RECONSTRUCTED",
+      "original_native_id": null,
+      "source_ids": [],
+      "effective_field_status": {},
+      "look_id": null,
+      "runtime_enabled": true
+    },
+    {
+      "kind": "maps",
+      "id": "gp:map:north_field",
+      "name": "북문 초보 들판",
+      "fact_status": "RECONSTRUCTED",
+      "original_native_id": null,
+      "source_ids": [],
+      "effective_field_status": {},
+      "look_id": null,
+      "runtime_enabled": true
+    },
+    {
+      "kind": "maps",
+      "id": "gp:map:south_field",
+      "name": "남문 왕초보 사냥터",
+      "fact_status": "RECONSTRUCTED",
+      "original_native_id": null,
+      "source_ids": [],
+      "effective_field_status": {},
+      "look_id": null,
+      "runtime_enabled": true
+    },
+    {
+      "kind": "maps",
+      "id": "gp:map:east_field",
+      "name": "동문 초보 숲",
+      "fact_status": "RECONSTRUCTED",
+      "original_native_id": null,
+      "source_ids": [],
+      "effective_field_status": {},
+      "look_id": null,
+      "runtime_enabled": true
+    },
+    {
+      "kind": "maps",
+      "id": "gp:map:west_field",
+      "name": "서문 초보 숲",
+      "fact_status": "RECONSTRUCTED",
+      "original_native_id": null,
+      "source_ids": [],
+      "effective_field_status": {},
+      "look_id": null,
+      "runtime_enabled": true
+    },
+    {
+      "kind": "npcs",
+      "id": "KRO-NPC_SERVICE-d276c50324a779",
+      "name": "태백",
+      "fact_status": null,
+      "original_native_id": null,
+      "source_ids": [],
+      "effective_field_status": {
+        "position": "RECONSTRUCTED",
+        "look": "RECONSTRUCTED",
+        "dialogue": "RECONSTRUCTED",
+        "prices": "BALANCE_ESTIMATE"
+      },
+      "look_id": "warrior_master",
+      "runtime_enabled": true
+    },
+    {
+      "kind": "npcs",
+      "id": "KRO-NPC_SERVICE-09df887c0d7548",
+      "name": "마로",
+      "fact_status": null,
+      "original_native_id": null,
+      "source_ids": [],
+      "effective_field_status": {
+        "position": "RECONSTRUCTED",
+        "look": "RECONSTRUCTED",
+        "dialogue": "RECONSTRUCTED",
+        "prices": "BALANCE_ESTIMATE"
+      },
+      "look_id": "rogue_master",
+      "runtime_enabled": true
+    },
+    {
+      "kind": "npcs",
+      "id": "KRO-NPC_SERVICE-b1176f92bc9e27",
+      "name": "해두",
+      "fact_status": null,
+      "original_native_id": null,
+      "source_ids": [],
+      "effective_field_status": {
+        "position": "RECONSTRUCTED",
+        "look": "RECONSTRUCTED",
+        "dialogue": "RECONSTRUCTED",
+        "prices": "BALANCE_ESTIMATE"
+      },
+      "look_id": "mage_master",
+      "runtime_enabled": true
+    },
+    {
+      "kind": "npcs",
+      "id": "KRO-NPC_SERVICE-1fbe93b95e5d54",
+      "name": "진선",
+      "fact_status": null,
+      "original_native_id": null,
+      "source_ids": [],
+      "effective_field_status": {
+        "position": "RECONSTRUCTED",
+        "look": "RECONSTRUCTED",
+        "dialogue": "RECONSTRUCTED",
+        "prices": "BALANCE_ESTIMATE"
+      },
+      "look_id": "poet_master",
+      "runtime_enabled": true
+    },
+    {
+      "kind": "npcs",
+      "id": "KRO-NPC_SERVICE-1e329bf1dc2165",
+      "name": "왈숙",
+      "fact_status": null,
+      "original_native_id": null,
+      "source_ids": [],
+      "effective_field_status": {
+        "position": "RECONSTRUCTED",
+        "look": "RECONSTRUCTED",
+        "dialogue": "RECONSTRUCTED",
+        "prices": "BALANCE_ESTIMATE"
+      },
+      "look_id": "tavern",
+      "runtime_enabled": true
+    },
+    {
+      "kind": "npcs",
+      "id": "KRO-NPC_SERVICE-42b4704cb5c0d5",
+      "name": "털보",
+      "fact_status": null,
+      "original_native_id": null,
+      "source_ids": [],
+      "effective_field_status": {
+        "position": "RECONSTRUCTED",
+        "look": "RECONSTRUCTED",
+        "dialogue": "RECONSTRUCTED",
+        "prices": "BALANCE_ESTIMATE"
+      },
+      "look_id": "forge",
+      "runtime_enabled": true
+    },
+    {
+      "kind": "npcs",
+      "id": "KRO-NPC_SERVICE-a0c0960283ad50",
+      "name": "떼보",
+      "fact_status": null,
+      "original_native_id": null,
+      "source_ids": [],
+      "effective_field_status": {
+        "position": "RECONSTRUCTED",
+        "look": "RECONSTRUCTED",
+        "dialogue": "RECONSTRUCTED",
+        "prices": "BALANCE_ESTIMATE"
+      },
+      "look_id": "armorer",
+      "runtime_enabled": true
+    },
+    {
+      "kind": "npcs",
+      "id": "gp:npc:grocer",
+      "name": "장터 식재료상",
+      "fact_status": null,
+      "original_native_id": null,
+      "source_ids": [],
+      "effective_field_status": {
+        "position": "RECONSTRUCTED",
+        "look": "RECONSTRUCTED",
+        "dialogue": "RECONSTRUCTED",
+        "prices": "BALANCE_ESTIMATE"
+      },
+      "look_id": "grocer",
+      "runtime_enabled": true
+    },
+    {
+      "kind": "npcs",
+      "id": "gp:npc:shrine_healer",
+      "name": "성황당지기",
+      "fact_status": null,
+      "original_native_id": null,
+      "source_ids": [],
+      "effective_field_status": {
+        "position": "RECONSTRUCTED",
+        "look": "RECONSTRUCTED",
+        "dialogue": "RECONSTRUCTED",
+        "prices": "BALANCE_ESTIMATE"
+      },
+      "look_id": "healer",
+      "runtime_enabled": true
+    },
+    {
+      "kind": "items",
+      "id": "KRO-ITEM-be19434c5b2ee6",
+      "name": "목도",
+      "fact_status": "ORIGINAL_FIELDS_WITH_RECONSTRUCTED_GAMEPLAY",
+      "original_native_id": null,
+      "source_ids": [
+        "P15-ARC-7eee1d661c10"
+      ],
+      "effective_field_status": {
+        "kind": "RECONSTRUCTED",
+        "slot": "RECONSTRUCTED",
+        "attack": "RECONSTRUCTED",
+        "damage_min": "ORIGINAL_VERIFIED",
+        "damage_max": "ORIGINAL_VERIFIED",
+        "durability": "RECONSTRUCTED",
+        "required_level": "ORIGINAL_VERIFIED",
+        "required_job": "RECONSTRUCTED",
+        "buy_price": "RECONSTRUCTED",
+        "sell_price": "RECONSTRUCTED",
+        "stack_max": "RECONSTRUCTED",
+        "look": "RECONSTRUCTED"
+      },
+      "look_id": null,
+      "runtime_enabled": true
+    },
+    {
+      "kind": "items",
+      "id": "KRO-ITEM-89a184f51172c1",
+      "name": "목검",
+      "fact_status": "ORIGINAL_FIELDS_WITH_RECONSTRUCTED_GAMEPLAY",
+      "original_native_id": null,
+      "source_ids": [
+        "P15-ARC-7eee1d661c10"
+      ],
+      "effective_field_status": {
+        "kind": "RECONSTRUCTED",
+        "slot": "RECONSTRUCTED",
+        "attack": "RECONSTRUCTED",
+        "durability": "RECONSTRUCTED",
+        "required_level": "ORIGINAL_VERIFIED",
+        "required_job": "RECONSTRUCTED",
+        "buy_price": "RECONSTRUCTED",
+        "sell_price": "RECONSTRUCTED",
+        "stack_max": "RECONSTRUCTED",
+        "look": "RECONSTRUCTED",
+        "damage_min": "ORIGINAL_VERIFIED",
+        "damage_max": "ORIGINAL_VERIFIED"
+      },
+      "look_id": null,
+      "runtime_enabled": true
+    },
+    {
+      "kind": "items",
+      "id": "KRO-ITEM-796e2a7fa45753",
+      "name": "사두목도",
+      "fact_status": "ORIGINAL_FIELDS_WITH_RECONSTRUCTED_GAMEPLAY",
+      "original_native_id": null,
+      "source_ids": [
+        "P15-ARC-7eee1d661c10"
+      ],
+      "effective_field_status": {
+        "kind": "RECONSTRUCTED",
+        "slot": "RECONSTRUCTED",
+        "attack": "RECONSTRUCTED",
+        "durability": "RECONSTRUCTED",
+        "required_level": "ORIGINAL_VERIFIED",
+        "required_job": "RECONSTRUCTED",
+        "buy_price": "RECONSTRUCTED",
+        "sell_price": "RECONSTRUCTED",
+        "stack_max": "RECONSTRUCTED",
+        "look": "RECONSTRUCTED",
+        "damage_min": "ORIGINAL_VERIFIED",
+        "damage_max": "ORIGINAL_VERIFIED"
+      },
+      "look_id": null,
+      "runtime_enabled": true
+    },
+    {
+      "kind": "items",
+      "id": "KRO-ITEM-1ec5d43f9e157e",
+      "name": "도토리",
+      "fact_status": "ORIGINAL_FIELDS_WITH_RECONSTRUCTED_GAMEPLAY",
+      "original_native_id": null,
+      "source_ids": [
+        "P15-ARC-a7eab177dc47"
+      ],
+      "effective_field_status": {
+        "kind": "RECONSTRUCTED",
+        "buy_price": "RECONSTRUCTED",
+        "sell_price": "RECONSTRUCTED"
+      },
+      "look_id": null,
+      "runtime_enabled": true
+    },
+    {
+      "kind": "items",
+      "id": "gp:item:rabbit_meat",
+      "name": "토끼고기",
+      "fact_status": "RECONSTRUCTED",
+      "original_native_id": null,
+      "source_ids": [],
+      "effective_field_status": {
+        "kind": "RECONSTRUCTED",
+        "hp_restore": "RECONSTRUCTED",
+        "buy_price": "RECONSTRUCTED",
+        "sell_price": "RECONSTRUCTED"
+      },
+      "look_id": null,
+      "runtime_enabled": true
+    },
+    {
+      "kind": "items",
+      "id": "KRO-ITEM-29c43190955429",
+      "name": "동동주",
+      "fact_status": "ORIGINAL_FIELDS_WITH_RECONSTRUCTED_GAMEPLAY",
+      "original_native_id": null,
+      "source_ids": [
+        "P15-ARC-a7eab177dc47"
+      ],
+      "effective_field_status": {
+        "kind": "RECONSTRUCTED",
+        "mp_restore": "RECONSTRUCTED",
+        "buy_price": "RECONSTRUCTED",
+        "sell_price": "RECONSTRUCTED"
+      },
+      "look_id": null,
+      "runtime_enabled": true
+    },
+    {
+      "kind": "items",
+      "id": "gp:item:starter_clothes",
+      "name": "초보옷",
+      "fact_status": "RECONSTRUCTED",
+      "original_native_id": null,
+      "source_ids": [],
+      "effective_field_status": {
+        "kind": "RECONSTRUCTED",
+        "slot": "RECONSTRUCTED",
+        "defense": "RECONSTRUCTED",
+        "durability": "RECONSTRUCTED",
+        "required_level": "RECONSTRUCTED",
+        "required_job": "RECONSTRUCTED",
+        "buy_price": "RECONSTRUCTED",
+        "sell_price": "RECONSTRUCTED",
+        "stack_max": "RECONSTRUCTED",
+        "look": "RECONSTRUCTED"
+      },
+      "look_id": null,
+      "runtime_enabled": true
+    },
+    {
+      "kind": "items",
+      "id": "gp:item:novice_armor",
+      "name": "초보갑옷",
+      "fact_status": "RECONSTRUCTED",
+      "original_native_id": null,
+      "source_ids": [],
+      "effective_field_status": {
+        "kind": "RECONSTRUCTED",
+        "slot": "RECONSTRUCTED",
+        "defense": "RECONSTRUCTED",
+        "durability": "RECONSTRUCTED",
+        "required_level": "RECONSTRUCTED",
+        "required_job": "RECONSTRUCTED",
+        "buy_price": "RECONSTRUCTED",
+        "sell_price": "RECONSTRUCTED",
+        "stack_max": "RECONSTRUCTED",
+        "look": "RECONSTRUCTED"
+      },
+      "look_id": null,
+      "runtime_enabled": true
+    },
+    {
+      "kind": "monsters",
+      "id": "KRO-a278e4d3cd81",
+      "name": "다람쥐",
+      "fact_status": null,
+      "original_native_id": null,
+      "source_ids": [
+        "P15-ARC-505599d12090"
+      ],
+      "effective_field_status": {
+        "name": "ORIGINAL_VERIFIED",
+        "xp": "ORIGINAL_VERIFIED",
+        "possible_item_name": "ORIGINAL_VERIFIED",
+        "hp": "BALANCE_ESTIMATE",
+        "attack": "BALANCE_ESTIMATE",
+        "AI": "RECONSTRUCTED",
+        "drop_chance": "BALANCE_ESTIMATE",
+        "spawn": "BALANCE_ESTIMATE"
+      },
+      "look_id": "squirrel",
+      "runtime_enabled": true
+    },
+    {
+      "kind": "monsters",
+      "id": "KRO-505b83a56a47",
+      "name": "토끼",
+      "fact_status": null,
+      "original_native_id": null,
+      "source_ids": [
+        "P15-ARC-505599d12090"
+      ],
+      "effective_field_status": {
+        "name": "ORIGINAL_VERIFIED",
+        "xp": "ORIGINAL_VERIFIED",
+        "possible_item_name": "ORIGINAL_VERIFIED",
+        "hp": "BALANCE_ESTIMATE",
+        "attack": "BALANCE_ESTIMATE",
+        "AI": "RECONSTRUCTED",
+        "drop_chance": "BALANCE_ESTIMATE",
+        "spawn": "BALANCE_ESTIMATE"
+      },
+      "look_id": "rabbit",
+      "runtime_enabled": true
+    },
+    {
+      "kind": "skills",
+      "id": "KRO-77f964c0bd64",
+      "name": "누리의기원",
+      "fact_status": null,
+      "original_native_id": null,
+      "source_ids": [
+        "P15-ARC-8f636f3c673d"
+      ],
+      "effective_field_status": {
+        "learn_level": "ORIGINAL_VERIFIED",
+        "learn_money": "ORIGINAL_VERIFIED",
+        "ingredient_quantities": "ORIGINAL_VERIFIED",
+        "ingredient_runtime_IDs": "RECONSTRUCTED_ALIAS",
+        "kind": "CORROBORATED",
+        "mp_cost": "BALANCE_ESTIMATE",
+        "power": "BALANCE_ESTIMATE",
+        "range": "BALANCE_ESTIMATE",
+        "timeline": "RECONSTRUCTED",
+        "effect_sound_binding": "RECONSTRUCTED"
+      },
+      "look_id": null,
+      "runtime_enabled": true
+    },
+    {
+      "kind": "skills",
+      "id": "KRO-32c49870aa62",
+      "name": "누리의기원",
+      "fact_status": null,
+      "original_native_id": null,
+      "source_ids": [
+        "P15-ARC-85066ebecea9"
+      ],
+      "effective_field_status": {
+        "learn_level": "ORIGINAL_VERIFIED",
+        "learn_money": "ORIGINAL_VERIFIED",
+        "ingredient_quantities": "ORIGINAL_VERIFIED",
+        "ingredient_runtime_IDs": "RECONSTRUCTED_ALIAS",
+        "kind": "CORROBORATED",
+        "mp_cost": "BALANCE_ESTIMATE",
+        "power": "BALANCE_ESTIMATE",
+        "range": "BALANCE_ESTIMATE",
+        "timeline": "RECONSTRUCTED",
+        "effect_sound_binding": "RECONSTRUCTED"
+      },
+      "look_id": null,
+      "runtime_enabled": true
+    },
+    {
+      "kind": "skills",
+      "id": "KRO-4eeca26285d6",
+      "name": "누리의기원",
+      "fact_status": null,
+      "original_native_id": null,
+      "source_ids": [
+        "P15-ARC-cb5e34400c09"
+      ],
+      "effective_field_status": {
+        "learn_level": "ORIGINAL_VERIFIED",
+        "learn_money": "ORIGINAL_VERIFIED",
+        "ingredient_quantities": "ORIGINAL_VERIFIED",
+        "ingredient_runtime_IDs": "RECONSTRUCTED_ALIAS",
+        "kind": "CORROBORATED",
+        "mp_cost": "BALANCE_ESTIMATE",
+        "power": "BALANCE_ESTIMATE",
+        "range": "BALANCE_ESTIMATE",
+        "timeline": "RECONSTRUCTED",
+        "effect_sound_binding": "RECONSTRUCTED"
+      },
+      "look_id": null,
+      "runtime_enabled": true
+    },
+    {
+      "kind": "skills",
+      "id": "KRO-62769e97ce90",
+      "name": "누리의기원",
+      "fact_status": null,
+      "original_native_id": null,
+      "source_ids": [
+        "P15-ARC-0b7dcb5d2678"
+      ],
+      "effective_field_status": {
+        "learn_level": "ORIGINAL_VERIFIED",
+        "learn_money": "ORIGINAL_VERIFIED",
+        "ingredient_quantities": "ORIGINAL_VERIFIED",
+        "ingredient_runtime_IDs": "RECONSTRUCTED_ALIAS",
+        "kind": "CORROBORATED",
+        "mp_cost": "BALANCE_ESTIMATE",
+        "power": "BALANCE_ESTIMATE",
+        "range": "BALANCE_ESTIMATE",
+        "timeline": "RECONSTRUCTED",
+        "effect_sound_binding": "RECONSTRUCTED"
+      },
+      "look_id": null,
+      "runtime_enabled": true
+    },
+    {
+      "kind": "skills",
+      "id": "KRO-972853314e6a",
+      "name": "비영사천문",
+      "fact_status": null,
+      "original_native_id": null,
+      "source_ids": [
+        "P15-ARC-030e07a01431"
+      ],
+      "effective_field_status": {
+        "learn_level": "ORIGINAL_VERIFIED",
+        "learn_money": "ORIGINAL_VERIFIED",
+        "ingredient_quantities": "ORIGINAL_VERIFIED",
+        "ingredient_runtime_IDs": "RECONSTRUCTED_ALIAS",
+        "kind": "CORROBORATED",
+        "mp_cost": "BALANCE_ESTIMATE",
+        "power": "BALANCE_ESTIMATE",
+        "range": "BALANCE_ESTIMATE",
+        "timeline": "RECONSTRUCTED",
+        "effect_sound_binding": "RECONSTRUCTED"
+      },
+      "look_id": null,
+      "runtime_enabled": true
+    },
+    {
+      "kind": "skills",
+      "id": "KRO-33876779ed3b",
+      "name": "성황령",
+      "fact_status": null,
+      "original_native_id": null,
+      "source_ids": [
+        "P15-ARC-030e07a01431"
+      ],
+      "effective_field_status": {
+        "learn_level": "ORIGINAL_VERIFIED",
+        "learn_money": "ORIGINAL_VERIFIED",
+        "ingredient_quantities": "ORIGINAL_VERIFIED",
+        "ingredient_runtime_IDs": "RECONSTRUCTED_ALIAS",
+        "kind": "CORROBORATED",
+        "mp_cost": "BALANCE_ESTIMATE",
+        "power": "BALANCE_ESTIMATE",
+        "range": "BALANCE_ESTIMATE",
+        "timeline": "RECONSTRUCTED",
+        "effect_sound_binding": "RECONSTRUCTED"
+      },
+      "look_id": null,
+      "runtime_enabled": true
+    },
+    {
+      "kind": "skills",
+      "id": "KRO-3559b12ed6a7",
+      "name": "화염주(화)",
+      "fact_status": null,
+      "original_native_id": null,
+      "source_ids": [
+        "P15-ARC-cb5e34400c09"
+      ],
+      "effective_field_status": {
+        "learn_level": "ORIGINAL_VERIFIED",
+        "learn_money": "ORIGINAL_VERIFIED",
+        "ingredient_quantities": "ORIGINAL_VERIFIED",
+        "ingredient_runtime_IDs": "RECONSTRUCTED_ALIAS",
+        "kind": "CORROBORATED",
+        "mp_cost": "BALANCE_ESTIMATE",
+        "power": "BALANCE_ESTIMATE",
+        "range": "BALANCE_ESTIMATE",
+        "timeline": "RECONSTRUCTED",
+        "effect_sound_binding": "RECONSTRUCTED"
+      },
+      "look_id": null,
+      "runtime_enabled": true
+    },
+    {
+      "kind": "skills",
+      "id": "KRO-9fa71eae9c36",
+      "name": "자무주(수)",
+      "fact_status": null,
+      "original_native_id": null,
+      "source_ids": [
+        "P15-ARC-cb5e34400c09"
+      ],
+      "effective_field_status": {
+        "learn_level": "ORIGINAL_VERIFIED",
+        "learn_money": "ORIGINAL_VERIFIED",
+        "ingredient_quantities": "ORIGINAL_VERIFIED",
+        "ingredient_runtime_IDs": "RECONSTRUCTED_ALIAS",
+        "kind": "CORROBORATED",
+        "mp_cost": "BALANCE_ESTIMATE",
+        "power": "BALANCE_ESTIMATE",
+        "range": "BALANCE_ESTIMATE",
+        "timeline": "RECONSTRUCTED",
+        "effect_sound_binding": "RECONSTRUCTED"
+      },
+      "look_id": null,
+      "runtime_enabled": true
+    },
+    {
+      "kind": "skills",
+      "id": "KRO-a1b768df5f76",
+      "name": "백열주(지)",
+      "fact_status": null,
+      "original_native_id": null,
+      "source_ids": [
+        "P15-ARC-cb5e34400c09"
+      ],
+      "effective_field_status": {
+        "learn_level": "ORIGINAL_VERIFIED",
+        "learn_money": "ORIGINAL_VERIFIED",
+        "ingredient_quantities": "ORIGINAL_VERIFIED",
+        "ingredient_runtime_IDs": "RECONSTRUCTED_ALIAS",
+        "kind": "CORROBORATED",
+        "mp_cost": "BALANCE_ESTIMATE",
+        "power": "BALANCE_ESTIMATE",
+        "range": "BALANCE_ESTIMATE",
+        "timeline": "RECONSTRUCTED",
+        "effect_sound_binding": "RECONSTRUCTED"
+      },
+      "look_id": null,
+      "runtime_enabled": true
+    },
+    {
+      "kind": "skills",
+      "id": "KRO-f0fcaedd0fba",
+      "name": "뢰진주 (풍뢰)",
+      "fact_status": null,
+      "original_native_id": null,
+      "source_ids": [
+        "P15-ARC-cb5e34400c09"
+      ],
+      "effective_field_status": {
+        "learn_level": "ORIGINAL_VERIFIED",
+        "learn_money": "ORIGINAL_VERIFIED",
+        "ingredient_quantities": "ORIGINAL_VERIFIED",
+        "ingredient_runtime_IDs": "RECONSTRUCTED_ALIAS",
+        "kind": "CORROBORATED",
+        "mp_cost": "BALANCE_ESTIMATE",
+        "power": "BALANCE_ESTIMATE",
+        "range": "BALANCE_ESTIMATE",
+        "timeline": "RECONSTRUCTED",
+        "effect_sound_binding": "RECONSTRUCTED"
+      },
+      "look_id": null,
+      "runtime_enabled": true
+    }
+  ],
+  "deferred": {
+    "higher_skill_ids": [
+      "KRO-89d81ccd8dfc",
+      "KRO-cce452629337",
+      "KRO-661caabd8a2e",
+      "KRO-55246dd957ba",
+      "KRO-5d155cfe3d67",
+      "KRO-85a49273a010",
+      "KRO-57e953a2574e",
+      "KRO-cd7ac536d2b3",
+      "KRO-8e2db0bee86e",
+      "KRO-2840e52581cf",
+      "KRO-bb8dfcf8d4b8",
+      "KRO-a3f10a19bd5e",
+      "KRO-d93da00b1518",
+      "KRO-62b311762b20",
+      "KRO-ade823e9e9b5",
+      "KRO-b339899aab5d",
+      "KRO-4b3e8b43798a",
+      "KRO-977b5b115bb9",
+      "KRO-05fc2ebd4d58",
+      "KRO-e46e771c8567",
+      "KRO-66b985b9737a",
+      "KRO-78063ff5ebe3",
+      "KRO-8501860bf1c5",
+      "KRO-51a6a907dcce",
+      "KRO-4a30d77993b3",
+      "KRO-be71d96f8a3c",
+      "KRO-92e8760e33c9",
+      "KRO-e645f8d30a7b",
+      "KRO-9d6d81e73179",
+      "KRO-050070727765",
+      "KRO-86fa389d2985",
+      "KRO-08163ac20995",
+      "KRO-e4c8d653e2ce",
+      "KRO-9cc84cf8aab4",
+      "KRO-1877c729a561",
+      "KRO-b263815ade47",
+      "KRO-2baeab06ad4c",
+      "KRO-3409aafb6ae7",
+      "KRO-7139a2513c5d",
+      "KRO-f76291c4bb71",
+      "KRO-c8445f09eff8",
+      "KRO-5c978cf8ad1b",
+      "KRO-fffd13e5c23a",
+      "KRO-17c8793ab22b",
+      "KRO-f3ffc03fa049",
+      "KRO-e5c1e3e5f6c4",
+      "KRO-f61c13102b19",
+      "KRO-17117b05a581",
+      "KRO-d6734471bde7",
+      "KRO-a81950d8f503",
+      "KRO-9f7802b84ecf",
+      "KRO-85860ef781d7",
+      "KRO-071816771466",
+      "KRO-e59f1b650098",
+      "KRO-1201a81433ea",
+      "KRO-8fdcc9511e14",
+      "KRO-0ccdc2795ba8",
+      "KRO-c2d74b5319fd",
+      "KRO-3010c6e04167",
+      "KRO-455a474f5eac",
+      "KRO-6e661d0eb3ac",
+      "KRO-b50e8ad9811c",
+      "KRO-b27d148b675a",
+      "KRO-455068ab7a74",
+      "KRO-e62a565a9ff3",
+      "KRO-71dc33bd6d48",
+      "KRO-6bb835bb0f73",
+      "KRO-bc45b79ff4fb",
+      "KRO-2559df84b7d3",
+      "KRO-5f0e058d1a0e",
+      "KRO-e5c053b3dff3",
+      "KRO-c7bae046ed15",
+      "KRO-b79ab9097f2f",
+      "KRO-5b77686db683",
+      "KRO-01899ae631a4",
+      "KRO-395ea3235cbe",
+      "KRO-4b9a8aa02632",
+      "KRO-a6afe4d113cf",
+      "KRO-3f305f236c54",
+      "KRO-a0ecb726cd9d",
+      "KRO-0eae7fde3f73",
+      "KRO-44a3befb24c4",
+      "KRO-cad1244849ae",
+      "KRO-8e84e7167ae3",
+      "KRO-0534ac17e02b",
+      "KRO-d973637855cf",
+      "KRO-24840b190c5a",
+      "KRO-032367659785",
+      "KRO-784691681bb7",
+      "KRO-b35eb75382e6",
+      "KRO-21fea0f07142",
+      "KRO-a24c6e3b6dd8",
+      "KRO-43232fcf60d7",
+      "KRO-d108e5bca690",
+      "KRO-76c080f529bf",
+      "KRO-ff07fa3d20c0",
+      "KRO-46ec397bde14",
+      "KRO-eca6a5b6a9fa",
+      "KRO-d0d06610a9a3",
+      "KRO-6a929977b704",
+      "KRO-1831242cd7eb",
+      "KRO-b92828e376a8",
+      "KRO-772367fd21b4",
+      "KRO-03d224759cbf",
+      "KRO-d2a224851dd4",
+      "KRO-8d24a0cfcf1c",
+      "KRO-dfd7c77942ff",
+      "KRO-539624b2bf80",
+      "KRO-30bb18a7d057",
+      "KRO-9b973094a63e",
+      "KRO-08bda2486123",
+      "KRO-57466f28cb05",
+      "KRO-ea028e4a3a13",
+      "KRO-5043e6d34a70",
+      "KRO-2887a9284007",
+      "KRO-806203718177",
+      "KRO-3b68fb92fcdc",
+      "KRO-0def023d51d0",
+      "KRO-8cce0f79e2c2",
+      "KRO-d616d37f5b7a",
+      "KRO-68079ab30294",
+      "KRO-abc1ce9ac7d7",
+      "KRO-7fd2a368cadf",
+      "KRO-f256051ce2c8",
+      "KRO-c2825b2dab80",
+      "KRO-24bed760289e",
+      "KRO-1802948bd89e",
+      "KRO-e579012ca1e0",
+      "KRO-1aa890f4e435",
+      "KRO-2a81ef1e699c",
+      "KRO-a0383907fea9",
+      "KRO-8655189ede6f",
+      "KRO-b6ad73505d85",
+      "KRO-244a416223d6",
+      "KRO-3e3c1d13ebb1",
+      "KRO-9c56730ff85e",
+      "KRO-f3a488297810",
+      "KRO-19bd83b56202",
+      "KRO-985c5fc4f711",
+      "KRO-5b6b8028db27",
+      "KRO-6735e0dc2c95",
+      "KRO-be084a2c96aa",
+      "KRO-129d21f8dd60",
+      "KRO-f3322de86160",
+      "KRO-bb1deb360b87",
+      "KRO-a529a55cc0d2",
+      "KRO-a55e92eecb65",
+      "KRO-b136d2da2590",
+      "KRO-2f7d824bdf16",
+      "KRO-b2a3bf50cadb",
+      "KRO-002326c4b3b5",
+      "KRO-dc13ac09eb29",
+      "KRO-b24e3a79dfb4",
+      "KRO-fcee9a4e9bbd",
+      "KRO-005b271e68c7",
+      "KRO-069a6e690994",
+      "KRO-5141ceb34994",
+      "KRO-f4462efdee0f",
+      "KRO-f26ca2744d5f",
+      "KRO-1ced02adeb42",
+      "KRO-6200a295efed",
+      "KRO-3f32fc8b60bd",
+      "KRO-437e3588e704",
+      "KRO-bec97021da77",
+      "KRO-010d0ceb6cda",
+      "KRO-a794ff798069",
+      "KRO-456feb5e9260",
+      "KRO-0c9704f73c74",
+      "KRO-d98479e2ae43",
+      "KRO-02bc5399ff53",
+      "KRO-5cebb726a7d3",
+      "KRO-ef058dc8385f",
+      "KRO-ef112992546e",
+      "KRO-1ae93a3abb33",
+      "KRO-87646590e5a7",
+      "KRO-008910c0424f",
+      "KRO-5f746aa0d6f7",
+      "KRO-1cf4e4e417ed"
+    ],
+    "unplaced_npc_contract_ids": [
+      "KRO-NPC_SERVICE-672ae033dde168",
+      "KRO-NPC_SERVICE-fb21a655dc2c1f",
+      "KRO-NPC_SERVICE-3bc78bb3b6a0b7",
+      "KRO-NPC_SERVICE-74c886ad21d359",
+      "KRO-NPC_SERVICE-8e0003f1abe85a",
+      "KRO-NPC_SERVICE-b7fece6cc5c363",
+      "KRO-NPC_SERVICE-6ef9732840c1b6",
+      "KRO-NPC_SERVICE-d2ebd41158b205",
+      "KRO-NPC_SERVICE-b727b2c0cdec26",
+      "KRO-NPC_SERVICE-cc6f3987e9e4b7",
+      "KRO-NPC_SERVICE-e28ebe7377f0cf",
+      "KRO-NPC_SERVICE-adeaf8a2412aa3",
+      "KRO-NPC_SERVICE-282fc0be464fb9",
+      "KRO-NPC_SERVICE-eca095426bbba5",
+      "KRO-NPC_SERVICE-98617ef3aca2e2"
+    ],
+    "source_map_geometry": "Unknown server topology and active bounds preserved; P3 reconstruction is separate"
+  },
+  "active_effect_ids": [
+    0,
+    13,
+    14,
+    16,
+    19,
+    20
+  ],
+  "active_sound_native_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    12,
+    13,
+    17,
+    18,
+    19,
+    20
+  ],
+  "historical_failures_preserved": {
+    "Android_GEN003": "FAIL_NO_REPORT",
+    "Windows_native": "BLOCKED_ENVIRONMENT_BRANCH_RULE",
+    "Wine_save_failed": 12,
+    "original_UI_masks_failed": [
+      "DLGLOGIN",
+      "DLGNEW01",
+      "DLGPASS"
+    ],
+    "North_America_reference_failed": 154
+  }
+}

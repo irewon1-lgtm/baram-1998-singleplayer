@@ -106,6 +106,7 @@ def stage_project(project: Path, runtime: Path, stage: Path, templates: Path) ->
 
 
 def export_gameplay(args: argparse.Namespace) -> int:
+    args.output = args.output.resolve()
     project, runtime = args.project.resolve(), args.runtime.resolve()
     if project in args.output.resolve().parents or args.output.resolve() == project:
         raise ValueError("Private output must be outside the source project")
@@ -218,6 +219,7 @@ def checkpoint_names(raw: bytes) -> list[str]:
 
 
 def android_gameplay(args: argparse.Namespace) -> int:
+    args.output = args.output.resolve()
     """Observe normal launch, then explicit debug-only one-shot smoke in same APK."""
     if digest(args.apk) != args.apk_sha256 or not re.fullmatch(r"[0-9a-f]{64}", args.apk_sha256):
         raise ValueError("Exact final APK SHA256 required")
@@ -391,6 +393,16 @@ def android_gameplay(args: argparse.Namespace) -> int:
             if isinstance(parsed, dict) and parsed.get("schema"):
                 (args.output / REPORT).write_bytes(raw)
                 checks = parsed.get("checks", [])
+                if parsed.get("schema") == "baram.gameplay-gui-evidence/1":
+                    character = parsed.get("final", {}).get("character", {})
+                    checks = [
+                        {"id":"production_gui_report_pass", "pass":parsed.get("status")=="PASS"},
+                        {"id":"four_production_moves", "pass":len(parsed.get("moves",[]))==4 and all(r.get("status")=="OK" for r in parsed.get("moves",[]))},
+                        {"id":"new_commoner_level1", "pass":character.get("job")=="commoner" and character.get("level")==1 and not parsed.get("final",{}).get("skills")},
+                        {"id":"actual_save_readback_equal", "pass":parsed.get("restored_equal") is True},
+                        {"id":"asset_and_draw_references_valid", "pass":parsed.get("asset_errors")==[] and parsed.get("draw_errors")==[] and bool(parsed.get("rendered_paths"))},
+                    ]
+                    receipt["derived_production_checks"] = checks
                 failures = sum(c.get("status") != "PASS" and not c.get("pass", False) for c in checks)
                 receipt.update(smoke="PASS" if checks and failures == 0 else "FAIL", checks=len(checks), failures=failures,
                     report_sha256=digest(args.output / REPORT), result="PASS_SAME_APK_DEFAULT_AND_SMOKE" if checks and failures == 0 else "FAIL_SMOKE_ASSERTIONS")

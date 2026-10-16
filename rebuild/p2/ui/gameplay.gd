@@ -244,7 +244,7 @@ func _build_touch() -> void:
 	overlay.hide()
 	overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	add_child(overlay)
+	view.add_child(overlay)
 	for entry in [["↑",Vector2(72,-190),Vector2i(0,-1)],["←",Vector2(12,-130),Vector2i(-1,0)],["↓",Vector2(72,-70),Vector2i(0,1)],["→",Vector2(132,-130),Vector2i(1,0)]]:
 		var button := Button.new()
 		button.text = entry[0]
@@ -256,10 +256,10 @@ func _build_touch() -> void:
 		overlay.add_child(button)
 	var attack := _button(overlay,"공격",func(): _dispatch({"type":"attack","target_id":selected_target}))
 	attack.anchor_left = 1; attack.anchor_right = 1; attack.anchor_top = 1; attack.anchor_bottom = 1
-	attack.position = Vector2(-100,-140); attack.size = Vector2(84,70)
+	attack.offset_left=-100; attack.offset_top=-140; attack.offset_right=-16; attack.offset_bottom=-70
 	var skill := _button(overlay,"기술",_cast_selected)
 	skill.anchor_left = 1; skill.anchor_right = 1; skill.anchor_top = 1; skill.anchor_bottom = 1
-	skill.position = Vector2(-100,-220); skill.size = Vector2(84,60)
+	skill.offset_left=-100; skill.offset_top=-220; skill.offset_right=-16; skill.offset_bottom=-160
 	if DisplayServer.has_feature(DisplayServer.FEATURE_ORIENTATION): DisplayServer.screen_set_orientation(DisplayServer.SCREEN_LANDSCAPE)
 
 func _resize_ui() -> void:
@@ -454,6 +454,9 @@ func _input(event: InputEvent) -> void:
 func _notification(what: int) -> void:
 	if what==NOTIFICATION_APPLICATION_FOCUS_OUT: movement=Vector2i.ZERO; touch_moves.clear()
 	if what==NOTIFICATION_APPLICATION_PAUSED and not game.state.is_empty(): _save()
+	if what==NOTIFICATION_WM_GO_BACK_REQUEST:
+		if is_instance_valid(dialogue) and dialogue.visible: dialogue.hide()
+		elif not game.state.is_empty(): _return_menu()
 	if what==NOTIFICATION_WM_CLOSE_REQUEST:
 		if game.state.is_empty() or _save(): get_tree().quit()
 
@@ -619,10 +622,17 @@ func _render_world() -> void:
 	if game.state.is_empty(): return
 	var c: Dictionary = game.state.character
 	var map: Dictionary = content.data.maps[c.map_id]
+	var world_zoom:=1.65 if size.x>=1000 else 1.25
+	var camera:=Vector2(int(c.x)*24+12,int(c.y)*24+12)
+	var visible_world:=Rect2(camera-view.size/(2*world_zoom),view.size/world_zoom).grow(24)
 	var layers: Array = map.get("ground_layers",[]).duplicate(true)
 	if layers.is_empty() and map.has("floor_png"): layers.append({"path":map.floor_png,"x":0,"y":0})
 	var sorted: Array = []
 	for object in map.get("objects",[]):
+		# Korean SOBJECT columns are exactly 24 pixels wide, height is in tiles.
+		# Cull offscreen columns before texture lookup; foot-depth order survives.
+		var bounds:=Rect2(float(object.x),float(object.y),24,maxf(24,float(object.get("height",6))*24))
+		if not visible_world.intersects(bounds): continue
 		var entry: Dictionary = object.duplicate(true)
 		if not entry.has("path"): entry.path=entry.get("frame_png","")
 		sorted.append(entry)
@@ -667,7 +677,7 @@ func _render_world() -> void:
 		if sample.finished: active_effects.remove_at(i)
 		else: layers.append_array(sample.back); layers.append_array(sample.front)
 	view.labels=labels
-	view.configure(layers,Vector2(int(map.width)*24,int(map.height)*24),Vector2(int(c.x)*24+12,int(c.y)*24+12),1.65 if size.x>=1000 else 1.25)
+	view.configure(layers,Vector2(int(map.width)*24,int(map.height)*24),camera,world_zoom)
 
 func _job_name(job: String) -> String:
 	return "평민" if job=="commoner" else job
