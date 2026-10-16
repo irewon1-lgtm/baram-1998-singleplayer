@@ -1,6 +1,6 @@
 # P3 실제 시험 결과
 
-최종 앱 코드 고정 원격 `716febebcf4add8168fed32cbbe32f8860b6c0d3` (로컬 1bf7e79와 tree 동일). 이후 문서/도구 수정은 앱 소스와 입력을 바꾸지 않는다. Linux Godot4.6.3 + Xvfb/Pulse 가상 출력이다. 실제 IME·물리 청취·Galaxy/Windows 시험과 구분한다.
+최종 앱 코드 고정 원격 `94bb1a5b8facf3c12219230e3d154a84bc65de75` (로컬 111b386와 tree 동일). 이후 문서/도구 수정은 앱 소스와 입력을 바꾸지 않는다. Linux Godot4.6.3 + Xvfb/Pulse 가상 출력이다. 실제 IME·물리 청취·Galaxy/Windows 시험과 구분한다.
 
 | 기준 | 판정 | 증거 범위/제한 |
 |---|---|---|

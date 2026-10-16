@@ -4,8 +4,8 @@
   "baseline_sha": "511b98bc81801e89c3fde8b5344d233aaa0c8a79",
   "status": "IN_PROGRESS",
   "current_step": "W5_ANDROID_W6_DELIVERY",
-  "source_commit": "716febebcf4add8168fed32cbbe32f8860b6c0d3",
-  "source_tree": "8173b6fb7fd277fbdcea917f95f279554a0ecb11",
+  "source_commit": "94bb1a5b8facf3c12219230e3d154a84bc65de75",
+  "source_tree": "942e10e59a07de4e51fe5e4c0d49fd0a61441c67",
   "source_project_files": {
     "inspection.tscn": "2b218968d812d1ff322638428a4bc85920d1996b180b6b383e7e01df5df7e5c4",
     "project.godot": "3a0c4135f275353a718961710e46f953391752a5b2508b623fcc7295c5e3c18a",
@@ -13,7 +13,7 @@
     "README.md": "0687451467ceb59b42e092bcb737a7c5f00d68c23795c351f8de5cfcf349229a",
     "export_presets.cfg": "2b8a8a9bbd8de76ef1ed7d2e0d0ebccf5252bd581080bfc11aa7c63988ebbdb3",
     "ui/original_inspection.gd": "43d352700e3b122e76861764116850d4225a66187363ef34a34c63eaf1a4b7a8",
-    "ui/gameplay.gd": "66b9b8fa5d0f5dc7c59462063f4c35657922924e27e1893902ca229d25ed2e0a",
+    "ui/gameplay.gd": "32b9f1fcd2b34d268c743538c23e9f9914962059e6145f07f01c2542394687ef",
     "ui/inspection.gd": "7723983f94857f99ca87356294c7ba15e6b2123250eebd9c28b70766f4cb26b6",
     "ui/inspection.gd.uid": "add58e6bf30d786c35df024772a90881672606d9dc7daff84a92097acc7bd612",
     "ui/original_inspection.gd.uid": "25a4b9ecfdc7700dd89913ce43eb991a4a82be698cfe2c2f25c78de97de13317",
@@ -60,16 +60,15 @@
     "Android_build": "PASS_EXPORT_ONLY"
   },
   "pending": {
-    "Android": "RUNNING",
+    "Android": "run04: touch creation/movement/save observed, process restart phase running",
     "native_Windows": "BLOCKED_EXISTING_ENVIRONMENT_BRANCH_RULE_NO_BYPASS",
     "Galaxy": "NOT_RUN_NO_DEVICE",
     "authentication": "BLOCKED_AUTH_ENVIRONMENT",
-    "private_delivery": "PENDING"
+    "private_delivery": "5_FINAL_ARTIFACTS_SAVED; final report/evidence pending"
   },
   "next_exact_commands": [
-    "python3 /workspace/scratch/f9c02bf96510/runtime-tools/gameplay/serve_emulator.py (only if existing owned service expired; run-request queue already contains fixed APK hash)",
-    "Read /workspace/scratch/f9c02bf96510/private/gameplay-platform/final-android-run01/RUN_RECEIPT.json; never repeat unchanged failed run",
-    "Finish docs/rebuild/gameplay/RESULTS and DELIVERY, upload generated private files, commit metadata then remote requery"
+    "Read /workspace/scratch/f9c02bf96510/private/gameplay-platform/final-android-run04/RUN_RECEIPT.json. Same APK SHA5d6c6e95937f78ce55591985769fdecc6f6e591c2892b69a7bef1c4b6c9bebed. Do not restart source research or rebuild unchanged APK.",
+    "Finalize RESULTS/PLAYTEST_RESULTS/DELIVERY from observed Android outcome, save HTML/evidence, commit and remote CAS requery."
   ],
   "failure_history": [
     "GUI1/2 fractional timer VERIFY_FAILED→fixed; finalGUI PASS",

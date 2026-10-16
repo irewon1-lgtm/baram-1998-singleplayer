@@ -20,6 +20,8 @@ def main(a):
         'BARAM_GAMEPLAY_EVIDENCE':str(out/'screens'),'GODOT_SILENCE_ROOT_WARNING':'1',
         'XDG_DATA_HOME':str(out/'isolated-data'),'XDG_CONFIG_HOME':str(out/'isolated-config')})
     if a.trace: env['BARAM_GAMEPLAY_TRACE']=str(a.trace.resolve())
+    if a.pack: env.pop('BARAM_GAMEPLAY_RUNTIME',None)
+    if a.natural_save: env['BARAM_GAMEPLAY_NATURAL_SAVE']=str(a.natural_save.resolve())
     Path(env['PULSE_RUNTIME_PATH']).mkdir(mode=0o700)
     env['PATH']=str(root/'usr/bin')+os.pathsep+env['PATH']
     subprocess.run([str(root/'usr/bin/xauth'),'-f',env['XAUTHORITY'],'add',env['DISPLAY'],'MIT-MAGIC-COOKIE-1',secrets.token_hex(16)],env=env,check=True,capture_output=True)
@@ -37,6 +39,7 @@ def main(a):
         receipt['servers_alive']=[p.poll() is None for p in processes]
         if not all(receipt['servers_alive']): raise RuntimeError('Virtual output server failed')
         cmd=[str(a.godot.resolve()),'--path',str(a.project.resolve()),'--rendering-method','gl_compatibility']
+        if a.pack: cmd=[str(a.godot.resolve()),'--main-pack',str(a.pack.resolve()),'--rendering-method','gl_compatibility']
         with (out/'ordinary.log').open('wb') as log:
             ordinary=subprocess.Popen(cmd,env=env,stdout=log,stderr=log)
             processes.append(ordinary)
@@ -59,7 +62,8 @@ def main(a):
             recorder=subprocess.Popen(['ffmpeg','-y','-f','x11grab','-framerate','12','-video_size','1280x900','-i',env['DISPLAY'],
                 '-f','pulse','-i','gameplay_capture.monitor','-c:v','libx264','-preset','ultrafast','-crf','24','-pix_fmt','yuv420p','-c:a','aac',str(out/'gameplay.mp4')],env=env,stdout=log,stderr=log)
             time.sleep(1)
-        receipt['application']=run_logged(cmd+['--','--gameplay-smoke'],out/'application.log',env,a.timeout)
+        test_cmd=cmd+(['--script',str(a.test_script.resolve()),'--','--ui-integration-fixture'] if a.test_script else ['--','--gameplay-smoke'])
+        receipt['application']=run_logged(test_cmd,out/'application.log',env,a.timeout)
         receipt['result']='PASS' if receipt['application']['exit_code']==0 else 'FAIL_OR_TIMEOUT'
         if a.os_probe and (receipt.get('ordinary_input_probe',{}).get('status')!='PASS' or receipt.get('ordinary_restart_probe',{}).get('status')!='PASS'):
             receipt['result']='FAIL_ORDINARY_INPUT_OR_RESTART'
@@ -90,5 +94,8 @@ if __name__=='__main__':
     p.add_argument('--trace',type=Path)
     p.add_argument('--video',action='store_true')
     p.add_argument('--os-probe',action='store_true')
+    p.add_argument('--pack',type=Path)
+    p.add_argument('--test-script',type=Path)
+    p.add_argument('--natural-save',type=Path)
     p.add_argument('--timeout',type=int,default=180)
     raise SystemExit(main(p.parse_args()))

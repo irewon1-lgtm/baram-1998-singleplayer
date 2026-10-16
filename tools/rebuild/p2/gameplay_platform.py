@@ -311,10 +311,20 @@ def android_gameplay(args: argparse.Namespace) -> int:
         if verified["exit_code"] != 0:
             receipt["result"] = "FAIL_SIGNATURE"
             return 1
-        installed = run(base + ["install", "-r", "--no-incremental", "--no-streaming", str(args.apk)], "install", 180)
-        if installed["exit_code"] != 0:
-            receipt["result"] = "FAIL_INSTALL"
-            return 1
+        if args.reuse_installed:
+            located=run(base+["shell","pm","path",PACKAGE],"installed-apk-path",30)
+            remote=Path(located["log"]).read_text().strip().removeprefix("package:")
+            if not re.fullmatch(r"/data/app/[A-Za-z0-9_./=+-]+/base\.apk",remote):
+                receipt["result"]="FAIL_INSTALLED_APK_LOCATION";return 1
+            observed=run(base+["shell","sha256sum",remote],"installed-apk-sha256",30)
+            if not Path(observed["log"]).read_text().startswith(args.apk_sha256+" "):
+                receipt["result"]="FAIL_INSTALLED_APK_HASH";return 1
+            receipt["installation"]="REUSED_EXACT_INSTALLED_APK_SHA256"
+        else:
+            installed = run(base + ["install", "-r", "--no-incremental", "--no-streaming", str(args.apk)], "install", 180)
+            if installed["exit_code"] != 0:
+                receipt["result"] = "FAIL_INSTALL"
+                return 1
         run(base + ["shell", "am", "force-stop", PACKAGE], "stop-before-default")
         old_checkpoints, _ = read_private(userdata + "/" + CHECKPOINTS)
         if old_checkpoints:
@@ -362,9 +372,16 @@ def android_gameplay(args: argparse.Namespace) -> int:
         overlay = receipt.get("environment_dialog", "")
         if overlay and overlay != "SYSTEM_UI_ANR_WAIT_SELECTED_DIALOG_CLOSED":
             receipt["default_mode"] = "APP_FIRST_FRAME_BEHIND_UNRESOLVED_ENVIRONMENT_DIALOG"
-        if not args.smoke:
+        if not args.smoke and not args.ui_probe:
             receipt["result"] = "PASS_DEFAULT_BOOT_ONLY" if receipt["default_mode"].startswith("PASS_") else "PARTIAL_DEFAULT_ENVIRONMENT_OVERLAY"
             return 0 if receipt["default_mode"].startswith("PASS_") else 1
+        if args.ui_probe:
+            from gameplay_android_input import probe
+            receipt["ordinary_input_probe"] = probe(base, PACKAGE, userdata, args.output, run, read_private, launch, capture)
+            save()
+        if not args.smoke:
+            receipt['result']='PASS_SAME_APK_DEFAULT_AND_ORDINARY_INPUT' if receipt.get('ordinary_input_probe',{}).get('status')=='PASS' else 'PARTIAL_ANDROID_ORDINARY_INPUT'
+            return 0 if receipt['result'].startswith('PASS_') else 1
         run(base + ["shell", "am", "force-stop", PACKAGE], "stop-before-explicit-smoke")
         removed = run(base + ["shell", "run-as", PACKAGE, "rm", "-f", userdata + "/" + REPORT, userdata + "/" + CHECKPOINTS], "remove-stale-test-diagnostics")
         if removed["exit_code"] != 0:
@@ -408,6 +425,9 @@ def android_gameplay(args: argparse.Namespace) -> int:
                     report_sha256=digest(args.output / REPORT), result="PASS_SAME_APK_DEFAULT_AND_SMOKE" if checks and failures == 0 else "FAIL_SMOKE_ASSERTIONS")
                 if receipt["default_mode"] != "PASS_NORMAL_LAUNCH_FIRST_FRAME_STAYS_RUNNING":
                     receipt["result"] = "PARTIAL_SMOKE_ENVIRONMENT_OVERLAY"
+                    return 1
+                if args.ui_probe and receipt.get("ordinary_input_probe",{}).get("status") != "PASS":
+                    receipt["result"] = "PARTIAL_ANDROID_ORDINARY_INPUT"
                     return 1
                 return 0 if checks and failures == 0 else 1
             raw_stages, _ = read_private(userdata + "/" + CHECKPOINTS)
@@ -462,6 +482,8 @@ def main() -> int:
     android.add_argument("--startup-timeout", type=int, default=90)
     android.add_argument("--timeout", type=int, default=180)
     android.add_argument("--smoke", action="store_true")
+    android.add_argument("--ui-probe", action="store_true")
+    android.add_argument("--reuse-installed", action="store_true")
     args = parser.parse_args()
     return export_gameplay(args) if args.mode == "export" else android_gameplay(args)
 

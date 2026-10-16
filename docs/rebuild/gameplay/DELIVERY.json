@@ -1,0 +1,66 @@
+{
+  "schema": "baram.gameplay.delivery/1",
+  "scope": "Private test delivery; no production deployment or existing app update",
+  "app_source_commit": "94bb1a5b8facf3c12219230e3d154a84bc65de75",
+  "app_source_tree": "942e10e59a07de4e51fe5e4c0d49fd0a61441c67",
+  "branch": "work/rebuild-p3-playable-20261016",
+  "runtime_generation": "WORK-GAMEPLAY-GEN001",
+  "runtime_manifest_sha256": "70f4a32045242ce176e9d66f13791179cac67dd974de318dd77c7c1374a7455c",
+  "package": "com.irewon.baram.gameplay20261016",
+  "signature": "New isolated P3 synthetic test key; existing keys untouched",
+  "normal_start": "Play menu; explicit smoke option only; no developer paths/SDK/database needed by end user",
+  "files": [
+    {
+      "filename": "baram-P3-Android-94bb1a5b.apk",
+      "local_path": "/workspace/scratch/f9c02bf96510/delivery/p3/baram-P3-Android-94bb1a5b.apk",
+      "bytes": 58030131,
+      "sha256": "5d6c6e95937f78ce55591985769fdecc6f6e591c2892b69a7bef1c4b6c9bebed",
+      "library_file_id": "libfile_a3c63dbf400c8191aed62fc390a0be7d",
+      "download_url": "https://chatgpt.com/api/library/files/libfile_a3c63dbf400c8191aed62fc390a0be7d/download",
+      "save_receipt": "SUCCEEDED",
+      "user_download_observation": "NOT_OBSERVED"
+    },
+    {
+      "filename": "baram-P3-Windows-94bb1a5b.zip",
+      "local_path": "/workspace/scratch/f9c02bf96510/delivery/p3/baram-P3-Windows-94bb1a5b.zip",
+      "bytes": 34896279,
+      "sha256": "07c3f40d29a42cbf87025731163d1af3c02391c2caf44afce3e344240d6e84aa",
+      "library_file_id": "libfile_61f3a13f0eac819192353f3ab94e1820",
+      "download_url": "https://chatgpt.com/api/library/files/libfile_61f3a13f0eac819192353f3ab94e1820/download",
+      "save_receipt": "SUCCEEDED",
+      "user_download_observation": "NOT_OBSERVED"
+    },
+    {
+      "filename": "baram-P3-input-WORK-GAMEPLAY-GEN001.zip",
+      "local_path": "/workspace/scratch/f9c02bf96510/delivery/p3/baram-P3-input-WORK-GAMEPLAY-GEN001.zip",
+      "bytes": 2350202,
+      "sha256": "b97c533e5b979abc4d68470314b37e012898c97c450515c9b9364644c9543461",
+      "library_file_id": "libfile_f209df1010b8819183ac2f6f5aa948b1",
+      "download_url": "https://chatgpt.com/api/library/files/libfile_f209df1010b8819183ac2f6f5aa948b1/download",
+      "save_receipt": "SUCCEEDED",
+      "user_download_observation": "NOT_OBSERVED"
+    },
+    {
+      "filename": "baram-P3-play-demo.mp4",
+      "local_path": "/workspace/scratch/f9c02bf96510/delivery/p3/baram-P3-play-demo.mp4",
+      "bytes": 2940773,
+      "sha256": "7a51202a3a6f5506644246545b8afd7f13347a7fd84c7d71c69a009aa1fb8622",
+      "library_file_id": "libfile_cdec34071e608191805cc8d4726b8ca4",
+      "download_url": "https://chatgpt.com/api/library/files/libfile_cdec34071e608191805cc8d4726b8ca4/download",
+      "save_receipt": "SUCCEEDED",
+      "user_download_observation": "NOT_OBSERVED"
+    },
+    {
+      "filename": "baram-P3-source-94bb1a5b.zip",
+      "local_path": "/workspace/scratch/f9c02bf96510/delivery/p3/baram-P3-source-94bb1a5b.zip",
+      "bytes": 261825,
+      "sha256": "b639f4b0836057e2053fc53cd3c1a6ad3d7de40223b44e621139ee745d4231d3",
+      "library_file_id": "libfile_d3219c9b7aa481919806900bf788fa80",
+      "download_url": "https://chatgpt.com/api/library/files/libfile_d3219c9b7aa481919806900bf788fa80/download",
+      "save_receipt": "SUCCEEDED",
+      "user_download_observation": "NOT_OBSERVED"
+    }
+  ],
+  "report_and_evidence": "PENDING_FINAL_ANDROID_RESULTS",
+  "new_cost": 0
+}

@@ -251,7 +251,7 @@ func _build_touch() -> void:
 		button.anchor_top = 1; button.anchor_bottom = 1
 		button.position = entry[1]; button.size = Vector2(56,56)
 		var move: Vector2i = entry[2]
-		button.button_down.connect(func(): touch_moves[str(move)] = move)
+		button.button_down.connect(func(): _begin_touch_move(move))
 		button.button_up.connect(func(): touch_moves.erase(str(move)))
 		overlay.add_child(button)
 	var attack := _button(overlay,"공격",func(): _dispatch({"type":"attack","target_id":selected_target}))
@@ -261,6 +261,15 @@ func _build_touch() -> void:
 	skill.anchor_left = 1; skill.anchor_right = 1; skill.anchor_top = 1; skill.anchor_bottom = 1
 	skill.offset_left=-100; skill.offset_top=-220; skill.offset_right=-16; skill.offset_bottom=-160
 	if DisplayServer.has_feature(DisplayServer.FEATURE_ORIENTATION): DisplayServer.screen_set_orientation(DisplayServer.SCREEN_LANDSCAPE)
+
+func _begin_touch_move(move: Vector2i) -> void:
+	touch_moves[str(move)]=move
+	if game.state.is_empty() or not play.visible or dialogue.visible: return
+	# A press/release can arrive in one slow Android render frame. Commit the
+	# initial step on press; _process continues repeat movement while held.
+	var result: Dictionary=_dispatch({"type":"move","dx":move.x,"dy":move.y})
+	input_repeat=0.15
+	checkpoint("touch_direction",{"dx":move.x,"dy":move.y,"status":result.status,"reason":result.get("reason"),"x":game.state.character.x,"y":game.state.character.y})
 
 func _resize_ui() -> void:
 	if panels == null: return
@@ -436,7 +445,10 @@ func _input(event: InputEvent) -> void:
 		if event.pressed and key==KEY_ESCAPE: dialogue.hide(); movement=Vector2i.ZERO; get_viewport().set_input_as_handled()
 		return
 	if key in [KEY_UP,KEY_W,KEY_DOWN,KEY_S,KEY_LEFT,KEY_A,KEY_RIGHT,KEY_D]:
-		if event.pressed: movement={KEY_UP:Vector2i.UP,KEY_W:Vector2i.UP,KEY_DOWN:Vector2i.DOWN,KEY_S:Vector2i.DOWN,KEY_LEFT:Vector2i.LEFT,KEY_A:Vector2i.LEFT,KEY_RIGHT:Vector2i.RIGHT,KEY_D:Vector2i.RIGHT}[key]
+		if event.pressed:
+			movement={KEY_UP:Vector2i.UP,KEY_W:Vector2i.UP,KEY_DOWN:Vector2i.DOWN,KEY_S:Vector2i.DOWN,KEY_LEFT:Vector2i.LEFT,KEY_A:Vector2i.LEFT,KEY_RIGHT:Vector2i.RIGHT,KEY_D:Vector2i.RIGHT}[key]
+			if not event.echo:
+				_dispatch({"type":"move","dx":movement.x,"dy":movement.y}); input_repeat=0.15
 		else: movement=Vector2i.ZERO
 		get_viewport().set_input_as_handled()
 		return
