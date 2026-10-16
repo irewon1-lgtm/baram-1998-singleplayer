@@ -14,6 +14,8 @@ The catalog supplies the profile/manifest fingerprint, known stable item/skill I
 
 The writer checks an existing backup even when the primary is absent. A backup from another owner, a future schema or an unsupported content profile blocks writing and remains intact. Pre-existing symlinks in the primary, sidecars or ancestor directories are refused before reading, writing or replacement. Use an app-owned directory: Godot's API does not provide exclusive/no-follow file opens, so this guard does not establish protection against a concurrent process swapping filesystem entries or hardlinks.
 
+On Android, the absolute-path filesystem provider lacks symlink operations. `native_directory(path)` opens `user://` first and retains its native USERDATA backend while changing to the absolute directory. The guard and link fixtures use this route so actual links remain detectable when the suite receives an absolute fixture root. Keep each suite run in a distinct directory to preserve earlier evidence and the absent-file preconditions.
+
 `save_self_test.gd` exposes `run(output_directory, optional_child_runner) -> Dictionary`. The inspection app can run it in its separate `user://` fixture directory on each platform. Without a child process runner the process kill/restart checks are recorded as `NOT_RUN`, while the same file/schema/fault/recovery/map tests execute. The full Linux runner is:
 
 ```sh

@@ -62,6 +62,7 @@
     "checksum": "Accidental corruption only; not a signature or account authentication.",
     "migration": "Only same stable map with still-valid coordinates can be updated. Otherwise DEFERRED and source retained. No old map coordinate transformation invented.",
     "path_safety": "App-owned directory required. Refuses pre-existing symlinks in primary/sidecars/corrupt copy/ancestors, rechecks before replacement. Godot lacks no-follow/exclusive open; no concurrent entry-swap/hardlink attack protection claim.",
-    "backup_preservation": "Any present backup is validated even with no primary. Foreign owner, future schema, deferred profile or corrupt backup blocks writing rather than discarding the only prior copy."
+    "backup_preservation": "Any present backup is validated even with no primary. Foreign owner, future schema, deferred profile or corrupt backup blocks writing rather than discarding the only prior copy.",
+    "android_backend": "Native USERDATA DirAccess must be retained through change_dir for symlink checks. Android absolute-path FILESYSTEM uses DirAccessJAndroid without is_link/create_link overrides; opening absolute parents directly loses link detection."
   }
 }
