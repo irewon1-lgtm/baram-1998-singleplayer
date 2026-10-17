@@ -517,8 +517,10 @@ def main():
                 else:check('ordinary_tavern_open_X_close',False)
                 button('지도',exact=True);time.sleep(.3);capture('04-map-dialogue');close_modal('닫기 / 취소')
                 check('ordinary_map_footer_close',True)
-            if not go_map('gp:map:south_field'):raise RuntimeError('Beginner field unreachable through ordinary OS movement')
-            capture('05-first-field')
+            if not a.resume_continuous:
+                if not go_map('gp:map:south_field'):raise RuntimeError('Beginner field unreachable through ordinary OS movement')
+                capture('05-first-field')
+            else:capture('05-earned-resume-position')
             trained=False;last_report=-60;last_capture=-180;initial15=False;last_training_attempt=-180;targeted_ready=False;last_surplus_trade=0;transactions_done=False
             if a.resume_continuous:
                 earned=state();kinds={content['skills'][sid].get('kind') for sid in earned['skills']}
