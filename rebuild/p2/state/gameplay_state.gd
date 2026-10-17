@@ -12,6 +12,13 @@ var data: Dictionary = {}
 var errors: Array[String] = []
 var _blocked: Dictionary = {}
 var _events: Array = []
+# Transaction-local indices. They are rebuilt from the full saved world, never
+# serialized; inactive records remain in state and keep their original IDs/order.
+var _in_transaction := false
+var _map_monster_ids: Dictionary = {}
+var _detached_monsters: Dictionary = {}
+var _status_monster_ids: Array = []
+var _npc_cells: Dictionary = {}
 
 func configure(definitions: Dictionary) -> bool:
 	errors.clear()
@@ -21,6 +28,7 @@ func configure(definitions: Dictionary) -> bool:
 	if definitions.maps.is_empty() or definitions.xp_thresholds.size()<5: errors.append("EMPTY_WORLD_OR_GROWTH")
 	data=definitions.duplicate(true)
 	_blocked.clear()
+	_npc_cells.clear()
 	for map_id in data.maps:
 		var map: Dictionary=data.maps[map_id]
 		if int(map.get("width",0))<=0 or int(map.get("height",0))<=0:
@@ -33,6 +41,9 @@ func configure(definitions: Dictionary) -> bool:
 			if not valid_position(str(exit.to_map),int(exit.to_x),int(exit.to_y)): errors.append("INVALID_EXIT_DESTINATION:"+str(map_id))
 	for id in data.npcs:
 		var npc: Dictionary=data.npcs[id]
+		var npc_map: String=str(npc.map_id)
+		if not _npc_cells.has(npc_map): _npc_cells[npc_map]={}
+		_npc_cells[npc_map][Vector2i(int(npc.x),int(npc.y))]=true
 		if not valid_position(str(npc.map_id),int(npc.x),int(npc.y)): errors.append("INVALID_NPC_POSITION:"+str(id))
 		for item_id in npc.get("shop",{}):
 			if not data.items.has(item_id): errors.append("UNKNOWN_SHOP_ITEM:"+str(item_id))
@@ -288,6 +299,44 @@ func _spawn_all() -> void:
 			var def: Dictionary=data.monsters[str(spawn.monster_id)]
 			state.monsters[id]={"id":id,"monster_id":str(spawn.monster_id),"map_id":str(map_id),"x":int(spawn.x),"y":int(spawn.y),"spawn_x":int(spawn.x),"spawn_y":int(spawn.y),"hp":int(def.hp),"alive":true,"generation":0,"respawn_at":0.0,"ai_at":0.0,"attack_at":0.0,"aggro":false,"respawn_seconds":float(spawn.get("respawn_seconds",def.get("respawn_seconds",8.0)))}
 
+func _begin_transaction(prior: Dictionary) -> void:
+	# Keep rollback isolation without cloning every monster on every input/frame.
+	# Every other mutable branch is still deeply copied, including inventory,
+	# nested quests, pending actions, request tracking and RNG's scalar state.
+	state=prior.duplicate()
+	for key in prior:
+		if typeof(prior[key]) in [TYPE_DICTIONARY,TYPE_ARRAY]:
+			state[key]=prior[key].duplicate(key!="monsters")
+	_in_transaction=true
+	_map_monster_ids={};_detached_monsters={};_status_monster_ids=[]
+	for id in state.monsters:
+		var monster: Dictionary=state.monsters[id]
+		var map_id: String=str(monster.map_id)
+		if not _map_monster_ids.has(map_id): _map_monster_ids[map_id]=[]
+		_map_monster_ids[map_id].append(id)
+		# Off-map poison/expiry previously advanced globally: retain that behavior.
+		if map_id==str(state.character.map_id) or not monster.get("statuses",{}).is_empty():
+			_detach_monster(str(id))
+			_status_monster_ids.append(id)
+
+func _detach_monster(id: String) -> void:
+	if _detached_monsters.has(id): return
+	state.monsters[id]=state.monsters[id].duplicate(true)
+	_detached_monsters[id]=true
+
+func _ensure_map_mutable(map_id: String) -> void:
+	if not _in_transaction: return
+	for id in _map_monster_ids.get(map_id,[]): _detach_monster(str(id))
+	# A return/blink can enter a new map during a multi-step tick. Preserve the
+	# old global insertion order for status ticks, drops, events and RNG draws.
+	_status_monster_ids=[]
+	for id in state.monsters:
+		if _detached_monsters.has(id): _status_monster_ids.append(id)
+
+func _end_transaction() -> void:
+	_in_transaction=false
+	_map_monster_ids={};_detached_monsters={};_status_monster_ids=[]
+
 func command(cmd: Dictionary) -> Dictionary:
 	_events=[]
 	if state.is_empty(): return _response("REFUSED","NO_CHARACTER")
@@ -300,7 +349,7 @@ func command(cmd: Dictionary) -> Dictionary:
 	if sequence<1 or sequence>9007199254740991: return _response("REFUSED","REQUEST_SEQUENCE_INVALID")
 	if sequence<=int(state.request_watermarks.get(stream,0)): return _response("DUPLICATE","REQUEST_ALREADY_APPLIED")
 	var prior: Dictionary=state
-	state=prior.duplicate(true)
+	_begin_transaction(prior)
 	var result: Dictionary=_execute(cmd)
 	if result.status=="OK" and bool(result.get("changed",false)):
 		_sync_equipment_resources()
@@ -308,8 +357,10 @@ func command(cmd: Dictionary) -> Dictionary:
 		if state.applied_request_ids.size()>MAX_REQUESTS: state.applied_request_ids.pop_front()
 		state.request_watermarks[stream]=sequence
 		state.revision=int(prior.revision)+1
+		_end_transaction()
 		return _response("OK",str(result.reason),true)
 	state=prior
+	_end_transaction()
 	return _response(str(result.status),str(result.reason),false)
 
 func _execute(cmd: Dictionary) -> Dictionary:
@@ -367,10 +418,18 @@ func _now() -> float:
 func _ready(key: String) -> bool:
 	return _now()+0.00001>=float(state.cooldowns.get(key,0.0))
 
+func occupied_cells(map_id: String) -> Dictionary:
+	# One truthful snapshot per path query, rather than a global scan per BFS cell.
+	var cells: Dictionary=_npc_cells.get(map_id,{}).duplicate()
+	for monster in state.get("monsters",{}).values():
+		if bool(monster.alive) and str(monster.map_id)==map_id:
+			cells[Vector2i(int(monster.x),int(monster.y))]=true
+	return cells
+
 func _occupied(map_id: String,x: int,y: int,exclude: String="") -> bool:
-	for npc in data.npcs.values():
-		if str(npc.map_id)==map_id and int(npc.x)==x and int(npc.y)==y: return true
-	for id in state.monsters:
+	if _npc_cells.get(map_id,{}).has(Vector2i(x,y)): return true
+	var ids: Array=_map_monster_ids.get(map_id,[]) if _in_transaction else state.monsters.keys()
+	for id in ids:
 		var m: Dictionary=state.monsters[id]
 		if id!=exclude and m.alive and str(m.map_id)==map_id and int(m.x)==x and int(m.y)==y: return true
 	return false
@@ -393,6 +452,7 @@ func _transition(map_id: String,x: int,y: int,direction: int,reason: String) -> 
 	if not valid_position(map_id,x,y) or _occupied(map_id,x,y): return false
 	var c: Dictionary=state.character
 	var source: Dictionary={"map_id":c.map_id,"x":c.x,"y":c.y}
+	_ensure_map_mutable(map_id)
 	c.map_id=map_id;c.x=x;c.y=y;c.direction=direction
 	state.pending_actions=[]
 	state["summons"]=[]
@@ -1033,7 +1093,7 @@ func tick(seconds: float) -> Dictionary:
 	_events=[]
 	if state.is_empty() or not is_finite(seconds) or seconds<=0.0: return _response("NO_CHANGE","NO_TIME_ADVANCE")
 	var prior: Dictionary=state
-	state=prior.duplicate(true)
+	_begin_transaction(prior)
 	state.time_accumulator=float(state.time_accumulator)+minf(seconds,5.0)
 	var steps := 0
 	while float(state.time_accumulator)+0.000001>=STEP and steps<100:
@@ -1050,7 +1110,8 @@ func tick(seconds: float) -> Dictionary:
 				state.buffs.erase(id);_event("buff_expired",{"skill_id":id})
 		_update_statuses()
 		_update_summons()
-		for monster in state.monsters.values(): _update_monster(monster)
+		for monster_id in _map_monster_ids.get(str(state.character.map_id),[]):
+			_update_monster(state.monsters[monster_id])
 		# Out of combat, slow native stat recovery is a declared balance rule.
 		if not bool(state.character.dead) and _ready("combat_until") and int(floor(_now()/float(_config("regen_interval",4.0))))>int(floor((_now()-STEP)/float(_config("regen_interval",4.0)))):
 			state.character.hp=mini(int(state.character.hp_max),int(state.character.hp)+int(_config("regen_hp",1))+int(derived_stats().get("regen_bonus",0)))
@@ -1059,6 +1120,7 @@ func tick(seconds: float) -> Dictionary:
 	if seconds>5.0: _event("time_clamped",{"requested_seconds":seconds,"simulated_seconds":5.0})
 	_sync_equipment_resources()
 	state.revision=int(prior.revision)+1
+	_end_transaction()
 	return _response("OK","TIME_ADVANCED",true)
 
 func _valid_status(value: Variant) -> bool:
@@ -1093,7 +1155,9 @@ func _break_stealth() -> void:
 		if str(state.buffs[id].get("status",""))=="stealth": state.buffs.erase(id);_event("stealth_broken",{"skill_id":id})
 
 func _update_statuses() -> void:
-	for monster in state.monsters.values():
+	var ids: Array=_status_monster_ids if _in_transaction else state.monsters.keys()
+	for monster_id in ids:
+		var monster: Dictionary=state.monsters[monster_id]
 		for id in monster.get("statuses",{}).keys():
 			var effect: Dictionary=monster.statuses[id]
 			if _now()>=float(effect.expires_at): monster.statuses.erase(id);_event("status_expired",{"target_id":monster.id,"skill_id":id});continue
@@ -1346,3 +1410,4 @@ func _barrier_blocks(point: Dictionary) -> bool:
 	for buff in state.buffs.values():
 		if int(buff.get("barrier_radius",0))>0 and _distance(point,state.character)<=int(buff.barrier_radius): return true
 	return false
+

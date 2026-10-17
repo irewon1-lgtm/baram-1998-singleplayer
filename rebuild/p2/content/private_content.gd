@@ -12,6 +12,12 @@ var priority: Dictionary = {}
 const MAX_TEXTURE_PIXELS := 16 * 1024 * 1024
 var texture_pixels := 0
 var texture_order: Array[String] = []
+var texture_sizes: Dictionary = {}
+var sound_cache: Dictionary = {}
+var texture_decode_count := 0
+var texture_cache_hits := 0
+var texture_evictions := 0
+var texture_decode_usec := 0
 
 func safe(relative: String) -> bool:
 	if relative.is_empty() or relative.is_absolute_path() or ".." in relative.split("/") or "\\" in relative:
@@ -93,10 +99,12 @@ func texture(relative: String) -> Texture2D:
 	if not safe(relative):
 		return null
 	if textures.has(relative):
+		texture_cache_hits += 1
 		texture_order.erase(relative)
 		texture_order.append(relative)
 		return textures[relative]
 	var path := root.path_join(relative)
+	var began := Time.get_ticks_usec()
 	var result: Texture2D
 	if path.begins_with("res://") and ResourceLoader.exists(path):
 		result = load(path) as Texture2D
@@ -114,16 +122,37 @@ func texture(relative: String) -> Texture2D:
 	while texture_pixels + pixels > MAX_TEXTURE_PIXELS and not texture_order.is_empty():
 		var evicted: String = texture_order.pop_front()
 		var previous: Texture2D = textures[evicted]
+		texture_evictions += 1
 		texture_pixels -= previous.get_width() * previous.get_height()
 		textures.erase(evicted)
 	textures[relative] = result
 	texture_order.append(relative)
 	texture_pixels += pixels
+	texture_sizes[relative] = result.get_size()
+	texture_decode_count += 1
+	texture_decode_usec += Time.get_ticks_usec() - began
 	consumed[relative] = true
 	return result
 
+func texture_size(relative: String) -> Vector2:
+	if texture_sizes.has(relative): return texture_sizes[relative]
+	if not safe(relative): return Vector2.ZERO
+	# Exported PNG source bytes remain in the frozen runtime. Reading only the
+	# 24-byte header avoids synchronous Image/Texture creation during culling.
+	var file := FileAccess.open(root.path_join(relative), FileAccess.READ)
+	if file != null and file.get_length() >= 24:
+		var header := file.get_buffer(24)
+		if header[0] == 137 and header[1] == 80 and header[2] == 78 and header[3] == 71:
+			var w := int(header[16]) * 16777216 + int(header[17]) * 65536 + int(header[18]) * 256 + int(header[19])
+			var h := int(header[20]) * 16777216 + int(header[21]) * 65536 + int(header[22]) * 256 + int(header[23])
+			if w > 0 and h > 0 and w * h <= MAX_TEXTURE_PIXELS:
+				texture_sizes[relative] = Vector2(w, h)
+				return texture_sizes[relative]
+	return Vector2.ZERO
+
 func sound(relative: String) -> AudioStream:
 	if not safe(relative): return null
+	if sound_cache.has(relative): return sound_cache[relative]
 	var path := root.path_join(relative)
 	var stream: AudioStream
 	if path.begins_with("res://") and ResourceLoader.exists(path):
@@ -134,4 +163,5 @@ func sound(relative: String) -> AudioStream:
 		errors.append("AUDIO_DECODE: " + relative)
 	else:
 		consumed[relative] = true
+		sound_cache[relative] = stream
 	return stream

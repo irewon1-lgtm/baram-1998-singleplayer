@@ -12,6 +12,86 @@ const PHASES := ["after_pending_write", "after_pending_verify", "after_backup_wr
 var base = BaseStore.new()
 var phase_observer: Callable
 var fault_phase := ""
+# Reuse only a fully configured, privately owned definition snapshot. Comparing
+# the complete value (rather than manifest/object identity/a short hash) catches
+# in-place nested changes to a caller's mutable Dictionary. No caller receives
+# this snapshot; the authoritative validator only reads it.
+var _validation_engine: RefCounted
+var validation_content_sha256 := ""
+var content_configurations := 0
+const DECODE_CACHE_LIMIT := 4
+var _decoded_cache: Array = []
+# Same verified bytes may recur as primary/backup/pending. Cached payloads are
+# never returned by reference, and files are still read before cache lookup.
+var last_timings: Dictionary = {}
+var _writing := false
+
+func _content_engine(content: Dictionary) -> RefCounted:
+	if _validation_engine != null and content == _validation_engine.data:
+		return _validation_engine
+	_decoded_cache.clear()
+	_validation_engine = null
+	validation_content_sha256 = ""
+	var engine = GameState.new()
+	if not engine.configure(content): return null
+	_validation_engine = engine
+	validation_content_sha256 = var_to_bytes(engine.data).hex_encode().sha256_text()
+	content_configurations += 1
+	return engine
+
+func _freeze_definitions(value: Variant) -> void:
+	match typeof(value):
+		TYPE_DICTIONARY:
+			for child in value.values(): _freeze_definitions(child)
+			value.make_read_only()
+		TYPE_ARRAY:
+			for child in value: _freeze_definitions(child)
+			value.make_read_only()
+
+func prepare_content(content: Dictionary) -> Dictionary:
+	# Optional fast path for a loaded generation: return a private, recursively
+	# read-only snapshot, never freeze the caller's mutable content. Supplying
+	# this same value to read/write avoids repeated full-generation equality.
+	# Reloaded/changed generations must call prepare_content again. The generic
+	# mutable-content API remains supported and checks the complete value.
+	for key in ["profile","maps","npcs","items","monsters","skills","start","gates","respawn","xp_thresholds"]:
+		if not content.has(key): return {}
+	for key in ["maps","npcs","items","monsters","skills","start","gates","respawn"]:
+		if typeof(content[key]) != TYPE_DICTIONARY: return {}
+	if typeof(content.xp_thresholds) != TYPE_ARRAY: return {}
+	var engine := _content_engine(content)
+	if engine == null: return {}
+	_freeze_definitions(engine.data)
+	return engine.data
+
+func _verified_cached_decode(text: String, owner: String, content: Dictionary, isolate: bool = true) -> Dictionary:
+	if _validation_engine == null or content != _validation_engine.data: return {}
+	for entry in _decoded_cache:
+		if entry.owner == owner and entry.text == text:
+			return entry.decoded.duplicate(isolate)
+	return {}
+
+func _remember_decode(text: String, owner: String, decoded: Dictionary, owned: bool = false) -> void:
+	if decoded.status != "OK": return
+	_decoded_cache.push_front({"text":text,"owner":owner,"decoded":decoded if owned else decoded.duplicate(true)})
+	if _decoded_cache.size() > DECODE_CACHE_LIMIT: _decoded_cache.pop_back()
+
+func _verify_written(path: String, expected: String) -> bool:
+	# These bytes encode an already validated candidate / verified old document.
+	# Exact read-back equality proves the full intended envelope was written;
+	# unknown external bytes still take _decode's full checksum/semantic path.
+	if not _path(path): return false
+	var file := FileAccess.open(path, FileAccess.READ)
+	if file == null: return false
+	if file.get_length() > MAX_BYTES:
+		file.close()
+		return false
+	var actual := file.get_buffer(file.get_length())
+	file.close()
+	return actual == expected.to_utf8_buffer()
+
+func _timing(key: String, started: int) -> void:
+	last_timings[key] = float(Time.get_ticks_usec() - started) / 1000.0
 const MIGRATION_PHASES := ["after_migration_source_preserved", "after_migration_backup_preserved"]
 
 func result(status: String, reason: String = "", revision: int = -1) -> Dictionary:
@@ -148,9 +228,22 @@ func _phase(name: String) -> bool:
 	return name == fault_phase
 
 func _encode(document: Dictionary) -> String:
-	var output := document.duplicate(true)
-	output.sha256 = _canonical(document).sha256_text()
-	return _canonical(output)
+	# Canonicalize the payload once. The checksum field is excluded from its
+	# own digest; JSON member order does not change the persisted contract.
+	var body := _canonical(document)
+	if document.has("sha256"):
+		var output := document.duplicate(true)
+		output.sha256 = body.sha256_text()
+		return _canonical(output)
+	return body.left(-1) + ("," if not document.is_empty() else "") + '"sha256":' + JSON.stringify(body.sha256_text()) + "}"
+
+func _remember_written(text: String, owner: String, content: Dictionary) -> void:
+	if _validation_engine == null or content != _validation_engine.data: return
+	# Canonical timer precision is reflected in the cached document exactly as
+	# in a future disk decode. Only call after exact read-back and atomic commit.
+	var document: Dictionary = JSON.parse_string(text)
+	document.erase("sha256")
+	_remember_decode(text, owner, {"status":"OK","reason":"","revision":int(document.revision),"payload":document.payload.duplicate(true),"document":document,"geometry_changed":false,"manifest_changed":false,"migration_required":false,"added_spawns":[]}, true)
 
 func _canonical(value: Variant) -> String:
 	# Godot's JSON parser can change the last binary digit of a full-precision
@@ -178,7 +271,14 @@ func _canonical(value: Variant) -> String:
 			return "0" if number=="-0" else number
 	return JSON.stringify(value)
 
-func _decode(text: String, owner: String, content: Dictionary) -> Dictionary:
+func _decode(text: String, owner: String, content: Dictionary, isolate: bool = true) -> Dictionary:
+	var cached := _verified_cached_decode(text, owner, content, isolate)
+	if not cached.is_empty(): return cached
+	var decoded := _decode_uncached(text, owner, content)
+	_remember_decode(text, owner, decoded)
+	return decoded
+
+func _decode_uncached(text: String, owner: String, content: Dictionary) -> Dictionary:
 	if text.to_utf8_buffer().size() > MAX_BYTES: return result("SAVE_SIZE_LIMIT")
 	var depth := 0
 	var quoted := false
@@ -225,7 +325,7 @@ func _decode(text: String, owner: String, content: Dictionary) -> Dictionary:
 	var geometry_changed: bool=doc.compatibility.get("map_geometry") != compat.map_geometry
 	return {"status":"OK","reason":"MIGRATION_AVAILABLE" if requires_migration else "","revision":int(doc.revision),"payload":candidate,"document":doc,"geometry_changed":geometry_changed,"manifest_changed":doc.manifest_sha256 != content.get("manifest_sha256",""),"migration_required":requires_migration or geometry_changed,"added_spawns":added_spawns}
 
-func _read_one(path: String, owner: String, content: Dictionary) -> Dictionary:
+func _read_one(path: String, owner: String, content: Dictionary, isolate: bool = true) -> Dictionary:
 	if not _path(path): return result("UNSAFE_PATH")
 	if not FileAccess.file_exists(path): return result("MISSING")
 	var file := FileAccess.open(path,FileAccess.READ)
@@ -233,9 +333,11 @@ func _read_one(path: String, owner: String, content: Dictionary) -> Dictionary:
 	if file.get_length() > MAX_BYTES:
 		file.close()
 		return result("SAVE_SIZE_LIMIT")
-	var text := file.get_as_text()
+	var bytes := file.get_buffer(file.get_length())
 	file.close()
-	return _decode(text,owner,content)
+	var text := bytes.get_string_from_utf8()
+	if bytes != text.to_utf8_buffer(): return result("CORRUPT","utf8")
+	return _decode(text,owner,content,isolate)
 
 func read_game(path: String, owner: String, content: Dictionary) -> Dictionary:
 	if not _id(owner): return result("OWNER_MISMATCH")
@@ -252,32 +354,57 @@ func read_game(path: String, owner: String, content: Dictionary) -> Dictionary:
 	return primary
 
 func write_game(path: String, payload: Dictionary, owner: String, content: Dictionary) -> Dictionary:
+	# Main-thread synchronous API: reject a reentrant callback save rather than
+	# let an older outer transaction replace a newer nested revision.
+	if _writing: return result("BUSY","save_in_progress")
+	_writing = true
+	last_timings = {}
+	var started := Time.get_ticks_usec()
+	var saved := _write_game(path, payload, owner, content)
+	_timing("total_ms", started)
+	_writing = false
+	return saved
+
+func _write_game(path: String, payload: Dictionary, owner: String, content: Dictionary) -> Dictionary:
+	var started := Time.get_ticks_usec()
 	var valid := validate_payload(payload,owner,content)
+	_timing("validation_ms", started)
 	if valid.status != "OK": return valid
+	# Pin the privately owned generation for this synchronous transaction. An
+	# observer/caller mutating its original definitions cannot change the save.
+	content = _validation_engine.data
 	for suffix in ["",".pending",".backup",".backup.pending"]:
 		if not _path(path+suffix): return result("UNSAFE_PATH",suffix)
 	var compatibility := _compat(content)
 	if not _valid_compat(compatibility): return result("INVALID_CONTENT","compatibility")
+	started = Time.get_ticks_usec()
 	var document := {"schema":SCHEMA,"owner":owner,"revision":payload.revision,"profile":content.get("profile",""),"compatibility":compatibility,"manifest_sha256":content.get("manifest_sha256",""),"payload":payload.duplicate(true)}
 	var text := _encode(document)
+	_timing("encoding_ms", started)
+	started = Time.get_ticks_usec()
 	if text.to_utf8_buffer().size() > MAX_BYTES: return result("SAVE_SIZE_LIMIT")
 	var previous := ""
 	var previous_revision := -1
+	var previous_decoded: Dictionary = {}
+	var primary_valid := false
 	var migration_sources: Array[String]=[]
 	var primary_requires_migration:=false
 	if FileAccess.file_exists(path+".backup"):
-		var backup := _read_one(path+".backup",owner,content)
+		var backup := _read_one(path+".backup",owner,content,false)
 		if backup.status != "OK": return result("EXISTING_SAVE_NOT_WRITABLE","backup."+backup.status)
 		if backup.get("migration_required",false): migration_sources.append(path+".backup")
 		previous=FileAccess.get_file_as_string(path+".backup")
 		previous_revision=backup.revision
+		previous_decoded=backup
 	if FileAccess.file_exists(path):
-		var current := _read_one(path,owner,content)
+		var current := _read_one(path,owner,content,false)
 		if current.status == "OK":
+			primary_valid=true
 			primary_requires_migration=bool(current.get("migration_required",false))
 			if primary_requires_migration: migration_sources.append(path)
 			previous=FileAccess.get_file_as_string(path)
 			previous_revision=current.revision
+			previous_decoded=current
 		elif current.status in ["CORRUPT","CHECKSUM_MISMATCH","INVALID_STATE"] and not previous.is_empty():
 			var broken := FileAccess.get_file_as_bytes(path)
 			var hasher := HashingContext.new()
@@ -289,11 +416,12 @@ func write_game(path: String, payload: Dictionary, owner: String, content: Dicti
 				if FileAccess.get_file_as_bytes(preserved) != broken: return result("PRESERVATION_CONFLICT")
 			elif DirAccess.copy_absolute(path,preserved) != OK: return result("PRESERVATION_FAILED")
 		else: return result("EXISTING_SAVE_NOT_WRITABLE",current.status)
+	_timing("existing_read_ms", started)
 	if previous_revision > int(payload.revision): return result("STALE_REVISION","older_than_saved",previous_revision)
 	if previous_revision == int(payload.revision):
-		var old := _decode(previous,owner,content)
+		var old := previous_decoded
 		if old.status != "OK" or _canonical(old.payload) != _canonical(payload): return result("REVISION_CONFLICT")
-		if FileAccess.file_exists(path) and _read_one(path,owner,content).status == "OK" and not primary_requires_migration: return {"status":"SAVED","reason":"IDENTICAL_SNAPSHOT","revision":int(payload.revision),"bytes":text.to_utf8_buffer().size()}
+		if primary_valid and not primary_requires_migration: return {"status":"SAVED","reason":"IDENTICAL_SNAPSHOT","revision":int(payload.revision),"bytes":text.to_utf8_buffer().size()}
 	if DirAccess.make_dir_recursive_absolute(path.get_base_dir()) != OK: return result("WRITE_FAILED","directory")
 	var preserved_migration_sources: Array=[]
 	# Preserve source bytes before even writing the migrated candidate. Backups
@@ -304,26 +432,37 @@ func write_game(path: String, payload: Dictionary, owner: String, content: Dicti
 		preserved_migration_sources.append(preserved.archive)
 		var phase_name:="after_migration_source_preserved" if source==path else "after_migration_backup_preserved"
 		if _phase(phase_name): return result("INJECTED_FAILURE",phase_name)
+	started = Time.get_ticks_usec()
 	if not base._write(path+".pending",text): return result("WRITE_FAILED","pending")
 	if _phase("after_pending_write"): return result("INJECTED_FAILURE","after_pending_write")
-	if _read_one(path+".pending",owner,content).status != "OK": return result("VERIFY_FAILED","pending")
+	if not _verify_written(path+".pending",text): return result("VERIFY_FAILED","pending")
+	_timing("pending_write_verify_ms", started)
 	if _phase("after_pending_verify"): return result("INJECTED_FAILURE","after_pending_verify")
 	if not previous.is_empty():
+		started = Time.get_ticks_usec()
 		if not base._write(path+".backup.pending",previous): return result("WRITE_FAILED","backup.pending")
 		if _phase("after_backup_write"): return result("INJECTED_FAILURE","after_backup_write")
-		if _read_one(path+".backup.pending",owner,content).status != "OK": return result("VERIFY_FAILED","backup.pending")
+		if not _verify_written(path+".backup.pending",previous): return result("VERIFY_FAILED","backup.pending")
+		_timing("backup_write_verify_ms", started)
 		if _phase("after_backup_verify"): return result("INJECTED_FAILURE","after_backup_verify")
 		if not _path(path+".backup.pending") or not _path(path+".backup"): return result("UNSAFE_PATH","backup_replace")
 		if DirAccess.rename_absolute(path+".backup.pending",path+".backup") != OK: return result("REPLACE_FAILED","backup")
 		if _phase("after_backup_replace"): return result("INJECTED_FAILURE","after_backup_replace")
+	started = Time.get_ticks_usec()
 	if _phase("before_primary_replace"): return result("INJECTED_FAILURE","before_primary_replace")
 	if not _path(path+".pending") or not _path(path): return result("UNSAFE_PATH","primary_replace")
 	if DirAccess.rename_absolute(path+".pending",path) != OK: return result("REPLACE_FAILED","primary")
+	_timing("primary_replace_ms", started)
 	if _phase("after_primary_replace"): return result("COMMITTED_ACK_LOST","after_primary_replace",int(payload.revision))
+	started = Time.get_ticks_usec()
+	_remember_written(text, owner, content)
+	_timing("remember_verified_ms", started)
 	return {"status":"SAVED","reason":"MIGRATED" if not preserved_migration_sources.is_empty() else "","revision":int(payload.revision),"bytes":text.to_utf8_buffer().size(),"preserved_migration_sources":preserved_migration_sources}
 
 func validate_payload(payload: Dictionary, owner: String, content: Dictionary) -> Dictionary:
+	var section_started := Time.get_ticks_usec()
 	if not _id(owner) or not _plain(payload): return result("INVALID_STATE","owner_or_json_types")
+	_timing("state_plain_ms", section_started)
 	var fields := ["schema","profile","character","inventory","equipment","skills","hotkeys","quests","loot","monsters","buffs","cooldowns","revision","rng_state","applied_request_ids","request_watermarks","sim_time","time_accumulator","pending_actions","next_instance_id","next_loot_id","stats","shop_purchases"]
 	if not payload.has_all(fields): return result("INVALID_STATE","payload.shape")
 	for key in payload:
@@ -344,8 +483,10 @@ func validate_payload(payload: Dictionary, owner: String, content: Dictionary) -
 	for key in ["maps","npcs","items","monsters","skills","start","gates","respawn"]:
 		if typeof(content[key]) != TYPE_DICTIONARY: return result("INVALID_CONTENT",key+".type")
 	if typeof(content.xp_thresholds) != TYPE_ARRAY: return result("INVALID_CONTENT","xp_thresholds.type")
-	var engine = GameState.new()
-	if not engine.configure(content): return result("INVALID_CONTENT",JSON.stringify(engine.errors))
+	section_started = Time.get_ticks_usec()
+	var engine = _content_engine(content)
+	_timing("content_check_ms", section_started)
+	if engine == null: return result("INVALID_CONTENT","definition_validation")
 	# Protect the authoritative validator's typed accesses from malformed structures.
 	for row in payload.inventory+payload.get("bank_inventory",[]):
 		if typeof(row) != TYPE_DICTIONARY or not row.has_all(["instance_id","item_id","quantity","durability"]): return result("INVALID_STATE","inventory.shape")
@@ -368,7 +509,9 @@ func validate_payload(payload: Dictionary, owner: String, content: Dictionary) -
 		if not content.maps.has(row.get("map_id","")): return result("DEFERRED","action.map_reference")
 	for id in payload.skills:
 		if not content.skills.has(id): return result("DEFERRED","skills.reference")
+	section_started = Time.get_ticks_usec()
 	var authoritative: Dictionary=engine.validate_payload(payload,owner)
+	_timing("authoritative_state_ms", section_started)
 	if authoritative.status != "OK": return result(authoritative.status,authoritative.get("reason",""))
 	var instances := {}
 	for row in payload.inventory+payload.get("bank_inventory",[]):

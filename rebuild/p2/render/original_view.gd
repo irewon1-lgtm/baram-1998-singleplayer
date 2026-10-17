@@ -45,10 +45,19 @@ func _draw() -> void:
 		if not pos.is_finite() or not is_finite(layer_scale) or layer_scale <= 0 or layer_scale > 16 or not is_finite(opacity) or opacity < 0 or opacity > 1:
 			draw_errors.append("UNSAFE_LAYER_GEOMETRY_OR_OPACITY: " + path)
 			continue
+		# Size metadata (or a PNG header) is cheap; decoding/uploading an unseen
+		# whole map is not. Cull before texture(), including partially visible
+		# tall sprites using their actual top-left anchor and full extent.
+		var declared := Vector2(float(entry.get("width_px", 0)), float(entry.get("height_px", 0)))
+		if declared.x <= 0 or declared.y <= 0:
+			declared = content.texture_size(path)
+		var s := layer_scale * zoom
+		if declared.x > 0 and declared.y > 0:
+			var bounds := Rect2(offset + pos * zoom, declared * s)
+			if not bounds.intersects(Rect2(Vector2.ZERO, size)): continue
 		var tex: Texture2D = content.texture(path)
 		if tex == null:
 			continue
-		var s := layer_scale * zoom
 		var destination:=Rect2(offset+pos*zoom,tex.get_size()*s)
 		if not destination.intersects(Rect2(Vector2.ZERO,size)): continue
 		draw_texture_rect(tex,destination,false,Color(1,1,1,opacity))
