@@ -17,6 +17,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'p2'))
 from gameplay_x11 import X11, checkpoints
 
 DIRECTIONS=[('Up',0,-1,1,4),('Right',1,0,2,8),('Down',0,1,4,1),('Left',-1,0,8,2)]
+class VisualCaptureOnly(Exception):pass
 def sha(path):
     with Path(path).open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
 def dump(path,value):
@@ -125,8 +126,8 @@ class Operator:
         if self.user.exists():shutil.rmtree(self.user)
         saves=self.user/'gameplay-p3/characters';saves.mkdir(parents=True)
         shutil.copy2(fixture,saves/'world-qa-start.json');self.pos.unlink(missing_ok=True)
-        command=[str(self.a.godot.resolve()),'--audio-driver','Dummy','--path',str(self.a.project.resolve())]
-        if self.a.pack:command=[str(self.a.godot.resolve()),'--audio-driver','Dummy','--main-pack',str(self.a.pack.resolve())];self.env.pop('BARAM_GAMEPLAY_RUNTIME',None)
+        command=[str(self.a.godot.resolve()),'--audio-driver','Dummy','--max-fps','60','--path',str(self.a.project.resolve())]
+        if self.a.pack:command=[str(self.a.godot.resolve()),'--audio-driver','Dummy','--max-fps','60','--main-pack',str(self.a.pack.resolve())];self.env.pop('BARAM_GAMEPLAY_RUNTIME',None)
         self.game_stream=(self.temp/(case['case_id']+'.log')).open('wb')
         self.proc=subprocess.Popen(command,env=self.env,stdout=self.game_stream,stderr=subprocess.STDOUT)
         self.log('process_started',pid=self.proc.pid,command=command,fixture_sha256=sha(fixture),fixture_provenance='OFFLINE_QA_START_FIXTURE_NOT_NATURAL_PROGRESS')
@@ -153,8 +154,10 @@ class Operator:
                 src=self.temp/(self.case['case_id']+suffix)
                 if src.exists():shutil.copy2(src,self.out/src.name)
             if self.cp.exists():shutil.copy2(self.cp,self.out/(self.case['case_id']+'-checkpoints.jsonl'))
+            save=self.user/'gameplay-p3/characters/world-qa-start.json'
+            if save.exists():shutil.copy2(save,self.out/(self.case['case_id']+'-final-save.json'))
     def walk(self,map_id,target,expected_map=None,max_steps=220):
-        target=tuple(target)
+        target=tuple(target);temporary_obstacles={};detours=0
         for step in range(max_steps):
             observed=self.state();c=observed['character'];origin=(int(c['x']),int(c['y']))
             if c.get('dead'):raise RuntimeError('character died in OS door path')
@@ -163,6 +166,22 @@ class Operator:
             if origin==target:return observed
             path=route(self.c,map_id,origin,target)
             if not path:raise RuntimeError('no physical route from observed cell to door')
+            temporary_obstacles={cell:until for cell,until in temporary_obstacles.items() if until>time.monotonic()}
+            alternative=route(self.c,map_id,origin,target,temporary_obstacles)
+            if alternative:path=alternative
+            elif temporary_obstacles:
+                # A live monster can occupy the intended return cell. Ordinary
+                # users can step aside so it follows, then walk back. Do that
+                # through OS keys; never remove/disable/relocate any actor.
+                options=[]
+                for _,ox,oy,_,_ in DIRECTIONS:
+                    other=(origin[0]+ox,origin[1]+oy)
+                    if other in self.c['maps'][map_id]['_exits'] or other in temporary_obstacles:continue
+                    detour=route(self.c,map_id,origin,other,temporary_obstacles)
+                    if len(detour)==1:options.append((-(abs(other[0]-target[0])+abs(other[1]-target[1])),other))
+                if not options:
+                    time.sleep(.3);continue
+                path=[sorted(options)[0][1]]
             nxt=path[0];dx=nxt[0]-origin[0];dy=nxt[1]-origin[1];key=next(k for k,x,y,_,_ in DIRECTIONS if (x,y)==(dx,dy))
             success=False
             for attempt in range(4):
@@ -174,7 +193,11 @@ class Operator:
                 cc=after.get('character',{})
                 if cc.get('map_id')!=map_id or (int(cc.get('x',-1)),int(cc.get('y',-1)))!=origin:success=True;break
                 time.sleep(.2)
-            if not success:raise RuntimeError('OS key did not move after4attempts: '+json.dumps(after))
+            if not success:
+                temporary_obstacles[nxt]=time.monotonic()+2.0;detours+=1
+                self.log('ordinary_obstacle_detour',observed=after,blocked_cell=list(nxt),attempt=detours,scope='Normal OS movement only; dynamic collision inferred from actual REFUSED input, actor not modified')
+                if detours>12:raise RuntimeError('OS movement blocked after12normaldetourattempts: '+json.dumps(after))
+                continue
             time.sleep(.17)
         raise RuntimeError('OS path step budget exceeded')
     def one(self,case,fixture):
@@ -188,6 +211,7 @@ class Operator:
                 self.click_button('지도');self.wait(lambda:any(c['text']=='닫기 / 취소' for c in self.layout().get('controls',[])),8)
                 overview=self.capture(prefix+'-overview');self.key('Escape');time.sleep(.25)
                 self.maps[case['map_id']]={'map_id':case['map_id'],'name':case['map_name'],'runtime_frame':result['captures'][0],'overview_frame':overview,'coordinate':case['start'],'content_sha256':self.plan['content_sha256'],'visual_status':'NOT_RUN','provenance':'Offline initial save fixture, actual game renderer and OS map button'}
+            if int(case['case_id'].split('-')[-1]) in self.a.visual_only_case:raise VisualCaptureOnly()
             e=case['exit'];result['approach_before']=self.state()
             if case.get('door_contract',{}).get('approach_cell'):self.walk(case['map_id'],case['door_contract']['approach_cell'])
             arrival=self.walk(case['map_id'],(e['x'],e['y']),e['to_map']);result['arrival']=arrival
@@ -209,6 +233,8 @@ class Operator:
             self.walk(case['map_id'],case['start']);result['final']=self.state()
             result['input_status']='PASS_INPUT_DOOR_CONTRACT'
             result['final_start_reached']=True
+        except VisualCaptureOnly:
+            result['input_status']='NOT_RUN_VISUAL_RECAPTURE';result['input_reuse_requested']=True
         except Exception as exc:
             result['input_status']='FAIL';result['error']=str(exc)
             if self.proc and self.proc.poll() is None:
@@ -240,11 +266,14 @@ def main():
     for k in ['godot','project','runtime','xdotool','seed-save','output']:p.add_argument('--'+k,type=Path,required=True)
     p.add_argument('--pack',type=Path);p.add_argument('--plan-only',action='store_true');p.add_argument('--record',action='store_true');p.add_argument('--screen',default='1600x1000');p.add_argument('--user-dir-name',default='baram_rebuild_gameplay_001');p.add_argument('--case-start',type=int,default=0);p.add_argument('--case-count',type=int,default=9999)
     p.add_argument('--preview-scene',action='append',default=[],help='Read-only fixture-start visual preview map_id,x,y; no door PASS assigned')
+    p.add_argument('--exclude-case',type=int,action='append',default=[],help='Exact same-fingerprint completed pilot case included separately by merger')
+    p.add_argument('--visual-only-case',type=int,action='append',default=[],help='Current actual capture only, with earlier immutable functional proof ingested separately')
     a=p.parse_args();out=a.output.resolve()
     if out.exists():raise ValueError('Fresh output directory required')
     out.mkdir(parents=True);content=json.loads((a.runtime/'gameplay_content.json').read_text());plan=build_plan(content,a.runtime/'gameplay_content.json');dump(out/'PLAN.json',plan)
     if a.plan_only:return 0
     selected=plan['cases'][a.case_start:a.case_start+a.case_count]
+    selected=[r for r in selected if int(r['case_id'].split('-')[-1]) not in a.exclude_case]
     if a.preview_scene:
         selected=[]
         for i,spec in enumerate(a.preview_scene):

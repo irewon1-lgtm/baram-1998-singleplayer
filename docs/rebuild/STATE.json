@@ -113,126 +113,20 @@
     }
   },
   "retained_actual_status": {
-    "Windows_native": "NOT_RUN",
-    "Android_native_install_update_save_retention": "NOT_RUN",
+    "Windows_native": "BLOCKED_NO_NATIVE_WINDOWS_AND_CI_BRANCH_ENVIRONMENT_PROTECTION",
+    "Android_native_install_update_save_retention": "BLOCKED_NO_CONNECTED_DEVICE_KVM_AND_CI_BRANCH_ENVIRONMENT_PROTECTION",
     "Galaxy": "NOT_RUN",
     "OS_Korean_IME": "NOT_RUN",
     "physical_audio_and_display_latency": "NOT_RUN",
-    "authenticated_account_roundtrip": "BLOCKED_NO_APPROVED_GAME_AUTHENTICATED_ENDPOINT",
-    "fine_balance_and_map_join_art": "TUNING_PENDING",
+    "authenticated_account_roundtrip": "BLOCKED_NO_AUTHENTICATED_ENDPOINT",
+    "all_111_map_visual_review": "NOT_RUN_PENDING_FINAL_ART_RUNTIME",
+    "all_276_exit_normal_input": "IN_PROGRESS_PREVIEW_REPAIRS_TWO_AFFECTED_WRONG_SIDE_CASES_PASSED",
     "performance": {
-      "long": {
-        "status": "PASS_OBSERVED_SCOPE",
-        "engine_wall_frame_interval": {
-          "n": 124390,
-          "p50_ms": 13.353,
-          "p95_ms": 22.047,
-          "p99_ms": 33.509,
-          "max_ms": 643.445,
-          "over50ms": 832,
-          "over100ms": 53
-        },
-        "engine_input_to_frame_post_draw": {
-          "n": 444,
-          "p50_ms": 21.168,
-          "p95_ms": 80.649,
-          "p99_ms": 126.881,
-          "max_ms": 160.048,
-          "over50ms": 91,
-          "over100ms": 11
-        },
-        "save_duration": {
-          "n": 685,
-          "p50_ms": 46.977,
-          "p95_ms": 58.772,
-          "p99_ms": 67.029,
-          "max_ms": 474.195,
-          "over50ms": 177,
-          "over100ms": 1
-        },
-        "target_assessment": {
-          "frame_delta_p95_le33_4": true,
-          "frame_delta_p99_le50": true,
-          "engine_wall_p95_le33_4": true,
-          "engine_wall_p99_le50": true,
-          "engine_render_feedback_p95_le100": true,
-          "saves_over100ms": 1,
-          "actual_OS_presentation": "NOT_RUN",
-          "human_fun_acceptance": "NOT_RUN"
-        },
-        "OS_received_to_frame_post_draw": null
-      },
-      "cold": {
-        "first-process": {
-          "engine_wall_frame_interval": {
-            "n": 802,
-            "p50_ms": 24.951,
-            "p95_ms": 39.311,
-            "p99_ms": 61.102,
-            "max_ms": 566.738,
-            "over50ms": 13,
-            "over100ms": 3
-          },
-          "save_duration": {
-            "n": 8,
-            "p50_ms": 63.301,
-            "p95_ms": 369.753,
-            "p99_ms": 496.684,
-            "max_ms": 528.417,
-            "over50ms": 7,
-            "over100ms": 1
-          },
-          "target_assessment": {
-            "frame_delta_p95_le33_4": false,
-            "frame_delta_p99_le50": false,
-            "engine_wall_p95_le33_4": false,
-            "engine_wall_p99_le50": false,
-            "engine_render_feedback_p95_le100": true,
-            "saves_over100ms": 1,
-            "actual_OS_presentation": "NOT_RUN",
-            "human_fun_acceptance": "NOT_RUN"
-          }
-        },
-        "restart-process": {
-          "engine_wall_frame_interval": {
-            "n": 817,
-            "p50_ms": 24.826,
-            "p95_ms": 36.495,
-            "p99_ms": 86.01,
-            "max_ms": 522.278,
-            "over50ms": 11,
-            "over100ms": 6
-          },
-          "save_duration": {
-            "n": 8,
-            "p50_ms": 65.139,
-            "p95_ms": 126.259,
-            "p99_ms": 147.697,
-            "max_ms": 153.056,
-            "over50ms": 8,
-            "over100ms": 1
-          },
-          "target_assessment": {
-            "frame_delta_p95_le33_4": false,
-            "frame_delta_p99_le50": false,
-            "engine_wall_p95_le33_4": false,
-            "engine_wall_p99_le50": false,
-            "engine_render_feedback_p95_le100": true,
-            "saves_over100ms": 1,
-            "actual_OS_presentation": "NOT_RUN",
-            "human_fun_acceptance": "NOT_RUN"
-          }
-        }
-      },
-      "full_world_fixture": {
-        "full_world_file_bytes": 578229,
-        "full_world_monsters": 2026,
-        "full_world_read_ms": 20.473,
-        "full_world_write_ms": 164.224,
-        "g1_migration_read_ms": 502.518
-      },
-      "overall": "FAIL_NUMERIC_TARGETS_NOT_WAIVED",
-      "scope": "Untrimmed Linux software-rendered engine frame, receipt-to-post-draw and save measurements. Not native/physical display/input latency. Independent clocks stay separate."
+      "long_stability": "NOT_RUN",
+      "short_final_pack": "NOT_RUN_PENDING_FINAL_FREEZE",
+      "store_source_sha256": "3e4cc30682a2510b65eddffa010a905b0a143744246434c0682c5511a7b429b0",
+      "prior_r16_store_fixture": "PASS_OBSERVED_SCOPE; save_work/r16-earned-migration-frozen-final.json; final changed coordinate metadata regression pending",
+      "historical_r15_performance": "historical.G2_r15_before_single_reference_repair.retained_actual_status.performance"
     }
   },
   "defect_policy_changes": {
@@ -293,9 +187,9 @@
   "next_action": {
     "owner": "Work",
     "phase": "B5",
-    "action": "Inspect final111map/276door actual GUI captures and repair any real failures. In parallel export same-source Android version8/Windows candidates and verify pack equality/short ordinary OS save/restart.",
-    "resume_from": "docs/rebuild/v2/r16/SOURCE_FREEZE.json; final dcfb92a7 content /4c0889f3 runtime",
-    "do_not_repeat": "No original redownload/new plan/engine/full restart/30minutevideo; changed-function short regressions; longstability NOT_RUN"
+    "action": "Complete final111map/276door actual screenshot+ordinary-input sweep and independent human visual reviews; export exact frozen source/runtime Android version8 and Windows candidates; short final-PCK/save regressions only.",
+    "resume_from": "private_runtime_r16_final contenta628c8f5/runtimeec7faedf; docs/rebuild/v2/r16/SOURCE_FREEZE.json; evidence/R16_EXPORT_FREEZE.json",
+    "do_not_repeat": "No new plan/engine/original redownload/reset/30min video. Preserve all source counts/IDs/save invariants. Do not export known broken art or turn old logical PASS into visual PASS."
   },
   "retry_policy": {
     "deterministic_unchanged_failure": "CHANGE_METHOD",
@@ -2041,11 +1935,149 @@
           "physical_target_device": "NOT_RUN"
         }
       }
+    },
+    "G2_r15_before_single_reference_repair": {
+      "retained_actual_status": {
+        "Windows_native": "NOT_RUN",
+        "Android_native_install_update_save_retention": "NOT_RUN",
+        "Galaxy": "NOT_RUN",
+        "OS_Korean_IME": "NOT_RUN",
+        "physical_audio_and_display_latency": "NOT_RUN",
+        "authenticated_account_roundtrip": "BLOCKED_NO_APPROVED_GAME_AUTHENTICATED_ENDPOINT",
+        "fine_balance_and_map_join_art": "TUNING_PENDING",
+        "performance": {
+          "long": {
+            "status": "PASS_OBSERVED_SCOPE",
+            "engine_wall_frame_interval": {
+              "n": 124390,
+              "p50_ms": 13.353,
+              "p95_ms": 22.047,
+              "p99_ms": 33.509,
+              "max_ms": 643.445,
+              "over50ms": 832,
+              "over100ms": 53
+            },
+            "engine_input_to_frame_post_draw": {
+              "n": 444,
+              "p50_ms": 21.168,
+              "p95_ms": 80.649,
+              "p99_ms": 126.881,
+              "max_ms": 160.048,
+              "over50ms": 91,
+              "over100ms": 11
+            },
+            "save_duration": {
+              "n": 685,
+              "p50_ms": 46.977,
+              "p95_ms": 58.772,
+              "p99_ms": 67.029,
+              "max_ms": 474.195,
+              "over50ms": 177,
+              "over100ms": 1
+            },
+            "target_assessment": {
+              "frame_delta_p95_le33_4": true,
+              "frame_delta_p99_le50": true,
+              "engine_wall_p95_le33_4": true,
+              "engine_wall_p99_le50": true,
+              "engine_render_feedback_p95_le100": true,
+              "saves_over100ms": 1,
+              "actual_OS_presentation": "NOT_RUN",
+              "human_fun_acceptance": "NOT_RUN"
+            },
+            "OS_received_to_frame_post_draw": null
+          },
+          "cold": {
+            "first-process": {
+              "engine_wall_frame_interval": {
+                "n": 802,
+                "p50_ms": 24.951,
+                "p95_ms": 39.311,
+                "p99_ms": 61.102,
+                "max_ms": 566.738,
+                "over50ms": 13,
+                "over100ms": 3
+              },
+              "save_duration": {
+                "n": 8,
+                "p50_ms": 63.301,
+                "p95_ms": 369.753,
+                "p99_ms": 496.684,
+                "max_ms": 528.417,
+                "over50ms": 7,
+                "over100ms": 1
+              },
+              "target_assessment": {
+                "frame_delta_p95_le33_4": false,
+                "frame_delta_p99_le50": false,
+                "engine_wall_p95_le33_4": false,
+                "engine_wall_p99_le50": false,
+                "engine_render_feedback_p95_le100": true,
+                "saves_over100ms": 1,
+                "actual_OS_presentation": "NOT_RUN",
+                "human_fun_acceptance": "NOT_RUN"
+              }
+            },
+            "restart-process": {
+              "engine_wall_frame_interval": {
+                "n": 817,
+                "p50_ms": 24.826,
+                "p95_ms": 36.495,
+                "p99_ms": 86.01,
+                "max_ms": 522.278,
+                "over50ms": 11,
+                "over100ms": 6
+              },
+              "save_duration": {
+                "n": 8,
+                "p50_ms": 65.139,
+                "p95_ms": 126.259,
+                "p99_ms": 147.697,
+                "max_ms": 153.056,
+                "over50ms": 8,
+                "over100ms": 1
+              },
+              "target_assessment": {
+                "frame_delta_p95_le33_4": false,
+                "frame_delta_p99_le50": false,
+                "engine_wall_p95_le33_4": false,
+                "engine_wall_p99_le50": false,
+                "engine_render_feedback_p95_le100": true,
+                "saves_over100ms": 1,
+                "actual_OS_presentation": "NOT_RUN",
+                "human_fun_acceptance": "NOT_RUN"
+              }
+            }
+          },
+          "full_world_fixture": {
+            "full_world_file_bytes": 578229,
+            "full_world_monsters": 2026,
+            "full_world_read_ms": 20.473,
+            "full_world_write_ms": 164.224,
+            "g1_migration_read_ms": 502.518
+          },
+          "overall": "FAIL_NUMERIC_TARGETS_NOT_WAIVED",
+          "scope": "Untrimmed Linux software-rendered engine frame, receipt-to-post-draw and save measurements. Not native/physical display/input latency. Independent clocks stay separate."
+        }
+      },
+      "execution_20261017": {
+        "generation": "G2",
+        "source_commit": "0627c774927d92b68936ffd3323129fa268967dd",
+        "evidence": "docs/rebuild/v2/VERIFICATION.json"
+      },
+      "playability_20261017": {
+        "generation": "G2",
+        "ordinary_seconds": 1801.2429928830024,
+        "overall": "PARTIAL_PERFORMANCE_NATIVE_ACCOUNT_GATES_REMAIN"
+      },
+      "handoff_commit": "0627c774927d92b68936ffd3323129fa268967dd",
+      "app_behavior_commit": "0627c774927d92b68936ffd3323129fa268967dd"
     }
   },
   "publication": {
-    "method": "Atomic documentation/model commit on existing active Work branch, expected-HEAD lease, no force push",
-    "verification": "App0627c774 and exact export file hashes are pinned separately from later documentation/test-tool commits; no main/production mutation."
+    "method": "Atomic expected-HEAD lease on existing canonical Work branch; no force/main/production changes",
+    "last_published_app_source_commit": "b898438bc24f0a6a555727442edc81ea4ddb9de7",
+    "verification": "Actual publication receipts in evidence/PUBLICATION-*.json. Additional actual-screen world/wardrobe and label fixes are local working changes pending final freeze/publication."
   },
   "execution_20261017": {
     "generation": "G2",
@@ -2053,9 +2085,11 @@
     "evidence": "docs/rebuild/v2/VERIFICATION.json"
   },
   "playability_20261017": {
-    "generation": "G2",
-    "ordinary_seconds": 1801.2429928830024,
-    "overall": "PARTIAL_PERFORMANCE_NATIVE_ACCOUNT_GATES_REMAIN"
+    "generation": "G2-r16-in-progress",
+    "long_stability": "NOT_RUN",
+    "mandatory_30min_and_unedited_video": "WAIVED_BY_USER",
+    "all_maps_and_exits": "RETAINED",
+    "overall": "IN_PROGRESS_VISUAL_REPAIR_AND_SHORT_AFFECTED_REGRESSIONS"
   },
   "G2_integration_checkpoint": {
     "app_source": "0627c774927d92b68936ffd3323129fa268967dd",
@@ -2166,7 +2200,7 @@
     "last_valid_result": "G2 r15 historical scoped tests retained; visual user failure overrides visual completion only",
     "tests": [],
     "native_status": "NOT_RUN",
-    "updated_at_utc": "2026-10-17T10:01:12.441377+00:00",
+    "updated_at_utc": "2026-10-17T10:51:39.153810+00:00",
     "user_override_1900_KST": {
       "long30_and_unedited_video_required": false,
       "priority": "111map/buildings/doors/UI/characters/effects actual visual quality; code/image repair",
@@ -2175,13 +2209,11 @@
       "save_safety_and_candidate_validation": "RETAINED"
     },
     "storage_checkpoint": {
-      "source_sha256": "931dbf6cc30d3773130f92c52889ebd1f6ac8aa4233774b2dfe598b9927d335a",
+      "source_sha256": "3e4cc30682a2510b65eddffa010a905b0a143744246434c0682c5511a7b429b0",
       "evidence": "docs/rebuild/v2/r16/SAVE_CHECKPOINT.json",
-      "new_world_save_migration": "NOT_RUN_PENDING_WORLD_FREEZE"
+      "new_world_save_migration": "PASS_PRIOR_R16_STORE_FIXTURE_FINAL_R17_CHANGED_COORDINATE_METADATA_REGRESSION_PENDING"
     },
-    "implementation_status": "SOURCE_AND_PRIVATE_RUNTIME_FROZEN_ACTUAL_SCREEN_ALL_DOOR_QA_RUNNING",
-    "frozen_runtime": "4c0889f3b730a0102c3448fbd599dac922a9410131f683ded989b011860d352f",
-    "frozen_content": "dcfb92a75aa304b36c2325d513752d3214e54c13b4f4d5e5cd97f53bc6edbb81",
+    "implementation_status": "FINAL_BYTES_FROZEN_111MAP_276DOOR_ACTUAL_QA_AND_CANDIDATES_BEGINNING",
     "source_freeze": "docs/rebuild/v2/r16/SOURCE_FREEZE.json",
     "actual_changes": [
       "native-derived integrated HUD and full-body equipment preview/footer controls",
@@ -2189,7 +2221,11 @@
       "directional visible gates and blocked footings/exact apertures",
       "7 wrong arrival coordinates/17 arrival facing/16 teleport aliases corrected with migration",
       "native player shield and95 reconstructed effect semantic bindings",
-      "cold save definition/backup/depth/migration safety repair"
+      "cold save definition/backup/depth/migration safety repair",
+      "reverse landing now equals paired physical approach with123 explicit old-landing mappings",
+      "97 noncity biome floor/object repairs and complete portal silhouettes",
+      "82helmet/100cape worn source-part layers;37steelweapon category look corrections",
+      "explicit armor item.look honored; same-cell and adjacent service labels readable"
     ],
     "storage_final": {
       "report": "save_work/r16-earned-migration-frozen-final.json",
@@ -2199,6 +2235,17 @@
       "status": "PASS_OBSERVED_STORE_FIXTURE",
       "store_sha256": "3e4cc30682a2510b65eddffa010a905b0a143744246434c0682c5511a7b429b0"
     },
-    "all_maps_and_doors": "RUNNING_FROZEN_SOURCE_OS_SWEEP_INITIAL_STATE_FIXTURE_SCOPE_NOT_NATURAL_PROGRESSION"
+    "all_maps_and_doors": "STARTING_FINAL_RUNTIME_OS_SWEEP_274_NEW_ROUTES_TWO_SCOPED_REUSED_PHYSICS_PASSES",
+    "superseded_sweep": {
+      "runtime_manifest_sha256": "4c0889f3b730a0102c3448fbd599dac922a9410131f683ded989b011860d352f",
+      "content_sha256": "dcfb92a75aa304b36c2325d513752d3214e54c13b4f4d5e5cd97f53bc6edbb81",
+      "evidence": "evidence/world-qa/SUPERSEDED_RUN.json",
+      "visual_evidence": "evidence/world-qa/visual-review-world-agent.json",
+      "remaining": "Correct biome/floor/object selection and complete portal silhouettes; pair reverse landings to correct physical approach side; new frozen actual all-map/all-door sweep"
+    },
+    "long_stability": "NOT_RUN_USER_WAIVED_MANDATORY_LONG_TEST",
+    "frozen_runtime": "ec7faedff382f04be6c21a99d1b0909b07a5ef09366aa18689e610709300c56b",
+    "frozen_content": "a628c8f585a5256c94031c3cc3a8dab18c265b09a8ab2b44b3a5918da0895466",
+    "runtime_directory": "private_runtime_r16_final"
   }
 }

@@ -1,0 +1,309 @@
+{
+  "schema": "baram.v2.playability-verification/4",
+  "created_at_utc": "2026-10-17T07:23:03.584810+00:00",
+  "plan_id": "BARAM_REBUILD_V2_RESOURCE_FIRST_20261016",
+  "overall": "PARTIAL_PERFORMANCE_NATIVE_ACCOUNT_GATES_REMAIN",
+  "app_source_commit": "0627c774927d92b68936ffd3323129fa268967dd",
+  "incoming_head": "2317f6bf299b508962a850eeeefd92baa18f45c3",
+  "previous_app_source": "639750f04d10ee4ac3c1a7113232b8c30109f078",
+  "branch": "work/rebuild-p3-remediation-20261016",
+  "generation": "G2",
+  "counts": {
+    "maps": 111,
+    "items": 1105,
+    "monsters": 644,
+    "skills": 262,
+    "npcs": 84,
+    "quests": 160,
+    "recipes": 73
+  },
+  "meaningful_monsters": 513,
+  "spawn_definitions": 2026,
+  "gather_nodes": 256,
+  "world": {
+    "baseline_area_A0": 40798,
+    "g2_area_A1": 635313,
+    "ratio": 15.572160400019609,
+    "unique_chunks_placed": 127,
+    "source_chunks_total": 250
+  },
+  "tests": [
+    {
+      "name": "구조·충돌·성장 그래프",
+      "path": "g2-static-delivery.json",
+      "sha256": "0d57e02b2a35b017491b1438ce7c478f2ae0f6ac7f1d1613a19685e4f621399f",
+      "status": "PASS",
+      "checks": 1670,
+      "failures": 0,
+      "use": "EXECUTED",
+      "scope": "Actual frozen definitions, source masks, area and normal level graph; NOT gameplay/visual/native certification"
+    },
+    {
+      "name": "모든 ID 명령",
+      "path": "g2-closure-delivery.json",
+      "sha256": "ffb8ccbefa10bf4c162c56ead39014a7511587dc98019d214790ecacfe6ebbbe",
+      "status": "PASS",
+      "checks": 6872,
+      "failures": 0,
+      "use": "EXECUTED",
+      "scope": "Explicit level/money/stats/RNG/material fixtures with real buy/drop/pickup/craft/equip/use/learn/quest/advance/attack/move commands; not natural whole-game progression, visual or platform tests"
+    },
+    {
+      "name": "기술·게임 행동",
+      "path": "g2-actions-delivery.json",
+      "sha256": "eb1513234f060dd01398cf90fe5b9863a50e56d5989293a883993cfe07470476",
+      "status": "PASS",
+      "checks": 2299,
+      "failures": 0,
+      "use": "EXECUTED",
+      "scope": "Linux Godot engine isolation fixtures; no GUI, natural growth or platform claim"
+    },
+    {
+      "name": "추가 전투 역할 AI·저장",
+      "path": "g2-roles-delivery.json",
+      "sha256": "6e109118c47ef1e2f81ec078c62f56248ff7476e9ad5d0752367fb374ac90023",
+      "status": "PASS",
+      "checks": 401,
+      "failures": 0,
+      "use": "EXECUTED",
+      "scope": "112 real regional definitions/spawn IDs, fixed-step AI attacks/status effects and actual disk roundtrips under declared position/HP/time fixtures; no natural progression or visual/platform claim."
+    },
+    {
+      "name": "저장·이전·중단·길찾기",
+      "path": "g2-storage-delivery.json",
+      "sha256": "d0a43555d29160952269fff8c002e9093f289e2543480f29ada140d6fc11d72f",
+      "status": "PASS",
+      "checks": 894,
+      "failures": 0,
+      "use": "EXECUTED",
+      "scope": "Explicit test state; real G1/G2 store writes, migration archives, interruption hooks and commands. No native platform or natural-all-world claim."
+    },
+    {
+      "name": "새 캐릭터 4직업 초반 성장",
+      "path": "g2-natural-delivery.json",
+      "sha256": "b839e787886df85bc4d52f2d5ec9297a48731dbed6326ed6524e1ac0830957cd",
+      "status": "PASS",
+      "checks": 88,
+      "failures": 0,
+      "use": "EXECUTED",
+      "scope": "Four fresh characters; time-accelerated production commands and fixed-step ticks; no direct XP/money/item/skill grants, no fixture restore; not GUI/device/native Windows/Android/1-99 proof"
+    },
+    {
+      "name": "의뢰160·제작73",
+      "path": "g2-quests-final.json",
+      "sha256": "ed0229c0f933f7ddd5806a9273ef0d058d5f410b16a5acb45343003ba3f8a57c",
+      "status": "PASS",
+      "checks": 898,
+      "failures": 0,
+      "use": "REUSED_EXACT_DEFINITIONS_G2_REUSE_IMPACT",
+      "scope": "Level/money/companion-material/position fixtures; actual accept, talk, move, attack, timed respawn, equip, craft, complete and payload validation. Not natural progression."
+    },
+    {
+      "name": "최종 PCK 화면",
+      "path": "g2-delivery-pack-ui-labels/GUI.json",
+      "sha256": "4aab56cd00a7c4ae14f8cd2537bc0276ae3b50bf30113dcafde9175b3f186f94",
+      "status": "PASS",
+      "checks": 71,
+      "failures": 0,
+      "use": "EXECUTED",
+      "scope": "Production UI and renderer with explicit location fixtures; not OS play, physical Windows/Android or visual perfection."
+    },
+    {
+      "name": "APK/PCK 자료 일치",
+      "path": "g2-delivery-parity-expanded.json",
+      "sha256": "c10d0c8df31a74950b4f810e5ca003710e3ea2c3eb8960d6ff1d582b838427d7",
+      "status": "PASS",
+      "checks": 8990,
+      "failures": 0,
+      "use": "EXECUTED",
+      "scope": "All raw private-runtime resources and compiled scripts in actual APK versus final Windows embedded PCK, read by Linux Godot. No native Windows/Android execution claim."
+    },
+    {
+      "name": "최종 PCK 새 프로세스 이어하기",
+      "path": "g2-delivery-cold/OS_PLAYABILITY.json",
+      "sha256": "427d9c558e253a74546592676a6c507bd5c65195f25d58b6543fd532828b78ac",
+      "status": "PASS_OBSERVED_SCOPE",
+      "checks": 72,
+      "failures": null,
+      "use": "EXECUTED",
+      "scope": "Exact exported PCK, full G2, two ordinary Linux XTEST processes, each20s safe-town movement/autosave/menu. No callbacks/grants/combat/trades. Not long-play/native/physical/IME/audio proof."
+    },
+    {
+      "name": "연속1800초 일반 입력",
+      "path": "g2-delivery-ordinary30/OS_PLAYABILITY.json",
+      "sha256": "59af2454a1ac630d81b54b0272d9c4d81b9d5a54b44d63554fecd39857306404",
+      "status": "PASS_OBSERVED_SCOPE",
+      "checks": 25,
+      "failures": null,
+      "use": "EXECUTED",
+      "scope": "Ordinary Linux OpenGL GUI, unaccelerated XTEST mouse/keys; read-only committed saves; no grants or callbacks. Not human/native Windows/Android/IME/audio listening."
+    }
+  ],
+  "performance": {
+    "long": {
+      "status": "PASS_OBSERVED_SCOPE",
+      "engine_wall_frame_interval": {
+        "n": 124390,
+        "p50_ms": 13.353,
+        "p95_ms": 22.047,
+        "p99_ms": 33.509,
+        "max_ms": 643.445,
+        "over50ms": 832,
+        "over100ms": 53
+      },
+      "engine_input_to_frame_post_draw": {
+        "n": 444,
+        "p50_ms": 21.168,
+        "p95_ms": 80.649,
+        "p99_ms": 126.881,
+        "max_ms": 160.048,
+        "over50ms": 91,
+        "over100ms": 11
+      },
+      "save_duration": {
+        "n": 685,
+        "p50_ms": 46.977,
+        "p95_ms": 58.772,
+        "p99_ms": 67.029,
+        "max_ms": 474.195,
+        "over50ms": 177,
+        "over100ms": 1
+      },
+      "target_assessment": {
+        "frame_delta_p95_le33_4": true,
+        "frame_delta_p99_le50": true,
+        "engine_wall_p95_le33_4": true,
+        "engine_wall_p99_le50": true,
+        "engine_render_feedback_p95_le100": true,
+        "saves_over100ms": 1,
+        "actual_OS_presentation": "NOT_RUN",
+        "human_fun_acceptance": "NOT_RUN"
+      },
+      "OS_received_to_frame_post_draw": null
+    },
+    "cold": {
+      "first-process": {
+        "engine_wall_frame_interval": {
+          "n": 802,
+          "p50_ms": 24.951,
+          "p95_ms": 39.311,
+          "p99_ms": 61.102,
+          "max_ms": 566.738,
+          "over50ms": 13,
+          "over100ms": 3
+        },
+        "save_duration": {
+          "n": 8,
+          "p50_ms": 63.301,
+          "p95_ms": 369.753,
+          "p99_ms": 496.684,
+          "max_ms": 528.417,
+          "over50ms": 7,
+          "over100ms": 1
+        },
+        "target_assessment": {
+          "frame_delta_p95_le33_4": false,
+          "frame_delta_p99_le50": false,
+          "engine_wall_p95_le33_4": false,
+          "engine_wall_p99_le50": false,
+          "engine_render_feedback_p95_le100": true,
+          "saves_over100ms": 1,
+          "actual_OS_presentation": "NOT_RUN",
+          "human_fun_acceptance": "NOT_RUN"
+        }
+      },
+      "restart-process": {
+        "engine_wall_frame_interval": {
+          "n": 817,
+          "p50_ms": 24.826,
+          "p95_ms": 36.495,
+          "p99_ms": 86.01,
+          "max_ms": 522.278,
+          "over50ms": 11,
+          "over100ms": 6
+        },
+        "save_duration": {
+          "n": 8,
+          "p50_ms": 65.139,
+          "p95_ms": 126.259,
+          "p99_ms": 147.697,
+          "max_ms": 153.056,
+          "over50ms": 8,
+          "over100ms": 1
+        },
+        "target_assessment": {
+          "frame_delta_p95_le33_4": false,
+          "frame_delta_p99_le50": false,
+          "engine_wall_p95_le33_4": false,
+          "engine_wall_p99_le50": false,
+          "engine_render_feedback_p95_le100": true,
+          "saves_over100ms": 1,
+          "actual_OS_presentation": "NOT_RUN",
+          "human_fun_acceptance": "NOT_RUN"
+        }
+      }
+    },
+    "full_world_fixture": {
+      "full_world_file_bytes": 578229,
+      "full_world_monsters": 2026,
+      "full_world_read_ms": 20.473,
+      "full_world_write_ms": 164.224,
+      "g1_migration_read_ms": 502.518
+    },
+    "overall": "FAIL_NUMERIC_TARGETS_NOT_WAIVED",
+    "scope": "Untrimmed Linux software-rendered engine frame, receipt-to-post-draw and save measurements. Not native/physical display/input latency. Independent clocks stay separate."
+  },
+  "remaining": {
+    "Windows_native": "NOT_RUN",
+    "Android_native_install_update_save_retention": "NOT_RUN",
+    "Galaxy": "NOT_RUN",
+    "OS_Korean_IME": "NOT_RUN",
+    "physical_audio_and_display_latency": "NOT_RUN",
+    "authenticated_account_roundtrip": "BLOCKED_NO_APPROVED_GAME_AUTHENTICATED_ENDPOINT",
+    "fine_balance_and_map_join_art": "TUNING_PENDING",
+    "performance": "FAIL_COLD_AND_FULL_WORLD_SAVE_TARGETS"
+  },
+  "pack": {
+    "schema": "baram.g2.packaged-artifacts/1",
+    "source_commit": "0627c774927d92b68936ffd3323129fa268967dd",
+    "source_content_fingerprint": "41a7e9dd755dbc5c48d1bf24422edb656bead63d4f96ea2bd47b63c86da7006d",
+    "runtime_manifest_sha256": "2c3844f186cb1e2387e7acafa3d9de037737d8c82ff9ee8058b89c7c86da92b3",
+    "content_sha256": "bbb0b00a750a3397061bf959c96aa47a160513df4332262e3bc35ca41eda7fc3",
+    "windows_exe_sha256": "dcabd093d258e17177a71de3fe48792f535bfda8225735cc5a698fb7d3153f16",
+    "original_export_zip_sha256": "a2264f5abd7dbb78bff7ccdf8969f337240debb7689cc8a4247d7ab8de28b97e",
+    "repacked_windows_zip_policy": "Same byte-identical EXE plus Korean installation/control/save guide and checksum; no executable changes.",
+    "artifacts": [
+      {
+        "filename": "baram-G2-r15-Android.apk",
+        "local_path": "/workspace/scratch/7a09b4f9ec28/deliverables/baram-G2-r15-Android.apk",
+        "bytes": 122877379,
+        "sha256": "1215248ce8b48c48036b0f9c584ce0066cef8dd8088d8c6069365a1f7b4e42e2",
+        "status": "BUILT_NOT_NATIVE_EXECUTION_VERIFIED"
+      },
+      {
+        "filename": "baram-G2-r15-Windows64.zip",
+        "local_path": "/workspace/scratch/7a09b4f9ec28/deliverables/baram-G2-r15-Windows64.zip",
+        "bytes": 80744260,
+        "sha256": "1dc970a0031e8989ea83da1fb477756701ed9ad2e6265f558b3c3e436d1d32d6",
+        "status": "BUILT_NOT_NATIVE_EXECUTION_VERIFIED"
+      },
+      {
+        "filename": "baram-G2-r15-private-runtime.zip",
+        "local_path": "/workspace/scratch/7a09b4f9ec28/deliverables/baram-G2-r15-private-runtime.zip",
+        "bytes": 126821300,
+        "sha256": "00a6eccfe789217c4a10f35be5db785445ff658d62cc8fe363c71c552d88f378",
+        "status": "BUILT_NOT_NATIVE_EXECUTION_VERIFIED"
+      }
+    ],
+    "installed_package": "com.irewon.baram.p3repair20261016",
+    "user_directory": "baram_rebuild_p3repair_001",
+    "version_code": 7,
+    "signer_sha256": "c0bc3989d93d7b9443bbfa59281797a48e2b020e5da4b1dc91858768b35ccd05",
+    "native_update": "NOT_RUN",
+    "native_execution": "NOT_RUN",
+    "private_keys_or_user_saves_in_artifacts": false
+  },
+  "reuse_impact": "G2_REUSE_IMPACT.json",
+  "source_count_correction": "Earlier521 included names. Strict401 was extended by112 actual tactical profiles to513;131 aliases are excluded.",
+  "historical_previous": "history/R14_VERIFICATION.json"
+}

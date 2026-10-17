@@ -9,6 +9,7 @@ Run under toolchain/run_gui.py. This is Linux automation, not native Windows,
 Android, physical input/IME/audio, natural progression or long-play acceptance.
 """
 import argparse
+import copy
 import hashlib
 import json
 import os
@@ -65,8 +66,42 @@ def main():
     original_saves = sorted((source / 'gameplay-p3/characters').glob('*.json'))
     if len(original_saves) != 1:
         raise ValueError('Exactly one already earned character primary save is required')
-    original_payload = json.loads(original_saves[0].read_text())['payload']
+    original_document = json.loads(original_saves[0].read_text())
+    original_payload = original_document['payload']
     content = json.loads((args.runtime / 'gameplay_content.json').read_text())
+    # Compute only the declared old-cell -> new-cell contract for assertions.
+    # These expected values are never written to a save or sent to the game.
+    contracts = [row for row in content.get('accepted_compatibility', [])
+                 if all(row.get(key) == original_document.get(key)
+                        for key in ['profile', 'manifest_sha256', 'compatibility'])]
+    current_generation = all(content.get(key) == original_document.get(key)
+                             for key in ['profile', 'manifest_sha256', 'compatibility'])
+    if not current_generation and len(contracts) != 1:
+        raise ValueError('Old earned save requires one explicit compatibility contract')
+    transforms = contracts[0].get('map_transforms', {}) if not current_generation else {}
+    expected_loaded_payload = copy.deepcopy(original_payload)
+
+    def expected_point(row, x_key='x', y_key='y'):
+        transform = transforms.get(row['map_id'], {})
+        cell = transform.get('cell_mappings', {}).get(str(int(row[x_key])) + ',' + str(int(row[y_key])), {})
+        return (transform.get('to_map_id', row['map_id']),
+                int(cell.get('x', int(row[x_key]) + int(transform.get('dx', 0)))),
+                int(cell.get('y', int(row[y_key]) + int(transform.get('dy', 0)))))
+
+    def transform_expected(row):
+        row['map_id'], row['x'], row['y'] = expected_point(row)
+
+    transform_expected(expected_loaded_payload['character'])
+    expected_loaded_payload['character']['discovered_maps'] = [
+        transforms.get(mid, {}).get('to_map_id', mid)
+        for mid in expected_loaded_payload['character'].get('discovered_maps', [])]
+    for monster in expected_loaded_payload['monsters'].values():
+        _, spawn_x, spawn_y = expected_point(monster, 'spawn_x', 'spawn_y')
+        transform_expected(monster)
+        monster['spawn_x'], monster['spawn_y'] = spawn_x, spawn_y
+    for name in ['loot', 'summons']:
+        for row in expected_loaded_payload.get(name, []):
+            transform_expected(row)
     pack_provenance = json.loads(args.pack_provenance.read_text())
     expected_pack = pack_provenance.get('embedded_pck', {}).get('sha256')
     if (pack_provenance.get('standard_parity_status') != 'PASS'
@@ -107,7 +142,7 @@ def main():
                XAUTHORITY='', GODOT_SILENCE_ROOT_WARNING='1')
     for key in ['BARAM_GAMEPLAY_RUNTIME', 'BARAM_P2_RUNTIME']:
         env.pop(key, None)
-    command = [str(args.godot.resolve()), '--audio-driver', 'Dummy', '--main-pack', str(args.pack.resolve())]
+    command = [str(args.godot.resolve()), '--audio-driver', 'Dummy', '--max-fps', '60', '--main-pack', str(args.pack.resolve())]
     started = time.monotonic()
     input_path = temporary / 'os-input-timeline.jsonl'
     process = None
@@ -128,7 +163,7 @@ def main():
                                        'source_commit': pack_provenance.get('source_commit'), 'document': pack_provenance},
               'runtime_input_file_count': len(runtime_files_before),
               'environment': {'platform': sys.platform, 'display': env.get('DISPLAY'), 'screen': '1600x1000', 'game_viewport': '1100x720', 'recording_fps': 30, 'audio': 'Dummy'},
-              'continued_naturally_earned_data': {'directory': str(args.resume_data.resolve()), 'from_user_dir': args.resume_user_dir_name, 'to_user_dir': args.user_dir_name, 'files': original_files, 'method': 'Byte-identical isolated userdata copy; original never written. Not authenticated account sync.'},
+              'continued_naturally_earned_data': {'directory': str(args.resume_data.resolve()), 'from_user_dir': args.resume_user_dir_name, 'to_user_dir': args.user_dir_name, 'files': original_files, 'method': 'Byte-identical isolated userdata copy; original never written. Expected declared coordinate transforms affect assertions only; production Continue performs actual migration. Not authenticated account sync.', 'declared_coordinate_contract_maps': len(transforms)},
               'full_G2_counts': actual_counts, 'isolated_session_directory': str(temporary),
               'analysis_scope': 'Use per-phase first-process and restart-process directories with run_playability_analysis.py. Top-level journey/restart traces are independently retained; do not concatenate process clocks or treat this40s probe as1800s.'}
 
@@ -213,7 +248,7 @@ def main():
         # Alternate toward the original cell when possible, otherwise pick the
         # first adjacent legal non-exit tile. A single press/release avoids
         # held-key repeat; every actual autosaved result is checked afterward.
-        home = (int(original_payload['character']['x']), int(original_payload['character']['y']))
+        home = (int(expected_loaded_payload['character']['x']), int(expected_loaded_payload['character']['y']))
         candidates = [('Up', 0, -1), ('Right', 1, 0), ('Down', 0, 1), ('Left', -1, 0)]
         candidates.sort(key=lambda row: abs(origin[0] + row[1] - home[0]) + abs(origin[1] + row[2] - home[1]))
         for name, dx, dy in candidates:
@@ -286,10 +321,10 @@ def main():
             ensure(name + '_20s_unaccelerated_movement', elapsed >= 20 and any((r['before_character']['x'], r['before_character']['y']) != (r['after_character']['x'], r['after_character']['y']) for r in observed_moves), {'seconds': elapsed, 'moves': observed_moves})
             ensure(name + '_multiple_ordinary_autosaves', observed_autosaves >= 4, observed_autosaves)
             capture(name + '-before-menu')
-            menu_start = len(rows(checkpoint)); button('저장 · 처음으로')
+            menu_start = len(rows(checkpoint)); button('저장')
             wait_stage('performance', menu_start); wait_stage('ui_layout', menu_start)
             after = payload()
-            ensure(name + '_normal_menu_save_preserves_all752_monsters_and_owned_progress', stable_preserved(before, after))
+            ensure(name + '_normal_menu_save_preserves_all_monsters_and_owned_progress', stable_preserved(before, after))
             ensure(name + '_revision_and_ui_requests_advance', after['revision'] > before['revision'] and after['request_watermarks'].get('ui', 0) > before['request_watermarks'].get('ui', 0))
             phase_checkpoints = rows(checkpoint)[since:]
             saves = [r for r in phase_checkpoints if r.get('stage') == 'save']
@@ -329,14 +364,14 @@ def main():
         observe('raw_recorder_ready_before_first_process', encoded_frames=fields['frame'],
                 recorder_alive=recorder.poll() is None, progress=progress,
                 raw_bytes=raw.stat().st_size if raw.is_file() else 0)
-        result['before_restart'] = one_phase('first-process', original_payload)
+        result['before_restart'] = one_phase('first-process', expected_loaded_payload)
         result['final'] = one_phase('restart-process', result['before_restart'])
     except Exception as error:
         result['error'] = str(error); observe('operator_stopped', error=str(error))
         try:
             capture('failure')
             if process and process.poll() is None and x:
-                button('저장 · 처음으로'); time.sleep(.8)
+                button('저장'); time.sleep(.8)
         except Exception as recovery:
             observe('ordinary_error_recovery_incomplete', error=str(recovery))
     finally:

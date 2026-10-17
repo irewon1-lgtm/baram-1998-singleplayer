@@ -1267,6 +1267,7 @@ func _look_player() -> String:
 		if content.data.monsters.has(form_id): return str(content.data.monsters[form_id].get("look_id",content.data.monsters[form_id].get("look","")))
 	var armor := false
 	var shield := false
+	var helmet := false
 	var weapon_graphics: Dictionary = {}
 	for instance_id in game.state.equipment.values():
 		var item := _instance(str(instance_id))
@@ -1274,11 +1275,13 @@ func _look_player() -> String:
 		var def: Dictionary = content.data.items[item.item_id]
 		if int(def.get("durability",0))>0 and int(item.durability)<=0: continue
 		if def.get("slot")=="weapon": weapon_graphics=content.actors.get("item_equipment_graphics",{}).get(str(item.item_id),{})
-		if def.get("slot")=="armor" and int(def.get("defense",0))>0: armor=true
+		if def.get("slot")=="armor" and int(def.get("defense",0))>0: armor=str(def.get("look","player_armor"))!="player_base"
 		if def.get("slot")=="shield":shield=true
+		if def.get("slot") in ["helmet","head"] and content.actors.get("helmet_item_graphics",{}).has(str(item.item_id)):helmet=true
 	var look := str(weapon_graphics.get("armored_player_look" if armor else "player_look","player_armor" if armor else "player_base"))
 	if int(game.state.character.appearance.get("variant",0))==1: look+="_alt"
 	if shield and content.actors.get("looks",{}).has(look+"_shield"):look+="_shield"
+	if helmet and content.actors.get("looks",{}).has(look+"_helmet"):look+="_helmet"
 	return look
 
 func _skill_icon(id: String) -> Texture2D:
@@ -1313,16 +1316,45 @@ func _cast_hotkey(slot: String) -> void:
 		if str(skills.get_item_metadata(index))==id:skills.select(index);break
 	_cast_selected()
 
+func _cape_player_look() -> String:
+	# A polymorph uses its complete monster body and does not wear human parts.
+	if not _look_player().contains("player"):return ""
+	for instance_id in game.state.equipment.values():
+		var item:=_instance(str(instance_id))
+		if item.is_empty():continue
+		var def: Dictionary=content.data.items[item.item_id]
+		if def.get("slot")!="cape":continue
+		if int(def.get("durability",0))>0 and int(item.durability)<=0:continue
+		return str(content.actors.get("cape_item_graphics",{}).get(str(item.item_id),{}).get("cape_look",""))
+	return ""
+
+func _player_frame_layers(look: String, animation: String, direction: int, at_clock: float) -> Array:
+	var frame: Dictionary=content.actor(look,animation,direction,at_clock)
+	if frame.is_empty():return []
+	var cape_look:=_cape_player_look()
+	if cape_look.is_empty() or not frame.has("part_layers"):
+		return [{"path":"gameplay-assets/"+str(frame.path),"x":float(frame.offset[0]),"y":float(frame.offset[1])}]
+	var cape: Dictionary=content.actor(cape_look,animation,direction,at_clock)
+	var result: Array=[]
+	var cape_layer: Dictionary={}
+	if not cape.is_empty():cape_layer={"path":"gameplay-assets/"+str(cape.path),"x":float(cape.offset[0]),"y":float(cape.offset[1])}
+	if direction!=0 and not cape_layer.is_empty():result.append(cape_layer)
+	for part_id in frame.part_layers:
+		var part: Dictionary=content.actors.get("player_part_layers",{}).get(str(part_id),{})
+		if part.is_empty():continue
+		result.append({"path":"gameplay-assets/"+str(part.path),"x":float(part.offset[0]),"y":float(part.offset[1])})
+		if direction==0 and part.kind=="body" and not cape_layer.is_empty():result.append(cape_layer)
+	return result
+
 func _refresh_equipment_preview() -> void:
 	var look:=_look_player()
 	var preview_scale:=1.0 if size.y<540 else 2.0
-	var look_key:=look+":"+str(preview_scale)
-	if equipment_preview_look==look_key: return
-	var frame: Dictionary=content.actor(look,"standing",2,0)
-	if frame.is_empty(): return
+	var look_key:=look+":"+_cape_player_look()+":"+str(preview_scale)
+	if equipment_preview_look==look_key:return
+	var layers:=_player_frame_layers(look,"standing",2,0)
+	if layers.is_empty():return
 	equipment_preview_look=look_key
-	var layer:={"path":"gameplay-assets/"+str(frame.path),"x":float(frame.offset[0]),"y":float(frame.offset[1])}
-	equipment_preview.configure([layer],Vector2(100,100),Vector2(0,-23),preview_scale)
+	equipment_preview.configure(layers,Vector2(100,100),Vector2(0,-23),preview_scale)
 
 func _visual_point(id: String, x: float, y: float) -> Vector2:
 	if not visual_positions.has(id): return Vector2(x,y)
@@ -1399,9 +1431,7 @@ func _render_world() -> void:
 			scenery_cache.append(entry)
 	sorted.append_array(scenery_cache)
 	var labels: Array=[]
-	for landmark in map.get("landmarks",[]):
-		if landmark.has("x") and landmark.has("y"):
-			labels.append({"x":int(landmark.x)*24+12,"y":int(landmark.y)*24+24,"text":str(landmark.get("name",landmark.get("label",""))),"color":"ccb78d"})
+	labels.append_array(_readable_landmarks(map,camera,world_zoom))
 	for node in map.get("gather_nodes",[]):
 		if not visible_world.has_point(Vector2(float(node.x)*24,float(node.y)*24)):continue
 		var node_icon: Dictionary=content.actors.icons.get(str(node.item_id),{})
@@ -1438,11 +1468,17 @@ func _render_world() -> void:
 			if not path.begins_with("gameplay-assets/"): path="gameplay-assets/"+path
 			sorted.append({"path":path,"x":int(loot.x)*24+2,"y":int(loot.y)*24+8,"depth_y":int(loot.y)*24+23})
 		labels.append({"x":int(loot.x)*24+12,"y":int(loot.y)*24+50,"text":"전리품 · Z","color":"d3c480"})
-	var player := _actor_layer(_look_player(),character_animation if clock<animation_until else "standing",int(c.direction),player_position.x,player_position.y)
+	var player_layers := _player_frame_layers(_look_player(),character_animation if clock<animation_until else "standing",int(c.direction),clock)
 	var stealthed := false
 	for buff in game.state.get("buffs",{}).values():
 		if str(buff.get("status",""))=="stealth": stealthed=true
-	if not player.is_empty(): player.opacity=0.4 if c.dead or stealthed else 1.0; sorted.append(player)
+	for layer_index in range(player_layers.size()):
+		var player: Dictionary=player_layers[layer_index]
+		player.x=float(player.x)+player_position.x*24+12
+		player.y=float(player.y)+player_position.y*24+24
+		player.depth_y=player_position.y*24+24+float(layer_index)*0.001
+		player.opacity=0.4 if c.dead or stealthed else 1.0
+		sorted.append(player)
 	labels.append({"x":player_position.x*24+12,"y":player_position.y*24+24,"text":c.name,"color":"a9e8bd"})
 	for i in range(active_effects.size()-1,-1,-1):
 		var active: Dictionary=active_effects[i]
@@ -1469,6 +1505,43 @@ func _render_world() -> void:
 	layers.append_array(sorted)
 	view.labels=labels
 	view.configure(layers,Vector2(int(map.width)*24,int(map.height)*24),camera,world_zoom)
+
+func _readable_landmarks(map: Dictionary, camera: Vector2, world_zoom: float) -> Array:
+	# Legacy short labels and generated destination labels can share one cell.
+	# Keep one authoritative destination label at that real doorway, then keep
+	# nearer visible labels when adjacent text rectangles would overlap. This
+	# changes drawing only: map IDs, door cells, collision and input stay intact.
+	var by_cell: Dictionary={}
+	var character: Dictionary=game.state.character
+	var player_cell:=Vector2(float(character.x),float(character.y))
+	var font:=ThemeDB.fallback_font
+	var viewport:=Rect2(Vector2.ZERO,view.size)
+	for landmark in map.get("landmarks",[]):
+		if not landmark.has("x") or not landmark.has("y"):continue
+		var title:=str(landmark.get("name",landmark.get("label","")))
+		if title.is_empty():continue
+		var cell:=Vector2i(int(landmark.x),int(landmark.y))
+		var priority:=2 if str(landmark.get("kind",""))=="exit" else 1 if str(landmark.get("kind",""))=="service" else 0
+		if by_cell.has(cell) and int(by_cell[cell].priority)>=priority:continue
+		var point:=Vector2(cell)*24+Vector2(12,24)
+		var width:=font.get_string_size(title,HORIZONTAL_ALIGNMENT_LEFT,-1,14).x
+		var baseline: Vector2=view.size*0.5+(point-camera)*world_zoom+Vector2(-width*0.5,-48*world_zoom-8)
+		var bounds:=Rect2(baseline-Vector2(0,font.get_ascent(14)),Vector2(width,font.get_height(14))).grow(4)
+		by_cell[cell]={"priority":priority,"distance":Vector2(cell).distance_squared_to(player_cell),"bounds":bounds,"label":{"x":point.x,"y":point.y,"text":title,"color":"ccb78d"}}
+	var candidates: Array=by_cell.values()
+	candidates.sort_custom(func(a,b):
+		if a.distance==b.distance:return float(a.label.x)<float(b.label.x)
+		return float(a.distance)<float(b.distance))
+	var accepted: Array=[]
+	var occupied: Array[Rect2]=[]
+	for candidate in candidates:
+		if not viewport.encloses(candidate.bounds):continue
+		var overlaps:=false
+		for bounds in occupied:
+			if bounds.intersects(candidate.bounds):overlaps=true;break
+		if overlaps:continue
+		accepted.append(candidate.label);occupied.append(candidate.bounds)
+	return accepted
 
 func _append_depth_effect(layers: Array, sample: Dictionary, feet_y: float) -> void:
 	# Native back/front frame sets straddle the same foot-depth as the actor.

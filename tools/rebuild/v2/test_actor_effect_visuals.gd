@@ -11,8 +11,11 @@ func check(id: String,ok: bool,detail: Variant=null):
  checks.append({"id":id,"status":"PASS" if ok else "FAIL","detail":detail})
  if not ok: printerr("FAIL "+id+" "+JSON.stringify(detail))
 func capture(name: String,detail: Dictionary={}):
+ if OS.get_environment("BARAM_ACTOR_EFFECT_PEAK_ONLY")=="1" and not name.ends_with("effect-peak"):return
  app._refresh_panels();app._render_world()
- await process_frame;await process_frame;await RenderingServer.frame_post_draw
+ await process_frame;await process_frame
+ app._render_world() # Refresh camera/culling after the first UI layout, before evidence capture.
+ await process_frame;await RenderingServer.frame_post_draw
  var image=root.get_texture().get_image()
  var file=name+".png"
  check(name+":framebuffer",image.save_png(out.path_join(file))==OK and app.view.draw_errors.is_empty(),app.view.draw_errors)
@@ -54,13 +57,16 @@ func run():
  if not app.startup_error.is_empty():finish();return
  app.set_process(false)
  var jobs=[{"job":"전사","weapon":"KRO-ITEM-064babaf513bd0","skill":"KRO-e5c1e3e5f6c4","label":"warrior"},{"job":"도적","weapon":"KRO-ITEM-99362a13fd3a63","skill":"KRO-21fea0f07142","label":"rogue"},{"job":"주술사","weapon":"KRO-ITEM-1626587b0529e5","skill":"KRO-3559b12ed6a7","label":"mage"},{"job":"도사","weapon":"KRO-ITEM-1b372e7e78b543","skill":"KRO-cce452629337","label":"poet"}]
+ if OS.get_environment("BARAM_ACTOR_EFFECT_PEAK_ONLY")=="1":jobs=[jobs[0],jobs[2]]
  if OS.get_environment("BARAM_ACTOR_EFFECT_POISON_ONLY")=="1":jobs=[]
+ if OS.get_environment("BARAM_ACTOR_EFFECT_REFRESH_FIRST")=="1":jobs=[jobs[0]]
  for row in jobs:
   base_fixture(row.job,row.weapon)
-  for direction in range(4):
+  for direction in ([0] if OS.get_environment("BARAM_ACTOR_EFFECT_REFRESH_FIRST")=="1" else range(4)):
    app.game.state.character.direction=direction
    app.character_animation="standing";app.animation_until=0;app.clock=0
    await capture(str(row.label)+"-direction-"+str(direction),{"job":row.job,"fixture":"Lv99/equipment/location, not natural progression","direction":direction})
+  if OS.get_environment("BARAM_ACTOR_EFFECT_REFRESH_FIRST")=="1":break
   if not app.content.actors.get("shield_item_graphics",{}).is_empty():
    var shield_id:String=app.content.actors.shield_item_graphics.keys()[0]
    var base_look:String=app._look_player()
@@ -106,6 +112,9 @@ func run():
   check(str(row.label)+":skill_applied",events.any(func(e):return e.get("type")=="skill_applied") or response.events.any(func(e):return e.get("type")=="skill_applied"),events)
   if row.job=="도적":
    check("rogue:stealth_actual_opacity",app.view.layers.any(func(layer):return float(layer.get("opacity",1))==0.4))
+  if row.job in ["전사","주술사"] and not app.active_effects.is_empty():
+   app.clock=maxf(app.clock,float(app.active_effects[0].at)+(0.75 if row.job=="주술사" else 0.65))
+   await capture(str(row.label)+"-effect-peak",{"fixture":"later native effect frame sampled after actual impact; no historical timing claim","active_effects":app.active_effects.duplicate(true)})
   app.clock+=10.1;app._render_world()
   check(str(row.label)+":effect_cleanup",app.active_effects.is_empty() and app.projectiles.is_empty(),{"active":app.active_effects.size(),"projectiles":app.projectiles.size()})
   await capture(str(row.label)+"-finished",{"fixture":"render clock advanced beyond native sequence duration","effects":app.active_effects.size(),"projectiles":app.projectiles.size()})

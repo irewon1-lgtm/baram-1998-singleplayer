@@ -1,7 +1,7 @@
-import json,base64,hashlib
+import json,base64,hashlib,sys
 from pathlib import Path
 from collections import deque
-p=Path('private_runtime_world_r16');data=json.loads((p/'gameplay_content.json').read_text());old=json.load(open('private_runtime/gameplay_content.json'));fail=[];checks=[];far=[];total=0
+p=Path(sys.argv[1]if len(sys.argv)>1 else'private_runtime_world_r16');data=json.loads((p/'gameplay_content.json').read_text());old=json.load(open((Path(sys.argv[2])if len(sys.argv)>2 else Path('private_runtime'))/'gameplay_content.json'));fail=[];checks=[];far=[];total=0
 for mid,m in data['maps'].items():
  w,h=m['width'],m['height'];b=base64.b64decode(m['blocked_base64']);e=base64.b64decode(m.get('edge_masks_base64',''));g=json.loads((p/m['geometry_file']).read_text());blocked=set(map(tuple,g['blocked']));assert len(b)==w*h
  for d in m['door_contracts']:
@@ -35,10 +35,10 @@ for mid,m in data['maps'].items():
    if npc['map_id']==mid and(npc['x'],npc['y'])not in seen:fail.append([mid,npc['id'],'npc_disconnected'])
   total+=len(seen)
  checks.append({'map_id':mid,'exits':len(m['exits']),'posts':sum(len(d.get('solid_post_cells',[]))for d in m['door_contracts']),'maximum_floor_chunk_dimension':max(max(o['width_px'],o['height_px'])for o in m['ground_layers'])})
-for mid,t in json.loads((p/'G2_R16_MAP_MIGRATION.json').read_text())['map_transforms'].items():
+for mid,t in json.loads((p/('G2_R17_MAP_MIGRATION.json'if(p/'G2_R17_MAP_MIGRATION.json').exists()else'G2_R16_MAP_MIGRATION.json')).read_text())['map_transforms'].items():
  m=data['maps'][mid];b=base64.b64decode(m['blocked_base64']);e=base64.b64decode(m.get('edge_masks_base64',''))
  for key,v in t['cell_mappings'].items():
   at=v['y']*m['width']+v['x']
-  if b[at]or(e and e[at]):fail.append([mid,key,'unsafe_migration_target',v])
-result={'status':'PASS_STATIC_GEOMETRY'if not fail and not far else'FAIL','scope':'static two-sided directional collision graph, protected source/target door cells, visible post footprints, paired landing distance and explicit migration targets; no render or ordinary-input PASS','failures':fail,'far_landings':far,'maps':checks,'reachable_cells':total,'content_sha256':hashlib.sha256((p/'gameplay_content.json').read_bytes()).hexdigest()}
-Path('evidence').mkdir(exist_ok=True);Path('evidence/world-r16-static-geometry.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n');print(json.dumps({k:v for k,v in result.items()if k!='maps'},ensure_ascii=False))
+  if b[at]:fail.append([mid,key,'unsafe_migration_target',v])
+result={'status':'PASS_STATIC_GEOMETRY'if not fail and not far else'FAIL','scope':'static two-sided directional collision graph, protected source/target door cells, visible post footprints, paired landing distance and explicit migration targets; no render or ordinary-input PASS','failures':fail,'far_landings':far,'maps':checks,'reachable_cells':total,'migration_valid_position_policy':'Production GameplayState.valid_position checks bounds and blocked bytes; directional edge bits are separately checked for approach can_step, not treated as occupied cells. Prior all-edge-zero audit was stricter than production and preserved separately.','content_sha256':hashlib.sha256((p/'gameplay_content.json').read_bytes()).hexdigest()}
+Path('evidence').mkdir(exist_ok=True);Path('evidence/world-r17-static-geometry.json'if 'r17'in p.name else'evidence/world-r16-static-geometry.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n');print(json.dumps({k:v for k,v in result.items()if k!='maps'},ensure_ascii=False))

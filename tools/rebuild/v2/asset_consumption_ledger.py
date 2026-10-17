@@ -34,7 +34,7 @@ def main():
     source={'recorded_archive':'KR_4.91_491v.zip','recorded_container':'NWind.dat','archive_member_chain':['Install/DATA1.CAB','NWind.dat'],'container_sha256':actors['source']['dat_sha256'],
             'source_id':kr['source_id'],'target_1998_2001_historical_match':kr.get('target1998_2001_match','NOT_ESTABLISHED'),'original_archive_bytes_revalidated_this_run':False,
             'note':'Retained pinned extraction provenance. Original archive is not re-downloaded/re-decoded. Runtime PNG bytes are independently hashed below.',
-            'reader_sha256':actors['source']['reader_sha256'],'builder_sha256':actors['source']['builder_sha256'],'native_shield_repair':actors['source'].get('native_shield_repair')}
+            'reader_sha256':actors['source']['reader_sha256'],'builder_sha256':actors['source']['builder_sha256'],'native_shield_repair':actors['source'].get('native_shield_repair'),'native_steel_repair':actors['source'].get('native_steel_repair'),'native_helmet_repair':actors['source'].get('native_helmet_repair'),'cape_reconstruction':actors['source'].get('cape_reconstruction')}
     if args.archive:
         source['archive_sha256']=sha(args.archive);source['original_archive_bytes_revalidated_this_run']=True
     if args.dat:
@@ -74,7 +74,7 @@ def main():
             result.append({'member':epf,'member_sha256':members.get(epf,{}).get('sha256'),'palette_member':f.get('palette_member'),
               'palette_member_sha256':members.get(f.get('palette_member'),{}).get('sha256'),'frame':f['frame'],'palette':f.get('palette'),
               'offset':f.get('offset'),'rgba_sha256':f.get('rgba_sha256'),'recolor_byte':f.get('recolor_byte'),
-              'recolor_semantics':f.get('recolor_semantics'),'source_id':f.get('source_id'),'part_id':f.get('part_id'),'relative_frame':f.get('relative_frame')})
+              'recolor_semantics':f.get('recolor_semantics'),'source_id':f.get('source_id'),'part_id':f.get('part_id'),'relative_frame':f.get('relative_frame'),'source_original_rgba_sha256':f.get('source_original_rgba_sha256'),'source_indices_and_alpha_sha256':f.get('source_indices_and_alpha_sha256'),'reconstructed_palette_ramp':f.get('reconstructed_palette_ramp'),'source_body_part':f.get('source_body_part')})
         return result
     records=[]
     for lid,look in actors['looks'].items():
@@ -84,8 +84,21 @@ def main():
                     path='gameplay-assets/'+frame['path']
                     records.append({'family':'actor','look':lid,'action':action,'direction':int(direction),'frame_index':i,
                      'binding_scope':look.get('binding_scope'),'decoder_sources':frame_sources(frame['source_frames']),
-                     'runtime':runtime_receipt(path,frame['png_sha256']),'runtime_consumer':'gameplay.gd::_actor_layer / _refresh_equipment_preview',
+                     'runtime':runtime_receipt(path,frame['png_sha256']),'runtime_consumer':'gameplay.gd::_actor_layer / _player_frame_layers / _refresh_equipment_preview',
                      'foot_anchor':{'frame_offset':frame['offset'],'world_formula':'cell*(24,24)+(12,24)+frame.offset'},'duration_ms':frame['duration_ms']})
+    native_part_sources={}
+    for look in actors['looks'].values():
+        for directions in look['animations'].values():
+            for frames in directions.values():
+                for frame in frames:
+                    source_by_kind={f.get('epf','').removesuffix('.epf').lower():f for f in frame.get('source_frames',[])}
+                    for part_id in frame.get('part_layers',[]):
+                        part=actors.get('player_part_layers',{}).get(part_id,{})
+                        if part.get('kind') in source_by_kind:native_part_sources[part_id]=source_by_kind[part['kind']]
+    for part_id,part in actors.get('player_part_layers',{}).items():
+        records.append({'family':'native_player_part','part_id':part_id,'kind':part['kind'],'decoder_sources':frame_sources([native_part_sources[part_id]]),
+          'runtime':runtime_receipt('gameplay-assets/'+part['path'],part['png_sha256']),'runtime_consumer':'gameplay.gd::_player_frame_layers (only when a cape is equipped)',
+          'foot_anchor':{'frame_offset':part['offset'],'world_formula':'cell*(24,24)+(12,24)+native leaf offset'},'layer_order':'Native DrwOrder; north cape after body; other directions before parts; casting retains no native weapon/shield'})
     for iid,frame in actors['icons'].items():
         records.append({'family':'item_icon','item_id':iid,'name':game['items'][iid]['name'],
          'decoder_sources':frame_sources(frame['source_frames']),'item_source_pointer':game['items'][iid].get('source_pointer'),'runtime':runtime_receipt('gameplay-assets/'+frame['path'],frame['png_sha256']),
@@ -109,13 +122,14 @@ def main():
                  'bound_skills':skills_by_effect[effect['id']],'historical_timing_audio':'NOT_ESTABLISHED'})
     weapon_styles=Counter(v.get('style','legacy') for v in actors['item_equipment_graphics'].values())
     shield_looks=[lid for lid,l in actors['looks'].items() if l.get('source_parts',{}).get('shield') is not None]
-    missing_worn=[{'item_id':iid,'name':v['name'],'slot':v.get('slot'),'classification':'SOURCE_PRESENT_UNUSED' if v.get('slot')=='shield' else 'REFERENCE_UNCERTAIN',
-      'reason':'Exact item-to-native Head/Body part ID has not been established; this equipment slot changes stats but has no selected avatar layer.'}
-      for iid,v in game['items'].items() if v.get('slot') in ['shield','helmet','cape'] and not (v.get('slot')=='shield' and iid in actors.get('shield_item_graphics',{}))]
+    slot_tables={'shield':'shield_item_graphics','helmet':'helmet_item_graphics','head':'helmet_item_graphics','cape':'cape_item_graphics'}
+    missing_worn=[{'item_id':iid,'name':v['name'],'slot':v.get('slot'),'classification':'EXCLUDED_NONWEARABLE_RECEIPT' if any(t in v['name'] for t in ['보관증','보관권','교환권']) else 'REFERENCE_UNCERTAIN',
+      'reason':'Legacy broad name classification placed a receipt in helmet slot; deliberately no avatar part' if any(t in v['name'] for t in ['보관증','보관권','교환권']) else 'No selected original/reconstructed avatar layer for this slot.'}
+      for iid,v in game['items'].items() if v.get('slot')in slot_tables and iid not in actors.get(slot_tables[v['slot']],{})]
     report={'schema':'baram.asset-consumption.actor-effect/1','source':source,
       'fingerprints':{p:sha(root/p) for p in ['runtime.json','gameplay_content.json','gameplay-assets/actors.json','kr491/kr491_runtime.json']},
       'summary':{'looks':len(actors['looks']),'icons':len(actors['icons']),'wearable_weapon_bindings':len(actors['item_equipment_graphics']),
-      'weapon_styles':dict(weapon_styles),'effects':len(kr['effects']),'skill_bindings':len(game['skills']),
+      'helmet_category_bindings':len(actors.get('helmet_item_graphics',{})),'cape_category_bindings':len(actors.get('cape_item_graphics',{})),'native_player_part_pngs':len(actors.get('player_part_layers',{})),'wearable_identity_status':'GENERIC_NATIVE_HELMET/SHIELD_AND_RECONSTRUCTED_CAPE_CATEGORIES_NOT_ITEM_EXACT; native steel category corrected separately from wooden; exact item identity unproven','weapon_styles':dict(weapon_styles),'effects':len(kr['effects']),'skill_bindings':len(game['skills']),
       'skill_binding_methods':dict(Counter(s.get('effect_asset_binding',{}).get('method','UNKNOWN') for s in game['skills'].values())),
       'records':len(records),'families':dict(Counter(r['family']for r in records)),'unique_pngs_verified':len(byte_cache),
       'paths_captured_in_actual_production_renderer':sum(bool(seen[p]) for p in byte_cache),'byte_failures':len(errors),
