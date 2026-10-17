@@ -1584,6 +1584,7 @@ func _readable_landmarks(map: Dictionary, camera: Vector2, world_zoom: float) ->
 func _readable_gather_labels(map: Dictionary, captions: Array, existing_labels: Array, camera: Vector2, world_zoom: float) -> Dictionary:
 	# Preserve ordinary captions. Only a caption touching an aperture or other
 	# text moves below its unchanged resource icon; no node/gameplay data changes.
+	if captions.is_empty():return {"labels":[],"audit":[]}
 	var font:=ThemeDB.fallback_font
 	var viewport:=Rect2(Vector2.ZERO,view.size)
 	var project_bounds:=func(label: Dictionary) -> Rect2:
@@ -1598,6 +1599,13 @@ func _readable_gather_labels(map: Dictionary, captions: Array, existing_labels: 
 		var origin:=Vector2(float(pixels[0]),float(pixels[1]))
 		var extent:=Vector2(float(pixels[2])-origin.x,float(pixels[3])-origin.y)
 		reserved.append(Rect2(view.size*0.5+(origin-camera)*world_zoom,extent*world_zoom).grow(4))
+	# The existing visible cache also contains complete solid gate posts. Keep
+	# captions off their wood/stone without scanning all map scenery each frame.
+	for object in scenery_cache:
+		if str(object.get("source_unit",""))!="complete blocking portal base":continue
+		var origin:=Vector2(float(object.x),float(object.y))
+		var extent:=Vector2(float(object.get("width_px",24)),float(object.get("height_px",48)))
+		reserved.append(Rect2(view.size*0.5+(origin-camera)*world_zoom,extent*world_zoom).grow(4))
 	for label in existing_labels:reserved.append(project_bounds.call(label))
 	var accepted: Array=[]
 	var audit: Array=[]
@@ -1607,17 +1615,29 @@ func _readable_gather_labels(map: Dictionary, captions: Array, existing_labels: 
 		var placed: Dictionary={}
 		var placed_bounds:=original
 		var placement:="OMITTED_NO_SAFE_SLOT"
+		var candidates: Array=[]
 		for row in range(5):
 			var candidate: Dictionary=caption.duplicate()
 			# Below-icon top edge has eight screen pixels of clear space.
 			if row>0:candidate.height=-(font.get_ascent(14)+16.0+float(row-1)*step)/world_zoom
+			candidates.append({"label":candidate,"placement":"ORIGINAL" if row==0 else "BELOW_ICON_ROW_"+str(row)})
+		# A tightly stacked gateway can occupy every centered row. Try the same
+		# below-icon rows beside it only after preserving all centered choices.
+		for row in range(1,5):
+			for side in [1,-1]:
+				var candidate: Dictionary=caption.duplicate()
+				candidate.height=-(font.get_ascent(14)+16.0+float(row-1)*step)/world_zoom
+				candidate.x=float(candidate.x)+float(side)*(original.size.x*0.5+40.0)/world_zoom
+				candidates.append({"label":candidate,"placement":"BELOW_ICON_ROW_"+str(row)+("_RIGHT" if side==1 else "_LEFT")})
+		for choice in candidates:
+			var candidate: Dictionary=choice.label
 			var bounds: Rect2=project_bounds.call(candidate)
-			if row>0 and not viewport.encloses(bounds):continue
+			if str(choice.placement)!="ORIGINAL" and not viewport.encloses(bounds):continue
 			var overlaps:=false
 			for occupied in reserved:
 				if occupied.intersects(bounds):overlaps=true;break
 			if overlaps:continue
-			placed=candidate;placed_bounds=bounds;placement="ORIGINAL" if row==0 else "BELOW_ICON_ROW_"+str(row)
+			placed=candidate;placed_bounds=bounds;placement=str(choice.placement)
 			break
 		if not placed.is_empty():accepted.append(placed);reserved.append(placed_bounds)
 		audit.append({"node_id":str(caption.get("node_id","")),"text":str(caption.text),"placement":placement,"original_rect":[original.position.x,original.position.y,original.size.x,original.size.y],"placed_rect":[placed_bounds.position.x,placed_bounds.position.y,placed_bounds.size.x,placed_bounds.size.y] if not placed.is_empty() else [],"height":float(placed.get("height",48.0)) if not placed.is_empty() else null})
