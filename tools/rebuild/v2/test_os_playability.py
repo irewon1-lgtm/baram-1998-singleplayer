@@ -345,21 +345,11 @@ def main():
             if learned:return True
             target=next((r for r in controls if r['text'].startswith(name+' 학습')),None)
             if target:
-                rect=target['rect']
-                previous=next((r['rect'] for r in controls if r['text']=='이전'),None)
-                footer=next(r['rect'] for r in controls if r['text']=='닫기 / 취소')
-                clip_end=(previous[1] if previous else footer[1])-4
-                offset=0
-                if rect[1]+rect[3]>clip_end:
-                    row_rects=[r['rect'] for r in controls if abs(r['rect'][0]-rect[0])<1 and abs(r['rect'][2]-rect[2])<1 and r['text'] not in ['닫기 / 취소','다음','이전']]
-                    offset=max(0,max(r[1]+r[3] for r in row_rects)-clip_end)
-                    focus();run('mousemove','--window',x.window,int(rect[0]+rect[2]/2),int(clip_end-50));log('mouse_wheel',direction='down',steps=20,description='ordinary dialogue scroll to '+name)
-                    run('click','--repeat',20,'--delay',20,'5');time.sleep(.35)
+                if not click_scrollable_row(name+' 학습','dialogue'):return False
                 capture('visible-learning-'+str(page)+'-'+str(len(observations)))
-                click_xy(rect[0]+rect[2]/2,rect[1]+rect[3]/2-offset,'visible scrolled '+name+' 학습')
                 after=state(3.3)
                 learned_ids=[sid for sid in after['skills'] if content['skills'][sid]['name']==name]
-                observe('ordinary_scrolled_learning',skill_name=name,page=page+1,scroll_offset_px=offset,learned_ids=learned_ids,character=after['character'])
+                observe('ordinary_scrolled_learning',skill_name=name,page=page+1,geometry='Actual fresh scroll-region clip and global row rect',learned_ids=learned_ids,character=after['character'])
                 return bool(learned_ids)
             if not button('다음',exact=True,optional=True):return False
             time.sleep(.35)

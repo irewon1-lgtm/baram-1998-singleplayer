@@ -21,6 +21,12 @@ import sys
 from threading import Lock
 
 
+ANDROID_PACKAGE = 'com.irewon.baram.p3repair20261016'
+RETAINED_SIGNER_SHA256 = 'c0bc3989d93d7b9443bbfa59281797a48e2b020e5da4b1dc91858768b35ccd05'
+OLD_VERSION_CODE = 3
+OLD_APK_SHA256 = '54316901c31bef6e748bcd2935dbe6812f811f307e11f2d1f72fb2a3294fc970'
+
+
 def digest(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
@@ -45,6 +51,32 @@ def file_digest(path: Path) -> str:
         return hashlib.file_digest(stream, 'sha256').hexdigest()
 
 
+def android_install_contract(receipt: dict) -> dict:
+    """Validate measured final-APK metadata from the hash-bound export receipt."""
+    version = receipt.get('version_code')
+    manifest = receipt.get('final_apk_manifest')
+    if type(version) is not int or version <= OLD_VERSION_CODE:
+        raise ValueError('Final Android receipt must declare an increasing integer version code')
+    if not isinstance(manifest, dict) or type(manifest.get('version_code')) is not int:
+        raise ValueError('Measured final Android manifest is missing its integer version code')
+    if manifest['version_code'] != version or manifest.get('version_name') != receipt.get('version_name'):
+        raise ValueError('Final APK manifest version differs from its export receipt')
+    if (manifest.get('package') != ANDROID_PACKAGE
+            or receipt.get('installed_package') != ANDROID_PACKAGE
+            or receipt.get('staged_options', {}).get('package') != ANDROID_PACKAGE):
+        raise ValueError('Final Android candidate must retain the existing repair package')
+    if (receipt.get('retained_signer_sha256') != RETAINED_SIGNER_SHA256
+            or receipt.get('final_apk_signer_matches_retained') is not True
+            or receipt.get('new_signing_key_created') is not False
+            or receipt.get('retained_private_key_used') is not True):
+        raise ValueError('Final APK export must verify the retained signer without creating an app key')
+    return {'package': ANDROID_PACKAGE, 'old_version_code': OLD_VERSION_CODE,
+            'new_version_code': version, 'new_version_name': manifest['version_name'],
+            'retained_signer_sha256': RETAINED_SIGNER_SHA256,
+            'old_apk_baseline_sha256': OLD_APK_SHA256,
+            'final_apk_signer_matches_retained': True, 'new_app_signing_key_created': False}
+
+
 def prepare(args) -> None:
     if args.session.exists() and any(args.session.iterdir()):
         raise ValueError('Use an empty new session directory; never overwrite a session')
@@ -53,6 +85,7 @@ def prepare(args) -> None:
     android = read(args.android_export / 'EXPORT_RECEIPT.json')
     if any(r.get('result') != 'PASS_EXPORT_ONLY' for r in [windows, android]):
         raise ValueError('Both exports must have successful exporter receipts')
+    android_contract = android_install_contract(android)
     common = ['source_commit', 'source_content_fingerprint', 'runtime_manifest_sha256']
     for key in common:
         if windows.get(key) != android.get(key):
@@ -71,7 +104,8 @@ def prepare(args) -> None:
     public = key.public_key().public_bytes(serialization.Encoding.PEM, serialization.PublicFormat.SubjectPublicKeyInfo).decode('ascii')
     (args.session / 'session-public-key.pem').write_text(public, encoding='ascii')
     files = {'windows': Path(windows['windows_zip']['path']), 'new': Path(android['artifact']['path']), 'old': args.old_apk.resolve()}
-    expected = {'windows': windows['windows_zip']['sha256'], 'new': android['artifact']['sha256']}
+    expected = {'windows': windows['windows_zip']['sha256'], 'new': android['artifact']['sha256'],
+                'old': OLD_APK_SHA256}
     chunks = []
     contract = {}
     for label, path in files.items():
@@ -97,6 +131,7 @@ def prepare(args) -> None:
         'windows-manifest.json': {**shared, 'schema': 'baram.v2.native_chunks/1',
                                   'zip_sha256': contract['windows']['sha256'], 'chunks': contract['windows']['chunks']},
         'android-manifest.json': {**shared, 'schema': 'baram.v2.android_native_chunks/1',
+                                  **android_contract,
                                   'new_apk_sha256': contract['new']['sha256'], 'old_apk_sha256': contract['old']['sha256'],
                                   'new_apk_chunks': contract['new']['chunks'], 'old_apk_chunks': contract['old']['chunks']},
     }
@@ -112,12 +147,16 @@ def prepare(args) -> None:
         'ANDROID_NATIVE_REQUEST.json': {**request_shared, 'schema': 'baram.v2.android_native_request/1',
                                         'private_manifest_path': args.prefix + '/android-manifest.json',
                                         'new_apk_sha256': contract['new']['sha256'], 'old_apk_sha256': contract['old']['sha256'],
-                                        'package': 'com.irewon.baram.p3repair20261016', 'old_version_code': 3, 'new_version_code': 4},
+                                        'package': android_contract['package'],
+                                        'old_version_code': android_contract['old_version_code'],
+                                        'new_version_code': android_contract['new_version_code'],
+                                        'retained_signer_sha256': android_contract['retained_signer_sha256']},
     }
     for name, value in requests.items():
         write(args.session / (name + '.template'), value)
     write(args.session / 'SESSION.json', {'schema': 'baram.v2.native_staging_session/1', **shared,
           'prefix': args.prefix, 'chunks': chunks, 'manifest_names': list(manifests),
+          'android_install_contract': android_contract,
           'request_names': list(requests), 'native_execution': 'NOT_RUN', 'new_paid_resources': False})
     print(json.dumps({'prepared_chunks': len(chunks), 'source_commit': shared['source_commit'], 'native_execution': 'NOT_RUN'}))
 

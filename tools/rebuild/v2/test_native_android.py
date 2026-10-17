@@ -54,13 +54,28 @@ def request(path: Path) -> dict:
     for k in ['new_apk_sha256','old_apk_sha256','source_content_fingerprint','runtime_manifest_sha256']:
         if not re.fullmatch('[0-9a-f]{64}', d.get(k, '')):
             raise ValueError('Exact hash required: '+k)
-    if d.get('package') != PACKAGE or d.get('old_version_code') != 3 or d.get('new_version_code') != 4:
-        raise ValueError('Retained repair package and code 3 to code 4 required')
+    old_version, new_version = d.get('old_version_code'), d.get('new_version_code')
+    if (d.get('package') != PACKAGE or type(old_version) is not int or old_version != 3
+            or type(new_version) is not int or new_version < 4 or new_version <= old_version):
+        raise ValueError('Retained repair package and increasing code 3 to code 4 or newer required')
+    if 'retained_signer_sha256' in d and d['retained_signer_sha256'] != RETAINED_CERT:
+        raise ValueError('Request signer differs from retained repair identity')
     if not d.get('private_manifest_path','').startswith('v2-native/'):
         raise ValueError('Isolated private manifest required')
     if not d.get('encryption_public_key_pem','').startswith('-----BEGIN PUBLIC KEY-----'):
         raise ValueError('Session encryption public key required')
     return d
+
+
+def apk_manifest(raw: bytes) -> dict:
+    match = re.search(rb"^package: name='([^']+)' versionCode='([0-9]+)'", raw, re.MULTILINE)
+    if not match:
+        raise ValueError('Cannot read measured APK package/version from aapt badging')
+    return {'package': match[1].decode('utf-8'), 'version_code': int(match[2])}
+
+
+def installed_version_codes(raw: bytes) -> list[int]:
+    return [int(value) for value in re.findall(rb'^\s*versionCode=([0-9]+)(?:\s|$)', raw, re.MULTILINE)]
 
 
 def prepare(args) -> int:
@@ -71,6 +86,9 @@ def prepare(args) -> int:
     for k in ['source_commit','source_content_fingerprint','runtime_manifest_sha256','new_apk_sha256','old_apk_sha256']:
         if m.get(k) != d[k]:
             raise ValueError('Private manifest does not match request: '+k)
+    for k in ['package', 'old_version_code', 'new_version_code', 'retained_signer_sha256']:
+        if k in m and m[k] != d.get(k, RETAINED_CERT if k == 'retained_signer_sha256' else None):
+            raise ValueError('Private APK install contract does not match request: '+k)
     args.output.mkdir(parents=True,exist_ok=True)
     args.inputs.mkdir(parents=True,exist_ok=True)
     prepared = {'schema':'baram.v2.android_native_prepared/1'}
@@ -114,7 +132,8 @@ class Probe:
             **{k:d[k]for k in ['new_apk_sha256','old_apk_sha256','source_commit','source_content_fingerprint','runtime_manifest_sha256']},
             'platform':'Android API35 x86_64 KVM emulator on standard public Ubuntu24.04 runner',
             'checks':[],'screenshots':[],'commands':[],
-            'scope':'Exact APK ordinary launch, ADB OS touch creation/walk/dialogue close/save/restart plus code3 to code4 update. Synthetic new characters without state grants.',
+            'package':PACKAGE,'old_version_code':d['old_version_code'],'new_version_code':d['new_version_code'],
+            'scope':f"Exact APK ordinary launch, ADB OS touch creation/walk/dialogue close/save/restart plus code{d['old_version_code']} to code{d['new_version_code']} update. Synthetic new characters without state grants.",
             'fingerprint_scope':'Source/runtime fingerprints are pinned exporter contracts. APK bytes are measured here; embedded source provenance is not reconstructed.',
             'visual_review':'PENDING_ENCRYPTED_SCREENSHOT_REVIEW','smoke_fixture':'NOT_RUN',
             'physical_Galaxy':'NOT_RUN','physical_IME':'NOT_RUN_ASCII_ADB_INPUT_ONLY',
@@ -324,22 +343,27 @@ class Probe:
         (self.out/'old-code3-save-before-update.json').write_bytes(saved[2])
         self.record_stop();return saved
 
-    def install(self,apk,label,expected):
+    def install(self,apk,label,expected,expected_version):
         raw=self.adb(['install','-r','--no-incremental','--no-streaming',str(apk)],'install-'+label,timeout=150)
         self.check(label+'_install_success',b'Success'in raw)
         path=self.adb(['shell','pm','path',PACKAGE],label+'-installed-path').decode().strip().removeprefix('package:')
         if not re.fullmatch(r'/data/app/[A-Za-z0-9_./=+-]+/base\.apk',path):raise RuntimeError('Unexpected installed APK path')
         raw=self.adb(['shell','sha256sum',path],label+'-installed-byte-hash')
         self.check(label+'_installed_exact_apk',raw.decode().startswith(expected+' '))
+        raw=self.adb(['shell','dumpsys','package',PACKAGE],label+'-installed-package-version')
+        versions=installed_version_codes(raw)
+        self.check(label+'_installed_package_version',bool(versions)and all(v==expected_version for v in versions),
+                   {'requested_version':expected_version,'observed_version_codes':versions})
 
     def run_new(self,old_saved):
-        self.launch('new-code4',observe=True);self.record_start('new-code4')
+        version=self.d['new_version_code'];new_label='new-code'+str(version)
+        self.launch(new_label,observe=True);self.record_start(new_label)
         if old_saved:
             preserved=self.wait(lambda:self.named_save('NativeOld'))
-            self.check('code3_to4_update_preserves_save_bytes',preserved[2]==old_saved[2],{'before':sha(old_saved[2]),'after':sha(preserved[2])})
+            self.check(f'code3_to{version}_update_preserves_save_bytes',preserved[2]==old_saved[2],{'before':sha(old_saved[2]),'after':sha(preserved[2])})
             self.button('이어 하기')
             loaded=self.wait(lambda:self.stage('loaded'))
-            self.check('code4_reads_old_character',all(loaded['character'].get(k)==old_saved[1]['character'].get(k)for k in ['name','level','job','map_id','x','y']))
+            self.check(f'code{version}_reads_old_character',all(loaded['character'].get(k)==old_saved[1]['character'].get(k)for k in ['name','level','job','map_id','x','y']))
             self.screenshot('updated-old-character-resumed')
             self.button('저장 · 처음으로')
         self.button('새 캐릭터');self.button('name_input')
@@ -347,8 +371,8 @@ class Probe:
         self.adb(['shell','input','keyevent','KEYCODE_BACK'],'new-hide-keyboard');time.sleep(.5)
         self.button('만들고 시작')
         original=self.wait(lambda:self.named_save('NativeNew'))
-        self.check('new_code4_ordinary_Lv1_creation',original[1]['character']['level']==1 and original[1]['character']['job']=='commoner')
-        self.screenshot('new-code4-created')
+        self.check(f'new_code{version}_ordinary_Lv1_creation',original[1]['character']['level']==1 and original[1]['character']['job']=='commoner')
+        self.screenshot(new_label+'-created')
         row=self.wait(lambda:self.layout('대화'));x,y,w,h=row['view_rect']
         before=tuple(original[1]['character'][k]for k in ['map_id','x','y'])
         after=before
@@ -376,12 +400,12 @@ class Probe:
         self.button('저장 · 처음으로')
         saved=self.wait(lambda:self.named_save('NativeNew'))
         self.capture_system('after-ordinary-play');self.record_stop()
-        self.launch('restart-code4',observe=True)
+        self.launch('restart-code'+str(version),observe=True)
         self.select_character('NativeNew')
         self.button('이어 하기')
         loaded=self.wait(lambda:self.stage('loaded'))
         self.check('force_stop_restart_retains_character',all(loaded['character'].get(k)==saved[1]['character'].get(k)for k in ['name','level','job','map_id','x','y']),{'loaded_character':loaded['character']})
-        self.screenshot('new-code4-resumed');self.button('저장 · 처음으로')
+        self.screenshot(new_label+'-resumed');self.button('저장 · 처음으로')
         self.refresh()
         self.receipt['observed_engine_performance']=[r['details']for r in self.rows if r.get('stage')in ['performance','frame_timing']]
 
@@ -398,8 +422,9 @@ def run(args) -> int:
             apk=Path(prepared[label+'_apk'])
             probe.check(label+'_exact_input_hash',sha(apk.read_bytes())==d[label+'_apk_sha256'])
             raw=probe.command([str(build/'aapt'),'dump','badging',str(apk)],label+'-badging')
-            expected=("package: name='%s' versionCode='%s'"%(PACKAGE,d[label+'_version_code'])).encode()
-            probe.check(label+'_package_version',expected in raw)
+            measured=apk_manifest(raw)
+            probe.receipt.setdefault('measured_apk_manifests',{})[label]=measured
+            probe.check(label+'_package_version',measured=={'package':PACKAGE,'version_code':d[label+'_version_code']},measured)
             raw=probe.command([str(build/'apksigner'),'verify','--print-certs',str(apk)],label+'-signature')
             cert=re.search(rb'certificate SHA-256 digest: ([0-9a-f]{64})',raw)
             probe.check(label+'_retained_signer',bool(cert)and cert[1].decode()==RETAINED_CERT)
@@ -408,14 +433,14 @@ def run(args) -> int:
         probe.capture_system('before-install')
         stream=(probe.out/'logcat-all.log').open('wb')
         logger=subprocess.Popen(probe.base+['logcat','-b','all','-v','threadtime'],stdout=stream,stderr=subprocess.STDOUT)
-        probe.install(Path(prepared['old_apk']),'old-code3',d['old_apk_sha256'])
+        probe.install(Path(prepared['old_apk']),'old-code3',d['old_apk_sha256'],d['old_version_code'])
         try:old_saved=probe.create_old()
         except Exception as error:
             failed=True;probe.receipt['old_update_setup_failure']=type(error).__name__+': '+str(error);probe.save()
             try:probe.screenshot('old-setup-failed')
             except Exception:pass
             probe.record_stop()
-        probe.install(Path(prepared['new_apk']),'new-code4',d['new_apk_sha256'])
+        probe.install(Path(prepared['new_apk']),'new-code'+str(d['new_version_code']),d['new_apk_sha256'],d['new_version_code'])
         try:probe.run_new(old_saved)
         except Exception as error:
             failed=True;probe.receipt['new_probe_failure']=type(error).__name__+': '+str(error);probe.save()
@@ -447,7 +472,7 @@ def run(args) -> int:
 def public_summary(args) -> int:
     d=request(args.request);path=args.output/'execution/RUN_RECEIPT.json'
     receipt=json.loads(path.read_text())if path.exists()else{'status':'BLOCKED_BEFORE_ANDROID_PROBE','checks':[]}
-    public={k:receipt.get(k,d.get(k))for k in ['schema','status','platform','new_apk_sha256','old_apk_sha256','source_commit','source_content_fingerprint','runtime_manifest_sha256','scope','fingerprint_scope','visual_review','smoke_fixture','physical_Galaxy','physical_IME','physical_listening','account_sync','performance_scope']}
+    public={k:receipt.get(k,d.get(k))for k in ['schema','status','platform','package','old_version_code','new_version_code','measured_apk_manifests','new_apk_sha256','old_apk_sha256','source_commit','source_content_fingerprint','runtime_manifest_sha256','scope','fingerprint_scope','visual_review','smoke_fixture','physical_Galaxy','physical_IME','physical_listening','account_sync','performance_scope']}
     public['check_results']=[{'id':x['id'],'status':x['status']}for x in receipt.get('checks',[])]
     public['screenshots_videos_logs']='ENCRYPTED_ONLY_NO_PUBLIC_PLAINTEXT'
     write(args.summary,public);return 0
