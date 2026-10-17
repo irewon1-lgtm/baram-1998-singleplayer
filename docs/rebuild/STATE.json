@@ -13,7 +13,7 @@
   "handoff_commit": "82e09f50861065c8e763efe34f7634d0e95e2e82",
   "app_behavior_commit": "4a0c8d796e65a0493207221f2eb60b78d006c681",
   "current_phase": "B5",
-  "current_phase_execution": "R13_FIXED_EXACT_PACK_CONTINUOUS1800_RUNNING",
+  "current_phase_execution": "R13_FUNCTIONAL1806_COMPLETE_COLD_SAVE_FAIL_R14_MINIMAL_FIX_IN_PROGRESS",
   "authorization": {
     "goal_and_plan": "USER_APPROVED",
     "ordered_followup_work": "B1_THROUGH_B6_WITHIN_FREE_SCOPE",
@@ -163,10 +163,10 @@
   "next_action": {
     "owner": "Work",
     "phase": "B5",
-    "action": "Continue already-running final30-r13 process (now past900s), no duplicate run and no heavy parallel work. Preserve first116.114ms cold save inside phase. After1800+normal save/restart, analyze full first/restart traces, confirm cold existing_read phase, then select prepared minimum metadata-copy fix only if evidence supports; run affected cold/storage checks and exact updated-candidate ordinary validation. Other verified engine/data/skills stay retained. Native/account/physical gates persist.",
+    "action": "Preserve completed r13 exact-pack1806.054s functional26PASS and cold performance FAIL. Inspected first save116.099ms existing_read76.163 and restart103.415ms existing_read70.253. Apply minimum writer metadata ownership copy fix, isolated cold correctness/timing plus affected storage regressions. Exact new candidate shortcold+1800 replay is required only for changed store; unchanged G1/engine/UI proofs retained. No research/SDK/character reset.",
     "on_environment_block": "Continue independent B5 code/UI/assets and adapter tests; native physical devices and authenticated roundtrip remain explicitly BLOCKED/NOT_RUN. B6 promotion blocked by B5 failures.",
     "do_not_repeat": "No full inventory/SDK/parser reset; reuse verified toolchain and unchanged evidence; only changed-source affected final suites.",
-    "resume_from": "RUNNING final30-r13 session21905/display127/PID77003/temp /tmp/baram-ordinary-fbkrto2m. Source4a0, PCKd5558c69, runtime4791e101. Driver0654 publisheda299, analysisf5ded194+wrapper2947 source0fad09b. Short14PASS:137first+2restart saves0>100, coldrestart99.805ms; measuredtailsretained. Do not replay short preflight."
+    "resume_from": "Current r13 processes ended exit0 and all recorder/Godot/RSS stopped. Existing earned character Lv18/kills263/pickups632/deaths0. final30-r13 logs and pinnedF5 analysis retained; analyzer external command correlation clockdrift investigation separate, actual receipt→draw event_id binding valid."
   },
   "retry_policy": {
     "deterministic_unchanged_failure": "CHANGE_METHOD",
@@ -212,7 +212,7 @@
   },
   "publication": {
     "method": "Atomic documentation/model commit on existing active Work branch, expected-HEAD lease, no force push",
-    "verification": "Read branch after final expected-HEAD update; app behavior remains c9fe9288; next HEAD contains evidence/state only."
+    "verification": "Expected-HEAD work branch documentation checkpoint; main untouched. Current candidate app4a0 remains current exported source, store-only successor under test."
   },
   "execution_20261017": {
     "baseline_head": "39c7e4a2fe5f555b5d32a1e973930f3671d508ef",
@@ -260,7 +260,7 @@
       "content_sha256": "f1e45c2a7045e130b842325751ab81cf38c22ac92df62ddafe33700aa9267fca",
       "runtime_generation": "WORK-V2-G1-20261017",
       "runtime_variant": "r12-final",
-      "ordinary_final30": "RUNNING_NOT_A_FINAL_RESULT",
+      "ordinary_final30": "R13_FUNCTIONAL_COMPLETE_COLD_PERFORMANCE_FAIL_NOT_FINAL_CANDIDATE_ACCEPTANCE",
       "native": "BLOCKED_BEFORE_RUNNER_STEPS_EXACT_REASON_NOT_OBSERVED",
       "account_sync": "BLOCKED_NO_IDENTIFIED_GAME_AUTHENTICATED_ENDPOINT",
       "ordinary_operator_correction": "Clamped map camera projection and actual lower-right overlay boundary; previous short attempts preserved as harness failures, not game pathfinding failures.",
@@ -290,7 +290,7 @@
       },
       "actual_operator_sha256": "1b00a9cbefaa3038814b30a90f361b7dd1f2d1029f7521cfa55539c8a4cdae67",
       "active_run": {
-        "status": "RUNNING_NOT_A_FINAL_RESULT",
+        "status": "ENDED_FUNCTIONAL26_PASS_COLD_PERFORMANCE_FAIL",
         "exec_session_id": 21905,
         "display": 127,
         "host_game_pid": 77003,
@@ -305,9 +305,12 @@
         "final_report": "evidence/b5-play/final30-r13/OS_PLAYABILITY.json",
         "final_analysis": "evidence/b5-play/final30-r13/FINAL_ANALYSIS.json",
         "instruction": "Do not restart valid run. Required1800-second uninterrupted marker-defined stress with actual integrated transactions. First process, stress, separate restart and all tails retained; no new off/on replay.",
-        "continuous_stress_start_unix_ns": 1792206246679055369
+        "continuous_stress_start_unix_ns": 1792206246679055369,
+        "all_processes_ended": true,
+        "observed_continuous_seconds": 1806.054,
+        "wall_seconds": 1825.74
       },
-      "functional_scope_gap": "Shop visits in current30min do not change money/inventory; separate short actual sale/purchase/owned-equipment/save followup prepared, not counted as in-phase trades.",
+      "functional_scope_gap": "Actual same-kind spare weapon sale/purchase/new-instance equip all occurred within completed continuous phase; stronger weapon upgrade not observed.",
       "observed_final_candidate_failure": {
         "source_commit": "82e09f50861065c8e763efe34f7634d0e95e2e82",
         "runtime_manifest_sha256": "4791e101c547f0a3848297b40b0e424acd776ac85c2d455e40e1f83c4bd1fdf0",
@@ -363,26 +366,29 @@
       "preflight": "evidence/b5-play/final-preflight-r13/OS_PLAYABILITY.json",
       "analysis_provenance": "Separate first-process/restart clocks; actual analyzer/input/output receipts retained. Full acceptance not yet reached.",
       "live_known_incident": {
-        "status": "OBSERVED_RETAINED_NOT_EXCLUDED",
-        "first_cold_save_ms": 116.114,
+        "status": "FINAL_OBSERVED_RETAINED_NOT_EXCLUDED",
+        "first_cold_save_ms": 116.099,
         "inside_stress": true,
-        "phase_trace_pending_until_normal_menu_flush": true,
-        "at_stress_seconds": 915,
-        "saves_observed": 422,
-        "saves_over100ms": 1,
-        "all_saved_status": "SAVED",
-        "repeated_warm_over100_observed": 0,
-        "app_source_unchanged": "4a0c8d796e65a0493207221f2eb60b78d006c681"
+        "first_existing_read_ms": 76.163,
+        "restart_first_save_ms": 103.415,
+        "restart_existing_read_ms": 70.253,
+        "firstprocess_stress_saves": 855,
+        "firstprocess_stress_over100ms": 1,
+        "restart_saves": 2,
+        "restart_over100ms": 1,
+        "phase_trace_pending_until_normal_menu_flush": false,
+        "source": "4a0c8d796e65a0493207221f2eb60b78d006c681"
       },
       "conditional_cold_followup": {
-        "status": "PROPOSAL_AND_TOOLS_ONLY_NOT_APPLIED_OR_EXECUTED",
+        "status": "ACTUAL_PHASE_CONFIRMED_MINIMUM_PROPOSAL_APPLY_AND_AFFECTED_TESTS_IN_PROGRESS",
         "proposal": "evidence/store-cold-proposal.diff",
         "existing_short_first_existing_read_ms": 67.687,
         "existing_short_next_existing_read_ms": 2.188,
         "test_prepared": "tools/rebuild/v2/test_store_cold.gd",
         "OS_probe_prepared": "tools/rebuild/v2/test_os_cold_resume.py",
         "restriction": "Keep current1800 process unchanged; inspect completed actual cold phase before selecting minimum fix. Full validation, cache ownership, source/archive preservation remain mandatory."
-      }
+      },
+      "analysis_correlation_incident": "PinnedF5 command→receipt greedy matching used single cross-clock sync; monotonic drift caused actual event to be rejected then later repeated key stolen. Preserve rawanalysis. Actual event_id receipt→draw valid; external command cross-clock latency not validated pending minimal analyzer correction."
     }
   }
 }
