@@ -8,12 +8,12 @@
   "active_branch": "work/rebuild-p3-remediation-20261016",
   "entrypoint": "AGENTS.md",
   "master_plan": "docs/rebuild/MASTER_PLAN.md",
-  "status": "B5_USER_REPORTED_PLAYABILITY_FAIL_REPAIR_IN_PROGRESS",
-  "implementation_status": "G1_RETAINED_USER_PLAYABILITY_FAILURES_REOPENED",
-  "handoff_commit": "d124aa6c23c753f1fa1edd810b0b0386e3b80315",
-  "app_behavior_commit": "c9fe92886cb738708b189bd14f0c40299ddef301",
+  "status": "B5_REPAIR_FINAL_R12_VALIDATION_IN_PROGRESS",
+  "implementation_status": "G1_RETAINED_PLAYABILITY_REPAIR_HOST_VALIDATED_NATIVE_LONG_PLAY_PENDING",
+  "handoff_commit": "d213590f85375f2fb7dea9a389e214a175bccd75",
+  "app_behavior_commit": "be47c61631366c8fa3307c047435a38a151085e4",
   "current_phase": "B5",
-  "current_phase_execution": "REPAIR_IN_PROGRESS",
+  "current_phase_execution": "FINAL_R12_ORDINARY_PLAY_AND_NATIVE_VALIDATION",
   "authorization": {
     "goal_and_plan": "USER_APPROVED",
     "ordered_followup_work": "B1_THROUGH_B6_WITHIN_FREE_SCOPE",
@@ -163,10 +163,10 @@
   "next_action": {
     "owner": "Work",
     "phase": "B5",
-    "action": "Measure same full G1 idle/move/path/combat/dialogue/save route; repair reproduced bottlenecks and fixed modal close controls/building assembly, revalidate affected save and engine paths; then remaining four-job play, native platforms/auth sync and B6 same candidate.",
+    "action": "Finish frozen r12 ordinary30min full G1 XTEST/unedited video/frames/save tests, then exact hash-pinned native Windows and Android update using existing free public runners and existing private vault. Resolve actual failures, retain account and physical device limits; consolidate RESULTS/VERIFICATION/DELIVERY and deliver exact files.",
     "on_environment_block": "Continue independent B5 code/UI/assets and adapter tests; native physical devices and authenticated roundtrip remain explicitly BLOCKED/NOT_RUN. B6 promotion blocked by B5 failures.",
     "do_not_repeat": "No full inventory/SDK/parser reset; reuse verified toolchain and unchanged evidence; only changed-source affected final suites.",
-    "resume_from": "Current HEAD plus B5 work-in-progress; source/runtime restored without reset; use existing Godot4.6.3/export toolchain and retained private signer."
+    "resume_from": "d213590f source; appbe47 unchanged52files; r12 runtime4791e101. Existing Godot4.6.3 and retained signer. Running final30-r12; export-r12 Windows/Android started, do not reexport absent changed inputs."
   },
   "retry_policy": {
     "deterministic_unchanged_failure": "CHANGE_METHOD",
@@ -250,8 +250,31 @@
       "NPC_dialogue_close_not_readily_accessible",
       "map_building_visual_defects"
     ],
-    "developer_reproduction": "IN_PROGRESS",
+    "developer_reproduction": "REPRODUCED_BOTTLENECK_AND_MODAL_INPUT_VISUAL_REPAIRS_EXECUTED",
     "scope": "Keep B0-B4/G1 IDs, fix affected B3/B4 code/assets within B5; actual platform/sync/update gates retained",
-    "prior_evidence_policy": "Historical PASS logs retained, affected source/content/config/environment/scope revalidated; no unexecuted PASS"
+    "prior_evidence_policy": "Historical PASS logs retained, affected source/content/config/environment/scope revalidated; no unexecuted PASS",
+    "resume": {
+      "source_commit": "d213590f85375f2fb7dea9a389e214a175bccd75",
+      "app_behavior_commit": "be47c61631366c8fa3307c047435a38a151085e4",
+      "runtime_manifest_sha256": "4791e101c547f0a3848297b40b0e424acd776ac85c2d455e40e1f83c4bd1fdf0",
+      "content_sha256": "f1e45c2a7045e130b842325751ab81cf38c22ac92df62ddafe33700aa9267fca",
+      "runtime_generation": "WORK-V2-G1-20261017",
+      "runtime_variant": "r12-final",
+      "ordinary_final30": "RUNNING_OS_XTEST_LINUX_FULL_G1_UNACCELERATED_RECORDING",
+      "native": "EXACT_CANDIDATE_FREE_RUNNER_STAGING_NOT_YET_EXECUTED",
+      "account_sync": "BLOCKED_NO_IDENTIFIED_GAME_AUTHENTICATED_ENDPOINT",
+      "ordinary_operator_correction": "Clamped map camera projection and actual lower-right overlay boundary; previous short attempts preserved as harness failures, not game pathfinding failures.",
+      "visual_repair": "12 interiors use low door jambs instead of outdoor roof, arbitrary aisle removed, existing domestic tavern blocked cells use complete wooden tables; all76topology and gameplay rules unchanged.",
+      "new_gameplay_defect_if_any": "UNDER_OBSERVATION_NOT_PREDECLARED_PASS",
+      "evidence": [
+        "evidence/r12-impact-reuse.json",
+        "interior-repair-r12.json",
+        "map-render-r12-evidence/map-render.json",
+        "evidence/b5/ui-integrity-resume-final/ui-integrity.json",
+        "evidence/b5-engine/FINAL_R11_IMPACT_ASSESSMENT.json",
+        "evidence/b5-play/final30-r12/",
+        "evidence/native-resume/"
+      ]
+    }
   }
 }

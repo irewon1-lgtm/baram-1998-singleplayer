@@ -1,0 +1,348 @@
+{
+  "schema": "baram.b5.r12-impact-reuse/1",
+  "status": "PASS_STATIC_VISUAL_ONLY_IMPACT_AUDIT",
+  "scope": "Independent exactJSON comparisons and perfilehash audit only; no new game/natural/native/save execution claimed. Integrate into existing verification only.",
+  "inputs": {
+    "r11": {
+      "path": "private/baram-V2-G1-r11-final",
+      "runtime_sha256": "48a41ea15fa368d56df2c15e4901bc2d663d890b933971d290ce371c32764fb3",
+      "content_sha256": "9a7b634241bcd1dda2cf25b47d54b7b5b0849e4a5e2e81d9d4b4ea4fd343d800"
+    },
+    "r12": {
+      "path": "private/baram-V2-G1-r12-final",
+      "runtime_sha256": "4791e101c547f0a3848297b40b0e424acd776ac85c2d455e40e1f83c4bd1fdf0",
+      "content_sha256": "f1e45c2a7045e130b842325751ab81cf38c22ac92df62ddafe33700aa9267fca"
+    }
+  },
+  "content_top_level_changed_fields": [
+    "interior_presentation_repair",
+    "maps"
+  ],
+  "maps": {
+    "id_count_before": 76,
+    "id_count_after": 76,
+    "id_sets_equal": true,
+    "changed_map_count": 12,
+    "changed_maps": [
+      {
+        "map_id": "gp:map:tavern",
+        "name": "주막",
+        "changed_fields": [
+          "floor_png",
+          "ground_layers",
+          "objects",
+          "presentation_ground_ids",
+          "visual_buildings",
+          "visual_style"
+        ],
+        "visual_only": true
+      },
+      {
+        "map_id": "gp:map:forge",
+        "name": "대장간",
+        "changed_fields": [
+          "floor_png",
+          "ground_layers",
+          "objects",
+          "presentation_ground_ids",
+          "visual_buildings",
+          "visual_style"
+        ],
+        "visual_only": true
+      },
+      {
+        "map_id": "gp:map:warrior_guild",
+        "name": "전사길드",
+        "changed_fields": [
+          "floor_png",
+          "ground_layers",
+          "objects",
+          "presentation_ground_ids",
+          "visual_buildings",
+          "visual_style"
+        ],
+        "visual_only": true
+      },
+      {
+        "map_id": "gp:map:mage_guild",
+        "name": "주술사길드",
+        "changed_fields": [
+          "floor_png",
+          "ground_layers",
+          "objects",
+          "presentation_ground_ids",
+          "visual_buildings",
+          "visual_style"
+        ],
+        "visual_only": true
+      },
+      {
+        "map_id": "gp:map:rogue_guild",
+        "name": "도적길드",
+        "changed_fields": [
+          "floor_png",
+          "ground_layers",
+          "objects",
+          "presentation_ground_ids",
+          "visual_buildings",
+          "visual_style"
+        ],
+        "visual_only": true
+      },
+      {
+        "map_id": "gp:map:poet_guild",
+        "name": "도사길드",
+        "changed_fields": [
+          "floor_png",
+          "ground_layers",
+          "objects",
+          "presentation_ground_ids",
+          "visual_buildings",
+          "visual_style"
+        ],
+        "visual_only": true
+      },
+      {
+        "map_id": "g1:map:buya_tavern",
+        "name": "부여 주막",
+        "changed_fields": [
+          "floor_png",
+          "ground_layers",
+          "objects",
+          "presentation_ground_ids",
+          "visual_buildings",
+          "visual_style"
+        ],
+        "visual_only": true
+      },
+      {
+        "map_id": "g1:map:buya_forge",
+        "name": "부여 대장간",
+        "changed_fields": [
+          "floor_png",
+          "ground_layers",
+          "objects",
+          "presentation_ground_ids",
+          "visual_buildings",
+          "visual_style"
+        ],
+        "visual_only": true
+      },
+      {
+        "map_id": "g1:map:buya_warrior_guild",
+        "name": "부여 전사길드",
+        "changed_fields": [
+          "floor_png",
+          "ground_layers",
+          "objects",
+          "presentation_ground_ids",
+          "visual_buildings",
+          "visual_style"
+        ],
+        "visual_only": true
+      },
+      {
+        "map_id": "g1:map:buya_mage_guild",
+        "name": "부여 주술사길드",
+        "changed_fields": [
+          "floor_png",
+          "ground_layers",
+          "objects",
+          "presentation_ground_ids",
+          "visual_buildings",
+          "visual_style"
+        ],
+        "visual_only": true
+      },
+      {
+        "map_id": "g1:map:buya_rogue_guild",
+        "name": "부여 도적길드",
+        "changed_fields": [
+          "floor_png",
+          "ground_layers",
+          "objects",
+          "presentation_ground_ids",
+          "visual_buildings",
+          "visual_style"
+        ],
+        "visual_only": true
+      },
+      {
+        "map_id": "g1:map:buya_poet_guild",
+        "name": "부여 도사길드",
+        "changed_fields": [
+          "floor_png",
+          "ground_layers",
+          "objects",
+          "presentation_ground_ids",
+          "visual_buildings",
+          "visual_style"
+        ],
+        "visual_only": true
+      }
+    ],
+    "allowed_visual_keys": [
+      "floor_png",
+      "ground_layers",
+      "objects",
+      "presentation_ground_ids",
+      "visual_buildings",
+      "visual_style"
+    ],
+    "all_nonvisual_map_fields_exactly_equal": true,
+    "unexpected_changed_maps": [],
+    "preserved_fields_including": [
+      "id",
+      "name",
+      "width",
+      "height",
+      "tile_size",
+      "ground_ids",
+      "blocked",
+      "exits",
+      "spawns",
+      "source_geometry",
+      "geometry_note",
+      "map_version"
+    ],
+    "exit_count": 152,
+    "spawn_count": 752
+  },
+  "nonvisual_content_sections_exact_equal": {
+    "npcs": true,
+    "items": true,
+    "monsters": true,
+    "skills": true,
+    "jobs": true,
+    "xp_thresholds": true,
+    "start": true,
+    "gates": true,
+    "returns": true,
+    "respawn": true,
+    "config": true,
+    "advancements": true,
+    "quests": true,
+    "recipes": true,
+    "training_rules": true,
+    "rule_bindings": true,
+    "nation_starts": true,
+    "return_points": true,
+    "nation_gates": true,
+    "job_growth": true,
+    "progression_model": true,
+    "accepted_compatibility": true,
+    "compatibility": true,
+    "manifest_sha256": true,
+    "require_geometry_migration_contract": true
+  },
+  "all_app_source52_exactly_unchanged": true,
+  "source_mismatches": [],
+  "runtime_files": {
+    "r11_count": 3932,
+    "r12_count": 3994,
+    "added": [
+      "gameplay/world/repair/0ded0f9fbbf4-r12-0-0.png",
+      "gameplay/world/repair/0ded0f9fbbf4-r12-0-384.png",
+      "gameplay/world/repair/0ded0f9fbbf4-r12-384-0.png",
+      "gameplay/world/repair/0ded0f9fbbf4-r12-384-384.png",
+      "gameplay/world/repair/0ded0f9fbbf4d0eecd-floor-r12.png",
+      "gameplay/world/repair/25308b0848f7-r12-0-0.png",
+      "gameplay/world/repair/25308b0848f7-r12-0-384.png",
+      "gameplay/world/repair/25308b0848f7-r12-384-0.png",
+      "gameplay/world/repair/25308b0848f7-r12-384-384.png",
+      "gameplay/world/repair/25308b0848f7559e5a-floor-r12.png",
+      "gameplay/world/repair/3fd6014aa4a0-r12-0-0.png",
+      "gameplay/world/repair/3fd6014aa4a0-r12-0-384.png",
+      "gameplay/world/repair/3fd6014aa4a0-r12-384-0.png",
+      "gameplay/world/repair/3fd6014aa4a0-r12-384-384.png",
+      "gameplay/world/repair/3fd6014aa4a084e15b-floor-r12.png",
+      "gameplay/world/repair/693100fe4da3-r12-0-0.png",
+      "gameplay/world/repair/693100fe4da3-r12-0-384.png",
+      "gameplay/world/repair/693100fe4da3-r12-384-0.png",
+      "gameplay/world/repair/693100fe4da3-r12-384-384.png",
+      "gameplay/world/repair/693100fe4da3438788-floor-r12.png",
+      "gameplay/world/repair/6964ec144356-r12-0-0.png",
+      "gameplay/world/repair/6964ec144356-r12-0-384.png",
+      "gameplay/world/repair/6964ec144356-r12-384-0.png",
+      "gameplay/world/repair/6964ec144356-r12-384-384.png",
+      "gameplay/world/repair/6964ec144356cba45e-floor-r12.png",
+      "gameplay/world/repair/8d7fb9affd21-r12-0-0.png",
+      "gameplay/world/repair/8d7fb9affd21-r12-0-384.png",
+      "gameplay/world/repair/8d7fb9affd21-r12-384-0.png",
+      "gameplay/world/repair/8d7fb9affd21-r12-384-384.png",
+      "gameplay/world/repair/8d7fb9affd21c12f21-floor-r12.png",
+      "gameplay/world/repair/974991f32be5-r12-0-0.png",
+      "gameplay/world/repair/974991f32be5-r12-0-384.png",
+      "gameplay/world/repair/974991f32be5-r12-384-0.png",
+      "gameplay/world/repair/974991f32be5-r12-384-384.png",
+      "gameplay/world/repair/974991f32be5910e35-floor-r12.png",
+      "gameplay/world/repair/98723f59fc0d-r12-0-0.png",
+      "gameplay/world/repair/98723f59fc0d-r12-0-384.png",
+      "gameplay/world/repair/98723f59fc0d-r12-384-0.png",
+      "gameplay/world/repair/98723f59fc0d-r12-384-384.png",
+      "gameplay/world/repair/98723f59fc0d160424-floor-r12.png",
+      "gameplay/world/repair/b653f37b4ef4-r12-0-0.png",
+      "gameplay/world/repair/b653f37b4ef4-r12-0-384.png",
+      "gameplay/world/repair/b653f37b4ef4-r12-384-0.png",
+      "gameplay/world/repair/b653f37b4ef4-r12-384-384.png",
+      "gameplay/world/repair/b653f37b4ef4c2f6d4-floor-r12.png",
+      "gameplay/world/repair/c3c60addc2c1-r12-0-0.png",
+      "gameplay/world/repair/c3c60addc2c1-r12-0-384.png",
+      "gameplay/world/repair/c3c60addc2c1-r12-384-0.png",
+      "gameplay/world/repair/c3c60addc2c1-r12-384-384.png",
+      "gameplay/world/repair/c3c60addc2c1c10a42-floor-r12.png",
+      "gameplay/world/repair/ca0e784a2c6c-r12-0-0.png",
+      "gameplay/world/repair/ca0e784a2c6c-r12-0-384.png",
+      "gameplay/world/repair/ca0e784a2c6c-r12-384-0.png",
+      "gameplay/world/repair/ca0e784a2c6c-r12-384-384.png",
+      "gameplay/world/repair/ca0e784a2c6c44dfcb-floor-r12.png",
+      "gameplay/world/repair/fdd3b9d0275c-r12-0-0.png",
+      "gameplay/world/repair/fdd3b9d0275c-r12-0-384.png",
+      "gameplay/world/repair/fdd3b9d0275c-r12-384-0.png",
+      "gameplay/world/repair/fdd3b9d0275c-r12-384-384.png",
+      "gameplay/world/repair/fdd3b9d0275cfb2ac0-floor-r12.png",
+      "gameplay/world/repair/interior-door-jambs-r12.png",
+      "gameplay/world/repair/tavern-complete-wood-table-r12.png"
+    ],
+    "removed": [],
+    "changed": [
+      "gameplay_content.json"
+    ],
+    "r12_manifest_errors": [],
+    "r12_all_payload_bytes_verified": true
+  },
+  "save_impact": {
+    "r11_to_r12_same_declared_save_manifest": true,
+    "r11_to_r12_same_compatibility": true,
+    "accepted_source_rows_unchanged": true,
+    "geometry_migration_policy_unchanged": true,
+    "r3_exact_declared_source_stamp": "b77ae438524e0013a1d180f60d30ed262ef4886f6051546203cd2abf62320629",
+    "r3_actual_runtime_manifest_sha256": "6ffdfc0cbad388635dd641579adfdb12ad0539726d13e8fdfb7c4f0b4227d1a9",
+    "r3_matching_accepted_row_indexes": [
+      1
+    ],
+    "r3_map_transform_tables_unchanged": true,
+    "interpretation": "Production GameContent reads content.manifest_sha256 unchanged and Store writes that declared save stamp. It differs from SHA256(runtime.json); acceptedmigration pins intentionally match shipped declared save stamp,profile+allcompatfields. r11→r12 needs no geometry transformation; r3→r12 retains exact pinned62maptransformcontract. Static reuse argument, not new user save/device update test.",
+    "unchanged_engine_store_validators": "All sources identical; validators consume unchangedgeometry,IDs,definitions,compatibility and migration tables. Presentation keys are not payload state.",
+    "reuse": [
+      "storage-evidence/save-regression-r11-final.json",
+      "storage-evidence/save-migration-r11-final.json",
+      "storage-evidence/cell-migration-r11-final.json",
+      "storage-evidence/save-record-cache-final-fixed.json"
+    ]
+  },
+  "evidence_reuse": {
+    "ui24": "REUSED_WITH_IMPACT_AUDIT. Exactui/store/touch/classic source plus allNPC/service/item/skill definitions unchanged. The24 modal/tap/drag/cancel/save cases are unchanged; screenshots showr11 art only. Affected12rendered interior scenes require r12 new captures.",
+    "engine_and_acquisition": "REUSED_WITH_IMPACT_AUDIT. Engine/nav code and allnonvisual world/ID/growth/combat/economy fields exactlysame; priorfinal131/1323/3655/15 fixtures remain their scopes, not fresh counts.",
+    "early_midlate": "REUSED_WITH_IMPACT_AUDIT. R11 3seedaccelerated4job and12+4midlatefixtures observe same rules/geometry; their evidence is not realtimeGUI/fun acceptance.",
+    "navigation": "REUSED_WITH_IMPACT_AUDIT. All76nonvisualmapfields/exits/blocked/spawns/NPCs identical; r10→r11 priorpreservation retained.",
+    "render76": "REUSE64_UNCHANGED_MAPS_ONLY. Changed12interiors need new actualruntimeframe inspection; visual_reviewowns those captures.",
+    "performance": "R11 CPU logic and finalstore microprofile reuse scope only. ChangedPNG/objectcount can affectrendercost; final30min must inspect r12 scope or explicitly rerun affectedrender/performance route.",
+    "exports": "R11 export source39037843 fingerprint no longer represents r12 runtime. Final r12 exportreceipt/hash/parity/platform evidence required."
+  },
+  "remaining": [
+    "Visual_review actual12roomrender inspection",
+    "Exactr12exportreceipt/candidatehashes/parity",
+    "Finalordinarylongsession andnativeplatform/update/account gates stillpending"
+  ]
+}

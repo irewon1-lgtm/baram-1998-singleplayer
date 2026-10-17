@@ -1,0 +1,16 @@
+{
+  "source_commit": "be47c61631366c8fa3307c047435a38a151085e4",
+  "source_content_fingerprint": "ca67ab8060b979999896c00cd5216cc5f05d6ebbeaba8a2e6eb4b311cda80297",
+  "runtime_manifest_sha256": "4791e101c547f0a3848297b40b0e424acd776ac85c2d455e40e1f83c4bd1fdf0",
+  "encryption_public_key_pem": "-----BEGIN PUBLIC KEY-----\nMIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEArA+QRd+VhPyluvphpnfO\np2uc8Yei/R1sfW2ik0bkpKXGWWTAXZ9FkHv/ecOqahA8qbyPqkbeYWSP3imKk6Tm\n/Wfryv3N5rGK3cIx48RRddGN6oHwe96SZ3tfzwxFFLiWJ14JxfjDtVYdLbZiX7qL\nLW40H2h9Vc1oJ3Q6I7EDo3dvTpfx99fYOvdIGNje92qph1mINVVqz+eOcULqDKKo\ncOx/SAk7BERoHRdw1ujo0OJqgwAVPyc7DujfgicdDLhMkDhEt7SLQ3hM4Qajvz5I\nAtDiAP52UWvhKmiQInUAjhrTW+r5uIQYBQLvbLoXnGgGWIE7H4fXM8muDRC79pH3\nkVIytuiiqRvTA4wOy9ACChzGcKn9h4sid+w21zcMj5O3m8EFddeEqHkyPp2wSGlo\nsOy82x+xRv/8aW3f0VU10i3ZRaku5x08HrZlY7kuLt/IQxN4ilj/YxtzFacL55t3\nUFWm+ltHZKquDEv/Aox6Mrfhe6A0Pwomic8l8uA3v5f5AgMBAAE=\n-----END PUBLIC KEY-----\n",
+  "npc_probe": {
+    "map_id": "gp:map:domestic_city",
+    "x": 27,
+    "y": 33
+  },
+  "schema": "baram.v2.native_request/1",
+  "private_manifest_path": "v2-native/final-r12-20261017/windows-manifest.json",
+  "windows_zip_sha256": "f64f5abd5befeb87ccc50ef843e25f1e6016909aa2e17c2aff0d12d7403fa5d3",
+  "windows_exe_sha256": "75023c17094a74867b12ee5244b2c58c608bda78b44b49ae9820d25f40f6a8ab",
+  "vault_commit": "ac8a7307dd4e6e05bd286ee781ca627cd8283c96"
+}
