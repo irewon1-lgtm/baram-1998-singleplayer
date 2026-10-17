@@ -33,6 +33,8 @@ var _writing := false
 const MONSTER_RECORD_CACHE_LIMIT := 4096
 var _monster_record_cache: Dictionary = {}
 var _id_value_cache: Dictionary = {}
+var _json_strings: RegEx
+var _json_brackets: RegEx
 
 func _cache_monster_record(id: String, record: Dictionary) -> Dictionary:
 	var cached: Dictionary = _monster_record_cache.get(id,{})
@@ -334,6 +336,14 @@ func _migrate_payload(payload: Dictionary, contract: Dictionary, content: Dictio
 		if not content.maps.has(str(transforms[map_id].to_map_id)): return result("DEFERRED","migration.transform_target_map")
 	if not transforms.is_empty():
 		if typeof(candidate.get("character"))!=TYPE_DICTIONARY or not _transform_position(candidate.character,transforms): return result("DEFERRED","migration.character_position")
+		# Exploration references follow the same explicit old-map -> new-map
+		# contract as positions. Keeping a removed old ID here made an otherwise
+		# valid coordinate migration fail the authoritative payload validator.
+		if candidate.character.has("discovered_maps"):
+			if typeof(candidate.character.discovered_maps)!=TYPE_ARRAY:return result("INVALID_STATE","migration.discovered_maps_type")
+			for index in range(candidate.character.discovered_maps.size()):
+				var map_id: String=str(candidate.character.discovered_maps[index])
+				if transforms.has(map_id):candidate.character.discovered_maps[index]=transforms[map_id].to_map_id
 		if typeof(candidate.get("loot"))!=TYPE_ARRAY or typeof(candidate.get("monsters"))!=TYPE_DICTIONARY or typeof(candidate.get("pending_actions"))!=TYPE_ARRAY: return result("INVALID_STATE","migration.payload_shape")
 		for loot in candidate.loot:
 			if typeof(loot)!=TYPE_DICTIONARY or not _transform_position(loot,transforms): return result("DEFERRED","migration.loot_position")
@@ -362,8 +372,14 @@ func _migrate_payload(payload: Dictionary, contract: Dictionary, content: Dictio
 	# Existing living/dead monster instances keep their IDs, HP, cells and
 	# timers. Only absent content-generation spawns are initialized normally.
 	if typeof(candidate.get("monsters"))!=TYPE_DICTIONARY: return result("INVALID_STATE","migration.monsters")
-	var engine=GameState.new()
-	if not engine.configure(content): return result("INVALID_CONTENT","migration.configure")
+	# Definitions were already fully configured for this store generation.
+	# Reconfiguring the entire G2 world here duplicated every map/definition
+	# when an otherwise valid old backup was first examined by autosave.
+	# Only enumerate default spawns using the same private read-only engine;
+	# restore its scratch state before validating/returning the candidate.
+	var engine=_content_engine(content)
+	if engine==null: return result("INVALID_CONTENT","migration.configure")
+	var prior_state: Dictionary=engine.state
 	engine.state={"monsters":{}}
 	if bool(content.get("config",{}).get("lazy_world_spawns",false)):
 		# Existing records retain every HP/timer/drop. Initialize only visited maps.
@@ -379,6 +395,7 @@ func _migrate_payload(payload: Dictionary, contract: Dictionary, content: Dictio
 		if not candidate.monsters.has(id):
 			candidate.monsters[id]=engine.state.monsters[id].duplicate(true)
 			added.append(id)
+	engine.state=prior_state
 	return {"status":"OK","payload":candidate,"added_spawns":added}
 
 func _preserve_migration_source(path: String) -> Dictionary:
@@ -451,25 +468,36 @@ func _decode(text: String, owner: String, content: Dictionary, isolate: bool = t
 	_remember_decode(text, owner, decoded)
 	return decoded
 
+func _json_depth_allowed(text: String) -> bool:
+	# Perform the bounded-depth guard before JSON.parse, preserving the old
+	# 24-level limit. Native matching removes complete quoted strings first,
+	# so braces in names/escaped text are inert. GDScript then visits only
+	# structural brackets rather than every byte of a 400KB earned save.
+	# Malformed strings/escapes remain the parser's responsibility; valid JSON
+	# strings have disjoint quoted/non-escape branches, including UTF-8 text.
+	if _json_strings==null:
+		_json_strings=RegEx.new()
+		_json_strings.compile('"(?:[^"\\\\]|\\\\.)*"')
+		_json_brackets=RegEx.new()
+		_json_brackets.compile('[{}\\[\\]]')
+	var unquoted:=_json_strings.sub(text,"",true)
+	var depth:=0
+	var offset:=0
+	while offset<unquoted.length():
+		# Do not materialize every match before checking depth: a malformed
+		# MAX_BYTES file of opening brackets must stop at bracket25 as before.
+		var bracket:=_json_brackets.search(unquoted,offset)
+		if bracket==null:break
+		if bracket.get_string() in ["{","["]:
+			depth+=1
+			if depth>24:return false
+		else:depth-=1
+		offset=bracket.get_end()
+	return true
+
 func _decode_uncached(text: String, owner: String, content: Dictionary) -> Dictionary:
-	var utf8 := text.to_utf8_buffer()
-	if utf8.size() > MAX_BYTES: return result("SAVE_SIZE_LIMIT")
-	var depth := 0
-	var quoted := false
-	var escaped := false
-	# JSON structure uses ASCII only. Non-ASCII UTF-8 bytes are inert here;
-	# preserve the original quote/escape/depth order and let JSON.parse retain
-	# responsibility for malformed quotes, negative/final depth and escapes.
-	for c in utf8:
-		if escaped: escaped=false
-		elif quoted and c==92: escaped=true
-		elif c==34: quoted=not quoted
-		elif not quoted:
-			if c==123 or c==91:
-				depth+=1
-				if depth>24: return result("SAVE_DEPTH_LIMIT")
-			elif c==125 or c==93: depth-=1
-	utf8.clear()
+	if text.to_utf8_buffer().size() > MAX_BYTES: return result("SAVE_SIZE_LIMIT")
+	if not _json_depth_allowed(text): return result("SAVE_DEPTH_LIMIT")
 	var parser := JSON.new()
 	if parser.parse(text) != OK or typeof(parser.data) != TYPE_DICTIONARY: return result("CORRUPT","json")
 	var doc: Dictionary = parser.data
@@ -536,10 +564,18 @@ func _read_one(path: String, owner: String, content: Dictionary, isolate: bool =
 		return _decoded_metadata(decoded)
 	return _decode(text,owner,content,isolate)
 
-func read_game(path: String, owner: String, content: Dictionary) -> Dictionary:
+func read_game(path: String, owner: String, content: Dictionary, warm_backup: bool = false) -> Dictionary:
 	if not _id(owner): return result("OWNER_MISMATCH")
 	var primary := _read_one(path,owner,content)
 	primary.source=path
+	if primary.status=="OK" and warm_backup:
+		# Explicit Continue/load may prepare the prior backup before gameplay
+		# starts. Autosave still reads the real bytes every time and revalidates
+		# any external change. Keep this opt-in so generic cold reads/tests retain
+		# their original behavior, and report the loading work to the caller.
+		var began:=Time.get_ticks_usec()
+		var backup_prepared:=_read_one(path+".backup",owner,content,false,true)
+		primary["backup_preparation"]={"status":backup_prepared.status,"duration_ms":float(Time.get_ticks_usec()-began)/1000.0,"migration_required":backup_prepared.get("migration_required",false)}
 	if primary.status == "OK" or primary.status not in ["MISSING","CORRUPT","CHECKSUM_MISMATCH","INVALID_STATE"]: return primary
 	var backup := _read_one(path+".backup",owner,content)
 	if backup.status == "OK":

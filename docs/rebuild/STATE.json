@@ -8,12 +8,12 @@
   "active_branch": "work/rebuild-p3-remediation-20261016",
   "entrypoint": "AGENTS.md",
   "master_plan": "docs/rebuild/MASTER_PLAN.md",
-  "status": "G2_LARGE_WORLD_CANDIDATES_BUILT_PARTIAL_ACCEPTANCE",
+  "status": "B5_SINGLE_REFERENCE_REPAIR_IN_PROGRESS_USER_VISUAL_FAIL",
   "implementation_status": "PARTIAL_PERFORMANCE_NATIVE_ACCOUNT_GATES_REMAIN",
   "handoff_commit": "0627c774927d92b68936ffd3323129fa268967dd",
   "app_behavior_commit": "0627c774927d92b68936ffd3323129fa268967dd",
   "current_phase": "B5",
-  "current_phase_execution": "G2_LARGE_WORLD_CONTENT_HOST_VERIFIED_B6_FILES_READY_NATIVE_ACCOUNT_PERFORMANCE_REMAIN",
+  "current_phase_execution": "B5_SOURCE_FIRST_SINGLE_REFERENCE_REPAIR",
   "authorization": {
     "goal_and_plan": "USER_APPROVED",
     "ordered_followup_work": "B1_THROUGH_B6_WITHIN_FREE_SCOPE",
@@ -293,9 +293,9 @@
   "next_action": {
     "owner": "Work",
     "phase": "B5",
-    "action": "Resume from exact G2 cold save existing_read phase: first process480.966ms/restart88.921ms. Preserve checksum, archive, revision and rollback checks while reducing repeat decode/migration; rerun only affected cold/save and source-dependent checks. Native/account gates remain separate.",
-    "resume_from": "app0627c774 / G2 delivery runtime / evidence/g2-delivery-cold first-process and restart-process",
-    "do_not_repeat": "No reset, new plan/engine, full source inventory/decoder restart, unchanged native CI retry, or recount by names. Reuse current 111map/1105item/644ID(513meaningful)/262skill/84NPC/160quest/73recipe implementation."
+    "action": "Repair integrated HUD/building/visible door scene using retained originals; propagate to111maps/all exits. Profile cold existing_read in parallel.",
+    "resume_from": "d19cc36d/G2-r15 recovered exact bytes/1000021793.jpg single reference",
+    "do_not_repeat": "No original redownload/decoder reset/new plan/engine; reuse valid historic scoped evidence; no unrun PASS"
   },
   "retry_policy": {
     "deterministic_unchanged_failure": "CHANGE_METHOD",
@@ -2130,5 +2130,54 @@
     "app_source_commit": "0627c774927d92b68936ffd3323129fa268967dd",
     "native_update": "NOT_RUN",
     "full_B6_acceptance": "PENDING"
+  },
+  "single_reference_repair_20261017": {
+    "task_id": "BARAM_REBUILD_V2_B5_SINGLE_REFERENCE_REPAIR_20261017",
+    "incoming_head": "d19cc36da925fb1b39e7d624e2699a3461c3cfea",
+    "incoming_app": "0627c774927d92b68936ffd3323129fa268967dd",
+    "reference": {
+      "filename": "1000021793.jpg",
+      "sha256": "a12e4f779066c850ede58916c6933c57600b4662de7943884ba78bb6cc38e2d8",
+      "role": "USER_SELECTED_VISUAL_STYLE_NOT_HISTORICAL_PROOF",
+      "other_ten_ai_references": "NO_LONGER_REQUIRED"
+    },
+    "user_visual_status": "USER_REPORTED_FAIL",
+    "runtime_recovery": {
+      "artifact": "baram-G2-r15-private-runtime.zip",
+      "sha256": "00a6eccfe789217c4a10f35be5db785445ff658d62cc8fe363c71c552d88f378",
+      "originals_redownloaded": false
+    },
+    "required_order": [
+      "reference_scene_HUD_and_building",
+      "111maps_and_all_exits",
+      "four_classes_and_UI",
+      "save_and_frame_latency",
+      "native_platforms_and_B6_candidate"
+    ],
+    "verification_contract": {
+      "source": "Exact d19 HEAD blob hashes verified during restore; no reset",
+      "visual": "Actual rendered game, human inspection against sole reference, all111maps with overview; PNG presence is not visual PASS",
+      "exits": "Recount current runtime; OS input approach/enter/return with visible gate and save safety",
+      "performance": "Short affected save/frame checks retain untrimmed samples and scope. Thirty-minute stability NOT_RUN unless actually performed; no mandatory new long video.",
+      "native": "Windows/Android/Galaxy exact candidate actual execution; unavailable environment BLOCKED/NOT_RUN; emulator/Linux not native PASS",
+      "save": "Keep checksum/atomic replacement/backup/revision/migration/rollback; old saves never removed",
+      "completion": "B5 failures or missing native/account evidence prevent B6 final PASS"
+    },
+    "last_valid_result": "G2 r15 historical scoped tests retained; visual user failure overrides visual completion only",
+    "tests": [],
+    "native_status": "NOT_RUN",
+    "updated_at_utc": "2026-10-17T10:01:12.441377+00:00",
+    "user_override_1900_KST": {
+      "long30_and_unedited_video_required": false,
+      "priority": "111map/buildings/doors/UI/characters/effects actual visual quality; code/image repair",
+      "regression": "Short affected-function tests only; all-map visual and all-door checks retained",
+      "long_stability": "NOT_RUN",
+      "save_safety_and_candidate_validation": "RETAINED"
+    },
+    "storage_checkpoint": {
+      "source_sha256": "931dbf6cc30d3773130f92c52889ebd1f6ac8aa4233774b2dfe598b9927d335a",
+      "evidence": "docs/rebuild/v2/r16/SAVE_CHECKPOINT.json",
+      "new_world_save_migration": "NOT_RUN_PENDING_WORLD_FREEZE"
+    }
   }
 }
