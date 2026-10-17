@@ -8,12 +8,12 @@
   "active_branch": "work/rebuild-p3-remediation-20261016",
   "entrypoint": "AGENTS.md",
   "master_plan": "docs/rebuild/MASTER_PLAN.md",
-  "status": "G2_IMPLEMENTATION_IN_PROGRESS",
+  "status": "G2_CANDIDATES_FROZEN_INTEGRATED_OS_TEST_RUNNING",
   "implementation_status": "B5_REPAIR_CANDIDATE_HOST_SCOPE_ONLY_FULL_ACCEPTANCE_PENDING",
-  "handoff_commit": "82e09f50861065c8e763efe34f7634d0e95e2e82",
-  "app_behavior_commit": "639750f04d10ee4ac3c1a7113232b8c30109f078",
+  "handoff_commit": "0627c774927d92b68936ffd3323129fa268967dd",
+  "app_behavior_commit": "0627c774927d92b68936ffd3323129fa268967dd",
   "current_phase": "B5",
-  "current_phase_execution": "G2_COMPILED_ALL_ID_ACTIONS_HOST_VERIFIED_FINAL_UI_MIGRATION_PERFORMANCE_IN_PROGRESS",
+  "current_phase_execution": "G2_LARGE_WORLD_AND_CONTENT_HOST_COMMANDS_VERIFIED_EXACT_INSTALL_CANDIDATES_READY_1800S_OS_SESSION_RUNNING",
   "authorization": {
     "goal_and_plan": "USER_APPROVED",
     "ordered_followup_work": "B1_THROUGH_B6_WITHIN_FREE_SCOPE",
@@ -97,7 +97,8 @@
     "G2_registered": {
       "maps": 111,
       "items": 1105,
-      "monsters": 532,
+      "monsters": 644,
+      "meaningful_monsters": 513,
       "skills": 262,
       "npcs": 84,
       "quests": 160,
@@ -314,9 +315,9 @@
   "next_action": {
     "owner": "Work",
     "phase": "B5",
-    "action": "Freeze G2 final source and runtime; execute current-source save migration, GUI and 30min ordinary OS play; then exact-candidate Windows/Android exports and delivery.",
-    "resume_from": "2317f6bf / r14 source639750f0 / r12 contentf1e45c2a",
-    "do_not_repeat": "Existing G1 parser/inventory/30min evidence retained; retest only G2 dependencies."
+    "action": "Resume the already-running final G2 1800s OS session, then analyze raw frame/save/video evidence, package results and persist actual APK/Windows/runtime/evidence/video files. Do not restart the completed checks or frozen build.",
+    "resume_from": "source0627c774 / private G2 delivery runtime2c3844f1 / g2-delivery-ordinary30",
+    "do_not_repeat": "No reset, inventory/decode restart, unchanged native CI rerun or name-inclusive monster count."
   },
   "retry_policy": {
     "deterministic_unchanged_failure": "CHANGE_METHOD",
@@ -1911,6 +1912,71 @@
             "full_performance_pass": false
           }
         }
+      }
+    ]
+  },
+  "G2_integration_checkpoint": {
+    "app_source": "0627c774927d92b68936ffd3323129fa268967dd",
+    "runtime_manifest_sha256": "2c3844f186cb1e2387e7acafa3d9de037737d8c82ff9ee8058b89c7c86da92b3",
+    "tests": {
+      "all_ID_commands": {
+        "checks": 6872,
+        "failures": 0
+      },
+      "actions_skills": {
+        "checks": 2299,
+        "failures": 0
+      },
+      "save_migration": {
+        "checks": 894,
+        "failures": 0
+      },
+      "new_AI_roles": {
+        "checks": 401,
+        "failures": 0
+      },
+      "strict_structure": {
+        "checks": 1670,
+        "failures": 0
+      },
+      "fresh_four_jobs": {
+        "checks": 88,
+        "commands": 5955,
+        "failures": 0
+      },
+      "actual_PCK_GUI": {
+        "checks": 71,
+        "failures": 0
+      },
+      "actual_PCK_cold_resume": {
+        "checks": 72,
+        "result": "PASS_OBSERVED_SCOPE_PERFORMANCE_FAIL"
+      },
+      "APK_PCK_equal_files": 8990
+    },
+    "cold_performance": "FAIL:framep95~36-39ms/save528ms and153ms; preserve all tails",
+    "native_account": "Still NOT_RUN/BLOCKED, old runner failure not retried",
+    "artifacts": [
+      {
+        "filename": "baram-G2-r15-Android.apk",
+        "local_path": "/workspace/scratch/7a09b4f9ec28/deliverables/baram-G2-r15-Android.apk",
+        "bytes": 122877379,
+        "sha256": "1215248ce8b48c48036b0f9c584ce0066cef8dd8088d8c6069365a1f7b4e42e2",
+        "status": "BUILT_NOT_NATIVE_EXECUTION_VERIFIED"
+      },
+      {
+        "filename": "baram-G2-r15-Windows64.zip",
+        "local_path": "/workspace/scratch/7a09b4f9ec28/deliverables/baram-G2-r15-Windows64.zip",
+        "bytes": 80744260,
+        "sha256": "1dc970a0031e8989ea83da1fb477756701ed9ad2e6265f558b3c3e436d1d32d6",
+        "status": "BUILT_NOT_NATIVE_EXECUTION_VERIFIED"
+      },
+      {
+        "filename": "baram-G2-r15-private-runtime.zip",
+        "local_path": "/workspace/scratch/7a09b4f9ec28/deliverables/baram-G2-r15-private-runtime.zip",
+        "bytes": 126821300,
+        "sha256": "00a6eccfe789217c4a10f35be5db785445ff658d62cc8fe363c71c552d88f378",
+        "status": "BUILT_NOT_NATIVE_EXECUTION_VERIFIED"
       }
     ]
   }

@@ -25,7 +25,7 @@ func run():
  for row in targets:
   var mid:=str(row.mid);var c: Dictionary=app.game.state.character
   c.map_id=mid;c.x=row.point.x;c.y=row.point.y
-  app.game._spawn_map(mid);app.runtime_monster_map="";app.map_render_key="";app._close_dialogue();app._render_world()
+  app.game._spawn_map(mid);app.runtime_monster_map="";app.map_render_key="";app._close_dialogue();app.panel_dirty=true;app._refresh_panels();app._render_world()
   await process_frame;await process_frame;await RenderingServer.frame_post_draw
   check(mid+":render",app.view.draw_errors.is_empty() and not app.view.last_drawn.is_empty() and app.content.assets.errors.is_empty(),app.view.draw_errors)
   if n<6 or n%4==0:root.get_texture().get_image().save_png(out.path_join("world-%02d.png"%n))
@@ -40,6 +40,7 @@ func run():
   n+=1
  finish()
 func finish():
- var d={"status":"PASS"if failures==0 else"FAIL","scope":"Production UI and renderer with explicit location fixtures; not OS play, physical Windows/Android or visual perfection.","checks":checks,"failures":failures,"source_ui_sha256":FileAccess.get_sha256("res://ui/gameplay.gd")}
+ var ui_file: String="res://ui/gameplay.gdc" if FileAccess.file_exists("res://ui/gameplay.gdc") else "res://ui/gameplay.gd"
+ var d={"status":"PASS"if failures==0 else"FAIL","scope":"Production UI and renderer with explicit location fixtures; not OS play, physical Windows/Android or visual perfection.","checks":checks,"failures":failures,"ui_file":ui_file,"ui_sha256":FileAccess.get_sha256(ui_file)}
  var f=FileAccess.open(out.path_join("GUI.json"),FileAccess.WRITE);f.store_string(JSON.stringify(d,"  "))
  print(JSON.stringify({"checks":checks.size(),"failures":failures}));quit(0 if failures==0 else 1)
