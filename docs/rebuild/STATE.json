@@ -188,7 +188,7 @@
     "owner": "Work",
     "phase": "B5",
     "action": "Complete final111map/276door actual screenshot+ordinary-input sweep and independent human visual reviews; export exact frozen source/runtime Android version8 and Windows candidates; short final-PCK/save regressions only.",
-    "resume_from": "private_runtime_r16_final contenta628c8f5/runtimeec7faedf; docs/rebuild/v2/r16/SOURCE_FREEZE.json; evidence/R16_EXPORT_FREEZE.json",
+    "resume_from": "Finalsource9ee89c / private_runtime_r17_floor_final f25cd82b+64af0624 / evidence/world-qa-complete / architecture142captureplanned",
     "do_not_repeat": "No new plan/engine/original redownload/reset/30min video. Preserve all source counts/IDs/save invariants. Do not export known broken art or turn old logical PASS into visual PASS."
   },
   "retry_policy": {
@@ -2076,7 +2076,7 @@
   },
   "publication": {
     "method": "Atomic expected-HEAD lease on existing canonical Work branch; no force/main/production changes",
-    "last_published_app_source_commit": "b898438bc24f0a6a555727442edc81ea4ddb9de7",
+    "last_published_app_source_commit": "f36a67afc3d3acdc3e4aad58ca20cec59f423277",
     "verification": "Actual publication receipts in evidence/PUBLICATION-*.json. Additional actual-screen world/wardrobe and label fixes are local working changes pending final freeze/publication."
   },
   "execution_20261017": {
@@ -2200,7 +2200,7 @@
     "last_valid_result": "G2 r15 historical scoped tests retained; visual user failure overrides visual completion only",
     "tests": [],
     "native_status": "NOT_RUN",
-    "updated_at_utc": "2026-10-17T10:51:39.153810+00:00",
+    "updated_at_utc": "2026-10-17T11:06:49.855583+00:00",
     "user_override_1900_KST": {
       "long30_and_unedited_video_required": false,
       "priority": "111map/buildings/doors/UI/characters/effects actual visual quality; code/image repair",
@@ -2213,7 +2213,7 @@
       "evidence": "docs/rebuild/v2/r16/SAVE_CHECKPOINT.json",
       "new_world_save_migration": "PASS_PRIOR_R16_STORE_FIXTURE_FINAL_R17_CHANGED_COORDINATE_METADATA_REGRESSION_PENDING"
     },
-    "implementation_status": "FINAL_BYTES_FROZEN_111MAP_276DOOR_ACTUAL_QA_AND_CANDIDATES_BEGINNING",
+    "implementation_status": "FINAL_LABEL_AND_CONTINUOUS_FLOOR_FIX_FROZEN_ALL_MAP_DOOR_REVIEW_RUNNING",
     "source_freeze": "docs/rebuild/v2/r16/SOURCE_FREEZE.json",
     "actual_changes": [
       "native-derived integrated HUD and full-body equipment preview/footer controls",
@@ -2228,14 +2228,29 @@
       "explicit armor item.look honored; same-cell and adjacent service labels readable"
     ],
     "storage_final": {
-      "report": "save_work/r16-earned-migration-frozen-final.json",
-      "report_sha256": "fd9953e03a608f48905758166934f118db1dbe2779e954749c433044ead323e1",
-      "checks": 177,
-      "actual_writes": 6,
-      "status": "PASS_OBSERVED_STORE_FIXTURE",
-      "store_sha256": "3e4cc30682a2510b65eddffa010a905b0a143744246434c0682c5511a7b429b0"
+      "reports": [
+        "evidence/store-final/R17_EARNED_MIGRATION.json",
+        "evidence/store-final/R17_LV22_EARNED_MIGRATION.json"
+      ],
+      "checks_each": 63,
+      "actual_writes_each": 2,
+      "store_sha256": "3e4cc30682a2510b65eddffa010a905b0a143744246434c0682c5511a7b429b0",
+      "content_sha256": "f25cd82bcdcf857974a14585da7805f74089ef3e48840e1477350ff9c58056b1",
+      "runtime_manifest_sha256": "64af0624b9dd5e00e03dad3986bf5cade57a6f50580487361eaf6917a2727d75",
+      "status": "PASS_OBSERVED_STORE_FIXTURE; timing targets separately assessed",
+      "write_ms": [
+        148.824,
+        51.704,
+        98.161,
+        67.2
+      ],
+      "load_ms": [
+        485.843,
+        483.274
+      ],
+      "concurrent_headless_fixtures": true
     },
-    "all_maps_and_doors": "STARTING_FINAL_RUNTIME_OS_SWEEP_274_NEW_ROUTES_TWO_SCOPED_REUSED_PHYSICS_PASSES",
+    "all_maps_and_doors": "222_REMAINING_ROUTES_RUNNING_PLUS54_DEPENDENCY_PROVEN_PHYSICS_RESULTS_AND_FRESH_VISUALS",
     "superseded_sweep": {
       "runtime_manifest_sha256": "4c0889f3b730a0102c3448fbd599dac922a9410131f683ded989b011860d352f",
       "content_sha256": "dcfb92a75aa304b36c2325d513752d3214e54c13b4f4d5e5cd97f53bc6edbb81",
@@ -2244,8 +2259,10 @@
       "remaining": "Correct biome/floor/object selection and complete portal silhouettes; pair reverse landings to correct physical approach side; new frozen actual all-map/all-door sweep"
     },
     "long_stability": "NOT_RUN_USER_WAIVED_MANDATORY_LONG_TEST",
-    "frozen_runtime": "ec7faedff382f04be6c21a99d1b0909b07a5ef09366aa18689e610709300c56b",
-    "frozen_content": "a628c8f585a5256c94031c3cc3a8dab18c265b09a8ab2b44b3a5918da0895466",
-    "runtime_directory": "private_runtime_r16_final"
+    "frozen_runtime": "64af0624b9dd5e00e03dad3986bf5cade57a6f50580487361eaf6917a2727d75",
+    "frozen_content": "f25cd82bcdcf857974a14585da7805f74089ef3e48840e1477350ff9c58056b1",
+    "runtime_directory": "private_runtime_r17_floor_final",
+    "current_ui_sha256": "9ee89c189bed41a22d6fbbba6340b6819a6fbc2b843c6f8376c98e19a1130dc6",
+    "all_buildings": "140_unique_building_units_plus2_closed_gates_actual_detail_capture_and_review_in_progress"
   }
 }

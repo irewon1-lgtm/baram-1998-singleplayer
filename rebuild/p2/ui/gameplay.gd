@@ -1516,11 +1516,20 @@ func _readable_landmarks(map: Dictionary, camera: Vector2, world_zoom: float) ->
 	var player_cell:=Vector2(float(character.x),float(character.y))
 	var font:=ThemeDB.fallback_font
 	var viewport:=Rect2(Vector2.ZERO,view.size)
+	# A service landmark can name the same NPC at the exact same cell.
+	# Its actor name already identifies that entity; do not shift a duplicate.
+	var npc_names_by_cell: Dictionary={}
+	for id in runtime_npc_ids:
+		var npc: Dictionary=content.data.npcs[id]
+		var cell:=Vector2i(int(npc.x),int(npc.y))
+		if not npc_names_by_cell.has(cell):npc_names_by_cell[cell]={}
+		npc_names_by_cell[cell][str(npc.name)]=true
 	for landmark in map.get("landmarks",[]):
 		if not landmark.has("x") or not landmark.has("y"):continue
 		var title:=str(landmark.get("name",landmark.get("label","")))
 		if title.is_empty():continue
 		var cell:=Vector2i(int(landmark.x),int(landmark.y))
+		if npc_names_by_cell.get(cell,{}).has(title):continue
 		var priority:=2 if str(landmark.get("kind",""))=="exit" else 1 if str(landmark.get("kind",""))=="service" else 0
 		if by_cell.has(cell) and int(by_cell[cell].priority)>=priority:continue
 		var point:=Vector2(cell)*24+Vector2(12,24)
@@ -1534,13 +1543,33 @@ func _readable_landmarks(map: Dictionary, camera: Vector2, world_zoom: float) ->
 		return float(a.distance)<float(b.distance))
 	var accepted: Array=[]
 	var occupied: Array[Rect2]=[]
+	# Names use the same projected baseline as landmarks. Reserve the live
+	# player/NPC name rectangles before placing a gate caption, including the
+	# player's interpolated position while approaching or leaving a doorway.
+	var names: Array=[{"point":_visual_point("player",float(character.x),float(character.y))*24+Vector2(12,24),"text":str(character.name)}]
+	for id in runtime_npc_ids:
+		var npc: Dictionary=content.data.npcs[id]
+		names.append({"point":Vector2(float(npc.x)*24+12,float(npc.y)*24+24),"text":str(npc.name)})
+	for name_label in names:
+		var width:=font.get_string_size(name_label.text,HORIZONTAL_ALIGNMENT_LEFT,-1,14).x
+		var baseline: Vector2=view.size*0.5+(Vector2(name_label.point)-camera)*world_zoom+Vector2(-width*0.5,-48*world_zoom-8)
+		occupied.append(Rect2(baseline-Vector2(0,font.get_ascent(14)),Vector2(width,font.get_height(14))).grow(4))
+	var caption_step:=font.get_height(14)+10.0
 	for candidate in candidates:
-		if not viewport.encloses(candidate.bounds):continue
-		var overlaps:=false
-		for bounds in occupied:
-			if bounds.intersects(candidate.bounds):overlaps=true;break
-		if overlaps:continue
-		accepted.append(candidate.label);occupied.append(candidate.bounds)
+		# Prefer the original anchor, then an adjacent row above it. This moves
+		# only the text's screen-space height, never the door or landing cell.
+		for row in range(3):
+			var bounds: Rect2=candidate.bounds
+			bounds.position.y-=float(row)*caption_step
+			if not viewport.encloses(bounds):continue
+			var overlaps:=false
+			for reserved in occupied:
+				if reserved.intersects(bounds):overlaps=true;break
+			if overlaps:continue
+			var label: Dictionary=candidate.label.duplicate()
+			label.height=48.0+float(row)*caption_step/world_zoom
+			accepted.append(label);occupied.append(bounds)
+			break
 	return accepted
 
 func _append_depth_effect(layers: Array, sample: Dictionary, feet_y: float) -> void:

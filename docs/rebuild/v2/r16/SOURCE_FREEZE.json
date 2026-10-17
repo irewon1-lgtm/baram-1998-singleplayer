@@ -1,7 +1,7 @@
 {
   "schema": "baram.b5.single-reference-source-freeze/2",
-  "created_at_utc": "2026-10-17T10:51:39.153810+00:00",
-  "source_parent_commit": "b898438bc24f0a6a555727442edc81ea4ddb9de7",
+  "created_at_utc": "2026-10-17T11:06:49.855583+00:00",
+  "source_parent_commit": "f36a67afc3d3acdc3e4aad58ca20cec59f423277",
   "source_snapshot": {
     "README.md": "0687451467ceb59b42e092bcb737a7c5f00d68c23795c351f8de5cfcf349229a",
     "content/gameplay_content.gd": "b12d8fa265e6f358581ad56bfebe4729e33b37798680ecc09991ca671e43f403",
@@ -50,7 +50,7 @@
     "ui/classic_list.gd.uid": "47cd5fe93fb3c397f4b70d4262ac9904f8986ee8a8a1e9cd0e5bc9b173afe64f",
     "ui/classic_skin.gd": "c59765c5a40a3a463232beacaa48150e14cbd39ef75401fd4c04d77a11fe2c70",
     "ui/classic_skin.gd.uid": "8ff7e3ad98c45ed7a277dcd495e38ea04473937237a9dd008fee62645f33e589",
-    "ui/gameplay.gd": "afb7c0aac2b0cdab501f204c37ce1a7cbef70332f0514a91d3c0f60700fffe3d",
+    "ui/gameplay.gd": "9ee89c189bed41a22d6fbbba6340b6819a6fbc2b843c6f8376c98e19a1130dc6",
     "ui/gameplay.gd.uid": "4ab88fcbe286f3a7487d47206d9791a12697d2e305eaf66f404c99e85a15f3ce",
     "ui/inspection.gd": "7723983f94857f99ca87356294c7ba15e6b2123250eebd9c28b70766f4cb26b6",
     "ui/inspection.gd.uid": "add58e6bf30d786c35df024772a90881672606d9dc7daff84a92097acc7bd612",
@@ -61,10 +61,11 @@
     "ui/priority_inspection.gd": "5c35a54974dea36c5d4246e24c01deda0a5ae27b86911de9b2f6deebd259838b",
     "ui/priority_inspection.gd.uid": "30e351484f7f654315f405c4c5f96672caf7336970b9d0a3617a008ca061d499"
   },
-  "source_snapshot_sha256": "5d2a48ed9668f600249d0fcb7cc694366458f8c999449af60615c69e53023111",
-  "runtime_snapshot_sha256": "bb94c220de6e23dd2724309a44fd0b5bedad4100abdf74afe8da60ee3cf50be8",
-  "runtime_manifest_sha256": "ec7faedff382f04be6c21a99d1b0909b07a5ef09366aa18689e610709300c56b",
-  "content_sha256": "a628c8f585a5256c94031c3cc3a8dab18c265b09a8ab2b44b3a5918da0895466",
+  "source_snapshot_sha256": "f8d380718ffb7e60b12b4ca19940b8a398340c6c3a4ba64b6fe412d3444cc2f1",
+  "runtime_snapshot_sha256": "dc1d942f03f866422d5b470a432d4fbbe9de3f071921852d23592d2f2c1e0d4a",
+  "runtime_manifest_sha256": "64af0624b9dd5e00e03dad3986bf5cade57a6f50580487361eaf6917a2727d75",
+  "content_sha256": "f25cd82bcdcf857974a14585da7805f74089ef3e48840e1477350ff9c58056b1",
+  "actor_sha256": "55380a9e538e43f0a96717f19de566c71981472105e093090f12114dd15db57a",
   "counts": {
     "maps": 111,
     "items": 1105,
@@ -80,10 +81,24 @@
   "native_execution": "NOT_RUN_BLOCKED_ENVIRONMENT",
   "visual_quality": "PENDING_ALL111_ACTUAL_SCREEN_HUMAN_REVIEW",
   "ordinary_exit_checks": "PENDING_274_NEW_ROUTES_PLUS_2_PROVEN_DEPENDENCY_REUSED_ROUTES",
+  "reused_unaffected_evidence": {
+    "store": "evidence/store-final/FINAL_EARNED_MIGRATION_PROVENANCE.json; exact unchanged store and all mechanics; global runtime was ec7faedf before art-only continuous walk-floor refinement",
+    "mechanical_identity": "evidence/world-r17-continuous-floor-delta.json",
+    "actor_effect_wardrobe": "actor_effect_qa/FINAL_RELEASE_READY.json and SOURCE_LABEL_FOLLOWUP.json; unchanged actor/effect/wardrobe bodies and asset PNGs, later source changes only text placement",
+    "full_world_input": "52 prior full-route passes +2 pilot passes, explicitly dependency-proven reused;222 remaining routes and fresh affected visuals current freeze"
+  },
+  "label_render_followup": {
+    "change": "Reserve player/NPC name boxes and suppress identical NPC/service captions at same anchor",
+    "affected_same_name_service_maps": 18,
+    "duplicate_name_anchors": 60,
+    "controllers_unchanged": true,
+    "fresh_actual_visual_poses": "label_repair/npc-dedup in progress",
+    "runtime_or_save_changes": false
+  },
   "plan_id": "BARAM_REBUILD_V2_RESOURCE_FIRST_20261016",
   "plan_version": "2.1",
-  "freeze_status": "FINAL_BYTES_FROZEN_ACTUAL_111MAP_AND276DOOR_REVIEW_PENDING",
-  "runtime_file_count": 24938,
+  "freeze_status": "FINAL_BYTES_FROZEN_ACTUAL_ALL_MAP_DOOR_BUILDING_REVIEW_RUNNING",
+  "runtime_file_count": 27894,
   "private_full_freeze": "evidence/R16_EXPORT_FREEZE.json",
   "originals_and_old_saves_preserved": true,
   "artifact_status": "CANDIDATE_EXPORT_QUEUED_NATIVE_NOT_RUN"
