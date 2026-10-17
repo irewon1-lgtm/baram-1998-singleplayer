@@ -13,7 +13,7 @@
   "handoff_commit": "82e09f50861065c8e763efe34f7634d0e95e2e82",
   "app_behavior_commit": "82e09f50861065c8e763efe34f7634d0e95e2e82",
   "current_phase": "B5",
-  "current_phase_execution": "EXACT_FINAL_PCK_RESUMED_NATURAL_SAVE_PREFLIGHT_THEN_30MIN",
+  "current_phase_execution": "RUNNING_EXACT_82E_PCK_CONTINUOUS1800S_DO_NOT_RESTART",
   "authorization": {
     "goal_and_plan": "USER_APPROVED",
     "ordered_followup_work": "B1_THROUGH_B6_WITHIN_FREE_SCOPE",
@@ -163,10 +163,10 @@
   "next_action": {
     "owner": "Work",
     "phase": "B5",
-    "action": "Exact final82e embedded WindowsPCK ordinary Linux XTEST from byte-identical naturally earned17minsave: preflight actual fire+return and continuous1800s sameprocess; then full rawmetrics/video, consolidate central docs/files. Earlier17min automation failure retained; no freshcreation or repeated engine/store/content suites.",
+    "action": "Keep existing live exact82e/PCK session11289/display125; do not restart or repeat earned progress. Await continuous1800 marker and normal save/restart, then preserve full rawframes/video. Run separate short real transactions/captureoff-on with earned save, not another30min; verify all actual deltas. Final video decoding and canonical docs/delivery follow only completed evidence.",
     "on_environment_block": "Continue independent B5 code/UI/assets and adapter tests; native physical devices and authenticated roundtrip remain explicitly BLOCKED/NOT_RUN. B6 promotion blocked by B5 failures.",
     "do_not_repeat": "No full inventory/SDK/parser reset; reuse verified toolchain and unchanged evidence; only changed-source affected final suites.",
-    "resume_from": "Source82e09f50, r12runtime4791e101, final30-r12-ink (display123); new pack receiptsfp23a3cd4d. Final APKb46191db and WindowsZIPd332a2c7 saved. Native runner block retained; no same-condition retry."
+    "resume_from": "evidence/b5-play/final30-r12-ink/RUN_ANCHOR.json; active sameprocess PID60870/display125/session11289, continuous start1792202527742457846ns. Source82e/r12 frozen, OSoperator1b00a9...; exactPCK57e6d654. If session finishes, read OS_PLAYABILITY+FINAL_ANALYSIS rather than recreate. Tool checkpointb50df74b appunchanged."
   },
   "retry_policy": {
     "deterministic_unchanged_failure": "CHANGE_METHOD",
@@ -260,7 +260,7 @@
       "content_sha256": "f1e45c2a7045e130b842325751ab81cf38c22ac92df62ddafe33700aa9267fca",
       "runtime_generation": "WORK-V2-G1-20261017",
       "runtime_variant": "r12-final",
-      "ordinary_final30": "RUNNING_EXACT_82E_EMBEDDED_PCK_FROM_EARNED_SAVE",
+      "ordinary_final30": "RUNNING_NOT_FINAL_RESULT",
       "native": "BLOCKED_BEFORE_RUNNER_STEPS_EXACT_REASON_NOT_OBSERVED",
       "account_sync": "BLOCKED_NO_IDENTIFIED_GAME_AUTHENTICATED_ENDPOINT",
       "ordinary_operator_correction": "Clamped map camera projection and actual lower-right overlay boundary; previous short attempts preserved as harness failures, not game pathfinding failures.",
@@ -279,7 +279,7 @@
       "native_block_evidence": "docs/rebuild/v2/B5_NATIVE_RUNNER_BLOCK.json",
       "native_blocked_candidate": "pre-color be47 r12; current final label-only82e exports require exact input staging when runner block resolved",
       "color_only_impact": "docs/rebuild/v2/B5_COLOR_ONLY_IMPACT.json",
-      "ordinary_followup": "IN_PROGRESS_NORMAL_OS_PAGINATION_RESERVED_MATERIALS_NO_GRANTS",
+      "ordinary_followup": "SHORT_REAL_TRANSACTIONS_CAPTURE_COMPARISON_PREPARED_NOT_RUN",
       "previous_17min": {
         "status": "FAIL_HARNESS_CLIPPED_TARGET",
         "path": "evidence/b5-play/final30-r12/OS_PLAYABILITY.json",
@@ -287,7 +287,215 @@
         "video_seconds": 1019.433,
         "reason": "Operator clicked clipped buy row at y543 over fixedclosefootery542; modalclosednormally; laterclose absent",
         "app_close_failure_observed": false
-      }
+      },
+      "actual_operator_sha256": "1b00a9cbefaa3038814b30a90f361b7dd1f2d1029f7521cfa55539c8a4cdae67",
+      "active_run": {
+        "anchor": "evidence/b5-play/final30-r12-ink/RUN_ANCHOR.json",
+        "display": 125,
+        "exec_session": 11289,
+        "pid": 60870,
+        "continuous_start_unix_ns": 1792202527742457846,
+        "required_continuous_seconds": 1800,
+        "last_observation": {
+          "kind": "observation",
+          "wall_unix_ns": 1792203684447696293,
+          "operator_elapsed_s": 1233.841,
+          "name": "live_progress",
+          "play_seconds": 1156.71,
+          "character": {
+            "appearance": {
+              "variant": 0
+            },
+            "base_stats": {
+              "dexterity": 17,
+              "intelligence": 24,
+              "strength": 17
+            },
+            "dead": false,
+            "desired_job": "주술사",
+            "direction": 1,
+            "guardian": "주작",
+            "hp": 63,
+            "hp_max": 160,
+            "id": "character:0b5e7a416efc7924a434",
+            "job": "주술사",
+            "level": 13,
+            "map_id": "g1:map:8a2a4988d6daa5",
+            "money": 522,
+            "mp": 76,
+            "mp_max": 176,
+            "name": "finaljourney",
+            "nationality": "고구려",
+            "owner_id": "local-profile:default",
+            "x": 13,
+            "xp": 1461,
+            "y": 22
+          },
+          "stats": {
+            "deaths": 0,
+            "items_picked_up": 275,
+            "kills": 137,
+            "money_earned": 492,
+            "total_xp_earned": 1461
+          },
+          "skills": [
+            "KRO-3559b12ed6a7",
+            "KRO-972853314e6a"
+          ],
+          "inventory": [
+            {
+              "item_id": "KRO-ITEM-be19434c5b2ee6",
+              "quantity": 1
+            },
+            {
+              "item_id": "gp:item:starter_clothes",
+              "quantity": 1
+            },
+            {
+              "item_id": "KRO-ITEM-1ec5d43f9e157e",
+              "quantity": 2
+            },
+            {
+              "item_id": "KRO-ITEM-89a184f51172c1",
+              "quantity": 1
+            },
+            {
+              "item_id": "KRO-ITEM-89a184f51172c1",
+              "quantity": 1
+            },
+            {
+              "item_id": "KRO-ITEM-89a184f51172c1",
+              "quantity": 1
+            },
+            {
+              "item_id": "KRO-ITEM-e540569cf2f77a",
+              "quantity": 8
+            },
+            {
+              "item_id": "KRO-ITEM-5d3f28fbe15c37",
+              "quantity": 8
+            },
+            {
+              "item_id": "g1:item:c1a1446b0ac05e",
+              "quantity": 7
+            },
+            {
+              "item_id": "KRO-ITEM-36d2a69ca8aaa3",
+              "quantity": 14
+            },
+            {
+              "item_id": "KRO-ITEM-c8d54f0d074146",
+              "quantity": 24
+            },
+            {
+              "item_id": "KRO-ITEM-d910713dffb2ba",
+              "quantity": 13
+            },
+            {
+              "item_id": "KRO-ITEM-7670804897b9a4",
+              "quantity": 12
+            },
+            {
+              "item_id": "g1:item:23b51ed40dd0ae",
+              "quantity": 6
+            },
+            {
+              "item_id": "KRO-ITEM-492cb14182ef2e",
+              "quantity": 13
+            },
+            {
+              "item_id": "g1:item:1449a47df7a229",
+              "quantity": 3
+            },
+            {
+              "item_id": "KRO-ITEM-76b8e06d0ab195",
+              "quantity": 8
+            },
+            {
+              "item_id": "KRO-ITEM-141bfbda2f619e",
+              "quantity": 3
+            },
+            {
+              "item_id": "g1:item:e0c253e73280ad",
+              "quantity": 3
+            },
+            {
+              "item_id": "KRO-ITEM-265a90cf89d482",
+              "quantity": 11
+            },
+            {
+              "item_id": "KRO-ITEM-120fdb485c7407",
+              "quantity": 5
+            },
+            {
+              "item_id": "KRO-ITEM-ca37261fade592",
+              "quantity": 5
+            },
+            {
+              "item_id": "KRO-ITEM-39943ae5113d82",
+              "quantity": 6
+            },
+            {
+              "item_id": "KRO-ITEM-50d28676a7c7be",
+              "quantity": 3
+            },
+            {
+              "item_id": "g1:item:7abef27343f741",
+              "quantity": 5
+            },
+            {
+              "item_id": "KRO-ITEM-abc0cb0b1a967a",
+              "quantity": 11
+            },
+            {
+              "item_id": "KRO-ITEM-9c19c21786e16e",
+              "quantity": 9
+            },
+            {
+              "item_id": "KRO-ITEM-6c8be77cc6022f",
+              "quantity": 7
+            },
+            {
+              "item_id": "KRO-ITEM-cb2537570b58dd",
+              "quantity": 6
+            },
+            {
+              "item_id": "KRO-ITEM-9b0315683a8906",
+              "quantity": 7
+            },
+            {
+              "item_id": "KRO-ITEM-6f2ccc22622518",
+              "quantity": 4
+            },
+            {
+              "item_id": "KRO-ITEM-995567c3bc33c4",
+              "quantity": 1
+            },
+            {
+              "item_id": "KRO-ITEM-25b010e3c9722d",
+              "quantity": 6
+            },
+            {
+              "item_id": "KRO-ITEM-935836c3bb52c7",
+              "quantity": 2
+            },
+            {
+              "item_id": "KRO-ITEM-cbb12a848bb382",
+              "quantity": 3
+            },
+            {
+              "item_id": "KRO-ITEM-254fee8d880ea9",
+              "quantity": 9
+            },
+            {
+              "item_id": "KRO-ITEM-13da4dcfe86a58",
+              "quantity": 3
+            }
+          ]
+        },
+        "status": "RUNNING_NO_COMPLETION_CLAIM"
+      },
+      "functional_scope_gap": "Shop visits in current30min do not change money/inventory; separate short actual sale/purchase/owned-equipment/save followup prepared, not counted as in-phase trades."
     }
   }
 }
