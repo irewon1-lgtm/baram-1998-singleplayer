@@ -8,12 +8,12 @@
   "active_branch": "work/rebuild-p3-remediation-20261016",
   "entrypoint": "AGENTS.md",
   "master_plan": "docs/rebuild/MASTER_PLAN.md",
-  "status": "G2_CANDIDATES_FROZEN_INTEGRATED_OS_TEST_RUNNING",
-  "implementation_status": "B5_REPAIR_CANDIDATE_HOST_SCOPE_ONLY_FULL_ACCEPTANCE_PENDING",
+  "status": "G2_LARGE_WORLD_CANDIDATES_BUILT_PARTIAL_ACCEPTANCE",
+  "implementation_status": "PARTIAL_PERFORMANCE_NATIVE_ACCOUNT_GATES_REMAIN",
   "handoff_commit": "0627c774927d92b68936ffd3323129fa268967dd",
   "app_behavior_commit": "0627c774927d92b68936ffd3323129fa268967dd",
   "current_phase": "B5",
-  "current_phase_execution": "G2_LARGE_WORLD_AND_CONTENT_HOST_COMMANDS_VERIFIED_EXACT_INSTALL_CANDIDATES_READY_1800S_OS_SESSION_RUNNING",
+  "current_phase_execution": "G2_LARGE_WORLD_CONTENT_HOST_VERIFIED_B6_FILES_READY_NATIVE_ACCOUNT_PERFORMANCE_REMAIN",
   "authorization": {
     "goal_and_plan": "USER_APPROVED",
     "ordered_followup_work": "B1_THROUGH_B6_WITHIN_FREE_SCOPE",
@@ -55,20 +55,19 @@
     "delivery": "docs/rebuild/v2/DELIVERY.json",
     "results": "docs/rebuild/v2/RESULTS.md",
     "historical_evidence": "docs/rebuild/p3-remediation/",
-    "scope": "EXACT_R14_HOST_SCOPE_PARTIAL_NATIVE_ACCOUNT_PHYSICAL_GATES_REMAIN"
+    "scope": "G2_HOST_SCOPE_SOURCE_0627C774_PRIVATE_INSTALL_CANDIDATES_NOT_FULL_ACCEPTANCE"
   },
   "observed_counts": {
     "active": {
-      "maps": 76,
-      "monster_stable_ids": 346,
-      "monster_exact_semantics": 333,
-      "items": 593,
-      "skills": 190,
-      "npcs": 24,
-      "quests": 52,
-      "recipes": 9,
-      "advancements": 13,
-      "training_rules": 7
+      "maps": 111,
+      "items": 1105,
+      "monsters": 644,
+      "skills": 262,
+      "npcs": 84,
+      "quests": 160,
+      "recipes": 73,
+      "monster_stable_ids": 644,
+      "monster_exact_semantics": 513
     },
     "note": "Do not add heterogeneous row counts or compute a total completion percentage.",
     "G1": {
@@ -98,163 +97,142 @@
       "maps": 111,
       "items": 1105,
       "monsters": 644,
-      "meaningful_monsters": 513,
       "skills": 262,
       "npcs": 84,
+      "quests": 160,
+      "recipes": 73
+    },
+    "G2_command_executed": {
+      "items_executed": 1105,
+      "maps_reached_by_exits": 111,
+      "monsters_fought": 644,
+      "npcs_accessed": 84,
+      "skills": 262,
       "quests": 160,
       "recipes": 73
     }
   },
   "retained_actual_status": {
-    "Android": "NOT_RUN_CURRENT_R14_APK",
-    "Windows_native": "NOT_RUN_CURRENT_R14_EXE",
-    "Galaxy": "NOT_RUN_NO_DEVICE_ACCESS",
+    "Windows_native": "NOT_RUN",
+    "Android_native_install_update_save_retention": "NOT_RUN",
+    "Galaxy": "NOT_RUN",
     "OS_Korean_IME": "NOT_RUN",
-    "physical_listening": "NOT_RUN",
-    "same_account_roundtrip": "BLOCKED_NO_IDENTIFIED_GAME_AUTHENTICATED_ENDPOINT",
-    "original_city_grid": "UNRESOLVED_RECONSTRUCTION_NOW_AUTHORIZED",
-    "old_Android_save_automatic_migration": "NOT_VERIFIED",
+    "physical_audio_and_display_latency": "NOT_RUN",
+    "authenticated_account_roundtrip": "BLOCKED_NO_APPROVED_GAME_AUTHENTICATED_ENDPOINT",
+    "fine_balance_and_map_join_art": "TUNING_PENDING",
     "performance": {
-      "host_continuous_stress": {
-        "scope": "Every first-process active-play sample inside preregistered continuous1800s phase, no outliers removed. Marker-external active-play and new-process restart metrics are separate; menu/startup/trace-export gaps remain unmeasured and visible in raw video.",
-        "engine_wall_p95_le33_4": true,
-        "engine_wall_p99_le50": false,
-        "engine_input_feedback_p95_le100": true,
-        "OS_received_to_engine_draw_p95_le100": true,
-        "saves_over100ms": 0,
-        "long_wall_incidents": 155,
-        "OS_matching": {
-          "status": "OBSERVED",
-          "all_received_events": 3245,
-          "non_echo_presses": 1623,
-          "echo_events": 0,
-          "release_events": 1622,
-          "press_feedback_missing": 0,
-          "logged_commands": 1622,
-          "matched_commands": 1622,
-          "unmatched_commands": 0,
-          "matched_render_feedback": 1622,
-          "unmatched_engine_presses": 1,
-          "signature_sequence_status": "EXACT_UNIQUE_ORDERED_SEQUENCE",
-          "candidate_command_sequence_starts": [
-            1
-          ],
-          "global_logged_commands": 1631,
-          "global_engine_presses": 1627,
-          "global_signature_correlated_pairs": 1627,
-          "ambiguous_commands": 0,
-          "outside_receipt_phase_commands": 0,
-          "key_presses_without_name_or_ascii_code": 0,
-          "latency_outliers_removed": 0,
-          "method": "Unique complete contiguous ordered signature alignment of non-echo presses by normalized physical key name or mouse button and viewport x/y within 2px. No timestamp lower bound or latency cutoff. Ambiguous or incomplete sequence alignments are not forced. Signed cross-clock residuals retain negatives without calibration and cannot validate command latency. Receipt-to-draw uses event_id within the same engine clock."
+      "long": {
+        "status": "PASS_OBSERVED_SCOPE",
+        "engine_wall_frame_interval": {
+          "n": 124390,
+          "p50_ms": 13.353,
+          "p95_ms": 22.047,
+          "p99_ms": 33.509,
+          "max_ms": 643.445,
+          "over50ms": 832,
+          "over100ms": 53
         },
-        "actual_physical_OS_presentation": "NOT_RUN",
-        "human_fun_acceptance": "NOT_RUN",
-        "OS_command_matching_acceptance": "EXCLUDED_UNVALIDATED_CROSS_CLOCK_ALIGNMENT; exact signature correspondence and signed residuals retained; never used to award or fail an absolute command-latency target",
-        "scope_limit": "OS receive starts inside Godot and event-ID post_draw feedback is the bounded measured definition; not physical presentation/guaranteed changed pixels. Command→event latency has unvalidated cross-clock alignment; exact signature correspondence does not calibrate clock drift, so it is excluded from acceptance. Their tails remain in raw evidence; no latency cutoff.",
-        "first_process_active_play_long_wall_incidents": 155,
-        "restart_active_play_long_wall_incidents": 5,
-        "cold_active_play_long_wall_incidents": 7,
-        "all_recorded_active_play_long_wall_incidents": 167,
-        "restart_save_duration": {
-          "n": 2,
-          "p50_ms": 58.541,
-          "p95_ms": 84.181,
-          "p99_ms": 86.46,
-          "max_ms": 87.03,
-          "over50ms": 1,
-          "over100ms": 0
+        "engine_input_to_frame_post_draw": {
+          "n": 444,
+          "p50_ms": 21.168,
+          "p95_ms": 80.649,
+          "p99_ms": 126.881,
+          "max_ms": 160.048,
+          "over50ms": 91,
+          "over100ms": 11
         },
-        "cold_sublegs": {
-          "first-process": {
-            "first_save_ms": 85.978,
-            "save_duration": {
-              "n": 8,
-              "p50_ms": 34.736,
-              "p95_ms": 82.506,
-              "p99_ms": 85.284,
-              "max_ms": 85.978,
-              "over50ms": 2,
-              "over100ms": 0
-            },
-            "movement_seconds": 21.123055678999663,
-            "OS_received_to_frame_post_draw": {
-              "n": 7,
-              "p50_ms": 19.686,
-              "p95_ms": 22.429,
-              "p99_ms": 22.795,
-              "max_ms": 22.887,
-              "over50ms": 0,
-              "over100ms": 0
-            }
-          },
-          "restart-process": {
-            "first_save_ms": 81.716,
-            "save_duration": {
-              "n": 8,
-              "p50_ms": 34.195,
-              "p95_ms": 66.087,
-              "p99_ms": 78.59,
-              "max_ms": 81.716,
-              "over50ms": 1,
-              "over100ms": 0
-            },
-            "movement_seconds": 21.033642679001787,
-            "OS_received_to_frame_post_draw": {
-              "n": 7,
-              "p50_ms": 17.715,
-              "p95_ms": 25.068,
-              "p99_ms": 25.543,
-              "max_ms": 25.662,
-              "over50ms": 0,
-              "over100ms": 0
-            }
-          }
+        "save_duration": {
+          "n": 685,
+          "p50_ms": 46.977,
+          "p95_ms": 58.772,
+          "p99_ms": 67.029,
+          "max_ms": 474.195,
+          "over50ms": 177,
+          "over100ms": 1
         },
-        "all_save_sets": {
-          "full_first_process": {
-            "n": 858,
-            "p50_ms": 34.097,
-            "p95_ms": 43.824,
-            "p99_ms": 51.322,
-            "max_ms": 90.797,
-            "over50ms": 11,
-            "over100ms": 0
-          },
-          "full_restart_process": {
-            "n": 2,
-            "p50_ms": 58.541,
-            "p95_ms": 84.181,
-            "p99_ms": 86.46,
-            "max_ms": 87.03,
-            "over50ms": 1,
-            "over100ms": 0
-          },
-          "first-process": {
-            "n": 8,
-            "p50_ms": 34.736,
-            "p95_ms": 82.506,
-            "p99_ms": 85.284,
-            "max_ms": 85.978,
-            "over50ms": 2,
-            "over100ms": 0
-          },
-          "restart-process": {
-            "n": 8,
-            "p50_ms": 34.195,
-            "p95_ms": 66.087,
-            "p99_ms": 78.59,
-            "max_ms": 81.716,
-            "over50ms": 1,
-            "over100ms": 0
-          }
+        "target_assessment": {
+          "frame_delta_p95_le33_4": true,
+          "frame_delta_p99_le50": true,
+          "engine_wall_p95_le33_4": true,
+          "engine_wall_p99_le50": true,
+          "engine_render_feedback_p95_le100": true,
+          "saves_over100ms": 1,
+          "actual_OS_presentation": "NOT_RUN",
+          "human_fun_acceptance": "NOT_RUN"
         },
-        "all_recorded_save_count": 876,
-        "all_recorded_saves_under100ms": true,
-        "host_numeric_targets_met": false
+        "OS_received_to_frame_post_draw": null
       },
-      "host_overall": "PARTIAL_HOST_PERFORMANCE_TARGET_NOT_MET_NATIVE_ACCOUNT_GATES_REMAIN",
-      "physical_target_device": "NOT_RUN"
+      "cold": {
+        "first-process": {
+          "engine_wall_frame_interval": {
+            "n": 802,
+            "p50_ms": 24.951,
+            "p95_ms": 39.311,
+            "p99_ms": 61.102,
+            "max_ms": 566.738,
+            "over50ms": 13,
+            "over100ms": 3
+          },
+          "save_duration": {
+            "n": 8,
+            "p50_ms": 63.301,
+            "p95_ms": 369.753,
+            "p99_ms": 496.684,
+            "max_ms": 528.417,
+            "over50ms": 7,
+            "over100ms": 1
+          },
+          "target_assessment": {
+            "frame_delta_p95_le33_4": false,
+            "frame_delta_p99_le50": false,
+            "engine_wall_p95_le33_4": false,
+            "engine_wall_p99_le50": false,
+            "engine_render_feedback_p95_le100": true,
+            "saves_over100ms": 1,
+            "actual_OS_presentation": "NOT_RUN",
+            "human_fun_acceptance": "NOT_RUN"
+          }
+        },
+        "restart-process": {
+          "engine_wall_frame_interval": {
+            "n": 817,
+            "p50_ms": 24.826,
+            "p95_ms": 36.495,
+            "p99_ms": 86.01,
+            "max_ms": 522.278,
+            "over50ms": 11,
+            "over100ms": 6
+          },
+          "save_duration": {
+            "n": 8,
+            "p50_ms": 65.139,
+            "p95_ms": 126.259,
+            "p99_ms": 147.697,
+            "max_ms": 153.056,
+            "over50ms": 8,
+            "over100ms": 1
+          },
+          "target_assessment": {
+            "frame_delta_p95_le33_4": false,
+            "frame_delta_p99_le50": false,
+            "engine_wall_p95_le33_4": false,
+            "engine_wall_p99_le50": false,
+            "engine_render_feedback_p95_le100": true,
+            "saves_over100ms": 1,
+            "actual_OS_presentation": "NOT_RUN",
+            "human_fun_acceptance": "NOT_RUN"
+          }
+        }
+      },
+      "full_world_fixture": {
+        "full_world_file_bytes": 578229,
+        "full_world_monsters": 2026,
+        "full_world_read_ms": 20.473,
+        "full_world_write_ms": 164.224,
+        "g1_migration_read_ms": 502.518
+      },
+      "overall": "FAIL_NUMERIC_TARGETS_NOT_WAIVED",
+      "scope": "Untrimmed Linux software-rendered engine frame, receipt-to-post-draw and save measurements. Not native/physical display/input latency. Independent clocks stay separate."
     }
   },
   "defect_policy_changes": {
@@ -305,19 +283,19 @@
     },
     {
       "id": "B5",
-      "status": "PARTIAL_HOST_PERFORMANCE_TARGET_NOT_MET_NATIVE_ACCOUNT_GATES_REMAIN"
+      "status": "PARTIAL_PERFORMANCE_NATIVE_ACCOUNT_GATES_REMAIN"
     },
     {
       "id": "B6",
-      "status": "REPAIR_CANDIDATES_BUILT_FULL_ACCEPTANCE_BLOCKED"
+      "status": "G2_APK_WINDOWS_CANDIDATES_READY_NATIVE_UPDATE_AND_FULL_ACCEPTANCE_PENDING"
     }
   ],
   "next_action": {
     "owner": "Work",
     "phase": "B5",
-    "action": "Resume the already-running final G2 1800s OS session, then analyze raw frame/save/video evidence, package results and persist actual APK/Windows/runtime/evidence/video files. Do not restart the completed checks or frozen build.",
-    "resume_from": "source0627c774 / private G2 delivery runtime2c3844f1 / g2-delivery-ordinary30",
-    "do_not_repeat": "No reset, inventory/decode restart, unchanged native CI rerun or name-inclusive monster count."
+    "action": "Resume from exact G2 cold save existing_read phase: first process480.966ms/restart88.921ms. Preserve checksum, archive, revision and rollback checks while reducing repeat decode/migration; rerun only affected cold/save and source-dependent checks. Native/account gates remain separate.",
+    "resume_from": "app0627c774 / G2 delivery runtime / evidence/g2-delivery-cold first-process and restart-process",
+    "do_not_repeat": "No reset, new plan/engine, full source inventory/decoder restart, unchanged native CI retry, or recount by names. Reuse current 111map/1105item/644ID(513meaningful)/262skill/84NPC/160quest/73recipe implementation."
   },
   "retry_policy": {
     "deterministic_unchanged_failure": "CHANGE_METHOD",
@@ -335,7 +313,7 @@
   "gates": {
     "historical_exactness": "NOT_A_RELEASE_GATE",
     "fallback_route": "NOT_IMPLEMENTATION_COMPLETION",
-    "content": "G1 required IDs bound and functional with normal acquisition/use paths",
+    "content": "G2 required IDs have actual command paths; strict monster count513 excludes names/looks/aliases; whole-game natural balance remains tuning.",
     "platform_delivery": "Native visible UI, normal input/play/save/restart for that exact artifact; NOT_RUN is not PASS",
     "replacement_update": "Verified signing/package/save migration and rollback evidence",
     "full_goal": "All contracted platform and sequential-account requirements actually verified; otherwise scope-qualified PARTIAL"
@@ -359,1561 +337,1725 @@
       "docs/rebuild/STATE.json": "8db17a2bc2a66d7ee42b6ca145e62ad4bed49044",
       "docs/rebuild/MASTER_PLAN.md": "d4116a5321bffa149873bce5456d0f1ca913a392"
     },
-    "authority": "Historical STEP/WORK_ORDER/RESULTS/STATE_* are evidence of their past tasks, not current restrictions."
-  },
-  "publication": {
-    "method": "Atomic documentation/model commit on existing active Work branch, expected-HEAD lease, no force push",
-    "verification": "App639750f0/exports pinned separately from later tool/evidence commits; no main mutation."
-  },
-  "execution_20261017": {
-    "baseline_head": "39c7e4a2fe5f555b5d32a1e973930f3671d508ef",
-    "baseline_apk_sha256": "a30ab55f633a4d35047bc38ea591a087e070c109d1445eea19c39e4da8ce3789",
-    "prior_repair_apk_sha256": "2dfa25177df487ceb04067fb61efbb6e59a9fd0dd2e6d2a0704a4456fa811141",
-    "runtime_source_zip_sha256": "b97c533e5b979abc4d68470314b37e012898c97c450515c9b9364644c9543461",
-    "new_paid_resources": false,
-    "native_platform_verification": "BLOCKED_NO_ANDROID_DEVICE_OR_NATIVE_WINDOWS",
-    "sync": "BLOCKED_NO_APPROVED_FREE_AUTHENTICATED_SYNC_ENDPOINT",
-    "evidence": [
-      "docs/rebuild/v2/B1_DIAGNOSIS.json",
-      "docs/rebuild/v2/G1_CONTRACT.json",
-      "docs/rebuild/v2/SAVE_MIGRATION.md",
-      "docs/rebuild/v2/VERIFICATION.json",
-      "docs/rebuild/v2/RESULTS.md",
-      "docs/rebuild/v2/DELIVERY.json"
-    ],
-    "initial_generation": "Kept immutable; identified haste, equipment/effect field usage and save bank integration failures corrected before final freeze. Initial fixture/UI failures retained separately.",
-    "final_runtime_manifest_sha256": "6ffdfc0cbad388635dd641579adfdb12ad0539726d13e8fdfb7c4f0b4227d1a9",
-    "final_engine_sha256": "4ea4b760f4cdce69db6c8d12a4bfde79f798e0c7d5f3b8e9948725cc2cca3dd0",
-    "runtime_generation": "WORK-V2-G1-20261017",
-    "content_note": "Map geometry and missing mechanics reconstructed, source quantities not unique species count; current G1 every ID actual closure tests separate from native platform gates.",
-    "final_app_source_commit": "c9fe92886cb738708b189bd14f0c40299ddef301",
-    "host_gui_layout_limit": "89 logged PASS =74 GUI/fixture +12 logical panel bounds +3 nonempty framebuffers. Physical capture1100x720 valid;1600x900 request gives1375x900;600x960 request gives600x392. No full portrait/resolution PASS.",
-    "export_source_provenance": "Export git_head_at_export39c7 predates local ref advancement. Actual49 source/3411 runtime snapshot file hashes match published app sourcec9fe and shared fingerprint0f5a5259. No app/runtime modifications after candidate creation.",
-    "delivery": "docs/rebuild/v2/DELIVERY.json",
-    "delivered_file_count": 6,
-    "record_scope": "HISTORICAL_PRE_B5_CANDIDATE_NOT_CURRENT_FINAL",
-    "is_current": false
-  },
-  "playability_20261017": {
-    "task_id": "BARAM_V2_B5_B6_PLAYABILITY_20261017",
-    "baseline_head": "9f02bdf7f8b0ba73693600ad0d6c77665be9c0e7",
-    "baseline_app": "c9fe92886cb738708b189bd14f0c40299ddef301",
-    "user_reported_failures": [
-      "movement_action_stutter",
-      "NPC_dialogue_close_not_readily_accessible",
-      "map_building_visual_defects"
-    ],
-    "developer_reproduction": "REPRODUCED_BOTTLENECK_AND_MODAL_INPUT_VISUAL_REPAIRS_EXECUTED",
-    "scope": "Keep B0-B4/G1 IDs, fix affected B3/B4 code/assets within B5; actual platform/sync/update gates retained",
-    "prior_evidence_policy": "Historical PASS logs retained, affected source/content/config/environment/scope revalidated; no unexecuted PASS",
-    "resume": {
-      "status": "PARTIAL_HOST_PERFORMANCE_TARGET_NOT_MET_NATIVE_ACCOUNT_GATES_REMAIN",
-      "source_commit": "639750f04d10ee4ac3c1a7113232b8c30109f078",
-      "app_behavior_commit": "639750f04d10ee4ac3c1a7113232b8c30109f078",
-      "app_candidate": "r14",
-      "runtime_variant": "r12",
-      "runtime_manifest_sha256": "4791e101c547f0a3848297b40b0e424acd776ac85c2d455e40e1f83c4bd1fdf0",
-      "content_sha256": "f1e45c2a7045e130b842325751ab81cf38c22ac92df62ddafe33700aa9267fca",
-      "ordinary_final30": "PASS_OBSERVED_SCOPE",
-      "ordinary_final30_path": "evidence/b5-play/final30-r14/OS_PLAYABILITY.json",
-      "source_tools_commit": "214144adb934d8982938469c7465cdfd6d1327a4",
-      "tool_provenance": "evidence/FINAL_TOOL_PROVENANCE.json",
-      "evidence": [
-        "evidence/FIXED_SOURCE_FREEZE_R14.json",
-        "evidence/pack-parity-r14/PROVENANCE.json",
-        "evidence/b5-play/cold-resume-r14-fixed/OS_PLAYABILITY.json",
-        "evidence/b5-play/cold-resume-r14-fixed/SUMMARY.json",
-        "evidence/b5-play/recorder-readiness-proof-r14/PROOF.json",
-        "evidence/b5-play/ANALYZER_R14_EQUALITY.json",
-        "evidence/b5-play/cold-resume-r14-fixed/VIDEO_DECODE.json",
-        "evidence/b5-play/final30-r14/OS_PLAYABILITY.json",
-        "evidence/b5-play/final30-r14/FINAL_ANALYSIS.json",
-        "evidence/b5-play/final30-r14/VIDEO_DECODE.json",
-        "evidence/HOST_R14_INCIDENT_REVIEW.json",
-        "evidence/RUNTIME_DELIVERABLE_R14.json",
-        "evidence/ui-integrity-r14/ui-integrity.json",
-        "evidence/UI_ALLOCATION_REPAIR.json",
-        "evidence/ui-cache/AFTER.json",
-        "evidence/arrival-occupancy/SUMMARY.json",
-        "evidence/arrival-occupancy/FINAL.json",
-        "evidence/arrival-occupancy/ACTION_REGRESSION.json",
-        "evidence/store-latency-r14/SUMMARY.json",
-        "evidence/store-cold-r14/SUMMARY.json",
-        "evidence/store-cold-r14/final-candidate.json",
-        "evidence/store-cold-r14/depth-equivalence.json",
-        "map-render-r12-evidence/map-render.json",
-        "evidence/r12-impact-reuse.json",
-        "evidence/first-job-choice/SUMMARY.json",
-        "evidence/sequential-sync-fixtures.json",
-        "toolchain/SYNC_SERVICE_DISCOVERY.json",
-        "evidence/b5-play/cold-resume-r14-fixed/first-process/OS_PLAYABILITY.json",
-        "evidence/b5-play/cold-resume-r14-fixed/first-process/FINAL_ANALYSIS.json",
-        "evidence/b5-play/cold-resume-r14-fixed/restart-process/OS_PLAYABILITY.json",
-        "evidence/b5-play/cold-resume-r14-fixed/restart-process/FINAL_ANALYSIS.json",
-        "evidence/store-cold-r14/final-regression.json",
-        "evidence/store-cold-r14/final-migration-real.json",
-        "evidence/store-cold-r14/final-cell-migration-real.json",
-        "evidence/store-cold-r14/final-record-cache.json",
-        "evidence/store-cold-r14/final-cache-safety-generation.json"
-      ],
-      "functional_loop_coverage": {
-        "scope": "All three actual transactions occurred inside same explicit uninterrupted phase.",
-        "required_checks": [
-          "ordinary_real_spare_weapon_sale",
-          "ordinary_real_weapon_purchase",
-          "ordinary_owned_weapon_equipment_change"
+    "authority": "Historical STEP/WORK_ORDER/RESULTS/STATE_* are evidence of their past tasks, not current restrictions.",
+    "G1_execution_before_G2": {
+      "execution_20261017": {
+        "baseline_head": "39c7e4a2fe5f555b5d32a1e973930f3671d508ef",
+        "baseline_apk_sha256": "a30ab55f633a4d35047bc38ea591a087e070c109d1445eea19c39e4da8ce3789",
+        "prior_repair_apk_sha256": "2dfa25177df487ceb04067fb61efbb6e59a9fd0dd2e6d2a0704a4456fa811141",
+        "runtime_source_zip_sha256": "b97c533e5b979abc4d68470314b37e012898c97c450515c9b9364644c9543461",
+        "new_paid_resources": false,
+        "native_platform_verification": "BLOCKED_NO_ANDROID_DEVICE_OR_NATIVE_WINDOWS",
+        "sync": "BLOCKED_NO_APPROVED_FREE_AUTHENTICATED_SYNC_ENDPOINT",
+        "evidence": [
+          "docs/rebuild/v2/B1_DIAGNOSIS.json",
+          "docs/rebuild/v2/G1_CONTRACT.json",
+          "docs/rebuild/v2/SAVE_MIGRATION.md",
+          "docs/rebuild/v2/VERIFICATION.json",
+          "docs/rebuild/v2/RESULTS.md",
+          "docs/rebuild/v2/DELIVERY.json"
         ],
-        "observations": [
-          {
-            "kind": "observation",
-            "wall_unix_ns": 1792209488829656802,
-            "operator_elapsed_s": 47.481,
-            "name": "ordinary_real_sale",
-            "before_character": {
-              "appearance": {
-                "variant": 0
-              },
-              "base_stats": {
-                "dexterity": 22,
-                "intelligence": 34,
-                "strength": 22
-              },
-              "dead": false,
-              "desired_job": "주술사",
-              "direction": 0,
-              "guardian": "주작",
-              "hp": 144,
-              "hp_max": 210,
-              "id": "character:0b5e7a416efc7924a434",
-              "job": "주술사",
-              "level": 18,
-              "map_id": "gp:map:forge",
-              "money": 1176,
-              "mp": 215,
-              "mp_max": 266,
-              "name": "finaljourney",
-              "nationality": "고구려",
-              "owner_id": "local-profile:default",
-              "x": 10,
-              "xp": 3095,
-              "y": 9
-            },
-            "after_character": {
-              "appearance": {
-                "variant": 0
-              },
-              "base_stats": {
-                "dexterity": 22,
-                "intelligence": 34,
-                "strength": 22
-              },
-              "dead": false,
-              "desired_job": "주술사",
-              "direction": 0,
-              "guardian": "주작",
-              "hp": 150,
-              "hp_max": 210,
-              "id": "character:0b5e7a416efc7924a434",
-              "job": "주술사",
-              "level": 18,
-              "map_id": "gp:map:forge",
-              "money": 1181,
-              "mp": 231,
-              "mp_max": 266,
-              "name": "finaljourney",
-              "nationality": "고구려",
-              "owner_id": "local-profile:default",
-              "x": 10,
-              "xp": 3095,
-              "y": 9
-            },
-            "before_inventory": [
-              {
-                "durability": 12,
-                "instance_id": "instance:1",
-                "item_id": "KRO-ITEM-be19434c5b2ee6",
-                "quantity": 1
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:2",
-                "item_id": "gp:item:starter_clothes",
-                "quantity": 1
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:4",
-                "item_id": "KRO-ITEM-1ec5d43f9e157e",
-                "quantity": 2
-              },
-              {
-                "durability": 140,
-                "instance_id": "instance:7",
-                "item_id": "KRO-ITEM-89a184f51172c1",
-                "quantity": 1
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:9.0",
-                "item_id": "KRO-ITEM-e540569cf2f77a",
-                "quantity": 24
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:10",
-                "item_id": "KRO-ITEM-5d3f28fbe15c37",
-                "quantity": 28
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:11",
-                "item_id": "g1:item:c1a1446b0ac05e",
-                "quantity": 22
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:12",
-                "item_id": "KRO-ITEM-36d2a69ca8aaa3",
-                "quantity": 47
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:13",
-                "item_id": "KRO-ITEM-c8d54f0d074146",
-                "quantity": 50
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:14",
-                "item_id": "KRO-ITEM-d910713dffb2ba",
-                "quantity": 29
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:15",
-                "item_id": "KRO-ITEM-7670804897b9a4",
-                "quantity": 22
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:16",
-                "item_id": "g1:item:23b51ed40dd0ae",
-                "quantity": 22
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:17",
-                "item_id": "KRO-ITEM-492cb14182ef2e",
-                "quantity": 40
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:18",
-                "item_id": "g1:item:1449a47df7a229",
-                "quantity": 5
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:19",
-                "item_id": "KRO-ITEM-76b8e06d0ab195",
-                "quantity": 24
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:20",
-                "item_id": "KRO-ITEM-141bfbda2f619e",
-                "quantity": 4
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:21",
-                "item_id": "g1:item:e0c253e73280ad",
-                "quantity": 5
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:22",
-                "item_id": "KRO-ITEM-265a90cf89d482",
-                "quantity": 22
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:23",
-                "item_id": "KRO-ITEM-120fdb485c7407",
-                "quantity": 14
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:24",
-                "item_id": "KRO-ITEM-ca37261fade592",
-                "quantity": 10
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:25",
-                "item_id": "KRO-ITEM-39943ae5113d82",
-                "quantity": 13
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:26",
-                "item_id": "KRO-ITEM-50d28676a7c7be",
-                "quantity": 10
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:27",
-                "item_id": "g1:item:7abef27343f741",
-                "quantity": 9
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:28",
-                "item_id": "KRO-ITEM-abc0cb0b1a967a",
-                "quantity": 18
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:29",
-                "item_id": "KRO-ITEM-9c19c21786e16e",
-                "quantity": 15
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:30",
-                "item_id": "KRO-ITEM-6c8be77cc6022f",
-                "quantity": 18
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:31",
-                "item_id": "KRO-ITEM-cb2537570b58dd",
-                "quantity": 12
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:32",
-                "item_id": "KRO-ITEM-9b0315683a8906",
-                "quantity": 11
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:33",
-                "item_id": "KRO-ITEM-6f2ccc22622518",
-                "quantity": 8
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:34",
-                "item_id": "KRO-ITEM-995567c3bc33c4",
-                "quantity": 7
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:35",
-                "item_id": "KRO-ITEM-25b010e3c9722d",
-                "quantity": 10
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:36",
-                "item_id": "KRO-ITEM-935836c3bb52c7",
-                "quantity": 3
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:37",
-                "item_id": "KRO-ITEM-cbb12a848bb382",
-                "quantity": 12
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:38",
-                "item_id": "KRO-ITEM-254fee8d880ea9",
-                "quantity": 24
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:39",
-                "item_id": "KRO-ITEM-13da4dcfe86a58",
-                "quantity": 24
-              },
-              {
-                "durability": 150,
-                "instance_id": "instance:40.0",
-                "item_id": "KRO-ITEM-89a184f51172c1",
-                "quantity": 1
-              },
-              {
-                "durability": 47,
-                "instance_id": "instance:41.0",
-                "item_id": "KRO-ITEM-89a184f51172c1",
-                "quantity": 1
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:42",
-                "item_id": "KRO-ITEM-ef711a4f8eabf2",
-                "quantity": 5
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:43",
-                "item_id": "KRO-ITEM-9ec709268cac8d",
-                "quantity": 5
-              }
-            ],
-            "after_inventory": [
-              {
-                "durability": 12,
-                "instance_id": "instance:1",
-                "item_id": "KRO-ITEM-be19434c5b2ee6",
-                "quantity": 1
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:2",
-                "item_id": "gp:item:starter_clothes",
-                "quantity": 1
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:4",
-                "item_id": "KRO-ITEM-1ec5d43f9e157e",
-                "quantity": 2
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:9.0",
-                "item_id": "KRO-ITEM-e540569cf2f77a",
-                "quantity": 24
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:10",
-                "item_id": "KRO-ITEM-5d3f28fbe15c37",
-                "quantity": 28
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:11",
-                "item_id": "g1:item:c1a1446b0ac05e",
-                "quantity": 22
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:12",
-                "item_id": "KRO-ITEM-36d2a69ca8aaa3",
-                "quantity": 47
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:13",
-                "item_id": "KRO-ITEM-c8d54f0d074146",
-                "quantity": 50
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:14",
-                "item_id": "KRO-ITEM-d910713dffb2ba",
-                "quantity": 29
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:15",
-                "item_id": "KRO-ITEM-7670804897b9a4",
-                "quantity": 22
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:16",
-                "item_id": "g1:item:23b51ed40dd0ae",
-                "quantity": 22
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:17",
-                "item_id": "KRO-ITEM-492cb14182ef2e",
-                "quantity": 40
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:18",
-                "item_id": "g1:item:1449a47df7a229",
-                "quantity": 5
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:19",
-                "item_id": "KRO-ITEM-76b8e06d0ab195",
-                "quantity": 24
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:20",
-                "item_id": "KRO-ITEM-141bfbda2f619e",
-                "quantity": 4
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:21",
-                "item_id": "g1:item:e0c253e73280ad",
-                "quantity": 5
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:22",
-                "item_id": "KRO-ITEM-265a90cf89d482",
-                "quantity": 22
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:23",
-                "item_id": "KRO-ITEM-120fdb485c7407",
-                "quantity": 14
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:24",
-                "item_id": "KRO-ITEM-ca37261fade592",
-                "quantity": 10
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:25",
-                "item_id": "KRO-ITEM-39943ae5113d82",
-                "quantity": 13
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:26",
-                "item_id": "KRO-ITEM-50d28676a7c7be",
-                "quantity": 10
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:27",
-                "item_id": "g1:item:7abef27343f741",
-                "quantity": 9
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:28",
-                "item_id": "KRO-ITEM-abc0cb0b1a967a",
-                "quantity": 18
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:29",
-                "item_id": "KRO-ITEM-9c19c21786e16e",
-                "quantity": 15
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:30",
-                "item_id": "KRO-ITEM-6c8be77cc6022f",
-                "quantity": 18
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:31",
-                "item_id": "KRO-ITEM-cb2537570b58dd",
-                "quantity": 12
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:32",
-                "item_id": "KRO-ITEM-9b0315683a8906",
-                "quantity": 11
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:33",
-                "item_id": "KRO-ITEM-6f2ccc22622518",
-                "quantity": 8
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:34",
-                "item_id": "KRO-ITEM-995567c3bc33c4",
-                "quantity": 7
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:35",
-                "item_id": "KRO-ITEM-25b010e3c9722d",
-                "quantity": 10
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:36",
-                "item_id": "KRO-ITEM-935836c3bb52c7",
-                "quantity": 3
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:37",
-                "item_id": "KRO-ITEM-cbb12a848bb382",
-                "quantity": 12
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:38",
-                "item_id": "KRO-ITEM-254fee8d880ea9",
-                "quantity": 24
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:39",
-                "item_id": "KRO-ITEM-13da4dcfe86a58",
-                "quantity": 24
-              },
-              {
-                "durability": 150,
-                "instance_id": "instance:40.0",
-                "item_id": "KRO-ITEM-89a184f51172c1",
-                "quantity": 1
-              },
-              {
-                "durability": 47,
-                "instance_id": "instance:41.0",
-                "item_id": "KRO-ITEM-89a184f51172c1",
-                "quantity": 1
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:42",
-                "item_id": "KRO-ITEM-ef711a4f8eabf2",
-                "quantity": 5
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:43",
-                "item_id": "KRO-ITEM-9ec709268cac8d",
-                "quantity": 5
-              }
-            ]
-          },
-          {
-            "kind": "observation",
-            "wall_unix_ns": 1792209495965681291,
-            "operator_elapsed_s": 54.617,
-            "name": "ordinary_real_purchase",
-            "before_character": {
-              "appearance": {
-                "variant": 0
-              },
-              "base_stats": {
-                "dexterity": 22,
-                "intelligence": 34,
-                "strength": 22
-              },
-              "dead": false,
-              "desired_job": "주술사",
-              "direction": 0,
-              "guardian": "주작",
-              "hp": 150,
-              "hp_max": 210,
-              "id": "character:0b5e7a416efc7924a434",
-              "job": "주술사",
-              "level": 18,
-              "map_id": "gp:map:forge",
-              "money": 1181,
-              "mp": 231,
-              "mp_max": 266,
-              "name": "finaljourney",
-              "nationality": "고구려",
-              "owner_id": "local-profile:default",
-              "x": 10,
-              "xp": 3095,
-              "y": 9
-            },
-            "after_character": {
-              "appearance": {
-                "variant": 0
-              },
-              "base_stats": {
-                "dexterity": 22,
-                "intelligence": 34,
-                "strength": 22
-              },
-              "dead": false,
-              "desired_job": "주술사",
-              "direction": 0,
-              "guardian": "주작",
-              "hp": 153,
-              "hp_max": 210,
-              "id": "character:0b5e7a416efc7924a434",
-              "job": "주술사",
-              "level": 18,
-              "map_id": "gp:map:forge",
-              "money": 1161,
-              "mp": 239,
-              "mp_max": 266,
-              "name": "finaljourney",
-              "nationality": "고구려",
-              "owner_id": "local-profile:default",
-              "x": 10,
-              "xp": 3095,
-              "y": 9
-            },
-            "before_inventory": [
-              {
-                "durability": 12,
-                "instance_id": "instance:1",
-                "item_id": "KRO-ITEM-be19434c5b2ee6",
-                "quantity": 1
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:2",
-                "item_id": "gp:item:starter_clothes",
-                "quantity": 1
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:4",
-                "item_id": "KRO-ITEM-1ec5d43f9e157e",
-                "quantity": 2
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:9.0",
-                "item_id": "KRO-ITEM-e540569cf2f77a",
-                "quantity": 24
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:10",
-                "item_id": "KRO-ITEM-5d3f28fbe15c37",
-                "quantity": 28
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:11",
-                "item_id": "g1:item:c1a1446b0ac05e",
-                "quantity": 22
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:12",
-                "item_id": "KRO-ITEM-36d2a69ca8aaa3",
-                "quantity": 47
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:13",
-                "item_id": "KRO-ITEM-c8d54f0d074146",
-                "quantity": 50
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:14",
-                "item_id": "KRO-ITEM-d910713dffb2ba",
-                "quantity": 29
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:15",
-                "item_id": "KRO-ITEM-7670804897b9a4",
-                "quantity": 22
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:16",
-                "item_id": "g1:item:23b51ed40dd0ae",
-                "quantity": 22
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:17",
-                "item_id": "KRO-ITEM-492cb14182ef2e",
-                "quantity": 40
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:18",
-                "item_id": "g1:item:1449a47df7a229",
-                "quantity": 5
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:19",
-                "item_id": "KRO-ITEM-76b8e06d0ab195",
-                "quantity": 24
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:20",
-                "item_id": "KRO-ITEM-141bfbda2f619e",
-                "quantity": 4
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:21",
-                "item_id": "g1:item:e0c253e73280ad",
-                "quantity": 5
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:22",
-                "item_id": "KRO-ITEM-265a90cf89d482",
-                "quantity": 22
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:23",
-                "item_id": "KRO-ITEM-120fdb485c7407",
-                "quantity": 14
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:24",
-                "item_id": "KRO-ITEM-ca37261fade592",
-                "quantity": 10
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:25",
-                "item_id": "KRO-ITEM-39943ae5113d82",
-                "quantity": 13
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:26",
-                "item_id": "KRO-ITEM-50d28676a7c7be",
-                "quantity": 10
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:27",
-                "item_id": "g1:item:7abef27343f741",
-                "quantity": 9
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:28",
-                "item_id": "KRO-ITEM-abc0cb0b1a967a",
-                "quantity": 18
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:29",
-                "item_id": "KRO-ITEM-9c19c21786e16e",
-                "quantity": 15
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:30",
-                "item_id": "KRO-ITEM-6c8be77cc6022f",
-                "quantity": 18
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:31",
-                "item_id": "KRO-ITEM-cb2537570b58dd",
-                "quantity": 12
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:32",
-                "item_id": "KRO-ITEM-9b0315683a8906",
-                "quantity": 11
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:33",
-                "item_id": "KRO-ITEM-6f2ccc22622518",
-                "quantity": 8
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:34",
-                "item_id": "KRO-ITEM-995567c3bc33c4",
-                "quantity": 7
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:35",
-                "item_id": "KRO-ITEM-25b010e3c9722d",
-                "quantity": 10
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:36",
-                "item_id": "KRO-ITEM-935836c3bb52c7",
-                "quantity": 3
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:37",
-                "item_id": "KRO-ITEM-cbb12a848bb382",
-                "quantity": 12
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:38",
-                "item_id": "KRO-ITEM-254fee8d880ea9",
-                "quantity": 24
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:39",
-                "item_id": "KRO-ITEM-13da4dcfe86a58",
-                "quantity": 24
-              },
-              {
-                "durability": 150,
-                "instance_id": "instance:40.0",
-                "item_id": "KRO-ITEM-89a184f51172c1",
-                "quantity": 1
-              },
-              {
-                "durability": 47,
-                "instance_id": "instance:41.0",
-                "item_id": "KRO-ITEM-89a184f51172c1",
-                "quantity": 1
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:42",
-                "item_id": "KRO-ITEM-ef711a4f8eabf2",
-                "quantity": 5
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:43",
-                "item_id": "KRO-ITEM-9ec709268cac8d",
-                "quantity": 5
-              }
-            ],
-            "after_inventory": [
-              {
-                "durability": 12,
-                "instance_id": "instance:1",
-                "item_id": "KRO-ITEM-be19434c5b2ee6",
-                "quantity": 1
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:2",
-                "item_id": "gp:item:starter_clothes",
-                "quantity": 1
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:4",
-                "item_id": "KRO-ITEM-1ec5d43f9e157e",
-                "quantity": 2
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:9.0",
-                "item_id": "KRO-ITEM-e540569cf2f77a",
-                "quantity": 24
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:10",
-                "item_id": "KRO-ITEM-5d3f28fbe15c37",
-                "quantity": 28
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:11",
-                "item_id": "g1:item:c1a1446b0ac05e",
-                "quantity": 22
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:12",
-                "item_id": "KRO-ITEM-36d2a69ca8aaa3",
-                "quantity": 47
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:13",
-                "item_id": "KRO-ITEM-c8d54f0d074146",
-                "quantity": 50
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:14",
-                "item_id": "KRO-ITEM-d910713dffb2ba",
-                "quantity": 29
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:15",
-                "item_id": "KRO-ITEM-7670804897b9a4",
-                "quantity": 22
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:16",
-                "item_id": "g1:item:23b51ed40dd0ae",
-                "quantity": 22
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:17",
-                "item_id": "KRO-ITEM-492cb14182ef2e",
-                "quantity": 40
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:18",
-                "item_id": "g1:item:1449a47df7a229",
-                "quantity": 5
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:19",
-                "item_id": "KRO-ITEM-76b8e06d0ab195",
-                "quantity": 24
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:20",
-                "item_id": "KRO-ITEM-141bfbda2f619e",
-                "quantity": 4
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:21",
-                "item_id": "g1:item:e0c253e73280ad",
-                "quantity": 5
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:22",
-                "item_id": "KRO-ITEM-265a90cf89d482",
-                "quantity": 22
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:23",
-                "item_id": "KRO-ITEM-120fdb485c7407",
-                "quantity": 14
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:24",
-                "item_id": "KRO-ITEM-ca37261fade592",
-                "quantity": 10
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:25",
-                "item_id": "KRO-ITEM-39943ae5113d82",
-                "quantity": 13
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:26",
-                "item_id": "KRO-ITEM-50d28676a7c7be",
-                "quantity": 10
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:27",
-                "item_id": "g1:item:7abef27343f741",
-                "quantity": 9
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:28",
-                "item_id": "KRO-ITEM-abc0cb0b1a967a",
-                "quantity": 18
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:29",
-                "item_id": "KRO-ITEM-9c19c21786e16e",
-                "quantity": 15
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:30",
-                "item_id": "KRO-ITEM-6c8be77cc6022f",
-                "quantity": 18
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:31",
-                "item_id": "KRO-ITEM-cb2537570b58dd",
-                "quantity": 12
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:32",
-                "item_id": "KRO-ITEM-9b0315683a8906",
-                "quantity": 11
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:33",
-                "item_id": "KRO-ITEM-6f2ccc22622518",
-                "quantity": 8
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:34",
-                "item_id": "KRO-ITEM-995567c3bc33c4",
-                "quantity": 7
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:35",
-                "item_id": "KRO-ITEM-25b010e3c9722d",
-                "quantity": 10
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:36",
-                "item_id": "KRO-ITEM-935836c3bb52c7",
-                "quantity": 3
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:37",
-                "item_id": "KRO-ITEM-cbb12a848bb382",
-                "quantity": 12
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:38",
-                "item_id": "KRO-ITEM-254fee8d880ea9",
-                "quantity": 24
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:39",
-                "item_id": "KRO-ITEM-13da4dcfe86a58",
-                "quantity": 24
-              },
-              {
-                "durability": 150,
-                "instance_id": "instance:40.0",
-                "item_id": "KRO-ITEM-89a184f51172c1",
-                "quantity": 1
-              },
-              {
-                "durability": 47,
-                "instance_id": "instance:41.0",
-                "item_id": "KRO-ITEM-89a184f51172c1",
-                "quantity": 1
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:42",
-                "item_id": "KRO-ITEM-ef711a4f8eabf2",
-                "quantity": 5
-              },
-              {
-                "durability": 0,
-                "instance_id": "instance:43",
-                "item_id": "KRO-ITEM-9ec709268cac8d",
-                "quantity": 5
-              },
-              {
-                "durability": 150,
-                "instance_id": "instance:44.0",
-                "item_id": "KRO-ITEM-89a184f51172c1",
-                "quantity": 1
-              }
-            ]
-          },
-          {
-            "kind": "observation",
-            "wall_unix_ns": 1792209507631222668,
-            "operator_elapsed_s": 66.282,
-            "name": "ordinary_real_equipment_change",
-            "before_equipment": {
-              "durability": 47,
-              "instance_id": "instance:41.0",
-              "item_id": "KRO-ITEM-89a184f51172c1",
-              "quantity": 1
-            },
-            "after_equipment": {
-              "durability": 150,
-              "instance_id": "instance:44.0",
-              "item_id": "KRO-ITEM-89a184f51172c1",
-              "quantity": 1
-            },
-            "character": {
-              "appearance": {
-                "variant": 0
-              },
-              "base_stats": {
-                "dexterity": 22,
-                "intelligence": 34,
-                "strength": 22
-              },
-              "dead": false,
-              "desired_job": "주술사",
-              "direction": 0,
-              "guardian": "주작",
-              "hp": 162,
-              "hp_max": 210,
-              "id": "character:0b5e7a416efc7924a434",
-              "job": "주술사",
-              "level": 18,
-              "map_id": "gp:map:forge",
-              "money": 1161,
-              "mp": 263,
-              "mp_max": 266,
-              "name": "finaljourney",
-              "nationality": "고구려",
-              "owner_id": "local-profile:default",
-              "x": 10,
-              "xp": 3095,
-              "y": 9
-            }
-          }
-        ],
-        "separate_transaction_followup_required": false,
-        "character_scope": "One naturally earned mage without grants; sparewood sale/repurchase and new-instance equipment of the same item kind, not a stronger-weapon upgrade. Not four fresh GUI campaigns/natural1–99."
+        "initial_generation": "Kept immutable; identified haste, equipment/effect field usage and save bank integration failures corrected before final freeze. Initial fixture/UI failures retained separately.",
+        "final_runtime_manifest_sha256": "6ffdfc0cbad388635dd641579adfdb12ad0539726d13e8fdfb7c4f0b4227d1a9",
+        "final_engine_sha256": "4ea4b760f4cdce69db6c8d12a4bfde79f798e0c7d5f3b8e9948725cc2cca3dd0",
+        "runtime_generation": "WORK-V2-G1-20261017",
+        "content_note": "Map geometry and missing mechanics reconstructed, source quantities not unique species count; current G1 every ID actual closure tests separate from native platform gates.",
+        "final_app_source_commit": "c9fe92886cb738708b189bd14f0c40299ddef301",
+        "host_gui_layout_limit": "89 logged PASS =74 GUI/fixture +12 logical panel bounds +3 nonempty framebuffers. Physical capture1100x720 valid;1600x900 request gives1375x900;600x960 request gives600x392. No full portrait/resolution PASS.",
+        "export_source_provenance": "Export git_head_at_export39c7 predates local ref advancement. Actual49 source/3411 runtime snapshot file hashes match published app sourcec9fe and shared fingerprint0f5a5259. No app/runtime modifications after candidate creation.",
+        "delivery": "docs/rebuild/v2/DELIVERY.json",
+        "delivered_file_count": 6,
+        "record_scope": "HISTORICAL_PRE_B5_CANDIDATE_NOT_CURRENT_FINAL",
+        "is_current": false
       },
-      "host_performance": {
-        "scope": "Every first-process active-play sample inside preregistered continuous1800s phase, no outliers removed. Marker-external active-play and new-process restart metrics are separate; menu/startup/trace-export gaps remain unmeasured and visible in raw video.",
-        "engine_wall_p95_le33_4": true,
-        "engine_wall_p99_le50": false,
-        "engine_input_feedback_p95_le100": true,
-        "OS_received_to_engine_draw_p95_le100": true,
-        "saves_over100ms": 0,
-        "long_wall_incidents": 155,
-        "OS_matching": {
-          "status": "OBSERVED",
-          "all_received_events": 3245,
-          "non_echo_presses": 1623,
-          "echo_events": 0,
-          "release_events": 1622,
-          "press_feedback_missing": 0,
-          "logged_commands": 1622,
-          "matched_commands": 1622,
-          "unmatched_commands": 0,
-          "matched_render_feedback": 1622,
-          "unmatched_engine_presses": 1,
-          "signature_sequence_status": "EXACT_UNIQUE_ORDERED_SEQUENCE",
-          "candidate_command_sequence_starts": [
-            1
+      "playability_20261017": {
+        "task_id": "BARAM_V2_B5_B6_PLAYABILITY_20261017",
+        "baseline_head": "9f02bdf7f8b0ba73693600ad0d6c77665be9c0e7",
+        "baseline_app": "c9fe92886cb738708b189bd14f0c40299ddef301",
+        "user_reported_failures": [
+          "movement_action_stutter",
+          "NPC_dialogue_close_not_readily_accessible",
+          "map_building_visual_defects"
+        ],
+        "developer_reproduction": "REPRODUCED_BOTTLENECK_AND_MODAL_INPUT_VISUAL_REPAIRS_EXECUTED",
+        "scope": "Keep B0-B4/G1 IDs, fix affected B3/B4 code/assets within B5; actual platform/sync/update gates retained",
+        "prior_evidence_policy": "Historical PASS logs retained, affected source/content/config/environment/scope revalidated; no unexecuted PASS",
+        "resume": {
+          "status": "PARTIAL_HOST_PERFORMANCE_TARGET_NOT_MET_NATIVE_ACCOUNT_GATES_REMAIN",
+          "source_commit": "639750f04d10ee4ac3c1a7113232b8c30109f078",
+          "app_behavior_commit": "639750f04d10ee4ac3c1a7113232b8c30109f078",
+          "app_candidate": "r14",
+          "runtime_variant": "r12",
+          "runtime_manifest_sha256": "4791e101c547f0a3848297b40b0e424acd776ac85c2d455e40e1f83c4bd1fdf0",
+          "content_sha256": "f1e45c2a7045e130b842325751ab81cf38c22ac92df62ddafe33700aa9267fca",
+          "ordinary_final30": "PASS_OBSERVED_SCOPE",
+          "ordinary_final30_path": "evidence/b5-play/final30-r14/OS_PLAYABILITY.json",
+          "source_tools_commit": "214144adb934d8982938469c7465cdfd6d1327a4",
+          "tool_provenance": "evidence/FINAL_TOOL_PROVENANCE.json",
+          "evidence": [
+            "evidence/FIXED_SOURCE_FREEZE_R14.json",
+            "evidence/pack-parity-r14/PROVENANCE.json",
+            "evidence/b5-play/cold-resume-r14-fixed/OS_PLAYABILITY.json",
+            "evidence/b5-play/cold-resume-r14-fixed/SUMMARY.json",
+            "evidence/b5-play/recorder-readiness-proof-r14/PROOF.json",
+            "evidence/b5-play/ANALYZER_R14_EQUALITY.json",
+            "evidence/b5-play/cold-resume-r14-fixed/VIDEO_DECODE.json",
+            "evidence/b5-play/final30-r14/OS_PLAYABILITY.json",
+            "evidence/b5-play/final30-r14/FINAL_ANALYSIS.json",
+            "evidence/b5-play/final30-r14/VIDEO_DECODE.json",
+            "evidence/HOST_R14_INCIDENT_REVIEW.json",
+            "evidence/RUNTIME_DELIVERABLE_R14.json",
+            "evidence/ui-integrity-r14/ui-integrity.json",
+            "evidence/UI_ALLOCATION_REPAIR.json",
+            "evidence/ui-cache/AFTER.json",
+            "evidence/arrival-occupancy/SUMMARY.json",
+            "evidence/arrival-occupancy/FINAL.json",
+            "evidence/arrival-occupancy/ACTION_REGRESSION.json",
+            "evidence/store-latency-r14/SUMMARY.json",
+            "evidence/store-cold-r14/SUMMARY.json",
+            "evidence/store-cold-r14/final-candidate.json",
+            "evidence/store-cold-r14/depth-equivalence.json",
+            "map-render-r12-evidence/map-render.json",
+            "evidence/r12-impact-reuse.json",
+            "evidence/first-job-choice/SUMMARY.json",
+            "evidence/sequential-sync-fixtures.json",
+            "toolchain/SYNC_SERVICE_DISCOVERY.json",
+            "evidence/b5-play/cold-resume-r14-fixed/first-process/OS_PLAYABILITY.json",
+            "evidence/b5-play/cold-resume-r14-fixed/first-process/FINAL_ANALYSIS.json",
+            "evidence/b5-play/cold-resume-r14-fixed/restart-process/OS_PLAYABILITY.json",
+            "evidence/b5-play/cold-resume-r14-fixed/restart-process/FINAL_ANALYSIS.json",
+            "evidence/store-cold-r14/final-regression.json",
+            "evidence/store-cold-r14/final-migration-real.json",
+            "evidence/store-cold-r14/final-cell-migration-real.json",
+            "evidence/store-cold-r14/final-record-cache.json",
+            "evidence/store-cold-r14/final-cache-safety-generation.json"
           ],
-          "global_logged_commands": 1631,
-          "global_engine_presses": 1627,
-          "global_signature_correlated_pairs": 1627,
-          "ambiguous_commands": 0,
-          "outside_receipt_phase_commands": 0,
-          "key_presses_without_name_or_ascii_code": 0,
-          "latency_outliers_removed": 0,
-          "method": "Unique complete contiguous ordered signature alignment of non-echo presses by normalized physical key name or mouse button and viewport x/y within 2px. No timestamp lower bound or latency cutoff. Ambiguous or incomplete sequence alignments are not forced. Signed cross-clock residuals retain negatives without calibration and cannot validate command latency. Receipt-to-draw uses event_id within the same engine clock."
-        },
-        "actual_physical_OS_presentation": "NOT_RUN",
-        "human_fun_acceptance": "NOT_RUN",
-        "OS_command_matching_acceptance": "EXCLUDED_UNVALIDATED_CROSS_CLOCK_ALIGNMENT; exact signature correspondence and signed residuals retained; never used to award or fail an absolute command-latency target",
-        "scope_limit": "OS receive starts inside Godot and event-ID post_draw feedback is the bounded measured definition; not physical presentation/guaranteed changed pixels. Command→event latency has unvalidated cross-clock alignment; exact signature correspondence does not calibrate clock drift, so it is excluded from acceptance. Their tails remain in raw evidence; no latency cutoff.",
-        "first_process_active_play_long_wall_incidents": 155,
-        "restart_active_play_long_wall_incidents": 5,
-        "cold_active_play_long_wall_incidents": 7,
-        "all_recorded_active_play_long_wall_incidents": 167,
-        "restart_save_duration": {
-          "n": 2,
-          "p50_ms": 58.541,
-          "p95_ms": 84.181,
-          "p99_ms": 86.46,
-          "max_ms": 87.03,
-          "over50ms": 1,
-          "over100ms": 0
-        },
-        "cold_sublegs": {
-          "first-process": {
-            "first_save_ms": 85.978,
-            "save_duration": {
-              "n": 8,
-              "p50_ms": 34.736,
-              "p95_ms": 82.506,
-              "p99_ms": 85.284,
-              "max_ms": 85.978,
-              "over50ms": 2,
-              "over100ms": 0
-            },
-            "movement_seconds": 21.123055678999663,
-            "OS_received_to_frame_post_draw": {
-              "n": 7,
-              "p50_ms": 19.686,
-              "p95_ms": 22.429,
-              "p99_ms": 22.795,
-              "max_ms": 22.887,
-              "over50ms": 0,
-              "over100ms": 0
-            }
+          "functional_loop_coverage": {
+            "scope": "All three actual transactions occurred inside same explicit uninterrupted phase.",
+            "required_checks": [
+              "ordinary_real_spare_weapon_sale",
+              "ordinary_real_weapon_purchase",
+              "ordinary_owned_weapon_equipment_change"
+            ],
+            "observations": [
+              {
+                "kind": "observation",
+                "wall_unix_ns": 1792209488829656802,
+                "operator_elapsed_s": 47.481,
+                "name": "ordinary_real_sale",
+                "before_character": {
+                  "appearance": {
+                    "variant": 0
+                  },
+                  "base_stats": {
+                    "dexterity": 22,
+                    "intelligence": 34,
+                    "strength": 22
+                  },
+                  "dead": false,
+                  "desired_job": "주술사",
+                  "direction": 0,
+                  "guardian": "주작",
+                  "hp": 144,
+                  "hp_max": 210,
+                  "id": "character:0b5e7a416efc7924a434",
+                  "job": "주술사",
+                  "level": 18,
+                  "map_id": "gp:map:forge",
+                  "money": 1176,
+                  "mp": 215,
+                  "mp_max": 266,
+                  "name": "finaljourney",
+                  "nationality": "고구려",
+                  "owner_id": "local-profile:default",
+                  "x": 10,
+                  "xp": 3095,
+                  "y": 9
+                },
+                "after_character": {
+                  "appearance": {
+                    "variant": 0
+                  },
+                  "base_stats": {
+                    "dexterity": 22,
+                    "intelligence": 34,
+                    "strength": 22
+                  },
+                  "dead": false,
+                  "desired_job": "주술사",
+                  "direction": 0,
+                  "guardian": "주작",
+                  "hp": 150,
+                  "hp_max": 210,
+                  "id": "character:0b5e7a416efc7924a434",
+                  "job": "주술사",
+                  "level": 18,
+                  "map_id": "gp:map:forge",
+                  "money": 1181,
+                  "mp": 231,
+                  "mp_max": 266,
+                  "name": "finaljourney",
+                  "nationality": "고구려",
+                  "owner_id": "local-profile:default",
+                  "x": 10,
+                  "xp": 3095,
+                  "y": 9
+                },
+                "before_inventory": [
+                  {
+                    "durability": 12,
+                    "instance_id": "instance:1",
+                    "item_id": "KRO-ITEM-be19434c5b2ee6",
+                    "quantity": 1
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:2",
+                    "item_id": "gp:item:starter_clothes",
+                    "quantity": 1
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:4",
+                    "item_id": "KRO-ITEM-1ec5d43f9e157e",
+                    "quantity": 2
+                  },
+                  {
+                    "durability": 140,
+                    "instance_id": "instance:7",
+                    "item_id": "KRO-ITEM-89a184f51172c1",
+                    "quantity": 1
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:9.0",
+                    "item_id": "KRO-ITEM-e540569cf2f77a",
+                    "quantity": 24
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:10",
+                    "item_id": "KRO-ITEM-5d3f28fbe15c37",
+                    "quantity": 28
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:11",
+                    "item_id": "g1:item:c1a1446b0ac05e",
+                    "quantity": 22
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:12",
+                    "item_id": "KRO-ITEM-36d2a69ca8aaa3",
+                    "quantity": 47
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:13",
+                    "item_id": "KRO-ITEM-c8d54f0d074146",
+                    "quantity": 50
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:14",
+                    "item_id": "KRO-ITEM-d910713dffb2ba",
+                    "quantity": 29
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:15",
+                    "item_id": "KRO-ITEM-7670804897b9a4",
+                    "quantity": 22
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:16",
+                    "item_id": "g1:item:23b51ed40dd0ae",
+                    "quantity": 22
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:17",
+                    "item_id": "KRO-ITEM-492cb14182ef2e",
+                    "quantity": 40
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:18",
+                    "item_id": "g1:item:1449a47df7a229",
+                    "quantity": 5
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:19",
+                    "item_id": "KRO-ITEM-76b8e06d0ab195",
+                    "quantity": 24
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:20",
+                    "item_id": "KRO-ITEM-141bfbda2f619e",
+                    "quantity": 4
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:21",
+                    "item_id": "g1:item:e0c253e73280ad",
+                    "quantity": 5
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:22",
+                    "item_id": "KRO-ITEM-265a90cf89d482",
+                    "quantity": 22
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:23",
+                    "item_id": "KRO-ITEM-120fdb485c7407",
+                    "quantity": 14
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:24",
+                    "item_id": "KRO-ITEM-ca37261fade592",
+                    "quantity": 10
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:25",
+                    "item_id": "KRO-ITEM-39943ae5113d82",
+                    "quantity": 13
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:26",
+                    "item_id": "KRO-ITEM-50d28676a7c7be",
+                    "quantity": 10
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:27",
+                    "item_id": "g1:item:7abef27343f741",
+                    "quantity": 9
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:28",
+                    "item_id": "KRO-ITEM-abc0cb0b1a967a",
+                    "quantity": 18
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:29",
+                    "item_id": "KRO-ITEM-9c19c21786e16e",
+                    "quantity": 15
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:30",
+                    "item_id": "KRO-ITEM-6c8be77cc6022f",
+                    "quantity": 18
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:31",
+                    "item_id": "KRO-ITEM-cb2537570b58dd",
+                    "quantity": 12
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:32",
+                    "item_id": "KRO-ITEM-9b0315683a8906",
+                    "quantity": 11
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:33",
+                    "item_id": "KRO-ITEM-6f2ccc22622518",
+                    "quantity": 8
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:34",
+                    "item_id": "KRO-ITEM-995567c3bc33c4",
+                    "quantity": 7
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:35",
+                    "item_id": "KRO-ITEM-25b010e3c9722d",
+                    "quantity": 10
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:36",
+                    "item_id": "KRO-ITEM-935836c3bb52c7",
+                    "quantity": 3
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:37",
+                    "item_id": "KRO-ITEM-cbb12a848bb382",
+                    "quantity": 12
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:38",
+                    "item_id": "KRO-ITEM-254fee8d880ea9",
+                    "quantity": 24
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:39",
+                    "item_id": "KRO-ITEM-13da4dcfe86a58",
+                    "quantity": 24
+                  },
+                  {
+                    "durability": 150,
+                    "instance_id": "instance:40.0",
+                    "item_id": "KRO-ITEM-89a184f51172c1",
+                    "quantity": 1
+                  },
+                  {
+                    "durability": 47,
+                    "instance_id": "instance:41.0",
+                    "item_id": "KRO-ITEM-89a184f51172c1",
+                    "quantity": 1
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:42",
+                    "item_id": "KRO-ITEM-ef711a4f8eabf2",
+                    "quantity": 5
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:43",
+                    "item_id": "KRO-ITEM-9ec709268cac8d",
+                    "quantity": 5
+                  }
+                ],
+                "after_inventory": [
+                  {
+                    "durability": 12,
+                    "instance_id": "instance:1",
+                    "item_id": "KRO-ITEM-be19434c5b2ee6",
+                    "quantity": 1
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:2",
+                    "item_id": "gp:item:starter_clothes",
+                    "quantity": 1
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:4",
+                    "item_id": "KRO-ITEM-1ec5d43f9e157e",
+                    "quantity": 2
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:9.0",
+                    "item_id": "KRO-ITEM-e540569cf2f77a",
+                    "quantity": 24
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:10",
+                    "item_id": "KRO-ITEM-5d3f28fbe15c37",
+                    "quantity": 28
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:11",
+                    "item_id": "g1:item:c1a1446b0ac05e",
+                    "quantity": 22
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:12",
+                    "item_id": "KRO-ITEM-36d2a69ca8aaa3",
+                    "quantity": 47
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:13",
+                    "item_id": "KRO-ITEM-c8d54f0d074146",
+                    "quantity": 50
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:14",
+                    "item_id": "KRO-ITEM-d910713dffb2ba",
+                    "quantity": 29
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:15",
+                    "item_id": "KRO-ITEM-7670804897b9a4",
+                    "quantity": 22
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:16",
+                    "item_id": "g1:item:23b51ed40dd0ae",
+                    "quantity": 22
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:17",
+                    "item_id": "KRO-ITEM-492cb14182ef2e",
+                    "quantity": 40
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:18",
+                    "item_id": "g1:item:1449a47df7a229",
+                    "quantity": 5
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:19",
+                    "item_id": "KRO-ITEM-76b8e06d0ab195",
+                    "quantity": 24
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:20",
+                    "item_id": "KRO-ITEM-141bfbda2f619e",
+                    "quantity": 4
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:21",
+                    "item_id": "g1:item:e0c253e73280ad",
+                    "quantity": 5
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:22",
+                    "item_id": "KRO-ITEM-265a90cf89d482",
+                    "quantity": 22
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:23",
+                    "item_id": "KRO-ITEM-120fdb485c7407",
+                    "quantity": 14
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:24",
+                    "item_id": "KRO-ITEM-ca37261fade592",
+                    "quantity": 10
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:25",
+                    "item_id": "KRO-ITEM-39943ae5113d82",
+                    "quantity": 13
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:26",
+                    "item_id": "KRO-ITEM-50d28676a7c7be",
+                    "quantity": 10
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:27",
+                    "item_id": "g1:item:7abef27343f741",
+                    "quantity": 9
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:28",
+                    "item_id": "KRO-ITEM-abc0cb0b1a967a",
+                    "quantity": 18
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:29",
+                    "item_id": "KRO-ITEM-9c19c21786e16e",
+                    "quantity": 15
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:30",
+                    "item_id": "KRO-ITEM-6c8be77cc6022f",
+                    "quantity": 18
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:31",
+                    "item_id": "KRO-ITEM-cb2537570b58dd",
+                    "quantity": 12
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:32",
+                    "item_id": "KRO-ITEM-9b0315683a8906",
+                    "quantity": 11
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:33",
+                    "item_id": "KRO-ITEM-6f2ccc22622518",
+                    "quantity": 8
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:34",
+                    "item_id": "KRO-ITEM-995567c3bc33c4",
+                    "quantity": 7
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:35",
+                    "item_id": "KRO-ITEM-25b010e3c9722d",
+                    "quantity": 10
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:36",
+                    "item_id": "KRO-ITEM-935836c3bb52c7",
+                    "quantity": 3
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:37",
+                    "item_id": "KRO-ITEM-cbb12a848bb382",
+                    "quantity": 12
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:38",
+                    "item_id": "KRO-ITEM-254fee8d880ea9",
+                    "quantity": 24
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:39",
+                    "item_id": "KRO-ITEM-13da4dcfe86a58",
+                    "quantity": 24
+                  },
+                  {
+                    "durability": 150,
+                    "instance_id": "instance:40.0",
+                    "item_id": "KRO-ITEM-89a184f51172c1",
+                    "quantity": 1
+                  },
+                  {
+                    "durability": 47,
+                    "instance_id": "instance:41.0",
+                    "item_id": "KRO-ITEM-89a184f51172c1",
+                    "quantity": 1
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:42",
+                    "item_id": "KRO-ITEM-ef711a4f8eabf2",
+                    "quantity": 5
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:43",
+                    "item_id": "KRO-ITEM-9ec709268cac8d",
+                    "quantity": 5
+                  }
+                ]
+              },
+              {
+                "kind": "observation",
+                "wall_unix_ns": 1792209495965681291,
+                "operator_elapsed_s": 54.617,
+                "name": "ordinary_real_purchase",
+                "before_character": {
+                  "appearance": {
+                    "variant": 0
+                  },
+                  "base_stats": {
+                    "dexterity": 22,
+                    "intelligence": 34,
+                    "strength": 22
+                  },
+                  "dead": false,
+                  "desired_job": "주술사",
+                  "direction": 0,
+                  "guardian": "주작",
+                  "hp": 150,
+                  "hp_max": 210,
+                  "id": "character:0b5e7a416efc7924a434",
+                  "job": "주술사",
+                  "level": 18,
+                  "map_id": "gp:map:forge",
+                  "money": 1181,
+                  "mp": 231,
+                  "mp_max": 266,
+                  "name": "finaljourney",
+                  "nationality": "고구려",
+                  "owner_id": "local-profile:default",
+                  "x": 10,
+                  "xp": 3095,
+                  "y": 9
+                },
+                "after_character": {
+                  "appearance": {
+                    "variant": 0
+                  },
+                  "base_stats": {
+                    "dexterity": 22,
+                    "intelligence": 34,
+                    "strength": 22
+                  },
+                  "dead": false,
+                  "desired_job": "주술사",
+                  "direction": 0,
+                  "guardian": "주작",
+                  "hp": 153,
+                  "hp_max": 210,
+                  "id": "character:0b5e7a416efc7924a434",
+                  "job": "주술사",
+                  "level": 18,
+                  "map_id": "gp:map:forge",
+                  "money": 1161,
+                  "mp": 239,
+                  "mp_max": 266,
+                  "name": "finaljourney",
+                  "nationality": "고구려",
+                  "owner_id": "local-profile:default",
+                  "x": 10,
+                  "xp": 3095,
+                  "y": 9
+                },
+                "before_inventory": [
+                  {
+                    "durability": 12,
+                    "instance_id": "instance:1",
+                    "item_id": "KRO-ITEM-be19434c5b2ee6",
+                    "quantity": 1
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:2",
+                    "item_id": "gp:item:starter_clothes",
+                    "quantity": 1
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:4",
+                    "item_id": "KRO-ITEM-1ec5d43f9e157e",
+                    "quantity": 2
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:9.0",
+                    "item_id": "KRO-ITEM-e540569cf2f77a",
+                    "quantity": 24
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:10",
+                    "item_id": "KRO-ITEM-5d3f28fbe15c37",
+                    "quantity": 28
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:11",
+                    "item_id": "g1:item:c1a1446b0ac05e",
+                    "quantity": 22
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:12",
+                    "item_id": "KRO-ITEM-36d2a69ca8aaa3",
+                    "quantity": 47
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:13",
+                    "item_id": "KRO-ITEM-c8d54f0d074146",
+                    "quantity": 50
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:14",
+                    "item_id": "KRO-ITEM-d910713dffb2ba",
+                    "quantity": 29
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:15",
+                    "item_id": "KRO-ITEM-7670804897b9a4",
+                    "quantity": 22
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:16",
+                    "item_id": "g1:item:23b51ed40dd0ae",
+                    "quantity": 22
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:17",
+                    "item_id": "KRO-ITEM-492cb14182ef2e",
+                    "quantity": 40
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:18",
+                    "item_id": "g1:item:1449a47df7a229",
+                    "quantity": 5
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:19",
+                    "item_id": "KRO-ITEM-76b8e06d0ab195",
+                    "quantity": 24
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:20",
+                    "item_id": "KRO-ITEM-141bfbda2f619e",
+                    "quantity": 4
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:21",
+                    "item_id": "g1:item:e0c253e73280ad",
+                    "quantity": 5
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:22",
+                    "item_id": "KRO-ITEM-265a90cf89d482",
+                    "quantity": 22
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:23",
+                    "item_id": "KRO-ITEM-120fdb485c7407",
+                    "quantity": 14
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:24",
+                    "item_id": "KRO-ITEM-ca37261fade592",
+                    "quantity": 10
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:25",
+                    "item_id": "KRO-ITEM-39943ae5113d82",
+                    "quantity": 13
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:26",
+                    "item_id": "KRO-ITEM-50d28676a7c7be",
+                    "quantity": 10
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:27",
+                    "item_id": "g1:item:7abef27343f741",
+                    "quantity": 9
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:28",
+                    "item_id": "KRO-ITEM-abc0cb0b1a967a",
+                    "quantity": 18
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:29",
+                    "item_id": "KRO-ITEM-9c19c21786e16e",
+                    "quantity": 15
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:30",
+                    "item_id": "KRO-ITEM-6c8be77cc6022f",
+                    "quantity": 18
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:31",
+                    "item_id": "KRO-ITEM-cb2537570b58dd",
+                    "quantity": 12
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:32",
+                    "item_id": "KRO-ITEM-9b0315683a8906",
+                    "quantity": 11
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:33",
+                    "item_id": "KRO-ITEM-6f2ccc22622518",
+                    "quantity": 8
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:34",
+                    "item_id": "KRO-ITEM-995567c3bc33c4",
+                    "quantity": 7
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:35",
+                    "item_id": "KRO-ITEM-25b010e3c9722d",
+                    "quantity": 10
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:36",
+                    "item_id": "KRO-ITEM-935836c3bb52c7",
+                    "quantity": 3
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:37",
+                    "item_id": "KRO-ITEM-cbb12a848bb382",
+                    "quantity": 12
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:38",
+                    "item_id": "KRO-ITEM-254fee8d880ea9",
+                    "quantity": 24
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:39",
+                    "item_id": "KRO-ITEM-13da4dcfe86a58",
+                    "quantity": 24
+                  },
+                  {
+                    "durability": 150,
+                    "instance_id": "instance:40.0",
+                    "item_id": "KRO-ITEM-89a184f51172c1",
+                    "quantity": 1
+                  },
+                  {
+                    "durability": 47,
+                    "instance_id": "instance:41.0",
+                    "item_id": "KRO-ITEM-89a184f51172c1",
+                    "quantity": 1
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:42",
+                    "item_id": "KRO-ITEM-ef711a4f8eabf2",
+                    "quantity": 5
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:43",
+                    "item_id": "KRO-ITEM-9ec709268cac8d",
+                    "quantity": 5
+                  }
+                ],
+                "after_inventory": [
+                  {
+                    "durability": 12,
+                    "instance_id": "instance:1",
+                    "item_id": "KRO-ITEM-be19434c5b2ee6",
+                    "quantity": 1
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:2",
+                    "item_id": "gp:item:starter_clothes",
+                    "quantity": 1
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:4",
+                    "item_id": "KRO-ITEM-1ec5d43f9e157e",
+                    "quantity": 2
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:9.0",
+                    "item_id": "KRO-ITEM-e540569cf2f77a",
+                    "quantity": 24
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:10",
+                    "item_id": "KRO-ITEM-5d3f28fbe15c37",
+                    "quantity": 28
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:11",
+                    "item_id": "g1:item:c1a1446b0ac05e",
+                    "quantity": 22
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:12",
+                    "item_id": "KRO-ITEM-36d2a69ca8aaa3",
+                    "quantity": 47
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:13",
+                    "item_id": "KRO-ITEM-c8d54f0d074146",
+                    "quantity": 50
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:14",
+                    "item_id": "KRO-ITEM-d910713dffb2ba",
+                    "quantity": 29
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:15",
+                    "item_id": "KRO-ITEM-7670804897b9a4",
+                    "quantity": 22
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:16",
+                    "item_id": "g1:item:23b51ed40dd0ae",
+                    "quantity": 22
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:17",
+                    "item_id": "KRO-ITEM-492cb14182ef2e",
+                    "quantity": 40
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:18",
+                    "item_id": "g1:item:1449a47df7a229",
+                    "quantity": 5
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:19",
+                    "item_id": "KRO-ITEM-76b8e06d0ab195",
+                    "quantity": 24
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:20",
+                    "item_id": "KRO-ITEM-141bfbda2f619e",
+                    "quantity": 4
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:21",
+                    "item_id": "g1:item:e0c253e73280ad",
+                    "quantity": 5
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:22",
+                    "item_id": "KRO-ITEM-265a90cf89d482",
+                    "quantity": 22
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:23",
+                    "item_id": "KRO-ITEM-120fdb485c7407",
+                    "quantity": 14
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:24",
+                    "item_id": "KRO-ITEM-ca37261fade592",
+                    "quantity": 10
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:25",
+                    "item_id": "KRO-ITEM-39943ae5113d82",
+                    "quantity": 13
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:26",
+                    "item_id": "KRO-ITEM-50d28676a7c7be",
+                    "quantity": 10
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:27",
+                    "item_id": "g1:item:7abef27343f741",
+                    "quantity": 9
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:28",
+                    "item_id": "KRO-ITEM-abc0cb0b1a967a",
+                    "quantity": 18
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:29",
+                    "item_id": "KRO-ITEM-9c19c21786e16e",
+                    "quantity": 15
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:30",
+                    "item_id": "KRO-ITEM-6c8be77cc6022f",
+                    "quantity": 18
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:31",
+                    "item_id": "KRO-ITEM-cb2537570b58dd",
+                    "quantity": 12
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:32",
+                    "item_id": "KRO-ITEM-9b0315683a8906",
+                    "quantity": 11
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:33",
+                    "item_id": "KRO-ITEM-6f2ccc22622518",
+                    "quantity": 8
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:34",
+                    "item_id": "KRO-ITEM-995567c3bc33c4",
+                    "quantity": 7
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:35",
+                    "item_id": "KRO-ITEM-25b010e3c9722d",
+                    "quantity": 10
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:36",
+                    "item_id": "KRO-ITEM-935836c3bb52c7",
+                    "quantity": 3
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:37",
+                    "item_id": "KRO-ITEM-cbb12a848bb382",
+                    "quantity": 12
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:38",
+                    "item_id": "KRO-ITEM-254fee8d880ea9",
+                    "quantity": 24
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:39",
+                    "item_id": "KRO-ITEM-13da4dcfe86a58",
+                    "quantity": 24
+                  },
+                  {
+                    "durability": 150,
+                    "instance_id": "instance:40.0",
+                    "item_id": "KRO-ITEM-89a184f51172c1",
+                    "quantity": 1
+                  },
+                  {
+                    "durability": 47,
+                    "instance_id": "instance:41.0",
+                    "item_id": "KRO-ITEM-89a184f51172c1",
+                    "quantity": 1
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:42",
+                    "item_id": "KRO-ITEM-ef711a4f8eabf2",
+                    "quantity": 5
+                  },
+                  {
+                    "durability": 0,
+                    "instance_id": "instance:43",
+                    "item_id": "KRO-ITEM-9ec709268cac8d",
+                    "quantity": 5
+                  },
+                  {
+                    "durability": 150,
+                    "instance_id": "instance:44.0",
+                    "item_id": "KRO-ITEM-89a184f51172c1",
+                    "quantity": 1
+                  }
+                ]
+              },
+              {
+                "kind": "observation",
+                "wall_unix_ns": 1792209507631222668,
+                "operator_elapsed_s": 66.282,
+                "name": "ordinary_real_equipment_change",
+                "before_equipment": {
+                  "durability": 47,
+                  "instance_id": "instance:41.0",
+                  "item_id": "KRO-ITEM-89a184f51172c1",
+                  "quantity": 1
+                },
+                "after_equipment": {
+                  "durability": 150,
+                  "instance_id": "instance:44.0",
+                  "item_id": "KRO-ITEM-89a184f51172c1",
+                  "quantity": 1
+                },
+                "character": {
+                  "appearance": {
+                    "variant": 0
+                  },
+                  "base_stats": {
+                    "dexterity": 22,
+                    "intelligence": 34,
+                    "strength": 22
+                  },
+                  "dead": false,
+                  "desired_job": "주술사",
+                  "direction": 0,
+                  "guardian": "주작",
+                  "hp": 162,
+                  "hp_max": 210,
+                  "id": "character:0b5e7a416efc7924a434",
+                  "job": "주술사",
+                  "level": 18,
+                  "map_id": "gp:map:forge",
+                  "money": 1161,
+                  "mp": 263,
+                  "mp_max": 266,
+                  "name": "finaljourney",
+                  "nationality": "고구려",
+                  "owner_id": "local-profile:default",
+                  "x": 10,
+                  "xp": 3095,
+                  "y": 9
+                }
+              }
+            ],
+            "separate_transaction_followup_required": false,
+            "character_scope": "One naturally earned mage without grants; sparewood sale/repurchase and new-instance equipment of the same item kind, not a stronger-weapon upgrade. Not four fresh GUI campaigns/natural1–99."
           },
-          "restart-process": {
-            "first_save_ms": 81.716,
-            "save_duration": {
-              "n": 8,
-              "p50_ms": 34.195,
-              "p95_ms": 66.087,
-              "p99_ms": 78.59,
-              "max_ms": 81.716,
+          "host_performance": {
+            "scope": "Every first-process active-play sample inside preregistered continuous1800s phase, no outliers removed. Marker-external active-play and new-process restart metrics are separate; menu/startup/trace-export gaps remain unmeasured and visible in raw video.",
+            "engine_wall_p95_le33_4": true,
+            "engine_wall_p99_le50": false,
+            "engine_input_feedback_p95_le100": true,
+            "OS_received_to_engine_draw_p95_le100": true,
+            "saves_over100ms": 0,
+            "long_wall_incidents": 155,
+            "OS_matching": {
+              "status": "OBSERVED",
+              "all_received_events": 3245,
+              "non_echo_presses": 1623,
+              "echo_events": 0,
+              "release_events": 1622,
+              "press_feedback_missing": 0,
+              "logged_commands": 1622,
+              "matched_commands": 1622,
+              "unmatched_commands": 0,
+              "matched_render_feedback": 1622,
+              "unmatched_engine_presses": 1,
+              "signature_sequence_status": "EXACT_UNIQUE_ORDERED_SEQUENCE",
+              "candidate_command_sequence_starts": [
+                1
+              ],
+              "global_logged_commands": 1631,
+              "global_engine_presses": 1627,
+              "global_signature_correlated_pairs": 1627,
+              "ambiguous_commands": 0,
+              "outside_receipt_phase_commands": 0,
+              "key_presses_without_name_or_ascii_code": 0,
+              "latency_outliers_removed": 0,
+              "method": "Unique complete contiguous ordered signature alignment of non-echo presses by normalized physical key name or mouse button and viewport x/y within 2px. No timestamp lower bound or latency cutoff. Ambiguous or incomplete sequence alignments are not forced. Signed cross-clock residuals retain negatives without calibration and cannot validate command latency. Receipt-to-draw uses event_id within the same engine clock."
+            },
+            "actual_physical_OS_presentation": "NOT_RUN",
+            "human_fun_acceptance": "NOT_RUN",
+            "OS_command_matching_acceptance": "EXCLUDED_UNVALIDATED_CROSS_CLOCK_ALIGNMENT; exact signature correspondence and signed residuals retained; never used to award or fail an absolute command-latency target",
+            "scope_limit": "OS receive starts inside Godot and event-ID post_draw feedback is the bounded measured definition; not physical presentation/guaranteed changed pixels. Command→event latency has unvalidated cross-clock alignment; exact signature correspondence does not calibrate clock drift, so it is excluded from acceptance. Their tails remain in raw evidence; no latency cutoff.",
+            "first_process_active_play_long_wall_incidents": 155,
+            "restart_active_play_long_wall_incidents": 5,
+            "cold_active_play_long_wall_incidents": 7,
+            "all_recorded_active_play_long_wall_incidents": 167,
+            "restart_save_duration": {
+              "n": 2,
+              "p50_ms": 58.541,
+              "p95_ms": 84.181,
+              "p99_ms": 86.46,
+              "max_ms": 87.03,
               "over50ms": 1,
               "over100ms": 0
             },
-            "movement_seconds": 21.033642679001787,
-            "OS_received_to_frame_post_draw": {
-              "n": 7,
-              "p50_ms": 17.715,
-              "p95_ms": 25.068,
-              "p99_ms": 25.543,
-              "max_ms": 25.662,
-              "over50ms": 0,
-              "over100ms": 0
-            }
-          }
-        },
-        "all_save_sets": {
-          "full_first_process": {
-            "n": 858,
-            "p50_ms": 34.097,
-            "p95_ms": 43.824,
-            "p99_ms": 51.322,
-            "max_ms": 90.797,
-            "over50ms": 11,
-            "over100ms": 0
-          },
-          "full_restart_process": {
-            "n": 2,
-            "p50_ms": 58.541,
-            "p95_ms": 84.181,
-            "p99_ms": 86.46,
-            "max_ms": 87.03,
-            "over50ms": 1,
-            "over100ms": 0
-          },
-          "first-process": {
-            "n": 8,
-            "p50_ms": 34.736,
-            "p95_ms": 82.506,
-            "p99_ms": 85.284,
-            "max_ms": 85.978,
-            "over50ms": 2,
-            "over100ms": 0
-          },
-          "restart-process": {
-            "n": 8,
-            "p50_ms": 34.195,
-            "p95_ms": 66.087,
-            "p99_ms": 78.59,
-            "max_ms": 81.716,
-            "over50ms": 1,
-            "over100ms": 0
-          }
-        },
-        "all_recorded_save_count": 876,
-        "all_recorded_saves_under100ms": true,
-        "host_numeric_targets_met": false
-      },
-      "native": "NOT_RUN_CURRENT_R14_CANDIDATE",
-      "native_staging": "evidence/native-resume/final-r14/READY.json",
-      "account_sync": "BLOCKED_NO_IDENTIFIED_GAME_AUTHENTICATED_ENDPOINT",
-      "prior_actual_failure": "R13 completed1806s functional loop but initial cold save116ms failed performance target; earlier82e/r12 interrupted1311s due monster-occupied arrival, repaired without resetting752monsters. Both scopes retained separately.",
-      "new_gameplay_defect_if_any": "No failed functional check in completed scope; numeric targets/tails and native/physical/human gates classified separately.",
-      "verification": "docs/rebuild/v2/VERIFICATION.json",
-      "delivery_status": "PASS_SIX_CURRENT_FILES_SAVED_AND_IDENTITIES_VERIFIED",
-      "delivery_receipt": "docs/rebuild/v2/B5_FINAL_DELIVERY_R14.json",
-      "active_run": null,
-      "all_run_processes_ended": true
-    },
-    "historical_resume_records": [
-      {
-        "resume": {
-          "source_commit": "639750f04d10ee4ac3c1a7113232b8c30109f078",
-          "app_behavior_commit": "639750f04d10ee4ac3c1a7113232b8c30109f078",
-          "runtime_manifest_sha256": "4791e101c547f0a3848297b40b0e424acd776ac85c2d455e40e1f83c4bd1fdf0",
-          "content_sha256": "f1e45c2a7045e130b842325751ab81cf38c22ac92df62ddafe33700aa9267fca",
-          "runtime_generation": "WORK-V2-G1-20261017",
-          "runtime_variant": "r12-final",
-          "ordinary_final30": "R14_RUNNING_NOT_A_FINAL_RESULT",
-          "native": "BLOCKED_BEFORE_RUNNER_STEPS_EXACT_REASON_NOT_OBSERVED",
-          "account_sync": "BLOCKED_NO_IDENTIFIED_GAME_AUTHENTICATED_ENDPOINT",
-          "ordinary_operator_correction": "Clamped map camera projection and actual lower-right overlay boundary; previous short attempts preserved as harness failures, not game pathfinding failures.",
-          "visual_repair": "12 interiors use low door jambs instead of outdoor roof, arbitrary aisle removed, existing domestic tavern blocked cells use complete wooden tables; all76topology and gameplay rules unchanged.",
-          "new_gameplay_defect_if_any": "Arrival and synchronous save/UI allocation fixes verified in targeted scopes; ordinary exact fixed-candidate proof pending",
-          "evidence": [
-            "evidence/r12-impact-reuse.json",
-            "interior-repair-r12.json",
-            "map-render-r12-evidence/map-render.json",
-            "evidence/b5/ui-integrity-resume-final/ui-integrity.json",
-            "evidence/b5-engine/FINAL_R11_IMPACT_ASSESSMENT.json",
-            "evidence/b5-play/final30-r12/",
-            "evidence/native-resume/"
-          ],
-          "functional_behavior_base": "82e09f50861065c8e763efe34f7634d0e95e2e82",
-          "native_block_evidence": "docs/rebuild/v2/B5_NATIVE_RUNNER_BLOCK.json",
-          "native_blocked_candidate": "pre-color be47 r12; current final label-only82e exports require exact input staging when runner block resolved",
-          "color_only_impact": "docs/rebuild/v2/B5_COLOR_ONLY_IMPACT.json",
-          "ordinary_followup": "FIXED_EXACT_PACK_PREFLIGHT14_PASS_WITH_REAL_TRADE_ARRIVAL_RETURN_RESTART",
-          "previous_17min": {
-            "status": "FAIL_HARNESS_CLIPPED_TARGET",
-            "path": "evidence/b5-play/final30-r12/OS_PLAYABILITY.json",
-            "seconds": 1062.23,
-            "video_seconds": 1019.433,
-            "reason": "Operator clicked clipped buy row at y543 over fixedclosefootery542; modalclosednormally; laterclose absent",
-            "app_close_failure_observed": false
-          },
-          "actual_operator_sha256": "1b00a9cbefaa3038814b30a90f361b7dd1f2d1029f7521cfa55539c8a4cdae67",
-          "functional_scope_gap": "Actual same-kind spare weapon sale/purchase/new-instance equip all occurred within completed continuous phase; stronger weapon upgrade not observed.",
-          "observed_final_candidate_failure": {
-            "source_commit": "82e09f50861065c8e763efe34f7634d0e95e2e82",
-            "runtime_manifest_sha256": "4791e101c547f0a3848297b40b0e424acd776ac85c2d455e40e1f83c4bd1fdf0",
-            "error": "Normal route to hunting field failed",
-            "wall_seconds": 1391.37,
-            "continuous_seconds": 1311.235516498,
-            "video_seconds": 1387.7,
-            "real_cause": "east_field landing(2,16) occupied by alive gp:spawn:east:2:0; off-map monster AI freezes, _transition occupied refusal permanently blocks gate. Screenshot DESTINATION_UNAVAILABLE and saved monster position confirm. Not operator projection error.",
-            "performance": {
-              "engine_wall_frame_interval": {
-                "n": 87235,
-                "p50_ms": 13.335,
-                "p95_ms": 21.426,
-                "p99_ms": 73.193,
-                "max_ms": 241.284,
-                "over50ms": 1378,
-                "over100ms": 146
+            "cold_sublegs": {
+              "first-process": {
+                "first_save_ms": 85.978,
+                "save_duration": {
+                  "n": 8,
+                  "p50_ms": 34.736,
+                  "p95_ms": 82.506,
+                  "p99_ms": 85.284,
+                  "max_ms": 85.978,
+                  "over50ms": 2,
+                  "over100ms": 0
+                },
+                "movement_seconds": 21.123055678999663,
+                "OS_received_to_frame_post_draw": {
+                  "n": 7,
+                  "p50_ms": 19.686,
+                  "p95_ms": 22.429,
+                  "p99_ms": 22.795,
+                  "max_ms": 22.887,
+                  "over50ms": 0,
+                  "over100ms": 0
+                }
               },
-              "engine_input_to_frame_post_draw": {
-                "n": 852,
-                "p50_ms": 18.79,
-                "p95_ms": 112.968,
-                "p99_ms": 155.992,
-                "max_ms": 202.507,
-                "over50ms": 213,
-                "over100ms": 61
+              "restart-process": {
+                "first_save_ms": 81.716,
+                "save_duration": {
+                  "n": 8,
+                  "p50_ms": 34.195,
+                  "p95_ms": 66.087,
+                  "p99_ms": 78.59,
+                  "max_ms": 81.716,
+                  "over50ms": 1,
+                  "over100ms": 0
+                },
+                "movement_seconds": 21.033642679001787,
+                "OS_received_to_frame_post_draw": {
+                  "n": 7,
+                  "p50_ms": 17.715,
+                  "p95_ms": 25.068,
+                  "p99_ms": 25.543,
+                  "max_ms": 25.662,
+                  "over50ms": 0,
+                  "over100ms": 0
+                }
+              }
+            },
+            "all_save_sets": {
+              "full_first_process": {
+                "n": 858,
+                "p50_ms": 34.097,
+                "p95_ms": 43.824,
+                "p99_ms": 51.322,
+                "max_ms": 90.797,
+                "over50ms": 11,
+                "over100ms": 0
               },
-              "save_duration": {
-                "n": 628,
-                "p50_ms": 55.767,
-                "p95_ms": 68.03,
-                "p99_ms": 78.096,
-                "max_ms": 95.5,
-                "over50ms": 553,
+              "full_restart_process": {
+                "n": 2,
+                "p50_ms": 58.541,
+                "p95_ms": 84.181,
+                "p99_ms": 86.46,
+                "max_ms": 87.03,
+                "over50ms": 1,
+                "over100ms": 0
+              },
+              "first-process": {
+                "n": 8,
+                "p50_ms": 34.736,
+                "p95_ms": 82.506,
+                "p99_ms": 85.284,
+                "max_ms": 85.978,
+                "over50ms": 2,
+                "over100ms": 0
+              },
+              "restart-process": {
+                "n": 8,
+                "p50_ms": 34.195,
+                "p95_ms": 66.087,
+                "p99_ms": 78.59,
+                "max_ms": 81.716,
+                "over50ms": 1,
                 "over100ms": 0
               }
             },
-            "current_work": {
-              "arrival_fix": "engine only; actual-save reproduction plus bounded deterministic arrival fallback without ID/geometry/monster removal",
-              "store_perf": "store only; eliminate redundant validation/encoding/cache work, preserve atomic and external validation guarantees"
-            },
-            "prior_evidence_reused": "UI/r12visuals/store prior correctness evidence only where unchanged; no failed30min promoted"
+            "all_recorded_save_count": 876,
+            "all_recorded_saves_under100ms": true,
+            "host_numeric_targets_met": false
           },
-          "source_freeze": "evidence/FIXED_SOURCE_FREEZE_R14.json",
-          "targeted_fix_evidence": {
-            "arrival": "evidence/arrival-occupancy/SUMMARY.json",
-            "store": "evidence/store-cold-r14/SUMMARY.json",
-            "UI_rows": "evidence/UI_ALLOCATION_REPAIR.json",
-            "UI_common": "evidence/ui-integrity-r14/ui-integrity.json"
-          },
-          "source_tools_commit": "214144adb934d8982938469c7465cdfd6d1327a4",
-          "fixed_pack_parity": "docs/rebuild/v2/B5_PACK_PARITY_R14.json",
-          "preflight": "evidence/b5-play/cold-resume-r14-fixed/OS_PLAYABILITY.json",
-          "analysis_provenance": "Separate first-process/restart clocks; actual analyzer/input/output receipts retained. Full acceptance not yet reached.",
-          "live_known_incident": {
-            "status": "FINAL_OBSERVED_RETAINED_NOT_EXCLUDED",
-            "first_cold_save_ms": 116.099,
-            "inside_stress": true,
-            "first_existing_read_ms": 76.163,
-            "restart_first_save_ms": 103.415,
-            "restart_existing_read_ms": 70.253,
-            "firstprocess_stress_saves": 855,
-            "firstprocess_stress_over100ms": 1,
-            "restart_saves": 2,
-            "restart_over100ms": 1,
-            "phase_trace_pending_until_normal_menu_flush": false,
-            "source": "4a0c8d796e65a0493207221f2eb60b78d006c681"
-          },
-          "conditional_cold_followup": {
-            "status": "FINAL8EF_SOURCE_PUBLISHED_FRESH_FIXTURES_PASS_RENDERED_GATE_PENDING",
-            "proposal": "evidence/store-cold-proposal.diff",
-            "existing_short_first_existing_read_ms": 67.687,
-            "existing_short_next_existing_read_ms": 2.188,
-            "test_prepared": "tools/rebuild/v2/test_store_cold.gd",
-            "OS_probe_prepared": "tools/rebuild/v2/test_os_cold_resume.py",
-            "restriction": "Keep current1800 process unchanged; inspect completed actual cold phase before selecting minimum fix. Full validation, cache ownership, source/archive preservation remain mandatory."
-          },
-          "analysis_correlation_incident": "PinnedF5 command→receipt greedy matching used single cross-clock sync; monotonic drift caused actual event to be rejected then later repeated key stolen. Preserve rawanalysis. Actual event_id receipt→draw valid; external command cross-clock latency not validated pending minimal analyzer correction.",
-          "cold_capture_guard_history": {
-            "failure": "evidence/b5-play/cold-resume-r14/OS_PLAYABILITY.json",
-            "app_executions": 0,
-            "cold_save_samples": 0,
-            "actual_recorder_proof": "evidence/b5-play/recorder-readiness-proof-r14/PROOF.json",
-            "proof_checks": 4,
-            "current_operator_sha256": "a86183dca7392b5ee1417a15bc1b1f41b1788c6bd22c818538ce870ca884fcbb"
-          },
-          "prior_completed_r13_active_run": {
-            "status": "ENDED_FUNCTIONAL26_PASS_COLD_PERFORMANCE_FAIL",
-            "exec_session_id": 21905,
-            "display": 127,
-            "host_game_pid": 77003,
-            "required_continuous_seconds": 1800,
-            "game_source": "4a0c8d796e65a0493207221f2eb60b78d006c681",
-            "runtime": "r12-final",
-            "PCK": "evidence/pack-parity-r13/final-windows-embedded.pck",
-            "PCK_sha256": "d5558c6926ba6f50bd5d4b148f9539974ad2318141f5e77fea8465904ff33fc0",
-            "operator_sha256": "06540e780e4b2032c8b82859d22d980fe2e255140ad3c27dc97de558cf57b064",
-            "live_log": "evidence/b5-play/final30-r13-run.log",
-            "isolated_session": "/tmp/baram-ordinary-fbkrto2m",
-            "final_report": "evidence/b5-play/final30-r13/OS_PLAYABILITY.json",
-            "final_analysis": "evidence/b5-play/final30-r13/FINAL_ANALYSIS.json",
-            "instruction": "Do not restart valid run. Required1800-second uninterrupted marker-defined stress with actual integrated transactions. First process, stress, separate restart and all tails retained; no new off/on replay.",
-            "continuous_stress_start_unix_ns": 1792206246679055369,
-            "all_processes_ended": true,
-            "observed_continuous_seconds": 1806.054,
-            "wall_seconds": 1825.74
-          },
-          "active_run": {
-            "status": "RUNNING_NOT_A_FINAL_RESULT",
-            "exec_session_id": 49302,
-            "rss_exec_session_id": 55702,
-            "display": 151,
-            "host_game_pid": 91175,
-            "wrapper_pid": 91167,
-            "operator_pid": 91172,
-            "isolated_session": "/tmp/baram-ordinary-qonokdge",
-            "required_continuous_seconds": 1800,
-            "continuous_stress_start_unix_ns": 1792209445649805087,
-            "game_source": "639750f04d10ee4ac3c1a7113232b8c30109f078",
-            "runtime": "r12-final",
-            "PCK": "evidence/pack-parity-r14/final-windows-embedded.pck",
-            "PCK_sha256": "4a9f20d3bc34b6df17d929caa62f19305b346f7b313c4721e315dfad021acd10",
-            "operator_sha256": "06540e780e4b2032c8b82859d22d980fe2e255140ad3c27dc97de558cf57b064",
-            "analyzer_sha256": "69ba13dd7eb5209e7284402ab464ed8709c1b0e671134bd7cc7b4ec5078fd519",
-            "source_tools_commit": "214144adb934d8982938469c7465cdfd6d1327a4",
-            "run_anchor": "evidence/b5-play/final30-r14/RUN_ANCHOR.json",
-            "live_log": "evidence/b5-play/final30-r14-run.log",
-            "final_report": "evidence/b5-play/final30-r14/OS_PLAYABILITY.json",
-            "final_analysis": "evidence/b5-play/final30-r14/FINAL_ANALYSIS.json",
-            "instruction": "Already-running process: do not restart, duplicate, rebuild, upload, decode, benchmark or edit app/tool bytes. Continue marker1800 + actual in-phase transactions + normal return/save/newprocessContinue. All first/stress/restart frames and allcold/warm saves retained."
-          },
-          "cold_actual": {
-            "path": "evidence/b5-play/cold-resume-r14-fixed/OS_PLAYABILITY.json",
-            "status": "FUNCTIONAL72_PASS_16SAVES0_OVER100_HOST_FRAME_TAILS_REMAIN",
-            "first_save_ms": 85.978,
-            "restart_first_save_ms": 81.716,
-            "save_count": 16,
-            "save_over100ms": 0,
-            "frame_p99_ms": [
-              51.584,
-              54.656
-            ],
-            "wall_over100ms": [
-              3,
-              4
-            ],
-            "full_performance_pass": false
+          "native": "NOT_RUN_CURRENT_R14_CANDIDATE",
+          "native_staging": "evidence/native-resume/final-r14/READY.json",
+          "account_sync": "BLOCKED_NO_IDENTIFIED_GAME_AUTHENTICATED_ENDPOINT",
+          "prior_actual_failure": "R13 completed1806s functional loop but initial cold save116ms failed performance target; earlier82e/r12 interrupted1311s due monster-occupied arrival, repaired without resetting752monsters. Both scopes retained separately.",
+          "new_gameplay_defect_if_any": "No failed functional check in completed scope; numeric targets/tails and native/physical/human gates classified separately.",
+          "verification": "docs/rebuild/v2/VERIFICATION.json",
+          "delivery_status": "PASS_SIX_CURRENT_FILES_SAVED_AND_IDENTITIES_VERIFIED",
+          "delivery_receipt": "docs/rebuild/v2/B5_FINAL_DELIVERY_R14.json",
+          "active_run": null,
+          "all_run_processes_ended": true
+        },
+        "historical_resume_records": [
+          {
+            "resume": {
+              "source_commit": "639750f04d10ee4ac3c1a7113232b8c30109f078",
+              "app_behavior_commit": "639750f04d10ee4ac3c1a7113232b8c30109f078",
+              "runtime_manifest_sha256": "4791e101c547f0a3848297b40b0e424acd776ac85c2d455e40e1f83c4bd1fdf0",
+              "content_sha256": "f1e45c2a7045e130b842325751ab81cf38c22ac92df62ddafe33700aa9267fca",
+              "runtime_generation": "WORK-V2-G1-20261017",
+              "runtime_variant": "r12-final",
+              "ordinary_final30": "R14_RUNNING_NOT_A_FINAL_RESULT",
+              "native": "BLOCKED_BEFORE_RUNNER_STEPS_EXACT_REASON_NOT_OBSERVED",
+              "account_sync": "BLOCKED_NO_IDENTIFIED_GAME_AUTHENTICATED_ENDPOINT",
+              "ordinary_operator_correction": "Clamped map camera projection and actual lower-right overlay boundary; previous short attempts preserved as harness failures, not game pathfinding failures.",
+              "visual_repair": "12 interiors use low door jambs instead of outdoor roof, arbitrary aisle removed, existing domestic tavern blocked cells use complete wooden tables; all76topology and gameplay rules unchanged.",
+              "new_gameplay_defect_if_any": "Arrival and synchronous save/UI allocation fixes verified in targeted scopes; ordinary exact fixed-candidate proof pending",
+              "evidence": [
+                "evidence/r12-impact-reuse.json",
+                "interior-repair-r12.json",
+                "map-render-r12-evidence/map-render.json",
+                "evidence/b5/ui-integrity-resume-final/ui-integrity.json",
+                "evidence/b5-engine/FINAL_R11_IMPACT_ASSESSMENT.json",
+                "evidence/b5-play/final30-r12/",
+                "evidence/native-resume/"
+              ],
+              "functional_behavior_base": "82e09f50861065c8e763efe34f7634d0e95e2e82",
+              "native_block_evidence": "docs/rebuild/v2/B5_NATIVE_RUNNER_BLOCK.json",
+              "native_blocked_candidate": "pre-color be47 r12; current final label-only82e exports require exact input staging when runner block resolved",
+              "color_only_impact": "docs/rebuild/v2/B5_COLOR_ONLY_IMPACT.json",
+              "ordinary_followup": "FIXED_EXACT_PACK_PREFLIGHT14_PASS_WITH_REAL_TRADE_ARRIVAL_RETURN_RESTART",
+              "previous_17min": {
+                "status": "FAIL_HARNESS_CLIPPED_TARGET",
+                "path": "evidence/b5-play/final30-r12/OS_PLAYABILITY.json",
+                "seconds": 1062.23,
+                "video_seconds": 1019.433,
+                "reason": "Operator clicked clipped buy row at y543 over fixedclosefootery542; modalclosednormally; laterclose absent",
+                "app_close_failure_observed": false
+              },
+              "actual_operator_sha256": "1b00a9cbefaa3038814b30a90f361b7dd1f2d1029f7521cfa55539c8a4cdae67",
+              "functional_scope_gap": "Actual same-kind spare weapon sale/purchase/new-instance equip all occurred within completed continuous phase; stronger weapon upgrade not observed.",
+              "observed_final_candidate_failure": {
+                "source_commit": "82e09f50861065c8e763efe34f7634d0e95e2e82",
+                "runtime_manifest_sha256": "4791e101c547f0a3848297b40b0e424acd776ac85c2d455e40e1f83c4bd1fdf0",
+                "error": "Normal route to hunting field failed",
+                "wall_seconds": 1391.37,
+                "continuous_seconds": 1311.235516498,
+                "video_seconds": 1387.7,
+                "real_cause": "east_field landing(2,16) occupied by alive gp:spawn:east:2:0; off-map monster AI freezes, _transition occupied refusal permanently blocks gate. Screenshot DESTINATION_UNAVAILABLE and saved monster position confirm. Not operator projection error.",
+                "performance": {
+                  "engine_wall_frame_interval": {
+                    "n": 87235,
+                    "p50_ms": 13.335,
+                    "p95_ms": 21.426,
+                    "p99_ms": 73.193,
+                    "max_ms": 241.284,
+                    "over50ms": 1378,
+                    "over100ms": 146
+                  },
+                  "engine_input_to_frame_post_draw": {
+                    "n": 852,
+                    "p50_ms": 18.79,
+                    "p95_ms": 112.968,
+                    "p99_ms": 155.992,
+                    "max_ms": 202.507,
+                    "over50ms": 213,
+                    "over100ms": 61
+                  },
+                  "save_duration": {
+                    "n": 628,
+                    "p50_ms": 55.767,
+                    "p95_ms": 68.03,
+                    "p99_ms": 78.096,
+                    "max_ms": 95.5,
+                    "over50ms": 553,
+                    "over100ms": 0
+                  }
+                },
+                "current_work": {
+                  "arrival_fix": "engine only; actual-save reproduction plus bounded deterministic arrival fallback without ID/geometry/monster removal",
+                  "store_perf": "store only; eliminate redundant validation/encoding/cache work, preserve atomic and external validation guarantees"
+                },
+                "prior_evidence_reused": "UI/r12visuals/store prior correctness evidence only where unchanged; no failed30min promoted"
+              },
+              "source_freeze": "evidence/FIXED_SOURCE_FREEZE_R14.json",
+              "targeted_fix_evidence": {
+                "arrival": "evidence/arrival-occupancy/SUMMARY.json",
+                "store": "evidence/store-cold-r14/SUMMARY.json",
+                "UI_rows": "evidence/UI_ALLOCATION_REPAIR.json",
+                "UI_common": "evidence/ui-integrity-r14/ui-integrity.json"
+              },
+              "source_tools_commit": "214144adb934d8982938469c7465cdfd6d1327a4",
+              "fixed_pack_parity": "docs/rebuild/v2/B5_PACK_PARITY_R14.json",
+              "preflight": "evidence/b5-play/cold-resume-r14-fixed/OS_PLAYABILITY.json",
+              "analysis_provenance": "Separate first-process/restart clocks; actual analyzer/input/output receipts retained. Full acceptance not yet reached.",
+              "live_known_incident": {
+                "status": "FINAL_OBSERVED_RETAINED_NOT_EXCLUDED",
+                "first_cold_save_ms": 116.099,
+                "inside_stress": true,
+                "first_existing_read_ms": 76.163,
+                "restart_first_save_ms": 103.415,
+                "restart_existing_read_ms": 70.253,
+                "firstprocess_stress_saves": 855,
+                "firstprocess_stress_over100ms": 1,
+                "restart_saves": 2,
+                "restart_over100ms": 1,
+                "phase_trace_pending_until_normal_menu_flush": false,
+                "source": "4a0c8d796e65a0493207221f2eb60b78d006c681"
+              },
+              "conditional_cold_followup": {
+                "status": "FINAL8EF_SOURCE_PUBLISHED_FRESH_FIXTURES_PASS_RENDERED_GATE_PENDING",
+                "proposal": "evidence/store-cold-proposal.diff",
+                "existing_short_first_existing_read_ms": 67.687,
+                "existing_short_next_existing_read_ms": 2.188,
+                "test_prepared": "tools/rebuild/v2/test_store_cold.gd",
+                "OS_probe_prepared": "tools/rebuild/v2/test_os_cold_resume.py",
+                "restriction": "Keep current1800 process unchanged; inspect completed actual cold phase before selecting minimum fix. Full validation, cache ownership, source/archive preservation remain mandatory."
+              },
+              "analysis_correlation_incident": "PinnedF5 command→receipt greedy matching used single cross-clock sync; monotonic drift caused actual event to be rejected then later repeated key stolen. Preserve rawanalysis. Actual event_id receipt→draw valid; external command cross-clock latency not validated pending minimal analyzer correction.",
+              "cold_capture_guard_history": {
+                "failure": "evidence/b5-play/cold-resume-r14/OS_PLAYABILITY.json",
+                "app_executions": 0,
+                "cold_save_samples": 0,
+                "actual_recorder_proof": "evidence/b5-play/recorder-readiness-proof-r14/PROOF.json",
+                "proof_checks": 4,
+                "current_operator_sha256": "a86183dca7392b5ee1417a15bc1b1f41b1788c6bd22c818538ce870ca884fcbb"
+              },
+              "prior_completed_r13_active_run": {
+                "status": "ENDED_FUNCTIONAL26_PASS_COLD_PERFORMANCE_FAIL",
+                "exec_session_id": 21905,
+                "display": 127,
+                "host_game_pid": 77003,
+                "required_continuous_seconds": 1800,
+                "game_source": "4a0c8d796e65a0493207221f2eb60b78d006c681",
+                "runtime": "r12-final",
+                "PCK": "evidence/pack-parity-r13/final-windows-embedded.pck",
+                "PCK_sha256": "d5558c6926ba6f50bd5d4b148f9539974ad2318141f5e77fea8465904ff33fc0",
+                "operator_sha256": "06540e780e4b2032c8b82859d22d980fe2e255140ad3c27dc97de558cf57b064",
+                "live_log": "evidence/b5-play/final30-r13-run.log",
+                "isolated_session": "/tmp/baram-ordinary-fbkrto2m",
+                "final_report": "evidence/b5-play/final30-r13/OS_PLAYABILITY.json",
+                "final_analysis": "evidence/b5-play/final30-r13/FINAL_ANALYSIS.json",
+                "instruction": "Do not restart valid run. Required1800-second uninterrupted marker-defined stress with actual integrated transactions. First process, stress, separate restart and all tails retained; no new off/on replay.",
+                "continuous_stress_start_unix_ns": 1792206246679055369,
+                "all_processes_ended": true,
+                "observed_continuous_seconds": 1806.054,
+                "wall_seconds": 1825.74
+              },
+              "active_run": {
+                "status": "RUNNING_NOT_A_FINAL_RESULT",
+                "exec_session_id": 49302,
+                "rss_exec_session_id": 55702,
+                "display": 151,
+                "host_game_pid": 91175,
+                "wrapper_pid": 91167,
+                "operator_pid": 91172,
+                "isolated_session": "/tmp/baram-ordinary-qonokdge",
+                "required_continuous_seconds": 1800,
+                "continuous_stress_start_unix_ns": 1792209445649805087,
+                "game_source": "639750f04d10ee4ac3c1a7113232b8c30109f078",
+                "runtime": "r12-final",
+                "PCK": "evidence/pack-parity-r14/final-windows-embedded.pck",
+                "PCK_sha256": "4a9f20d3bc34b6df17d929caa62f19305b346f7b313c4721e315dfad021acd10",
+                "operator_sha256": "06540e780e4b2032c8b82859d22d980fe2e255140ad3c27dc97de558cf57b064",
+                "analyzer_sha256": "69ba13dd7eb5209e7284402ab464ed8709c1b0e671134bd7cc7b4ec5078fd519",
+                "source_tools_commit": "214144adb934d8982938469c7465cdfd6d1327a4",
+                "run_anchor": "evidence/b5-play/final30-r14/RUN_ANCHOR.json",
+                "live_log": "evidence/b5-play/final30-r14-run.log",
+                "final_report": "evidence/b5-play/final30-r14/OS_PLAYABILITY.json",
+                "final_analysis": "evidence/b5-play/final30-r14/FINAL_ANALYSIS.json",
+                "instruction": "Already-running process: do not restart, duplicate, rebuild, upload, decode, benchmark or edit app/tool bytes. Continue marker1800 + actual in-phase transactions + normal return/save/newprocessContinue. All first/stress/restart frames and allcold/warm saves retained."
+              },
+              "cold_actual": {
+                "path": "evidence/b5-play/cold-resume-r14-fixed/OS_PLAYABILITY.json",
+                "status": "FUNCTIONAL72_PASS_16SAVES0_OVER100_HOST_FRAME_TAILS_REMAIN",
+                "first_save_ms": 85.978,
+                "restart_first_save_ms": 81.716,
+                "save_count": 16,
+                "save_over100ms": 0,
+                "frame_p99_ms": [
+                  51.584,
+                  54.656
+                ],
+                "wall_over100ms": [
+                  3,
+                  4
+                ],
+                "full_performance_pass": false
+              }
+            }
           }
+        ]
+      },
+      "retained_actual_status": {
+        "Android": "NOT_RUN_CURRENT_R14_APK",
+        "Windows_native": "NOT_RUN_CURRENT_R14_EXE",
+        "Galaxy": "NOT_RUN_NO_DEVICE_ACCESS",
+        "OS_Korean_IME": "NOT_RUN",
+        "physical_listening": "NOT_RUN",
+        "same_account_roundtrip": "BLOCKED_NO_IDENTIFIED_GAME_AUTHENTICATED_ENDPOINT",
+        "original_city_grid": "UNRESOLVED_RECONSTRUCTION_NOW_AUTHORIZED",
+        "old_Android_save_automatic_migration": "NOT_VERIFIED",
+        "performance": {
+          "host_continuous_stress": {
+            "scope": "Every first-process active-play sample inside preregistered continuous1800s phase, no outliers removed. Marker-external active-play and new-process restart metrics are separate; menu/startup/trace-export gaps remain unmeasured and visible in raw video.",
+            "engine_wall_p95_le33_4": true,
+            "engine_wall_p99_le50": false,
+            "engine_input_feedback_p95_le100": true,
+            "OS_received_to_engine_draw_p95_le100": true,
+            "saves_over100ms": 0,
+            "long_wall_incidents": 155,
+            "OS_matching": {
+              "status": "OBSERVED",
+              "all_received_events": 3245,
+              "non_echo_presses": 1623,
+              "echo_events": 0,
+              "release_events": 1622,
+              "press_feedback_missing": 0,
+              "logged_commands": 1622,
+              "matched_commands": 1622,
+              "unmatched_commands": 0,
+              "matched_render_feedback": 1622,
+              "unmatched_engine_presses": 1,
+              "signature_sequence_status": "EXACT_UNIQUE_ORDERED_SEQUENCE",
+              "candidate_command_sequence_starts": [
+                1
+              ],
+              "global_logged_commands": 1631,
+              "global_engine_presses": 1627,
+              "global_signature_correlated_pairs": 1627,
+              "ambiguous_commands": 0,
+              "outside_receipt_phase_commands": 0,
+              "key_presses_without_name_or_ascii_code": 0,
+              "latency_outliers_removed": 0,
+              "method": "Unique complete contiguous ordered signature alignment of non-echo presses by normalized physical key name or mouse button and viewport x/y within 2px. No timestamp lower bound or latency cutoff. Ambiguous or incomplete sequence alignments are not forced. Signed cross-clock residuals retain negatives without calibration and cannot validate command latency. Receipt-to-draw uses event_id within the same engine clock."
+            },
+            "actual_physical_OS_presentation": "NOT_RUN",
+            "human_fun_acceptance": "NOT_RUN",
+            "OS_command_matching_acceptance": "EXCLUDED_UNVALIDATED_CROSS_CLOCK_ALIGNMENT; exact signature correspondence and signed residuals retained; never used to award or fail an absolute command-latency target",
+            "scope_limit": "OS receive starts inside Godot and event-ID post_draw feedback is the bounded measured definition; not physical presentation/guaranteed changed pixels. Command→event latency has unvalidated cross-clock alignment; exact signature correspondence does not calibrate clock drift, so it is excluded from acceptance. Their tails remain in raw evidence; no latency cutoff.",
+            "first_process_active_play_long_wall_incidents": 155,
+            "restart_active_play_long_wall_incidents": 5,
+            "cold_active_play_long_wall_incidents": 7,
+            "all_recorded_active_play_long_wall_incidents": 167,
+            "restart_save_duration": {
+              "n": 2,
+              "p50_ms": 58.541,
+              "p95_ms": 84.181,
+              "p99_ms": 86.46,
+              "max_ms": 87.03,
+              "over50ms": 1,
+              "over100ms": 0
+            },
+            "cold_sublegs": {
+              "first-process": {
+                "first_save_ms": 85.978,
+                "save_duration": {
+                  "n": 8,
+                  "p50_ms": 34.736,
+                  "p95_ms": 82.506,
+                  "p99_ms": 85.284,
+                  "max_ms": 85.978,
+                  "over50ms": 2,
+                  "over100ms": 0
+                },
+                "movement_seconds": 21.123055678999663,
+                "OS_received_to_frame_post_draw": {
+                  "n": 7,
+                  "p50_ms": 19.686,
+                  "p95_ms": 22.429,
+                  "p99_ms": 22.795,
+                  "max_ms": 22.887,
+                  "over50ms": 0,
+                  "over100ms": 0
+                }
+              },
+              "restart-process": {
+                "first_save_ms": 81.716,
+                "save_duration": {
+                  "n": 8,
+                  "p50_ms": 34.195,
+                  "p95_ms": 66.087,
+                  "p99_ms": 78.59,
+                  "max_ms": 81.716,
+                  "over50ms": 1,
+                  "over100ms": 0
+                },
+                "movement_seconds": 21.033642679001787,
+                "OS_received_to_frame_post_draw": {
+                  "n": 7,
+                  "p50_ms": 17.715,
+                  "p95_ms": 25.068,
+                  "p99_ms": 25.543,
+                  "max_ms": 25.662,
+                  "over50ms": 0,
+                  "over100ms": 0
+                }
+              }
+            },
+            "all_save_sets": {
+              "full_first_process": {
+                "n": 858,
+                "p50_ms": 34.097,
+                "p95_ms": 43.824,
+                "p99_ms": 51.322,
+                "max_ms": 90.797,
+                "over50ms": 11,
+                "over100ms": 0
+              },
+              "full_restart_process": {
+                "n": 2,
+                "p50_ms": 58.541,
+                "p95_ms": 84.181,
+                "p99_ms": 86.46,
+                "max_ms": 87.03,
+                "over50ms": 1,
+                "over100ms": 0
+              },
+              "first-process": {
+                "n": 8,
+                "p50_ms": 34.736,
+                "p95_ms": 82.506,
+                "p99_ms": 85.284,
+                "max_ms": 85.978,
+                "over50ms": 2,
+                "over100ms": 0
+              },
+              "restart-process": {
+                "n": 8,
+                "p50_ms": 34.195,
+                "p95_ms": 66.087,
+                "p99_ms": 78.59,
+                "max_ms": 81.716,
+                "over50ms": 1,
+                "over100ms": 0
+              }
+            },
+            "all_recorded_save_count": 876,
+            "all_recorded_saves_under100ms": true,
+            "host_numeric_targets_met": false
+          },
+          "host_overall": "PARTIAL_HOST_PERFORMANCE_TARGET_NOT_MET_NATIVE_ACCOUNT_GATES_REMAIN",
+          "physical_target_device": "NOT_RUN"
         }
       }
-    ]
+    }
+  },
+  "publication": {
+    "method": "Atomic documentation/model commit on existing active Work branch, expected-HEAD lease, no force push",
+    "verification": "App0627c774 and exact export file hashes are pinned separately from later documentation/test-tool commits; no main/production mutation."
+  },
+  "execution_20261017": {
+    "generation": "G2",
+    "source_commit": "0627c774927d92b68936ffd3323129fa268967dd",
+    "evidence": "docs/rebuild/v2/VERIFICATION.json"
+  },
+  "playability_20261017": {
+    "generation": "G2",
+    "ordinary_seconds": 1801.2429928830024,
+    "overall": "PARTIAL_PERFORMANCE_NATIVE_ACCOUNT_GATES_REMAIN"
   },
   "G2_integration_checkpoint": {
     "app_source": "0627c774927d92b68936ffd3323129fa268967dd",
@@ -1979,5 +2121,14 @@
         "status": "BUILT_NOT_NATIVE_EXECUTION_VERIFIED"
       }
     ]
+  },
+  "delivery_20261017_G2": {
+    "status": "SAVED_ORDERED_BATCH",
+    "candidate": "G2-r15",
+    "files": 6,
+    "manifest": "docs/rebuild/v2/DELIVERY.json",
+    "app_source_commit": "0627c774927d92b68936ffd3323129fa268967dd",
+    "native_update": "NOT_RUN",
+    "full_B6_acceptance": "PENDING"
   }
 }

@@ -1,0 +1,44 @@
+{
+  "schema": "baram.g2.reuse-impact/1",
+  "policy": "Earlier quest/recipe and UI execution retained after exact field equivalence and lossless collision proof; do not count reused checks as a new execution. Final source all-ID/AI/store/OS runs are separate.",
+  "checks": [
+    {
+      "field": "items",
+      "byte_canonical_definition_equivalent": true,
+      "sha256": "fac7dfb2118137fee209b4a82e75fbef5804a564064e101df1aed007f75baf53"
+    },
+    {
+      "field": "skills",
+      "byte_canonical_definition_equivalent": true,
+      "sha256": "8397e4a265efdfa209a3507d3938a4b44172f0b9a8dda19294029bcc8bab8233"
+    },
+    {
+      "field": "npcs",
+      "byte_canonical_definition_equivalent": true,
+      "sha256": "597bfa280bc369fceb0407cb6ba106e3e3193dc72217744d73078810a14d8414"
+    },
+    {
+      "field": "quests",
+      "byte_canonical_definition_equivalent": true,
+      "sha256": "16d091474c891af50b8678067c8898f40adfb5247fb89451f40b8137068cfd18"
+    },
+    {
+      "field": "recipes",
+      "byte_canonical_definition_equivalent": true,
+      "sha256": "ccdb0c8bf0057351dde8606ab1d2f09352313a4845a4b315052b487f4b5367d5"
+    },
+    {
+      "field": "advancements",
+      "byte_canonical_definition_equivalent": true,
+      "sha256": "3f517bc68420e7f34f3546fde89b6e0d21e23a8280653d2aa649e18e48d0d50e"
+    },
+    {
+      "field": "training_rules",
+      "byte_canonical_definition_equivalent": true,
+      "sha256": "cc59f88e8d5b8b3f14a58889430dd8ef9980e49438d23b6bdfae5626c230a552"
+    }
+  ],
+  "source_before": "dd1822a070eeaf614df32dd129036ff6272338fd",
+  "source_after": "0627c774927d92b68936ffd3323129fa268967dd",
+  "changes": "Enemy status save validation, gather save field, camp arrivals and directional collision representation; strict monster encounter additions; these do not change quest/reward/recipe/skill/NPC definitions."
+}

@@ -1,0 +1,6 @@
+{
+  "source_object_records_in_adopted_chunks": 47334,
+  "placed_with_source_relative_coordinates": 46994,
+  "outside_64cell_anchor_records_skipped": 340,
+  "policy": "Native import retains anchors within the decoded64x64 chunk. Out-of-chunk anchors are excluded, not counted as placed; boundary art remains a tuning limit."
+}

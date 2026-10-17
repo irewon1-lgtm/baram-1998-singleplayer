@@ -1,0 +1,67 @@
+{
+  "schema": "baram.g2.persistent-save/1",
+  "status": "SAVED_ORDERED_BATCH",
+  "all_succeeded": true,
+  "files": [
+    {
+      "filename": "baram-G2-r15-Android.apk",
+      "local_path": "/workspace/scratch/7a09b4f9ec28/deliverables/baram-G2-r15-Android.apk",
+      "bytes": 122877379,
+      "sha256": "1215248ce8b48c48036b0f9c584ce0066cef8dd8088d8c6069365a1f7b4e42e2",
+      "library_file_id": "libfile_3f85c26df5ac8191af05a9f5c4f365de",
+      "file_id": "file_00000000fecc81f79eefe68587c1bb37",
+      "current_version_number": 0,
+      "persistent_save_status": "SAVED"
+    },
+    {
+      "filename": "baram-G2-r15-Windows64.zip",
+      "local_path": "/workspace/scratch/7a09b4f9ec28/deliverables/baram-G2-r15-Windows64.zip",
+      "bytes": 80744260,
+      "sha256": "1dc970a0031e8989ea83da1fb477756701ed9ad2e6265f558b3c3e436d1d32d6",
+      "library_file_id": "libfile_17bc351f20dc8191849d7efa0528d124",
+      "file_id": "file_0000000004fc81f5b7e3d0a03427ba42",
+      "current_version_number": 0,
+      "persistent_save_status": "SAVED"
+    },
+    {
+      "filename": "baram-G2-r15-evidence.zip",
+      "local_path": "/workspace/scratch/7a09b4f9ec28/deliverables/baram-G2-r15-evidence.zip",
+      "bytes": 330452616,
+      "sha256": "6232bfcb436357c612ab4c188be4156367355dac5c4d46770f9a9c4877995323",
+      "library_file_id": "libfile_9466c000d438819195ef6503d3a57227",
+      "file_id": "file_00000000b20c81f78a5e327ea77aad5a",
+      "current_version_number": 0,
+      "persistent_save_status": "SAVED"
+    },
+    {
+      "filename": "baram-G2-r15-ordinary30-unedited.mp4",
+      "local_path": "/workspace/scratch/7a09b4f9ec28/deliverables/baram-G2-r15-ordinary30-unedited.mp4",
+      "bytes": 396945443,
+      "sha256": "0a08791d2b7aa01274b009628b8ca3866c6b14998c6a1e752bc3adca2adb6ea3",
+      "library_file_id": "libfile_03789bb268248191a486c17c77c0103c",
+      "file_id": "file_00000000c7c081f7a477112793a00f50",
+      "current_version_number": 0,
+      "persistent_save_status": "SAVED"
+    },
+    {
+      "filename": "baram-G2-r15-private-runtime.zip",
+      "local_path": "/workspace/scratch/7a09b4f9ec28/deliverables/baram-G2-r15-private-runtime.zip",
+      "bytes": 126821300,
+      "sha256": "00a6eccfe789217c4a10f35be5db785445ff658d62cc8fe363c71c552d88f378",
+      "library_file_id": "libfile_ad223cb808308191b3714661fdbce1b9",
+      "file_id": "file_000000008d3481f7ae4f8f3e509d67c8",
+      "current_version_number": 0,
+      "persistent_save_status": "SAVED"
+    },
+    {
+      "filename": "baram-G2-r15-results.html",
+      "local_path": "/workspace/scratch/7a09b4f9ec28/deliverables/baram-G2-r15-results.html",
+      "bytes": 1906688,
+      "sha256": "f6f329d5dd2873a43e4d63dc2ea084db56c72f9ebb5990ecb586ecc11d8fc135",
+      "library_file_id": "libfile_71d4a2c1d83c81919a69bbeb59523244",
+      "file_id": "file_00000000067481f79803ddcf637a4c31",
+      "current_version_number": 0,
+      "persistent_save_status": "SAVED"
+    }
+  ]
+}

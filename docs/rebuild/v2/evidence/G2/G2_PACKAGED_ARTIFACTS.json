@@ -1,0 +1,40 @@
+{
+  "schema": "baram.g2.packaged-artifacts/1",
+  "source_commit": "0627c774927d92b68936ffd3323129fa268967dd",
+  "source_content_fingerprint": "41a7e9dd755dbc5c48d1bf24422edb656bead63d4f96ea2bd47b63c86da7006d",
+  "runtime_manifest_sha256": "2c3844f186cb1e2387e7acafa3d9de037737d8c82ff9ee8058b89c7c86da92b3",
+  "content_sha256": "bbb0b00a750a3397061bf959c96aa47a160513df4332262e3bc35ca41eda7fc3",
+  "windows_exe_sha256": "dcabd093d258e17177a71de3fe48792f535bfda8225735cc5a698fb7d3153f16",
+  "original_export_zip_sha256": "a2264f5abd7dbb78bff7ccdf8969f337240debb7689cc8a4247d7ab8de28b97e",
+  "repacked_windows_zip_policy": "Same byte-identical EXE plus Korean installation/control/save guide and checksum; no executable changes.",
+  "artifacts": [
+    {
+      "filename": "baram-G2-r15-Android.apk",
+      "local_path": "/workspace/scratch/7a09b4f9ec28/deliverables/baram-G2-r15-Android.apk",
+      "bytes": 122877379,
+      "sha256": "1215248ce8b48c48036b0f9c584ce0066cef8dd8088d8c6069365a1f7b4e42e2",
+      "status": "BUILT_NOT_NATIVE_EXECUTION_VERIFIED"
+    },
+    {
+      "filename": "baram-G2-r15-Windows64.zip",
+      "local_path": "/workspace/scratch/7a09b4f9ec28/deliverables/baram-G2-r15-Windows64.zip",
+      "bytes": 80744260,
+      "sha256": "1dc970a0031e8989ea83da1fb477756701ed9ad2e6265f558b3c3e436d1d32d6",
+      "status": "BUILT_NOT_NATIVE_EXECUTION_VERIFIED"
+    },
+    {
+      "filename": "baram-G2-r15-private-runtime.zip",
+      "local_path": "/workspace/scratch/7a09b4f9ec28/deliverables/baram-G2-r15-private-runtime.zip",
+      "bytes": 126821300,
+      "sha256": "00a6eccfe789217c4a10f35be5db785445ff658d62cc8fe363c71c552d88f378",
+      "status": "BUILT_NOT_NATIVE_EXECUTION_VERIFIED"
+    }
+  ],
+  "installed_package": "com.irewon.baram.p3repair20261016",
+  "user_directory": "baram_rebuild_p3repair_001",
+  "version_code": 7,
+  "signer_sha256": "c0bc3989d93d7b9443bbfa59281797a48e2b020e5da4b1dc91858768b35ccd05",
+  "native_update": "NOT_RUN",
+  "native_execution": "NOT_RUN",
+  "private_keys_or_user_saves_in_artifacts": false
+}

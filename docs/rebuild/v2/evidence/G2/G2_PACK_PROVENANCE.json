@@ -1,0 +1,18 @@
+{
+  "schema": "baram.g2.pack-provenance/1",
+  "source_commit": "0627c774927d92b68936ffd3323129fa268967dd",
+  "runtime_manifest_sha256": "2c3844f186cb1e2387e7acafa3d9de037737d8c82ff9ee8058b89c7c86da92b3",
+  "content_sha256": "bbb0b00a750a3397061bf959c96aa47a160513df4332262e3bc35ca41eda7fc3",
+  "source_content_fingerprint": "41a7e9dd755dbc5c48d1bf24422edb656bead63d4f96ea2bd47b63c86da7006d",
+  "standard_parity_status": "PASS",
+  "expanded_parity_status": "PASS",
+  "expanded_parity_failures": 0,
+  "expanded_file_count": 8990,
+  "embedded_pck": {
+    "sha256": "fa59b25fec2280993a81c80c8fb6412afe59c425ec38ba01675d36f7e92879d5",
+    "bytes": 120789436
+  },
+  "same_export_inputs": true,
+  "native_Windows": "NOT_RUN",
+  "native_Android": "NOT_RUN"
+}
