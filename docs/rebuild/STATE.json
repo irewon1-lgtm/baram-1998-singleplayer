@@ -8,12 +8,12 @@
   "active_branch": "work/rebuild-p3-remediation-20261016",
   "entrypoint": "AGENTS.md",
   "master_plan": "docs/rebuild/MASTER_PLAN.md",
-  "status": "PARTIAL_NATIVE_PLATFORM_AND_SYNC_GATES_PENDING",
-  "implementation_status": "G1_CONTENT_ENGINE_HOST_GUI_SCOPE_VERIFIED",
+  "status": "B5_USER_REPORTED_PLAYABILITY_FAIL_REPAIR_IN_PROGRESS",
+  "implementation_status": "G1_RETAINED_USER_PLAYABILITY_FAILURES_REOPENED",
   "handoff_commit": "d124aa6c23c753f1fa1edd810b0b0386e3b80315",
   "app_behavior_commit": "c9fe92886cb738708b189bd14f0c40299ddef301",
-  "current_phase": "B6",
-  "current_phase_execution": "CANDIDATES_DELIVERED_NATIVE_AND_SYNC_GATES_PENDING",
+  "current_phase": "B5",
+  "current_phase_execution": "REPAIR_IN_PROGRESS",
   "authorization": {
     "goal_and_plan": "USER_APPROVED",
     "ordered_followup_work": "B1_THROUGH_B6_WITHIN_FREE_SCOPE",
@@ -153,20 +153,20 @@
     },
     {
       "id": "B5",
-      "status": "HOST_FUNCTIONAL_TESTS_COMPLETE_LAYOUT_AND_NATIVE_GATES_RETAINED"
+      "status": "USER_REPORTED_PLAYABILITY_FAIL_REPAIR_IN_PROGRESS"
     },
     {
       "id": "B6",
-      "status": "CANDIDATES_DELIVERED_NATIVE_RELEASE_GATE_PENDING"
+      "status": "RELEASE_BLOCKED_BY_B5"
     }
   ],
   "next_action": {
     "owner": "Work",
-    "phase": "B5_B6_NATIVE_GATES",
-    "action": "Use the exact delivered c9fe9288 APK on Galaxy and ZIP on native Windows: visible first menu/frame, Korean creation/IME, normal hunting/input, save/restart, Android same-repair-package update and retained save, device frame time/audio. Implement and verify authenticated Windows→Android→Windows continuation only with an approved accessible free endpoint. Current G1 source/content/host tests and candidates are already complete; do not restart inventory, parser, SDK or exports without a changed input or reproduced defect.",
-    "on_environment_block": "Keep native Android/Galaxy/Windows/IME/audio/performance NOT_RUN and account sync NOT_IMPLEMENTED. Deliver candidates and evidence without claiming full-goal PASS.",
+    "phase": "B5",
+    "action": "Measure same full G1 idle/move/path/combat/dialogue/save route; repair reproduced bottlenecks and fixed modal close controls/building assembly, revalidate affected save and engine paths; then remaining four-job play, native platforms/auth sync and B6 same candidate.",
+    "on_environment_block": "Continue independent B5 code/UI/assets and adapter tests; native physical devices and authenticated roundtrip remain explicitly BLOCKED/NOT_RUN. B6 promotion blocked by B5 failures.",
     "do_not_repeat": "No full inventory/SDK/parser reset; reuse verified toolchain and unchanged evidence; only changed-source affected final suites.",
-    "resume_from": "Current branch HEAD; app behavior c9fe92886cb738708b189bd14f0c40299ddef301; docs/rebuild/v2/DELIVERY.json identifies exact candidate/runtime/evidence artifacts. Retained private signer remains in existing private handoff, not GitHub or new public files."
+    "resume_from": "Current HEAD plus B5 work-in-progress; source/runtime restored without reset; use existing Godot4.6.3/export toolchain and retained private signer."
   },
   "retry_policy": {
     "deterministic_unchanged_failure": "CHANGE_METHOD",
@@ -240,5 +240,18 @@
     "export_source_provenance": "Export git_head_at_export39c7 predates local ref advancement. Actual49 source/3411 runtime snapshot file hashes match published app sourcec9fe and shared fingerprint0f5a5259. No app/runtime modifications after candidate creation.",
     "delivery": "docs/rebuild/v2/DELIVERY.json",
     "delivered_file_count": 6
+  },
+  "playability_20261017": {
+    "task_id": "BARAM_V2_B5_B6_PLAYABILITY_20261017",
+    "baseline_head": "9f02bdf7f8b0ba73693600ad0d6c77665be9c0e7",
+    "baseline_app": "c9fe92886cb738708b189bd14f0c40299ddef301",
+    "user_reported_failures": [
+      "movement_action_stutter",
+      "NPC_dialogue_close_not_readily_accessible",
+      "map_building_visual_defects"
+    ],
+    "developer_reproduction": "IN_PROGRESS",
+    "scope": "Keep B0-B4/G1 IDs, fix affected B3/B4 code/assets within B5; actual platform/sync/update gates retained",
+    "prior_evidence_policy": "Historical PASS logs retained, affected source/content/config/environment/scope revalidated; no unexecuted PASS"
   }
 }
