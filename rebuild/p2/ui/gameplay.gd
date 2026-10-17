@@ -129,6 +129,7 @@ var runtime_monster_count := -1
 var equipment_slot_names: Array = []
 var equipment_preview_look := ""
 var position_observation_path := OS.get_environment("BARAM_POSITION_OBSERVATION")
+var gather_label_audit: Array = []
 
 func checkpoint(stage: String, details: Dictionary = {}) -> void:
 	var value := {"stage":stage,"ticks_ms":Time.get_ticks_msec(),"pid":OS.get_process_id(),"platform":OS.get_name(),"details":details}
@@ -602,7 +603,7 @@ func _layout_checkpoint() -> void:
 		if not is_instance_valid(region): continue
 		var rect: Rect2=region.get_global_rect()
 		scroll_regions[pair[0]]={"rect":[rect.position.x,rect.position.y,rect.size.x,rect.size.y],"scroll_vertical":region.scroll_vertical,"visible":region.is_visible_in_tree()}
-	checkpoint("ui_layout",{"controls":controls,"scroll_regions":scroll_regions,"view_rect":[view.get_global_rect().position.x,view.get_global_rect().position.y,view.size.x,view.size.y],"view_zoom":view.zoom,"view_focus":[view.focus.x,view.focus.y],"character_position":game.state.get("character",{}).duplicate()})
+	checkpoint("ui_layout",{"controls":controls,"scroll_regions":scroll_regions,"view_rect":[view.get_global_rect().position.x,view.get_global_rect().position.y,view.size.x,view.size.y],"view_zoom":view.zoom,"view_focus":[view.focus.x,view.focus.y],"character_position":game.state.get("character",{}).duplicate(),"gather_label_audit":gather_label_audit.duplicate(true)})
 
 func _save() -> bool:
 	if game.state.is_empty() or save_path.is_empty(): return false
@@ -1436,6 +1437,7 @@ func _render_world() -> void:
 			scenery_cache.append(entry)
 	sorted.append_array(scenery_cache)
 	var labels: Array=[]
+	var gather_captions: Array=[]
 	labels.append_array(_readable_landmarks(map,camera,world_zoom))
 	for node in map.get("gather_nodes",[]):
 		if not visible_world.has_point(Vector2(float(node.x)*24,float(node.y)*24)):continue
@@ -1444,7 +1446,7 @@ func _render_world() -> void:
 			var node_path:=str(node_icon.path)
 			if not node_path.begins_with("gameplay-assets/"):node_path="gameplay-assets/"+node_path
 			sorted.append({"path":node_path,"x":int(node.x)*24,"y":int(node.y)*24,"depth_y":int(node.y)*24+23})
-		labels.append({"x":int(node.x)*24+12,"y":int(node.y)*24+24,"text":str(node.name)+" · 채집","color":"98d787"})
+		gather_captions.append({"node_id":str(node.id),"x":int(node.x)*24+12,"y":int(node.y)*24+24,"text":str(node.name)+" · 채집","color":"98d787"})
 	for id in runtime_npc_ids:
 		var npc: Dictionary=content.data.npcs[id]
 		var layer := _actor_layer(str(npc.get("look_id",npc.get("appearance_id","tavern"))),"standing",int(npc.get("direction",2)),int(npc.x),int(npc.y))
@@ -1508,6 +1510,8 @@ func _render_world() -> void:
 			_append_depth_effect(sorted,sample,position.y)
 	sorted.sort_custom(func(a,b): return float(a.get("depth_y",a.y))<float(b.get("depth_y",b.y)))
 	layers.append_array(sorted)
+	var gather_layout:=_readable_gather_labels(map,gather_captions,labels,camera,world_zoom)
+	labels.append_array(gather_layout.labels);gather_label_audit=gather_layout.audit
 	view.labels=labels
 	view.configure(layers,Vector2(int(map.width)*24,int(map.height)*24),camera,world_zoom)
 
@@ -1576,6 +1580,48 @@ func _readable_landmarks(map: Dictionary, camera: Vector2, world_zoom: float) ->
 			accepted.append(label);occupied.append(bounds)
 			break
 	return accepted
+
+func _readable_gather_labels(map: Dictionary, captions: Array, existing_labels: Array, camera: Vector2, world_zoom: float) -> Dictionary:
+	# Preserve ordinary captions. Only a caption touching an aperture or other
+	# text moves below its unchanged resource icon; no node/gameplay data changes.
+	var font:=ThemeDB.fallback_font
+	var viewport:=Rect2(Vector2.ZERO,view.size)
+	var project_bounds:=func(label: Dictionary) -> Rect2:
+		var width:=font.get_string_size(str(label.text),HORIZONTAL_ALIGNMENT_LEFT,-1,14).x
+		var height:=float(label.get("height",34.0 if label.has("hp") else 48.0))
+		var baseline: Vector2=view.size*0.5+(Vector2(float(label.x),float(label.y))-camera)*world_zoom+Vector2(-width*0.5,-height*world_zoom-8)
+		return Rect2(baseline-Vector2(0,font.get_ascent(14)),Vector2(width,font.get_height(14))).grow(4)
+	var reserved: Array[Rect2]=[]
+	for door in map.get("door_contracts",[]):
+		var pixels: Array=door.get("visible_aperture_pixels",[])
+		if pixels.size()!=4:continue
+		var origin:=Vector2(float(pixels[0]),float(pixels[1]))
+		var extent:=Vector2(float(pixels[2])-origin.x,float(pixels[3])-origin.y)
+		reserved.append(Rect2(view.size*0.5+(origin-camera)*world_zoom,extent*world_zoom).grow(4))
+	for label in existing_labels:reserved.append(project_bounds.call(label))
+	var accepted: Array=[]
+	var audit: Array=[]
+	var step:=font.get_height(14)+10.0
+	for caption in captions:
+		var original: Rect2=project_bounds.call(caption)
+		var placed: Dictionary={}
+		var placed_bounds:=original
+		var placement:="OMITTED_NO_SAFE_SLOT"
+		for row in range(5):
+			var candidate: Dictionary=caption.duplicate()
+			# Below-icon top edge has eight screen pixels of clear space.
+			if row>0:candidate.height=-(font.get_ascent(14)+16.0+float(row-1)*step)/world_zoom
+			var bounds: Rect2=project_bounds.call(candidate)
+			if row>0 and not viewport.encloses(bounds):continue
+			var overlaps:=false
+			for occupied in reserved:
+				if occupied.intersects(bounds):overlaps=true;break
+			if overlaps:continue
+			placed=candidate;placed_bounds=bounds;placement="ORIGINAL" if row==0 else "BELOW_ICON_ROW_"+str(row)
+			break
+		if not placed.is_empty():accepted.append(placed);reserved.append(placed_bounds)
+		audit.append({"node_id":str(caption.get("node_id","")),"text":str(caption.text),"placement":placement,"original_rect":[original.position.x,original.position.y,original.size.x,original.size.y],"placed_rect":[placed_bounds.position.x,placed_bounds.position.y,placed_bounds.size.x,placed_bounds.size.y] if not placed.is_empty() else [],"height":float(placed.get("height",48.0)) if not placed.is_empty() else null})
+	return {"labels":accepted,"audit":audit}
 
 func _append_depth_effect(layers: Array, sample: Dictionary, feet_y: float) -> void:
 	# Native back/front frame sets straddle the same foot-depth as the actor.

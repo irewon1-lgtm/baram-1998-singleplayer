@@ -1,7 +1,7 @@
 {
   "schema": "baram.b5.single-reference-source-freeze/3",
-  "created_at_utc": "2026-10-17T11:31:28.372048+00:00",
-  "source_parent_commit": "60587ed78e10a9d3ae505dcd5dbc00984a56825f",
+  "created_at_utc": "2026-10-17T11:47:15.573839+00:00",
+  "source_parent_commit": "63a57e190c869469c1c2a82079796c0bee2c6e74",
   "source_snapshot": {
     "README.md": "0687451467ceb59b42e092bcb737a7c5f00d68c23795c351f8de5cfcf349229a",
     "content/gameplay_content.gd": "b12d8fa265e6f358581ad56bfebe4729e33b37798680ecc09991ca671e43f403",
@@ -50,7 +50,7 @@
     "ui/classic_list.gd.uid": "47cd5fe93fb3c397f4b70d4262ac9904f8986ee8a8a1e9cd0e5bc9b173afe64f",
     "ui/classic_skin.gd": "c59765c5a40a3a463232beacaa48150e14cbd39ef75401fd4c04d77a11fe2c70",
     "ui/classic_skin.gd.uid": "8ff7e3ad98c45ed7a277dcd495e38ea04473937237a9dd008fee62645f33e589",
-    "ui/gameplay.gd": "3b9cb38f76b81155f7a39bab7a298c24bd2758c76d3640fa48eee5d8734fefd2",
+    "ui/gameplay.gd": "8509c2db0c8a58dbaf07e61f854593a40d9f224c6ec9413c760c86e1e6d64601",
     "ui/gameplay.gd.uid": "4ab88fcbe286f3a7487d47206d9791a12697d2e305eaf66f404c99e85a15f3ce",
     "ui/inspection.gd": "7723983f94857f99ca87356294c7ba15e6b2123250eebd9c28b70766f4cb26b6",
     "ui/inspection.gd.uid": "add58e6bf30d786c35df024772a90881672606d9dc7daff84a92097acc7bd612",
@@ -61,7 +61,7 @@
     "ui/priority_inspection.gd": "5c35a54974dea36c5d4246e24c01deda0a5ae27b86911de9b2f6deebd259838b",
     "ui/priority_inspection.gd.uid": "30e351484f7f654315f405c4c5f96672caf7336970b9d0a3617a008ca061d499"
   },
-  "source_snapshot_sha256": "39288e1adaafe707e0202b319cdcf2cbef98cbe1298f846ffa0d3de9516f9029",
+  "source_snapshot_sha256": "8fc15cef937b0a8dd3e3a1d9fbd9dd994ab27cf14d59c3f67c76baf55836d5b7",
   "runtime_snapshot_sha256": "2ffe0b81b4a76d6e4e91d11d776190dc48ec19742741a2d7db741f2c9148d283",
   "runtime_manifest_sha256": "f5e0547a4f26ec55f323b2a51b2645e6339932f2e32482267d1b87453809eb34",
   "content_sha256": "4943d2d12aefa6178f14a0d9790c8b80b6ae803feff19a779192791169390377",
