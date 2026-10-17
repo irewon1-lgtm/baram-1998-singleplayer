@@ -1,11 +1,11 @@
 {
-  "schema": "baram.active-final-run/1",
-  "status": "RUNNING_NOT_A_FINAL_RESULT",
+  "schema": "baram.completed-final-run/2",
+  "status": "COMPLETED_OBSERVED_FUNCTIONAL_SCOPE_HOST_FRAME_P99_TARGET_FAIL",
   "app_source_commit": "639750f04d10ee4ac3c1a7113232b8c30109f078",
   "runtime_variant": "r12",
   "anchor": {
     "schema": "baram.playability-run-anchor/1",
-    "status": "RUNNING",
+    "status": "ENDED_PASS_OBSERVED_1800_SCOPE_WITH_HOST_FRAME_P99_TARGET_FAILURE",
     "exec_session_id": 49302,
     "rss_sampler_session_id": 55702,
     "display": 151,
@@ -59,31 +59,463 @@
     "final_report": "evidence/b5-play/final30-r14/OS_PLAYABILITY.json",
     "final_analysis": "evidence/b5-play/final30-r14/FINAL_ANALYSIS.json",
     "environment_launch_contract": "Pinned operator0654 removes BARAM_GAMEPLAY_RUNTIME and BARAM_P2_RUNTIME for --pack; embedded imported assets used. /proc/environ access denied, so not an independent environment dump.",
-    "instruction": "Live preserved run. Do not launch a competing app/operator or edit active tools. Keep full first-process+marker-defined1800+independent restart tails."
+    "instruction": "Historical completed execution. This run Godot/operator/recorder/Xvfb/RSS exited0. Do not resume dead PID/session. All first/stress/restart tails preserved; host frame p99 target FAIL. Original running annotation bytes retained separately.",
+    "completed_continuous_seconds": 1809.292992231,
+    "completion_file": "RUN_COMPLETION.json",
+    "process_cleanup_file": "PROCESS_CLEANUP.json",
+    "video_sha256": "2982e7d6f52fb42f025f1b8e3f7c56cdd95ec18c6bc8f13aeb002e4045096bed",
+    "original_running_anchor_file": "RUN_ANCHOR_STARTED.json"
   },
-  "active_run": {
+  "completion": {
+    "schema": "baram.playability-run-completion/1",
+    "status": "COMPLETED_OBSERVED_FUNCTIONAL_SCOPE_HOST_FRAME_P99_TARGET_FAIL",
+    "operator_status": "PASS_OBSERVED_SCOPE",
+    "operational_check_count": 25,
+    "all_operational_checks_pass": true,
+    "engine_errors": [],
+    "continuous_stress_observed_seconds": 1809.292992231,
+    "wall_seconds": 1829.77,
+    "first_process_metrics": {
+      "frame_delta": {
+        "n": 102998,
+        "p50_ms": 16.667,
+        "p95_ms": 25.848,
+        "p99_ms": 50.649,
+        "max_ms": 150.0,
+        "over50ms": 1067,
+        "over100ms": 148
+      },
+      "engine_wall_frame_interval": {
+        "n": 102997,
+        "p50_ms": 16.17,
+        "p95_ms": 26.689,
+        "p99_ms": 54.348,
+        "max_ms": 560.863,
+        "over50ms": 1293,
+        "over100ms": 155
+      },
+      "process_duration": {
+        "n": 102998,
+        "p50_ms": 1.574,
+        "p95_ms": 4.597,
+        "p99_ms": 7.849,
+        "max_ms": 94.916,
+        "over50ms": 40,
+        "over100ms": 0
+      },
+      "engine_input_to_frame_post_draw": {
+        "n": 1092,
+        "p50_ms": 25.059,
+        "p95_ms": 68.395,
+        "p99_ms": 89.521,
+        "max_ms": 128.586,
+        "over50ms": 287,
+        "over100ms": 5
+      },
+      "OS_event_received_to_frame_post_draw": {
+        "n": 1626,
+        "p50_ms": 23.475,
+        "p95_ms": 65.153,
+        "p99_ms": 86.499,
+        "max_ms": 128.662,
+        "over50ms": 303,
+        "over100ms": 6
+      },
+      "save_duration": {
+        "n": 858,
+        "p50_ms": 34.097,
+        "p95_ms": 43.824,
+        "p99_ms": 51.322,
+        "max_ms": 90.797,
+        "over50ms": 11,
+        "over100ms": 0
+      },
+      "OS_event_matching": {
+        "status": "OBSERVED",
+        "all_received_events": 3254,
+        "non_echo_presses": 1627,
+        "echo_events": 0,
+        "release_events": 1627,
+        "press_feedback_missing": 1,
+        "logged_commands": 1631,
+        "matched_commands": 1627,
+        "unmatched_commands": 4,
+        "matched_render_feedback": 1626,
+        "unmatched_engine_presses": 0,
+        "signature_sequence_status": "EXACT_UNIQUE_ORDERED_SEQUENCE",
+        "candidate_command_sequence_starts": [
+          1
+        ],
+        "global_logged_commands": 1631,
+        "global_engine_presses": 1627,
+        "global_signature_correlated_pairs": 1627,
+        "ambiguous_commands": 0,
+        "outside_receipt_phase_commands": 0,
+        "key_presses_without_name_or_ascii_code": 0,
+        "latency_outliers_removed": 0,
+        "method": "Unique complete contiguous ordered signature alignment of non-echo presses by normalized physical key name or mouse button and viewport x/y within 2px. No timestamp lower bound or latency cutoff. Ambiguous or incomplete sequence alignments are not forced. Signed cross-clock residuals retain negatives without calibration and cannot validate command latency. Receipt-to-draw uses event_id within the same engine clock."
+      }
+    },
+    "continuous_stress_metrics": {
+      "frame_delta": {
+        "n": 102710,
+        "p50_ms": 16.667,
+        "p95_ms": 25.834,
+        "p99_ms": 50.612,
+        "max_ms": 150.0,
+        "over50ms": 1060,
+        "over100ms": 146
+      },
+      "engine_wall_frame_interval": {
+        "n": 102709,
+        "p50_ms": 16.166,
+        "p95_ms": 26.682,
+        "p99_ms": 54.339,
+        "max_ms": 560.863,
+        "over50ms": 1288,
+        "over100ms": 155
+      },
+      "process_duration": {
+        "n": 102710,
+        "p50_ms": 1.574,
+        "p95_ms": 4.597,
+        "p99_ms": 7.849,
+        "max_ms": 94.916,
+        "over50ms": 39,
+        "over100ms": 0
+      },
+      "engine_input_to_frame_post_draw": {
+        "n": 1090,
+        "p50_ms": 25.071,
+        "p95_ms": 68.411,
+        "p99_ms": 89.551,
+        "max_ms": 128.586,
+        "over50ms": 287,
+        "over100ms": 5
+      },
+      "OS_event_received_to_frame_post_draw": {
+        "n": 1623,
+        "p50_ms": 23.479,
+        "p95_ms": 65.162,
+        "p99_ms": 86.515,
+        "max_ms": 128.662,
+        "over50ms": 303,
+        "over100ms": 6
+      },
+      "save_duration": {
+        "n": 855,
+        "p50_ms": 34.091,
+        "p95_ms": 43.835,
+        "p99_ms": 51.325,
+        "max_ms": 90.797,
+        "over50ms": 11,
+        "over100ms": 0
+      },
+      "OS_event_matching": {
+        "status": "OBSERVED",
+        "all_received_events": 3245,
+        "non_echo_presses": 1623,
+        "echo_events": 0,
+        "release_events": 1622,
+        "press_feedback_missing": 0,
+        "logged_commands": 1622,
+        "matched_commands": 1622,
+        "unmatched_commands": 0,
+        "matched_render_feedback": 1622,
+        "unmatched_engine_presses": 1,
+        "signature_sequence_status": "EXACT_UNIQUE_ORDERED_SEQUENCE",
+        "candidate_command_sequence_starts": [
+          1
+        ],
+        "global_logged_commands": 1631,
+        "global_engine_presses": 1627,
+        "global_signature_correlated_pairs": 1627,
+        "ambiguous_commands": 0,
+        "outside_receipt_phase_commands": 0,
+        "key_presses_without_name_or_ascii_code": 0,
+        "latency_outliers_removed": 0,
+        "method": "Unique complete contiguous ordered signature alignment of non-echo presses by normalized physical key name or mouse button and viewport x/y within 2px. No timestamp lower bound or latency cutoff. Ambiguous or incomplete sequence alignments are not forced. Signed cross-clock residuals retain negatives without calibration and cannot validate command latency. Receipt-to-draw uses event_id within the same engine clock."
+      }
+    },
+    "restart_metrics": {
+      "frame_delta": {
+        "n": 241,
+        "p50_ms": 16.667,
+        "p95_ms": 32.984,
+        "p99_ms": 116.607,
+        "max_ms": 144.041,
+        "over50ms": 8,
+        "over100ms": 5
+      },
+      "engine_wall_frame_interval": {
+        "n": 240,
+        "p50_ms": 16.694,
+        "p95_ms": 34.138,
+        "p99_ms": 118.786,
+        "max_ms": 250.128,
+        "over50ms": 6,
+        "over100ms": 5
+      },
+      "process_duration": {
+        "n": 241,
+        "p50_ms": 0.878,
+        "p95_ms": 4.192,
+        "p99_ms": 6.865,
+        "max_ms": 91.031,
+        "over50ms": 1,
+        "over100ms": 0
+      },
+      "engine_input_to_frame_post_draw": {
+        "n": 1,
+        "p50_ms": 17.421,
+        "p95_ms": 17.421,
+        "p99_ms": 17.421,
+        "max_ms": 17.421,
+        "over50ms": 0,
+        "over100ms": 0
+      },
+      "OS_event_received_to_frame_post_draw": {
+        "n": 1,
+        "p50_ms": 17.433,
+        "p95_ms": 17.433,
+        "p99_ms": 17.433,
+        "max_ms": 17.433,
+        "over50ms": 0,
+        "over100ms": 0
+      },
+      "save_duration": {
+        "n": 2,
+        "p50_ms": 58.541,
+        "p95_ms": 84.181,
+        "p99_ms": 86.46,
+        "max_ms": 87.03,
+        "over50ms": 1,
+        "over100ms": 0
+      },
+      "OS_event_matching": {
+        "status": "OBSERVED",
+        "all_received_events": 4,
+        "non_echo_presses": 2,
+        "echo_events": 0,
+        "release_events": 2,
+        "press_feedback_missing": 1,
+        "logged_commands": 2,
+        "matched_commands": 2,
+        "unmatched_commands": 0,
+        "matched_render_feedback": 1,
+        "unmatched_engine_presses": 0,
+        "signature_sequence_status": "EXACT_UNIQUE_ORDERED_SEQUENCE",
+        "candidate_command_sequence_starts": [
+          1629
+        ],
+        "global_logged_commands": 1631,
+        "global_engine_presses": 2,
+        "global_signature_correlated_pairs": 2,
+        "ambiguous_commands": 0,
+        "outside_receipt_phase_commands": 0,
+        "key_presses_without_name_or_ascii_code": 0,
+        "latency_outliers_removed": 0,
+        "method": "Unique complete contiguous ordered signature alignment of non-echo presses by normalized physical key name or mouse button and viewport x/y within 2px. No timestamp lower bound or latency cutoff. Ambiguous or incomplete sequence alignments are not forced. Signed cross-clock residuals retain negatives without calibration and cannot validate command latency. Receipt-to-draw uses event_id within the same engine clock."
+      }
+    },
+    "first_two_saves": {
+      "first_process": [
+        {
+          "duration_ms": 90.797,
+          "kind": "save",
+          "phases": {
+            "authoritative_state_ms": 6.15,
+            "backup_write_verify_ms": 1.587,
+            "content_check_ms": 0.007,
+            "encoding_ms": 9.232,
+            "existing_read_ms": 58.754,
+            "pending_write_verify_ms": 1.062,
+            "primary_replace_ms": 0.204,
+            "remember_verified_ms": 0.008,
+            "state_plain_ms": 7.905,
+            "total_ms": 88.491,
+            "validation_ms": 16.476
+          },
+          "revision": 93954,
+          "status": "SAVED",
+          "us": 5498799
+        },
+        {
+          "duration_ms": 43.088,
+          "kind": "save",
+          "phases": {
+            "authoritative_state_ms": 10.666,
+            "backup_write_verify_ms": 0.959,
+            "content_check_ms": 0.005,
+            "encoding_ms": 12.888,
+            "existing_read_ms": 2.341,
+            "pending_write_verify_ms": 1.075,
+            "primary_replace_ms": 0.204,
+            "remember_verified_ms": 0.01,
+            "state_plain_ms": 7.044,
+            "total_ms": 41.591,
+            "validation_ms": 21.622
+          },
+          "revision": 94008,
+          "status": "SAVED",
+          "us": 8466884
+        }
+      ],
+      "restart_process": [
+        {
+          "duration_ms": 87.03,
+          "kind": "save",
+          "phases": {
+            "authoritative_state_ms": 6.929,
+            "backup_write_verify_ms": 1.095,
+            "content_check_ms": 0.007,
+            "encoding_ms": 8.995,
+            "existing_read_ms": 58.565,
+            "pending_write_verify_ms": 0.919,
+            "primary_replace_ms": 0.215,
+            "remember_verified_ms": 0.01,
+            "state_plain_ms": 7.815,
+            "total_ms": 85.177,
+            "validation_ms": 14.293
+          },
+          "revision": 127152,
+          "status": "SAVED",
+          "us": 5908852
+        },
+        {
+          "duration_ms": 30.053,
+          "kind": "save",
+          "phases": {
+            "authoritative_state_ms": 4.78,
+            "backup_write_verify_ms": 0.926,
+            "content_check_ms": 0.006,
+            "encoding_ms": 7.61,
+            "existing_read_ms": 2.192,
+            "pending_write_verify_ms": 1.058,
+            "primary_replace_ms": 0.207,
+            "remember_verified_ms": 0.01,
+            "state_plain_ms": 6.893,
+            "total_ms": 27.818,
+            "validation_ms": 14.542
+          },
+          "revision": 127179,
+          "status": "SAVED",
+          "us": 7815403
+        }
+      ]
+    },
+    "final_character": {
+      "appearance": {
+        "variant": 0
+      },
+      "base_stats": {
+        "dexterity": 25,
+        "intelligence": 40,
+        "strength": 25
+      },
+      "dead": false,
+      "desired_job": "주술사",
+      "direction": 3,
+      "guardian": "주작",
+      "hp": 152,
+      "hp_max": 240,
+      "id": "character:0b5e7a416efc7924a434",
+      "job": "주술사",
+      "level": 21,
+      "map_id": "gp:map:domestic_city",
+      "money": 1880,
+      "mp": 221,
+      "mp_max": 320,
+      "name": "finaljourney",
+      "nationality": "고구려",
+      "owner_id": "local-profile:default",
+      "x": 60,
+      "xp": 4538,
+      "y": 32
+    },
+    "final_stats": {
+      "deaths": 0,
+      "items_picked_up": 974,
+      "kills": 373,
+      "money_earned": 1854,
+      "total_xp_earned": 4538
+    },
+    "video": {
+      "remux_returncode": 0,
+      "ffprobe_returncode": 0,
+      "metadata": {
+        "programs": [],
+        "streams": [
+          {
+            "r_frame_rate": "30/1",
+            "nb_frames": "54594"
+          }
+        ],
+        "format": {
+          "duration": "1824.800000",
+          "size": "380948553"
+        }
+      },
+      "stderr": ""
+    },
+    "video_sha256": "2982e7d6f52fb42f025f1b8e3f7c56cdd95ec18c6bc8f13aeb002e4045096bed",
+    "analysis_sha256": "179442e2e64cc68bbb0632c87aefe67c3b0f2673e068fe48a4d44ae413503112",
+    "analysis_execution_receipt_sha256": "04b4885ac957d997a3c093cffad7ce5730f49c277b05a2f650743bfa586fafb6",
+    "input_integrity_status": "PASS",
+    "cleanup_file": "PROCESS_CLEANUP.json",
+    "limits": "No p99 performance PASS: all first-process/stress/restart tails retained. Same-engine event receipt to rendering feedback is valid numeric scope; command-clock latency is NOT_VALIDATED_CLOCK_ALIGNMENT. Not physical presentation, native Windows/Android, IME/audio/human fun or isolated host. RSS includes accumulating trace. Full video decode not executed by this agent."
+  },
+  "process_cleanup": {
+    "schema": "baram.playability-process-cleanup/1",
+    "checked_unix_ns": 1792211287468932990,
+    "main_exec_session": 49302,
+    "main_exit_code": 0,
+    "rss_exec_session": 55702,
+    "rss_exit_code": 0,
+    "original_first_process_host_pid": 91175,
+    "remaining_matching_run_processes": [],
+    "status": "PASS",
+    "scope": "This run Godot/operator/recorder/Xvfb/RSS only; no assertion of an otherwise isolated host."
+  },
+  "proofs": {
+    "RUN_ANCHOR.json": {
+      "path": "evidence/b5-play/final30-r14/RUN_ANCHOR.json",
+      "sha256": "0b0518e4bd873f15e331217155926698a27fba701667050a288b750c80635c1d"
+    },
+    "RUN_ANCHOR_STARTED.json": {
+      "path": "evidence/b5-play/final30-r14/RUN_ANCHOR_STARTED.json",
+      "sha256": "cc683b3f1499782d2f8a34d2c90a70912adbae9e86e502603e9025d93b6edc87"
+    },
+    "RUN_COMPLETION.json": {
+      "path": "evidence/b5-play/final30-r14/RUN_COMPLETION.json",
+      "sha256": "7d5d1586bd2bde1d4ddde085fbca01b3893b957cb48203db95cf778e7486a210"
+    },
+    "PROCESS_CLEANUP.json": {
+      "path": "evidence/b5-play/final30-r14/PROCESS_CLEANUP.json",
+      "sha256": "2cd58bc5417f8f43cd37b751b6cabd7d82f41629b303dafb9373cb78da34d55b"
+    },
+    "RUN_INPUT_INTEGRITY.json": {
+      "path": "evidence/b5-play/final30-r14/RUN_INPUT_INTEGRITY.json",
+      "sha256": "3b8b73149f04f89efdc423dbd65d0ede6d038d559abcfd5bfdce98295c350e2d"
+    },
+    "ANALYZER_RUN.json": {
+      "path": "evidence/b5-play/final30-r14/ANALYZER_RUN.json",
+      "sha256": "04b4885ac957d997a3c093cffad7ce5730f49c277b05a2f650743bfa586fafb6"
+    },
+    "VIDEO_DECODE.json": {
+      "path": "evidence/b5-play/final30-r14/VIDEO_DECODE.json",
+      "sha256": "4aa616229b481fd0deb8fa17cbb3614b4ee13b03675e8e8868adb1f1525e07dc"
+    }
+  },
+  "active_run": null,
+  "all_processes_ended": true,
+  "acceptance": "25 functional checks PASS;1809.293s observed;host frame wall p99 target FAIL;native/account/physical/human gates remain.",
+  "historical_running_annotation": {
     "status": "RUNNING_NOT_A_FINAL_RESULT",
-    "exec_session_id": 49302,
-    "rss_exec_session_id": 55702,
-    "display": 151,
-    "host_game_pid": 91175,
-    "wrapper_pid": 91167,
-    "operator_pid": 91172,
-    "isolated_session": "/tmp/baram-ordinary-qonokdge",
-    "required_continuous_seconds": 1800,
-    "continuous_stress_start_unix_ns": 1792209445649805087,
-    "game_source": "639750f04d10ee4ac3c1a7113232b8c30109f078",
-    "runtime": "r12-final",
-    "PCK": "evidence/pack-parity-r14/final-windows-embedded.pck",
-    "PCK_sha256": "4a9f20d3bc34b6df17d929caa62f19305b346f7b313c4721e315dfad021acd10",
-    "operator_sha256": "06540e780e4b2032c8b82859d22d980fe2e255140ad3c27dc97de558cf57b064",
-    "analyzer_sha256": "69ba13dd7eb5209e7284402ab464ed8709c1b0e671134bd7cc7b4ec5078fd519",
-    "source_tools_commit": "214144adb934d8982938469c7465cdfd6d1327a4",
-    "run_anchor": "evidence/b5-play/final30-r14/RUN_ANCHOR.json",
-    "live_log": "evidence/b5-play/final30-r14-run.log",
-    "final_report": "evidence/b5-play/final30-r14/OS_PLAYABILITY.json",
-    "final_analysis": "evidence/b5-play/final30-r14/FINAL_ANALYSIS.json",
-    "instruction": "Already-running process: do not restart, duplicate, rebuild, upload, decode, benchmark or edit app/tool bytes. Continue marker1800 + actual in-phase transactions + normal return/save/newprocessContinue. All first/stress/restart frames and allcold/warm saves retained."
-  },
-  "no_acceptance_until_end": true
+    "run_anchor_started": {
+      "path": "evidence/b5-play/final30-r14/RUN_ANCHOR_STARTED.json",
+      "sha256": "cc683b3f1499782d2f8a34d2c90a70912adbae9e86e502603e9025d93b6edc87"
+    },
+    "scope": "Original running bytes retained in immutable started anchor; no PID/session is still considered active."
+  }
 }

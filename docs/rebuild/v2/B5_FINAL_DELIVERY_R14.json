@@ -1,0 +1,176 @@
+{
+  "schema": "baram.b5.final-delivery/1",
+  "status": "PASS_SIX_CURRENT_FILES_SAVED_AND_IDENTITIES_VERIFIED",
+  "observed_unix_ns": 1792211747029776267,
+  "app_source_commit": "639750f04d10ee4ac3c1a7113232b8c30109f078",
+  "source_tools_commit": "214144adb934d8982938469c7465cdfd6d1327a4",
+  "runtime_variant": "r12",
+  "acceptance": "PARTIAL_HOST_PERFORMANCE_TARGET_NOT_MET_NATIVE_ACCOUNT_GATES_REMAIN",
+  "functional_checks": 25,
+  "continuous_seconds": 1809.292992231,
+  "all_recorded_saves": 876,
+  "save_over100ms": 0,
+  "stress_wall_p99_ms": 54.339,
+  "wall_p99_target_ms": 50,
+  "native_execution": "NOT_RUN",
+  "account_roundtrip": "BLOCKED_NO_IDENTIFIED_GAME_AUTHENTICATED_ENDPOINT",
+  "artifacts": [
+    {
+      "filename": "baram-B5-r12-Android.apk",
+      "file_name": "baram-B5-r12-Android.apk",
+      "local_path": "/workspace/scratch/1f69b6682e42/deliverables/baram-B5-r12-Android.apk",
+      "bytes": 79324349,
+      "sha256": "6231cfac8742a1c0352e116629cc16b5e08401bd7b58f99ef22af82296a82100",
+      "identity": {
+        "user.library-file-version": "2",
+        "user.library-file-id": "libfile_9e6908bfb1d4819192d35905a8a0e724"
+      },
+      "save_result": {
+        "status": "succeeded",
+        "library_file_id": "libfile_9e6908bfb1d4819192d35905a8a0e724",
+        "file_id": "file_00000000f61081f5a78cc37a9711e7cf",
+        "current_version_number": 2,
+        "local_metadata_applied": true,
+        "purpose": "replace_library_file"
+      }
+    },
+    {
+      "filename": "baram-B5-r12-Windows64.zip",
+      "file_name": "baram-B5-r12-Windows64.zip",
+      "local_path": "/workspace/scratch/1f69b6682e42/deliverables/baram-B5-r12-Windows64.zip",
+      "bytes": 50657331,
+      "sha256": "e3a120f12a7057813edbf14bc06d8758c8874b812e8dea3f3722ba5533ef765f",
+      "identity": {
+        "user.library-file-version": "2",
+        "user.library-file-id": "libfile_15b314cc379881919a7d3f17617f6d7f"
+      },
+      "save_result": {
+        "status": "succeeded",
+        "library_file_id": "libfile_15b314cc379881919a7d3f17617f6d7f",
+        "file_id": "file_00000000a49081f58648d75c6cdbb713",
+        "current_version_number": 2,
+        "local_metadata_applied": true,
+        "purpose": "replace_library_file"
+      }
+    },
+    {
+      "filename": "baram-B5-r12-evidence.zip",
+      "file_name": "baram-B5-r12-evidence.zip",
+      "local_path": "/workspace/scratch/1f69b6682e42/deliverables/baram-B5-r12-evidence.zip",
+      "bytes": 348046598,
+      "sha256": "2d948ba761e71229c2adaa7ada28076f6b8c4341287a505cbf1367d23e63fa36",
+      "identity": {
+        "user.library-file-version": "0",
+        "user.library-file-id": "libfile_624de2c5ee5c8191843efff73cafbf03"
+      },
+      "save_result": {
+        "status": "succeeded",
+        "library_file_id": "libfile_624de2c5ee5c8191843efff73cafbf03",
+        "file_id": "file_00000000fec081f5bb761c260a0d1d4a",
+        "current_version_number": 0,
+        "local_metadata_applied": true,
+        "purpose": "create_library_file"
+      }
+    },
+    {
+      "filename": "baram-B5-r12-failed21-unedited.mp4",
+      "file_name": "baram-B5-r12-failed21-unedited.mp4",
+      "local_path": "/workspace/scratch/1f69b6682e42/deliverables/baram-B5-r12-failed21-unedited.mp4",
+      "bytes": 292606881,
+      "sha256": "0ddb42d44ecdff6b3aaaf2b79e4801511b804c89b99d0f3d54995574347f31cc",
+      "identity": {
+        "user.library-file-version": "0",
+        "user.library-file-id": "libfile_81332000ab4c81919041edfc853eb2ef"
+      },
+      "save_result": {
+        "status": "PREVIOUSLY_SAVED_BYTE_IDENTICAL_HISTORY",
+        "current_version_number": 0
+      }
+    },
+    {
+      "filename": "baram-B5-r12-ordinary30-unedited.mp4",
+      "file_name": "baram-B5-r12-ordinary30-unedited.mp4",
+      "local_path": "/workspace/scratch/1f69b6682e42/deliverables/baram-B5-r12-ordinary30-unedited.mp4",
+      "bytes": 380948553,
+      "sha256": "2982e7d6f52fb42f025f1b8e3f7c56cdd95ec18c6bc8f13aeb002e4045096bed",
+      "identity": {
+        "user.library-file-version": "0",
+        "user.library-file-id": "libfile_510253e29c648191b9acd8c7b56f8653"
+      },
+      "save_result": {
+        "status": "succeeded",
+        "library_file_id": "libfile_510253e29c648191b9acd8c7b56f8653",
+        "file_id": "file_00000000a1e481f5b07e8e451a91d832",
+        "current_version_number": 0,
+        "local_metadata_applied": true,
+        "purpose": "create_library_file"
+      }
+    },
+    {
+      "filename": "baram-B5-r12-prior30-cold-unedited.mp4",
+      "file_name": "baram-B5-r12-prior30-cold-unedited.mp4",
+      "local_path": "/workspace/scratch/1f69b6682e42/deliverables/baram-B5-r12-prior30-cold-unedited.mp4",
+      "bytes": 387441051,
+      "sha256": "4f74903060390e188604fccb7de5c81bb9258d3c48b6312050cb4b290e42be1f",
+      "identity": {
+        "user.library-file-version": "0",
+        "user.library-file-id": "libfile_80f4f4bcd6ac8191ae6259cbb5a6e526"
+      },
+      "save_result": {
+        "status": "PREVIOUSLY_SAVED_BYTE_IDENTICAL_HISTORY",
+        "current_version_number": 0
+      }
+    },
+    {
+      "filename": "baram-B5-r12-private-runtime.zip",
+      "file_name": "baram-B5-r12-private-runtime.zip",
+      "local_path": "/workspace/scratch/1f69b6682e42/deliverables/baram-B5-r12-private-runtime.zip",
+      "bytes": 31918211,
+      "sha256": "19195e063bd48added292ba5b6d41a8470933ef09baead3b1d7abd11a6b0d190",
+      "identity": {
+        "user.library-file-version": "2",
+        "user.library-file-id": "libfile_28e0e00695d08191acdc268e43e6afaf"
+      },
+      "save_result": {
+        "status": "succeeded",
+        "library_file_id": "libfile_28e0e00695d08191acdc268e43e6afaf",
+        "file_id": "file_00000000778481f5bfcad2ae1c646256",
+        "current_version_number": 2,
+        "local_metadata_applied": true,
+        "purpose": "replace_library_file"
+      }
+    },
+    {
+      "filename": "baram-B5-r12-results.html",
+      "file_name": "baram-B5-r12-results.html",
+      "local_path": "/workspace/scratch/1f69b6682e42/deliverables/baram-B5-r12-results.html",
+      "bytes": 858961,
+      "sha256": "c48a1e85f63d3927d99be3f64992b989f27af7ed493c185e12a7fd77e2509980",
+      "identity": {
+        "user.library-file-version": "0",
+        "user.library-file-id": "libfile_de960740af308191bec492c58559d9e3"
+      },
+      "save_result": {
+        "status": "succeeded",
+        "library_file_id": "libfile_de960740af308191bec492c58559d9e3",
+        "file_id": "file_000000008a188246b63471e2fca053d1",
+        "current_version_number": 0,
+        "local_metadata_applied": true,
+        "purpose": "create_library_file"
+      }
+    }
+  ],
+  "evidence_archive": {
+    "entries": 849,
+    "crc": "PASS",
+    "bytes": 348046598,
+    "sha256": "2d948ba761e71229c2adaa7ada28076f6b8c4341287a505cbf1367d23e63fa36",
+    "scope": "Immutable verification snapshot made before six final saved identities; later metadata is intentionally not recursively repackaged."
+  },
+  "branch_publication": {
+    "branch": "work/rebuild-p3-remediation-20261016",
+    "expected_previous_commit": "9b75135b071be4c061937b0750495c91e903afba",
+    "main_baseline": "443b49abe97948f59893d3e23f667b0e2eb5e8ff",
+    "main_update": false
+  }
+}

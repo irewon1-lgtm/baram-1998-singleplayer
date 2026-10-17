@@ -1,0 +1,1034 @@
+{
+  "schema": "baram.b5.host-r14-wall-incident-review/1",
+  "status": "OBSERVED_HOST_P99_TARGET_FAIL_CAUSE_NOT_FULLY_ATTRIBUTED",
+  "method": "Read-only aggregation of already completed raw trace and existing analysis; no app edits, rerun or new benchmark. All retained intervals/tails are included.",
+  "source_commit": "639750f04d10ee4ac3c1a7113232b8c30109f078",
+  "evidence": {
+    "analysis": {
+      "path": "evidence/b5-play/final30-r14/FINAL_ANALYSIS.json",
+      "sha256": "179442e2e64cc68bbb0632c87aefe67c3b0f2673e068fe48a4d44ae413503112"
+    },
+    "raw_first_process": {
+      "path": "evidence/b5-play/final30-r14/journey-frame-timeline.jsonl",
+      "sha256": "ae08d562714ca383db9d96648531538f15e2dc4aa74240072cc37e3bb75056c0"
+    },
+    "raw_checkpoints": {
+      "path": "evidence/b5-play/final30-r14/data/baram_rebuild_p3repair_001/gameplay-checkpoints.jsonl",
+      "sha256": "475704592c5ba772df1686c0accb1fdb3a8ff51c33ebc74e1f69cd8b4ff960ca"
+    },
+    "external_RSS": {
+      "path": "evidence/b5-play/final30-r14/external-rss.jsonl",
+      "sha256": "70ec614b89b0e95d5aaf955ce1a343cbe58c3cbc8d2f51b555df54424a69550d"
+    },
+    "host_metadata": {
+      "path": "evidence/HOST_ENVIRONMENT.json",
+      "sha256": "345b481ea58cf4ccc44ed0427435ddde185e4ccd49c66a23dd3c871db7605810"
+    }
+  },
+  "functional_scope": {
+    "status": "PASS_OBSERVED_SCOPE",
+    "checks": 25,
+    "failed_or_not_run_checks": [],
+    "completed_continuous_seconds": 1809.292992231,
+    "level_start": 18,
+    "level_end": 21
+  },
+  "full_first_process": {
+    "all": {
+      "wall_interval": {
+        "n": 102997,
+        "p50_ms": 16.17,
+        "p95_ms": 26.689,
+        "p99_ms": 54.348,
+        "max_ms": 560.863,
+        "over50ms": 1293,
+        "over100ms": 155
+      },
+      "current_process_duration": {
+        "n": 102997,
+        "p50_ms": 1.574,
+        "p95_ms": 4.597,
+        "p99_ms": 7.849,
+        "max_ms": 94.916,
+        "over50ms": 40,
+        "over100ms": 0
+      },
+      "wall_minus_current_process": {
+        "n": 102997,
+        "p50_ms": 14.519,
+        "p95_ms": 22.984,
+        "p99_ms": 40.738,
+        "max_ms": 554.195,
+        "over50ms": 703,
+        "over100ms": 136
+      },
+      "over100_count": 155,
+      "over100_current_process_le10ms": 123,
+      "over100_current_process_gt50ms": 9,
+      "over100_current_process_gt100ms": 0
+    },
+    "save_overlap": {
+      "wall_interval": {
+        "n": 857,
+        "p50_ms": 57.121,
+        "p95_ms": 87.299,
+        "p99_ms": 187.999,
+        "max_ms": 527.304,
+        "over50ms": 724,
+        "over100ms": 27
+      },
+      "current_process_duration": {
+        "n": 857,
+        "p50_ms": 37.616,
+        "p95_ms": 49.076,
+        "p99_ms": 58.326,
+        "max_ms": 94.916,
+        "over50ms": 38,
+        "over100ms": 0
+      },
+      "wall_minus_current_process": {
+        "n": 857,
+        "p50_ms": 17.437,
+        "p95_ms": 69.556,
+        "p99_ms": 160.391,
+        "max_ms": 492.136,
+        "over50ms": 261,
+        "over100ms": 17
+      },
+      "over100_count": 27,
+      "over100_current_process_le10ms": 8,
+      "over100_current_process_gt50ms": 8,
+      "over100_current_process_gt100ms": 0
+    },
+    "without_save_overlap": {
+      "wall_interval": {
+        "n": 102140,
+        "p50_ms": 16.117,
+        "p95_ms": 25.852,
+        "p99_ms": 39.843,
+        "max_ms": 560.863,
+        "over50ms": 569,
+        "over100ms": 128
+      },
+      "current_process_duration": {
+        "n": 102140,
+        "p50_ms": 1.557,
+        "p95_ms": 4.477,
+        "p99_ms": 6.408,
+        "max_ms": 92.708,
+        "over50ms": 2,
+        "over100ms": 0
+      },
+      "wall_minus_current_process": {
+        "n": 102140,
+        "p50_ms": 14.504,
+        "p95_ms": 22.739,
+        "p99_ms": 35.746,
+        "max_ms": 554.195,
+        "over50ms": 442,
+        "over100ms": 119
+      },
+      "over100_count": 128,
+      "over100_current_process_le10ms": 115,
+      "over100_current_process_gt50ms": 1,
+      "over100_current_process_gt100ms": 0
+    }
+  },
+  "continuous_phase": {
+    "all": {
+      "wall_interval": {
+        "n": 102709,
+        "p50_ms": 16.166,
+        "p95_ms": 26.682,
+        "p99_ms": 54.339,
+        "max_ms": 560.863,
+        "over50ms": 1288,
+        "over100ms": 155
+      },
+      "current_process_duration": {
+        "n": 102709,
+        "p50_ms": 1.574,
+        "p95_ms": 4.597,
+        "p99_ms": 7.849,
+        "max_ms": 94.916,
+        "over50ms": 39,
+        "over100ms": 0
+      },
+      "wall_minus_current_process": {
+        "n": 102709,
+        "p50_ms": 14.516,
+        "p95_ms": 22.978,
+        "p99_ms": 40.71,
+        "max_ms": 554.195,
+        "over50ms": 700,
+        "over100ms": 136
+      },
+      "over100_count": 155,
+      "over100_current_process_le10ms": 123,
+      "over100_current_process_gt50ms": 9,
+      "over100_current_process_gt100ms": 0
+    },
+    "save_overlap": {
+      "wall_interval": {
+        "n": 855,
+        "p50_ms": 57.109,
+        "p95_ms": 87.314,
+        "p99_ms": 188.841,
+        "max_ms": 527.304,
+        "over50ms": 722,
+        "over100ms": 27
+      },
+      "current_process_duration": {
+        "n": 855,
+        "p50_ms": 37.601,
+        "p95_ms": 48.759,
+        "p99_ms": 58.328,
+        "max_ms": 94.916,
+        "over50ms": 37,
+        "over100ms": 0
+      },
+      "wall_minus_current_process": {
+        "n": 855,
+        "p50_ms": 17.437,
+        "p95_ms": 69.613,
+        "p99_ms": 160.772,
+        "max_ms": 492.136,
+        "over50ms": 261,
+        "over100ms": 17
+      },
+      "over100_count": 27,
+      "over100_current_process_le10ms": 8,
+      "over100_current_process_gt50ms": 8,
+      "over100_current_process_gt100ms": 0
+    },
+    "without_save_overlap": {
+      "wall_interval": {
+        "n": 101854,
+        "p50_ms": 16.113,
+        "p95_ms": 25.847,
+        "p99_ms": 39.748,
+        "max_ms": 560.863,
+        "over50ms": 566,
+        "over100ms": 128
+      },
+      "current_process_duration": {
+        "n": 101854,
+        "p50_ms": 1.558,
+        "p95_ms": 4.477,
+        "p99_ms": 6.408,
+        "max_ms": 92.708,
+        "over50ms": 2,
+        "over100ms": 0
+      },
+      "wall_minus_current_process": {
+        "n": 101854,
+        "p50_ms": 14.501,
+        "p95_ms": 22.725,
+        "p99_ms": 35.72,
+        "max_ms": 554.195,
+        "over50ms": 439,
+        "over100ms": 119
+      },
+      "over100_count": 128,
+      "over100_current_process_le10ms": 115,
+      "over100_current_process_gt50ms": 1,
+      "over100_current_process_gt100ms": 0
+    }
+  },
+  "save_metrics": {
+    "full": {
+      "n": 858,
+      "p50_ms": 34.097,
+      "p95_ms": 43.824,
+      "p99_ms": 51.322,
+      "max_ms": 90.797,
+      "over50ms": 11,
+      "over100ms": 0
+    },
+    "continuous": {
+      "n": 855,
+      "p50_ms": 34.091,
+      "p95_ms": 43.835,
+      "p99_ms": 51.325,
+      "max_ms": 90.797,
+      "over50ms": 11,
+      "over100ms": 0
+    },
+    "all_statuses": {
+      "SAVED": 858
+    }
+  },
+  "continuous_time_bins": [
+    {
+      "phase_seconds_from": 0,
+      "phase_seconds_to": 300,
+      "wall_interval": {
+        "n": 18467,
+        "p50_ms": 14.878,
+        "p95_ms": 25.06,
+        "p99_ms": 49.602,
+        "max_ms": 481.46,
+        "over50ms": 184,
+        "over100ms": 12
+      },
+      "current_process_duration": {
+        "n": 18467,
+        "p50_ms": 1.124,
+        "p95_ms": 4.222,
+        "p99_ms": 7.049,
+        "max_ms": 94.916,
+        "over50ms": 7,
+        "over100ms": 0
+      },
+      "wall_minus_current_process": {
+        "n": 18467,
+        "p50_ms": 13.591,
+        "p95_ms": 21.664,
+        "p99_ms": 35.204,
+        "max_ms": 466.631,
+        "over50ms": 104,
+        "over100ms": 7
+      },
+      "over100_count": 12,
+      "over100_current_process_le10ms": 7,
+      "over100_current_process_gt50ms": 2,
+      "over100_current_process_gt100ms": 0,
+      "save_overlap_intervals": 140,
+      "over100_save_overlap": 5
+    },
+    {
+      "phase_seconds_from": 300,
+      "phase_seconds_to": 600,
+      "wall_interval": {
+        "n": 16973,
+        "p50_ms": 16.398,
+        "p95_ms": 26.733,
+        "p99_ms": 53.476,
+        "max_ms": 437.391,
+        "over50ms": 208,
+        "over100ms": 17
+      },
+      "current_process_duration": {
+        "n": 16973,
+        "p50_ms": 1.715,
+        "p95_ms": 4.681,
+        "p99_ms": 8.077,
+        "max_ms": 56.95,
+        "over50ms": 5,
+        "over100ms": 0
+      },
+      "wall_minus_current_process": {
+        "n": 16973,
+        "p50_ms": 14.672,
+        "p95_ms": 22.894,
+        "p99_ms": 40.519,
+        "max_ms": 433.433,
+        "over50ms": 111,
+        "over100ms": 16
+      },
+      "over100_count": 17,
+      "over100_current_process_le10ms": 14,
+      "over100_current_process_gt50ms": 0,
+      "over100_current_process_gt100ms": 0,
+      "save_overlap_intervals": 150,
+      "over100_save_overlap": 2
+    },
+    {
+      "phase_seconds_from": 600,
+      "phase_seconds_to": 900,
+      "wall_interval": {
+        "n": 17173,
+        "p50_ms": 16.211,
+        "p95_ms": 26.042,
+        "p99_ms": 52.486,
+        "max_ms": 317.987,
+        "over50ms": 190,
+        "over100ms": 21
+      },
+      "current_process_duration": {
+        "n": 17173,
+        "p50_ms": 1.773,
+        "p95_ms": 4.814,
+        "p99_ms": 7.945,
+        "max_ms": 71.684,
+        "over50ms": 9,
+        "over100ms": 0
+      },
+      "wall_minus_current_process": {
+        "n": 17173,
+        "p50_ms": 14.339,
+        "p95_ms": 22.372,
+        "p99_ms": 35.058,
+        "max_ms": 277.333,
+        "over50ms": 96,
+        "over100ms": 19
+      },
+      "over100_count": 21,
+      "over100_current_process_le10ms": 16,
+      "over100_current_process_gt50ms": 2,
+      "over100_current_process_gt100ms": 0,
+      "save_overlap_intervals": 140,
+      "over100_save_overlap": 3
+    },
+    {
+      "phase_seconds_from": 900,
+      "phase_seconds_to": 1200,
+      "wall_interval": {
+        "n": 16561,
+        "p50_ms": 15.942,
+        "p95_ms": 29.026,
+        "p99_ms": 59.967,
+        "max_ms": 467.836,
+        "over50ms": 260,
+        "over100ms": 55
+      },
+      "current_process_duration": {
+        "n": 16561,
+        "p50_ms": 1.033,
+        "p95_ms": 4.527,
+        "p99_ms": 8.522,
+        "max_ms": 92.708,
+        "over50ms": 7,
+        "over100ms": 0
+      },
+      "wall_minus_current_process": {
+        "n": 16561,
+        "p50_ms": 14.568,
+        "p95_ms": 25.13,
+        "p99_ms": 49.89,
+        "max_ms": 462.853,
+        "over50ms": 165,
+        "over100ms": 48
+      },
+      "over100_count": 55,
+      "over100_current_process_le10ms": 43,
+      "over100_current_process_gt50ms": 5,
+      "over100_current_process_gt100ms": 0,
+      "save_overlap_intervals": 130,
+      "over100_save_overlap": 9
+    },
+    {
+      "phase_seconds_from": 1200,
+      "phase_seconds_to": 1500,
+      "wall_interval": {
+        "n": 16045,
+        "p50_ms": 17.229,
+        "p95_ms": 28.068,
+        "p99_ms": 56.929,
+        "max_ms": 527.304,
+        "over50ms": 241,
+        "over100ms": 25
+      },
+      "current_process_duration": {
+        "n": 16045,
+        "p50_ms": 1.7,
+        "p95_ms": 4.765,
+        "p99_ms": 8.08,
+        "max_ms": 61.511,
+        "over50ms": 3,
+        "over100ms": 0
+      },
+      "wall_minus_current_process": {
+        "n": 16045,
+        "p50_ms": 15.373,
+        "p95_ms": 23.935,
+        "p99_ms": 44.503,
+        "max_ms": 492.136,
+        "over50ms": 127,
+        "over100ms": 24
+      },
+      "over100_count": 25,
+      "over100_current_process_le10ms": 21,
+      "over100_current_process_gt50ms": 0,
+      "over100_current_process_gt100ms": 0,
+      "save_overlap_intervals": 147,
+      "over100_save_overlap": 4
+    },
+    {
+      "phase_seconds_from": 1500,
+      "phase_seconds_to": 1800,
+      "wall_interval": {
+        "n": 17013,
+        "p50_ms": 16.305,
+        "p95_ms": 25.603,
+        "p99_ms": 52.54,
+        "max_ms": 560.863,
+        "over50ms": 195,
+        "over100ms": 24
+      },
+      "current_process_duration": {
+        "n": 17013,
+        "p50_ms": 1.545,
+        "p95_ms": 4.53,
+        "p99_ms": 7.623,
+        "max_ms": 71.769,
+        "over50ms": 8,
+        "over100ms": 0
+      },
+      "wall_minus_current_process": {
+        "n": 17013,
+        "p50_ms": 14.604,
+        "p95_ms": 22.038,
+        "p99_ms": 36.072,
+        "max_ms": 554.195,
+        "over50ms": 91,
+        "over100ms": 21
+      },
+      "over100_count": 24,
+      "over100_current_process_le10ms": 21,
+      "over100_current_process_gt50ms": 0,
+      "over100_current_process_gt100ms": 0,
+      "save_overlap_intervals": 142,
+      "over100_save_overlap": 3
+    },
+    {
+      "phase_seconds_from": 1800,
+      "phase_seconds_to": 1809.293,
+      "wall_interval": {
+        "n": 477,
+        "p50_ms": 17.671,
+        "p95_ms": 31.664,
+        "p99_ms": 60.271,
+        "max_ms": 115.565,
+        "over50ms": 10,
+        "over100ms": 1
+      },
+      "current_process_duration": {
+        "n": 477,
+        "p50_ms": 1.866,
+        "p95_ms": 4.867,
+        "p99_ms": 11.744,
+        "max_ms": 42.431,
+        "over50ms": 0,
+        "over100ms": 0
+      },
+      "wall_minus_current_process": {
+        "n": 477,
+        "p50_ms": 14.957,
+        "p95_ms": 25.555,
+        "p99_ms": 53.927,
+        "max_ms": 112.641,
+        "over50ms": 6,
+        "over100ms": 1
+      },
+      "over100_count": 1,
+      "over100_current_process_le10ms": 1,
+      "over100_current_process_gt50ms": 0,
+      "over100_current_process_gt100ms": 0,
+      "save_overlap_intervals": 6,
+      "over100_save_overlap": 1
+    }
+  ],
+  "continuous_map_sample_groups": {
+    "gp:map:domestic_city": {
+      "map_name": "국내성",
+      "wall_interval": {
+        "n": 36359,
+        "p50_ms": 14.553,
+        "p95_ms": 23.179,
+        "p99_ms": 47.354,
+        "max_ms": 527.304,
+        "over50ms": 300,
+        "over100ms": 54
+      },
+      "current_process_duration": {
+        "n": 36359,
+        "p50_ms": 0.761,
+        "p95_ms": 3.47,
+        "p99_ms": 5.996,
+        "max_ms": 94.916,
+        "over50ms": 9,
+        "over100ms": 0
+      },
+      "wall_minus_current_process": {
+        "n": 36359,
+        "p50_ms": 13.426,
+        "p95_ms": 20.671,
+        "p99_ms": 33.871,
+        "max_ms": 492.136,
+        "over50ms": 147,
+        "over100ms": 50
+      },
+      "over100_count": 54,
+      "over100_current_process_le10ms": 47,
+      "over100_current_process_gt50ms": 1,
+      "over100_current_process_gt100ms": 0,
+      "save_overlap_intervals": 196,
+      "over100_save_overlap": 3,
+      "last_character_context_age_seconds": {
+        "n": 36359,
+        "p50_s": 46.444,
+        "max_s": 125.338,
+        "count_age_gt10s": 31209
+      }
+    },
+    "gp:map:forge": {
+      "map_name": "대장간",
+      "wall_interval": {
+        "n": 17910,
+        "p50_ms": 13.663,
+        "p95_ms": 22.783,
+        "p99_ms": 47.025,
+        "max_ms": 467.836,
+        "over50ms": 145,
+        "over100ms": 27
+      },
+      "current_process_duration": {
+        "n": 17910,
+        "p50_ms": 0.649,
+        "p95_ms": 3.271,
+        "p99_ms": 5.797,
+        "max_ms": 64.917,
+        "over50ms": 4,
+        "over100ms": 0
+      },
+      "wall_minus_current_process": {
+        "n": 17910,
+        "p50_ms": 12.634,
+        "p95_ms": 20.511,
+        "p99_ms": 34.844,
+        "max_ms": 462.853,
+        "over50ms": 89,
+        "over100ms": 25
+      },
+      "over100_count": 27,
+      "over100_current_process_le10ms": 22,
+      "over100_current_process_gt50ms": 2,
+      "over100_current_process_gt100ms": 0,
+      "save_overlap_intervals": 91,
+      "over100_save_overlap": 5,
+      "last_character_context_age_seconds": {
+        "n": 17910,
+        "p50_s": 57.357,
+        "max_s": 125.183,
+        "count_age_gt10s": 15039
+      }
+    },
+    "g1:map:8a2a4988d6daa5": {
+      "map_name": "쥐굴 1층",
+      "wall_interval": {
+        "n": 48440,
+        "p50_ms": 18.506,
+        "p95_ms": 29.094,
+        "p99_ms": 59.17,
+        "max_ms": 560.863,
+        "over50ms": 843,
+        "over100ms": 74
+      },
+      "current_process_duration": {
+        "n": 48440,
+        "p50_ms": 1.952,
+        "p95_ms": 5.243,
+        "p99_ms": 9.424,
+        "max_ms": 92.708,
+        "over50ms": 26,
+        "over100ms": 0
+      },
+      "wall_minus_current_process": {
+        "n": 48440,
+        "p50_ms": 15.94,
+        "p95_ms": 24.661,
+        "p99_ms": 48.464,
+        "max_ms": 554.195,
+        "over50ms": 464,
+        "over100ms": 61
+      },
+      "over100_count": 74,
+      "over100_current_process_le10ms": 54,
+      "over100_current_process_gt50ms": 6,
+      "over100_current_process_gt100ms": 0,
+      "save_overlap_intervals": 568,
+      "over100_save_overlap": 19,
+      "last_character_context_age_seconds": {
+        "n": 48440,
+        "p50_s": 85.61,
+        "max_s": 187.711,
+        "count_age_gt10s": 45541
+      }
+    }
+  },
+  "continuous_latest_UI_layout_groups": {
+    "latest_layout_has_close_control": {
+      "wall_interval": {
+        "n": 797,
+        "p50_ms": 19.924,
+        "p95_ms": 35.676,
+        "p99_ms": 72.331,
+        "max_ms": 157.445,
+        "over50ms": 24,
+        "over100ms": 3
+      },
+      "current_process_duration": {
+        "n": 797,
+        "p50_ms": 1.338,
+        "p95_ms": 4.168,
+        "p99_ms": 5.929,
+        "max_ms": 44.007,
+        "over50ms": 0,
+        "over100ms": 0
+      },
+      "over100_count": 3,
+      "scope": "Forward-filled same-Godot-clock ui_layout sample; visible X or label containing 닫기 marks a modal. Not per-frame modal telemetry."
+    },
+    "latest_layout_has_no_close_control": {
+      "wall_interval": {
+        "n": 101912,
+        "p50_ms": 16.128,
+        "p95_ms": 26.599,
+        "p99_ms": 54.079,
+        "max_ms": 560.863,
+        "over50ms": 1264,
+        "over100ms": 152
+      },
+      "current_process_duration": {
+        "n": 101912,
+        "p50_ms": 1.576,
+        "p95_ms": 4.6,
+        "p99_ms": 7.853,
+        "max_ms": 94.916,
+        "over50ms": 39,
+        "over100ms": 0
+      },
+      "over100_count": 152,
+      "scope": "Forward-filled same-Godot-clock ui_layout sample; visible X or label containing 닫기 marks a modal. Not per-frame modal telemetry."
+    }
+  },
+  "largest_8_wall_intervals": [
+    {
+      "engine_us": 1685990902,
+      "phase_elapsed_seconds": 1682.296,
+      "wall_ms": 560.863,
+      "current_process_ms": 6.668,
+      "wall_minus_current_process_ms": 554.195,
+      "overlap_save_durations_ms": [],
+      "last_same_clock_character_map": "g1:map:8a2a4988d6daa5",
+      "last_same_clock_layout_age_seconds": 11.639
+    },
+    {
+      "engine_us": 1345678900,
+      "phase_elapsed_seconds": 1341.984,
+      "wall_ms": 527.304,
+      "current_process_ms": 35.168,
+      "wall_minus_current_process_ms": 492.136,
+      "overlap_save_durations_ms": [
+        30.786
+      ],
+      "last_same_clock_character_map": "gp:map:domestic_city",
+      "last_same_clock_layout_age_seconds": 93.202
+    },
+    {
+      "engine_us": 240404520,
+      "phase_elapsed_seconds": 236.71,
+      "wall_ms": 481.46,
+      "current_process_ms": 14.829,
+      "wall_minus_current_process_ms": 466.631,
+      "overlap_save_durations_ms": [],
+      "last_same_clock_character_map": "g1:map:8a2a4988d6daa5",
+      "last_same_clock_layout_age_seconds": 53.627
+    },
+    {
+      "engine_us": 1053029200,
+      "phase_elapsed_seconds": 1049.335,
+      "wall_ms": 467.836,
+      "current_process_ms": 4.983,
+      "wall_minus_current_process_ms": 462.853,
+      "overlap_save_durations_ms": [],
+      "last_same_clock_character_map": "gp:map:forge",
+      "last_same_clock_layout_age_seconds": 53.462
+    },
+    {
+      "engine_us": 470123648,
+      "phase_elapsed_seconds": 466.429,
+      "wall_ms": 437.391,
+      "current_process_ms": 3.958,
+      "wall_minus_current_process_ms": 433.433,
+      "overlap_save_durations_ms": [
+        33.999
+      ],
+      "last_same_clock_character_map": "g1:map:8a2a4988d6daa5",
+      "last_same_clock_layout_age_seconds": 5.715
+    },
+    {
+      "engine_us": 1045693781,
+      "phase_elapsed_seconds": 1041.999,
+      "wall_ms": 349.13,
+      "current_process_ms": 6.172,
+      "wall_minus_current_process_ms": 342.958,
+      "overlap_save_durations_ms": [],
+      "last_same_clock_character_map": "gp:map:forge",
+      "last_same_clock_layout_age_seconds": 46.127
+    },
+    {
+      "engine_us": 994435295,
+      "phase_elapsed_seconds": 990.741,
+      "wall_ms": 325.897,
+      "current_process_ms": 5.746,
+      "wall_minus_current_process_ms": 320.151,
+      "overlap_save_durations_ms": [],
+      "last_same_clock_character_map": "gp:map:domestic_city",
+      "last_same_clock_layout_age_seconds": 43.793
+    },
+    {
+      "engine_us": 881864753,
+      "phase_elapsed_seconds": 878.17,
+      "wall_ms": 317.987,
+      "current_process_ms": 40.654,
+      "wall_minus_current_process_ms": 277.333,
+      "overlap_save_durations_ms": [
+        34.152
+      ],
+      "last_same_clock_character_map": "g1:map:8a2a4988d6daa5",
+      "last_same_clock_layout_age_seconds": 111.087
+    }
+  ],
+  "separate_restart_process": {
+    "status": "OBSERVED",
+    "frame_delta": {
+      "n": 241,
+      "p50_ms": 16.667,
+      "p95_ms": 32.984,
+      "p99_ms": 116.607,
+      "max_ms": 144.041,
+      "over50ms": 8,
+      "over100ms": 5
+    },
+    "engine_wall_frame_interval": {
+      "n": 240,
+      "p50_ms": 16.694,
+      "p95_ms": 34.138,
+      "p99_ms": 118.786,
+      "max_ms": 250.128,
+      "over50ms": 6,
+      "over100ms": 5
+    },
+    "process_duration": {
+      "n": 241,
+      "p50_ms": 0.878,
+      "p95_ms": 4.192,
+      "p99_ms": 6.865,
+      "max_ms": 91.031,
+      "over50ms": 1,
+      "over100ms": 0
+    },
+    "save_duration": {
+      "n": 2,
+      "p50_ms": 58.541,
+      "p95_ms": 84.181,
+      "p99_ms": 86.46,
+      "max_ms": 87.03,
+      "over50ms": 1,
+      "over100ms": 0
+    },
+    "over100ms_wall_incidents": {
+      "count": 5
+    }
+  },
+  "separate_cold_probe_processes": [
+    {
+      "path": "evidence/b5-play/cold-resume-r14-fixed/first-process/FINAL_ANALYSIS.json",
+      "status": "PASS_OBSERVED_SCOPE",
+      "wall": {
+        "n": 1133,
+        "p50_ms": 17.413,
+        "p95_ms": 27.135,
+        "p99_ms": 51.584,
+        "max_ms": 156.687,
+        "over50ms": 13,
+        "over100ms": 3
+      },
+      "process": {
+        "n": 1134,
+        "p50_ms": 0.98,
+        "p95_ms": 3.848,
+        "p99_ms": 6.47,
+        "max_ms": 91.208,
+        "over50ms": 2,
+        "over100ms": 0
+      },
+      "save_duration": {
+        "n": 8,
+        "p50_ms": 34.736,
+        "p95_ms": 82.506,
+        "p99_ms": 85.284,
+        "max_ms": 85.978,
+        "over50ms": 2,
+        "over100ms": 0
+      },
+      "over100_incident_count": 3,
+      "clock_scope": "Own process trace; not merged with first1800s or another process clock."
+    },
+    {
+      "path": "evidence/b5-play/cold-resume-r14-fixed/restart-process/FINAL_ANALYSIS.json",
+      "status": "PASS_OBSERVED_SCOPE",
+      "wall": {
+        "n": 1115,
+        "p50_ms": 17.162,
+        "p95_ms": 31.937,
+        "p99_ms": 54.656,
+        "max_ms": 223.095,
+        "over50ms": 19,
+        "over100ms": 4
+      },
+      "process": {
+        "n": 1116,
+        "p50_ms": 0.948,
+        "p95_ms": 3.651,
+        "p99_ms": 5.992,
+        "max_ms": 86.138,
+        "over50ms": 1,
+        "over100ms": 0
+      },
+      "save_duration": {
+        "n": 8,
+        "p50_ms": 34.195,
+        "p95_ms": 66.087,
+        "p99_ms": 78.59,
+        "max_ms": 81.716,
+        "over50ms": 1,
+        "over100ms": 0
+      },
+      "over100_incident_count": 4,
+      "clock_scope": "Own process trace; not merged with first1800s or another process clock."
+    }
+  ],
+  "memory": {
+    "RSS_samples": 60,
+    "RSS_first_kB": 755324,
+    "RSS_last_kB": 925588,
+    "RSS_min_kB": 755324,
+    "RSS_max_kB": 925588,
+    "RSS_change_MiB": 166.273,
+    "engine_static_first_bytes": 430860438,
+    "engine_static_last_bytes": 526217318,
+    "engine_static_change_MiB": 90.939,
+    "interpretation": "Observed growth includes accumulating frame/input/save trace dictionaries; no instrumentation-off control or memory-pressure telemetry establishes a product leak or a cause of wall intervals."
+  },
+  "environment_limits": {
+    "observed_renderer": "OpenGL Compatibility / Mesa llvmpipe software rendering",
+    "recording_fps": 30,
+    "host_snapshot_observed_UTC": "2026-10-17T01:49:01.406867+00:00",
+    "operator_stress_start_system_wall_UTC": "2026-10-17T03:57:25.649805+00:00",
+    "host_snapshot_precedes_start_seconds": 7704.243,
+    "snapshot_scope": "Historical host/environment snapshot, not time-aligned per-run CPU/GPU/cgroup-pressure telemetry. Its old contender/overlap comments do not establish that those jobs overlapped r14. Process cleanup/quiet launch contract also does not identify a stall cause.",
+    "per_interval_CPU_scheduler_GPU_queue_or_memory_pressure_measurements": "NOT_AVAILABLE",
+    "actual_game_log_renderer_lines": [
+      "OpenGL API 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.2 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 20.1.2, 256 bits)"
+    ],
+    "actual_game_log_path": "evidence/b5-play/final30-r14/game.log",
+    "actual_game_log_sha256": "66e4a058e9832093b503c211c02306549c5322bfeeef2a4f00b3885be82c9b57"
+  },
+  "interpretation_limits": [
+    "A save-overlap association is not proof that the save caused the whole wall interval. The interval also covers work/wait between profiled _process endpoints.",
+    "Wall minus current process duration is a timing remainder, not a measurement of OS scheduling, GPU, capture or a specific engine callback.",
+    "Map/modal groups use latest character/layout checkpoint on the same Godot tick clock; map cells and modal state are not sampled every frame. Group membership can lag a change and does not prove causal map/render effects.",
+    "OS action clock alignment was not independently calibrated; action-to-wall joins and cross-process clocks are not used for causal attribution here.",
+    "R13 Lv14→18 and r14 Lv18→21, map route, earned inventory/state, action cadence and observed run conditions differ. Their p99 values are not a controlled before/after causal comparison.",
+    "No long-tail frame is removed or reclassified as a PASS. Final engine wall p99 exceeds50ms while p95 meets33.4ms. Physical presentation/device acceptance remains separate."
+  ],
+  "report_fragment_ko": "연속 1809.293초의 일반 조작에서 기능 25검사는 통과했고 전체 첫 프로세스 저장 858회는 최대 90.797ms로100ms 초과가 없었습니다. 그러나 엔진 wall 프레임 p99 54.348ms로50ms 목표는 실패했습니다. >100ms wall 간격 155건 중 저장 중첩은27건, 비중첩은128건입니다. 모든 해당 간격에서 계측된 현재 _process 자체는100ms를 넘지 않았습니다. 이는 계측 구간 밖의 시간도 포함된다는 관측이며 OS·GPU·녹화·메모리 중 어느 원인으로도 단정할 수 없습니다. 전후 레벨과 실제 플레이 상태가 달라 r13과의 p99 차이를 코드 회귀의 인과 증거로 사용하지 않았습니다.",
+  "same_clock_context_sampling": {
+    "character_samples": 185,
+    "modal_label_definition": "Visible X or Button text containing 닫기 in actual ui_layout controls.",
+    "map_group_scope": "These are latest observed character-map sample groups, not true per-frame map occupancy. Samples omit many intermediate map visits; long forward-fill ages prohibit geographic attribution of stalls. Overall/frame/performance acceptance metrics retain all intervals.",
+    "fresh_character_context_max_age_s": 2,
+    "fresh_context_groups": {
+      "gp:map:domestic_city": {
+        "wall_interval": {
+          "n": 2118,
+          "p50_ms": 15.095,
+          "p95_ms": 26.467,
+          "p99_ms": 51.262,
+          "max_ms": 157.445,
+          "over50ms": 24,
+          "over100ms": 2
+        },
+        "current_process_duration": {
+          "n": 2118,
+          "p50_ms": 0.753,
+          "p95_ms": 3.101,
+          "p99_ms": 4.569,
+          "max_ms": 42.817,
+          "over50ms": 0,
+          "over100ms": 0
+        },
+        "scope": "Only contextual diagnostic subset; never replaces full distributions or removes tails from acceptance."
+      },
+      "gp:map:forge": {
+        "wall_interval": {
+          "n": 1282,
+          "p50_ms": 13.297,
+          "p95_ms": 21.609,
+          "p99_ms": 49.801,
+          "max_ms": 109.098,
+          "over50ms": 13,
+          "over100ms": 2
+        },
+        "current_process_duration": {
+          "n": 1282,
+          "p50_ms": 0.419,
+          "p95_ms": 2.635,
+          "p99_ms": 4.206,
+          "max_ms": 53.799,
+          "over50ms": 1,
+          "over100ms": 0
+        },
+        "scope": "Only contextual diagnostic subset; never replaces full distributions or removes tails from acceptance."
+      },
+      "g1:map:8a2a4988d6daa5": {
+        "wall_interval": {
+          "n": 767,
+          "p50_ms": 20.655,
+          "p95_ms": 37.946,
+          "p99_ms": 67.811,
+          "max_ms": 226.121,
+          "over50ms": 22,
+          "over100ms": 2
+        },
+        "current_process_duration": {
+          "n": 767,
+          "p50_ms": 2.025,
+          "p95_ms": 5.524,
+          "p99_ms": 23.268,
+          "max_ms": 53.502,
+          "over50ms": 1,
+          "over100ms": 0
+        },
+        "scope": "Only contextual diagnostic subset; never replaces full distributions or removes tails from acceptance."
+      }
+    }
+  },
+  "attribution_verdict": {
+    "cause": "NOT_OBSERVED",
+    "established": "The host engine-wall p99 exceeds50ms and all155 first-process >100ms intervals lie inside the marked phase. Save-overlap is associated with higher intervals, while128/155 long intervals have no overlapping save. The current profiled _process never exceeds100ms.",
+    "not_established": [
+      "OS scheduling delay",
+      "GPU/render-queue stall",
+      "capture encoder contention",
+      "memory pressure or a product leak",
+      "regression causally established by r13→r14 comparison"
+    ],
+    "next_evidence_if_a_new_investigation_is_authorized": "Inspect render/event-dispatch/wait and scheduler/CPU/GPU timing in the same affected interval under a controlled identical character/route; this report does not create or execute a new benchmark."
+  },
+  "scope_accounting": {
+    "first_process_all_intervals": 102997,
+    "continuous_phase_intervals": 102709,
+    "first_process_long_intervals": 155,
+    "restart_process_long_intervals": 5,
+    "cold_probe_long_intervals": 7,
+    "no_cross_process_clock_merge": true,
+    "save_event_vs_interval_scope": "858full save events versus857save-overlap intervals are different measurements; terminal/boundary saves can fall outside a retained frame pair. Continuous855save events and855save-overlap intervals are retained without trimming.",
+    "separate_scope_long_interval_count_sum": 167
+  },
+  "observed_associations": {
+    "continuous_over50_save_overlap_fraction": 0.5606,
+    "continuous_over100_save_overlap_fraction": 0.1742,
+    "conditional_non_save_p99_below50_does_not_reclassify_combined_FAIL": true,
+    "largest_5min_long_interval_cluster_seconds": [
+      900,
+      1200
+    ],
+    "largest_5min_long_interval_count": 55,
+    "final_complete_5min_long_interval_count": 24,
+    "scope": "Conditional associations only. Saves below100ms can still overlap >50ms frame intervals. None establishes the whole interval cause; no sample is removed from full/stress acceptance."
+  }
+}
