@@ -2,9 +2,9 @@
   "schema": "baram.final-playability-tool-provenance/3",
   "repository": "irewon1-lgtm/baram-1998-singleplayer",
   "branch": "work/rebuild-p3-remediation-20261016",
-  "commit": "639750f04d10ee4ac3c1a7113232b8c30109f078",
+  "commit": "214144adb934d8982938469c7465cdfd6d1327a4",
   "app_source_commit": "639750f04d10ee4ac3c1a7113232b8c30109f078",
-  "app_changed": true,
+  "app_changed": false,
   "operator_path": "tools/rebuild/v2/test_os_playability.py",
   "operator_sha256": "06540e780e4b2032c8b82859d22d980fe2e255140ad3c27dc97de558cf57b064",
   "analyzer_path": "tools/rebuild/v2/analyze_playability.py",
@@ -18,7 +18,7 @@
     "tools/rebuild/v2/run_playability_analysis.py": "0e771b0bfdb2053fea8f457014b9e16d31c66bae0d509bd0a70f17263c82502b",
     "tools/rebuild/v2/test_store_cold.gd": "22827853b5ef6af5ebff91b69a10cdf7c1e045719b6bf55355852b7f8ebbaa17",
     "tools/rebuild/v2/test_store_depth.gd": "5acb17fb0f190aee2309cda35ab01fffb37cfa186b209a228de68154307ecc1e",
-    "tools/rebuild/v2/test_os_cold_resume.py": "705d1a059fd83632e74f33db88f7f1c6b2b3b92d525307ce850969398e3f181f"
+    "tools/rebuild/v2/test_os_cold_resume.py": "a86183dca7392b5ee1417a15bc1b1f41b1788c6bd22c818538ce870ca884fcbb"
   },
   "scope": "Published store-only r14 successor; operator unchanged0654; analyzer exactordered signature correlation with signed uncalibrated residuals, command latency NOT_VALIDATED_CLOCK_ALIGNMENT; event_id receipt-to-draw unchanged; independent process clocks; cold40s operator is separate from final1800. All performance/raw histories retained. No native app execution.",
   "preflight_tools_commit": "396840406fabe6bef585c67eb28d120d57798ef2",
@@ -27,5 +27,6 @@
   "analysis_wrapper_path": "tools/rebuild/v2/run_playability_analysis.py",
   "analysis_wrapper_sha256": "0e771b0bfdb2053fea8f457014b9e16d31c66bae0d509bd0a70f17263c82502b",
   "cold_operator_path": "tools/rebuild/v2/test_os_cold_resume.py",
-  "cold_operator_sha256": "705d1a059fd83632e74f33db88f7f1c6b2b3b92d525307ce850969398e3f181f"
+  "cold_operator_sha256": "a86183dca7392b5ee1417a15bc1b1f41b1788c6bd22c818538ce870ca884fcbb",
+  "cold_capture_change": "Observe actualencodedffmpeg frames through-progress, unchanged encoding/unchanged app639/PCK4a9. Original pre-app0samples guardFAIL preserved; recorder-only4PASS. Appfreeze tool705 is historicalfirstpublication, currentcoldtoolA861 livesat214144."
 }
