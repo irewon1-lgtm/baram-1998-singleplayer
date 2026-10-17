@@ -10,10 +10,10 @@
   "master_plan": "docs/rebuild/MASTER_PLAN.md",
   "status": "B5_REPAIR_FINAL_R12_VALIDATION_IN_PROGRESS",
   "implementation_status": "G1_RETAINED_PLAYABILITY_REPAIR_HOST_VALIDATED_NATIVE_LONG_PLAY_PENDING",
-  "handoff_commit": "d213590f85375f2fb7dea9a389e214a175bccd75",
-  "app_behavior_commit": "be47c61631366c8fa3307c047435a38a151085e4",
+  "handoff_commit": "82e09f50861065c8e763efe34f7634d0e95e2e82",
+  "app_behavior_commit": "82e09f50861065c8e763efe34f7634d0e95e2e82",
   "current_phase": "B5",
-  "current_phase_execution": "FINAL_R12_ORDINARY_PLAY_AND_NATIVE_VALIDATION",
+  "current_phase_execution": "FINAL30_RUNNING_NATIVE_RUNNER_BLOCKED_COLOR_ONLY_EXPORTING",
   "authorization": {
     "goal_and_plan": "USER_APPROVED",
     "ordered_followup_work": "B1_THROUGH_B6_WITHIN_FREE_SCOPE",
@@ -163,10 +163,10 @@
   "next_action": {
     "owner": "Work",
     "phase": "B5",
-    "action": "Finish frozen r12 ordinary30min full G1 XTEST/unedited video/frames/save tests, then exact hash-pinned native Windows and Android update using existing free public runners and existing private vault. Resolve actual failures, retain account and physical device limits; consolidate RESULTS/VERIFICATION/DELIVERY and deliver exact files.",
+    "action": "Finish current uninterrupted be47/r12 30min ordinary OS run, then use actual earned save with reserved materials and real page navigation for projectile+return follow-up. New82e four-label-color-only exports: exact pack parity/ordinary test, no repeated long run for simple colors; explicit source impact. Native two jobs failed before runner steps, no same-condition rerun. Consolidate central reports and saved exact files.",
     "on_environment_block": "Continue independent B5 code/UI/assets and adapter tests; native physical devices and authenticated roundtrip remain explicitly BLOCKED/NOT_RUN. B6 promotion blocked by B5 failures.",
     "do_not_repeat": "No full inventory/SDK/parser reset; reuse verified toolchain and unchanged evidence; only changed-source affected final suites.",
-    "resume_from": "d213590f source; appbe47 unchanged52files; r12 runtime4791e101. Existing Godot4.6.3 and retained signer. Running final30-r12; export-r12 Windows/Android started, do not reexport absent changed inputs."
+    "resume_from": "Source82e09f50; functionalbasebe47; r12runtime4791e101; active final30-r12. Existing exact first-job63 PASS, UI ink24 PASS, prior byte parity10 ordinary retained. Native private inputac8a7307 pre-color candidate and root request3a881f1659."
   },
   "retry_policy": {
     "deterministic_unchanged_failure": "CHANGE_METHOD",
@@ -254,14 +254,14 @@
     "scope": "Keep B0-B4/G1 IDs, fix affected B3/B4 code/assets within B5; actual platform/sync/update gates retained",
     "prior_evidence_policy": "Historical PASS logs retained, affected source/content/config/environment/scope revalidated; no unexecuted PASS",
     "resume": {
-      "source_commit": "d213590f85375f2fb7dea9a389e214a175bccd75",
-      "app_behavior_commit": "be47c61631366c8fa3307c047435a38a151085e4",
+      "source_commit": "82e09f50861065c8e763efe34f7634d0e95e2e82",
+      "app_behavior_commit": "82e09f50861065c8e763efe34f7634d0e95e2e82",
       "runtime_manifest_sha256": "4791e101c547f0a3848297b40b0e424acd776ac85c2d455e40e1f83c4bd1fdf0",
       "content_sha256": "f1e45c2a7045e130b842325751ab81cf38c22ac92df62ddafe33700aa9267fca",
       "runtime_generation": "WORK-V2-G1-20261017",
       "runtime_variant": "r12-final",
-      "ordinary_final30": "RUNNING_OS_XTEST_LINUX_FULL_G1_UNACCELERATED_RECORDING",
-      "native": "EXACT_CANDIDATE_FREE_RUNNER_STAGING_NOT_YET_EXECUTED",
+      "ordinary_final30": "RUNNING_UNINTERRUPTED_BE47_R12_SCOPE_MOVEMENT_TRANSACTION_SAVE_OPERATOR_PAGINATION_LIMITS",
+      "native": "BLOCKED_BEFORE_RUNNER_STEPS_EXACT_REASON_NOT_OBSERVED",
       "account_sync": "BLOCKED_NO_IDENTIFIED_GAME_AUTHENTICATED_ENDPOINT",
       "ordinary_operator_correction": "Clamped map camera projection and actual lower-right overlay boundary; previous short attempts preserved as harness failures, not game pathfinding failures.",
       "visual_repair": "12 interiors use low door jambs instead of outdoor roof, arbitrary aisle removed, existing domestic tavern blocked cells use complete wooden tables; all76topology and gameplay rules unchanged.",
@@ -274,7 +274,12 @@
         "evidence/b5-engine/FINAL_R11_IMPACT_ASSESSMENT.json",
         "evidence/b5-play/final30-r12/",
         "evidence/native-resume/"
-      ]
+      ],
+      "functional_behavior_base": "be47c61631366c8fa3307c047435a38a151085e4",
+      "native_block_evidence": "docs/rebuild/v2/B5_NATIVE_RUNNER_BLOCK.json",
+      "native_blocked_candidate": "pre-color be47 r12; current final label-only82e exports require exact input staging when runner block resolved",
+      "color_only_impact": "docs/rebuild/v2/B5_COLOR_ONLY_IMPACT.json",
+      "ordinary_followup": "NOT_RUN_YET_FROM_NATURALLY_EARNED_SAVE_NO_GRANTS_FOR_PROJECTILE_RETURN"
     }
   }
 }
