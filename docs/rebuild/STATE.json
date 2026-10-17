@@ -8,12 +8,12 @@
   "active_branch": "work/rebuild-p3-remediation-20261016",
   "entrypoint": "AGENTS.md",
   "master_plan": "docs/rebuild/MASTER_PLAN.md",
-  "status": "B5_SINGLE_REFERENCE_REPAIR_IN_PROGRESS_USER_VISUAL_FAIL",
-  "implementation_status": "PARTIAL_PERFORMANCE_NATIVE_ACCOUNT_GATES_REMAIN",
-  "handoff_commit": "0627c774927d92b68936ffd3323129fa268967dd",
-  "app_behavior_commit": "0627c774927d92b68936ffd3323129fa268967dd",
+  "status": "PARTIAL_B5_VISUAL_PERFORMANCE_LIMITS_B6_NATIVE_ACCOUNT_NOT_RUN",
+  "implementation_status": "PARTIAL_B5_VISUAL_PERFORMANCE_LIMITS_B6_NATIVE_ACCOUNT_NOT_RUN",
+  "handoff_commit": "d19cc36da925fb1b39e7d624e2699a3461c3cfea",
+  "app_behavior_commit": "c703868999fd5fb59a580f6b8e03b18172a225ac",
   "current_phase": "B5",
-  "current_phase_execution": "B5_SOURCE_FIRST_SINGLE_REFERENCE_REPAIR",
+  "current_phase_execution": "B5_EXECUTED_WITH_SCOPED_RESULTS_B6_NATIVE_ACCOUNT_BLOCKED",
   "authorization": {
     "goal_and_plan": "USER_APPROVED",
     "ordered_followup_work": "B1_THROUGH_B6_WITHIN_FREE_SCOPE",
@@ -55,7 +55,7 @@
     "delivery": "docs/rebuild/v2/DELIVERY.json",
     "results": "docs/rebuild/v2/RESULTS.md",
     "historical_evidence": "docs/rebuild/p3-remediation/",
-    "scope": "G2_HOST_SCOPE_SOURCE_0627C774_PRIVATE_INSTALL_CANDIDATES_NOT_FULL_ACCEPTANCE"
+    "scope": "G2_R16_SINGLE_REFERENCE_ACTUAL_SCREENS_AND_CANDIDATES_SCOPED_ACCEPTANCE"
   },
   "observed_counts": {
     "active": {
@@ -119,15 +119,128 @@
     "OS_Korean_IME": "NOT_RUN",
     "physical_audio_and_display_latency": "NOT_RUN",
     "authenticated_account_roundtrip": "BLOCKED_NO_AUTHENTICATED_ENDPOINT",
-    "all_111_map_visual_review": "NOT_RUN_PENDING_FINAL_ART_RUNTIME",
-    "all_276_exit_normal_input": "IN_PROGRESS_PREVIEW_REPAIRS_TWO_AFFECTED_WRONG_SIDE_CASES_PASSED",
+    "all_111_map_visual_review": "PASS_REVIEWED_CAPTURE_AREAS_WITH_8_QA_DYNAMIC_LIMITS_AND_CITY_ROOF_OCCLUSION_NOT_WHOLE_WORLD_CLEAN_PASS",
+    "all_276_exit_normal_input": "PASS_276_WITH_EXPLICIT_DEPENDENCY_REUSE",
     "performance": {
       "long_stability": "NOT_RUN",
-      "short_final_pack": "NOT_RUN_PENDING_FINAL_FREEZE",
+      "short_final_pack": "PASS_OBSERVED_SCOPE_FUNCTIONAL; actual performance targets assessed separately",
       "store_source_sha256": "3e4cc30682a2510b65eddffa010a905b0a143744246434c0682c5511a7b429b0",
-      "prior_r16_store_fixture": "PASS_OBSERVED_SCOPE; save_work/r16-earned-migration-frozen-final.json; final changed coordinate metadata regression pending",
-      "historical_r15_performance": "historical.G2_r15_before_single_reference_repair.retained_actual_status.performance"
-    }
+      "first_process": {
+        "frame_delta": {
+          "n": 1222,
+          "p50_ms": 16.667,
+          "p95_ms": 20.833,
+          "p99_ms": 55.094,
+          "max_ms": 138.18,
+          "over50ms": 15,
+          "over100ms": 2
+        },
+        "engine_wall_frame_interval": {
+          "n": 1221,
+          "p50_ms": 16.58,
+          "p95_ms": 23.913,
+          "p99_ms": 37.937,
+          "max_ms": 151.862,
+          "over50ms": 11,
+          "over100ms": 2
+        },
+        "engine_input_to_frame_post_draw": {
+          "n": 7,
+          "p50_ms": 15.511,
+          "p95_ms": 20.39,
+          "p99_ms": 21.668,
+          "max_ms": 21.988,
+          "over50ms": 0,
+          "over100ms": 0
+        },
+        "save_duration": {
+          "n": 8,
+          "p50_ms": 58.569,
+          "p95_ms": 93.218,
+          "p99_ms": 104.453,
+          "max_ms": 107.262,
+          "over50ms": 8,
+          "over100ms": 1
+        },
+        "target_assessment": {
+          "frame_delta_p95_le33_4": true,
+          "frame_delta_p99_le50": false,
+          "engine_wall_p95_le33_4": true,
+          "engine_wall_p99_le50": true,
+          "engine_render_feedback_p95_le100": true,
+          "saves_over100ms": 1,
+          "actual_OS_presentation": "NOT_RUN",
+          "human_fun_acceptance": "NOT_RUN"
+        }
+      },
+      "restart_process": {
+        "frame_delta": {
+          "n": 1238,
+          "p50_ms": 16.667,
+          "p95_ms": 19.374,
+          "p99_ms": 33.236,
+          "max_ms": 145.74,
+          "over50ms": 10,
+          "over100ms": 3
+        },
+        "engine_wall_frame_interval": {
+          "n": 1237,
+          "p50_ms": 16.428,
+          "p95_ms": 23.791,
+          "p99_ms": 34.557,
+          "max_ms": 539.82,
+          "over50ms": 9,
+          "over100ms": 2
+        },
+        "engine_input_to_frame_post_draw": {
+          "n": 7,
+          "p50_ms": 16.577,
+          "p95_ms": 22.6,
+          "p99_ms": 24.138,
+          "max_ms": 24.522,
+          "over50ms": 0,
+          "over100ms": 0
+        },
+        "save_duration": {
+          "n": 8,
+          "p50_ms": 51.736,
+          "p95_ms": 74.67,
+          "p99_ms": 77.733,
+          "max_ms": 78.499,
+          "over50ms": 5,
+          "over100ms": 0
+        },
+        "target_assessment": {
+          "frame_delta_p95_le33_4": true,
+          "frame_delta_p99_le50": true,
+          "engine_wall_p95_le33_4": true,
+          "engine_wall_p99_le50": true,
+          "engine_render_feedback_p95_le100": true,
+          "saves_over100ms": 0,
+          "actual_OS_presentation": "NOT_RUN",
+          "human_fun_acceptance": "NOT_RUN"
+        }
+      },
+      "headless_earned_migration_prior_same_mechanics": {
+        "checks_each": 63,
+        "writes_ms": [
+          148.824,
+          51.704,
+          98.161,
+          67.2
+        ],
+        "loads_ms": [
+          485.843,
+          483.274
+        ],
+        "concurrent_headless_fixtures": true,
+        "report": "evidence/store-final/R17_FINAL_EARNED_MIGRATION_PROVENANCE.json"
+      },
+      "scope": "Two20s Linux llvmpipe/XTEST processes, all retained active-play samples and saves; process clocks kept separate. Startup/menu transitions retained in video/checkpoints. No native, physical input/display/audio latency or long stability claim.",
+      "verdict": "FAIL_SOME_SHORT_TARGETS_IN_OBSERVED_LINUX_RUN",
+      "owner_review": "첫/재시작 frame delta p95는20.833/19.374ms, wall p95는23.913/23.791ms였다. 첫프로세스 delta p99는55.094ms로50ms목표를넘었고, 저장8회중1회107.262ms로100ms를넘었다. 재시작저장8회는최대78.499ms였으나 wall frame최대539.820ms(저장구간과겹침없음)를보존했다. 입력→엔진 post-draw p95는20.390/22.600ms였다. 기능72개확인은통과했지만성능목표전체는FAIL로남긴다. 이소프트웨어렌더링·녹화환경관측을실기기성능판정으로확장하지않는다."
+    },
+    "all_140_buildings_and2_closed_gates": "PASS_VISIBLE_140_BUILDINGS_PLUS2_CLOSED_GATES_142ROWS"
   },
   "defect_policy_changes": {
     "P3-FIX-09": {
@@ -165,31 +278,34 @@
     },
     {
       "id": "B2",
-      "status": "G1_CONTRACT_FROZEN_ALL_BINDINGS_STATIC_AUDIT_PASS"
+      "status": "G1_CONTRACT_FROZEN_ALL_BINDINGS_STATIC_AUDIT_PASS",
+      "scope": "Retained historical G1 baseline; G2 expansion preserved. Current r16 scopes and NOT_RUN gates are in docs/rebuild/v2/VERIFICATION.json."
     },
     {
       "id": "B3",
-      "status": "G1_ENGINE_ACTIONS_ALL_IDS_AND_REGRESSION_PASS"
+      "status": "G1_ENGINE_ACTIONS_ALL_IDS_AND_REGRESSION_PASS",
+      "scope": "Retained historical G1 baseline; G2 expansion preserved. Current r16 scopes and NOT_RUN gates are in docs/rebuild/v2/VERIFICATION.json."
     },
     {
       "id": "B4",
-      "status": "G1_R3_CONTENT_ASSETS_INTEGRATED"
+      "status": "G1_R3_CONTENT_ASSETS_INTEGRATED",
+      "scope": "Retained historical G1 baseline; G2 expansion preserved. Current r16 scopes and NOT_RUN gates are in docs/rebuild/v2/VERIFICATION.json."
     },
     {
       "id": "B5",
-      "status": "PARTIAL_PERFORMANCE_NATIVE_ACCOUNT_GATES_REMAIN"
+      "status": "PARTIAL_B5_VISUAL_PERFORMANCE_LIMITS_B6_NATIVE_ACCOUNT_NOT_RUN"
     },
     {
       "id": "B6",
-      "status": "G2_APK_WINDOWS_CANDIDATES_READY_NATIVE_UPDATE_AND_FULL_ACCEPTANCE_PENDING"
+      "status": "INSTALLATION_CANDIDATES_BUILT_NATIVE_UPDATE_ACCOUNT_NOT_RUN"
     }
   ],
   "next_action": {
     "owner": "Work",
-    "phase": "B5",
-    "action": "Complete final111map/276door actual screenshot+ordinary-input sweep and independent human visual reviews; export exact frozen source/runtime Android version8 and Windows candidates; short final-PCK/save regressions only.",
-    "resume_from": "Finalsource9ee89c / private_runtime_r17_floor_final f25cd82b+64af0624 / evidence/world-qa-complete / architecture142captureplanned",
-    "do_not_repeat": "No new plan/engine/original redownload/reset/30min video. Preserve all source counts/IDs/save invariants. Do not export known broken art or turn old logical PASS into visual PASS."
+    "phase": "B5→B6",
+    "action": "B5 observedshortperformance misses andwhole-world visual limits remain explicit. Nexttest exactc703 candidates on permitted nativeWindows/Android runner/device for install/update/save retention and compare observedstalls there; identifyexistingapprovedauthenticatedendpoint for sameaccountroundtrip. Do not rerun completed fullsweeps ormake30minvideo; no original re-download/reset/newengine.",
+    "resume_from": "Latest canonical branch HEAD; last exported app c703868999fd5fb59a580f6b8e03b18172a225ac; runtime f5e0547a4f26ec55f323b2a51b2645e6339932f2e32482267d1b87453809eb34; never reset to historical SHA",
+    "do_not_repeat": "Do not reset, redraw accepted assets, redownload originals, rerun unchanged full sweeps or make30min video. Preserve all IDs/saves/keys and prior negative evidence."
   },
   "retry_policy": {
     "deterministic_unchanged_failure": "CHANGE_METHOD",
@@ -2071,99 +2187,103 @@
         "overall": "PARTIAL_PERFORMANCE_NATIVE_ACCOUNT_GATES_REMAIN"
       },
       "handoff_commit": "0627c774927d92b68936ffd3323129fa268967dd",
-      "app_behavior_commit": "0627c774927d92b68936ffd3323129fa268967dd"
+      "app_behavior_commit": "0627c774927d92b68936ffd3323129fa268967dd",
+      "G2_integration_checkpoint": {
+        "app_source": "0627c774927d92b68936ffd3323129fa268967dd",
+        "runtime_manifest_sha256": "2c3844f186cb1e2387e7acafa3d9de037737d8c82ff9ee8058b89c7c86da92b3",
+        "tests": {
+          "all_ID_commands": {
+            "checks": 6872,
+            "failures": 0
+          },
+          "actions_skills": {
+            "checks": 2299,
+            "failures": 0
+          },
+          "save_migration": {
+            "checks": 894,
+            "failures": 0
+          },
+          "new_AI_roles": {
+            "checks": 401,
+            "failures": 0
+          },
+          "strict_structure": {
+            "checks": 1670,
+            "failures": 0
+          },
+          "fresh_four_jobs": {
+            "checks": 88,
+            "commands": 5955,
+            "failures": 0
+          },
+          "actual_PCK_GUI": {
+            "checks": 71,
+            "failures": 0
+          },
+          "actual_PCK_cold_resume": {
+            "checks": 72,
+            "result": "PASS_OBSERVED_SCOPE_PERFORMANCE_FAIL"
+          },
+          "APK_PCK_equal_files": 8990
+        },
+        "cold_performance": "FAIL:framep95~36-39ms/save528ms and153ms; preserve all tails",
+        "native_account": "Still NOT_RUN/BLOCKED, old runner failure not retried",
+        "artifacts": [
+          {
+            "filename": "baram-G2-r15-Android.apk",
+            "local_path": "/workspace/scratch/7a09b4f9ec28/deliverables/baram-G2-r15-Android.apk",
+            "bytes": 122877379,
+            "sha256": "1215248ce8b48c48036b0f9c584ce0066cef8dd8088d8c6069365a1f7b4e42e2",
+            "status": "BUILT_NOT_NATIVE_EXECUTION_VERIFIED"
+          },
+          {
+            "filename": "baram-G2-r15-Windows64.zip",
+            "local_path": "/workspace/scratch/7a09b4f9ec28/deliverables/baram-G2-r15-Windows64.zip",
+            "bytes": 80744260,
+            "sha256": "1dc970a0031e8989ea83da1fb477756701ed9ad2e6265f558b3c3e436d1d32d6",
+            "status": "BUILT_NOT_NATIVE_EXECUTION_VERIFIED"
+          },
+          {
+            "filename": "baram-G2-r15-private-runtime.zip",
+            "local_path": "/workspace/scratch/7a09b4f9ec28/deliverables/baram-G2-r15-private-runtime.zip",
+            "bytes": 126821300,
+            "sha256": "00a6eccfe789217c4a10f35be5db785445ff658d62cc8fe363c71c552d88f378",
+            "status": "BUILT_NOT_NATIVE_EXECUTION_VERIFIED"
+          }
+        ]
+      },
+      "delivery_20261017_G2": {
+        "status": "SAVED_ORDERED_BATCH",
+        "candidate": "G2-r15",
+        "files": 6,
+        "manifest": "docs/rebuild/v2/DELIVERY.json",
+        "app_source_commit": "0627c774927d92b68936ffd3323129fa268967dd",
+        "native_update": "NOT_RUN",
+        "full_B6_acceptance": "PENDING"
+      }
     }
   },
   "publication": {
     "method": "Atomic expected-HEAD lease on existing canonical Work branch; no force/main/production changes",
-    "last_published_app_source_commit": "f36a67afc3d3acdc3e4aad58ca20cec59f423277",
-    "verification": "Actual publication receipts in evidence/PUBLICATION-*.json. Additional actual-screen world/wardrobe and label fixes are local working changes pending final freeze/publication."
+    "last_published_app_source_commit": "c703868999fd5fb59a580f6b8e03b18172a225ac",
+    "verification": "Exact expected-HEAD atomic publication receipts; no force or main change; final app bytes equal frozen export input"
   },
   "execution_20261017": {
-    "generation": "G2",
-    "source_commit": "0627c774927d92b68936ffd3323129fa268967dd",
-    "evidence": "docs/rebuild/v2/VERIFICATION.json"
+    "scope": "HISTORICAL_PRE_SINGLE_REFERENCE_R16",
+    "current_evidence": "docs/rebuild/v2/VERIFICATION.json"
   },
   "playability_20261017": {
-    "generation": "G2-r16-in-progress",
-    "long_stability": "NOT_RUN",
-    "mandatory_30min_and_unedited_video": "WAIVED_BY_USER",
-    "all_maps_and_exits": "RETAINED",
-    "overall": "IN_PROGRESS_VISUAL_REPAIR_AND_SHORT_AFFECTED_REGRESSIONS"
+    "scope": "HISTORICAL_PRE_SINGLE_REFERENCE_R16",
+    "current_evidence": "docs/rebuild/v2/VERIFICATION.json"
   },
   "G2_integration_checkpoint": {
-    "app_source": "0627c774927d92b68936ffd3323129fa268967dd",
-    "runtime_manifest_sha256": "2c3844f186cb1e2387e7acafa3d9de037737d8c82ff9ee8058b89c7c86da92b3",
-    "tests": {
-      "all_ID_commands": {
-        "checks": 6872,
-        "failures": 0
-      },
-      "actions_skills": {
-        "checks": 2299,
-        "failures": 0
-      },
-      "save_migration": {
-        "checks": 894,
-        "failures": 0
-      },
-      "new_AI_roles": {
-        "checks": 401,
-        "failures": 0
-      },
-      "strict_structure": {
-        "checks": 1670,
-        "failures": 0
-      },
-      "fresh_four_jobs": {
-        "checks": 88,
-        "commands": 5955,
-        "failures": 0
-      },
-      "actual_PCK_GUI": {
-        "checks": 71,
-        "failures": 0
-      },
-      "actual_PCK_cold_resume": {
-        "checks": 72,
-        "result": "PASS_OBSERVED_SCOPE_PERFORMANCE_FAIL"
-      },
-      "APK_PCK_equal_files": 8990
-    },
-    "cold_performance": "FAIL:framep95~36-39ms/save528ms and153ms; preserve all tails",
-    "native_account": "Still NOT_RUN/BLOCKED, old runner failure not retried",
-    "artifacts": [
-      {
-        "filename": "baram-G2-r15-Android.apk",
-        "local_path": "/workspace/scratch/7a09b4f9ec28/deliverables/baram-G2-r15-Android.apk",
-        "bytes": 122877379,
-        "sha256": "1215248ce8b48c48036b0f9c584ce0066cef8dd8088d8c6069365a1f7b4e42e2",
-        "status": "BUILT_NOT_NATIVE_EXECUTION_VERIFIED"
-      },
-      {
-        "filename": "baram-G2-r15-Windows64.zip",
-        "local_path": "/workspace/scratch/7a09b4f9ec28/deliverables/baram-G2-r15-Windows64.zip",
-        "bytes": 80744260,
-        "sha256": "1dc970a0031e8989ea83da1fb477756701ed9ad2e6265f558b3c3e436d1d32d6",
-        "status": "BUILT_NOT_NATIVE_EXECUTION_VERIFIED"
-      },
-      {
-        "filename": "baram-G2-r15-private-runtime.zip",
-        "local_path": "/workspace/scratch/7a09b4f9ec28/deliverables/baram-G2-r15-private-runtime.zip",
-        "bytes": 126821300,
-        "sha256": "00a6eccfe789217c4a10f35be5db785445ff658d62cc8fe363c71c552d88f378",
-        "status": "BUILT_NOT_NATIVE_EXECUTION_VERIFIED"
-      }
-    ]
+    "scope": "HISTORICAL_PRE_SINGLE_REFERENCE_R16",
+    "current_evidence": "docs/rebuild/v2/VERIFICATION.json"
   },
   "delivery_20261017_G2": {
-    "status": "SAVED_ORDERED_BATCH",
-    "candidate": "G2-r15",
-    "files": 6,
-    "manifest": "docs/rebuild/v2/DELIVERY.json",
-    "app_source_commit": "0627c774927d92b68936ffd3323129fa268967dd",
-    "native_update": "NOT_RUN",
-    "full_B6_acceptance": "PENDING"
+    "scope": "HISTORICAL_PRE_SINGLE_REFERENCE_R16",
+    "current_evidence": "docs/rebuild/v2/VERIFICATION.json"
   },
   "single_reference_repair_20261017": {
     "task_id": "BARAM_REBUILD_V2_B5_SINGLE_REFERENCE_REPAIR_20261017",
@@ -2198,9 +2318,100 @@
       "completion": "B5 failures or missing native/account evidence prevent B6 final PASS"
     },
     "last_valid_result": "G2 r15 historical scoped tests retained; visual user failure overrides visual completion only",
-    "tests": [],
-    "native_status": "NOT_RUN",
-    "updated_at_utc": "2026-10-17T11:06:49.855583+00:00",
+    "tests": [
+      {
+        "name": "111지도·276출입구 실제 화면/일반 입력",
+        "path": "evidence/world-qa-joint-final/WORLD_QA.json",
+        "sha256": "39a031b8d816c168a4c3648d076f4b1d50549f40f7dd6d159e04e236a9622e3c",
+        "status": "PASS_REVIEWED_CAPTURE_AREAS_AND_INPUT_CONTRACTS",
+        "scope": "111 actual runtime+overview pairs individually reviewed;276ordinary-input contracts across frozen runs;222f25direct+54priorphysical routes,276dependencyreuse under final art/label-only source. Exact final binary all-route rerun0.8dynamic crowd/occlusion map limits remain.",
+        "use": "EXECUTED"
+      },
+      {
+        "name": "건물·닫힌 성문 실제 상세 검수",
+        "path": "evidence/city-building-gallery/ARCHITECTURE_VISUAL_REVIEW.json",
+        "sha256": "92443f2b15141751f844008004776f4ced5bf7bf80986874a3445fec1e624a34",
+        "status": "PASS_VISIBLE_ARCHITECTURE_FRAMES",
+        "scope": "140unique building units+2closedgates,143physical full game-window frames; hall uses2overlap frames; no fake stitch. Source/runtime city dependencies unchanged.",
+        "use": "EXECUTED"
+      },
+      {
+        "name": "단일기준·실제 전후 UI 비교",
+        "path": "final_comparison/final/REFERENCE_BEFORE_AFTER.json",
+        "sha256": "29b44f769e9e3ee744882e2378b12c51eccc5b1eef416923688c798f6dc24199",
+        "status": "PASS_REVIEWED_SCENES_WITH_CONDITIONAL_SOURCE_REUSE",
+        "scope": "Sole1000021793.jpg;2locations×5tabs before+after=20actualimages. Aftercapture63a, finalc703 has0gather-nodes in these scenes; explicit source dependency proof. No wholeworld art PASS.",
+        "use": "EXECUTED"
+      },
+      {
+        "name": "최종 채집물 이름·계단/표지 분리",
+        "path": "gather_label_repair/GATHER_LABEL_VISUAL_REVIEW.json",
+        "sha256": "71d88bfe0eb06c1a4cc34f448d6c43cdcf89403b5231ca81679aec325e1bb1d3",
+        "status": "PASS_VISIBLE_CAPTURE_ONLY",
+        "scope": "12cases=3freshc703+9conditional66b reuse;oldcoastFAILretained. Static256nodes245original/11moved/0omitted. Initial stale pre-layout telemetry excluded from screenshot-state proof.",
+        "use": "EXECUTED"
+      },
+      {
+        "name": "4직업 배우·장비·기술 효과 실제 대표 프레임",
+        "path": "actor_effect_qa/FINAL_RELEASE_READY.json",
+        "sha256": "f5f53116c55b15ddeb34a7baab0c6715ce68ef076855b0ff48f11b91c2ea8169",
+        "status": "PASS_REPRESENTATIVE_FIXTURES_WITH_DEPENDENCY_REUSE",
+        "scope": "202baselinefixturechecks/92framefiles +20jointanimalchecks/13framefiles;105capturefiles,99uniqueframehashes.4jobs×4directions andrepresentativeeffects;644aliasfallbacks/poly/summon. Not allskills/animations/items or final4jobnaturalGUIplay.",
+        "use": "EXECUTED_BASELINE_PLUS_BOUNDED_FOLLOWUP_AND_REUSE"
+      },
+      {
+        "name": "저장 안전·복구·마이그레이션",
+        "path": "baram/docs/rebuild/v2/r16/SAVE_CHECKPOINT.json",
+        "sha256": "7e31d50d1dc116d58a3841795b72ec2d0304e2e3c618a50cb86c5ee34bad6893",
+        "status": "PASS_REPORTED_STORE_SCOPES",
+        "scope": "Finalstore3e4c source executed once: safety83/cache31/migration78/depth357;9actual childkill/restart/archiveboundaries. FreshisolatedXDG/exactcommandandhashreceipt. Not native/fullworld/performance/longstability.",
+        "use": "EXECUTED_CURRENT_SOURCE_SYNTHETIC_FIXTURES"
+      },
+      {
+        "name": "원래 획득한 Lv21/Lv22 저장 이전",
+        "path": "evidence/store-final/R17_FINAL_EARNED_MIGRATION_PROVENANCE.json",
+        "sha256": "8e9527c08dd78f6b752b03fc9ba65f5443020c3b3053f86fce9ec182c73890e3",
+        "status": "PASS_OBSERVED_STORE_FIXTURES",
+        "scope": "2original earned saves1296/1310monsters,63checks+2writes each. Final f25 physics/definitions reused under exactfinaljointmechanics proof. Raw originals unchanged.",
+        "use": "EXECUTED"
+      },
+      {
+        "name": "최종 설치 PCK 새 캐릭터·취소·입력·저장·재시작",
+        "path": "evidence/r16-ordinary/ORDINARY_PROCESS.json",
+        "sha256": "f50abcde4e50e9586884497f1f5c8baf0301dd0af56b9790dc34fa8a33bc481f",
+        "status": "PASS_OBSERVED_SCOPE",
+        "scope": "Final exportedPCK ordinaryLv1 creation/cancel/move/attack/save/separateprocesscontinue;actualLinuxXTEST only.",
+        "use": "EXECUTED",
+        "checks": 10
+      },
+      {
+        "name": "최종 설치 PCK 기존 저장 이어하기·재시작",
+        "path": "evidence/r16-cold-resume/OS_PLAYABILITY.json",
+        "sha256": "cc4f69ffdddb0580adb5f6a8141ba9fa587123392df9ed6f5c99df3eb7b60d8d",
+        "status": "PASS_OBSERVED_SCOPE",
+        "scope": "Byte-identical isolated old earnedLv22 userdata; productionContinue migration;2×20s ordinaryOSmovement/autosave/menu/restart;original data allbytesunchanged;untrimmed shortvideo.",
+        "use": "EXECUTED",
+        "checks": 72
+      },
+      {
+        "name": "설치파일 내용·서명·동일성",
+        "path": "deliverables/r16-packaging-provenance.json",
+        "sha256": "71e6231e517fc53512ee98a5a875dbdad9d5d2661372e18d79c01a03530447da",
+        "status": "PASS_STRUCTURAL_AND_PARITY_ONLY",
+        "scope": "ActualAPKmanifest package/version8/certc0bc unchangedidentity;WindowscleanZIPstructure;privateRuntime allmembers hashverified. No native install/update execution.",
+        "use": "EXECUTED"
+      },
+      {
+        "name": "기존 G2 새 캐릭터 4직업 초반 성장",
+        "path": "previous/evidence/g2-natural-delivery.json",
+        "sha256": "b839e787886df85bc4d52f2d5ec9297a48731dbed6326ed6524e1ac0830957cd",
+        "status": "PASS_PRIOR_COMMAND_SCOPE_REUSED",
+        "scope": "4freshLv1→Lv6jobs,5955productioncommands/88checks, acceleratedticks/nodirectgrants;notGUI/device/native/natural1–99. Rules andcommandhandlersunchanged; only affected visual/effects checks executed thisrun.",
+        "use": "REUSED_UNCHANGED_GAME_RULES_AND_HANDLERS"
+      }
+    ],
+    "native_status": "NOT_RUN_BLOCKED_ENVIRONMENT",
+    "updated_at_utc": "2026-10-17T12:44:23.536233+00:00",
     "user_override_1900_KST": {
       "long30_and_unedited_video_required": false,
       "priority": "111map/buildings/doors/UI/characters/effects actual visual quality; code/image repair",
@@ -2211,9 +2422,9 @@
     "storage_checkpoint": {
       "source_sha256": "3e4cc30682a2510b65eddffa010a905b0a143744246434c0682c5511a7b429b0",
       "evidence": "docs/rebuild/v2/r16/SAVE_CHECKPOINT.json",
-      "new_world_save_migration": "PASS_PRIOR_R16_STORE_FIXTURE_FINAL_R17_CHANGED_COORDINATE_METADATA_REGRESSION_PENDING"
+      "new_world_save_migration": "PASS_OBSERVED_CURRENT_STORE_549_CHECKS_AND_2_EARNED_FIXTURES_126_CHECKS_PLUS_FINAL_PACK_COLD72; native update/account/long NOT_RUN"
     },
-    "implementation_status": "FINAL_LABEL_AND_CONTINUOUS_FLOOR_FIX_FROZEN_ALL_MAP_DOOR_REVIEW_RUNNING",
+    "implementation_status": "PARTIAL_B5_VISUAL_PERFORMANCE_LIMITS_B6_NATIVE_ACCOUNT_NOT_RUN",
     "source_freeze": "docs/rebuild/v2/r16/SOURCE_FREEZE.json",
     "actual_changes": [
       "native-derived integrated HUD and full-body equipment preview/footer controls",
@@ -2250,7 +2461,7 @@
       ],
       "concurrent_headless_fixtures": true
     },
-    "all_maps_and_doors": "222_REMAINING_ROUTES_RUNNING_PLUS54_DEPENDENCY_PROVEN_PHYSICS_RESULTS_AND_FRESH_VISUALS",
+    "all_maps_and_doors": "PASS_REVIEWED_CAPTURE_AREAS_WITH_8_QA_DYNAMIC_LIMITS_AND_CITY_ROOF_OCCLUSION_NOT_WHOLE_WORLD_CLEAN_PASS;PASS_276_WITH_EXPLICIT_DEPENDENCY_REUSE",
     "superseded_sweep": {
       "runtime_manifest_sha256": "4c0889f3b730a0102c3448fbd599dac922a9410131f683ded989b011860d352f",
       "content_sha256": "dcfb92a75aa304b36c2325d513752d3214e54c13b4f4d5e5cd97f53bc6edbb81",
@@ -2259,10 +2470,11 @@
       "remaining": "Correct biome/floor/object selection and complete portal silhouettes; pair reverse landings to correct physical approach side; new frozen actual all-map/all-door sweep"
     },
     "long_stability": "NOT_RUN_USER_WAIVED_MANDATORY_LONG_TEST",
-    "frozen_runtime": "64af0624b9dd5e00e03dad3986bf5cade57a6f50580487361eaf6917a2727d75",
-    "frozen_content": "f25cd82bcdcf857974a14585da7805f74089ef3e48840e1477350ff9c58056b1",
-    "runtime_directory": "private_runtime_r17_floor_final",
-    "current_ui_sha256": "9ee89c189bed41a22d6fbbba6340b6819a6fbc2b843c6f8376c98e19a1130dc6",
-    "all_buildings": "140_unique_building_units_plus2_closed_gates_actual_detail_capture_and_review_in_progress"
+    "frozen_runtime": "f5e0547a4f26ec55f323b2a51b2645e6339932f2e32482267d1b87453809eb34",
+    "frozen_content": "4943d2d12aefa6178f14a0d9790c8b80b6ae803feff19a779192791169390377",
+    "runtime_directory": "private_runtime_joint_final",
+    "current_ui_sha256": "3c82aac8ab8f0f46784a67a330fa41e25d5c5e6193bc411bdae9e02df1fe28b6",
+    "all_buildings": "PASS_VISIBLE_140_BUILDINGS_PLUS2_CLOSED_GATES_142ROWS",
+    "app_source_commit": "c703868999fd5fb59a580f6b8e03b18172a225ac"
   }
 }

@@ -21,7 +21,7 @@ def main():
  if a.pack:e.pop('BARAM_GAMEPLAY_RUNTIME',None)
  elif a.runtime:e['BARAM_GAMEPLAY_RUNTIME']=str(a.runtime.resolve())
  else:raise ValueError('Explicit runtime or final pack required')
- command=[str(a.godot.resolve()),'--audio-driver','Dummy']+(['--main-pack',str(a.pack.resolve())] if a.pack else ['--path',str(a.project.resolve())])
+ command=[str(a.godot.resolve()),'--audio-driver','Dummy','--max-fps','60']+(['--main-pack',str(a.pack.resolve())] if a.pack else ['--path',str(a.project.resolve())])
  cpath=o/'data'/a.user_dir/'gameplay-checkpoints.jsonl';saves=cpath.parent/'gameplay-p3/characters'
  result={'scope':'Actual Linux OpenGL window, synthetic X11 events, ordinary game mode, no progress grants; not native Windows/Android/physical IME','checks':[],'pack_sha256':hashlib.sha256(a.pack.read_bytes()).hexdigest() if a.pack else None,'runtime_manifest_sha256':hashlib.sha256((a.runtime/'runtime.json').read_bytes()).hexdigest() if a.runtime else None}
  def check(i,b,details=None):result['checks'].append({'id':i,'status':'PASS' if b else 'FAIL','details':details})

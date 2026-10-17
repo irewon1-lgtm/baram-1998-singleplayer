@@ -34,7 +34,7 @@ def main():
     source={'recorded_archive':'KR_4.91_491v.zip','recorded_container':'NWind.dat','archive_member_chain':['Install/DATA1.CAB','NWind.dat'],'container_sha256':actors['source']['dat_sha256'],
             'source_id':kr['source_id'],'target_1998_2001_historical_match':kr.get('target1998_2001_match','NOT_ESTABLISHED'),'original_archive_bytes_revalidated_this_run':False,
             'note':'Retained pinned extraction provenance. Original archive is not re-downloaded/re-decoded. Runtime PNG bytes are independently hashed below.',
-            'reader_sha256':actors['source']['reader_sha256'],'builder_sha256':actors['source']['builder_sha256'],'native_shield_repair':actors['source'].get('native_shield_repair'),'native_steel_repair':actors['source'].get('native_steel_repair'),'native_helmet_repair':actors['source'].get('native_helmet_repair'),'cape_reconstruction':actors['source'].get('cape_reconstruction')}
+            'reader_sha256':actors['source']['reader_sha256'],'builder_sha256':actors['source']['builder_sha256'],'native_shield_repair':actors['source'].get('native_shield_repair'),'common_animal_repair':actors['source'].get('common_animal_repair'),'native_steel_repair':actors['source'].get('native_steel_repair'),'native_helmet_repair':actors['source'].get('native_helmet_repair'),'cape_reconstruction':actors['source'].get('cape_reconstruction')}
     if args.archive:
         source['archive_sha256']=sha(args.archive);source['original_archive_bytes_revalidated_this_run']=True
     if args.dat:
@@ -53,7 +53,7 @@ def main():
     for capture in captures['captures']:
         for layer in capture['visible_layers']:
             seen[layer['runtime_path']].append({'capture':capture['file'],'map_id':capture['map_id'],'cell':capture['cell'],
-             'world_top_left':layer.get('world_top_left'),'screen_rect':layer.get('screen_rect'),'consumer':layer.get('consumer','visible_world_layer'),'original_frame':layer.get('original_frame'),'method':capture['method']})
+             'world_top_left':layer.get('world_top_left'),'screen_rect':layer.get('screen_rect'),'consumer':layer.get('consumer','visible_world_layer'),'original_frame':layer.get('original_frame'),'method':capture['method'],'capture_run_fingerprints':capture.get('capture_run_fingerprints')})
     byte_cache={};errors=[]
     def runtime_receipt(path,expected):
         if path not in byte_cache:
@@ -74,7 +74,7 @@ def main():
             result.append({'member':epf,'member_sha256':members.get(epf,{}).get('sha256'),'palette_member':f.get('palette_member'),
               'palette_member_sha256':members.get(f.get('palette_member'),{}).get('sha256'),'frame':f['frame'],'palette':f.get('palette'),
               'offset':f.get('offset'),'rgba_sha256':f.get('rgba_sha256'),'recolor_byte':f.get('recolor_byte'),
-              'recolor_semantics':f.get('recolor_semantics'),'source_id':f.get('source_id'),'part_id':f.get('part_id'),'relative_frame':f.get('relative_frame'),'source_original_rgba_sha256':f.get('source_original_rgba_sha256'),'source_indices_and_alpha_sha256':f.get('source_indices_and_alpha_sha256'),'reconstructed_palette_ramp':f.get('reconstructed_palette_ramp'),'source_body_part':f.get('source_body_part')})
+              'recolor_semantics':f.get('recolor_semantics'),'source_id':f.get('source_id'),'part_id':f.get('part_id'),'relative_frame':f.get('relative_frame'),'source_original_rgba_sha256':f.get('source_original_rgba_sha256'),'source_indices_and_alpha_sha256':f.get('source_indices_and_alpha_sha256'),'reconstructed_palette_ramp':f.get('reconstructed_palette_ramp'),'source_body_part':f.get('source_body_part'),'reconstructed_bear_anatomy':f.get('reconstructed_bear_anatomy',False),'original_native_rgba_sha256':f.get('original_native_rgba_sha256')})
         return result
     records=[]
     for lid,look in actors['looks'].items():
@@ -128,12 +128,14 @@ def main():
       for iid,v in game['items'].items() if v.get('slot')in slot_tables and iid not in actors.get(slot_tables[v['slot']],{})]
     report={'schema':'baram.asset-consumption.actor-effect/1','source':source,
       'fingerprints':{p:sha(root/p) for p in ['runtime.json','gameplay_content.json','gameplay-assets/actors.json','kr491/kr491_runtime.json']},
-      'summary':{'looks':len(actors['looks']),'icons':len(actors['icons']),'wearable_weapon_bindings':len(actors['item_equipment_graphics']),
+      'summary':{'looks':len(actors['looks']),'icons':len(actors['icons']),'wearable_weapon_bindings':len(actors['item_equipment_graphics']),'entity_art_aliases':len(actors.get('actor_aliases',{})),
       'helmet_category_bindings':len(actors.get('helmet_item_graphics',{})),'cape_category_bindings':len(actors.get('cape_item_graphics',{})),'native_player_part_pngs':len(actors.get('player_part_layers',{})),'wearable_identity_status':'GENERIC_NATIVE_HELMET/SHIELD_AND_RECONSTRUCTED_CAPE_CATEGORIES_NOT_ITEM_EXACT; native steel category corrected separately from wooden; exact item identity unproven','weapon_styles':dict(weapon_styles),'effects':len(kr['effects']),'skill_bindings':len(game['skills']),
       'skill_binding_methods':dict(Counter(s.get('effect_asset_binding',{}).get('method','UNKNOWN') for s in game['skills'].values())),
       'records':len(records),'families':dict(Counter(r['family']for r in records)),'unique_pngs_verified':len(byte_cache),
       'paths_captured_in_actual_production_renderer':sum(bool(seen[p]) for p in byte_cache),'byte_failures':len(errors),
       'shield_looks':shield_looks,'missing_worn_slots':dict(Counter(r['slot'] for r in missing_worn))},
+      'capture_run_fingerprints':{'legacy_header':{k:captures.get(k) for k in ['content_sha256','actor_index_sha256','ui_sha256']},'runs':captures.get('capture_runs',[])},
+      'capture_association_compatibility':{'same_actor_index_bytes':captures.get('actor_index_sha256')==sha(root/'gameplay-assets/actors.json'),'policy':'Capture associations are attached only to identical current runtime PNG paths/hashes; capture source/content versions remain explicit. Later world-floor/label-only followups are separate and do not redate framebuffers.'},
       'scope':'Runtime member/frame/hash consumption audit and actual production-render fixture association. No all-asset visual PASS, native platform, source-era exactness or normal-input claim.',
       'status':'PASS_RUNTIME_BYTES_ONLY' if not errors else 'FAIL_RUNTIME_BYTES','errors':errors,'missing_worn_slot_bindings':missing_worn,
       'records':records}

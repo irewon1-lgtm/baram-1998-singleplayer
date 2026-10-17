@@ -47,7 +47,10 @@ def apply_visual_ledgers(paths,maps,cases,content_sha,output):
             target['visual_notes']=' | '.join(str(r['notes']) for r in target['visual_reviews'])
     return {'applied_rows':len(applied),'applied':applied,'rejected':rejected,'policy':'Human review only, generation and actual current capture hash required; scoped image PASS never means entire-map/native/natural PASS.'}
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--worker',type=Path,action='append',required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--visual-ledger',type=Path,action='append',default=[]);p.add_argument('--reuse-input',type=Path,action='append',default=[]);p.add_argument('--reuse-proof',type=Path);a=p.parse_args();a.output.mkdir(parents=True,exist_ok=True)
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--worker',type=Path,action='append',required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--visual-ledger',type=Path,action='append',default=[]);p.add_argument('--reuse-input',type=Path,action='append',default=[]);p.add_argument('--reuse-proof',type=Path)
+    p.add_argument('--retained-worker',type=Path,action='append',default=[]);p.add_argument('--retention-proof',type=Path);p.add_argument('--visual-recapture',type=Path,action='append',default=[])
+    p.add_argument('--retest',type=Path,action='append',default=[])
+    a=p.parse_args();a.output.mkdir(parents=True,exist_ok=True)
     maps={};cases={};sources=[];contents=set();expected={}
     for worker in a.worker:
         data=json.loads((worker/'WORLD_DOOR_QA.json').read_text());contents.add(data['content_sha256']);sources.append(str(worker.resolve()));plan=json.loads((worker/'PLAN.json').read_text())
@@ -60,7 +63,54 @@ def main():
             m={**m,**{k:os.path.relpath(worker/m[k],a.output) for k in ['runtime_frame','overview_frame']}}
             maps.setdefault(m['map_id'],m)
     if len(contents)!=1:raise ValueError('Cannot merge differing runtime generations')
+    retained=[]
+    if a.retained_worker:
+        if not a.retention_proof:raise ValueError('Retained functional results require explicit parity proof')
+        proof=json.loads(a.retention_proof.read_text())
+        if proof.get('new_content_sha256')!=next(iter(contents)) or not all(proof.get(k) is True for k in ['physics_equal','source_engine_equal','source_input_handlers_equal']):raise ValueError('Retained result parity not established')
+        for directory in a.retained_worker:
+            old=json.loads((directory/'WORLD_DOOR_QA.json').read_text())
+            if old['content_sha256']!=proof['old_content_sha256']:raise ValueError('Retained result generation mismatch')
+            for prior in old['case_results']:
+                id=prior['case_id']
+                if id in cases:raise ValueError('Duplicate retained/current case: '+id)
+                if id not in proof['case_ids'] or prior['input_status'] not in ['PASS_INPUT_DOOR_CONTRACT','NOT_RUN_VISUAL_RECAPTURE']:raise ValueError('Unapproved retained result: '+id)
+                for key in ['map_id','exit','return_exit','start','door_contract','reverse_door_contract']:
+                    if prior[key]!=expected[id][key]:raise ValueError('Retained physical field changed: '+id+' '+key)
+                row={**prior,'captures':[],'visual_status':'NOT_RUN','worker':os.path.relpath(directory,a.output),'superseded_captures':[os.path.relpath(directory/f,a.output) for f in prior['captures']]}
+                if prior['input_status']=='PASS_INPUT_DOOR_CONTRACT':
+                    row['input_status']='PASS_REUSED_UNCHANGED_PHYSICS';retained.append(id)
+                    row['reused_input']={'source':str(directory),'old_content_sha256':old['content_sha256'],'old_runtime_sha256':old['runtime_sha256'],'source_result_sha256':file_sha(directory/'WORLD_DOOR_QA.json'),'proof':str(a.retention_proof),'proof_sha256':file_sha(a.retention_proof),'prior_result':prior,'scope':'Completed physical OS route retained across proven art/label-only changes; current-binary traversal not repeated. Old images preserved separately; current visual recaptures have independent provenance.'}
+                cases[id]=row
     for id,row in expected.items():cases.setdefault(id,{**row,'input_status':'NOT_RUN','visual_status':'NOT_RUN','captures':[],'error':'Worker did not execute this case'})
+    for directory in a.retest:
+        fresh=json.loads((directory/'WORLD_DOOR_QA.json').read_text())
+        if fresh['content_sha256']!=next(iter(contents)):raise ValueError('Retest generation mismatch')
+        for row in fresh['case_results']:
+            id=row['case_id'];prior=cases[id]
+            if prior['input_status']!='FAIL' or row['input_status']!='PASS_INPUT_DOOR_CONTRACT':raise ValueError('Retest must explicitly retain failed prior and passed current attempt: '+id)
+            for key in ['map_id','exit','return_exit','start','door_contract','reverse_door_contract']:
+                if row[key]!=prior[key]:raise ValueError('Retest physical contract changed: '+id+' '+key)
+            source=json.loads((a.output/prior['worker']/'WORLD_DOOR_QA.json').read_text())
+            if source['runtime_sha256']!=fresh['runtime_sha256'] or source['source_fingerprint']!=fresh['source_fingerprint']:raise ValueError('Retest binary/runtime changed without new proof: '+id)
+            scope='Original exact-anchor negative retained. Current same-binary route follows observed safe occupied-anchor fallback with ordinary movement/combat and requires exact nominal re-entry, direction, paired return and original starting cell.' if row.get('observed_initial_occupied_fallback') else 'Original process-exit negative retained. Complete same-binary/runtime ordinary-input route rerun after host contention reduced; requires exact nominal arrival, facing, paired return and original starting cell. Host cause is evidence-qualified, not silently inferred from a passing retry.'
+            cases[id]={**row,'worker':os.path.relpath(directory,a.output),'captures':[os.path.relpath(directory/f,a.output) for f in row['captures']],'superseded_attempts':[prior],'retest_result_sha256':file_sha(directory/'WORLD_DOOR_QA.json'),'retest_scope':scope}
+        for m in fresh['maps']:
+            m={**m,**{k:os.path.relpath(directory/m[k],a.output) for k in ['runtime_frame','overview_frame']}}
+            maps.setdefault(m['map_id'],m)
+    recapture_sources=[]
+    for directory in a.visual_recapture:
+        fresh=json.loads((directory/'WORLD_DOOR_QA.json').read_text())
+        if fresh['content_sha256']!=next(iter(contents)):raise ValueError('Visual recapture generation mismatch')
+        recapture_sources.append(str(directory))
+        for pose in fresh['case_results']:
+            id=pose['original_case_id'];row=cases[id]
+            if row['input_status']=='NOT_RUN':continue
+            row['captures'] += [os.path.relpath(directory/f,a.output) for f in pose['captures']]
+            row.setdefault('visual_recapture_provenance',[]).append({'phase':pose['original_phase'],'position':{'map_id':pose['map_id'],'x':pose['start'][0],'y':pose['start'][1],'direction':pose['direction']},'prior_capture':pose['prior_capture'],'current_source_fingerprint':fresh['source_fingerprint'],'record':os.path.relpath(directory/'WORLD_DOOR_QA.json',a.output),'scope':'Offline fixture loaded at previously observed pose, actual current renderer, ordinary Continue/map button; no new traversal claim'})
+        for m in fresh['maps']:
+            m={**m,**{k:os.path.relpath(directory/m[k],a.output) for k in ['runtime_frame','overview_frame']}}
+            maps.setdefault(m['map_id'],m)
     reused=[]
     if a.reuse_input:
         if not a.reuse_proof:raise ValueError('Explicit physics/source reuse proof required')
@@ -75,6 +125,7 @@ def main():
                 current=cases[id]
                 if current['input_status']=='NOT_RUN':continue # Its fresh current visual capture has not arrived yet.
                 if current['input_status']!='NOT_RUN_VISUAL_RECAPTURE':raise ValueError('Reuse needs fresh current visual recapture: '+id)
+                if not current['captures']:continue
                 for key in ['map_id','exit','return_exit','start','door_contract','reverse_door_contract']:
                     if prior[key]!=current[key]:raise ValueError('Physical case field changed: '+id+' '+key)
                 current['input_status']='PASS_REUSED_UNCHANGED_PHYSICS'
@@ -83,14 +134,17 @@ def main():
     visual_ingest=apply_visual_ledgers(a.visual_ledger,maps,cases,next(iter(contents)),a.output)
     results=sorted(cases.values(),key=lambda r:r['case_id']);summary={'maps_with_actual_frames':len(maps),'exit_count':len(results),'input_pass_count':sum(r['input_status']=='PASS_INPUT_DOOR_CONTRACT' for r in results),'input_fail_count':sum(r['input_status']=='FAIL' and 'Operator cancelled' not in r.get('error','') for r in results),'input_cancelled_partial_count':sum('Operator cancelled' in r.get('error','') for r in results),'input_not_run_count':sum(r['input_status']=='NOT_RUN' for r in results),'visual_status':'NOT_RUN','natural_progression':'NOT_RUN','long_stability':'NOT_RUN_USER_SCOPE_CHANGE'}
     summary.update(map_visual_reviewed=sum(bool(m.get('visual_reviews')) for m in maps.values()),map_visible_frame_pass=sum(m['visual_status'].startswith('PASS') for m in maps.values()),map_visible_frame_fail=sum(m['visual_status'].startswith('FAIL') for m in maps.values()),door_visual_reviewed=sum(bool(r.get('visual_reviews')) for r in results),door_visible_frame_pass=sum(r['visual_status'].startswith('PASS') for r in results),door_visible_frame_fail=sum(r['visual_status'].startswith('FAIL') for r in results))
-    summary['input_reused_unchanged_physics_count']=len(reused)
+    summary['input_reused_unchanged_physics_count']=len(reused)+len(retained)
+    summary['superseded_negative_attempts_retained']=sum(len(r.get('superseded_attempts',[])) for r in results)
+    summary['observed_occupied_anchor_fallbacks']=sum(bool(r.get('observed_initial_occupied_fallback')) for r in results)
+    summary['cases_with_three_current_phase_captures']=sum(all(any('-'+phase+'-' in f or f.endswith('-'+phase+'.png') for f in r['captures']) for phase in ['approach','arrival','returned']) for r in results)
     summary['visual_status']='FAIL' if summary['map_visible_frame_fail'] or summary['door_visible_frame_fail'] else 'NOT_RUN'
     summary['visual_scope']='Manual screen-area review counts below; an overall B5 visual PASS is not inferred automatically.'
-    out={'schema':'baram.world-exhaustive-os-merge/1','content_sha256':next(iter(contents)),'scope':'Offline fixtures before process start; subsequent actual GUI keys only. Functional results do not establish visual quality or natural progression.','summary':summary,'workers':sources,'maps':list(maps.values()),'case_results':results,'visual_ledger_ingest':visual_ingest}
+    out={'schema':'baram.world-exhaustive-os-merge/1','content_sha256':next(iter(contents)),'scope':'Offline fixtures before process start; subsequent actual GUI keys only. Functional results do not establish visual quality or natural progression.','summary':summary,'workers':sources,'retained_workers':list(map(str,a.retained_worker)),'visual_recapture_sources':recapture_sources,'maps':list(maps.values()),'case_results':results,'visual_ledger_ingest':visual_ingest}
     (a.output/'WORLD_QA.json').write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n')
     with (a.output/'WORLD_QA.csv').open('w',newline='') as f:
-        fields=['case_id','map_id','map_name','exit_id','to_map','door_x','door_y','input_status','visual_status','visual_notes','error','captures'];w=csv.DictWriter(f,fieldnames=fields);w.writeheader()
-        for r in results:w.writerow({**{k:r.get(k,'') for k in ['case_id','map_id','map_name','input_status','visual_status','visual_notes','error']},'exit_id':r['exit']['id'],'to_map':r['exit']['to_map'],'door_x':r['exit']['x'],'door_y':r['exit']['y'],'captures':'|'.join(r['captures'])})
+        fields=['case_id','map_id','map_name','exit_id','to_map','door_x','door_y','input_status','visual_status','visual_notes','error','prior_negative_attempts','retest_scope','captures'];w=csv.DictWriter(f,fieldnames=fields);w.writeheader()
+        for r in results:w.writerow({**{k:r.get(k,'') for k in ['case_id','map_id','map_name','input_status','visual_status','visual_notes','error','retest_scope']},'exit_id':r['exit']['id'],'to_map':r['exit']['to_map'],'door_x':r['exit']['x'],'door_y':r['exit']['y'],'prior_negative_attempts':len(r.get('superseded_attempts',[])),'captures':'|'.join(r['captures'])})
     with (a.output/'MAP_VISUAL_QA.csv').open('w',newline='') as f:
         fields=['map_id','name','coordinate','visual_status','visual_notes','runtime_frame','overview_frame'];w=csv.DictWriter(f,fieldnames=fields);w.writeheader()
         for m in maps.values():w.writerow({k:m.get(k,'') for k in fields})
@@ -101,7 +155,13 @@ def main():
         body.append(f'<article><h3>{esc(m["name"])} · <code>{esc(m["map_id"])}</code></h3><p>좌표 {esc(str(m["coordinate"]))} · {esc(m["visual_status"])}</p><p>{esc(m.get("visual_notes","아직 육안 검수 기록이 없습니다."))}</p><div class="frames">'+''.join(f'<a href="{esc(m[k])}"><img loading="lazy" src="{esc(m[k])}" alt="{esc(m["name"])} {k}"></a>' for k in ['runtime_frame','overview_frame'])+'</div></article>')
     body.append('<h2>전체 출입구: 실제 접근·도착·귀환 화면</h2>')
     for r in results:
-        body.append(f'<article><h3>{esc(r["case_id"])} {esc(r["map_name"])}</h3><p class="{"fail" if r["input_status"]!="PASS_INPUT_DOOR_CONTRACT" else ""}">{esc(r["input_status"])} · {esc(r["visual_status"])}</p><p>{esc(r.get("visual_notes","아직 육안 검수 기록이 없습니다."))}</p><p><code>{esc(r["exit"]["id"])} ({r["exit"]["x"]}, {r["exit"]["y"]}) → {esc(r["exit"]["to_map"])}</code></p>'+ (f'<p>{esc(r["error"])}</p>' if r.get('error') else '')+'<div class="frames">'+''.join(f'<a href="{esc(f)}"><img loading="lazy" src="{esc(f)}" alt="{esc(r["case_id"])} actual game frame"></a>' for f in r['captures'])+'</div></article>')
+        prior=''
+        if r.get('superseded_attempts'):
+            prior='<details><summary>이전 실패 시도 보존 · '+str(len(r['superseded_attempts']))+'회</summary><p>'+esc(r.get('retest_scope',''))+'</p>'
+            for attempt in r['superseded_attempts']:
+                prior+='<p class="fail">'+esc(attempt['input_status']+' · '+attempt.get('error',''))+'</p><div class="frames">'+''.join(f'<a href="{esc(f)}"><img loading="lazy" src="{esc(f)}" alt="original negative"></a>' for f in attempt['captures'])+'</div>'
+            prior+='</details>'
+        body.append(f'<article><h3>{esc(r["case_id"])} {esc(r["map_name"])}</h3><p class="{"fail" if r["input_status"]!="PASS_INPUT_DOOR_CONTRACT" else ""}">{esc(r["input_status"])} · {esc(r["visual_status"])}</p><p>{esc(r.get("visual_notes","아직 육안 검수 기록이 없습니다."))}</p><p><code>{esc(r["exit"]["id"])} ({r["exit"]["x"]}, {r["exit"]["y"]}) → {esc(r["exit"]["to_map"])}</code></p>'+ (f'<p>{esc(r["error"])}</p>' if r.get('error') else '')+prior+'<div class="frames">'+''.join(f'<a href="{esc(f)}"><img loading="lazy" src="{esc(f)}" alt="{esc(r["case_id"])} actual game frame"></a>' for f in r['captures'])+'</div></article>')
     body.append('</html>');(a.output/'world-qa-gallery.html').write_text('\n'.join(body));print(json.dumps(summary,ensure_ascii=False))
     # Derivatives of actual framebuffer crops only. They aid exhaustive visual
     # review; creating a sheet does not change any map/door visual status.
@@ -121,6 +181,7 @@ def main():
     door_rows=results
     for stage,prefix in [('approach','doors'),('arrival','doors-arrival'),('returned','doors-returned')]:
         for base in range(0,len(door_rows),6):
+            if not any(any('-'+stage+'-' in f or f.endswith('-'+stage+'.png') for f in r['captures']) for r in door_rows[base:base+6]):continue
             sheet=Image.new('RGB',(1100,1170),'#211a13');draw=ImageDraw.Draw(sheet)
             for index,r in enumerate(door_rows[base:base+6]):
                 x=(index%2)*550;y=(index//2)*390

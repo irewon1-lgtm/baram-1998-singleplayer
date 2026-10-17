@@ -72,6 +72,7 @@ def build_plan(content,content_path):
 class Operator:
     def __init__(self,args,content,plan,out):
         self.a=args;self.c=content;self.plan=plan;self.out=out;self.proc=None;self.x=None;self.rec=None;self.started=time.monotonic();self.case=None
+        self.loaded_operator_sha256=sha(__file__)
         self.temp=Path(tempfile.mkdtemp(prefix='baram-world-os-'));self.env=os.environ.copy()
         self.env.update(XDG_DATA_HOME=str(self.temp/'data'),XDG_CONFIG_HOME=str(self.temp/'config'),XAUTHORITY='',GODOT_SILENCE_ROOT_WARNING='1',BARAM_GAMEPLAY_RUNTIME=str(args.runtime.resolve()),BARAM_POSITION_OBSERVATION=str(self.temp/'position.json'))
         self.env.setdefault('LP_NUM_THREADS','2')
@@ -219,6 +220,24 @@ class Operator:
             if expected_direction is not None and int(arrival['character']['direction'])!=expected_direction:raise RuntimeError('arrival direction differs from exit contract')
             arrival_delta=[int(arrival['character']['x'])-int(e['to_x']),int(arrival['character']['y'])-int(e['to_y'])]
             result['arrival_anchor_delta']=arrival_delta
+            if any(arrival_delta) and self.a.clear_occupied_arrival:
+                seed=json.loads(Path(fixture).read_text());payload=seed.get('payload',seed)
+                occupied=[m for m in payload.get('monsters',{}).values() if m.get('alive') and m.get('map_id')==e['to_map'] and int(m['x'])==int(e['to_x']) and int(m['y'])==int(e['to_y'])]
+                actual=(int(arrival['character']['x']),int(arrival['character']['y']));nominal=(int(e['to_x']),int(e['to_y']))
+                safe_path=route(self.c,e['to_map'],actual,nominal)
+                if not occupied or not safe_path or len(safe_path)>4:raise RuntimeError('Fallback not proven as nearby dynamic-monster occupancy')
+                result['observed_initial_occupied_fallback']={'arrival':arrival,'anchor_delta':arrival_delta,'initial_fixture_occupants':occupied,'safe_component_route_to_nominal':safe_path,'scope':'Observed safe fallback, not nominal-coordinate PASS; ordinary input clear/re-entry follows'}
+                result['captures'].append(self.capture(prefix+'-occupied-fallback'))
+                self.walk(e['to_map'],nominal)
+                for _ in range(3):self.key('space');time.sleep(.25)
+                reverse=case['return_exit']
+                self.walk(e['to_map'],case['reverse_door_contract']['approach_cell'])
+                self.walk(e['to_map'],(reverse['x'],reverse['y']),case['map_id'])
+                self.walk(case['map_id'],case['door_contract']['approach_cell'])
+                arrival=self.walk(case['map_id'],(e['x'],e['y']),e['to_map']);result['arrival']=arrival
+                arrival_delta=[int(arrival['character']['x'])-int(e['to_x']),int(arrival['character']['y'])-int(e['to_y'])];result['arrival_anchor_delta']=arrival_delta
+                result['nominal_reentry_after_normal_input']=True
+                if expected_direction is not None and int(arrival['character']['direction'])!=expected_direction:raise RuntimeError('Re-entry direction differs from exit contract')
             if any(arrival_delta):raise RuntimeError('arrival differs from declared landing cell (occupancy fallback is recorded as failure, not accepted)')
             result['captures'].append(self.capture(prefix+'-arrival'))
             r=case['return_exit'];result['reverse_exit_id']=r['id']
@@ -245,11 +264,11 @@ class Operator:
     def publish(self):
         if not self.inputs.closed:self.inputs.flush()
         if self.input_path.exists():shutil.copy2(self.input_path,self.out/'os-input-timeline.jsonl')
-        doc={'schema':'baram.os-world-door-results/1','scope':'ISOLATED_OFFLINE_INITIAL_FIXTURE_THEN_NORMAL_OS_KEYS; NOT_NATURAL_PROGRESSION; NOT_VISUAL_PASS; Linux only; Dummy audio','content_sha256':self.plan['content_sha256'],'runtime_sha256':sha(self.a.runtime/'runtime.json'),'maps':list(self.maps.values()),'case_results':self.results,'captures':self.captures,'operator_sha256':sha(__file__),'elapsed_s':time.monotonic()-self.started,'isolated_data_path':str(self.temp),'exact_pack_sha256':sha(self.a.pack) if self.a.pack else None,'source_fingerprint':{str(p.relative_to(self.a.project)):sha(p) for p in sorted(self.a.project.rglob('*')) if p.is_file() and p.suffix in ['.gd','.godot','.tscn']}}
+        doc={'schema':'baram.os-world-door-results/1','scope':'ISOLATED_OFFLINE_INITIAL_FIXTURE_THEN_NORMAL_OS_KEYS; NOT_NATURAL_PROGRESSION; NOT_VISUAL_PASS; Linux only; Dummy audio','content_sha256':self.plan['content_sha256'],'runtime_sha256':sha(self.a.runtime/'runtime.json'),'maps':list(self.maps.values()),'case_results':self.results,'captures':self.captures,'operator_sha256':self.loaded_operator_sha256,'elapsed_s':time.monotonic()-self.started,'isolated_data_path':str(self.temp),'exact_pack_sha256':sha(self.a.pack) if self.a.pack else None,'source_fingerprint':{str(p.relative_to(self.a.project)):sha(p) for p in sorted(self.a.project.rglob('*')) if p.is_file() and p.suffix in ['.gd','.godot','.tscn']}}
         dump(self.out/'WORLD_DOOR_QA.json',doc)
         with (self.out/'WORLD_DOOR_QA.csv').open('w',newline='') as f:
             w=csv.DictWriter(f,fieldnames=['case_id','map_id','map_name','exit_id','to_map','x','y','minimum_level','input_status','visual_status','natural_progression','error','captures']);w.writeheader()
-            for r in self.results:w.writerow({**{k:r.get(k,'') for k in ['case_id','map_id','map_name','input_status','visual_status','natural_progression','error']},**{k:r['exit'].get(k,'') for k in ['to_map','x','y','minimum_level']},'exit_id':r['exit']['id'],'captures':'|'.join(r['captures'])})
+            for r in self.results:w.writerow({**{k:r.get(k,'') for k in ['case_id','map_id','map_name','input_status','visual_status','natural_progression','error']},**{k:r['exit'].get(k,'') for k in ['to_map','x','y','minimum_level']},'exit_id':r['exit'].get('id',''),'captures':'|'.join(r['captures'])})
     def recording(self):
         if not self.a.record:return
         self.rec=subprocess.Popen(['ffmpeg','-v','warning','-y','-f','x11grab','-draw_mouse','1','-framerate','15','-video_size',self.a.screen,'-i',self.env['DISPLAY'],'-c:v','libx264','-threads','2','-preset','ultrafast','-crf','30','-pix_fmt','yuv420p',str(self.out/'unedited-os-door-session.mkv')],env=self.env,stdout=(self.out/'recorder.log').open('wb'),stderr=subprocess.STDOUT)
@@ -268,6 +287,9 @@ def main():
     p.add_argument('--preview-scene',action='append',default=[],help='Read-only fixture-start visual preview map_id,x,y; no door PASS assigned')
     p.add_argument('--exclude-case',type=int,action='append',default=[],help='Exact same-fingerprint completed pilot case included separately by merger')
     p.add_argument('--visual-only-case',type=int,action='append',default=[],help='Current actual capture only, with earlier immutable functional proof ingested separately')
+    p.add_argument('--recapture-from',type=Path,action='append',default=[],help='Fresh visual-only fixture starts at previously observed approach/arrival/returned poses; never a new traversal PASS')
+    p.add_argument('--recapture-phase',action='append',choices=['approach','arrival','returned'],default=[],help='Limit visual-only refresh to selected previously observed phases')
+    p.add_argument('--clear-occupied-arrival',action='store_true',help='Focused retest only: preserve observed fallback, use normal movement/attack and paired return, then require exact nominal re-entry; no state mutation')
     a=p.parse_args();out=a.output.resolve()
     if out.exists():raise ValueError('Fresh output directory required')
     out.mkdir(parents=True);content=json.loads((a.runtime/'gameplay_content.json').read_text());plan=build_plan(content,a.runtime/'gameplay_content.json');dump(out/'PLAN.json',plan)
@@ -279,6 +301,20 @@ def main():
         for i,spec in enumerate(a.preview_scene):
             map_id,x,y=spec.rsplit(',',2)
             selected.append({'case_id':f'preview-{i:03d}','map_id':map_id,'map_name':content['maps'][map_id]['name'],'start':[int(x),int(y)],'exit':{},'planning_status':'PREVIEW_ONLY','visual_status':'NOT_RUN'})
+    if a.recapture_from:
+        selected=[]
+        for source in a.recapture_from:
+            prior=json.loads((source/'WORLD_DOOR_QA.json').read_text())
+            for row in prior['case_results']:
+                number=int(row['case_id'].split('-')[-1])
+                if not a.case_start<=number<a.case_start+a.case_count:continue
+                if number in a.exclude_case:continue
+                for phase in ['approach','arrival','returned']:
+                    if a.recapture_phase and phase not in a.recapture_phase:continue
+                    original=next((c for c in prior['captures'] if c.get('game_frame')==row['case_id']+'-'+phase+'-game.png'),None)
+                    if not original:continue
+                    c=original['position']['character']
+                    selected.append({'case_id':row['case_id']+'-'+phase,'original_case_id':row['case_id'],'original_phase':phase,'map_id':c['map_id'],'map_name':content['maps'][c['map_id']]['name'],'start':[int(c['x']),int(c['y'])],'direction':int(c['direction']),'exit':{},'planning_status':'VISUAL_RECAPTURE_ONLY','visual_status':'NOT_RUN','prior_capture':{'file':str((source/original['game_frame']).resolve()),'sha256':original['game_frame_sha256']},'prior_result_file':str((source/'WORLD_DOOR_QA.json').resolve()),'prior_content_sha256':prior['content_sha256']})
     selected_plan={**plan,'cases':selected};dump(out/'SELECTED_PLAN.json',selected_plan)
     fixture_temp=Path(tempfile.mkdtemp(prefix='baram-world-fixtures-'));env=os.environ.copy();env.update(XDG_DATA_HOME=str(fixture_temp/'data'),XDG_CONFIG_HOME=str(fixture_temp/'config'))
     fixture_index=out/'FIXTURE_PROVENANCE.json'
@@ -299,9 +335,18 @@ def main():
         operator.recording()
         for case in selected:
             if (out/'STOP_OPERATOR').exists():break
-            if a.preview_scene:
+            if a.recapture_from:
+                operator.start(case,fixtures[case['case_id']]);frame=operator.capture(case['case_id']+'-recapture')
+                overview=None
+                if case['original_phase']=='approach' and case['map_id'] not in operator.maps:
+                    operator.click_button('지도');operator.wait(lambda:any(c['text']=='닫기 / 취소' for c in operator.layout().get('controls',[])),8)
+                    overview=operator.capture(case['case_id']+'-overview');operator.key('Escape')
+                    operator.maps[case['map_id']]={'map_id':case['map_id'],'name':case['map_name'],'runtime_frame':frame,'overview_frame':overview,'coordinate':case['start'],'content_sha256':plan['content_sha256'],'visual_status':'NOT_RUN','provenance':'Fresh offline fixture at previously observed pose; normal Continue and map button; no traversal claim'}
+                operator.stop();operator.results.append({**case,'captures':[frame],'overview_frame':overview,'input_status':'NOT_RUN_VISUAL_RECAPTURE','natural_progression':False});operator.publish()
+                print(json.dumps({'case_id':case['case_id'],'status':'VISUAL_RECAPTURE_ONLY'},ensure_ascii=False),flush=True)
+            elif a.preview_scene:
                 operator.start(case,fixtures[case['case_id']]);operator.capture(case['case_id']+'-actual-game');operator.click_button('지도');time.sleep(.4);operator.capture(case['case_id']+'-actual-overview');operator.key('Escape');operator.stop()
             else:operator.one(case,fixtures[case['case_id']])
     finally:operator.close()
-    return 0 if all(r['input_status']=='PASS_INPUT_DOOR_CONTRACT' for r in operator.results) else 1
+    return 0 if all(r['input_status'] in ['PASS_INPUT_DOOR_CONTRACT','NOT_RUN_VISUAL_RECAPTURE'] for r in operator.results) else 1
 if __name__=='__main__':raise SystemExit(main())

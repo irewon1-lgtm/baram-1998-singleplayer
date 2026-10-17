@@ -28,6 +28,7 @@ func _initialize() -> void:
 		var character: Dictionary=payload.character
 		var prior: Dictionary=character.duplicate(true)
 		character.map_id=row.map_id;character.x=row.start[0];character.y=row.start[1]
+		if row.has("direction"):character.direction=int(row.direction)
 		character.level=99;character.xp=int(content.xp_thresholds[-1])
 		character.hp_max=100000;character.hp=100000;character.dead=false
 		if str(row.map_id) not in character.discovered_maps:character.discovered_maps.append(str(row.map_id))

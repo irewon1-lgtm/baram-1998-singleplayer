@@ -1,45 +1,36 @@
 {
-  "scope": "Executed G2 original-runtime focused storage regression only; pending new world migration and native gates",
-  "reports": {
-    "after-g2-current-final.json": {
-      "sha256": "682c8c9c3379d0c1d1d0df1624c8847549a98cf9630e778b9872ed51992a38c3",
-      "status": "PASS_OBSERVED_STORE_FIXTURE",
-      "failures": 0,
-      "checks": 218,
-      "scope": "Headless full-G2 isolated persistence fixtures. Timing uses exact supplied earned primary/backup bytes, production restore+50ms ticks, no state grants or edited timing payloads. Fresh store caches each repetition, existing primary is loaded while backup is cold. File-system/process CPU caches are not reset. Negative revision/corruption/migration cases intentionally change isolated fixture copies. No OS/rendered frame, native-device or completed30minute performance claim; no first-save latency threshold is inferred from fixture completion.",
-      "source_store_sha256": "931dbf6cc30d3773130f92c52889ebd1f6ac8aa4233774b2dfe598b9927d335a"
-    },
-    "depth-final.json": {
-      "sha256": "305db11df77ac715cab3dfa2fb0d8e868322a047bda884d285565f0829851ea3",
-      "status": "PASS",
-      "failures": 0,
-      "checks": 357,
-      "scope": "Headless depth-limit/UTF-8/quoted delimiter/escape regressions; no device performance claim",
-      "source_store_sha256": null
-    },
-    "migration-final.json": {
-      "sha256": "d4a3e63bcd281febf4f32ae9656cbd0bb76b6df2c270f62cb79c01f19cb5ac5c",
-      "status": "PASS",
-      "failures": 0,
-      "checks": 78,
-      "scope": "Synthetic old/new content generations with actual GameState, filesystem writes and process termination; no real user save or Android/Windows/authentication claim",
-      "source_store_sha256": null
-    },
-    "gameplay-save.json": {
-      "sha256": "34db9ddf051a637f6b7b1d57b52eac1a7301257f98c540056a4d2e06358f4156",
-      "status": "PASS",
-      "failures": 0,
-      "checks": 83,
-      "scope": "Actual GameState payload using fixture definitions; not natural progression, nativeWindows, Android or authentication proof",
-      "source_store_sha256": null
-    },
-    "record-cache.json": {
-      "sha256": "4786c305fdea63f05971640cfee159af670fbd11d2d4636c6b473cd84a36d997",
-      "status": "PASS",
-      "failures": 0,
-      "checks": 31,
-      "scope": "Synthetic cache equivalence/invalid type/range/alias-change fixtures; no device performance claim",
-      "source_store_sha256": null
-    }
-  }
+  "schema": "baram.r16.current-store-checkpoint/2",
+  "scope": "Executed final-source tiny synthetic storage fixtures; not native/device/performance/full-world/long stability acceptance",
+  "app_source_commit": "c703868999fd5fb59a580f6b8e03b18172a225ac",
+  "store_sha256": "3e4cc30682a2510b65eddffa010a905b0a143744246434c0682c5511a7b429b0",
+  "receipt": "evidence/store-current-source/STORE_CURRENT_SOURCE_RECEIPT.json",
+  "receipt_sha256": "354e89a241220fa4a64497536ef67c41800b419a270ebec687d98825cadc08d5",
+  "checks": {
+    "gameplay_save": 83,
+    "record_cache": 31,
+    "migration": 78,
+    "depth": 357
+  },
+  "migration_actual_child_termination_boundaries": 9,
+  "status": "PASS_EXECUTED_CURRENT_SOURCE_SCOPES",
+  "original_earned_saves": {
+    "reports": [
+      "evidence/store-final/R17_EARNED_MIGRATION.json",
+      "evidence/store-final/R17_LV22_EARNED_MIGRATION.json"
+    ],
+    "checks_each": 63,
+    "source_store_same": true,
+    "physics_reuse_proof": "evidence/world-qa-joint-refresh/JOINT_REUSE_PROOF.json"
+  },
+  "short_exact_exported_pack": {
+    "status": "PASS_OBSERVED_SCOPE",
+    "checks": 72,
+    "report": "evidence/r16-cold-resume/OS_PLAYABILITY.json",
+    "report_sha256": "cc4f69ffdddb0580adb5f6a8141ba9fa587123392df9ed6f5c99df3eb7b60d8d",
+    "new_character_checks": 10,
+    "original_data": "All original userdata bytes unchanged; exact isolated bytecopy and productionContinue migration; two20s XTEST processes; no authenticated/native update claim",
+    "performance": "Separate untrimmed analyses; firstsave107.262ms, firstdeltaP9955.094ms, restartmaxwall539.820ms; targets not fully met"
+  },
+  "long_stability": "NOT_RUN_USER_WAIVED_MANDATORY_LONG_TEST",
+  "historical_previous": "history/R16_PRE_FINAL_STORE_931DBF_CHECKPOINT.json"
 }

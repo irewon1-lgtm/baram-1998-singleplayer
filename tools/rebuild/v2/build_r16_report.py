@@ -51,7 +51,7 @@ def main():
     body.append('</div><h2>111개 지도·전체 출입구</h2>')
     world = json.loads((root / manifest['world_qa']).read_text())
     body.append(table(['항목', '관측 결과'], [(key, json.dumps(value, ensure_ascii=False) if isinstance(value, (dict, list)) else value) for key, value in world['summary'].items()]))
-    body.append('<p>' + escape(manifest.get('world_scope', world['scope'])) + '</p>')
+    body.append('<p>' + escape(manifest.get('world_scope') or world.get('scope', world['summary'].get('scope', 'Scoped actual screen/input evidence; no whole-world clean-quality inference.'))) + '</p>')
     body.append('<p>지도별 실제 화면과 개요의 전체 크기 PNG, 문 접근·도착·귀환 캡처, OS 입력 로그 및 개별 시각 판정은 증거 ZIP의 world-qa-gallery.html에서 확인할 수 있습니다. 아래는 실제 화면의 미리보기입니다.</p><div class="maps">')
     for row in world['maps']:
         image_path = (root / manifest['world_qa']).parent / row['runtime_frame']

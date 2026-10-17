@@ -79,11 +79,11 @@
   "source_reference_sha256": "a12e4f779066c850ede58916c6933c57600b4662de7943884ba78bb6cc38e2d8",
   "long_stability": "NOT_RUN_USER_WAIVED_MANDATORY_LONG_TEST",
   "native_execution": "NOT_RUN_BLOCKED_ENVIRONMENT",
-  "visual_quality": "ALL111_MAP_ACTUAL_SCREEN_AND_OVERVIEW_REVIEWS_PLUS_FINAL_AFFECTED_SCENES;8_DYNAMIC_LIMITS;NO_WHOLE_WORLD_CLEAN_PASS",
+  "visual_quality": "111 actual map+overview reviews,27 joint affected maps,12 caption scenes;8 QA dynamic-map limits plus observed domestic-city player roof occlusion; no whole-world every-tile clean PASS",
   "ordinary_exit_checks": "276_NORMAL_INPUT_ROUTES_COMPLETE_WITH_EXPLICIT_MECHANICS_REUSE_PROOF",
   "reused_unaffected_evidence": {
     "store": "evidence/store-final/R17_FINAL_EARNED_MIGRATION_PROVENANCE.json; exact store unchanged; two original earned saves with126checks retain progress and2writes each",
-    "mechanical_identity": "world-qa-joint-refresh mechanics/input proof pending; final deltas service floor/decor and actor color/anatomy aliases only",
+    "mechanical_identity": "evidence/world-qa-joint-refresh/JOINT_REUSE_PROOF.json: completed exact engine/store/10inputhandlers/allmapphysics comparison; subsequent c703 delta is only _readable_gather_labels, independently bound in actor_effect_qa/SOURCE_C703_DEPENDENCY_APPENDIX.json",
     "actor_effect_wardrobe": "actor_effect_qa/FINAL_RELEASE_READY.json +SOURCE_LABEL_FOLLOWUP.json; six unchanged functions and three declared alias-read deltas;20final-joint bounded fixture checks",
     "full_world_input": "222current passes including2focused retests +54explicit dependency-proven reused routes; original negatives retained"
   },
