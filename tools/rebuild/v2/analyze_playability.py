@@ -61,6 +61,8 @@ def main():
              'video_validation':result.get('video_validation'),
              'limits':[
                  'Unaccelerated OS XTEST is automated input, not human play.',
+                 'Full-session trace metrics mean every retained active-play frame/save/input event. The frozen app returns before frame tracing when state is empty or play is hidden; initial menus and full startup/loading intervals do not have frame events. Raw unedited video includes those visible intervals.',
+                 'Save-to-menu profiling flushes accumulated trace data after the last active play frame; this instrumented flush is visible in video but is not an active-play frame sample.',
                  'Linux llvmpipe is not native Windows, Android or Galaxy performance.',
                  'Engine delta may be smoothed; engine wall interval is elapsed between process trace points.',
                  'frame_post_draw is engine rendering feedback; it does not prove a changed pixel for every input or measured OS display presentation.',
@@ -80,7 +82,7 @@ def main():
             if start and end:
                 lo=start['wall_unix_ns']/1000;hi=end['wall_unix_ns']/1000
                 subset=[r for r in frames if lo<=unix_us(r)<=hi]
-                summary['recording_comparison'].append({'recording':recording,'wall_seconds':(hi-lo)/1e6,'frame_delta':distribution(r['interval_ms'] for r in subset),'engine_wall_frame_interval':distribution((b['us']-a['us'])/1000 for a,b in zip(subset,subset[1:])),'save_duration':distribution(r['duration_ms'] for r in saves if lo<=unix_us(r)<=hi)})
+                summary['recording_comparison'].append({'recording':recording,'wall_seconds':(hi-lo)/1e6,'frame_delta':distribution(r['interval_ms'] for r in subset),'engine_wall_frame_interval':distribution((b['us']-a['us'])/1000 for a,b in zip(subset,subset[1:])),'save_duration':distribution(r['duration_ms'] for r in saves if lo<=unix_us(r)<=hi),'engine_input_to_frame_post_draw':distribution(r['elapsed_ms'] for r in feedback if lo<=unix_us(r)<=hi)})
         feedback_times=[unix_us(r) for r in feedback]
         engine_input_times=[unix_us(r) for r in inputs]
         matched=[];matching_records=[]
@@ -98,6 +100,14 @@ def main():
             delay=(feedback_times[j]-t)/1000;matched.append(delay);matching_records.append({'action_unix_us':t,'status':'MATCHED','delay_ms':delay})
         summary['OS_command_log_to_engine_render_envelope']=distribution(matched)
         summary['OS_envelope_matching']={'all_logged_actions':len(action),'matched_before_next_action':len(matched),'unmatched':unmatched,'latency_outliers_removed':0}
+        for comparison in summary['recording_comparison']:
+            flag=comparison['recording']
+            began=next(r for r in operator if r.get('name')=='recording_comparison_start' and r.get('recording')==flag)['wall_unix_ns']/1000
+            ended=next(r for r in operator if r.get('name')=='recording_comparison_end' and r.get('recording')==flag)['wall_unix_ns']/1000
+            rr=[r for r in matching_records if began<=r['action_unix_us']<=ended]
+            vv=[r['delay_ms'] for r in rr if r['status']=='MATCHED']
+            comparison['OS_command_log_to_engine_render_envelope']=distribution(vv)
+            comparison['OS_envelope_matching']={'all_logged_actions':len(rr),'matched_before_next_action':len(vv),'unmatched':sum(r['status']=='UNMATCHED' for r in rr),'latency_outliers_removed':0}
         # Keep all long frames, with overlapping completed save intervals and
         # the most recent ordinary OS action for reproducible diagnosis.
         action=[r for r in operator if r.get('kind') in ['key','mouse_click']]
@@ -131,11 +141,14 @@ def main():
         summary['continuous_stress']['save_phases']={phase:distribution(row['phases'][phase] for row in ss if phase in row.get('phases',{})) for phase in summary.get('save_phases',{})}
         summary['continuous_stress']['over100ms_wall_incidents']=[row for row in summary.get('over100ms_wall_incidents',[]) if lo<=row['unix_us']<=hi]
         summary['continuous_stress']['scope']='Every frame, input feedback and save from explicit preregistered stress-start marker through completed duration marker, including loading and interactions within that phase. Full-session tail retained separately.'
-    if result.get('targeted_followup'):
+    if result.get('targeted_followup') or result.get('transaction_followup'):
         summary['limits']=[s for s in summary['limits'] if not s.startswith('The long-session operator missed')]
         summary['exact_pack_sha256']=result.get('exact_pack_sha256')
         summary['continued_naturally_earned_data']=result.get('continued_naturally_earned_data')
     fps=result.get('performance_checkpoints',[])
+    if result.get('controlled_capture_comparison'):
+        summary['limits']=[line for line in summary['limits'] if not line.startswith('Recording off/on samples reuse')]
+        summary['limits'].append('Capture comparison is one sequential30-second off/on pair using the same ordinary directional sequence, without randomized ABBA order or confidence intervals; it does not establish physical-device overhead.')
     summary['performance_checkpoints']=fps
     summary['all_frame_data_sha256']=hashlib.sha256((root/'journey-frame-timeline.jsonl').read_bytes()).hexdigest()
     summary['target_assessment']={
