@@ -1,19 +1,19 @@
 {
   "schema": "baram.rebuild.current-state/2",
   "plan_id": "BARAM_REBUILD_V2_RESOURCE_FIRST_20261016",
-  "plan_version": "2.0",
+  "plan_version": "2.1",
   "approved_date": "2026-10-16",
   "timezone": "Asia/Seoul",
   "repository": "irewon1-lgtm/baram-1998-singleplayer",
   "active_branch": "work/rebuild-p3-remediation-20261016",
   "entrypoint": "AGENTS.md",
   "master_plan": "docs/rebuild/MASTER_PLAN.md",
-  "status": "PARTIAL_HOST_PERFORMANCE_TARGET_NOT_MET_NATIVE_ACCOUNT_GATES_REMAIN",
+  "status": "G2_IMPLEMENTATION_IN_PROGRESS",
   "implementation_status": "B5_REPAIR_CANDIDATE_HOST_SCOPE_ONLY_FULL_ACCEPTANCE_PENDING",
   "handoff_commit": "82e09f50861065c8e763efe34f7634d0e95e2e82",
   "app_behavior_commit": "639750f04d10ee4ac3c1a7113232b8c30109f078",
   "current_phase": "B5",
-  "current_phase_execution": "R14_HOST_EVIDENCE_RECORDED_FULL_ACCEPTANCE_PARTIAL",
+  "current_phase_execution": "G2_COMPILED_ALL_ID_ACTIONS_HOST_VERIFIED_FINAL_UI_MIGRATION_PERFORMANCE_IN_PROGRESS",
   "authorization": {
     "goal_and_plan": "USER_APPROVED",
     "ordered_followup_work": "B1_THROUGH_B6_WITHIN_FREE_SCOPE",
@@ -21,7 +21,8 @@
     "game_implementation_run_this_session": true,
     "app_build_run_this_session": true,
     "main_merge_or_production_publish": false,
-    "new_paid_resources": false
+    "new_paid_resources": false,
+    "G2_expansion": "USER_APPROVED_REPLACES_G1_SCOPE_FREEZE"
   },
   "goal": {
     "exact_historical_match_required": false,
@@ -46,7 +47,7 @@
       "same_account_sequential_continuation",
       "existing_assets_saves_keys"
     ],
-    "generation_scope": "G1_FIXED_CONTRACT_76_MAPS_593_ITEMS_190_SKILLS_346_MONSTER_IDS_24_NPCS"
+    "generation_scope": "G2_SOURCE_WORLD_BULK_USER_APPROVED_20261017"
   },
   "source_of_current_evidence": {
     "defects": "docs/rebuild/p3-remediation/DEFECTS.csv",
@@ -92,6 +93,15 @@
     "deferred_before_G1": {
       "skill_rows": 178,
       "npc_contract_rows": 15
+    },
+    "G2_registered": {
+      "maps": 111,
+      "items": 1105,
+      "monsters": 532,
+      "skills": 262,
+      "npcs": 84,
+      "quests": 160,
+      "recipes": 73
     }
   },
   "retained_actual_status": {
@@ -304,10 +314,9 @@
   "next_action": {
     "owner": "Work",
     "phase": "B5",
-    "action": "Use retained incident/same-input evidence for any unresolved host performance target/tail; do not promote silently. Exact r14 native Windows/Android update requires working native route. Account roundtrip requires identified approved free authenticated game endpoint; Galaxy/IME/audio/physical display/human fun remain unverified.",
-    "on_environment_block": "Continue independent B5 code/UI/assets and adapter tests; native physical devices and authenticated roundtrip remain explicitly BLOCKED/NOT_RUN. B6 promotion blocked by B5 failures.",
-    "do_not_repeat": "No full inventory/SDK/parser reset; reuse verified toolchain and unchanged evidence; only changed-source affected final suites.",
-    "resume_from": "App639750f0, runtime r12/4791e101, final30-r14 exact PCK+unedited video. Real transactions inside1800s. Preserve r13 completed1806s cold-performance FAIL separately from1311s actual gameplay FAIL,17min harness failure, invalid initial15 and old pre-color native vault; no completed source/data restart."
+    "action": "Freeze G2 final source and runtime; execute current-source save migration, GUI and 30min ordinary OS play; then exact-candidate Windows/Android exports and delivery.",
+    "resume_from": "2317f6bf / r14 source639750f0 / r12 contentf1e45c2a",
+    "do_not_repeat": "Existing G1 parser/inventory/30min evidence retained; retest only G2 dependencies."
   },
   "retry_policy": {
     "deterministic_unchanged_failure": "CHANGE_METHOD",

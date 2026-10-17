@@ -30,7 +30,7 @@ var _writing := false
 # authoritative whole-payload validation is never skipped.
 # Each record owns a deep snapshot. Native full Dictionary equality detects
 # changes even when a caller reuses/mutates the same source Dictionary.
-const MONSTER_RECORD_CACHE_LIMIT := 1024
+const MONSTER_RECORD_CACHE_LIMIT := 4096
 var _monster_record_cache: Dictionary = {}
 var _id_value_cache: Dictionary = {}
 
@@ -157,7 +157,8 @@ func prepare_content(content: Dictionary) -> Dictionary:
 	if _monster_record_cache.is_empty():
 		var prior: Dictionary=engine.state
 		engine.state={"monsters":{}}
-		engine._spawn_all()
+		if bool(content.get("config",{}).get("lazy_world_spawns",false)):engine._spawn_map(str(content.start.map_id))
+		else:engine._spawn_all()
 		for id in engine.state.monsters:
 			var record: Dictionary=engine.state.monsters[id]
 			var cached:=_cache_monster_record(str(id),record)
@@ -364,7 +365,13 @@ func _migrate_payload(payload: Dictionary, contract: Dictionary, content: Dictio
 	var engine=GameState.new()
 	if not engine.configure(content): return result("INVALID_CONTENT","migration.configure")
 	engine.state={"monsters":{}}
-	engine._spawn_all()
+	if bool(content.get("config",{}).get("lazy_world_spawns",false)):
+		# Existing records retain every HP/timer/drop. Initialize only visited maps.
+		var visited: Dictionary={}
+		visited[str(candidate.character.map_id)]=true
+		for record in candidate.monsters.values():visited[str(record.map_id)]=true
+		for mid in visited:engine._spawn_map(str(mid))
+	else:engine._spawn_all()
 	var added: Array=[]
 	for id in engine.state.monsters:
 		if not candidate.monsters.has(id):

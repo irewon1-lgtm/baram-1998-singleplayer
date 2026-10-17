@@ -19,6 +19,9 @@ var _map_monster_ids: Dictionary = {}
 var _detached_monsters: Dictionary = {}
 var _status_monster_ids: Array = []
 var _npc_cells: Dictionary = {}
+var _edge_masks: Dictionary = {}
+var _indexed_maps: Dictionary = {}
+var _indexed_monster_count := -1
 
 func configure(definitions: Dictionary) -> bool:
 	errors.clear()
@@ -28,11 +31,15 @@ func configure(definitions: Dictionary) -> bool:
 	if definitions.maps.is_empty() or definitions.xp_thresholds.size()<5: errors.append("EMPTY_WORLD_OR_GROWTH")
 	data=definitions.duplicate(true)
 	_blocked.clear()
+	_edge_masks.clear()
+	_indexed_monster_count=-1
 	_npc_cells.clear()
 	for map_id in data.maps:
 		var map: Dictionary=data.maps[map_id]
 		if int(map.get("width",0))<=0 or int(map.get("height",0))<=0:
 			errors.append("INVALID_MAP_SIZE:"+str(map_id))
+		_edge_masks[map_id]=PackedByteArray(map.get("edge_masks",[]))
+		if not _edge_masks[map_id].is_empty() and _edge_masks[map_id].size()!=int(map.width)*int(map.height): errors.append("INVALID_EDGE_MASK_COUNT:"+str(map_id))
 		_blocked[map_id]={}
 		for point in map.get("blocked",[]):
 			_blocked[map_id][str(int(point[0]))+","+str(int(point[1]))]=true
@@ -97,8 +104,8 @@ func configure(definitions: Dictionary) -> bool:
 		if not data.npcs.has(str(quest.get("npc_id",""))): errors.append("UNKNOWN_QUEST_NPC:"+str(id))
 		for objective in quest.get("objectives",[]):
 			var kind: String=str(objective.get("kind",""));var reference: String=str(objective.get("id",""))
-			if kind not in ["kill","collect","visit"] or int(objective.get("count",1))<1: errors.append("INVALID_QUEST_OBJECTIVE:"+str(id))
-			elif not data.get({"kill":"monsters","collect":"items","visit":"maps"}[kind],{}).has(reference): errors.append("UNKNOWN_QUEST_REFERENCE:"+str(id))
+			if kind not in ["kill","collect","visit","talk","craft","equip"] or int(objective.get("count",1))<1: errors.append("INVALID_QUEST_OBJECTIVE:"+str(id))
+			elif not data.get({"kill":"monsters","collect":"items","visit":"maps","talk":"npcs","craft":"recipes","equip":"items"}[kind],{}).has(reference): errors.append("UNKNOWN_QUEST_REFERENCE:"+str(id))
 		for item_id in quest.get("rewards",{}).get("items",{}):
 			if not data.items.has(item_id): errors.append("UNKNOWN_QUEST_REWARD:"+str(id))
 	for id in data.get("recipes",{}):
@@ -126,6 +133,71 @@ func valid_position(map_id: String,x: int,y: int) -> bool:
 
 func _config(key: String,fallback: Variant) -> Variant:
 	return data.get("config",{}).get(key,fallback)
+
+func can_step(map_id: String,from_x: int,from_y: int,to_x: int,to_y: int) -> bool:
+	if not valid_position(map_id,from_x,from_y) or not valid_position(map_id,to_x,to_y): return false
+	var dx:=to_x-from_x;var dy:=to_y-from_y
+	if absi(dx)+absi(dy)!=1:return false
+	var masks: PackedByteArray=_edge_masks.get(map_id,PackedByteArray())
+	if masks.is_empty():return true
+	var w: int=int(data.maps[map_id].width)
+	var source_bit:=1 if dy<0 else 2 if dx>0 else 4 if dy>0 else 8
+	var target_bit:=4 if dy<0 else 8 if dx>0 else 1 if dy>0 else 2
+	return not ((masks[from_y*w+from_x]&source_bit) or (masks[to_y*w+to_x]&target_bit))
+
+func _active_monster(monster: Dictionary,map_id: String="") -> bool:
+	if map_id.is_empty():map_id=str(state.character.map_id)
+	if str(monster.map_id)!=map_id:return false
+	if not bool(_config("lazy_world_spawns",false)):return true
+	return maxi(absi(int(monster.x)-int(state.character.x)),absi(int(monster.y)-int(state.character.y)))<=int(_config("active_ai_radius",32))
+
+func _reindex_monsters() -> void:
+	if _indexed_monster_count==state.monsters.size():return
+	_indexed_maps={}
+	for id in state.monsters:
+		var mid: String=str(state.monsters[id].map_id)
+		if not _indexed_maps.has(mid):_indexed_maps[mid]=[]
+		_indexed_maps[mid].append(id)
+	_indexed_monster_count=state.monsters.size()
+
+func _spawn_map(map_id: String) -> void:
+	for spawn in data.maps[map_id].get("spawns",[]):
+		var id: String=str(spawn.id)
+		if state.monsters.has(id):continue
+		var definition: Dictionary=data.monsters[str(spawn.monster_id)]
+		state.monsters[id]={"id":id,"monster_id":str(spawn.monster_id),"map_id":map_id,"x":int(spawn.x),"y":int(spawn.y),"spawn_x":int(spawn.x),"spawn_y":int(spawn.y),"hp":int(definition.hp),"alive":true,"generation":0,"respawn_at":0.0,"ai_at":0.0,"attack_at":0.0,"aggro":false,"respawn_seconds":float(spawn.get("respawn_seconds",definition.get("respawn_seconds",8.0)))}
+
+func _gather(cmd: Dictionary) -> Dictionary:
+	var mid: String=str(state.character.map_id)
+	var id: String=str(cmd.get("node_id",""));var node: Dictionary={}
+	for row in data.maps[mid].get("gather_nodes",[]):
+		if str(row.id)==id:node=row;break
+	if node.is_empty():return _response("REFUSED","UNKNOWN_GATHER_NODE")
+	if absi(int(node.x)-int(state.character.x))+absi(int(node.y)-int(state.character.y))>1:return _response("REFUSED","GATHER_OUT_OF_REACH")
+	if int(state.character.level)<int(node.get("minimum_level",1)):return _response("REFUSED","LEVEL_TOO_LOW")
+	if not state.has("gathered_nodes"):state["gathered_nodes"]={}
+	if _now()<float(state.gathered_nodes.get(id,0)):return _response("REFUSED","GATHER_NOT_READY")
+	if not _add_item(str(node.item_id),int(node.get("quantity",1))):return _response("REFUSED","INVENTORY_FULL")
+	state.gathered_nodes[id]=_now()+float(node.get("respawn_seconds",40))
+	_event("gathered",{"node_id":id,"item_id":node.item_id,"quantity":node.get("quantity",1)})
+	return _response("OK","GATHERED",true)
+
+func _travel(cmd: Dictionary) -> Dictionary:
+	var npc: Dictionary=_near_npc(str(cmd.get("npc_id","")),"travel")
+	if npc.is_empty():return _response("REFUSED","TRAVEL_NPC_REQUIRED")
+	var mid: String=str(cmd.get("map_id",""))
+	if mid not in state.character.get("discovered_maps",[]) or mid==str(state.character.map_id):return _response("REFUSED","DESTINATION_NOT_DISCOVERED")
+	var point: Dictionary={}
+	for n in data.npcs.values():
+		if str(n.map_id)==mid and "travel" in n.get("services",[]):point=n;break
+	if point.is_empty():return _response("REFUSED","NO_TRAVEL_CAMP")
+	var fee:=maxi(10,int(data.maps[mid].get("recommended_level",1))*2)
+	if int(state.character.money)<fee:return _response("REFUSED","INSUFFICIENT_MONEY")
+	var arrival:=_arrival_position(mid,int(point.x)+1,int(point.y),true)
+	if arrival.is_empty() or not _transition(mid,int(arrival.x),int(arrival.y),2,"camp_travel"):return _response("REFUSED","DESTINATION_UNAVAILABLE")
+	state.character.money=int(state.character.money)-fee
+	_event("travelled",{"map_id":mid,"money":fee})
+	return _response("OK","TRAVELLED",true)
 
 func _integer(value: Variant,minimum: int,maximum: int) -> bool:
 	return typeof(value) in [TYPE_INT,TYPE_FLOAT] and is_finite(float(value)) and float(value)==floor(float(value)) and float(value)>=minimum and float(value)<=maximum
@@ -166,7 +238,9 @@ func create_character(name: String,owner: String,options: Dictionary={}) -> Dict
 		if not data.items.has(str(item.item_id)) or not _add_item(str(item.item_id),int(item.get("quantity",1))):
 			state={}
 			return _response("REFUSED","INVALID_STARTER_ITEM")
-	_spawn_all()
+	if bool(_config("lazy_world_spawns",false)): _spawn_map(str(state.character.map_id))
+	else: _spawn_all()
+	state.character["discovered_maps"]=[str(state.character.map_id)]
 	for slot in start.get("initial_equipment",{}):
 		var item_id: String=str(start.initial_equipment[slot])
 		for item in state.inventory:
@@ -190,6 +264,7 @@ func restore(payload: Dictionary) -> Dictionary:
 	var check: Dictionary=validate_payload(payload,expected_owner)
 	if check.status!="OK": return check
 	state=payload.duplicate(true)
+	_indexed_monster_count=-1
 	_sync_equipment_resources()
 	if state!=payload:
 		state.revision=int(payload.revision)+1
@@ -218,7 +293,13 @@ func validate_payload(payload: Dictionary,expected_owner: String="") -> Dictiona
 	if not is_finite(float(payload.sim_time)) or float(payload.sim_time)<0 or float(payload.sim_time)>MAX_VALUE: return invalid
 	if not is_finite(float(payload.time_accumulator)) or float(payload.time_accumulator)<0 or float(payload.time_accumulator)>=STEP+0.00001: return invalid
 	if typeof(payload.get("bank_inventory",[]))!=TYPE_ARRAY or payload.get("bank_inventory",[]).size()>int(_config("bank_slots",120)): return invalid
-	if payload.inventory.size()>int(_config("inventory_slots",_config("inventory_capacity",60))) or payload.loot.size()>2048 or payload.monsters.size()>1024 or payload.pending_actions.size()>32 or payload.applied_request_ids.size()>MAX_REQUESTS: return invalid
+	if payload.inventory.size()>int(_config("inventory_slots",_config("inventory_capacity",60))) or payload.loot.size()>2048 or payload.monsters.size()>int(_config("max_world_monsters",1024)) or payload.pending_actions.size()>32 or payload.applied_request_ids.size()>MAX_REQUESTS: return invalid
+	if typeof(c.get("discovered_maps",[]))!=TYPE_ARRAY or c.get("discovered_maps",[]).size()>256: return invalid
+	for map_id in c.get("discovered_maps",[]):
+		if not data.maps.has(str(map_id)): return invalid
+	if typeof(payload.get("gathered_nodes",{}))!=TYPE_DICTIONARY or payload.get("gathered_nodes",{}).size()>2048: return invalid
+	for available in payload.get("gathered_nodes",{}).values():
+		if typeof(available) not in [TYPE_INT,TYPE_FLOAT] or not is_finite(float(available)) or float(available)<0: return invalid
 	var ids: Dictionary={}
 	var inventory_ids: Dictionary={}
 	for instance in payload.inventory: inventory_ids[str(instance.get("instance_id",""))]=true
@@ -308,16 +389,13 @@ func _begin_transaction(prior: Dictionary) -> void:
 		if typeof(prior[key]) in [TYPE_DICTIONARY,TYPE_ARRAY]:
 			state[key]=prior[key].duplicate(key!="monsters")
 	_in_transaction=true
-	_map_monster_ids={};_detached_monsters={};_status_monster_ids=[]
+	_reindex_monsters()
+	_map_monster_ids=_indexed_maps
+	_detached_monsters={};_status_monster_ids=[]
 	for id in state.monsters:
 		var monster: Dictionary=state.monsters[id]
-		var map_id: String=str(monster.map_id)
-		if not _map_monster_ids.has(map_id): _map_monster_ids[map_id]=[]
-		_map_monster_ids[map_id].append(id)
-		# Off-map poison/expiry previously advanced globally: retain that behavior.
-		if map_id==str(state.character.map_id) or not monster.get("statuses",{}).is_empty():
-			_detach_monster(str(id))
-			_status_monster_ids.append(id)
+		if _active_monster(monster) or not monster.get("statuses",{}).is_empty():
+			_detach_monster(str(id));_status_monster_ids.append(id)
 
 func _detach_monster(id: String) -> void:
 	if _detached_monsters.has(id): return
@@ -326,7 +404,10 @@ func _detach_monster(id: String) -> void:
 
 func _ensure_map_mutable(map_id: String) -> void:
 	if not _in_transaction: return
-	for id in _map_monster_ids.get(map_id,[]): _detach_monster(str(id))
+	_reindex_monsters()
+	_map_monster_ids=_indexed_maps
+	for id in _map_monster_ids.get(map_id,[]):
+		if _active_monster(state.monsters[id],map_id): _detach_monster(str(id))
 	# A return/blink can enter a new map during a multi-step tick. Preserve the
 	# old global insertion order for status ticks, drops, events and RNG draws.
 	_status_monster_ids=[]
@@ -381,6 +462,8 @@ func _execute(cmd: Dictionary) -> Dictionary:
 	if (_has_status(state.buffs,"paralysis") and type in ["move","attack","cast"] and "paralysis" not in cleanse_statuses) or (_has_status(state.buffs,"silence") and type=="cast" and "silence" not in cleanse_statuses): return _response("REFUSED","STATUS_PREVENTS_ACTION")
 	if bool(state.character.dead) and type not in ["talk","cast"]: return _response("REFUSED","CHARACTER_DEAD")
 	match type:
+		"gather": return _gather(cmd)
+		"travel": return _travel(cmd)
 		"move": return _move(cmd)
 		"attack": return _attack(cmd)
 		"pickup": return _pickup(cmd)
@@ -477,13 +560,16 @@ func _arrival_position(map_id: String,x: int,y: int,allow_nearby: bool) -> Dicti
 	return {}
 
 func _transition(map_id: String,x: int,y: int,direction: int,reason: String) -> bool:
+	if bool(_config("lazy_world_spawns",false)): _spawn_map(map_id)
 	var point:=_arrival_position(map_id,x,y,reason in ["exit","item_return","resurrection","inn_return","directional_return","ghost_to_shrine"])
 	if point.is_empty(): return false
 	x=int(point.x);y=int(point.y)
 	var c: Dictionary=state.character
 	var source: Dictionary={"map_id":c.map_id,"x":c.x,"y":c.y}
-	_ensure_map_mutable(map_id)
 	c.map_id=map_id;c.x=x;c.y=y;c.direction=direction
+	_ensure_map_mutable(map_id)
+	if not c.has("discovered_maps"): c["discovered_maps"]=[]
+	if map_id not in c.discovered_maps: c.discovered_maps.append(map_id)
 	state.pending_actions=[]
 	state["summons"]=[]
 	_quest_progress("visit",map_id)
@@ -498,7 +584,7 @@ func _move(cmd: Dictionary) -> Dictionary:
 	if not _ready("move") or not _ready("action"): return _response("REFUSED","ACTION_COOLDOWN")
 	var c: Dictionary=state.character
 	var x: int=int(c.x)+dx;var y: int=int(c.y)+dy
-	if not valid_position(str(c.map_id),x,y) or _occupied(str(c.map_id),x,y): return _response("REFUSED","BLOCKED_TILE")
+	if not can_step(str(c.map_id),int(c.x),int(c.y),x,y) or _occupied(str(c.map_id),x,y): return _response("REFUSED","BLOCKED_TILE")
 	for exit in data.maps[c.map_id].get("exits",[]):
 		if int(exit.x)==x and int(exit.y)==y:
 			if int(c.level)<int(exit.get("minimum_level",1)): return _response("REFUSED","EXIT_LEVEL_REQUIRED")
@@ -522,7 +608,8 @@ func _talk(cmd: Dictionary) -> Dictionary:
 	if npc.is_empty(): return _response("REFUSED","NPC_OUT_OF_REACH")
 	var dialogue: Dictionary=npc.get("dialogue",{})
 	_event("dialogue",{"npc_id":npc.id,"name":npc.name,"text":str(dialogue.get("greeting",npc.name+"입니다.")),"services":npc.get("services",[]),"shop":npc.get("shop",{}),"job":npc.get("job")})
-	return _response("OK","DIALOGUE_OPENED")
+	_quest_progress("talk",str(npc.id))
+	return _response("OK","DIALOGUE_OPENED",true)
 
 func _inventory_index(instance_id: String) -> int:
 	for i in range(state.inventory.size()):
@@ -615,6 +702,7 @@ func _equip(cmd: Dictionary) -> Dictionary:
 	if int(def.get("durability",0))>0 and int(item.durability)<=0: return _response("REFUSED","ITEM_BROKEN")
 	if state.equipment.get(slot)==item.instance_id: return _response("REFUSED","ALREADY_EQUIPPED")
 	state.equipment[slot]=item.instance_id
+	_quest_progress("equip",str(item.item_id))
 	_event("equipped",{"slot":slot,"instance_id":item.instance_id,"item_id":item.item_id})
 	return _response("OK","EQUIPPED",true)
 
@@ -927,7 +1015,10 @@ func _kill_monster(target: Dictionary) -> void:
 
 func _hit_monster(target: Dictionary,damage: int,source: String,effect_id: Variant=null,sound_id: Variant=null) -> void:
 	if not target.alive: return
-	var defense: int=int(data.monsters[target.monster_id].get("defense",0))
+	var definition: Dictionary=data.monsters[target.monster_id]
+	var element: String=str(data.skills.get(source,{}).get("element","physical"))
+	damage=maxi(1,int(round(float(damage)*float(definition.get("resistances",{}).get(element,1.0))*(1.0-float(definition.get("guard_reduction",0.0))))))
+	var defense: int=int(definition.get("defense",0))
 	for status in target.get("statuses",{}).values(): defense+=int(status.get("defense",0))
 	var actual: int=maxi(1,damage-defense)
 	target.hp=maxi(0,int(target.hp)-actual);target.aggro=true
@@ -977,11 +1068,15 @@ func _resolve_action(action: Dictionary) -> void:
 	elif action.kind=="monster_attack":
 		if not state.monsters.has(str(action.target_id)): return
 		var monster: Dictionary=state.monsters[action.target_id]
-		if not monster.alive or int(monster.generation)!=int(action.target_generation) or bool(state.character.dead) or _distance(monster,state.character)>1: return
+		if not monster.alive or int(monster.generation)!=int(action.target_generation) or bool(state.character.dead) or _distance(monster,state.character)>int(data.monsters[monster.monster_id].get("attack_range",1)) or not _line_clear(str(monster.map_id),monster,state.character): return
 		if _has_status(monster.get("statuses",{}),"paralysis") or _has_status(state.buffs,"stealth") or _barrier_blocks(monster): return
 		var outgoing: int=int(data.monsters[monster.monster_id].attack)
 		if _has_status(monster.get("statuses",{}),"blindness"): outgoing=maxi(1,int(round(outgoing*0.6)))
 		_damage_player(outgoing,str(monster.id))
+		var definition: Dictionary=data.monsters[monster.monster_id]
+		if str(definition.get("on_hit_status","")) in STATUS_KINDS and not bool(state.character.dead):
+			var status: String=str(definition.on_hit_status)
+			state.buffs["monster:"+str(monster.id)]=_status_definition({"duration":definition.get("status_duration",5),"status_power":definition.get("status_power",1)},status)
 	else:
 		_resolve_skill(action)
 
@@ -1074,7 +1169,7 @@ func _resolve_skill(action: Dictionary) -> void:
 func _monster_move(monster: Dictionary,dx: int,dy: int) -> bool:
 	var x: int=int(monster.x)+dx;var y: int=int(monster.y)+dy
 	if _barrier_blocks({"map_id":monster.map_id,"x":x,"y":y}): return false
-	if not valid_position(str(monster.map_id),x,y) or _occupied(str(monster.map_id),x,y,str(monster.id)) or (str(monster.map_id)==str(state.character.map_id) and x==int(state.character.x) and y==int(state.character.y)): return false
+	if not can_step(str(monster.map_id),int(monster.x),int(monster.y),x,y) or _occupied(str(monster.map_id),x,y,str(monster.id)) or (str(monster.map_id)==str(state.character.map_id) and x==int(state.character.x) and y==int(state.character.y)): return false
 	for exit in data.maps[monster.map_id].get("exits",[]):
 		if int(exit.x)==x and int(exit.y)==y: return false
 	var from: Dictionary={"x":monster.x,"y":monster.y}
@@ -1083,7 +1178,7 @@ func _monster_move(monster: Dictionary,dx: int,dy: int) -> bool:
 	return true
 
 func _update_monster(monster: Dictionary) -> void:
-	if str(monster.map_id)!=str(state.character.map_id): return
+	if not _active_monster(monster): return
 	var def: Dictionary=data.monsters[monster.monster_id]
 	if not monster.alive:
 		if _now()>=float(monster.respawn_at) and not _occupied(str(monster.map_id),int(monster.spawn_x),int(monster.spawn_y),str(monster.id)) and not (int(monster.spawn_x)==int(state.character.x) and int(monster.spawn_y)==int(state.character.y)):
@@ -1094,7 +1189,7 @@ func _update_monster(monster: Dictionary) -> void:
 	if bool(state.character.dead) or _has_status(monster.get("statuses",{}),"paralysis"): return
 	var distance: int=_distance(monster,state.character)
 	var hostile: bool=(bool(monster.aggro) or str(def.get("aggression","retaliate")) in ["hostile","HOSTILE_DOCUMENTED"]) and not _has_status(state.buffs,"stealth")
-	if hostile and distance<=1 and _now()>=float(monster.attack_at):
+	if hostile and distance<=int(def.get("attack_range",1)) and _line_clear(str(monster.map_id),monster,state.character) and _now()>=float(monster.attack_at) and state.pending_actions.size()<32:
 		monster.attack_at=_now()+float(def.get("attack_interval",1.0))
 		state.pending_actions.append({"kind":"monster_attack","target_id":monster.id,"target_generation":monster.generation,"map_id":monster.map_id,"due":_now()+float(def.get("attack_windup",0.2))})
 		_event("monster_attack_started",{"target_id":monster.id,"impact_delay":float(def.get("attack_windup",0.2))})
@@ -1107,6 +1202,8 @@ func _update_monster(monster: Dictionary) -> void:
 	if home_distance>int(def.get("leash_range",8)):
 		monster.aggro=false
 		dx=signi(int(monster.spawn_x)-int(monster.x));dy=signi(int(monster.spawn_y)-int(monster.y))
+	elif hostile and int(def.get("attack_range",1))>1 and distance<=int(def.get("attack_range",1)) and not low_hp_flee:
+		return
 	elif (hostile or low_hp_flee) and distance<=int(def.get("chase_range",6)):
 		dx=signi(int(state.character.x)-int(monster.x));dy=signi(int(state.character.y)-int(monster.y))
 		if low_hp_flee: dx=-dx;dy=-dy
@@ -1281,6 +1378,7 @@ func _craft(cmd: Dictionary) -> Dictionary:
 	if not _pay_requirements(recipe): return _response("REFUSED","INSUFFICIENT_MONEY_OR_MATERIALS")
 	for item_id in recipe.get("results",{}):
 		if not _add_item(str(item_id),int(recipe.results[item_id])): return _response("REFUSED","INVENTORY_FULL")
+	_quest_progress("craft",id)
 	_event("crafted",{"recipe_id":id,"results":recipe.get("results",{})})
 	return _response("OK","CRAFTED",true)
 

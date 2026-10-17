@@ -79,6 +79,9 @@ var hp_bar: ProgressBar
 var mp_bar: ProgressBar
 var stick
 var panel_toggle: Button
+var navigation_search: RefCounted
+var navigation_goal:=Vector2i(-1,-1)
+var navigation_reach:=0
 var path: Array[Vector2i] = []
 var arrival_action: Dictionary = {}
 var tick_accumulator := 0.0
@@ -425,6 +428,8 @@ func _observe_os_input(event: InputEvent) -> void:
 	os_event_feedback_pending.append(received)
 
 func _stop_motion() -> void:
+	navigation_search=null
+	navigation_goal=Vector2i(-1,-1)
 	movement=Vector2i.ZERO;touch_moves.clear();keyboard_moves.clear();path.clear();arrival_action.clear()
 	if is_instance_valid(stick): stick.cancel()
 	for button in touch_action_buttons:
@@ -697,6 +702,18 @@ func _advance_movement() -> void:
 	if game.state.is_empty() or dialogue.visible or save_failure: return
 	if not game._ready("move") or not game._ready("action"): return
 	var move:=movement
+	if move!=Vector2i.ZERO:
+		navigation_search=null;navigation_goal=Vector2i(-1,-1);path.clear();arrival_action.clear()
+	if move==Vector2i.ZERO and path.is_empty() and navigation_goal.x>=0:
+		var current:=Vector2i(game.state.character.x,game.state.character.y)
+		if absi(current.x-navigation_goal.x)+absi(current.y-navigation_goal.y)>navigation_reach:
+			if navigation_search==null:
+				navigation_search=Navigation.new();navigation_search.begin(game,navigation_goal,navigation_reach)
+			if not navigation_search.advance(96):return
+			path=navigation_search.result;navigation_search=null
+			if path.is_empty():_stop_motion();message.text="가까운 적이나 막힌 길을 피해서 다시 눌러 주세요.";return
+		else:navigation_goal=Vector2i(-1,-1)
+
 	if move==Vector2i.ZERO and not path.is_empty():
 		var cell:=path[0];var c: Dictionary=game.state.character
 		move=cell-Vector2i(c.x,c.y)
@@ -705,7 +722,7 @@ func _advance_movement() -> void:
 	var result:=_dispatch({"type":"move","dx":move.x,"dy":move.y})
 	if result.status=="OK":
 		if not path.is_empty(): path.pop_front()
-		if path.is_empty() and not arrival_action.is_empty():
+		if path.is_empty() and not arrival_action.is_empty() and absi(int(game.state.character.x)-navigation_goal.x)+absi(int(game.state.character.y)-navigation_goal.y)<=navigation_reach:
 			var action:=arrival_action.duplicate();arrival_action.clear();_dispatch(action)
 	elif result.reason not in ["ACTION_COOLDOWN","MOVE_COOLDOWN"]:
 		path.clear();arrival_action.clear()
@@ -800,13 +817,17 @@ func _navigate(tile: Vector2i, reach: int = 0, action: Dictionary = {}) -> void:
 	if absi(tile.x-int(c.x))+absi(tile.y-int(c.y))<=reach:
 		if not action.is_empty(): _dispatch(action)
 		return
-	path=Navigation.route(game,tile,reach)
-	if path.is_empty(): message.text="그곳까지 걸어갈 수 없습니다. 다른 길을 누르세요.";return
+	navigation_goal=tile;navigation_reach=reach
+	navigation_search=Navigation.new();navigation_search.begin(game,tile,reach)
+	message.text="길을 찾는 중 · 방향키나 조이스틱으로 취소할 수 있습니다."
 	arrival_action=action
 	input_received_ms=Time.get_ticks_msec();_advance_movement()
 
 func _click_world(tile: Vector2i) -> void:
 	if game.state.is_empty() or dialogue.visible: return
+	for node in content.data.maps[game.state.character.map_id].get("gather_nodes",[]):
+		if Vector2i(node.x,node.y)==tile:
+			_navigate(tile,1,{"type":"gather","node_id":node.id});return
 	for id in content.data.npcs:
 		var npc: Dictionary=content.data.npcs[id]
 		if npc.map_id==game.state.character.map_id and Vector2i(npc.x,npc.y)==tile:
@@ -840,9 +861,9 @@ func _quest_objectives(quest_id: String) -> String:
 	var parts: PackedStringArray=[]
 	for objective in quest.get("objectives",[]):
 		var id:=str(objective.id);var kind:=str(objective.kind)
-		var collection: Dictionary=content.data.get({"collect":"items","kill":"monsters","visit":"maps"}.get(kind,""),{})
+		var collection: Dictionary=content.data.get({"collect":"items","kill":"monsters","visit":"maps","talk":"npcs","craft":"recipes","equip":"items"}.get(kind,""),{})
 		var name:=str(collection.get(id,{}).get("name",id))
-		var count:=game.item_count(id) if kind=="collect" else int(progress.get(kind+":"+id,0))
+		var count: int=game.item_count(id) if kind=="collect" else int(progress.get(kind+":"+id,0))
 		parts.append(name+" "+str(count)+"/"+str(int(objective.get("count",1))))
 	return " · ".join(parts)
 
@@ -893,6 +914,12 @@ func _show_dialogue(id: String, page: int = 0, preserve_scroll: bool = false) ->
 			var rank := str(skill.get("required_advancement",skill.get("advancement_rank",0)))
 			var rank_text := " · 승급 "+rank if rank not in ["0",""] else ""
 			dialogue_rows.append({"label":str(skill.name)+(" [배움]" if learned else " 학습")+" · Lv"+str(int(skill.learn_level))+rank_text+" / "+str(int(skill.get("learn_money",0)))+"전"+_material_text(skill.get("ingredients",{})),"command":{"type":"learn","npc_id":id,"skill_id":str(skill_id)},"disabled":learned})
+	if "travel" in npc.get("services",[]):
+		for map_id in game.state.character.get("discovered_maps",[]):
+			if str(map_id)==str(npc.map_id):continue
+			var target: Dictionary=content.data.maps[map_id]
+			if not content.data.npcs.values().any(func(n):return str(n.map_id)==str(map_id) and "travel" in n.get("services",[])):continue
+			dialogue_rows.append({"label":"야영지 이동 · "+str(target.name)+" / "+str(maxi(10,int(target.get("recommended_level",1))*2))+"전","command":{"type":"travel","npc_id":id,"map_id":str(map_id)}})
 	for quest_id in content.data.get("quests",{}):
 		var quest: Dictionary=content.data.quests[quest_id]
 		if str(quest.get("npc_id",quest.get("giver_id","")))!=id: continue
@@ -971,12 +998,12 @@ func _show_map() -> void:
 	var c: Dictionary=game.state.character
 	var map: Dictionary=content.data.maps[c.map_id]
 	_label(dialogue_body,str(map.name)+" · "+str(int(c.x))+", "+str(int(c.y))).add_theme_color_override("font_color",Color("302012"))
-	var overview:=OriginalView.new();overview.content=content.assets;overview.mouse_filter=Control.MOUSE_FILTER_IGNORE
-	var extent:=Vector2(float(map.width)*24,float(map.height)*24)
-	overview.custom_minimum_size=Vector2(280,210);dialogue_body.add_child(overview)
-	var layers: Array=map.get("ground_layers",[]).duplicate()
-	if layers.is_empty() and map.has("floor_png"): layers.append({"path":map.floor_png,"x":0,"y":0})
-	overview.configure(layers,extent,extent*0.5,minf(280/extent.x,210/extent.y))
+	var overview=preload("res://render/world_map.gd").new()
+	overview.assets=content.assets;overview.definition=map;overview.character=c
+	overview.npcs=content.data.npcs.values().filter(func(n):return str(n.map_id)==str(c.map_id))
+	overview.cell_selected.connect(func(cell):_close_dialogue();_navigate(cell))
+	dialogue_body.add_child(overview)
+	_label(dialogue_body,"초록: 현재 위치 · 파랑: 시설 · 금색: 출구 · 지도를 눌러 이동")
 	for exit in map.get("exits",[]):
 		var target:=Vector2i(exit.x,exit.y)
 		var destination:=str(content.data.maps[exit.to_map].name)
@@ -1229,23 +1256,39 @@ func _render_world() -> void:
 	camera.x=clampf(camera.x,half_view.x,extent.x-half_view.x) if extent.x>=2.0*half_view.x else extent.x*0.5
 	camera.y=clampf(camera.y,half_view.y,extent.y-half_view.y) if extent.y>=2.0*half_view.y else extent.y*0.5
 	var visible_world:=Rect2(camera-view.size/(2*world_zoom),view.size/world_zoom).grow(24)
-	var layers: Array = map.get("ground_layers",[]).duplicate()
+	var layers: Array = _visible_ground(map,visible_world)
 	if layers.is_empty() and map.has("floor_png"): layers.append({"path":map.floor_png,"x":0,"y":0})
 	var sorted: Array = []
 	var next_key:=str(c.map_id)+":"+str(Vector2i(camera/24))+":"+str(view.size)
 	if map_render_key!=next_key:
 		map_render_key=next_key;scenery_cache.clear()
-		for object in map.get("objects",[]):
+		var indices: Dictionary={}
+		if map.has("object_buckets"):
+			for by in range(maxi(0,floori(visible_world.position.y/384)-1),mini(int(map.height)/16+1,ceili(visible_world.end.y/384)+1)):
+				for bx in range(maxi(0,floori(visible_world.position.x/384)-1),mini(int(map.width)/16+1,ceili(visible_world.end.x/384)+1)):
+					for i in map.object_buckets.get(str(bx)+","+str(by),[]):indices[int(i)]=true
+		else:
+			for i in range(map.get("objects",[]).size()):indices[i]=true
+		for i in indices:
+			var object: Dictionary=map.objects[i]
 			var bounds:=Rect2(float(object.x),float(object.y),float(object.get("width_px",24)),maxf(24,float(object.get("height_px",float(object.get("height",6))*24))))
-			if not visible_world.grow(48).intersects(bounds): continue
+			if not visible_world.grow(48).intersects(bounds):continue
 			var entry: Dictionary=object.duplicate()
-			if not entry.has("path"): entry.path=entry.get("frame_png","")
+			if not entry.has("path"):entry.path=entry.get("frame_png","")
 			scenery_cache.append(entry)
 	sorted.append_array(scenery_cache)
 	var labels: Array=[]
 	for landmark in map.get("landmarks",[]):
 		if landmark.has("x") and landmark.has("y"):
 			labels.append({"x":int(landmark.x)*24+12,"y":int(landmark.y)*24+24,"text":str(landmark.get("name",landmark.get("label",""))),"color":"ccb78d"})
+	for node in map.get("gather_nodes",[]):
+		if not visible_world.has_point(Vector2(float(node.x)*24,float(node.y)*24)):continue
+		var node_icon: Dictionary=content.actors.icons.get(str(node.item_id),{})
+		if not node_icon.is_empty():
+			var node_path:=str(node_icon.path)
+			if not node_path.begins_with("gameplay-assets/"):node_path="gameplay-assets/"+node_path
+			sorted.append({"path":node_path,"x":int(node.x)*24,"y":int(node.y)*24,"depth_y":int(node.y)*24+23})
+		labels.append({"x":int(node.x)*24+12,"y":int(node.y)*24+24,"text":str(node.name)+" · 채집","color":"98d787"})
 	for id in runtime_npc_ids:
 		var npc: Dictionary=content.data.npcs[id]
 		var layer := _actor_layer(str(npc.get("look_id",npc.get("appearance_id","tavern"))),"standing",int(npc.get("direction",2)),int(npc.x),int(npc.y))
@@ -1253,7 +1296,7 @@ func _render_world() -> void:
 		labels.append({"x":int(npc.x)*24+12,"y":int(npc.y)*24+24,"text":npc.name,"color":"f4d58a"})
 	for id in runtime_monster_ids:
 		var monster: Dictionary=game.state.monsters[id]
-		if not monster.alive: continue
+		if not monster.alive or not visible_world.grow(72).has_point(Vector2(float(monster.x)*24,float(monster.y)*24)): continue
 		var def: Dictionary=content.data.monsters[monster.monster_id]
 		var animation := "attack" if clock<float(actor_animations.get(id,0)) else "walking" if clock<float(actor_walk_until.get(id,0)) else "standing"
 		var at:=_visual_point(str(id),float(monster.x),float(monster.y))
@@ -1418,3 +1461,12 @@ func _finish_smoke(result: Dictionary) -> void:
 	if file: file.store_string(JSON.stringify(result,"  ")+"\n"); file.flush()
 	print("GAMEPLAY_GUI_RESULT "+JSON.stringify({"status":result.status,"path":smoke_report}))
 	get_tree().quit(0 if result.status=="PASS" else 1)
+
+func _visible_ground(map: Dictionary,visible: Rect2) -> Array:
+	if not map.has("ground_chunks"):return map.get("ground_layers",[]).duplicate()
+	var layers: Array=[]
+	for by in range(maxi(0,floori(visible.position.y/384)),mini(ceili(float(map.height)/16),ceili(visible.end.y/384))):
+		for bx in range(maxi(0,floori(visible.position.x/384)),mini(ceili(float(map.width)/16),ceili(visible.end.x/384))):
+			var key:=str(bx)+","+str(by)
+			if map.ground_chunks.has(key):layers.append(map.ground_chunks[key])
+	return layers
