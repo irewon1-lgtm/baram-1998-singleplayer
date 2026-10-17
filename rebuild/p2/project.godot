@@ -1,22 +1,30 @@
-; Isolated offline P3 play; explicit --p2-* options retain previous inspection.
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
 config_version=5
 
 [application]
+
 config/name="Baram First Journey"
+run/main_scene="res://gameplay.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="baram_rebuild_gameplay_001"
-run/main_scene="res://gameplay.tscn"
+config/features=PackedStringArray("4.6")
 
 [display]
+
 window/size/viewport_width=1100
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 
 [rendering]
+
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(0.06, 0.07, 0.09, 1)
-
-[audio]
-driver/enable_input=false

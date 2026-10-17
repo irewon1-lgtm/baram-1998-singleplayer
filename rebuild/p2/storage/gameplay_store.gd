@@ -25,6 +25,85 @@ var _decoded_cache: Array = []
 # never returned by reference, and files are still read before cache lookup.
 var last_timings: Dictionary = {}
 var _writing := false
+# Encoding/plain-type caches are pure value caches, never semantic approval.
+# Each record owns a deep snapshot. Native full Dictionary equality detects
+# changes even when a caller reuses/mutates the same source Dictionary.
+const MONSTER_RECORD_CACHE_LIMIT := 1024
+var _monster_record_cache: Dictionary = {}
+var _id_value_cache: Dictionary = {}
+
+func _cache_monster_record(id: String, record: Dictionary) -> Dictionary:
+	var cached: Dictionary = _monster_record_cache.get(id,{})
+	if not cached.is_empty() and cached.snapshot == record: return cached
+	if not _monster_record_cache.has(id) and _monster_record_cache.size() >= MONSTER_RECORD_CACHE_LIMIT:
+		_monster_record_cache.erase(_monster_record_cache.keys()[0])
+	cached = {"snapshot":record.duplicate(true),"plain":false,"canonical":""}
+	_monster_record_cache[id] = cached
+	return cached
+
+func _plain_game_payload(payload: Dictionary) -> bool:
+	# Monster values always occur at depth two of a gameplay payload. Reuse
+	# only that exact bounded-JSON check; every semantic/range/reference check
+	# below and in GameState.validate_payload still runs on every save.
+	if payload.size() > MAX_ENTRIES: return false
+	for key in payload:
+		if typeof(key) != TYPE_STRING or key.length() > 256: return false
+		if key == "monsters" and typeof(payload[key]) == TYPE_DICTIONARY and payload[key].size() <= MONSTER_RECORD_CACHE_LIMIT:
+			for id in payload[key]:
+				if typeof(id) != TYPE_STRING or id.length() > 256: return false
+				var record: Variant = payload[key][id]
+				if typeof(record) != TYPE_DICTIONARY:
+					if not _plain(record,2): return false
+					continue
+				var cached: Dictionary = _monster_record_cache.get(id,{})
+				if not cached.is_empty() and cached.plain and cached.snapshot == record:
+					# Dictionary equality treats String and StringName keys as
+					# equivalent. Native typed bytes close that type-only gap;
+					# the cached bounded shape makes encoding this match safe.
+					var typed: PackedByteArray=var_to_bytes(record)
+					if cached.get("plain_bytes",PackedByteArray()) == typed: continue
+				# Reject unbounded/deep/object input before making any deep copy
+				# or typed-byte encoding of a new/changed untrusted record.
+				if not _plain(record,2): return false
+				cached = _cache_monster_record(id,record)
+				cached.plain = true
+				cached["plain_bytes"] = var_to_bytes(record)
+		elif not _plain(payload[key],1): return false
+	return true
+
+func _canonical_monsters(monsters: Dictionary) -> String:
+	var ids: Array = monsters.keys()
+	ids.sort()
+	var fields: PackedStringArray=[]
+	for id in ids:
+		var record: Variant = monsters[id]
+		var encoded: String
+		if typeof(id)==TYPE_STRING and typeof(record)==TYPE_DICTIONARY:
+			var cached := _cache_monster_record(id,record)
+			if cached.canonical.is_empty(): cached.canonical = _canonical(record)
+			encoded = cached.canonical
+		else: encoded = _canonical(record)
+		fields.append(JSON.stringify(str(id))+":"+encoded)
+	return "{"+",".join(fields)+"}"
+
+func _canonical_save_document(document: Dictionary) -> String:
+	# Generic callers (including sequential-sync metadata) retain _canonical.
+	var payload: Variant = document.get("payload")
+	if typeof(payload) != TYPE_DICTIONARY or payload.get("schema","") != "baram.p3.gameplay-payload/1" or typeof(payload.get("monsters")) != TYPE_DICTIONARY:
+		return _canonical(document)
+	var payload_keys: Array = payload.keys()
+	payload_keys.sort()
+	var payload_fields: PackedStringArray=[]
+	for key in payload_keys:
+		var encoded := _canonical_monsters(payload[key]) if key=="monsters" else _canonical(payload[key])
+		payload_fields.append(JSON.stringify(str(key))+":"+encoded)
+	var encoded_payload := "{"+",".join(payload_fields)+"}"
+	var keys: Array = document.keys()
+	keys.sort()
+	var fields: PackedStringArray=[]
+	for key in keys:
+		fields.append(JSON.stringify(str(key))+":"+(encoded_payload if key=="payload" else _canonical(document[key])))
+	return "{"+",".join(fields)+"}"
 
 func _content_engine(content: Dictionary) -> RefCounted:
 	if _validation_engine != null and content == _validation_engine.data:
@@ -62,6 +141,21 @@ func prepare_content(content: Dictionary) -> Dictionary:
 	var engine := _content_engine(content)
 	if engine == null: return {}
 	_freeze_definitions(engine.data)
+	# Prepare the generation's initial monster serialization during explicit
+	# content loading, rather than make the first confirmed create/save pay
+	# the one-time 752-record cache fill in its input/render frame.
+	if _monster_record_cache.is_empty():
+		var prior: Dictionary=engine.state
+		engine.state={"monsters":{}}
+		engine._spawn_all()
+		for id in engine.state.monsters:
+			var record: Dictionary=engine.state.monsters[id]
+			var cached:=_cache_monster_record(str(id),record)
+			_id(str(id))
+			cached.plain=_plain(record,2)
+			cached["plain_bytes"]=var_to_bytes(record)
+			cached.canonical=_canonical(record)
+		engine.state=prior
 	return engine.data
 
 func _verified_cached_decode(text: String, owner: String, content: Dictionary, isolate: bool = true) -> Dictionary:
@@ -102,9 +196,17 @@ func _int(value: Variant, minimum: int = 0, maximum: int = MAX_SAFE_INTEGER) -> 
 
 func _id(value: Variant) -> bool:
 	if typeof(value) != TYPE_STRING or value.is_empty() or value.length() > 128: return false
+	# This is a pure predicate on an immutable String value, independent of
+	# game/content state. Repeated 752 stable-ID character scans add no safety.
+	if _id_value_cache.has(value): return bool(_id_value_cache[value])
+	var valid := true
 	for c in value:
-		if not c in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789:._-": return false
-	return true
+		if not c in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789:._-":
+			valid = false
+			break
+	if _id_value_cache.size() >= MAX_ENTRIES: _id_value_cache.erase(_id_value_cache.keys()[0])
+	_id_value_cache[value] = valid
+	return valid
 
 func _plain(value: Variant, depth: int = 0) -> bool:
 	if depth > 24: return false
@@ -153,21 +255,51 @@ func _migration_contract(document: Dictionary, content: Dictionary) -> Dictionar
 			return row.duplicate(true)
 	return {}
 
+func _valid_cell_transform(transform: Variant) -> bool:
+	if typeof(transform) != TYPE_DICTIONARY or not transform.has_all(["to_map_id","dx","dy"]): return false
+	if transform.size() != 3 and not (transform.size() == 4 and transform.has("cell_mappings")): return false
+	if not _id(transform.to_map_id) or not _int(transform.dx,-65535,65535) or not _int(transform.dy,-65535,65535): return false
+	var cells: Variant = transform.get("cell_mappings",{})
+	if typeof(cells) != TYPE_DICTIONARY or cells.size() > 65536: return false
+	for key in cells:
+		if typeof(key) != TYPE_STRING or key.length() > 11: return false
+		var parts: PackedStringArray = key.split(",")
+		if parts.size() != 2: return false
+		for part in parts:
+			if not part.is_valid_int() or str(int(part)) != part or not _int(int(part),0,65535): return false
+		var target: Variant = cells[key]
+		if not base._keys(target,["x","y"]) or not _int(target.x,0,65535) or not _int(target.y,0,65535): return false
+	return true
+
 func _transform_position(position: Dictionary, transforms: Dictionary, x_key: String="x", y_key: String="y") -> bool:
 	if not position.has_all(["map_id",x_key,y_key]): return false
 	if not transforms.has(str(position.map_id)): return true
 	var transform: Variant=transforms[str(position.map_id)]
-	if not base._keys(transform,["to_map_id","dx","dy"]) or not _id(transform.to_map_id) or not _int(transform.dx,-65535,65535) or not _int(transform.dy,-65535,65535): return false
+	# _migrate_payload checks every contract row once, including unused rows.
+	# Here only the matching coordinate is inspected; large explicit cell
+	# tables must not be rescanned for every saved monster/loot instance.
+	if typeof(transform) != TYPE_DICTIONARY or not transform.has_all(["to_map_id","dx","dy"]): return false
 	if not _int(position[x_key],0,65535) or not _int(position[y_key],0,65535): return false
-	position[x_key]=int(position[x_key])+int(transform.dx)
-	position[y_key]=int(position[y_key])+int(transform.dy)
+	var cell := str(int(position[x_key]))+","+str(int(position[y_key]))
+	var cells: Dictionary=transform.get("cell_mappings",{})
+	if cells.has(cell):
+		# Explicit coordinates are final destination cells. Unlisted cells keep
+		# the existing uniform-offset behavior; no nearest-cell guess at load.
+		position[x_key]=int(cells[cell].x)
+		position[y_key]=int(cells[cell].y)
+	else:
+		position[x_key]=int(position[x_key])+int(transform.dx)
+		position[y_key]=int(position[y_key])+int(transform.dy)
 	position.map_id=transform.to_map_id
 	return true
 
 func _migrate_payload(payload: Dictionary, contract: Dictionary, content: Dictionary) -> Dictionary:
 	var candidate: Dictionary=payload.duplicate(true)
 	var transforms: Variant=contract.get("map_transforms",{})
-	if typeof(transforms)!=TYPE_DICTIONARY: return result("DEFERRED","migration.map_transforms")
+	if typeof(transforms)!=TYPE_DICTIONARY or transforms.size() > 4096: return result("DEFERRED","migration.map_transforms")
+	for map_id in transforms:
+		if not _id(map_id) or not _valid_cell_transform(transforms[map_id]): return result("DEFERRED","migration.transform_contract")
+		if not content.maps.has(str(transforms[map_id].to_map_id)): return result("DEFERRED","migration.transform_target_map")
 	if not transforms.is_empty():
 		if typeof(candidate.get("character"))!=TYPE_DICTIONARY or not _transform_position(candidate.character,transforms): return result("DEFERRED","migration.character_position")
 		if typeof(candidate.get("loot"))!=TYPE_ARRAY or typeof(candidate.get("monsters"))!=TYPE_DICTIONARY or typeof(candidate.get("pending_actions"))!=TYPE_ARRAY: return result("INVALID_STATE","migration.payload_shape")
@@ -230,7 +362,7 @@ func _phase(name: String) -> bool:
 func _encode(document: Dictionary) -> String:
 	# Canonicalize the payload once. The checksum field is excluded from its
 	# own digest; JSON member order does not change the persisted contract.
-	var body := _canonical(document)
+	var body := _canonical_save_document(document)
 	if document.has("sha256"):
 		var output := document.duplicate(true)
 		output.sha256 = body.sha256_text()
@@ -299,7 +431,7 @@ func _decode_uncached(text: String, owner: String, content: Dictionary) -> Dicti
 	var digest: Variant = doc.sha256
 	doc.erase("sha256")
 	if typeof(digest) != TYPE_STRING: return result("CHECKSUM_MISMATCH")
-	if _canonical(doc).sha256_text() != digest and base.canonical(doc).sha256_text() != digest: return result("CHECKSUM_MISMATCH")
+	if _canonical_save_document(doc).sha256_text() != digest and base.canonical(doc).sha256_text() != digest: return result("CHECKSUM_MISMATCH")
 	if doc.schema != SCHEMA: return result("UNSUPPORTED_FORMAT","schema")
 	if doc.owner != owner: return result("OWNER_MISMATCH")
 	if not _int(doc.revision) or typeof(doc.payload) != TYPE_DICTIONARY or doc.payload.get("revision") != doc.revision: return result("INVALID_STATE","revision")
@@ -313,6 +445,15 @@ func _decode_uncached(text: String, owner: String, content: Dictionary) -> Dicti
 			contract=_migration_contract(doc,content)
 			if contract.is_empty(): return result("DEFERRED","compatibility."+key)
 			requires_migration=true
+	var geometry_changed: bool=doc.compatibility.get("map_geometry") != compat.map_geometry
+	if geometry_changed:
+		# Geometry-only legacy updates remain non-teleporting unless the new
+		# generation explicitly pins an exact source and provides transforms.
+		# A generation changing walkable cells requires a pinned source contract;
+		# unknown manifests cannot bypass it through the old geometry-only path.
+		if contract.is_empty(): contract=_migration_contract(doc,content)
+		if bool(content.get("require_geometry_migration_contract",false)) and contract.is_empty(): return result("DEFERRED","compatibility.map_geometry_contract")
+		if not contract.is_empty() and (contract.has("map_transforms") or bool(content.get("require_geometry_migration_contract",false))): requires_migration=true
 	var candidate: Dictionary=doc.payload.duplicate(true)
 	var added_spawns: Array=[]
 	if requires_migration:
@@ -322,7 +463,6 @@ func _decode_uncached(text: String, owner: String, content: Dictionary) -> Dicti
 		added_spawns=migrated.added_spawns
 	var valid: Dictionary = validate_payload(candidate,owner,content)
 	if valid.status != "OK": return valid
-	var geometry_changed: bool=doc.compatibility.get("map_geometry") != compat.map_geometry
 	return {"status":"OK","reason":"MIGRATION_AVAILABLE" if requires_migration else "","revision":int(doc.revision),"payload":candidate,"document":doc,"geometry_changed":geometry_changed,"manifest_changed":doc.manifest_sha256 != content.get("manifest_sha256",""),"migration_required":requires_migration or geometry_changed,"added_spawns":added_spawns}
 
 func _read_one(path: String, owner: String, content: Dictionary, isolate: bool = true) -> Dictionary:
@@ -461,7 +601,7 @@ func _write_game(path: String, payload: Dictionary, owner: String, content: Dict
 
 func validate_payload(payload: Dictionary, owner: String, content: Dictionary) -> Dictionary:
 	var section_started := Time.get_ticks_usec()
-	if not _id(owner) or not _plain(payload): return result("INVALID_STATE","owner_or_json_types")
+	if not _id(owner) or not _plain_game_payload(payload): return result("INVALID_STATE","owner_or_json_types")
 	_timing("state_plain_ms", section_started)
 	var fields := ["schema","profile","character","inventory","equipment","skills","hotkeys","quests","loot","monsters","buffs","cooldowns","revision","rng_state","applied_request_ids","request_watermarks","sim_time","time_accumulator","pending_actions","next_instance_id","next_loot_id","stats","shop_purchases"]
 	if not payload.has_all(fields): return result("INVALID_STATE","payload.shape")
@@ -537,9 +677,9 @@ func validate_payload(payload: Dictionary, owner: String, content: Dictionary) -
 	for id in payload.monsters:
 		var monster: Dictionary=payload.monsters[id]
 		if monster.get("id")!=id or not _id(id) or not _int(monster.generation,0,1000000000) or typeof(monster.alive)!=TYPE_BOOL or typeof(monster.aggro)!=TYPE_BOOL: return result("INVALID_STATE","monster.identity")
-		for key in ["x","y","spawn_x","spawn_y"]:
-			if not _int(monster[key],0,65535): return result("INVALID_STATE","monster.coordinate_type")
-		if not engine.valid_position(monster.map_id,int(monster.spawn_x),int(monster.spawn_y)): return result("DEFERRED","monster.spawn_position")
+		# Coordinate types and current/home walkability were already checked
+		# above before the read-only authoritative validator. Repeating the
+		# same four range checks and home lookup cannot detect a new mutation.
 		for key in ["respawn_at","ai_at","attack_at","respawn_seconds"]:
 			if not monster.has(key) or not _timer(monster[key]): return result("INVALID_STATE","monster.timer")
 	for action in payload.pending_actions:

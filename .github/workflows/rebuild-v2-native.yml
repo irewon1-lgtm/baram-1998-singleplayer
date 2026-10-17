@@ -1,0 +1,92 @@
+name: V2 exact candidate native Windows
+on:
+  push:
+    branches: [work/rebuild-p3-remediation-20261016]
+    paths: ['docs/rebuild/v2/NATIVE_REQUEST.json']
+permissions:
+  contents: read
+concurrency:
+  group: baram-v2-native-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  windows:
+    if: github.event.repository.private == false
+    runs-on: windows-2025
+    timeout-minutes: 15
+    environment: baram-windows-private
+    env:
+      PYTHONUTF8: '1'
+      GH_TOKEN: ${{ secrets.BARAM_PRIVATE_REPO_TOKEN }}
+      PRIVATE_REPO: irewon1-lgtm/baram-windows-private
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          path: source
+          persist-credentials: false
+      - name: Resolve pinned private input commit without changing settings
+        id: request
+        shell: pwsh
+        run: |
+          $request = Get-Content source/docs/rebuild/v2/NATIVE_REQUEST.json -Raw | ConvertFrom-Json
+          if ($request.schema -ne 'baram.v2.native_request/1') { throw 'Unexpected request schema' }
+          if ($request.vault_commit -notmatch '^[0-9a-f]{40}$') { throw 'Pinned private commit required' }
+          $vault = gh api "repos/$env:PRIVATE_REPO" | ConvertFrom-Json
+          if (-not $vault.private) { throw 'Existing private source vault required' }
+          "vault_commit=$($request.vault_commit)" >> $env:GITHUB_OUTPUT
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ env.PRIVATE_REPO }}
+          ref: ${{ steps.request.outputs.vault_commit }}
+          token: ${{ secrets.BARAM_PRIVATE_REPO_TOKEN }}
+          path: vault
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install evidence libraries
+        shell: pwsh
+        run: |
+          python -m pip install Pillow==11.3.0 cryptography==46.0.3
+          if ($LASTEXITCODE) { throw 'Evidence dependency install failed' }
+      - name: Reconstruct hash-pinned candidate and safely extract into clean directory
+        shell: pwsh
+        run: |
+          python source/tools/rebuild/v2/test_native_windows.py prepare --request source/docs/rebuild/v2/NATIVE_REQUEST.json --vault vault --output private-output
+          if ($LASTEXITCODE) { throw 'Exact private candidate validation failed' }
+      - name: Ordinary EXE with actual Windows SendInput, screenshots, save and restart
+        shell: pwsh
+        run: |
+          python source/tools/rebuild/v2/test_native_windows.py run --request source/docs/rebuild/v2/NATIVE_REQUEST.json --output private-output
+          if ($LASTEXITCODE) { throw 'Native candidate flow failed; encrypted evidence follows' }
+      - name: Publish only non-content result metadata
+        if: always()
+        shell: pwsh
+        run: |
+          python source/tools/rebuild/v2/test_native_windows.py public-summary --request source/docs/rebuild/v2/NATIVE_REQUEST.json --output private-output --summary public-metadata/native-summary.json
+          if ($LASTEXITCODE) { throw 'Native metadata generation failed' }
+      - name: Encrypt all private evidence using existing seal format
+        if: always()
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory private-output -Force | Out-Null
+          if (-not (Test-Path private-output/session-public-key.pem)) {
+            $request = Get-Content source/docs/rebuild/v2/NATIVE_REQUEST.json -Raw | ConvertFrom-Json
+            [System.IO.File]::WriteAllText("$PWD/private-output/session-public-key.pem", $request.encryption_public_key_pem, [System.Text.Encoding]::ASCII)
+          }
+          python source/tools/rebuild/p2/work_platform.py seal --source private-output --public-key private-output/session-public-key.pem --output baram-v2-native.sealed
+          if ($LASTEXITCODE) { throw 'Encryption failed; plaintext upload is prohibited' }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: baram-v2-native-encrypted
+          path: baram-v2-native.sealed
+          if-no-files-found: error
+          retention-days: 1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: baram-v2-native-public-metadata
+          path: public-metadata/native-summary.json
+          if-no-files-found: warn
+          retention-days: 1

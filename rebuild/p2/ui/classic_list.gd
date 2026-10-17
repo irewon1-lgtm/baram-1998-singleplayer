@@ -23,6 +23,7 @@ func clear() -> void:
 func add_item(title: String, icon: Texture2D = null) -> void:
 	var index := entries.size()
 	var button := Button.new()
+	button.mouse_filter=Control.MOUSE_FILTER_PASS
 	button.text = (String.chr(97+index) if index<26 else str(index+1))+":  "+title
 	button.clip_text=true
 	button.tooltip_text=title

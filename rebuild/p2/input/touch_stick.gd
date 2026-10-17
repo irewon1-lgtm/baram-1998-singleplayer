@@ -30,6 +30,9 @@ func _set_point(value: Vector2) -> void:
 
 func _event(event: InputEvent) -> void:
 	if event is InputEventScreenTouch:
+		if event.canceled:
+			if event.index==finger:cancel()
+			accept_event();return
 		if event.pressed and finger<0:
 			finger=event.index;origin=event.position;point=origin;dragging=false
 		elif not event.pressed and event.index==finger:

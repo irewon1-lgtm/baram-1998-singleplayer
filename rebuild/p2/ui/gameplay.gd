@@ -26,6 +26,7 @@ var appearance: OptionButton
 var message: Label
 var status: Label
 var help_text: Label
+var goal_hint: Label
 var panels: TabContainer
 var bag
 var equipment
@@ -59,6 +60,7 @@ var actor_directions: Dictionary = {}
 var actor_walk_until: Dictionary = {}
 var last_state_revision := -1
 var save_failure := false
+var last_save_committed := false
 var smoke := false
 var smoke_request: Dictionary = {}
 var smoke_report := ""
@@ -103,8 +105,8 @@ var feedback_pending_usec := 0
 var visual_feedback_latencies: Array[float] = []
 var profile_timeline: Array = []
 var trace_enabled := false
+var trace_destination := ""
 var last_keyboard_height := 0
-var last_saved_revision := -1
 var save_definitions: Dictionary = {}
 var suppress_emulated_until := 0
 var runtime_monster_map := ""
@@ -134,7 +136,9 @@ func _ready() -> void:
 	get_tree().auto_accept_quit = false
 	_adapt_window_scale()
 	get_window().size_changed.connect(_adapt_window_scale)
-	trace_enabled=not OS.get_environment("BARAM_PLAYABILITY_TRACE").is_empty()
+	trace_destination=OS.get_environment("BARAM_PLAYABILITY_TRACE")
+	trace_enabled=not trace_destination.is_empty() or "--playability-observe" in args or (OS.has_feature("debug") and FileAccess.file_exists("user://playability-observe.enabled"))
+	if trace_enabled and trace_destination.is_empty():trace_destination="user://playability-frame-timeline.jsonl"
 	RenderingServer.frame_post_draw.connect(_presented_feedback)
 	checkpoint("engine", {"version":Engine.get_version_info(),"user_data":OS.get_user_data_dir()})
 	smoke = "--gameplay-smoke" in args
@@ -177,6 +181,7 @@ func _button(parent: Node, title: String, action: Callable, native_multitouch: b
 	button.custom_minimum_size.y = 34
 	button.pressed.connect(func(): _mark_input();action.call())
 	if not native_multitouch:
+		button.mouse_filter=Control.MOUSE_FILTER_PASS
 		parent.add_child(button)
 		return button
 	# Native Button mouse emulation only covers one finger. Handle each real
@@ -185,6 +190,8 @@ func _button(parent: Node, title: String, action: Callable, native_multitouch: b
 	button.set_meta("native_touches",touches)
 	button.gui_input.connect(func(event: InputEvent):
 		if event is InputEventScreenTouch:
+			if event.canceled:
+				touches.erase(event.index);button.accept_event();return
 			if event.pressed:
 				touches[event.index]=true
 			elif touches.has(event.index):
@@ -256,6 +263,8 @@ func _build_ui() -> void:
 	_button(creation,"취소",func(): creation.hide();name_input.clear();message.text="캐릭터를 만들지 않았습니다.")
 	creation.hide()
 	play=VBoxContainer.new();play.size_flags_vertical=Control.SIZE_EXPAND_FILL;root.add_child(play);play.hide()
+	goal_hint=_label(play,"");goal_hint.add_theme_font_size_override("font_size",13)
+	goal_hint.add_theme_color_override("font_color",Color("e9c987"))
 	body=HBoxContainer.new();body.size_flags_vertical=Control.SIZE_EXPAND_FILL;play.add_child(body)
 	view=View.new();view.content=content.assets
 	view.custom_minimum_size=Vector2(220,180)
@@ -408,6 +417,8 @@ func _resize_ui() -> void:
 	help_text.visible=size.y>620
 	if is_instance_valid(dialogue):
 		var keyboard_height:=float(DisplayServer.virtual_keyboard_get_height()) if DisplayServer.has_feature(DisplayServer.FEATURE_VIRTUAL_KEYBOARD) else 0.0
+		var screen_scale_y:=maxf(0.01,float(get_window().size.y)/maxf(1.0,get_viewport_rect().size.y))
+		keyboard_height/=screen_scale_y
 		var available:=Vector2(size.x,maxf(180,size.y-keyboard_height))
 		dialogue.custom_minimum_size=Vector2(minf(300,available.x-16),minf(180,available.y-16))
 		dialogue.size=Vector2(minf(540,available.x-16),minf(500,available.y-16))
@@ -420,6 +431,7 @@ func _close_dialogue() -> void:
 	weapon_name_input=null
 	if DisplayServer.has_feature(DisplayServer.FEATURE_VIRTUAL_KEYBOARD):DisplayServer.virtual_keyboard_hide()
 	get_viewport().gui_release_focus()
+	if trace_enabled:_layout_checkpoint.call_deferred()
 
 func _restore_dialogue_scroll(value: int, npc_id: String, page: int) -> void:
 	await get_tree().process_frame
@@ -476,7 +488,7 @@ func _start_play() -> void:
 	selected_target = ""; current_npc = ""
 	frame_samples.clear();visual_feedback_latencies.clear();input_latencies.clear();profile_timeline.clear()
 	max_process_ms=0;runtime_monster_map="";autosave=0
-	last_saved_revision=-1
+	if trace_enabled:profile_timeline.append({"kind":"clock_sync","us":Time.get_ticks_usec(),"unix_us":int(Time.get_unix_time_from_system()*1000000.0)})
 	get_viewport().gui_release_focus()
 	message.text="지면을 누르거나 드래그해서 이동하세요. 공격은 가까운 몬스터를 자동으로 찾습니다."
 	_stop_motion();visual_positions.clear();map_render_key="";panel_dirty=true
@@ -497,23 +509,31 @@ func _layout_checkpoint() -> void:
 		if (node is Button or node is LineEdit) and node.is_visible_in_tree():
 			var rect: Rect2=node.get_global_rect()
 			controls.append({"class":node.get_class(),"text":str(node.text) if node is Button else "name_input","rect":[rect.position.x,rect.position.y,rect.size.x,rect.size.y]})
-	checkpoint("ui_layout",{"controls":controls,"view_rect":[view.get_global_rect().position.x,view.get_global_rect().position.y,view.size.x,view.size.y],"view_zoom":view.zoom,"character_position":game.state.get("character",{}).duplicate()})
+	checkpoint("ui_layout",{"controls":controls,"view_rect":[view.get_global_rect().position.x,view.get_global_rect().position.y,view.size.x,view.size.y],"view_zoom":view.zoom,"view_focus":[view.focus.x,view.focus.y],"character_position":game.state.get("character",{}).duplicate()})
 
 func _save() -> bool:
 	if game.state.is_empty() or save_path.is_empty(): return false
 	var owner := str(game.state.character.owner_id) if smoke else OWNER
-	if last_saved_revision==int(game.state.revision): autosave=0;return true
 	var save_started:=Time.get_ticks_usec()
-	var receipt: Dictionary = store.write_game(save_path,game.snapshot(),owner,save_definitions)
+	last_save_committed=false
+	var snapshot: Dictionary=game.snapshot()
+	var receipt: Dictionary = store.write_game(save_path,snapshot,owner,save_definitions)
+	if receipt.status=="COMMITTED_ACK_LOST":
+		# The atomic rename already committed. Never roll memory back to a
+		# revision older than disk merely because acknowledgement was lost.
+		last_save_committed=true
+		var confirmed: Dictionary=store.read_game(save_path,owner,save_definitions)
+		if confirmed.has("payload") and store._canonical(confirmed.payload)==store._canonical(snapshot):
+			receipt={"status":"SAVED","reason":"COMMIT_CONFIRMED_BY_READBACK","revision":int(snapshot.revision)}
 	save_receipts.append({"status":receipt.status,"revision":game.state.revision,"time":clock,"duration_ms":float(Time.get_ticks_usec()-save_started)/1000.0})
-	if trace_enabled: profile_timeline.append({"kind":"save","us":Time.get_ticks_usec(),"status":receipt.status,"revision":game.state.revision,"duration_ms":float(Time.get_ticks_usec()-save_started)/1000.0})
+	if trace_enabled: profile_timeline.append({"kind":"save","us":Time.get_ticks_usec(),"status":receipt.status,"revision":game.state.revision,"duration_ms":float(Time.get_ticks_usec()-save_started)/1000.0,"phases":store.last_timings.duplicate()})
 	if save_receipts.size()>64: save_receipts.pop_front()
 	if receipt.status not in ["SAVED","UNCHANGED","OK"]:
 		save_failure = true
 		message.text="저장 실패 · 진행을 보존하고 행동을 중지합니다: "+str(receipt.status)+" "+str(receipt.get("reason",""))
 		checkpoint("save_failed",receipt)
 		return false
-	last_saved_revision=int(game.state.revision);autosave=0
+	autosave=0
 	checkpoint("save",{"revision":game.state.revision,"status":receipt.status,"duration_ms":float(Time.get_ticks_usec()-save_started)/1000.0})
 	return true
 
@@ -525,7 +545,9 @@ func _dispatch(command: Dictionary) -> Dictionary:
 		command["request_id"] = "ui:"+str(int(game.state.request_watermarks.get("ui",0))+1)
 	var result: Dictionary = game.command(command)
 	if result.get("changed",false) and str(command.type) not in ["move","attack","cast"]:
-		if not _save(): game.state=before; return {"status":"SAVE_FAILED","events":[]}
+		if not _save():
+			if not last_save_committed:game.state=before
+			return {"status":"SAVE_FAILED","events":[]}
 	_consume_events(result.get("events",[]))
 	if result.status not in ["OK","DUPLICATE","CANCELLED"] and (result.reason not in ["ACTION_COOLDOWN","MOVE_COOLDOWN"] or command.type in ["attack","cast"]):
 		message.text = _reason(str(result.reason))
@@ -622,7 +644,8 @@ func _process(delta: float) -> void:
 			var critical:=false
 			for event in result.get("events",[]):
 				if str(event.type) in ["monster_died","skill_applied","player_died","level_up"]: critical=true
-			if critical and not _save(): game.state=before
+			if critical and not _save():
+				if not last_save_committed:game.state=before
 			else: _consume_events(result.get("events",[]))
 			if autosave>=3.0: _save()
 			if not dialogue.visible: _advance_movement()
@@ -710,6 +733,7 @@ func _return_menu() -> void:
 	_stop_motion();_performance_checkpoint();game.state={};play.hide();menu.show();dialogue.hide()
 	if is_instance_valid(mobile_controls): mobile_controls.hide()
 	_refresh_characters(); message.text="저장했습니다. 이어 하기에서 같은 진행을 불러올 수 있습니다."
+	if trace_enabled:_layout_checkpoint.call_deferred()
 
 func _nearest_npc() -> String:
 	var best := ""; var distance := 999
@@ -859,6 +883,12 @@ func _show_dialogue(id: String, page: int = 0, preserve_scroll: bool = false) ->
 	_restore_dialogue_scroll(previous_scroll,id,dialogue_page)
 	if trace_enabled:_layout_checkpoint.call_deferred()
 
+func _refresh_open_dialogue(npc_id: String, page: int, preserve_scroll: bool) -> void:
+	# Rebuild rows only after the input callback has returned; a queued refresh
+	# must not reopen a window the player has already closed.
+	if dialogue.visible and current_npc==npc_id and dialogue_page==page:
+		_show_dialogue(npc_id,page,preserve_scroll)
+
 func _render_dialogue_page() -> void:
 	for child in dialogue_body.get_children(): dialogue_body.remove_child(child);child.queue_free()
 	for child in dialogue_pager.get_children(): dialogue_pager.remove_child(child);child.queue_free()
@@ -876,7 +906,7 @@ func _render_dialogue_page() -> void:
 		var action:=func():
 			if str(command.type)=="rename_weapon" and is_instance_valid(weapon_name_input): command.name=weapon_name_input.text.strip_edges()
 			var result: Dictionary=_dispatch(command)
-			if result.get("changed",false): _show_dialogue(current_npc,dialogue_page,true)
+			if result.get("changed",false): _refresh_open_dialogue.call_deferred(current_npc,dialogue_page,true)
 		var button:=_button(dialogue_body,str(row.label),action,false)
 		button.custom_minimum_size.y=44
 		button.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
@@ -884,13 +914,13 @@ func _render_dialogue_page() -> void:
 		button.disabled=bool(row.get("disabled",false))
 	if dialogue_rows.size()>DIALOGUE_PAGE_SIZE:
 		var pages:=dialogue_pager
-		var previous:=_button(pages,"이전",func(): dialogue_page-=1;_render_dialogue_page())
+		var previous:=_button(pages,"이전",func(): dialogue_page-=1;_refresh_open_dialogue.call_deferred(current_npc,dialogue_page,false))
 		previous.disabled=dialogue_page==0
 		var page_label:=_label(pages,str(dialogue_page+1)+" / "+str(ceili(float(dialogue_rows.size())/DIALOGUE_PAGE_SIZE)))
 		page_label.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 		page_label.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
 		page_label.custom_minimum_size.x=90
-		var next:=_button(pages,"다음",func(): dialogue_page+=1;_render_dialogue_page())
+		var next:=_button(pages,"다음",func(): dialogue_page+=1;_refresh_open_dialogue.call_deferred(current_npc,dialogue_page,false))
 		next.disabled=start+DIALOGUE_PAGE_SIZE>=dialogue_rows.size()
 	dialogue_scroll.scroll_vertical=0
 	if trace_enabled:_layout_checkpoint.call_deferred()
@@ -903,7 +933,7 @@ func _show_map() -> void:
 	var c: Dictionary=game.state.character
 	var map: Dictionary=content.data.maps[c.map_id]
 	_label(dialogue_body,str(map.name)+" · "+str(int(c.x))+", "+str(int(c.y)))
-	var overview:=OriginalView.new();overview.content=content.assets
+	var overview:=OriginalView.new();overview.content=content.assets;overview.mouse_filter=Control.MOUSE_FILTER_IGNORE
 	var extent:=Vector2(float(map.width)*24,float(map.height)*24)
 	overview.custom_minimum_size=Vector2(280,210);dialogue_body.add_child(overview)
 	var layers: Array=map.get("ground_layers",[]).duplicate()
@@ -1032,6 +1062,20 @@ func _refresh_panels() -> void:
 
 func _refresh_vitals() -> void:
 	var c: Dictionary=game.state.character
+	if c.job=="commoner":
+		goal_hint.text="다음 목표 · 남문 밖에서 토끼·다람쥐 사냥 → 5레벨에 네 직업 중 선택" if int(c.level)<5 else "전직할 수 있습니다 · 지도를 열어 원하는 직업의 길드를 찾아가세요."
+	elif game.state.skills.is_empty():
+		var acorns:=0;var meat:=0
+		for item in game.state.inventory:
+			if str(item.item_id)=="KRO-ITEM-1ec5d43f9e157e":acorns+=int(item.quantity)
+			if str(item.item_id)=="gp:item:rabbit_meat":meat+=int(item.quantity)
+		goal_hint.text="다음 목표 · 사범에게 기술 배우기 · 귀환 재료: 도토리 %d/10 · 토끼고기 %d/10" % [acorns,meat]
+	else:
+		goal_hint.text="다음 목표 · 배운 기술과 새 장비로 사냥터 탐험 · 전리품은 상점 판매·학습·제작에 사용"
+	for instance in game.state.inventory:
+		if str(instance.instance_id)==str(game.state.equipment.get("weapon","")) and int(instance.durability)<=0:
+			goal_hint.text="무기가 부서졌습니다 · 대장간에서 수리하거나 새 무기로 바꾸세요."
+			break
 	hp_bar.max_value=c.hp_max;hp_bar.value=c.hp;hp_bar.tooltip_text="체력 "+str(int(c.hp))+" / "+str(int(c.hp_max))
 	mp_bar.max_value=c.mp_max;mp_bar.value=c.mp;mp_bar.tooltip_text="마력 "+str(int(c.mp))+" / "+str(int(c.mp_max))
 	status.text=str(c.name)+" · "+_job_name(str(c.job))+" Lv"+str(c.level)+"\n체력 "+str(int(c.hp))+"/"+str(int(c.hp_max))+"  마력 "+str(int(c.mp))+"/"+str(int(c.mp_max))+"\n경험치 "+str(int(c.xp))+" · "+str(int(c.money))+"전\n"+str(content.data.maps[c.map_id].name)+( " · 귀신" if c.dead else "")
@@ -1084,8 +1128,7 @@ func _performance_checkpoint() -> void:
 		if sample>100:over100+=1
 	checkpoint("frame_timing",{"max_ms":samples[-1] if not samples.is_empty() else -1,"over50ms":over50,"over100ms":over100,"render_feedback_p95_ms":_percentile(visual_latency,0.95),"render_feedback_scope":"engine frame_post_draw; OS presentation requires external device/frame correlation","save_receipts":save_receipts})
 	if trace_enabled:
-		var trace_path:=OS.get_environment("BARAM_PLAYABILITY_TRACE")
-		var trace_file:=FileAccess.open(trace_path,FileAccess.WRITE)
+		var trace_file:=FileAccess.open(trace_destination,FileAccess.WRITE)
 		if trace_file:
 			for row in profile_timeline: trace_file.store_line(JSON.stringify(row))
 			trace_file.flush()
@@ -1101,6 +1144,10 @@ func _render_world() -> void:
 	var world_zoom:=1.65 if size.x>=1000 else 1.25
 	var player_position:=_visual_point("player",float(c.x),float(c.y))
 	var camera:=player_position*24+Vector2(12,12)
+	var extent:=Vector2(float(map.width)*24,float(map.height)*24)
+	var half_view: Vector2=view.size/(2.0*world_zoom)
+	camera.x=clampf(camera.x,half_view.x,extent.x-half_view.x) if extent.x>=2.0*half_view.x else extent.x*0.5
+	camera.y=clampf(camera.y,half_view.y,extent.y-half_view.y) if extent.y>=2.0*half_view.y else extent.y*0.5
 	var visible_world:=Rect2(camera-view.size/(2*world_zoom),view.size/world_zoom).grow(24)
 	var layers: Array = map.get("ground_layers",[]).duplicate()
 	if layers.is_empty() and map.has("floor_png"): layers.append({"path":map.floor_png,"x":0,"y":0})
