@@ -13,13 +13,20 @@ def fingerprint(path):
     return {'file':str(path),'bytes':path.stat().st_size,'sha256':hashlib.sha256(path.read_bytes()).hexdigest()} if path.exists() else {'file':str(path),'status':'ABSENT'}
 
 
+def find_host_environment(root):
+    for parent in root.parents:
+        candidate=parent/'HOST_ENVIRONMENT.json'
+        if candidate.is_file():return candidate
+    return root/'HOST_ENVIRONMENT.json'
+
+
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('directory',type=Path)
     parser.add_argument('--analyzer',type=Path,default=Path(__file__).with_name('analyze_playability.py'))
     args=parser.parse_args();root=args.directory.resolve();analyzer=args.analyzer.resolve()
     paths=[root/name for name in ['OS_PLAYABILITY.json','journey-frame-timeline.jsonl','restart-frame-timeline.jsonl','os-input-timeline.jsonl','external-rss.jsonl']]
-    paths.append(root.parents[1]/'HOST_ENVIRONMENT.json')
+    paths.append(find_host_environment(root))
     result=json.loads((root/'OS_PLAYABILITY.json').read_text())
     if not result.get('final') and not result.get('before_restart'):paths.extend(sorted(root.glob('data/*/gameplay-p3/characters/*.json')))
     before=[fingerprint(path) for path in paths];tool_before=fingerprint(analyzer)

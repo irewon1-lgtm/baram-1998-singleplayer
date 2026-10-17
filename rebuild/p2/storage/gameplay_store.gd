@@ -182,11 +182,18 @@ func _verified_cached_decode(text: String, owner: String, content: Dictionary, i
 			return entry.decoded.duplicate(isolate)
 	return {}
 
-func _verified_written_metadata(text: String, owner: String, content: Dictionary) -> Dictionary:
+func _decoded_metadata(decoded: Dictionary) -> Dictionary:
+	# Only successful private decodes reach this helper. Migration approval is
+	# preserved; metadata alone must never suppress source-archive handling.
+	return {"status":"OK","reason":decoded.get("reason",""),"revision":decoded.revision,"migration_required":decoded.get("migration_required",false)}
+
+func _verified_cached_metadata(text: String, owner: String, content: Dictionary) -> Dictionary:
 	if _validation_engine == null or content != _validation_engine.data: return {}
 	for entry in _decoded_cache:
-		if entry.owner == owner and entry.text == text and entry.has("written_revision"):
-			return {"status":"OK","revision":entry.written_revision,"migration_required":false}
+		if entry.owner == owner and entry.text == text:
+			if entry.has("written_revision"):
+				return {"status":"OK","revision":entry.written_revision,"migration_required":false}
+			if entry.decoded.get("status") == "OK": return _decoded_metadata(entry.decoded)
 	return {}
 
 func _remember_decode(text: String, owner: String, decoded: Dictionary, owned: bool = false) -> void:
@@ -436,19 +443,24 @@ func _decode(text: String, owner: String, content: Dictionary, isolate: bool = t
 	return decoded
 
 func _decode_uncached(text: String, owner: String, content: Dictionary) -> Dictionary:
-	if text.to_utf8_buffer().size() > MAX_BYTES: return result("SAVE_SIZE_LIMIT")
+	var utf8 := text.to_utf8_buffer()
+	if utf8.size() > MAX_BYTES: return result("SAVE_SIZE_LIMIT")
 	var depth := 0
 	var quoted := false
 	var escaped := false
-	for c in text:
+	# JSON structure uses ASCII only. Non-ASCII UTF-8 bytes are inert here;
+	# preserve the original quote/escape/depth order and let JSON.parse retain
+	# responsibility for malformed quotes, negative/final depth and escapes.
+	for c in utf8:
 		if escaped: escaped=false
-		elif quoted and c=="\\": escaped=true
-		elif c=='"': quoted=not quoted
+		elif quoted and c==92: escaped=true
+		elif c==34: quoted=not quoted
 		elif not quoted:
-			if c in ["{","["]:
+			if c==123 or c==91:
 				depth+=1
 				if depth>24: return result("SAVE_DEPTH_LIMIT")
-			elif c in ["}","]"]: depth-=1
+			elif c==125 or c==93: depth-=1
+	utf8.clear()
 	var parser := JSON.new()
 	if parser.parse(text) != OK or typeof(parser.data) != TYPE_DICTIONARY: return result("CORRUPT","json")
 	var doc: Dictionary = parser.data
@@ -503,8 +515,16 @@ func _read_one(path: String, owner: String, content: Dictionary, isolate: bool =
 	var text := bytes.get_string_from_utf8()
 	if bytes != text.to_utf8_buffer(): return result("CORRUPT","utf8")
 	if metadata_only:
-		var metadata := _verified_written_metadata(text,owner,content)
+		var metadata := _verified_cached_metadata(text,owner,content)
 		if not metadata.is_empty(): return metadata
+		# Writer-only cold path: all unknown-byte size/depth/JSON/checksum/
+		# owner/content/migration/semantic checks still execute. The parsed
+		# result has no external owner, so transfer it to the private cache
+		# rather than deep-copying a full world for an unused caller payload.
+		var decoded := _decode_uncached(text,owner,content)
+		if decoded.status != "OK": return decoded
+		_remember_decode(text,owner,decoded,true)
+		return _decoded_metadata(decoded)
 	return _decode(text,owner,content,isolate)
 
 func read_game(path: String, owner: String, content: Dictionary) -> Dictionary:

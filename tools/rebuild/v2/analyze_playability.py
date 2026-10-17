@@ -35,19 +35,29 @@ def normalized_key(name):
     return {'enter':'return','esc':'escape',' ':'space','spacebar':'space'}.get(name,name)
 
 
+def find_host_environment(root):
+    for parent in root.parents:
+        candidate=parent/'HOST_ENVIRONMENT.json'
+        if candidate.is_file():return candidate
+    return root/'HOST_ENVIRONMENT.json'
+
+
 def os_event_metrics(trace, operator, sync, lower=-float('inf'), upper=float('inf')):
     """Keep the new OS-receipt definition separate from legacy input metrics."""
     def unix_us(row): return sync['unix_us']+row['us']-sync['us']
-    received=[r for r in trace if r.get('kind')=='os_input_received']
-    if not sync or not received:
+    all_received=[r for r in trace if r.get('kind')=='os_input_received']
+    if not sync or not all_received:
         return {'OS_event_received_to_frame_post_draw':distribution([]),
                 'OS_command_to_matched_OS_event_received':distribution([]),
                 'OS_command_to_matched_OS_event_frame_post_draw':distribution([]),
                 'OS_event_matching':{'status':'NOT_RUN','reason':'New OS-receipt trace event type is absent, or no clock sync.'}}
-    received=[r for r in received if lower<=unix_us(r)<=upper]
+    received=[r for r in all_received if lower<=unix_us(r)<=upper]
     feedback={r['event_id']:r for r in trace if r.get('kind')=='os_event_frame_post_draw_feedback'}
+    all_presses=[r for r in all_received if r.get('pressed') and not r.get('echo',False) and not r.get('canceled',False)]
     presses=[r for r in received if r.get('pressed') and not r.get('echo',False) and not r.get('canceled',False)]
-    actions=[r for r in operator if r.get('kind') in ['key','mouse_click'] and lower<=r['wall_unix_ns']/1000<=upper]
+    all_actions=[r for r in operator if r.get('kind') in ['key','mouse_click']]
+    selected=[(index,r) for index,r in enumerate(all_actions) if lower<=r['wall_unix_ns']/1000<=upper]
+    actions=[r for _,r in selected]
     def event_key(row):
         name=row.get('physical_key_name') or row.get('physical_key_string')
         if name:return normalized_key(name)
@@ -61,39 +71,53 @@ def os_event_metrics(trace, operator, sync, lower=-float('inf'), upper=float('in
         return (event.get('event_type')=='mouse_button' and event.get('button')==action.get('button',1)
                 and abs(event.get('x',float('inf'))-action['x'])<=2
                 and abs(event.get('y',float('inf'))-action['y'])<=2)
-    used=set();matches=[];receipt_delays=[];render_delays=[]
-    for index,action in enumerate(actions):
+    # A single initial wall/engine clock anchor drifts during long runs. The
+    # previous timestamp lower bound stole later repeated-key events when a
+    # real receipt projected just before its command. Correlate only a unique
+    # complete ordered signature sequence, independently of both clocks.
+    starts=[]
+    if all_presses and len(all_presses)<=len(all_actions):
+        starts=[start for start in range(len(all_actions)-len(all_presses)+1)
+                if all(compatible(all_actions[start+offset],event) for offset,event in enumerate(all_presses))]
+    pairing={starts[0]+offset:event for offset,event in enumerate(all_presses)} if len(starts)==1 else {}
+    phase_ids={r['event_id'] for r in presses}
+    used=set();matches=[];receipt_residuals=[];render_residuals=[]
+    for index,action in selected:
         t=action['wall_unix_ns']/1000
-        candidates=[r for r in presses if r['event_id'] not in used and unix_us(r)>=t and compatible(action,r)]
-        if not candidates:
-            matches.append({'action':action,'status':'UNMATCHED'});continue
-        event=min(candidates,key=lambda r:(r['us'],r['event_id']))
+        event=pairing.get(index)
+        if event is None:
+            matches.append({'action':action,'status':'AMBIGUOUS' if len(starts)>1 else 'UNMATCHED'});continue
+        if event['event_id'] not in phase_ids:
+            matches.append({'action':action,'event':event,'status':'OUTSIDE_RECEIPT_PHASE'});continue
         used.add(event['event_id']);draw=feedback.get(event['event_id'])
-        later_compatible=[a for a in actions[index+1:] if a['wall_unix_ns']/1000<=unix_us(event) and compatible(a,event)]
         row={'action':action,'status':'MATCHED','event':event,
-             'command_to_received_ms':round((unix_us(event)-t)/1000,3),
-             'ambiguous_crosses_later_compatible_command':bool(later_compatible)}
-        receipt_delays.append((unix_us(event)-t)/1000)
+             'signed_command_to_received_clock_residual_ms':round((unix_us(event)-t)/1000,3)}
+        receipt_residuals.append((unix_us(event)-t)/1000)
         if draw:
-            row['feedback']=draw;row['command_to_frame_post_draw_ms']=round((unix_us(draw)-t)/1000,3)
-            render_delays.append((unix_us(draw)-t)/1000)
+            row['feedback']=draw;row['signed_command_to_frame_post_draw_clock_residual_ms']=round((unix_us(draw)-t)/1000,3)
+            render_residuals.append((unix_us(draw)-t)/1000)
         matches.append(row)
     all_feedback=[feedback[r['event_id']]['elapsed_ms'] for r in received if r['event_id'] in feedback]
     press_feedback=[feedback[r['event_id']]['elapsed_ms'] for r in presses if r['event_id'] in feedback]
     return {'OS_event_received_to_frame_post_draw':distribution(press_feedback),
             'OS_event_all_received_to_frame_post_draw':distribution(all_feedback),
             'OS_event_received_to_frame_post_draw_by_type':{kind:distribution(feedback[r['event_id']]['elapsed_ms'] for r in presses if r['event_id'] in feedback and r.get('event_type')==kind) for kind in sorted({r.get('event_type','unknown') for r in presses})},
-            'OS_command_to_matched_OS_event_received':distribution(receipt_delays),
-            'OS_command_to_matched_OS_event_frame_post_draw':distribution(render_delays),
+            'OS_command_to_matched_OS_event_received':{'n':0,'status':'NOT_VALIDATED_CLOCK_ALIGNMENT','signature_correlated_pairs':len(receipt_residuals)},
+            'OS_command_to_matched_OS_event_frame_post_draw':{'n':0,'status':'NOT_VALIDATED_CLOCK_ALIGNMENT','signature_correlated_pairs_with_feedback':len(render_residuals)},
+            'OS_command_to_OS_event_signed_clock_residual':{**distribution(receipt_residuals),'negative_n':sum(v<0 for v in receipt_residuals),'scope':'Signed residual under one initial cross-clock projection; clock drift is not calibrated. Not input latency. No negative values clamped, removed or offset-fitted.'},
+            'OS_command_to_OS_post_draw_signed_clock_residual':{**distribution(render_residuals),'negative_n':sum(v<0 for v in render_residuals),'scope':'Signed residual under one initial cross-clock projection; clock drift is not calibrated. Not command-to-presentation latency.'},
             'OS_event_matching':{'status':'OBSERVED' if received else 'NOT_RUN','all_received_events':len(received),
                 'non_echo_presses':len(presses),'echo_events':sum(bool(r.get('echo')) for r in received),
                 'release_events':sum(not r.get('pressed') for r in received),
                 'press_feedback_missing':sum(r['event_id'] not in feedback for r in presses),
-                'logged_commands':len(actions),'matched_commands':len(receipt_delays),'unmatched_commands':len(actions)-len(receipt_delays),
-                'matched_render_feedback':len(render_delays),'unmatched_engine_presses':len(presses)-len(used),
-                'ambiguous_crosses_later_compatible_command':sum(r.get('ambiguous_crosses_later_compatible_command',False) for r in matches),
+                'logged_commands':len(actions),'matched_commands':len(receipt_residuals),'unmatched_commands':len(actions)-len(receipt_residuals),
+                'matched_render_feedback':len(render_residuals),'unmatched_engine_presses':len(presses)-len(used),
+                'signature_sequence_status':'EXACT_UNIQUE_ORDERED_SEQUENCE' if len(starts)==1 else 'AMBIGUOUS_SEQUENCE' if starts else 'NO_COMPLETE_SEQUENCE_ALIGNMENT',
+                'candidate_command_sequence_starts':starts,'global_logged_commands':len(all_actions),'global_engine_presses':len(all_presses),
+                'global_signature_correlated_pairs':len(pairing),'ambiguous_commands':sum(r['status']=='AMBIGUOUS' for r in matches),
+                'outside_receipt_phase_commands':sum(r['status']=='OUTSIDE_RECEIPT_PHASE' for r in matches),
                 'key_presses_without_name_or_ascii_code':sum(r.get('event_type')=='key' and event_key(r) is None for r in presses),
-                'latency_outliers_removed':0,'method':'Chronological one-to-one FIFO matching of non-echo presses by normalized physical key name, or mouse button and viewport x/y within 2px. No latency cutoff; a match that crosses a later compatible command is retained and flagged as ambiguous. Logged timestamps follow window focus and precede the remaining xdotool subprocess/mousemove/key or click calls. Engine post-draw is not physical display presentation.'},
+                'latency_outliers_removed':0,'method':'Unique complete contiguous ordered signature alignment of non-echo presses by normalized physical key name or mouse button and viewport x/y within 2px. No timestamp lower bound or latency cutoff. Ambiguous or incomplete sequence alignments are not forced. Signed cross-clock residuals retain negatives without calibration and cannot validate command latency. Receipt-to-draw uses event_id within the same engine clock.'},
             'OS_event_matching_records':matches}
 
 
@@ -172,7 +196,7 @@ def main():
              'video_validation':result.get('video_validation'),
              'limits':[
                  'Unaccelerated OS XTEST is automated input, not human play.',
-                 'Full-session trace metrics mean every retained active-play frame/save/input event. The frozen app returns before frame tracing when state is empty or play is hidden; initial menus and full startup/loading intervals do not have frame events. Raw unedited video includes those visible intervals.',
+                 'Top-level trace metrics mean every retained active-play event in the first process journey file. The independent restart table covers its separate clock and trace. Initial menus and full startup/loading intervals have no active-play frame events; recorded video covers visible transitions after its recording-start marker.',
                  'Save-to-menu profiling flushes accumulated trace data after the last active play frame; this instrumented flush is visible in video but is not an active-play frame sample.',
                  'Linux llvmpipe is not native Windows, Android or Galaxy performance.',
                  'Engine delta may be smoothed; engine wall interval is elapsed between process trace points.',
@@ -190,6 +214,7 @@ def main():
     summary['restart_active_play']['scope']='Independent restarted game-process active-play trace, read once with its own clock sync. Initial menu/loading time has no active-play frames; raw video covers the recorded restart transition. No cross-process frame interval is computed.'
     summary['restart_active_play']['trace_file']=str(restart_path)
     summary['restart_active_play']['trace_sha256']=hashlib.sha256(restart_path.read_bytes()).hexdigest() if restart_path.exists() else None
+    summary['legacy_command_envelope_scope']='The unchanged legacy envelope uses one initial cross-clock projection and semantic input callbacks. It is retained for historical comparison; it does not validate absolute OS-command latency, particularly when clocks drift.'
     if not result.get('final') and not result.get('before_restart'):
         committed=[]
         for saved in sorted(root.glob('data/*/gameplay-p3/characters/*.json')):
@@ -253,7 +278,7 @@ def main():
     summary['external_memory']={'samples':len(rss),'first':rss[0] if rss else None,'last':rss[-1] if rss else None,'scope':'Host RSS under accumulating per-frame tracing; not a product leak determination.'}
     summary['engine_static_memory']={'first_bytes':frames[0].get('memory_bytes') if frames else None,'last_bytes':frames[-1].get('memory_bytes') if frames else None}
     summary['environment']={**result.get('environment',{}),'renderer':'OpenGL Compatibility / Mesa llvmpipe software rendering','isolation':'Not an isolated hardware benchmark. See timestamped HOST_ENVIRONMENT evidence and separate preliminary-session contenders. No physical target-device, battery or thermal claim.'}
-    host=root.parents[1]/'HOST_ENVIRONMENT.json'
+    host=find_host_environment(root)
     summary['host_environment_reference']={'file':str(host),'sha256':hashlib.sha256(host.read_bytes()).hexdigest(),'details':json.loads(host.read_text())} if host.exists() else {'status':'NOT_FOUND'}
     stress_start=next((r for r in operator if r.get('name')=='continuous_stress_started'),None)
     stress_end=next((r for r in reversed(operator) if r.get('name')=='requested_play_duration_completed'),None)
@@ -273,15 +298,22 @@ def main():
         summary['continuous_stress']['over100ms_wall_incidents']=[row for row in summary.get('over100ms_wall_incidents',[]) if lo<=row['unix_us']<=hi]
         summary['continuous_stress']['scope']='Every frame, input feedback and save from explicit preregistered stress-start marker through completed duration marker or explicit failure marker, including loading and interactions within that phase. An interrupted phase is not a completed duration PASS. Full-session tail retained separately.'
         summary['continuous_stress'].update(os_event_metrics(trace,operator,sync,lo,hi))
-    if result.get('targeted_followup') or result.get('transaction_followup') or result.get('resume_continuous'):
+    if result.get('targeted_followup') or result.get('transaction_followup') or result.get('resume_continuous') or result.get('cold_resume_probe'):
         summary['limits']=[s for s in summary['limits'] if not s.startswith('The long-session operator missed')]
         summary['exact_pack_sha256']=result.get('exact_pack_sha256')
         summary['continued_naturally_earned_data']=result.get('continued_naturally_earned_data')
+    if result.get('cold_resume_probe'):
+        phases=sorted({r['phase'] for r in result.get('observations',[]) if r.get('phase')})
+        summary['cold_resume_probe_scope']={'scope':'Process-cold ordinary OS resume probe only; this is not1800-second long-play or physical cold-disk/device certification. Each child trace has its own process clock.','phases':phases,'requested_seconds':result['requested_seconds']}
+        summary['top_level_metric_scope']='Independent '+('/'.join(phases) or 'cold-resume')+' active-play trace from this child directory only. No concatenation with another process; whole shared video is identified in the OS report.'
     fps=result.get('performance_checkpoints',[])
     if result.get('controlled_capture_comparison'):
         summary['limits']=[line for line in summary['limits'] if not line.startswith('Recording off/on samples reuse')]
         summary['limits'].append('Capture comparison is one sequential30-second off/on pair using the same ordinary directional sequence, without randomized ABBA order or confidence intervals; it does not establish physical-device overhead.')
         summary['limits'].append('Raw video begins at the video_recording_started OS marker, after the unrecorded warmup/off comparison. It includes the on comparison, continuous stress and later recorded menus/restart; the initial launch and off interval exist in OS/engine traces without video.')
+    elif not summary['recording_comparison']:
+        summary['limits']=[line for line in summary['limits'] if not line.startswith('Recording off/on samples reuse')]
+        summary['capture_comparison_scope']={'status':'NOT_RUN_IN_THIS_SESSION','scope':'A separate controlled preflight, when present, is distinct evidence; no off/on sample is implied here.'}
     summary['performance_checkpoints']=fps
     summary['all_frame_data_sha256']=hashlib.sha256((root/'journey-frame-timeline.jsonl').read_bytes()).hexdigest()
     summary['target_assessment']={

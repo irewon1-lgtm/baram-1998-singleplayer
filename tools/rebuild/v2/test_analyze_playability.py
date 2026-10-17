@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """Synthetic clock/correlation checks; this does not run the game."""
 import unittest
+import tempfile
+from pathlib import Path
 
-from analyze_playability import os_event_metrics, active_process_metrics
+from analyze_playability import os_event_metrics, active_process_metrics, find_host_environment
+from run_playability_analysis import find_host_environment as find_receipt_host
 
 
 class OSReceiptAnalysis(unittest.TestCase):
@@ -33,8 +36,9 @@ class OSReceiptAnalysis(unittest.TestCase):
         self.assertEqual(result['OS_event_received_to_frame_post_draw']['n'], 3)
         self.assertEqual(result['OS_event_received_to_frame_post_draw']['max_ms'], 20)
         self.assertEqual(result['OS_event_all_received_to_frame_post_draw']['n'], 5)
-        self.assertEqual(result['OS_command_to_matched_OS_event_received']['max_ms'], 1400)
-        self.assertEqual(result['OS_command_to_matched_OS_event_frame_post_draw']['max_ms'], 1420)
+        self.assertEqual(result['OS_command_to_matched_OS_event_received']['status'], 'NOT_VALIDATED_CLOCK_ALIGNMENT')
+        self.assertEqual(result['OS_command_to_OS_event_signed_clock_residual']['max_ms'], 1400)
+        self.assertEqual(result['OS_command_to_OS_post_draw_signed_clock_residual']['max_ms'], 1420)
         self.assertEqual(result['OS_event_matching']['matched_commands'], 3)
         self.assertEqual(result['OS_event_matching']['latency_outliers_removed'], 0)
 
@@ -50,16 +54,41 @@ class OSReceiptAnalysis(unittest.TestCase):
         self.assertEqual(result['OS_event_matching']['matched_commands'], 1)
         self.assertEqual(result['OS_event_received_to_frame_post_draw']['n'], 1)
 
-    def test_late_ambiguous_receipt_is_retained_and_flagged(self):
+    def test_repeated_signature_ambiguity_is_not_forced(self):
+        self.trace=[]
+        self.event(4,1_600_000,1_620_000,event_type='key',physical_keycode=90)
         actions = [self.actions[2], dict(self.actions[2], wall_unix_ns=1_300_000_000)]
         result = os_event_metrics(self.trace, actions, self.sync)
-        self.assertEqual(result['OS_event_matching']['ambiguous_crosses_later_compatible_command'], 1)
-        self.assertEqual(result['OS_command_to_matched_OS_event_received']['max_ms'], 1400)
+        self.assertEqual(result['OS_event_matching']['ambiguous_commands'], 2)
+        self.assertEqual(result['OS_event_matching']['matched_commands'], 0)
+        self.assertEqual(result['OS_event_matching']['signature_sequence_status'], 'AMBIGUOUS_SEQUENCE')
+
+    def test_clock_drift_does_not_steal_later_repeated_key(self):
+        self.trace=[]
+        names=['Left','Space','Space','Z'];times=[10_000,99_000,198_000,297_000]
+        actions=[{'kind':'key','key':key,'wall_unix_ns':(1_000_000+index*100_000)*1000} for index,key in enumerate(['Left','space','space','z'])]
+        for index,(key,received) in enumerate(zip(names,times)):
+            self.event(index,received,received+10_000,event_type='key',physical_key_name=key)
+        result=os_event_metrics(self.trace,actions,self.sync)
+        self.assertEqual(result['OS_event_matching']['matched_commands'],4)
+        self.assertEqual(result['OS_event_matching']['signature_sequence_status'],'EXACT_UNIQUE_ORDERED_SEQUENCE')
+        self.assertEqual(result['OS_event_received_to_frame_post_draw']['max_ms'],10)
+        self.assertEqual(result['OS_command_to_OS_event_signed_clock_residual']['negative_n'],3)
+        self.assertEqual(result['OS_command_to_OS_event_signed_clock_residual']['p50_ms'],-1.5)
+        self.assertEqual(result['OS_command_to_matched_OS_event_received']['status'],'NOT_VALIDATED_CLOCK_ALIGNMENT')
 
     def test_old_trace_is_not_run(self):
         result = os_event_metrics([], self.actions, self.sync)
         self.assertEqual(result['OS_event_matching']['status'], 'NOT_RUN')
         self.assertEqual(result['OS_event_received_to_frame_post_draw']['status'], 'NOT_RUN')
+
+    def test_nested_cold_probe_and_receipt_bind_same_host_environment(self):
+        with tempfile.TemporaryDirectory() as directory:
+            evidence=Path(directory)/'evidence';evidence.mkdir()
+            host=evidence/'HOST_ENVIRONMENT.json';host.write_text('{}')
+            child=evidence/'b5-play'/'cold-probe'/'restart-process';child.mkdir(parents=True)
+            self.assertEqual(find_host_environment(child),host)
+            self.assertEqual(find_receipt_host(child),host)
 
     def test_restart_uses_own_reset_clock_and_retains_cold_tail(self):
         trace = [
@@ -83,7 +112,7 @@ class OSReceiptAnalysis(unittest.TestCase):
         self.assertEqual(result['save_phases']['total_ms']['over100ms'],1)
         self.assertEqual(result['OS_event_matching']['logged_commands'],1)
         self.assertEqual(result['OS_event_matching']['matched_commands'],1)
-        self.assertEqual(result['OS_command_to_matched_OS_event_received']['max_ms'],.5)
+        self.assertEqual(result['OS_command_to_OS_event_signed_clock_residual']['max_ms'],.5)
         self.assertEqual(len(result['over100ms_wall_incidents']),1)
 
 

@@ -1,0 +1,133 @@
+{
+  "schema": "baram.r13-completed-cold-failure/1",
+  "source_commit": "4a0c8d796e65a0493207221f2eb60b78d006c681",
+  "status": "FUNCTIONAL_26_PASS_COLD_SAVE_PERFORMANCE_FAIL",
+  "continuous_seconds": 1806.054283267,
+  "wall_seconds": 1825.74,
+  "scope": "Completed prior r13 exact-PCK1806seconds is retained history; not new r14 store candidate proof. All26 normal-OS functional checks passed including in-phase same-kind weapon sale, repurchase, newinstance equip, combat, loot, return, save and newprocessContinue. No stronger weapon upgrade claim.",
+  "first_process": {
+    "engine_wall_frame_interval": {
+      "n": 120002,
+      "p50_ms": 14.04,
+      "p95_ms": 22.116,
+      "p99_ms": 39.449,
+      "max_ms": 403.637,
+      "over50ms": 814,
+      "over100ms": 44
+    },
+    "engine_input_to_frame_post_draw": {
+      "n": 1056,
+      "p50_ms": 21.647,
+      "p95_ms": 62.125,
+      "p99_ms": 75.19,
+      "max_ms": 112.308,
+      "over50ms": 239,
+      "over100ms": 2
+    },
+    "OS_event_received_to_frame_post_draw": {
+      "n": 1568,
+      "p50_ms": 20.154,
+      "p95_ms": 59.279,
+      "p99_ms": 68.434,
+      "max_ms": 112.381,
+      "over50ms": 240,
+      "over100ms": 2
+    },
+    "save_duration": {
+      "n": 858,
+      "p50_ms": 33.396,
+      "p95_ms": 41.155,
+      "p99_ms": 47.733,
+      "max_ms": 116.099,
+      "over50ms": 6,
+      "over100ms": 1
+    }
+  },
+  "continuous": {
+    "engine_wall_frame_interval": {
+      "n": 119682,
+      "p50_ms": 14.036,
+      "p95_ms": 22.1,
+      "p99_ms": 39.432,
+      "max_ms": 403.637,
+      "over50ms": 809,
+      "over100ms": 43
+    },
+    "engine_input_to_frame_post_draw": {
+      "n": 1054,
+      "p50_ms": 21.647,
+      "p95_ms": 62.126,
+      "p99_ms": 75.199,
+      "max_ms": 112.308,
+      "over50ms": 239,
+      "over100ms": 2
+    },
+    "OS_event_received_to_frame_post_draw": {
+      "n": 1565,
+      "p50_ms": 20.153,
+      "p95_ms": 59.284,
+      "p99_ms": 68.456,
+      "max_ms": 112.381,
+      "over50ms": 240,
+      "over100ms": 2
+    },
+    "save_duration": {
+      "n": 855,
+      "p50_ms": 33.387,
+      "p95_ms": 41.166,
+      "p99_ms": 47.759,
+      "max_ms": 116.099,
+      "over50ms": 6,
+      "over100ms": 1
+    }
+  },
+  "restart": {
+    "engine_wall_frame_interval": {
+      "n": 339,
+      "p50_ms": 13.597,
+      "p95_ms": 20.385,
+      "p99_ms": 24.047,
+      "max_ms": 118.604,
+      "over50ms": 2,
+      "over100ms": 1
+    },
+    "engine_input_to_frame_post_draw": {
+      "n": 1,
+      "p50_ms": 21.503,
+      "p95_ms": 21.503,
+      "p99_ms": 21.503,
+      "max_ms": 21.503,
+      "over50ms": 0,
+      "over100ms": 0
+    },
+    "OS_event_received_to_frame_post_draw": {
+      "n": 1,
+      "p50_ms": 21.519,
+      "p95_ms": 21.519,
+      "p99_ms": 21.519,
+      "max_ms": 21.519,
+      "over50ms": 0,
+      "over100ms": 0
+    },
+    "save_duration": {
+      "n": 2,
+      "p50_ms": 71.554,
+      "p95_ms": 100.229,
+      "p99_ms": 102.778,
+      "max_ms": 103.415,
+      "over50ms": 1,
+      "over100ms": 1
+    }
+  },
+  "first_existing_read_ms": 76.163,
+  "restart_existing_read_ms": 70.253,
+  "external_command_latency": "NOT_VALIDATED_CLOCK_ALIGNMENT. PinnedF5 greedy time matching drift failed; current correction preserves original output and all signed clock residuals, actualreceipt→draw event_id remains valid.",
+  "original_analysis": {
+    "path": "evidence/b5-play/final30-r13/PREVIOUS_ANALYSIS_F5.json",
+    "sha256": "7bba80af3bb810b7ede89d05fe31cd4ba0a87ccc9d0ed1b6c8156612b4b8ce38"
+  },
+  "original_receipt": "evidence/b5-play/final30-r13/PREVIOUS_ANALYZER_RUN_F5.json",
+  "original_video": "deliverables/baram-B5-r12-prior30-cold-unedited.mp4",
+  "no_process_restarted_for_reanalysis": true,
+  "remaining": "First-cold storage cost minimal correction and affected exactcandidate validation; native Windows/Android/device/IME/audio/account/humanfun remain NOT_RUN or BLOCKED."
+}

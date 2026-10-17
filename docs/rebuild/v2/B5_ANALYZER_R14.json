@@ -1,0 +1,93 @@
+{
+  "schema": "baram.b5-analyzer-r14/1",
+  "status": "PASS_UNIT_AND_RETAINED_NUMERIC_EQUALITY",
+  "tools": {
+    "analyzer": {
+      "path": "tools/rebuild/v2/analyze_playability.py",
+      "evidence_copy": "evidence/b5-play/analyze_final.py",
+      "sha256": "69ba13dd7eb5209e7284402ab464ed8709c1b0e671134bd7cc7b4ec5078fd519"
+    },
+    "execution_wrapper": {
+      "path": "tools/rebuild/v2/run_playability_analysis.py",
+      "sha256": "0e771b0bfdb2053fea8f457014b9e16d31c66bae0d509bd0a70f17263c82502b"
+    },
+    "tests": {
+      "path": "tools/rebuild/v2/test_analyze_playability.py",
+      "sha256": "e814ee2a2f27b87c0abf575befab3deffa08a45cf001c17a94a68dc2acb241f5"
+    },
+    "cold_os_operator": {
+      "path": "tools/rebuild/v2/test_os_cold_resume.py",
+      "status": "Awaiting root final freeze/execution receipt; no cold app run by this analyzer agent."
+    }
+  },
+  "unit_execution": {
+    "file": "evidence/b5-play/ANALYZER_UNIT_R14.json",
+    "sha256": "30b14224e460c0447a53bb50313b906dbc1ff0b1645cb21d5123bdb388875168",
+    "status": "PASS",
+    "count": 8
+  },
+  "historical_f5_copies": [
+    {
+      "file": "evidence/b5-play/final30-r13/PREVIOUS_ANALYSIS_F5.json",
+      "sha256": "7bba80af3bb810b7ede89d05fe31cd4ba0a87ccc9d0ed1b6c8156612b4b8ce38"
+    },
+    {
+      "file": "evidence/b5-play/final30-r13/PREVIOUS_ANALYZER_RUN_F5.json",
+      "sha256": "3dacd7a23cc2f9bd885148915127c365ad552cd3e7c634463e2d2b1be33cd9c6"
+    },
+    {
+      "file": "evidence/b5-play/final30-r13/analyzer-source-F5.py",
+      "sha256": "f5ded1949b0c6d2236401877f2a5501e4ded8cb65db2598218c773aa4a28ef81"
+    },
+    {
+      "file": "evidence/b5-play/final-preflight-r13/PREVIOUS_ANALYSIS_F5.json",
+      "sha256": "369df15dbc0c82d9103854ebc0b258ec1f1d3669d5e58a9a9c7671f5ae8871d2"
+    },
+    {
+      "file": "evidence/b5-play/final-preflight-r13/PREVIOUS_ANALYZER_RUN_F5.json",
+      "sha256": "55c7604898bc35cd7253e0a57205e1f127c4142d94963a3bc926d879bfea0f7f"
+    },
+    {
+      "file": "evidence/b5-play/final-preflight-r13/analyzer-source-F5.py",
+      "sha256": "f5ded1949b0c6d2236401877f2a5501e4ded8cb65db2598218c773aa4a28ef81"
+    }
+  ],
+  "matching_contract": {
+    "identity": "Non-echo pressed physical key name, or mouse button and viewport x/y within2px.",
+    "qualification": "Only a unique complete contiguous ordered signature alignment is accepted; no time lower bound or latency cutoff. Ambiguous candidates and incomplete insertion/deletion sequences are not force-matched.",
+    "latency_acceptance": "OS_command_to_matched_OS_event_received and OS_command_to_matched_OS_event_frame_post_draw are NOT_VALIDATED_CLOCK_ALIGNMENT. No command p95/PASS is inferred from one initial clock sync.",
+    "residuals": "Signed cross-clock residuals, including all negative values, remain diagnostic. No clipping, negative removal, offset fitting or clock calibration is invented.",
+    "valid_metric": "Engine os_input_received to os_event_frame_post_draw_feedback elapsed_ms pairs use event_id within one engine clock; this is engine rendering feedback, not physical display/pixel presentation.",
+    "scope_counts": "All unmatched, ambiguous, release, echo, missing feedback and phase-boundary counts are retained."
+  },
+  "observed_f5_method_failure": {
+    "file": "evidence/b5-play/final30-r13/PREVIOUS_ANALYSIS_F5.json",
+    "unique_signature_pairs": 1569,
+    "command_slice": "[1:1570]",
+    "engine_press_slice": "[0:1569]",
+    "outside_active_trace_commands": 4,
+    "first_greedy_failure": {
+      "command_index": 210,
+      "key": "z",
+      "operator_elapsed_s": 258.976,
+      "actual_event_id": 418,
+      "signed_residual_ms": -0.28275,
+      "incorrect_later_event_id": 432
+    },
+    "interpretation": "Observed clock-projection drift broke the old timestamp-greedy matcher. Its very long assigned delays are method-error history, not validated game input latency."
+  },
+  "process_and_probe_scope": {
+    "first_process": "Top-level journey trace only; no restart duplication.",
+    "restart_process": "restart-frame-timeline read once with its own sync; no cross-process frame intervals.",
+    "cold_resume_probe": "Each20s process leg is an independent child OS report. Not1800s play, cold physical-disk, native or target-device certification.",
+    "host_environment": "Find closest existing HOST_ENVIRONMENT.json in ancestors; wrapper binds the same actual file.",
+    "capture_comparison": "Only actual recording comparison markers/controlled flag determine text. An absent comparison is NOT_RUN_IN_THIS_SESSION; separate controlled preflight is distinct evidence."
+  },
+  "retained_equality": {
+    "status": "PASS",
+    "file": "evidence/b5-play/ANALYZER_R14_EQUALITY.json",
+    "sha256": "cc677db864592a8ffeba09438a8d18f946f6b4c4b5b8c9f225fdc682f29b5574",
+    "app_replays": 0
+  },
+  "app_execution": "No app replay by analyzer work. Root owns exclusive cold/store probes."
+}
