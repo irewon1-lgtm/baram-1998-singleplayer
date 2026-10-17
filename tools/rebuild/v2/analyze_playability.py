@@ -97,6 +97,50 @@ def os_event_metrics(trace, operator, sync, lower=-float('inf'), upper=float('in
             'OS_event_matching_records':matches}
 
 
+def active_process_metrics(trace, operator):
+    """Analyze one process with its own clock; never join frame intervals."""
+    sync=next((r for r in trace if r.get('kind')=='clock_sync'),None)
+    if not sync:return {'status':'NOT_RUN','reason':'Independent process clock sync is absent.'}
+    def unix_us(row):return sync['unix_us']+row['us']-sync['us']
+    frames=[r for r in trace if r.get('kind')=='frame']
+    saves=[r for r in trace if r.get('kind')=='save']
+    inputs=[r for r in trace if r.get('kind')=='input']
+    feedback=[r for r in trace if r.get('kind')=='frame_post_draw_feedback']
+    lower=sync['unix_us'];upper=max((unix_us(r) for r in trace if 'us' in r),default=lower)
+    actions=[r for r in operator if r.get('kind') in ['key','mouse_click'] and lower<=r['wall_unix_ns']/1000<=upper]
+    input_times=[unix_us(r) for r in inputs];feedback_times=[unix_us(r) for r in feedback]
+    envelope=[];unmatched=0
+    for index,row in enumerate(actions):
+        t=row['wall_unix_ns']/1000;next_t=actions[index+1]['wall_unix_ns']/1000 if index+1<len(actions) else float('inf')
+        i=bisect.bisect_left(input_times,t)
+        if i>=len(input_times) or input_times[i]>=next_t:unmatched+=1;continue
+        j=bisect.bisect_left(feedback_times,input_times[i])
+        if j>=len(feedback_times):unmatched+=1;continue
+        envelope.append((feedback_times[j]-t)/1000)
+    summary={'status':'OBSERVED','clock_sync':sync,'active_trace_window_unix_us':[lower,upper],
+             'active_trace_seconds':(upper-lower)/1e6,
+             'frame_delta':distribution(r['interval_ms'] for r in frames),
+             'engine_wall_frame_interval':distribution((b['us']-a['us'])/1000 for a,b in zip(frames,frames[1:])),
+             'process_duration':distribution(r['process_ms'] for r in frames),
+             'engine_input_to_frame_post_draw':distribution(r['elapsed_ms'] for r in feedback),
+             'save_duration':distribution(r['duration_ms'] for r in saves),
+             'save_statuses':dict(Counter(r['status'] for r in saves)),
+             'save_phases':{phase:distribution(row['phases'][phase] for row in saves if phase in row.get('phases',{})) for phase in sorted({k for row in saves for k,v in row.get('phases',{}).items() if isinstance(v,(int,float))})},
+             'OS_command_log_to_engine_render_envelope':distribution(envelope),
+             'OS_envelope_matching':{'all_logged_actions':len(actions),'matched_before_next_action':len(envelope),'unmatched':unmatched,'latency_outliers_removed':0},
+             'engine_static_memory':{'first_bytes':frames[0].get('memory_bytes') if frames else None,'last_bytes':frames[-1].get('memory_bytes') if frames else None}}
+    summary.update(os_event_metrics(trace,operator,sync,lower,upper))
+    action_times=[r['wall_unix_ns']/1000 for r in actions];incidents=[]
+    for prior,current in zip(frames,frames[1:]):
+        duration=(current['us']-prior['us'])/1000
+        if duration<=100:continue
+        t=unix_us(current);i=bisect.bisect_right(action_times,t)-1
+        overlap=[s for s in saves if s['us']>=prior['us'] and s['us']-s['duration_ms']*1000<=current['us']]
+        incidents.append({'engine_us':current['us'],'unix_us':t,'wall_interval_ms':round(duration,3),'delta_ms':current['interval_ms'],'process_ms':current['process_ms'],'overlapping_saves':[{'status':s['status'],'duration_ms':s['duration_ms'],'revision':s['revision']} for s in overlap],'previous_OS_action':actions[i] if i>=0 else None})
+    summary['over100ms_wall_incidents']=incidents
+    return summary
+
+
 def main():
     p=argparse.ArgumentParser();p.add_argument('directory',type=Path);a=p.parse_args()
     root=a.directory
@@ -140,6 +184,12 @@ def main():
                  'The long-session operator missed clipped skill controls and reserved insufficient learning materials; repeated teacher travel is an operator coverage limitation, not measured game progression balance. Targeted continuation evidence is reported separately.',
              ]}
     summary.update(os_event_metrics(trace,operator,sync))
+    summary['top_level_metric_scope']='Every retained active-play event in journey-frame-timeline.jsonl from the first game process. Restart process metrics use restart-frame-timeline.jsonl and its own clock below; no intervals are joined across processes. Raw video includes recorded menus and process transitions that have no active-play frame events.'
+    restart_path=root/'restart-frame-timeline.jsonl'
+    summary['restart_active_play']=active_process_metrics(records(restart_path),operator)
+    summary['restart_active_play']['scope']='Independent restarted game-process active-play trace, read once with its own clock sync. Initial menu/loading time has no active-play frames; raw video covers the recorded restart transition. No cross-process frame interval is computed.'
+    summary['restart_active_play']['trace_file']=str(restart_path)
+    summary['restart_active_play']['trace_sha256']=hashlib.sha256(restart_path.read_bytes()).hexdigest() if restart_path.exists() else None
     if not result.get('final') and not result.get('before_restart'):
         committed=[]
         for saved in sorted(root.glob('data/*/gameplay-p3/characters/*.json')):
