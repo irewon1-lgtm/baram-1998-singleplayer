@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Ordinary GUI create/cancel, OS X11 input, save and separate-process continuation.
 
-Runs inside with_display.py. Synthetic OS events are not physical keys or Korean
+Runs inside with_display.py. R16 compact footer exposes the same save/menu callback as '저장'. Synthetic OS events are not physical keys or Korean
 IME, and Linux Godot loading an exported Windows PCK is not native Windows.
 """
 import argparse,json,os,subprocess,sys,time,hashlib
@@ -62,7 +62,7 @@ def main():
    first=json.loads(files[0].read_text())['payload'];check('ordinary_Lv1_commoner_no_skills',first['character']['level']==1 and first['character']['job']=='commoner' and not first['skills'])
    x.key('Down',5.0);time.sleep(.4);x.key('space',.15);time.sleep(.3)
    capture('02-world')
-   x.click(control(cpath,'저장 · 처음으로'));time.sleep(.6)
+   x.click(control(cpath,'저장'));time.sleep(.6)
    after=json.loads(files[0].read_text())['payload']
    check('OS_input_movement_saved',(after['character']['map_id'],after['character']['x'],after['character']['y'])!=(first['character']['map_id'],first['character']['x'],first['character']['y']),{'before':first['character'],'after':after['character']})
    check('saved_request_stream_advanced',after['request_watermarks'].get('ui',0)>0)
@@ -76,7 +76,7 @@ def main():
    time.sleep(.5)
    for direction in ('Down','Left','Right','Up'):x.key(direction,.4)
    time.sleep(.2);capture('03-resumed')
-   x.click(control(cpath,'저장 · 처음으로'));time.sleep(.5)
+   x.click(control(cpath,'저장'));time.sleep(.5)
    final=json.loads(files[0].read_text())['payload']
    check('continued_process_new_requests_save',final['request_watermarks'].get('ui',0)>after['request_watermarks'].get('ui',0))
    result['final_character']=final['character'];result['commands']='Ordinary synthetic X11 mouse/keyboard only; no engine fixture or state grants'

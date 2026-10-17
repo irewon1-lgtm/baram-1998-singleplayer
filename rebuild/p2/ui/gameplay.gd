@@ -7,6 +7,7 @@ const View = preload("res://render/gameplay_view.gd")
 const Effect = preload("res://render/effect_preview.gd")
 const ClassicList = preload("res://ui/classic_list.gd")
 const Paper = preload("res://ui/parchment_panel.gd")
+const ClassicSkin = preload("res://ui/classic_skin.gd")
 const Stick = preload("res://input/touch_stick.gd")
 const Navigation = preload("res://input/grid_navigation.gd")
 const OriginalView = preload("res://render/original_view.gd")
@@ -75,6 +76,13 @@ var mobile_controls: Control
 var body: HBoxContainer
 var side: VBoxContainer
 var equipment_preview
+var character_header: Label
+var equipped_icons: Dictionary = {}
+var quick_skill_buttons: Array[Button] = []
+var skill_icon_cache: Dictionary = {}
+var world_column: VBoxContainer
+var hud_footer: PanelContainer
+var action_dock: HBoxContainer
 var hp_bar: ProgressBar
 var mp_bar: ProgressBar
 var stick
@@ -120,6 +128,7 @@ var runtime_npc_ids: Array = []
 var runtime_monster_count := -1
 var equipment_slot_names: Array = []
 var equipment_preview_look := ""
+var position_observation_path := OS.get_environment("BARAM_POSITION_OBSERVATION")
 
 func checkpoint(stage: String, details: Dictionary = {}) -> void:
 	var value := {"stage":stage,"ticks_ms":Time.get_ticks_msec(),"pid":OS.get_process_id(),"platform":OS.get_name(),"details":details}
@@ -219,32 +228,22 @@ func _label(parent: Node, title: String) -> Label:
 	return label
 
 func _build_ui() -> void:
-	var theme := Theme.new()
-	theme.default_font_size=16
 	var korean:=SystemFont.new()
 	korean.font_names=PackedStringArray(["Malgun Gothic","Noto Sans CJK KR","NanumGothic","sans-serif"])
-	theme.default_font=korean
 	ThemeDB.fallback_font=korean
-	var button_style:=StyleBoxFlat.new()
-	button_style.bg_color=Color("684329");button_style.border_color=Color("b18b51")
-	button_style.set_border_width_all(1);button_style.set_corner_radius_all(3)
-	button_style.content_margin_left=7;button_style.content_margin_right=7
-	theme.set_stylebox("normal","Button",button_style)
-	var pressed:=button_style.duplicate();pressed.bg_color=Color("322012")
-	theme.set_stylebox("pressed","Button",pressed)
-	var hover:=button_style.duplicate();hover.bg_color=Color("976d3b")
-	theme.set_stylebox("hover","Button",hover)
-	theme.set_color("font_color","Button",Color("f8dfaa"))
-	self.theme=theme
+	ClassicSkin.bind_original(content.assets.texture("kr491/images/dlgnew02-00000-baram-0.png"))
+	self.theme=ClassicSkin.theme_for(korean)
+	texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST
 	var background:=ColorRect.new();background.color=Color("24140c")
 	background.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	background.mouse_filter=Control.MOUSE_FILTER_IGNORE;add_child(background)
 	var margin:=MarginContainer.new();margin.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
-	for edge in ["left","right","top","bottom"]: margin.add_theme_constant_override("margin_"+edge,8)
+	for edge in ["left","right","top","bottom"]: margin.add_theme_constant_override("margin_"+edge,5)
 	add_child(margin)
-	var root:=VBoxContainer.new();root.add_theme_constant_override("separation",5);margin.add_child(root)
+	var root:=VBoxContainer.new();root.add_theme_constant_override("separation",3);margin.add_child(root)
 	var title:=HBoxContainer.new();root.add_child(title)
-	var heading:=_label(title,"바람의나라 · 모험의 길")
+	var heading:=_label(title,"바람의나라")
+	heading.add_theme_font_size_override("font_size",14)
 	heading.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	heading.add_theme_color_override("font_color",Color("dbc292"))
 	panel_toggle=_button(title,"물품 · 기술 · 장비 · 능력치",_toggle_panels)
@@ -273,33 +272,63 @@ func _build_ui() -> void:
 	play=VBoxContainer.new();play.size_flags_vertical=Control.SIZE_EXPAND_FILL;root.add_child(play);play.hide()
 	goal_hint=_label(play,"");goal_hint.add_theme_font_size_override("font_size",13)
 	goal_hint.add_theme_color_override("font_color",Color("e9c987"))
-	body=HBoxContainer.new();body.size_flags_vertical=Control.SIZE_EXPAND_FILL;play.add_child(body)
+	body=HBoxContainer.new();body.add_theme_constant_override("separation",0);body.size_flags_vertical=Control.SIZE_EXPAND_FILL;play.add_child(body)
+	world_column=VBoxContainer.new();world_column.add_theme_constant_override("separation",0)
+	world_column.size_flags_horizontal=Control.SIZE_EXPAND_FILL;body.add_child(world_column)
+	var world_frame:=Paper.new();world_frame.compact=true
+	world_frame.size_flags_vertical=Control.SIZE_EXPAND_FILL;world_column.add_child(world_frame)
 	view=View.new();view.content=content.assets
 	view.custom_minimum_size=Vector2(220,180)
 	view.size_flags_horizontal=Control.SIZE_EXPAND_FILL;view.size_flags_vertical=Control.SIZE_EXPAND_FILL
-	view.world_pressed.connect(_click_world);body.add_child(view)
+	view.world_pressed.connect(_click_world);world_frame.add_child(view)
 	side=VBoxContainer.new();side.custom_minimum_size.x=310;body.add_child(side)
 	var paper:=Paper.new();paper.size_flags_vertical=Control.SIZE_EXPAND_FILL;side.add_child(paper)
+	var sheet:=VBoxContainer.new();sheet.add_theme_constant_override("separation",3);paper.add_child(sheet)
+	character_header=_label(sheet,"");character_header.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
+	character_header.add_theme_color_override("font_color",Color("402815"))
+	character_header.add_theme_font_size_override("font_size",15)
+	var portrait:=HBoxContainer.new();portrait.alignment=BoxContainer.ALIGNMENT_CENTER;sheet.add_child(portrait)
+	for slot in ["weapon","portrait","armor"]:
+		if slot=="portrait":
+			equipment_preview=OriginalView.new();equipment_preview.content=content.assets
+			equipment_preview.background_color=Color(0,0,0,0)
+			equipment_preview.custom_minimum_size=Vector2(112,118)
+			equipment_preview.mouse_filter=Control.MOUSE_FILTER_IGNORE;portrait.add_child(equipment_preview)
+		else:
+			var slot_box:=VBoxContainer.new();slot_box.alignment=BoxContainer.ALIGNMENT_CENTER;portrait.add_child(slot_box)
+			var slot_label:=_label(slot_box,"무기" if slot=="weapon" else "갑옷")
+			slot_label.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER;slot_label.add_theme_font_size_override("font_size",12)
+			slot_label.add_theme_color_override("font_color",Color("67431f"))
+			var icon_button:=_button(slot_box,"",func(): panels.current_tab=2)
+			icon_button.custom_minimum_size=Vector2(40,46);icon_button.expand_icon=true
+			icon_button.add_theme_constant_override("icon_max_width",30)
+			equipped_icons[slot]=icon_button
 	panels=TabContainer.new();panels.size_flags_vertical=Control.SIZE_EXPAND_FILL
 	panels.add_theme_stylebox_override("panel",StyleBoxEmpty.new())
-	paper.add_child(panels)
+	sheet.add_child(panels)
 	panels.tab_changed.connect(func(_index): _stop_motion();panel_dirty=true)
 	var bag_box:=VBoxContainer.new();bag_box.name="물품";panels.add_child(bag_box)
 	bag=ClassicList.new();bag.size_flags_vertical=Control.SIZE_EXPAND_FILL;bag_box.add_child(bag)
 	bag.item_selected.connect(func(_index): _stop_motion())
-	_button(bag_box,"장착 / 사용",_use_selected_item)
-	_button(bag_box,"가까운 상인에게 판매 (1개)",_sell_selected)
+	var bag_actions:=HBoxContainer.new();bag_box.add_child(bag_actions)
+	var use_button:=_button(bag_actions,"장착 / 사용",_use_selected_item);use_button.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	var sell_button:=_button(bag_actions,"판매 (1개)",_sell_selected);sell_button.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	sell_button.tooltip_text="가까운 상인에게 판매 (1개)"
 	var skill_box:=VBoxContainer.new();skill_box.name="기술";panels.add_child(skill_box)
-	skills=ClassicList.new();skills.size_flags_vertical=Control.SIZE_EXPAND_FILL;skill_box.add_child(skills)
+	var skill_scroll:=ScrollContainer.new();skill_scroll.size_flags_vertical=Control.SIZE_EXPAND_FILL
+	skill_scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;skill_box.add_child(skill_scroll)
+	var skill_controls:=VBoxContainer.new();skill_controls.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	skill_controls.size_flags_vertical=Control.SIZE_EXPAND_FILL;skill_scroll.add_child(skill_controls)
+	skills=ClassicList.new();skills.custom_minimum_size.y=76;skills.size_flags_vertical=Control.SIZE_EXPAND_FILL;skill_controls.add_child(skills)
 	skills.item_selected.connect(func(_index): _stop_motion();_describe_skill())
-	skill_description=_label(skill_box,"")
+	skill_description=_label(skill_controls,"")
 	skill_description.add_theme_color_override("font_color",Color("302012"))
 	skill_description.add_theme_font_size_override("font_size",13)
 	direction_picker=OptionButton.new()
 	for value in ["동","서","남","북"]: direction_picker.add_item(value)
-	skill_box.add_child(direction_picker)
-	_button(skill_box,"선택 기술 사용",_cast_selected)
-	var hotkey:=HBoxContainer.new();skill_box.add_child(hotkey)
+	skill_controls.add_child(direction_picker)
+	_button(skill_controls,"선택 기술 사용",_cast_selected)
+	var hotkey:=HBoxContainer.new();skill_controls.add_child(hotkey)
 	for slot in [1,2,3]:
 		var number:=str(slot)
 		_button(hotkey,number+"번 지정",func():
@@ -307,33 +336,49 @@ func _build_ui() -> void:
 			if id.is_empty(): message.text="기술을 먼저 고르세요.";return
 			_dispatch({"type":"bind_hotkey","slot":number,"skill_id":id}))
 	var equip_box:=VBoxContainer.new();equip_box.name="장비";panels.add_child(equip_box)
-	equipment_preview=OriginalView.new();equipment_preview.content=content.assets
-	equipment_preview.background_color=Color("c4a067")
-	equipment_preview.custom_minimum_size=Vector2(130,128);equip_box.add_child(equipment_preview)
-	equipment_preview.mouse_filter=Control.MOUSE_FILTER_IGNORE
 	equipment=ClassicList.new();equipment.size_flags_vertical=Control.SIZE_EXPAND_FILL;equip_box.add_child(equipment)
 	equipment.item_selected.connect(func(_index): _stop_motion())
-	_button(equip_box,"선택 부위 해제",_unequip_selected)
-	_button(equip_box,"대장장이에게 수리",_repair_selected)
+	var equipment_actions:=HBoxContainer.new();equip_box.add_child(equipment_actions)
+	var remove_button:=_button(equipment_actions,"선택 부위 해제",_unequip_selected);remove_button.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	var repair_button:=_button(equipment_actions,"대장장이에게 수리",_repair_selected);repair_button.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	attributes=RichTextLabel.new();attributes.name="능력치";attributes.scroll_active=true
 	attributes.add_theme_color_override("default_color",Color("302012"));panels.add_child(attributes)
-	var vitals:=PanelContainer.new();var vitals_style:=StyleBoxFlat.new()
-	vitals_style.bg_color=Color("3c2616");vitals_style.border_color=Color("a17b46");vitals_style.set_border_width_all(2)
-	vitals.add_theme_stylebox_override("panel",vitals_style);side.add_child(vitals)
-	var stats:=VBoxContainer.new();vitals.add_child(stats)
-	status=_label(stats,"");status.add_theme_font_size_override("font_size",15)
-	hp_bar=ProgressBar.new();hp_bar.custom_minimum_size.y=20;stats.add_child(hp_bar)
-	mp_bar=ProgressBar.new();mp_bar.custom_minimum_size.y=20;stats.add_child(mp_bar)
-	for entry in [[hp_bar,Color("a63424")],[mp_bar,Color("315d9d")]]:
-		var fill:=StyleBoxFlat.new();fill.bg_color=entry[1];entry[0].add_theme_stylebox_override("fill",fill)
-		entry[0].show_percentage=false
-	help_text=_label(play,"지면 탭: 걸어가기 · 드래그: 이동 · Space: 공격 · Enter: 대화 · Z: 줍기 · Tab: 패널")
-	help_text.add_theme_font_size_override("font_size",13)
-	var actions:=HBoxContainer.new();play.add_child(actions)
-	_button(actions,"지도",_show_map)
-	_button(actions,"대화",_talk_nearest);_button(actions,"줍기",_pickup_nearest)
-	_button(actions,"부활",func(): _dispatch({"type":"respawn"}))
-	_button(actions,"저장 · 처음으로",_return_menu)
+	var vitals:=PanelContainer.new();sheet.add_child(vitals)
+	var vitals_style:=ClassicSkin.patch(ClassicSkin.wood(),Vector4(5,3,5,3),Vector4(7,7,7,7))
+	vitals_style.modulate_color=Color("a38a70");vitals.add_theme_stylebox_override("panel",vitals_style)
+	var stats:=VBoxContainer.new();stats.add_theme_constant_override("separation",2);vitals.add_child(stats)
+	status=_label(stats,"");status.add_theme_font_size_override("font_size",13)
+	status.add_theme_color_override("font_color",Color("f2db9b"))
+	for kind in ["체력","마력"]:
+		var line:=HBoxContainer.new();line.add_theme_constant_override("separation",5);stats.add_child(line)
+		var caption:=_label(line,kind);caption.add_theme_font_size_override("font_size",12)
+		caption.custom_minimum_size.x=28;caption.autowrap_mode=TextServer.AUTOWRAP_OFF
+		caption.add_theme_color_override("font_color",Color("efd39b"))
+		var meter:=ProgressBar.new();meter.custom_minimum_size=Vector2(0,15);meter.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		meter.show_percentage=false;line.add_child(meter)
+		var empty:=ClassicSkin.patch(ClassicSkin.wood(),Vector4(4,3,4,3),Vector4.ZERO);empty.modulate_color=Color("6a5044")
+		meter.add_theme_stylebox_override("background",empty)
+		var fill:=ClassicSkin.patch(ClassicSkin.parchment(),Vector4(2,2,2,2),Vector4.ZERO)
+		fill.modulate_color=Color("c83d26") if kind=="체력" else Color("366fbd")
+		meter.add_theme_stylebox_override("fill",fill)
+		if kind=="체력":hp_bar=meter
+		else:mp_bar=meter
+	hud_footer=Paper.new();hud_footer.compact=true;world_column.add_child(hud_footer)
+	var footer:=VBoxContainer.new();footer.add_theme_constant_override("separation",2);hud_footer.add_child(footer)
+	var quick:=HBoxContainer.new();quick.add_theme_constant_override("separation",3);footer.add_child(quick)
+	action_dock=quick
+	_button(quick,"지도",_show_map);_button(quick,"대화",_talk_nearest);_button(quick,"줍기",_pickup_nearest)
+	for slot in ["1","2","3"]:
+		var key: String=slot
+		var skill_button:=_button(quick,key,func(): _cast_hotkey(key))
+		skill_button.expand_icon=true;skill_button.add_theme_constant_override("icon_max_width",23)
+		skill_button.custom_minimum_size=Vector2(49,34);quick_skill_buttons.append(skill_button)
+	var spacer:=Control.new();spacer.size_flags_horizontal=Control.SIZE_EXPAND_FILL;quick.add_child(spacer)
+	_button(quick,"부활",func(): _dispatch({"type":"respawn"}))
+	_button(quick,"저장",_return_menu)
+	help_text=_label(footer,"지면 탭: 걸어가기 · 드래그: 이동 · Space: 공격 · Enter: 대화 · Z: 줍기 · Tab: 패널")
+	help_text.add_theme_font_size_override("font_size",12)
+	help_text.add_theme_color_override("font_color",Color("594326"))
 	modal_shield=Control.new();modal_shield.name="ModalShield"
 	modal_shield.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	modal_shield.mouse_filter=Control.MOUSE_FILTER_STOP;add_child(modal_shield);modal_shield.hide()
@@ -359,12 +404,12 @@ func _build_ui() -> void:
 	message=_label(root,"로컬 캐릭터를 선택하거나 새로 만드세요.")
 	message.add_theme_color_override("font_color",Color("f1ddae"))
 	message.custom_minimum_size.y=25
-	history=RichTextLabel.new();history.custom_minimum_size.y=50;history.scroll_following=true
-	var chat_style:=StyleBoxFlat.new();chat_style.bg_color=Color("c1a478");chat_style.border_color=Color("6f4727");chat_style.set_border_width_all(2)
-	chat_style.content_margin_left=6;chat_style.content_margin_top=4
+	history=RichTextLabel.new();history.custom_minimum_size.y=52;history.scroll_following=true
+	var chat_style:=ClassicSkin.patch(ClassicSkin.parchment(),Vector4(3,3,3,3),Vector4(5,3,5,3))
+	chat_style.modulate_color=Color("7481bf")
 	history.add_theme_stylebox_override("normal",chat_style)
-	history.add_theme_color_override("default_color",Color("302214"));history.add_theme_font_size_override("normal_font_size",14)
-	root.add_child(history)
+	history.add_theme_color_override("default_color",Color("fff1c9"));history.add_theme_font_size_override("normal_font_size",13)
+	footer.add_child(history)
 	for i in range(8):
 		var player:=AudioStreamPlayer.new();player.volume_db=-8;add_child(player);audio.append(player)
 	_build_touch();resized.connect(_resize_ui);_resize_ui()
@@ -379,16 +424,16 @@ func _build_touch() -> void:
 	stick.tapped.connect(func(position):
 		var world: Vector2=(position-view.size*0.5)/view.zoom+view.focus
 		_click_world(Vector2i(floori(world.x/24),floori(world.y/24))))
-	var overlay:=Control.new();overlay.mouse_filter=Control.MOUSE_FILTER_IGNORE
-	overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);view.add_child(overlay)
+	# Keep the two-finger action targets below the map; their hit regions must
+	# not hide doors, monsters, or the tile used by ordinary tap navigation.
+	var overlay:=HBoxContainer.new();overlay.add_theme_constant_override("separation",3)
+	action_dock.add_child(overlay);action_dock.move_child(overlay,6)
 	mobile_controls=overlay;overlay.hide()
 	var attack:=_button(overlay,"공격",_basic_attack)
-	attack.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_RIGHT)
-	attack.offset_left=-100;attack.offset_right=-12;attack.offset_top=-72;attack.offset_bottom=-16
 	var skill:=_button(overlay,"기술",_cast_selected)
-	skill.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_RIGHT)
-	skill.offset_left=-90;skill.offset_right=-12;skill.offset_top=-122;skill.offset_bottom=-78
-	for button in [attack,skill]: button.modulate.a=0.78;button.focus_mode=Control.FOCUS_NONE
+	for button in [attack,skill]:
+		button.custom_minimum_size=Vector2(64,48)
+		button.focus_mode=Control.FOCUS_NONE
 
 func _begin_touch_move(move: Vector2i) -> void:
 	movement=move;path.clear();arrival_action.clear();_advance_movement()
@@ -446,6 +491,10 @@ func _resize_ui() -> void:
 	if not portrait: side.show()
 	was_portrait=portrait
 	side.custom_minimum_size.x=clampf(size.x*0.29,270,330)
+	equipment_preview.custom_minimum_size.y=64 if size.y<540 else 82 if size.y<620 else 118
+	if not game.state.is_empty():_refresh_equipment_preview();_refresh_vitals()
+	history.custom_minimum_size.y=38 if size.y<620 else 52
+	for quick_button in quick_skill_buttons:quick_button.visible=size.x>=560
 	help_text.visible=size.y>620
 	if is_instance_valid(dialogue):
 		var keyboard_height:=float(DisplayServer.virtual_keyboard_get_height()) if DisplayServer.has_feature(DisplayServer.FEATURE_VIRTUAL_KEYBOARD) else 0.0
@@ -504,17 +553,21 @@ func _continue_character() -> void:
 	if names.selected < 0: return
 	var path: Variant = names.get_item_metadata(names.selected)
 	if typeof(path) != TYPE_STRING: return
-	var loaded: Dictionary = store.read_game(path,OWNER,save_definitions)
+	var load_started:=Time.get_ticks_usec()
+	var loaded: Dictionary = store.read_game(path,OWNER,save_definitions,true)
 	if not loaded.has("payload"): message.text="불러오기 보류: "+str(loaded.status); return
 	game.state = {}
 	var restored: Dictionary = game.restore(loaded.payload)
 	if restored.status != "OK": message.text="진행 보존 후 불러오기 보류: "+str(restored.reason); return
 	save_path = path
 	_start_play()
-	checkpoint("loaded",{"revision":game.state.revision,"character":game.state.character})
+	checkpoint("loaded",{"revision":game.state.revision,"character":game.state.character,"duration_ms":float(Time.get_ticks_usec()-load_started)/1000.0,"backup_preparation":loaded.get("backup_preparation",{})})
 
 func _start_play() -> void:
 	menu.hide(); play.show(); dialogue.hide()
+	message.reparent(hud_footer.get_child(0));hud_footer.get_child(0).move_child(message,1)
+	message.add_theme_color_override("font_color",Color("4d331d"))
+	message.add_theme_font_size_override("font_size",13)
 	if is_instance_valid(mobile_controls): mobile_controls.show()
 	save_failure = false
 	selected_target = ""; current_npc = ""
@@ -526,6 +579,7 @@ func _start_play() -> void:
 	message.text="지면을 누르거나 드래그해서 이동하세요. 공격은 가까운 몬스터를 자동으로 찾습니다."
 	_stop_motion();visual_positions.clear();map_render_key="";panel_dirty=true
 	_refresh_panels(); _render_world()
+	_observe_position("PLAY_STARTED")
 	_layout_checkpoint.call_deferred()
 
 func _show_creation() -> void:
@@ -594,16 +648,34 @@ func _dispatch(command: Dictionary) -> Dictionary:
 		if command.type not in ["move","attack","cast"]: panel_dirty=true
 		if command.type in ["move","attack","cast"] and input_received_ms>0:
 			input_latencies.append(float(Time.get_ticks_msec()-input_received_ms));input_received_ms=0
+	_observe_position(str(result.status))
 	return result
+
+func _observe_position(command_status: String) -> void:
+	# Optional read-only OS-input telemetry, separate from the save protocol.
+	if position_observation_path.is_empty() or game.state.is_empty():return
+	var c: Dictionary=game.state.character
+	var value: Dictionary={"character":{"map_id":c.map_id,"x":c.x,"y":c.y,"direction":c.direction,"dead":c.dead},"revision":game.state.revision,"last_command_status":command_status,"ticks_usec":Time.get_ticks_usec()}
+	var file:=FileAccess.open(position_observation_path,FileAccess.WRITE)
+	if file:file.store_string(JSON.stringify(value))
 
 func _consume_events(events: Array) -> void:
 	for event in events:
 		event_log.append(event)
 		if event_log.size()>200: event_log.pop_front()
 		var type := str(event.type)
-		if event.get("sound_id") != null: _sound(str(event.sound_id))
-		if event.get("effect_id") != null and type!="projectile_started":
+		var event_skill: Dictionary=content.data.skills.get(str(event.get("skill_id","")),{})
+		var targeted_summary:=type=="skill_applied" and (str(event.get("kind","")) in ["damage","debuff"] or (str(event.get("kind",""))=="status" and str(event_skill.get("target","monster"))!="self"))
+		# Damage already has target-local monster_hit events. The later summary
+		# must not spawn the same impact and sound again at the caster's feet.
+		if not targeted_summary and event.get("sound_id") != null: _sound(str(event.sound_id))
+		if not targeted_summary and event.get("effect_id") != null and type!="projectile_started":
 			active_effects.append({"id":str(event.effect_id),"at":clock,"map_id":event.get("map_id",game.state.character.map_id),"x":event.get("x",game.state.character.x),"y":event.get("y",game.state.character.y)})
+		if type=="status_applied" and str(event_skill.get("kind",""))!="damage":
+			var target: Dictionary=game.state.monsters.get(str(event.get("target_id","")),{})
+			if not target.is_empty():
+				if event_skill.get("effect_id")!=null:active_effects.append({"id":str(event_skill.effect_id),"at":clock,"map_id":target.map_id,"x":target.x,"y":target.y})
+				if event_skill.get("sound_id")!=null:_sound(str(event_skill.sound_id))
 		if type=="projectile_started":
 			var projectile: Dictionary=event.duplicate(true)
 			projectile.at=clock;projectiles.append(projectile)
@@ -786,6 +858,7 @@ func _return_menu() -> void:
 	if not _save(): return
 	_stop_motion();_performance_checkpoint();game.state={};play.hide();menu.show();dialogue.hide()
 	if is_instance_valid(mobile_controls): mobile_controls.hide()
+	message.reparent(menu.get_parent());message.add_theme_color_override("font_color",Color("f1ddae"))
 	_refresh_characters(); message.text="저장했습니다. 이어 하기에서 같은 진행을 불러올 수 있습니다."
 	if trace_enabled:_layout_checkpoint.call_deferred()
 
@@ -1137,9 +1210,10 @@ func _refresh_panels() -> void:
 		for slot in game.state.hotkeys:
 			if game.state.hotkeys[slot]==id: key="["+str(slot)+"] "
 		var title:=key+str(def.name)+" · MP "+str(def.get("mp_cost",0))
+		var skill_icon:=_skill_icon(id)
 		if rebuild_skills:
-			skills.add_item(title);skills.set_item_metadata(index,id)
-		else: skills.update_item(index,title)
+			skills.add_item(title,skill_icon);skills.set_item_metadata(index,id)
+		else: skills.update_item(index,title,skill_icon)
 		if rebuild_skills and id==previous_skill: skills.select(index)
 	_describe_skill()
 	var derived: Dictionary=game.derived_stats()
@@ -1153,6 +1227,14 @@ func _refresh_panels() -> void:
 		for buff_id in game.state.buffs:
 			attributes.text+="\n"+str(content.data.skills.get(str(buff_id),{}).get("name",buff_id))
 	_refresh_equipment_preview()
+	for slot in equipped_icons:
+		var item:=_instance(str(game.state.equipment.get(slot,"")))
+		equipped_icons[slot].icon=content.icon(str(item.item_id)) if not item.is_empty() else null
+		equipped_icons[slot].tooltip_text=_item_title(item) if not item.is_empty() else "착용 장비 없음"
+	for index in range(quick_skill_buttons.size()):
+		var id:=str(game.state.hotkeys.get(str(index+1),""))
+		quick_skill_buttons[index].icon=_skill_icon(id) if not id.is_empty() else null
+		quick_skill_buttons[index].tooltip_text=str(content.data.skills.get(id,{}).get("name","기술창에서 단축키 지정"))
 	_refresh_vitals()
 	last_state_revision=int(game.state.revision)
 
@@ -1174,7 +1256,9 @@ func _refresh_vitals() -> void:
 			break
 	hp_bar.max_value=c.hp_max;hp_bar.value=c.hp;hp_bar.tooltip_text="체력 "+str(int(c.hp))+" / "+str(int(c.hp_max))
 	mp_bar.max_value=c.mp_max;mp_bar.value=c.mp;mp_bar.tooltip_text="마력 "+str(int(c.mp))+" / "+str(int(c.mp_max))
-	status.text=str(c.name)+" · "+_job_name(str(c.job))+" Lv"+str(c.level)+"\n체력 "+str(int(c.hp))+"/"+str(int(c.hp_max))+"  마력 "+str(int(c.mp))+"/"+str(int(c.mp_max))+"\n경험치 "+str(int(c.xp))+" · "+str(int(c.money))+"전\n"+str(content.data.maps[c.map_id].name)+( " · 귀신" if c.dead else "")
+	character_header.text=str(c.name)+" · "+_job_name(str(c.job))+" Lv"+str(int(c.level))
+	status.text=str(content.data.maps[c.map_id].name)+( " · 귀신" if c.dead else "")+"  "+str(int(c.x))+", "+str(int(c.y))+"\n체력 "+str(int(c.hp))+"/"+str(int(c.hp_max))+"  마력 "+str(int(c.mp))+"/"+str(int(c.mp_max))+"\n경험치 "+str(int(c.xp))+" · "+str(int(c.money))+"전"
+	if size.y<540:status.text=str(content.data.maps[c.map_id].name)+" · "+str(int(c.money))+"전"
 	last_state_revision=int(game.state.revision)
 
 func _look_player() -> String:
@@ -1182,6 +1266,7 @@ func _look_player() -> String:
 		var form_id:=str(buff.get("form_monster_id",""))
 		if content.data.monsters.has(form_id): return str(content.data.monsters[form_id].get("look_id",content.data.monsters[form_id].get("look","")))
 	var armor := false
+	var shield := false
 	var weapon_graphics: Dictionary = {}
 	for instance_id in game.state.equipment.values():
 		var item := _instance(str(instance_id))
@@ -1190,18 +1275,54 @@ func _look_player() -> String:
 		if int(def.get("durability",0))>0 and int(item.durability)<=0: continue
 		if def.get("slot")=="weapon": weapon_graphics=content.actors.get("item_equipment_graphics",{}).get(str(item.item_id),{})
 		if def.get("slot")=="armor" and int(def.get("defense",0))>0: armor=true
+		if def.get("slot")=="shield":shield=true
 	var look := str(weapon_graphics.get("armored_player_look" if armor else "player_look","player_armor" if armor else "player_base"))
 	if int(game.state.character.appearance.get("variant",0))==1: look+="_alt"
+	if shield and content.actors.get("looks",{}).has(look+"_shield"):look+="_shield"
 	return look
+
+func _skill_icon(id: String) -> Texture2D:
+	if skill_icon_cache.has(id): return skill_icon_cache[id]
+	var def: Dictionary=content.data.skills.get(id,{})
+	var effect: Dictionary=content.effects.get(str(def.get("effect_id","")),{})
+	var selected: Dictionary={};var area:=0
+	for frame in effect.get("front_frames",[]):
+		var candidate: Dictionary=frame.get("image",{})
+		var extent: Array=candidate.get("size",[0,0])
+		var next_area:=int(extent[0])*int(extent[1])
+		if next_area>area and not candidate.get("source_empty_rectangle",false):
+			selected=candidate;area=next_area
+	var result: Texture2D=null
+	if not selected.is_empty():
+		var native: Texture2D=content.assets.texture("kr491/"+str(selected.path))
+		if native!=null:
+			var pixels:=native.get_image()
+			var bounds:=pixels.get_used_rect()
+			if bounds.size.x>0 and bounds.size.y>0:
+				pixels=pixels.get_region(bounds)
+				var factor:=minf(1.0,24.0/maxf(pixels.get_width(),pixels.get_height()))
+				pixels.resize(maxi(1,int(pixels.get_width()*factor)),maxi(1,int(pixels.get_height()*factor)),Image.INTERPOLATE_NEAREST)
+				result=ImageTexture.create_from_image(pixels)
+	skill_icon_cache[id]=result
+	return result
+
+func _cast_hotkey(slot: String) -> void:
+	var id:=str(game.state.get("hotkeys",{}).get(slot,""))
+	if id.is_empty():message.text="기술창에서 "+slot+"번 기술을 먼저 지정하세요.";return
+	for index in range(skills.item_count):
+		if str(skills.get_item_metadata(index))==id:skills.select(index);break
+	_cast_selected()
 
 func _refresh_equipment_preview() -> void:
 	var look:=_look_player()
-	if equipment_preview_look==look: return
+	var preview_scale:=1.0 if size.y<540 else 2.0
+	var look_key:=look+":"+str(preview_scale)
+	if equipment_preview_look==look_key: return
 	var frame: Dictionary=content.actor(look,"standing",2,0)
 	if frame.is_empty(): return
-	equipment_preview_look=look
+	equipment_preview_look=look_key
 	var layer:={"path":"gameplay-assets/"+str(frame.path),"x":float(frame.offset[0]),"y":float(frame.offset[1])}
-	equipment_preview.configure([layer],Vector2(100,100),Vector2(0,-21),2.3)
+	equipment_preview.configure([layer],Vector2(100,100),Vector2(0,-23),preview_scale)
 
 func _visual_point(id: String, x: float, y: float) -> Vector2:
 	if not visual_positions.has(id): return Vector2(x,y)
@@ -1323,8 +1444,6 @@ func _render_world() -> void:
 		if str(buff.get("status",""))=="stealth": stealthed=true
 	if not player.is_empty(): player.opacity=0.4 if c.dead or stealthed else 1.0; sorted.append(player)
 	labels.append({"x":player_position.x*24+12,"y":player_position.y*24+24,"text":c.name,"color":"a9e8bd"})
-	sorted.sort_custom(func(a,b): return float(a.get("depth_y",a.y))<float(b.get("depth_y",b.y)))
-	layers.append_array(sorted)
 	for i in range(active_effects.size()-1,-1,-1):
 		var active: Dictionary=active_effects[i]
 		if clock-float(active.at)>10: active_effects.remove_at(i); continue
@@ -1333,7 +1452,7 @@ func _render_world() -> void:
 		if definition.is_empty(): continue
 		var sample: Dictionary=Effect.layers(definition,clock-float(active.at),Vector2(float(active.x)*24+12,float(active.y)*24+24))
 		if sample.finished: active_effects.remove_at(i)
-		else: layers.append_array(sample.back); layers.append_array(sample.front)
+		else: _append_depth_effect(sorted,sample,float(active.y)*24+24)
 	for index in range(projectiles.size()-1,-1,-1):
 		var projectile: Dictionary=projectiles[index]
 		var elapsed := clock-float(projectile.at)
@@ -1345,9 +1464,19 @@ func _render_world() -> void:
 		var effect: Dictionary=content.effects.get(str(projectile.get("effect_id","")),{})
 		if not effect.is_empty():
 			var sample: Dictionary=Effect.layers(effect,0.02,position)
-			layers.append_array(sample.back);layers.append_array(sample.front)
+			_append_depth_effect(sorted,sample,position.y)
+	sorted.sort_custom(func(a,b): return float(a.get("depth_y",a.y))<float(b.get("depth_y",b.y)))
+	layers.append_array(sorted)
 	view.labels=labels
 	view.configure(layers,Vector2(int(map.width)*24,int(map.height)*24),camera,world_zoom)
+
+func _append_depth_effect(layers: Array, sample: Dictionary, feet_y: float) -> void:
+	# Native back/front frame sets straddle the same foot-depth as the actor.
+	# Appending both after all actors made source back effects cover bodies.
+	for side_name in ["back","front"]:
+		for frame in sample.get(side_name,[]):
+			frame["depth_y"]=feet_y+(-0.5 if side_name=="back" else 0.5)
+			layers.append(frame)
 
 func _job_name(job: String) -> String:
 	return "평민" if job=="commoner" else job

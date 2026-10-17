@@ -379,15 +379,22 @@ func _migrate_payload(payload: Dictionary, contract: Dictionary, content: Dictio
 	# restore its scratch state before validating/returning the candidate.
 	var engine=_content_engine(content)
 	if engine==null: return result("INVALID_CONTENT","migration.configure")
-	var prior_state: Dictionary=engine.state
-	engine.state={"monsters":{}}
+	var visited: Dictionary={}
 	if bool(content.get("config",{}).get("lazy_world_spawns",false)):
 		# Existing records retain every HP/timer/drop. Initialize only visited maps.
-		var visited: Dictionary={}
+		# Reject malformed/unknown map references before replacing the private
+		# engine's scratch state or invoking a typed spawn lookup.
+		if typeof(candidate.get("character"))!=TYPE_DICTIONARY or not candidate.character.has("map_id"):return result("INVALID_STATE","migration.character_shape")
 		visited[str(candidate.character.map_id)]=true
 		# G1 serialized all global spawn records even before the map was visited.
 		# Keep those records, but do not infer discovery from their mere presence.
+		if typeof(candidate.character.get("discovered_maps",[]))!=TYPE_ARRAY:return result("INVALID_STATE","migration.discovered_maps_type")
 		for mid in candidate.character.get("discovered_maps",[]):visited[str(mid)]=true
+		for mid in visited:
+			if not content.maps.has(mid):return result("DEFERRED","migration.discovered_map_reference")
+	var prior_state: Dictionary=engine.state
+	engine.state={"monsters":{}}
+	if bool(content.get("config",{}).get("lazy_world_spawns",false)):
 		for mid in visited:engine._spawn_map(str(mid))
 	else:engine._spawn_all()
 	var added: Array=[]

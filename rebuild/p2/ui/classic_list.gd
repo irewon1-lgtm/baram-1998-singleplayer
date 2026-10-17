@@ -1,6 +1,7 @@
 extends ScrollContainer
 ## Real parchment rows, shared selection API; no ItemList skin substitution.
 signal item_selected(index: int)
+const ClassicSkin=preload("res://ui/classic_skin.gd")
 var rows: VBoxContainer
 var entries: Array = []
 var selected := -1
@@ -32,13 +33,18 @@ func add_item(title: String, icon: Texture2D = null) -> void:
 	button.custom_minimum_size=Vector2(0,38)
 	button.alignment=HORIZONTAL_ALIGNMENT_LEFT
 	button.toggle_mode=true; button.focus_mode=Control.FOCUS_NONE
-	var normal:=StyleBoxFlat.new();normal.bg_color=Color(0.5,0.3,0.12,0.04)
-	normal.content_margin_left=5;normal.content_margin_right=3
+	var normal:=StyleBoxEmpty.new();normal.content_margin_left=5;normal.content_margin_right=3
 	button.add_theme_stylebox_override("normal",normal)
-	var hover:=normal.duplicate();hover.bg_color=Color(0.5,0.3,0.12,0.17)
+	var hover:=ClassicSkin.patch(ClassicSkin.parchment(),Vector4(3,3,3,3),Vector4(5,3,3,3));hover.modulate_color=Color("dec28a")
 	button.add_theme_stylebox_override("hover",hover)
+	var selected_style:=ClassicSkin.patch(ClassicSkin.wood(),Vector4(4,3,4,3),Vector4(5,3,3,3))
+	button.add_theme_stylebox_override("pressed",selected_style)
+	button.add_theme_stylebox_override("hover_pressed",selected_style)
 	button.add_theme_color_override("font_color",Color("302012"))
+	button.add_theme_color_override("font_hover_color",Color("302012"))
 	button.add_theme_color_override("font_pressed_color",Color("fff3ca"))
+	button.add_theme_color_override("font_outline_color",Color.TRANSPARENT)
+	button.add_theme_constant_override("outline_size",0)
 	button.pressed.connect(func(): select(index); item_selected.emit(index))
 	rows.add_child(button)
 	entries.append({"button":button,"metadata":null})
