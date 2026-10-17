@@ -13,7 +13,7 @@
   "handoff_commit": "82e09f50861065c8e763efe34f7634d0e95e2e82",
   "app_behavior_commit": "639750f04d10ee4ac3c1a7113232b8c30109f078",
   "current_phase": "B5",
-  "current_phase_execution": "R14_EXPORT_PARITY_PASS_COLD_OS_READY_AFTER_PRE_APP_CAPTURE_GUARD_FIX",
+  "current_phase_execution": "R14_EXACT_PACK_CONTINUOUS1800_RUNNING",
   "authorization": {
     "goal_and_plan": "USER_APPROVED",
     "ordered_followup_work": "B1_THROUGH_B6_WITHIN_FREE_SCOPE",
@@ -163,10 +163,10 @@
   "next_action": {
     "owner": "Work",
     "phase": "B5",
-    "action": "Run existing earned save two20s Continue processes with actual published coldoperatorA861/toolcommit214144, after false pre-app rawfilesize readiness guard was replaced by encodedframe progress. Exports/parity standard11+23compiled+7983resources+ordinary10 PASS, all processesended. Then actualcandidate1800 once aftershortcold assessed; no oldpreflight or character reset.",
+    "action": "Continue already-running final30-r14 exec49302/display151/Godot91175/RSS55702, source639/PCK4a9/operator0654/analyzer69ba. No duplicate/preflight/SDK/G1 reset/heavyparallelwork. After1800+normal save/restart cleanup, analyze immutable traces then strict full video decode, stage exactnativeinputs metadata-only (no samefailedCIrerun), finalize actualpartialscope and persist candidate/evidence/report.",
     "on_environment_block": "Continue independent B5 code/UI/assets and adapter tests; native physical devices and authenticated roundtrip remain explicitly BLOCKED/NOT_RUN. B6 promotion blocked by B5 failures.",
     "do_not_repeat": "No full inventory/SDK/parser reset; reuse verified toolchain and unchanged evidence; only changed-source affected final suites.",
-    "resume_from": "R13 ended1806.054s/26functionalPASS, originalvideo persisted and cold116/103FAIL retained. New app639750f0/store8ef fixtures83/90/368/31/38/168 and339PASS, commonUI24PASS; exactexport/cold40/final1800NOT_RUN."
+    "resume_from": "RUNNING final30-r14, marker1792209445649805087, /tmp/baram-ordinary-qonokdge, canonicalr13earnedLv18/1176 without reset/grants. Coldfixed72PASS/49.3svalidvideo: first85.978/restart81.716,16saves0>100; coldwallp99~52/55ms and7>100wallgaps retained, nofullperfPASS. Exactexports/parity alreadyPASS. Main untouched."
   },
   "retry_policy": {
     "deterministic_unchanged_failure": "CHANGE_METHOD",
@@ -260,7 +260,7 @@
       "content_sha256": "f1e45c2a7045e130b842325751ab81cf38c22ac92df62ddafe33700aa9267fca",
       "runtime_generation": "WORK-V2-G1-20261017",
       "runtime_variant": "r12-final",
-      "ordinary_final30": "R14_NOT_RUN_R13_FUNCTIONAL_COMPLETE_COLD_FAIL_RETAINED",
+      "ordinary_final30": "R14_RUNNING_NOT_A_FINAL_RESULT",
       "native": "BLOCKED_BEFORE_RUNNER_STEPS_EXACT_REASON_NOT_OBSERVED",
       "account_sync": "BLOCKED_NO_IDENTIFIED_GAME_AUTHENTICATED_ENDPOINT",
       "ordinary_operator_correction": "Clamped map camera projection and actual lower-right overlay boundary; previous short attempts preserved as harness failures, not game pathfinding failures.",
@@ -289,27 +289,6 @@
         "app_close_failure_observed": false
       },
       "actual_operator_sha256": "1b00a9cbefaa3038814b30a90f361b7dd1f2d1029f7521cfa55539c8a4cdae67",
-      "active_run": {
-        "status": "ENDED_FUNCTIONAL26_PASS_COLD_PERFORMANCE_FAIL",
-        "exec_session_id": 21905,
-        "display": 127,
-        "host_game_pid": 77003,
-        "required_continuous_seconds": 1800,
-        "game_source": "4a0c8d796e65a0493207221f2eb60b78d006c681",
-        "runtime": "r12-final",
-        "PCK": "evidence/pack-parity-r13/final-windows-embedded.pck",
-        "PCK_sha256": "d5558c6926ba6f50bd5d4b148f9539974ad2318141f5e77fea8465904ff33fc0",
-        "operator_sha256": "06540e780e4b2032c8b82859d22d980fe2e255140ad3c27dc97de558cf57b064",
-        "live_log": "evidence/b5-play/final30-r13-run.log",
-        "isolated_session": "/tmp/baram-ordinary-fbkrto2m",
-        "final_report": "evidence/b5-play/final30-r13/OS_PLAYABILITY.json",
-        "final_analysis": "evidence/b5-play/final30-r13/FINAL_ANALYSIS.json",
-        "instruction": "Do not restart valid run. Required1800-second uninterrupted marker-defined stress with actual integrated transactions. First process, stress, separate restart and all tails retained; no new off/on replay.",
-        "continuous_stress_start_unix_ns": 1792206246679055369,
-        "all_processes_ended": true,
-        "observed_continuous_seconds": 1806.054,
-        "wall_seconds": 1825.74
-      },
       "functional_scope_gap": "Actual same-kind spare weapon sale/purchase/new-instance equip all occurred within completed continuous phase; stronger weapon upgrade not observed.",
       "observed_final_candidate_failure": {
         "source_commit": "82e09f50861065c8e763efe34f7634d0e95e2e82",
@@ -396,6 +375,68 @@
         "actual_recorder_proof": "evidence/b5-play/recorder-readiness-proof-r14/PROOF.json",
         "proof_checks": 4,
         "current_operator_sha256": "a86183dca7392b5ee1417a15bc1b1f41b1788c6bd22c818538ce870ca884fcbb"
+      },
+      "prior_completed_r13_active_run": {
+        "status": "ENDED_FUNCTIONAL26_PASS_COLD_PERFORMANCE_FAIL",
+        "exec_session_id": 21905,
+        "display": 127,
+        "host_game_pid": 77003,
+        "required_continuous_seconds": 1800,
+        "game_source": "4a0c8d796e65a0493207221f2eb60b78d006c681",
+        "runtime": "r12-final",
+        "PCK": "evidence/pack-parity-r13/final-windows-embedded.pck",
+        "PCK_sha256": "d5558c6926ba6f50bd5d4b148f9539974ad2318141f5e77fea8465904ff33fc0",
+        "operator_sha256": "06540e780e4b2032c8b82859d22d980fe2e255140ad3c27dc97de558cf57b064",
+        "live_log": "evidence/b5-play/final30-r13-run.log",
+        "isolated_session": "/tmp/baram-ordinary-fbkrto2m",
+        "final_report": "evidence/b5-play/final30-r13/OS_PLAYABILITY.json",
+        "final_analysis": "evidence/b5-play/final30-r13/FINAL_ANALYSIS.json",
+        "instruction": "Do not restart valid run. Required1800-second uninterrupted marker-defined stress with actual integrated transactions. First process, stress, separate restart and all tails retained; no new off/on replay.",
+        "continuous_stress_start_unix_ns": 1792206246679055369,
+        "all_processes_ended": true,
+        "observed_continuous_seconds": 1806.054,
+        "wall_seconds": 1825.74
+      },
+      "active_run": {
+        "status": "RUNNING_NOT_A_FINAL_RESULT",
+        "exec_session_id": 49302,
+        "rss_exec_session_id": 55702,
+        "display": 151,
+        "host_game_pid": 91175,
+        "wrapper_pid": 91167,
+        "operator_pid": 91172,
+        "isolated_session": "/tmp/baram-ordinary-qonokdge",
+        "required_continuous_seconds": 1800,
+        "continuous_stress_start_unix_ns": 1792209445649805087,
+        "game_source": "639750f04d10ee4ac3c1a7113232b8c30109f078",
+        "runtime": "r12-final",
+        "PCK": "evidence/pack-parity-r14/final-windows-embedded.pck",
+        "PCK_sha256": "4a9f20d3bc34b6df17d929caa62f19305b346f7b313c4721e315dfad021acd10",
+        "operator_sha256": "06540e780e4b2032c8b82859d22d980fe2e255140ad3c27dc97de558cf57b064",
+        "analyzer_sha256": "69ba13dd7eb5209e7284402ab464ed8709c1b0e671134bd7cc7b4ec5078fd519",
+        "source_tools_commit": "214144adb934d8982938469c7465cdfd6d1327a4",
+        "run_anchor": "evidence/b5-play/final30-r14/RUN_ANCHOR.json",
+        "live_log": "evidence/b5-play/final30-r14-run.log",
+        "final_report": "evidence/b5-play/final30-r14/OS_PLAYABILITY.json",
+        "final_analysis": "evidence/b5-play/final30-r14/FINAL_ANALYSIS.json",
+        "instruction": "Already-running process: do not restart, duplicate, rebuild, upload, decode, benchmark or edit app/tool bytes. Continue marker1800 + actual in-phase transactions + normal return/save/newprocessContinue. All first/stress/restart frames and allcold/warm saves retained."
+      },
+      "cold_actual": {
+        "path": "evidence/b5-play/cold-resume-r14-fixed/OS_PLAYABILITY.json",
+        "status": "FUNCTIONAL72_PASS_16SAVES0_OVER100_HOST_FRAME_TAILS_REMAIN",
+        "first_save_ms": 85.978,
+        "restart_first_save_ms": 81.716,
+        "save_count": 16,
+        "save_over100ms": 0,
+        "frame_p99_ms": [
+          51.584,
+          54.656
+        ],
+        "wall_over100ms": [
+          3,
+          4
+        ],
+        "full_performance_pass": false
       }
     }
   }
