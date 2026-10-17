@@ -1181,7 +1181,7 @@ func _refresh_panels() -> void:
 			if not slot_name.is_empty() and slot_name not in equipment_slot_names: equipment_slot_names.append(slot_name)
 	var equipment_rows: Array=[]
 	var equipment_ids: Array=[]
-	var slot_labels := {"weapon":"무기","armor":"갑옷","helmet":"투구","head":"투구","shield":"방패","ring":"반지","accessory":"보조","necklace":"목걸이","boots":"신발","left_hand":"왼손","right_hand":"오른손"}
+	var slot_labels := {"weapon":"무기","armor":"갑옷","helmet":"투구","head":"투구","shield":"방패","ring":"반지","accessory":"보조","necklace":"목걸이","boots":"신발","cape":"망토","left_hand":"왼손","right_hand":"오른손"}
 	for slot in equipment_slot_names:
 		var title:=str(slot_labels.get(slot,slot))+": 없음"
 		var icon: Texture2D=null

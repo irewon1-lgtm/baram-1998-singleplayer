@@ -52,7 +52,7 @@
     "ui/classic_list.gd.uid": "47cd5fe93fb3c397f4b70d4262ac9904f8986ee8a8a1e9cd0e5bc9b173afe64f",
     "ui/classic_skin.gd": "c59765c5a40a3a463232beacaa48150e14cbd39ef75401fd4c04d77a11fe2c70",
     "ui/classic_skin.gd.uid": "8ff7e3ad98c45ed7a277dcd495e38ea04473937237a9dd008fee62645f33e589",
-    "ui/gameplay.gd": "e0b5a50f2730b0eefa22a9ca6177b3d2541f8b243f884d158d40a9916fabe136",
+    "ui/gameplay.gd": "91fa7de03a311b5a02f5e91894f43e5af6367e09b17a6880bef0d52d0d438b0f",
     "ui/gameplay.gd.uid": "4ab88fcbe286f3a7487d47206d9791a12697d2e305eaf66f404c99e85a15f3ce",
     "ui/inspection.gd": "7723983f94857f99ca87356294c7ba15e6b2123250eebd9c28b70766f4cb26b6",
     "ui/inspection.gd.uid": "add58e6bf30d786c35df024772a90881672606d9dc7daff84a92097acc7bd612",
@@ -89,5 +89,11 @@
   "long_stability": "NOT_RUN_USER_WAIVED_MANDATORY_LONG_TEST",
   "native_execution": "NOT_RUN_BLOCKED_ENVIRONMENT_PROTECTION_AND_NO_LOCAL_DEVICES",
   "user_visual_failure": "RETAINED_UNTIL_FINAL_SCREEN_REVIEW",
-  "artifact_status": "CANDIDATE_EXPORT_IN_PROGRESS"
+  "artifact_status": "CANDIDATE_EXPORT_IN_PROGRESS",
+  "final_label_correction": {
+    "parent_source_commit": "95015d21abac54c8a82297b37a50339e0beeca52",
+    "change": "equipment slot cape→망토 label only",
+    "runtime_or_gameplay_changes": false,
+    "world_door_qa_reuse": "Default inventory/world/map screens and input code untouched; source diff is one dictionary entry, equipment panel recaptured separately"
+  }
 }
