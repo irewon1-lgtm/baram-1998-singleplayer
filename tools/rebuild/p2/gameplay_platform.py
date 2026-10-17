@@ -157,7 +157,7 @@ def export_gameplay(args: argparse.Namespace) -> int:
         env.update(JAVA_HOME=str(java), GODOT_ANDROID_KEYSTORE_DEBUG_PATH=str(key),
                    GODOT_ANDROID_KEYSTORE_DEBUG_USER="gameplay", GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD=password)
         settings = args.output / "godot-config/godot/editor_settings-4.6.tres"
-        settings.parent.mkdir(parents=True)
+        settings.parent.mkdir(parents=True, exist_ok=True)
         settings.write_text('[gd_resource type="EditorSettings" format=3]\n\n[resource]\n' +
             'export/android/java_sdk_path = ' + json.dumps(str(java)) + '\n' +
             'export/android/android_sdk_path = ' + json.dumps(str(sdk)) + '\n' +

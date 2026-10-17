@@ -665,9 +665,10 @@ func validate_payload(payload: Dictionary, owner: String, content: Dictionary) -
 	var fields := ["schema","profile","character","inventory","equipment","skills","hotkeys","quests","loot","monsters","buffs","cooldowns","revision","rng_state","applied_request_ids","request_watermarks","sim_time","time_accumulator","pending_actions","next_instance_id","next_loot_id","stats","shop_purchases"]
 	if not payload.has_all(fields): return result("INVALID_STATE","payload.shape")
 	for key in payload:
-		if key not in fields and key not in ["summons","bank_inventory"]: return result("INVALID_STATE","payload.unknown_field")
+		if key not in fields and key not in ["summons","bank_inventory","gathered_nodes"]: return result("INVALID_STATE","payload.unknown_field")
 	if payload.has("summons") and typeof(payload.summons)!=TYPE_ARRAY: return result("INVALID_STATE","summons.type")
 	if payload.has("bank_inventory") and typeof(payload.bank_inventory)!=TYPE_ARRAY: return result("INVALID_STATE","bank_inventory.type")
+	if payload.has("gathered_nodes") and typeof(payload.gathered_nodes)!=TYPE_DICTIONARY: return result("INVALID_STATE","gathered_nodes.type")
 	for key in ["character","equipment","hotkeys","quests","monsters","buffs","cooldowns","request_watermarks","stats","shop_purchases"]:
 		if typeof(payload[key]) != TYPE_DICTIONARY: return result("INVALID_STATE",key+".type")
 	for key in ["inventory","skills","loot","applied_request_ids","pending_actions"]:
@@ -739,7 +740,13 @@ func validate_payload(payload: Dictionary, owner: String, content: Dictionary) -
 		if str(key) not in ["1","2","3","4","5","6","7","8","9"] or payload.hotkeys[key] not in payload.skills: return result("INVALID_STATE","hotkey.reference")
 	for id in payload.buffs:
 		var buff: Variant=payload.buffs[id]
-		if not content.skills.has(id) or id not in payload.skills or typeof(buff)!=TYPE_DICTIONARY or not buff.has_all(["expires_at","attack","defense","attack_multiplier"]): return result("INVALID_STATE","buff.reference")
+		if typeof(buff)!=TYPE_DICTIONARY or not buff.has_all(["expires_at","attack","defense","attack_multiplier"]): return result("INVALID_STATE","buff.reference")
+		var known_source: bool=content.skills.has(id) and id in payload.skills
+		if str(id).begins_with("monster:"):
+			var source: Dictionary=payload.monsters.get(str(id).trim_prefix("monster:"),{})
+			var definition: Dictionary=content.monsters.get(str(source.get("monster_id","")),{})
+			known_source=not str(definition.get("on_hit_status","")).is_empty() and str(buff.get("status",""))==str(definition.get("on_hit_status",""))
+		if not known_source: return result("INVALID_STATE","buff.reference")
 		if not _timer(buff.expires_at) or not _int(buff.attack,-1000000000,1000000000) or not _int(buff.defense,-1000000000,1000000000) or typeof(buff.attack_multiplier) not in [TYPE_INT,TYPE_FLOAT] or not is_finite(float(buff.attack_multiplier)) or float(buff.attack_multiplier)<0 or float(buff.attack_multiplier)>1000: return result("INVALID_STATE","buff.range")
 	for id in unchecked_monsters:
 		var monster: Dictionary=payload.monsters[id]

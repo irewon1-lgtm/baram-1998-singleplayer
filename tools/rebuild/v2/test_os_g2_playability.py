@@ -7,6 +7,7 @@ events. Synthetic mouse/keys are explicitly not human, Korean IME, Windows, or
 Android evidence. Run inside toolchain/run_gui.py in the same namespace.
 """
 import argparse
+import base64
 from collections import deque
 import hashlib
 import json
@@ -70,6 +71,11 @@ def main():
     if a.resume_data:cpath.unlink(missing_ok=True)  # copied instrumentation log; earned save bytes remain untouched
     saves = cpath.parent / 'gameplay-p3/characters'
     content = json.loads((a.runtime / 'gameplay_content.json').read_text())
+    for m in content['maps'].values():
+        if 'blocked_base64' in m:
+            cells=base64.b64decode(m['blocked_base64'])
+            m['blocked']=[(n%m['width'],n//m['width']) for n,b in enumerate(cells) if b]
+            m['edge_masks']=list(base64.b64decode(m.get('edge_masks_base64','')))
     if a.pack:
         env.pop('BARAM_GAMEPLAY_RUNTIME',None);env.pop('BARAM_P2_RUNTIME',None)
     command = [str(a.godot.resolve()), '--audio-driver', 'Dummy'] + (['--main-pack',str(a.pack.resolve())] if a.pack else ['--path', str(a.project.resolve())])

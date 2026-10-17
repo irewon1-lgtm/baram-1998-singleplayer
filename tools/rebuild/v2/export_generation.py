@@ -54,6 +54,9 @@ def main() -> int:
     parser.add_argument("--source-commit", required=True)
     parser.add_argument("--version-code", type=int, default=3)
     parser.add_argument("--version-name", default="0.2.0-v2-candidate")
+    parser.add_argument("--resume-import", action="store_true",
+                        help="Resume a timed-out import only after exact frozen-input checks")
+    parser.add_argument("--import-timeout", type=int, default=180)
     args = parser.parse_args()
     if args.version_code <= 2:
         parser.error("Version code must increase above the delivered P3 repair code 2")
@@ -72,6 +75,49 @@ def main() -> int:
             .replace('version/name="0.1.0-p3"', 'version/name="' + args.version_name + '"')
             .replace('package/name="바람의나라 P3"', 'package/name="바람의나라 자료 재구성"'))
     platform.presets = presets
+    if not 180 <= args.import_timeout <= 1800:
+        parser.error("Import timeout must be between 180 and 1800 seconds")
+    base_run = platform.run_logged
+    def bounded_import(command, output, env, timeout=300):
+        if "--import" in command:
+            timeout = args.import_timeout
+        return base_run(command, output, env, timeout)
+    platform.run_logged = bounded_import
+    if args.resume_import:
+        prior_path = args.output.resolve() / "EXPORT_RECEIPT.json"
+        prior = json.loads(prior_path.read_text())
+        if (prior.get("result") != "FAIL_IMPORT" or prior.get("source_commit") != args.source_commit
+                or prior.get("target") != args.target or prior.get("version_code") != args.version_code
+                or prior.get("version_name") != args.version_name
+                or prior.get("source_snapshot") != platform.snapshot(args.project.resolve())
+                or prior.get("runtime_snapshot") != platform.snapshot(args.runtime.resolve())):
+            raise ValueError("Resume requires the identical failed import and frozen inputs")
+        stage = args.output.resolve() / "project"
+        for name, expected in prior["source_snapshot"].items():
+            staged = stage / name
+            if name == "export_presets.cfg":
+                continue
+            if name == "project.godot":
+                text = (args.project.resolve() / name).read_text()
+                text = re.sub(r'config/custom_user_dir_name="[^"\\n]+"',
+                              'config/custom_user_dir_name="' + USER_DIR + '"', text)
+                if staged.read_text() != text:
+                    raise ValueError("Staged project settings changed")
+            elif platform.digest(staged) != expected:
+                raise ValueError("Staged source changed: " + name)
+        if (stage / "export_presets.cfg").read_text() != presets(args.templates.resolve()):
+            raise ValueError("Staged export presets changed")
+        for name, expected in prior["runtime_snapshot"].items():
+            if platform.digest(stage / "private_runtime" / name) != expected:
+                raise ValueError("Staged runtime changed: " + name)
+        for name in ("EXPORT_RECEIPT.json", "import.log"):
+            source = args.output.resolve() / name
+            archived = source.with_name(source.name + ".attempt-1")
+            if archived.exists():
+                raise ValueError("Resume attempt archive already exists")
+            source.rename(archived)
+        platform.empty_output = lambda output: None
+        platform.stage_project = lambda *unused: prior["staged_options"]
     if args.target == "Android":
         base_run_logged = platform.run_logged
         def retained_key_logged(command, output, env, timeout=300):

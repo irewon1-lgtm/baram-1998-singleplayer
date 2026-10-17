@@ -38,11 +38,18 @@ func configure(definitions: Dictionary) -> bool:
 		var map: Dictionary=data.maps[map_id]
 		if int(map.get("width",0))<=0 or int(map.get("height",0))<=0:
 			errors.append("INVALID_MAP_SIZE:"+str(map_id))
-		_edge_masks[map_id]=PackedByteArray(map.get("edge_masks",[]))
+		_edge_masks[map_id]=Marshalls.base64_to_raw(str(map.edge_masks_base64)) if map.has("edge_masks_base64") else PackedByteArray(map.get("edge_masks",[]))
 		if not _edge_masks[map_id].is_empty() and _edge_masks[map_id].size()!=int(map.width)*int(map.height): errors.append("INVALID_EDGE_MASK_COUNT:"+str(map_id))
-		_blocked[map_id]={}
-		for point in map.get("blocked",[]):
-			_blocked[map_id][str(int(point[0]))+","+str(int(point[1]))]=true
+		var cells:=PackedByteArray()
+		if map.has("blocked_base64"):
+			cells=Marshalls.base64_to_raw(str(map.blocked_base64))
+			if cells.size()!=int(map.width)*int(map.height):errors.append("INVALID_BLOCKED_COUNT:"+str(map_id))
+		else:
+			cells.resize(int(map.width)*int(map.height));cells.fill(0)
+			for point in map.get("blocked",[]):
+				if int(point[0])>=0 and int(point[0])<int(map.width) and int(point[1])>=0 and int(point[1])<int(map.height):cells[int(point[1])*int(map.width)+int(point[0])]=1
+		_blocked[map_id]=cells
+	if not errors.is_empty():return false
 	for map_id in data.maps:
 		for exit in data.maps[map_id].get("exits",[]):
 			if not valid_position(str(exit.to_map),int(exit.to_x),int(exit.to_y)): errors.append("INVALID_EXIT_DESTINATION:"+str(map_id))
@@ -129,7 +136,7 @@ func configure(definitions: Dictionary) -> bool:
 func valid_position(map_id: String,x: int,y: int) -> bool:
 	if not data.get("maps",{}).has(map_id): return false
 	var map: Dictionary=data.maps[map_id]
-	return x>=0 and y>=0 and x<int(map.width) and y<int(map.height) and not _blocked.get(map_id,{}).has(str(x)+","+str(y))
+	return x>=0 and y>=0 and x<int(map.width) and y<int(map.height) and _blocked[map_id][y*int(map.width)+x]==0
 
 func _config(key: String,fallback: Variant) -> Variant:
 	return data.get("config",{}).get(key,fallback)
@@ -193,7 +200,11 @@ func _travel(cmd: Dictionary) -> Dictionary:
 	if point.is_empty():return _response("REFUSED","NO_TRAVEL_CAMP")
 	var fee:=maxi(10,int(data.maps[mid].get("recommended_level",1))*2)
 	if int(state.character.money)<fee:return _response("REFUSED","INSUFFICIENT_MONEY")
-	var arrival:=_arrival_position(mid,int(point.x)+1,int(point.y),true)
+	if bool(_config("lazy_world_spawns",false)): _spawn_map(mid)
+	var arrival: Dictionary={}
+	for offset in [Vector2i.RIGHT,Vector2i.DOWN,Vector2i.LEFT,Vector2i.UP]:
+		arrival=_arrival_position(mid,int(point.x)+offset.x,int(point.y)+offset.y,true)
+		if not arrival.is_empty():break
 	if arrival.is_empty() or not _transition(mid,int(arrival.x),int(arrival.y),2,"camp_travel"):return _response("REFUSED","DESTINATION_UNAVAILABLE")
 	state.character.money=int(state.character.money)-fee
 	_event("travelled",{"map_id":mid,"money":fee})
@@ -548,7 +559,7 @@ func _arrival_position(map_id: String,x: int,y: int,allow_nearby: bool) -> Dicti
 			var next: Vector2i=current+offset
 			if seen.has(next) or absi(next.x-x)+absi(next.y-y)>4: continue
 			seen[next]=true
-			if not valid_position(map_id,next.x,next.y) or _occupied(map_id,next.x,next.y): continue
+			if not can_step(map_id,current.x,current.y,next.x,next.y) or _occupied(map_id,next.x,next.y): continue
 			var is_exit:=false
 			for exit in data.maps[map_id].get("exits",[]):
 				if int(exit.x)==next.x and int(exit.y)==next.y: is_exit=true;break

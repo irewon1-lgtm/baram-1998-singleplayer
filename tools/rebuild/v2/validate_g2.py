@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Structural/progression graph checks. No gameplay or platform PASS inference."""
-import argparse,json,hashlib
+import argparse,json,hashlib,base64
 from pathlib import Path
 from collections import Counter,deque
 from build_g2_world import write,reachable
@@ -15,6 +15,11 @@ def run(root):
  for m in d['maps'].values():
   for e in m['exits']:landings[e['to_map']].add((int(e['to_x']),int(e['to_y'])))
  for mid,m in d['maps'].items():
+  if 'geometry_file'in m:
+   source=json.load(open(root/m['geometry_file']))
+   blocked=base64.b64decode(m['blocked_base64']);edges=base64.b64decode(m.get('edge_masks_base64',''))
+   check('packed_cells:'+mid,len(blocked)==m['width']*m['height']and{(n%m['width'],n//m['width'])for n,b in enumerate(blocked)if b}=={tuple(p)for p in source['blocked']}and bytes(source.get('edge_masks',[]))==edges)
+   m.update({k:source[k]for k in ('blocked','ground_ids','edge_masks')if k in source})
   b={tuple(p)for p in m['blocked']};nodes={p['id']for p in m.get('gather_nodes',[])}
   check('grid:'+mid,len(m['ground_ids'])==m['width']*m['height']and(not m.get('edge_masks')or len(m['edge_masks'])==len(m['ground_ids'])))
   check('entrance_clear:'+mid,all((s['x'],s['y'])not in landings[mid]for s in m['spawns'])and all((n['x'],n['y'])not in landings[mid]for n in d['npcs'].values()if n['map_id']==mid))
