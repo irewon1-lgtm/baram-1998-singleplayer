@@ -355,9 +355,83 @@ def early_balance(source,output,evidence_ref):
     for kind in ('maps','monsters','items','skills','npcs','quests','recipes','advancements','training_rules'):assert set(data[kind])==set(original[kind]),kind
     return {'status':'PASS_STATIC_NARROW_EARLY_BALANCE','runtime_sha256':digest(output/'runtime.json'),'content_sha256':digest(output/'gameplay_content.json'),'fingerprint':manifest['fingerprint'],'changed_executable_fields':len(entries),'unchanged_png_wav_assets':unchanged_assets,'maps_byte_semantically_identical':76,'stable_id_sets_preserved':True,'save_compatibility_and_pinned_migrations_preserved':True,'ledger':entries,'natural_play_after_change':'NOT_RUN'}
 
+def interior_presentation(source,output):
+    """Narrow visual-only r12 repair; never re-extract native IDs from repainted floors.
+
+    The exact r11 room pixels and complete props are the palette/scale source.
+    Door jambs reuse only the upright portion of the existing outdoor gateway;
+    tables combine the existing wooden surface pixels with complete stool legs.
+    No navigation, actor, service or saved geometry coordinate changes.
+    """
+    original=json.loads((source/'gameplay_content.json').read_text());data=deepcopy(original);changes=[]
+    def asset(key,image):
+        relative='gameplay/world/repair/'+key+'.png';image.save(output/relative);return relative
+    gateway=Image.open(source/'gameplay/world/repair/open-gateway.png').convert('RGBA')
+    jambs=gateway.crop((0,48,48,72));door_path=asset('interior-door-jambs-r12',jambs)
+    for mid,m in data['maps'].items():
+        if not(m['width']==20 and m['height']==18):continue
+        before=original['maps'][mid];w,h=m['width'],m['height'];floor=Image.open(source/m['floor_png']).convert('RGBA')
+        tile=floor.crop((24,24,48,48));base=int(m['visual_style']['ground_native_id'])
+        # Remove the arbitrary nine-tile outdoor-looking aisle. Preserve the
+        # actual portal threshold and perimeter pixel locations exactly.
+        for y in range(8,h-1):
+            for x in (9,10,11):floor.alpha_composite(tile,(x*24,y*24))
+        for e in m['exits']:
+            ex,ey=int(e['x']),int(e['y'])
+            old_floor=Image.open(source/before['floor_png']).convert('RGBA')
+            floor.alpha_composite(old_floor.crop((ex*24,ey*24,(ex+1)*24,(ey+1)*24)),(ex*24,ey*24))
+        m['objects']=[o for o in m['objects'] if o.get('visual_repair')!='interior_open_exit']
+        buildings=[]
+        for e in m['exits']:
+            ex,ey=int(e['x']),int(e['y']);x,y=ex*24-12,ey*24
+            m['objects'].append({'path':door_path,'frame_png':door_path,'x':x,'y':y,'depth_y':(ey+1)*24,'width_px':48,'height_px':24,'height':1,'placement_fact_status':'LEGACY_RECONSTRUCTED','visual_repair':'interior_low_door_jambs','source_ids':['KR125:SOBJECT.OTB:695:lower24','KR125:SOBJECT.OTB:696:lower24']})
+            buildings.append({'exit_id':e['id'],'cell':[ex,ey],'pixel_bounds':[x,y,48,24],'open_aperture_center':[ex*24+12,ey*24+12],'depth_y':(ey+1)*24})
+        m['visual_buildings']=buildings
+        table_count=0
+        if '주막' in m['name']:
+            # A legged wooden table uses the same decoded room palette. Its
+            # blocking footprint is one pre-existing stool cell; paired seats
+            # remain on the immediately adjacent pre-existing blocked cells.
+            wood=tile.transpose(Image.Transpose.ROTATE_90).resize((24,16),Image.Resampling.NEAREST)
+            stool=Image.open(source/'gameplay/world/objects/object-146.png').convert('RGBA')
+            table=Image.new('RGBA',(24,32));table.alpha_composite(stool.crop((0,12,24,24)),(0,20));table.alpha_composite(wood,(0,4))
+            table_path=asset('tavern-complete-wood-table-r12',table)
+            for o in m['objects']:
+                if o.get('visual_repair')=='complete_prop_on_existing_blocked_cell' and int(o['y'])==120:
+                    o.update(path=table_path,frame_png=table_path,y=112,width_px=24,height_px=32,height=2,visual_repair='complete_table_on_existing_blocked_cell',source_ids=['KR125:GROUND:370:wood_surface','KR125:SOBJECT.OTB:146:legs']);table_count+=1
+        relative='gameplay/world/repair/'+hashlib.sha256(mid.encode()).hexdigest()[:18]+'-floor-r12.png';floor.save(output/relative);m['floor_png']=relative
+        layers=[]
+        for y in range(0,floor.height,384):
+            for x in range(0,floor.width,384):
+                chunk=floor.crop((x,y,min(x+384,floor.width),min(y+384,floor.height)));p=asset(hashlib.sha256(mid.encode()).hexdigest()[:12]+f'-r12-{x}-{y}',chunk);layers.append({'path':p,'x':x,'y':y,'width_px':chunk.width,'height_px':chunk.height})
+        m['ground_layers']=layers
+        m['presentation_ground_ids']=[133 if x in (0,w-1) or y in (0,h-1) else base for y in range(h) for x in range(w)]
+        for e in m['exits']:
+            ex,ey=int(e['x']),int(e['y']);m['presentation_ground_ids'][ey*w+ex]=255
+            if e.get('direction') in ('north','south'):m['presentation_ground_ids'][(0 if e['direction']=='north' else h-1)*w+ex]=255
+        m['visual_style']['interior_revision']='r12 low doorway, continuous room floor, complete native-palette tables'
+        assert topology(m)==topology(before),mid+' topology changed'
+        changes.append({'map_id':mid,'name':m['name'],'removed_outdoor_roof':True,'door_height_px':24,'removed_arbitrary_aisle':True,'tables_on_existing_blocked_cells':table_count})
+    assert len(changes)==12,len(changes)
+    for kind in original:
+        if kind not in ('maps','interior_presentation_repair'):assert data.get(kind)==original[kind],kind
+    changed_ids={c['map_id']for c in changes}
+    for mid in set(data['maps'])-changed_ids:assert data['maps'][mid]==original['maps'][mid],mid
+    data['interior_presentation_repair']={'version':'B5-r12-20261017','parent_runtime_sha256':digest(source/'runtime.json'),'parent_content_sha256':digest(source/'gameplay_content.json'),'tool_sha256':digest(Path(__file__)),'source_tier':'LEGACY_RECONSTRUCTED','topology_unchanged':True,'changes':changes}
+    write(output/'gameplay_content.json',data)
+    manifest=json.loads((source/'runtime.json').read_text());manifest['parent_interior_runtime_sha256']=digest(source/'runtime.json');manifest['interior_presentation_repair']=deepcopy(data['interior_presentation_repair']);old={f['path']:f for f in manifest['files']};files=[]
+    for p in sorted(output.rglob('*')):
+        if not p.is_file() or p.name=='runtime.json':continue
+        relative=str(p.relative_to(output));f=deepcopy(old.get(relative,{'path':relative}));f.update(bytes=p.stat().st_size,sha256=digest(p))
+        if p.suffix=='.png':
+            with Image.open(p) as im:f.update(width_px=im.width,height_px=im.height)
+        files.append(f)
+    manifest['files']=files;manifest['fingerprint']=hashlib.sha256(canonical(files).encode()).hexdigest();manifest['dependency_closure']['png_files_verified']=sum(f['path'].endswith('.png')for f in files);write(output/'runtime.json',manifest)
+    return {'status':'PASS_STATIC_INTERIOR_ONLY_REPAIR','runtime_sha256':digest(output/'runtime.json'),'content_sha256':digest(output/'gameplay_content.json'),'fingerprint':manifest['fingerprint'],'maps_changed':len(changes),'changes':changes,'all_noninterior_maps_identical':True,'all_gameplay_and_save_contracts_identical':True,'actual_runtime_render':'NOT_RUN','normal_play':'NOT_RUN'}
+
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--source',type=Path,required=True);ap.add_argument('--output',type=Path,required=True);ap.add_argument('--receipt',type=Path,required=True);ap.add_argument('--reshape',action='store_true');ap.add_argument('--early-balance',action='store_true');ap.add_argument('--observed-evidence',default='B5-r7 integration-owner unaccelerated natural 32-kill session');args=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument('--source',type=Path,required=True);ap.add_argument('--output',type=Path,required=True);ap.add_argument('--receipt',type=Path,required=True);ap.add_argument('--reshape',action='store_true');ap.add_argument('--early-balance',action='store_true');ap.add_argument('--interior-presentation',action='store_true');ap.add_argument('--observed-evidence',default='B5-r7 integration-owner unaccelerated natural 32-kill session');args=ap.parse_args()
     if args.output.exists():raise SystemExit('Refusing to overwrite a runtime generation')
-    if args.reshape and args.early_balance:raise SystemExit('Geometry and balance are separate reviewed generations')
-    shutil.copytree(args.source,args.output);r=early_balance(args.source,args.output,args.observed_evidence) if args.early_balance else Repair(args.source,args.output,args.reshape).run();write(args.receipt,r);print(json.dumps({k:v for k,v in r.items()if k not in ('changes','regional_layouts','ledger')}))
+    if sum((args.reshape,args.early_balance,args.interior_presentation))>1:raise SystemExit('Geometry, balance and interior presentation are separate reviewed generations')
+    shutil.copytree(args.source,args.output);r=interior_presentation(args.source,args.output) if args.interior_presentation else early_balance(args.source,args.output,args.observed_evidence) if args.early_balance else Repair(args.source,args.output,args.reshape).run();write(args.receipt,r);print(json.dumps({k:v for k,v in r.items()if k not in ('changes','regional_layouts','ledger')}))
 if __name__=='__main__':main()

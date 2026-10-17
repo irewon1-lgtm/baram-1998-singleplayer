@@ -128,6 +128,7 @@ def main():
     def state(settle=0):
         if settle: time.sleep(settle)
         if process.poll() is not None: raise RuntimeError('Game process exited')
+        if (out/'STOP_OPERATOR').exists(): raise RuntimeError('Operator cancellation requested; product result not established')
         return json.loads(savefile.read_text())['payload']
     def capture(name):
         path=out/(name+'.png')
@@ -152,10 +153,24 @@ def main():
             attack=next(c['rect'] for c in layout['controls'] if c['text']=='공격')
             rect=[8,39,attack[0]+100-8,attack[1]+72-39]
         zoom=layout.get('view_zoom',1.65)
-        px=rect[0]+rect[2]/2+(target[0]-character['x'])*24*zoom
-        py=rect[1]+rect[3]/2+(target[1]-character['y'])*24*zoom
-        px=max(rect[0]+35,min(rect[0]+rect[2]-115,px))
-        py=max(rect[1]+35,min(rect[1]+rect[3]-145,py))
+        # The ordinary camera clamps at map edges and centers small maps. A
+        # character-relative projection aimed at the wrong ground near exits.
+        # Reproduce only the public canvas transform using read-only content
+        # and a settled committed character; never invoke the game's methods.
+        m=content['maps'][character['map_id']]
+        extent=(m['width']*24,m['height']*24)
+        half=(rect[2]/(2*zoom),rect[3]/(2*zoom))
+        focus=[character['x']*24+12,character['y']*24+12]
+        for axis in (0,1):
+            focus[axis]=max(half[axis],min(extent[axis]-half[axis],focus[axis])) if extent[axis]>=2*half[axis] else extent[axis]/2
+        px=rect[0]+rect[2]/2+(target[0]*24+12-focus[0])*zoom
+        py=rect[1]+rect[3]/2+(target[1]*24+12-focus[1])*zoom
+        px=max(rect[0]+12,min(rect[0]+rect[2]-12,px))
+        py=max(rect[1]+12,min(rect[1]+rect[3]-12,py))
+        # Action buttons cover only the lower-right corner, not the entire
+        # bottom edge where real map exits may sit.
+        if px>rect[0]+rect[2]-112 and py>rect[1]+rect[3]-140:
+            px=rect[0]+rect[2]-120
         click_xy(px,py,description)
     def grid_route(payload, destination, reach=0):
         c=payload['character']; m=content['maps'][c['map_id']]
