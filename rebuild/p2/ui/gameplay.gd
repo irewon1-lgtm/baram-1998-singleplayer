@@ -1261,10 +1261,15 @@ func _refresh_vitals() -> void:
 	if size.y<540:status.text=str(content.data.maps[c.map_id].name)+" · "+str(int(c.money))+"전"
 	last_state_revision=int(game.state.revision)
 
+func _monster_look(monster_id: String) -> String:
+	var definition: Dictionary=content.data.monsters.get(monster_id,{})
+	var fallback:=str(definition.get("look_id",definition.get("look",definition.get("appearance_id","rabbit"))))
+	return str(content.actors.get("actor_aliases",{}).get(monster_id,fallback))
+
 func _look_player() -> String:
 	for buff in game.state.get("buffs",{}).values():
 		var form_id:=str(buff.get("form_monster_id",""))
-		if content.data.monsters.has(form_id): return str(content.data.monsters[form_id].get("look_id",content.data.monsters[form_id].get("look","")))
+		if content.data.monsters.has(form_id): return _monster_look(form_id)
 	var armor := false
 	var shield := false
 	var helmet := false
@@ -1451,13 +1456,13 @@ func _render_world() -> void:
 		var def: Dictionary=content.data.monsters[monster.monster_id]
 		var animation := "attack" if clock<float(actor_animations.get(id,0)) else "walking" if clock<float(actor_walk_until.get(id,0)) else "standing"
 		var at:=_visual_point(str(id),float(monster.x),float(monster.y))
-		var layer := _actor_layer(str(def.get("look_id",def.get("appearance_id","rabbit"))),animation,int(actor_directions.get(id,2)),at.x,at.y)
+		var layer := _actor_layer(_monster_look(str(monster.monster_id)),animation,int(actor_directions.get(id,2)),at.x,at.y)
 		if not layer.is_empty(): sorted.append(layer)
 		labels.append({"x":at.x*24+12,"y":at.y*24+24,"text":str(def.name)+( " ◇" if id==selected_target else ""),"hp":monster.hp,"hp_max":def.hp,"color":"f0e8c7"})
 	for summon in game.state.get("summons",[]):
 		if str(summon.map_id)!=str(c.map_id): continue
 		var definition: Dictionary=content.data.monsters.get(str(summon.monster_id),{})
-		var ally:=_actor_layer(str(definition.get("look_id",definition.get("look",""))),"standing",int(c.direction),float(summon.x),float(summon.y))
+		var ally:=_actor_layer(_monster_look(str(summon.monster_id)),"standing",int(c.direction),float(summon.x),float(summon.y))
 		if not ally.is_empty(): sorted.append(ally)
 		labels.append({"x":int(summon.x)*24+12,"y":int(summon.y)*24+24,"text":str(definition.get("name","동료"))+" · 동료","color":"84dfab"})
 	for loot in game.state.loot:
