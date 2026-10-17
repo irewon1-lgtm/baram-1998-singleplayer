@@ -1,0 +1,31 @@
+{
+  "schema": "baram.final-playability-tool-provenance/3",
+  "repository": "irewon1-lgtm/baram-1998-singleplayer",
+  "branch": "work/rebuild-p3-remediation-20261016",
+  "commit": "639750f04d10ee4ac3c1a7113232b8c30109f078",
+  "app_source_commit": "639750f04d10ee4ac3c1a7113232b8c30109f078",
+  "app_changed": true,
+  "operator_path": "tools/rebuild/v2/test_os_playability.py",
+  "operator_sha256": "06540e780e4b2032c8b82859d22d980fe2e255140ad3c27dc97de558cf57b064",
+  "analyzer_path": "tools/rebuild/v2/analyze_playability.py",
+  "analyzer_sha256": "69ba13dd7eb5209e7284402ab464ed8709c1b0e671134bd7cc7b4ec5078fd519",
+  "tool_sha256": {
+    "tools/rebuild/v2/test_os_playability.py": "06540e780e4b2032c8b82859d22d980fe2e255140ad3c27dc97de558cf57b064",
+    "tools/rebuild/v2/analyze_playability.py": "69ba13dd7eb5209e7284402ab464ed8709c1b0e671134bd7cc7b4ec5078fd519",
+    "tools/rebuild/v2/test_analyze_playability.py": "e814ee2a2f27b87c0abf575befab3deffa08a45cf001c17a94a68dc2acb241f5",
+    "tools/rebuild/v2/stage_native_candidate.py": "1b53eceb730df2b5a0da9b4156f4be78cdd1c7daffbcacdcff41876c0d23b809",
+    "tools/rebuild/v2/test_native_android.py": "bce468a461e5f0de7aba28e539fe7deb1a15cb3bfb99cf90426612367993419a",
+    "tools/rebuild/v2/run_playability_analysis.py": "0e771b0bfdb2053fea8f457014b9e16d31c66bae0d509bd0a70f17263c82502b",
+    "tools/rebuild/v2/test_store_cold.gd": "22827853b5ef6af5ebff91b69a10cdf7c1e045719b6bf55355852b7f8ebbaa17",
+    "tools/rebuild/v2/test_store_depth.gd": "5acb17fb0f190aee2309cda35ab01fffb37cfa186b209a228de68154307ecc1e",
+    "tools/rebuild/v2/test_os_cold_resume.py": "705d1a059fd83632e74f33db88f7f1c6b2b3b92d525307ce850969398e3f181f"
+  },
+  "scope": "Published store-only r14 successor; operator unchanged0654; analyzer exactordered signature correlation with signed uncalibrated residuals, command latency NOT_VALIDATED_CLOCK_ALIGNMENT; event_id receipt-to-draw unchanged; independent process clocks; cold40s operator is separate from final1800. All performance/raw histories retained. No native app execution.",
+  "preflight_tools_commit": "396840406fabe6bef585c67eb28d120d57798ef2",
+  "preflight_operator_sha256": "00fcfb7c6e6f23b6e042b32529d7d4dcfac583aee068399cabceeb0290347df2",
+  "final_operator_first_published_commit": "a299eb8693c193872375f5697de12c09eefab800",
+  "analysis_wrapper_path": "tools/rebuild/v2/run_playability_analysis.py",
+  "analysis_wrapper_sha256": "0e771b0bfdb2053fea8f457014b9e16d31c66bae0d509bd0a70f17263c82502b",
+  "cold_operator_path": "tools/rebuild/v2/test_os_cold_resume.py",
+  "cold_operator_sha256": "705d1a059fd83632e74f33db88f7f1c6b2b3b92d525307ce850969398e3f181f"
+}

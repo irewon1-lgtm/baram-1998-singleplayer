@@ -11,9 +11,9 @@
   "status": "B5_FIXED_EXACT_CANDIDATE_CONTINUOUS1800_RUNNING",
   "implementation_status": "G1_RETAINED_PLAYABILITY_REPAIR_HOST_VALIDATED_NATIVE_LONG_PLAY_PENDING",
   "handoff_commit": "82e09f50861065c8e763efe34f7634d0e95e2e82",
-  "app_behavior_commit": "4a0c8d796e65a0493207221f2eb60b78d006c681",
+  "app_behavior_commit": "639750f04d10ee4ac3c1a7113232b8c30109f078",
   "current_phase": "B5",
-  "current_phase_execution": "R13_FUNCTIONAL1806_COMPLETE_COLD_SAVE_FAIL_R14_MINIMAL_FIX_IN_PROGRESS",
+  "current_phase_execution": "R14_STORE_ONLY_FROZEN_EXPORT_AND_COLD_OS_PENDING",
   "authorization": {
     "goal_and_plan": "USER_APPROVED",
     "ordered_followup_work": "B1_THROUGH_B6_WITHIN_FREE_SCOPE",
@@ -163,10 +163,10 @@
   "next_action": {
     "owner": "Work",
     "phase": "B5",
-    "action": "Preserve completed r13 exact-pack1806.054s functional26PASS and cold performance FAIL. Inspected first save116.099ms existing_read76.163 and restart103.415ms existing_read70.253. Apply minimum writer metadata ownership copy fix, isolated cold correctness/timing plus affected storage regressions. Exact new candidate shortcold+1800 replay is required only for changed store; unchanged G1/engine/UI proofs retained. No research/SDK/character reset.",
+    "action": "Export exact app639750f0 version6 with unchangedr12 runtime/signing/package/userdir, verify PCK/APK parity and10ordinary checks, then40s two-process Continue probe. Only after actual coldOS assessment, run final1800 once exactcandidate from same earnedLv18 r13 save. No240s preflight, learning, SDK or G1 reset.",
     "on_environment_block": "Continue independent B5 code/UI/assets and adapter tests; native physical devices and authenticated roundtrip remain explicitly BLOCKED/NOT_RUN. B6 promotion blocked by B5 failures.",
     "do_not_repeat": "No full inventory/SDK/parser reset; reuse verified toolchain and unchanged evidence; only changed-source affected final suites.",
-    "resume_from": "Current r13 processes ended exit0 and all recorder/Godot/RSS stopped. Existing earned character Lv18/kills263/pickups632/deaths0. final30-r13 logs and pinnedF5 analysis retained; analyzer external command correlation clockdrift investigation separate, actual receipt→draw event_id binding valid."
+    "resume_from": "R13 ended1806.054s/26functionalPASS, originalvideo persisted and cold116/103FAIL retained. New app639750f0/store8ef fixtures83/90/368/31/38/168 and339PASS, commonUI24PASS; exactexport/cold40/final1800NOT_RUN."
   },
   "retry_policy": {
     "deterministic_unchanged_failure": "CHANGE_METHOD",
@@ -254,13 +254,13 @@
     "scope": "Keep B0-B4/G1 IDs, fix affected B3/B4 code/assets within B5; actual platform/sync/update gates retained",
     "prior_evidence_policy": "Historical PASS logs retained, affected source/content/config/environment/scope revalidated; no unexecuted PASS",
     "resume": {
-      "source_commit": "4a0c8d796e65a0493207221f2eb60b78d006c681",
-      "app_behavior_commit": "4a0c8d796e65a0493207221f2eb60b78d006c681",
+      "source_commit": "639750f04d10ee4ac3c1a7113232b8c30109f078",
+      "app_behavior_commit": "639750f04d10ee4ac3c1a7113232b8c30109f078",
       "runtime_manifest_sha256": "4791e101c547f0a3848297b40b0e424acd776ac85c2d455e40e1f83c4bd1fdf0",
       "content_sha256": "f1e45c2a7045e130b842325751ab81cf38c22ac92df62ddafe33700aa9267fca",
       "runtime_generation": "WORK-V2-G1-20261017",
       "runtime_variant": "r12-final",
-      "ordinary_final30": "R13_FUNCTIONAL_COMPLETE_COLD_PERFORMANCE_FAIL_NOT_FINAL_CANDIDATE_ACCEPTANCE",
+      "ordinary_final30": "R14_NOT_RUN_R13_FUNCTIONAL_COMPLETE_COLD_FAIL_RETAINED",
       "native": "BLOCKED_BEFORE_RUNNER_STEPS_EXACT_REASON_NOT_OBSERVED",
       "account_sync": "BLOCKED_NO_IDENTIFIED_GAME_AUTHENTICATED_ENDPOINT",
       "ordinary_operator_correction": "Clamped map camera projection and actual lower-right overlay boundary; previous short attempts preserved as harness failures, not game pathfinding failures.",
@@ -354,14 +354,14 @@
         },
         "prior_evidence_reused": "UI/r12visuals/store prior correctness evidence only where unchanged; no failed30min promoted"
       },
-      "source_freeze": "evidence/FIXED_SOURCE_FREEZE.json",
+      "source_freeze": "evidence/FIXED_SOURCE_FREEZE_R14.json",
       "targeted_fix_evidence": {
         "arrival": "evidence/arrival-occupancy/SUMMARY.json",
-        "store": "evidence/store-latency-r13/SUMMARY.json",
+        "store": "evidence/store-cold-r14/SUMMARY.json",
         "UI_rows": "evidence/UI_ALLOCATION_REPAIR.json",
-        "UI_common": "evidence/ui-integrity-fixed/ui-integrity.json"
+        "UI_common": "evidence/ui-integrity-r14/ui-integrity.json"
       },
-      "source_tools_commit": "0fad09b1a6ee44484c5a197eb2a305197ffc047b",
+      "source_tools_commit": "639750f04d10ee4ac3c1a7113232b8c30109f078",
       "fixed_pack_parity": "docs/rebuild/v2/B5_PACK_PARITY_R13.json",
       "preflight": "evidence/b5-play/final-preflight-r13/OS_PLAYABILITY.json",
       "analysis_provenance": "Separate first-process/restart clocks; actual analyzer/input/output receipts retained. Full acceptance not yet reached.",
@@ -380,7 +380,7 @@
         "source": "4a0c8d796e65a0493207221f2eb60b78d006c681"
       },
       "conditional_cold_followup": {
-        "status": "ACTUAL_PHASE_CONFIRMED_MINIMUM_PROPOSAL_APPLY_AND_AFFECTED_TESTS_IN_PROGRESS",
+        "status": "FINAL8EF_SOURCE_PUBLISHED_FRESH_FIXTURES_PASS_RENDERED_GATE_PENDING",
         "proposal": "evidence/store-cold-proposal.diff",
         "existing_short_first_existing_read_ms": 67.687,
         "existing_short_next_existing_read_ms": 2.188,

@@ -1,0 +1,43 @@
+{
+  "schema": "baram.b5.fixed-source-freeze/2",
+  "app_source_commit": "639750f04d10ee4ac3c1a7113232b8c30109f078",
+  "parent": "968360917c9c0ba03db0b7d70f448b186633bbcd",
+  "branch": "work/rebuild-p3-remediation-20261016",
+  "app_sources_changed": [
+    "rebuild/p2/storage/gameplay_store.gd"
+  ],
+  "source_sha256": {
+    "rebuild/p2/state/gameplay_state.gd": "75b6ce536fe2bb1e3f213678d8d9588d93caa858dd1081eabb74f11a626e6205",
+    "rebuild/p2/storage/gameplay_store.gd": "8ef2f4db97867e9d42150019e9774c6bb5b1024282b30ed30f1c2045ce87cebd",
+    "rebuild/p2/ui/gameplay.gd": "cf3d18ec2aafca206ee2bf63db1cf7fe4605e5ff8fc31ce7123fed65b1180be6",
+    "rebuild/p2/ui/classic_list.gd": "b9f6b74ca10acad2ebcd0e9ad1bc559114dc54cfab7f467ca8967238d5574218",
+    "tools/rebuild/v2/test_store_cold.gd": "22827853b5ef6af5ebff91b69a10cdf7c1e045719b6bf55355852b7f8ebbaa17",
+    "tools/rebuild/v2/test_store_depth.gd": "5acb17fb0f190aee2309cda35ab01fffb37cfa186b209a228de68154307ecc1e",
+    "tools/rebuild/v2/test_os_cold_resume.py": "705d1a059fd83632e74f33db88f7f1c6b2b3b92d525307ce850969398e3f181f",
+    "tools/rebuild/v2/test_os_playability.py": "06540e780e4b2032c8b82859d22d980fe2e255140ad3c27dc97de558cf57b064",
+    "tools/rebuild/v2/analyze_playability.py": "69ba13dd7eb5209e7284402ab464ed8709c1b0e671134bd7cc7b4ec5078fd519",
+    "tools/rebuild/v2/test_analyze_playability.py": "e814ee2a2f27b87c0abf575befab3deffa08a45cf001c17a94a68dc2acb241f5",
+    "tools/rebuild/v2/run_playability_analysis.py": "0e771b0bfdb2053fea8f457014b9e16d31c66bae0d509bd0a70f17263c82502b"
+  },
+  "runtime_manifest_sha256": "4791e101c547f0a3848297b40b0e424acd776ac85c2d455e40e1f83c4bd1fdf0",
+  "content_sha256": "f1e45c2a7045e130b842325751ab81cf38c22ac92df62ddafe33700aa9267fca",
+  "runtime_changed": false,
+  "prior_app_source": "4a0c8d796e65a0493207221f2eb60b78d006c681",
+  "reuse_impact": {
+    "unchanged_game_state": "Exact75b6ce53 source bytes; reuse67 actual-save arrival/collision tests and1323 G1 actions. All752 monster states, spawn rules, exits, skills and economic rules unchanged.",
+    "unchanged_UI": "Exactcf3d18ec gameplayUI/b9f6b74 classicList; reuse17 row reuse fixtures and7image visual read review, only their unchanged scopes. New24commonGUI executed against8ef store.",
+    "unchanged_data": "Exactr12 manifest4791e101/contentf1e45c2a;3995runtimeinputsunchanged. Reuse76map renders, firstskill command proofs, finitebudget progression only original scopes.",
+    "changed_store": "Only private metadata ownership and bytewise same-depth guard. Fresh83/90/368/31/38/168 and339 exactbyte-reference comparisons bindcurrent8ef. New exactcandidate coldOS+1800 mandatory; priorr13 coldFAIL is history.",
+    "NOT_REUSED_AS_CURRENT": "Prior4a0/r13 completed1806s all26functionPASS firstsave116/restart103FAIL; prior82e/r12 interrupted1311s gameplayFAIL; allnative/account/physical/human requirements unchangedunverified."
+  },
+  "tests": {
+    "store": "evidence/store-cold-r14/SUMMARY.json",
+    "store_execution_bindings": "evidence/store-latency-r14/SUMMARY.json",
+    "UI_common": "evidence/ui-integrity-r14/ui-integrity.json",
+    "analyzer": "evidence/b5-play/ANALYZER_R14_EQUALITY.json"
+  },
+  "scope": "Published source and executed targeted fixtures. Exact installer/coldOS/final1800/native acceptance not yet executed.",
+  "published": true,
+  "published_head": "639750f04d10ee4ac3c1a7113232b8c30109f078",
+  "published_tree": "8065173120a283965f5a75554a4a77bed44161b6"
+}

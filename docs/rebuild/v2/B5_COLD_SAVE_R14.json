@@ -1,0 +1,789 @@
+{
+  "schema": "baram.b5.store-cold-final-repair/1",
+  "status": "PASS_EXECUTED_FINAL_STORE_FIXTURES_RENDERED_GATE_REQUIRED",
+  "final_store_sha256": "8ef2f4db97867e9d42150019e9774c6bb5b1024282b30ed30f1c2045ce87cebd",
+  "before_store_sha256": "c5f2b5d14e289e57613701f82ead154d081c0e36d30c455cd83fb949241527da",
+  "intermediate_metadata_only_sha256": "111a1447c164c6d1451760d04f25c48fde3f0c7bd8219296b5192587416a4e73",
+  "source_game_state_sha256": "75b6ce536fe2bb1e3f213678d8d9588d93caa858dd1081eabb74f11a626e6205",
+  "app_source_commit": "639750f04d10ee4ac3c1a7113232b8c30109f078",
+  "observed_unix_ns": 1792208716870657101,
+  "evidence_scope": "Final-source targeted headless full-G1 cold persistence and safety fixtures. No final installer/native/platform or rendered30minute acceptance verdict is made here.",
+  "original_primary_sha256": "4a43edf95a10310d137e6d65f64c86f23b50ebd49d5ea302713cf24f4c2c19b9",
+  "original_backup_sha256": "eb98e9ce6e0512168159a0834d8aacf0c6b9c2cec9626beb72905d3f5fa811ac",
+  "content_sha256": "f1e45c2a7045e130b842325751ab81cf38c22ac92df62ddafe33700aa9267fca",
+  "conditions_equal": {
+    "untouched_original_primary_and_backup": true,
+    "same_engine_source_and_content": true,
+    "all_5_first_and_next_production_tick_candidate_hashes_equal": true,
+    "sequential_performance_probes_no_parallel_export_decode_or_other_benchmark": true,
+    "store_cache_cold_each_repetition": true,
+    "OS_filesystem_CPU_caches_reset": false
+  },
+  "timing_before": {
+    "evidence": "evidence/store-cold-r14/baseline.json",
+    "report_sha256": "54aaf903382a27776733797ef0a05de3c05439513ad11485088986ec8d12f3ac",
+    "source_store_sha256": "c5f2b5d14e289e57613701f82ead154d081c0e36d30c455cd83fb949241527da",
+    "status": "PASS_OBSERVED_STORE_FIXTURE",
+    "failure_count": 0,
+    "first_cold_backup": {
+      "outer_write_ms": {
+        "n": 5,
+        "raw_ms": [
+          100.195,
+          92.278,
+          90.485,
+          91.552,
+          131.502
+        ],
+        "p50_ms": 92.278,
+        "p95_ms": 125.241,
+        "min_ms": 90.485,
+        "max_ms": 131.502,
+        "over100ms": 2
+      },
+      "existing_read_ms": {
+        "n": 5,
+        "raw_ms": [
+          71.29,
+          63.425,
+          65.407,
+          66.015,
+          90.785
+        ],
+        "p50_ms": 66.015,
+        "p95_ms": 86.886,
+        "min_ms": 63.425,
+        "max_ms": 90.785,
+        "over100ms": 0
+      },
+      "raw_store_phases": [
+        {
+          "authoritative_state_ms": 4.757,
+          "backup_write_verify_ms": 1.089,
+          "content_check_ms": 0.006,
+          "encoding_ms": 8.536,
+          "existing_read_ms": 71.29,
+          "pending_write_verify_ms": 1.193,
+          "primary_replace_ms": 0.43,
+          "remember_verified_ms": 0.01,
+          "state_plain_ms": 6.565,
+          "total_ms": 100.188,
+          "validation_ms": 14.891
+        },
+        {
+          "authoritative_state_ms": 4.772,
+          "backup_write_verify_ms": 0.823,
+          "content_check_ms": 0.007,
+          "encoding_ms": 6.512,
+          "existing_read_ms": 63.425,
+          "pending_write_verify_ms": 1.053,
+          "primary_replace_ms": 0.215,
+          "remember_verified_ms": 0.009,
+          "state_plain_ms": 5.859,
+          "total_ms": 92.257,
+          "validation_ms": 18.533
+        },
+        {
+          "authoritative_state_ms": 5.679,
+          "backup_write_verify_ms": 0.962,
+          "content_check_ms": 0.009,
+          "encoding_ms": 6.303,
+          "existing_read_ms": 65.407,
+          "pending_write_verify_ms": 1.309,
+          "primary_replace_ms": 0.338,
+          "remember_verified_ms": 0.01,
+          "state_plain_ms": 6.134,
+          "total_ms": 90.477,
+          "validation_ms": 14.613
+        },
+        {
+          "authoritative_state_ms": 5.115,
+          "backup_write_verify_ms": 1.502,
+          "content_check_ms": 0.007,
+          "encoding_ms": 6.404,
+          "existing_read_ms": 66.015,
+          "pending_write_verify_ms": 1.55,
+          "primary_replace_ms": 0.316,
+          "remember_verified_ms": 0.011,
+          "state_plain_ms": 6.197,
+          "total_ms": 91.544,
+          "validation_ms": 14.21
+        },
+        {
+          "authoritative_state_ms": 5.488,
+          "backup_write_verify_ms": 1.221,
+          "content_check_ms": 0.008,
+          "encoding_ms": 9.027,
+          "existing_read_ms": 90.785,
+          "pending_write_verify_ms": 1.455,
+          "primary_replace_ms": 0.274,
+          "remember_verified_ms": 0.01,
+          "state_plain_ms": 14.993,
+          "total_ms": 131.494,
+          "validation_ms": 27.188
+        }
+      ]
+    },
+    "next_warm_backup": {
+      "outer_write_ms": {
+        "n": 5,
+        "raw_ms": [
+          26.964,
+          26.487,
+          26.205,
+          26.912,
+          39.163
+        ],
+        "p50_ms": 26.912,
+        "p95_ms": 36.723,
+        "min_ms": 26.205,
+        "max_ms": 39.163,
+        "over100ms": 0
+      },
+      "existing_read_ms": {
+        "n": 5,
+        "raw_ms": [
+          1.991,
+          2.366,
+          2.127,
+          2.099,
+          1.961
+        ],
+        "p50_ms": 2.099,
+        "p95_ms": 2.318,
+        "min_ms": 1.961,
+        "max_ms": 2.366,
+        "over100ms": 0
+      },
+      "raw_store_phases": [
+        {
+          "authoritative_state_ms": 4.787,
+          "backup_write_verify_ms": 1.399,
+          "content_check_ms": 0.005,
+          "encoding_ms": 6.819,
+          "existing_read_ms": 1.991,
+          "pending_write_verify_ms": 0.921,
+          "primary_replace_ms": 0.288,
+          "remember_verified_ms": 0.01,
+          "state_plain_ms": 6.832,
+          "total_ms": 26.956,
+          "validation_ms": 14.308
+        },
+        {
+          "authoritative_state_ms": 5.188,
+          "backup_write_verify_ms": 0.792,
+          "content_check_ms": 0.007,
+          "encoding_ms": 6.384,
+          "existing_read_ms": 2.366,
+          "pending_write_verify_ms": 0.929,
+          "primary_replace_ms": 0.209,
+          "remember_verified_ms": 0.009,
+          "state_plain_ms": 6.799,
+          "total_ms": 26.478,
+          "validation_ms": 14.568
+        },
+        {
+          "authoritative_state_ms": 4.922,
+          "backup_write_verify_ms": 0.819,
+          "content_check_ms": 0.007,
+          "encoding_ms": 6.211,
+          "existing_read_ms": 2.127,
+          "pending_write_verify_ms": 0.921,
+          "primary_replace_ms": 0.231,
+          "remember_verified_ms": 0.009,
+          "state_plain_ms": 7.131,
+          "total_ms": 26.195,
+          "validation_ms": 14.631
+        },
+        {
+          "authoritative_state_ms": 5.013,
+          "backup_write_verify_ms": 0.979,
+          "content_check_ms": 0.007,
+          "encoding_ms": 6.829,
+          "existing_read_ms": 2.099,
+          "pending_write_verify_ms": 0.885,
+          "primary_replace_ms": 0.225,
+          "remember_verified_ms": 0.009,
+          "state_plain_ms": 6.727,
+          "total_ms": 26.903,
+          "validation_ms": 14.583
+        },
+        {
+          "authoritative_state_ms": 12.944,
+          "backup_write_verify_ms": 0.85,
+          "content_check_ms": 0.009,
+          "encoding_ms": 6.497,
+          "existing_read_ms": 1.961,
+          "pending_write_verify_ms": 0.883,
+          "primary_replace_ms": 0.217,
+          "remember_verified_ms": 0.009,
+          "state_plain_ms": 9.956,
+          "total_ms": 39.156,
+          "validation_ms": 27.558
+        }
+      ]
+    }
+  },
+  "timing_metadata_only": {
+    "evidence": "evidence/store-cold-r14/candidate.json",
+    "report_sha256": "ccf3c96aeb76c5f6d09c0a3d0e4b78df436b153ec8beb818527eeedae03ab62e",
+    "source_store_sha256": "111a1447c164c6d1451760d04f25c48fde3f0c7bd8219296b5192587416a4e73",
+    "status": "PASS_OBSERVED_STORE_FIXTURE",
+    "failure_count": 0,
+    "first_cold_backup": {
+      "outer_write_ms": {
+        "n": 5,
+        "raw_ms": [
+          89.89,
+          94.291,
+          91.385,
+          97.195,
+          88.227
+        ],
+        "p50_ms": 91.385,
+        "p95_ms": 96.614,
+        "min_ms": 88.227,
+        "max_ms": 97.195,
+        "over100ms": 0
+      },
+      "existing_read_ms": {
+        "n": 5,
+        "raw_ms": [
+          63.05,
+          67.631,
+          63.51,
+          70.859,
+          62.124
+        ],
+        "p50_ms": 63.51,
+        "p95_ms": 70.213,
+        "min_ms": 62.124,
+        "max_ms": 70.859,
+        "over100ms": 0
+      },
+      "raw_store_phases": [
+        {
+          "authoritative_state_ms": 4.515,
+          "backup_write_verify_ms": 1.763,
+          "content_check_ms": 0.006,
+          "encoding_ms": 7.622,
+          "existing_read_ms": 63.05,
+          "pending_write_verify_ms": 1.984,
+          "primary_replace_ms": 0.301,
+          "remember_verified_ms": 0.011,
+          "state_plain_ms": 6.222,
+          "total_ms": 89.882,
+          "validation_ms": 13.988
+        },
+        {
+          "authoritative_state_ms": 4.71,
+          "backup_write_verify_ms": 2.021,
+          "content_check_ms": 0.007,
+          "encoding_ms": 7.242,
+          "existing_read_ms": 67.631,
+          "pending_write_verify_ms": 1.938,
+          "primary_replace_ms": 0.233,
+          "remember_verified_ms": 0.039,
+          "state_plain_ms": 6.301,
+          "total_ms": 94.282,
+          "validation_ms": 13.966
+        },
+        {
+          "authoritative_state_ms": 4.765,
+          "backup_write_verify_ms": 1.967,
+          "content_check_ms": 0.007,
+          "encoding_ms": 7.123,
+          "existing_read_ms": 63.51,
+          "pending_write_verify_ms": 1.958,
+          "primary_replace_ms": 0.229,
+          "remember_verified_ms": 0.038,
+          "state_plain_ms": 6.311,
+          "total_ms": 91.376,
+          "validation_ms": 15.397
+        },
+        {
+          "authoritative_state_ms": 6.165,
+          "backup_write_verify_ms": 1.805,
+          "content_check_ms": 0.007,
+          "encoding_ms": 7.031,
+          "existing_read_ms": 70.859,
+          "pending_write_verify_ms": 1.731,
+          "primary_replace_ms": 0.281,
+          "remember_verified_ms": 0.01,
+          "state_plain_ms": 6.73,
+          "total_ms": 97.187,
+          "validation_ms": 14.25
+        },
+        {
+          "authoritative_state_ms": 4.818,
+          "backup_write_verify_ms": 1.179,
+          "content_check_ms": 0.006,
+          "encoding_ms": 7.097,
+          "existing_read_ms": 62.124,
+          "pending_write_verify_ms": 1.391,
+          "primary_replace_ms": 0.274,
+          "remember_verified_ms": 0.009,
+          "state_plain_ms": 5.753,
+          "total_ms": 88.22,
+          "validation_ms": 14.268
+        }
+      ]
+    },
+    "next_warm_backup": {
+      "outer_write_ms": {
+        "n": 5,
+        "raw_ms": [
+          26.778,
+          26.485,
+          26.105,
+          28.577,
+          26.781
+        ],
+        "p50_ms": 26.778,
+        "p95_ms": 28.218,
+        "min_ms": 26.105,
+        "max_ms": 28.577,
+        "over100ms": 0
+      },
+      "existing_read_ms": {
+        "n": 5,
+        "raw_ms": [
+          2.228,
+          1.981,
+          2.193,
+          2.348,
+          2.402
+        ],
+        "p50_ms": 2.228,
+        "p95_ms": 2.391,
+        "min_ms": 1.981,
+        "max_ms": 2.402,
+        "over100ms": 0
+      },
+      "raw_store_phases": [
+        {
+          "authoritative_state_ms": 4.954,
+          "backup_write_verify_ms": 0.843,
+          "content_check_ms": 0.007,
+          "encoding_ms": 7.345,
+          "existing_read_ms": 2.228,
+          "pending_write_verify_ms": 0.942,
+          "primary_replace_ms": 0.21,
+          "remember_verified_ms": 0.009,
+          "state_plain_ms": 6.49,
+          "total_ms": 26.77,
+          "validation_ms": 14.09
+        },
+        {
+          "authoritative_state_ms": 4.737,
+          "backup_write_verify_ms": 0.971,
+          "content_check_ms": 0.008,
+          "encoding_ms": 6.312,
+          "existing_read_ms": 1.981,
+          "pending_write_verify_ms": 0.965,
+          "primary_replace_ms": 0.248,
+          "remember_verified_ms": 0.009,
+          "state_plain_ms": 6.937,
+          "total_ms": 26.477,
+          "validation_ms": 14.246
+        },
+        {
+          "authoritative_state_ms": 5.511,
+          "backup_write_verify_ms": 0.933,
+          "content_check_ms": 0.007,
+          "encoding_ms": 6.085,
+          "existing_read_ms": 2.193,
+          "pending_write_verify_ms": 0.867,
+          "primary_replace_ms": 0.299,
+          "remember_verified_ms": 0.009,
+          "state_plain_ms": 6.325,
+          "total_ms": 26.094,
+          "validation_ms": 14.37
+        },
+        {
+          "authoritative_state_ms": 5.543,
+          "backup_write_verify_ms": 1.952,
+          "content_check_ms": 0.006,
+          "encoding_ms": 6.422,
+          "existing_read_ms": 2.348,
+          "pending_write_verify_ms": 0.857,
+          "primary_replace_ms": 0.216,
+          "remember_verified_ms": 0.01,
+          "state_plain_ms": 6.674,
+          "total_ms": 28.568,
+          "validation_ms": 15.239
+        },
+        {
+          "authoritative_state_ms": 4.957,
+          "backup_write_verify_ms": 0.84,
+          "content_check_ms": 0.007,
+          "encoding_ms": 6.337,
+          "existing_read_ms": 2.402,
+          "pending_write_verify_ms": 1.016,
+          "primary_replace_ms": 0.215,
+          "remember_verified_ms": 0.01,
+          "state_plain_ms": 6.997,
+          "total_ms": 26.771,
+          "validation_ms": 14.806
+        }
+      ]
+    }
+  },
+  "timing_final_byte_scanner": {
+    "evidence": "evidence/store-cold-r14/final-candidate.json",
+    "report_sha256": "05b5fc40997b51a20836c0e113c9bdbe1e554f6b7f0bdd871eed31c7f30d3d13",
+    "source_store_sha256": "8ef2f4db97867e9d42150019e9774c6bb5b1024282b30ed30f1c2045ce87cebd",
+    "status": "PASS_OBSERVED_STORE_FIXTURE",
+    "failure_count": 0,
+    "first_cold_backup": {
+      "outer_write_ms": {
+        "n": 5,
+        "raw_ms": [
+          72.851,
+          75.081,
+          74.398,
+          72.217,
+          68.725
+        ],
+        "p50_ms": 72.851,
+        "p95_ms": 74.944,
+        "min_ms": 68.725,
+        "max_ms": 75.081,
+        "over100ms": 0
+      },
+      "existing_read_ms": {
+        "n": 5,
+        "raw_ms": [
+          48.479,
+          48.838,
+          47.984,
+          46.986,
+          45.273
+        ],
+        "p50_ms": 47.984,
+        "p95_ms": 48.766,
+        "min_ms": 45.273,
+        "max_ms": 48.838,
+        "over100ms": 0
+      },
+      "raw_store_phases": [
+        {
+          "authoritative_state_ms": 5.181,
+          "backup_write_verify_ms": 0.956,
+          "content_check_ms": 0.008,
+          "encoding_ms": 7.055,
+          "existing_read_ms": 48.479,
+          "pending_write_verify_ms": 1.069,
+          "primary_replace_ms": 0.232,
+          "remember_verified_ms": 0.011,
+          "state_plain_ms": 6.64,
+          "total_ms": 72.841,
+          "validation_ms": 13.6
+        },
+        {
+          "authoritative_state_ms": 5.029,
+          "backup_write_verify_ms": 0.866,
+          "content_check_ms": 0.008,
+          "encoding_ms": 6.724,
+          "existing_read_ms": 48.838,
+          "pending_write_verify_ms": 1.016,
+          "primary_replace_ms": 0.228,
+          "remember_verified_ms": 0.024,
+          "state_plain_ms": 7.048,
+          "total_ms": 75.071,
+          "validation_ms": 16.212
+        },
+        {
+          "authoritative_state_ms": 4.775,
+          "backup_write_verify_ms": 0.855,
+          "content_check_ms": 0.007,
+          "encoding_ms": 6.851,
+          "existing_read_ms": 47.984,
+          "pending_write_verify_ms": 0.911,
+          "primary_replace_ms": 0.256,
+          "remember_verified_ms": 0.009,
+          "state_plain_ms": 6.538,
+          "total_ms": 74.388,
+          "validation_ms": 16.373
+        },
+        {
+          "authoritative_state_ms": 4.616,
+          "backup_write_verify_ms": 0.809,
+          "content_check_ms": 0.007,
+          "encoding_ms": 6.703,
+          "existing_read_ms": 46.986,
+          "pending_write_verify_ms": 1.364,
+          "primary_replace_ms": 0.211,
+          "remember_verified_ms": 0.009,
+          "state_plain_ms": 6.001,
+          "total_ms": 72.207,
+          "validation_ms": 14.433
+        },
+        {
+          "authoritative_state_ms": 4.339,
+          "backup_write_verify_ms": 1.074,
+          "content_check_ms": 0.006,
+          "encoding_ms": 6.467,
+          "existing_read_ms": 45.273,
+          "pending_write_verify_ms": 0.906,
+          "primary_replace_ms": 0.274,
+          "remember_verified_ms": 0.008,
+          "state_plain_ms": 6.248,
+          "total_ms": 68.716,
+          "validation_ms": 13.605
+        }
+      ]
+    },
+    "next_warm_backup": {
+      "outer_write_ms": {
+        "n": 5,
+        "raw_ms": [
+          26.528,
+          26.376,
+          29.512,
+          30.784,
+          25.484
+        ],
+        "p50_ms": 26.528,
+        "p95_ms": 30.53,
+        "min_ms": 25.484,
+        "max_ms": 30.784,
+        "over100ms": 0
+      },
+      "existing_read_ms": {
+        "n": 5,
+        "raw_ms": [
+          1.958,
+          2.063,
+          2.1,
+          2.235,
+          2.181
+        ],
+        "p50_ms": 2.1,
+        "p95_ms": 2.224,
+        "min_ms": 1.958,
+        "max_ms": 2.235,
+        "over100ms": 0
+      },
+      "raw_store_phases": [
+        {
+          "authoritative_state_ms": 5.438,
+          "backup_write_verify_ms": 0.815,
+          "content_check_ms": 0.009,
+          "encoding_ms": 6.693,
+          "existing_read_ms": 1.958,
+          "pending_write_verify_ms": 0.973,
+          "primary_replace_ms": 0.218,
+          "remember_verified_ms": 0.009,
+          "state_plain_ms": 6.62,
+          "total_ms": 26.518,
+          "validation_ms": 14.7
+        },
+        {
+          "authoritative_state_ms": 5.256,
+          "backup_write_verify_ms": 0.862,
+          "content_check_ms": 0.006,
+          "encoding_ms": 6.609,
+          "existing_read_ms": 2.063,
+          "pending_write_verify_ms": 0.94,
+          "primary_replace_ms": 0.211,
+          "remember_verified_ms": 0.008,
+          "state_plain_ms": 6.614,
+          "total_ms": 26.366,
+          "validation_ms": 14.538
+        },
+        {
+          "authoritative_state_ms": 6.35,
+          "backup_write_verify_ms": 0.857,
+          "content_check_ms": 0.009,
+          "encoding_ms": 7.448,
+          "existing_read_ms": 2.1,
+          "pending_write_verify_ms": 0.934,
+          "primary_replace_ms": 0.221,
+          "remember_verified_ms": 0.013,
+          "state_plain_ms": 6.776,
+          "total_ms": 29.5,
+          "validation_ms": 16.73
+        },
+        {
+          "authoritative_state_ms": 8.773,
+          "backup_write_verify_ms": 0.856,
+          "content_check_ms": 0.008,
+          "encoding_ms": 6.988,
+          "existing_read_ms": 2.235,
+          "pending_write_verify_ms": 0.956,
+          "primary_replace_ms": 0.309,
+          "remember_verified_ms": 0.009,
+          "state_plain_ms": 6.702,
+          "total_ms": 30.775,
+          "validation_ms": 18.08
+        },
+        {
+          "authoritative_state_ms": 4.814,
+          "backup_write_verify_ms": 0.933,
+          "content_check_ms": 0.006,
+          "encoding_ms": 6.498,
+          "existing_read_ms": 2.181,
+          "pending_write_verify_ms": 0.928,
+          "primary_replace_ms": 0.212,
+          "remember_verified_ms": 0.009,
+          "state_plain_ms": 6.159,
+          "total_ms": 25.474,
+          "validation_ms": 13.542
+        }
+      ]
+    }
+  },
+  "profile": {
+    "evidence": "evidence/store-cold-r14/profile.json",
+    "report_sha256": "0c40fc8a7cd418759ebed36ff410912ef5611fe59021add6da4addecc9cf4505",
+    "scope": "One isolated instrumented copied-store cold/warm experiment on intermediate metadata-only source; diagnostic only, not a final-source repeat.",
+    "first_cold_outer_ms": 90.008,
+    "first_cold_phases": {
+      "authoritative_state_ms": 4.732,
+      "backup_write_verify_ms": 0.814,
+      "content_check_ms": 0.006,
+      "decode_candidate_clone_ms": 1.258,
+      "decode_checksum_ms": 9.629,
+      "decode_depth_scan_ms": 32.218,
+      "decode_json_parse_ms": 4.461,
+      "decode_semantic_ms": 13.862,
+      "encoding_ms": 7.42,
+      "existing_read_ms": 63.911,
+      "pending_write_verify_ms": 0.933,
+      "primary_replace_ms": 0.233,
+      "remember_verified_ms": 0.011,
+      "state_plain_ms": 6.649,
+      "total_ms": 89.997,
+      "validation_ms": 15.512
+    }
+  },
+  "regressions": {
+    "regression": {
+      "status": "PASS",
+      "checks": 83,
+      "failures": 0,
+      "not_run": 0,
+      "evidence": "evidence/store-cold-r14/final-regression.json",
+      "report_sha256": "16c94f5a7cdbfed0546e11d2638da2943418dcee96dcb7fe71890bc032296411",
+      "store_sha256": "8ef2f4db97867e9d42150019e9774c6bb5b1024282b30ed30f1c2045ce87cebd",
+      "source_store_sha256": "8ef2f4db97867e9d42150019e9774c6bb5b1024282b30ed30f1c2045ce87cebd",
+      "store_hash_emitted_by_report": null,
+      "source_binding_basis": "Exact final store preloaded from isolated sessions/store-regression/rebuild/p2/storage/gameplay_store.gd, copied before sequential suite invocation and unchanged through suite completion; report file hash pinned.",
+      "actual_execution_count": 1
+    },
+    "migration-real": {
+      "status": "PASS",
+      "checks": 90,
+      "failures": 0,
+      "not_run": 0,
+      "evidence": "evidence/store-cold-r14/final-migration-real.json",
+      "report_sha256": "3c99ed912087342cb1fa7c783ed4988f1c4a5a3c7f74e8628e34490e6e05c5ce",
+      "store_sha256": "8ef2f4db97867e9d42150019e9774c6bb5b1024282b30ed30f1c2045ce87cebd",
+      "source_store_sha256": "8ef2f4db97867e9d42150019e9774c6bb5b1024282b30ed30f1c2045ce87cebd",
+      "store_hash_emitted_by_report": null,
+      "source_binding_basis": "Exact final store preloaded from isolated sessions/store-regression/rebuild/p2/storage/gameplay_store.gd, copied before sequential suite invocation and unchanged through suite completion; report file hash pinned.",
+      "actual_execution_count": 1
+    },
+    "cell-migration-real": {
+      "status": "PASS",
+      "checks": 368,
+      "failures": 0,
+      "not_run": 0,
+      "evidence": "evidence/store-cold-r14/final-cell-migration-real.json",
+      "report_sha256": "5a2c35045601a473c45241dd4288dbdcc6a56f08ba9a2a0490f351d1e1be30e7",
+      "store_sha256": "8ef2f4db97867e9d42150019e9774c6bb5b1024282b30ed30f1c2045ce87cebd",
+      "source_store_sha256": "8ef2f4db97867e9d42150019e9774c6bb5b1024282b30ed30f1c2045ce87cebd",
+      "store_hash_emitted_by_report": "8ef2f4db97867e9d42150019e9774c6bb5b1024282b30ed30f1c2045ce87cebd",
+      "source_binding_basis": "Actual test report emits exact final store SHA.",
+      "actual_execution_count": 1
+    },
+    "record-cache": {
+      "status": "PASS",
+      "checks": 31,
+      "failures": 0,
+      "not_run": 0,
+      "evidence": "evidence/store-cold-r14/final-record-cache.json",
+      "report_sha256": "594146484fc9534c0628ee0b0763fdb1c38282c291192dbeff0688d7ce1c08fa",
+      "store_sha256": "8ef2f4db97867e9d42150019e9774c6bb5b1024282b30ed30f1c2045ce87cebd",
+      "source_store_sha256": "8ef2f4db97867e9d42150019e9774c6bb5b1024282b30ed30f1c2045ce87cebd",
+      "store_hash_emitted_by_report": "8ef2f4db97867e9d42150019e9774c6bb5b1024282b30ed30f1c2045ce87cebd",
+      "source_binding_basis": "Actual test report emits exact final store SHA.",
+      "actual_execution_count": 1
+    },
+    "cache-safety-generation": {
+      "status": "PASS",
+      "checks": 38,
+      "failures": 0,
+      "not_run": 0,
+      "evidence": "evidence/store-cold-r14/final-cache-safety-generation.json",
+      "report_sha256": "24886afb02527a73b1a58fcd0708244580c90d2094dbeebd9a23d6bd3ac29dee",
+      "store_sha256": "8ef2f4db97867e9d42150019e9774c6bb5b1024282b30ed30f1c2045ce87cebd",
+      "source_store_sha256": "8ef2f4db97867e9d42150019e9774c6bb5b1024282b30ed30f1c2045ce87cebd",
+      "store_hash_emitted_by_report": "8ef2f4db97867e9d42150019e9774c6bb5b1024282b30ed30f1c2045ce87cebd",
+      "source_binding_basis": "Actual test report emits exact final store SHA.",
+      "actual_execution_count": 1
+    },
+    "cold-metadata": {
+      "status": "PASS_OBSERVED_STORE_FIXTURE",
+      "checks": 168,
+      "failures": 0,
+      "not_run": 0,
+      "evidence": "evidence/store-cold-r14/final-candidate.json",
+      "report_sha256": "05b5fc40997b51a20836c0e113c9bdbe1e554f6b7f0bdd871eed31c7f30d3d13",
+      "store_sha256": "8ef2f4db97867e9d42150019e9774c6bb5b1024282b30ed30f1c2045ce87cebd",
+      "source_store_sha256": "8ef2f4db97867e9d42150019e9774c6bb5b1024282b30ed30f1c2045ce87cebd",
+      "store_hash_emitted_by_report": "8ef2f4db97867e9d42150019e9774c6bb5b1024282b30ed30f1c2045ce87cebd",
+      "source_binding_basis": "Actual test report emits exact final store SHA.",
+      "actual_execution_count": 1
+    },
+    "depth-equivalence": {
+      "status": "PASS",
+      "checks": 339,
+      "failures": 0,
+      "not_run": 0,
+      "evidence": "evidence/store-cold-r14/depth-equivalence.json",
+      "report_sha256": "718ebfe7ac6037d4e4e796ce00be92dce54368bf26f629cd09b1f70545f9c805",
+      "store_sha256": "8ef2f4db97867e9d42150019e9774c6bb5b1024282b30ed30f1c2045ce87cebd",
+      "source_store_sha256": "8ef2f4db97867e9d42150019e9774c6bb5b1024282b30ed30f1c2045ce87cebd",
+      "source_reference_sha256": "111a1447c164c6d1451760d04f25c48fde3f0c7bd8219296b5192587416a4e73",
+      "source_binding_basis": "Executed isolated candidate store copy is byte-identical to the final actual app store. Both the guard state and complete _decode_uncached results were differentially compared. Reused exact same bytes, not rerun after copying to the app path.",
+      "actual_execution_count": 1
+    },
+    "cache-safety": {
+      "status": "PASS",
+      "checks": 38,
+      "failures": 0,
+      "not_run": 0,
+      "evidence": "evidence/store-cold-r14/final-cache-safety-generation.json",
+      "report_sha256": "24886afb02527a73b1a58fcd0708244580c90d2094dbeebd9a23d6bd3ac29dee",
+      "store_sha256": "8ef2f4db97867e9d42150019e9774c6bb5b1024282b30ed30f1c2045ce87cebd",
+      "source_store_sha256": "8ef2f4db97867e9d42150019e9774c6bb5b1024282b30ed30f1c2045ce87cebd",
+      "store_hash_emitted_by_report": "8ef2f4db97867e9d42150019e9774c6bb5b1024282b30ed30f1c2045ce87cebd",
+      "source_binding_basis": "Actual test report emits exact final store SHA.",
+      "actual_execution_count": 0,
+      "alias_of": "cache-safety-generation",
+      "execution_accounting": "Alias to the same one actual final38-case report; do not count as a second execution or76checks."
+    }
+  },
+  "cache38_execution_accounting": "final-cache-safety-generation.json is ONE actual 38-case execution covering cache safety and generation invalidation. It is not counted twice as76. Earlier same-suite intermediate-source reports remain historical and are not globally relabeled as final.",
+  "retained_validations": [
+    "File read/size/UTF8 roundtrip",
+    "Before-parse 24-depth bound with exact old quote/escape/negative-depth behavior",
+    "JSON parse/envelope/owner/checksum/content/migration/full semantic checks",
+    "Atomic pending and backup exact readback + replacement",
+    "Stale/same-revision conflict and migration source archives",
+    "Public payload/document deep isolation",
+    "Full G1 and original source files unchanged"
+  ],
+  "actual_changes": [
+    "Writer cold metadata miss transfers an internal fully checked decoded result into the private cache without an unused full-world caller/cache deep clone. Existing verified metadata lookup retains exact text/owner/private-content-generation gates and migration_required.",
+    "Depth scanner traverses UTF8 bytes with ASCII integer quote/backslash/bracket predicates, preserves original state order, releases the temporary byte buffer and retains the original JSON parser decisions."
+  ],
+  "remaining": [
+    "Actual rendered cold-save40second gate on an exact rebuilt final candidate is required.",
+    "The existing r13 1800second record includes cold-save116.099ms and restart103.415ms and remains preserved; this headless result does not reclassify it.",
+    "Small n=5 timing distributions retain every sample and tail, including baseline131.502ms. They do not establish physical-device, OS presentation or broad confidence bounds.",
+    "Native Windows/Android/Galaxy/IME/audio and authenticated account continuation remain separately gated."
+  ]
+}
