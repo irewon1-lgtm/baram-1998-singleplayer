@@ -50,7 +50,16 @@ func get_item_metadata(index: int) -> Variant:
 	return entries[index].metadata
 
 func set_item_tooltip(index: int, title: String) -> void:
-	entries[index].button.tooltip_text=title
+	if entries[index].button.tooltip_text!=title: entries[index].button.tooltip_text=title
+
+func update_item(index: int, title: String, icon: Texture2D = null) -> void:
+	# Keep the pressed/selected Control alive when only a quantity or durability
+	# changes. Replacing every row during combat also repeats styles and layout.
+	var button: Button=entries[index].button
+	var text: String=(String.chr(97+index) if index<26 else str(index+1))+":  "+title
+	if button.text!=text:
+		button.text=text;button.tooltip_text=title
+	if button.icon!=icon: button.icon=icon
 
 func get_selected_items() -> PackedInt32Array:
 	return PackedInt32Array([selected]) if selected>=0 and selected<entries.size() else PackedInt32Array()

@@ -175,10 +175,14 @@ def upload(args) -> None:
     api.private_repository(args.repository)
     if args.branch == 'main':
         raise ValueError('Never publish native staging inputs to vault main')
-    branch_url = f'https://api.github.com/repos/{args.repository}/branches/{args.parent_ref}'
-    branch = api.call('fetch', url=branch_url)
-    parent = branch['commit']['sha']
-    base_tree = branch['commit']['commit']['tree']['sha']
+    ref_url = f'https://api.github.com/repos/{args.repository}/git/ref/heads/{args.parent_ref}'
+    ref = api.call('fetch', url=ref_url)
+    parent = ref['object']['sha']
+    if args.expected_parent is not None and args.expected_parent != parent:
+        raise ValueError('Vault HEAD differs from the explicit expected parent; no upload performed')
+    commit_url = f'https://api.github.com/repos/{args.repository}/git/commits/{parent}'
+    parent_commit = api.call('fetch', url=commit_url)
+    base_tree = parent_commit['tree']['sha']
     state_path = args.session / 'UPLOAD.json'
     state = read(state_path) if state_path.exists() else {'schema': 'baram.v2.native_staging_upload/1',
         'repository': args.repository, 'branch': args.branch, 'parent_ref': args.parent_ref, 'parent': parent, 'base_tree': base_tree,

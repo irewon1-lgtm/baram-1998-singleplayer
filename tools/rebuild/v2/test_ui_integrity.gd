@@ -257,4 +257,5 @@ func finish() -> void:
 	var file := FileAccess.open(output.path_join("ui-integrity.json"), FileAccess.WRITE)
 	if file: file.store_string(JSON.stringify(report, "\t")); file.close()
 	print(JSON.stringify({"status":report.status,"failures":failures,"checks":checks.size(),"output":output,"scope":"PRODUCTION_UI_AND_EXPLICIT_FIXTURES_GODOT_INPUT_NO_NATIVE_PLATFORM_CLAIM"}))
+	if is_instance_valid(app) and app.trace_enabled: app._performance_checkpoint()
 	quit(0 if failures == 0 else 1)

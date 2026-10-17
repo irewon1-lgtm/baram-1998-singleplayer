@@ -25,7 +25,9 @@ var _decoded_cache: Array = []
 # never returned by reference, and files are still read before cache lookup.
 var last_timings: Dictionary = {}
 var _writing := false
-# Encoding/plain-type caches are pure value caches, never semantic approval.
+# Encoding/plain-type caches are pure value caches. Record-local semantic
+# predicates additionally require the identical private definition engine;
+# authoritative whole-payload validation is never skipped.
 # Each record owns a deep snapshot. Native full Dictionary equality detects
 # changes even when a caller reuses/mutates the same source Dictionary.
 const MONSTER_RECORD_CACHE_LIMIT := 1024
@@ -43,8 +45,9 @@ func _cache_monster_record(id: String, record: Dictionary) -> Dictionary:
 
 func _plain_game_payload(payload: Dictionary) -> bool:
 	# Monster values always occur at depth two of a gameplay payload. Reuse
-	# only that exact bounded-JSON check; every semantic/range/reference check
-	# below and in GameState.validate_payload still runs on every save.
+	# only that exact bounded-JSON check. Typed value matching runs every save;
+	# local semantics are memoized only for an unchanged record/generation,
+	# while GameState.validate_payload still checks the whole payload each time.
 	if payload.size() > MAX_ENTRIES: return false
 	for key in payload:
 		if typeof(key) != TYPE_STRING or key.length() > 256: return false
@@ -71,7 +74,7 @@ func _plain_game_payload(payload: Dictionary) -> bool:
 		elif not _plain(payload[key],1): return false
 	return true
 
-func _canonical_monsters(monsters: Dictionary) -> String:
+func _canonical_monsters(monsters: Dictionary, validated_records: bool = false) -> String:
 	var ids: Array = monsters.keys()
 	ids.sort()
 	var fields: PackedStringArray=[]
@@ -79,14 +82,21 @@ func _canonical_monsters(monsters: Dictionary) -> String:
 		var record: Variant = monsters[id]
 		var encoded: String
 		if typeof(id)==TYPE_STRING and typeof(record)==TYPE_DICTIONARY:
-			var cached := _cache_monster_record(id,record)
+			# Only write_game's synchronous post-validation encode can use the
+			# already checked records. Generic encoding and external disk decode
+			# still compare the complete current value with the private snapshot.
+			var cached: Dictionary = _monster_record_cache.get(id,{}) if validated_records else {}
+			if cached.is_empty(): cached = _cache_monster_record(id,record)
 			if cached.canonical.is_empty(): cached.canonical = _canonical(record)
 			encoded = cached.canonical
+			if not cached.has("member_key"): cached["member_key"]=JSON.stringify(id)+":"
+			fields.append(cached.member_key+encoded)
+			continue
 		else: encoded = _canonical(record)
 		fields.append(JSON.stringify(str(id))+":"+encoded)
 	return "{"+",".join(fields)+"}"
 
-func _canonical_save_document(document: Dictionary) -> String:
+func _canonical_save_document(document: Dictionary, validated_monsters: bool = false) -> String:
 	# Generic callers (including sequential-sync metadata) retain _canonical.
 	var payload: Variant = document.get("payload")
 	if typeof(payload) != TYPE_DICTIONARY or payload.get("schema","") != "baram.p3.gameplay-payload/1" or typeof(payload.get("monsters")) != TYPE_DICTIONARY:
@@ -95,7 +105,7 @@ func _canonical_save_document(document: Dictionary) -> String:
 	payload_keys.sort()
 	var payload_fields: PackedStringArray=[]
 	for key in payload_keys:
-		var encoded := _canonical_monsters(payload[key]) if key=="monsters" else _canonical(payload[key])
+		var encoded := _canonical_monsters(payload[key],validated_monsters) if key=="monsters" else _canonical(payload[key])
 		payload_fields.append(JSON.stringify(str(key))+":"+encoded)
 	var encoded_payload := "{"+",".join(payload_fields)+"}"
 	var keys: Array = document.keys()
@@ -162,7 +172,21 @@ func _verified_cached_decode(text: String, owner: String, content: Dictionary, i
 	if _validation_engine == null or content != _validation_engine.data: return {}
 	for entry in _decoded_cache:
 		if entry.owner == owner and entry.text == text:
+			if entry.decoded.is_empty():
+				# Written bytes already passed full candidate validation and exact
+				# atomic read-back. Parse only when a caller actually needs a full
+				# payload, preserving disk timer precision and isolated read results.
+				var document: Dictionary = JSON.parse_string(text)
+				document.erase("sha256")
+				entry.decoded = {"status":"OK","reason":"","revision":int(document.revision),"payload":document.payload.duplicate(true),"document":document,"geometry_changed":false,"manifest_changed":false,"migration_required":false,"added_spawns":[]}
 			return entry.decoded.duplicate(isolate)
+	return {}
+
+func _verified_written_metadata(text: String, owner: String, content: Dictionary) -> Dictionary:
+	if _validation_engine == null or content != _validation_engine.data: return {}
+	for entry in _decoded_cache:
+		if entry.owner == owner and entry.text == text and entry.has("written_revision"):
+			return {"status":"OK","revision":entry.written_revision,"migration_required":false}
 	return {}
 
 func _remember_decode(text: String, owner: String, decoded: Dictionary, owned: bool = false) -> void:
@@ -359,23 +383,24 @@ func _phase(name: String) -> bool:
 	if phase_observer.is_valid(): phase_observer.call(name)
 	return name == fault_phase
 
-func _encode(document: Dictionary) -> String:
+func _encode(document: Dictionary, validated_monsters: bool = false) -> String:
 	# Canonicalize the payload once. The checksum field is excluded from its
 	# own digest; JSON member order does not change the persisted contract.
-	var body := _canonical_save_document(document)
+	var body := _canonical_save_document(document,validated_monsters)
 	if document.has("sha256"):
 		var output := document.duplicate(true)
 		output.sha256 = body.sha256_text()
 		return _canonical(output)
 	return body.left(-1) + ("," if not document.is_empty() else "") + '"sha256":' + JSON.stringify(body.sha256_text()) + "}"
 
-func _remember_written(text: String, owner: String, content: Dictionary) -> void:
+func _remember_written(text: String, owner: String, content: Dictionary, revision: int) -> void:
 	if _validation_engine == null or content != _validation_engine.data: return
-	# Canonical timer precision is reflected in the cached document exactly as
-	# in a future disk decode. Only call after exact read-back and atomic commit.
-	var document: Dictionary = JSON.parse_string(text)
-	document.erase("sha256")
-	_remember_decode(text, owner, {"status":"OK","reason":"","revision":int(document.revision),"payload":document.payload.duplicate(true),"document":document,"geometry_changed":false,"manifest_changed":false,"migration_required":false,"added_spawns":[]}, true)
+	# Only called after full validation, exact read-back and atomic commit.
+	# Keep the exact verified bytes, not another pair of full-world deep copies.
+	# The next save needs revision/rotation metadata; read_game and same-revision
+	# conflict checks still materialize the complete canonical decoded payload.
+	_decoded_cache.push_front({"text":text,"owner":owner,"written_revision":revision,"decoded":{}})
+	if _decoded_cache.size() > DECODE_CACHE_LIMIT: _decoded_cache.pop_back()
 
 func _canonical(value: Variant) -> String:
 	# Godot's JSON parser can change the last binary digit of a full-precision
@@ -465,7 +490,7 @@ func _decode_uncached(text: String, owner: String, content: Dictionary) -> Dicti
 	if valid.status != "OK": return valid
 	return {"status":"OK","reason":"MIGRATION_AVAILABLE" if requires_migration else "","revision":int(doc.revision),"payload":candidate,"document":doc,"geometry_changed":geometry_changed,"manifest_changed":doc.manifest_sha256 != content.get("manifest_sha256",""),"migration_required":requires_migration or geometry_changed,"added_spawns":added_spawns}
 
-func _read_one(path: String, owner: String, content: Dictionary, isolate: bool = true) -> Dictionary:
+func _read_one(path: String, owner: String, content: Dictionary, isolate: bool = true, metadata_only: bool = false) -> Dictionary:
 	if not _path(path): return result("UNSAFE_PATH")
 	if not FileAccess.file_exists(path): return result("MISSING")
 	var file := FileAccess.open(path,FileAccess.READ)
@@ -477,6 +502,9 @@ func _read_one(path: String, owner: String, content: Dictionary, isolate: bool =
 	file.close()
 	var text := bytes.get_string_from_utf8()
 	if bytes != text.to_utf8_buffer(): return result("CORRUPT","utf8")
+	if metadata_only:
+		var metadata := _verified_written_metadata(text,owner,content)
+		if not metadata.is_empty(): return metadata
 	return _decode(text,owner,content,isolate)
 
 func read_game(path: String, owner: String, content: Dictionary) -> Dictionary:
@@ -518,8 +546,11 @@ func _write_game(path: String, payload: Dictionary, owner: String, content: Dict
 	var compatibility := _compat(content)
 	if not _valid_compat(compatibility): return result("INVALID_CONTENT","compatibility")
 	started = Time.get_ticks_usec()
-	var document := {"schema":SCHEMA,"owner":owner,"revision":payload.revision,"profile":content.get("profile",""),"compatibility":compatibility,"manifest_sha256":content.get("manifest_sha256",""),"payload":payload.duplicate(true)}
-	var text := _encode(document)
+	# Encoding is synchronous and read-only, before any observer callback. Its
+	# resulting immutable text already pins the complete candidate; cloning all
+	# 752 records immediately before serializing them adds no isolation.
+	var document := {"schema":SCHEMA,"owner":owner,"revision":payload.revision,"profile":content.get("profile",""),"compatibility":compatibility,"manifest_sha256":content.get("manifest_sha256",""),"payload":payload}
+	var text := _encode(document,true)
 	_timing("encoding_ms", started)
 	started = Time.get_ticks_usec()
 	if text.to_utf8_buffer().size() > MAX_BYTES: return result("SAVE_SIZE_LIMIT")
@@ -530,14 +561,14 @@ func _write_game(path: String, payload: Dictionary, owner: String, content: Dict
 	var migration_sources: Array[String]=[]
 	var primary_requires_migration:=false
 	if FileAccess.file_exists(path+".backup"):
-		var backup := _read_one(path+".backup",owner,content,false)
+		var backup := _read_one(path+".backup",owner,content,false,true)
 		if backup.status != "OK": return result("EXISTING_SAVE_NOT_WRITABLE","backup."+backup.status)
 		if backup.get("migration_required",false): migration_sources.append(path+".backup")
 		previous=FileAccess.get_file_as_string(path+".backup")
 		previous_revision=backup.revision
 		previous_decoded=backup
 	if FileAccess.file_exists(path):
-		var current := _read_one(path,owner,content,false)
+		var current := _read_one(path,owner,content,false,true)
 		if current.status == "OK":
 			primary_valid=true
 			primary_requires_migration=bool(current.get("migration_required",false))
@@ -560,6 +591,7 @@ func _write_game(path: String, payload: Dictionary, owner: String, content: Dict
 	if previous_revision > int(payload.revision): return result("STALE_REVISION","older_than_saved",previous_revision)
 	if previous_revision == int(payload.revision):
 		var old := previous_decoded
+		if not old.has("payload"): old = _decode(previous,owner,content,false)
 		if old.status != "OK" or _canonical(old.payload) != _canonical(payload): return result("REVISION_CONFLICT")
 		if primary_valid and not primary_requires_migration: return {"status":"SAVED","reason":"IDENTICAL_SNAPSHOT","revision":int(payload.revision),"bytes":text.to_utf8_buffer().size()}
 	if DirAccess.make_dir_recursive_absolute(path.get_base_dir()) != OK: return result("WRITE_FAILED","directory")
@@ -593,11 +625,11 @@ func _write_game(path: String, payload: Dictionary, owner: String, content: Dict
 	if not _path(path+".pending") or not _path(path): return result("UNSAFE_PATH","primary_replace")
 	if DirAccess.rename_absolute(path+".pending",path) != OK: return result("REPLACE_FAILED","primary")
 	_timing("primary_replace_ms", started)
-	if _phase("after_primary_replace"): return result("COMMITTED_ACK_LOST","after_primary_replace",int(payload.revision))
+	if _phase("after_primary_replace"): return result("COMMITTED_ACK_LOST","after_primary_replace",int(document.revision))
 	started = Time.get_ticks_usec()
-	_remember_written(text, owner, content)
+	_remember_written(text, owner, content, int(document.revision))
 	_timing("remember_verified_ms", started)
-	return {"status":"SAVED","reason":"MIGRATED" if not preserved_migration_sources.is_empty() else "","revision":int(payload.revision),"bytes":text.to_utf8_buffer().size(),"preserved_migration_sources":preserved_migration_sources}
+	return {"status":"SAVED","reason":"MIGRATED" if not preserved_migration_sources.is_empty() else "","revision":int(document.revision),"bytes":text.to_utf8_buffer().size(),"preserved_migration_sources":preserved_migration_sources}
 
 func validate_payload(payload: Dictionary, owner: String, content: Dictionary) -> Dictionary:
 	var section_started := Time.get_ticks_usec()
@@ -636,9 +668,17 @@ func validate_payload(payload: Dictionary, owner: String, content: Dictionary) -
 		if not _int(row.x,0,65535) or not _int(row.y,0,65535): return result("INVALID_STATE","loot.coordinate_type")
 		if not engine.valid_position(str(row.map_id),int(row.x),int(row.y)): return result("DEFERRED","loot.coordinate_mapping")
 		if not content.items.has(row.item_id): return result("DEFERRED","loot.item_reference")
+	var unchecked_monsters: Array=[]
 	for id in payload.monsters:
 		if typeof(payload.monsters[id]) != TYPE_DICTIONARY: return result("INVALID_STATE","monster.type")
 		var monster: Dictionary=payload.monsters[id]
+		# _plain_game_payload already checked the complete current typed value
+		# against this private snapshot, or fully checked a changed/new record.
+		# Reuse only these record-local store predicates for the same immutable
+		# definitions. The authoritative full payload validator still runs below.
+		var cached: Dictionary=_monster_record_cache.get(id,{})
+		if cached.get("semantic_generation",-1) == content_configurations: continue
+		unchecked_monsters.append(id)
 		if not monster.has_all(["map_id","x","y","spawn_x","spawn_y"]): return result("INVALID_STATE","monster.position_shape")
 		if not content.monsters.has(monster.get("monster_id","")): return result("DEFERRED","monster.definition_reference")
 		for key in ["x","y","spawn_x","spawn_y"]:
@@ -674,7 +714,7 @@ func validate_payload(payload: Dictionary, owner: String, content: Dictionary) -
 		var buff: Variant=payload.buffs[id]
 		if not content.skills.has(id) or id not in payload.skills or typeof(buff)!=TYPE_DICTIONARY or not buff.has_all(["expires_at","attack","defense","attack_multiplier"]): return result("INVALID_STATE","buff.reference")
 		if not _timer(buff.expires_at) or not _int(buff.attack,-1000000000,1000000000) or not _int(buff.defense,-1000000000,1000000000) or typeof(buff.attack_multiplier) not in [TYPE_INT,TYPE_FLOAT] or not is_finite(float(buff.attack_multiplier)) or float(buff.attack_multiplier)<0 or float(buff.attack_multiplier)>1000: return result("INVALID_STATE","buff.range")
-	for id in payload.monsters:
+	for id in unchecked_monsters:
 		var monster: Dictionary=payload.monsters[id]
 		if monster.get("id")!=id or not _id(id) or not _int(monster.generation,0,1000000000) or typeof(monster.alive)!=TYPE_BOOL or typeof(monster.aggro)!=TYPE_BOOL: return result("INVALID_STATE","monster.identity")
 		# Coordinate types and current/home walkability were already checked
@@ -682,6 +722,10 @@ func validate_payload(payload: Dictionary, owner: String, content: Dictionary) -
 		# same four range checks and home lookup cannot detect a new mutation.
 		for key in ["respawn_at","ai_at","attack_at","respawn_seconds"]:
 			if not monster.has(key) or not _timer(monster[key]): return result("INVALID_STATE","monster.timer")
+		var cached: Dictionary=_monster_record_cache.get(id,{})
+		# A monotonic generation number keeps this cache from retaining old
+		# full definition engines across reloads when different records change.
+		if not cached.is_empty(): cached["semantic_generation"]=content_configurations
 	for action in payload.pending_actions:
 		if not _timer(action.due): return result("INVALID_STATE","action.due")
 		if not str(action.get("target_id","")).is_empty() and not payload.monsters.has(action.target_id): return result("INVALID_STATE","action.target")

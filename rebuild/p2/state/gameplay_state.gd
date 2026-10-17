@@ -448,8 +448,38 @@ func _direction_value(value: Variant) -> int:
 		return int({"north":0,"east":1,"south":2,"west":3,"북":0,"동":1,"남":2,"서":3}.get(value,2))
 	return clampi(int(value),0,3)
 
+func _arrival_position(map_id: String,x: int,y: int,allow_nearby: bool) -> Dictionary:
+	# Off-map monsters do not walk while the player is elsewhere. An old save
+	# can therefore keep an arrival anchor occupied indefinitely. Only dynamic
+	# monster occupancy permits a nearby landing; invalid/NPC anchors still fail.
+	if not valid_position(map_id,x,y) or _npc_cells.get(map_id,{}).has(Vector2i(x,y)): return {}
+	if not _occupied(map_id,x,y): return {"x":x,"y":y}
+	if not allow_nearby: return {}
+	var anchor:=Vector2i(x,y)
+	var queue: Array[Vector2i]=[anchor]
+	var seen: Dictionary={anchor:true}
+	var index:=0
+	while index<queue.size():
+		var current: Vector2i=queue[index];index+=1
+		for offset in [Vector2i.UP,Vector2i.RIGHT,Vector2i.DOWN,Vector2i.LEFT]:
+			var next: Vector2i=current+offset
+			if seen.has(next) or absi(next.x-x)+absi(next.y-y)>4: continue
+			seen[next]=true
+			if not valid_position(map_id,next.x,next.y) or _occupied(map_id,next.x,next.y): continue
+			var is_exit:=false
+			for exit in data.maps[map_id].get("exits",[]):
+				if int(exit.x)==next.x and int(exit.y)==next.y: is_exit=true;break
+			if is_exit: continue
+			# Search stays in the anchor's reachable component. It never jumps
+			# across a wall, NPC, living monster or another exit trigger.
+			queue.append(next)
+			return {"x":next.x,"y":next.y}
+	return {}
+
 func _transition(map_id: String,x: int,y: int,direction: int,reason: String) -> bool:
-	if not valid_position(map_id,x,y) or _occupied(map_id,x,y): return false
+	var point:=_arrival_position(map_id,x,y,reason in ["exit","item_return","resurrection","inn_return","directional_return","ghost_to_shrine"])
+	if point.is_empty(): return false
+	x=int(point.x);y=int(point.y)
 	var c: Dictionary=state.character
 	var source: Dictionary={"map_id":c.map_id,"x":c.x,"y":c.y}
 	_ensure_map_mutable(map_id)
@@ -773,7 +803,9 @@ func _cast(cmd: Dictionary) -> Dictionary:
 			var gates: Dictionary=_return_gates()
 			if not gates.has(direction): return _response("REFUSED","RETURN_DESTINATION_UNKNOWN")
 			destination=gates[direction].duplicate(true)
-		if not valid_position(str(destination.map_id),int(destination.x),int(destination.y)) or _occupied(str(destination.map_id),int(destination.x),int(destination.y)): return _response("REFUSED","DESTINATION_UNAVAILABLE")
+		# Keep the original anchor in the pending action; occupancy is resolved
+		# again at impact rather than reserving a stale provisional fallback.
+		if _arrival_position(str(destination.map_id),int(destination.x),int(destination.y),true).is_empty(): return _response("REFUSED","DESTINATION_UNAVAILABLE")
 	if kind=="blink":
 		var offset: Vector2i=[Vector2i.UP,Vector2i.RIGHT,Vector2i.DOWN,Vector2i.LEFT][int(state.character.direction)]
 		var x: int=int(target.x)+offset.x;var y: int=int(target.y)+offset.y

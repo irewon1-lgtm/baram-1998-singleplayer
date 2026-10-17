@@ -41,7 +41,13 @@ def main():
     p.add_argument('--targeted-followup', action='store_true', help='Reserve actual fire/return materials, use visible dialogue scrolling, then demonstrate ordinary learned projectile and return')
     p.add_argument('--compare-recording', action='store_true', help='Run 30s of the same ordinary input with recording off and on before journey')
     p.add_argument('--advance-hunting', action='store_true', help='After natural level 8 and actual learned skills, walk to the existing rat cave')
+    p.add_argument('--resume-continuous', action='store_true', help='Start continuous stress from a naturally earned job/skill save; reuse prior valid learning preflight')
+    p.add_argument('--integrated-transactions', action='store_true', help='Require actual spare sale, normal purchase and owned equipment change inside continuous stress')
     a = p.parse_args()
+    if a.resume_continuous and (not a.resume_data or not a.continuous_after_preflight):
+        p.error('--resume-continuous requires --resume-data and --continuous-after-preflight')
+    if a.integrated_transactions and not a.resume_continuous:
+        p.error('--integrated-transactions requires --resume-continuous')
     out = a.output.resolve()
     if out.exists():
         raise ValueError('Fresh isolated output required: ' + str(out))
@@ -76,6 +82,9 @@ def main():
               'isolated_session_directory': str(temporary_root),
               'continued_naturally_earned_data': {'directory':str(a.resume_data.resolve()),'from_user_dir':a.resume_user_dir_name,'to_user_dir':a.user_dir_name,'method':'Byte-identical continuity import between isolated Linux test directories; not authenticated sync. No payload edits or grants.','files':[{'file':str(f.relative_to(a.resume_data)),'sha256':hashlib.sha256(f.read_bytes()).hexdigest()} for f in sorted(a.resume_data.rglob('*')) if f.is_file()]} if a.resume_data else None,
               'targeted_followup':a.targeted_followup,
+              'resume_continuous':a.resume_continuous,
+              'integrated_transactions':a.integrated_transactions,
+              'controlled_capture_comparison':a.compare_recording,
               'exact_pack_sha256': hashlib.sha256(a.pack.read_bytes()).hexdigest() if a.pack else None,
               'associated_candidate_files': [{'file':str(f.resolve()),'sha256':hashlib.sha256(f.read_bytes()).hexdigest()} for f in a.candidate_file],
               'runtime_manifest_sha256': hashlib.sha256((a.runtime / 'runtime.json').read_bytes()).hexdigest(),
@@ -249,7 +258,12 @@ def main():
         npc=next(n for n in content['npcs'].values() if n['name']==name)
         if not go_map(npc['map_id']): return False
         if not walk_to((npc['x'],npc['y']),reach=int(npc.get('interaction_range',2))): return False
-        key('Return'); time.sleep(.3); return True
+        since=len(checkpoints(cpath));key('Return');deadline=time.monotonic()+3
+        while time.monotonic()<deadline:
+            rows=checkpoints(cpath)[since:]
+            if any(row.get('stage')=='ui_layout' and any(c['text']=='닫기 / 취소' for c in row['details'].get('controls',[])) for row in rows):return True
+            time.sleep(.05)
+        return False
     def close_modal(method='Escape'):
         controls=latest_layout().get('controls',[])
         has_modal=any(c['text']=='닫기 / 취소' for c in controls)
@@ -358,21 +372,103 @@ def main():
             key('Tab');time.sleep(.25)
             button('지도',exact=True);time.sleep(.25);close_modal('Escape')
         return False
-    def trade_surplus():
-        before=state()
-        if not talk('장터 식재료상'):raise RuntimeError('Normal surplus-sale route failed')
-        close_modal('X')
-        # Navigate tabs through ordinary keys until the bag is actually visible.
+    def show_panel(marker):
         for _ in range(4):
-            if any(':  토끼고기 ×' in r['text'] for r in latest_layout().get('controls',[])):break
-            key('Tab');time.sleep(.2)
-        quantity=sum(int(i['quantity']) for i in before['inventory'] if i['item_id']=='gp:item:rabbit_meat')
-        for item in latest_layout().get('controls',[]):
-            if ':  토끼고기 ×' in item['text']:
-                r=item['rect'];click_xy(r[0]+r[2]/2,r[1]+r[3]/2,item['text'])
-                for _ in range(min(5,max(0,quantity-10))):button('가까운 상인에게 판매');time.sleep(.2)
-                break
-        observe('ordinary_surplus_trade',before_character=before['character'],after_character=state(3.3)['character'],meat_reserved=10)
+            if any(r['text']==marker for r in latest_layout().get('controls',[])):return
+            key('Tab');time.sleep(.15)
+            # Tab changes do not emit an ordinary layout checkpoint. Opening
+            # and closing the visible map refreshes read-only UI observations.
+            button('지도',exact=True);time.sleep(.15);close_modal('Escape')
+        raise RuntimeError('Actual ordinary panel absent: '+marker)
+    def click_scrollable_row(prefix,region_name):
+        for attempt in range(80):
+            layout=latest_layout();region=layout.get('scroll_regions',{}).get(region_name,{})
+            if not region.get('visible') or not region.get('rect'):
+                raise RuntimeError('Actual visible scroll clip absent: '+region_name)
+            target=next((r for r in layout.get('controls',[]) if r['text'].startswith(prefix)),None)
+            if not target:return False
+            r=target['rect'];clip=region['rect'];top=clip[1];bottom=clip[1]+clip[3]
+            if r[1]>=top-.25 and r[1]+r[3]<=bottom+.25:
+                px=max(clip[0]+3,min(clip[0]+clip[2]-16,r[0]+r[2]/2))
+                observe('visible_scroll_row',region=region_name,text=target['text'],rect=r,clip=clip,scroll_vertical=region.get('scroll_vertical'))
+                click_xy(px,r[1]+r[3]/2,target['text']);return True
+            down=r[1]+r[3]>bottom
+            px=clip[0]+clip[2]/2;py=clip[1]+clip[3]/2
+            focus();run('mousemove','--window',x.window,int(px),int(py))
+            since=len(checkpoints(cpath))
+            log('mouse_click',x=int(px),y=int(py),button=5 if down else 4,description='ordinary scroll '+region_name)
+            run('click','5' if down else '4')
+            wait_stage('ui_layout',since,timeout=3)
+            # A new real wheel event supplies actual post-scroll global row
+            # geometry. No inferred scroll offset or developer callback.
+        raise RuntimeError('Ordinary row did not enter actual scroll clip: '+prefix)
+    def select_inventory_instance(instance_id):
+        show_panel('장착 / 사용')
+        current=state();index=next((i for i,v in enumerate(current['inventory']) if v['instance_id']==instance_id),None)
+        if index is None:return False
+        entry=current['inventory'][index];label=chr(97+index) if index<26 else str(index+1)
+        return click_scrollable_row(label+':  '+content['items'][entry['item_id']]['name']+' ×','bag')
+    def click_scrolled_option(prefix):
+        for page in range(12):
+            if any(r['text'].startswith(prefix) for r in latest_layout().get('controls',[])):
+                return click_scrollable_row(prefix,'dialogue')
+            since=len(checkpoints(cpath))
+            if not button('다음',exact=True,optional=True):return False
+            wait_stage('ui_layout',since,timeout=3)
+        return False
+    def integrated_transaction_sequence():
+        if not talk('털보'):raise RuntimeError('Normal route to forge for actual transactions failed')
+        capture('transaction-forge');close_modal('X')
+        before=state();wood=next(k for k,d in content['items'].items() if d['name']=='목검')
+        def quantity(payload):return sum(int(i['quantity']) for i in payload['inventory'] if i['item_id']==wood)
+        spares=[i for i in before['inventory'] if i['item_id']==wood and i['instance_id'] not in before['equipment'].values()]
+        if not spares:raise RuntimeError('No naturally owned spare wood weapon for actual sale')
+        spare=min(spares,key=lambda i:(i.get('durability',0),i['instance_id']))
+        if not select_inventory_instance(spare['instance_id']):raise RuntimeError('Actual spare weapon row absent')
+        button('가까운 상인에게 판매');after_sale=state(3.3)
+        check('ordinary_real_spare_weapon_sale',after_sale['character']['money']>before['character']['money'] and quantity(after_sale)==quantity(before)-1,{'before_character':before['character'],'after_character':after_sale['character'],'before_inventory':before['inventory'],'after_inventory':after_sale['inventory']})
+        observe('ordinary_real_sale',before_character=before['character'],after_character=after_sale['character'],before_inventory=before['inventory'],after_inventory=after_sale['inventory'])
+        if not talk('털보'):raise RuntimeError('Normal forge reopen failed')
+        if not click_scrolled_option('목검 구매'):raise RuntimeError('Actual visible paged wood weapon purchase absent')
+        after_purchase=state(3.3)
+        check('ordinary_real_weapon_purchase',after_purchase['character']['money']<after_sale['character']['money'] and quantity(after_purchase)==quantity(after_sale)+1,{'before_character':after_sale['character'],'after_character':after_purchase['character'],'before_inventory':after_sale['inventory'],'after_inventory':after_purchase['inventory']})
+        observe('ordinary_real_purchase',before_character=after_sale['character'],after_character=after_purchase['character'],before_inventory=after_sale['inventory'],after_inventory=after_purchase['inventory'])
+        close_modal('Escape')
+        spares=[i for i in after_purchase['inventory'] if i['item_id']==wood and i['instance_id'] not in after_purchase['equipment'].values() and i.get('durability',0)>0]
+        if not spares:raise RuntimeError('No healthy naturally owned weapon for equipment change')
+        spare=max(spares,key=lambda i:(i.get('durability',0),i['instance_id']))
+        if not select_inventory_instance(spare['instance_id']):raise RuntimeError('Actual owned weapon row absent')
+        button('장착 / 사용',exact=True);after_equip=state(3.3)
+        old_id=after_purchase['equipment']['weapon'];new_id=after_equip['equipment']['weapon']
+        old=next(i for i in after_purchase['inventory'] if i['instance_id']==old_id);new=next(i for i in after_equip['inventory'] if i['instance_id']==new_id)
+        check('ordinary_owned_weapon_equipment_change',new_id!=old_id and new['durability']>=old['durability'],{'old_equipment':old,'new_equipment':new})
+        observe('ordinary_real_equipment_change',before_equipment=old,after_equipment=new,character=after_equip['character'])
+        capture('transaction-finished');result['transaction_final']=after_equip
+        required=['ordinary_real_spare_weapon_sale','ordinary_real_weapon_purchase','ordinary_owned_weapon_equipment_change']
+        if not all(any(c['id']==name and c['status']=='PASS' for c in result['checks']) for name in required):
+            raise RuntimeError('Actual integrated transaction scope failed; preserve state before further stress')
+    def trade_surplus():
+        before=state();merchant=next(n for n in content['npcs'].values() if n['name']=='장터 식재료상')
+        candidates=[i for i in before['inventory'] if i['instance_id'] not in before['equipment'].values() and int(i['quantity'])>10 and merchant.get('shop',{}).get(i['item_id'],{}).get('sell_price') is not None]
+        if not candidates:
+            observe('ordinary_surplus_sale_no_eligible_spare',character=before['character'],reserve_per_item=10);return
+        item=max(candidates,key=lambda i:int(i['quantity'])-10)
+        if not talk(merchant['name']):raise RuntimeError('Normal surplus-sale route failed')
+        close_modal('X');before=state();count=min(2,int(item['quantity'])-10)
+        if not select_inventory_instance(item['instance_id']):raise RuntimeError('Actual surplus inventory row absent')
+        for _ in range(count):button('가까운 상인에게 판매');state(3.3)
+        after=state();quantity=lambda p:sum(int(i['quantity']) for i in p['inventory'] if i['item_id']==item['item_id'])
+        check('ordinary_surplus_sale_'+str(len(observations)),after['character']['money']>before['character']['money'] and quantity(after)==quantity(before)-count,{'item_id':item['item_id'],'sold_quantity':count,'before_money':before['character']['money'],'after_money':after['character']['money']})
+        observe('ordinary_surplus_trade',item_id=item['item_id'],item_name=content['items'][item['item_id']]['name'],sold_quantity=count,before_character=before['character'],after_character=after['character'],before_inventory=before['inventory'],after_inventory=after['inventory'],reserve_per_item=10)
+    def repair_if_needed():
+        before=state();weapon=before['equipment'].get('weapon');old=next((i for i in before['inventory'] if i['instance_id']==weapon),None)
+        if not old or old.get('durability',0)>40:return
+        if not talk('털보'):raise RuntimeError('Normal repair route failed')
+        close_modal('X');show_panel('대장장이에게 수리')
+        if not click_scrollable_row('a:  무기: ','equipment'):raise RuntimeError('Actual equipment weapon row absent')
+        button('대장장이에게 수리',exact=True);after=state(3.3);new=next(i for i in after['inventory'] if i['instance_id']==weapon)
+        check('ordinary_real_repair_'+str(len(observations)),new['durability']>old['durability'] and after['character']['money']<before['character']['money'],{'before_equipment':old,'after_equipment':new,'before_money':before['character']['money'],'after_money':after['character']['money']})
+        observe('ordinary_real_repair',before_equipment=old,after_equipment=new,before_character=before['character'],after_character=after['character'])
     def try_return_skill():
         s=state()
         key('Escape')
@@ -416,6 +512,10 @@ def main():
                 savefile=files[0];first=state();check('Lv1_commoner_zero_skills',first['character']['level']==1 and first['character']['job']=='commoner' and not first['skills'])
             play_start=time.monotonic();observe('ordinary_play_start',character=first['character']);capture('02-created')
             if a.record and a.compare_recording:
+                if not go_map('gp:map:domestic_city') or not walk_to((32,40)):raise RuntimeError('Safe ordinary city comparison route failed')
+                observe('capture_comparison_normal_warmup_start',character=state()['character'])
+                key('Left',.2);key('Right',.2);state(4.5)
+                observe('capture_comparison_normal_warmup_end',character=state()['character'])
                 recording_comparison(False);start_recorder();play_start=time.monotonic()
                 observe('recorded_journey_start',character=state()['character'])
                 recording_comparison(True)
@@ -429,7 +529,17 @@ def main():
                 check('ordinary_map_footer_close',True)
             if not go_map('gp:map:south_field'):raise RuntimeError('Beginner field unreachable through ordinary OS movement')
             capture('05-first-field')
-            trained=False;last_report=-60;last_capture=-180;initial15=False;last_training_attempt=-180;targeted_ready=False;last_surplus_trade=0
+            trained=False;last_report=-60;last_capture=-180;initial15=False;last_training_attempt=-180;targeted_ready=False;last_surplus_trade=0;transactions_done=False
+            if a.resume_continuous:
+                earned=state();kinds={content['skills'][sid].get('kind') for sid in earned['skills']}
+                ready=earned['character']['job']!='commoner' and 'damage' in kinds and 'return' in kinds
+                check('continued_earned_job_and_skills',ready,{'character':earned['character'],'skills':earned['skills'],'scope':'Prior valid learning preflight reused; no fresh creation, learning, grants or save edits.'})
+                if not ready:raise RuntimeError('Naturally earned job/damage/return save required')
+                trained=True;targeted_ready=True
+                if a.advance_hunting:
+                    hunting_map=next((mid for mid,m in content['maps'].items() if m['name']=='쥐굴 1층'),hunting_map)
+                play_start=time.monotonic()
+                observe('continuous_stress_started',requested_seconds=a.seconds,character=earned['character'],skills=earned['skills'],mode='Resume naturally earned state; integrated transactions and route are inside this phase')
             while time.monotonic()-play_start<a.seconds:
                 elapsed=time.monotonic()-play_start
                 s=state();c=s['character']
@@ -439,6 +549,10 @@ def main():
                     last_capture=elapsed;capture('play-'+str(int(elapsed)))
                 if elapsed>=900 and not initial15:
                     initial15=True;observe('initial_15_minutes_completed',character=c,stats=s['stats']);capture('initial-15-minutes')
+                if a.integrated_transactions and not transactions_done:
+                    integrated_transaction_sequence();transactions_done=True
+                    if not go_map(hunting_map):raise RuntimeError('Normal hunting route after integrated transactions failed')
+                    select_learned_skill('화염주(화)');continue
                 if a.targeted_followup and not targeted_ready:
                     teacher={'전사':'태백','도적':'마로','주술사':'해두','도사':'진선'}[a.job]
                     names=['화염주(화)','비영사천문'] if a.job=='주술사' else ['비영사천문']
@@ -498,7 +612,10 @@ def main():
                 if targeted_ready and elapsed-last_surplus_trade>=300:
                     last_surplus_trade=elapsed
                     check('ordinary_repeated_learned_return_'+str(int(elapsed)),try_return_skill())
-                    trade_surplus();go_map(hunting_map);select_learned_skill('화염주(화)')
+                    trade_surplus()
+                    if a.integrated_transactions:repair_if_needed()
+                    if not go_map(hunting_map):raise RuntimeError('Normal hunting route after periodic return failed')
+                    select_learned_skill('화염주(화)')
                 if a.advance_hunting and hunting_map=='gp:map:south_field' and c['level']>=8 and s['skills']:
                     target=next((mid for mid,m in content['maps'].items() if m['name']=='쥐굴 1층'),None)
                     if target and go_map(target):
@@ -507,11 +624,13 @@ def main():
             if a.continuous_after_preflight:check('continuous_requested_stress_duration',targeted_ready and time.monotonic()-play_start>=a.seconds,{'stress_seconds':time.monotonic()-play_start,'required_seconds':a.seconds})
             final_play=state(3.3);capture('06-final-play');observe('requested_play_duration_completed',play_seconds=time.monotonic()-play_start,character=final_play['character'],stats=final_play['stats'])
             result['ordinary_return_skill']=try_return_skill()
-            check('ordinary_natural_combat_kills',final_play['stats']['kills']>0,final_play['stats'])
-            check('ordinary_loot_picked_up',final_play['stats']['items_picked_up']>0,final_play['stats'])
+            if a.resume_continuous:check('ordinary_final_learned_return',result['ordinary_return_skill'])
+            check('ordinary_natural_combat_kills',final_play['stats']['kills']>first['stats']['kills'] if a.resume_continuous else final_play['stats']['kills']>0,{'before':first['stats'],'after':final_play['stats']})
+            check('ordinary_loot_picked_up',final_play['stats']['items_picked_up']>first['stats']['items_picked_up'] if a.resume_continuous else final_play['stats']['items_picked_up']>0,{'before':first['stats'],'after':final_play['stats']})
             button('저장 · 처음으로',exact=True);time.sleep(.7);before_restart=state()
             if (temporary_root/'frame-timeline.jsonl').exists():shutil.copy2(temporary_root/'frame-timeline.jsonl',out/'journey-frame-timeline.jsonl')
-            check('natural_job_change_and_skill_learning',(before_restart['character']['job']!='commoner' and bool(before_restart['skills'])) if last_training_attempt>=0 else None,{'job':before_restart['character']['job'],'skills':before_restart['skills'],'learning_attempted':last_training_attempt>=0})
+            if not a.resume_continuous:
+                check('natural_job_change_and_skill_learning',(before_restart['character']['job']!='commoner' and bool(before_restart['skills'])) if last_training_attempt>=0 else None,{'job':before_restart['character']['job'],'skills':before_restart['skills'],'learning_attempted':last_training_attempt>=0})
             result['before_restart']=before_restart
             process.terminate();process.wait(timeout=15);x.close();x=None
             since=len(checkpoints(cpath));process=subprocess.Popen(command,env=env,stdout=game_log,stderr=subprocess.STDOUT)
@@ -560,6 +679,9 @@ def main():
     result['performance_checkpoints']=[r for r in checkpoints(cpath) if r.get('stage') in ['performance','frame_timing']]
     result['engine_error_lines']=[line for line in (out/'game.log').read_text(errors='replace').splitlines() if 'ERROR:' in line or 'SCRIPT ERROR' in line]
     check('no_ordinary_engine_errors',not result['engine_error_lines'],result['engine_error_lines'])
+    if a.integrated_transactions:
+        transaction_ids=['ordinary_real_spare_weapon_sale','ordinary_real_weapon_purchase','ordinary_owned_weapon_equipment_change']
+        check('transaction_scope_completed',bool(result.get('transaction_final')) and all(any(c['id']==required and c['status']=='PASS' for c in result['checks']) for required in transaction_ids),{'required_checks':transaction_ids,'transaction_final_present':bool(result.get('transaction_final'))})
     result['evidence_files']=[{'file':str(f),'bytes':f.stat().st_size,'sha256':hashlib.sha256(f.read_bytes()).hexdigest()} for f in sorted(out.iterdir()) if f.is_file() and f.name not in ['OS_PLAYABILITY.json']]
     result['status']='FAIL' if result.get('error') or any(c['status']=='FAIL' for c in result['checks']) else 'PARTIAL_NOT_RUN' if any(c['status']=='NOT_RUN' for c in result['checks']) else 'PASS_OBSERVED_SCOPE'
     (out/'OS_PLAYABILITY.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')

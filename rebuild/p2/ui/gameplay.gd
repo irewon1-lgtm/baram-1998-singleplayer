@@ -106,12 +106,17 @@ var visual_feedback_latencies: Array[float] = []
 var profile_timeline: Array = []
 var trace_enabled := false
 var trace_destination := ""
+var os_event_sequence := 0
+var os_event_feedback_pending: Array[Dictionary] = []
 var last_keyboard_height := 0
 var save_definitions: Dictionary = {}
 var suppress_emulated_until := 0
 var runtime_monster_map := ""
 var runtime_monster_ids: Array = []
 var runtime_npc_ids: Array = []
+var runtime_monster_count := -1
+var equipment_slot_names: Array = []
+var equipment_preview_look := ""
 
 func checkpoint(stage: String, details: Dictionary = {}) -> void:
 	var value := {"stage":stage,"ticks_ms":Time.get_ticks_msec(),"pid":OS.get_process_id(),"platform":OS.get_name(),"details":details}
@@ -392,11 +397,32 @@ func _mark_input() -> void:
 	if trace_enabled: profile_timeline.append({"kind":"input","us":Time.get_ticks_usec()})
 
 func _presented_feedback() -> void:
+	if trace_enabled and not os_event_feedback_pending.is_empty():
+		var rendered_usec:=Time.get_ticks_usec()
+		for received in os_event_feedback_pending:
+			profile_timeline.append({"kind":"os_event_frame_post_draw_feedback","us":rendered_usec,"event_id":received.event_id,"event_us":received.us,"elapsed_ms":float(rendered_usec-int(received.us))/1000.0})
+		os_event_feedback_pending.clear()
 	if feedback_pending_usec==0: return
 	var elapsed:=float(Time.get_ticks_usec()-feedback_pending_usec)/1000.0
 	visual_feedback_latencies.append(elapsed)
 	if trace_enabled: profile_timeline.append({"kind":"frame_post_draw_feedback","us":Time.get_ticks_usec(),"elapsed_ms":elapsed})
 	feedback_pending_usec=0
+
+func _observe_os_input(event: InputEvent) -> void:
+	# Observe receipt before GUI callbacks without changing input handling. This
+	# clock ends at engine post-draw, not at physical OS pixel presentation.
+	if not trace_enabled or game.state.is_empty() or not play.visible: return
+	var received: Dictionary={"kind":"os_input_received","us":Time.get_ticks_usec(),"event_id":os_event_sequence,"device":event.device}
+	if event is InputEventKey:
+		received.merge({"event_type":"key","physical_keycode":event.physical_keycode,"physical_key_name":OS.get_keycode_string(event.physical_keycode),"pressed":event.pressed,"echo":event.echo})
+	elif event is InputEventMouseButton:
+		received.merge({"event_type":"mouse_button","button":event.button_index,"pressed":event.pressed,"x":event.position.x,"y":event.position.y})
+	elif event is InputEventScreenTouch:
+		received.merge({"event_type":"touch","index":event.index,"pressed":event.pressed,"canceled":event.canceled,"x":event.position.x,"y":event.position.y})
+	else: return
+	os_event_sequence+=1
+	profile_timeline.append(received)
+	os_event_feedback_pending.append(received)
 
 func _stop_motion() -> void:
 	movement=Vector2i.ZERO;touch_moves.clear();keyboard_moves.clear();path.clear();arrival_action.clear()
@@ -488,7 +514,8 @@ func _start_play() -> void:
 	save_failure = false
 	selected_target = ""; current_npc = ""
 	frame_samples.clear();visual_feedback_latencies.clear();input_latencies.clear();profile_timeline.clear()
-	max_process_ms=0;runtime_monster_map="";autosave=0
+	os_event_feedback_pending.clear();os_event_sequence=0
+	max_process_ms=0;runtime_monster_map="";runtime_monster_count=-1;equipment_slot_names.clear();equipment_preview_look="";autosave=0
 	if trace_enabled:profile_timeline.append({"kind":"clock_sync","us":Time.get_ticks_usec(),"unix_us":int(Time.get_unix_time_from_system()*1000000.0)})
 	get_viewport().gui_release_focus()
 	message.text="지면을 누르거나 드래그해서 이동하세요. 공격은 가까운 몬스터를 자동으로 찾습니다."
@@ -510,7 +537,13 @@ func _layout_checkpoint() -> void:
 		if (node is Button or node is LineEdit) and node.is_visible_in_tree():
 			var rect: Rect2=node.get_global_rect()
 			controls.append({"class":node.get_class(),"text":str(node.text) if node is Button else "name_input","rect":[rect.position.x,rect.position.y,rect.size.x,rect.size.y]})
-	checkpoint("ui_layout",{"controls":controls,"view_rect":[view.get_global_rect().position.x,view.get_global_rect().position.y,view.size.x,view.size.y],"view_zoom":view.zoom,"view_focus":[view.focus.x,view.focus.y],"character_position":game.state.get("character",{}).duplicate()})
+	var scroll_regions: Dictionary={}
+	for pair in [["dialogue",dialogue_scroll],["bag",bag],["skills",skills],["equipment",equipment]]:
+		var region=pair[1]
+		if not is_instance_valid(region): continue
+		var rect: Rect2=region.get_global_rect()
+		scroll_regions[pair[0]]={"rect":[rect.position.x,rect.position.y,rect.size.x,rect.size.y],"scroll_vertical":region.scroll_vertical,"visible":region.is_visible_in_tree()}
+	checkpoint("ui_layout",{"controls":controls,"scroll_regions":scroll_regions,"view_rect":[view.get_global_rect().position.x,view.get_global_rect().position.y,view.size.x,view.size.y],"view_zoom":view.zoom,"view_focus":[view.focus.x,view.focus.y],"character_position":game.state.get("character",{}).duplicate()})
 
 func _save() -> bool:
 	if game.state.is_empty() or save_path.is_empty(): return false
@@ -686,6 +719,9 @@ func _basic_attack() -> void:
 	_dispatch({"type":"attack","target_id":target})
 
 func _input(event: InputEvent) -> void:
+	_observe_os_input(event)
+	if trace_enabled and event is InputEventMouseButton and event.pressed and event.button_index in [MOUSE_BUTTON_WHEEL_UP,MOUSE_BUTTON_WHEEL_DOWN] and is_instance_valid(panels):
+		_layout_checkpoint.call_deferred()
 	# Real touch callbacks above already perform the action. Suppress only their
 	# emulated mouse copies, leaving normal mouse, keyboard, tabs and lists intact.
 	if event is InputEventMouseButton and event.device==InputEvent.DEVICE_ID_EMULATION:
@@ -1014,41 +1050,72 @@ func _describe_skill() -> void:
 	if kind in ["damage","heal","restore_mp"]:skill_description.text+=" · 위력 "+str(int(skill.get("power",0)))
 	if not str(skill.get("status","")).is_empty(): skill_description.text+=" · "+str({"stealth":"투명","paralysis":"마비","poison":"중독","slow":"감속","silence":"침묵","blindness":"실명","haste":"가속","protection":"보호"}.get(str(skill.status),str(skill.status)))
 
+func _same_list_members(list, ids: Array) -> bool:
+	if list.item_count!=ids.size(): return false
+	for index in range(ids.size()):
+		if list.get_item_metadata(index)!=ids[index]: return false
+	return true
+
 func _refresh_panels() -> void:
 	if game.state.is_empty(): return
 	var c: Dictionary = game.state.character
 	var previous_bag := _selection(bag); var previous_skill := _selection(skills); var previous_equipment := _selection(equipment)
-	bag.clear(); equipment.clear(); skills.clear()
-	for item in game.state.inventory:
-		var def: Dictionary = content.data.items[item.item_id]
-		bag.add_item(_item_title(item)+" ×"+str(int(item.quantity))+(" [착용]" if item.instance_id in game.state.equipment.values() else ""),content.icon(str(item.item_id)))
-		var index: int = bag.item_count-1
-		bag.set_item_metadata(index,item.instance_id)
+	var bag_ids: Array=[]
+	for item in game.state.inventory: bag_ids.append(item.instance_id)
+	var rebuild_bag:=not _same_list_members(bag,bag_ids)
+	if rebuild_bag: bag.clear()
+	for index in range(game.state.inventory.size()):
+		var item: Dictionary=game.state.inventory[index]
+		var def: Dictionary=content.data.items[item.item_id]
+		var title:=_item_title(item)+" ×"+str(int(item.quantity))+(" [착용]" if item.instance_id in game.state.equipment.values() else "")
+		var icon: Texture2D=content.icon(str(item.item_id))
+		if rebuild_bag:
+			bag.add_item(title,icon);bag.set_item_metadata(index,item.instance_id)
+		else: bag.update_item(index,title,icon)
 		bag.set_item_tooltip(index,str(def.name)+" · 내구 "+str(item.durability)+" · Lv"+str(int(def.get("required_level",1)))+" · 공격 "+str(int(def.get("attack",0)))+" · 방어 "+str(int(def.get("defense",0))))
-		if item.instance_id==previous_bag: bag.select(index)
-	var slots: Array=["weapon","armor"]
-	for item in content.data.items.values():
-		var slot_name:=str(item.get("slot",""))
-		if not slot_name.is_empty() and slot_name not in slots: slots.append(slot_name)
+		if rebuild_bag and item.instance_id==previous_bag: bag.select(index)
+	if equipment_slot_names.is_empty():
+		equipment_slot_names=["weapon","armor"]
+		for item in content.data.items.values():
+			var slot_name:=str(item.get("slot",""))
+			if not slot_name.is_empty() and slot_name not in equipment_slot_names: equipment_slot_names.append(slot_name)
+	var equipment_rows: Array=[]
+	var equipment_ids: Array=[]
 	var slot_labels := {"weapon":"무기","armor":"갑옷","helmet":"투구","head":"투구","shield":"방패","ring":"반지","accessory":"보조","necklace":"목걸이","boots":"신발","left_hand":"왼손","right_hand":"오른손"}
-	for slot in slots:
-		if not game.state.equipment.has(slot):
-			equipment.add_item(str(slot_labels.get(slot,slot))+": 없음");equipment.set_item_metadata(equipment.item_count-1,slot);continue
-		var item := _instance(str(game.state.equipment[slot]))
-		if item.is_empty(): continue
-		equipment.add_item(str(slot_labels.get(slot,slot))+": "+_item_title(item)+" · 내구"+str(int(item.durability)),content.icon(str(item.item_id)))
-		equipment.set_item_metadata(equipment.item_count-1,slot)
-		if slot==previous_equipment: equipment.select(equipment.item_count-1)
-	for id in game.state.skills:
+	for slot in equipment_slot_names:
+		var title:=str(slot_labels.get(slot,slot))+": 없음"
+		var icon: Texture2D=null
+		if game.state.equipment.has(slot):
+			var item:=_instance(str(game.state.equipment[slot]))
+			if item.is_empty(): continue
+			title=str(slot_labels.get(slot,slot))+": "+_item_title(item)+" · 내구"+str(int(item.durability))
+			icon=content.icon(str(item.item_id))
+		equipment_ids.append(slot);equipment_rows.append({"title":title,"icon":icon})
+	var rebuild_equipment:=not _same_list_members(equipment,equipment_ids)
+	if rebuild_equipment: equipment.clear()
+	for index in range(equipment_rows.size()):
+		var row: Dictionary=equipment_rows[index]
+		if rebuild_equipment:
+			equipment.add_item(row.title,row.icon);equipment.set_item_metadata(index,equipment_ids[index])
+		else: equipment.update_item(index,row.title,row.icon)
+		if rebuild_equipment and equipment_ids[index]==previous_equipment: equipment.select(index)
+	var skill_ids: Array=[]
+	for id in game.state.skills: skill_ids.append(id)
+	var rebuild_skills:=not _same_list_members(skills,skill_ids)
+	if rebuild_skills: skills.clear()
+	for index in range(skill_ids.size()):
+		var id: String=str(skill_ids[index])
 		var def: Dictionary=content.data.skills[id]
 		var key := ""
 		for slot in game.state.hotkeys:
 			if game.state.hotkeys[slot]==id: key="["+str(slot)+"] "
-		skills.add_item(key+str(def.name)+" · MP "+str(def.get("mp_cost",0)))
-		skills.set_item_metadata(skills.item_count-1,id)
-		if id==previous_skill: skills.select(skills.item_count-1)
+		var title:=key+str(def.name)+" · MP "+str(def.get("mp_cost",0))
+		if rebuild_skills:
+			skills.add_item(title);skills.set_item_metadata(index,id)
+		else: skills.update_item(index,title)
+		if rebuild_skills and id==previous_skill: skills.select(index)
 	_describe_skill()
-	var derived: Dictionary = game.derived_stats()
+	var derived: Dictionary=game.derived_stats()
 	attributes.text="이름  "+str(c.name)+"\n국적  "+str(c.get("nationality","고구려"))+"\n수호  "+str(c.get("guardian","주작"))+"\n직업  "+_job_name(str(c.job))+"\n레벨  "+str(c.level)+"\n경험치  "+str(c.xp)+"\n체력  "+str(c.hp)+" / "+str(c.hp_max)+"\n마력  "+str(c.mp)+" / "+str(c.mp_max)+"\n공격  "+str(derived.attack)+"\n방어  "+str(derived.defense)+"\n힘 / 민첩 / 지력  "+str(int(derived.get("strength",0)))+" / "+str(int(derived.get("dexterity",0)))+" / "+str(int(derived.get("intelligence",0)))+"\n금전  "+str(c.money)+"전\n사냥  "+str(game.state.stats.kills)+"마리\n좌표  "+str(c.x)+", "+str(c.y)+"\n승급  "+str(c.get("title","없음"))+"\n의뢰  "+str(game.state.quests.size())+"건"
 	for quest_id in game.state.quests:
 		var quest: Dictionary=content.data.get("quests",{}).get(quest_id,{})
@@ -1101,8 +1168,11 @@ func _look_player() -> String:
 	return look
 
 func _refresh_equipment_preview() -> void:
-	var frame: Dictionary=content.actor(_look_player(),"standing",2,0)
+	var look:=_look_player()
+	if equipment_preview_look==look: return
+	var frame: Dictionary=content.actor(look,"standing",2,0)
 	if frame.is_empty(): return
+	equipment_preview_look=look
 	var layer:={"path":"gameplay-assets/"+str(frame.path),"x":float(frame.offset[0]),"y":float(frame.offset[1])}
 	equipment_preview.configure([layer],Vector2(100,100),Vector2(0,-21),2.3)
 
@@ -1143,6 +1213,14 @@ func _render_world() -> void:
 	if game.state.is_empty(): return
 	var c: Dictionary = game.state.character
 	var map: Dictionary = content.data.maps[c.map_id]
+	# Keep stable IDs only, then read current copy-on-write records every frame.
+	if runtime_monster_map!=str(c.map_id) or runtime_monster_count!=game.state.monsters.size():
+		runtime_monster_map=str(c.map_id);runtime_monster_count=game.state.monsters.size()
+		runtime_monster_ids.clear();runtime_npc_ids.clear()
+		for id in game.state.monsters:
+			if str(game.state.monsters[id].map_id)==runtime_monster_map: runtime_monster_ids.append(id)
+		for id in content.data.npcs:
+			if str(content.data.npcs[id].map_id)==runtime_monster_map: runtime_npc_ids.append(id)
 	var world_zoom:=1.65 if size.x>=1000 else 1.25
 	var player_position:=_visual_point("player",float(c.x),float(c.y))
 	var camera:=player_position*24+Vector2(12,12)
@@ -1168,15 +1246,14 @@ func _render_world() -> void:
 	for landmark in map.get("landmarks",[]):
 		if landmark.has("x") and landmark.has("y"):
 			labels.append({"x":int(landmark.x)*24+12,"y":int(landmark.y)*24+24,"text":str(landmark.get("name",landmark.get("label",""))),"color":"ccb78d"})
-	for id in content.data.npcs:
+	for id in runtime_npc_ids:
 		var npc: Dictionary=content.data.npcs[id]
-		if npc.map_id!=c.map_id: continue
 		var layer := _actor_layer(str(npc.get("look_id",npc.get("appearance_id","tavern"))),"standing",int(npc.get("direction",2)),int(npc.x),int(npc.y))
 		if not layer.is_empty(): sorted.append(layer)
 		labels.append({"x":int(npc.x)*24+12,"y":int(npc.y)*24+24,"text":npc.name,"color":"f4d58a"})
-	for id in game.state.monsters:
+	for id in runtime_monster_ids:
 		var monster: Dictionary=game.state.monsters[id]
-		if monster.map_id!=c.map_id or not monster.alive: continue
+		if not monster.alive: continue
 		var def: Dictionary=content.data.monsters[monster.monster_id]
 		var animation := "attack" if clock<float(actor_animations.get(id,0)) else "walking" if clock<float(actor_walk_until.get(id,0)) else "standing"
 		var at:=_visual_point(str(id),float(monster.x),float(monster.y))
