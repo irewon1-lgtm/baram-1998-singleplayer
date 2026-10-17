@@ -1,0 +1,36 @@
+{
+  "schema": "baram.b5.fixed-source-freeze/1",
+  "app_source_commit": "4a0c8d796e65a0493207221f2eb60b78d006c681",
+  "parent": "9189867bfe66368192fd5387e1d41f0f6ced2e73",
+  "branch": "work/rebuild-p3-remediation-20261016",
+  "app_sources_changed": [
+    "rebuild/p2/state/gameplay_state.gd",
+    "rebuild/p2/storage/gameplay_store.gd",
+    "rebuild/p2/ui/gameplay.gd",
+    "rebuild/p2/ui/classic_list.gd"
+  ],
+  "source_sha256": {
+    "rebuild/p2/state/gameplay_state.gd": "75b6ce536fe2bb1e3f213678d8d9588d93caa858dd1081eabb74f11a626e6205",
+    "rebuild/p2/storage/gameplay_store.gd": "c5f2b5d14e289e57613701f82ead154d081c0e36d30c455cd83fb949241527da",
+    "rebuild/p2/ui/gameplay.gd": "cf3d18ec2aafca206ee2bf63db1cf7fe4605e5ff8fc31ce7123fed65b1180be6",
+    "rebuild/p2/ui/classic_list.gd": "b9f6b74ca10acad2ebcd0e9ad1bc559114dc54cfab7f467ca8967238d5574218",
+    "tools/rebuild/v2/test_arrival_occupancy.gd": "c3df6d3697236117d514735114932cb6dbe041afe929ced6706d0e707674c6bb",
+    "tools/rebuild/v2/test_store_latency.gd": "4e54691a8dfa4944de05ff5362211f1a6f0f6d2de3bb114c96bee19848d5d58d",
+    "tools/rebuild/v2/test_ui_reuse.gd": "fc69f73a3cf504dc99ca67d34403a902acdad242fe5c9a73ee6e392ff8a92247",
+    "tools/rebuild/v2/test_ui_integrity.gd": "55bf5326c3128a491251844c4e1c086f586ae46f03529cbba704ae0a39aab327",
+    "tools/rebuild/v2/test_os_playability.py": "971ac23817c170b213a2f98dff65d2e31cfcabd5efd950999cc638fdfd17f35f",
+    "tools/rebuild/v2/analyze_playability.py": "55d44da819c26a5620a8a6718d210aa268055334d496319e04d13651406495db",
+    "tools/rebuild/v2/stage_native_candidate.py": "a0e2036327947789facc137b74a5927dd1f75f2db3af9d14403efe408c0dc18f"
+  },
+  "runtime_manifest_sha256": "4791e101c547f0a3848297b40b0e424acd776ac85c2d455e40e1f83c4bd1fdf0",
+  "content_sha256": "f1e45c2a7045e130b842325751ab81cf38c22ac92df62ddafe33700aa9267fca",
+  "runtime_changed": false,
+  "prior_failed_app_source": "82e09f50861065c8e763efe34f7634d0e95e2e82",
+  "tests": {
+    "arrival": "evidence/arrival-occupancy/SUMMARY.json",
+    "store": "evidence/store-latency-r13/SUMMARY.json",
+    "UI_rows": "evidence/UI_ALLOCATION_REPAIR.json",
+    "UI_common": "evidence/ui-integrity-fixed/ui-integrity.json"
+  },
+  "scope": "Targeted source, actual saved-state recovery, storage correctness and Linux UI fixture checks executed. Exact fixed exports and ordinary/native long play are not yet run."
+}
