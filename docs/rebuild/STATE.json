@@ -8,12 +8,12 @@
   "active_branch": "work/rebuild-p3-remediation-20261016",
   "entrypoint": "AGENTS.md",
   "master_plan": "docs/rebuild/MASTER_PLAN.md",
-  "status": "B5_FIXED_SOURCE_VERIFIED_EXPORT_AND_ORDINARY_VALIDATION_PENDING",
+  "status": "B5_FIXED_EXPORT_PARITY_PASS_ORDINARY_PREFLIGHT_RUNNING",
   "implementation_status": "G1_RETAINED_PLAYABILITY_REPAIR_HOST_VALIDATED_NATIVE_LONG_PLAY_PENDING",
   "handoff_commit": "82e09f50861065c8e763efe34f7634d0e95e2e82",
   "app_behavior_commit": "4a0c8d796e65a0493207221f2eb60b78d006c681",
   "current_phase": "B5",
-  "current_phase_execution": "NEW_SOURCE_FROZEN_TARGETED_CHECKS_PASS_EXPORT_PENDING",
+  "current_phase_execution": "EXACT_FIXED_PACK_240S_PREFLIGHT_RUNNING",
   "authorization": {
     "goal_and_plan": "USER_APPROVED",
     "ordered_followup_work": "B1_THROUGH_B6_WITHIN_FREE_SCOPE",
@@ -163,10 +163,10 @@
   "next_action": {
     "owner": "Work",
     "phase": "B5",
-    "action": "Export this exact source with r12 data, retained package/certificate/userdir and incremented APKcode5. Verify byte parity, then short ordinary actual saved-state arrival recovery/trade/equipment/save/restart and latency preflight. Run affected stable fixed-candidate continuous1800s with actual trades only after that evidence; no fresh character or repeated inventory/SDK. Native blocked runners remain un-retried.",
+    "action": "Observe already-running exact4a0/r13PCK240s ordinary preflight. Do not start duplicate process. Review actual arrival recovery, integrated sale/purchase/equipment and full frame/input/save distributions. Only after PASS begin new continuous1800s with earned preflight save. No heavy parallel tests/uploads while measuring.",
     "on_environment_block": "Continue independent B5 code/UI/assets and adapter tests; native physical devices and authenticated roundtrip remain explicitly BLOCKED/NOT_RUN. B6 promotion blocked by B5 failures.",
     "do_not_repeat": "No full inventory/SDK/parser reset; reuse verified toolchain and unchanged evidence; only changed-source affected final suites.",
-    "resume_from": "Frozen appsource4a0c8d796e65a0493207221f2eb60b78d006c681, runtime4791e101, source fingerprints in evidence/FIXED_SOURCE_FREEZE.json. Old1311s FAIL and untouched Lv14/565money source save are preserved; do not reset progress. All4 changed appfiles matched targeted evidence. Previous exports82e are failed historical candidates and need replacements."
+    "resume_from": "Running preflight evidence/b5-play/final-preflight-r13/RUN_ANCHOR.json and progress.json. Latest exact packd5558c69, source4a0, runtime4791e101; original1311s realfailure and earned save retained. Prior native blocked jobs remain un-retried."
   },
   "retry_policy": {
     "deterministic_unchanged_failure": "CHANGE_METHOD",
@@ -279,7 +279,7 @@
       "native_block_evidence": "docs/rebuild/v2/B5_NATIVE_RUNNER_BLOCK.json",
       "native_blocked_candidate": "pre-color be47 r12; current final label-only82e exports require exact input staging when runner block resolved",
       "color_only_impact": "docs/rebuild/v2/B5_COLOR_ONLY_IMPACT.json",
-      "ordinary_followup": "PREPARED_INTEGRATED_ACTUAL_TRADES_AND_RESUMED_EARNED_SAVE_NOT_RUN",
+      "ordinary_followup": "EXACT_FIXED_PACK_EARNED_SAVE_240S_PREFLIGHT_RUNNING",
       "previous_17min": {
         "status": "FAIL_HARNESS_CLIPPED_TARGET",
         "path": "evidence/b5-play/final30-r12/OS_PLAYABILITY.json",
@@ -290,29 +290,21 @@
       },
       "actual_operator_sha256": "1b00a9cbefaa3038814b30a90f361b7dd1f2d1029f7521cfa55539c8a4cdae67",
       "active_run": {
-        "status": "ENDED_FAIL_DEAD_PROCESS_DO_NOT_RESTART",
-        "anchor": {
-          "status": "ENDED_FAIL_PRODUCT_MAP_LANDING_BLOCKED",
-          "exec_session_id": 11289,
-          "display": 125,
-          "host_game_pid": 60870,
-          "continuous_stress_start_unix_ns": 1792202527742457846,
-          "required_continuous_seconds": 1800,
-          "game_source": "82e09f50",
-          "runtime": "r12-final",
-          "PCK": "evidence/pack-parity-r12-ink/final-windows-embedded.pck",
-          "PCK_sha256": "57e6d65456af96d863092751d7c83ff66db5272da0bf2e915c412849be8a877e",
-          "operator_sha256": "1b00a9cbefaa3038814b30a90f361b7dd1f2d1029f7521cfa55539c8a4cdae67",
-          "live_log": "evidence/b5-play/final30-r12-ink3-run.log",
-          "isolated_session": "/tmp/baram-ordinary-c8s6pe_k",
-          "final_report": "evidence/b5-play/final30-r12-ink/OS_PLAYABILITY.json",
-          "final_analysis": "evidence/b5-play/final30-r12-ink/FINAL_ANALYSIS.json",
-          "instruction": "Historical completed execution record. Do not resume dead PID/session; use final artifacts.",
-          "continuous_stress_observed_seconds": 1311.235516,
-          "failure_incident": "evidence/b5-play/final30-r12-ink/FAILURE_INCIDENT.json"
-        },
-        "result": "evidence/b5-play/final30-r12-ink/OS_PLAYABILITY.json",
-        "analysis": "evidence/b5-play/final30-r12-ink/FINAL_ANALYSIS.json"
+        "status": "RUNNING_NOT_A_FINAL_RESULT",
+        "exec_session_id": 1064,
+        "display": 126,
+        "host_game_pid": 74654,
+        "required_continuous_seconds": 240,
+        "game_source": "4a0c8d796e65a0493207221f2eb60b78d006c681",
+        "runtime": "r12-final",
+        "PCK": "evidence/pack-parity-r13/final-windows-embedded.pck",
+        "PCK_sha256": "d5558c6926ba6f50bd5d4b148f9539974ad2318141f5e77fea8465904ff33fc0",
+        "operator_sha256": "00fcfb7c6e6f23b6e042b32529d7d4dcfac583aee068399cabceeb0290347df2",
+        "live_log": "evidence/b5-play/final-preflight-r13-run.log",
+        "isolated_session": "/tmp/baram-ordinary-baaziapb",
+        "final_report": "evidence/b5-play/final-preflight-r13/OS_PLAYABILITY.json",
+        "final_analysis": "evidence/b5-play/final-preflight-r13/FINAL_ANALYSIS.json",
+        "instruction": "Do not restart valid run. Preflight only; root must review and give separate GO for1800. Full session and explicit stress marker retained."
       },
       "functional_scope_gap": "Shop visits in current30min do not change money/inventory; separate short actual sale/purchase/owned-equipment/save followup prepared, not counted as in-phase trades.",
       "observed_final_candidate_failure": {
@@ -364,7 +356,9 @@
         "store": "evidence/store-latency-r13/SUMMARY.json",
         "UI_rows": "evidence/UI_ALLOCATION_REPAIR.json",
         "UI_common": "evidence/ui-integrity-fixed/ui-integrity.json"
-      }
+      },
+      "source_tools_commit": "396840406fabe6bef585c67eb28d120d57798ef2",
+      "fixed_pack_parity": "docs/rebuild/v2/B5_PACK_PARITY_R13.json"
     }
   }
 }

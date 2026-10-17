@@ -1,0 +1,115 @@
+{
+  "schema": "baram.final-pack-parity-provenance/1",
+  "observed_at_utc": "2026-10-17T02:50:22.978895+00:00",
+  "source_commit": "4a0c8d796e65a0493207221f2eb60b78d006c681",
+  "source_head_context": "2c4b5ffa (later tools HEAD; appsource exact4a0c8d79)",
+  "shared_fingerprint": "bc1488c8bd2d7d49f1b6de0cedbc74a957deff7660224536c98cbaefd3b04944",
+  "runtime_manifest_sha256": "4791e101c547f0a3848297b40b0e424acd776ac85c2d455e40e1f83c4bd1fdf0",
+  "content_sha256": "f1e45c2a7045e130b842325751ab81cf38c22ac92df62ddafe33700aa9267fca",
+  "source_ui_sha256": "cf3d18ec2aafca206ee2bf63db1cf7fe4605e5ff8fc31ce7123fed65b1180be6",
+  "source_state_sha256": "75b6ce536fe2bb1e3f213678d8d9588d93caa858dd1081eabb74f11a626e6205",
+  "source_store_sha256": "c5f2b5d14e289e57613701f82ead154d081c0e36d30c455cd83fb949241527da",
+  "source_classic_list_sha256": "b9f6b74ca10acad2ebcd0e9ad1bc559114dc54cfab7f467ca8967238d5574218",
+  "receipts": {
+    "Windows": {
+      "result": "PASS_EXPORT_ONLY",
+      "source_commit": "4a0c8d796e65a0493207221f2eb60b78d006c681",
+      "version_code": 5,
+      "source_count": 52,
+      "runtime_input_count": 3995,
+      "source_mismatches": [],
+      "runtime_mismatches": [],
+      "artifact_bytes": 148007824,
+      "artifact_sha256": "3ae2cf067ac875024fdf8246d8975b6817187e881dcca9c205b50ccbb732ebd1",
+      "artifact_matches_receipt": true,
+      "commit_matches": true,
+      "fingerprint_matches": true,
+      "receipt_sha256": "a76ae8b089c4ecbbdff84b1e6653b9c266f35f03f6b41e15930cd5b81278475b"
+    },
+    "Android": {
+      "result": "PASS_EXPORT_ONLY",
+      "source_commit": "4a0c8d796e65a0493207221f2eb60b78d006c681",
+      "version_code": 5,
+      "source_count": 52,
+      "runtime_input_count": 3995,
+      "source_mismatches": [],
+      "runtime_mismatches": [],
+      "artifact_bytes": 79324349,
+      "artifact_sha256": "2a1ececd441925d4d638dd1ea4168971f16e5fcbb1a2948b03a581a1500c58de",
+      "artifact_matches_receipt": true,
+      "commit_matches": true,
+      "fingerprint_matches": true,
+      "receipt_sha256": "ef90475084ad2e37f3877f9dbdd3092567c5b11a3fcf73a62ae144f6f2f75948"
+    }
+  },
+  "embedded_pck": {
+    "offset": 100787712,
+    "size": 47220100,
+    "sha256": "d5558c6926ba6f50bd5d4b148f9539974ad2318141f5e77fea8465904ff33fc0",
+    "ordinary_test_pack_hash_matches": true
+  },
+  "compiled_script_count": 23,
+  "expanded_parity_status": "PASS",
+  "standard_parity_status": "PASS",
+  "exact_pack_ordinary_linux_gui": {
+    "status": "PASS",
+    "checks": 10,
+    "failed_checks": [],
+    "scope": "Actual Linux OpenGL window, synthetic X11 events, ordinary game mode, no progress grants; not native Windows/Android/physical IME",
+    "error": null,
+    "path": "ordinary-exact-pack/ORDINARY_PROCESS.json",
+    "runtime_manifest_sha256": "4791e101c547f0a3848297b40b0e424acd776ac85c2d455e40e1f83c4bd1fdf0",
+    "process_wrapper_exit_code": 0,
+    "all_short_test_processes_terminated": true
+  },
+  "status": "PASS_EXACT_PACK_BYTES_INPUT_PROVENANCE_AND_ORDINARY_LINUX_GUI",
+  "scope": "Exact r13 final appsource4a0c8d79/version5 exports with unchanged r12runtime. Compare APK and Windows embeddedPCK actual compiled/import resources and run ordinaryLinux10case; no native Windows/Android or longsession performance claim.",
+  "exported_runtime_import_files": 7983,
+  "expanded_parity_failures": [],
+  "standard_parity_checks": 11,
+  "compiled_ui_sha256": "a4bd6d855943205dde2ed3fbb7940f8c330ade74b48efaf7e79d0947f38cecea",
+  "completed_at_utc": "2026-10-17T02:52:04.452313+00:00",
+  "test_tools": {
+    "Godot": {
+      "path": "toolchain/godot/Godot_v4.6.3-stable_linux.x86_64",
+      "sha256": "f64d4ed19fc9df9440321653fcc80df8c6e365ba7b6de0a29e2cfa9fa71bfeb3"
+    },
+    "standard_parity": {
+      "path": "baram/tools/rebuild/p3/test_pack_parity.gd",
+      "sha256": "ee2cb986a7337bfd47ca46f844f07ccf228ee9cefeea6939b5055b6b68217268"
+    },
+    "all_payload_parity": {
+      "path": "evidence/pack-parity-r13/pack_runtime_audit.gd",
+      "sha256": "7e5da9308b81bce0a3e8af65b01dda0d27fa3f1308ea977db58eede061ff15d3"
+    },
+    "ordinary_GUI": {
+      "path": "baram/tools/rebuild/v2/test_ordinary_process.py",
+      "sha256": "7ece085f72ec92667d89c870fbe424c3ae7321ddfe4ac2ebb87c8aa2f2c83412"
+    },
+    "Xvfb_wrapper": {
+      "path": "toolchain/run_gui.py",
+      "sha256": "b69ba8f6187debe076753fdaeb7fe0f64e2d66dea3cfada908391e44426bd90c"
+    }
+  },
+  "commands": [
+    {
+      "scope": "standard11",
+      "command": "GODOT_SILENCE_ROOT_WARNING=1 BARAM_PARITY_APK=build-r13-Android/baram-p3-playable.apk BARAM_PARITY_OUTPUT=evidence/pack-parity-r13/FINAL_PACK_PARITY.json toolchain/godot/Godot_v4.6.3-stable_linux.x86_64 --headless --main-pack evidence/pack-parity-r13/final-windows-embedded.pck --script baram/tools/rebuild/p3/test_pack_parity.gd",
+      "exit_code": 0,
+      "log": "final-parity.log"
+    },
+    {
+      "scope": "all23scripts+7983resources+sevenrawJSON",
+      "command": "GODOT_SILENCE_ROOT_WARNING=1 BARAM_PARITY_APK=build-r13-Android/baram-p3-playable.apk BARAM_PARITY_AUDIT_OUTPUT=evidence/pack-parity-r13/ALL_PAYLOAD_PARITY.json BARAM_PARITY_RUNTIME_SOURCE=private/baram-V2-G1-r12-final BARAM_PARITY_COMPILED_PATHS=evidence/pack-parity-r13/expected-compiled-paths.json toolchain/godot/Godot_v4.6.3-stable_linux.x86_64 --headless --main-pack evidence/pack-parity-r13/final-windows-embedded.pck --script evidence/pack-parity-r13/pack_runtime_audit.gd",
+      "exit_code": 0,
+      "log": "all-payload-parity.log"
+    },
+    {
+      "scope": "ordinary10LinuxGUI",
+      "command": "python toolchain/run_gui.py --display 147 --log evidence/pack-parity-r13/ordinary-xvfb.log -- python baram/tools/rebuild/v2/test_ordinary_process.py --godot toolchain/godot/Godot_v4.6.3-stable_linux.x86_64 --runtime private/baram-V2-G1-r12-final --pack evidence/pack-parity-r13/final-windows-embedded.pck --output evidence/pack-parity-r13/ordinary-exact-pack --user-dir baram_rebuild_p3repair_001 --xdotool toolchain/xvfb/usr/bin/xdotool",
+      "exit_code": 0,
+      "log": "ordinary-exact-pack.log"
+    }
+  ],
+  "command_note": "Recorded commands use workspace-relative paths for readability; actual invocations supplied absolute path values to Godot environment/script/PCK and ordinary runtime/output options. Tool paths and hashes are pinned above."
+}
