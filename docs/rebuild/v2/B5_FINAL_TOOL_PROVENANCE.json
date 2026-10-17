@@ -2,19 +2,25 @@
   "schema": "baram.final-playability-tool-provenance/2",
   "repository": "irewon1-lgtm/baram-1998-singleplayer",
   "branch": "work/rebuild-p3-remediation-20261016",
-  "commit": "396840406fabe6bef585c67eb28d120d57798ef2",
+  "commit": "0fad09b1a6ee44484c5a197eb2a305197ffc047b",
   "app_source_commit": "4a0c8d796e65a0493207221f2eb60b78d006c681",
   "app_changed": false,
   "operator_path": "tools/rebuild/v2/test_os_playability.py",
-  "operator_sha256": "00fcfb7c6e6f23b6e042b32529d7d4dcfac583aee068399cabceeb0290347df2",
+  "operator_sha256": "06540e780e4b2032c8b82859d22d980fe2e255140ad3c27dc97de558cf57b064",
   "analyzer_path": "tools/rebuild/v2/analyze_playability.py",
-  "analyzer_sha256": "55d44da819c26a5620a8a6718d210aa268055334d496319e04d13651406495db",
+  "analyzer_sha256": "f5ded1949b0c6d2236401877f2a5501e4ded8cb65db2598218c773aa4a28ef81",
   "tool_sha256": {
-    "tools/rebuild/v2/test_os_playability.py": "00fcfb7c6e6f23b6e042b32529d7d4dcfac583aee068399cabceeb0290347df2",
-    "tools/rebuild/v2/analyze_playability.py": "55d44da819c26a5620a8a6718d210aa268055334d496319e04d13651406495db",
-    "tools/rebuild/v2/test_analyze_playability.py": "241b00f51590f7ffe674114bf33fb5b754c5530e86d2ec7ea612190bdad96ef7",
+    "tools/rebuild/v2/test_os_playability.py": "06540e780e4b2032c8b82859d22d980fe2e255140ad3c27dc97de558cf57b064",
+    "tools/rebuild/v2/analyze_playability.py": "f5ded1949b0c6d2236401877f2a5501e4ded8cb65db2598218c773aa4a28ef81",
+    "tools/rebuild/v2/test_analyze_playability.py": "bb952f6f02ac0832c0ff44c021ae59691b935ad6a5bc115ed8076a2f2037c9aa",
     "tools/rebuild/v2/stage_native_candidate.py": "1b53eceb730df2b5a0da9b4156f4be78cdd1c7daffbcacdcff41876c0d23b809",
-    "tools/rebuild/v2/test_native_android.py": "bce468a461e5f0de7aba28e539fe7deb1a15cb3bfb99cf90426612367993419a"
+    "tools/rebuild/v2/test_native_android.py": "bce468a461e5f0de7aba28e539fe7deb1a15cb3bfb99cf90426612367993419a",
+    "tools/rebuild/v2/run_playability_analysis.py": "2947a0a97e2313c3f896bd80801a3dec6c8d12ec294063ea000a7ba0fb457659"
   },
-  "scope": "Tool-only checkpoint. Exact exported app remains4a0. Integrated continuous-phase sale/purchase/equipment from preserved earned save, fresh observed scroll bounds, separate OS receipt/post-draw correlation. Actual future run results must match these hashes. Native request metadata version validation22cases, no native execution or CI retrigger."
+  "scope": "App4a0/r12data unchanged. Final operator only skips unnecessary starter-field detour for earned continuous resume; preflight operator separately pinned. Analyzer adds independently clocked restart active-play and retains all previous first-process/stress metrics. Analysis execution receipts pin tool/input/output bytes; no combined clocks or trimmed tails. Native tool metadata tests22, no native execution/retrigger.",
+  "preflight_tools_commit": "396840406fabe6bef585c67eb28d120d57798ef2",
+  "preflight_operator_sha256": "00fcfb7c6e6f23b6e042b32529d7d4dcfac583aee068399cabceeb0290347df2",
+  "final_operator_first_published_commit": "a299eb8693c193872375f5697de12c09eefab800",
+  "analysis_wrapper_path": "tools/rebuild/v2/run_playability_analysis.py",
+  "analysis_wrapper_sha256": "2947a0a97e2313c3f896bd80801a3dec6c8d12ec294063ea000a7ba0fb457659"
 }
