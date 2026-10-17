@@ -334,6 +334,7 @@ func _build_ui() -> void:
 	dialogue.add_child(dialogue_layout)
 	var dialogue_header:=HBoxContainer.new();dialogue_layout.add_child(dialogue_header)
 	dialogue_title=_label(dialogue_header,"");dialogue_title.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	dialogue_title.add_theme_color_override("font_color",Color("302012"))
 	var close_x:=_button(dialogue_header,"X",_close_dialogue)
 	close_x.name="CloseX";close_x.tooltip_text="닫기 · Esc / 뒤로가기";close_x.custom_minimum_size=Vector2(48,44)
 	dialogue_scroll=ScrollContainer.new();dialogue_scroll.custom_minimum_size=Vector2(0,40)
@@ -894,7 +895,7 @@ func _render_dialogue_page() -> void:
 	for child in dialogue_pager.get_children(): dialogue_pager.remove_child(child);child.queue_free()
 	var npc: Dictionary=content.data.npcs[current_npc]
 	dialogue_title.text=str(npc.name)
-	_label(dialogue_body,str(npc.get("dialogue",{}).get("greeting","")))
+	_label(dialogue_body,str(npc.get("dialogue",{}).get("greeting",""))).add_theme_color_override("font_color",Color("302012"))
 	weapon_name_input=null
 	if "weapon_naming" in npc.get("services",[]):
 		weapon_name_input=LineEdit.new();weapon_name_input.placeholder_text="새 무기 이름 · 2~12자";weapon_name_input.max_length=12
@@ -918,6 +919,7 @@ func _render_dialogue_page() -> void:
 		previous.disabled=dialogue_page==0
 		var page_label:=_label(pages,str(dialogue_page+1)+" / "+str(ceili(float(dialogue_rows.size())/DIALOGUE_PAGE_SIZE)))
 		page_label.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+		page_label.add_theme_color_override("font_color",Color("302012"))
 		page_label.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
 		page_label.custom_minimum_size.x=90
 		var next:=_button(pages,"다음",func(): dialogue_page+=1;_refresh_open_dialogue.call_deferred(current_npc,dialogue_page,false))
@@ -932,7 +934,7 @@ func _show_map() -> void:
 	for child in dialogue_pager.get_children(): dialogue_pager.remove_child(child);child.queue_free()
 	var c: Dictionary=game.state.character
 	var map: Dictionary=content.data.maps[c.map_id]
-	_label(dialogue_body,str(map.name)+" · "+str(int(c.x))+", "+str(int(c.y)))
+	_label(dialogue_body,str(map.name)+" · "+str(int(c.x))+", "+str(int(c.y))).add_theme_color_override("font_color",Color("302012"))
 	var overview:=OriginalView.new();overview.content=content.assets;overview.mouse_filter=Control.MOUSE_FILTER_IGNORE
 	var extent:=Vector2(float(map.width)*24,float(map.height)*24)
 	overview.custom_minimum_size=Vector2(280,210);dialogue_body.add_child(overview)

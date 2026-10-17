@@ -25,6 +25,10 @@ def digest(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
+def git_blob_digest(data: bytes) -> str:
+    return hashlib.sha1(b'blob ' + str(len(data)).encode('ascii') + b'\0' + data).hexdigest()
+
+
 def write(path: Path, value: dict) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(path.suffix + '.tmp')
@@ -191,8 +195,8 @@ def upload(args) -> None:
         result = api.call('create_blob', repository_full_name=args.repository,
                           content=encoded.decode('ascii'), encoding='utf-8')
         sha = result['sha']
-        if not re.fullmatch('[0-9a-f]{40}', sha):
-            raise ValueError('Unexpected blob SHA')
+        if sha != git_blob_digest(encoded):
+            raise ValueError('Uploaded Git blob differs from the exact local chunk')
         with lock:
             state['blobs'][row['path']] = sha
             write(state_path, state)
@@ -207,8 +211,11 @@ def upload(args) -> None:
     for name in session['manifest_names']:
         path = session['prefix'] + '/' + name
         if path not in state['blobs']:
+            content = (args.session / name).read_bytes()
             result = api.call('create_blob', repository_full_name=args.repository,
-                              content=(args.session / name).read_text(encoding='utf-8'), encoding='utf-8')
+                              content=content.decode('utf-8'), encoding='utf-8')
+            if result['sha'] != git_blob_digest(content):
+                raise ValueError('Uploaded manifest differs from exact local bytes')
             state['blobs'][path] = result['sha']
             write(state_path, state)
     if not state.get('commit'):
