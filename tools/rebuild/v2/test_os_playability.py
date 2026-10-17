@@ -34,6 +34,11 @@ def main():
     p.add_argument('--name', default='osjourney')
     p.add_argument('--job', default='주술사', choices=['전사', '도적', '주술사', '도사'])
     p.add_argument('--record', action='store_true')
+    p.add_argument('--user-dir-name', default='baram_rebuild_gameplay_001', help='Actual Godot custom user directory for the tested project/pack')
+    p.add_argument('--resume-user-dir-name', default='baram_rebuild_gameplay_001', help='Original natural-session data directory name, copied without payload edits')
+    p.add_argument('--resume-data', type=Path, help='Byte-identical copy of a completed naturally earned isolated session; no payload edits or grants')
+    p.add_argument('--continuous-after-preflight', action='store_true', help='Keep same process and raw recording after successful natural ability preflight, then run requested continuous stress duration')
+    p.add_argument('--targeted-followup', action='store_true', help='Reserve actual fire/return materials, use visible dialogue scrolling, then demonstrate ordinary learned projectile and return')
     p.add_argument('--compare-recording', action='store_true', help='Run 30s of the same ordinary input with recording off and on before journey')
     p.add_argument('--advance-hunting', action='store_true', help='After natural level 8 and actual learned skills, walk to the existing rat cave')
     a = p.parse_args()
@@ -52,10 +57,15 @@ def main():
                XAUTHORITY='', GODOT_SILENCE_ROOT_WARNING='1',
                BARAM_GAMEPLAY_RUNTIME=str(a.runtime.resolve()),
                BARAM_PLAYABILITY_TRACE=str(temporary_root / 'frame-timeline.jsonl'))
-    cpath = temporary_root / 'data/baram_rebuild_gameplay_001/gameplay-checkpoints.jsonl'
+    if any('/' in name or '..' in name for name in [a.user_dir_name,a.resume_user_dir_name]):raise ValueError('Simple custom user directory names required')
+    if a.resume_data:
+        shutil.copytree(a.resume_data.resolve()/a.resume_user_dir_name,temporary_root/'data'/a.user_dir_name,dirs_exist_ok=True)
+    cpath = temporary_root / 'data' / a.user_dir_name / 'gameplay-checkpoints.jsonl'
+    if a.resume_data:cpath.unlink(missing_ok=True)  # copied instrumentation log; earned save bytes remain untouched
     saves = cpath.parent / 'gameplay-p3/characters'
     content = json.loads((a.runtime / 'gameplay_content.json').read_text())
-    if a.pack:env.pop('BARAM_GAMEPLAY_RUNTIME',None)
+    if a.pack:
+        env.pop('BARAM_GAMEPLAY_RUNTIME',None);env.pop('BARAM_P2_RUNTIME',None)
     command = [str(a.godot.resolve()), '--audio-driver', 'Dummy'] + (['--main-pack',str(a.pack.resolve())] if a.pack else ['--path', str(a.project.resolve())])
     start = time.monotonic()
     input_path = temporary_root / 'os-input-timeline.jsonl'
@@ -64,6 +74,8 @@ def main():
               'requested_seconds': a.seconds, 'checks': [], 'observations': observations,
               'operator_sha256': hashlib.sha256(operator_source).hexdigest(),
               'isolated_session_directory': str(temporary_root),
+              'continued_naturally_earned_data': {'directory':str(a.resume_data.resolve()),'from_user_dir':a.resume_user_dir_name,'to_user_dir':a.user_dir_name,'method':'Byte-identical continuity import between isolated Linux test directories; not authenticated sync. No payload edits or grants.','files':[{'file':str(f.relative_to(a.resume_data)),'sha256':hashlib.sha256(f.read_bytes()).hexdigest()} for f in sorted(a.resume_data.rglob('*')) if f.is_file()]} if a.resume_data else None,
+              'targeted_followup':a.targeted_followup,
               'exact_pack_sha256': hashlib.sha256(a.pack.read_bytes()).hexdigest() if a.pack else None,
               'associated_candidate_files': [{'file':str(f.resolve()),'sha256':hashlib.sha256(f.read_bytes()).hexdigest()} for f in a.candidate_file],
               'runtime_manifest_sha256': hashlib.sha256((a.runtime / 'runtime.json').read_bytes()).hexdigest(),
@@ -107,11 +119,20 @@ def main():
             if row.get('stage') == 'ui_layout': return row['details']
         return {}
     def button(prefix, exact=False, optional=False):
-        for item in latest_layout().get('controls', []):
+        controls=latest_layout().get('controls', [])
+        footer=next((c['rect'] for c in controls if c['text']=='닫기 / 취소'),None)
+        pager=next((c['rect'] for c in controls if c['text']=='이전'),None)
+        close_x=next((c['rect'] for c in controls if c['text']=='X'),None)
+        for item in controls:
             if item['text'] == prefix if exact else item['text'].startswith(prefix):
                 rect = item['rect']
                 if rect[1] < 0 or rect[1]+rect[3] > 720:
                     continue
+                if footer and close_x and item['text'] not in ['X','닫기 / 취소','다음','이전']:
+                    if abs(rect[0]-footer[0])>=1:continue  # field controls behind the ordinary modal are not OS targets
+                    clip_top=close_x[1]+close_x[3]+4
+                    clip_bottom=(pager[1] if pager else footer[1])-4
+                    if rect[1]<clip_top or rect[1]+rect[3]>clip_bottom:continue
                 click_xy(rect[0]+rect[2]/2, rect[1]+rect[3]/2, item['text'])
                 return item['text']
         if optional: return None
@@ -177,6 +198,7 @@ def main():
         origin=(int(c['x']),int(c['y'])); destination=tuple(map(int,destination))
         blocked={tuple(v) for v in m.get('blocked',[])}
         blocked|={(int(n['x']),int(n['y'])) for n in content['npcs'].values() if n['map_id']==c['map_id']}
+        blocked|={(int(m['x']),int(m['y'])) for m in payload['monsters'].values() if m['map_id']==c['map_id'] and m['alive'] and (int(m['x']),int(m['y'])) not in [origin,destination]}
         exits={(int(e['x']),int(e['y'])) for e in m.get('exits',[])}
         q=deque([origin]); previous={origin:origin}; found=None
         while q:
@@ -229,9 +251,17 @@ def main():
         if not walk_to((npc['x'],npc['y']),reach=int(npc.get('interaction_range',2))): return False
         key('Return'); time.sleep(.3); return True
     def close_modal(method='Escape'):
-        if method=='Escape': key('Escape')
-        else: button(method,exact=True)
-        time.sleep(.2)
+        controls=latest_layout().get('controls',[])
+        has_modal=any(c['text']=='닫기 / 취소' for c in controls)
+        if method=='Escape':key('Escape')
+        elif has_modal:button(method,exact=True)
+        else:
+            observe('operator_close_target_already_absent',requested=method,interpretation='No modal footer in latest ordinary layout; preserve incident and use normal Esc recovery')
+            capture('close-already-absent-'+str(len(observations)));key('Escape')
+        deadline=time.monotonic()+2
+        while time.monotonic()<deadline and any(c['text']=='닫기 / 취소' for c in latest_layout().get('controls',[])):time.sleep(.05)
+        still_modal=any(c['text']=='닫기 / 취소' for c in latest_layout().get('controls',[]))
+        if still_modal:raise RuntimeError('Actual modal remains after ordinary close input')
     def hunt_cycle():
         s=state();c=s['character']
         if c.get('dead'):
@@ -253,7 +283,7 @@ def main():
         # normal walking route before it reaches the visible target.
         distance=abs(m['x']-c['x'])+abs(m['y']-c['y'])
         if distance>1:time.sleep(min(1.4,(distance-1)*.18+.25))
-        if s['skills'] and content['skills'][s['skills'][0]].get('kind')=='damage':
+        if (s['skills'] and content['skills'][s['skills'][0]].get('kind')=='damage') or (a.targeted_followup and any(content['skills'][sid].get('kind')=='damage' for sid in s['skills'])):
             button('기술',exact=True);time.sleep(.3)
         for _ in range(4):key('space');time.sleep(.53)
         key('z');time.sleep(.25)
@@ -291,14 +321,65 @@ def main():
             button(prefix+' 학습',optional=True);time.sleep(.25)
         close_modal('Escape');observe('ordinary_job_and_learning_attempt',character=state(3.3)['character'],skills=state()['skills'])
         return state()['character']['job']!='commoner'
+    def learn_scrolled_skill(name):
+        # Open a fresh ordinary dialogue so its scroll starts at zero. Use OS
+        # wheel input; the read-only layout supplies geometry, never callbacks.
+        close_modal('Escape');key('Return');time.sleep(.35)
+        for page in range(12):
+            layout=latest_layout();controls=layout.get('controls',[])
+            learned=next((r for r in controls if r['text'].startswith(name+' [배움]')),None)
+            if learned:return True
+            target=next((r for r in controls if r['text'].startswith(name+' 학습')),None)
+            if target:
+                rect=target['rect']
+                previous=next((r['rect'] for r in controls if r['text']=='이전'),None)
+                footer=next(r['rect'] for r in controls if r['text']=='닫기 / 취소')
+                clip_end=(previous[1] if previous else footer[1])-4
+                offset=0
+                if rect[1]+rect[3]>clip_end:
+                    row_rects=[r['rect'] for r in controls if abs(r['rect'][0]-rect[0])<1 and abs(r['rect'][2]-rect[2])<1 and r['text'] not in ['닫기 / 취소','다음','이전']]
+                    offset=max(0,max(r[1]+r[3] for r in row_rects)-clip_end)
+                    focus();run('mousemove','--window',x.window,int(rect[0]+rect[2]/2),int(clip_end-50));log('mouse_wheel',direction='down',steps=20,description='ordinary dialogue scroll to '+name)
+                    run('click','--repeat',20,'--delay',20,'5');time.sleep(.35)
+                capture('visible-learning-'+str(page)+'-'+str(len(observations)))
+                click_xy(rect[0]+rect[2]/2,rect[1]+rect[3]/2-offset,'visible scrolled '+name+' 학습')
+                after=state(3.3)
+                learned_ids=[sid for sid in after['skills'] if content['skills'][sid]['name']==name]
+                observe('ordinary_scrolled_learning',skill_name=name,page=page+1,scroll_offset_px=offset,learned_ids=learned_ids,character=after['character'])
+                return bool(learned_ids)
+            if not button('다음',exact=True,optional=True):return False
+            time.sleep(.35)
+        return False
+    def select_learned_skill(name):
+        for _ in range(4):
+            for item in latest_layout().get('controls',[]):
+                if ':  '+name in item['text']:
+                    r=item['rect'];click_xy(r[0]+r[2]/2,r[1]+r[3]/2,item['text']);return True
+            key('Tab');time.sleep(.25)
+        return False
+    def trade_surplus():
+        before=state()
+        if not talk('장터 식재료상'):raise RuntimeError('Normal surplus-sale route failed')
+        close_modal('X')
+        # Navigate tabs through ordinary keys until the bag is actually visible.
+        for _ in range(4):
+            if any(':  토끼고기 ×' in r['text'] for r in latest_layout().get('controls',[])):break
+            key('Tab');time.sleep(.2)
+        quantity=sum(int(i['quantity']) for i in before['inventory'] if i['item_id']=='gp:item:rabbit_meat')
+        for item in latest_layout().get('controls',[]):
+            if ':  토끼고기 ×' in item['text']:
+                r=item['rect'];click_xy(r[0]+r[2]/2,r[1]+r[3]/2,item['text'])
+                for _ in range(min(5,max(0,quantity-10))):button('가까운 상인에게 판매');time.sleep(.2)
+                break
+        observe('ordinary_surplus_trade',before_character=before['character'],after_character=state(3.3)['character'],meat_reserved=10)
     def try_return_skill():
         s=state()
         learned=[sid for sid in s['skills'] if content['skills'][sid].get('kind')=='return']
         if not learned:
             observe('return_skill_not_learned',status='NOT_RUN',reason='Natural materials/learning not completed')
             return False
-        key('Tab');button('지도',exact=True);time.sleep(.3);close_modal('Escape')
         skill_name=content['skills'][learned[0]]['name']
+        if not select_learned_skill(skill_name):return False
         for item in latest_layout().get('controls',[]):
             if ':  '+skill_name in item['text']:
                 r=item['rect'];click_xy(r[0]+r[2]/2,r[1]+r[3]/2,item['text']);button('선택 기술 사용');time.sleep(3.3)
@@ -312,28 +393,36 @@ def main():
             wait_stage('ui_layout');x=X11(env)
             capture('01-menu')
             if a.record and not a.compare_recording:start_recorder()
-            button('새 캐릭터',exact=True);run('type','--clearmodifiers','--delay','30','cancelos');button('취소',exact=True)
-            check('creation_cancel_zero_save',not list(saves.glob('*.json')))
-            button('새 캐릭터',exact=True);run('type','--clearmodifiers','--delay','30',a.name);button('만들고 시작',exact=True)
-            wait_stage('character_created');time.sleep(1)
-            files=list(saves.glob('*.json'));check('ordinary_creation_one_save',len(files)==1)
-            if len(files)!=1:raise RuntimeError('Normal character creation failed')
-            savefile=files[0];first=state();check('Lv1_commoner_zero_skills',first['character']['level']==1 and first['character']['job']=='commoner' and not first['skills'])
+            if a.resume_data:
+                since=len(checkpoints(cpath));button('이어 하기',exact=True);wait_stage('loaded',since);time.sleep(.7)
+                files=list(saves.glob('*.json'));check('continued_real_earned_character_one_save',len(files)==1)
+                if len(files)!=1:raise RuntimeError('Targeted follow-up requires exactly one preserved natural character')
+                savefile=files[0];first=state()
+                observe('continued_naturally_earned_character',character=first['character'],skills=first['skills'],stats=first['stats'])
+            else:
+                button('새 캐릭터',exact=True);run('type','--clearmodifiers','--delay','30','cancelos');button('취소',exact=True)
+                check('creation_cancel_zero_save',not list(saves.glob('*.json')))
+                button('새 캐릭터',exact=True);run('type','--clearmodifiers','--delay','30',a.name);button('만들고 시작',exact=True)
+                wait_stage('character_created');time.sleep(1)
+                files=list(saves.glob('*.json'));check('ordinary_creation_one_save',len(files)==1)
+                if len(files)!=1:raise RuntimeError('Normal character creation failed')
+                savefile=files[0];first=state();check('Lv1_commoner_zero_skills',first['character']['level']==1 and first['character']['job']=='commoner' and not first['skills'])
             play_start=time.monotonic();observe('ordinary_play_start',character=first['character']);capture('02-created')
             if a.record and a.compare_recording:
                 recording_comparison(False);start_recorder();play_start=time.monotonic()
                 observe('recorded_journey_start',character=state()['character'])
                 recording_comparison(True)
-            if talk('왈숙'):
-                capture('03-tavern-dialogue');modal_before=state();close_modal('X');key('Down',.35);modal_after=state(3.3)
-                check('ordinary_tavern_open_X_close_movement_resumes',(modal_before['character']['x'],modal_before['character']['y'])!=(modal_after['character']['x'],modal_after['character']['y']),{'before':modal_before['character'],'after':modal_after['character']})
-                check('closing_NPC_does_not_trade',modal_before['inventory']==modal_after['inventory'] and modal_before['character']['money']==modal_after['character']['money'])
-            else:check('ordinary_tavern_open_X_close',False)
-            button('지도',exact=True);time.sleep(.3);capture('04-map-dialogue');close_modal('닫기 / 취소')
-            check('ordinary_map_footer_close',True)
+            if not a.resume_data:
+                if talk('왈숙'):
+                    capture('03-tavern-dialogue');modal_before=state();close_modal('X');key('Down',.35);modal_after=state(3.3)
+                    check('ordinary_tavern_open_X_close_movement_resumes',(modal_before['character']['x'],modal_before['character']['y'])!=(modal_after['character']['x'],modal_after['character']['y']),{'before':modal_before['character'],'after':modal_after['character']})
+                    check('closing_NPC_does_not_trade',modal_before['inventory']==modal_after['inventory'] and modal_before['character']['money']==modal_after['character']['money'])
+                else:check('ordinary_tavern_open_X_close',False)
+                button('지도',exact=True);time.sleep(.3);capture('04-map-dialogue');close_modal('닫기 / 취소')
+                check('ordinary_map_footer_close',True)
             if not go_map('gp:map:south_field'):raise RuntimeError('Beginner field unreachable through ordinary OS movement')
             capture('05-first-field')
-            trained=False;last_report=-60;last_capture=-180;initial15=False;last_training_attempt=-180
+            trained=False;last_report=-60;last_capture=-180;initial15=False;last_training_attempt=-180;targeted_ready=False;last_surplus_trade=0
             while time.monotonic()-play_start<a.seconds:
                 elapsed=time.monotonic()-play_start
                 s=state();c=s['character']
@@ -343,13 +432,59 @@ def main():
                     last_capture=elapsed;capture('play-'+str(int(elapsed)))
                 if elapsed>=900 and not initial15:
                     initial15=True;observe('initial_15_minutes_completed',character=c,stats=s['stats']);capture('initial-15-minutes')
-                if (not trained or not s['skills']) and c['level']>=6 and s['stats']['items_picked_up']>=10 and elapsed-last_training_attempt>=180:
+                if a.targeted_followup and not targeted_ready:
+                    teacher={'전사':'태백','도적':'마로','주술사':'해두','도사':'진선'}[a.job]
+                    names=['화염주(화)','비영사천문'] if a.job=='주술사' else ['비영사천문']
+                    wanted=[sid for name in names for sid,d in content['skills'].items() if d['name']==name and (d['job']==a.job or d['job']=='COMMON_FOUR_STARTER_JOBS') and d['learn_level']<=c['level']]
+                    missing=[sid for sid in wanted if sid not in s['skills']]
+                    requirements={}
+                    for sid in missing:
+                        for item_id,quantity in content['skills'][sid].get('ingredients',{}).items():requirements[item_id]=requirements.get(item_id,0)+int(quantity)
+                    inventory={item_id:sum(int(i['quantity']) for i in s['inventory'] if i['item_id']==item_id) for item_id in requirements}
+                    if all(inventory[item_id]>=quantity for item_id,quantity in requirements.items()):
+                        if not talk(teacher):raise RuntimeError('Normal route to teacher failed in earned-character follow-up')
+                        for name in names:check('ordinary_scrolled_learning_'+name,learn_scrolled_skill(name))
+                        close_modal('Escape');go_map('gp:map:south_field');hunting_map='gp:map:south_field'
+                        # Select the newly learned real attack in the visible skill
+                        # panel, then use the existing ordinary combat buttons.
+                        if not select_learned_skill('화염주(화)'):raise RuntimeError('Actually learned projectile missing from ordinary skill panel')
+                        current=state();cc=current['character']
+                        monsters=[v for v in current['monsters'].values() if v['map_id']==cc['map_id'] and v['alive']]
+                        target=min(monsters,key=lambda v:abs(v['x']-cc['x'])+abs(v['y']-cc['y']))
+                        if abs(target['x']-cc['x'])+abs(target['y']-cc['y'])>4:walk_to((target['x'],target['y']),reach=4)
+                        key('Escape')  # normal field cancel stops walking/auto-attack before the isolated spell input
+                        before_projectile=state(3.3);capture('ordinary-before-projectile')
+                        button('기술',exact=True);capture('ordinary-projectile-effect');after_projectile=state(3.3)
+                        capture('ordinary-learned-projectile')
+                        check('ordinary_learned_attack_MP_cost_observed',True if after_projectile['character']['mp']<before_projectile['character']['mp'] else None,{'before_mp':before_projectile['character']['mp'],'after_mp':after_projectile['character']['mp'],'before_level':before_projectile['character']['level'],'after_level':after_projectile['character']['level'],'scope':'No basic attack is issued during this isolated ordinary spell observation; persistent MP cost and target health corroborate the original video.'})
+                        before_monsters={k:{f:v[f] for f in ['hp','alive','x','y']} for k,v in before_projectile['monsters'].items() if v['map_id']=='gp:map:south_field'}
+                        after_monsters={k:{f:v[f] for f in ['hp','alive','x','y']} for k,v in after_projectile['monsters'].items() if v['map_id']=='gp:map:south_field'}
+                        damaged=[k for k,v in before_monsters.items() if k in after_monsters and (after_monsters[k]['hp']<v['hp'] or (v['alive'] and not after_monsters[k]['alive']))]
+                        check('ordinary_learned_projectile_target_damage',bool(damaged) or after_projectile['stats']['kills']>before_projectile['stats']['kills'],{'damaged_monsters':damaged,'before':before_monsters,'after':after_monsters})
+                        observe('ordinary_projectile_use_attempt',before_character=before_projectile['character'],after_character=after_projectile['character'],before_stats=before_projectile['stats'],after_stats=after_projectile['stats'],damaged_monsters=damaged)
+                        trained=True;last_training_attempt=elapsed
+                        preflight_return=try_return_skill();check('ordinary_preflight_learned_return',preflight_return)
+                        preflight_checks=[c for c in result['checks'] if c['id'].startswith('ordinary_scrolled_learning_') or c['id'] in ['ordinary_learned_attack_MP_cost_observed','ordinary_learned_projectile_target_damage','ordinary_preflight_learned_return']]
+                        if any(c['status']!='PASS' for c in preflight_checks):raise RuntimeError('Natural ability preflight incomplete; preserve evidence before continuous stress')
+                        observe('natural_ability_preflight_completed',character=state()['character'],skills=state()['skills'])
+                        if not a.continuous_after_preflight:break
+                        if not go_map(hunting_map):raise RuntimeError('Normal route back after preflight return failed')
+                        select_learned_skill('화염주(화)')
+                        targeted_ready=True;play_start=time.monotonic();last_report=-60;last_capture=-180;initial15=False;last_surplus_trade=0
+                        observe('continuous_stress_started',requested_seconds=a.seconds,character=state()['character'],skills=state()['skills']);continue
+                    hunt_cycle();continue
+                if not a.targeted_followup and (not trained or not s['skills']) and c['level']>=6 and s['stats']['items_picked_up']>=10 and elapsed-last_training_attempt>=180:
                     last_training_attempt=elapsed;trained=trade_and_train();go_map(hunting_map)
+                if targeted_ready and elapsed-last_surplus_trade>=300:
+                    last_surplus_trade=elapsed
+                    check('ordinary_repeated_learned_return_'+str(int(elapsed)),try_return_skill())
+                    trade_surplus();go_map(hunting_map);select_learned_skill('화염주(화)')
                 if a.advance_hunting and hunting_map=='gp:map:south_field' and c['level']>=8 and s['skills']:
                     target=next((mid for mid,m in content['maps'].items() if m['name']=='쥐굴 1층'),None)
                     if target and go_map(target):
                         hunting_map=target;observe('natural_next_hunting_area',character=state()['character'],skills=state()['skills']);capture('next-hunting-area')
                 hunt_cycle()
+            if a.continuous_after_preflight:check('continuous_requested_stress_duration',targeted_ready and time.monotonic()-play_start>=a.seconds,{'stress_seconds':time.monotonic()-play_start,'required_seconds':a.seconds})
             final_play=state(3.3);capture('06-final-play');observe('requested_play_duration_completed',play_seconds=time.monotonic()-play_start,character=final_play['character'],stats=final_play['stats'])
             result['ordinary_return_skill']=try_return_skill()
             check('ordinary_natural_combat_kills',final_play['stats']['kills']>0,final_play['stats'])
@@ -370,6 +505,14 @@ def main():
         result['error']=str(ex);observe('operator_stopped',error=str(ex))
         try:capture('failure')
         except Exception:pass
+        # A harness error must preserve its evidence before attempting ordinary
+        # save-to-menu, which also flushes the frozen app's accumulated trace.
+        if savefile and process and process.poll() is None:
+            try:
+                key('Escape');time.sleep(.25);button('저장 · 처음으로',exact=True);time.sleep(.7)
+                if (temporary_root/'frame-timeline.jsonl').exists():shutil.copy2(temporary_root/'frame-timeline.jsonl',out/'journey-frame-timeline.jsonl')
+                observe('ordinary_save_after_operator_error',character=state()['character'])
+            except Exception as recovery:observe('ordinary_error_recovery_incomplete',error=str(recovery))
     finally:
         if x:x.close()
         if process and process.poll() is None:process.terminate();process.wait(timeout=15)
@@ -385,7 +528,7 @@ def main():
             try:video_metadata=json.loads(probe.stdout)
             except json.JSONDecodeError:video_metadata={}
             result['video_validation']={'remux_returncode':remux.returncode,'ffprobe_returncode':probe.returncode,'metadata':video_metadata,'stderr':probe.stderr or remux.stderr.decode(errors='replace')}
-            valid=remux.returncode==0 and probe.returncode==0 and float(video_metadata.get('format',{}).get('duration',0))>=a.seconds
+            valid=remux.returncode==0 and probe.returncode==0 and float(video_metadata.get('format',{}).get('duration',0))>=(1 if a.targeted_followup and not a.continuous_after_preflight else a.seconds)
             check('unedited_video_readable_and_duration',valid,result['video_validation'])
             if remuxed.exists() and probe.returncode==0:
                 publishing=out/'.finalizing-video.mp4';shutil.copy2(remuxed,publishing);os.replace(publishing,out/'ordinary-unedited.mp4')

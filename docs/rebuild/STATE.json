@@ -13,7 +13,7 @@
   "handoff_commit": "82e09f50861065c8e763efe34f7634d0e95e2e82",
   "app_behavior_commit": "82e09f50861065c8e763efe34f7634d0e95e2e82",
   "current_phase": "B5",
-  "current_phase_execution": "FINAL30_RUNNING_NATIVE_RUNNER_BLOCKED_COLOR_ONLY_EXPORTING",
+  "current_phase_execution": "EXACT_FINAL_PCK_RESUMED_NATURAL_SAVE_PREFLIGHT_THEN_30MIN",
   "authorization": {
     "goal_and_plan": "USER_APPROVED",
     "ordered_followup_work": "B1_THROUGH_B6_WITHIN_FREE_SCOPE",
@@ -163,10 +163,10 @@
   "next_action": {
     "owner": "Work",
     "phase": "B5",
-    "action": "Finish current uninterrupted be47/r12 30min ordinary OS run, then use actual earned save with reserved materials and real page navigation for projectile+return follow-up. New82e four-label-color-only exports: exact pack parity/ordinary test, no repeated long run for simple colors; explicit source impact. Native two jobs failed before runner steps, no same-condition rerun. Consolidate central reports and saved exact files.",
+    "action": "Exact final82e embedded WindowsPCK ordinary Linux XTEST from byte-identical naturally earned17minsave: preflight actual fire+return and continuous1800s sameprocess; then full rawmetrics/video, consolidate central docs/files. Earlier17min automation failure retained; no freshcreation or repeated engine/store/content suites.",
     "on_environment_block": "Continue independent B5 code/UI/assets and adapter tests; native physical devices and authenticated roundtrip remain explicitly BLOCKED/NOT_RUN. B6 promotion blocked by B5 failures.",
     "do_not_repeat": "No full inventory/SDK/parser reset; reuse verified toolchain and unchanged evidence; only changed-source affected final suites.",
-    "resume_from": "Source82e09f50; functionalbasebe47; r12runtime4791e101; active final30-r12. Existing exact first-job63 PASS, UI ink24 PASS, prior byte parity10 ordinary retained. Native private inputac8a7307 pre-color candidate and root request3a881f1659."
+    "resume_from": "Source82e09f50, r12runtime4791e101, final30-r12-ink (display123); new pack receiptsfp23a3cd4d. Final APKb46191db and WindowsZIPd332a2c7 saved. Native runner block retained; no same-condition retry."
   },
   "retry_policy": {
     "deterministic_unchanged_failure": "CHANGE_METHOD",
@@ -260,7 +260,7 @@
       "content_sha256": "f1e45c2a7045e130b842325751ab81cf38c22ac92df62ddafe33700aa9267fca",
       "runtime_generation": "WORK-V2-G1-20261017",
       "runtime_variant": "r12-final",
-      "ordinary_final30": "RUNNING_UNINTERRUPTED_BE47_R12_SCOPE_MOVEMENT_TRANSACTION_SAVE_OPERATOR_PAGINATION_LIMITS",
+      "ordinary_final30": "RUNNING_EXACT_82E_EMBEDDED_PCK_FROM_EARNED_SAVE",
       "native": "BLOCKED_BEFORE_RUNNER_STEPS_EXACT_REASON_NOT_OBSERVED",
       "account_sync": "BLOCKED_NO_IDENTIFIED_GAME_AUTHENTICATED_ENDPOINT",
       "ordinary_operator_correction": "Clamped map camera projection and actual lower-right overlay boundary; previous short attempts preserved as harness failures, not game pathfinding failures.",
@@ -279,7 +279,15 @@
       "native_block_evidence": "docs/rebuild/v2/B5_NATIVE_RUNNER_BLOCK.json",
       "native_blocked_candidate": "pre-color be47 r12; current final label-only82e exports require exact input staging when runner block resolved",
       "color_only_impact": "docs/rebuild/v2/B5_COLOR_ONLY_IMPACT.json",
-      "ordinary_followup": "NOT_RUN_YET_FROM_NATURALLY_EARNED_SAVE_NO_GRANTS_FOR_PROJECTILE_RETURN"
+      "ordinary_followup": "IN_PROGRESS_NORMAL_OS_PAGINATION_RESERVED_MATERIALS_NO_GRANTS",
+      "previous_17min": {
+        "status": "FAIL_HARNESS_CLIPPED_TARGET",
+        "path": "evidence/b5-play/final30-r12/OS_PLAYABILITY.json",
+        "seconds": 1062.23,
+        "video_seconds": 1019.433,
+        "reason": "Operator clicked clipped buy row at y543 over fixedclosefootery542; modalclosednormally; laterclose absent",
+        "app_close_failure_observed": false
+      }
     }
   }
 }
