@@ -353,9 +353,10 @@ def main():
     def select_learned_skill(name):
         for _ in range(4):
             for item in latest_layout().get('controls',[]):
-                if ':  '+name in item['text']:
+                if name in item['text'] and ('MP' in item['text'] or '마력' in item['text']):
                     r=item['rect'];click_xy(r[0]+r[2]/2,r[1]+r[3]/2,item['text']);return True
             key('Tab');time.sleep(.25)
+            button('지도',exact=True);time.sleep(.25);close_modal('Escape')
         return False
     def trade_surplus():
         before=state()
@@ -374,6 +375,12 @@ def main():
         observe('ordinary_surplus_trade',before_character=before['character'],after_character=state(3.3)['character'],meat_reserved=10)
     def try_return_skill():
         s=state()
+        key('Escape')
+        # Normal resource recovery is part of play. A low-MP request is an
+        # expected rejected command, not a positive return-ability failure.
+        deadline=time.monotonic()+45
+        while s['character']['mp']<5 and time.monotonic()<deadline:
+            observe('ordinary_wait_for_return_MP',character=s['character']);s=state(4.2)
         learned=[sid for sid in s['skills'] if content['skills'][sid].get('kind')=='return']
         if not learned:
             observe('return_skill_not_learned',status='NOT_RUN',reason='Natural materials/learning not completed')
@@ -381,7 +388,7 @@ def main():
         skill_name=content['skills'][learned[0]]['name']
         if not select_learned_skill(skill_name):return False
         for item in latest_layout().get('controls',[]):
-            if ':  '+skill_name in item['text']:
+            if skill_name in item['text'] and ('MP' in item['text'] or '마력' in item['text']):
                 r=item['rect'];click_xy(r[0]+r[2]/2,r[1]+r[3]/2,item['text']);button('선택 기술 사용');time.sleep(3.3)
                 observe('learned_return_skill_used',before_map=s['character']['map_id'],after_character=state()['character'])
                 return state()['character']['map_id']!=s['character']['map_id']
@@ -442,26 +449,39 @@ def main():
                         for item_id,quantity in content['skills'][sid].get('ingredients',{}).items():requirements[item_id]=requirements.get(item_id,0)+int(quantity)
                     inventory={item_id:sum(int(i['quantity']) for i in s['inventory'] if i['item_id']==item_id) for item_id in requirements}
                     if all(inventory[item_id]>=quantity for item_id,quantity in requirements.items()):
-                        if not talk(teacher):raise RuntimeError('Normal route to teacher failed in earned-character follow-up')
-                        for name in names:check('ordinary_scrolled_learning_'+name,learn_scrolled_skill(name))
-                        close_modal('Escape');go_map('gp:map:south_field');hunting_map='gp:map:south_field'
+                        if missing:
+                            if not talk(teacher):raise RuntimeError('Normal route to teacher failed in earned-character follow-up')
+                            for name in names:check('ordinary_scrolled_learning_'+name,learn_scrolled_skill(name))
+                            close_modal('Escape')
+                        else:observe('reused_earned_learning',skills=s['skills'],provenance='Earlier actual OS scrolling learning and byte-identical saved continuation; no relearning/grants')
+                        go_map('gp:map:south_field');hunting_map='gp:map:south_field'
                         # Select the newly learned real attack in the visible skill
                         # panel, then use the existing ordinary combat buttons.
                         if not select_learned_skill('화염주(화)'):raise RuntimeError('Actually learned projectile missing from ordinary skill panel')
-                        current=state();cc=current['character']
-                        monsters=[v for v in current['monsters'].values() if v['map_id']==cc['map_id'] and v['alive']]
-                        target=min(monsters,key=lambda v:abs(v['x']-cc['x'])+abs(v['y']-cc['y']))
-                        if abs(target['x']-cc['x'])+abs(target['y']-cc['y'])>4:walk_to((target['x'],target['y']),reach=4)
-                        key('Escape')  # normal field cancel stops walking/auto-attack before the isolated spell input
-                        before_projectile=state(3.3);capture('ordinary-before-projectile')
-                        button('기술',exact=True);capture('ordinary-projectile-effect');after_projectile=state(3.3)
+                        projectile_success=False
+                        for attempt in range(4):
+                            current=state();cc=current['character']
+                            deadline=time.monotonic()+45
+                            while cc['mp']<6 and time.monotonic()<deadline:
+                                key('Escape');current=state(4.2);cc=current['character']
+                            monsters=[v for v in current['monsters'].values() if v['map_id']==cc['map_id'] and v['alive']]
+                            target=min(monsters,key=lambda v:abs(v['x']-cc['x'])+abs(v['y']-cc['y']))
+                            if abs(target['x']-cc['x'])+abs(target['y']-cc['y'])>2:walk_to((target['x'],target['y']),reach=2)
+                            key('Escape')  # normal field cancel stops walking/auto-attack before isolated spell
+                            before_projectile=state(3.3);capture('ordinary-before-projectile-'+str(attempt))
+                            button('기술',exact=True);capture('ordinary-projectile-effect-'+str(attempt));after_projectile=state(3.3)
+                            before_monsters={k:{f:v[f] for f in ['hp','alive','x','y']} for k,v in before_projectile['monsters'].items() if v['map_id']=='gp:map:south_field'}
+                            after_monsters={k:{f:v[f] for f in ['hp','alive','x','y']} for k,v in after_projectile['monsters'].items() if v['map_id']=='gp:map:south_field'}
+                            damaged=[k for k,v in before_monsters.items() if k in after_monsters and (after_monsters[k]['hp']<v['hp'] or (v['alive'] and not after_monsters[k]['alive']))]
+                            cost=after_projectile['character']['mp']<before_projectile['character']['mp']
+                            damage=bool(damaged) or after_projectile['stats']['kills']>before_projectile['stats']['kills']
+                            observe('ordinary_projectile_use_attempt',attempt=attempt+1,before_character=before_projectile['character'],after_character=after_projectile['character'],before_stats=before_projectile['stats'],after_stats=after_projectile['stats'],damaged_monsters=damaged,MP_cost_observed=cost,legitimate_miss_or_levelup_possible=not(cost and damage))
+                            if cost and damage:
+                                projectile_success=True;break
+                            time.sleep(1.2)
                         capture('ordinary-learned-projectile')
-                        check('ordinary_learned_attack_MP_cost_observed',True if after_projectile['character']['mp']<before_projectile['character']['mp'] else None,{'before_mp':before_projectile['character']['mp'],'after_mp':after_projectile['character']['mp'],'before_level':before_projectile['character']['level'],'after_level':after_projectile['character']['level'],'scope':'No basic attack is issued during this isolated ordinary spell observation; persistent MP cost and target health corroborate the original video.'})
-                        before_monsters={k:{f:v[f] for f in ['hp','alive','x','y']} for k,v in before_projectile['monsters'].items() if v['map_id']=='gp:map:south_field'}
-                        after_monsters={k:{f:v[f] for f in ['hp','alive','x','y']} for k,v in after_projectile['monsters'].items() if v['map_id']=='gp:map:south_field'}
-                        damaged=[k for k,v in before_monsters.items() if k in after_monsters and (after_monsters[k]['hp']<v['hp'] or (v['alive'] and not after_monsters[k]['alive']))]
-                        check('ordinary_learned_projectile_target_damage',bool(damaged) or after_projectile['stats']['kills']>before_projectile['stats']['kills'],{'damaged_monsters':damaged,'before':before_monsters,'after':after_monsters})
-                        observe('ordinary_projectile_use_attempt',before_character=before_projectile['character'],after_character=after_projectile['character'],before_stats=before_projectile['stats'],after_stats=after_projectile['stats'],damaged_monsters=damaged)
+                        check('ordinary_learned_attack_MP_cost_observed',projectile_success,{'attempts':attempt+1,'before_mp':before_projectile['character']['mp'],'after_mp':after_projectile['character']['mp']})
+                        check('ordinary_learned_projectile_target_damage',projectile_success,{'damaged_monsters':damaged,'before':before_monsters,'after':after_monsters})
                         trained=True;last_training_attempt=elapsed
                         preflight_return=try_return_skill();check('ordinary_preflight_learned_return',preflight_return)
                         preflight_checks=[c for c in result['checks'] if c['id'].startswith('ordinary_scrolled_learning_') or c['id'] in ['ordinary_learned_attack_MP_cost_observed','ordinary_learned_projectile_target_damage','ordinary_preflight_learned_return']]
