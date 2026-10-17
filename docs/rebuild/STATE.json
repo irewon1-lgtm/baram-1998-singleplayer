@@ -8,12 +8,12 @@
   "active_branch": "work/rebuild-p3-remediation-20261016",
   "entrypoint": "AGENTS.md",
   "master_plan": "docs/rebuild/MASTER_PLAN.md",
-  "status": "B5_REPAIR_FINAL_R12_VALIDATION_IN_PROGRESS",
+  "status": "B5_EXACT_R12_REAL_GAMEPLAY_FAIL_REPAIR_IN_PROGRESS",
   "implementation_status": "G1_RETAINED_PLAYABILITY_REPAIR_HOST_VALIDATED_NATIVE_LONG_PLAY_PENDING",
   "handoff_commit": "82e09f50861065c8e763efe34f7634d0e95e2e82",
   "app_behavior_commit": "82e09f50861065c8e763efe34f7634d0e95e2e82",
   "current_phase": "B5",
-  "current_phase_execution": "RUNNING_EXACT_82E_PCK_CONTINUOUS1800S_DO_NOT_RESTART",
+  "current_phase_execution": "REPAIR_REAL_ARRIVAL_OCCUPANCY_AND_SYNC_SAVE_CPU",
   "authorization": {
     "goal_and_plan": "USER_APPROVED",
     "ordered_followup_work": "B1_THROUGH_B6_WITHIN_FREE_SCOPE",
@@ -153,20 +153,20 @@
     },
     {
       "id": "B5",
-      "status": "USER_REPORTED_PLAYABILITY_FAIL_REPAIR_IN_PROGRESS"
+      "status": "REAL_PLAYABILITY_FAIL_TARGETED_REPAIR_IN_PROGRESS"
     },
     {
       "id": "B6",
-      "status": "RELEASE_BLOCKED_BY_B5"
+      "status": "BLOCKED_BY_REAL_B5_FAILURES"
     }
   ],
   "next_action": {
     "owner": "Work",
     "phase": "B5",
-    "action": "Keep existing live exact82e/PCK session11289/display125; do not restart or repeat earned progress. Await continuous1800 marker and normal save/restart, then preserve full rawframes/video. Run separate short real transactions/captureoff-on with earned save, not another30min; verify all actual deltas. Final video decoding and canonical docs/delivery follow only completed evidence.",
+    "action": "Continue existing arrival_fix and store_perf agents from actual failure, no fresh character or repeated catalogue/SDK/old suites. Freeze changed-source candidate only after targeted reproduction/regressions. Re-export matching bytes with same package/signing/save identity; ordinary verification must include actual transactions and arrival block scenario. Native staging/requests remain on hold until fixed candidate; never retry blocked runner unchanged.",
     "on_environment_block": "Continue independent B5 code/UI/assets and adapter tests; native physical devices and authenticated roundtrip remain explicitly BLOCKED/NOT_RUN. B6 promotion blocked by B5 failures.",
     "do_not_repeat": "No full inventory/SDK/parser reset; reuse verified toolchain and unchanged evidence; only changed-source affected final suites.",
-    "resume_from": "evidence/b5-play/final30-r12-ink/RUN_ANCHOR.json; active sameprocess PID60870/display125/session11289, continuous start1792202527742457846ns. Source82e/r12 frozen, OSoperator1b00a9...; exactPCK57e6d654. If session finishes, read OS_PLAYABILITY+FINAL_ANALYSIS rather than recreate. Tool checkpointb50df74b appunchanged."
+    "resume_from": "Source82e/r12 failed session preserved final30-r12-ink (1311s stress,1387.7sraw). No live30min session. Engine and store agents own separate files; main UI/root unchanged. Read failure/analysis and current edits rather than restarting. Tool checkpointf70fec3, main branch untouched."
   },
   "retry_policy": {
     "deterministic_unchanged_failure": "CHANGE_METHOD",
@@ -260,12 +260,12 @@
       "content_sha256": "f1e45c2a7045e130b842325751ab81cf38c22ac92df62ddafe33700aa9267fca",
       "runtime_generation": "WORK-V2-G1-20261017",
       "runtime_variant": "r12-final",
-      "ordinary_final30": "RUNNING_NOT_FINAL_RESULT",
+      "ordinary_final30": "FAIL_INTERRUPTED1311S_NOT1800PASS",
       "native": "BLOCKED_BEFORE_RUNNER_STEPS_EXACT_REASON_NOT_OBSERVED",
       "account_sync": "BLOCKED_NO_IDENTIFIED_GAME_AUTHENTICATED_ENDPOINT",
       "ordinary_operator_correction": "Clamped map camera projection and actual lower-right overlay boundary; previous short attempts preserved as harness failures, not game pathfinding failures.",
       "visual_repair": "12 interiors use low door jambs instead of outdoor roof, arbitrary aisle removed, existing domestic tavern blocked cells use complete wooden tables; all76topology and gameplay rules unchanged.",
-      "new_gameplay_defect_if_any": "UNDER_OBSERVATION_NOT_PREDECLARED_PASS",
+      "new_gameplay_defect_if_any": "CONFIRMED_PERMANENT_LANDING_MONSTER_BLOCK_AND_HOST_FRAME_INPUT_TARGET_FAIL",
       "evidence": [
         "evidence/r12-impact-reuse.json",
         "interior-repair-r12.json",
@@ -279,7 +279,7 @@
       "native_block_evidence": "docs/rebuild/v2/B5_NATIVE_RUNNER_BLOCK.json",
       "native_blocked_candidate": "pre-color be47 r12; current final label-only82e exports require exact input staging when runner block resolved",
       "color_only_impact": "docs/rebuild/v2/B5_COLOR_ONLY_IMPACT.json",
-      "ordinary_followup": "SHORT_REAL_TRANSACTIONS_CAPTURE_COMPARISON_PREPARED_NOT_RUN",
+      "ordinary_followup": "PREPARED_NOT_RUN_PENDING_FIXED_CANDIDATE",
       "previous_17min": {
         "status": "FAIL_HARNESS_CLIPPED_TARGET",
         "path": "evidence/b5-play/final30-r12/OS_PLAYABILITY.json",
@@ -290,212 +290,74 @@
       },
       "actual_operator_sha256": "1b00a9cbefaa3038814b30a90f361b7dd1f2d1029f7521cfa55539c8a4cdae67",
       "active_run": {
-        "anchor": "evidence/b5-play/final30-r12-ink/RUN_ANCHOR.json",
-        "display": 125,
-        "exec_session": 11289,
-        "pid": 60870,
-        "continuous_start_unix_ns": 1792202527742457846,
-        "required_continuous_seconds": 1800,
-        "last_observation": {
-          "kind": "observation",
-          "wall_unix_ns": 1792203684447696293,
-          "operator_elapsed_s": 1233.841,
-          "name": "live_progress",
-          "play_seconds": 1156.71,
-          "character": {
-            "appearance": {
-              "variant": 0
-            },
-            "base_stats": {
-              "dexterity": 17,
-              "intelligence": 24,
-              "strength": 17
-            },
-            "dead": false,
-            "desired_job": "주술사",
-            "direction": 1,
-            "guardian": "주작",
-            "hp": 63,
-            "hp_max": 160,
-            "id": "character:0b5e7a416efc7924a434",
-            "job": "주술사",
-            "level": 13,
-            "map_id": "g1:map:8a2a4988d6daa5",
-            "money": 522,
-            "mp": 76,
-            "mp_max": 176,
-            "name": "finaljourney",
-            "nationality": "고구려",
-            "owner_id": "local-profile:default",
-            "x": 13,
-            "xp": 1461,
-            "y": 22
-          },
-          "stats": {
-            "deaths": 0,
-            "items_picked_up": 275,
-            "kills": 137,
-            "money_earned": 492,
-            "total_xp_earned": 1461
-          },
-          "skills": [
-            "KRO-3559b12ed6a7",
-            "KRO-972853314e6a"
-          ],
-          "inventory": [
-            {
-              "item_id": "KRO-ITEM-be19434c5b2ee6",
-              "quantity": 1
-            },
-            {
-              "item_id": "gp:item:starter_clothes",
-              "quantity": 1
-            },
-            {
-              "item_id": "KRO-ITEM-1ec5d43f9e157e",
-              "quantity": 2
-            },
-            {
-              "item_id": "KRO-ITEM-89a184f51172c1",
-              "quantity": 1
-            },
-            {
-              "item_id": "KRO-ITEM-89a184f51172c1",
-              "quantity": 1
-            },
-            {
-              "item_id": "KRO-ITEM-89a184f51172c1",
-              "quantity": 1
-            },
-            {
-              "item_id": "KRO-ITEM-e540569cf2f77a",
-              "quantity": 8
-            },
-            {
-              "item_id": "KRO-ITEM-5d3f28fbe15c37",
-              "quantity": 8
-            },
-            {
-              "item_id": "g1:item:c1a1446b0ac05e",
-              "quantity": 7
-            },
-            {
-              "item_id": "KRO-ITEM-36d2a69ca8aaa3",
-              "quantity": 14
-            },
-            {
-              "item_id": "KRO-ITEM-c8d54f0d074146",
-              "quantity": 24
-            },
-            {
-              "item_id": "KRO-ITEM-d910713dffb2ba",
-              "quantity": 13
-            },
-            {
-              "item_id": "KRO-ITEM-7670804897b9a4",
-              "quantity": 12
-            },
-            {
-              "item_id": "g1:item:23b51ed40dd0ae",
-              "quantity": 6
-            },
-            {
-              "item_id": "KRO-ITEM-492cb14182ef2e",
-              "quantity": 13
-            },
-            {
-              "item_id": "g1:item:1449a47df7a229",
-              "quantity": 3
-            },
-            {
-              "item_id": "KRO-ITEM-76b8e06d0ab195",
-              "quantity": 8
-            },
-            {
-              "item_id": "KRO-ITEM-141bfbda2f619e",
-              "quantity": 3
-            },
-            {
-              "item_id": "g1:item:e0c253e73280ad",
-              "quantity": 3
-            },
-            {
-              "item_id": "KRO-ITEM-265a90cf89d482",
-              "quantity": 11
-            },
-            {
-              "item_id": "KRO-ITEM-120fdb485c7407",
-              "quantity": 5
-            },
-            {
-              "item_id": "KRO-ITEM-ca37261fade592",
-              "quantity": 5
-            },
-            {
-              "item_id": "KRO-ITEM-39943ae5113d82",
-              "quantity": 6
-            },
-            {
-              "item_id": "KRO-ITEM-50d28676a7c7be",
-              "quantity": 3
-            },
-            {
-              "item_id": "g1:item:7abef27343f741",
-              "quantity": 5
-            },
-            {
-              "item_id": "KRO-ITEM-abc0cb0b1a967a",
-              "quantity": 11
-            },
-            {
-              "item_id": "KRO-ITEM-9c19c21786e16e",
-              "quantity": 9
-            },
-            {
-              "item_id": "KRO-ITEM-6c8be77cc6022f",
-              "quantity": 7
-            },
-            {
-              "item_id": "KRO-ITEM-cb2537570b58dd",
-              "quantity": 6
-            },
-            {
-              "item_id": "KRO-ITEM-9b0315683a8906",
-              "quantity": 7
-            },
-            {
-              "item_id": "KRO-ITEM-6f2ccc22622518",
-              "quantity": 4
-            },
-            {
-              "item_id": "KRO-ITEM-995567c3bc33c4",
-              "quantity": 1
-            },
-            {
-              "item_id": "KRO-ITEM-25b010e3c9722d",
-              "quantity": 6
-            },
-            {
-              "item_id": "KRO-ITEM-935836c3bb52c7",
-              "quantity": 2
-            },
-            {
-              "item_id": "KRO-ITEM-cbb12a848bb382",
-              "quantity": 3
-            },
-            {
-              "item_id": "KRO-ITEM-254fee8d880ea9",
-              "quantity": 9
-            },
-            {
-              "item_id": "KRO-ITEM-13da4dcfe86a58",
-              "quantity": 3
-            }
-          ]
+        "status": "ENDED_FAIL_DEAD_PROCESS_DO_NOT_RESTART",
+        "anchor": {
+          "status": "ENDED_FAIL_PRODUCT_MAP_LANDING_BLOCKED",
+          "exec_session_id": 11289,
+          "display": 125,
+          "host_game_pid": 60870,
+          "continuous_stress_start_unix_ns": 1792202527742457846,
+          "required_continuous_seconds": 1800,
+          "game_source": "82e09f50",
+          "runtime": "r12-final",
+          "PCK": "evidence/pack-parity-r12-ink/final-windows-embedded.pck",
+          "PCK_sha256": "57e6d65456af96d863092751d7c83ff66db5272da0bf2e915c412849be8a877e",
+          "operator_sha256": "1b00a9cbefaa3038814b30a90f361b7dd1f2d1029f7521cfa55539c8a4cdae67",
+          "live_log": "evidence/b5-play/final30-r12-ink3-run.log",
+          "isolated_session": "/tmp/baram-ordinary-c8s6pe_k",
+          "final_report": "evidence/b5-play/final30-r12-ink/OS_PLAYABILITY.json",
+          "final_analysis": "evidence/b5-play/final30-r12-ink/FINAL_ANALYSIS.json",
+          "instruction": "Historical completed execution record. Do not resume dead PID/session; use final artifacts.",
+          "continuous_stress_observed_seconds": 1311.235516,
+          "failure_incident": "evidence/b5-play/final30-r12-ink/FAILURE_INCIDENT.json"
         },
-        "status": "RUNNING_NO_COMPLETION_CLAIM"
+        "result": "evidence/b5-play/final30-r12-ink/OS_PLAYABILITY.json",
+        "analysis": "evidence/b5-play/final30-r12-ink/FINAL_ANALYSIS.json"
       },
-      "functional_scope_gap": "Shop visits in current30min do not change money/inventory; separate short actual sale/purchase/owned-equipment/save followup prepared, not counted as in-phase trades."
+      "functional_scope_gap": "Shop visits in current30min do not change money/inventory; separate short actual sale/purchase/owned-equipment/save followup prepared, not counted as in-phase trades.",
+      "observed_final_candidate_failure": {
+        "source_commit": "82e09f50861065c8e763efe34f7634d0e95e2e82",
+        "runtime_manifest_sha256": "4791e101c547f0a3848297b40b0e424acd776ac85c2d455e40e1f83c4bd1fdf0",
+        "error": "Normal route to hunting field failed",
+        "wall_seconds": 1391.37,
+        "continuous_seconds": 1311.235516498,
+        "video_seconds": 1387.7,
+        "real_cause": "east_field landing(2,16) occupied by alive gp:spawn:east:2:0; off-map monster AI freezes, _transition occupied refusal permanently blocks gate. Screenshot DESTINATION_UNAVAILABLE and saved monster position confirm. Not operator projection error.",
+        "performance": {
+          "engine_wall_frame_interval": {
+            "n": 87235,
+            "p50_ms": 13.335,
+            "p95_ms": 21.426,
+            "p99_ms": 73.193,
+            "max_ms": 241.284,
+            "over50ms": 1378,
+            "over100ms": 146
+          },
+          "engine_input_to_frame_post_draw": {
+            "n": 852,
+            "p50_ms": 18.79,
+            "p95_ms": 112.968,
+            "p99_ms": 155.992,
+            "max_ms": 202.507,
+            "over50ms": 213,
+            "over100ms": 61
+          },
+          "save_duration": {
+            "n": 628,
+            "p50_ms": 55.767,
+            "p95_ms": 68.03,
+            "p99_ms": 78.096,
+            "max_ms": 95.5,
+            "over50ms": 553,
+            "over100ms": 0
+          }
+        },
+        "current_work": {
+          "arrival_fix": "engine only; actual-save reproduction plus bounded deterministic arrival fallback without ID/geometry/monster removal",
+          "store_perf": "store only; eliminate redundant validation/encoding/cache work, preserve atomic and external validation guarantees"
+        },
+        "prior_evidence_reused": "UI/r12visuals/store prior correctness evidence only where unchanged; no failed30min promoted"
+      }
     }
   }
 }
