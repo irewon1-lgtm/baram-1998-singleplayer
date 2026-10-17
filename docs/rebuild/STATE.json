@@ -163,7 +163,7 @@
   "next_action": {
     "owner": "Work",
     "phase": "B5",
-    "action": "Observe existing final30-r13 ordinary1800s process; do not restart or launch duplicate work. Read active RUN_ANCHOR/progress. No heavy parallel build/tests/uploads while measuring. After completed marker, actual integrated trade/combat/drop/return/save/restart and full raw video, run pinned analyzer wrapper, decode entire video, then finalize reviewable candidates/evidence. Native/account/physical gates remain.",
+    "action": "Continue already-running final30-r13 process (now past900s), no duplicate run and no heavy parallel work. Preserve first116.114ms cold save inside phase. After1800+normal save/restart, analyze full first/restart traces, confirm cold existing_read phase, then select prepared minimum metadata-copy fix only if evidence supports; run affected cold/storage checks and exact updated-candidate ordinary validation. Other verified engine/data/skills stay retained. Native/account/physical gates persist.",
     "on_environment_block": "Continue independent B5 code/UI/assets and adapter tests; native physical devices and authenticated roundtrip remain explicitly BLOCKED/NOT_RUN. B6 promotion blocked by B5 failures.",
     "do_not_repeat": "No full inventory/SDK/parser reset; reuse verified toolchain and unchanged evidence; only changed-source affected final suites.",
     "resume_from": "RUNNING final30-r13 session21905/display127/PID77003/temp /tmp/baram-ordinary-fbkrto2m. Source4a0, PCKd5558c69, runtime4791e101. Driver0654 publisheda299, analysisf5ded194+wrapper2947 source0fad09b. Short14PASS:137first+2restart saves0>100, coldrestart99.805ms; measuredtailsretained. Do not replay short preflight."
@@ -361,7 +361,28 @@
       "source_tools_commit": "0fad09b1a6ee44484c5a197eb2a305197ffc047b",
       "fixed_pack_parity": "docs/rebuild/v2/B5_PACK_PARITY_R13.json",
       "preflight": "evidence/b5-play/final-preflight-r13/OS_PLAYABILITY.json",
-      "analysis_provenance": "Separate first-process/restart clocks; actual analyzer/input/output receipts retained. Full acceptance not yet reached."
+      "analysis_provenance": "Separate first-process/restart clocks; actual analyzer/input/output receipts retained. Full acceptance not yet reached.",
+      "live_known_incident": {
+        "status": "OBSERVED_RETAINED_NOT_EXCLUDED",
+        "first_cold_save_ms": 116.114,
+        "inside_stress": true,
+        "phase_trace_pending_until_normal_menu_flush": true,
+        "at_stress_seconds": 915,
+        "saves_observed": 422,
+        "saves_over100ms": 1,
+        "all_saved_status": "SAVED",
+        "repeated_warm_over100_observed": 0,
+        "app_source_unchanged": "4a0c8d796e65a0493207221f2eb60b78d006c681"
+      },
+      "conditional_cold_followup": {
+        "status": "PROPOSAL_AND_TOOLS_ONLY_NOT_APPLIED_OR_EXECUTED",
+        "proposal": "evidence/store-cold-proposal.diff",
+        "existing_short_first_existing_read_ms": 67.687,
+        "existing_short_next_existing_read_ms": 2.188,
+        "test_prepared": "tools/rebuild/v2/test_store_cold.gd",
+        "OS_probe_prepared": "tools/rebuild/v2/test_os_cold_resume.py",
+        "restriction": "Keep current1800 process unchanged; inspect completed actual cold phase before selecting minimum fix. Full validation, cache ownership, source/archive preservation remain mandatory."
+      }
     }
   }
 }
