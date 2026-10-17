@@ -1,0 +1,192 @@
+{
+  "schema": "baram.final-pack-parity-provenance/1",
+  "observed_at_utc": "2026-10-17T03:48:53.753953+00:00",
+  "source_commit": "639750f04d10ee4ac3c1a7113232b8c30109f078",
+  "shared_fingerprint": "1d1891f4e1ae39de54f59bf4d26b98b2de555eb99311b72fd54df6d31327cc5f",
+  "runtime_manifest_sha256": "4791e101c547f0a3848297b40b0e424acd776ac85c2d455e40e1f83c4bd1fdf0",
+  "content_sha256": "f1e45c2a7045e130b842325751ab81cf38c22ac92df62ddafe33700aa9267fca",
+  "source_ui_sha256": "cf3d18ec2aafca206ee2bf63db1cf7fe4605e5ff8fc31ce7123fed65b1180be6",
+  "source_state_sha256": "75b6ce536fe2bb1e3f213678d8d9588d93caa858dd1081eabb74f11a626e6205",
+  "source_store_sha256": "8ef2f4db97867e9d42150019e9774c6bb5b1024282b30ed30f1c2045ce87cebd",
+  "source_classic_list_sha256": "b9f6b74ca10acad2ebcd0e9ad1bc559114dc54cfab7f467ca8967238d5574218",
+  "receipts": {
+    "Windows": {
+      "result": "PASS_EXPORT_ONLY",
+      "source_commit": "639750f04d10ee4ac3c1a7113232b8c30109f078",
+      "version_code": 6,
+      "version_name": "0.2.3-b5-repair",
+      "source_count": 52,
+      "runtime_input_count": 3995,
+      "source_mismatches": [],
+      "runtime_mismatches": [],
+      "artifact_bytes": 148008256,
+      "artifact_sha256": "83a2dabd97421bf5db858d318dc0821b8684784642e47e28d67bec67276a80b5",
+      "artifact_matches_receipt": true,
+      "commit_matches": true,
+      "fingerprint_matches": true,
+      "receipt_sha256": "f0970da46739f7fd76a3160b61b4125b2c2925620b84317f67b6ae7101165e57",
+      "sources_unchanged": true,
+      "runtime_unchanged": true
+    },
+    "Android": {
+      "result": "PASS_EXPORT_ONLY",
+      "source_commit": "639750f04d10ee4ac3c1a7113232b8c30109f078",
+      "version_code": 6,
+      "version_name": "0.2.3-b5-repair",
+      "source_count": 52,
+      "runtime_input_count": 3995,
+      "source_mismatches": [],
+      "runtime_mismatches": [],
+      "artifact_bytes": 79324349,
+      "artifact_sha256": "6231cfac8742a1c0352e116629cc16b5e08401bd7b58f99ef22af82296a82100",
+      "artifact_matches_receipt": true,
+      "commit_matches": true,
+      "fingerprint_matches": true,
+      "receipt_sha256": "56581bf6ec98b6034fd0c8c1bd967ba7f2d92265cff9e34a1a9b4f242198872d",
+      "sources_unchanged": true,
+      "runtime_unchanged": true
+    }
+  },
+  "export_identity": {
+    "package": "com.irewon.baram.p3repair20261016",
+    "preserved_user_dir": "baram_rebuild_p3repair_001",
+    "version_code": 6,
+    "version_name": "0.2.3-b5-repair",
+    "retained_signer_sha256": "c0bc3989d93d7b9443bbfa59281797a48e2b020e5da4b1dc91858768b35ccd05",
+    "new_signing_key_created": false,
+    "final_apk_signer_matches_retained": true
+  },
+  "embedded_pck": {
+    "offset": 100787712,
+    "size": 47220532,
+    "sha256": "4a9f20d3bc34b6df17d929caa62f19305b346f7b313c4721e315dfad021acd10",
+    "ordinary_test_pack_hash_matches": true
+  },
+  "compiled_script_count": 23,
+  "expanded_parity_status": "PASS",
+  "standard_parity_status": "PASS",
+  "exact_pack_ordinary_linux_gui": {
+    "status": "PASS",
+    "checks": 10,
+    "failed_checks": [],
+    "scope": "Actual Linux OpenGL window, synthetic X11 events, ordinary game mode, no progress grants; not native Windows/Android/physical IME",
+    "error": null,
+    "engine_error_lines": [],
+    "path": "ordinary-exact-pack/ORDINARY_PROCESS.json",
+    "runtime_manifest_sha256": "4791e101c547f0a3848297b40b0e424acd776ac85c2d455e40e1f83c4bd1fdf0",
+    "process_wrapper_exit_code": 0,
+    "all_short_test_processes_terminated": true,
+    "display": 149
+  },
+  "input_impact": {
+    "schema": "baram.r13-r14.exact-export-input-impact/1",
+    "status": "PASS_EXACT_INPUT_IMPACT",
+    "prior_source_commit": "4a0c8d796e65a0493207221f2eb60b78d006c681",
+    "source_commit": "639750f04d10ee4ac3c1a7113232b8c30109f078",
+    "source_count": 52,
+    "source_unchanged_count": 51,
+    "source_changed": [
+      {
+        "path": "storage/gameplay_store.gd",
+        "r13_sha256": "c5f2b5d14e289e57613701f82ead154d081c0e36d30c455cd83fb949241527da",
+        "r14_sha256": "8ef2f4db97867e9d42150019e9774c6bb5b1024282b30ed30f1c2045ce87cebd"
+      }
+    ],
+    "runtime_input_count": 3995,
+    "runtime_unchanged_count": 3995,
+    "runtime_changed": [],
+    "runtime_snapshot_dictionaries_byte_hash_values_equal": true,
+    "source_key_sets_equal": true,
+    "runtime_key_sets_equal": true,
+    "new_compiled_or_runtime_parity_execution": "PASS",
+    "scope": "Actual final export input snapshots checked against current52source/3995runtime files and final r13 receipt. Store-only source delta; no claim that r13 timing/cold result is finalr14. Native and exactr14coldOS/1800 are separate.",
+    "compiled_script_count": 23,
+    "compiled_script_unchanged_count": 22,
+    "compiled_script_changed": [
+      {
+        "path": "storage/gameplay_store.gdc",
+        "r13_sha256": "5c2d8eda3543d1f1e700b2152666fe0171c42e2e79a56ca3c5e56211fba2e991",
+        "r14_sha256": "d158f283644f1629c4496cb0f79744dab6ccfa76fb3e974f2dcca71cd65ec86d"
+      }
+    ],
+    "exported_runtime_resource_count": 7983,
+    "exported_runtime_resource_unchanged_count": 7983,
+    "exported_runtime_resource_changed": []
+  },
+  "status": "PASS_EXACT_PACK_BYTES_INPUT_PROVENANCE_AND_ORDINARY_LINUX_GUI",
+  "scope": "Exact r14 appsource639750f0/version6 exports with unchanged r12runtime. Store-only source delta fromr13. APK/Windows actual compiled/import resource byteparity and ordinaryLinux10case are distinct from native execution, coldOS and1800 performance.",
+  "exported_runtime_import_files": 7983,
+  "expanded_parity_failures": [],
+  "standard_parity_checks": 11,
+  "compiled_ui_sha256": "a4bd6d855943205dde2ed3fbb7940f8c330ade74b48efaf7e79d0947f38cecea",
+  "completed_at_utc": "2026-10-17T03:50:53.940967+00:00",
+  "test_tools": {
+    "Godot": {
+      "path": "toolchain/godot/Godot_v4.6.3-stable_linux.x86_64",
+      "sha256": "f64d4ed19fc9df9440321653fcc80df8c6e365ba7b6de0a29e2cfa9fa71bfeb3"
+    },
+    "exporter": {
+      "path": "baram/tools/rebuild/v2/export_generation.py",
+      "sha256": "238196c00dd9449e81d1da8746d0b8d4b2dfc7cb7bc905802721bf9618ce899b"
+    },
+    "standard_parity": {
+      "path": "baram/tools/rebuild/p3/test_pack_parity.gd",
+      "sha256": "ee2cb986a7337bfd47ca46f844f07ccf228ee9cefeea6939b5055b6b68217268"
+    },
+    "all_payload_parity": {
+      "path": "evidence/pack-parity-r14/pack_runtime_audit.gd",
+      "sha256": "7e5da9308b81bce0a3e8af65b01dda0d27fa3f1308ea977db58eede061ff15d3"
+    },
+    "ordinary_GUI": {
+      "path": "baram/tools/rebuild/v2/test_ordinary_process.py",
+      "sha256": "7ece085f72ec92667d89c870fbe424c3ae7321ddfe4ac2ebb87c8aa2f2c83412"
+    },
+    "Xvfb_wrapper": {
+      "path": "toolchain/run_gui.py",
+      "sha256": "b69ba8f6187debe076753fdaeb7fe0f64e2d66dea3cfada908391e44426bd90c"
+    }
+  },
+  "commands": [
+    {
+      "scope": "exportWindows",
+      "command": "python baram/tools/rebuild/v2/export_generation.py --project baram/rebuild/p2 --runtime private/baram-V2-G1-r12-final --godot toolchain/godot/Godot_v4.6.3-stable_linux.x86_64 --templates toolchain/godot/templates --source-commit 639750f04d10ee4ac3c1a7113232b8c30109f078 --version-code 6 --version-name 0.2.3-b5-repair --target Windows --output build-r14-Windows",
+      "exit_code": 0,
+      "log": "export-Windows.log"
+    },
+    {
+      "scope": "exportAndroid",
+      "command": "python baram/tools/rebuild/v2/export_generation.py --project baram/rebuild/p2 --runtime private/baram-V2-G1-r12-final --godot toolchain/godot/Godot_v4.6.3-stable_linux.x86_64 --templates toolchain/godot/templates --source-commit 639750f04d10ee4ac3c1a7113232b8c30109f078 --version-code 6 --version-name 0.2.3-b5-repair --target Android --output build-r14-Android --android-sdk toolchain/android-sdk --java-home /usr/lib/jvm/java-17-openjdk-amd64 --signing-root toolchain/private-resume/extracted/new-private-test-signing",
+      "exit_code": 0,
+      "log": "export-Android.log"
+    },
+    {
+      "scope": "standard11",
+      "command": "GODOT_SILENCE_ROOT_WARNING=1 BARAM_PARITY_APK=build-r14-Android/baram-p3-playable.apk BARAM_PARITY_OUTPUT=evidence/pack-parity-r14/FINAL_PACK_PARITY.json toolchain/godot/Godot_v4.6.3-stable_linux.x86_64 --headless --main-pack evidence/pack-parity-r14/final-windows-embedded.pck --script baram/tools/rebuild/p3/test_pack_parity.gd",
+      "exit_code": 0,
+      "log": "final-parity.log"
+    },
+    {
+      "scope": "all23scripts+7983resources+sevenrawJSON",
+      "command": "GODOT_SILENCE_ROOT_WARNING=1 BARAM_PARITY_APK=build-r14-Android/baram-p3-playable.apk BARAM_PARITY_AUDIT_OUTPUT=evidence/pack-parity-r14/ALL_PAYLOAD_PARITY.json BARAM_PARITY_RUNTIME_SOURCE=private/baram-V2-G1-r12-final BARAM_PARITY_COMPILED_PATHS=evidence/pack-parity-r14/expected-compiled-paths.json toolchain/godot/Godot_v4.6.3-stable_linux.x86_64 --headless --main-pack evidence/pack-parity-r14/final-windows-embedded.pck --script evidence/pack-parity-r14/pack_runtime_audit.gd",
+      "exit_code": 0,
+      "log": "all-payload-parity.log"
+    },
+    {
+      "scope": "ordinary10LinuxGUI",
+      "command": "python toolchain/run_gui.py --display 149 --log evidence/pack-parity-r14/ordinary-xvfb.log -- python baram/tools/rebuild/v2/test_ordinary_process.py --godot toolchain/godot/Godot_v4.6.3-stable_linux.x86_64 --runtime private/baram-V2-G1-r12-final --pack evidence/pack-parity-r14/final-windows-embedded.pck --output evidence/pack-parity-r14/ordinary-exact-pack --user-dir baram_rebuild_p3repair_001 --xdotool toolchain/xvfb/usr/bin/xdotool",
+      "exit_code": 0,
+      "log": "ordinary-exact-pack.log"
+    }
+  ],
+  "command_note": "Workspace-relative paths shown for readability; actual invocations used absolute project/runtime/output/PCK/script/env values. Retained signing material was reused via environment, no password/key values recorded.",
+  "scope_limitations": [
+    "Native Windows/Android execution, code6 update/save retention, physical controls/IME/audio and account sync not tested by these Linux/parity checks.",
+    "Ordinary10 confirms basic create/cancel/move/save/newprocesscontinue only. It does not pass coldOS or continuous1800 performance; root/playability owns those later exactr14 probes.",
+    "Compiled/imported resource bytes are compared across actual APK/WindowsPCK. Raw sourcePNG/WAV hashes are input provenance, not a claim that PNG/WAV remain raw in exported packs.",
+    "Prior r13 functional1806s and cold-save failures remain historical and are not relabeled as r14 results."
+  ],
+  "evidence_provenance_path": "evidence/pack-parity-r14/PROVENANCE.json",
+  "evidence_provenance_sha256": "76f9d133e1ff337eefec9c4aabc2d99b9d063557a434f3749ec7516aaffd44e3",
+  "canonical_plan": "docs/rebuild/MASTER_PLAN.md",
+  "document_scope": "R14 export/parity/ordinaryLinux evidence only, integrated into existing B5 work. Root publishes this document; no new plan."
+}

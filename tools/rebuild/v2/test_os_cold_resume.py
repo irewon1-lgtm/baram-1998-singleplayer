@@ -306,15 +306,29 @@ def main():
     try:
         ensure('source_userdata_byte_identical_import', imported_files == original_files)
         ensure('copied_original_primary_save_bytes_exact', digest(savefile) == digest(original_saves[0]))
-        recorder = subprocess.Popen(['ffmpeg', '-loglevel', 'warning', '-y', '-f', 'x11grab', '-draw_mouse', '1', '-framerate', '30', '-video_size', '1600x1000', '-i', env['DISPLAY'], '-c:v', 'libx264', '-preset', 'ultrafast', '-crf', '29', '-pix_fmt', 'yuv420p', str(temporary / 'ordinary-unedited.mkv')], env=env, stdout=(temporary / 'recorder.log').open('wb'), stderr=subprocess.STDOUT)
+        recorder_progress = temporary / 'recorder-progress.txt'
+        recorder = subprocess.Popen(['ffmpeg', '-loglevel', 'warning', '-progress', str(recorder_progress), '-y', '-f', 'x11grab', '-draw_mouse', '1', '-framerate', '30', '-video_size', '1600x1000', '-i', env['DISPLAY'], '-c:v', 'libx264', '-preset', 'ultrafast', '-crf', '29', '-pix_fmt', 'yuv420p', str(temporary / 'ordinary-unedited.mkv')], env=env, stdout=(temporary / 'recorder.log').open('wb'), stderr=subprocess.STDOUT)
         log('video_recording_started', recorder_pid=recorder.pid)
         recording_deadline = time.monotonic() + 10
         raw = temporary / 'ordinary-unedited.mkv'
-        while not raw.is_file() or raw.stat().st_size == 0:
+        while True:
             if recorder.poll() is not None or time.monotonic() >= recording_deadline:
                 raise RuntimeError('Raw recorder did not become ready before first application launch')
+            progress = rows_text = recorder_progress.read_text() if recorder_progress.is_file() else ''
+            fields = {}
+            for line in rows_text.splitlines():
+                if '=' in line:
+                    field, value = line.split('=', 1)
+                    if value.strip().isdigit(): fields[field] = int(value.strip())
+            # A small black-screen MKV may stay wholly inside AVIO's output
+            # buffer. Actual encoded-frame progress, not file size or merely
+            # a live process, proves capture readiness before launching Godot.
+            if fields.get('frame', 0) > 0:
+                break
             time.sleep(.1)
-        observe('raw_recorder_ready_before_first_process', raw_bytes=raw.stat().st_size)
+        observe('raw_recorder_ready_before_first_process', encoded_frames=fields['frame'],
+                recorder_alive=recorder.poll() is None, progress=progress,
+                raw_bytes=raw.stat().st_size if raw.is_file() else 0)
         result['before_restart'] = one_phase('first-process', original_payload)
         result['final'] = one_phase('restart-process', result['before_restart'])
     except Exception as error:
