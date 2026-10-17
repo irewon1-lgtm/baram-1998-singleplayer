@@ -369,7 +369,9 @@ func _migrate_payload(payload: Dictionary, contract: Dictionary, content: Dictio
 		# Existing records retain every HP/timer/drop. Initialize only visited maps.
 		var visited: Dictionary={}
 		visited[str(candidate.character.map_id)]=true
-		for record in candidate.monsters.values():visited[str(record.map_id)]=true
+		# G1 serialized all global spawn records even before the map was visited.
+		# Keep those records, but do not infer discovery from their mere presence.
+		for mid in candidate.character.get("discovered_maps",[]):visited[str(mid)]=true
 		for mid in visited:engine._spawn_map(str(mid))
 	else:engine._spawn_all()
 	var added: Array=[]

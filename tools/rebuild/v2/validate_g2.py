@@ -4,6 +4,7 @@ import argparse,json,hashlib,base64
 from pathlib import Path
 from collections import Counter,deque
 from build_g2_world import write,reachable
+from expand_g2_encounters import signatures,SEMANTIC_FIELDS
 def run(root):
  d=json.load(open(root/'gameplay_content.json'));checks=[]
  def check(i,v,detail=None):checks.append({'id':i,'status':'PASS'if v else'FAIL','detail':detail})
@@ -54,8 +55,8 @@ def run(root):
   if len(supplied)==before:break
  for iid,item in d['items'].items():check('acquisition:'+iid,iid in supplied or any(s['item_id']==iid for s in d['start']['starter_items']))
  for rid,r in d['recipes'].items():check('craft_materials:'+rid,set(r['ingredients'])<=supplied)
- semantic=Counter((m['name'],m['hp'],m['attack'],m.get('attack_range',1),m.get('on_hit_status',''),tuple((v['item_id'],v.get('chance'))for v in m.get('drops',[])))for m in d['monsters'].values())
- check('nonduplicate_monster_semantics',len(semantic)>=500,{'stable_ids':len(d['monsters']),'distinct_name_combat_drop_signatures':len(semantic),'method':'Spawn instances excluded. Exact baseline aliases collapsed; meaningful role variations retained.'})
+ semantic=signatures(d['monsters'])
+ check('nonduplicate_monster_semantics',len(semantic)>=500,{'stable_ids':len(d['monsters']),'distinct_gameplay_signatures':len(semantic),'fields':SEMANTIC_FIELDS,'method':'Names, IDs, graphics, regions and spawn instances excluded. Exact gameplay aliases collapsed.'})
  usage=json.load(open(root/'G2_WORLD_USAGE.json'));check('area_5x',usage['g2_area_A1']>=5*usage['baseline_area_A0'],usage['ratio'])
  result={'schema':'baram.g2.structural/1','scope':'Actual frozen definitions, source masks, area and normal level graph; NOT gameplay/visual/native certification','status':'PASS'if all(x['status']=='PASS'for x in checks)else'FAIL','checks':checks,'failures':sum(x['status']=='FAIL'for x in checks),'content_sha256':hashlib.sha256((root/'gameplay_content.json').read_bytes()).hexdigest()}
  return result

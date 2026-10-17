@@ -144,7 +144,9 @@ func _initialize() -> void:
 	timings.full_world_file_bytes=FileAccess.get_file_as_bytes(full_path).size();timings.full_world_monsters=full.state.monsters.size()
 	started=Time.get_ticks_usec();var full_read: Dictionary=store.read_game(full_path,OWNER,current_ready)
 	timings.full_world_read_ms=float(Time.get_ticks_usec()-started)/1000.0
-	check("all_1802_monsters_saved_restored",full_write.status=="SAVED" and full_read.status=="OK" and full_read.payload.monsters.size()==1802 and store._canonical(full_read.payload)==store._canonical(full.snapshot()))
+	var expected_monsters:=0
+	for map in current.maps.values():expected_monsters+=map.get("spawns",[]).size()
+	check("all_defined_monsters_saved_restored",full_write.status=="SAVED" and full_read.status=="OK" and full_read.payload.monsters.size()==expected_monsters and expected_monsters==2026 and store._canonical(full_read.payload)==store._canonical(full.snapshot()),expected_monsters)
 	check("full_world_below_4MiB",timings.full_world_file_bytes<4194304,timings)
 	var poison_id:=""
 	for id in full.state.monsters:

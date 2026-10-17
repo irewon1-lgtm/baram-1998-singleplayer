@@ -13,6 +13,7 @@ import json
 import os
 from pathlib import Path
 import re
+import shutil
 import subprocess
 import sys
 import zipfile
@@ -57,6 +58,8 @@ def main() -> int:
     parser.add_argument("--resume-import", action="store_true",
                         help="Resume a timed-out import only after exact frozen-input checks")
     parser.add_argument("--import-timeout", type=int, default=180)
+    parser.add_argument("--import-cache-from", type=Path,
+                        help="Previous staging project; reuse only import sidecars for unchanged raw bytes")
     args = parser.parse_args()
     if args.version_code <= 2:
         parser.error("Version code must increase above the delivered P3 repair code 2")
@@ -75,6 +78,23 @@ def main() -> int:
             .replace('version/name="0.1.0-p3"', 'version/name="' + args.version_name + '"')
             .replace('package/name="바람의나라 P3"', 'package/name="바람의나라 자료 재구성"'))
     platform.presets = presets
+    if args.import_cache_from:
+        previous_stage=args.import_cache_from.resolve()
+        base_stage=platform.stage_project
+        def cached_stage(*arguments):
+            options=base_stage(*arguments)
+            stage=arguments[2]
+            count=0
+            for sidecar in previous_stage.rglob("*.import"):
+                relative=sidecar.relative_to(previous_stage)
+                source=sidecar.with_suffix("");target=stage/relative.with_suffix("")
+                if target.is_file() and source.is_file() and platform.digest(target)==platform.digest(source):
+                    shutil.copy2(sidecar,stage/relative);count+=1
+            cache=previous_stage/".godot/imported"
+            if cache.is_dir():shutil.copytree(cache,stage/".godot/imported",dirs_exist_ok=True)
+            options["import_cache"]={"from":str(previous_stage),"verified_raw_sidecars":count,"policy":"Raw bytes checked per sidecar; Godot still performs its own import validation"}
+            return options
+        platform.stage_project=cached_stage
     if not 180 <= args.import_timeout <= 1800:
         parser.error("Import timeout must be between 180 and 1800 seconds")
     base_run = platform.run_logged
