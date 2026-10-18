@@ -55,6 +55,28 @@ def main():
     assert text != project.read_text(encoding='utf-8-sig')
     project.write_text(text)
     shutil.copyfile(P3 / 'OfflineApi.cs', private_src / 'Server/P3.OfflineApi.cs')
+    # Host-path seam only: embedded Android may have an empty assembly base
+    # directory. Avoid a desktop ancestor walk outside the app sandbox.
+    paths = private_src / 'Shared/RepoPaths.cs'
+    original_paths_hash = sha(paths)
+    needle = '        var dir = new DirectoryInfo(AppContext.BaseDirectory);'
+    replacement = '''        // P3 host supplies its absolute app-private deployment root.
+        var appRoot = Environment.GetEnvironmentVariable("P1998_P3_ROOT");
+        if (appRoot is not null)
+        {
+            if (string.IsNullOrWhiteSpace(appRoot) || !Path.IsPathFullyQualified(appRoot))
+                throw new InvalidDataException("P3 deployment root must be absolute and non-empty");
+            return Path.GetFullPath(appRoot);
+        }
+''' + needle
+    paths_text = paths.read_text()
+    assert paths_text.count(needle) == 1, 'Pinned RepoPaths host seam changed'
+    paths.write_text(paths_text.replace(needle, replacement))
+    path_overlay = {'path': 'Shared/RepoPaths.cs', 'source_sha256': original_paths_hash,
+                    'private_build_sha256': sha(paths), 'override': 'P1998_P3_ROOT',
+                    'scope': 'deployment-root resolution only; no rule-body edits',
+                    'original_desktop_fallback': 'unchanged when override is absent'}
+    (out / 'HOST_PATH_OVERLAY.json').write_text(json.dumps(path_overlay, indent=2) + '\n')
     content = out / 'content'; content.mkdir(parents=True)
     (out / 'runtime').mkdir()
     content_audit = []
@@ -94,7 +116,10 @@ def main():
                 'overlay': {'path': 'Server/P3.OfflineApi.cs', 'sha256': sha(P3 / 'OfflineApi.cs')},
                 'source_project_changes': ['Server OutputType Exe to Library', 'Exclude host-only top-level Program.cs'],
                 'world': {'maps': [4711], 'automatic_spawns': 0, 'npcs': 0, 'warps': 0, 'item_rows': 4, 'mob_rows': 1}}
-    (out / 'SOURCE_LINK_MANIFEST.json').write_text(json.dumps(manifest, indent=2) + '\n')
+    # Preserve the v1 capsule identity so this repair accepts existing saves.
+    # Build-only source changes are audited separately from the saved capsule.
+    (out / 'SOURCE_LINK_MANIFEST.json').write_text(json.dumps(
+        manifest | {'host_path_overlay': path_overlay}, indent=2) + '\n')
     (content / 'capsule.json').write_text(json.dumps(manifest, indent=2) + '\n')
     shutil.copyfile(content / 'capsule.json', out / 'runtime/capsule.json')
     # CSVs are raw rule data, not Godot localization tables. A deterministic

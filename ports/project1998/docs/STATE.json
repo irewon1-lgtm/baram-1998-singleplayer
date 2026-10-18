@@ -14,16 +14,17 @@
     "p2_synthetic_touch": "PASS_FIXTURES_ONLY",
     "p2_android_emulator": "BLOCKED_ENVIRONMENT",
     "p2_galaxy": "NOT_RUN_DEVICE",
-    "overall": "PARTIAL_P3_ANDROID_RUNTIME_AND_P2_GALAXY_NOT_VERIFIED",
+    "overall": "PARTIAL_FIX1_ANDROID_RETEST_AND_P2_GALAXY_NOT_VERIFIED",
     "p3_source_audit": "PASS_151_CODE_BUILD_AND_77_CONTENT_INPUTS",
     "p3_original_oracle": "PASS_40_SNAPSHOTS",
-    "p3_host": "PASS_40_SNAPSHOTS_AND_COLD_SAVE",
-    "p3_save_guards": "PASS_4_REAL_ENGINE_PROCESSES",
+    "p3_host": "PASS_FIX1_40_SNAPSHOTS_AND_COLD_SAVE",
+    "p3_save_guards": "PASS_FIX1_4_REAL_ENGINE_PROCESSES",
     "p3_android_build": "BUILD_PASS",
-    "p3_android_runtime": "BLOCKED_ENVIRONMENT_BEFORE_APP_EXECUTION",
+    "p3_android_runtime": "USER_OBSERVED_FAIL_V1_FIX1_RETEST_NOT_RUN",
     "p3_galaxy": "NOT_RUN_DEVICE",
-    "p3_overall": "PARTIAL_ANDROID_RUNTIME_NOT_VERIFIED",
-    "p4": "NOT_STARTED"
+    "p3_overall": "PARTIAL_FIX1_ANDROID_RETEST_PENDING",
+    "p4": "NOT_STARTED",
+    "p3_path_regression": "PASS_5_REAL_GODOT_LINUX_PROCESSES"
   },
   "apk": {
     "apk": "p1998-s10fe-p2-tech.apk",
@@ -38,8 +39,8 @@
     "network_permission": false
   },
   "isolated_user_data": "project1998_s10fe_p2_20261018",
-  "last_valid_pass": "Original-source identity audit + original C# oracle and actual Godot host 40-snapshot parity + Lua/SQLite/cold save + four save guards + signed Android APK + managed/native packaging checks",
-  "next_action": "P3 remains pending Android runtime proof: install the exact signed P3 APK on a working Android environment, launch offline, observe 40-state original parity and SQLite/cold-process checks. P4 has not been started; wait for a new instruction.",
+  "last_valid_pass": "Fix1 actual Godot host parity (40 states), empty-base/prior-v1-save/cold tests, blank output fallback, failure diagnostics, four save guards, signed versionCode2 and matching certificate/payload",
+  "next_action": "Install versionCode2 P3 as an update, launch offline and observe all 40 states and SQLite/backup success, then restart and verify existing save. Device retest after fix is NOT_RUN; P4 remains NOT_STARTED.",
   "emulator_blocker": "Android guest did not finish booting in 240 seconds",
   "limitations": [
     "Original 4.95 Windows client execution NOT_RUN; reference is the pinned official map renderer, used by validated MapEditor format documentation.",
@@ -47,7 +48,7 @@
     "Model movement uses original FILE layer and 4x flags; dynamic/ForceOpen doors and quest locks are not integrated.",
     "No Galaxy device attached; 30 FPS, aspect ratio, physical touch/IME and actual Android lifecycle have not been verified.",
     "P3 is an automatic bounded core probe, not interactive P4 gameplay; random creation/combat/AI, warps and durable world-state restoration are not verified.",
-    "P3 Android app execution was not observed. A cross-build and Linux host parity do not establish Android C#/MoonSharp/SQLite runtime compatibility.",
+    "User screenshot shows P3 versionCode1 C# UI and an empty-path failure. VersionCode2 fixes the reproduced path mechanism; Android runtime after fix is NOT_RUN_AFTER_FIX.",
     "P3 native SQLite ELF LOAD alignment is 4 KiB; 16 KiB-page Android runtime compatibility has not been tested."
   ],
   "existing_baram_source_and_saves": "UNCHANGED",
@@ -55,10 +56,84 @@
   "device_gate": "NOT_RUN_DEVICE",
   "scope_override": {
     "date": "2026-10-18",
-    "latest_user_instruction": "P3만 진행해",
+    "latest_user_instruction": "P3\ub9cc \uc9c4\ud589\ud574",
     "effect": "Authorizes P3 despite earlier sequencing restriction; does not promote P2 device evidence; P4 remains unauthorized"
   },
   "p3_apk": {
+    "status": "BUILD_PASS",
+    "package": "com.irewon.baram.project1998.p3",
+    "versionCode": 2,
+    "versionName": "0.0.2-p3-fix1",
+    "apk": "p1998-s10fe-p3-core-fix1.apk",
+    "bytes": 217465997,
+    "sha256": "483fdaf32e0cec73b3861797b37525059df5791527e4f05654232db2a7197648",
+    "network_permission": false,
+    "sqlite_native": [
+      {
+        "abi": "arm64-v8a",
+        "entry": "lib/arm64-v8a/libe_sqlite3.so",
+        "sha256": "43596fc3907bae3538c7b85a567336bd4fd720f018fb6364dd4f13161acb86a1"
+      },
+      {
+        "abi": "x86_64",
+        "entry": "lib/x86_64/libe_sqlite3.so",
+        "sha256": "3913201738ddbac74eecdb199f1a4479e9f926f1193d04e5d63f335bb66a311d"
+      }
+    ],
+    "host": {
+      "status": "PASS_OBSERVED_PLATFORM",
+      "platform": "Linux",
+      "process_id": 548,
+      "schema": "project1998.p3.core-probe",
+      "version": 1,
+      "capsule_sha256": "4862e7de92165b26939c6909038e23f64ebd9b2804e579604343661ff70b3aae",
+      "steps": 40,
+      "original_parity": true,
+      "moonsharp_heal_and_drink": true,
+      "sqlite_round_trip": true,
+      "sqlite_online_backup": true,
+      "cold_existing_save": "Ok",
+      "cold_hp": 39,
+      "world_started": false,
+      "network_transport": "none; in-process sink",
+      "random_draws": 0,
+      "galaxy": "NOT_RUN_DEVICE",
+      "build": "0.0.2-p3-fix1",
+      "empty_base_directory": false,
+      "deployment_root_explicit": true
+    },
+    "galaxy": "NOT_RUN_DEVICE"
+  },
+  "p3_architecture": {
+    "candidate": "C# rules called in one Godot app process",
+    "app_tfm": "net9.0",
+    "original_libraries_tfm": "net8.0",
+    "decision": "Provisional until Android runtime parity is observed",
+    "source_head": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+    "login_server": "OMITTED",
+    "server_main": "EXCLUDED_FROM_PRIVATE_LIBRARY_BUILD",
+    "world_tick": "NOT_STARTED",
+    "probabilistic_rules": "NOT_TESTED"
+  },
+  "p3_save": {
+    "package": "com.irewon.baram.project1998.p3",
+    "desktop_user_dir": "project1998_s10fe_p3_20261018",
+    "path": "user://p3/v1/",
+    "schema_id": "project1998.p3.core-probe",
+    "schema_version": 1,
+    "character_schema": 1,
+    "content_manifest_sha256": "4862e7de92165b26939c6909038e23f64ebd9b2804e579604343661ff70b3aae",
+    "backup": "SQLite online backup API, read-back prior HP40 while primary HP39",
+    "rollback": "Read previous snapshot; future restore/migration goes to a new version directory",
+    "unknown_future_data": "REFUSE_WRITES",
+    "p2_migration": "NONE"
+  },
+  "p3_android_blockers": [
+    "API28 guest booted in 310.6 seconds, then Android package service broke its install pipe and restarted before app execution",
+    "A subsequent task AVD encountered a lingering emulator lock",
+    "Fresh AVD creation auto-expanded userdata to 6 GiB and required 7372.80 MB free; explicit 2048 MB partition flag was ineffective in this SDK environment"
+  ],
+  "p3_apk_v1_history": {
     "status": "BUILD_PASS",
     "package": "com.irewon.baram.project1998.p3",
     "versionCode": 1,
@@ -99,33 +174,37 @@
     },
     "galaxy": "NOT_RUN_DEVICE"
   },
-  "p3_architecture": {
-    "candidate": "C# rules called in one Godot app process",
-    "app_tfm": "net9.0",
-    "original_libraries_tfm": "net8.0",
-    "decision": "Provisional until Android runtime parity is observed",
-    "source_head": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
-    "login_server": "OMITTED",
-    "server_main": "EXCLUDED_FROM_PRIVATE_LIBRARY_BUILD",
-    "world_tick": "NOT_STARTED",
-    "probabilistic_rules": "NOT_TESTED"
-  },
-  "p3_save": {
-    "package": "com.irewon.baram.project1998.p3",
-    "desktop_user_dir": "project1998_s10fe_p3_20261018",
-    "path": "user://p3/v1/",
-    "schema_id": "project1998.p3.core-probe",
-    "schema_version": 1,
-    "character_schema": 1,
-    "content_manifest_sha256": "4862e7de92165b26939c6909038e23f64ebd9b2804e579604343661ff70b3aae",
-    "backup": "SQLite online backup API, read-back prior HP40 while primary HP39",
-    "rollback": "Read previous snapshot; future restore/migration goes to a new version directory",
-    "unknown_future_data": "REFUSE_WRITES",
-    "p2_migration": "NONE"
-  },
-  "p3_android_blockers": [
-    "API28 guest booted in 310.6 seconds, then Android package service broke its install pipe and restarted before app execution",
-    "A subsequent task AVD encountered a lingering emulator lock",
-    "Fresh AVD creation auto-expanded userdata to 6 GiB and required 7372.80 MB free; explicit 2048 MB partition flag was ineffective in this SDK environment"
-  ]
+  "p3_fix1": {
+    "observed_v1_failure": {
+      "source": "user-provided screenshot, 2026-10-18",
+      "apk_versionCode": 1,
+      "exception": "ArgumentException: The value cannot be an empty string. (Parameter 'path')",
+      "stack": "NOT_PROVIDED",
+      "device_model": "NOT_CONFIRMED"
+    },
+    "matching_original_failure_reproduced": "PASS_LINUX_EMPTY_APPCONTEXT_BASE_DIRECTORY",
+    "stack": "RepoPaths.Root -> ObjectFlags.Locate -> MapData.BlockedMove",
+    "private_path_overlay": {
+      "path": "Shared/RepoPaths.cs",
+      "source_sha256": "447002bf75e74e7280ae207eff96b48ab6802e3aa801c6af045246a87ece2337",
+      "private_build_sha256": "0a0d7701ecde8f8088c6f553ca7d28f0a178d47fc64fa013c72ebba6d09bab82",
+      "override": "P1998_P3_ROOT",
+      "scope": "deployment-root resolution only; no rule-body edits",
+      "original_desktop_fallback": "unchanged when override is absent"
+    },
+    "path_qa": "PASS_5_LINUX_PROCESSES_WITH_PRIOR_V1_SAVE_AND_COLD_READ",
+    "save_guards": "PASS_4_LINUX_PROCESSES",
+    "update_compatibility": {
+      "status": "PASS_STATIC_UPDATE_COMPATIBILITY",
+      "package": "com.irewon.baram.project1998.p3",
+      "previous_versionCode": 1,
+      "versionCode": 2,
+      "versionName": "0.0.2-p3-fix1",
+      "same_signing_certificate_sha256": "5fb380f895f3a98d90e9688e1d7769db7f3c16ae821f3ae9f47a8c348c0a921e",
+      "same_capsule_manifest": true,
+      "same_save_schema_and_path": true,
+      "android_install_over_v1": "NOT_RUN_AFTER_FIX"
+    },
+    "android_runtime_after_fix": "NOT_RUN_AFTER_FIX"
+  }
 }

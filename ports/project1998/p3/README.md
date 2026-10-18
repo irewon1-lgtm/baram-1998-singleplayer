@@ -12,6 +12,14 @@ Server build is a class library with its host-only `Program.cs` excluded; its ru
 source files are unchanged. Networking types still compile because Session is
 monolithic, but no TCP transport, listener, server main or tick loop is started.
 
+Fix 1 adds a separately audited **host-path-only** overlay in `Shared/RepoPaths.cs`.
+`P1998_P3_ROOT` supplies the absolute Godot sandbox root before any original
+configuration or collision lookup. This avoids the original desktop ancestor
+walk when an embedded Android runtime has an empty `AppContext.BaseDirectory`.
+`HOST_PATH_OVERLAY.json` records original/private hashes. Rule bodies remain
+unchanged. The v1 capsule manifest remains byte-identical for save compatibility;
+`SOURCE_LINK_MANIFEST.json` additionally records this build-only path overlay.
+
 `OfflineApi.cs` adds state-monitor-protected calls to original `GivePlaced`,
 `HandleUseItem`, `MapData.BlockedMove` and `World.TryMovePlayer`. This is a minimal
 integration seam, not a claim that the whole server has become a clean mobile SDK.
@@ -33,7 +41,8 @@ python3 ports/project1998/p3/build.py \
   --experiment /private/p3-run --dotnet /tools/dotnet/dotnet \
   --godot /tools/Godot_v4.6-stable_mono_linux.x86_64 \
   --sdk /tools/android-sdk --templates /tools/mono-templates \
-  --signing /private/p1998-test-signing --output /private/p1998-s10fe-p3-core.apk
+  --signing /private/p1998-test-signing --output /private/p1998-s10fe-p3-core-fix1.apk \
+  --version-code 2 --version-name 0.0.2-p3-fix1
 ```
 
 Install the .NET 8 and 9 SDKs into the same task-owned toolchain. Use the .NET
@@ -97,3 +106,18 @@ are made through SQLite's backup API, never by copying a live database file.
 `android_probe.py` installs the exact candidate in an isolated Android emulator,
 disables radios, reads app-generated verification, and checks a cold process.
 Emulator and physical Galaxy outcomes must always be reported separately.
+
+`verify_paths.py --godot … --experiment … --previous /private/prior-p3-run
+--output /private/path-qa` runs five real Linux Godot processes: an empty managed
+base directory with a prior-v1 SQLite backup, blank-output sandbox fallback,
+and refusal of a relative output path with a persisted failure record. The first
+two cases also run cold and compare all 40 original snapshots. This reproduces
+and tests the failed path condition; it does not constitute Android execution.
+
+The user observed versionCode 1 failing on Android with the empty-path exception.
+Its exact failure was reproduced in the unchanged original scenario through
+`RepoPaths.Root → ObjectFlags.Locate → MapData.BlockedMove`. Fix 1 is versionCode
+2, with the same package, signing identity, save schema and capsule hash. Install
+as an update. Android runtime after this repair remains `NOT_RUN_AFTER_FIX` until
+actual device evidence is supplied. The failure UI now includes the stage and
+records the exception without a second unhandled logging-path failure.

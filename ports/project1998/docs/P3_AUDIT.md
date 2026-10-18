@@ -28,12 +28,28 @@ Upstream dependency licences are included in the evidence distribution materials
 
 ## Selected route
 
-Status: **PARTIAL_ANDROID_RUNTIME_NOT_VERIFIED**. The C# implementation, host
-parity and signed Android build pass. The Android guest booted, but its package
-service restarted during installation; fresh AVD creation then hit a disk-space
-limit. The app itself was not executed on Android. Keep this as a candidate
-architecture until its Android runtime parity is observed; no GDScript fallback
-is justified by a host environment failure alone.
+Status: **PARTIAL_FIX1_ANDROID_RETEST_PENDING**. The user subsequently supplied
+an Android screenshot of versionCode 1: C# UI ran, but P3 failed with
+`ArgumentException: The value cannot be an empty string. (Parameter 'path')`.
+Device model, stack and full parity were not supplied. This supersedes the
+earlier pre-execution emulator blocker as the latest runtime evidence; it does
+not establish a successful Android core run.
+
+The unchanged original scenario reproduces that exception when the real .NET
+`AppContext.BaseDirectory` is set to empty. `ObjectFlags.Locate` unconditionally
+adds its desktop fallback and calls `RepoPaths.Root`, even when a valid SObj table
+was already found. The stack identifies `new DirectoryInfo("")` at the deployment
+root lookup. This is a demonstrated matching failure mechanism; the screenshot
+alone does not expose the device stack.
+
+Fix 1 injects an absolute app-private `P1998_P3_ROOT` through one audited private
+`RepoPaths.Root` build overlay. It also handles blank output overrides, rejects
+relative roots, and persists failure stage/stack safely. This is host-path
+adaptation, with no gameplay-rule edits. The original desktop fallback remains
+unchanged when the override is absent. Capsule bytes/schema remain unchanged.
+Five real Godot processes test the empty-base condition, prior-v1 save/cold read,
+sandbox fallback and diagnostic refusal; four save-refusal processes also pass.
+These are Linux fixture results. Android after repair is `NOT_RUN_AFTER_FIX`.
 
 The implemented candidate uses **direct C# calls in the Godot app process**, with a small adapter protected
 by the original session state monitor. Avoid a wholesale GDScript rule rewrite.
@@ -106,7 +122,7 @@ No failed load is treated as a fresh character to overwrite.
 
 ## Build and remaining platform boundaries
 
-The signed two-ABI APK is `p1998-s10fe-p3-core.apk` (217,461,901 bytes), SHA256
+The original versionCode 1 two-ABI APK is `p1998-s10fe-p3-core.apk` (217,461,901 bytes), SHA256
 `afb804ddee5da1badbbd072576b835a83c98bd20b36d9938c03f803ce61c7975`.
 All 14 selected managed assembly entries match actual export build outputs.
 The APK contains both Android SQLite libraries, no LoginServer.dll and no

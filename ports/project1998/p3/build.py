@@ -16,9 +16,14 @@ def main():
         p.add_argument('--' + key, type=Path, required=True)
     p.add_argument('--direct-msbuild', type=Path, help='Optional exact SDK MSBuild.dll for restricted /proc build hosts')
     p.add_argument('--resume', choices=['oracle-build', 'app-build', 'import', 'android-export'], default='oracle-build')
+    p.add_argument('--version-code', type=int, required=True)
+    p.add_argument('--version-name', required=True)
     a = p.parse_args()
+    if a.version_code < 1 or not a.version_name.replace('.', '').replace('-', '').isalnum():
+        raise ValueError('Invalid Android version')
     for k, v in vars(a).items():
         if isinstance(v, Path): setattr(a, k, v.resolve())
+    if a.output.exists(): raise ValueError('Preserve existing APK; choose a new output filename')
     exp = a.experiment; runtime = exp / 'runtime'; logs = exp / 'build'; logs.mkdir(exist_ok=True)
     env = os.environ | {'DOTNET_ROOT': str(a.dotnet.parent), 'DOTNET_CLI_HOME': str(exp.parent / 'dotnet-home'),
         'DOTNET_CLI_TELEMETRY_OPTOUT': '1', 'MSBUILDDISABLENODEREUSE': '1',
@@ -93,8 +98,8 @@ architectures/x86_64=true
 package/unique_name="com.irewon.baram.project1998.p3"
 package/name="Project1998 P3 Core"
 package/signed=true
-version/code=1
-version/name="0.0.1-p3"
+version/code=%d
+version/name="%s"
 screen/immersive_mode=true
 screen/orientation=0
 user_data_backup/allow=false
@@ -104,7 +109,7 @@ dotnet/include_scripts_content=false
 dotnet/include_debug_symbols=false
 dotnet/embed_build_outputs=true
 dotnet/android_use_linux_bionic=false
-''' % (a.templates / 'android_debug.apk', a.templates / 'android_release.apk'))
+''' % (a.templates / 'android_debug.apk', a.templates / 'android_release.apk', a.version_code, a.version_name))
     (runtime / 'PRIVATE_INPUT_NOTICE.txt').write_text('''Private, user-requested compatibility experiment.
 Original Project1998 supplied source: https://github.com/project1998/Project1998
 Pinned commit: 65cb3ef28f289ee35d19abfb6829d6120b9ec0cd
@@ -126,6 +131,8 @@ BCrypt.Net-Next 4.0.3: MIT. Noto Sans KR: SIL Open Font License (fonts/OFL.txt).
     badging = run('badging', [tools / 'aapt2', 'dump', 'badging', pending])
     assert 'android.permission.INTERNET' not in permission.read_text()
     assert "package: name='com.irewon.baram.project1998.p3'" in badging.read_text()
+    assert "versionCode='%d'" % a.version_code in badging.read_text()
+    assert "versionName='%s'" % a.version_name in badging.read_text()
     with zipfile.ZipFile(pending) as archive:
         names = archive.namelist(); native = []
         for abi in ['arm64-v8a', 'x86_64']:
@@ -134,7 +141,8 @@ BCrypt.Net-Next 4.0.3: MIT. Noto Sans KR: SIL Open Font License (fonts/OFL.txt).
             native.append({'abi': abi, 'entry': matches[0], 'sha256': hashlib.sha256(archive.read(matches[0])).hexdigest()})
         assert not any(n.endswith('/LoginServer.dll') for n in names)
     pending.rename(a.output)
-    receipt = {'status': 'BUILD_PASS', 'package': 'com.irewon.baram.project1998.p3', 'versionCode': 1,
+    receipt = {'status': 'BUILD_PASS', 'package': 'com.irewon.baram.project1998.p3', 'versionCode': a.version_code,
+               'versionName': a.version_name,
                'apk': a.output.name, 'bytes': a.output.stat().st_size, 'sha256': hashlib.sha256(a.output.read_bytes()).hexdigest(),
                'network_permission': False, 'sqlite_native': native, 'host': cold, 'galaxy': 'NOT_RUN_DEVICE'}
     (exp / 'BUILD_RECEIPT.json').write_text(json.dumps(receipt, indent=2) + '\n')
