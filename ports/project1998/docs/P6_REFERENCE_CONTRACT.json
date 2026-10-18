@@ -1,0 +1,61 @@
+{
+  "request": "2026-10-18 reference UI and NPC repair",
+  "base_commit": "adbb996c8ae919e698f06c8dddefdb2d96e79526",
+  "checks_before_execution": [
+    "right fixed parchment pane + bottom left chat + brown dragon frame at portrait and landscape",
+    "live name class level hp mp exp coins coordinates inventory gear spells stats; no reference player values copied",
+    "ordinary Talk control selects actual NPC, approaches walkable adjacent cell, opens native dialog; reply and shop transactions progress",
+    "all 36 retained NPC definitions audited against native collision and visible object columns; relocate only inaccessible/occluded instances; preserve definitions and handlers",
+    "native outgoing minitext/chat/events visible, speech-only NPCs supported with context actions",
+    "inventory equip/unequip/drop/pickup, spells, F1 functions, map navigation and save/cold update regression",
+    "original source/native rules and exact47-map capsule/save identity retained; exclusions compared and explicitly reported",
+    "signed versionCode8 same package/certificate; NOT_RUN_DEVICE until actual new device evidence"
+  ],
+  "references": [
+    {
+      "file": "01-11345.jpg",
+      "sha256": "9e499011c36214334137fe486cf5c399305f749176a25c715f6f0a5fff5723a2"
+    },
+    {
+      "file": "02-11343.jpg",
+      "sha256": "bed65f1d078d269bb508dd4fd96fd7c1d91d38b409cafcfeb6e0150e2ef4ede4"
+    },
+    {
+      "file": "03-11341.jpg",
+      "sha256": "e43b33a4e8d7fa671cba96a3b54b774aa18ad44b7ccc082b0e753eaa64a61ca2"
+    },
+    {
+      "file": "04-11339.jpg",
+      "sha256": "59ecd42df1fdfc396065b816e9b95a1fdba293560da2ea7f5e23a76bfaa239a9"
+    },
+    {
+      "file": "05-11337.jpg",
+      "sha256": "6539635d5612bd869dea077f2c16385994cd6f204e977384b6f1db296f65120c"
+    },
+    {
+      "file": "06-11335.jpg",
+      "sha256": "e2b602e1c77dfde8ee0f2403e7ba1543cb9990716c3b57ca9e0c6db153498784"
+    },
+    {
+      "file": "07-11331.jpg",
+      "sha256": "986a4905a3c50686dbd3b12e312e190b70a1130f5d92b0ee8ed47a9e56f1eab9"
+    },
+    {
+      "file": "08-11325.jpg",
+      "sha256": "692bbde05e09e7b6697583565db5112855a92517d5c6fc298e877637163304f0"
+    },
+    {
+      "file": "09-11326.jpg",
+      "sha256": "c9daf6faf8489a742c02fad1d973adde2f42ec445b28e9378927fd45e10b0436"
+    },
+    {
+      "file": "10-11347.jpg",
+      "sha256": "a8a6ae5f5e27a5406d830dceea95f5ba61bdb3523a934642944679c8b2fe41d9"
+    }
+  ],
+  "nonclaims": [
+    "not a full-world port",
+    "not exact source Korean-client assets where reference parts unavailable",
+    "host execution is not physical Galaxy execution"
+  ]
+}

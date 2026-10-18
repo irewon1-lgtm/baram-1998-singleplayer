@@ -1,0 +1,1151 @@
+{
+  "status": "PASS_DECLARED_COMPARISON_AND_NPC_SCOPE",
+  "original_commit": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+  "original_repository": "https://github.com/project1998/Project1998",
+  "comparison": "pinned original source and every CSV preparation selection; not a claim of full-world equivalence",
+  "capsule_sha256": "a354ffd0e90a3d1ca447ad51f63e33f634e6a99d95e00890c866609f710507f6",
+  "denominators": {
+    "map_metadata_rows": 9850,
+    "map_index_rows": 2031,
+    "included_maps": 47,
+    "original_npc_rows": 380,
+    "included_npc_instances": 36
+  },
+  "all_content_tables": [
+    {
+      "path": "AmbushBursts.csv",
+      "source_sha256": "90f0e6478bf5327722ee693c7add67295ecda312c65724c00f52e5ad3bc6279d",
+      "source_rows": 37,
+      "kept_rows": 0
+    },
+    {
+      "path": "AmbushConfig.csv",
+      "source_sha256": "50b02d229f3c21fff6971c9eafe5b1b5e4523072448c48aced3dec2cd91d4293",
+      "source_rows": 21,
+      "kept_rows": 0
+    },
+    {
+      "path": "AreaSpawns.csv",
+      "source_sha256": "031ebcb51e8039210d9094c0836f45030495567e349cf4ddc2183e43116bdf96",
+      "source_rows": 2588,
+      "kept_rows": 72
+    },
+    {
+      "path": "AreaSpawnsCrafting.csv",
+      "source_sha256": "7e9ccb98abb1541d46899439ad3b1138877e6207bf7608987526ac7cb3bbe921",
+      "source_rows": 8,
+      "kept_rows": 0
+    },
+    {
+      "path": "AreaSpawnsTrap.csv",
+      "source_sha256": "e99378df6483f175406163f62579a7e990d49b926add6269b58275fdc9a8fb46",
+      "source_rows": 20,
+      "kept_rows": 0
+    },
+    {
+      "path": "ArenaDoors.csv",
+      "source_sha256": "654c4c5eabadf0e40a092258c62e5aa3052c414c9ddcda4f3c1969eb38666e3c",
+      "source_rows": 5,
+      "kept_rows": 0
+    },
+    {
+      "path": "ArmorDyeRamps.csv",
+      "source_sha256": "b35ccc1810109b5852f0ea35266560731ec986f1dc990247107a94f081bcad0b",
+      "source_rows": 11,
+      "kept_rows": 11
+    },
+    {
+      "path": "ArmorQuests.csv",
+      "source_sha256": "e64737aa96cd3c9efd9d9c834d70075e3aff0fd1d10d8bc0ae6e1076510fc8f8",
+      "source_rows": 12,
+      "kept_rows": 12
+    },
+    {
+      "path": "BoardLocations.csv",
+      "source_sha256": "8603e676467df1109a21c995a1e8e8e4b1b30c1ce1f0fdc29977fe36615a77a3",
+      "source_rows": 1,
+      "kept_rows": 0
+    },
+    {
+      "path": "CraftingToggles.csv",
+      "source_sha256": "66117d554cbd45625dbbf34b212e4137ecab709c5d998cb8d6731d72e594f2da",
+      "source_rows": 14,
+      "kept_rows": 14
+    },
+    {
+      "path": "DoorObjects.csv",
+      "source_sha256": "77a84ad6fd0f232068c141b8f0f3bc1714bb35e5abe7f61481ae25bee53e148e",
+      "source_rows": 50,
+      "kept_rows": 50
+    },
+    {
+      "path": "Doors.csv",
+      "source_sha256": "a3ef3b31fc07a8014c8c63c37cd9f55dda8ce4d2b7a519eea4466fb615ccf8ad",
+      "source_rows": 8,
+      "kept_rows": 1
+    },
+    {
+      "path": "EraFeatures.csv",
+      "source_sha256": "98f0569b1072ae0d874246cdd054b2809dd52d5fffa8800846aaaea8c100d13e",
+      "source_rows": 10,
+      "kept_rows": 10
+    },
+    {
+      "path": "EventCaveTiers.csv",
+      "source_sha256": "1a9fc533ac6a812dc113f1ba9c736fe364dde327a8d8ac98cfd9751c3c5cecbb",
+      "source_rows": 9,
+      "kept_rows": 9
+    },
+    {
+      "path": "EventCaves.csv",
+      "source_sha256": "b065fb47777338ecae3e402ffd192cf9320510ae1e3e541bb7cdcce3ef6ab2ab",
+      "source_rows": 1,
+      "kept_rows": 0
+    },
+    {
+      "path": "FallRooms.csv",
+      "source_sha256": "625dd434957e90d8efe7e4f716615cc6717e7e9cae65a6f2dac26d7d76f6e0a8",
+      "source_rows": 12,
+      "kept_rows": 0
+    },
+    {
+      "path": "ForageAreas.csv",
+      "source_sha256": "f8de0cb7e7a141d318b4b22250353b4520315591f3c9eecad89dcb53f7958541",
+      "source_rows": 2,
+      "kept_rows": 0
+    },
+    {
+      "path": "GatewayGates.csv",
+      "source_sha256": "14297d8ca27c459ec25f33497adb533b50abc7101ca95c87912dd3717d55b8db",
+      "source_rows": 16,
+      "kept_rows": 4
+    },
+    {
+      "path": "HarvestNodes.csv",
+      "source_sha256": "672a340cde6922e459374d70d27a7d05406e2532f831773d79b0d8159040b8eb",
+      "source_rows": 6,
+      "kept_rows": 6
+    },
+    {
+      "path": "Inns.csv",
+      "source_sha256": "6eacdbc388da2fa17c1f91fc93ff114a2c591d59d48a56eed2860949c9e4b292",
+      "source_rows": 14,
+      "kept_rows": 3
+    },
+    {
+      "path": "ItemParams.csv",
+      "source_sha256": "953034bd3a57cfc087060299a89ce20033063bb078beba86fc338b3bcbe13581",
+      "source_rows": 60,
+      "kept_rows": 60
+    },
+    {
+      "path": "Items.csv",
+      "source_sha256": "f8749498724eab37643022ba0df11f67a3a32630026e729e27fd4ca96b7ed826",
+      "source_rows": 2544,
+      "kept_rows": 2544
+    },
+    {
+      "path": "LevelExp.csv",
+      "source_sha256": "63c33bbe2273e371b31037d91651f0bdb6b0ca5a53d92bc0169f69fb5ea66365",
+      "source_rows": 491,
+      "kept_rows": 491
+    },
+    {
+      "path": "MapBgm.csv",
+      "source_sha256": "ac40f8018801624add5bea019cac943fa50833013ca28786baec50e28a5d9303",
+      "source_rows": 7,
+      "kept_rows": 7
+    },
+    {
+      "path": "MapCells.csv",
+      "source_sha256": "7a1fac7d4a483c56e10a8c90b1a7cf42a01c32038a9073c4c059898eab3d6168",
+      "source_rows": 32,
+      "kept_rows": 0
+    },
+    {
+      "path": "Maps.csv",
+      "source_sha256": "02c3b95e9f2db5408135f1bb5c50f23193ae4cfaaf0f489e917a5ace156b8b48",
+      "source_rows": 9850,
+      "kept_rows": 47
+    },
+    {
+      "path": "MinorQuests.csv",
+      "source_sha256": "1d584b81ead09248e4023fae523d3973ff36793c94d12b7b9dad0796f934e79c",
+      "source_rows": 101,
+      "kept_rows": 101
+    },
+    {
+      "path": "Mob5xPalettes.csv",
+      "source_sha256": "98b9f21f88c8db58b4cf7b1774cb2772c1458b349f1d20483b137023195fa933",
+      "source_rows": 16,
+      "kept_rows": 16
+    },
+    {
+      "path": "MobBosses.csv",
+      "source_sha256": "01e6bb43c3648454824723a1b8e530128c90d2c00b70dcf022bfd6a3535cb64e",
+      "source_rows": 72,
+      "kept_rows": 72
+    },
+    {
+      "path": "MobChatter.csv",
+      "source_sha256": "7dcc262f9bb52b1d2414019fde63b5b3dcde20955ef217f343b7973f02acca59",
+      "source_rows": 21,
+      "kept_rows": 21
+    },
+    {
+      "path": "MobDrops.csv",
+      "source_sha256": "0b9d1c5f20cfbff1cc61d16fe0faf3f544db50f35ce81f7d67513648b28e5a32",
+      "source_rows": 377,
+      "kept_rows": 377
+    },
+    {
+      "path": "MobEquipment.csv",
+      "source_sha256": "384bacbf625858367100e09a7a53fc06684a160207fa5de0b5abadd260bc86d0",
+      "source_rows": 0,
+      "kept_rows": 0
+    },
+    {
+      "path": "MobFlees.csv",
+      "source_sha256": "84cd51de70c85b7980b62e1faaa18ff6a8c5919bf9ecc978ea6c440d7dfa8bb4",
+      "source_rows": 2,
+      "kept_rows": 2
+    },
+    {
+      "path": "MobSpawnRules.csv",
+      "source_sha256": "bfe95332efe01383144e4be67e330d31d0c6efc7a0cf52a6843a41c26777fa8f",
+      "source_rows": 67,
+      "kept_rows": 67
+    },
+    {
+      "path": "MobSpells.csv",
+      "source_sha256": "ed0552f603bca4b1ceb6341942bec9bfda15b20117bb30eec907bd1e59ee08f1",
+      "source_rows": 294,
+      "kept_rows": 294
+    },
+    {
+      "path": "MobStationary.csv",
+      "source_sha256": "8a2f7cae63ccd746a254c8bcd0c79fcfc9405bce55d600b5b1d7eeb83c1db7e5",
+      "source_rows": 14,
+      "kept_rows": 14
+    },
+    {
+      "path": "Morphs.csv",
+      "source_sha256": "614a96fd4397b5f3b5ce22f1b00bd034ee824af62dd209cea2125cff747e37ab",
+      "source_rows": 29,
+      "kept_rows": 29
+    },
+    {
+      "path": "MusicTracks.csv",
+      "source_sha256": "66d26a7efd36d90b7f11fbc3ba89d86141161a56e4ac0ec5567d9ad889ff5c6e",
+      "source_rows": 89,
+      "kept_rows": 89
+    },
+    {
+      "path": "MythicAlliances.csv",
+      "source_sha256": "3d0ba79d6ae1ebb7cb3f481d599ed0836dccdb26dafbc77c410b89a02c605659",
+      "source_rows": 12,
+      "kept_rows": 12
+    },
+    {
+      "path": "MythicCaves.csv",
+      "source_sha256": "8289886cc2fd8d912a2f09014308d23b44b00c568c40691949f49eebc24fec7e",
+      "source_rows": 12,
+      "kept_rows": 0
+    },
+    {
+      "path": "NPCEquipment.csv",
+      "source_sha256": "27aeb6d151e7ee48c022d0cb20e58578bebb5e80f4f39adae2faff880976f8a4",
+      "source_rows": 1,
+      "kept_rows": 1
+    },
+    {
+      "path": "NPCs.csv",
+      "source_sha256": "beb634cbeea61849e74fc7a9f832bea7e473d430f108a3477d8ef487f403e22c",
+      "source_rows": 380,
+      "kept_rows": 36
+    },
+    {
+      "path": "NpcAbilities.csv",
+      "source_sha256": "e3c7a95b18a2e7587d0b68f0814b104259d412cce7c559829639a06600439070",
+      "source_rows": 32,
+      "kept_rows": 32
+    },
+    {
+      "path": "Obj533Fix.csv",
+      "source_sha256": "d132a86fd5b02e189a75db290fdb1ba32d8a2093fe15a072b634934fd9c286ad",
+      "kept": "all"
+    },
+    {
+      "path": "ObjectFlagOverrides.csv",
+      "source_sha256": "2d9e56619b595224bbc542072edf28df662da592889e6a34f465dde0dd570df9",
+      "kept": "all"
+    },
+    {
+      "path": "PathGrowth.csv",
+      "source_sha256": "c0ea059447f3439b0c12c24ed24eed8d3e46ce6e0928bac48bf761df331880d2",
+      "source_rows": 5,
+      "kept_rows": 5
+    },
+    {
+      "path": "PathHalls.csv",
+      "source_sha256": "6dfcc3b27931307da75f1cc71cfafc30185372857676a388cfb87391fb7c85ef",
+      "source_rows": 12,
+      "kept_rows": 4
+    },
+    {
+      "path": "Paths.csv",
+      "source_sha256": "0f6f6120bea28ffa174e9614b9342c895898c60d8e3a6d8db8b92b80fb9b38c1",
+      "source_rows": 23,
+      "kept_rows": 23
+    },
+    {
+      "path": "Pets.csv",
+      "source_sha256": "f6e51d4f495d30ef14fabea167e5878b7b553e7893f0c88e6ee0f5741825a886",
+      "source_rows": 29,
+      "kept_rows": 29
+    },
+    {
+      "path": "ServerTuning.csv",
+      "source_sha256": "12234cb9f2f1cb00f0aaca163be3f135e78a7b600f8b80b4e4a1aed18026b0e9",
+      "source_rows": 20,
+      "kept_rows": 20
+    },
+    {
+      "path": "ShopBuysFrom.csv",
+      "source_sha256": "b2272e86d8a9bcfc9b451864967681432eda06bd2bff4d4f640ae521c21cb08a",
+      "source_rows": 46,
+      "kept_rows": 46
+    },
+    {
+      "path": "ShopCatalogues.csv",
+      "source_sha256": "5d56c52ac0c9490fef6e2acebd6f7f15648409a0ebc620320a55c99bb70e7bd0",
+      "source_rows": 11,
+      "kept_rows": 11
+    },
+    {
+      "path": "ShopStock.csv",
+      "source_sha256": "05b164bba2d7766bd50f6331f26d01c520353f1a12069031f85167a9506b1ce1",
+      "source_rows": 38,
+      "kept_rows": 38
+    },
+    {
+      "path": "Sources.csv",
+      "source_sha256": "2f8c1b74fd33edcd1dee5fc4ef0a28c59491230cad107743427a6e5f2cc01c50",
+      "source_rows": 45,
+      "kept_rows": 45
+    },
+    {
+      "path": "Spawns.csv",
+      "source_sha256": "d1df898026ac2198624bc552111ed05bcd17fb98d7d194ee6c3a3537a22bca5a",
+      "source_rows": 1175,
+      "kept_rows": 475
+    },
+    {
+      "path": "SpellLearnCosts.csv",
+      "source_sha256": "b0055dbc3c8c9bc4879e1ce92f2d63e4fffb4954f5a5e48e5f9a6383671b4b0e",
+      "source_rows": 591,
+      "kept_rows": 591
+    },
+    {
+      "path": "SpellLevels.csv",
+      "source_sha256": "a95d8fa113c8905bde90d125b5e69beda7c98ae56a7e41b5b8cebabcf6409650",
+      "source_rows": 143,
+      "kept_rows": 143
+    },
+    {
+      "path": "SpellMods.csv",
+      "source_sha256": "b46744907c1ee897f7d7e2ba23a7352696e2691f26397001f2822a015828b180",
+      "source_rows": 42,
+      "kept_rows": 42
+    },
+    {
+      "path": "SpellParams.csv",
+      "source_sha256": "fe028baf438170fb7b59f71eefd73cdf847a60ea7a581adf31f8904e2227bc86",
+      "source_rows": 98,
+      "kept_rows": 98
+    },
+    {
+      "path": "SpellText.csv",
+      "source_sha256": "897ebcee27bd08c9ac9308c286235ca158df7b28fd20398d467c802772e17afb",
+      "source_rows": 4,
+      "kept_rows": 4
+    },
+    {
+      "path": "Spells.csv",
+      "source_sha256": "5c0f82120dd60d6afcc0420ed2bacff84fe1a85a5228b8fde958d40526399ac4",
+      "source_rows": 927,
+      "kept_rows": 927
+    },
+    {
+      "path": "Tile533Map.csv",
+      "source_sha256": "a89931a3816876def839f7c2b259e0c4910bc238c403401998be9e6268a1c9d7",
+      "kept": "all"
+    },
+    {
+      "path": "Traps.csv",
+      "source_sha256": "4554c4b37a14aa7148610a197f02bb44d4299a18c6541921ee0fa46d42f89749",
+      "source_rows": 8,
+      "kept_rows": 8
+    },
+    {
+      "path": "WarpQuestLocks.csv",
+      "source_sha256": "efe13be3f0879f415e8ba4b0e286213eb66707c1579460b61c3f5f15e7c8efdd",
+      "source_rows": 4,
+      "kept_rows": 4
+    },
+    {
+      "path": "Warps.csv",
+      "source_sha256": "4e74e7a45cdae1e897e790989fb5662774f4b92d14c05caba308e89e3ca1d362",
+      "source_rows": 4824,
+      "kept_rows": 226
+    },
+    {
+      "path": "WeaponProcs.csv",
+      "source_sha256": "c0b13672970a7807f14a39b04874b42b8b5503d8cf48766c47e04f9864902970",
+      "source_rows": 25,
+      "kept_rows": 25
+    },
+    {
+      "path": "WorldMapDests.csv",
+      "source_sha256": "58e14a871eb3322f2160de67290c403a2d3a0fba2a1142b7bccf937e0eb4310d",
+      "source_rows": 7,
+      "kept_rows": 0
+    },
+    {
+      "path": "WorldMapTriggers.csv",
+      "source_sha256": "95f009cc576d7e30f2f37c067e6554bcc27691ba64ac1843439035327edff890",
+      "source_rows": 7,
+      "kept_rows": 0
+    },
+    {
+      "path": "map_index.csv",
+      "source_sha256": "908f5c2e761fafab4bf0df8156fb680301ca1b4ad75095898f5e35ca7264ce12",
+      "source_rows": 2031,
+      "kept_rows": 47
+    },
+    {
+      "path": "mobs.csv",
+      "source_sha256": "e0d8bf20c57c64bdeef43044cc4562b56f63340b7d856b97102e0a7e5ac985cf",
+      "source_rows": 716,
+      "kept_rows": 716
+    },
+    {
+      "path": "spell_effects.csv",
+      "source_sha256": "6ce16b6311fcda99fab07ad70462e345d184eb67bd2096c5d36acaf19c55aa6c",
+      "source_rows": 643,
+      "kept_rows": 643
+    }
+  ],
+  "filtered_or_empty_tables": [
+    {
+      "path": "AmbushBursts.csv",
+      "source_sha256": "90f0e6478bf5327722ee693c7add67295ecda312c65724c00f52e5ad3bc6279d",
+      "source_rows": 37,
+      "kept_rows": 0
+    },
+    {
+      "path": "AmbushConfig.csv",
+      "source_sha256": "50b02d229f3c21fff6971c9eafe5b1b5e4523072448c48aced3dec2cd91d4293",
+      "source_rows": 21,
+      "kept_rows": 0
+    },
+    {
+      "path": "AreaSpawns.csv",
+      "source_sha256": "031ebcb51e8039210d9094c0836f45030495567e349cf4ddc2183e43116bdf96",
+      "source_rows": 2588,
+      "kept_rows": 72
+    },
+    {
+      "path": "AreaSpawnsCrafting.csv",
+      "source_sha256": "7e9ccb98abb1541d46899439ad3b1138877e6207bf7608987526ac7cb3bbe921",
+      "source_rows": 8,
+      "kept_rows": 0
+    },
+    {
+      "path": "AreaSpawnsTrap.csv",
+      "source_sha256": "e99378df6483f175406163f62579a7e990d49b926add6269b58275fdc9a8fb46",
+      "source_rows": 20,
+      "kept_rows": 0
+    },
+    {
+      "path": "ArenaDoors.csv",
+      "source_sha256": "654c4c5eabadf0e40a092258c62e5aa3052c414c9ddcda4f3c1969eb38666e3c",
+      "source_rows": 5,
+      "kept_rows": 0
+    },
+    {
+      "path": "BoardLocations.csv",
+      "source_sha256": "8603e676467df1109a21c995a1e8e8e4b1b30c1ce1f0fdc29977fe36615a77a3",
+      "source_rows": 1,
+      "kept_rows": 0
+    },
+    {
+      "path": "Doors.csv",
+      "source_sha256": "a3ef3b31fc07a8014c8c63c37cd9f55dda8ce4d2b7a519eea4466fb615ccf8ad",
+      "source_rows": 8,
+      "kept_rows": 1
+    },
+    {
+      "path": "EventCaves.csv",
+      "source_sha256": "b065fb47777338ecae3e402ffd192cf9320510ae1e3e541bb7cdcce3ef6ab2ab",
+      "source_rows": 1,
+      "kept_rows": 0
+    },
+    {
+      "path": "FallRooms.csv",
+      "source_sha256": "625dd434957e90d8efe7e4f716615cc6717e7e9cae65a6f2dac26d7d76f6e0a8",
+      "source_rows": 12,
+      "kept_rows": 0
+    },
+    {
+      "path": "ForageAreas.csv",
+      "source_sha256": "f8de0cb7e7a141d318b4b22250353b4520315591f3c9eecad89dcb53f7958541",
+      "source_rows": 2,
+      "kept_rows": 0
+    },
+    {
+      "path": "GatewayGates.csv",
+      "source_sha256": "14297d8ca27c459ec25f33497adb533b50abc7101ca95c87912dd3717d55b8db",
+      "source_rows": 16,
+      "kept_rows": 4
+    },
+    {
+      "path": "Inns.csv",
+      "source_sha256": "6eacdbc388da2fa17c1f91fc93ff114a2c591d59d48a56eed2860949c9e4b292",
+      "source_rows": 14,
+      "kept_rows": 3
+    },
+    {
+      "path": "MapCells.csv",
+      "source_sha256": "7a1fac7d4a483c56e10a8c90b1a7cf42a01c32038a9073c4c059898eab3d6168",
+      "source_rows": 32,
+      "kept_rows": 0
+    },
+    {
+      "path": "Maps.csv",
+      "source_sha256": "02c3b95e9f2db5408135f1bb5c50f23193ae4cfaaf0f489e917a5ace156b8b48",
+      "source_rows": 9850,
+      "kept_rows": 47
+    },
+    {
+      "path": "MythicCaves.csv",
+      "source_sha256": "8289886cc2fd8d912a2f09014308d23b44b00c568c40691949f49eebc24fec7e",
+      "source_rows": 12,
+      "kept_rows": 0
+    },
+    {
+      "path": "NPCs.csv",
+      "source_sha256": "beb634cbeea61849e74fc7a9f832bea7e473d430f108a3477d8ef487f403e22c",
+      "source_rows": 380,
+      "kept_rows": 36
+    },
+    {
+      "path": "PathHalls.csv",
+      "source_sha256": "6dfcc3b27931307da75f1cc71cfafc30185372857676a388cfb87391fb7c85ef",
+      "source_rows": 12,
+      "kept_rows": 4
+    },
+    {
+      "path": "Spawns.csv",
+      "source_sha256": "d1df898026ac2198624bc552111ed05bcd17fb98d7d194ee6c3a3537a22bca5a",
+      "source_rows": 1175,
+      "kept_rows": 475
+    },
+    {
+      "path": "Warps.csv",
+      "source_sha256": "4e74e7a45cdae1e897e790989fb5662774f4b92d14c05caba308e89e3ca1d362",
+      "source_rows": 4824,
+      "kept_rows": 226
+    },
+    {
+      "path": "WorldMapDests.csv",
+      "source_sha256": "58e14a871eb3322f2160de67290c403a2d3a0fba2a1142b7bccf937e0eb4310d",
+      "source_rows": 7,
+      "kept_rows": 0
+    },
+    {
+      "path": "WorldMapTriggers.csv",
+      "source_sha256": "95f009cc576d7e30f2f37c067e6554bcc27691ba64ac1843439035327edff890",
+      "source_rows": 7,
+      "kept_rows": 0
+    },
+    {
+      "path": "map_index.csv",
+      "source_sha256": "908f5c2e761fafab4bf0df8156fb680301ca1b4ad75095898f5e35ca7264ce12",
+      "source_rows": 2031,
+      "kept_rows": 47
+    }
+  ],
+  "npc_execution": [
+    {
+      "npc": 2.0,
+      "native_floor_accessible": true,
+      "source": [
+        11.0,
+        9.0
+      ],
+      "position": [
+        11,
+        9
+      ],
+      "changed": false,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 3.0,
+      "native_floor_accessible": true,
+      "source": [
+        11.0,
+        9.0
+      ],
+      "position": [
+        11,
+        9
+      ],
+      "changed": false,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 4.0,
+      "native_floor_accessible": true,
+      "source": [
+        3.0,
+        7.0
+      ],
+      "position": [
+        3,
+        7
+      ],
+      "changed": false,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 6.0,
+      "native_floor_accessible": true,
+      "source": [
+        10.0,
+        7.0
+      ],
+      "position": [
+        10,
+        7
+      ],
+      "changed": false,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 7.0,
+      "native_floor_accessible": true,
+      "source": [
+        11.0,
+        17.0
+      ],
+      "position": [
+        11,
+        19
+      ],
+      "changed": true,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 8.0,
+      "native_floor_accessible": true,
+      "source": [
+        10.0,
+        6.0
+      ],
+      "position": [
+        10,
+        8
+      ],
+      "changed": true,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 20.0,
+      "native_floor_accessible": true,
+      "source": [
+        4.0,
+        6.0
+      ],
+      "position": [
+        4,
+        6
+      ],
+      "changed": false,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 21.0,
+      "native_floor_accessible": true,
+      "source": [
+        3.0,
+        3.0
+      ],
+      "position": [
+        3,
+        6
+      ],
+      "changed": true,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 22.0,
+      "native_floor_accessible": true,
+      "source": [
+        1.0,
+        3.0
+      ],
+      "position": [
+        1,
+        6
+      ],
+      "changed": true,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 23.0,
+      "native_floor_accessible": true,
+      "source": [
+        25.0,
+        171.0
+      ],
+      "position": [
+        25,
+        170
+      ],
+      "changed": true,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 24.0,
+      "native_floor_accessible": true,
+      "source": [
+        3.0,
+        3.0
+      ],
+      "position": [
+        5,
+        3
+      ],
+      "changed": true,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 35.0,
+      "native_floor_accessible": true,
+      "source": [
+        5.0,
+        2.0
+      ],
+      "position": [
+        5,
+        4
+      ],
+      "changed": true,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 36.0,
+      "native_floor_accessible": true,
+      "source": [
+        4.0,
+        3.0
+      ],
+      "position": [
+        2,
+        3
+      ],
+      "changed": true,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 37.0,
+      "native_floor_accessible": true,
+      "source": [
+        5.0,
+        4.0
+      ],
+      "position": [
+        5,
+        4
+      ],
+      "changed": false,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 38.0,
+      "native_floor_accessible": true,
+      "source": [
+        6.0,
+        2.0
+      ],
+      "position": [
+        6,
+        4
+      ],
+      "changed": true,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 50.0,
+      "native_floor_accessible": true,
+      "source": [
+        2.0,
+        4.0
+      ],
+      "position": [
+        2,
+        6
+      ],
+      "changed": true,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 52.0,
+      "native_floor_accessible": true,
+      "source": [
+        18.0,
+        4.0
+      ],
+      "position": [
+        18,
+        5
+      ],
+      "changed": true,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 53.0,
+      "native_floor_accessible": true,
+      "source": [
+        14.0,
+        3.0
+      ],
+      "position": [
+        14,
+        4
+      ],
+      "changed": true,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 54.0,
+      "native_floor_accessible": true,
+      "source": [
+        14.0,
+        8.0
+      ],
+      "position": [
+        14,
+        8
+      ],
+      "changed": false,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 57.0,
+      "native_floor_accessible": true,
+      "source": [
+        18.0,
+        9.0
+      ],
+      "position": [
+        18,
+        10
+      ],
+      "changed": true,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 62.0,
+      "native_floor_accessible": true,
+      "source": [
+        18.0,
+        3.0
+      ],
+      "position": [
+        18,
+        5
+      ],
+      "changed": true,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 63.0,
+      "native_floor_accessible": true,
+      "source": [
+        18.0,
+        9.0
+      ],
+      "position": [
+        18,
+        10
+      ],
+      "changed": true,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 66.0,
+      "native_floor_accessible": true,
+      "source": [
+        5.0,
+        4.0
+      ],
+      "position": [
+        5,
+        4
+      ],
+      "changed": false,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 67.0,
+      "native_floor_accessible": true,
+      "source": [
+        5.0,
+        4.0
+      ],
+      "position": [
+        5,
+        4
+      ],
+      "changed": false,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 70.0,
+      "native_floor_accessible": true,
+      "source": [
+        2.0,
+        4.0
+      ],
+      "position": [
+        2,
+        7
+      ],
+      "changed": true,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 73.0,
+      "native_floor_accessible": true,
+      "source": [
+        3.0,
+        4.0
+      ],
+      "position": [
+        3,
+        6
+      ],
+      "changed": true,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 77.0,
+      "native_floor_accessible": true,
+      "source": [
+        61.0,
+        146.0
+      ],
+      "position": [
+        61,
+        144
+      ],
+      "changed": true,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 79.0,
+      "native_floor_accessible": true,
+      "source": [
+        19.0,
+        170.0
+      ],
+      "position": [
+        19,
+        170
+      ],
+      "changed": false,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 82.0,
+      "native_floor_accessible": true,
+      "source": [
+        2.0,
+        14.0
+      ],
+      "position": [
+        2,
+        14
+      ],
+      "changed": false,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 214.0,
+      "native_floor_accessible": true,
+      "source": [
+        104.0,
+        95.0
+      ],
+      "position": [
+        104,
+        95
+      ],
+      "changed": false,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 243.0,
+      "native_floor_accessible": true,
+      "source": [
+        11.0,
+        3.0
+      ],
+      "position": [
+        11,
+        3
+      ],
+      "changed": false,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 244.0,
+      "native_floor_accessible": true,
+      "source": [
+        11.0,
+        3.0
+      ],
+      "position": [
+        11,
+        3
+      ],
+      "changed": false,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 245.0,
+      "native_floor_accessible": true,
+      "source": [
+        11.0,
+        3.0
+      ],
+      "position": [
+        11,
+        3
+      ],
+      "changed": false,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 246.0,
+      "native_floor_accessible": true,
+      "source": [
+        11.0,
+        3.0
+      ],
+      "position": [
+        11,
+        3
+      ],
+      "changed": false,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 393.0,
+      "native_floor_accessible": true,
+      "source": [
+        13.0,
+        6.0
+      ],
+      "position": [
+        13,
+        6
+      ],
+      "changed": false,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    },
+    {
+      "npc": 394.0,
+      "native_floor_accessible": true,
+      "source": [
+        9.0,
+        7.0
+      ],
+      "position": [
+        9,
+        7
+      ],
+      "changed": false,
+      "visible_object_coverage": 0.0,
+      "status": "PASS"
+    }
+  ],
+  "repaired_npc_count": 18,
+  "restored_merchant_icon_count": 29,
+  "remaining_icon_keys": [
+    "light_fox_fur",
+    "mining_pick",
+    "red_fox_fur"
+  ],
+  "retained_native_bindings": [
+    "walk/turn/attack",
+    "pickup",
+    "use/eat/equip/unequip",
+    "native spell casting and paid learning",
+    "NPC click/menu/text/input",
+    "shop categories/buy/sell/confirmation/amount",
+    "ordinary speech including Lua speech handlers",
+    "F1 central functions",
+    "drop one/drop stack",
+    "original mini-text/speech event history",
+    "original running timed-effect names and remaining time"
+  ],
+  "unported_or_not_equivalent": [
+    "47-map starting region only; remaining indexed maps/geography are absent, not marked playable",
+    "4 harvesting definitions 542..545 and 52 fixed spawn rows still deferred from the prior capsule",
+    "51 boundary warp rows retain native rejection for destinations outside the capsule; 3 original out-of-bounds/duplicate tutorial source rows remain recorded in REGION_SOURCE_AUDIT.json",
+    "Gold-drop, item-throw and the complete original dedicated packet/UI collection are not all bound; multiplayer exchange/group/clan/boards are not reproduced as a complete offline social simulation",
+    "MIDI music and complete spell-effect/ghost/morph/riding/face/hair/equipment visual layers remain incomplete",
+    "Supplied screenshot decoration and scalable live layout reproduce the reference hierarchy and brown palette; the supplied English-client DAT/font differs from the original Korean-client skin. Full pixel-by-pixel equivalence is not asserted",
+    "Full quest completion for all retained NPCs is not inferred from source loading, placement access, or representative GUI flows",
+    "Current APK Android/Galaxy execution, actual IME/rotation/lifecycle/FPS/heat/battery remain NOT_RUN_DEVICE"
+  ]
+}

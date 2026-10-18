@@ -10,6 +10,9 @@ func _init() -> void:
 func name_of(value: String) -> String:
 	var clean:=value.replace("\\'","'")
 	if data.names.has(clean):return str(data.names[clean])
+	if clean.contains(": "):
+		var colon:=clean.find(": ");var speaker:=clean.left(colon)
+		if data.names.has(speaker):return name_of(speaker)+": "+text(clean.substr(colon+2))
 	if clean.contains(", "):
 		var parts:=PackedStringArray()
 		for part in clean.split(", "):parts.append(name_of(part))

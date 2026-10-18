@@ -1,5 +1,16 @@
 # Project1998 Android port
 
+The latest 2026-10-18 request supersedes fix1's overlay-only HUD: reproduce
+the supplied classic brown frame and fixed right parchment pane, connect the
+ordinary Talk button to native NPC conversations, move obstructed NPCs to
+accessible standalone positions, inspect other defects and compare omissions
+against the pinned original repository. Follow docs/P6_REFERENCE_CONTRACT.json
+on work/project1998-s10fe-p6-reference-ui-20261018. Source map/NPC definitions
+and the P5 capsule remain exact; explicit host-side NPC-instance relocation is
+authorized by this request. Retain fix1/code7 as a rollback. This is P6 fix2,
+not P7 or full-world completion. Do not label screenshot-derived decoration,
+scalable layout or current font as a full Korean-client pixel-perfect clone.
+
 This subtree follows user plan `P1998_S10FE_NATIVE_PORT_V1_20261018`.
 The P6 stage instruction on 2026-10-18 was “6단계 진행해”, following
 the completed P5 increment in this conversation. It authorizes P6 Korean

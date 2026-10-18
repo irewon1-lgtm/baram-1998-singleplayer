@@ -4,6 +4,28 @@ namespace Server;
 
 public sealed partial class Session
 {
+    public sealed record P6Text(long sequence, string channel, uint entity, string text);
+    public readonly List<P6Text> P6Texts = new();
+    private long _p6TextSequence;
+    private void P6ObserveText(string channel, uint entity, string text)
+    {
+        P6Texts.Add(new(++_p6TextSequence, channel, entity, text));
+        if(P6Texts.Count>96)P6Texts.RemoveAt(0);
+    }
+    public object[] P6Effects() => WithState(() =>
+    {
+        long now=Environment.TickCount64;
+        var list=new List<object>();
+        foreach(var b in _buffs)if(b.Expires>now)list.Add(new{name=b.Name,key=b.Key,seconds=(int)Math.Ceiling((b.Expires-now)/1000.0)});
+        foreach(var (key,until) in _statusFlags)if(until>now)list.Add(new{name=key,key,seconds=(int)Math.Ceiling((until-now)/1000.0)});
+        foreach(var (key,name,until) in new (string,string,long)[]{("rage",_rageName,_rageUntil),("sanctuary",_sancDeductName,_sancDeductUntil),("cunning","Cunning",_cunningDeductUntil),("backstab","Backstab",_backstabUntil),("flank","Flank",_flankUntil),("four_way","Four Way",_fourWayUntil),("stealth",_stealthName,_stealthUntil),("morph",_morphKey,_morphUntil)})
+            if(until>now)list.Add(new{name,key,seconds=(int)Math.Ceiling((until-now)/1000.0)});
+        return list.ToArray();
+    });
+    public void P6Drop(int slot,bool all) => WithState(() =>
+    {
+        if(slot is >=0 and <254 && ActionAllowed(ClientOp.DropItem))HandleDropItem(new[]{(byte)(slot+1),(byte)(all?1:0),(byte)0});
+    });
     public sealed record P6Pose(long sequence, uint entity, int type, ushort time);
     public readonly List<P6Pose> P6Poses = new();
     private long _p6PoseSequence;

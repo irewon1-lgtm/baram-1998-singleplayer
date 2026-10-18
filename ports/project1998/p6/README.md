@@ -1,5 +1,39 @@
 # P6: Korean display, mobile UI and six-defect repair
 
+The current P6 fix2 follows `../docs/P6_REFERENCE_CONTRACT.json`: supplied
+classic brown dragon rails, a persistent right pane for inventory/equipment/
+spells/stats, live status below it, and separate mini-text/chat areas. Reference
+images remain private and pinned; only text-free decorative crops are used.
+Numbers, names, gear and contents are live original-core data. Portrait keeps
+the parchment artwork's aspect instead of stretching the curl vertically.
+
+Talk now selects a real NPC, navigates to an adjacent native-walkable cell,
+then opens the original dialogue. Clicking its actual sprite does the same.
+Speech-only NPCs expose the original spoken questions. F1, drop-one/drop-all,
+original speech/mini-text history and timed effect names are also connected.
+The map-change handler retains a new route explicitly entered after a warp.
+
+`Placement.cs` applies the user's authorized standalone NPC-instance repair.
+`reference_art.py` audits source object-column occlusion and supplies nearby
+clear candidates. Native collision and the largest walkable floor component
+select the location; source NPC IDs/scripts/CSV/map words remain unchanged.
+36 NPCs are inspected; 18 problematic instances move. This is a placement
+repair, not proof that every original quest has been played to completion.
+
+29 regional merchant icons missing from 4.95 are decoded from the supplied
+5.33 Misc.dat, using the pinned original repository's encoded Item.tbl decoder.
+Three icons outside the supplied frame range remain named gaps. The original
+47-map capsule/checkpoint identity remains exact; full-world geography and
+the retained exclusions are listed separately in the compatibility report.
+
+Preparation now additionally requires `--references <private-upload-dir>`.
+`reference_qa.gd` exercises ordinary real GUI touch, original NPC/shop/class
+flows, the fixed pane, restored icon equipment/drop/pickup and cold updates.
+Build code8 with `build.py`; do not export while a host QA process is active.
+Actual Android/Galaxy fix2 execution remains a separate, unexecuted gate.
+
+The sections below document the retained earlier fix1 and code6 work.
+
 The latest user report supplies physical Android P6 evidence of six defects.
 See `../docs/P6_REPAIR_CONTRACT.json` and `P6_REPAIR_RESULTS.json` for the
 repair boundary and actual execution. The new update is code7 /

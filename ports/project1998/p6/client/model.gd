@@ -32,6 +32,7 @@ func _init(root: String) -> void:
 	source=JSON.parse_string(FileAccess.get_file_as_string("res://assets/assets.json"))
 	var extra: Dictionary=JSON.parse_string(FileAccess.get_file_as_string("res://p6/art/assets.json"))
 	source.actor_regions.merge(extra.actor_regions);source.animations.merge(extra.animations)
+	source.item_icons.merge(extra.get("item_icons",{}))
 	for entry in source.maps:
 		var mid:=str(int(entry.id));definitions[mid]=entry
 		var bytes:=FileAccess.get_file_as_bytes("res://assets/"+str(entry.raw_path))

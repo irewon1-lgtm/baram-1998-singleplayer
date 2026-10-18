@@ -1,0 +1,173 @@
+{
+  "status": "P6_FIX2_HOST_FINITE_PASS_AND_BUILD_PASS; FULL_ORIGINAL_PARITY_INCOMPLETE; NOT_RUN_DEVICE_FIX2",
+  "request": "fixed right reference UI, native NPC talk, palette and placement; original omissions audit",
+  "host": {
+    "status": "PASS_FINITE_HOST_SCOPE",
+    "cases": [
+      {
+        "case": "qa-fresh-3",
+        "checks": 114,
+        "status": "PASS",
+        "mode": "fresh",
+        "evidence": "/workspace/scratch/e5949e1243cd/p1998-private/p6-fix2/qa-fresh-3",
+        "source_scope": "Current final client: class-*-5 and update-5. Earlier native-flow proofs reused only where authority/flow unchanged; cosmetic frames and icon additions verified by update-5/icons-4."
+      },
+      {
+        "case": "qa-rogue-2",
+        "checks": 5,
+        "status": "PASS",
+        "mode": "rogue",
+        "evidence": "/workspace/scratch/e5949e1243cd/p1998-private/p6-fix2/qa-rogue-2",
+        "source_scope": "Current final client: class-*-5 and update-5. Earlier native-flow proofs reused only where authority/flow unchanged; cosmetic frames and icon additions verified by update-5/icons-4."
+      },
+      {
+        "case": "qa-shop-3",
+        "checks": 20,
+        "status": "PASS",
+        "mode": "shop",
+        "evidence": "/workspace/scratch/e5949e1243cd/p1998-private/p6-fix2/qa-shop-3",
+        "source_scope": "Current final client: class-*-5 and update-5. Earlier native-flow proofs reused only where authority/flow unchanged; cosmetic frames and icon additions verified by update-5/icons-4."
+      },
+      {
+        "case": "qa-spells-3",
+        "checks": 4,
+        "status": "PASS",
+        "mode": "spells",
+        "evidence": "/workspace/scratch/e5949e1243cd/p1998-private/p6-fix2/qa-spells-3",
+        "source_scope": "Current final client: class-*-5 and update-5. Earlier native-flow proofs reused only where authority/flow unchanged; cosmetic frames and icon additions verified by update-5/icons-4."
+      },
+      {
+        "case": "qa-cold-4",
+        "checks": 3,
+        "status": "PASS",
+        "mode": "cold",
+        "evidence": "/workspace/scratch/e5949e1243cd/p1998-private/p6-fix2/qa-cold-4",
+        "source_scope": "Current final client: class-*-5 and update-5. Earlier native-flow proofs reused only where authority/flow unchanged; cosmetic frames and icon additions verified by update-5/icons-4."
+      },
+      {
+        "case": "qa-update-5",
+        "checks": 93,
+        "status": "PASS",
+        "mode": "update",
+        "evidence": "/workspace/scratch/e5949e1243cd/p1998-private/p6-fix2/qa-update-5",
+        "source_scope": "Current final client: class-*-5 and update-5. Earlier native-flow proofs reused only where authority/flow unchanged; cosmetic frames and icon additions verified by update-5/icons-4."
+      },
+      {
+        "case": "qa-icons-4",
+        "checks": 18,
+        "status": "PASS",
+        "mode": "icons",
+        "evidence": "/workspace/scratch/e5949e1243cd/p1998-private/p6-fix2/qa-icons-4",
+        "source_scope": "Current final client: class-*-5 and update-5. Earlier native-flow proofs reused only where authority/flow unchanged; cosmetic frames and icon additions verified by update-5/icons-4."
+      },
+      {
+        "case": "qa-class-1-5",
+        "checks": 28,
+        "status": "PASS",
+        "mode": "class-1",
+        "evidence": "/workspace/scratch/e5949e1243cd/p1998-private/p6-fix2/qa-class-1-5",
+        "source_scope": "Current final client: class-*-5 and update-5. Earlier native-flow proofs reused only where authority/flow unchanged; cosmetic frames and icon additions verified by update-5/icons-4."
+      },
+      {
+        "case": "qa-class-2-5",
+        "checks": 28,
+        "status": "PASS",
+        "mode": "class-2",
+        "evidence": "/workspace/scratch/e5949e1243cd/p1998-private/p6-fix2/qa-class-2-5",
+        "source_scope": "Current final client: class-*-5 and update-5. Earlier native-flow proofs reused only where authority/flow unchanged; cosmetic frames and icon additions verified by update-5/icons-4."
+      },
+      {
+        "case": "qa-class-3-5",
+        "checks": 28,
+        "status": "PASS",
+        "mode": "class-3",
+        "evidence": "/workspace/scratch/e5949e1243cd/p1998-private/p6-fix2/qa-class-3-5",
+        "source_scope": "Current final client: class-*-5 and update-5. Earlier native-flow proofs reused only where authority/flow unchanged; cosmetic frames and icon additions verified by update-5/icons-4."
+      },
+      {
+        "case": "qa-class-4-5",
+        "checks": 28,
+        "status": "PASS",
+        "mode": "class-4",
+        "evidence": "/workspace/scratch/e5949e1243cd/p1998-private/p6-fix2/qa-class-4-5",
+        "source_scope": "Current final client: class-*-5 and update-5. Earlier native-flow proofs reused only where authority/flow unchanged; cosmetic frames and icon additions verified by update-5/icons-4."
+      }
+    ],
+    "checks": 369,
+    "executions": 11,
+    "device": "NOT_RUN_DEVICE_FIX2",
+    "known_warning": "spells process exits0 after successful cost/heal assertions, with a shutdown-only resource-in-use warning retained in its log",
+    "retained_failed_runs": [
+      "qa-fresh-1: history assertion lacked a speech stimulus, fixed harness; native operations passed",
+      "qa-shop-2: harness omitted category and sale confirmation; original screens prove these were required",
+      "qa-class-1-4 and qa-class-2-4: new route cancelled immediately after warp; actual client corrected and same initial fixture retested successfully in class-*-5"
+    ]
+  },
+  "build": {
+    "status": "BUILD_PASS",
+    "package": "com.irewon.baram.project1998.p3",
+    "versionCode": 8,
+    "versionName": "0.0.6-p6-fix2",
+    "apk": "p1998-s10fe-p6-fix2.apk",
+    "bytes": 223644027,
+    "sha256": "f4613fe333b52021a380937028102454875ffa7adf52f3b102bc7b1694449068",
+    "signer_sha256": "5fb380f895f3a98d90e9688e1d7769db7f3c16ae821f3ae9f47a8c348c0a921e",
+    "internet_permission": false,
+    "abis": [
+      {
+        "abi": "arm64-v8a",
+        "sqlite_sha256": "43596fc3907bae3538c7b85a567336bd4fd720f018fb6364dd4f13161acb86a1"
+      },
+      {
+        "abi": "x86_64",
+        "sqlite_sha256": "3913201738ddbac74eecdb199f1a4479e9f926f1193d04e5d63f335bb66a311d"
+      }
+    ],
+    "native_android": "NOT_RUN_DEVICE_P6_FIX2"
+  },
+  "source_audit": {
+    "original_csharp_files": 145,
+    "original_body_status": "PASS",
+    "app_checks": 19,
+    "capsule_sha256": "a354ffd0e90a3d1ca447ad51f63e33f634e6a99d95e00890c866609f710507f6"
+  },
+  "save": {
+    "package": "com.irewon.baram.project1998.p3",
+    "user_data": "project1998_s10fe_p3_20261018",
+    "canonical": "user://p4/v2",
+    "identity_schema": 2,
+    "checkpoint_schema": 1,
+    "character_schema": 1,
+    "world_schema": 1,
+    "policy": "same signer/package/user directory; no uninstall/reset; fix1 code7 retained",
+    "critical_fields_from_real_fix1_save": "10 exact initial fields verified in UPDATE_PROOF.json"
+  },
+  "changes": [
+    "fixed right parchment pane + native brown dragon frame + separate mini/chat logs",
+    "live inventory/equipment/spells/stats, name/class/level/HP/MP/XP/coins/coordinates",
+    "ordinary talk selects NPC, walks adjacent and opens native conversation; actual sprite touch verified",
+    "speech-only NPC questions and native F1 menu",
+    "all36 native-floor/visible-object placement checks,18 obstructed instances relocated without map/CSV edits",
+    "29 exact supplemental5.33 item icons; native ring equipment/stat/drop/pickup executed",
+    "native mini-text/speech history and running effect names",
+    "original drop-one/drop-stack binding",
+    "fixed cancellation of a new route entered immediately after warp"
+  ],
+  "compatibility_report": "P6_SOURCE_COMPATIBILITY.json",
+  "remaining": [
+    "47-map starting region only; remaining indexed maps/geography are absent, not marked playable",
+    "4 harvesting definitions 542..545 and 52 fixed spawn rows still deferred from the prior capsule",
+    "51 boundary warp rows retain native rejection for destinations outside the capsule; 3 original out-of-bounds/duplicate tutorial source rows remain recorded in REGION_SOURCE_AUDIT.json",
+    "Gold-drop, item-throw and the complete original dedicated packet/UI collection are not all bound; multiplayer exchange/group/clan/boards are not reproduced as a complete offline social simulation",
+    "MIDI music and complete spell-effect/ghost/morph/riding/face/hair/equipment visual layers remain incomplete",
+    "Supplied screenshot decoration and scalable live layout reproduce the reference hierarchy and brown palette; the supplied English-client DAT/font differs from the original Korean-client skin. Full pixel-by-pixel equivalence is not asserted",
+    "Full quest completion for all retained NPCs is not inferred from source loading, placement access, or representative GUI flows",
+    "Current APK Android/Galaxy execution, actual IME/rotation/lifecycle/FPS/heat/battery remain NOT_RUN_DEVICE"
+  ],
+  "failed_runs_preserved": [
+    "qa-fresh-1: history assertion lacked a speech stimulus, fixed harness; native operations passed",
+    "qa-shop-2: harness omitted category and sale confirmation; original screens prove these were required",
+    "qa-class-1-4 and qa-class-2-4: new route cancelled immediately after warp; actual client corrected and same initial fixture retested successfully in class-*-5"
+  ],
+  "device_status": "New APK not executed on Android/Galaxy; user screenshot proves preceding fix1 failures only"
+}

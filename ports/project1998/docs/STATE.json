@@ -1,9 +1,9 @@
 {
   "plan_id": "P1998_S10FE_NATIVE_PORT_V1_20261018",
   "authorized_scope": [
-    "P6 repair of six reported defects"
+    "P6 fix2 reference UI, NPC conversation and accessible standalone placements, additional defect and original omission audit"
   ],
-  "active_branch": "work/project1998-s10fe-p6-repair-20261018",
+  "active_branch": "work/project1998-s10fe-p6-reference-ui-20261018",
   "android_baseline_head": "c1f3c5a075fe3ecb1cfb06a57f360e67b9b9798a",
   "official_project1998_head": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
   "stages": {
@@ -14,7 +14,7 @@
     "p2_synthetic_touch": "PASS_FIXTURES_ONLY",
     "p2_android_emulator": "BLOCKED_ENVIRONMENT",
     "p2_galaxy": "NOT_RUN_DEVICE",
-    "overall": "P6_FIX1_SIX_DEFECTS_HOST_VERIFIED_SIGNED_CODE7; NOT_RUN_DEVICE_FIX1",
+    "overall": "P6_FIX2_HOST_FINITE_PASS_AND_BUILD_PASS; FULL_ORIGINAL_PARITY_INCOMPLETE; NOT_RUN_DEVICE_FIX2",
     "p3_source_audit": "PASS_151_CODE_BUILD_AND_77_CONTENT_INPUTS",
     "p3_original_oracle": "PASS_40_SNAPSHOTS",
     "p3_host": "PASS_FIX1_40_SNAPSHOTS_AND_COLD_SAVE",
@@ -49,23 +49,24 @@
     "p5_android_runtime": "NOT_RUN_DEVICE_P5",
     "p6": "BASELINE_DEVICE_UI_FAILURE_REPORTED; FIX1_HOST_143_PASS",
     "p6_localization": "APPLIED_FINITE_NAMES_541_SOURCE_ROWS; RUNTIME_AND_ERA_RATES_SEPARATE",
-    "p6_ui": "ORIGINAL103_GEOMETRY_CHECKS_SUPERSEDED_BY_USER_FAILURE; FIX1_WINDOW_FULLSCREEN_CHECKS_PASS",
+    "p6_ui": "REFERENCE_FIXED_RIGHT_PANE_AND_BROWN_DECORATION_HOST_VERIFIED; NOT_PIXEL_EXACT_KOREAN_CLIENT",
     "p6_classes": "PASS_FOUR_NATIVE_GUI_FLOWS",
     "p6_spells": "PASS_139_EXACT_DEBIT_INSUFFICIENT_MP_ORIGINAL_DAMAGE_KILL_CHECKS",
     "p6_storage": "PASS_30_CONTROLS_SIGKILL_COLD_6_GUARDS",
     "p6_audio": "PASS_NATIVE_EVENTS_REAL_PCM_MIXER_17_CHECKS",
     "p6_android_build": "BUILD_PASS",
-    "p6_android_runtime": "USER_P6_SCREENSHOT_OBSERVED_LAYOUT_GAMEPLAY_AND_REPORTED_FAILURES; FIX1_NOT_RUN_DEVICE",
-    "p6_fix1": "143_HOST_OPERATION_CHECKS_PASS; BUILD_PASS; NOT_RUN_DEVICE_FIX1"
+    "p6_android_runtime": "USER_FIX1_SCREENSHOT_OBSERVED_FAILURE; FIX2_NOT_RUN_DEVICE",
+    "p6_fix1": "143_HOST_OPERATION_CHECKS_PASS; BUILD_PASS; NOT_RUN_DEVICE_FIX1",
+    "p6_fix2": "369_FINITE_HOST_CHECKS_IN11_EXECUTIONS; BUILD_PASS_CODE8; FULL_PARITY_INCOMPLETE; NOT_RUN_DEVICE"
   },
   "apk": {
     "status": "BUILD_PASS",
     "package": "com.irewon.baram.project1998.p3",
-    "versionCode": 7,
-    "versionName": "0.0.6-p6-fix1",
-    "apk": "p1998-s10fe-p6-fix1.apk",
-    "bytes": 223366565,
-    "sha256": "4539251055bc570fbdf23fdcd28423a4b9ef837cf0f7ce758a5fbe3ce4263d24",
+    "versionCode": 8,
+    "versionName": "0.0.6-p6-fix2",
+    "apk": "p1998-s10fe-p6-fix2.apk",
+    "bytes": 223644027,
+    "sha256": "f4613fe333b52021a380937028102454875ffa7adf52f3b102bc7b1694449068",
     "signer_sha256": "5fb380f895f3a98d90e9688e1d7769db7f3c16ae821f3ae9f47a8c348c0a921e",
     "internet_permission": false,
     "abis": [
@@ -78,18 +79,21 @@
         "sqlite_sha256": "3913201738ddbac74eecdb199f1a4479e9f926f1193d04e5d63f335bb66a311d"
       }
     ],
-    "native_android": "NOT_RUN_DEVICE_P6_FIX1"
+    "native_android": "NOT_RUN_DEVICE_P6_FIX2"
   },
   "isolated_user_data": "project1998_s10fe_p3_20261018; unchanged P5 user://p4/v2, P4 v1 read-only import, optional profile-p6.json",
-  "last_valid_pass": "P6 fix1:143 host operation checks in7 real Godot processes,145 original C# files +17 app checks, frozen resource APK verification and same-signer code7 APK.",
-  "next_action": "Update existing P6 with fix1 APK without uninstalling; confirm actual Galaxy six-defect behavior. Do not claim device/P7 acceptance from host tests.",
+  "last_valid_pass": "P6 fix2: ordinary NPC talk and actual sprite click, all36 placement checks/18 fixes, native buy/sell,4 class admission+paid learning,29 restored icons with native ring equip/drop/pickup, update/cold proofs;145 source bodies; signed same-identity code8 APK.",
+  "next_action": "Install code8 as update without uninstalling. Actual Galaxy behavior remains unverified; no P7/full-world acceptance is claimed.",
   "emulator_blocker": "Android guest did not finish booting in 240 seconds",
   "limitations": [
-    "Fix1 Android/Galaxy update install and actual touch/IME/lifecycle/rotation/FPS/heat/battery not run",
-    "Original47-map scope; full world not ported",
-    "Original parchment textures/components used; exact Windows window coordinates and every equipment/spell layer not claimed",
-    "MIDI music/full spell FX, existing source-art gaps and later translation/era review remain",
-    "One spells-test process reports a resource-in-use warning only at shutdown; action assertions and exit code passed; warning retained in evidence"
+    "47-map starting region only; remaining indexed maps/geography are absent, not marked playable",
+    "4 harvesting definitions 542..545 and 52 fixed spawn rows still deferred from the prior capsule",
+    "51 boundary warp rows retain native rejection for destinations outside the capsule; 3 original out-of-bounds/duplicate tutorial source rows remain recorded in REGION_SOURCE_AUDIT.json",
+    "Gold-drop, item-throw and the complete original dedicated packet/UI collection are not all bound; multiplayer exchange/group/clan/boards are not reproduced as a complete offline social simulation",
+    "MIDI music and complete spell-effect/ghost/morph/riding/face/hair/equipment visual layers remain incomplete",
+    "Supplied screenshot decoration and scalable live layout reproduce the reference hierarchy and brown palette; the supplied English-client DAT/font differs from the original Korean-client skin. Full pixel-by-pixel equivalence is not asserted",
+    "Full quest completion for all retained NPCs is not inferred from source loading, placement access, or representative GUI flows",
+    "Current APK Android/Galaxy execution, actual IME/rotation/lifecycle/FPS/heat/battery remain NOT_RUN_DEVICE"
   ],
   "existing_baram_source_and_saves": "UNCHANGED",
   "public_original_assets": "NONE",

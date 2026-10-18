@@ -17,7 +17,15 @@ func _draw() -> void:
 	var key:="armor:%d:%d-idle-2" %[appearance.armor,appearance.dye]
 	if not model.source.animations.has(key):key="idle-2"
 	var scale:=minf(size.y/60.0,4.0);var anchor:=Vector2(size.x/2,size.y*0.78)
-	draw_texture_rect_region(paper,Rect2(Vector2(size.x/2-150,0),Vector2(300,size.y)),Rect2(30,145,120,80))
+	var positions: Dictionary={4:Vector2(0.50,0.03),7:Vector2(0.16,0.75),8:Vector2(0.78,0.75),3:Vector2(0.08,0.27),5:Vector2(0.80,0.27)}
+	for slot in positions:
+		var at: Vector2=positions[slot]*size
+		draw_rect(Rect2(at-Vector2(16,0),Vector2(32,32)),Color("71421c"),false,2)
+		for worn in model.snapshot.equipment:
+			if int(worn.slot)!=slot or not model.source.item_icons.has(str(worn.key)):continue
+			var region: Dictionary=model.source.actor_regions[model.source.item_icons[str(worn.key)].key];var r: Array=region.rect
+			var icon_atlas: Texture2D=load("res://p6/art/extra-icons.png") if region.get("sheet","")=="extra_icons" else atlas
+			draw_texture_rect_region(icon_atlas,Rect2(at-Vector2(14,-2),Vector2(28,28)),Rect2(r[0],r[1],r[2],r[3]))
 	_shadow(anchor+Vector2(-25,-5),Vector2(50,10))
 	_part(str(model.source.animations[key][0].key),anchor,scale)
 	for item in model.snapshot.equipment:

@@ -6,6 +6,7 @@ var ground: Texture2D
 var objects: Texture2D
 var actors: Texture2D
 var pickup: Texture2D
+var extra_icons: Texture2D
 var user_zoom:=2.0
 var cover_zoom:=1.0
 var zoom: float:
@@ -28,6 +29,7 @@ func _ready() -> void:
 	objects=load("res://assets/objects.png")
 	actors=load("res://assets/actors.png")
 	pickup=load("res://p6/art/pickup.png")
+	extra_icons=load("res://p6/art/extra-icons.png")
 	var face:=FontVariation.new();face.base_font=load("res://fonts/NotoSansKR.ttf");face.variation_opentype={"wght":600.0};font=face
 
 func refresh(delta: float) -> void:
@@ -61,7 +63,8 @@ func _sprite(key: String,anchor: Vector2) -> void:
 	var region: Dictionary=model.source.actor_regions[key]
 	var r: Array=region.rect
 	var offset: Array=region.offset
-	draw_texture_rect_region(pickup if region.get("sheet","")=="pickup" else actors,Rect2((anchor+Vector2(offset[0],offset[1])-camera)*zoom,Vector2(r[2],r[3])*zoom),Rect2(r[0],r[1],r[2],r[3]))
+	var texture: Texture2D=pickup if region.get("sheet","")=="pickup" else extra_icons if region.get("sheet","")=="extra_icons" else actors
+	draw_texture_rect_region(texture,Rect2((anchor+Vector2(offset[0],offset[1])-camera)*zoom,Vector2(r[2],r[3])*zoom),Rect2(r[0],r[1],r[2],r[3]))
 	last_draw_items+=1
 
 func _actor_at(actor: Dictionary,cell: Vector2) -> void:
