@@ -1,0 +1,46 @@
+{
+  "plan_id": "P1998_S10FE_NATIVE_PORT_V1_20261018",
+  "authorized_scope": [
+    "P0",
+    "P1",
+    "P2"
+  ],
+  "active_branch": "work/project1998-s10fe-p0-p2-20261018",
+  "android_baseline_head": "c1f3c5a075fe3ecb1cfb06a57f360e67b9b9798a",
+  "official_project1998_head": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+  "stages": {
+    "p0": "PASS",
+    "p1": "PASS_CONVERSION_AND_REFERENCE_RENDER_SCOPE",
+    "p2_build": "BUILD_PASS",
+    "p2_host": "PASS_OBSERVED_SCOPE",
+    "p2_synthetic_touch": "PASS_FIXTURES_ONLY",
+    "p2_android_emulator": "BLOCKED_ENVIRONMENT",
+    "p2_galaxy": "NOT_RUN_DEVICE",
+    "overall": "PARTIAL_P2_DEVICE_GATE_NOT_MET"
+  },
+  "apk": {
+    "apk": "p1998-s10fe-p2-tech.apk",
+    "sha256": "c75cfa35d4e2ba812e49538a6db886c027d21ae53f831828adf08257731cfaf2",
+    "bytes": 62884516,
+    "package": "com.irewon.baram.project1998.dev",
+    "versionCode": 1,
+    "abis": [
+      "arm64-v8a",
+      "x86_64"
+    ],
+    "network_permission": false
+  },
+  "isolated_user_data": "project1998_s10fe_p2_20261018",
+  "last_valid_pass": "Frozen-source P0/P1 + signed APK + actual Linux OS input/renderer + source collision/store fixtures",
+  "next_action": "Install this exact APK directly on an actual Galaxy Tab S10 FE, record airplane-mode movement/collision/background return and frame/memory logs. Fix only observed P2 defects. Do not start P3 until DEVICE_PASS.",
+  "emulator_blocker": "Android guest did not finish booting in 240 seconds",
+  "limitations": [
+    "Original 4.95 Windows client execution NOT_RUN; reference is the pinned official map renderer, used by validated MapEditor format documentation.",
+    "P2 is a technology scene, not a playable port of C# server rules. Working warps/NPC/combat/progression are P3/P4, not implemented.",
+    "Model movement uses original FILE layer and 4x flags; dynamic/ForceOpen doors and quest locks are not integrated.",
+    "No Galaxy device attached; 30 FPS, aspect ratio, physical touch/IME and actual Android lifecycle have not been verified."
+  ],
+  "existing_baram_source_and_saves": "UNCHANGED",
+  "public_original_assets": "NONE",
+  "device_gate": "NOT_RUN_DEVICE"
+}
