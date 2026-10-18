@@ -1,9 +1,9 @@
 {
   "plan_id": "P1998_S10FE_NATIVE_PORT_V1_20261018",
   "authorized_scope": [
-    "P5"
+    "P6"
   ],
-  "active_branch": "work/project1998-s10fe-p5-20261018",
+  "active_branch": "work/project1998-s10fe-p6-20261018",
   "android_baseline_head": "c1f3c5a075fe3ecb1cfb06a57f360e67b9b9798a",
   "official_project1998_head": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
   "stages": {
@@ -14,7 +14,7 @@
     "p2_synthetic_touch": "PASS_FIXTURES_ONLY",
     "p2_android_emulator": "BLOCKED_ENVIRONMENT",
     "p2_galaxy": "NOT_RUN_DEVICE",
-    "overall": "P5_FIRST_REGION_HOST_VERIFIED_AND_SIGNED_UPDATE; ANDROID_P5_RUNTIME_AND_GALAXY_NOT_VERIFIED",
+    "overall": "P6_FINITE_KOREAN_UI_QUALITY_HOST_VERIFIED_AND_SIGNED_UPDATE; ANDROID_P6_RUNTIME_AND_GALAXY_NOT_RUN",
     "p3_source_audit": "PASS_151_CODE_BUILD_AND_77_CONTENT_INPUTS",
     "p3_original_oracle": "PASS_40_SNAPSHOTS",
     "p3_host": "PASS_FIX1_40_SNAPSHOTS_AND_COLD_SAVE",
@@ -46,16 +46,25 @@
     "p5_storage": "PASS_FINAL_30_CHECKS_SIGKILL_COLD_6_GUARDS",
     "p5_migration": "PASS_P4_IMMUTABLE_COPY_7_GUARDS",
     "p5_android_build": "BUILD_PASS",
-    "p5_android_runtime": "NOT_RUN_DEVICE_P5"
+    "p5_android_runtime": "NOT_RUN_DEVICE_P5",
+    "p6": "HOST_SOFTWARE_SCOPE_VERIFIED; NOT_RUN_DEVICE_P6",
+    "p6_localization": "APPLIED_FINITE_NAMES_541_SOURCE_ROWS; RUNTIME_AND_ERA_RATES_SEPARATE",
+    "p6_ui": "PASS_103_HOST_GUI_CHECKS_5_VIEWPORTS_AND_KEYBOARD_FIXTURE",
+    "p6_classes": "PASS_FOUR_NATIVE_GUI_FLOWS",
+    "p6_spells": "PASS_139_EXACT_DEBIT_INSUFFICIENT_MP_ORIGINAL_DAMAGE_KILL_CHECKS",
+    "p6_storage": "PASS_30_CONTROLS_SIGKILL_COLD_6_GUARDS",
+    "p6_audio": "PASS_NATIVE_EVENTS_REAL_PCM_MIXER_17_CHECKS",
+    "p6_android_build": "BUILD_PASS",
+    "p6_android_runtime": "NOT_RUN_DEVICE_P6"
   },
   "apk": {
     "status": "BUILD_PASS",
     "package": "com.irewon.baram.project1998.p3",
-    "versionCode": 5,
-    "versionName": "0.0.5-p5",
-    "apk": "p1998-s10fe-p5-kugnae-fix1.apk",
-    "bytes": 219682940,
-    "sha256": "90b6b277065b0267cf83a99755811388be0e1800d8f811bc1259e45dd8378a3d",
+    "versionCode": 6,
+    "versionName": "0.0.6-p6",
+    "apk": "p1998-s10fe-p6-korean.apk",
+    "bytes": 220942688,
+    "sha256": "e1565dbb3d137b8fd79c9ba275d1e10f1eeabe7429cebc1c5aa3d09608f630fe",
     "signer_sha256": "5fb380f895f3a98d90e9688e1d7769db7f3c16ae821f3ae9f47a8c348c0a921e",
     "internet_permission": false,
     "abis": [
@@ -68,29 +77,28 @@
         "sqlite_sha256": "3913201738ddbac74eecdb199f1a4479e9f926f1193d04e5d63f335bb66a311d"
       }
     ],
-    "native_android": "NOT_RUN_DEVICE_P5"
+    "native_android": "NOT_RUN_DEVICE_P6"
   },
-  "isolated_user_data": "project1998_s10fe_p3_20261018; P4 data in user://p4/v1/",
-  "last_valid_pass": "P5 first region: 47 maps source raster comparison, 357 exit/world fixture checks plus 2 unchanged unreachable source tiles; natural shop continuation, four native trainer flows, 102 spell GUI checks, gold-death recovery, P4 migration, final storage SIGKILL/cold/guards and signed code5 APK.",
-  "next_action": "Install the P5 APK over P4 without uninstalling. P4 v1 is copied into P5 v2 and retained. Check normal touch, inventory/spellbook, level-gated cave, death/revival, offline save/reopen and FPS on actual Galaxy. P5 rest-of-world and P6 remain unstarted.",
+  "isolated_user_data": "project1998_s10fe_p3_20261018; unchanged P5 user://p4/v2, P4 v1 read-only import, optional profile-p6.json",
+  "last_valid_pass": "P6 finite Korean UI/software host scope:103 responsive/input checks, four native class flows, shop continuation,139 spell checks, death/gold cold restore, Korean Finish native quest/warp, real audio mixer, SIGKILL/cold/guards, signed code6 APK.",
+  "next_action": "Install P6 over P5/P4 without uninstalling. Continue P7 actual Galaxy acceptance when authorized: touch, Korean IME, airplane mode, shops/classes/spells, death/revival, lifecycle/rotation/back, saves and measured FPS/heat/battery. See P6_RESULTS.json; no Android P6 runtime/device PASS exists.",
   "emulator_blocker": "Android guest did not finish booting in 240 seconds",
   "limitations": [
-    "P5 Android runtime/emulator",
-    "Galaxy S10 FE touch/IME/offline installation/update/lifecycle/FPS",
-    "16KiB Android page support",
-    "Windows original client full animation/layer parity",
-    "Whole world and later class quests",
-    "First region only: 47/2031 indexed maps; 51 boundary warp rows; original later quests may require regions outside this APK.",
-    "4 harvesting-node definitions/52 fixed rows deferred for absent 4.95 art;32 regional item icons absent; textual interaction remains.",
-    "3 original unreachable warp rows on2 Welcome tiles remain source defects, not passed exits."
+    "actual Galaxy install over P5/P4, touch, Samsung IME, speaker, airplane mode and OS lifecycle/rotation unexecuted",
+    "Galaxy minimum FPS, heat and battery unmeasured",
+    "Android16KiB page support unverified",
+    "original Windows full window/equipment layering, cast poses and spell FX parity not claimed",
+    "MIDI background music and implicit action sound mapping not implemented",
+    "later quests/era terminology remain REVIEW or English fallback",
+    "P5 region boundaries,52 absent-art harvesting rows,32 source item icon gaps and3 unreachable warp rows remain unchanged"
   ],
   "existing_baram_source_and_saves": "UNCHANGED",
   "public_original_assets": "NONE",
   "device_gate": "NOT_RUN_DEVICE",
   "scope_override": {
     "date": "2026-10-18",
-    "latest_user_instruction": "5단계 진행해",
-    "effect": "Existing P5 first-region increment authorized after P4. Separate V2 review proposal is not a restart order. P6 not started; device checks remain separate."
+    "latest_user_instruction": "6단계 진행해",
+    "effect": "P6 from completed P5 authorized; unchanged region/content/save identity, device acceptance remains P7; separate V2/V3 review is not a reset order"
   },
   "p3_apk": {
     "status": "BUILD_PASS",
@@ -360,5 +368,37 @@
     "runtime_cache": "cache-p5 owned/disposable",
     "policy": "verified copy-on-upgrade, character+world single FULL/WAL transaction, prior slot2, pending dialogues deferred",
     "gold": "native ItemId=-1, amount/Graphic/looter deadline retained"
+  },
+  "p5_apk": {
+    "status": "BUILD_PASS",
+    "package": "com.irewon.baram.project1998.p3",
+    "versionCode": 5,
+    "versionName": "0.0.5-p5",
+    "apk": "p1998-s10fe-p5-kugnae-fix1.apk",
+    "bytes": 219682940,
+    "sha256": "90b6b277065b0267cf83a99755811388be0e1800d8f811bc1259e45dd8378a3d",
+    "signer_sha256": "5fb380f895f3a98d90e9688e1d7769db7f3c16ae821f3ae9f47a8c348c0a921e",
+    "internet_permission": false,
+    "abis": [
+      {
+        "abi": "arm64-v8a",
+        "sqlite_sha256": "43596fc3907bae3538c7b85a567336bd4fd720f018fb6364dd4f13161acb86a1"
+      },
+      {
+        "abi": "x86_64",
+        "sqlite_sha256": "3913201738ddbac74eecdb199f1a4479e9f926f1193d04e5d63f335bb66a311d"
+      }
+    ],
+    "native_android": "NOT_RUN_DEVICE_P5"
+  },
+  "p6_results": "ports/project1998/docs/P6_RESULTS.json",
+  "deliverables": {
+    "apk": "p1998-s10fe-p6-korean.apk",
+    "report": "p1998-s10fe-p6-results.html",
+    "evidence": "p1998-s10fe-p6-evidence.zip",
+    "private_resources": "p1998-s10fe-p6-private-resources.zip",
+    "preview": "p1998-s10fe-p6-preview.png",
+    "source_receipt": "p1998-s10fe-p6-delivery.json",
+    "sha256": "e1565dbb3d137b8fd79c9ba275d1e10f1eeabe7429cebc1c5aa3d09608f630fe"
   }
 }

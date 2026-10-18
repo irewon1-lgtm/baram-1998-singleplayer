@@ -1,0 +1,519 @@
+{
+  "plan_id": "P1998_S10FE_NATIVE_PORT_V1_20261018",
+  "stage": "P6",
+  "authorization": "6단계 진행해",
+  "status": "HOST_SOFTWARE_SCOPE_VERIFIED_AND_BUILD_PASS; NOT_RUN_DEVICE_P6",
+  "source": {
+    "branch": "work/project1998-s10fe-p6-20261018",
+    "base_head": "cda6fe275dd2e41635a5fd20def137d3bd57c115",
+    "original_head": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+    "original_cs_bodies": 145,
+    "source_audit": "SOURCE_AUDIT_FINAL.json",
+    "delivery_commit": "recorded in delivered p1998-s10fe-p6-delivery.json; this file cannot self-reference its containing commit"
+  },
+  "scope": {
+    "maps": 47,
+    "native_npc_placements": 36,
+    "spawned_creature_types": 23,
+    "new_maps_or_rules": 0,
+    "whole_world": "NOT_CLAIMED"
+  },
+  "localization": {
+    "mode": "presentation only; original keys, numeric fields, menu indices, merchant reply names/slots and save capsule retained",
+    "application": {
+      "maps": {
+        "all_rows": 9850,
+        "all_fully_korean": 4872,
+        "regional_rows": 47,
+        "regional_fully_korean": 47,
+        "regional_application_percent": 100.0,
+        "execution_verified": "see real GUI evidence, not inferred from application"
+      },
+      "items": {
+        "all_rows": 2544,
+        "all_fully_korean": 688,
+        "regional_rows": 255,
+        "regional_fully_korean": 255,
+        "regional_application_percent": 100.0,
+        "execution_verified": "see real GUI evidence, not inferred from application"
+      },
+      "spells": {
+        "all_rows": 927,
+        "all_fully_korean": 331,
+        "regional_rows": 180,
+        "regional_fully_korean": 180,
+        "regional_application_percent": 100.0,
+        "execution_verified": "see real GUI evidence, not inferred from application"
+      },
+      "npcs": {
+        "all_rows": 380,
+        "all_fully_korean": 143,
+        "regional_rows": 36,
+        "regional_fully_korean": 36,
+        "regional_application_percent": 100.0,
+        "execution_verified": "see real GUI evidence, not inferred from application"
+      },
+      "mobs": {
+        "all_rows": 716,
+        "all_fully_korean": 392,
+        "regional_rows": 23,
+        "regional_fully_korean": 23,
+        "regional_application_percent": 100.0,
+        "execution_verified": "see real GUI evidence, not inferred from application"
+      }
+    },
+    "exact_dialog_entries": 140,
+    "dynamic_patterns": 19,
+    "verification": "actual GUI flows below, separate from source-row application; no100% runtime or semantic/era verification claim",
+    "glyphs": "actual font availability for all Hangul codepoints in name catalog checked by qa-ui-6; not visual inspection of every name",
+    "wording_and_era": "REVIEW for candidate/composed/proper names; selected tutorial, merchant, trainer text translated; later quests retain English fallback",
+    "input": "host real Unicode key commits and Korean alias cold roundtrip; Korean directions and Finish reach native handlers; physical Samsung IME composition NOT_RUN"
+  },
+  "save": {
+    "path": "user://p4/v2",
+    "schema_id": "project1998.p5.kugnae-region",
+    "identity_schema": 2,
+    "capsule_sha256": "a354ffd0e90a3d1ca447ad51f63e33f634e6a99d95e00890c866609f710507f6",
+    "canonical_format": "unchanged P5 SQLite/character/world",
+    "p4_v1": "protected read-only copy import",
+    "p3": "unchanged",
+    "optional_p6_profile": "atomic profile-p6.json contains display alias and volume; native Name/keys remain unchanged; unknown profile schema refused",
+    "cold_P5_update": "entire original character, revision and identity preserved in real P6 process before first native tick",
+    "gold": "native ItemId=-1, ID, amount, graphic and coordinates restored in separate cold process"
+  },
+  "ui": {
+    "viewport_pixels": [
+      [
+        1280,
+        800
+      ],
+      [
+        1920,
+        1200
+      ],
+      [
+        1000,
+        600
+      ],
+      [
+        800,
+        1280
+      ],
+      [
+        540,
+        960
+      ]
+    ],
+    "checks": 103,
+    "keyboard_fixture": "500 physical-pixel occlusion injected; actual Android keyboard not run",
+    "modal": "whole-body scroll, wrapped text, foreground input shield",
+    "lifecycle": "same handler pause/resume synthetic call, held direction cancelled, save and audio stop; actual OS lifecycle not run"
+  },
+  "audio": {
+    "actual_source_wav_members": 184,
+    "source_archive_sha256": "f4c111b3865967a4afc8b1b8dd701797e507541744d88b3800387e712e153b69",
+    "pcm_preserved": true,
+    "native_outgoing_observer": true,
+    "mixer": {
+      "claim": "Linux Dummy driver actual mixer PCM; physical Android speaker not run",
+      "driver": "Dummy",
+      "peak": 0.650296568870544,
+      "samples": 28672
+    },
+    "no_replay_mute_pause": "PASS_HOST",
+    "device_speaker": "NOT_RUN",
+    "bgm": "NOT_IMPLEMENTED; 12 original MIDI members present, supplied synth/bank absent",
+    "implicit_windows_action_audio": "NOT_IMPLEMENTED"
+  },
+  "host_cases": [
+    {
+      "case": "qa-ui-6",
+      "mode": "",
+      "status": "PASS",
+      "checks": 103,
+      "sha256": "c49286916c94b320e5b1d7106d480cb8c021df891b88e6eaf7493002effc6302",
+      "input": "synthetic ScreenTouch + same client A* travel API",
+      "fixture": true,
+      "device": "NOT_RUN"
+    },
+    {
+      "case": "qa-ui-cold-1",
+      "mode": "cold",
+      "status": "PASS",
+      "checks": 5,
+      "sha256": "8544f63be64cd2ee4206a0eb2488851178f3cc5e3c2991e4a288b264e6f2ab3c",
+      "input": "synthetic ScreenTouch + same client A* travel API",
+      "fixture": true,
+      "device": "NOT_RUN"
+    },
+    {
+      "case": "qa-class-1-1",
+      "mode": "class",
+      "status": "PASS",
+      "checks": 35,
+      "sha256": "b0c7de2162e8f61afa23ac8004268460edeaba072a4a03afc27dd6e136499245",
+      "input": "synthetic ScreenTouch + same client A* travel API",
+      "fixture": true,
+      "device": "NOT_RUN"
+    },
+    {
+      "case": "qa-class-2-1",
+      "mode": "class",
+      "status": "PASS",
+      "checks": 35,
+      "sha256": "972e61a3c5e0fbc50f94eaf0c03fe60e27f6d07d8c8dbe9e4b4550c167a2937c",
+      "input": "synthetic ScreenTouch + same client A* travel API",
+      "fixture": true,
+      "device": "NOT_RUN"
+    },
+    {
+      "case": "qa-class-3-1",
+      "mode": "class",
+      "status": "PASS",
+      "checks": 35,
+      "sha256": "110987009a3098a53386600cf12fddf78cac75f71136d3f3074acc56cb4053ef",
+      "input": "synthetic ScreenTouch + same client A* travel API",
+      "fixture": true,
+      "device": "NOT_RUN"
+    },
+    {
+      "case": "qa-class-4-1",
+      "mode": "class",
+      "status": "PASS",
+      "checks": 35,
+      "sha256": "756e79b556d78e0d8fb62c4309a7d14199564a7048e8ccb5df2074a506f9b43f",
+      "input": "synthetic ScreenTouch + same client A* travel API",
+      "fixture": true,
+      "device": "NOT_RUN"
+    },
+    {
+      "case": "qa-journey-2",
+      "mode": "journey",
+      "status": "PASS",
+      "checks": 36,
+      "sha256": "74ba66c11a1b3814c15197a8f41b3812238db03dc79d8160a50114af41ec5e2c",
+      "input": "synthetic ScreenTouch + same client A* travel API",
+      "fixture": false,
+      "device": "NOT_RUN"
+    },
+    {
+      "case": "qa-spells-3",
+      "mode": "spells",
+      "status": "PASS",
+      "checks": 139,
+      "sha256": "9f9f35a762b4eb79273c1d08de6339aa2e99e937c3d762e3df57e796d3137b04",
+      "input": "synthetic ScreenTouch + same client A* travel API",
+      "fixture": true,
+      "device": "NOT_RUN"
+    },
+    {
+      "case": "qa-audio-2",
+      "mode": "native-audio",
+      "status": "PASS",
+      "checks": 17,
+      "sha256": "e7f4f313f0256a0856a93f8870faed1ba82c00af05d05c2e5336f2b44a538129",
+      "input": "synthetic ScreenTouch + same client A* travel API",
+      "fixture": true,
+      "device": "NOT_RUN"
+    },
+    {
+      "case": "qa-death-2",
+      "mode": "death",
+      "status": "PASS",
+      "checks": 11,
+      "sha256": "92e849e6a157807b7e64a5e415b3216364a8e15048c4053d40b3576ccb39b3c2",
+      "input": "synthetic ScreenTouch + same client A* travel API",
+      "fixture": true,
+      "device": "NOT_RUN"
+    },
+    {
+      "case": "qa-gold-cold-1",
+      "mode": "native-gold-cold",
+      "status": "PASS",
+      "checks": 4,
+      "sha256": "fc944c0673f31d10a0cb9b2eb733d646413f51c903a8098658c83483a56f4224",
+      "input": "synthetic ScreenTouch + same client A* travel API",
+      "fixture": true,
+      "device": "NOT_RUN"
+    },
+    {
+      "case": "qa-angel-2",
+      "mode": "Korean-Finish-source-Angel-fixture",
+      "status": "PASS",
+      "checks": 18,
+      "sha256": "ba841c8172bcb39ce16fb0d5e9b140edb39edec611d4927fb09dc560f3896390",
+      "input": "synthetic ScreenTouch + same client A* travel API",
+      "fixture": true,
+      "device": "NOT_RUN"
+    },
+    {
+      "case": "qa-performance-2",
+      "mode": "P5-update-and-host-performance",
+      "status": "PASS",
+      "checks": 5,
+      "sha256": "204fadfe64fd17ee04a3f5a805ddf365faf8f6d922ce5dc93399a9beb5dbbc11",
+      "input": "synthetic ScreenTouch + same client A* travel API",
+      "fixture": false,
+      "device": "NOT_RUN"
+    }
+  ],
+  "storage": {
+    "status": "PASS_HOST_STORAGE_SCOPE",
+    "actual_sigkill_exit": -9,
+    "save_loop_active_before_kill": true,
+    "sqlite_integrity": "ok",
+    "current_and_previous_checkpoint_checksums": "PASS",
+    "cold": [
+      {
+        "name": "loaded committed revision",
+        "ok": true
+      },
+      {
+        "name": "complete original character restored",
+        "ok": true
+      },
+      {
+        "name": "living mob IDs/HP/coordinates restored without duplication",
+        "ok": true
+      },
+      {
+        "name": "natural floor loot IDs/amounts/coordinates restored",
+        "ok": true
+      }
+    ],
+    "controls": 30,
+    "guards": [
+      {
+        "name": "future_identity",
+        "status": "PASS",
+        "database_unchanged": true
+      },
+      {
+        "name": "future_checkpoint",
+        "status": "PASS",
+        "database_unchanged": true
+      },
+      {
+        "name": "future_character",
+        "status": "PASS",
+        "database_unchanged": true
+      },
+      {
+        "name": "future_world",
+        "status": "PASS",
+        "database_unchanged": true
+      },
+      {
+        "name": "bad_checksum",
+        "status": "PASS",
+        "database_unchanged": true
+      },
+      {
+        "name": "unknown_cache",
+        "status": "PASS",
+        "database_unchanged": true
+      }
+    ],
+    "prior_p3_files_preserved": 82,
+    "native_android": "NOT_RUN_DEVICE_P6"
+  },
+  "performance": {
+    "status": "MEASURED_LINUX_ONLY",
+    "rendering_device": "llvmpipe (LLVM 20.1.2, 256 bits)",
+    "phases": [
+      {
+        "average_fps": 50.6268874336471,
+        "draw_items_median": 608,
+        "engine_static_after": 73784419.0,
+        "engine_static_before": 73774211.0,
+        "frames": 180,
+        "logical_canvas": [
+          1280.0,
+          800.0
+        ],
+        "median_frame_ms": 17.887,
+        "p95_frame_ms": 30.283,
+        "phase": "Kugnae active native ticks",
+        "seconds": 3.555423,
+        "window_pixels": [
+          1280,
+          800
+        ],
+        "worst_frame_ms": 76.969
+      },
+      {
+        "average_fps": 36.7760782235356,
+        "draw_items_median": 608,
+        "engine_static_after": 74332783.0,
+        "engine_static_before": 74381503.0,
+        "frames": 180,
+        "logical_canvas": [
+          1280.0,
+          800.0
+        ],
+        "median_frame_ms": 25.041,
+        "p95_frame_ms": 40.969,
+        "phase": "Korean inventory open; native ticks active",
+        "seconds": 4.894486,
+        "window_pixels": [
+          1280,
+          800
+        ],
+        "worst_frame_ms": 84.241
+      },
+      {
+        "average_fps": 40.3276396680587,
+        "draw_items_median": 720,
+        "engine_static_after": 73748739.0,
+        "engine_static_before": 73738531.0,
+        "frames": 180,
+        "logical_canvas": [
+          800.0,
+          1280.0
+        ],
+        "median_frame_ms": 22.523,
+        "p95_frame_ms": 38.519,
+        "phase": "portrait active native ticks",
+        "seconds": 4.46344,
+        "window_pixels": [
+          800,
+          1280
+        ],
+        "worst_frame_ms": 84.582
+      },
+      {
+        "average_fps": 43.6069751779407,
+        "draw_items_median": 608,
+        "engine_static_after": 73750223.0,
+        "engine_static_before": 73740015.0,
+        "frames": 180,
+        "logical_canvas": [
+          1280.0,
+          800.0
+        ],
+        "median_frame_ms": 20.65,
+        "p95_frame_ms": 35.281,
+        "phase": "resume active native ticks",
+        "seconds": 4.12778,
+        "window_pixels": [
+          1280,
+          800
+        ],
+        "worst_frame_ms": 71.226
+      }
+    ],
+    "godot_peak_rss_kib": 467068,
+    "device_30fps_thermal_battery": "NOT_RUN_DEVICE"
+  },
+  "reuse_of_valid_proof": {
+    "P5_capsule_and_rule_parity": "exact same P5 capsule, Adapter.cs, Checkpoint.cs and original C# bodies; P5 17 parity traces / four Lua files remain valid",
+    "P5_map_reference": "47 identical raw maps and image assets; prior independent renderer comparisons retained, not rebranded as P6 Galaxy screenshots",
+    "P5_exits": "357 PASS and2 unchanged unreachable source-tile cases, not359PASS",
+    "earlier_P6_class_storage_audio_spells": "unaffected native bodies and persistent format reused; final generic modal shield/geometry verified by ui-6 and native Angel flow"
+  },
+  "build": {
+    "status": "BUILD_PASS",
+    "package": "com.irewon.baram.project1998.p3",
+    "versionCode": 6,
+    "versionName": "0.0.6-p6",
+    "apk": "p1998-s10fe-p6-korean.apk",
+    "bytes": 220942688,
+    "sha256": "e1565dbb3d137b8fd79c9ba275d1e10f1eeabe7429cebc1c5aa3d09608f630fe",
+    "signer_sha256": "5fb380f895f3a98d90e9688e1d7769db7f3c16ae821f3ae9f47a8c348c0a921e",
+    "internet_permission": false,
+    "abis": [
+      {
+        "abi": "arm64-v8a",
+        "sqlite_sha256": "43596fc3907bae3538c7b85a567336bd4fd720f018fb6364dd4f13161acb86a1"
+      },
+      {
+        "abi": "x86_64",
+        "sqlite_sha256": "3913201738ddbac74eecdb199f1a4479e9f926f1193d04e5d63f335bb66a311d"
+      }
+    ],
+    "native_android": "NOT_RUN_DEVICE_P6"
+  },
+  "package_payload_verification": {
+    "status": "PASS",
+    "frozen_inputs_unchanged": 260,
+    "drift": [],
+    "embedded_locale_exact": true,
+    "embedded_P5_capsule_exact": true,
+    "source_WAV_imports": 184,
+    "apk_sha256": "e1565dbb3d137b8fd79c9ba275d1e10f1eeabe7429cebc1c5aa3d09608f630fe"
+  },
+  "retained_failed_runs": [
+    {
+      "case": "qa-smoke-1",
+      "cause": "new locale script used reserved match identifier",
+      "resolution": "renamed the regex result; smoke-2 and subsequent real GUI runs pass"
+    },
+    {
+      "case": "qa-ui-1",
+      "cause": "font edit script replaced a substring inside an already configured FontVariation",
+      "resolution": "explicit world font statement; subsequent real GUI loads pass"
+    },
+    {
+      "case": "qa-ui-2",
+      "cause": "Korean alias internal name was 12 letters, exceeding original 11-letter NameRules; ASCII probe also logged Unicode conversion warnings",
+      "resolution": "10 letter-only internal name; no lossy ASCII probe; Korean key commits and cold alias checks pass"
+    },
+    {
+      "case": "import-1/import-2",
+      "cause": "legacy RIFF text tags were not UTF-8; Python wave writer omitted odd terminal RIFF padding",
+      "resolution": "remove metadata only; even-byte pad; every PCM byte preserved; import-3 clean and real mixer nonzero"
+    },
+    {
+      "case": "qa-audio-1",
+      "cause": "test GDScript dynamic values needed explicit String/int annotations",
+      "resolution": "test types fixed; qa-audio-2 passes 17 checks and actual PCM capture"
+    },
+    {
+      "case": "qa-performance-1",
+      "cause": "Godot get_file_as_string on zero-length procfs metadata could not provide RSS; final collector failed",
+      "resolution": "external runner collects child peak RSS; qa-performance-2 completes all 720 measured frames"
+    },
+    {
+      "case": "qa-spells-1",
+      "cause": "test expected a 5MP debit even when native MP was below5",
+      "resolution": "same100MP fixture now checks both exact debit and original no-mana refusal; original rules were not modified"
+    },
+    {
+      "case": "qa-spells-2",
+      "cause": "all debit/refusal samples passed, but a fixed24 attempts stopped before native regeneration enabled the killing cast",
+      "resolution": "bounded40 attempts; no HP/MP grants, source regen/heal only; qa-spells-3 passes139 including native damage/kill/reward"
+    },
+    {
+      "case": "qa-death-1",
+      "cause": "fixture copied Godot snapshot floating-point JSON into a strict integer checkpoint",
+      "resolution": "fixture derives character from canonical SQLite integer JSON; qa-death-2 and actual gold cold restore pass"
+    },
+    {
+      "case": "qa-angel-1",
+      "cause": "test assumed final text dialog stayed open and selected background speech button instead of foreground submit",
+      "resolution": "conditional close and foreground touch lookup; actual modal shield added; qa-angel-2 native Korean Finish/warp pass"
+    },
+    {
+      "case": "qa-ui-5",
+      "cause": "test accidentally scoped background geometry inventory to foreground modal when updating touch lookup",
+      "resolution": "geometry reads full tree; actions target foreground; qa-ui-6 passes103 including shield"
+    }
+  ],
+  "device": {
+    "status": "NOT_RUN_DEVICE_P6",
+    "adb_devices": "List of devices attached\n\n",
+    "android_runtime": "NOT_RUN",
+    "Galaxy_touch_IME_install_update_airplane_mode_thermal_battery_FPS": "NOT_RUN",
+    "prior_P3_screenshot": "old core40 scope only, not P6"
+  },
+  "limitations": [
+    "actual Galaxy install over P5/P4, touch, Samsung IME, speaker, airplane mode and OS lifecycle/rotation unexecuted",
+    "Galaxy minimum FPS, heat and battery unmeasured",
+    "Android16KiB page support unverified",
+    "original Windows full window/equipment layering, cast poses and spell FX parity not claimed",
+    "MIDI background music and implicit action sound mapping not implemented",
+    "later quests/era terminology remain REVIEW or English fallback",
+    "P5 region boundaries,52 absent-art harvesting rows,32 source item icon gaps and3 unreachable warp rows remain unchanged"
+  ],
+  "next": "P7 device acceptance: update install without uninstalling; verify offline touch, Korean IME, original shop/classes/spells/death, save/reopen, rotation/back and device performance"
+}
