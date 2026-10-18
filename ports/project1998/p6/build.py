@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Export the private P4 update, retaining P3's package and signing identity."""
+"""Export the private P6 repair, retaining the existing package/signing identity."""
 import argparse
 import hashlib
 import json
@@ -24,11 +24,11 @@ def main():
     config = exp / 'editor-config/godot'; config.mkdir(parents=True, exist_ok=True)
     (config / 'editor_settings-4.6.tres').write_text('[gd_resource type="EditorSettings" format=3]\n[resource]\nexport/android/android_sdk_path=' + json.dumps(str(w / 'toolchain/android-sdk')) + '\nexport/android/java_sdk_path="/usr/lib/jvm/java-17-openjdk-amd64"\n')
     (runtime / 'export_presets.cfg').write_text('''[preset.0]
-name="P1998 P6 Android"
+name="P1998 P6 Fix1 Android"
 platform="Android"
 runnable=true
 export_filter="all_resources"
-include_filter="capsule.json,capsule.zip,migration.json,fonts/OFL.txt,PRIVATE_INPUT_NOTICE.txt,assets/assets.json,assets/maps/*.map,p6/locale.json"
+include_filter="capsule.json,capsule.zip,migration.json,fonts/OFL.txt,PRIVATE_INPUT_NOTICE.txt,assets/assets.json,assets/maps/*.map,p6/locale.json,p6/art/assets.json"
 exclude_filter="*.csproj,*.sln"
 export_path=""
 script_export_mode=2
@@ -41,10 +41,10 @@ architectures/arm64-v8a=true
 architectures/x86=false
 architectures/x86_64=true
 package/unique_name="com.irewon.baram.project1998.p3"
-package/name="Project1998 P6"
+package/name="Project1998 P6 수정"
 package/signed=true
-version/code=6
-version/name="0.0.6-p6"
+version/code=7
+version/name="0.0.6-p6-fix1"
 screen/immersive_mode=true
 screen/orientation=6
 user_data_backup/allow=false
@@ -72,7 +72,7 @@ Noto Sans KR SIL OFL (fonts/OFL.txt).
         if result.returncode: print(log.read_text()[-5000:]); raise RuntimeError(label)
         return log.read_text()
     output.parent.mkdir(parents=True, exist_ok=True); pending = output.with_suffix('.pending.apk')
-    run('export', [godot(w), '--headless', '--path', runtime, '--export-debug', 'P1998 P6 Android', pending])
+    run('export', [godot(w), '--headless', '--path', runtime, '--export-debug', 'P1998 P6 Fix1 Android', pending])
     android = w / 'toolchain/android-sdk/build-tools/35.0.1'
     cert = run('signature', [android / 'apksigner', 'verify', '--verbose', '--print-certs', pending])
     expected = '5fb380f895f3a98d90e9688e1d7769db7f3c16ae821f3ae9f47a8c348c0a921e'
@@ -80,7 +80,7 @@ Noto Sans KR SIL OFL (fonts/OFL.txt).
     permissions = run('permissions', [android / 'aapt2', 'dump', 'permissions', pending])
     badging = run('badging', [android / 'aapt2', 'dump', 'badging', pending])
     assert 'android.permission.INTERNET' not in permissions
-    assert "name='com.irewon.baram.project1998.p3'" in badging and "versionCode='6'" in badging
+    assert "name='com.irewon.baram.project1998.p3'" in badging and "versionCode='7'" in badging
     native = []
     with zipfile.ZipFile(pending) as z:
         for abi in ['arm64-v8a', 'x86_64']:
@@ -88,9 +88,9 @@ Noto Sans KR SIL OFL (fonts/OFL.txt).
             native.append({'abi': abi, 'sqlite_sha256': hashlib.sha256(z.read(entry)).hexdigest()})
         assert not any(n.endswith('/LoginServer.dll') for n in z.namelist())
     pending.rename(output)
-    receipt = {'status': 'BUILD_PASS', 'package': 'com.irewon.baram.project1998.p3', 'versionCode': 6, 'versionName': '0.0.6-p6',
+    receipt = {'status': 'BUILD_PASS', 'package': 'com.irewon.baram.project1998.p3', 'versionCode': 7, 'versionName': '0.0.6-p6-fix1',
                'apk': output.name, 'bytes': output.stat().st_size, 'sha256': sha(output), 'signer_sha256': expected,
-               'internet_permission': False, 'abis': native, 'native_android': 'NOT_RUN_DEVICE_P6'}
+               'internet_permission': False, 'abis': native, 'native_android': 'NOT_RUN_DEVICE_P6_FIX1'}
     (exp / 'BUILD_RECEIPT.json').write_text(json.dumps(receipt, indent=2) + '\n'); print(json.dumps(receipt))
 
 

@@ -5,7 +5,12 @@ var model: RefCounted
 var ground: Texture2D
 var objects: Texture2D
 var actors: Texture2D
-var zoom := 2.0
+var pickup: Texture2D
+var user_zoom:=2.0
+var cover_zoom:=1.0
+var zoom: float:
+	get:return maxf(user_zoom,cover_zoom)
+	set(value):user_zoom=value
 var camera := Vector2.ZERO
 var font: Font
 var elapsed := 0.0
@@ -22,6 +27,7 @@ func _ready() -> void:
 	ground=load("res://assets/ground.png")
 	objects=load("res://assets/objects.png")
 	actors=load("res://assets/actors.png")
+	pickup=load("res://p6/art/pickup.png")
 	var face:=FontVariation.new();face.base_font=load("res://fonts/NotoSansKR.ttf");face.variation_opentype={"wght":600.0};font=face
 
 func refresh(delta: float) -> void:
@@ -29,6 +35,7 @@ func refresh(delta: float) -> void:
 	if model==null or not model.snapshot.get("playing",false):return
 	var m: Dictionary=model.definitions[model.map_id()]
 	var map_pixels:=Vector2(int(m.width)*24,int(m.height)*24)
+	cover_zoom=maxf(size.x/map_pixels.x,size.y/map_pixels.y)
 	var desired: Vector2=(model.visual+Vector2(0.5,0.5))*24-size/(2*zoom)
 	for axis in range(2):
 		camera[axis]=roundf((map_pixels[axis]-size[axis]/zoom)/2) if map_pixels[axis]*zoom<size[axis] else roundf(clampf(desired[axis],0,map_pixels[axis]-size[axis]/zoom))
@@ -37,11 +44,24 @@ func refresh(delta: float) -> void:
 func screen_cell(point: Vector2) -> Vector2i:
 	return Vector2i(((point/zoom+camera)/24).floor())
 
+func actor_at_screen(point: Vector2) -> Dictionary:
+	var picked: Dictionary={};var depth:=-INF
+	for actor in model.snapshot.actors:
+		var prefix: String=("npc:" if actor.npc else "mob:")+str(int(actor.npc_def) if actor.npc else actor.key)+"-"+str(int(actor.facing))
+		if not model.source.animations.has(prefix):continue
+		var seq: Array=model.source.animations[prefix]
+		var region: Dictionary=model.source.actor_regions[str(seq[model.actor_tick(actor,seq.size())].key)]
+		var r: Array=region.rect;var off: Array=region.offset
+		var cell: Vector2=model.actor_visual(actor)
+		var box:=Rect2(((cell+Vector2(0.5,0.5))*24+Vector2(off[0],off[1])-camera)*zoom,Vector2(r[2],r[3])*zoom)
+		if box.has_point(point) and cell.y>=depth:picked=actor;depth=cell.y
+	return picked
+
 func _sprite(key: String,anchor: Vector2) -> void:
 	var region: Dictionary=model.source.actor_regions[key]
 	var r: Array=region.rect
 	var offset: Array=region.offset
-	draw_texture_rect_region(actors,Rect2((anchor+Vector2(offset[0],offset[1])-camera)*zoom,Vector2(r[2],r[3])*zoom),Rect2(r[0],r[1],r[2],r[3]))
+	draw_texture_rect_region(pickup if region.get("sheet","")=="pickup" else actors,Rect2((anchor+Vector2(offset[0],offset[1])-camera)*zoom,Vector2(r[2],r[3])*zoom),Rect2(r[0],r[1],r[2],r[3]))
 	last_draw_items+=1
 
 func _actor_at(actor: Dictionary,cell: Vector2) -> void:
@@ -58,11 +78,12 @@ func _actor_at(actor: Dictionary,cell: Vector2) -> void:
 		var prefix: String=("npc:" if actor.npc else "mob:")+str(int(actor.npc_def) if actor.npc else actor.key)+"-"+str(int(actor.facing))
 		if not model.source.animations.has(prefix):return
 		var seq: Array=model.source.animations[prefix]
-		key=str(seq[int(elapsed*5)%seq.size()].key)
+		key=str(seq[model.actor_tick(actor,seq.size())].key)
 	var anchor: Vector2=(cell+Vector2(0.5,0.5))*24
 	var weapon:=""
 	if player:
 		for item in model.snapshot.equipment:
+			if model.pickup_elapsed<0.40:break
 			if int(item.type)==3:
 				var animation: String="weapon:%d:%d-" %[item.look,item.dye]+model.animation_key()
 				if model.source.animations.has(animation):
@@ -115,8 +136,9 @@ func _draw() -> void:
 	if draw_actors:
 		pending.append({"actor":{"player":true},"cell":model.visual,"depth":model.visual.y+0.5})
 		for actor in model.snapshot.actors:
-			if int(actor.x)<min_x or int(actor.x)>max_x or int(actor.y)<min_y or int(actor.y)>max_y:continue
-			pending.append({"actor":actor,"cell":Vector2(actor.x,actor.y),"depth":float(actor.y)+0.5})
+			var at: Vector2=model.actor_visual(actor)
+			if at.x<min_x-1 or at.x>max_x+1 or at.y<min_y-1 or at.y>max_y+1:continue
+			pending.append({"actor":actor,"cell":at,"depth":at.y+0.5})
 		pending.sort_custom(func(a,b):return float(a.depth)<float(b.depth))
 	for y in range(min_y,max_y+1):
 		while not pending.is_empty() and float(pending[0].depth)<=float(y+1):

@@ -5,6 +5,8 @@ const Sound=preload("res://p6/audio.gd")
 const Model=preload("res://p6/model.gd")
 const World=preload("res://p6/world.gd")
 const Stick=preload("res://input/touch_stick.gd")
+const MapView=preload("res://p6/map.gd")
+const PaperDoll=preload("res://p6/paperdoll.gd")
 const Navigation=preload("res://input/grid_navigation.gd")
 var locale:=Locale.new()
 var profile: RefCounted
@@ -13,6 +15,8 @@ var top_panel: PanelContainer
 var footer_panel: PanelContainer
 var hp_bar: ProgressBar
 var mp_bar: ProgressBar
+var skip_button: Button
+var map_view: Control
 var modal_scroll: ScrollContainer
 var creation_scroll: ScrollContainer
 var keyboard_height_override:=-1
@@ -61,12 +65,16 @@ func initialize(root: String) -> bool:
 	return model.ready
 
 func button(text: String,action: Callable,width: float=98,height: float=54) -> Button:
-	var b:=Button.new();b.text=text;b.custom_minimum_size=Vector2(minf(width,maxf(64,size.x-100)),height);b.focus_mode=Control.FOCUS_NONE
+	var limit:=modal.size.x-70 if modal!=null else size.x-100
+	var b:=Button.new();b.text=text;b.custom_minimum_size=Vector2(minf(width,maxf(64,limit)),height);b.focus_mode=Control.FOCUS_NONE
 	b.add_theme_font_size_override("font_size",20)
 	b.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	for mode in ["normal","hover","pressed"]:
-		var box:=StyleBoxFlat.new();box.bg_color=Color("526349") if mode=="pressed" else Color("283b30")
+		var box:=StyleBoxFlat.new();box.bg_color=(Color("c8a46a") if mode=="pressed" else Color("e1c48fa8")) if modal!=null else (Color("465945b3") if mode=="pressed" else Color("19251c70"))
 		box.border_color=Color("81957a");box.set_border_width_all(1);box.set_corner_radius_all(7);b.add_theme_stylebox_override(mode,box)
+	if modal!=null:
+		for state in ["font_color","font_hover_color","font_pressed_color"]:b.add_theme_color_override(state,Color("382819"))
+	else:b.add_theme_color_override("font_color",Color("fff1d3"));b.add_theme_color_override("font_outline_color",Color("151a12"));b.add_theme_constant_override("outline_size",2)
 	b.gui_input.connect(func(event: InputEvent):
 		if event is InputEventScreenTouch and event.pressed and not event.canceled:action.call();b.accept_event()
 		elif event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_LEFT and event.device!=InputEvent.DEVICE_ID_EMULATION:action.call();b.accept_event())
@@ -76,7 +84,7 @@ func _ready() -> void:
 	get_tree().auto_accept_quit=false;Engine.max_fps=60
 	get_window().size_changed.connect(_configure_viewport);resized.connect(_layout);_configure_viewport()
 	sounds=Sound.new();sounds.volume=profile.volume;add_child(sounds)
-	var face:=FontVariation.new();face.base_font=load("res://fonts/NotoSansKR.ttf");face.variation_opentype={"wght":500.0}
+	var face:=FontVariation.new();face.base_font=load("res://fonts/NotoSansKR.ttf");face.variation_opentype={"wght":650.0}
 	var t:=Theme.new();t.default_font=face;t.default_font_size=20;theme=t
 	if not model.ready:
 		var fail:=Label.new();fail.text="P6 시작 실패\n"+initialization_error;fail.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;fail.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);add_child(fail);return
@@ -89,66 +97,78 @@ func _creation() -> void:
 	var center:=CenterContainer.new();center.size_flags_horizontal=Control.SIZE_EXPAND_FILL;center.size_flags_vertical=Control.SIZE_EXPAND_FILL;scroll.add_child(center)
 	var box:=VBoxContainer.new();box.custom_minimum_size=Vector2(minf(680,size.x-80),400);box.add_theme_constant_override("separation",20);center.add_child(box)
 	var heading:=Label.new();heading.text="PROJECT1998   /   P6";heading.add_theme_font_size_override("font_size",34);box.add_child(heading)
-	var intro:=Label.new();intro.text="초보자의 여정\n들판에서 무기를 얻고, 사냥하고, 기술을 배워 국내성으로 갑니다.";intro.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;box.add_child(intro)
+	var intro:=Label.new();intro.text="국내성에서 모험을 시작합니다.\n원하면 초보자 수련부터 진행할 수도 있습니다.";intro.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;box.add_child(intro)
 	form=LineEdit.new();form.text="여행자";form.placeholder_text="한글 2~12자 또는 영문 3~16자";form.max_length=16;form.custom_minimum_size.y=64;form.virtual_keyboard_enabled=true;box.add_child(form)
 	create_error=Label.new();create_error.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;create_error.modulate=Color("edbf93");box.add_child(create_error)
-	box.add_child(button("여정 시작",_create_character,200,64))
-	form.text_submitted.connect(func(_value: String):_create_character())
+	box.add_child(button("본게임 시작",_create_character.bind(true),240,64))
+	box.add_child(button("초보자 수련 시작",_create_character.bind(false),240,64))
+	form.text_submitted.connect(func(_value: String):_create_character(true))
 	var note:=Label.new();note.text="오프라인 · 자동 저장\n초보자 구간 · 국내성 상점 · 네 직업 교습소 · 쥐굴과 지하 동굴";note.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;note.modulate=Color("a4b8a6");box.add_child(note)
 
-func _create_character() -> void:
+func _create_character(skip: bool=false) -> void:
 	var nickname:=form.text.strip_edges()
 	if not profile.valid_name(nickname):create_error.text="한글 2~12자 또는 영문 3~16자로 입력해 주세요.";return
 	model.call_core("Create",[profile.native_name(nickname)])
 	if not model.snapshot.get("playing",false):create_error.text=locale.text(str(model.snapshot.error));return
 	if not profile.save(str(model.snapshot.name),nickname):ui_message="이름 설정을 저장하지 못했습니다."
 	model.display_name=profile.shown(str(model.snapshot.name))
+	if skip:model.call_core("SkipTutorial")
 	creation_scroll=null
 	for child in get_children():
 		if child!=sounds:child.queue_free()
 	_build_game()
 
 func _meter(color: String) -> ProgressBar:
-	var bar:=ProgressBar.new();bar.custom_minimum_size=Vector2(180,24);bar.size_flags_horizontal=Control.SIZE_EXPAND_FILL;bar.show_percentage=false
-	var back:=StyleBoxFlat.new();back.bg_color=Color("111b17");back.set_corner_radius_all(4);bar.add_theme_stylebox_override("background",back)
-	var fill:=StyleBoxFlat.new();fill.bg_color=Color(color);fill.set_corner_radius_all(4);bar.add_theme_stylebox_override("fill",fill);return bar
+	var bar:=ProgressBar.new();bar.custom_minimum_size=Vector2(100,19);bar.size_flags_horizontal=Control.SIZE_EXPAND_FILL;bar.show_percentage=false
+	var back:=StyleBoxFlat.new();back.bg_color=Color("111b1770");back.set_corner_radius_all(4);bar.add_theme_stylebox_override("background",back)
+	var fill:=StyleBoxFlat.new();fill.bg_color=Color(color);fill.bg_color.a=0.72;fill.set_corner_radius_all(4);bar.add_theme_stylebox_override("fill",fill);return bar
+
+func _overlay(panel: PanelContainer) -> void:
+	var skin:=StyleBoxFlat.new();skin.bg_color=Color(0.06,0.09,0.06,0.12);panel.add_theme_stylebox_override("panel",skin)
+	panel.mouse_filter=Control.MOUSE_FILTER_IGNORE
+
+func _caption(label: Label) -> void:
+	label.mouse_filter=Control.MOUSE_FILTER_IGNORE
+	label.add_theme_color_override("font_color",Color("fff0ca"));label.add_theme_color_override("font_outline_color",Color("10180e"));label.add_theme_constant_override("outline_size",3)
 
 func _build_game() -> void:
 	game_visible=true
-	world=World.new();world.model=model;world.locale=locale;world.anchor_right=1;world.anchor_bottom=1;add_child(world)
+	world=World.new();world.model=model;world.locale=locale;world.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);add_child(world)
 	stick=Stick.new();stick.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);world.add_child(stick)
 	stick.direction_changed.connect(_direction);stick.tapped.connect(_world_tap)
-	top_panel=PanelContainer.new();top_panel.anchor_right=1;add_child(top_panel)
-	var margin:=MarginContainer.new();margin.add_theme_constant_override("margin_left",14);margin.add_theme_constant_override("margin_right",14);margin.add_theme_constant_override("margin_top",8);margin.add_theme_constant_override("margin_bottom",8);top_panel.add_child(margin)
-	var box:=VBoxContainer.new();box.add_theme_constant_override("separation",7);margin.add_child(box)
-	var row:=HBoxContainer.new();box.add_child(row)
-	title=Label.new();title.size_flags_horizontal=Control.SIZE_EXPAND_FILL;title.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;title.add_theme_font_size_override("font_size",20);row.add_child(title)
-	row.add_child(button("가방 / 장비",_bag,130,56));row.add_child(button("저장",_save,76,56));row.add_child(button("지역 안내",_region,114,56));row.add_child(button("설정",_settings,76,56))
-	hud=Label.new();hud.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;hud.add_theme_font_size_override("font_size",20);box.add_child(hud)
-	var meters:=HBoxContainer.new();meters.add_theme_constant_override("separation",14);box.add_child(meters)
-	hp_bar=_meter("b7564c");mp_bar=_meter("557ea5");meters.add_child(hp_bar);meters.add_child(mp_bar)
-	guide=Label.new();guide.add_theme_font_size_override("font_size",18);guide.modulate=Color("e5ce91");guide.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;box.add_child(guide)
-	footer_panel=PanelContainer.new();footer_panel.anchor_top=1;footer_panel.anchor_bottom=1;footer_panel.anchor_right=1;add_child(footer_panel)
-	var footer_margin:=MarginContainer.new();footer_margin.add_theme_constant_override("margin_left",12);footer_margin.add_theme_constant_override("margin_right",12);footer_margin.add_theme_constant_override("margin_top",8);footer_margin.add_theme_constant_override("margin_bottom",8);footer_panel.add_child(footer_margin)
-	var footer_box:=VBoxContainer.new();footer_margin.add_child(footer_box)
-	status=Label.new();status.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;status.max_lines_visible=2;status.add_theme_font_size_override("font_size",18);status.custom_minimum_size.y=24;footer_box.add_child(status)
-	var bottom:=HBoxContainer.new();bottom.add_theme_constant_override("separation",10);footer_box.add_child(bottom)
-	var pad:=GridContainer.new();pad.columns=3;bottom.add_child(pad)
-	for value in [Vector2i.ZERO,Vector2i.UP,Vector2i.ZERO,Vector2i.LEFT,Vector2i.DOWN,Vector2i.RIGHT]:
-		if value==Vector2i.ZERO:
-			var blank:=Control.new();blank.custom_minimum_size=Vector2(58,58);pad.add_child(blank)
-		else:
-			var labels: Dictionary={Vector2i.UP:"↑",Vector2i.RIGHT:"→",Vector2i.DOWN:"↓",Vector2i.LEFT:"←"}
-			var b:=button(labels[value],func():pass,58,58);pad.add_child(b);b.gui_input.connect(_pad_input.bind(value,b))
-	var spacer:=Control.new();spacer.size_flags_horizontal=Control.SIZE_EXPAND_FILL;bottom.add_child(spacer)
-	var actions:=GridContainer.new();actions.columns=2;actions.add_theme_constant_override("h_separation",10);actions.add_theme_constant_override("v_separation",6);bottom.add_child(actions)
-	attack=button("공격",_attack,126,56);actions.add_child(attack)
-	skill=button("기술 / 마법",_spellbook,144,56);actions.add_child(skill)
-	actions.add_child(button("줍기",func():model.call_core("Pickup");_update_hud(),126,56))
-	actions.add_child(button("말하기",_speech,144,56))
-	var zooms:=VBoxContainer.new();bottom.add_child(zooms)
-	for amount in [0.5,-0.5]:zooms.add_child(button("+" if amount>0 else "−",func():world.zoom=clampf(world.zoom+amount,1.0,4.0),52,56))
+	top_panel=PanelContainer.new();top_panel.anchor_right=1;_overlay(top_panel);add_child(top_panel)
+	var margin:=MarginContainer.new();margin.mouse_filter=Control.MOUSE_FILTER_IGNORE
+	for edge in ["left","right"]:margin.add_theme_constant_override("margin_"+edge,10)
+	margin.add_theme_constant_override("margin_top",6);margin.add_theme_constant_override("margin_bottom",4);top_panel.add_child(margin)
+	var box:=VBoxContainer.new();box.mouse_filter=Control.MOUSE_FILTER_IGNORE;box.add_theme_constant_override("separation",3);margin.add_child(box)
+	var row:=HBoxContainer.new();row.mouse_filter=Control.MOUSE_FILTER_IGNORE;box.add_child(row)
+	title=Label.new();_caption(title);title.size_flags_horizontal=Control.SIZE_EXPAND_FILL;title.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;title.add_theme_font_size_override("font_size",18);row.add_child(title)
+	for entry in [["소지품",_bag],["장비",_equipment],["능력치",_stats],["지역 안내",_region],["설정",_settings]]:row.add_child(button(entry[0],entry[1],82 if entry[0]=="지역 안내" else 72,52))
+	var vitals:=HBoxContainer.new();vitals.mouse_filter=Control.MOUSE_FILTER_IGNORE;box.add_child(vitals)
+	hud=Label.new();_caption(hud);hud.add_theme_font_size_override("font_size",16);hud.size_flags_horizontal=Control.SIZE_EXPAND_FILL;vitals.add_child(hud)
+	hp_bar=_meter("b7564c");mp_bar=_meter("557ea5");vitals.add_child(hp_bar);vitals.add_child(mp_bar)
+	guide=Label.new();_caption(guide);guide.add_theme_font_size_override("font_size",15);guide.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;guide.max_lines_visible=2;box.add_child(guide)
+	footer_panel=PanelContainer.new();footer_panel.anchor_top=1;footer_panel.anchor_bottom=1;footer_panel.anchor_right=1;_overlay(footer_panel);add_child(footer_panel)
+	var footer_margin:=MarginContainer.new();footer_margin.mouse_filter=Control.MOUSE_FILTER_IGNORE
+	for edge in ["left","right","bottom"]:footer_margin.add_theme_constant_override("margin_"+edge,10)
+	footer_panel.add_child(footer_margin)
+	var footer_box:=VBoxContainer.new();footer_box.mouse_filter=Control.MOUSE_FILTER_IGNORE;footer_margin.add_child(footer_box)
+	status=Label.new();_caption(status);status.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;status.max_lines_visible=2;status.add_theme_font_size_override("font_size",15);footer_box.add_child(status)
+	var bottom:=HBoxContainer.new();bottom.mouse_filter=Control.MOUSE_FILTER_IGNORE;bottom.add_theme_constant_override("separation",7);footer_box.add_child(bottom)
+	skip_button=button("본게임 시작",_skip_tutorial,120,56);bottom.add_child(skip_button)
+	for amount in [-0.5,0.5]:bottom.add_child(button("−" if amount<0 else "+",func():world.zoom=clampf(world.user_zoom+amount,1.0,5.0),52,56))
+	var spacer:=Control.new();spacer.mouse_filter=Control.MOUSE_FILTER_IGNORE;spacer.size_flags_horizontal=Control.SIZE_EXPAND_FILL;bottom.add_child(spacer)
+	bottom.add_child(button("말하기",_speech,90,56))
+	skill=button("기술",_spellbook,82,56);bottom.add_child(skill)
+	bottom.add_child(button("줍기",_pickup,82,56))
+	attack=button("공격",_attack,100,56);bottom.add_child(attack)
 	_update_hud();_sync_dialog();world.refresh(0);call_deferred("_layout")
+
+func _pickup() -> void:
+	_cancel_input();model.call_core("Pickup");_update_hud()
+
+func _skip_tutorial() -> void:
+	_cancel_input();_close_panel();model.call_core("SkipTutorial");_update_hud();world.refresh(0)
 
 func _configure_viewport() -> void:
 	var pixels:=get_window().size
@@ -167,10 +187,10 @@ func _layout() -> void:
 	if game_visible and top_panel!=null and footer_panel!=null:
 		top_panel.offset_bottom=top_panel.get_combined_minimum_size().y
 		footer_panel.offset_top=-footer_panel.get_combined_minimum_size().y
-		world.offset_top=top_panel.size.y;world.offset_bottom=footer_panel.offset_top
+		world.offset_top=0;world.offset_bottom=0
 	if modal!=null:
 		var available:=size-Vector2(32,32+_keyboard_height())
-		modal.size=Vector2(minf(1040,available.x),maxf(180,minf(800 if size.y>size.x else 620,available.y)))
+		modal.size=Vector2(minf(680,available.x),maxf(180,minf(1040 if size.y>size.x else 750,available.y)))
 		modal.position=Vector2((size.x-modal.size.x)/2,maxf(16,(size.y-_keyboard_height()-modal.size.y)/2))
 		if get_viewport().gui_get_focus_owner()!=null and modal.is_ancestor_of(get_viewport().gui_get_focus_owner()):modal_scroll.ensure_control_visible(get_viewport().gui_get_focus_owner())
 
@@ -196,13 +216,14 @@ func _update_hud() -> void:
 	var s: Dictionary=model.snapshot
 	title.text=locale.entity("maps",model.map_id(),str(model.definitions[model.map_id()].name))+"  (%d, %d)" %[s.x,s.y]
 	hud.text="%s  Lv.%d   경험 %d   금전 %d" %[model.display_name+" / "+locale.name_of(str(s.class_name)),s.level,s.exp,s.coins]
-	guide.text=quest_text();skill.disabled=false
-	hp_bar.max_value=maxi(1,int(s.max_hp));hp_bar.value=int(s.hp);mp_bar.max_value=maxi(1,int(s.max_mp));mp_bar.value=int(s.mp)
+	guide.text=quest_text() if int(s.stage)<10 else "";skill.disabled=false
+	skip_button.visible=int(s.map)>=4711 and int(s.map)<=4718
+	hp_bar.max_value=maxi(1,int(s.stats.max_hp));hp_bar.value=int(s.hp);mp_bar.max_value=maxi(1,int(s.stats.max_mp));mp_bar.value=int(s.mp)
 	for bar in [hp_bar,mp_bar]:
 		if bar.get_child_count()==0:
 			var caption:=Label.new();caption.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);caption.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER;caption.add_theme_font_size_override("font_size",17);bar.add_child(caption)
-	(bar_label(hp_bar)).text="체력 %d / %d" %[s.hp,s.max_hp]
-	(bar_label(mp_bar)).text="마력 %d / %d" %[s.mp,s.max_mp]
+	(bar_label(hp_bar)).text="체력 %d / %d" %[s.hp,s.stats.max_hp]
+	(bar_label(mp_bar)).text="마력 %d / %d" %[s.mp,s.stats.max_mp]
 	attack.text="사냥 중\n누르면 중지" if auto_attack else "공격"
 	status.text=locale.text(str(s.message))+"  ·  "+str(s.save_status)
 	if ui_message!="":status.text=ui_message
@@ -237,16 +258,17 @@ func _go(cell: Vector2i,reach: int=0) -> void:
 func _world_tap(point: Vector2) -> void:
 	if paused or modal!=null:return
 	var cell: Vector2i=world.screen_cell(point)
+	var hit: Dictionary=world.actor_at_screen(point)
 	if pending_spell!="":
 		for actor in model.snapshot.actors:
-			if Vector2i(actor.x,actor.y)==cell:
+			if (not hit.is_empty() and int(actor.id)==int(hit.id)) or (hit.is_empty() and Vector2i(actor.x,actor.y)==cell):
 				var key:=pending_spell;pending_spell="";model.call_core("CastSpell",[key,int(actor.id),""]);_update_hud();return
 		if cell==model.position():
 			var key:=pending_spell;pending_spell="";model.call_core("CastSpell",[key,int(model.snapshot.character.Id),""]);_update_hud()
 		return
 	selected_id=0;pending_npc=0;pending_loot=false;auto_attack=false
 	for a in model.snapshot.actors:
-		if Vector2i(int(a.x),int(a.y))==cell:
+		if (not hit.is_empty() and int(a.id)==int(hit.id)) or (hit.is_empty() and Vector2i(int(a.x),int(a.y))==cell):
 			if a.npc:
 				_cancel_input();_face(cell);model.call_core("Talk",[int(a.id)]);_sync_dialog();return
 			else:selected_id=int(a.id);auto_attack=true
@@ -277,7 +299,11 @@ func _panel(kind: String) -> void:
 	_cancel_input();_close_panel();modal_kind=kind;ui_message=""
 	modal_backdrop=ColorRect.new();modal_backdrop.color=Color(0,0,0,0.42);modal_backdrop.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);modal_backdrop.mouse_filter=Control.MOUSE_FILTER_STOP;add_child(modal_backdrop)
 	modal=PanelContainer.new()
-	var style:=StyleBoxFlat.new();style.bg_color=Color("16291ffa");style.border_color=Color("c2b68c");style.set_border_width_all(2);style.set_content_margin_all(18);style.set_corner_radius_all(10);modal.add_theme_stylebox_override("panel",style);add_child(modal)
+	var style:=StyleBoxTexture.new();style.texture=load("res://p6/art/spellinv.png")
+	style.texture_margin_left=22;style.texture_margin_right=22;style.texture_margin_top=22;style.texture_margin_bottom=26
+	style.content_margin_left=35;style.content_margin_right=35;style.content_margin_top=32;style.content_margin_bottom=34
+	modal.texture_filter=CanvasItem.TEXTURE_FILTER_NEAREST;modal.add_theme_stylebox_override("panel",style)
+	var paper:=theme.duplicate();paper.set_color("font_color","Label",Color("392b1c"));paper.set_color("font_color","LineEdit",Color("fff1d2"));modal.theme=paper;add_child(modal)
 	modal_scroll=ScrollContainer.new();modal_scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;modal.add_child(modal_scroll)
 	modal_box=VBoxContainer.new();modal_box.size_flags_horizontal=Control.SIZE_EXPAND_FILL;modal_box.add_theme_constant_override("separation",14);modal_scroll.add_child(modal_box);_layout()
 
@@ -285,7 +311,7 @@ func _close_panel() -> void:
 	if DisplayServer.has_feature(DisplayServer.FEATURE_VIRTUAL_KEYBOARD):DisplayServer.virtual_keyboard_hide()
 	if modal!=null:modal.queue_free();modal=null
 	if modal_backdrop!=null:modal_backdrop.queue_free();modal_backdrop=null
-	modal_kind="";bag_open=false
+	modal_kind="";bag_open=false;map_view=null
 
 func _text(value: String) -> Label:
 	var label:=Label.new();label.text=locale.text(value);label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;label.size_flags_horizontal=Control.SIZE_EXPAND_FILL;modal_box.add_child(label);return label
@@ -327,24 +353,71 @@ func _sync_dialog() -> void:
 	else:options.add_child(button("다음 / 확인",func():model.call_core("Reply",[1,0,""]);_sync_dialog(),280,62))
 	modal_box.add_child(button("대화 닫기",func():model.call_core("CloseDialog");_close_panel();modal_revision=-1;_update_hud(),160,52))
 
+func _window_tabs() -> void:
+	var tabs:=HBoxContainer.new();tabs.add_theme_constant_override("separation",6);modal_box.add_child(tabs)
+	for entry in [["소지품",_bag],["기술",_spellbook],["장비",_equipment],["능력치",_stats]]:
+		var tab:=button(entry[0],entry[1],120,52);tab.size_flags_horizontal=Control.SIZE_EXPAND_FILL;tabs.add_child(tab)
+
+func _heading(value: String) -> void:
+	var label:=_text(value);label.add_theme_font_size_override("font_size",26)
+
+func _icon(item: Dictionary) -> AtlasTexture:
+	if not model.source.item_icons.has(item.key):return null
+	var texture:=AtlasTexture.new();texture.atlas=world.actors
+	var r: Array=model.source.actor_regions[model.source.item_icons[item.key].key].rect
+	texture.region=Rect2(r[0],r[1],r[2],r[3]);return texture
+
 func _bag() -> void:
 	if model.snapshot.dialog!=null:return
-	_panel("bag");bag_open=true;_text("가방 / 장비    ·    금전 %d" %int(model.snapshot.coins))
-	var list:=_list()
-	for equipped in [false,true]:
-		var heading:=Label.new();heading.text="착용 장비" if equipped else "소지품";list.add_child(heading)
-		for item in (model.snapshot.equipment if equipped else model.snapshot.inventory):
-			var row:=HBoxContainer.new();list.add_child(row)
-			if model.source.item_icons.has(item.key):
-				var icon:=TextureRect.new();var texture:=AtlasTexture.new();texture.atlas=world.actors;var r: Array=model.source.actor_regions[model.source.item_icons[item.key].key].rect;texture.region=Rect2(r[0],r[1],r[2],r[3]);icon.texture=texture;icon.custom_minimum_size=Vector2(40,44);icon.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;row.add_child(icon)
-			var label:=Label.new();label.text="%s ×%d   내구도 %d" %[locale.entity("item",str(item.key),str(item.name)),item.amount,item.durability];label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;label.size_flags_horizontal=Control.SIZE_EXPAND_FILL;row.add_child(label)
-			if equipped:row.add_child(button("벗기",func():model.call_core("Unequip",[int(item.slot)]);_bag()))
-			else:row.add_child(button("사용 / 착용",func():model.call_core("UseItem",[int(item.slot),false]);_bag(),142));row.add_child(button("먹기",func():model.call_core("UseItem",[int(item.slot),true]);_bag(),82))
+	_panel("bag");bag_open=true;_window_tabs();_heading("소지품    ·    %d전" %int(model.snapshot.coins))
+	_text("아이템을 누르면 착용하거나 사용할 수 있습니다.")
+	var list:=_list(350)
+	if model.snapshot.inventory.is_empty():
+		var empty:=Label.new();empty.text="가방이 비어 있습니다.";list.add_child(empty)
+	for item in model.snapshot.inventory:
+		var label:="%s  ×%d" %[locale.entity("item",str(item.key),str(item.name)),item.amount]
+		var b:=button(label,_item_details.bind(item),620,66);b.alignment=HORIZONTAL_ALIGNMENT_LEFT;b.icon=_icon(item);b.icon_alignment=HORIZONTAL_ALIGNMENT_LEFT;b.expand_icon=true;b.add_theme_constant_override("icon_max_width",40);list.add_child(b)
 	modal_box.add_child(button("닫기",func():_close_panel();_update_hud(),160))
+
+func _item_details(item: Dictionary) -> void:
+	_panel("item");_window_tabs();_heading(locale.entity("item",str(item.key),str(item.name)))
+	var icon:=TextureRect.new();icon.texture=_icon(item);icon.custom_minimum_size=Vector2(100,120);icon.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;modal_box.add_child(icon)
+	_text("수량 %d    내구도 %d / %d" %[item.amount,item.durability,item.max_durability])
+	modal_box.add_child(button("사용 / 착용",func():model.call_core("UseItem",[int(item.slot),false]);_bag();_update_hud(),300,60))
+	modal_box.add_child(button("먹기",func():model.call_core("UseItem",[int(item.slot),true]);_bag();_update_hud(),300,60))
+	modal_box.add_child(button("소지품으로",_bag,240))
+	modal_box.add_child(button("닫기",_close_panel))
+
+func _equipment() -> void:
+	if model.snapshot.dialog!=null:return
+	_panel("equipment");_window_tabs();_heading("장착 아이템")
+	var doll:=PaperDoll.new();doll.model=model;doll.custom_minimum_size=Vector2(200,220);modal_box.add_child(doll)
+	var list:=_list(180)
+	if model.snapshot.equipment.is_empty():
+		var empty:=Label.new();empty.text="착용한 장비가 없습니다. 소지품에서 장비를 선택하세요.";empty.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;list.add_child(empty)
+	for item in model.snapshot.equipment:
+		var row:=HBoxContainer.new();list.add_child(row)
+		var icon:=TextureRect.new();icon.texture=_icon(item);icon.custom_minimum_size=Vector2(40,52);icon.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;row.add_child(icon)
+		var label:=Label.new();label.text="%s\n내구도 %d / %d" %[locale.entity("item",str(item.key),str(item.name)),item.durability,item.max_durability];label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;label.size_flags_horizontal=Control.SIZE_EXPAND_FILL;row.add_child(label)
+		row.add_child(button("벗기",func():model.call_core("Unequip",[int(item.slot)]);_equipment();_update_hud(),90,54))
+	modal_box.add_child(button("닫기",_close_panel))
+
+func _stats() -> void:
+	if model.snapshot.dialog!=null:return
+	_panel("stats");_window_tabs();_heading("능력치  ·  "+model.display_name)
+	var values: Dictionary=model.snapshot.stats
+	_text("%s    %d레벨" %[locale.name_of(str(model.snapshot.class_name)),model.snapshot.level])
+	var stats:=VBoxContainer.new();stats.add_theme_constant_override("separation",6);modal_box.add_child(stats)
+	for entry in [["체력","%d / %d" %[model.snapshot.hp,values.max_hp]],["마력","%d / %d" %[model.snapshot.mp,values.max_mp]],["힘",str(int(values.might))],["지력",str(int(values.will))],["민첩",str(int(values.grace))],["방어력",str(int(values.ac))],["명중 보정",str(int(values.hit))],["공격 보정",str(int(values.dam))],["경험치",str(int(model.snapshot.exp))],["다음 레벨까지",str(int(values.tnl))],["금전",str(int(model.snapshot.coins))+"전"]]:
+		var row:=HBoxContainer.new();row.custom_minimum_size.y=38;stats.add_child(row)
+		var caption:=Label.new();caption.text=entry[0];caption.size_flags_horizontal=Control.SIZE_EXPAND_FILL;row.add_child(caption)
+		var value:=Label.new();value.text=entry[1];value.horizontal_alignment=HORIZONTAL_ALIGNMENT_RIGHT;row.add_child(value)
+	_text("장착 장비와 현재 효과가 반영됩니다.")
+	modal_box.add_child(button("닫기",_close_panel))
 
 func _speech() -> void:
 	if model.snapshot.dialog!=null:return
-	_panel("speech");_text("근처 NPC에게 말하기\n천사에게 ‘완료’라고 말하면 초보자 여정을 마칩니다.")
+	_panel("speech");_text("근처 NPC에게 말하기\n수련을 모두 마친 뒤 천사에게 ‘완료’라고 말합니다.\n바로 나가려면 화면의 ‘본게임 시작’을 누르세요.")
 	var input:=LineEdit.new();input.custom_minimum_size=Vector2(0,64);input.placeholder_text="예: 완료";modal_box.add_child(input)
 	var error_label:=_text("")
 	modal_box.add_child(button("말하기",func():
@@ -355,7 +428,10 @@ func _speech() -> void:
 
 func _settings() -> void:
 	if model.snapshot.dialog!=null:return
-	_panel("settings");_text("이름과 소리")
+	_panel("settings");_heading("설정")
+	modal_box.add_child(button("저장",_save,160))
+	if int(model.snapshot.map)>=4711 and int(model.snapshot.map)<=4718:modal_box.add_child(button("본게임 시작 · 수련 건너뛰기",_skip_tutorial,500,60))
+	_text("이름과 소리")
 	var nickname:=LineEdit.new();nickname.text=model.display_name;nickname.placeholder_text="한글 2~12자 또는 영문 3~16자";nickname.custom_minimum_size.y=64;modal_box.add_child(nickname)
 	var feedback:=_text(profile.error)
 	modal_box.add_child(button("이름 저장",func():
@@ -372,7 +448,7 @@ func _settings() -> void:
 
 func _spellbook() -> void:
 	if model.snapshot.dialog!=null:return
-	_panel("spells");_text("기술 / 마법  ·  "+locale.name_of(str(model.snapshot.class_name)))
+	_panel("spells");_window_tabs();_heading("기술 / 마법  ·  "+locale.name_of(str(model.snapshot.class_name)))
 	var list:=_list()
 	if model.snapshot.spellbook.is_empty():
 		var empty:=Label.new();empty.text="배운 기술이 없습니다. 미그녹과 직업 교습소에서 배울 수 있습니다.";list.add_child(empty)
@@ -400,29 +476,36 @@ func _choose_spell(spell: Dictionary) -> void:
 	else:
 		_close_panel();model.call_core("CastSpell",[str(spell.key),0,""]);_sync_dialog();_update_hud()
 
-func _region() -> void:
+func _region(overview: bool=false) -> void:
 	if model.snapshot.dialog!=null:return
-	_panel("region");_text("지역 안내 · "+locale.entity("maps",model.map_id(),str(model.definitions[model.map_id()].name)))
-	var list:=_list()
-	var entries: Array=model.definitions[model.map_id()].warps.duplicate()
-	entries.append_array(model.definitions[model.map_id()].get("scripted_exits",[]))
-	var shown: Dictionary={}
-	for edge in entries:
-		var dest:=str(int(edge.DestinationMapId));var cell:=Vector2i(int(edge.SourceX),int(edge.SourceY))
-		var key:=dest+":"+str(cell)
-		if shown.has(key):continue
-		shown[key]=true
-		var current: Dictionary=model.definitions[model.map_id()]
-		var included: bool=model.definitions.has(dest) and cell.x>=0 and cell.y>=0 and cell.x<int(current.width) and cell.y<int(current.height)
-		var label:=locale.entity("maps",dest,str(model.definitions[dest].name)) if included else "아직 열리지 않은 지역"
-		if edge.get("kind","")=="class-guild":label+=" · 해당 직업 전용"
-		var b:=button("%s  ← 출구 (%d, %d)" %[label,cell.x,cell.y],func():_close_panel();_go(cell),800,54)
-		b.disabled=not included;list.add_child(b)
+	_panel("region");_heading("지역 안내 · "+locale.entity("maps",model.map_id(),str(model.definitions[model.map_id()].name)))
+	var tabs:=HBoxContainer.new();modal_box.add_child(tabs)
+	tabs.add_child(button("현재 지도",_region.bind(false),180,52));tabs.add_child(button("왕국 전도",_region.bind(true),180,52))
+	map_view=MapView.new();map_view.model=model;map_view.locale=locale;map_view.overview=overview;map_view.custom_minimum_size=Vector2(0,370 if size.y>size.x else 290);map_view.size_flags_horizontal=Control.SIZE_EXPAND_FILL;modal_box.add_child(map_view)
+	map_view.navigate.connect(func(cell: Vector2i):_close_panel();_go(cell))
+	var zooms:=HBoxContainer.new();modal_box.add_child(zooms)
+	zooms.add_child(button("축소",func():map_view.change_zoom(-0.5),110,52));zooms.add_child(button("확대",func():map_view.change_zoom(0.5),110,52))
+	_text("왕국의 전체 지도입니다. 현재 지도에서 길과 출구를 선택할 수 있습니다." if overview else "흰 점: 나 · 파란 점: NPC · 초록 점: 출구\n지도를 누르면 이동합니다. 확대 후 끌어서 살펴볼 수 있습니다.")
+	if not overview:
+		var list:=_list(150)
+		var entries: Array=model.definitions[model.map_id()].warps.duplicate()
+		entries.append_array(model.definitions[model.map_id()].get("scripted_exits",[]))
+		var shown: Dictionary={}
+		for edge in entries:
+			var dest:=str(int(edge.DestinationMapId));var cell:=Vector2i(int(edge.SourceX),int(edge.SourceY))
+			var key:=dest+":"+str(cell)
+			if shown.has(key):continue
+			shown[key]=true
+			var current: Dictionary=model.definitions[model.map_id()]
+			var included: bool=model.definitions.has(dest) and cell.x>=0 and cell.y>=0 and cell.x<int(current.width) and cell.y<int(current.height)
+			var label:=locale.entity("maps",dest,str(model.definitions[dest].name)) if included else "아직 열리지 않은 지역"
+			var b:=button("%s  ← 출구 (%d, %d)" %[label,cell.x,cell.y],func():_close_panel();_go(cell),600,54)
+			b.disabled=not included;list.add_child(b)
 	modal_box.add_child(button("닫기",_close_panel))
 
 func _help() -> void:
 	if model.snapshot.dialog!=null:return
-	_panel("help");_text("조작 안내\n\n바닥을 누르면 이동합니다. 방향 버튼이나 화면을 누른 채 끌어도 됩니다.\nNPC를 누르면 대화합니다. 몬스터를 누르면 추적하며 사냥합니다.\n공격 버튼으로 사냥을 중지할 수 있습니다. 전리품을 누르면 다가가 줍습니다.\n가방에서 무기·옷을 착용하고 먹을 것을 사용할 수 있습니다.\n기술 / 마법 창에서 배운 능력을 선택합니다. 대상 기술은 대상을 누르고, 질문형 기술은 답을 입력합니다.\n진행은 자동 저장됩니다. 위쪽 안내의 퀘스트 순서로 진행하세요.\n지역 안내는 현재 지도의 출구로 걸어갑니다.\n직업별 기술·비용·장비 조건은 교습소에서 확인할 수 있습니다.")
+	_panel("help");_text("조작 안내\n\n바닥을 누르면 이동합니다. 화면을 누른 채 끌어서도 이동할 수 있습니다.\nNPC를 누르면 대화합니다. 몬스터를 누르면 추적하며 사냥합니다.\n공격 버튼으로 사냥을 중지할 수 있습니다. 전리품을 누르면 다가가 줍습니다.\n소지품에서 무기·옷을 착용하고 먹을 것을 사용할 수 있습니다.\n기술 / 마법 창에서 배운 능력을 선택합니다. 대상 기술은 대상을 누르고, 질문형 기술은 답을 입력합니다.\n진행은 자동 저장됩니다. 위쪽 안내의 퀘스트 순서로 진행하세요.\n지역 안내에서 실제 지도와 왕국 전도를 볼 수 있습니다.\n초보자 수련 중에는 본게임 시작으로 국내성에 바로 갈 수 있습니다.\n직업별 기술·비용·장비 조건은 교습소에서 확인할 수 있습니다.")
 	modal_box.add_child(button("확인",_close_panel))
 
 func _input(event: InputEvent) -> void:

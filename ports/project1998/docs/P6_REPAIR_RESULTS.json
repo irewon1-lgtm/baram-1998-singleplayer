@@ -1,0 +1,164 @@
+{
+  "status": "BUILD_PASS_AND_143_HOST_OPERATION_CHECKS_PASS; NOT_RUN_DEVICE_FIX1",
+  "request": "User supplied actual Android P6 screenshot and six concrete defects on2026-10-18",
+  "base_commit": "6b4a793af8c06c46bce0c01ea0ac4f812e15df69",
+  "branch": "work/project1998-s10fe-p6-repair-20261018",
+  "build": {
+    "status": "BUILD_PASS",
+    "package": "com.irewon.baram.project1998.p3",
+    "versionCode": 7,
+    "versionName": "0.0.6-p6-fix1",
+    "apk": "p1998-s10fe-p6-fix1.apk",
+    "bytes": 223366565,
+    "sha256": "4539251055bc570fbdf23fdcd28423a4b9ef837cf0f7ce758a5fbe3ce4263d24",
+    "signer_sha256": "5fb380f895f3a98d90e9688e1d7769db7f3c16ae821f3ae9f47a8c348c0a921e",
+    "internet_permission": false,
+    "abis": [
+      {
+        "abi": "arm64-v8a",
+        "sqlite_sha256": "43596fc3907bae3538c7b85a567336bd4fd720f018fb6364dd4f13161acb86a1"
+      },
+      {
+        "abi": "x86_64",
+        "sqlite_sha256": "3913201738ddbac74eecdb199f1a4479e9f926f1193d04e5d63f335bb66a311d"
+      }
+    ],
+    "native_android": "NOT_RUN_DEVICE_P6_FIX1"
+  },
+  "host_cases": [
+    {
+      "case": "qa-repair-6",
+      "checks": 85,
+      "scope": "Six-defect integration: native stage1, viewport, windows, map, moving mobs, pickup attempt and skip",
+      "fixture": false,
+      "status": "PASS",
+      "shutdown_resource_warning": false
+    },
+    {
+      "case": "qa-windows-2",
+      "checks": 25,
+      "scope": "Four windows in landscape+portrait; bounds, scroll and input shield",
+      "fixture": true,
+      "status": "PASS",
+      "shutdown_resource_warning": false
+    },
+    {
+      "case": "qa-pickup-1",
+      "checks": 5,
+      "scope": "Native floor-gold pickup and original crouch; labelled revived/on-pile fixture",
+      "fixture": true,
+      "status": "PASS",
+      "shutdown_resource_warning": false
+    },
+    {
+      "case": "qa-spells-2",
+      "checks": 9,
+      "scope": "New parchment book: native Soothe cost/heal and Korean Gateway",
+      "fixture": true,
+      "status": "PASS",
+      "shutdown_resource_warning": true
+    },
+    {
+      "case": "qa-p6-update-1",
+      "checks": 11,
+      "scope": "Actual previous P6 v2 save and alias; skip retains earned character",
+      "fixture": false,
+      "status": "PASS",
+      "shutdown_resource_warning": false
+    },
+    {
+      "case": "qa-cold-1",
+      "checks": 3,
+      "scope": "Separate cold restore after skip; repeated skip no reward",
+      "fixture": false,
+      "status": "PASS",
+      "shutdown_resource_warning": false
+    },
+    {
+      "case": "qa-new-main-1",
+      "checks": 5,
+      "scope": "Fresh original creation enters main game without rewards",
+      "fixture": false,
+      "status": "PASS",
+      "shutdown_resource_warning": false
+    }
+  ],
+  "host_checks": 143,
+  "source_audit": {
+    "status": "PASS",
+    "original_csharp_files": 145,
+    "repo_runtime_checks": 17,
+    "original_statements": "exact after removing declared path/build/presentation hooks",
+    "exception": "user-authorized SkipTutorial operation sets newbie stage>=10 and Warp0(87,147), no rewards"
+  },
+  "art": {
+    "status": "PASS",
+    "original_inter_sha256": "592cc8981e1887b7fe507a6097a50ef22be2ca325574446159d18bef5d79c37e",
+    "original_windows_and_maps": 8,
+    "source_pickup_poses": 396,
+    "map_thumbnails": 47,
+    "pickup_binding": "native ActionType4 -> original BODY/HEAD relative76..79",
+    "ui_alpha": "original nonzero palette raster retained; palette0 transparent"
+  },
+  "package_verification": {
+    "status": "PASS",
+    "frozen_inputs": 320,
+    "drift": [],
+    "json_exact": {
+      "capsule.json": true,
+      "p6/locale.json": true,
+      "p6/art/assets.json": true
+    },
+    "native_ui_map_pose_imports": [
+      {
+        "source": "p6/art/spellinv.png",
+        "imported": ".godot/imported/spellinv.png-77ed50494fc415b326c26368ea96f2d8.ctex",
+        "in_apk": true
+      },
+      {
+        "source": "p6/art/pickup.png",
+        "imported": ".godot/imported/pickup.png-a9d46ef3dc2ddaad75386ab0b94bcfbc.ctex",
+        "in_apk": true
+      },
+      {
+        "source": "p6/art/field10.png",
+        "imported": ".godot/imported/field10.png-1c7973021911d26df861f48336c5a0db.ctex",
+        "in_apk": true
+      },
+      {
+        "source": "p6/art/map-4712.png",
+        "imported": ".godot/imported/map-4712.png-2d185a8b80f5a928345d6ee8c81e8952.ctex",
+        "in_apk": true
+      }
+    ],
+    "sound_imports": 184,
+    "apk_sha256": "4539251055bc570fbdf23fdcd28423a4b9ef837cf0f7ce758a5fbe3ce4263d24"
+  },
+  "save": {
+    "path": "user://p4/v2",
+    "schema": "checkpoint1 / Character1 / World1 / identity2",
+    "capsule_sha256": "a354ffd0e90a3d1ca447ad51f63e33f634e6a99d95e00890c866609f710507f6",
+    "same_package_signer_user_directory": true,
+    "p4_v1": "protected read-only import; unchanged",
+    "alias": "existing optional profile-p6.json retained",
+    "skip": "same canonical character+world SQLite checkpoint; earned state retained; no reward; repeat outside tutorial does nothing"
+  },
+  "prior_proof_reused": [
+    "P5 47-map source words/raster/warp and native-content scope",
+    "P6 exact original shop/class/magic rules, PCM audio, canonical save guards and SIGKILL/cold proof for unchanged code"
+  ],
+  "device": {
+    "baseline_P6": "User supplied actual Android screenshot showing layout/gameplay and six reported defects; UI acceptance FAIL",
+    "repair_APK": "NOT_RUN_DEVICE",
+    "adb_devices": "No attached devices",
+    "same_package_and_signer": "verified during build; actual update installation not claimed"
+  },
+  "failures": "FAILURE_HISTORY.json and original failed logs/captures retained",
+  "limitations": [
+    "Fix1 Android/Galaxy update install and actual touch/IME/lifecycle/rotation/FPS/heat/battery not run",
+    "Original47-map scope; full world not ported",
+    "Original parchment textures/components used; exact Windows window coordinates and every equipment/spell layer not claimed",
+    "MIDI music/full spell FX, existing source-art gaps and later translation/era review remain",
+    "One spells-test process reports a resource-in-use warning only at shutdown; action assertions and exit code passed; warning retained in evidence"
+  ]
+}

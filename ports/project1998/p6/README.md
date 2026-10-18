@@ -1,4 +1,34 @@
-# P6: Korean display, mobile UI and quality
+# P6: Korean display, mobile UI and six-defect repair
+
+The latest user report supplies physical Android P6 evidence of six defects.
+See `../docs/P6_REPAIR_CONTRACT.json` and `P6_REPAIR_RESULTS.json` for the
+repair boundary and actual execution. The new update is code7 /
+`0.0.6-p6-fix1`, not P7 hardware acceptance. The world now fills the canvas
+behind translucent controls without a D-pad. Original action4 drives original
+pickup poses 76..79. Actors interpolate over 0.2 seconds and source walk
+frames follow movement. Region guide displays preserved local map art and
+Inter.dat FIELD10; four separate parchment windows expose inventory, spells,
+equipment/paperdoll and effective source stats.
+
+The explicit user-requested offline tutorial bypass sets the newbie stage to
+at least10 and enters Kugnae map0 at (87,147), the original tutor-home
+Warp589 destination. It retains earned character data and awards nothing.
+The existing canonical checkpoint commits stage/location and world together.
+This is a declared exception to the earlier presentation-only P6 scope.
+Normal source gate and quest handlers remain unchanged.
+
+`repair_art.py` requires frozen Inter.dat and NexusTK.dat, emits only private
+assets and audits palette raster hashes. `RepairSession.cs` adds a bounded
+outgoing pose observer, read-only effective stats and the explicit bypass.
+`RepairCore.cs` exposes that operation through the existing checkpoint.
+`repair_fixtures.py` copies prior actual saves and labels only the prepared
+pickup/spell changes. `repair_qa.gd` executes the finite six-defect checks,
+portrait/landscape windows, cold restore, fresh main entry and P6 update.
+`repair_package.py` creates separately named delivery/evidence; retain code6.
+
+The following describes the original code6 P6 baseline; its device UI
+acceptance is superseded by the user screenshot and this repair contract.
+
 
 Continues P5 commit `cda6fe275dd2e41635a5fd20def137d3bd57c115` under
 `P1998_S10FE_NATIVE_PORT_V1_20261018`. The user's “6단계 진행해” authorizes this

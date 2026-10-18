@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Add presentation-only P6 to the reproducible P5 source/content build."""
+"""Add P6 presentation and the user-authorized tutorial-bypass repair to P5."""
 import argparse, hashlib, json, shutil, subprocess, sys
 from pathlib import Path
 
@@ -25,7 +25,8 @@ def main():
     subprocess.run([sys.executable,str(HERE/'audio.py'),'--originals',str(a.originals),'--output',str(runtime/'audio'),
                     '--audit',str(out/'AUDIO_AUDIT.json')],check=True)
     b=runtime/'Bootstrap.cs';b.write_text(b.read_text().replace('res://p5/main.tscn','res://p6/main.tscn').replace('P5 시작 실패','P6 시작 실패'))
-    c=runtime/'GameCore.cs';c.write_text(c.read_text().replace('build = "0.0.5-p5"','media = _session.P6Media, build = "0.0.6-p6"'))
+    c=runtime/'GameCore.cs';c.write_text(c.read_text().replace('build = "0.0.5-p5"','media = _session.P6Media, poses = _session.P6Poses, stats = _session.P6Stats(), build = "0.0.6-p6-fix1"'))
+    shutil.copyfile(HERE/'RepairCore.cs',runtime/'RepairCore.cs')
     project=runtime/'project.godot'
     project.write_text(project.read_text().replace('Project1998 P5','Project1998 P6').replace('window/handheld/orientation=0',
         'window/handheld/orientation=6\nwindow/stretch/aspect="expand"'))
@@ -36,9 +37,18 @@ def main():
     needle='        var d = new List<byte> { 0x00, 0x03 };'
     hook='        P6ObserveSound(soundId, entityId, volume); // P6 outgoing media observer\n'
     assert text.count(needle)==1;text=text.replace(needle,hook+needle);target.write_text(text)
-    (out/'P6_SOURCE_AUDIT.json').write_text(json.dumps({'capsule_sha256':CAPSULE,'source':'P5 preparation + reversible outgoing sound observer',
+    shutil.copyfile(HERE/'RepairSession.cs',server/'P6.Repair.cs')
+    target=server/'Session.Combat.cs';text=target.read_text()
+    needle='    private void SendAction(uint id, ActionType type, ushort time, byte param) =>\n'
+    original=needle+'        SendMap(ServerOp.Action, _gameInc++, ActionBody(id, type, time, param),\n                $"action(0x1A) type={(byte)type} time={time}");'
+    replacement=needle.replace(' =>','')+'    {\n        P6ObserveAction(id, type, time); // P6 outgoing action observer\n'+original[len(needle):]+'\n    }'
+    assert text.count(original)==1;text=text.replace(original,replacement);target.write_text(text)
+    subprocess.run([sys.executable,str(HERE/'repair_art.py'),'--originals',str(a.originals),'--runtime',str(runtime),'--audit',str(out/'REPAIR_ART_AUDIT.json')],check=True)
+    (out/'P6_SOURCE_AUDIT.json').write_text(json.dumps({'capsule_sha256':CAPSULE,'source':'P5 preparation + reversible outgoing sound/action observers; read-only stats; user-authorized offline tutorial skip',
         'save_identity':'unchanged P5 v2; profile-p6.json is a separate optional display alias/preferences file',
-        'adapter_sha256':sha(server/'P4.Adapter.cs'),'media_sha256':sha(server/'P6.Media.cs')},indent=2)+'\n')
+        'adapter_sha256':sha(server/'P4.Adapter.cs'),'media_sha256':sha(server/'P6.Media.cs'),
+        'repair_session_sha256':sha(server/'P6.Repair.cs'),'repair_core_sha256':sha(runtime/'RepairCore.cs'),
+        'art_audit_sha256':sha(out/'REPAIR_ART_AUDIT.json')},indent=2)+'\n')
     print('P6_PREPARED',out)
 
 if __name__=='__main__':main()

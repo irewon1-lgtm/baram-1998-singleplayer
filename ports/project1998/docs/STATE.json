@@ -1,9 +1,9 @@
 {
   "plan_id": "P1998_S10FE_NATIVE_PORT_V1_20261018",
   "authorized_scope": [
-    "P6"
+    "P6 repair of six reported defects"
   ],
-  "active_branch": "work/project1998-s10fe-p6-20261018",
+  "active_branch": "work/project1998-s10fe-p6-repair-20261018",
   "android_baseline_head": "c1f3c5a075fe3ecb1cfb06a57f360e67b9b9798a",
   "official_project1998_head": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
   "stages": {
@@ -14,7 +14,7 @@
     "p2_synthetic_touch": "PASS_FIXTURES_ONLY",
     "p2_android_emulator": "BLOCKED_ENVIRONMENT",
     "p2_galaxy": "NOT_RUN_DEVICE",
-    "overall": "P6_FINITE_KOREAN_UI_QUALITY_HOST_VERIFIED_AND_SIGNED_UPDATE; ANDROID_P6_RUNTIME_AND_GALAXY_NOT_RUN",
+    "overall": "P6_FIX1_SIX_DEFECTS_HOST_VERIFIED_SIGNED_CODE7; NOT_RUN_DEVICE_FIX1",
     "p3_source_audit": "PASS_151_CODE_BUILD_AND_77_CONTENT_INPUTS",
     "p3_original_oracle": "PASS_40_SNAPSHOTS",
     "p3_host": "PASS_FIX1_40_SNAPSHOTS_AND_COLD_SAVE",
@@ -47,24 +47,25 @@
     "p5_migration": "PASS_P4_IMMUTABLE_COPY_7_GUARDS",
     "p5_android_build": "BUILD_PASS",
     "p5_android_runtime": "NOT_RUN_DEVICE_P5",
-    "p6": "HOST_SOFTWARE_SCOPE_VERIFIED; NOT_RUN_DEVICE_P6",
+    "p6": "BASELINE_DEVICE_UI_FAILURE_REPORTED; FIX1_HOST_143_PASS",
     "p6_localization": "APPLIED_FINITE_NAMES_541_SOURCE_ROWS; RUNTIME_AND_ERA_RATES_SEPARATE",
-    "p6_ui": "PASS_103_HOST_GUI_CHECKS_5_VIEWPORTS_AND_KEYBOARD_FIXTURE",
+    "p6_ui": "ORIGINAL103_GEOMETRY_CHECKS_SUPERSEDED_BY_USER_FAILURE; FIX1_WINDOW_FULLSCREEN_CHECKS_PASS",
     "p6_classes": "PASS_FOUR_NATIVE_GUI_FLOWS",
     "p6_spells": "PASS_139_EXACT_DEBIT_INSUFFICIENT_MP_ORIGINAL_DAMAGE_KILL_CHECKS",
     "p6_storage": "PASS_30_CONTROLS_SIGKILL_COLD_6_GUARDS",
     "p6_audio": "PASS_NATIVE_EVENTS_REAL_PCM_MIXER_17_CHECKS",
     "p6_android_build": "BUILD_PASS",
-    "p6_android_runtime": "NOT_RUN_DEVICE_P6"
+    "p6_android_runtime": "USER_P6_SCREENSHOT_OBSERVED_LAYOUT_GAMEPLAY_AND_REPORTED_FAILURES; FIX1_NOT_RUN_DEVICE",
+    "p6_fix1": "143_HOST_OPERATION_CHECKS_PASS; BUILD_PASS; NOT_RUN_DEVICE_FIX1"
   },
   "apk": {
     "status": "BUILD_PASS",
     "package": "com.irewon.baram.project1998.p3",
-    "versionCode": 6,
-    "versionName": "0.0.6-p6",
-    "apk": "p1998-s10fe-p6-korean.apk",
-    "bytes": 220942688,
-    "sha256": "e1565dbb3d137b8fd79c9ba275d1e10f1eeabe7429cebc1c5aa3d09608f630fe",
+    "versionCode": 7,
+    "versionName": "0.0.6-p6-fix1",
+    "apk": "p1998-s10fe-p6-fix1.apk",
+    "bytes": 223366565,
+    "sha256": "4539251055bc570fbdf23fdcd28423a4b9ef837cf0f7ce758a5fbe3ce4263d24",
     "signer_sha256": "5fb380f895f3a98d90e9688e1d7769db7f3c16ae821f3ae9f47a8c348c0a921e",
     "internet_permission": false,
     "abis": [
@@ -77,28 +78,27 @@
         "sqlite_sha256": "3913201738ddbac74eecdb199f1a4479e9f926f1193d04e5d63f335bb66a311d"
       }
     ],
-    "native_android": "NOT_RUN_DEVICE_P6"
+    "native_android": "NOT_RUN_DEVICE_P6_FIX1"
   },
   "isolated_user_data": "project1998_s10fe_p3_20261018; unchanged P5 user://p4/v2, P4 v1 read-only import, optional profile-p6.json",
-  "last_valid_pass": "P6 finite Korean UI/software host scope:103 responsive/input checks, four native class flows, shop continuation,139 spell checks, death/gold cold restore, Korean Finish native quest/warp, real audio mixer, SIGKILL/cold/guards, signed code6 APK.",
-  "next_action": "Install P6 over P5/P4 without uninstalling. Continue P7 actual Galaxy acceptance when authorized: touch, Korean IME, airplane mode, shops/classes/spells, death/revival, lifecycle/rotation/back, saves and measured FPS/heat/battery. See P6_RESULTS.json; no Android P6 runtime/device PASS exists.",
+  "last_valid_pass": "P6 fix1:143 host operation checks in7 real Godot processes,145 original C# files +17 app checks, frozen resource APK verification and same-signer code7 APK.",
+  "next_action": "Update existing P6 with fix1 APK without uninstalling; confirm actual Galaxy six-defect behavior. Do not claim device/P7 acceptance from host tests.",
   "emulator_blocker": "Android guest did not finish booting in 240 seconds",
   "limitations": [
-    "actual Galaxy install over P5/P4, touch, Samsung IME, speaker, airplane mode and OS lifecycle/rotation unexecuted",
-    "Galaxy minimum FPS, heat and battery unmeasured",
-    "Android16KiB page support unverified",
-    "original Windows full window/equipment layering, cast poses and spell FX parity not claimed",
-    "MIDI background music and implicit action sound mapping not implemented",
-    "later quests/era terminology remain REVIEW or English fallback",
-    "P5 region boundaries,52 absent-art harvesting rows,32 source item icon gaps and3 unreachable warp rows remain unchanged"
+    "Fix1 Android/Galaxy update install and actual touch/IME/lifecycle/rotation/FPS/heat/battery not run",
+    "Original47-map scope; full world not ported",
+    "Original parchment textures/components used; exact Windows window coordinates and every equipment/spell layer not claimed",
+    "MIDI music/full spell FX, existing source-art gaps and later translation/era review remain",
+    "One spells-test process reports a resource-in-use warning only at shutdown; action assertions and exit code passed; warning retained in evidence"
   ],
   "existing_baram_source_and_saves": "UNCHANGED",
   "public_original_assets": "NONE",
-  "device_gate": "NOT_RUN_DEVICE",
+  "device_gate": "NOT_RUN_DEVICE_FIX1",
   "scope_override": {
     "date": "2026-10-18",
-    "latest_user_instruction": "6단계 진행해",
-    "effect": "P6 from completed P5 authorized; unchanged region/content/save identity, device acceptance remains P7; separate V2/V3 review is not a reset order"
+    "latest_user_instruction": "Fix six defects in actual Android P6 screenshot; allow tutorial bypass to main game",
+    "contract": "P6_REPAIR_CONTRACT.json",
+    "exception": "explicit offline skip sets stage>=10 and enters Kugnae original Warp589 destination0(87,147); retain earned character data; no rewards"
   },
   "p3_apk": {
     "status": "BUILD_PASS",
@@ -400,5 +400,7 @@
     "preview": "p1998-s10fe-p6-preview.png",
     "source_receipt": "p1998-s10fe-p6-delivery.json",
     "sha256": "e1565dbb3d137b8fd79c9ba275d1e10f1eeabe7429cebc1c5aa3d09608f630fe"
-  }
+  },
+  "repair_result": "P6_REPAIR_RESULTS.json",
+  "previous_p6_apk_reference": "P6_RESULTS.json retains code6 receipt and original evidence"
 }

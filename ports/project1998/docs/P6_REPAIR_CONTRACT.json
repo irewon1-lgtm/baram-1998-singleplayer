@@ -1,0 +1,15 @@
+{
+  "request": "2026-10-18 six defects after physical Android P6 screenshot",
+  "base_commit": "6b4a793af8c06c46bce0c01ea0ac4f812e15df69",
+  "scope": "P6 repair; not completion of P7 hardware acceptance",
+  "checks": [
+    "World covers viewport behind translucent HUD/actions, no reserved top/footer bands or D-pad; small maps fill camera without invented tiles",
+    "Native ActionType.SitOrPickup triggers original body/head crouch frames 76..79; original pickup success/refusal unchanged",
+    "Actor-ID interpolation, walking frames tied to movement; map changes, despawns and teleport corrections snap without ghost actors",
+    "Region opens actual source map with player/NPC/exit markers and original Inter.dat kingdom overview",
+    "New/existing tutorial saves can explicitly start main game at Kugnae town 0(87,147), original tutor-home exit Warp589, retain earned stats/items/gold, commit stage10 and location together; no repeated rewards",
+    "Four separately accessible parchment inventory, spells, equipped-item/paperdoll and effective-stat windows use supplied original interface art and native actions"
+  ],
+  "invariants": ["47-map capsule bytes and v2 checkpoint identity unchanged", "same package, signer and user directory", "original Lua/CSV and handler rules unchanged", "tutorial bypass is the explicit user-authorized offline exception", "preserve old delivery, source inputs and failure evidence"],
+  "validation": "Actual Godot host UI/native core, portrait and landscape captures, cold restore, source audit, signed update APK; new physical Android execution reported separately"
+}
