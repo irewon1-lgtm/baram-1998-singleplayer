@@ -1,0 +1,232 @@
+{
+  "schema": "project1998.p3.fixture.v1",
+  "seed": 1998,
+  "random_draws": 0,
+  "appearance": [
+    0,
+    0,
+    1,
+    0,
+    0
+  ],
+  "hp": 40,
+  "mp": 10,
+  "actions": [
+    {
+      "op": "move",
+      "label": "east-open",
+      "dir": 1
+    },
+    {
+      "op": "move",
+      "label": "south-open",
+      "dir": 2
+    },
+    {
+      "op": "move",
+      "label": "east-before-rabbit",
+      "dir": 1
+    },
+    {
+      "op": "move",
+      "label": "living-rabbit-blocks",
+      "dir": 1
+    },
+    {
+      "op": "move",
+      "label": "north-to-bound-0",
+      "dir": 0
+    },
+    {
+      "op": "move",
+      "label": "north-to-bound-1",
+      "dir": 0
+    },
+    {
+      "op": "move",
+      "label": "north-to-bound-2",
+      "dir": 0
+    },
+    {
+      "op": "move",
+      "label": "north-to-bound-3",
+      "dir": 0
+    },
+    {
+      "op": "move",
+      "label": "north-to-bound-4",
+      "dir": 0
+    },
+    {
+      "op": "move",
+      "label": "north-to-bound-5",
+      "dir": 0
+    },
+    {
+      "op": "move",
+      "label": "north-to-bound-6",
+      "dir": 0
+    },
+    {
+      "op": "move",
+      "label": "invalid-direction",
+      "dir": 9
+    },
+    {
+      "op": "give",
+      "label": "acorn-partial-stack",
+      "id": 10009,
+      "amount": 200
+    },
+    {
+      "op": "give",
+      "label": "acorn-carry-cap",
+      "id": 10009,
+      "amount": 5
+    },
+    {
+      "op": "give",
+      "label": "two-wines-individual-slots",
+      "id": 10049,
+      "amount": 2
+    },
+    {
+      "op": "give",
+      "label": "wooden-sword-durability",
+      "id": 3001,
+      "amount": 1
+    },
+    {
+      "op": "capacity",
+      "label": "fixture-pack-full",
+      "value": 4
+    },
+    {
+      "op": "give",
+      "label": "full-pack-refuses-apple",
+      "id": 10001,
+      "amount": 2
+    },
+    {
+      "op": "capacity",
+      "label": "fixture-normal-capacity",
+      "value": 27
+    },
+    {
+      "op": "give",
+      "label": "apple-stack",
+      "id": 10001,
+      "amount": 98
+    },
+    {
+      "op": "give",
+      "label": "apple-cap",
+      "id": 10001,
+      "amount": 10
+    },
+    {
+      "op": "use",
+      "label": "lua-apple-heal-5",
+      "slot": 4,
+      "eat": true
+    },
+    {
+      "op": "use",
+      "label": "lua-wine-mana-25-hp-cost-5",
+      "slot": 1,
+      "eat": false
+    },
+    {
+      "op": "mounted",
+      "label": "fixture-mounted",
+      "value": true
+    },
+    {
+      "op": "use",
+      "label": "mounted-refuses-food-without-consuming",
+      "slot": 4,
+      "eat": true
+    },
+    {
+      "op": "mounted",
+      "label": "fixture-unmounted",
+      "value": false
+    },
+    {
+      "op": "status",
+      "label": "rabbit-sleep-set",
+      "category": "sleep",
+      "until": 1000,
+      "key": "doze"
+    },
+    {
+      "op": "status_query",
+      "label": "rabbit-sleep-before-expiry",
+      "category": "sleep",
+      "now": 999
+    },
+    {
+      "op": "status_query",
+      "label": "rabbit-sleep-at-expiry",
+      "category": "sleep",
+      "now": 1000
+    },
+    {
+      "op": "status",
+      "label": "rabbit-sleep-replaced",
+      "category": "sleep",
+      "until": 2000,
+      "key": "sleep"
+    },
+    {
+      "op": "clear_status",
+      "label": "rabbit-sleep-cleared",
+      "category": "sleep"
+    },
+    {
+      "op": "status_query",
+      "label": "rabbit-sleep-free-after-clear",
+      "category": "sleep",
+      "now": 1001
+    },
+    {
+      "op": "threat",
+      "label": "rabbit-threat-add",
+      "player": 1,
+      "amount": 7
+    },
+    {
+      "op": "threat",
+      "label": "rabbit-threat-accumulates",
+      "player": 1,
+      "amount": 9
+    },
+    {
+      "op": "threat",
+      "label": "rabbit-ignores-zero-id",
+      "player": 0,
+      "amount": 100
+    },
+    {
+      "op": "threat",
+      "label": "rabbit-ignores-negative-threat",
+      "player": 1,
+      "amount": -100
+    },
+    {
+      "op": "threat_query",
+      "label": "rabbit-threat-total",
+      "player": 1
+    },
+    {
+      "op": "clear_threat",
+      "label": "rabbit-forgets-player",
+      "player": 1
+    },
+    {
+      "op": "threat_query",
+      "label": "rabbit-threat-cleared",
+      "player": 1
+    }
+  ]
+}

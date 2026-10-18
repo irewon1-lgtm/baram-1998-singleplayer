@@ -1,0 +1,23 @@
+config_version=5
+
+[application]
+config/name="Project1998 P3 Core Probe"
+run/main_scene="res://main.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="project1998_s10fe_p3_20261018"
+config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
+
+[dotnet]
+project/assembly_name="P3Probe"
+
+[display]
+window/size/viewport_width=1280
+window/size/viewport_height=800
+window/stretch/mode="canvas_items"
+window/handheld/orientation=0
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.09,0.14,0.10,1)

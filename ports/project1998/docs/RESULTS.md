@@ -48,3 +48,36 @@ SHA256: `c75cfa35d4e2ba812e49538a6db886c027d21ae53f831828adf08257731cfaf2`
 Linux 소프트웨어 그래픽의 짧은 기록은 frame p50 18.06ms / p95 29.74ms / p99 113.72ms / max 143.42ms, 엔진 정적 메모리 약48.7MiB였다. 지도 전환·시작이 섞인 92샘플이며 총 앱 RSS나 Galaxy 성능이 아니다. 화면의 FPS 숫자도 해당 Linux 캡처 시점의 값이다. 30fps 실기기 판정에 사용하지 않았다.
 
 다음은 **동일 APK의 실제 Galaxy S10 FE P2 수락 시험**이다. 직접 설치·비행기 모드·터치/충돌·색/비율·백그라운드·프레임/메모리를 기록하고 관측 결함만 보수한다. 이 게이트를 통과하기 전 P3로 확대하지 않는다. 기존 BARAM 정본·앱·저장·서명키·main은 변경하지 않았다.
+
+## P3 follow-up — latest user instruction, 2026-10-18
+
+The user authorized **P3 only**, overriding the earlier sequencing gate while
+preserving the P2 `NOT_RUN_DEVICE` status. P4 was not started.
+
+- Source audit: 151 code/project/build inputs and 77 content inputs match upstream
+  commit 65cb3ef28f289ee35d19abfb6829d6120b9ec0cd.
+- Implemented candidate: one Godot .NET app process, net9.0 entry and unchanged
+  net8.0 original rule libraries. No LoginServer, TCP transport or running world tick.
+- Original desktop oracle versus actual Godot host: all 40 snapshots / 39 actions
+  equal, including cardinal/occupancy checks, original Lua item effects and mob
+  status/threat rules. Seed 1998 is fixed; random outcomes are not in this fixture.
+- Original SQLite character round-trip, cold process, online backup read and four
+  independent save-protection processes pass. No P2/Baram data migration occurs.
+- Signed native C# APK builds for arm64-v8a and x86_64; INTERNET permission absent.
+  Fourteen selected managed assemblies match export build outputs. The optional
+  host proc workaround is absent from the APK.
+- Android runtime: **BLOCKED_ENVIRONMENT_BEFORE_APP_EXECUTION**. API28 booted in
+  310.6 seconds, but the package service broke its install pipe and restarted.
+  A later attempt hit an emulator lock; fresh AVDs required 7372.80 MB free for
+  their auto-expanded userdata. These are not Android core-rule PASS results.
+- P3 overall: **PARTIAL_ANDROID_RUNTIME_NOT_VERIFIED**. Actual Galaxy remains
+  **NOT_RUN_DEVICE**. Do not promote P2 performance or P3 mobile execution.
+
+APK: `p1998-s10fe-p3-core.apk`, 217,461,901 bytes.
+SHA256: `afb804ddee5da1badbbd072576b835a83c98bd20b36d9938c03f803ce61c7975`.
+Separate package: `com.irewon.baram.project1998.p3`.
+
+See [P3_AUDIT.md](P3_AUDIT.md) and [../p3/README.md](../p3/README.md) for the
+compatibility audit, experiment code, storage decisions and precise scope.
+The candidate remains reviewable/installable, with the missing Android execution
+evidence stated explicitly. No public binary deployment was performed.

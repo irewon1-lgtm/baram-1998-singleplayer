@@ -1,7 +1,9 @@
 # Project1998 Android port
 
 This subtree follows user plan `P1998_S10FE_NATIVE_PORT_V1_20261018`.
-Its authorized scope is P0 → P1 → P2. Do not start P3 or import the full world.
+The latest user instruction on 2026-10-18 authorizes P3 only, after the P0–P2
+handoff. This explicitly overrides the earlier sequencing gate, but does not
+turn unexecuted P2 device checks into PASS. Do not start P4 or import the full world.
 Keep this separate from the existing Baram r16 game, package, saves and state.
 The port's checkpoint is `docs/STATE.json`; do not replace the Baram plan/state.
 
@@ -13,4 +15,5 @@ Do not erase buildings or create substitute art to conceal conversion failures.
 Use explicit statuses. A signed APK is BUILD_PASS; Linux or Android emulator
 execution is not Galaxy hardware verification. The P2 device gate requires an
 actual Galaxy Tab S10 FE, offline touch movement and measured minimum 30 FPS.
-Until that evidence exists, retain `NOT_RUN_DEVICE` and do not promote P3.
+Until that evidence exists, retain `NOT_RUN_DEVICE`. Report P3 host, Android
+build, Android runtime and physical-device evidence separately.

@@ -1,0 +1,760 @@
+{
+  "head": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+  "files": [
+    {
+      "path": "Shared.Core/Csv.cs",
+      "sha256": "f2430144c940a16373dd7990220152d658af89f7ca786b171f1e210655a50af4",
+      "official_blob": "0aa029baba812ed6ef5e343af79fe39434688eb6"
+    },
+    {
+      "path": "Shared.Core/Log.cs",
+      "sha256": "a6a7f10903da34a8b003419ba036f1d2be8cd2e9a307b1d5a58dd1bd3c6d091a",
+      "official_blob": "3e96ea21db40d760737ec998fc8d15338f7efc11"
+    },
+    {
+      "path": "Shared.Core/Shared.Core.csproj",
+      "sha256": "7a825bad8d5f8d2b42d05f09db24837cbedd59aedf226956392bb7d4c5af158e",
+      "official_blob": "dd3b932016c3741f46c006f374451ab3b6415c9f"
+    },
+    {
+      "path": "Shared/Auth.cs",
+      "sha256": "79e285bd08d1830561dc79a7ecec4a114de25b570302ed5d6995580df6e25968",
+      "official_blob": "7ab403bfded82bbe891f5fda0e6c46dfbd6c5879"
+    },
+    {
+      "path": "Shared/ChannelPorts.cs",
+      "sha256": "9e39d4616df69f2e2ba8ce5ae18deed106cc9d5072c3d40721be516f1c55e6ae",
+      "official_blob": "8dad07e6afc1ebcadfe996059e791fcbd7a951df"
+    },
+    {
+      "path": "Shared/Character.cs",
+      "sha256": "7657f1eacee195a7ec8fc8c039edcee9cb60efc3fa0886ea08ba7577fe403a6d",
+      "official_blob": "83c4d7a7c3c956cdd612127294ccf185fd98d134"
+    },
+    {
+      "path": "Shared/CharacterFactory.cs",
+      "sha256": "6f8490f027b657187824df91a264fc03bdee98a71962a0da7465e3c651c3ff4e",
+      "official_blob": "255ddc4acb69399be8169237cc6118b3a17d3991"
+    },
+    {
+      "path": "Shared/CharacterStore.cs",
+      "sha256": "6d5d53f44bf79b748aa05e361f82aa326f86aead6251b35fb8e1e61c8135f07f",
+      "official_blob": "c0375b1563830ade1883128f9ea4767fb91dadd4"
+    },
+    {
+      "path": "Shared/CharacterUpgrader.cs",
+      "sha256": "1be5b54e574d3f1c228f027e5ef8ca2ca5715e57bfb1399ec833042a1d8ba7e1",
+      "official_blob": "eb5797fa9194599914b2c3c87dff1f12cdc4b8c1"
+    },
+    {
+      "path": "Shared/ConnGuard.cs",
+      "sha256": "32889a75a804414224fb8109c208d1d7652a30e4959d19a6128781a36c38c07a",
+      "official_blob": "6189e4c0ad2962917e7add45b19639693cbae4bc"
+    },
+    {
+      "path": "Shared/Db.cs",
+      "sha256": "5606a27b31d015ec1bb1fd932a575d605edaffc5aa8a93842fa0d8675fc6c812",
+      "official_blob": "5a5c6b606b849882fd9cc054615ae8f91ad30622"
+    },
+    {
+      "path": "Shared/EraCalendar.cs",
+      "sha256": "8bf07d80da746c5ff862832f8260c611760374ca7d62069ea7232709ad6c13b6",
+      "official_blob": "d4a53d811973f86cb453b8589619e543d1716215"
+    },
+    {
+      "path": "Shared/GameCalendar.cs",
+      "sha256": "39066ec3b4a126bd22669ddfa31826b1930a976c721bb45b2268c37bcba0034a",
+      "official_blob": "475927779b73be11a9584e3eb6c566881137c0da"
+    },
+    {
+      "path": "Shared/HandoffTokens.cs",
+      "sha256": "d3baa95d3744e3835cc2458cc53db36bc70776bdd8bebd8cafbfd00ff9304b3e",
+      "official_blob": "3258a154d996957965f48ec42735f86bd977dfcc"
+    },
+    {
+      "path": "Shared/IOutbound.cs",
+      "sha256": "d587d7aa4c2f693144e948534508871569731da8cb7155024418b79516f84720",
+      "official_blob": "07d20b7223deac9cfa06948109ed4b19f3e0978c"
+    },
+    {
+      "path": "Shared/LoginAuth.cs",
+      "sha256": "f4e50c6befb3dac2a764f676c87802d60dcd2c2a268c91768a5bfae37ec6aacc",
+      "official_blob": "d32ce002c14ba5d83841f52dd6399fb3904747c9"
+    },
+    {
+      "path": "Shared/LoginThrottle.cs",
+      "sha256": "a5d3c3669556992c8a01ec2d24d519da905bc0a05aca599c1ad9e618efdef3a0",
+      "official_blob": "0f0bd4272af1e847d8346ca8d4d54f055a10257e"
+    },
+    {
+      "path": "Shared/Mob.cs",
+      "sha256": "d7b6ee3f8946de4a83fd5a9307ba1fefea555569b752aa4a6ee4a7fdfce7573e",
+      "official_blob": "611d20a885ac291601dfc194c9fa8439dca4e983"
+    },
+    {
+      "path": "Shared/Moderation.cs",
+      "sha256": "7cf549e6149f6149784772e5f2288b38ad4dac28c09bef24fd83432dc34a1bad",
+      "official_blob": "cb88982df30e29d19ecabf551fc70899a02ef9fe"
+    },
+    {
+      "path": "Shared/NameRules.cs",
+      "sha256": "6cb610d5a433a059f31248d6d22566c7db349ad285c50f26cb5a69e815c2f100",
+      "official_blob": "5bee15f30bff488321af974e1069c332330ad043"
+    },
+    {
+      "path": "Shared/NetBind.cs",
+      "sha256": "3e30facab493076757025d3025c400fd2721b893dd9b5152959332f3d42a0611",
+      "official_blob": "28986ca8aa8a8122cca08bd57adee2b82ebb42a0"
+    },
+    {
+      "path": "Shared/Opcodes.cs",
+      "sha256": "e148367cf2d19f73250ccaff4b906c0ed69ee7b9a06a7d554e8cc4e467a669ae",
+      "official_blob": "e00ea579f74f9971cf264348caa830e85e9d0b2d"
+    },
+    {
+      "path": "Shared/ProxyProtocol.cs",
+      "sha256": "714da4cbf6ec3a9ae5869b6a5795606e890681e796c37824b87b0c0eaabf01a0",
+      "official_blob": "e406c3df7e1b60b09fcfcd8155a303ab35e1c6ef"
+    },
+    {
+      "path": "Shared/RepoPaths.cs",
+      "sha256": "447002bf75e74e7280ae207eff96b48ab6802e3aa801c6af045246a87ece2337",
+      "official_blob": "31f7280158aa29ba6db467fdc385f69907000746"
+    },
+    {
+      "path": "Shared/ServerConfig.cs",
+      "sha256": "fc66957d48319859d3d9eb5cf4f523e41e6823ab2877ef4182238127cfb7e3ed",
+      "official_blob": "91b108dcfd65e93af6557c073f33344f6f7db433"
+    },
+    {
+      "path": "Shared/Shared.csproj",
+      "sha256": "fc74e3cc40d31a18db1647ae7c56e10370b32f1755daf524805745023acb4d17",
+      "official_blob": "afcb3b65be379a013662315e4a492801d60f2594"
+    },
+    {
+      "path": "Shared/TcpOutbound.cs",
+      "sha256": "93c806fe45b6ef5440e670b6812772a933a3a130d66e71dfe09c9f42be7082c7",
+      "official_blob": "08a9b39626ca67157b82d9d3daf97c7731867661"
+    },
+    {
+      "path": "Shared/TkAcceptor.cs",
+      "sha256": "705ae5cbf6d94db14ef8a04ef42e1256638d0b4d8ef2ca425f1b986b5a5a2e76",
+      "official_blob": "71d1fd06ce4e1050cc903d32c916c17ba73444dc"
+    },
+    {
+      "path": "Shared/WireValues.cs",
+      "sha256": "7f291e49f181f5cc80a4d05ed63f2f26665fea728699479961df19fe3c0af818",
+      "official_blob": "7e47812e1ec50939ca34e951fe356a862142c941"
+    },
+    {
+      "path": "Shared/WorldState.cs",
+      "sha256": "120616edb0b0fcd74b411d304cb720d99699019acd36064712162554bd2797cb",
+      "official_blob": "6295762c69364b128c9b0a54b9e615f8c1f6e952"
+    },
+    {
+      "path": "Protocol.Tk495/FrameReader.cs",
+      "sha256": "128740536a0df9237ee5f40cd8da07f49d46440fadc5b62c80b07bfc88c86dd8",
+      "official_blob": "1886e1e96bb5ce9d08727b06b120ecd016524008"
+    },
+    {
+      "path": "Protocol.Tk495/HostAddress.cs",
+      "sha256": "461ca35d9ecd0171e784ef30444eff95bd061ef5fed195b67807ee7821c8cea1",
+      "official_blob": "99d8a062ecc3f4fb7dc88d0e9f2b196e964224c7"
+    },
+    {
+      "path": "Protocol.Tk495/LoginRedirect.cs",
+      "sha256": "5ee72e154fe2528763988a832d086509472b9bd58accd4a2b7dad4d9d411768c",
+      "official_blob": "04eee9a6485cc3cb6fc232645266b5aa324b7b13"
+    },
+    {
+      "path": "Protocol.Tk495/PacketReader.cs",
+      "sha256": "c2905d1369bfdbd5d698c4704c759fa038ccff0374891c93f8c25e22e2cd32b0",
+      "official_blob": "77bd05716432889d0f01a300acb8b01fc1b2d9d5"
+    },
+    {
+      "path": "Protocol.Tk495/PacketWriter.cs",
+      "sha256": "b5190274e8db00877976b5b624515769627d4ebbfac4de7e77ec67d6a5f583bf",
+      "official_blob": "7beea1eb9395bb2f6120b426798e3d0797965b26"
+    },
+    {
+      "path": "Protocol.Tk495/Protocol.Tk495.csproj",
+      "sha256": "348f281915c6e03190090223edbb8913547773416da177f741e4da95c632f0a2",
+      "official_blob": "1a115b77af29751996f180826aebd7f9b520bf57"
+    },
+    {
+      "path": "Protocol.Tk495/Replay6x.cs",
+      "sha256": "e19a53e4491879093f67e901ee2fd321263a18d026444c50b4900af6646f3231",
+      "official_blob": "5a725f0c2dedd1a4b47bca41fd5338d2f6ee6b7e"
+    },
+    {
+      "path": "Protocol.Tk495/TkCrypt.cs",
+      "sha256": "2daae282ce89c96335119c5f5a2ae74b9960b23ad1e3f81f92662ebd61568b27",
+      "official_blob": "010620b1e715139eab36da7b5d69a903e76ef0c8"
+    },
+    {
+      "path": "Protocol.Tk495/TkPacket.cs",
+      "sha256": "513bf653d9dec6dc0687067f31b5fa8e9b88b2eb475c7e2ffa296c2a4f6069ce",
+      "official_blob": "c241fc438f1c132c922976093284543e4c774a26"
+    },
+    {
+      "path": "Protocol.Tk495/Welcome.cs",
+      "sha256": "dfc9a07fdbfa1b626d6d60491e470febab884ce7645176f9ea4384974d3978a4",
+      "official_blob": "57f7c23f4cbeaf2664379d0545220e75199faf4f"
+    },
+    {
+      "path": "Server/AlignmentQuest.cs",
+      "sha256": "aca4dfd720726157641c8e50bd1417e135c366b668ac8f1ee4d5c3bb6ee5ea23",
+      "official_blob": "9f1539593ed596d5c7c9da0b1f33cc5928aa0bb2"
+    },
+    {
+      "path": "Server/ArmorQuest.cs",
+      "sha256": "cfd91bd56ac37bc09407e554cc29947728c6bbc8c819e4dfcc4a72f4ed650060",
+      "official_blob": "ddf5350c1ebb80b0525cbfea053a07e663682afc"
+    },
+    {
+      "path": "Server/ArmorQuestAbility.cs",
+      "sha256": "3f1738d4cc2db86209156069bc5bb584b1fb00aa60d5e92b57cf78b89b6ff73f",
+      "official_blob": "e2c4b9c39f501f76b5729b1f1d04965b74ea2bf6"
+    },
+    {
+      "path": "Server/Boards.cs",
+      "sha256": "4fa901d5a79d67b778e742a3f9a059f65e763cd7e09ec5f5e14f3daf6a7e961a",
+      "official_blob": "db122e604ece0476bd2e43b6c09266f5c083ef63"
+    },
+    {
+      "path": "Server/BonHwa.cs",
+      "sha256": "69eb779da49f7a0dc364a02c40b72382bdd9fc1d89985c325b6ce4027ca9dc62",
+      "official_blob": "09bcea8624cb2a6efa6abc3ce121fcea7e2f5e87"
+    },
+    {
+      "path": "Server/Combat.cs",
+      "sha256": "156ed1ffa78444d79fa41cebd1a55c8c9d165f971a9a5c63e8985ebeeae285f3",
+      "official_blob": "221cca0219f20d888bd143c9c552d17f49b7cd6a"
+    },
+    {
+      "path": "Server/Commands.cs",
+      "sha256": "864be2773475dee504cba3d96ff84059dcab8bffd5863cd34b9d3e6b2380d966",
+      "official_blob": "15f9fa877cd319fea3558d85ca519cd6ae7c8cd4"
+    },
+    {
+      "path": "Server/Content.Csv.cs",
+      "sha256": "2f9dc3059e15b778819e0e67f1971d12f2570f0421a4155721dbaf4824ddc751",
+      "official_blob": "d8076a2e6d633fd5e501d6f42864378063a585e1"
+    },
+    {
+      "path": "Server/Content.Items.cs",
+      "sha256": "5433232d5f039913b63aa8e7bd4b57e9ad8e0ac29d8dec29f08357dfc984c151",
+      "official_blob": "dcb5935b0accaf058dae410578ecffbc1b70fa0b"
+    },
+    {
+      "path": "Server/Content.Maps.cs",
+      "sha256": "21bd93bce3621b012c1fb81cdfbd31b23ca7eff2c4630262b0734e0dd8af5d6b",
+      "official_blob": "a51c7ab9e86c798b1c5ce13e586a8ea0c20656ac"
+    },
+    {
+      "path": "Server/Content.Mobs.cs",
+      "sha256": "629b8253b09c1456774971776e1d14472e46dc8ac9caa7171a08eecdd72edec9",
+      "official_blob": "5b5c8b48de6c2bf809c537de55085513ff989025"
+    },
+    {
+      "path": "Server/Content.Music.cs",
+      "sha256": "06a978dbe0058f6334cd076cbe975372b4aa87d04b1bb01c9f3280fba47ae991",
+      "official_blob": "9a52e41abcc2ba57b89c969ee57ed03443c44d3c"
+    },
+    {
+      "path": "Server/Content.Quests.cs",
+      "sha256": "df29dc996ac5d98793da91a4ea9201c37c30a56b67e37548b1677e086e941d9a",
+      "official_blob": "3e91368456f4b6c0cc8d945067ccf54403fc7038"
+    },
+    {
+      "path": "Server/Content.Snapshot.cs",
+      "sha256": "bbb5b5ce93dbc2e0d3d37edf99dd21968302a3d24cf84df70b651fead5122387",
+      "official_blob": "76cc16be3bc069bf65ccb0058d28e250310d775e"
+    },
+    {
+      "path": "Server/Content.Spells.cs",
+      "sha256": "ad4fb730792b054d943cb8924f98009467fb4884973c828b523f7e0cb4bc05fa",
+      "official_blob": "ea7455b626ab25c486441f34da1112e7be1cf2d4"
+    },
+    {
+      "path": "Server/Content.Tables.cs",
+      "sha256": "66322138ec46e4e417e93250ab5df775eb92e58976f67d949ab29b88b7cc14be",
+      "official_blob": "37911f8fdeee3796c3bdfe4c71cdc4222c2abd03"
+    },
+    {
+      "path": "Server/Content.Tuning.cs",
+      "sha256": "e3a57c57b2032450a11c75cbc92c2db70b8080e337242cb14b487c805fe543d0",
+      "official_blob": "eed48c7b0c72acb72d75bc75744fca79d7bb1a72"
+    },
+    {
+      "path": "Server/Content.cs",
+      "sha256": "f0078f55c4797856bbbb8dc0da43897906006da592d51ff8ae5e215d3d036002",
+      "official_blob": "4e5de36d4a3dc8c591db59f593b1d7a03c3dcd82"
+    },
+    {
+      "path": "Server/CraftingToggles.cs",
+      "sha256": "534a26bf46b7fd08b62645614e8f9c1e3e820425d4605ff1f5ada988294d4d59",
+      "official_blob": "aebe42828189aa1081c94c697437ab8fa1bca3aa"
+    },
+    {
+      "path": "Server/DaggerUniformQuest.cs",
+      "sha256": "e30f963ebd6c8c200ee96ed2233dea8e3594a5b400f03cf7f78452358fe08ae6",
+      "official_blob": "3dc54cc0ba269ba1f79140ab103e98639a18709d"
+    },
+    {
+      "path": "Server/DamageIntake.cs",
+      "sha256": "17dffded0d86effd281e96272d942711868578c32da88a9994b41d250266e433",
+      "official_blob": "f772216f15a58c8681ec2010933ca25cf7bd1603"
+    },
+    {
+      "path": "Server/Doors.cs",
+      "sha256": "0c2d663ffd6e07c7b8e0ae78c92aed9a9dab9cde7c0609fd5982eac0ec35ea36",
+      "official_blob": "17253f80c978d6478839f2d8f85c982a5d877294"
+    },
+    {
+      "path": "Server/Era.cs",
+      "sha256": "456c62c4dc4f579bf0beecc519c66da3ca4199b50e8fcfd1b1b0284b5b8da9bf",
+      "official_blob": "60eb446866fddf8b0d104af52d65d3b5e02bbd07"
+    },
+    {
+      "path": "Server/FaultThrottle.cs",
+      "sha256": "f7a212c1c840e5da41eb21a098da178823792798fe13f4ba696c2e8b95206292",
+      "official_blob": "2a1aba8affb4709de9b4a74d082067bcbe679d7a"
+    },
+    {
+      "path": "Server/ForgottenPastQuest.cs",
+      "sha256": "7f81ffd407b1122a5a6f18a5b48513f5128230a961744aa0042d2ae4d6940e54",
+      "official_blob": "ffd676d87bd0aa009f60e2a7c3f48cb9344623cb"
+    },
+    {
+      "path": "Server/FoxSpirit.cs",
+      "sha256": "8f2c5f7bd56d9fcb27263c1fed820e5d6918c3b0f28338ed2088c4b6b8827464",
+      "official_blob": "a9c0e882bf78e2f29de90dab2b0ec467faa52442"
+    },
+    {
+      "path": "Server/GmOverrides.cs",
+      "sha256": "40ee3c1215cfda51e57bec6188953ed8c9e2dc1e64ccddd86f81176d32e376b1",
+      "official_blob": "dd3d46167d2d388922b1f405f4e8adf056063bf2"
+    },
+    {
+      "path": "Server/ItemContext.cs",
+      "sha256": "6698169752e4c27a1b96e35556563fea0fb3bbe430f01b1cc415e39f226afa35",
+      "official_blob": "ad5bd05514e9e8bc7f9d764525297ec9dfd17137"
+    },
+    {
+      "path": "Server/ItemScript.cs",
+      "sha256": "80edff49c4aac3fcbedc752f7e4e5965d2bef66af260997800385fbe548b43b6",
+      "official_blob": "da97ac4334d79464c026632fe3d6f1900c80dcce"
+    },
+    {
+      "path": "Server/Karma.cs",
+      "sha256": "ba36df4f94990c9491f28d4f137f68f95f94238f09833fa50a109deb6c62ec96",
+      "official_blob": "35b533ff499fcaf27c64df1db3535a4212072512"
+    },
+    {
+      "path": "Server/LeviathanQuest.cs",
+      "sha256": "ba4c35bc20881a55cd0c2a6dcd26de20508d7ad15e972061a096afe6b8c17dd4",
+      "official_blob": "3f4d8f9726f792d06eb5730e4f950bbca2f9b32f"
+    },
+    {
+      "path": "Server/LuaVerbHost.cs",
+      "sha256": "2e74b751cb1c92ebe522073646a4fb02797d92111c6ccb692eedfee3696c6093",
+      "official_blob": "f983aead46286d2e08db5fc88869253c7c8da4e8"
+    },
+    {
+      "path": "Server/MageStoneQuest.cs",
+      "sha256": "c7fa72a0301becff19228c1abcabf61447d1a3e77a5e055a17fc59d3a8ec7db8",
+      "official_blob": "a24272e8715a89c7645918457478c0b1de8654db"
+    },
+    {
+      "path": "Server/Mail.cs",
+      "sha256": "ef50bc1d8aad9e6d1f2140c746c054eee503d2837bba5e6459933d776d1229a3",
+      "official_blob": "5cbac0a5641be1ee4ca523c070aa6624d3b69523"
+    },
+    {
+      "path": "Server/MapCell.cs",
+      "sha256": "f673ebc95b5aca8e318a34f51c71dc1f6d3fe3d54d46dc1de0971a3bf0d2540b",
+      "official_blob": "cdfd3142b8d10f6d46c230ef3737466820c2bc45"
+    },
+    {
+      "path": "Server/MapData.cs",
+      "sha256": "b12f40639c4c66f48b4c98f5508fb61ce612373f80a1558dd017d31f6226d599",
+      "official_blob": "1beef8da5306dd1e196e4fc127c4297271308226"
+    },
+    {
+      "path": "Server/MapStore.cs",
+      "sha256": "cf7d8bff7c74892cf6286366ee0f69ff2dd6182c2d9b23ed836aaa2b8cc46f93",
+      "official_blob": "d03a0b7bdc109add1d899f6a4e2c727261599ffc"
+    },
+    {
+      "path": "Server/Mentorship.cs",
+      "sha256": "6432c23ed08ab523a23cb4721a6df0cf7e9922a888d11768da94271937e00290",
+      "official_blob": "c8a5e00c9fedb30027909fbc18646185c04303c7"
+    },
+    {
+      "path": "Server/MinorQuest.cs",
+      "sha256": "c712b6b12abef1288784a10705761b3147f56275e8d543f725eda1a792c1aed1",
+      "official_blob": "8e3a7cb086b133b83950e80e2ac58287896c9054"
+    },
+    {
+      "path": "Server/MobScript.cs",
+      "sha256": "6cc59c9ba8026de87fa872a3f157b79d83f9abb21510eb7fd0be9f8f50834d59",
+      "official_blob": "38f09e17e6d98c956bd80616b4ead302c7d5ee27"
+    },
+    {
+      "path": "Server/MythicAlliance.cs",
+      "sha256": "e5846f6759513e54df50262b896e50a0076ef6047cfafa462bcbb1e379685943",
+      "official_blob": "c51d286ba15756bc48574fb7a9696a037a61b0c2"
+    },
+    {
+      "path": "Server/NagnangShieldQuest.cs",
+      "sha256": "7deca4ce3d17561690b14e65de6051a02d80b21461e70422130d015aeb29ee86",
+      "official_blob": "b096bba4ab0f303f50667485eb02f691f491e780"
+    },
+    {
+      "path": "Server/Net.cs",
+      "sha256": "b5a423bb25bcedb2e14b1563c12c19ddc5f2c4ab79e7085a8bba2197b0c1709b",
+      "official_blob": "bab824a023a3c928b8034f75dbd58e5451cdc4c7"
+    },
+    {
+      "path": "Server/NoviceQuest.cs",
+      "sha256": "2cb0bc71f20643473e4ded5ff1f539c6de76a2bd9ebf5bd8991f40b20f0d18b3",
+      "official_blob": "b8b7849d42cca8ed3b53c56cc1fea01e52d1520a"
+    },
+    {
+      "path": "Server/NpcAbility.cs",
+      "sha256": "6abd5e5c0df606c74faf8262950f5ee99076c11e052b9441793f6e2748b43f7d",
+      "official_blob": "3cb3514bfa31fc4e10bd05a5946ed9c27934db15"
+    },
+    {
+      "path": "Server/NpcScript.cs",
+      "sha256": "2b27ad7850204d0e1f1ad2e199ca3de3f1c101571dac2841a05e46005a947631",
+      "official_blob": "1354182c43c015068e6dd5a6c21ec080f1876052"
+    },
+    {
+      "path": "Server/NpcScripts.cs",
+      "sha256": "da99558df5e1336683167361136f8d21fb7185dbb4565fcbc9fdaa446cf6434b",
+      "official_blob": "946a17c91c0f5f02f41eeb87358467d19a9950f7"
+    },
+    {
+      "path": "Server/ObjectFlags.cs",
+      "sha256": "e04395aac53fdf91d1275079a5859ab66b2c5ae810fca76e74d36549fd671ed2",
+      "official_blob": "26040bf401efe24dbe9d89fbe48e046a0ec79bec"
+    },
+    {
+      "path": "Server/Parcel.cs",
+      "sha256": "1d56463475b195001120c59d80ebb2334cff511c011a7a66cd15340591c79595",
+      "official_blob": "89a059362afbe8c63fb13022b216aca0bcbc4255"
+    },
+    {
+      "path": "Server/Party.cs",
+      "sha256": "8ae607f0588147659b1192e922296fc692813bea9c8fe819e3df5c11c2e4c65a",
+      "official_blob": "641d423d3c5c876d05c3958d78d8c51be31e8aab"
+    },
+    {
+      "path": "Server/PoetWhipQuest.cs",
+      "sha256": "b613dbc923473c8faec2bcca9c5be8a909c1d7cff16807c791cd675fe087013b",
+      "official_blob": "60c88d86c2d8723cd976e940bc7e41124b91946e"
+    },
+    {
+      "path": "Server/Program.cs",
+      "sha256": "ffc01f4f972d35820016db18ed37686e9d02c32bd687f9373202005bb39452b8",
+      "official_blob": "55d3bdcdf57fe9764dfea473e577af9cdd43c2b4"
+    },
+    {
+      "path": "Server/QuestState.cs",
+      "sha256": "e4b37fd1c63783777d2690779355953af677fbaab07ec65a3974fa52c0405679",
+      "official_blob": "cd2a03543ccd62354e56b441c952be2da6a3059c"
+    },
+    {
+      "path": "Server/RestartSchedule.cs",
+      "sha256": "0177f87a452eabbb2ded0980e2d1b3a6e97925addc5f6b99cabfd69b444b23ae",
+      "official_blob": "896a05da1164f9455147b02c21a6182df1b20b07"
+    },
+    {
+      "path": "Server/Server.csproj",
+      "sha256": "426e15f99209eb8457e8a81eaf35840672e2fed1fb052117517135ce38cd9df5",
+      "official_blob": "13cfd55444a3de9ee36af419c4bab262e10892a9"
+    },
+    {
+      "path": "Server/Session.ApproachSummon.cs",
+      "sha256": "b64b93529b10ad610163a339c5d7d12e584120221b59f0dbf6cfd41e6c628a1a",
+      "official_blob": "fb8612cfeea0de6acaeab8cd42cf958d8df9da2c"
+    },
+    {
+      "path": "Server/Session.Barrier.cs",
+      "sha256": "bcb9663cbe1ac325e8989a24eff0bad67804a753bdd249b9bec445273262699c",
+      "official_blob": "fdf014fdb2ceb40bee89c7f7c69c0c2e0d539391"
+    },
+    {
+      "path": "Server/Session.CharacterApi.cs",
+      "sha256": "f0f8c3f3f01cdea260c995eef4a06d1a122253a49adcc91a0d18abe8672b88c1",
+      "official_blob": "5743d57c55ed2dd678e850f955bca8099a61dfc9"
+    },
+    {
+      "path": "Server/Session.Chat.cs",
+      "sha256": "daece1b312265bd7708212e1769ffc472b8c3b21e96e5ebfe60c2a7b140bf13b",
+      "official_blob": "cf0fe28f605d06c74883567c212d906ba105498f"
+    },
+    {
+      "path": "Server/Session.Combat.cs",
+      "sha256": "93872c33195f15857af61ca547e1d02dda34590de8569a0693f12149a6a74525",
+      "official_blob": "86b46bf80c5850f164b0181f49a51c36df8ca2ae"
+    },
+    {
+      "path": "Server/Session.Dialog.cs",
+      "sha256": "80b34720605ab0f14180c2d9d31ce434ec850df75effbc2976f861151c5c8d85",
+      "official_blob": "a62970fd4df13d4aadbe8f214ebb978fbc9871ab"
+    },
+    {
+      "path": "Server/Session.Entity.cs",
+      "sha256": "6f5236ba295fc9ce029c025433d569f973eb9e7837140684efb9fe29d9226833",
+      "official_blob": "3ce312501657b8c6f7cfd5a6e8ef261e08292b77"
+    },
+    {
+      "path": "Server/Session.Exchange.cs",
+      "sha256": "ad993e457974269ef46c3ed2b675d9e50c9a4d6625168adfa2f4b2aa76c6d044",
+      "official_blob": "7cc54d435b1ae6cb0c5ad46728745b9c2afd01bb"
+    },
+    {
+      "path": "Server/Session.GmCommands.cs",
+      "sha256": "e8650afd5d094bcacd489c733697fbfa04d77b2b319ace8103e44662181023f9",
+      "official_blob": "c53dcfc9ae4913230013927b8566ce0787e7eafb"
+    },
+    {
+      "path": "Server/Session.Harvest.cs",
+      "sha256": "a449a8390a3412cbf0b4b5e3273b9011de280f76fd0fb6877476a911cac5b9d3",
+      "official_blob": "a4d8867f0c0ed1a00c827f54f28dd7b62a66f479"
+    },
+    {
+      "path": "Server/Session.Items.cs",
+      "sha256": "475bda71d3672a31b1d295882d68dfda1c653cf24a91540966d96c7e4d06ef65",
+      "official_blob": "c6e21cabf3f27b6e3752bfc4d386f235a3700a16"
+    },
+    {
+      "path": "Server/Session.Media.cs",
+      "sha256": "e2110193e74b8a6703a0e0e70eb7871a19ad2c27c15e534ebbae30fc749cee15",
+      "official_blob": "7938854023af335c3bec3f58e9a53677243c353f"
+    },
+    {
+      "path": "Server/Session.MobSpells.cs",
+      "sha256": "94ea3ee8594910d4d30a6a5c9147e4b8d172536d206fb57bea587acd7a9cdb66",
+      "official_blob": "b18a689970305c310ccc7de143950cdaa555fcde"
+    },
+    {
+      "path": "Server/Session.Moderation.cs",
+      "sha256": "ad9db63c3b601e055d6571bab06bfc4e6cb56189858bdcc363c3d09e07edf166",
+      "official_blob": "46cce2a9c38afa50cbbf4d14c576f557a907fdb8"
+    },
+    {
+      "path": "Server/Session.Movement.cs",
+      "sha256": "00317b6bd965d287d044e47e1454858aeff6bafec73d6ddad7fb35a5ed28ada0",
+      "official_blob": "d98ca77269706b3bd5cd38e629822f186acb818c"
+    },
+    {
+      "path": "Server/Session.Navigation.cs",
+      "sha256": "f81d27dafb8cfc79433b384ec7d15aa9d4589773250d993eabf57eef38c52a34",
+      "official_blob": "c867f71bbd516c29c7a361b3a0f1dc9b5bb53ca0"
+    },
+    {
+      "path": "Server/Session.Probes.cs",
+      "sha256": "4fdb786b9d1f861e86b30104f6299c7115ed26c5e9dd91b8674b01849f6bc6fa",
+      "official_blob": "10d713dc034633e68bc36ae7f44bf4ea172343be"
+    },
+    {
+      "path": "Server/Session.Resolve.cs",
+      "sha256": "1e0f603b38aeb9b64d1f7f249efcea997af7a43cba6e16a77dcbce17b514c93e",
+      "official_blob": "b06de412cfd60c281c416d78ebfc84a6273a42cb"
+    },
+    {
+      "path": "Server/Session.SecondSight.cs",
+      "sha256": "474c41011fe7aea8313a427722a4b10d34d58976a488b2dbc4cfeefbb4f28c0a",
+      "official_blob": "d35851253d5b3419dc9dea3011585e849e7d0b84"
+    },
+    {
+      "path": "Server/Session.Shop.cs",
+      "sha256": "f25650d7e5a2b56f713ec7db0a24aa24735ee21e81e60feb316b2afb7bd2b1a2",
+      "official_blob": "6a42c17b5b91ce422eb418082c41bcea2791da46"
+    },
+    {
+      "path": "Server/Session.Social.cs",
+      "sha256": "f32a319639020c0600e9133b09ad8e3597f21b8b7c57f1eb7019720e3b56212a",
+      "official_blob": "1c0dc507f4516b8c1de60f1d34c445c5b41974bf"
+    },
+    {
+      "path": "Server/Session.Spells.cs",
+      "sha256": "41c86208361c7c90250adf57a7830b6ff64073e68730dbe19c6353abf9eede96",
+      "official_blob": "3b8a2133bb470953c7bf07e19ea4fc8639dd174a"
+    },
+    {
+      "path": "Server/Session.State.cs",
+      "sha256": "e950107a763ec241cfa63e7b87d7c9f7e0aa7c6301b19892689d144382a8b3bf",
+      "official_blob": "fdc76a0571a4b1e86f3f638a8d0642251b977590"
+    },
+    {
+      "path": "Server/Session.TimedEffects.cs",
+      "sha256": "a810dae38c95de84d63f26ac118f612867a871acb5c55b4b453cb3b047b43a1f",
+      "official_blob": "bd9e47412942016bf2e04170bbf4d9ee2bd6a7d9"
+    },
+    {
+      "path": "Server/Session.UserList.cs",
+      "sha256": "8c2aa9b43db11408392850d8a3dab6946fdc08c63681e33f4d0ad8f49eba94c6",
+      "official_blob": "a7bae3fc3569e4d9eeea6725dffb9dc074862455"
+    },
+    {
+      "path": "Server/Session.WorldApi.cs",
+      "sha256": "a9e7e828a7d5d20bba1b912afc7caf1e2bd1f3cc5a8b07e122d2df22c3ccd59d",
+      "official_blob": "f2611590df6047fb5627ef0e1c60be7baea68eb3"
+    },
+    {
+      "path": "Server/Session.cs",
+      "sha256": "506d0adc9f6d3d5176db1f73b1b9d61494188a8e52313a2918770b4aa0bf1a6d",
+      "official_blob": "b32c1b6d48641392e3fa701509ba6a247b9cd899"
+    },
+    {
+      "path": "Server/Shops.cs",
+      "sha256": "2dacd578586ad6b697711415577c9076616884cab283dd420aa01210cc8583e8",
+      "official_blob": "b85fbe20e94c6b18deabb106e9e396ab3bc5631f"
+    },
+    {
+      "path": "Server/SpellContext.cs",
+      "sha256": "8afd86e0e7e364c86e89a0f169beb6fd0e1dfc8aa25ed0bb68261137a34af0a6",
+      "official_blob": "6e6bcb12a3d3bdff4efd7665f4905c3438c9da75"
+    },
+    {
+      "path": "Server/SpellScript.cs",
+      "sha256": "a084f044d5f27aa0007756ff96aad4508cb5a1180397a31ec097780db149f636",
+      "official_blob": "f51bdc8820e5c7787937b7f3c79c7d2ef8e66063"
+    },
+    {
+      "path": "Server/StaffAccounts.cs",
+      "sha256": "8ed4550dc154851a8d2f861fcf06768d7ad29fbb74658cd6cd627356621cdc22",
+      "official_blob": "2e8e469ea825d991507ae5075b7d77fec16fd297"
+    },
+    {
+      "path": "Server/StatusFile.cs",
+      "sha256": "b138990a534e0cab0895578d88a40426994c53bd3f88f27463de0cee84dc74eb",
+      "official_blob": "32bb2bb33522c3ecd77f7db717ba1a9b30f20b36"
+    },
+    {
+      "path": "Server/StatusResponder.cs",
+      "sha256": "f3e8f9ffa6c3a66d3e51956980bc15595a7f0a70bace997ce27c3f04e445d6cf",
+      "official_blob": "570a202eebf9df97eda6bc0b29c3d1fe3e02f0f9"
+    },
+    {
+      "path": "Server/SuteAi.cs",
+      "sha256": "0c248c88965c2fb438c750c54d2c9792fe6855a7c4afeea1e2171b19df8c4c41",
+      "official_blob": "eab47f56a073d9cc449e37236c38f9939e76a799"
+    },
+    {
+      "path": "Server/SuteQuest.cs",
+      "sha256": "759994c842d32ad2ade0503df16c53bd8e6686445d6bea1c6bedd21844631742",
+      "official_blob": "cbdfaa4718b3fba0f43e485be1a50efef7c79922"
+    },
+    {
+      "path": "Server/TigerMailQuest.cs",
+      "sha256": "7c0ef24c24a87ad67b6baa64ad4692577a8066575e9f2446576cd92300d67c3c",
+      "official_blob": "c94254ff3b58600d0f0d1537c23ea7e4f9e3f6c4"
+    },
+    {
+      "path": "Server/TileTranslation.cs",
+      "sha256": "779f7ab71090255e8a66090131533fc820fd6733c1eff527ca95d103556672e7",
+      "official_blob": "3af457930fe399b4e81a56cfe83cf4449aaffff4"
+    },
+    {
+      "path": "Server/TotemWorship.cs",
+      "sha256": "27ed35515178ee67024b2cdb7bfad4d0f29e2a7c7ac5a4430cd01319e8670eae",
+      "official_blob": "b65f0c0142417a762cec9a6860a7a826fba08494"
+    },
+    {
+      "path": "Server/Trade.cs",
+      "sha256": "d7d25fff5ea503a6da9efca9ac955addce8147c00966d45a70d0a298ac53ce87",
+      "official_blob": "311a7cc026a2dca232ba9c848b2b2563795d3d6b"
+    },
+    {
+      "path": "Server/TutorialQuest.cs",
+      "sha256": "ab7035d9dc8e0c8d04cbeed2d4fa3ddd5ab2ad5d1b2d8744372cbe98a3dcc070",
+      "official_blob": "43d807409a40f9d220016d906887a595441faaf4"
+    },
+    {
+      "path": "Server/ViewportSurvey.cs",
+      "sha256": "b0def9645032081649c42cb8322b381ac8d00fbefd73dfc1a999a30e2b7f1050",
+      "official_blob": "178c140461b082747cccdb7fe03149fde8dbe1fd"
+    },
+    {
+      "path": "Server/Watchdog.cs",
+      "sha256": "ec26a2208a54c08e192e6fbc388a09dac337e7836b7f59058f345a44ecfa69f0",
+      "official_blob": "a06132479d314cda1778faf5df25d3f846a5255d"
+    },
+    {
+      "path": "Server/Weather.cs",
+      "sha256": "6423a01a87b5b6997f75c345bfda92e431c6400ff962efc694bcf979c422d038",
+      "official_blob": "79dcb9759e95e93613507127c84325a5c317ae63"
+    },
+    {
+      "path": "Server/WhiteMoonAxeQuest.cs",
+      "sha256": "dd008f71b1e1d5ab472e4861aa5f6192f21f132ee1589d78d9af5f72b3e12af8",
+      "official_blob": "030f7b0739a7f026b490a5d2723c594b527913a7"
+    },
+    {
+      "path": "Server/World.AutoSaveLoop.cs",
+      "sha256": "34321bdc2fd5b4d56c8c5ffdc5e1c2d466b68a15e20ffbf430fb7ce943124f7b",
+      "official_blob": "ed8f552019765ed5e7affca8708c429be2722592"
+    },
+    {
+      "path": "Server/World.MobAiTick.cs",
+      "sha256": "55e6e400114c56e5c4fef5bf3e781e6ce091abae53b3b88150ee6de4dbf90203",
+      "official_blob": "38e5a3de659b6fc16ed3ba306c52e0f59d3c4383"
+    },
+    {
+      "path": "Server/World.MobFaults.cs",
+      "sha256": "9061b04d3c1a582e0598547c1aa6e25cc207b17dccb6598c1232f14cf08726c2",
+      "official_blob": "966f20811deb522c9d826c753e932eecb791f6c2"
+    },
+    {
+      "path": "Server/World.MobMovement.cs",
+      "sha256": "e55e4a1d348d57bc33a415e6c19ca471ea07ae765de3db57fbde4c2e2600ae03",
+      "official_blob": "a631f58078e172e34f15b15a45b832b869b470a7"
+    },
+    {
+      "path": "Server/World.OnlineRegistry.cs",
+      "sha256": "faf6bf6d4e6f15a4272e8dda1c5dc967e74d44f694bb1526d08283eda07e18e2",
+      "official_blob": "8c229e7a97d52b7277758e0c49cfef18d75f0064"
+    },
+    {
+      "path": "Server/World.ScriptGateRegistry.cs",
+      "sha256": "9016ad3ec7f29f1abf58d3d9717e8321a3d44d52647a1685a106f064a50d1e3f",
+      "official_blob": "4e7e7a0c8918ef04a9a8d63f2d927d855381447d"
+    },
+    {
+      "path": "Server/World.SpawnDirector.cs",
+      "sha256": "042216b46f380a306ef066a6cc11f6b32598799504c8fd424ce23871c451b166",
+      "official_blob": "151073b30d512d4cd1604822f877d7bd8b1975f0"
+    },
+    {
+      "path": "Server/World.WeatherService.cs",
+      "sha256": "6afc71216fc96a6bf6a92f3b92b6f834c26086bceb03edbbfdfb0ed851020fde",
+      "official_blob": "2513a5f65a6640d793685f422d3292100ff6eed9"
+    },
+    {
+      "path": "Server/World.WorldClock.cs",
+      "sha256": "99fe583c285ce03a8a92ab02b3f60f360bd27ec8c43b4a53ba8041343c4a875b",
+      "official_blob": "b47f726443585e0bb8bf3f2a2362843c13b28887"
+    },
+    {
+      "path": "Server/World.cs",
+      "sha256": "9490709898dd741c89c35f156f3f1a416b8e913b2d54d0346e741800e08a2588",
+      "official_blob": "07df818161e1685db1d3342bc3e0cb58906a212d"
+    },
+    {
+      "path": "Directory.Build.props",
+      "sha256": "b9d37f4f1a61271a8574a5bbc15a9bfa9a5b1e8214630efd57b970150de7db3d",
+      "official_blob": "6c5194b1d8848c03e47bed4834b3b84bf18cb092"
+    },
+    {
+      "path": "global.json",
+      "sha256": "1fdeb1b73953b98c28deda19adc5fea29f21712fe925ec208457eff1c093b107",
+      "official_blob": "391ba3c2a30b9c36244b0700565072079649b2bd"
+    }
+  ]
+}

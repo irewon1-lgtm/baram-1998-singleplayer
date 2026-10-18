@@ -1,10 +1,16 @@
-# Project1998 S10 FE — P0/P1/P2
+# Project1998 S10 FE — P0/P1/P2 and P3
+
+The latest user instruction authorizes **P3 only**. See [the P3 experiment](p3/README.md)
+for the in-process C# integration and its separate APK/save namespace. The P2
+Galaxy gate remains `NOT_RUN_DEVICE`; P4 has not been started. The material below
+is the preserved P0–P2 technology baseline.
 
 Plan: `P1998_S10FE_NATIVE_PORT_V1_20261018`.
 Android baseline: `c1f3c5a075fe3ecb1cfb06a57f360e67b9b9798a`.
 This isolated technology candidate displays the source city (0), tavern (2)
 and rabbit field (4711), with touch/grid movement, original actor frames and
-separate Korean local saves. Full gameplay and warp traversal begin in P3/P4.
+separate Korean local saves. P3 is a separate core probe; full gameplay and warp
+traversal remain P4 work.
 
 The public subtree contains adapters, build scripts and tests. It intentionally
 requires privately materialized art; no original client archive or APK is stored
