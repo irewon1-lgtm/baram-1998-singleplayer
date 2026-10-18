@@ -28,6 +28,7 @@ def main():
     p.add_argument('--output', type=Path, required=True)
     p.add_argument('--font-dir', type=Path, required=True)
     p.add_argument('--sqlite-android-nupkg', type=Path, required=True)
+    p.add_argument('--converted', type=Path, required=True, help='Existing verified P2 asset directory')
     a = p.parse_args(); src = a.source.resolve(); out = a.output.resolve()
     pins = json.loads((P3 / 'source_pins.json').read_text())
     assert pins['head'] == ORIGINAL_HEAD
@@ -129,9 +130,33 @@ def main():
             info = zipfile.ZipInfo(row['path'], date_time=(1980, 1, 1, 0, 0, 0))
             info.compress_type = zipfile.ZIP_DEFLATED
             archive.writestr(info, (content / row['path']).read_bytes())
-    for name in ['Scenario.cs', 'Probe.cs', 'ProbeStore.cs']:
+    for name in ['Scenario.cs', 'Probe.cs', 'ProbeStore.cs', 'InteractiveCore.cs']:
         shutil.copyfile(P3 / name, out / 'runtime' / name)
     shutil.copytree(P3 / 'godot', out / 'runtime', dirs_exist_ok=True)
+    shutil.copytree(P3 / 'play', out / 'runtime/play')
+    # Reuse the validated P2 renderer/input; do not copy its GDScript rule model.
+    game = P3.parent / 'game'
+    for name in ['render/world_view.gd', 'input/touch_stick.gd', 'input/grid_navigation.gd']:
+        target = out / 'runtime' / name; target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(game / name, target)
+    assets = out / 'runtime/assets'; assets.mkdir()
+    converted = a.converted.resolve()
+    art_pins = {row['path']: row for row in json.loads((converted / 'BUILD_ASSETS_MANIFEST.json').read_text())['files']}
+    for name in ['ground.png', 'objects.png', 'actors.png', 'maps/TK4711.map']:
+        assert sha(converted / name) == art_pins[name]['sha256'], 'Converted art drift: ' + name
+        target = assets / name; target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(converted / name, target)
+    scene_assets = json.loads((converted / 'assets.json').read_text())
+    assert scene_assets['schema'] == 'project1998.p2.assets.v1'
+    scene_assets['maps'] = [m for m in scene_assets['maps'] if int(m['id']) == 4711]
+    assert len(scene_assets['maps']) == 1
+    assert (assets / 'maps/TK4711.map').read_bytes() == map_file.read_bytes()
+    (assets / 'assets.json').write_text(json.dumps(scene_assets, ensure_ascii=False, indent=2) + '\n')
+    (out / 'VIEW_ASSETS.json').write_text(json.dumps({'map_ids': [4711],
+        'files': [{'path': str(f.relative_to(assets)), 'sha256': sha(f)} for f in sorted(assets.rglob('*')) if f.is_file()],
+        'reused_view_input': [{'path': name, 'sha256': sha(game / name)} for name in
+                              ['render/world_view.gd', 'input/touch_stick.gd', 'input/grid_navigation.gd']],
+        'gdscript_game_rule_model': 'NOT_INCLUDED; original C# is authoritative'}, indent=2) + '\n')
     shutil.copyfile(P3 / 'fixtures.json', out / 'runtime/fixtures.json')
     (out / 'runtime/fonts').mkdir()
     for origin, target in [('NotoSansKR[wght].ttf', 'NotoSansKR.ttf'), ('OFL.txt', 'OFL.txt')]:

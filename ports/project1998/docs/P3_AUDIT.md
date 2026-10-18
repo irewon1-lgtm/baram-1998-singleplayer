@@ -28,7 +28,7 @@ Upstream dependency licences are included in the evidence distribution materials
 
 ## Selected route
 
-Status: **PARTIAL_FIX1_ANDROID_RETEST_PENDING**. The user subsequently supplied
+Status: **PARTIAL_V3_MAP_ANDROID_RETEST_PENDING**. The user subsequently supplied
 an Android screenshot of versionCode 1: C# UI ran, but P3 failed with
 `ArgumentException: The value cannot be an empty string. (Parameter 'path')`.
 Device model, stack and full parity were not supplied. This supersedes the
@@ -50,6 +50,13 @@ unchanged when the override is absent. Capsule bytes/schema remain unchanged.
 Five real Godot processes test the empty-base condition, prior-v1 save/cold read,
 sandbox fallback and diagnostic refusal; four save-refusal processes also pass.
 These are Linux fixture results. Android after repair is `NOT_RUN_AFTER_FIX`.
+
+Later user evidence supersedes that fix1 pending status: its Android screenshot
+shows all 40 states matching and the saved-record confirmation. This supports
+**PASS_USER_SCREENSHOT_CORE_SCOPE** for versionCode2, with no cold-process or
+touch/performance proof. VersionCode3 now links the same C# core to the original
+map/actors and touch controls. See `P3_MAP_LINK.md` for the direct-input and cold
+verification; the new map APK's Android execution is still unobserved.
 
 The implemented candidate uses **direct C# calls in the Godot app process**, with a small adapter protected
 by the original session state monitor. Avoid a wholesale GDScript rule rewrite.

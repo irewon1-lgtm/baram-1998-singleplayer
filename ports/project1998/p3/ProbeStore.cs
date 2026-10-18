@@ -12,6 +12,7 @@ public sealed class ProbeStore
     public const int Version = 1;
     public const string OriginalHead = "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd";
     private readonly string _root;
+    private readonly string _backupPath;
     public CharacterStore Store { get; }
 
     public static void Guard(string root, string contentHash)
@@ -33,7 +34,12 @@ public sealed class ProbeStore
             engine_head = OriginalHead, content_sha256 = contentHash, character_schema = Character.CurrentSchemaVersion }));
     }
 
-    public ProbeStore(string root) { _root = root; Store = new CharacterStore(Path.Combine(root, "chars")); }
+    public ProbeStore(string root, string backupFile = "p3-v1.backup.db")
+    {
+        if (backupFile != Path.GetFileName(backupFile)) throw new ArgumentException("Backup filename required");
+        _root = root; _backupPath = Path.Combine(root, backupFile);
+        Store = new CharacterStore(Path.Combine(root, "chars"));
+    }
 
     public bool Save(Character c)
     {
@@ -55,14 +61,14 @@ public sealed class ProbeStore
             cmd.CommandText = "PRAGMA integrity_check;";
             if ((string?)cmd.ExecuteScalar() != "ok") throw new InvalidDataException("Backup integrity check failed");
         }
-        File.Move(pending, Path.Combine(_root, "p3-v1.backup.db"), true);
+        File.Move(pending, _backupPath, true);
     }
 
     // Read a rollback snapshot without replacing the current save. A future game
     // migration must restore into a new version directory after explicit choice.
     public Character? ReadBackup(string name)
     {
-        using var cn = new SqliteConnection("Data Source=" + Path.Combine(_root, "p3-v1.backup.db") + ";Mode=ReadOnly;Pooling=False");
+        using var cn = new SqliteConnection("Data Source=" + _backupPath + ";Mode=ReadOnly;Pooling=False");
         cn.Open(); using var cmd = cn.CreateCommand();
         cmd.CommandText = "SELECT json FROM characters WHERE username=$u";
         cmd.Parameters.AddWithValue("$u", CharacterStore.Key(name));

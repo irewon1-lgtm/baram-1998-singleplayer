@@ -14,17 +14,20 @@
     "p2_synthetic_touch": "PASS_FIXTURES_ONLY",
     "p2_android_emulator": "BLOCKED_ENVIRONMENT",
     "p2_galaxy": "NOT_RUN_DEVICE",
-    "overall": "PARTIAL_FIX1_ANDROID_RETEST_AND_P2_GALAXY_NOT_VERIFIED",
+    "overall": "PARTIAL_V3_MAP_ANDROID_AND_P2_GALAXY_NOT_VERIFIED",
     "p3_source_audit": "PASS_151_CODE_BUILD_AND_77_CONTENT_INPUTS",
     "p3_original_oracle": "PASS_40_SNAPSHOTS",
     "p3_host": "PASS_FIX1_40_SNAPSHOTS_AND_COLD_SAVE",
-    "p3_save_guards": "PASS_FIX1_4_REAL_ENGINE_PROCESSES",
+    "p3_save_guards": "PASS_V3_4_REAL_ENGINE_PROCESSES",
     "p3_android_build": "BUILD_PASS",
-    "p3_android_runtime": "USER_OBSERVED_FAIL_V1_FIX1_RETEST_NOT_RUN",
+    "p3_android_runtime": "PASS_USER_SCREENSHOT_V2_CORE_SCOPE; V3_MAP_NOT_RUN_DEVICE",
     "p3_galaxy": "NOT_RUN_DEVICE",
-    "p3_overall": "PARTIAL_FIX1_ANDROID_RETEST_PENDING",
+    "p3_overall": "PARTIAL_V3_MAP_ANDROID_RETEST_PENDING",
     "p4": "NOT_STARTED",
-    "p3_path_regression": "PASS_5_REAL_GODOT_LINUX_PROCESSES"
+    "p3_path_regression": "PASS_5_REAL_GODOT_LINUX_PROCESSES",
+    "p3_map_gui": "PASS_16_LINUX_GUI_INPUT_CHECKS",
+    "p3_map_cold": "PASS_SEPARATE_LINUX_PROCESS",
+    "p3_player_guard": "PASS_FUTURE_PLAYER_JSON_PRESERVED"
   },
   "apk": {
     "apk": "p1998-s10fe-p2-tech.apk",
@@ -39,8 +42,8 @@
     "network_permission": false
   },
   "isolated_user_data": "project1998_s10fe_p2_20261018",
-  "last_valid_pass": "Fix1 actual Godot host parity (40 states), empty-base/prior-v1-save/cold tests, blank output fallback, failure diagnostics, four save guards, signed versionCode2 and matching certificate/payload",
-  "next_action": "Install versionCode2 P3 as an update, launch offline and observe all 40 states and SQLite/backup success, then restart and verify existing save. Device retest after fix is NOT_RUN; P4 remains NOT_STARTED.",
+  "last_valid_pass": "V2 user Android screenshot: 40-state core and saved-record success. V3: actual Linux original-map GUI 16 input checks, separate cold player resume, prior-v2 probe preservation and future-player refusal, four guards, signed APK build.",
+  "next_action": "Install versionCode3 as an update. Default entry now opens map4711 with player/rabbit. Check native tap/drag/pad, apple/wine, save/cold resume on Android. V3 native map remains NOT_RUN_DEVICE_MAP_LINK; P4 not started.",
   "emulator_blocker": "Android guest did not finish booting in 240 seconds",
   "limitations": [
     "Original 4.95 Windows client execution NOT_RUN; reference is the pinned official map renderer, used by validated MapEditor format documentation.",
@@ -48,7 +51,7 @@
     "Model movement uses original FILE layer and 4x flags; dynamic/ForceOpen doors and quest locks are not integrated.",
     "No Galaxy device attached; 30 FPS, aspect ratio, physical touch/IME and actual Android lifecycle have not been verified.",
     "P3 is an automatic bounded core probe, not interactive P4 gameplay; random creation/combat/AI, warps and durable world-state restoration are not verified.",
-    "User screenshot shows P3 versionCode1 C# UI and an empty-path failure. VersionCode2 fixes the reproduced path mechanism; Android runtime after fix is NOT_RUN_AFTER_FIX.",
+    "User screenshot shows versionCode2 Android core parity and saved-record success. VersionCode3 map/touch/player integration has host execution proof only; native Android map rendering, touch and cold restart remain NOT_RUN_DEVICE_MAP_LINK.",
     "P3 native SQLite ELF LOAD alignment is 4 KiB; 16 KiB-page Android runtime compatibility has not been tested."
   ],
   "existing_baram_source_and_saves": "UNCHANGED",
@@ -62,11 +65,11 @@
   "p3_apk": {
     "status": "BUILD_PASS",
     "package": "com.irewon.baram.project1998.p3",
-    "versionCode": 2,
-    "versionName": "0.0.2-p3-fix1",
-    "apk": "p1998-s10fe-p3-core-fix1.apk",
-    "bytes": 217465997,
-    "sha256": "483fdaf32e0cec73b3861797b37525059df5791527e4f05654232db2a7197648",
+    "versionCode": 3,
+    "versionName": "0.0.3-p3-map",
+    "apk": "p1998-s10fe-p3-map.apk",
+    "bytes": 218241895,
+    "sha256": "ca81209f145c9b9c0a46a5a31e804f7b4e15b1d4d826e2848405ed8132893548",
     "network_permission": false,
     "sqlite_native": [
       {
@@ -83,7 +86,7 @@
     "host": {
       "status": "PASS_OBSERVED_PLATFORM",
       "platform": "Linux",
-      "process_id": 548,
+      "process_id": 546,
       "schema": "project1998.p3.core-probe",
       "version": 1,
       "capsule_sha256": "4862e7de92165b26939c6909038e23f64ebd9b2804e579604343661ff70b3aae",
@@ -98,7 +101,7 @@
       "network_transport": "none; in-process sink",
       "random_draws": 0,
       "galaxy": "NOT_RUN_DEVICE",
-      "build": "0.0.2-p3-fix1",
+      "build": "0.0.3-p3-map",
       "empty_base_directory": false,
       "deployment_root_explicit": true
     },
@@ -108,7 +111,7 @@
     "candidate": "C# rules called in one Godot app process",
     "app_tfm": "net9.0",
     "original_libraries_tfm": "net8.0",
-    "decision": "Provisional until Android runtime parity is observed",
+    "decision": "C# core validated on Android in user v2 screenshot scope; map/client integration v3 pending device retest",
     "source_head": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
     "login_server": "OMITTED",
     "server_main": "EXCLUDED_FROM_PRIVATE_LIBRARY_BUILD",
@@ -205,6 +208,73 @@
       "same_save_schema_and_path": true,
       "android_install_over_v1": "NOT_RUN_AFTER_FIX"
     },
-    "android_runtime_after_fix": "NOT_RUN_AFTER_FIX"
+    "android_runtime_after_fix": "PASS_USER_SCREENSHOT_CORE_SCOPE; cold/touch/performance NOT_OBSERVED"
+  },
+  "p3_apk_v2_history": {
+    "status": "BUILD_PASS",
+    "package": "com.irewon.baram.project1998.p3",
+    "versionCode": 2,
+    "versionName": "0.0.2-p3-fix1",
+    "apk": "p1998-s10fe-p3-core-fix1.apk",
+    "bytes": 217465997,
+    "sha256": "483fdaf32e0cec73b3861797b37525059df5791527e4f05654232db2a7197648",
+    "network_permission": false,
+    "sqlite_native": [
+      {
+        "abi": "arm64-v8a",
+        "entry": "lib/arm64-v8a/libe_sqlite3.so",
+        "sha256": "43596fc3907bae3538c7b85a567336bd4fd720f018fb6364dd4f13161acb86a1"
+      },
+      {
+        "abi": "x86_64",
+        "entry": "lib/x86_64/libe_sqlite3.so",
+        "sha256": "3913201738ddbac74eecdb199f1a4479e9f926f1193d04e5d63f335bb66a311d"
+      }
+    ],
+    "host": {
+      "status": "PASS_OBSERVED_PLATFORM",
+      "platform": "Linux",
+      "process_id": 548,
+      "schema": "project1998.p3.core-probe",
+      "version": 1,
+      "capsule_sha256": "4862e7de92165b26939c6909038e23f64ebd9b2804e579604343661ff70b3aae",
+      "steps": 40,
+      "original_parity": true,
+      "moonsharp_heal_and_drink": true,
+      "sqlite_round_trip": true,
+      "sqlite_online_backup": true,
+      "cold_existing_save": "Ok",
+      "cold_hp": 39,
+      "world_started": false,
+      "network_transport": "none; in-process sink",
+      "random_draws": 0,
+      "galaxy": "NOT_RUN_DEVICE",
+      "build": "0.0.2-p3-fix1",
+      "empty_base_directory": false,
+      "deployment_root_explicit": true
+    },
+    "galaxy": "NOT_RUN_DEVICE"
+  },
+  "p3_map_link": {
+    "versionCode": 3,
+    "default_entry": "map4711 original view + C# player state",
+    "authority": "original C# Session.P3Move/P3Use and MapData.BlockedMove",
+    "source_view": "existing P2 renderer/input, no P2 GDScript game-rule model",
+    "player_key": "p3player",
+    "player_backup": "user://p3/v1/p3-player-v1.backup.db",
+    "capsule_identity": "UNCHANGED",
+    "host_gui_and_save": {
+      "status": "PASS_HOST_GUI_AND_COLD_SCOPE",
+      "gui_checks": 16,
+      "cold_process": "PASS",
+      "prior_probe_json_preserved": true,
+      "prior_probe_backup_preserved": true,
+      "separate_player_backup_integrity": "ok",
+      "future_player_refused_without_overwrite": true,
+      "android_map_runtime": "NOT_RUN_DEVICE_MAP_LINK"
+    },
+    "initial_state": "controlled P3 fixture HP40 MP10; 3 apples + 1 source 50-charge wine granted once",
+    "android": "NOT_RUN_DEVICE_MAP_LINK",
+    "p4": "NOT_STARTED"
   }
 }

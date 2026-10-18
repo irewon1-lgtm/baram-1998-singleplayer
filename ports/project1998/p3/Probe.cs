@@ -24,7 +24,7 @@ public partial class Probe : Control
         foreach (var side in new[] { "left", "right", "top", "bottom" }) margin.AddThemeConstantOverride("margin_" + side, 36);
         AddChild(margin);
         var column = new VBoxContainer(); column.AddThemeConstantOverride("separation", 16); margin.AddChild(column);
-        var title = new Label { Text = "PROJECT1998  /  P3 · 수정 1\n오프라인 C# 코어 연동 실험" };
+        var title = new Label { Text = "PROJECT1998  /  P3\n시작 들판을 여는 중…" };
         title.AddThemeFontOverride("font", font); title.AddThemeFontSizeOverride("font_size", 34); column.AddChild(title);
         _text = new Label { Text = "원본 규칙 실행 중…", AutowrapMode = TextServer.AutowrapMode.WordSmart,
             SizeFlagsVertical = SizeFlags.ExpandFill };
@@ -75,6 +75,16 @@ public partial class Probe : Control
             if (Content.Maps.Count != 1 || Content.Items.Count != 4 || Content.Mobs.Count != 1 || Content.Spawns.Count != 0 || Content.Npcs.Count != 0)
                 throw new InvalidDataException("P3 capsule exceeded bounded scope or failed to load");
             if (!ItemScript.HasVerb("heal") || !ItemScript.HasVerb("drink")) throw new InvalidDataException("Original MoonSharp verbs missing");
+            if (!OS.GetCmdlineUserArgs().Contains("--p3-quit") && !OS.GetCmdlineUserArgs().Contains("--p3-probe-only"))
+            {
+                _stage = "world-scene";
+                var scene = GD.Load<PackedScene>("res://play/main.tscn").Instantiate<Control>();
+                if (!scene.Call("initialize", _root).AsBool())
+                    throw new InvalidDataException(scene.Get("initialization_error").AsString());
+                foreach (var child in GetChildren()) if (child is CanvasItem item) item.Hide();
+                AddChild(scene);
+                return;
+            }
             var store = new ProbeStore(state);
             var cold = store.Store.Load("p3probe");
             if (cold.Status is not (CharacterLoadStatus.Ok or CharacterLoadStatus.NotFound))
@@ -104,7 +114,7 @@ public partial class Probe : Control
                 sqlite_round_trip = roundTrip, sqlite_online_backup = rollback,
                 cold_existing_save = cold.Status.ToString(), cold_hp = cold.Character?.Hp,
                 world_started = scenario.World.IsStarted, network_transport = "none; in-process sink",
-                random_draws = 0, galaxy = "NOT_RUN_DEVICE", build = "0.0.2-p3-fix1",
+                random_draws = 0, galaxy = "NOT_RUN_DEVICE", build = "0.0.3-p3-map",
                 empty_base_directory = string.IsNullOrEmpty(AppContext.BaseDirectory), deployment_root_explicit = true };
             _stage = "verification-record";
             ProbeStore.AtomicText(Path.Combine(_root, "verification.json"), JsonSerializer.Serialize(receipt, Scenario.Json));
@@ -117,13 +127,13 @@ public partial class Probe : Control
         {
             _exit = 1;
             var cause = e.GetBaseException();
-            _text.Text = "P3 검증 실패 · 수정 1\n단계: " + _stage + "\n" + cause.GetType().Name + ": " + cause.Message;
+            _text.Text = "시작 실패 · P3\n단계: " + _stage + "\n" + cause.GetType().Name + ": " + cause.Message;
             GD.PushError(e.ToString());
             try
             {
                 Directory.CreateDirectory(AbsoluteRoot(_root));
                 ProbeStore.AtomicText(Path.Combine(_root, "failure.json"), JsonSerializer.Serialize(new {
-                    status = "FAIL", build = "0.0.2-p3-fix1", stage = _stage, error = e.ToString(),
+                    status = "FAIL", build = "0.0.3-p3-map", stage = _stage, error = e.ToString(),
                     empty_base_directory = string.IsNullOrEmpty(AppContext.BaseDirectory) }, Scenario.Json));
             }
             catch (Exception logError)

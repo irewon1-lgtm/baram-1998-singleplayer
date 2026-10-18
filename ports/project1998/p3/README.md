@@ -35,14 +35,15 @@ drift from the pinned original source hashes in `source_pins.json`.
 ```bash
 python3 ports/project1998/p3/prepare.py \
   --source /private/Project1998-master --output /private/p3-run \
-  --font-dir /private/fonts --sqlite-android-nupkg /private/sqlite-android.nupkg
+  --font-dir /private/fonts --sqlite-android-nupkg /private/sqlite-android.nupkg \
+  --converted /private/p2-runtime/assets
 
 python3 ports/project1998/p3/build.py \
   --experiment /private/p3-run --dotnet /tools/dotnet/dotnet \
   --godot /tools/Godot_v4.6-stable_mono_linux.x86_64 \
   --sdk /tools/android-sdk --templates /tools/mono-templates \
-  --signing /private/p1998-test-signing --output /private/p1998-s10fe-p3-core-fix1.apk \
-  --version-code 2 --version-name 0.0.2-p3-fix1
+  --signing /private/p1998-test-signing --output /private/p1998-s10fe-p3-map.apk \
+  --version-code 3 --version-name 0.0.3-p3-map
 ```
 
 Install the .NET 8 and 9 SDKs into the same task-owned toolchain. Use the .NET
@@ -121,3 +122,34 @@ Its exact failure was reproduced in the unchanged original scenario through
 as an update. Android runtime after this repair remains `NOT_RUN_AFTER_FIX` until
 actual device evidence is supplied. The failure UI now includes the stage and
 records the exception without a second unhandled logging-path failure.
+
+## Default entry: original map linked to the C# core (versionCode 3)
+
+The user's next Android screenshot showed fix1's complete 40-state success and
+saved-record confirmation. That is actual Android core-probe evidence, within
+the displayed scope; it does not establish cold restart, touch or frame rate.
+The remaining usability issue was a probe-only landing screen.
+
+Normal startup now opens map4711 with the existing original player/rabbit art.
+`InteractiveCore.cs` owns the Character, World, Session, inventory and SQLite
+store. `play/core_model.gd` reads those values and interpolates drawing only.
+Path planning asks the original `MapData.BlockedMove`; actual movement invokes
+`Session.P3Move`, which enforces original world occupancy. Apple/wine controls
+invoke `Session.P3Use` and the original Lua. The reused P2 renderer, touch adapter
+and A* are copied into the private runtime; **P2's GDScript game-rule model and
+JSON save store are not included**.
+
+The initial actor uses the controlled P3 fixture (HP40, MP10), three original
+apples and one original 50-charge wine, granted once through the source method.
+The player is stored under `p3player`, separate from `p3probe`, in the same guarded
+v1 database. Player backups use `p3-player-v1.backup.db`; existing probe rows and
+`p3-v1.backup.db` remain untouched during normal entry. `--p3-quit` and
+`--p3-probe-only` explicitly run the retained 40-state diagnostic path.
+
+`verify_view.py` runs actual GUI ScreenTouch/Drag fixtures, a second cold engine
+process, and future-player refusal. It preserves a prior-v2 SQLite snapshot and
+probe backup, then verifies their contents. The 16 GUI checks cover entry, tap,
+drag, release outside the pad, four facings, rabbit collision, two-finger wine,
+apple, pause and save. These are Linux input fixtures, not native Android touch.
+The versionCode3 map scene still requires actual Android retesting. No NPC,
+warp, combat, progression or P4 route is implemented by this P3 integration.
