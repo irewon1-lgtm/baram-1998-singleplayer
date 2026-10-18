@@ -1,0 +1,368 @@
+{
+  "stage": "P5 first region increment",
+  "status": "HOST_VERIFIED_FIRST_REGION; BUILD_PASS; NOT_RUN_DEVICE_P5",
+  "plan_id": "P1998_S10FE_NATIVE_PORT_V1_20261018",
+  "base_head": "622b6d94abce7952183a2f27d0257c99a465c5b0",
+  "original_head": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+  "android": {
+    "status": "BUILD_PASS",
+    "package": "com.irewon.baram.project1998.p3",
+    "versionCode": 5,
+    "versionName": "0.0.5-p5",
+    "apk": "p1998-s10fe-p5-kugnae-fix1.apk",
+    "bytes": 219682940,
+    "sha256": "90b6b277065b0267cf83a99755811388be0e1800d8f811bc1259e45dd8378a3d",
+    "signer_sha256": "5fb380f895f3a98d90e9688e1d7769db7f3c16ae821f3ae9f47a8c348c0a921e",
+    "internet_permission": false,
+    "abis": [
+      {
+        "abi": "arm64-v8a",
+        "sqlite_sha256": "43596fc3907bae3538c7b85a567336bd4fd720f018fb6364dd4f13161acb86a1"
+      },
+      {
+        "abi": "x86_64",
+        "sqlite_sha256": "3913201738ddbac74eecdb199f1a4479e9f926f1193d04e5d63f335bb66a311d"
+      }
+    ],
+    "native_android": "NOT_RUN_DEVICE_P5"
+  },
+  "capsule_sha256": "a354ffd0e90a3d1ca447ad51f63e33f634e6a99d95e00890c866609f710507f6",
+  "coverage": {
+    "maps": 47,
+    "npc_placements": 36,
+    "mob_definitions_loaded": 716,
+    "spawned_mob_types": 23,
+    "fixed_spawns": 475,
+    "area_rows": 72,
+    "internal_warp_rows": 175,
+    "boundary_warp_rows": 51,
+    "regional_shop_keys": 8,
+    "source_item_icons": 1036
+  },
+  "original_denominator": {
+    "map_index.csv": 2031,
+    "Maps.csv": 9850,
+    "Warps.csv": 4824,
+    "NPCs.csv": 380,
+    "mobs.csv": 716,
+    "Items.csv": 2544,
+    "Spells.csv": 927
+  },
+  "checks": {
+    "map_rasters": {
+      "status": "PASS_47_ZERO_PIXEL_DIFFERENCE",
+      "reference": "pinned original renderer; Windows client NOT_RUN"
+    },
+    "original_bodies": {
+      "status": "PASS",
+      "csharp": 145,
+      "lua": 4
+    },
+    "independent_parity": {
+      "status": "PASS",
+      "snapshots": 17,
+      "scope": "Native source vs adapter: original P4 deterministic cases, four full class/cost/target/effect catalogs and all shop stocks/prices"
+    },
+    "class_catalogs_unaligned_level99": {
+      "Warrior": 21,
+      "Rogue": 32,
+      "Mage": 46,
+      "Poet": 46,
+      "sets": "all four distinct"
+    },
+    "native_exit_world_fixtures": {
+      "status": "PASS_EXECUTED_SCOPE",
+      "pass": 357,
+      "source_unreachable_tiles": 2,
+      "maps": 47,
+      "normal_journey": false
+    },
+    "natural_continuation": {
+      "status": "PASS_HOST_GUI",
+      "checks": 36,
+      "character": "unmodified P4 natural Journey checkpoint",
+      "maps": [
+        0,
+        43,
+        3
+      ],
+      "cave": "original level5 gate correctly refuses level2; no grant/teleport"
+    },
+    "classes": [
+      {
+        "path": 1,
+        "class": "Warrior",
+        "status": "PASS_HOST_LV5_FIXTURE",
+        "gui_checks": 35
+      },
+      {
+        "path": 2,
+        "class": "Rogue",
+        "status": "PASS_HOST_LV5_FIXTURE",
+        "gui_checks": 35
+      },
+      {
+        "path": 3,
+        "class": "Mage",
+        "status": "PASS_HOST_LV5_FIXTURE",
+        "gui_checks": 35
+      },
+      {
+        "path": 4,
+        "class": "Poet",
+        "status": "PASS_HOST_LV5_FIXTURE",
+        "gui_checks": 35
+      }
+    ],
+    "spell_arguments": {
+      "status": "PASS_HOST_FIXTURE",
+      "checks": 102,
+      "types": [
+        1,
+        2,
+        5
+      ],
+      "scenarios": [
+        "Soothe heals/spends3MP",
+        "Gateway West lands inside original random box",
+        "targeted Thunder Bolt damages/kills mouse/spends5MP and earns source reward"
+      ],
+      "mana_sampling": "GUI stays active; next host tick deferred2frames to exclude regeneration"
+    },
+    "equipment": {
+      "status": "PASS_HOST_GUI",
+      "checks": 4,
+      "items": [
+        "staff_of_power",
+        "summer_garb"
+      ],
+      "art": "original spear family and armor dye1"
+    },
+    "input_storage": {
+      "status": "PASS_HOST_STORAGE_SCOPE",
+      "actual_sigkill_exit": -9,
+      "save_loop_active_before_kill": true,
+      "sqlite_integrity": "ok",
+      "current_and_previous_checkpoint_checksums": "PASS",
+      "cold": [
+        {
+          "name": "loaded committed revision",
+          "ok": true
+        },
+        {
+          "name": "complete original character restored",
+          "ok": true
+        },
+        {
+          "name": "living mob IDs/HP/coordinates restored without duplication",
+          "ok": true
+        },
+        {
+          "name": "natural floor loot IDs/amounts/coordinates restored",
+          "ok": true
+        }
+      ],
+      "controls": 30,
+      "guards": [
+        {
+          "name": "future_identity",
+          "status": "PASS",
+          "database_unchanged": true
+        },
+        {
+          "name": "future_checkpoint",
+          "status": "PASS",
+          "database_unchanged": true
+        },
+        {
+          "name": "future_character",
+          "status": "PASS",
+          "database_unchanged": true
+        },
+        {
+          "name": "future_world",
+          "status": "PASS",
+          "database_unchanged": true
+        },
+        {
+          "name": "bad_checksum",
+          "status": "PASS",
+          "database_unchanged": true
+        },
+        {
+          "name": "unknown_cache",
+          "status": "PASS",
+          "database_unchanged": true
+        }
+      ],
+      "prior_p3_files_preserved": 82,
+      "native_android": "NOT_RUN_DEVICE_P5"
+    },
+    "migration": {
+      "status": "PASS_HOST_MIGRATION_SCOPE",
+      "p4_file_hashes_preserved": {
+        "v1/progress.db": "e4b97241a78f3bb7dc7225ca54482df8add4f07c7ed87d1d0dfd1e7adc9ee233",
+        "v1/identity.json": "d46fac3972ff82dcd96de11a7070aaf3fafa216b27bd07a53dbbb93d8a023ac0"
+      },
+      "full_original_character_preserved": true,
+      "current_map_old_mob_ids_hp_coords_preserved": 253,
+      "all_old_world_living_ids_retained": 319,
+      "new_points_added_without_duplicate_ids": 221,
+      "revision_increased": true,
+      "guards": [
+        {
+          "case": "future_identity",
+          "status": "PASS",
+          "p4_bytes_preserved": true,
+          "no_new_game_created": true
+        },
+        {
+          "case": "wrong_content",
+          "status": "PASS",
+          "p4_bytes_preserved": true,
+          "no_new_game_created": true
+        },
+        {
+          "case": "future_checkpoint",
+          "status": "PASS",
+          "p4_bytes_preserved": true,
+          "no_new_game_created": true
+        },
+        {
+          "case": "future_character",
+          "status": "PASS",
+          "p4_bytes_preserved": true,
+          "no_new_game_created": true
+        },
+        {
+          "case": "future_world",
+          "status": "PASS",
+          "p4_bytes_preserved": true,
+          "no_new_game_created": true
+        },
+        {
+          "case": "bad_checksum",
+          "status": "PASS",
+          "p4_bytes_preserved": true,
+          "no_new_game_created": true
+        },
+        {
+          "case": "missing_identity",
+          "status": "PASS",
+          "p4_bytes_preserved": true,
+          "no_new_game_created": true
+        }
+      ],
+      "native_android": "NOT_RUN_DEVICE_P5"
+    },
+    "pending_dialog": {
+      "status": "PASS",
+      "actual_sigkill_exit": -9,
+      "pending_source_reward_in_ui": 1,
+      "canonical_sabers_before_dialog_commit": 0,
+      "criterion": "Pending dialogue changes must not commit an item before its quest stage"
+    },
+    "death": {
+      "death_checks": 11,
+      "cold_and_shaman_checks_passed": 16,
+      "followup_pickup_checks": 10,
+      "status": "PASS_HOST_DEATH_COLD_REVIVAL_PICKUP_SCOPE",
+      "note": "Initial pickup was correctly blocked by a live mouse on the pile. Walking drew it away; original pickup then recovered coins once."
+    }
+  },
+  "save": {
+    "package": "com.irewon.baram.project1998.p3",
+    "previous": "user://p4/v1 read-only",
+    "current": "user://p4/v2",
+    "runtime_cache": "cache-p5 owned/disposable",
+    "policy": "verified copy-on-upgrade, character+world single FULL/WAL transaction, prior slot2, pending dialogues deferred",
+    "gold": "native ItemId=-1, amount/Graphic/looter deadline retained"
+  },
+  "source_defects": {
+    "raw_unreachable_warp_rows": [
+      1,
+      2,
+      806
+    ],
+    "unique_tiles": 2,
+    "duplicate_tile": "4711:9,16",
+    "handling": "unchanged source data; not counted as traversed PASS; new region exits have valid bounds"
+  },
+  "deferred": {
+    "harvesting_node_definitions": [
+      "542",
+      "543",
+      "544",
+      "545"
+    ],
+    "fixed_spawn_rows": 52,
+    "reason": "Original 4.95 Monster.tbl has no looks 773,774,822. No substituted art. Harvesting remains outside this P5 increment.",
+    "merchant_icon_gaps": [
+      "large_amber_ring",
+      "large_baekho_ring",
+      "large_chung_ryong_ring",
+      "large_dark_ring",
+      "large_hyun_moo_ring",
+      "large_ju_jak_ring",
+      "large_white_ring",
+      "large_yellow_ring",
+      "light_fox_fur",
+      "luxury_amber_bracelet",
+      "luxury_dark_bracelet",
+      "luxury_yellow_bracelet",
+      "medium_amber_ring",
+      "medium_baekho_ring",
+      "medium_chung_ryong_ring",
+      "medium_dark_ring",
+      "medium_hyun_moo_ring",
+      "medium_ju_jak_ring",
+      "medium_white_ring",
+      "medium_yellow_ring",
+      "mining_pick",
+      "plain_amber_bracelet",
+      "plain_dark_bracelet",
+      "plain_yellow_bracelet",
+      "red_fox_fur",
+      "small_amber_ring",
+      "small_baekho_ring",
+      "small_chung_ryong_ring",
+      "small_dark_ring",
+      "small_hyun_moo_ring",
+      "small_ju_jak_ring",
+      "small_yellow_ring"
+    ]
+  },
+  "boundaries": {
+    "source_warp_rows": 51,
+    "policy": "outside first region, not playable destinations"
+  },
+  "fixes": [
+    "Stop an automatic route at a native denied gate while retaining live-occupancy replanning",
+    "Render/export/restore native gold sentinel without item-definition null dereference"
+  ],
+  "retained_failures": [
+    "4.x harvest look gap detected before scope deferral",
+    "GDScript type inference repaired before first GUI PASS",
+    "Natural level2 cave expectation corrected; denied-gate retry loop actually fixed",
+    "Spell test required source55HP/3damage rather than eight casts; fixture float JSON rejected; mana samples separated from regeneration; paused-input harness corrected",
+    "Death exposed gold-sentinel null dereference; fixed and cold-retested",
+    "First corpse pickup attempted adjacent to occupied pile; source correctly refused; lured enemy away and passed",
+    "One storage rerun collided with concurrent Android publication PDB write; final rerun sequential to publication passed",
+    "Old fixed stale-route goal could be occupied by expanded source spawns; final fixture chooses empty goal with tick held"
+  ],
+  "not_run": [
+    "P5 Android runtime/emulator",
+    "Galaxy S10 FE touch/IME/offline installation/update/lifecycle/FPS",
+    "16KiB Android page support",
+    "Windows original client full animation/layer parity",
+    "Whole world and later class quests"
+  ],
+  "native_availability": {
+    "command": "adb devices -l",
+    "output": "List of devices attached\n\n",
+    "exit": 0,
+    "android_p5_runtime": "NOT_RUN_DEVICE_P5",
+    "galaxy_s10fe": "NOT_RUN_DEVICE",
+    "reason": "No attached Android device in the current inventory; earlier emulator boot/package-manager environment failures are retained, not retried blindly."
+  }
+}

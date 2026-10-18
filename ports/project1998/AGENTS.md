@@ -1,10 +1,13 @@
 # Project1998 Android port
 
 This subtree follows user plan `P1998_S10FE_NATIVE_PORT_V1_20261018`.
-The latest user instruction on 2026-10-18 is “P4진행해” and authorizes the P4
-vertical slice from the current P3 integration. This supersedes the older
-P3-only restriction and sequencing gate; it does not turn unexecuted device
-checks into PASS. Do not start P5 or import the full world.
+The latest user instruction on 2026-10-18 is “5단계 진행해”, following
+“P4진행해” in this conversation. It authorizes the existing plan's P5 incremental
+content integration from the completed P4 branch. The independently requested
+V2 G0–G8 review document is not an instruction to reset/restart this work.
+P5 first expands the original starting region; record its finite denominator,
+source boundaries and untested areas. Do not claim a full-world port.
+Prior Android/Galaxy checks remain unexecuted unless new device evidence exists.
 Keep this separate from the existing Baram r16 game, package, saves and state.
 The port's checkpoint is `docs/STATE.json`; do not replace the Baram plan/state.
 
