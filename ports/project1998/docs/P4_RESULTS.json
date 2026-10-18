@@ -1,0 +1,104 @@
+{
+  "plan_id": "P1998_S10FE_NATIVE_PORT_V1_20261018",
+  "date": "2026-10-18T06:19:46.506935+00:00",
+  "source_head": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
+  "base_head": "deb2af36925d69aec729faf4095c2362c58f62f9",
+  "status": "PASS_HOST_P4_SCOPE; BUILD_PASS; NOT_RUN_DEVICE_P4",
+  "maps": [
+    4711,
+    4712,
+    4713,
+    4714,
+    4715,
+    4716,
+    4717,
+    4718,
+    36,
+    0,
+    2
+  ],
+  "tests": [
+    {
+      "stage": "asset conversion",
+      "result": "PASS",
+      "count": 11,
+      "observed": "All raw maps byte-identical; all 11 map reference comparisons have zero differing pixels."
+    },
+    {
+      "stage": "original source bodies",
+      "result": "PASS",
+      "count": 145,
+      "observed": "145 original C# logical source texts match after removing audited host seams; four Lua files byte-identical."
+    },
+    {
+      "stage": "independent deterministic parity",
+      "result": "PASS",
+      "count": 15,
+      "observed": "Names, source exit/return, item Lua, equip/unequip, known Soothe. Spawn RNG excluded; combat/level rolls tested in natural journey."
+    },
+    {
+      "stage": "continuous natural journey",
+      "result": "PASS_HOST_GUI_SCOPE",
+      "count": 72,
+      "observed": "Creation, exits, 10 rabbits, 10 squirrels, source loot, equipment, Soothe payment/cast, level2, Angel Finish, tutor20gold, Inn apple purchase10/sale5, return and save; no grants or stage edits.",
+      "conditions": "Final input/rendering/rule code; run before the final conversation-save deferral. That isolated save change is covered by the subsequent dialog and storage tests."
+    },
+    {
+      "stage": "final input and storage regression",
+      "result": "PASS_HOST_STORAGE_SCOPE",
+      "count": 30,
+      "observed": "Includes stale-route/native collision replan, multi-touch, exit/return, NPC close, equip/unequip; actual SIGKILL during full SQLite saves, cold complete-character/live-mob/floor-loot recovery, six protected-data refusals, 82 prior P3 files preserved."
+    },
+    {
+      "stage": "pending dialog crash regression",
+      "result": "PASS",
+      "count": 2,
+      "observed": "Before fix, real SIGKILL left one uncommitted saber in canonical save (FAIL evidence retained). Final code keeps zero; a new engine completes the quest with exactly one reward."
+    },
+    {
+      "stage": "signed Android update",
+      "result": "BUILD_PASS",
+      "observed": "Same P3 package and certificate, code4, arm64-v8a+x86_64, SQLite included, INTERNET absent."
+    },
+    {
+      "stage": "Android runtime and Galaxy",
+      "result": "NOT_RUN_DEVICE_P4",
+      "observed": "No adb device attached. Physical touch, IME, airplane mode, lifecycle, 16 KiB compatibility and 30 FPS are not verified."
+    }
+  ],
+  "apk": {
+    "status": "BUILD_PASS",
+    "package": "com.irewon.baram.project1998.p3",
+    "versionCode": 4,
+    "versionName": "0.0.4-p4",
+    "apk": "p1998-s10fe-p4-playable.apk",
+    "bytes": 218512882,
+    "sha256": "208e5a4bda8d8bbd881e120c9c6e62012107d70a86ce6bf5beb07928269b2a68",
+    "signer_sha256": "5fb380f895f3a98d90e9688e1d7769db7f3c16ae821f3ae9f47a8c348c0a921e",
+    "internet_permission": false,
+    "abis": [
+      {
+        "abi": "arm64-v8a",
+        "sqlite_sha256": "43596fc3907bae3538c7b85a567336bd4fd720f018fb6364dd4f13161acb86a1"
+      },
+      {
+        "abi": "x86_64",
+        "sqlite_sha256": "3913201738ddbac74eecdb199f1a4479e9f926f1193d04e5d63f335bb66a311d"
+      }
+    ],
+    "native_android": "NOT_RUN_DEVICE_P4"
+  },
+  "save": {
+    "schema_id": "project1998.p4.vertical-slice",
+    "version": 1,
+    "path": "user://p4/v1/",
+    "capsule_sha256": "8dcb1bcc3a50a5dc9f2cf0ab6b4aa6d68467abff97383159f2765c9b6b425ea6",
+    "transaction": "character+world in one FULL/WAL SQLite transaction; slot2 prior checkpoint",
+    "conversation_policy": "Checkpoint before talk; pending conversations/shops remain uncommitted; normal finish/close commits all changes.",
+    "p3": "separate user://p3 remains untouched",
+    "rng": "Original Random.Shared, no fixed-seed claim."
+  },
+  "p5": "NOT_STARTED",
+  "original_client_execution": "NOT_RUN; raster reference is the pinned original renderer",
+  "evidence": "p1998-s10fe-p4-evidence.zip"
+}

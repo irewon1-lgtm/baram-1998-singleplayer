@@ -1,9 +1,9 @@
 {
   "plan_id": "P1998_S10FE_NATIVE_PORT_V1_20261018",
   "authorized_scope": [
-    "P3"
+    "P4"
   ],
-  "active_branch": "work/project1998-s10fe-p3-20261018",
+  "active_branch": "work/project1998-s10fe-p4-20261018",
   "android_baseline_head": "c1f3c5a075fe3ecb1cfb06a57f360e67b9b9798a",
   "official_project1998_head": "65cb3ef28f289ee35d19abfb6829d6120b9ec0cd",
   "stages": {
@@ -14,7 +14,7 @@
     "p2_synthetic_touch": "PASS_FIXTURES_ONLY",
     "p2_android_emulator": "BLOCKED_ENVIRONMENT",
     "p2_galaxy": "NOT_RUN_DEVICE",
-    "overall": "PARTIAL_V3_MAP_ANDROID_AND_P2_GALAXY_NOT_VERIFIED",
+    "overall": "P4_HOST_VERIFIED_AND_SIGNED_UPDATE; ANDROID_P4_RUNTIME_AND_GALAXY_NOT_VERIFIED",
     "p3_source_audit": "PASS_151_CODE_BUILD_AND_77_CONTENT_INPUTS",
     "p3_original_oracle": "PASS_40_SNAPSHOTS",
     "p3_host": "PASS_FIX1_40_SNAPSHOTS_AND_COLD_SAVE",
@@ -23,44 +23,62 @@
     "p3_android_runtime": "PASS_USER_SCREENSHOT_V2_CORE_SCOPE; V3_MAP_NOT_RUN_DEVICE",
     "p3_galaxy": "NOT_RUN_DEVICE",
     "p3_overall": "PARTIAL_V3_MAP_ANDROID_RETEST_PENDING",
-    "p4": "NOT_STARTED",
+    "p4": "PASS_HOST_P4_SCOPE; NOT_RUN_DEVICE_P4",
     "p3_path_regression": "PASS_5_REAL_GODOT_LINUX_PROCESSES",
     "p3_map_gui": "PASS_16_LINUX_GUI_INPUT_CHECKS",
     "p3_map_cold": "PASS_SEPARATE_LINUX_PROCESS",
-    "p3_player_guard": "PASS_FUTURE_PLAYER_JSON_PRESERVED"
+    "p3_player_guard": "PASS_FUTURE_PLAYER_JSON_PRESERVED",
+    "p4_assets": "PASS_11_MAPS_ZERO_PIXEL_DIFFERENCE",
+    "p4_source": "PASS_145_ORIGINAL_CS_BODIES_AND_4_LUA",
+    "p4_parity": "PASS_15_STATES",
+    "p4_gameplay": "PASS_72_NATURAL_HOST_GUI_CHECKS",
+    "p4_input_storage": "PASS_30_CHECKS_ACTUAL_SIGKILL_COLD_6_GUARDS",
+    "p4_dialog_recovery": "PASS_ACTUAL_SIGKILL_PENDING_REWARD_AND_COLD",
+    "p4_android_build": "BUILD_PASS",
+    "p4_android_runtime": "NOT_RUN_DEVICE_P4",
+    "p5": "NOT_STARTED"
   },
   "apk": {
-    "apk": "p1998-s10fe-p2-tech.apk",
-    "sha256": "c75cfa35d4e2ba812e49538a6db886c027d21ae53f831828adf08257731cfaf2",
-    "bytes": 62884516,
-    "package": "com.irewon.baram.project1998.dev",
-    "versionCode": 1,
+    "status": "BUILD_PASS",
+    "package": "com.irewon.baram.project1998.p3",
+    "versionCode": 4,
+    "versionName": "0.0.4-p4",
+    "apk": "p1998-s10fe-p4-playable.apk",
+    "bytes": 218512882,
+    "sha256": "208e5a4bda8d8bbd881e120c9c6e62012107d70a86ce6bf5beb07928269b2a68",
+    "signer_sha256": "5fb380f895f3a98d90e9688e1d7769db7f3c16ae821f3ae9f47a8c348c0a921e",
+    "internet_permission": false,
     "abis": [
-      "arm64-v8a",
-      "x86_64"
+      {
+        "abi": "arm64-v8a",
+        "sqlite_sha256": "43596fc3907bae3538c7b85a567336bd4fd720f018fb6364dd4f13161acb86a1"
+      },
+      {
+        "abi": "x86_64",
+        "sqlite_sha256": "3913201738ddbac74eecdb199f1a4479e9f926f1193d04e5d63f335bb66a311d"
+      }
     ],
-    "network_permission": false
+    "native_android": "NOT_RUN_DEVICE_P4"
   },
-  "isolated_user_data": "project1998_s10fe_p2_20261018",
-  "last_valid_pass": "V2 user Android screenshot: 40-state core and saved-record success. V3: actual Linux original-map GUI 16 input checks, separate cold player resume, prior-v2 probe preservation and future-player refusal, four guards, signed APK build.",
-  "next_action": "Install versionCode3 as an update. Default entry now opens map4711 with player/rabbit. Check native tap/drag/pad, apple/wine, save/cold resume on Android. V3 native map remains NOT_RUN_DEVICE_MAP_LINK; P4 not started.",
+  "isolated_user_data": "project1998_s10fe_p3_20261018; P4 data in user://p4/v1/",
+  "last_valid_pass": "P4: 11 source-map raster comparisons, 145 C# bodies/4 Lua, 15 parity states, continuous 72-check natural host journey, final 30-check input/storage regression, actual SIGKILL+dialog replay protection, signed code4 update. Existing P3 Android screenshot remains P3-only evidence.",
+  "next_action": "Install p1998-s10fe-p4-playable.apk as an update without uninstalling P3. P4 starts a fresh original character and preserves P3 data. Run the displayed route on the actual Galaxy: touch, offline mode, save/pause/force-stop/reopen and measured FPS. P5 is not started.",
   "emulator_blocker": "Android guest did not finish booting in 240 seconds",
   "limitations": [
-    "Original 4.95 Windows client execution NOT_RUN; reference is the pinned official map renderer, used by validated MapEditor format documentation.",
-    "P2 is a technology scene, not a playable port of C# server rules. Working warps/NPC/combat/progression are P3/P4, not implemented.",
-    "Model movement uses original FILE layer and 4x flags; dynamic/ForceOpen doors and quest locks are not integrated.",
-    "No Galaxy device attached; 30 FPS, aspect ratio, physical touch/IME and actual Android lifecycle have not been verified.",
-    "P3 is an automatic bounded core probe, not interactive P4 gameplay; random creation/combat/AI, warps and durable world-state restoration are not verified.",
-    "User screenshot shows versionCode2 Android core parity and saved-record success. VersionCode3 map/touch/player integration has host execution proof only; native Android map rendering, touch and cold restart remain NOT_RUN_DEVICE_MAP_LINK.",
-    "P3 native SQLite ELF LOAD alignment is 4 KiB; 16 KiB-page Android runtime compatibility has not been tested."
+    "P4 Android runtime and Galaxy execution NOT_RUN_DEVICE_P4; adb inventory empty. Do not infer physical touch, IME, airplane mode, lifecycle or 30 FPS from host tests.",
+    "Original 4.95 Windows client execution NOT_RUN; map raster parity uses the pinned official renderer. Full original-client animation/layer parity is not claimed.",
+    "P4 is the selected eleven-map newbie/Kugnae/Inn route, not the full world or P5. The original tutor training beyond the initial allowance is outside this slice.",
+    "Final pending-dialog save change was verified by targeted dialog/cold and complete input/storage regression; the natural 72-check journey preceded that isolated change.",
+    "Previous checkpoint is slot2 in the same SQLite database; it is not an independent device backup. RNG draws are original Random.Shared, not replayed from a saved seed.",
+    "Native SQLite uses the same upstream 2.1.6 binaries as P3; 16 KiB-page Android compatibility has not been tested."
   ],
   "existing_baram_source_and_saves": "UNCHANGED",
   "public_original_assets": "NONE",
   "device_gate": "NOT_RUN_DEVICE",
   "scope_override": {
     "date": "2026-10-18",
-    "latest_user_instruction": "P3\ub9cc \uc9c4\ud589\ud574",
-    "effect": "Authorizes P3 despite earlier sequencing restriction; does not promote P2 device evidence; P4 remains unauthorized"
+    "latest_user_instruction": "P4진행해",
+    "effect": "P4 authorized from current P3. P5/full-world not started; prior device checks remain separate."
   },
   "p3_apk": {
     "status": "BUILD_PASS",
@@ -276,5 +294,50 @@
     "initial_state": "controlled P3 fixture HP40 MP10; 3 apples + 1 source 50-charge wine granted once",
     "android": "NOT_RUN_DEVICE_MAP_LINK",
     "p4": "NOT_STARTED"
-  }
+  },
+  "p2_apk": {
+    "apk": "p1998-s10fe-p2-tech.apk",
+    "sha256": "c75cfa35d4e2ba812e49538a6db886c027d21ae53f831828adf08257731cfaf2",
+    "bytes": 62884516,
+    "package": "com.irewon.baram.project1998.dev",
+    "versionCode": 1,
+    "abis": [
+      "arm64-v8a",
+      "x86_64"
+    ],
+    "network_permission": false
+  },
+  "p4_apk": {
+    "status": "BUILD_PASS",
+    "package": "com.irewon.baram.project1998.p3",
+    "versionCode": 4,
+    "versionName": "0.0.4-p4",
+    "apk": "p1998-s10fe-p4-playable.apk",
+    "bytes": 218512882,
+    "sha256": "208e5a4bda8d8bbd881e120c9c6e62012107d70a86ce6bf5beb07928269b2a68",
+    "signer_sha256": "5fb380f895f3a98d90e9688e1d7769db7f3c16ae821f3ae9f47a8c348c0a921e",
+    "internet_permission": false,
+    "abis": [
+      {
+        "abi": "arm64-v8a",
+        "sqlite_sha256": "43596fc3907bae3538c7b85a567336bd4fd720f018fb6364dd4f13161acb86a1"
+      },
+      {
+        "abi": "x86_64",
+        "sqlite_sha256": "3913201738ddbac74eecdb199f1a4479e9f926f1193d04e5d63f335bb66a311d"
+      }
+    ],
+    "native_android": "NOT_RUN_DEVICE_P4"
+  },
+  "p4_save": {
+    "schema_id": "project1998.p4.vertical-slice",
+    "version": 1,
+    "path": "user://p4/v1/",
+    "capsule_sha256": "8dcb1bcc3a50a5dc9f2cf0ab6b4aa6d68467abff97383159f2765c9b6b425ea6",
+    "transaction": "character+world in one FULL/WAL SQLite transaction; slot2 prior checkpoint",
+    "conversation_policy": "Checkpoint before talk; pending conversations/shops remain uncommitted; normal finish/close commits all changes.",
+    "p3": "separate user://p3 remains untouched",
+    "rng": "Original Random.Shared, no fixed-seed claim."
+  },
+  "p4_results": "docs/P4_RESULTS.json"
 }

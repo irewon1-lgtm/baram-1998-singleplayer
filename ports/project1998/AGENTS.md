@@ -1,9 +1,10 @@
 # Project1998 Android port
 
 This subtree follows user plan `P1998_S10FE_NATIVE_PORT_V1_20261018`.
-The latest user instruction on 2026-10-18 authorizes P3 only, after the P0–P2
-handoff. This explicitly overrides the earlier sequencing gate, but does not
-turn unexecuted P2 device checks into PASS. Do not start P4 or import the full world.
+The latest user instruction on 2026-10-18 is “P4진행해” and authorizes the P4
+vertical slice from the current P3 integration. This supersedes the older
+P3-only restriction and sequencing gate; it does not turn unexecuted device
+checks into PASS. Do not start P5 or import the full world.
 Keep this separate from the existing Baram r16 game, package, saves and state.
 The port's checkpoint is `docs/STATE.json`; do not replace the Baram plan/state.
 
