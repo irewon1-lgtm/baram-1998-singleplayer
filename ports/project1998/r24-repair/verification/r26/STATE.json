@@ -1,0 +1,25 @@
+{
+  "task": "P1998_NAV_WORLD_PERF_REPAIR_20261021",
+  "branch": "work/project1998-r24-repair-20261021",
+  "baseline_remote": "41e8628b1a5e9edec1654cd492ded9acebbc5e15",
+  "baseline_apk_sha256": "fb0f67905cdfc9bfcc85f4d6f2c4d94ef7e4374a7ce429f7f17b417f05ad120c",
+  "current_step": 1,
+  "steps": {
+    "0": "PASS_REPRODUCED_APK_SAME_CERTIFICATE",
+    "1": "NOT_RUN",
+    "2": "NOT_RUN",
+    "3": "NOT_RUN",
+    "4": "NOT_RUN",
+    "5": "NOT_RUN"
+  },
+  "private_key": "RECOVERED_SEPARATELY_NOT_FOR_DELIVERY",
+  "physical_android": "NOT_RUN",
+  "user_save_writes": 0,
+  "next": "Original movement reproduction of shop exterior and rat/bat exits; transition input generation fence",
+  "rulings": [
+    "User directs Work-only execution: no subagent dispatch.",
+    "Existing source ZIP and remote STATE agree; latest remote commit is r25.",
+    "Stage0 tooling recovery is independent of product changes."
+  ],
+  "baseline_build": "android/evidence/build-r25-101/BUILD_RECEIPT.json"
+}
