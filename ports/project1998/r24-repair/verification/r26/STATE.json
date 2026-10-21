@@ -10,12 +10,12 @@
     "2": "PASS_SCOPED_PC_NAVIGATION_AND_SIGNED_FIRST_APK_CODE29",
     "3": "PARTIAL_FINAL_SOURCE: all7948 maps structural/contact render; all10533 effective warp rows original Session+SQLite exercised;3333 complete scoped host roundtrips with outside move,7200 reviews/exclusions; all outgoing host rows passed on611 maps, never a whole-map progression PASS",
     "4": "PARTIAL_REPLACEMENT: ABBA same-seed host p95 327-417ms ->43-76ms;59.1MB/action ->18.8MB/action; FULL SQLite commits and world contents retained; snapshot86 +continuity9 PASS; actual progressed user save, physical relaunch/thermal NOT_RUN",
-    "5": "NOT_RUN"
+    "5": "PASS_SCOPED_BUILD_STORAGE_REGRESSION: final code30 retained certificate/package;2065 xUnit executed,1999 PASS/66 same FAIL;0 new names/messages; transaction/crash/backup12 continuity/3 named-totem/r25-reader and actual PC UI PASS; physical install/thermal NOT_RUN"
   },
   "private_key": "RECOVERED_SEPARATELY_NOT_FOR_DELIVERY",
   "physical_android": "NOT_RUN",
   "user_save_writes": 0,
-  "next": "Complete final full suite r26-final002; compare original66; build strict retained-signature final APK code30; package artifacts and exact per-entry ledger",
+  "next": "Artifact handoff; remaining conditions/visual/route reviews in full ledger and physical old/new character relaunch/play/thermal comparison require actual device and current progressed save. Do not relabel NOT_RUN as PASS.",
   "rulings": [
     "User directs Work-only execution: no subagent dispatch.",
     "Existing source ZIP and remote STATE agree; latest remote commit is r25.",
@@ -32,10 +32,25 @@
     "baseline": "evidence/r26/growth/before002/RESULT.json",
     "optimized": "evidence/r26/growth/after003/RESULT.json",
     "snapshot_contract": "evidence/r24/runtime/snapshot-opt-green003/RESULT.json",
-    "continuity": "evidence/r24/runtime/continuity-green001/RESULT.json",
+    "continuity": "evidence/r24/runtime/continuity-final003/RESULT.json",
     "physical_device": "NOT_RUN_NO_ADB_DEVICE",
     "actual_user_progress_save": "NOT_AVAILABLE; isolated synthetic same-byte seeds only",
     "abba": "evidence/r26/growth-pair/abba001/RESULT.json",
-    "final_ui": "evidence/r26/ui/input008/RECEIPT.json"
+    "final_ui": "evidence/r26/ui/input008/RECEIPT.json",
+    "r25_reader": "evidence/r24/runtime/reader-r25-final001/RESULT.json",
+    "named_totem": "evidence/r24/runtime/totem-final001/RESULT.json"
+  },
+  "completion": "PARTIAL_NOT_WHOLE_TASK_COMPLETE",
+  "final_apk": {
+    "name": "Project1998-r26-final-update-arm64.apk",
+    "versionCode": 30,
+    "sha256": "0517350d72af71e852fcccd72fb94fe8c5ed6136855e28aba4c35f5c4a04add5",
+    "certificate_sha256": "ecea13778e2466b3e568f45bfe1facb6fd708bdd0ed3f6ae2a4c305da2ebb030",
+    "receipt": "android/evidence/build-r26-003/BUILD_RECEIPT.json"
+  },
+  "physical_environment": "BLOCKED_NO_CONNECTED_ADB_DEVICE",
+  "world_script_inventory": {
+    "summary": "evidence/r26/SCRIPT-INVENTORY-SUMMARY.json",
+    "scripted_roundtrip_matrix": "NOT_RUN_SEPARATE_FROM_TABLE_WARP_SWEEP"
   }
 }

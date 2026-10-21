@@ -65,5 +65,15 @@ bad["Data"]!["X"] = 65534;
 bool refused = false;
 try { new World(new GameClock()).RestoreOfflineStateJson(unknown.ToJsonString()); } catch (InvalidDataException) { refused = true; }
 Check("unknown_invalid_coordinates_still_refused", refused);
+var spawnWorld = new World(new GameClock());
+var spawnGate = typeof(World).GetField("_lock", BindingFlags.NonPublic | BindingFlags.Instance)!.GetValue(spawnWorld)!;
+var freeSpawn = typeof(World).GetMethod("FreeSpawnTile", BindingFlags.NonPublic | BindingFlags.Instance)!;
+lock (spawnGate) foreach (var origin in new[] { ((ushort)3472, (ushort)11, (ushort)8), ((ushort)4164, (ushort)24, (ushort)32), ((ushort)4472, (ushort)10, (ushort)8) })
+{
+    var tile = ((ushort, ushort))freeSpawn.Invoke(spawnWorld, new object[] { origin.Item1, origin.Item2, origin.Item3, true })!;
+    var dims = Content.Maps[origin.Item1];
+    Check("all_declared_invalid_spawn_room_origins_" + origin.Item1, tile.Item1 < dims.Xs && tile.Item2 < dims.Ys
+        && !MapData.For(origin.Item1)!.Solid(tile.Item1, tile.Item2), new { map = origin.Item1, x = tile.Item1, y = tile.Item2 });
+}
 File.WriteAllText(args[2], JsonSerializer.Serialize(new { status = failed ? "FAIL" : "PASS", checks, physical_android = "NOT_RUN", scope = "Stable account floor/creature continuity plus exact r25 invalid-room fixture. No user save writes." }, new JsonSerializerOptions { WriteIndented = true }));
 return failed ? 1 : 0;
