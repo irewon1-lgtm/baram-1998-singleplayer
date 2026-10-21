@@ -10,7 +10,7 @@ using IO = System.IO;
 /// local credentials and Korean display metadata never replace original game rules.</summary>
 public partial class Main : Control
 {
-    public const string BuildId = "P1998-G7-V4-20261021-r26";
+    public const string BuildId = "P1998-G7-V4-20261021-r27";
     private sealed record Profile(string Id, string Password, string Name, int HairTone = 0, int SkinTone = 0);
     private sealed record UiLatency(string Kind, double Milliseconds, bool Committed, bool HostFaulted);
     private readonly ConcurrentQueue<Action> _ui = new();
@@ -535,6 +535,9 @@ public partial class Main : Control
                 case "use": await Execute("use", q => q.UseAsync(checked((byte)command.Number))); break;
                 case "eat": await Execute("eat", q => q.EatAsync(checked((byte)command.Number))); break;
                 case "equip": await Execute("equip", q => q.EquipAsync(checked((byte)command.Number))); break;
+                case "activate-item":
+                    if (command.Item is { } item) await Execute(item.Definition.IsEquip ? "equip" : item.Definition.Type==0 ? "eat" : "use", q => q.ActivateItemAsync(item));
+                    break;
                 case "unequip": await Execute("unequip", q => q.UnequipAsync(checked((byte)command.Number))); break;
                 case "drop": case "drop-all": await Execute(command.Kind, q => q.DropAsync(checked((byte)command.Number), command.Kind == "drop-all")); break;
                 case "hand": case "hand-all": await Execute(command.Kind, q => q.HandItemAsync(checked((byte)command.Number), command.Kind == "hand-all")); break;

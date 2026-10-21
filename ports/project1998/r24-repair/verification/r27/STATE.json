@@ -1,0 +1,27 @@
+{
+  "task": "P1998_R27_INVENTORY_DETAILS_AND_DOUBLE_ACTIVATION",
+  "baseline_local": "abc509659dd45d56147acffdb033c7a182c8c4ec",
+  "baseline_remote": "55d7cb02cf488b2232d9c81aede8556bbf3d4535",
+  "step": "2_FINAL_UI_REGRESSION_AND_STRICT_APK",
+  "requirements": [
+    "One bag tap immediately shows authoritative item stats, restrictions and current/max durability without an action-choice modal",
+    "Two short taps on the same unchanged item equip, eat or use it exactly once through existing original handlers",
+    "Changing item, page, panel, drag, focus, map or lifecycle cancels the pending double tap",
+    "Preserve original server restrictions, character and world data, FULL SQLite safety, package, certificate and save folder"
+  ],
+  "verification": [
+    "Baseline actual Godot pointer test must reproduce unexpected modal and absent details",
+    "Final actual indexed touch and desktop mouse tests: single inspection, double equip/food, slow/different/drag/cancel, stale slot, failed restrictions, save/reopen",
+    "Snapshot property values match original ItemDef and InvItem; no UI-thread Session lock or character/world serialization",
+    "Affected and complete regression, strict APK frozen-input/signature checks; physical Android NOT_RUN if no device"
+  ],
+  "status": "IN_PROGRESS",
+  "physical_android": "NOT_RUN",
+  "user_save_writes": 0,
+  "baseline_ui": "FAIL_REPRODUCED: actual PC touch opens modal; evidence/r27/ui/baseline002/runtime/ko-checks.json",
+  "first_ui": "PASS_17: evidence/r27/ui/green002/RECEIPT.json",
+  "inspection_and_failure_tests": "PASS_11: evidence/r27/xunit-targeted001",
+  "final_ui": "PASS_21: evidence/r27/ui/final002/RECEIPT.json",
+  "full_xunit": "2076 executed /2010 PASS /66 inherited FAIL; exact failure names/messages unchanged",
+  "remaining": "Existing final render/items/backup batch running; strict code31 export pending"
+}

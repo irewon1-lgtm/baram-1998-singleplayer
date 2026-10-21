@@ -93,6 +93,13 @@ public sealed class PlaySession
     public Task<OfflineActionResult> UseAsync(byte wireSlot) => Slot(ClientOp.UseItem, wireSlot);
     public Task<OfflineActionResult> EatAsync(byte wireSlot) => Slot(ClientOp.Eat, wireSlot);
     public Task<OfflineActionResult> EquipAsync(byte wireSlot) => Slot(ClientOp.Wield, wireSlot);
+    public Task<OfflineActionResult> ActivateItemAsync(OfflineItemInspection item)
+    {
+        ArgumentNullException.ThrowIfNull(item);
+        if (item.WireSlot == 0) throw new ArgumentOutOfRangeException(nameof(item));
+        byte opcode = item.Definition.IsEquip ? ClientOp.Wield : item.Definition.Type == 0 ? ClientOp.Eat : ClientOp.UseItem;
+        return Queue(opcode, () => new[] { item.WireSlot }, expectedBagItem: item);
+    }
     public Task<OfflineActionResult> UnequipAsync(byte wireSlot) => Slot(ClientOp.Unequip, wireSlot);
     // Original one-based slot and whole-stack flag. Dropping a tool is also the
     // 4.95 gathering gesture; the authoritative handler decides whether to harvest.
@@ -199,12 +206,12 @@ public sealed class PlaySession
             throw new ArgumentException("원본 게임의 자유 입력은 영문·숫자·기호 255자까지 지원합니다. 한글 표시명은 별도로 보존합니다.", nameof(text));
         return Encoding.ASCII.GetBytes(text);
     }
-    private Task<OfflineActionResult> Queue(byte opcode, Func<byte[]> body, long? acknowledge = null)
+    private Task<OfflineActionResult> Queue(byte opcode, Func<byte[]> body, long? acknowledge = null, OfflineItemInspection? expectedBagItem = null)
     {
         long generation = Host.Generation, lifecycle = Host.LifecycleVersion;
-        return RunCommandAsync(opcode, body, generation, lifecycle, Model.MapEpoch, acknowledge);
+        return RunCommandAsync(opcode, body, generation, lifecycle, Model.MapEpoch, acknowledge, expectedBagItem);
     }
-    private async Task<OfflineActionResult> RunCommandAsync(byte opcode, Func<byte[]> body, long generation, long lifecycle, long mapEpoch, long? acknowledge)
+    private async Task<OfflineActionResult> RunCommandAsync(byte opcode, Func<byte[]> body, long generation, long lifecycle, long mapEpoch, long? acknowledge, OfflineItemInspection? expectedBagItem)
     {
         long queued = System.Diagnostics.Stopwatch.GetTimestamp();
         await _commands.WaitAsync(_stopping.Token);
@@ -214,7 +221,7 @@ public sealed class PlaySession
             if (!Ready) throw new InvalidOperationException("게임이 준비되지 않았거나 일시 중지되었습니다.");
             if (Model.MapEpoch != mapEpoch) throw new InvalidOperationException("지도 전환 전의 입력을 취소했습니다. 새로 터치하세요.");
             var before = Model.CaptureScene();
-            var result = await Host.ReceiveAsync(opcode, body(), expectedGeneration: generation, expectedLifecycleVersion: lifecycle, expectedMapEpoch: mapEpoch);
+            var result = await Host.ReceiveAsync(opcode, body(), expectedGeneration: generation, expectedLifecycleVersion: lifecycle, expectedMapEpoch: mapEpoch, expectedBagItem: expectedBagItem);
             if (result.Committed)
             {
                 if (acknowledge is not null) Model.AcknowledgeDialog(acknowledge.Value);

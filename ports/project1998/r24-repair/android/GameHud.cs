@@ -1,7 +1,8 @@
 using Godot;
 using P1998.Embedded;
 
-public sealed record HudCommand(string Kind, int Number = 0, uint EntityId = 0, string Text = "", long Sequence = 0);
+public sealed record HudCommand(string Kind, int Number = 0, uint EntityId = 0, string Text = "", long Sequence = 0,
+    Server.OfflineItemInspection? Item = null);
 
 /// <summary>Touch presentation over the original FRAME.EPF. All numbers, inventory slots and
 /// choices originate in ClientSceneSnapshot. This control emits intentions and never edits game state.</summary>
@@ -87,7 +88,7 @@ public partial class GameHud : Control
         _legendIcons = Enumerable.Range(0, 16).Select(i => ResourceLoader.Load<Texture2D>("res://assets/runtime/r15-hud/legend-icon-" + i + ".png")
             ?? throw new System.IO.InvalidDataException("Original legend icon is missing: " + i)).ToArray();
         AddChild(NativeOverlay); NativeOverlay.AddChild(_nativeRight);
-        BuildNativePanel(); BuildTouchControls();
+        BuildNativePanel(); BuildTouchControls(); BuildItemInspection();
         var style = new StyleBoxFlat { BgColor = new Color("362719"), BorderColor = new Color("bf925e"), BorderWidthLeft = 2,
             BorderWidthTop = 2, BorderWidthRight = 2, BorderWidthBottom = 2,
             ContentMarginLeft = 18, ContentMarginTop = 16, ContentMarginRight = 18, ContentMarginBottom = 16 };
@@ -255,7 +256,7 @@ public partial class GameHud : Control
         button.AddThemeStyleboxOverride("normal", normal);
         var hover = (StyleBoxFlat)normal.Duplicate(); hover.BgColor = new Color("674a2c"); button.AddThemeStyleboxOverride("hover", hover);
         var down = (StyleBoxFlat)normal.Duplicate(); down.BgColor = new Color("2e2115"); button.AddThemeStyleboxOverride("pressed", down);
-        if (pressed is not null) button.Pressed += () => { if (key != "attack") ResetHeld(); if (!_busy || key is "attack" or "menu" or "export" or "menu-return" or "menu-export" or "local-close") pressed(); };
+        if (pressed is not null) button.Pressed += () => { if (!key.StartsWith("native-item-",StringComparison.Ordinal)) ResetItemTap(); if (key != "attack") ResetHeld(); if (!_busy || key is "attack" or "menu" or "export" or "menu-return" or "menu-export" or "local-close") pressed(); };
         Buttons[key] = button; if (dynamic) _dynamicKeys.Add(key); return button;
     }
 
@@ -273,6 +274,7 @@ public partial class GameHud : Control
     }
     private void HoldAttack(bool held)
     {
+        if (held) ResetItemTap();
         if (held && !CanHold) return;
         if (_attackHeld != held)
         {
@@ -293,6 +295,7 @@ public partial class GameHud : Control
     public override void _Input(InputEvent e)
     {
         if (!IsVisibleInTree() || _pad is null) return;
+        TrackItemPointer(e);
         // Physical holds retain their own indexed paths below. Other native UI
         // controls receive the first finger through the same GUI mouse path as
         // desktop input; this does not depend on platform mouse emulation.
@@ -381,6 +384,7 @@ public partial class GameHud : Control
     private bool IsGuiTouchPoint(Vector2 point)
     {
         if (ModalOpen) return true;
+        if (_itemCard.Visible && _itemCard.GetGlobalRect().HasPoint(point)) return true;
         if (_pad.IsVisibleInTree() && _pad.GetGlobalRect().HasPoint(point)) return false;
         if (Buttons["attack"].IsVisibleInTree() && Buttons["attack"].GetGlobalRect().HasPoint(point)) return false;
         return ModalOpen || Buttons.Values.Any(b => b.IsVisibleInTree() && b.GetGlobalRect().HasPoint(point))
@@ -400,6 +404,7 @@ public partial class GameHud : Control
     }
     private void CancelInputs()
     {
+        ResetItemTap();
         // A cancel must also discard the controller's one pending press. Ordinary pointer-up
         // only releases its level intent, so a valid short tap can survive a slow render poll.
         if (_uiTouchPointer >= 0)
@@ -423,6 +428,7 @@ public partial class GameHud : Control
     public void Present(ClientSceneSnapshot scene, string displayName, string status, bool busy, bool hostFaulted = false)
     {
         bool newFault = hostFaulted && !_hostFaulted;
+        if (_scene is not null && (_scene.SelfId != scene.SelfId || _scene.MapEpoch != scene.MapEpoch)) ClearItemInspection();
         _scene = scene; _name = displayName; _busy = busy; _hostFaulted = hostFaulted;
         if (newFault)
         {
@@ -479,6 +485,7 @@ public partial class GameHud : Control
         if (_nativeCanvasVersion != canvasVersion)
         { _nativeCanvasVersion = canvasVersion; NativeOverlay.QueueRedraw(); }
         RefreshModal();
+        RefreshItemInspection();
     }
 
     private partial class NativeHudCanvas : Control
@@ -626,7 +633,7 @@ public partial class GameHud : Control
                 int row = 0;
                 foreach (var item in _scene.Inventory.Skip(_nativePage * 10).Take(10))
                 {
-                    var button = NativeRow("native-item-" + item.WireSlot, $"{item.WireSlot}. {KoreanText.Display(item.Name)} ×{item.Amount:N0}", () => { if (CanUseNativeRows) OpenLocal("inventory"); }, row++ * 23, 158, 23);
+                    var button = NativeRow("native-item-" + item.WireSlot, $"{item.WireSlot}. {KoreanText.Display(item.Name)} ×{item.Amount:N0}", () => TapBagItem(item.WireSlot), row++ * 23, 158, 23);
                     button.Icon = IconTexture?.Invoke(item.Icon); button.ExpandIcon = true; button.AddThemeConstantOverride("icon_max_width", 18); button.Size = new(158, 23);
                 }
                 if (_scene.Inventory.Length == 0)
@@ -967,7 +974,9 @@ public partial class GameHud : Control
         var row = new VBoxContainer(); body.AddChild(row); var heading = new HBoxContainer(); row.AddChild(heading);
         var icon = IconTexture?.Invoke(item.Icon);
         if (icon is not null) heading.AddChild(new TextureRect { Texture = icon, CustomMinimumSize = new(42, 42), ExpandMode = TextureRect.ExpandModeEnum.IgnoreSize, StretchMode = TextureRect.StretchModeEnum.KeepAspectCentered });
-        heading.AddChild(Text($"{item.WireSlot}. {KoreanText.Display(item.Name)}  ×{item.Amount:N0}")); return row;
+        heading.AddChild(Text($"{item.WireSlot}. {KoreanText.Display(item.Name)}  ×{item.Amount:N0}"));
+        if (_scene is not null) row.AddChild(Text(ItemInspectionText(item,_scene),15));
+        return row;
     }
 
     private void OpenSpellInput(SceneSpellSnapshot spell)

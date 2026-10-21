@@ -27,8 +27,8 @@ public sealed partial class Session
     private Action<OfflineActionResult>? _offlineDeferredFailure;
     private OfflineSaveReceipt _offlineReceipt = new(false, false, "not requested", 0, 0, null);
     private static readonly JsonSerializerOptions OfflineJson = new() { IncludeFields = true };
-    private sealed record CommittedAppearance(Shared.RecoveredAppearance Value, long Sequence);
-    private CommittedAppearance _committedAppearance = new(default, 0);
+    private sealed record CommittedAppearance(Shared.RecoveredAppearance Value, long Sequence, OfflineInventoryInspection Items);
+    private CommittedAppearance _committedAppearance = new(default, 0, OfflineInventoryInspection.Empty);
     public Shared.RecoveredAppearance CommittedRecoveredAppearance => Volatile.Read(ref _committedAppearance).Value;
     private double _captureMilliseconds, _databaseMilliseconds;
     private OfflineActionTiming _lastActionTiming = new(0, 0, 0, 0, 0, 0);
@@ -89,6 +89,7 @@ public sealed partial class Session
     {
         string user, json, extra, runtime;
         Shared.RecoveredAppearance appearance;
+        OfflineInventoryInspection items;
         if (_offlineAbandoned is { } abandoned)
         {
             _offlineReceipt = receipt = new(false, false, reason, _saveSeq, _offlineRevision, "Abandoned session: " + abandoned);
@@ -128,6 +129,7 @@ public sealed partial class Session
                 extra = _offlineCaptureExtra?.Invoke() ?? "{}";
                 runtime = CaptureOfflineRuntime();
                 appearance = CaptureRecoveredAppearance();
+                items = CaptureOfflineInventoryInspection();
                 seq = ++_saveSeq;
             }
             catch (Exception e)
@@ -160,7 +162,7 @@ public sealed partial class Session
                 _offlineRevision = commit.Revision;
                 _writtenSeq = seq;
                 _lastSaveAtMs = Environment.TickCount64;
-                Volatile.Write(ref _committedAppearance, new(appearance, seq));
+                Volatile.Write(ref _committedAppearance, new(appearance, seq, items));
             }
             _offlineReceipt = receipt = new(commit.Committed, false, reason, seq, commit.Revision, commit.Error);
         }
@@ -174,7 +176,8 @@ public sealed partial class Session
     /// Full character graph, supported live timers and dirty state roll back together on failure.
     /// World mutations require their own rollback and are NOT claimed by this narrow primitive.
     /// </summary>
-    public OfflineActionResult ExecuteOfflineAction(Action body, Action<bool> publishOrDiscard, Action? beginStage = null)
+    public OfflineActionResult ExecuteOfflineAction(Action body, Action<bool> publishOrDiscard, Action? beginStage = null,
+        OfflineItemInspection? expectedBagItem = null)
     {
         ArgumentNullException.ThrowIfNull(body);
         ArgumentNullException.ThrowIfNull(publishOrDiscard);
@@ -187,6 +190,15 @@ public sealed partial class Session
             var refused = new OfflineSaveReceipt(false, false, "action", _saveSeq, _offlineRevision,
                 "Offline action requires an entered, configured session with no nested action.");
             return new(false, refused, false, "character-and-supported-session-timers", refused.Error);
+        }
+        // Check under the SAME state monitor as the original handler. A delayed second tap must
+        // never consume the new occupant of an inventory slot, or use changed charges/ownership.
+        if (expectedBagItem is not null && (InvAt(expectedBagItem.WireSlot - 1) is not { } item || !expectedBagItem.Matches(item, false)))
+        {
+            publishOrDiscard(false);
+            var refused = new OfflineSaveReceipt(false, false, "stale-item", _saveSeq, _offlineRevision,
+                "The selected item changed. Inspect and tap it again.");
+            return new(false, refused, false, "no-action-admitted", refused.Error, Cancelled: true);
         }
         LoadOfflineRuntime();
         CaptureTimedEffects();

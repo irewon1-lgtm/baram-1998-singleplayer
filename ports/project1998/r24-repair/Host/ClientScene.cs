@@ -22,7 +22,8 @@ public sealed record PlayerStatsSnapshot(int Nation, int Totem, int Level, uint 
     int Might, int Will, int Grace, uint Hp, uint Mp, uint Experience, uint Coins, bool FastMove);
 public sealed record PlayerLookSnapshot(uint Id, int X, int Y, int Direction, byte[] Appearance, string Name);
 public sealed record FloorItemSnapshot(uint Id, int X, int Y, ushort WireLook, int Icon);
-public sealed record SceneItemSnapshot(byte WireSlot, string Name, string BaseName, uint Amount, ushort WireIcon, int Icon);
+public sealed record SceneItemSnapshot(byte WireSlot, string Name, string BaseName, uint Amount, ushort WireIcon, int Icon,
+    Server.OfflineItemInspection? Details = null);
 public sealed record SceneSpellSnapshot(byte WireSlot, string Name, byte Type);
 public sealed record SceneDialogSnapshot(long Sequence, int Kind, uint EntityId, string Text, string[] Options,
     bool Previous, bool Next, int HeadKind, int PortraitLook, int PortraitColor, byte[]? Appearance);
@@ -43,7 +44,7 @@ public sealed record ClientSceneSnapshot(int Map, int Width, int Height, string 
     SceneItemSnapshot[] Inventory, SceneItemSnapshot[] Equipment, SceneSpellSnapshot[] Spells,
     SceneDialogSnapshot? Dialog, SceneShopSnapshot? Shop, SceneEvent[] Events, long LastEventSequence,
     bool EntryComplete, SceneWorldMapSnapshot? WorldMap = null, SceneProfileSnapshot? Profile = null,
-    Shared.RecoveredAppearance Cosmetics = default);
+    Shared.RecoveredAppearance Cosmetics = default, long MapEpoch = 0);
 
 /// <summary>Presentation state comes only from original 4.95 output. Content IDs, collision,
 /// inventory ownership, spell eligibility and quest state are never fabricated by this adapter.
@@ -71,6 +72,8 @@ public sealed partial class ClientModel
     // Accessed only under _gate. _cells remains the complete wire-derived collision/map cache;
     // this presentation image is rebuilt lazily only when that cache actually changes.
     private ModelTerrainSnapshot? _terrainSnapshot;
+    private Server.OfflineInventoryInspection _itemInspection = Server.OfflineInventoryInspection.Empty;
+    internal void SetItemInspection(Server.OfflineInventoryInspection items) { lock (_gate) _itemInspection = items; }
     public void EnableInteractivePresentation() { lock (_gate) _interactivePresentation = true; }
 
     public ClientSceneSnapshot CaptureScene()
@@ -81,24 +84,26 @@ public sealed partial class ClientModel
             PlayerLookSnapshot CopyLook(PlayerLookSnapshot p) => p with { Appearance = p.Appearance.ToArray() };
             PlayerLookSnapshot? self = _players.TryGetValue(SelfId, out var look)
                 ? CopyLook(look) with { X = X, Y = Y, Direction = _direction } : null;
-            SceneItemSnapshot Item(KeyValuePair<byte, BagRow> pair, Dictionary<byte, ushort> icons)
+            SceneItemSnapshot Item(KeyValuePair<byte, BagRow> pair, Dictionary<byte, ushort> icons, bool equipment)
             {
                 ushort icon = icons.GetValueOrDefault(pair.Key);
-                return new(pair.Key, pair.Value.Name, pair.Value.BaseName, pair.Value.Amount, icon, (icon + 0x4000) & 0xffff);
+                var detail = _itemInspection.Find(pair.Key, equipment);
+                if (detail is not null && (detail.Definition.Name != pair.Value.BaseName || detail.Amount != pair.Value.Amount)) detail = null;
+                return new(pair.Key, pair.Value.Name, pair.Value.BaseName, pair.Value.Amount, icon, (icon + 0x4000) & 0xffff, detail);
             }
             return new(Map, Width, Height, _mapTitle, X, Y, _direction, SelfId, self, _stats,
                 _terrainSnapshot ??= new(_cells.OrderBy(p => p.Key.Y).ThenBy(p => p.Key.X)
                     .Select(p => new ModelCell(p.Key.X, p.Key.Y, p.Value.Ground, p.Value.Object))),
                 _creatures.Values.OrderBy(p => p.Id).ToArray(), _players.Values.OrderBy(p => p.Id).Select(CopyLook).ToArray(),
                 _floorItems.Values.OrderBy(p => p.Id).ToArray(),
-                _inventory.OrderBy(p => p.Key).Select(p => Item(p, _bagIcons)).ToArray(),
-                _equipment.OrderBy(p => p.Key).Select(p => Item(p, _equipmentIcons)).ToArray(),
+                _inventory.OrderBy(p => p.Key).Select(p => Item(p, _bagIcons, false)).ToArray(),
+                _equipment.OrderBy(p => p.Key).Select(p => Item(p, _equipmentIcons, true)).ToArray(),
                 _spells.OrderBy(p => p.Key).Select(p => new SceneSpellSnapshot(p.Key, p.Value, _spellTypes.GetValueOrDefault(p.Key))).ToArray(),
                 _dialog is null ? null : _dialog with { Options = _dialog.Options.ToArray(), Appearance = _dialog.Appearance?.ToArray() },
                 _shop is null ? null : _shop with { Rows = _shop.Rows.ToArray() },
                 _events.Select(e => e with { Body = e.Body.ToArray() }).ToArray(), _eventSequence, EntryComplete,
                 _worldMap is null ? null : _worldMap with { Destinations = _worldMap.Destinations.ToArray() },
-                _profile is null ? null : _profile with { Legends = _profile.Legends.ToArray() });
+                _profile is null ? null : _profile with { Legends = _profile.Legends.ToArray() }, MapEpoch: _mapEpoch);
         }
     }
 

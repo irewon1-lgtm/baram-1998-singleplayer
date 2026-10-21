@@ -55,6 +55,7 @@ public sealed class EmbeddedHost
     public OfflineSaveReceipt LastSave => _session.LastOfflineSaveReceipt;
     public string CharacterJson => _session.CaptureOfflineCharacterJson();
     public RecoveredAppearance RecoveredAppearance => _session.CommittedRecoveredAppearance;
+    public OfflineInventoryInspection ItemInspection => _session.CommittedInventoryInspection;
     public string WorldJson => CaptureOfflineExtra();
     public BoundedHistory<double> InputMilliseconds { get; } = new(512, value => value);
     public BoundedHistory<double> TickMilliseconds { get; } = new(512, value => value);
@@ -257,7 +258,7 @@ public sealed class EmbeddedHost
     });
 
     public Task<OfflineActionResult> ReceiveAsync(byte opcode, byte[] plaintext, byte? increment = null, long? expectedGeneration = null,
-        long? expectedLifecycleVersion = null, long? expectedMapEpoch = null) => Task.Run(async () =>
+        long? expectedLifecycleVersion = null, long? expectedMapEpoch = null, OfflineItemInspection? expectedBagItem = null) => Task.Run(async () =>
     {
         long queueStarted = Stopwatch.GetTimestamp();
         await _serial.WaitAsync();
@@ -286,7 +287,7 @@ public sealed class EmbeddedHost
                 localWalkPresentation = Model.BeginLocalWalkPresentation(plaintext[0] & 3);
                 Model.PredictWalk(plaintext[0] & 3);
             }
-            var result = _session.ExecuteOfflineAction(() => _session.ReceiveEmbeddedFrame(frame), _out.CompleteStage, _out.BeginStage);
+            var result = _session.ExecuteOfflineAction(() => _session.ReceiveEmbeddedFrame(frame), _out.CompleteStage, _out.BeginStage, expectedBagItem);
             if (!result.Committed) Model.CancelPrediction(oldX, oldY);
             if (!result.Committed && !result.Cancelled) Fault("Action commit failed: " + result.Error);
             else if (result.Committed) _lastCommitReal = Environment.TickCount64;
@@ -357,6 +358,7 @@ public sealed class EmbeddedHost
             AppendWire(new("game", "receive", packet.Opcode, packet.Increment, Convert.ToHexString(frame).ToLowerInvariant(), Convert.ToHexString(decoded).ToLowerInvariant()));
             Model.Apply(packet.Opcode, decoded, output.SystemGenerated);
         }
+        Model.SetItemInspection(ItemInspection);
     }
     private string CaptureOfflineExtra()
     {
