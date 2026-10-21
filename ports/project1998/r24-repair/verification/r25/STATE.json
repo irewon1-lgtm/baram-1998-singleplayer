@@ -4,11 +4,11 @@
   "apk_baseline_sha256": "5cef47098ca9c3ad6d3cde7e1a720c8d3a5220e0a797270a1fa27e945ce2d5e0",
   "canonical_parent": "c1f3c5a0 (actual latest work/rebuild-p3-remediation-20261016, no reset)",
   "active_branch": "work/project1998-r24-repair-20261021",
-  "current_step": 1,
+  "current_step": 2,
   "steps": {
     "0": "PASS",
-    "1": "IN_PROGRESS",
-    "2": "NOT_RUN",
+    "1": "PASS",
+    "2": "IN_PROGRESS",
     "3": "NOT_RUN",
     "4": "NOT_RUN",
     "5": "NOT_RUN"
@@ -17,7 +17,7 @@
   "r24_after_changes_found": 0,
   "user_save_writes": 0,
   "signing": "Existing private key recovered separately; never package or commit it",
-  "next_action": "Reproduce queued smith repair cancellation and real SQLite failure in deferred purchase/container/cosmetic mutations on frozen baseline002",
+  "next_action": "Complete actual Godot F01 red reproduction, pass the same Cosmetics to equipment and refresh its canvas, then compare both panels",
   "rulings": [
     "User explicitly requests Work-only execution: no subagent dispatch, including final review; perform and label a separate self-review.",
     "Outer repository BARAM G2 plan concerns another game implementation; current direct user r24 repair specification governs this port. Preserve all outer-game files.",
@@ -30,5 +30,18 @@
   "step0_evidence": [
     "evidence/r25/products/baseline002/BUILD.json",
     "evidence/r25/fixtures/synthetic002/RESULT.json"
-  ]
+  ],
+  "evidence": {
+    "step0": [
+      "evidence/r25/products/baseline002/BUILD.json",
+      "evidence/r25/fixtures/synthetic002/RESULT.json",
+      "evidence/r25/fixtures/synthetic002/ENVIRONMENT.json"
+    ],
+    "step1": [
+      "evidence/r25/transactions/baseline001/RESULT.json",
+      "evidence/r25/transactions/fix001/RESULT.json",
+      "evidence/r25/crash/step1-001/RESULT.json"
+    ]
+  },
+  "canonical_remote": "5a987afcf093e3b512722305891190c45854a0bf"
 }

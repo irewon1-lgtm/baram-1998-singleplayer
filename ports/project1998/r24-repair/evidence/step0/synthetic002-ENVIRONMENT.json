@@ -1,0 +1,16 @@
+[
+  {
+    "name": "dotnet",
+    "status": "PASS",
+    "expected": "9.0.319",
+    "observed": "9.0.319",
+    "sha256": "5f867ee3382b524a69379c51fbe77b96f61a8a9c54ceea760a3108d10ae5f7a4"
+  },
+  {
+    "name": "godot",
+    "status": "PASS",
+    "expected": "4.6.stable.mono.official.89cea1439",
+    "observed": "4.6.stable.mono.official.89cea1439",
+    "sha256": "63bafe857f6f370e4d8ef1e23638ad7942a2de367eb534dd8fd4056c7162db91"
+  }
+]

@@ -31,12 +31,12 @@ products=Path(os.environ['P1998_PROBE_PRODUCTS']); csproj=project/'G1BProbe.cspr
 csproj.write_text(cs.replace('<ProjectReference Include="../Host/EmbeddedHost.csproj" />',refs))
 if (r/'android/.godot/imported').exists():shutil.copytree(r/'android/.godot/imported',project/'.godot/imported',dirs_exist_ok=True)
 
-with zipfile.ZipFile(r.parent/'downloads/Project1998-G7-V4-r23-final-arm64.apk')as z:
+with zipfile.ZipFile(Path(os.environ['P1998_BASELINE_APK']))as z:
  for n in z.namelist():
   if n.startswith('assets/.godot/imported/'):
    dst=project/n[7:]
    if not dst.exists():dst.parent.mkdir(parents=True,exist_ok=True);dst.write_bytes(z.read(n))
-env=os.environ|{'PATH':str(t/'dotnet')+':'+os.environ['PATH'],'DOTNET_ROOT':str(t/'dotnet'),'DOTNET_CLI_HOME':str(r.parent/'r21-dotnet-home'),'NUGET_PACKAGES':str(t/'nuget/packages'),'DOTNET_PROCESSOR_COUNT':'1','MSBUILDDISABLENODEREUSE':'1','P1998_G2_DATA':str(runtime),'GODOT_SILENCE_ROOT_WARNING':'1','LD_LIBRARY_PATH':str(t/'nuget/packages/sqlitepclraw.lib.e_sqlite3/2.1.6/runtimes/linux-x64/native')}
+env=os.environ|{'PATH':str(t/'dotnet')+':'+os.environ['PATH'],'DOTNET_ROOT':str(t/'dotnet'),'DOTNET_CLI_HOME':str(t/'dotnet-home'),'NUGET_PACKAGES':str(t/'nuget/packages'),'DOTNET_PROCESSOR_COUNT':'1','MSBUILDDISABLENODEREUSE':'1','P1998_G2_DATA':str(runtime),'GODOT_SILENCE_ROOT_WARNING':'1','LD_LIBRARY_PATH':str(t/'nuget/packages/sqlitepclraw.lib.e_sqlite3/2.1.6/runtimes/linux-x64/native')}
 rec={'schema':'P1998_R24_FULL_UI_1','started':datetime.datetime.now(datetime.timezone.utc).isoformat(),'physical_android':'NOT_RUN','fixture':'Exact original pre-UI r20 final002 archive bytes; parent contract hash matches. Same prior explicit death precondition inside the existing full flow.','parent_character_hash_matches':True,'parent_source_hashes':before,'steps':[]}
 def run(name,cmd):
  with(out/(name+'.log')).open('w')as f:x=subprocess.run([str(c)for c in cmd],env=env,cwd=r,stdout=f,stderr=subprocess.STDOUT)

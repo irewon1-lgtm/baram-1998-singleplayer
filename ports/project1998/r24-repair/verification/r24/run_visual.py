@@ -16,7 +16,7 @@ shutil.copy2(root/'evidence/r24/assets-audit/ALL-286-ASSET-AUDIT.json',project/'
 shutil.copy2(root/'verification/r24/assets-audit/reconstructed-role-spec.json',project/'reconstructed-roles.json')
 shutil.copytree(root/'android/assets',project/'assets',ignore=shutil.ignore_patterns('game-data.zip','g1a-normal-earned*','test-only'))
 # Preserve imported original bytes so an unchanged atlas need not be reimported.
-with zipfile.ZipFile(root.parent/'downloads/Project1998-G7-V4-r23-final-arm64.apk') as z:
+with zipfile.ZipFile(Path(os.environ['P1998_BASELINE_APK'])) as z:
  for n in z.namelist():
   if n.startswith('assets/.godot/imported/'):
    dst=project/n[7:];dst.parent.mkdir(parents=True,exist_ok=True);dst.write_bytes(z.read(n))
@@ -36,7 +36,7 @@ for m in rows:
  shutil.copy2(root/'candidate/game-data/maps'/('TK'+m['id']+'.map'),project/'terrain'/('TK'+m['id']+'.map'))
  maps.append({'id':int(m['id']),'name':m['name'],'width':int(m['xs']),'height':int(m['ys'])})
 (project/'terrain-input.json').write_text(json.dumps(maps))
-env=os.environ|{'PATH':str(tools/'dotnet')+':'+os.environ['PATH'],'DOTNET_ROOT':str(tools/'dotnet'),'DOTNET_CLI_HOME':str(root.parent/'r21-dotnet-home'),'NUGET_PACKAGES':str(tools/'nuget/packages'),'DOTNET_PROCESSOR_COUNT':'1','MSBUILDDISABLENODEREUSE':'1','GODOT_SILENCE_ROOT_WARNING':'1'}
+env=os.environ|{'PATH':str(tools/'dotnet')+':'+os.environ['PATH'],'DOTNET_ROOT':str(tools/'dotnet'),'DOTNET_CLI_HOME':str(tools/'dotnet-home'),'NUGET_PACKAGES':str(tools/'nuget/packages'),'DOTNET_PROCESSOR_COUNT':'1','MSBUILDDISABLENODEREUSE':'1','GODOT_SILENCE_ROOT_WARNING':'1'}
 godot=tools/'godot-mono/Godot_v4.6-stable_mono_linux_x86_64/Godot_v4.6-stable_mono_linux.x86_64'
 commands=[[str(tools/'dotnet/dotnet'),'build',str(project/'VisualProbe.csproj'),'-c','Release','-m:1','-p:NuGetAudit=false','-p:RestoreSources='+str(tools/'nuget/feed')],[str(godot),'--headless','--editor','--path',str(project),'--import','--quit']]
 rec={'attempt':a.attempt,'mode':a.mode,'source_hashes':{n:hashlib.sha256((project/n).read_bytes()).hexdigest() for n in names},'physical_android':'NOT_RUN','scope':'ACTUAL_SOURCE_PUBLIC_UI_AND_DECODED_RENDER_FIXTURE_NOT_NATURAL_PROGRESS','steps':[]}

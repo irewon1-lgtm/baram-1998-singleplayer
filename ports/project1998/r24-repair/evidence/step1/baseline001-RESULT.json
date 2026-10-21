@@ -1,0 +1,279 @@
+{
+  "status": "FAIL",
+  "category": "17_UNIQUE_QUEUED_CHARACTER_TRANSACTION_SCENARIOS",
+  "checks": [
+    {
+      "name": "repair_success",
+      "status": "PASS",
+      "observed": {
+        "pending": 1,
+        "changed": true,
+        "saved": true,
+        "Coins": 999500,
+        "dura": 50000
+      }
+    },
+    {
+      "name": "repair_pause",
+      "status": "FAIL",
+      "observed": {
+        "pending": 1,
+        "changed": true,
+        "saved": true,
+        "Coins": 999500,
+        "dura": 50000
+      }
+    },
+    {
+      "name": "repair_stop",
+      "status": "FAIL",
+      "observed": {
+        "pending": 1,
+        "changed": true,
+        "saved": true,
+        "Coins": 999500,
+        "dura": 50000
+      }
+    },
+    {
+      "name": "repair_graph_replaced",
+      "status": "FAIL",
+      "observed": {
+        "pending": 1,
+        "changed": true,
+        "saved": true,
+        "Coins": 999500,
+        "dura": 25000
+      }
+    },
+    {
+      "name": "repair_write_failure",
+      "status": "FAIL",
+      "observed": {
+        "pending": 1,
+        "changed": true,
+        "saved": false,
+        "Coins": 999500,
+        "dura": 50000
+      }
+    },
+    {
+      "name": "purchase_deferred_success",
+      "status": "PASS",
+      "observed": {
+        "pending": 1,
+        "changed": true,
+        "saved": true,
+        "outputs": 3,
+        "receipt": {
+          "Committed": true,
+          "NoChanges": false,
+          "Reason": "flush",
+          "CaptureSequence": 7,
+          "Revision": 7,
+          "Error": null
+        }
+      }
+    },
+    {
+      "name": "purchase_deferred_pause",
+      "status": "PASS",
+      "observed": {
+        "pending": 1,
+        "changed": false,
+        "saved": false,
+        "outputs": 0,
+        "receipt": {
+          "Committed": true,
+          "NoChanges": false,
+          "Reason": "action",
+          "CaptureSequence": 6,
+          "Revision": 6,
+          "Error": null
+        }
+      }
+    },
+    {
+      "name": "purchase_deferred_stop",
+      "status": "PASS",
+      "observed": {
+        "pending": 1,
+        "changed": false,
+        "saved": false,
+        "outputs": 0,
+        "receipt": {
+          "Committed": true,
+          "NoChanges": false,
+          "Reason": "action",
+          "CaptureSequence": 6,
+          "Revision": 6,
+          "Error": null
+        }
+      }
+    },
+    {
+      "name": "purchase_deferred_write_failure",
+      "status": "FAIL",
+      "observed": {
+        "pending": 1,
+        "changed": true,
+        "saved": false,
+        "outputs": 3,
+        "receipt": {
+          "Committed": false,
+          "NoChanges": false,
+          "Reason": "flush",
+          "CaptureSequence": 7,
+          "Revision": 6,
+          "Error": "SQLite Error 19: \u0027R25_INJECTED_WRITE_FAILURE\u0027."
+        }
+      }
+    },
+    {
+      "name": "cosmetic_deferred_success",
+      "status": "PASS",
+      "observed": {
+        "pending": 1,
+        "changed": true,
+        "saved": true,
+        "outputs": 3,
+        "receipt": {
+          "Committed": true,
+          "NoChanges": false,
+          "Reason": "flush",
+          "CaptureSequence": 4,
+          "Revision": 4,
+          "Error": null
+        }
+      }
+    },
+    {
+      "name": "cosmetic_deferred_pause",
+      "status": "PASS",
+      "observed": {
+        "pending": 1,
+        "changed": false,
+        "saved": false,
+        "outputs": 0,
+        "receipt": {
+          "Committed": true,
+          "NoChanges": false,
+          "Reason": "action",
+          "CaptureSequence": 3,
+          "Revision": 3,
+          "Error": null
+        }
+      }
+    },
+    {
+      "name": "cosmetic_deferred_stop",
+      "status": "PASS",
+      "observed": {
+        "pending": 1,
+        "changed": false,
+        "saved": false,
+        "outputs": 0,
+        "receipt": {
+          "Committed": true,
+          "NoChanges": false,
+          "Reason": "action",
+          "CaptureSequence": 3,
+          "Revision": 3,
+          "Error": null
+        }
+      }
+    },
+    {
+      "name": "cosmetic_deferred_write_failure",
+      "status": "FAIL",
+      "observed": {
+        "pending": 1,
+        "changed": true,
+        "saved": false,
+        "outputs": 3,
+        "receipt": {
+          "Committed": false,
+          "NoChanges": false,
+          "Reason": "flush",
+          "CaptureSequence": 4,
+          "Revision": 3,
+          "Error": "SQLite Error 19: \u0027R25_INJECTED_WRITE_FAILURE\u0027."
+        }
+      }
+    },
+    {
+      "name": "container_deferred_success",
+      "status": "PASS",
+      "observed": {
+        "pending": 1,
+        "changed": true,
+        "saved": true,
+        "outputs": 3,
+        "receipt": {
+          "Committed": true,
+          "NoChanges": false,
+          "Reason": "flush",
+          "CaptureSequence": 5,
+          "Revision": 5,
+          "Error": null
+        }
+      }
+    },
+    {
+      "name": "container_deferred_pause",
+      "status": "PASS",
+      "observed": {
+        "pending": 1,
+        "changed": false,
+        "saved": false,
+        "outputs": 0,
+        "receipt": {
+          "Committed": true,
+          "NoChanges": false,
+          "Reason": "action",
+          "CaptureSequence": 4,
+          "Revision": 4,
+          "Error": null
+        }
+      }
+    },
+    {
+      "name": "container_deferred_stop",
+      "status": "PASS",
+      "observed": {
+        "pending": 1,
+        "changed": false,
+        "saved": false,
+        "outputs": 0,
+        "receipt": {
+          "Committed": true,
+          "NoChanges": false,
+          "Reason": "action",
+          "CaptureSequence": 4,
+          "Revision": 4,
+          "Error": null
+        }
+      }
+    },
+    {
+      "name": "container_deferred_write_failure",
+      "status": "FAIL",
+      "observed": {
+        "pending": 1,
+        "changed": true,
+        "saved": false,
+        "outputs": 3,
+        "receipt": {
+          "Committed": false,
+          "NoChanges": false,
+          "Reason": "flush",
+          "CaptureSequence": 5,
+          "Revision": 4,
+          "Error": "SQLite Error 19: \u0027R25_INJECTED_WRITE_FAILURE\u0027."
+        }
+      }
+    }
+  ],
+  "physical_android": "NOT_RUN",
+  "world_rollback": "NOT_CLAIMED"
+}
