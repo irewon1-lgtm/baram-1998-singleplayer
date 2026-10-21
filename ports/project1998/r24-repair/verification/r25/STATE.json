@@ -4,20 +4,20 @@
   "apk_baseline_sha256": "5cef47098ca9c3ad6d3cde7e1a720c8d3a5220e0a797270a1fa27e945ce2d5e0",
   "canonical_parent": "c1f3c5a0 (actual latest work/rebuild-p3-remediation-20261016, no reset)",
   "active_branch": "work/project1998-r24-repair-20261021",
-  "current_step": 4,
+  "current_step": 5,
   "steps": {
     "0": "PASS",
-    "1": "PASS",
+    "1": "PASS_31_QUEUED_TRANSACTION_SCENARIOS",
     "2": "PASS_SCOPED_RENDER",
     "3": "PASS_SCOPED_MEASUREMENT",
-    "4": "IN_PROGRESS",
-    "5": "NOT_RUN"
+    "4": "PASS_SCOPED_6_OF_24_ADAPTED_SKINS",
+    "5": "IN_PROGRESS"
   },
   "toolchain": "P1998_TOOLCHAIN=/workspace/p1998-toolchain-r25",
   "r24_after_changes_found": 0,
   "user_save_writes": 0,
   "signing": "Existing private key recovered separately; never package or commit it",
-  "next_action": "Improve six blade skins using retained native sword-family animation sheets; keep other skins and mounts explicitly substituted; run original-frame pixel comparison",
+  "next_action": "Final002 combined regression on ordinary-fix001 frozen products, compare full original xUnit failure set against unchanged r24, package only after critical transaction safety is clear",
   "rulings": [
     "User explicitly requests Work-only execution: no subagent dispatch, including final review; perform and label a separate self-review.",
     "Outer repository BARAM G2 plan concerns another game implementation; current direct user r24 repair specification governs this port. Preserve all outer-game files.",
@@ -40,7 +40,10 @@
     "step1": [
       "evidence/r25/transactions/baseline001/RESULT.json",
       "evidence/r25/transactions/fix001/RESULT.json",
-      "evidence/r25/crash/step1-001/RESULT.json"
+      "evidence/r25/crash/step1-001/RESULT.json",
+      "evidence/r25/transactions/busy001/RESULT.json",
+      "evidence/r25/transactions/ordinary-before001/RESULT.json",
+      "evidence/r25/transactions/ordinary-after001/RESULT.json"
     ],
     "step2": [
       "evidence/r25/visual/appearance-baseline003/RESULT.json",
@@ -50,8 +53,18 @@
       "evidence/r25/PERFORMANCE-COMPARISON.json",
       "evidence/r25/diagnostics/baseline002/RESULT.json",
       "evidence/r25/diagnostics/fix001/RESULT.json",
-      "evidence/r25/visual/cache001/RESULT.json"
+      "evidence/r25/visual/cache001/RESULT.json",
+      "evidence/r25/CHARACTER-PIXELS-VERIFIED.json"
+    ],
+    "step4": [
+      "evidence/r25/visual/skins-before001/RESULT.json",
+      "evidence/r25/visual/skins-after001/RESULT.json",
+      "evidence/r25/step4-research/SKIN-FAMILY-PROVENANCE.json"
+    ],
+    "step5": [
+      "evidence/r25/control-baseline/RESULT.json"
     ]
   },
-  "canonical_remote": "bc6551b00aba2e7a2e563334e559833aa1cacc90"
+  "canonical_remote": "d332e404d23f29b49797147f92e5f8a1739ef7c5",
+  "review_note": "Full original unit suite revealed 66 prior failures. All 66 reproduced on unchanged r24 in a 225-test control; compare final full-suite failures before closing. Do not label inherited failures PASS."
 }

@@ -1,0 +1,118 @@
+{
+  "status": "FAIL",
+  "category": "21_UNIQUE_QUEUED_CHARACTER_TRANSACTION_SCENARIOS",
+  "checks": [
+    {
+      "name": "ordinary_purchase_success",
+      "status": "FAIL",
+      "observed": {
+        "pending": 1,
+        "changed": true,
+        "saved": false,
+        "live_and_stored_agree": false,
+        "outputs": 3
+      }
+    },
+    {
+      "name": "ordinary_purchase_pause",
+      "status": "FAIL",
+      "observed": {
+        "pending": 1,
+        "changed": true,
+        "saved": false,
+        "live_and_stored_agree": false,
+        "outputs": 2
+      }
+    },
+    {
+      "name": "ordinary_purchase_stop",
+      "status": "FAIL",
+      "observed": {
+        "pending": 1,
+        "changed": true,
+        "saved": false,
+        "live_and_stored_agree": false,
+        "outputs": 2
+      }
+    },
+    {
+      "name": "ordinary_purchase_write_failure",
+      "status": "FAIL",
+      "observed": {
+        "pending": 1,
+        "changed": true,
+        "saved": false,
+        "live_and_stored_agree": false,
+        "outputs": 3
+      }
+    },
+    {
+      "name": "ordinary_purchase_graph_replaced",
+      "status": "FAIL",
+      "observed": {
+        "pending": 1,
+        "changed": true,
+        "saved": false,
+        "live_and_stored_agree": false,
+        "outputs": 3
+      }
+    },
+    {
+      "name": "ordinary_sale_success",
+      "status": "FAIL",
+      "observed": {
+        "pending": 1,
+        "changed": true,
+        "saved": false,
+        "live_and_stored_agree": false,
+        "outputs": 3
+      }
+    },
+    {
+      "name": "ordinary_sale_pause",
+      "status": "FAIL",
+      "observed": {
+        "pending": 1,
+        "changed": true,
+        "saved": false,
+        "live_and_stored_agree": false,
+        "outputs": 2
+      }
+    },
+    {
+      "name": "ordinary_sale_stop",
+      "status": "FAIL",
+      "observed": {
+        "pending": 1,
+        "changed": true,
+        "saved": false,
+        "live_and_stored_agree": false,
+        "outputs": 2
+      }
+    },
+    {
+      "name": "ordinary_sale_write_failure",
+      "status": "FAIL",
+      "observed": {
+        "pending": 1,
+        "changed": true,
+        "saved": false,
+        "live_and_stored_agree": false,
+        "outputs": 3
+      }
+    },
+    {
+      "name": "ordinary_sale_graph_replaced",
+      "status": "FAIL",
+      "observed": {
+        "pending": 1,
+        "changed": true,
+        "saved": false,
+        "live_and_stored_agree": false,
+        "outputs": 3
+      }
+    }
+  ],
+  "physical_android": "NOT_RUN",
+  "world_rollback": "NOT_CLAIMED"
+}

@@ -14,7 +14,7 @@ with zipfile.ZipFile(a.baseline)as z:
    if not f.is_file()or f.is_symlink()or f.suffix not in extensions:continue
    rel=f.relative_to(ROOT)
    if any(x in skip for x in rel.parts):continue
-   if rel.parts[:2]==('android','assets'):continue
+   if rel.parts[:2]==('android','assets') and f.name!='skin-families.json':continue
    h=hashlib.sha256(f.read_bytes()).hexdigest()
    if baseline.get(rel.as_posix())==h:continue
    target=out/rel;target.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(f,target);copied.append(rel.as_posix())

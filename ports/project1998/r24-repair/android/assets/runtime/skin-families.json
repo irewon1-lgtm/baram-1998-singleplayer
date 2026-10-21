@@ -1,0 +1,85 @@
+{
+  "Schema": "P1998_ADAPTED_ORIGINAL_SKIN_FAMILIES_1",
+  "Bindings": [
+    {
+      "ItemId": 16001,
+      "Name": "Forsaken orb blade",
+      "LaterLook": 383,
+      "Family": "sword",
+      "Art": 61,
+      "Ramp": 0,
+      "ExistingSourceItemId": 48013,
+      "ExistingSourceName": "Forsaken blade",
+      "Classification": "ADAPTED_RETAINED_ORIGINAL_NOT_LATER_SKIN_RESTORATION",
+      "Reason": "Shared Forsaken blade name; orb-specific geometry is unavailable."
+    },
+    {
+      "ItemId": 16002,
+      "Name": "Forsaken orb sabre",
+      "LaterLook": 381,
+      "Family": "sword",
+      "Art": 61,
+      "Ramp": 0,
+      "ExistingSourceItemId": 48013,
+      "ExistingSourceName": "Forsaken blade",
+      "Classification": "ADAPTED_RETAINED_ORIGINAL_NOT_LATER_SKIN_RESTORATION",
+      "Reason": "Shared Forsaken blade family; original sabre variation is unavailable."
+    },
+    {
+      "ItemId": 16003,
+      "Name": "Shadowsteel claymore",
+      "LaterLook": 361,
+      "Family": "sword",
+      "Art": 68,
+      "Ramp": 0,
+      "ExistingSourceItemId": 48020,
+      "ExistingSourceName": "Midnight broadsword",
+      "Classification": "ADAPTED_RETAINED_ORIGINAL_NOT_LATER_SKIN_RESTORATION",
+      "Reason": "Authored dark broadsword substitute for the shadowsteel claymore."
+    },
+    {
+      "ItemId": 16004,
+      "Name": "Cursed soul reaver",
+      "LaterLook": 364,
+      "Family": "sword",
+      "Art": 47,
+      "Ramp": 0,
+      "ExistingSourceItemId": 48009,
+      "ExistingSourceName": "Cursed blade",
+      "Classification": "ADAPTED_RETAINED_ORIGINAL_NOT_LATER_SKIN_RESTORATION",
+      "Reason": "Shared cursed blade family; soul-reaver geometry is unavailable."
+    },
+    {
+      "ItemId": 16005,
+      "Name": "Yearn blade",
+      "LaterLook": 393,
+      "Family": "sword",
+      "Art": 9,
+      "Ramp": 0,
+      "ExistingSourceItemId": 48018,
+      "ExistingSourceName": "Fate\\'s blade",
+      "Classification": "ADAPTED_RETAINED_ORIGINAL_NOT_LATER_SKIN_RESTORATION",
+      "Reason": "Authored Fate blade substitute for the emotional Yearn name; inferred mapping."
+    },
+    {
+      "ItemId": 16006,
+      "Name": "Mourn blade",
+      "LaterLook": 394,
+      "Family": "sword",
+      "Art": 66,
+      "Ramp": 0,
+      "ExistingSourceItemId": 48022,
+      "ExistingSourceName": "Midnight sword",
+      "Classification": "ADAPTED_RETAINED_ORIGINAL_NOT_LATER_SKIN_RESTORATION",
+      "Reason": "Authored Midnight sword substitute for Mourn; inferred mapping."
+    }
+  ],
+  "TotalWeaponSkins": 24,
+  "AdaptedForMatchingSwordFamily": 6,
+  "OtherSkinsRetainIconSubstitutes": 18,
+  "NewItems": 0,
+  "ExactLaterSkinRestorations": 0,
+  "UniqueSourceAnimations": 5,
+  "Limit": "Applied only while the underlying displayed weapon is a sword. Spear/bow/fan pose alignment is preserved through the existing icon fallback.",
+  "OriginalSource": "Unchanged retained 4.95 atlas and sprite rows, matched by existing Items.csv aliases; mapping is authored."
+}

@@ -34,6 +34,7 @@ static class FixtureProbe
         cmd.CommandText = "SELECT username,json FROM characters ORDER BY username";
         using var reader = cmd.ExecuteReader(); var hashes = new Dictionary<string,string>();
         while (reader.Read()) hashes.Add(reader.GetString(0), Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(reader.GetString(1)))).ToLowerInvariant());
+        File.WriteAllText(Path.Combine(root,"ko-contract.json"),JsonSerializer.Serialize(new{id="repairalpha",character_sha256=hashes["repairalpha"],fixture="NEW_R25_SYNTHETIC_BASELINE_NOT_OLD_R20"}));
         File.WriteAllText(a[2], JsonSerializer.Serialize(new { status = "PASS", fixture = "NEW_R25_SYNTHETIC_BASELINE_NOT_OLD_R20_BYTES", checks, hashes, integrity = "ok", user_save_writes = 0 }, new JsonSerializerOptions { WriteIndented = true }));
         return 0;
     }

@@ -34,6 +34,7 @@ public sealed class ArtCatalog
     private readonly BudgetCache<byte[]> _characterPixels = new(256, 2 * 1024 * 1024);
     private readonly Dictionary<string, (long Offset, int Length, int Width, int Height)> _pixelRows = new(StringComparer.Ordinal);
     private long _customMisses, _smallFrameReads, _smallFrameBytes, _smallFrameTicks;
+    private readonly Dictionary<int, (string Family, int Art, int Ramp)> _skinFamilies = new();
     private readonly object _missingGate = new();
     private readonly int _cellPixels;
     private Texture2D? _deathSign;
@@ -103,6 +104,14 @@ public sealed class ArtCatalog
                 throw new InvalidDataException("Unsupported character pixel index.");
             foreach (var row in pixels.RootElement.GetProperty("frames").EnumerateObject())
                 _pixelRows.Add(row.Name, (row.Value[0].GetInt64(), row.Value[1].GetInt32(), row.Value[2].GetInt32(), row.Value[3].GetInt32()));
+        }
+        string skinsPath = folder + "skin-families.json";
+        if (Godot.FileAccess.FileExists(skinsPath))
+        {
+            using var skins = JsonDocument.Parse(Godot.FileAccess.GetFileAsString(skinsPath));
+            foreach (var row in skins.RootElement.GetProperty("Bindings").EnumerateArray())
+                _skinFamilies.Add(row.GetProperty("ItemId").GetInt32(),
+                    (row.GetProperty("Family").GetString()!, row.GetProperty("Art").GetInt32(), row.GetProperty("Ramp").GetInt32()));
         }
     }
 
@@ -334,7 +343,17 @@ public sealed class ArtCatalog
                     if ((appearance[1] != 3 || action != 0) && pose.Weapon >= 0 && WeaponFamily(appearance[5]) is { } weapon)
                     {
                         if (cosmetics.Enabled && cosmetics.WeaponIcon >= 0)
-                            DrawRecoveredWeapon(target, cosmetics.WeaponIcon, direction, action, position, opacity);
+                        {
+                            // Selected retained original sword animations are compatible aliases for six
+                            // later blades. Keep native family/body alignment; other weapon classes and
+                            // unavailable skins retain the declared icon substitute.
+                            if (_skinFamilies.TryGetValue(cosmetics.WeaponSkinId, out var skin) && skin.Family == weapon.Family)
+                            {
+                                Sprite(target, skin.Family, skin.Art, skin.Ramp, pose.Weapon, position);
+                                Substitute("adapted-original-weapon-family:" + cosmetics.WeaponSkinId);
+                            }
+                            else DrawRecoveredWeapon(target, cosmetics.WeaponIcon, direction, action, position, opacity);
+                        }
                         else Sprite(target,weapon.Family,weapon.Art,0,pose.Weapon,position);
                     }
                     break;

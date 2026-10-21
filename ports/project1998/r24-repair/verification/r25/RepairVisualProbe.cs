@@ -39,7 +39,7 @@ public partial class VisualProbe
         for(int dir=0;dir<4;dir++)for(int phase=0;phase<4;phase++)
         {
             var s=decorated with {Direction=dir};_view.Present(s,phase*70);_hud.Present(s,"검증","",false);await Flush();
-            Check("portrait_keeps_cosmetics_with_field_direction_phase_"+dir+"_"+phase,CropHash(panel)==heldPanel&&_art.Missing.Count==0);
+            Check("portrait_keeps_cosmetics_with_direction_scene_refresh_"+dir+"_"+phase,CropHash(panel)==heldPanel&&_art.Missing.Count==0);
         }
         _view.ResetSession();_view.Present(scene,0);_hud.Present(scene,"다른 캐릭터","",false);await Flush("r25-reset");
         Check("account_scene_reset_clears_cosmetic_pixels",CropHash(panel)==basePanel);
@@ -86,6 +86,26 @@ public partial class VisualProbe
         var d=doc.RootElement;Check("720_colours_keep_incremental_512_entry_texture_budget",d.GetProperty("texture_entries").GetInt32()==512&&d.GetProperty("texture_rgba_bytes").GetInt64()<=4194304&&d.GetProperty("texture_evictions").GetInt64()>0,d.Clone());
         Check("source_frame_cache_respects_256_entry_2MiB_budget",d.GetProperty("source_entries").GetInt32()<=256&&d.GetProperty("source_rgba_bytes").GetInt64()<=2097152);
         Check("cache_pressure_never_reads_original_gpu_atlas",d.GetProperty("atlas_reads").GetInt64()==0&&_art.Missing.Count==0);
+        gallery.QueueFree();_view.Visible=true;_hud.Visible=true;
+    }
+    private async Task R25SkinFamilies(ClientSceneSnapshot scene)
+    {
+        _view.Visible=false;_hud.Visible=false;
+        var gallery=new Gallery{Size=new(640,480),TextureFilter=TextureFilterEnum.Nearest};AddChild(gallery);
+        // Independently selected existing source-item aliases. These are compatible original sword
+        // animations, NOT evidence that the unavailable later skin used these historical graphics.
+        var aliases=new[]{(16001,61),(16002,61),(16003,68),(16004,47),(16005,9),(16006,66)};
+        foreach(var (skin,art) in aliases)for(int dir=0;dir<4;dir++)for(int action=0;action<2;action++)for(int phase=0;phase<(action==0?4:2);phase++)
+        {
+            byte[] app={0,0,0,0,0,0,255};var cosmetic=new RecoveredAppearance(true,-1,0,0,5209,0,0,0,0,skin);
+            gallery.Paint=t=>_art.Actor(t,app,dir,phase,action,new Vector2(320,260),cosmetics:cosmetic);gallery.QueueRedraw();await Flush();string actual=ImageHash(GetViewport().GetTexture().GetImage());
+            app[5]=(byte)art;gallery.Paint=t=>_art.Actor(t,app,dir,phase,action,new Vector2(320,260));gallery.QueueRedraw();await Flush();string original=ImageHash(GetViewport().GetTexture().GetImage());
+            Check("adapted_skin_uses_existing_native_pose_"+skin+"_"+dir+"_"+action+"_"+phase,actual==original&&_art.Missing.Count==0,new{actual,original});
+        }
+        byte[] ghost={0,1,0,0,0,0,255};
+        gallery.Paint=t=>_art.Actor(t,ghost,2,0,0,new Vector2(320,260));gallery.QueueRedraw();await Flush();string death=ImageHash(GetViewport().GetTexture().GetImage());
+        gallery.Paint=t=>_art.Actor(t,ghost,2,0,0,new Vector2(320,260),cosmetics:new(true,-1,2,0xAA2200,5209,0,0,0,17596,16001));gallery.QueueRedraw();await Flush();
+        Check("death_uses_original_ghost_without_stray_cosmetic_layers",ImageHash(GetViewport().GetTexture().GetImage())==death);
         gallery.QueueFree();_view.Visible=true;_hud.Visible=true;
     }
 }

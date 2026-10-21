@@ -20,7 +20,7 @@ if 'CustomizationDiagnostics' not in txt:
 shutil.copy2(root/'verification/r24/VisualProbe.cs',project/'VisualProbe.cs')
 shutil.copy2(root/'verification/r24/GraphicsProbe.cs',project/'GraphicsProbe.cs')
 shutil.copy2(root/'verification/r25/RepairVisualProbe.cs',project/'RepairVisualProbe.cs')
-pv=project/'VisualProbe.cs';pv.write_text(pv.read_text().replace('if(_mode=="layout")','if(_mode=="r25appearance") { await R25Appearance(scene); }\n            else if(_mode=="r25performance") { await R25Performance(scene); }\n            else if(_mode=="r25cache") { await R25Cache(scene); }\n            else if(_mode=="layout")'))
+pv=project/'VisualProbe.cs';pv.write_text(pv.read_text().replace('if(_mode=="layout")','if(_mode=="r25appearance") { await R25Appearance(scene); }\n            else if(_mode=="r25performance") { await R25Performance(scene); }\n            else if(_mode=="r25cache") { await R25Cache(scene); }\n            else if(_mode=="r25skins") { await R25SkinFamilies(scene); }\n            else if(_mode=="layout")'))
 shutil.copy2(root/'candidate/game-data/RecoveredItems.json',project/'recovered-items.json')
 (project/'skin-icons.json').write_text(json.dumps({x['ItmId']:int(x['ItmIcon']) for x in csv.DictReader((root/'candidate/game-data/Items.csv').read_text().splitlines()) if x['ItmType']=='27'}))
 shutil.copy2(root/'evidence/r24/assets-audit/ALL-286-ASSET-AUDIT.json',project/'asset-286.json')

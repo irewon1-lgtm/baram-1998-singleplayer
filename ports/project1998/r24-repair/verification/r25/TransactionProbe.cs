@@ -67,7 +67,10 @@ static class TransactionProbe
         if(interruption=="pause")S.PauseOffline();else if(interruption=="stop")S.StopOffline();
         else if(interruption=="graph_replaced")S.ExecuteOfflineAction(()=>throw new Exception("Replace current graph by real rollback"),_=>{});
         else if(interruption=="write_failure")FailWrites(true);
+        SqliteConnection? busy = null; SqliteTransaction? writer = null;
+        if(interruption=="busy") { busy=new SqliteConnection("Data Source="+Store.Directory);busy.Open();writer=busy.BeginTransaction(deferred:false); }
         int pending=q.Pending;Frames.Clear();q.Run();
+        writer?.Dispose();busy?.Dispose();
         bool changed=S.CaptureOfflineCharacterJson()!=before;bool saved=Store.ReadOfflineSnapshot(Live.Name)!.CharacterJson!=db;
         Check("repair_"+interruption,pending>0&&(interruption=="success"?Live.Inventory[0].Dura==def.Durability&&saved:!changed&&!saved),new{pending,changed,saved,Live.Coins,dura=Live.Inventory[0].Dura});
         if(interruption=="write_failure")FailWrites(false);
@@ -82,19 +85,37 @@ static class TransactionProbe
         else {q.Capture(()=>Act(ClientOp.UseItem,1));Pick("Add materials");q.Run();Input("2");}
         string before=S.CaptureOfflineCharacterJson();string db=Store.ReadOfflineSnapshot(Live.Name)!.CharacterJson;int pending=q.Pending;
         if(interruption=="write_failure")FailWrites(true);else if(interruption=="pause")S.PauseOffline();else if(interruption=="stop")S.StopOffline();
-        Frames.Clear();q.Run();
+        SqliteConnection? busy = null; SqliteTransaction? writer = null;
+        if(interruption=="busy") { busy=new SqliteConnection("Data Source="+Store.Directory);busy.Open();writer=busy.BeginTransaction(deferred:false); }
+        Frames.Clear();q.Run();writer?.Dispose();busy?.Dispose();
         bool changed=S.CaptureOfflineCharacterJson()!=before,saved=Store.ReadOfflineSnapshot(Live.Name)!.CharacterJson!=db;
         int outputs=Frames.Count;
         Check(kind+"_deferred_"+interruption,pending>0&&(interruption=="success"?changed&&saved:!changed&&!saved&&outputs==0),new{pending,changed,saved,outputs,receipt=S.LastOfflineSaveReceipt});
+        if(interruption=="write_failure")FailWrites(false);
+    }
+    static void OrdinaryShop(bool sale,string interruption)
+    {
+        int apple=Content.ItemByKey("apple")!.Id;
+        Init(52,c=>{if(sale)c.Inventory.Add(new InvItem(0,apple,1));});
+        var q=new Queued();q.Capture(()=>Open(52));Pick(sale?"Sell":"Buy");q.Run();
+        if(sale){var b=new byte[8];b[0]=4;b[7]=1;Act(ClientOp.ShopReply,b);q.Run();Pick("Yes");}
+        else {var text=Encoding.ASCII.GetBytes("Apple");var b=new byte[8+text.Length];b[0]=2;b[7]=(byte)text.Length;text.CopyTo(b,8);Act(ClientOp.ShopReply,b);}
+        string before=S.CaptureOfflineCharacterJson(),db=Store.ReadOfflineSnapshot(Live.Name)!.CharacterJson;int pending=q.Pending;
+        if(interruption=="pause")S.PauseOffline();else if(interruption=="stop")S.StopOffline();else if(interruption=="write_failure")FailWrites(true);
+        else if(interruption=="graph_replaced")S.ExecuteOfflineAction(()=>throw new Exception("Replace current graph"),_=>{});
+        Frames.Clear();q.Run();string now=S.CaptureOfflineCharacterJson(),stored=Store.ReadOfflineSnapshot(Live.Name)!.CharacterJson;
+        bool changed=now!=before,saved=stored!=db;
+        bool pass=pending>0&&(interruption=="success"||!sale&&interruption=="graph_replaced"?changed&&stored==now:!changed&&!saved);
+        Check("ordinary_"+(sale?"sale":"purchase")+"_"+interruption,pass,new{pending,changed,saved,live_and_stored_agree=now==stored,outputs=Frames.Count});
         if(interruption=="write_failure")FailWrites(false);
     }
     static int Main(string[] a)
     {
         Root=a[1];Directory.CreateDirectory(Root);Environment.SetEnvironmentVariable("P1998_GAME_DATA",a[0]);Environment.SetEnvironmentVariable("P1998_STATE",Root);
         Content.Load();NpcScript.Load(Path.Combine(a[0],"npc_dialog.lua"));
-        try {foreach(var mode in new[]{"success","pause","stop","graph_replaced","write_failure"})Repair(mode);foreach(var kind in new[]{"purchase","cosmetic","container"})foreach(var mode in new[]{"success","pause","stop","write_failure"})Deferred(kind,mode);}
+        try {if(a.Length>3&&a[3]=="ordinary-only") {foreach(bool sale in new[]{false,true})foreach(var mode in new[]{"success","pause","stop","write_failure","graph_replaced"})OrdinaryShop(sale,mode);}else {foreach(var mode in new[]{"success","pause","stop","graph_replaced","write_failure","busy"})Repair(mode);foreach(var kind in new[]{"purchase","cosmetic","container"})foreach(var mode in new[]{"success","pause","stop","write_failure","busy"})Deferred(kind,mode);}}
         catch(Exception e){Check("execution",false,e.ToString());}
         finally {if(S is not null){S.StopOffline();S.EndEmbeddedSessionAsync().GetAwaiter().GetResult();}}
-        File.WriteAllText(a[2],JsonSerializer.Serialize(new{status=Failed?"FAIL":"PASS",category="17_UNIQUE_QUEUED_CHARACTER_TRANSACTION_SCENARIOS",checks=Checks,physical_android="NOT_RUN",world_rollback="NOT_CLAIMED"},new JsonSerializerOptions{WriteIndented=true}));return Failed?1:0;
+        File.WriteAllText(a[2],JsonSerializer.Serialize(new{status=Failed?"FAIL":"PASS",category=a.Length>3?"10_UNIQUE_ORDINARY_SHOP_SCENARIOS":"21_UNIQUE_QUEUED_CHARACTER_TRANSACTION_SCENARIOS",checks=Checks,physical_android="NOT_RUN",world_rollback="NOT_CLAIMED"},new JsonSerializerOptions{WriteIndented=true}));return Failed?1:0;
     }
 }

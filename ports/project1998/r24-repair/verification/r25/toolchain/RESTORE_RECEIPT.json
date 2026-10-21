@@ -1,0 +1,63 @@
+{
+  "utc": "2026-10-19T23:59:19.319301+00:00",
+  "status": "VERIFIED_ARCHIVES_EXTRACTED",
+  "downloads": [
+    {
+      "name": "dotnet-sdk-9.0.319-linux-x64.tar.gz",
+      "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/9.0.319/dotnet-sdk-9.0.319-linux-x64.tar.gz",
+      "sha512": "ed080b81dd2cca56a453c939468b0061a60a083a87eaf21e035794cd28a14fc00faf52d96a4e4116f3cc1de40e6289cd0f08a8fd478d49e4dc4f28570e2f602c",
+      "target": "dotnet",
+      "bytes": 218314841,
+      "status": "VERIFIED_ORIGINAL_ARCHIVE"
+    },
+    {
+      "name": "Godot_v4.6-stable_mono_linux_x86_64.zip",
+      "url": "https://github.com/godotengine/godot/releases/download/4.6-stable/Godot_v4.6-stable_mono_linux_x86_64.zip",
+      "sha256": "cb4c54e0b74a44f3b3c6c4a6c25e5185f3b715d4a43981342ae7b981af50e271",
+      "bytes": 100460305,
+      "target": "godot-mono",
+      "status": "VERIFIED_ORIGINAL_ARCHIVE"
+    },
+    {
+      "name": "Godot_v4.6-stable_mono_export_templates.tpz",
+      "url": "https://github.com/godotengine/godot/releases/download/4.6-stable/Godot_v4.6-stable_mono_export_templates.tpz",
+      "sha256": "46056e8394cd1f1f85ccfaabddffc1a67f595bfd99fbda6cd62afa751dbfc519",
+      "bytes": 1171259653,
+      "target": "templates-mono",
+      "status": "VERIFIED_ORIGINAL_ARCHIVE"
+    },
+    {
+      "name": "SHA512-SUMS.txt",
+      "url": "https://github.com/godotengine/godot/releases/download/4.6-stable/SHA512-SUMS.txt",
+      "sha256": "87624ffc4f2744b8d01b29c8d84ce01d90a881ac427e969dfa35133eecbf4319",
+      "bytes": 4907,
+      "target": null,
+      "status": "VERIFIED_ORIGINAL_ARCHIVE"
+    },
+    {
+      "name": "build-tools_r35.0.1_linux.zip",
+      "url": "https://dl.google.com/android/repository/build-tools_r35.0.1_linux.zip",
+      "sha1": "e009a9b188cfeb1d2b4c318ab5cb4f1ddc368861",
+      "bytes": 61959297,
+      "target": "android-sdk/build-tools/35.0.1",
+      "status": "VERIFIED_ORIGINAL_ARCHIVE"
+    },
+    {
+      "name": "platform-35_r02.zip",
+      "url": "https://dl.google.com/android/repository/platform-35_r02.zip",
+      "sha1": "0bb560a90a7a2cbd0dd8348224d518b638fe7949",
+      "bytes": 64273788,
+      "target": "android-sdk/platforms/android-35",
+      "status": "VERIFIED_ORIGINAL_ARCHIVE"
+    },
+    {
+      "name": "platform-tools_r37.0.1-linux.zip",
+      "url": "https://dl.google.com/android/repository/platform-tools_r37.0.1-linux.zip",
+      "sha1": "477254aa5f903c15cf51001717bdf347fb6b53e0",
+      "bytes": 9054187,
+      "target": "android-sdk/platform-tools",
+      "status": "VERIFIED_ORIGINAL_ARCHIVE"
+    }
+  ],
+  "platform_tools_note": "Current Google metadata37.0.1; prior original buildSDK35.0.1 andplatform35 retained. ADB not product dependency."
+}

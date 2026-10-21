@@ -1,0 +1,340 @@
+{
+  "status": "INHERITED_FAILURES_REPRODUCED_ON_UNCHANGED_R24",
+  "scope": "225 selected original unit tests from classes that failed in the first full attempt; not a full r24 suite replay",
+  "source_zip_sha256": "07a0129381b484ec8c34743716efc8ce7f9473d47e2c786845c00c829f9e43e4",
+  "total": 225,
+  "passed": 159,
+  "failed": [
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 195, expected: \"ShopAbility|RepairAbility|BankAbility|ForgottenPas\"\u00b7\u00b7\u00b7)",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \u00b7\u00b7\u00b7\"kAbility|ForgottenPastAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"tAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 70)"
+    },
+    {
+      "name": "Tests.StatusFileTests.AHealthyBeatIsCountedButNotCountedAsSlow",
+      "outcome": "Failed",
+      "message": "System.InvalidOperationException : Process has exited, so the requested information is not available."
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 171, expected: \"poet_trainer|MinorQuestAbility|InfoAbility\")",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \u00b7\u00b7\u00b7\"oet_trainer|MinorQuestAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"tAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 42)"
+    },
+    {
+      "name": "Tests.StatusFileTests.TheStatusDocumentCountsEveryBeatAndEverySlowBeat",
+      "outcome": "Failed",
+      "message": "System.InvalidOperationException : Process has exited, so the requested information is not available."
+    },
+    {
+      "name": "Tests.StatusFileTests.TheCommittedFigureIsTheLastCollectionsAndCoversThatCollectionsHeap",
+      "outcome": "Failed",
+      "message": "System.InvalidOperationException : Process has exited, so the requested information is not available."
+    },
+    {
+      "name": "Tests.StatusFileTests.APhaseCostingAFractionOfAMillisecondEveryBeatTotalsUpRatherThanTruncatingToZero",
+      "outcome": "Failed",
+      "message": "System.InvalidOperationException : Process has exited, so the requested information is not available."
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 168, expected: \"mage_trainer|MinorQuestAbility|InfoAbility\")",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \u00b7\u00b7\u00b7\"age_trainer|MinorQuestAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"tAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 42)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 164, expected: \"rogue_trainer|MinorQuestAbility|WhiteMoonAxeAbilit\"\u00b7\u00b7\u00b7)",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \u00b7\u00b7\u00b7\"stAbility|WhiteMoonAxeAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"eAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 63)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 188, expected: \"AlignmentAbility|InfoAbility\")",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \"AlignmentAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"tAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 28)"
+    },
+    {
+      "name": "Tests.StatusFileTests.AForcedGen2ShowsUpInTheDocumentsCollectionCounts",
+      "outcome": "Failed",
+      "message": "System.InvalidOperationException : Process has exited, so the requested information is not available."
+    },
+    {
+      "name": "Tests.StatusFileTests.TheStatusTimersDocumentPublishesTheGameChannelsCounters",
+      "outcome": "Failed",
+      "message": "System.InvalidOperationException : Process has exited, so the requested information is not available."
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.MenuIsPinned(npcId: 391, profile: \"peasant\", expected: \"Worship Ju Jak\")",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \"Worship Ju Jak\"\nActual:   \"Worship Ju Jak / Forgive\"\n                         \u2191 (pos 14)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.MenuIsPinned(npcId: 388, profile: \"peasant\", expected: \"Worship Baekho\")",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \"Worship Baekho\"\nActual:   \"Worship Baekho / Forgive\"\n                         \u2191 (pos 14)"
+    },
+    {
+      "name": "Tests.OfflineFloorItemTests.ReservationConsumesOnlyActiveTimeAndSameObjectRedropNeverExtendsIt",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Values differ\nExpected: 299000\nActual:   0"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 159, expected: \"rogue_trainer|MinorQuestAbility|InfoAbility\")",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \u00b7\u00b7\u00b7\"gue_trainer|MinorQuestAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"tAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 43)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 91, expected: \"warrior_trainer|MinorQuestAbility|NagnangShieldAbi\"\u00b7\u00b7\u00b7)",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \u00b7\u00b7\u00b7\"tAbility|NagnangShieldAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"dAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 66)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 94, expected: \"InfoAbility\")",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \"InfoAbility\"\nActual:   \"InfoAbility|OfflineContinuationAbility|Re\"\u00b7\u00b7\u00b7\n                      \u2191 (pos 11)"
+    },
+    {
+      "name": "Tests.ContentSmokeTests.EraGatedNpcsFollowTheCalendar",
+      "outcome": "Failed",
+      "message": "Assert.NotEmpty() Failure: Collection was empty"
+    },
+    {
+      "name": "Tests.StatusFileTests.TheMemoryFieldsRenderInTheRelationsTheRuntimeGuarantees",
+      "outcome": "Failed",
+      "message": "System.InvalidOperationException : Process has exited, so the requested information is not available."
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 409, expected: \"poet_trainer|MinorQuestAbility|PoetWhipQuestAbilit\"\u00b7\u00b7\u00b7)",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \u00b7\u00b7\u00b7\"tAbility|PoetWhipQuestAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"tAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 63)"
+    },
+    {
+      "name": "Tests.SendMapLogTests.SendMapWritesOnlyWhenWireLoggingIsEnabled",
+      "outcome": "Failed",
+      "message": "System.Reflection.TargetParameterCountException : Parameter count mismatch."
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 390, expected: \"ReviveAbility|TotemWorshipAbility|InfoAbility\")",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \u00b7\u00b7\u00b7\"veAbility|TotemWorshipAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"pAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 45)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 125, expected: \"MythicAllianceAbility|InfoAbility\")",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \"MythicAllianceAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"eAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 33)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 196, expected: \"ShopAbility|RepairAbility|ForgottenPastAbility|Inf\"\u00b7\u00b7\u00b7)",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \u00b7\u00b7\u00b7\"rAbility|ForgottenPastAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"tAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 58)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 187, expected: \"SummitAbility|InfoAbility\")",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \"SummitAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"tAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 25)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 162, expected: \"rogue_trainer|MinorQuestAbility|WhiteMoonAxeAbilit\"\u00b7\u00b7\u00b7)",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \u00b7\u00b7\u00b7\"stAbility|WhiteMoonAxeAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"eAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 63)"
+    },
+    {
+      "name": "Tests.OfflineFloorItemTests.EveryGroundFieldAndStackOrderRestoreOnAMapWithoutMaterializedPopulation",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\n                                  \u2193 (pos 363)\nExpected: \u00b7\u00b7\u00b7\"orOwner\",\"LooterId\":1,\"LockRemainingMilli\"\u00b7\u00b7\u00b7\nActual:   \u00b7\u00b7\u00b7\"orOwner\",\"LooterId\":0,\"LockRemainingMilli\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 363)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 142, expected: \"ShopAbility|RepairAbility|ForgottenPastAbility|Inf\"\u00b7\u00b7\u00b7)",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \u00b7\u00b7\u00b7\"rAbility|ForgottenPastAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"tAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 58)"
+    },
+    {
+      "name": "Tests.TableSpecTests.ReadmeTableBlockMatchesGenerator",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\n                                  \u2193 (pos 387)\nExpected: \u00b7\u00b7\u00b7\"| `map_index.csv` | 7,948 | 7,948 | from \"\u00b7\u00b7\u00b7\nActual:   \u00b7\u00b7\u00b7\"| `map_index.csv` | 2,031 | 2,031 | from \"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 387)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 64, expected: \"ReviveAbility|ForgottenPastAbility|InfoAbility\")",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \u00b7\u00b7\u00b7\"eAbility|ForgottenPastAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"tAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 46)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 391, expected: \"ReviveAbility|TotemWorshipAbility|InfoAbility\")",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \u00b7\u00b7\u00b7\"veAbility|TotemWorshipAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"pAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 45)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 108, expected: \"ShopAbility|RepairAbility|NagnangTallShieldAbility\"\u00b7\u00b7\u00b7)",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \u00b7\u00b7\u00b7\"lity|NagnangTallShieldAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"dAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 62)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 153, expected: \"warrior_trainer|MinorQuestAbility|InfoAbility\")",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \u00b7\u00b7\u00b7\"ior_trainer|MinorQuestAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"tAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 45)"
+    },
+    {
+      "name": "Tests.ContentReloadTests.FailedReloadKeepsEveryPublishedFacade",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Values differ\nExpected: 88\nActual:   89"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 410, expected: \"poet_trainer|MinorQuestAbility|PoetWhipQuestAbilit\"\u00b7\u00b7\u00b7)",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \u00b7\u00b7\u00b7\"tAbility|PoetWhipQuestAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"tAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 63)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 38, expected: \"poet_trainer|MinorQuestAbility|ArmorQuestAbility|I\"\u00b7\u00b7\u00b7)",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \u00b7\u00b7\u00b7\"uestAbility|ArmorQuestAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"tAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 60)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 65, expected: \"ReviveAbility|InfoAbility\")",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \"ReviveAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"eAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 25)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 20, expected: \"QuestAbility|StarHintAbility|InfoAbility\")",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \"QuestAbility|StarHintAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"tAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 40)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 138, expected: \"rogue_trainer|MinorQuestAbility|DaggerUniformAbili\"\u00b7\u00b7\u00b7)",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \u00b7\u00b7\u00b7\"tAbility|DaggerUniformAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"mAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 64)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 165, expected: \"mage_trainer|MinorQuestAbility|InfoAbility\")",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \u00b7\u00b7\u00b7\"age_trainer|MinorQuestAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"tAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 42)"
+    },
+    {
+      "name": "Tests.StatusFileTests.TheStatusDocumentCarriesEachSendCounterInItsOwnField",
+      "outcome": "Failed",
+      "message": "System.InvalidOperationException : Process has exited, so the requested information is not available."
+    },
+    {
+      "name": "Tests.StatusFileTests.EveryPhaseTotalRisesWithTheBeatsAndThePartsSumToTheWhole",
+      "outcome": "Failed",
+      "message": "System.InvalidOperationException : Process has exited, so the requested information is not available."
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 133, expected: \"mage_trainer|MinorQuestAbility|MageStoneAbility|In\"\u00b7\u00b7\u00b7)",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \u00b7\u00b7\u00b7\"QuestAbility|MageStoneAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"eAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 59)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 120, expected: \"MythicAllianceAbility|InfoAbility\")",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \"MythicAllianceAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"eAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 33)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 137, expected: \"poet_trainer|MinorQuestAbility|PoetWhipQuestAbilit\"\u00b7\u00b7\u00b7)",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \u00b7\u00b7\u00b7\"tAbility|PoetWhipQuestAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"tAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 63)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 42, expected: \"rogue_trainer|MinorQuestAbility|WhiteMoonAxeAbilit\"\u00b7\u00b7\u00b7)",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \u00b7\u00b7\u00b7\"tAbility|DaggerUniformAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"mAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 102)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.MenuIsPinned(npcId: 390, profile: \"peasant\", expected: \"Worship Hyun Moo\")",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \"Worship Hyun Moo\"\nActual:   \"Worship Hyun Moo / Forgive\"\n                           \u2191 (pos 16)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 389, expected: \"ReviveAbility|TotemWorshipAbility|InfoAbility\")",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \u00b7\u00b7\u00b7\"veAbility|TotemWorshipAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"pAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 45)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 41, expected: \"warrior_trainer|MinorQuestAbility|ArmorQuestAbilit\"\u00b7\u00b7\u00b7)",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \u00b7\u00b7\u00b7\"uestAbility|ArmorQuestAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"tAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 63)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 37, expected: \"rogue_trainer|MinorQuestAbility|ArmorQuestAbility|\"\u00b7\u00b7\u00b7)",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \u00b7\u00b7\u00b7\"tAbility|DaggerUniformAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"mAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 82)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 189, expected: \"AlignmentAbility|InfoAbility\")",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \"AlignmentAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"tAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 28)"
+    },
+    {
+      "name": "Tests.ChangedPicksSurviveLoginTests.ATotemWorshippedAtAShrineSurvivesARelog",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Values differ\nExpected: 1\nActual:   0"
+    },
+    {
+      "name": "Tests.SpellDispatchRouteTests.EverySpellTakesTheBranchItTookBeforeExceptSpiritBlade",
+      "outcome": "Failed",
+      "message": "Assert.Empty() Failure: Collection was not empty\nCollection: [\"chance_rogue 2112: was 'verb=misc', now 'verb=rest\"\u00b7\u00b7\u00b7, \"cotw_wind_master_poet 4729: was 'verb=misc', now '\"\u00b7\u00b7\u00b7, \"natures_choice_rogue 2114: was 'verb=misc', now 'v\"\u00b7\u00b7\u00b7, \"randomness_rogue 2113: was 'verb=misc', now 'verb=\"\u00b7\u00b7\u00b7, \"trial_by_fire_rogue 2115: was 'verb=misc', now 've\"\u00b7\u00b7\u00b7]"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 35, expected: \"mage_trainer|MinorQuestAbility|ArmorQuestAbility|I\"\u00b7\u00b7\u00b7)",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \u00b7\u00b7\u00b7\"uestAbility|ArmorQuestAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"tAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 60)"
+    },
+    {
+      "name": "Tests.StatusFileTests.TheStatusDocumentCarriesTheWorldsSweepCounters",
+      "outcome": "Failed",
+      "message": "System.InvalidOperationException : Process has exited, so the requested information is not available."
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 36, expected: \"warrior_trainer|MinorQuestAbility|ArmorQuestAbilit\"\u00b7\u00b7\u00b7)",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \u00b7\u00b7\u00b7\"uestAbility|ArmorQuestAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"tAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 63)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 39, expected: \"mage_trainer|MinorQuestAbility|SuteQuestAbility|Ar\"\u00b7\u00b7\u00b7)",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \u00b7\u00b7\u00b7\"uestAbility|ArmorQuestAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"tAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 77)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 40, expected: \"poet_trainer|MinorQuestAbility|ArmorQuestAbility|I\"\u00b7\u00b7\u00b7)",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \u00b7\u00b7\u00b7\"uestAbility|ArmorQuestAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"tAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 60)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 408, expected: \"poet_trainer|MinorQuestAbility|PoetWhipQuestAbilit\"\u00b7\u00b7\u00b7)",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \u00b7\u00b7\u00b7\"tAbility|PoetWhipQuestAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"tAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 63)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 131, expected: \"MythicAllianceAbility|InfoAbility\")",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \"MythicAllianceAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"eAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 33)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 388, expected: \"ReviveAbility|TotemWorshipAbility|InfoAbility\")",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \u00b7\u00b7\u00b7\"veAbility|TotemWorshipAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"pAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 45)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 163, expected: \"rogue_trainer|MinorQuestAbility|WhiteMoonAxeAbilit\"\u00b7\u00b7\u00b7)",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \u00b7\u00b7\u00b7\"stAbility|WhiteMoonAxeAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"eAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 63)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 21, expected: \"ShopAbility|RepairAbility|InfoAbility\")",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \"ShopAbility|RepairAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"rAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 37)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.MenuIsPinned(npcId: 389, profile: \"peasant\", expected: \"Worship Chung Ryong\")",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \"Worship Chung Ryong\"\nActual:   \"Worship Chung Ryong / Forgive\"\n                              \u2191 (pos 19)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 190, expected: \"AlignmentAbility|InfoAbility\")",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \"AlignmentAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"tAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 28)"
+    },
+    {
+      "name": "Tests.NpcCompositionPinTests.ForIsPinned(npcId: 49, expected: \"QuestAbility|StarHintAbility|InfoAbility\")",
+      "outcome": "Failed",
+      "message": "Assert.Equal() Failure: Strings differ\nExpected: \"QuestAbility|StarHintAbility|InfoAbility\"\nActual:   \u00b7\u00b7\u00b7\"tAbility|InfoAbility|OfflineContinuationA\"\u00b7\u00b7\u00b7\n                                  \u2191 (pos 40)"
+    }
+  ],
+  "trx_sha256": "c844ef7821d329d1971813df534075a02efd3a23d480318f8ba49de3304371c6"
+}

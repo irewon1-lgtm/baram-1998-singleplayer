@@ -1,0 +1,140 @@
+[
+  {
+    "name": "Godot_v4.6-stable_mono_export_templates.tpz",
+    "status": "VERIFIED",
+    "bytes": 1171259653,
+    "sha256": "46056e8394cd1f1f85ccfaabddffc1a67f595bfd99fbda6cd62afa751dbfc519"
+  },
+  {
+    "name": "build-tools_r35.0.1_linux.zip",
+    "status": "VERIFIED",
+    "bytes": 61959297,
+    "sha256": "5993499f3229a021b89f87088c57242aeefaa62316bf3d69da7de40bfd5350f1"
+  },
+  {
+    "name": "platform-35_r02.zip",
+    "status": "VERIFIED",
+    "bytes": 64273788,
+    "sha256": "0988cacad01b38a18a47bac14a0695f246bc76c1b06c0eeb8eb0dc825ab0c8e0"
+  },
+  {
+    "name": "platform-tools_r37.0.1-linux.zip",
+    "status": "VERIFIED",
+    "bytes": 9054187,
+    "sha256": "d230f13842f60f782a8645f9c813f8f845bf36089ea7289f28c48f17979313f1"
+  },
+  {
+    "name": "dotnet-runtime-8.0.32-linux-x64.tar.gz",
+    "status": "VERIFIED",
+    "bytes": 31316637,
+    "sha256": "a967d422e196d79679dede132418372aa34882b638a1a8dd722d5641bcd697aa"
+  },
+  {
+    "name": "bcrypt.net-next.4.0.3.nupkg",
+    "status": "VERIFIED",
+    "bytes": 203168,
+    "sha256": "0715c7023215db106e44f51ecf30bee6385a1e2421827a93935935928dc3e83b"
+  },
+  {
+    "name": "microsoft.data.sqlite.8.0.10.nupkg",
+    "status": "VERIFIED",
+    "bytes": 34880,
+    "sha256": "07374ab446cea7c4aadf52fca629ffb8cef1b60ab7698b6536a0addadd81cf1a"
+  },
+  {
+    "name": "microsoft.data.sqlite.core.8.0.10.nupkg",
+    "status": "VERIFIED",
+    "bytes": 294862,
+    "sha256": "6018d8f3c2800b84a17dc19770d1cbeb2d40f4d1f6c6f93877fa9331fb8bba81"
+  },
+  {
+    "name": "moonsharp.2.0.0.nupkg",
+    "status": "VERIFIED",
+    "bytes": 2372229,
+    "sha256": "6be871a1c30b36503900737d0b2c5c769942286a6e865d96a2a6912ca45ae060"
+  },
+  {
+    "name": "sqlitepclraw.bundle_e_sqlite3.2.1.6.nupkg",
+    "status": "VERIFIED",
+    "bytes": 37656,
+    "sha256": "7590ff6d9b185e33aee3a647e58ff0821d2e8473aa2310be4bed1e70a86bef5f"
+  },
+  {
+    "name": "sqlitepclraw.core.2.1.6.nupkg",
+    "status": "VERIFIED",
+    "bytes": 34519,
+    "sha256": "4715a39b9d8f766315f7c7600f2d010a917df3cf81b2c45952000b2efed31ff1"
+  },
+  {
+    "name": "sqlitepclraw.lib.e_sqlite3.2.1.6.nupkg",
+    "status": "VERIFIED",
+    "bytes": 16588105,
+    "sha256": "b87b7977e48552449de960fb4e0d09ddef1e568c72fc533fb783c091cf4f253d"
+  },
+  {
+    "name": "sqlitepclraw.provider.e_sqlite3.2.1.6.nupkg",
+    "status": "VERIFIED",
+    "bytes": 58749,
+    "sha256": "cc773f619b1def6797948f1b6b5b6fe7c1d9594222ca325ac6ad8208fd6141ef"
+  },
+  {
+    "name": "system.memory.4.5.3.nupkg",
+    "status": "VERIFIED",
+    "bytes": 154054,
+    "sha256": "0af97b45b45b46ef6a2b37910568dabd492c793da3859054595d523e2a545859"
+  },
+  {
+    "name": "godot.sourcegenerators.4.6.0.nupkg",
+    "status": "VERIFIED",
+    "bytes": 58741,
+    "sha256": "7af34f7ed6510c623c6bdc8af8032e91634cad11419c2a4bf041e1e7a1cf56c0"
+  },
+  {
+    "name": "godotsharp.4.6.0.nupkg",
+    "status": "VERIFIED",
+    "bytes": 3125777,
+    "sha256": "6c650fbf7ba138889c154b93559eca89a49a0e47b4bdf46938080d192791f8ab"
+  },
+  {
+    "name": "microsoft.aspnetcore.app.ref.8.0.32.nupkg",
+    "status": "VERIFIED",
+    "bytes": 4372852,
+    "sha256": "0639c3e6b710d1c1808bc91817b3af1b0ba1dca61dc79b4c57d8b1bbd3dac2e3"
+  },
+  {
+    "name": "microsoft.netcore.app.host.linux-x64.8.0.32.nupkg",
+    "status": "VERIFIED",
+    "bytes": 4990039,
+    "sha256": "7f9a79f55b1d0e5906e27eeb19ded6d069d9d10aa662d3e0c31aecb3ac8e0943"
+  },
+  {
+    "name": "godot.net.sdk.4.6.0.nupkg",
+    "status": "VERIFIED",
+    "bytes": 19643,
+    "sha256": "281e286bd0ace784e18f7485b7a86607279917fff475f14e47fc5c40e58d9993"
+  },
+  {
+    "name": "sqlitepclraw.lib.e_sqlite3.android.2.1.6.nupkg",
+    "status": "VERIFIED",
+    "bytes": 6625794,
+    "sha256": "98c6358201e75f2ba51ee8f29229444515bcf141ded82a9db9c6048963e619d2"
+  },
+  {
+    "name": "microsoft.netcore.app.ref.8.0.32.nupkg",
+    "status": "VERIFIED",
+    "bytes": 6767209,
+    "sha256": "6088b3ebfe5af44511eaf8d592e029e1ef870da01b1fcb80aa790a6536bc14db"
+  },
+  {
+    "name": "microsoft.netcore.app.runtime.mono.android-arm64.8.0.32.nupkg",
+    "status": "VERIFIED",
+    "bytes": 25065787,
+    "sha256": "96240079c5401bdd874dcab9f48ed24398fe69284e11c8efd3c3d9b76a5dd75c"
+  },
+  {
+    "name": "microsoft.netcore.app.runtime.mono.android-arm64.9.0.21.nupkg",
+    "status": "VERIFIED",
+    "bytes": 26108211,
+    "sha256": "b4075b47f3b5b9503e0f4ca8890e8c51c350c213df969a9dd6e4c2370e3f41a0"
+  }
+]
