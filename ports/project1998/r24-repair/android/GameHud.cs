@@ -7,6 +7,7 @@ public sealed record HudCommand(string Kind, int Number = 0, uint EntityId = 0, 
 /// choices originate in ClientSceneSnapshot. This control emits intentions and never edits game state.</summary>
 public partial class GameHud : Control
 {
+    public bool MusicEnabled { get; set; } = true;
     public event Action<HudCommand>? Command;
     public event Action<int>? DirectionHeld;
     public event Action<bool>? AttackHeld;
@@ -953,7 +954,8 @@ public partial class GameHud : Control
             var ride = ModalButton("menu-ride", "말 타기 · 내리기", () => { CloseLocalPanel(); Emit("ride"); }); ride.Disabled = _hostFaulted; body.AddChild(ride);
             body.AddChild(ModalButton("menu-pad", _showPad ? "방향 패드 숨기기" : "화면 안 방향 패드 표시", () =>
             { _showPad = !_showPad; _pad.Visible = _showPad; CloseLocalPanel(); }));
-            body.AddChild(Text("게임 화면을 누른 곳이 이동 조작의 중심입니다. 손가락을 원하는 방향으로 밀고, 손을 떼면 멈춥니다. 공격·말하기·줍기·문 열기는 화면 아래에서 사용할 수 있습니다.", 16));
+            body.AddChild(ModalButton("menu-bgm", MusicEnabled ? "배경 음악: 켜짐 · 누르면 끄기" : "배경 음악: 꺼짐 · 누르면 켜기", () => Emit("bgm")));
+            body.AddChild(Text("바닥을 한 번 누르면 목적지까지 이동합니다. 이동 중 다른 곳을 누르면 목적지를 바꿉니다. 손가락을 밀면 수동 이동하고, 손을 떼면 멈춥니다.", 16));
             body.AddChild(ModalButton("menu-export", "검사 결과 내보내기", () => Emit("export")));
             body.AddChild(ModalButton("menu-return", _hostFaulted ? "시작 화면으로 돌아가기" : "저장하고 시작 화면으로", () => Emit("menu")));
         }

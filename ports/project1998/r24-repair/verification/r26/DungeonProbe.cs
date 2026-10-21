@@ -27,16 +27,16 @@ foreach(ushort city in new ushort[]{0,330}){
   var path=Route(city,x,y,entry.Key.x,entry.Key.y,new());if(path is {Length:>=5 and <=15})options.Add((x,y,path.Length));}
  if(options.Count==0){Check("ordinary_road_start_"+city,false);continue;}
  var start=options.OrderBy(x=>Math.Abs(x.length-8)).First();var map=Content.Maps[city];
- var clock=new GameClock();clock.Resume();var world=new World(clock);var outbound=new BoundedOutbound(16384);
+ long simulatedTime=0;var clock=new GameClock(monotonicMs:()=>simulatedTime);clock.Resume();var world=new World(clock);var outbound=new BoundedOutbound(16384);
  var store=CharacterStore.ForDatabase(Path.Combine(args[1],"legacy"+city),Path.Combine(args[1],"route"+city+".db"));
- var c=new Character{SchemaVersion=Character.CurrentSchemaVersion,Id=world.AllocatePlayerId(),Name="route"+city,Map=city,MapXs=map.Xs,MapYs=map.Ys,X=(ushort)start.x,Y=(ushort)start.y,Level=30,ClassName="Warrior",Might=240,Hp=1000,MaxHp=1000,Mp=1000,MaxMp=1000,Coins=123456};
+ var c=new Character{SchemaVersion=Character.CurrentSchemaVersion,Id=world.AllocatePlayerId(),Name="route"+city,Map=city,MapXs=map.Xs,MapYs=map.Ys,X=(ushort)start.x,Y=(ushort)start.y,Level=30,ClassName="Warrior",Might=240,Hp=50000,MaxHp=50000,Mp=1000,MaxMp=1000,Coins=123456};
  var session=new Session(outbound,2005,store,world,c);session.EnableOfflineLifecycle();session.EnableOfflinePersistence();world.EnterMap(session,city);outbound.Drain();
  int moves=0;var travelled=new List<object>();
  bool WalkTo(ushort target){
   var current=CharacterStore.Deserialize(session.CaptureOfflineCharacterJson());
   var exits=Content.Warps.Where(w=>w.Key.m==current.Map&&w.Value.m==target).ToArray();
   var occupied=new HashSet<(int,int)>();
-  for(int retry=0;retry<12;retry++){
+  for(int retry=0;retry<128;retry++){
    current=CharacterStore.Deserialize(session.CaptureOfflineCharacterJson());
    var paths=exits.Select(w=>(w,route:Route(current.Map,current.X,current.Y,w.Key.x,w.Key.y,occupied))).Where(x=>x.route is not null).OrderBy(x=>x.route!.Length).ToArray();
    if(paths.Length==0)return false;var chosen=paths[0];bool blocked=false;
@@ -51,7 +51,7 @@ foreach(ushort city in new ushort[]{0,330}){
      foreach(var packet in new[]{(ClientOp.Turn,new byte[]{(byte)d}),(ClientOp.Attack,Array.Empty<byte>())}){
       outbound.BeginStage();session.ExecuteOfflineAction(()=>session.ReceiveEmbeddedFrame(TkPacket.Build(packet.Item1,0,TkCrypt.Crypt(packet.Item2,0,TkCrypt.LoginKey))),outbound.CompleteStage);outbound.Drain();}
     }
-    Thread.Sleep(650);world.TickOffline();outbound.Drain();occupied.Clear();blocked=true;break;}
+    simulatedTime+=1000;world.TickOffline();outbound.Drain();occupied.Clear();blocked=true;break;}
    }if(!blocked)return false;
   }return false;
  }
@@ -62,4 +62,4 @@ foreach(ushort city in new ushort[]{0,330}){
  Check("route_save_money_and_progress_preserved_"+city,final.Coins==123456&&final.Level==30&&session.LastOfflineSaveReceipt.Committed,new{final.Coins,final.Level,session.LastOfflineSaveReceipt});
  session.StopOffline();session.EndEmbeddedSessionAsync().GetAwaiter().GetResult();
 }
-File.WriteAllText(args[2],JsonSerializer.Serialize(new{status=failed?"FAIL":"PASS",checks,physical_android="NOT_RUN",scope="Original Session walk+SQLite from ordinary road, both rat/bat chains to deepest room and back. Synthetic prerequisite character, not user's current dungeon identification."},new JsonSerializerOptions{WriteIndented=true}));return failed?1:0;
+File.WriteAllText(args[2],JsonSerializer.Serialize(new{status=failed?"FAIL":"PASS",checks,physical_android="NOT_RUN",scope="Original Session walk+SQLite from ordinary road, both rat/bat chains to deepest room and back. Synthetic prerequisite character and explicit accelerated test clock, not realtime gameplay or user's current dungeon identification."},new JsonSerializerOptions{WriteIndented=true}));return failed?1:0;

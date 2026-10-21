@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Diagnostics;
 using Shared;
 
 namespace Server;
@@ -10,6 +11,8 @@ public sealed record OfflineSaveReceipt(bool Committed, bool NoChanges, string R
 /// <summary>RollbackScope explicitly excludes world damage/doors/ground items.</summary>
 public sealed record OfflineActionResult(bool Committed, OfflineSaveReceipt Receipt,
     bool CharacterRestored, string RollbackScope, string? Error, bool Cancelled = false);
+public sealed record OfflineActionTiming(double StateWaitMs, double PrepareMs, double HandlerMs,
+    double CaptureSerializeMs, double DatabaseMs, double TotalMs);
 
 public sealed partial class Session
 {
@@ -24,6 +27,12 @@ public sealed partial class Session
     private Action<OfflineActionResult>? _offlineDeferredFailure;
     private OfflineSaveReceipt _offlineReceipt = new(false, false, "not requested", 0, 0, null);
     private static readonly JsonSerializerOptions OfflineJson = new() { IncludeFields = true };
+    private sealed record CommittedAppearance(Shared.RecoveredAppearance Value, long Sequence);
+    private CommittedAppearance _committedAppearance = new(default, 0);
+    public Shared.RecoveredAppearance CommittedRecoveredAppearance => Volatile.Read(ref _committedAppearance).Value;
+    private double _captureMilliseconds, _databaseMilliseconds;
+    private OfflineActionTiming _lastActionTiming = new(0, 0, 0, 0, 0, 0);
+    public OfflineActionTiming LastOfflineActionTiming => Volatile.Read(ref _lastActionTiming);
 
     /// <summary>
     /// Enable only for the explicitly offline host. Extra state is captured under the session monitor,
@@ -79,12 +88,14 @@ public sealed partial class Session
     private bool CaptureAndWriteOffline(bool dirtyGated, string reason, out OfflineSaveReceipt receipt)
     {
         string user, json, extra, runtime;
+        Shared.RecoveredAppearance appearance;
         if (_offlineAbandoned is { } abandoned)
         {
             _offlineReceipt = receipt = new(false, false, reason, _saveSeq, _offlineRevision, "Abandoned session: " + abandoned);
             return false;
         }
         long seq;
+        long captureStarted = Stopwatch.GetTimestamp();
         using (EnterState())
         {
             if (Volatile.Read(ref _replaced) != 0 || !_enteredWorld)
@@ -116,6 +127,7 @@ public sealed partial class Session
                 user = CharacterStore.Key(_char.Name);
                 extra = _offlineCaptureExtra?.Invoke() ?? "{}";
                 runtime = CaptureOfflineRuntime();
+                appearance = CaptureRecoveredAppearance();
                 seq = ++_saveSeq;
             }
             catch (Exception e)
@@ -125,6 +137,7 @@ public sealed partial class Session
                 return false;
             }
         }
+        _captureMilliseconds = Stopwatch.GetElapsedTime(captureStarted).TotalMilliseconds;
         OfflineCommitResult commit;
         lock (_writeGate)
         {
@@ -139,12 +152,15 @@ public sealed partial class Session
                     "Capture was superseded; this request did not commit.");
                 return false;
             }
+            long databaseStarted = Stopwatch.GetTimestamp();
             commit = _store.SaveOfflineSnapshot(user, json, extra, runtime, seq, _offlineRevision);
+            _databaseMilliseconds = Stopwatch.GetElapsedTime(databaseStarted).TotalMilliseconds;
             if (commit.Committed)
             {
                 _offlineRevision = commit.Revision;
                 _writtenSeq = seq;
                 _lastSaveAtMs = Environment.TickCount64;
+                Volatile.Write(ref _committedAppearance, new(appearance, seq));
             }
             _offlineReceipt = receipt = new(commit.Committed, false, reason, seq, commit.Revision, commit.Error);
         }
@@ -162,7 +178,9 @@ public sealed partial class Session
     {
         ArgumentNullException.ThrowIfNull(body);
         ArgumentNullException.ThrowIfNull(publishOrDiscard);
+        long actionStarted = Stopwatch.GetTimestamp();
         using var held = EnterState();
+        double stateWaitMs = Stopwatch.GetElapsedTime(actionStarted).TotalMilliseconds;
         if (!_offlinePersistence || !_enteredWorld || _offlineActionDepth != 0)
         {
             publishOrDiscard(false);
@@ -183,9 +201,13 @@ public sealed partial class Session
         _offlineHandlerFailure = null;
         _offlineActionThread = Environment.CurrentManagedThreadId;
         _offlineActionDepth++;
+        double prepareMs = Stopwatch.GetElapsedTime(actionStarted).TotalMilliseconds - stateWaitMs;
+        long handlerStarted = Stopwatch.GetTimestamp();
         try { body(); }
         catch (Exception e) { failure = e; }
         finally { _offlineActionDepth--; if (_offlineActionDepth == 0) _offlineActionThread = 0; }
+        double handlerMs = Stopwatch.GetElapsedTime(handlerStarted).TotalMilliseconds;
+        _captureMilliseconds = _databaseMilliseconds = 0;
         failure ??= _offlineHandlerFailure;
         if (failure is null && OfflineGeneration != actionGeneration)
             failure = new OperationCanceledException("Offline lifecycle changed before action commit.");
@@ -197,6 +219,8 @@ public sealed partial class Session
             actionReceipt = new(false, false, "action", _saveSeq, _offlineRevision, failure.Message);
             ok = false;
         }
+        Volatile.Write(ref _lastActionTiming, new(stateWaitMs, prepareMs, handlerMs,
+            _captureMilliseconds, _databaseMilliseconds, Stopwatch.GetElapsedTime(actionStarted).TotalMilliseconds));
         if (!ok)
         {
             _char = CharacterStore.Deserialize(before);

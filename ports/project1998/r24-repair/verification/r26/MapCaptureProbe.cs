@@ -1,0 +1,17 @@
+using Server;
+using Shared;
+using P1998.Embedded;
+using System.Reflection;
+using System.Text.Json;
+using System.Text.Json.Nodes;
+using System.Diagnostics;
+Environment.SetEnvironmentVariable("P1998_GAME_DATA",args[0]);Content.Load();
+var clock=new GameClock();var world=new World(clock);
+var method=typeof(EmbeddedHost).Assembly.GetType("P1998.Embedded.OfflineMapState")!.GetMethod("Capture",BindingFlags.Static|BindingFlags.NonPublic)!;
+string Capture()=>(string)method.Invoke(null,new object[]{world,new ushort[]{330}})!;
+world.CaptureOfflineStateJson();Capture();
+long baseStart=GC.GetAllocatedBytesForCurrentThread();string original=world.CaptureOfflineStateJson();long baseAllocation=GC.GetAllocatedBytesForCurrentThread()-baseStart;
+long start=GC.GetAllocatedBytesForCurrentThread();var timer=Stopwatch.StartNew();string combined=Capture();double ms=timer.Elapsed.TotalMilliseconds;long totalAllocation=GC.GetAllocatedBytesForCurrentThread()-start;
+var expected=JsonNode.Parse(original)!;var actual=JsonNode.Parse(combined)!;actual.AsObject().Remove("EmbeddedMapState");
+bool equal=JsonNode.DeepEquals(expected,actual);bool budget=totalAllocation<=baseAllocation*2.2+65536;
+File.WriteAllText(args[2],JsonSerializer.Serialize(new{status=equal&&budget?"PASS":"FAIL",all_existing_world_fields_preserved=equal,baseAllocation,totalAllocation,ratio=totalAllocation/(double)baseAllocation,ms,physical_android="NOT_RUN"}));return equal&&budget?0:1;

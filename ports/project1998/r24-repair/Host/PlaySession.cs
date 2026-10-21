@@ -25,6 +25,7 @@ public sealed class PlaySession
     public bool Faulted => Host.Faulted;
     public string InternalId { get; }
     public string DisplayName { get; private set; }
+    public BoundedHistory<double> CommandQueueMilliseconds { get; } = new(512, value => value);
 
     private PlaySession(EmbeddedHost host, HostOptions options)
     { Host = host; InternalId = options.InternalId; DisplayName = options.DisplayName; }
@@ -205,7 +206,9 @@ public sealed class PlaySession
     }
     private async Task<OfflineActionResult> RunCommandAsync(byte opcode, Func<byte[]> body, long generation, long lifecycle, long mapEpoch, long? acknowledge)
     {
+        long queued = System.Diagnostics.Stopwatch.GetTimestamp();
         await _commands.WaitAsync(_stopping.Token);
+        CommandQueueMilliseconds.Add(System.Diagnostics.Stopwatch.GetElapsedTime(queued).TotalMilliseconds);
         try
         {
             if (!Ready) throw new InvalidOperationException("게임이 준비되지 않았거나 일시 중지되었습니다.");

@@ -54,11 +54,14 @@ public sealed class EmbeddedHost
     public int TeardownCount { get; private set; }
     public OfflineSaveReceipt LastSave => _session.LastOfflineSaveReceipt;
     public string CharacterJson => _session.CaptureOfflineCharacterJson();
-    public RecoveredAppearance RecoveredAppearance => _session.CaptureRecoveredAppearance();
+    public RecoveredAppearance RecoveredAppearance => _session.CommittedRecoveredAppearance;
     public string WorldJson => CaptureOfflineExtra();
     public BoundedHistory<double> InputMilliseconds { get; } = new(512, value => value);
     public BoundedHistory<double> TickMilliseconds { get; } = new(512, value => value);
     public BoundedHistory<object> MapTransitions { get; } = new(64);
+    public BoundedHistory<object> InputStages { get; } = new(512);
+    public BoundedHistory<object> RuntimePerformance { get; } = new(128);
+    private long _nextRuntimeSample;
     public BoundedHistory<object> CommitObservations { get; } = new(256);
     public double InitializationMilliseconds { get; private set; }
     public EntryDiagnostics? StartupDiagnostics { get; private set; }
@@ -231,6 +234,7 @@ public sealed class EmbeddedHost
             host.InitializationMilliseconds = watch.Elapsed.TotalMilliseconds;
             trace.Mark("ready");
             host.StartupDiagnostics = trace.Capture(host, _contentLoaded, true);
+            host.SampleRuntimePerformance();
             if (options.AutomaticTicks) host._ticker = host.TickLoopAsync();
             return host;
         }
@@ -255,7 +259,9 @@ public sealed class EmbeddedHost
     public Task<OfflineActionResult> ReceiveAsync(byte opcode, byte[] plaintext, byte? increment = null, long? expectedGeneration = null,
         long? expectedLifecycleVersion = null, long? expectedMapEpoch = null) => Task.Run(async () =>
     {
+        long queueStarted = Stopwatch.GetTimestamp();
         await _serial.WaitAsync();
+        double queueWaitMs = Stopwatch.GetElapsedTime(queueStarted).TotalMilliseconds;
         var elapsed = Stopwatch.StartNew();
         bool localWalkPresentation = false;
         long localWalkLifecycle = 0;
@@ -284,7 +290,11 @@ public sealed class EmbeddedHost
             if (!result.Committed) Model.CancelPrediction(oldX, oldY);
             if (!result.Committed && !result.Cancelled) Fault("Action commit failed: " + result.Error);
             else if (result.Committed) _lastCommitReal = Environment.TickCount64;
+            long outputStarted = Stopwatch.GetTimestamp();
             _session.AfterEmbeddedRead(); Drain();
+            InputStages.Add(new { opcode, queue_wait_ms = queueWaitMs, action = _session.LastOfflineActionTiming,
+                world_capture = _world.LastOfflineCapture,
+                output_drain_ms = Stopwatch.GetElapsedTime(outputStarted).TotalMilliseconds, result.Committed });
             int inputDirection = plaintext.Length > 0 ? plaintext[0] & 3 : -1;
             int entryX = oldX + (inputDirection == 1 ? 1 : inputDirection == 3 ? -1 : 0);
             int entryY = oldY + (inputDirection == 2 ? 1 : inputDirection == 0 ? -1 : 0);
@@ -298,6 +308,7 @@ public sealed class EmbeddedHost
                     result.Committed, original_condition_enforced = true,
                     reason = Model.CaptureScene().Events.Where(e => e.Kind is "minitext" or "chat").TakeLast(2).Select(e => e.Text).ToArray() });
             if (_out.Closed || _session.EmbeddedClosed) Fault("Original Session closed the bounded output channel.");
+            SampleRuntimePerformance();
             if (localWalkPresentation)
             {
                 Model.EndLocalWalkPresentation(result.Committed && !_faulted && !Paused && !_session.OfflineStopped
@@ -353,6 +364,27 @@ public sealed class EmbeddedHost
         lock (_visitedMapGate) maps = _visitedMaps.Order().ToArray();
         return OfflineMapState.Capture(_world, maps);
     }
+    private void SampleRuntimePerformance()
+    {
+        long now = Environment.TickCount64;
+        if (now < _nextRuntimeSample) return;
+        _nextRuntimeSample = now + 5000;
+        double? cpuMs = null; long? rss = null; string? error = null;
+        try
+        {
+            using var process = Process.GetCurrentProcess();
+            cpuMs = process.TotalProcessorTime.TotalMilliseconds; rss = process.WorkingSet64;
+        }
+        catch (Exception failure) { error = failure.GetType().Name + ": " + failure.Message; }
+        int visited;
+        lock (_visitedMapGate) visited = _visitedMaps.Count;
+        RuntimePerformance.Add(new { monotonic_ms = now, game_ms = GameMilliseconds, current_map = Model.Map,
+            visited_maps = visited, terrain_cache = MapData.ObserveCache(), world_capture = _world.LastOfflineCapture,
+            process_cpu_total_ms = cpuMs, process_rss_bytes = rss, process_metric_error = error,
+            managed_bytes = GC.GetTotalMemory(false), allocated_bytes_total = GC.GetTotalAllocatedBytes(),
+            gc0 = GC.CollectionCount(0), gc1 = GC.CollectionCount(1), gc2 = GC.CollectionCount(2),
+            last_committed_revision = LastSave.Revision, scope = "PROCESS_COUNTERS_BOUNDED_128_SAMPLES_AT_MOST_EVERY5_SECONDS; THERMAL_NOT_MEASURED" });
+    }
     private void Fault(string reason)
     {
         _faulted = true; Ready = false; RequestPause();
@@ -383,6 +415,7 @@ public sealed class EmbeddedHost
                         else _lastCommitReal = Environment.TickCount64;
                     }
                     Drain();
+                    SampleRuntimePerformance();
                     if (_out.Closed) Fault("Tick output saturated.");
                 }
                 catch (OfflinePausedException) { /* pause won admission; the ticker remains resumable */ }

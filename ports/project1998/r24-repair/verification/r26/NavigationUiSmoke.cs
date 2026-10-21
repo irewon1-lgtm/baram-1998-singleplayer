@@ -35,6 +35,18 @@ public partial class Main
    await R26Tap(110,136);await R26At(330,110,136);R26Check("normal_walking_after_exit",p.Capture().Y==136);await CaptureScreen("r26-shop-outside");
    R26Check("transition_journal_retains_entries",p.Host.MapTransitions.Count>=2,new{count=p.Host.MapTransitions.Count});
    await Click(_hud.Buttons["save"]);await InputSettle();R26Check("money_and_existing_progress_preserved",G4Character(p).Coins==123456&&G4Character(p).Level==30&&p.Host.LastSave.Committed);
+   await Click(_hud.Buttons["menu"]);await WaitUi(()=>_hud.Buttons.TryGetValue("menu-bgm",out var b)&&b.IsVisibleInTree(),"BGM menu button");await R15Hud("menu-bgm");
+   R26Check("bgm_off_persists_independently",!_audio.MusicEnabled&&!_hud.MusicEnabled&&IO.File.ReadAllText(IO.Path.Combine(_root,"audio-settings.json")).Contains("false"));
+   var isolatedAudio=new GameAudio();AddChild(isolatedAudio);isolatedAudio.SetMusicEnabled(false);
+   var musicEvents=Enumerable.Range(1,12).Select(i=>new SceneEvent(i,"music",0,0,i,2,"",new byte[]{0,0,0,0,100})).Append(new SceneEvent(13,"sound",0,0,1,0,"",new byte[]{0,0,0,0,100})).ToArray();
+   var audioScene=p.Capture() with { Events=musicEvents,LastEventSequence=13 };
+   isolatedAudio.Present(audioScene);isolatedAudio._Process(.3);var off=JsonSerializer.SerializeToElement(isolatedAudio.SnapshotStatus());
+   R26Check("bgm_off_no_loading_polling_sound_effect_still_consumed",off.GetProperty("music").GetProperty("loads").GetInt64()==0&&off.GetProperty("music").GetProperty("polls").GetInt64()==0&&off.GetProperty("sound_event_requests").GetInt32()==1);
+   var comparison=new List<object>();foreach(bool enabled in new[]{true,false,false,true}){isolatedAudio.SetMusicEnabled(enabled);long t=System.Diagnostics.Stopwatch.GetTimestamp();for(int i=0;i<2000;i++){isolatedAudio.Present(audioScene);isolatedAudio._Process(.016);}comparison.Add(new{enabled,iterations=2000,ms=System.Diagnostics.Stopwatch.GetElapsedTime(t).TotalMilliseconds,status=isolatedAudio.SnapshotStatus()});}
+   AtomicWrite(IO.Path.Combine(_root,"bgm-comparison.json"),JsonSerializer.Serialize(new{status="HOST_CPU_ONLY_ANDROID_MIDI_NOT_RUN",same_build=true,same_scene=true,order="ON_OFF_OFF_ON",comparison,physical_android="NOT_RUN",conclusion="PC does not synthesize MIDI; this does not establish Android performance benefit."},new JsonSerializerOptions{WriteIndented=true}));
+   isolatedAudio.StopPlayback();isolatedAudio.QueueFree();
+   await InputDelay(34000);await R26Tap(110,135);await R26At(330,110,135);
+   R26Check("actual_game_sampler_continues_after31_active_seconds",_performance.ActiveSeconds>31&&_performance.TotalFrames>_performance.FramesMilliseconds.Count,new{_performance.ActiveSeconds,_performance.TotalFrames,recent=_performance.FramesMilliseconds.Count});
    status="PASS_SCOPED_ACTUAL_PC_TOUCH_NAVIGATION_AND_NORMAL_SHOP_ROUNDTRIP";
   }catch(Exception e){error=e.ToString();}
   AtomicWrite(IO.Path.Combine(_root,"ko-checks.json"),JsonSerializer.Serialize(new{status,checks=_r26Checks,error,physical_android="NOT_RUN",scope="Actual indexed touch -> Godot GameView -> Main -> original PlaySession/Session/SQLite. Synthetic prerequisite save, no user data."},new JsonSerializerOptions{WriteIndented=true}));

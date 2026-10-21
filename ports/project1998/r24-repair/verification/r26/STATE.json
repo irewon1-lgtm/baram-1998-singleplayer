@@ -8,23 +8,32 @@
     "0": "PASS_REPRODUCED_APK_SAME_CERTIFICATE",
     "1": "PARTIAL_FACADE_AND_MAP_EPOCH_FENCE_IMPLEMENTED; current user dungeon unidentified; dynamic-mob route test pending",
     "2": "PASS_SCOPED_PC_NAVIGATION_AND_SIGNED_FIRST_APK_CODE29",
-    "3": "PARTIAL: all7948 directed terrain analyses and contact renders,10533 warp ledger rows;43 legacy-coordinate reviews,16 arrival-area reviews; whole manual/roundtrip NOT_RUN",
-    "4": "NOT_RUN",
+    "3": "PARTIAL: 7948 registered maps structural/contact-render ledger; all10533 warp rows exercised with original Session+SQLite;3135 scoped full host roundtrips with outside move,7398 reviews/exclusions; conditions/whole manual visual/physical NOT_RUN",
+    "4": "REPLACEMENT_IMPLEMENTED_SCOPED_HOST: same-map level/history reproduction; exact creature snapshot cache+single JSON writer+buffer reuse; skip empty visited terrain restoration; r25 known invalid boss-room save recovered preserving1309 monsters; physical/thermal and actual user profile NOT_RUN",
     "5": "NOT_RUN"
   },
   "private_key": "RECOVERED_SEPARATELY_NOT_FOR_DELIVERY",
   "physical_android": "NOT_RUN",
   "user_save_writes": 0,
-  "next": "Fix reproduced render state-lock wait, rolling sampler, BGM exclusive toggle and compare",
+  "next": "Uncontended ABBA comparison, freeze final products, full regression after world-save optimization, current UI input test, retained-signature APK code30",
   "rulings": [
     "User directs Work-only execution: no subagent dispatch.",
     "Existing source ZIP and remote STATE agree; latest remote commit is r25.",
-    "Stage0 tooling recovery is independent of product changes."
+    "Stage0 tooling recovery is independent of product changes.",
+    "User steering supersedes original step4/BGM scope; no further BGM/performance-only completion claim. Existing scoped render lock fix retained."
   ],
   "baseline_build": "android/evidence/build-r25-101/BUILD_RECEIPT.json",
   "first_apk": {
     "path": "Project1998-r26-first-update-arm64.apk",
     "versionCode": 29,
     "sha256": "91ef4129d3ca5f6c83d79bcb049339c561f3b8fdc0aedb2de159802a65485531"
+  },
+  "new_user_stage4": {
+    "baseline": "evidence/r26/growth/before002/RESULT.json",
+    "optimized": "evidence/r26/growth/after003/RESULT.json",
+    "snapshot_contract": "evidence/r24/runtime/snapshot-opt-green003/RESULT.json",
+    "continuity": "evidence/r24/runtime/continuity-green001/RESULT.json",
+    "physical_device": "NOT_RUN_NO_ADB_DEVICE",
+    "actual_user_progress_save": "NOT_AVAILABLE; isolated synthetic same-byte seeds only"
   }
 }

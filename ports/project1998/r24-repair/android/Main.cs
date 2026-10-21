@@ -101,8 +101,21 @@ public partial class Main : Control
             if (!_view.InitializationComplete) throw new InvalidOperationException("Game view initialization did not complete; inspect the engine log.");
             StartupPhase("game_audio"); _audio = new GameAudio(); AddChild(_audio);
             if (!_audio.InitializationComplete) throw new InvalidOperationException("Game audio initialization did not complete; inspect the engine log.");
+            string audioSettings = IO.Path.Combine(_root, "audio-settings.json");
+            try
+            {
+                if (IO.File.Exists(audioSettings))
+                {
+                    using var settings = JsonDocument.Parse(IO.File.ReadAllText(audioSettings));
+                    if (settings.RootElement.TryGetProperty("music_enabled", out var music) && music.ValueKind is JsonValueKind.True or JsonValueKind.False)
+                        _audio.SetMusicEnabled(music.GetBoolean());
+                }
+            }
+            catch (Exception error) when (error is IO.IOException or JsonException)
+            { Record(_failures, new { phase = "audio_preference", error = error.Message }); }
             StartupPhase("game_hud"); _hud = new GameHud { Visible = false, Art = _art, IconTexture = _art.IconTexture }; AddChild(_hud);
             if (!_hud.InitializationComplete) throw new InvalidOperationException("Game HUD initialization did not complete; inspect the engine log.");
+            _hud.MusicEnabled = _audio.MusicEnabled;
             _hud.DirectionHeld += HoldDirection;
             _hud.InputCanceled += ResetInput;
             _hud.DirectionCanceled += _input.CancelDirection;
@@ -371,7 +384,7 @@ public partial class Main : Control
     {
         if (_busy || _destination is not { } target || play.Host.GameMilliseconds < _nextDestinationStep) return;
         var scene = play.Capture();
-        if (scene.Map != target.Map || scene.Dialog is not null || scene.Shop is not null || scene.WorldMap is not null
+        if (scene.Map != target.Map || scene.Stats.Hp == 0 || scene.Dialog is not null || scene.Shop is not null || scene.WorldMap is not null
             || (scene.X == target.X && scene.Y == target.Y)) { CancelDestination(); return; }
         // Replan if a creature moved, a door/collision tile changed, or another
         // action changed our position. The route's immutable terrain is indexed
@@ -497,6 +510,13 @@ public partial class Main : Control
             return;
         }
         if (command.Kind == "export") { ResetInput(); Export(); return; }
+        if (command.Kind == "bgm")
+        {
+            ResetInput(); _audio.SetMusicEnabled(!_audio.MusicEnabled); _hud.MusicEnabled = _audio.MusicEnabled;
+            try { AtomicWrite(IO.Path.Combine(_root, "audio-settings.json"), JsonSerializer.Serialize(new { music_enabled = _audio.MusicEnabled })); }
+            catch (IO.IOException error) { Status("음악 설정을 저장하지 못했습니다: " + error.Message); }
+            _hud.CloseLocalPanel(); return;
+        }
         if (command.Kind is "menu" or "exit") { ResetInput(); await End(command.Kind == "exit"); return; }
         ResetInput(); if (p is null || _busy) return;
         try
@@ -661,7 +681,7 @@ public partial class Main : Control
                 local_characters_scope = "LAST_EXPLICIT_PROFILE_DISCOVERY_SNAPSHOT; CURRENT_PLAYING_CHARACTER_IS_REPORTED_SEPARATELY; ORIGINAL_LOGIN_AUTHENTICATION_UNCHANGED", fullscreen = new { viewport = new { Size.X, Size.Y }, frame_width = _view?.FrameWidth, controller_gutters = false, native_bitmap_font_parity = "NOT_RUN" } },
             character = s is null ? null : new { s.Map, s.X, s.Y, s.Direction, s.Stats, s.EntryComplete, inventory = s.Inventory, equipment = s.Equipment, spells = s.Spells },
             save = p?.Host.LastSave, t = p?.Host.GameMilliseconds, actions, lifecycle, failures, latency_samples = latencies,
-            performance = new { status = _performance.Status(DisplayServer.GetName() != "headless"), clock = MonotonicFrameMetrics.ClockSource, timestamp_frequency = _performance.Frequency, measurement_seconds = MonotonicFrameMetrics.MeasurementSeconds, active_seconds = _performance.ActiveSeconds, frame_ms = Percentiles(_performance.FramesMilliseconds), minimum_rolling_fps = _performance.MinimumRollingFps, target_minimum_fps = 30, application_dispatch_to_receipt_ms = Percentiles(latencies.Where(x => x.Kind != "save" && x.Committed && !x.HostFaulted).Select(x => x.Milliseconds)), application_save_to_receipt_ms = Percentiles(latencies.Where(x => x.Kind == "save" && x.Committed && !x.HostFaulted).Select(x => x.Milliseconds)), latency_status = latencies.Any(x => x.Committed && !x.HostFaulted) ? "MEASURED_REVIEW_REQUIRED" : "NOT_RUN_NO_SUCCESSFUL_RECEIPT", latency_failed_or_uncommitted_count = latencies.Count(x => !x.Committed || x.HostFaulted), latency_scope = "SUCCESSFUL_NONFAULTED_RECEIPTS_ONLY_IN_AGGREGATES; RAW_FAILED_SAMPLES_RETAINED; APP_DISPATCH_TO_ORIGINAL_RECEIPT_INCLUDES_QUEUE_COMMIT_DRAIN_NOT_PHYSICAL_TOUCH_OR_DRAW; SAVE_CALL_TO_ORIGINAL_SAVE_RECEIPT_NOT_RAW_SQLITE_COMMIT", physical_touch_to_display_latency = "NOT_RUN", host_input_ms = HostTimingReport(p?.Host.InputMilliseconds), host_tick_ms = HostTimingReport(p?.Host.TickMilliseconds) },
+            performance = new { sample_scope = "RECENT31_ACTIVE_SECONDS_AND_SESSION_TOTALS", input_queue_ms = p?.CommandQueueMilliseconds.ToArray(), input_stages = p?.Host.InputStages.ToArray(), cumulative_runtime = p?.Host.RuntimePerformance.Snapshot(), total_frames = _performance.TotalFrames, session_maximum_frame_ms = _performance.SessionMaximumMilliseconds, session_long_frames_over100ms = _performance.SessionLongFrames, map_transitions = p?.Host.MapTransitions.ToArray(), status = _performance.Status(DisplayServer.GetName() != "headless"), clock = MonotonicFrameMetrics.ClockSource, timestamp_frequency = _performance.Frequency, measurement_seconds = MonotonicFrameMetrics.MeasurementSeconds, active_seconds = _performance.ActiveSeconds, frame_ms = Percentiles(_performance.FramesMilliseconds), minimum_rolling_fps = _performance.MinimumRollingFps, target_minimum_fps = 30, application_dispatch_to_receipt_ms = Percentiles(latencies.Where(x => x.Kind != "save" && x.Committed && !x.HostFaulted).Select(x => x.Milliseconds)), application_save_to_receipt_ms = Percentiles(latencies.Where(x => x.Kind == "save" && x.Committed && !x.HostFaulted).Select(x => x.Milliseconds)), latency_status = latencies.Any(x => x.Committed && !x.HostFaulted) ? "MEASURED_REVIEW_REQUIRED" : "NOT_RUN_NO_SUCCESSFUL_RECEIPT", latency_failed_or_uncommitted_count = latencies.Count(x => !x.Committed || x.HostFaulted), latency_scope = "SUCCESSFUL_NONFAULTED_RECEIPTS_ONLY_IN_AGGREGATES; RAW_FAILED_SAMPLES_RETAINED; APP_DISPATCH_TO_ORIGINAL_RECEIPT_INCLUDES_QUEUE_COMMIT_DRAIN_NOT_PHYSICAL_TOUCH_OR_DRAW; SAVE_CALL_TO_ORIGINAL_SAVE_RECEIPT_NOT_RAW_SQLITE_COMMIT", physical_touch_to_display_latency = "NOT_RUN", host_input_ms = HostTimingReport(p?.Host.InputMilliseconds), host_tick_ms = HostTimingReport(p?.Host.TickMilliseconds) },
             render_observations = _view?.RenderObservations(), audio = _audio?.SnapshotStatus(), missing_asset_keys = _art?.Missing.ToArray(), substituted_asset_keys = _art?.Substitutions.ToArray(), native495_visual_parity = "NOT_RUN", fixture = OS.GetCmdlineUserArgs().Any(a => a is "--g2-combined-smoke" or "--g2-combined-reopen-smoke") ? "ISOLATED_PRIOR_NORMAL_GUI_COMBAT_PENDING_SPAWN_PRESSURE_NOT_STAGE5" : OS.GetCmdlineUserArgs().Contains("--g2-door-fixture") ? "SYNTHETIC_UNLOCK_ISOLATED_HANDLER_FIXTURE_NOT_NORMAL_QUEST_UNLOCK_NOT_STAGE5_ACCEPTANCE" : (OS.GetCmdlineUserArgs().Contains("--g2-continue-smoke") || OS.GetCmdlineUserArgs().Contains("--g2-combat-smoke")) ? "ISOLATED_NORMAL_EARNED_CHECKPOINT_UI_ONLY_NOT_STAGE5_ACCEPTANCE" : "NO_FIXTURE_DEFAULT_NORMAL_PLAY", physical_s10fe = OS.GetName() == "Android" ? "MEASURED_REVIEW_REQUIRED" : "NOT_RUN",
             assemblies = new { ui_mvid = typeof(Main).Assembly.ManifestModule.ModuleVersionId, host_mvid = typeof(PlaySession).Assembly.ManifestModule.ModuleVersionId } };
         return JsonSerializer.Serialize(report, new JsonSerializerOptions { WriteIndented = true });
