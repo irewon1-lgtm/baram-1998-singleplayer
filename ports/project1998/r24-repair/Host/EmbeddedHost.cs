@@ -58,6 +58,7 @@ public sealed class EmbeddedHost
     public string WorldJson => CaptureOfflineExtra();
     public BoundedHistory<double> InputMilliseconds { get; } = new(512, value => value);
     public BoundedHistory<double> TickMilliseconds { get; } = new(512, value => value);
+    public BoundedHistory<object> MapTransitions { get; } = new(64);
     public BoundedHistory<object> CommitObservations { get; } = new(256);
     public double InitializationMilliseconds { get; private set; }
     public EntryDiagnostics? StartupDiagnostics { get; private set; }
@@ -252,7 +253,7 @@ public sealed class EmbeddedHost
     });
 
     public Task<OfflineActionResult> ReceiveAsync(byte opcode, byte[] plaintext, byte? increment = null, long? expectedGeneration = null,
-        long? expectedLifecycleVersion = null) => Task.Run(async () =>
+        long? expectedLifecycleVersion = null, long? expectedMapEpoch = null) => Task.Run(async () =>
     {
         await _serial.WaitAsync();
         var elapsed = Stopwatch.StartNew();
@@ -264,12 +265,15 @@ public sealed class EmbeddedHost
                 throw new InvalidOperationException("Stale host generation; input refused.");
             if (expectedLifecycleVersion is not null && expectedLifecycleVersion.Value != LifecycleVersion)
                 throw new InvalidOperationException("Stale application lifecycle; queued input refused.");
+            if (expectedMapEpoch is not null && expectedMapEpoch != Model.MapEpoch)
+                throw new InvalidOperationException("Stale map generation; queued input refused.");
             if (_faulted || _session.OfflineStopped || !_session.OfflineInputAllowed)
                 throw new InvalidOperationException("Input is not admitted in the current host state.");
             byte inc = increment ?? _inputIncrement++;
             RecordInput(opcode, inc, plaintext, false);
             var frame = TkPacket.Build(opcode, inc, TkCrypt.Crypt(plaintext, inc, TkCrypt.LoginKey));
-            int oldX = Model.X, oldY = Model.Y;
+            int oldX = Model.X, oldY = Model.Y, oldMap = Model.Map;
+            long oldEpoch = Model.MapEpoch;
             if (opcode is 6 or 0x32 && plaintext.Length > 0)
             {
                 localWalkLifecycle = LifecycleVersion;
@@ -281,6 +285,18 @@ public sealed class EmbeddedHost
             if (!result.Committed && !result.Cancelled) Fault("Action commit failed: " + result.Error);
             else if (result.Committed) _lastCommitReal = Environment.TickCount64;
             _session.AfterEmbeddedRead(); Drain();
+            int inputDirection = plaintext.Length > 0 ? plaintext[0] & 3 : -1;
+            int entryX = oldX + (inputDirection == 1 ? 1 : inputDirection == 3 ? -1 : 0);
+            int entryY = oldY + (inputDirection == 2 ? 1 : inputDirection == 0 ? -1 : 0);
+            bool entrance = opcode is 6 or 0x32 && oldMap is >= 0 and <= ushort.MaxValue
+                && entryX is >= 0 and <= ushort.MaxValue && entryY is >= 0 and <= ushort.MaxValue
+                && Content.TryWarp((ushort)oldMap, (ushort)entryX, (ushort)entryY, out _);
+            if (Model.MapEpoch != oldEpoch || entrance)
+                MapTransitions.Add(new { from_map = oldMap, from_x = oldX, from_y = oldY,
+                    entrance_x = entryX, entrance_y = entryY, to_map = Model.Map, to_x = Model.X, to_y = Model.Y,
+                    input_map_generation = oldEpoch, output_map_generation = Model.MapEpoch, lifecycle = LifecycleVersion,
+                    result.Committed, original_condition_enforced = true,
+                    reason = Model.CaptureScene().Events.Where(e => e.Kind is "minitext" or "chat").TakeLast(2).Select(e => e.Text).ToArray() });
             if (_out.Closed || _session.EmbeddedClosed) Fault("Original Session closed the bounded output channel.");
             if (localWalkPresentation)
             {

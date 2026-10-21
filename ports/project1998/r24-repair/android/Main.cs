@@ -478,7 +478,9 @@ public partial class Main : Control
         _busy = true;
         try
         {
-            long started = System.Diagnostics.Stopwatch.GetTimestamp(); var before = play.Capture(); var result = await action(play); double elapsedMs = System.Diagnostics.Stopwatch.GetElapsedTime(started).TotalMilliseconds; RecordLatency(kind, elapsedMs, result.Committed, play.Faulted); var after = play.Capture();
+            long started = System.Diagnostics.Stopwatch.GetTimestamp(); long mapEpoch = play.Model.MapEpoch; var before = play.Capture(); var result = await action(play); double elapsedMs = System.Diagnostics.Stopwatch.GetElapsedTime(started).TotalMilliseconds; RecordLatency(kind, elapsedMs, result.Committed, play.Faulted); var after = play.Capture();
+            if (play.Model.MapEpoch != mapEpoch)
+                _ui.Enqueue(() => { if (ReferenceEquals(play, _play)) ResetInput(); });
             Record(_actions, new { kind, result, dispatch_to_receipt_ms = elapsedMs, before = new { before.Map, before.X, before.Y }, after = new { after.Map, after.X, after.Y }, t = play.Host.GameMilliseconds });
             _ui.Enqueue(() => { _confirmedFacing = after.Direction; if (play.Faulted) Failure(kind, new IO.IOException(result.Error ?? result.Receipt.Error ?? (result.Committed ? "Output/session fault after the original action; inspect the committed receipt." : "Original action was not committed."))); else Status(result.Committed ? "원본 응답 수신 · " + kind : "입력이 처리되지 않았습니다 · " + kind); });
         }
