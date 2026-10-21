@@ -1,0 +1,28 @@
+{
+  "status": "PASS_ALL_FROZEN_INPUTS_UNCHANGED",
+  "source_input_count": 9127,
+  "source_inputs_sha256": "09c907990b1d71b96fd88e503d51dcf41ba58ca511b7f4597a7d7a4d4b6d6d90",
+  "inputs_equal_after_export": true,
+  "post_abi_package_locks": {
+    "Host": {
+      "source": "/workspace/scratch/5d391e8c81da/source/p1998-r25-restore/Host/packages.lock.json",
+      "sha256": "c1779a169e32269202a734b5fce862f1d861dafc2f03c3d28962fd81734335e3",
+      "dependency_targets": [
+        "net8.0",
+        "net8.0/android-arm64"
+      ],
+      "evidence": "POST_BUILD_Host_packages.lock.json",
+      "frozen_sha256": "c1779a169e32269202a734b5fce862f1d861dafc2f03c3d28962fd81734335e3"
+    },
+    "Android": {
+      "source": "/workspace/scratch/5d391e8c81da/source/p1998-r25-restore/android/packages.lock.json",
+      "sha256": "a70faf31ec767d8ffd94742d6308c4b91b1ce9b5e8efa2b6bb603a9aac08b33a",
+      "dependency_targets": [
+        "net9.0",
+        "net9.0/android-arm64"
+      ],
+      "evidence": "POST_BUILD_Android_packages.lock.json",
+      "frozen_sha256": "a70faf31ec767d8ffd94742d6308c4b91b1ce9b5e8efa2b6bb603a9aac08b33a"
+    }
+  }
+}

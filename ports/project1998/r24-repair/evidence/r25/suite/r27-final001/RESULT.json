@@ -1,0 +1,157 @@
+{
+  "status": "FAIL_OR_BLOCKED",
+  "results": [
+    {
+      "name": "synthetic-fixture",
+      "category": "NEW_SYNTHETIC_FIXTURE",
+      "exit": 0,
+      "status": "PASS",
+      "started": "2026-10-21T14:26:20.749784+00:00",
+      "finished": "2026-10-21T14:26:38.810788+00:00",
+      "result": "evidence/r25/fixtures/r27-final001/RESULT.json",
+      "observed_status": "PASS"
+    },
+    {
+      "name": "transactions",
+      "category": "ACTUAL_INPUT_OR_STORAGE",
+      "exit": 0,
+      "status": "PASS",
+      "started": "2026-10-21T14:26:38.811067+00:00",
+      "finished": "2026-10-21T14:27:04.344591+00:00",
+      "result": "evidence/r25/final-runtime/r27-final001-transactions/RESULT.json",
+      "observed_status": "PASS"
+    },
+    {
+      "name": "ordinary-shop",
+      "category": "ACTUAL_INPUT_OR_STORAGE",
+      "exit": 0,
+      "status": "PASS",
+      "started": "2026-10-21T14:27:04.345879+00:00",
+      "finished": "2026-10-21T14:27:10.183682+00:00",
+      "result": "evidence/r25/final-runtime/r27-final001-ordinary-shop/RESULT.json",
+      "observed_status": "PASS"
+    },
+    {
+      "name": "normal-entry-route",
+      "category": "ACTUAL_INPUT_OR_STORAGE",
+      "exit": 0,
+      "status": "PASS",
+      "started": "2026-10-21T14:27:10.183962+00:00",
+      "finished": "2026-10-21T14:27:27.058357+00:00",
+      "result": "evidence/r25/final-runtime/r27-final001-normal-entry-route/RESULT.json",
+      "observed_status": "OBSERVED_CHECKS_PASS"
+    },
+    {
+      "name": "diagnostic-stress",
+      "category": "ACTUAL_INPUT_OR_STORAGE",
+      "exit": 0,
+      "status": "PASS",
+      "started": "2026-10-21T14:27:27.058982+00:00",
+      "finished": "2026-10-21T14:27:33.693357+00:00",
+      "result": "evidence/r25/final-runtime/r27-final001-diagnostic-stress/RESULT.json",
+      "observed_status": "PASS"
+    },
+    {
+      "name": "crash-atomicity",
+      "category": "ACTUAL_SQLITE_PROCESS_KILL",
+      "exit": 0,
+      "status": "PASS",
+      "started": "2026-10-21T14:27:33.693877+00:00",
+      "finished": "2026-10-21T14:27:38.553965+00:00",
+      "result": "evidence/r25/crash/r27-final001/RESULT.json",
+      "observed_status": "PASS"
+    },
+    {
+      "name": "existing-console-regression",
+      "category": "EXISTING_ID_INPUT_SAVE_REGRESSIONS",
+      "exit": 0,
+      "status": "PASS",
+      "started": "2026-10-21T14:27:38.554366+00:00",
+      "finished": "2026-10-21T14:29:43.077332+00:00",
+      "result": "evidence/r24/console-r27-final001/RESULT.json",
+      "observed_status": "PASS_SCOPED_FINAL_RUNTIME"
+    },
+    {
+      "name": "original-xunit",
+      "category": "ORIGINAL_UNIT_AND_INTEGRATION_TESTS",
+      "exit": 1,
+      "status": "FAIL",
+      "started": "2026-10-21T14:29:43.077710+00:00",
+      "finished": "2026-10-21T14:32:56.865288+00:00",
+      "result": null,
+      "observed_status": null
+    },
+    {
+      "name": "visual-all",
+      "category": "ACTUAL_GODOT_RENDER",
+      "exit": 0,
+      "status": "PASS",
+      "started": "2026-10-21T14:32:56.865728+00:00",
+      "finished": "2026-10-21T14:36:03.019924+00:00",
+      "result": "evidence/r25/visual/r27-final001-all/RESULT.json",
+      "observed_status": "PASS_SCOPED_PUBLIC_UI"
+    },
+    {
+      "name": "visual-r25appearance",
+      "category": "ACTUAL_GODOT_RENDER",
+      "exit": 0,
+      "status": "PASS",
+      "started": "2026-10-21T14:36:03.023284+00:00",
+      "finished": "2026-10-21T14:36:23.694937+00:00",
+      "result": "evidence/r25/visual/r27-final001-r25appearance/RESULT.json",
+      "observed_status": "PASS_SCOPED_PUBLIC_UI"
+    },
+    {
+      "name": "visual-r25cache",
+      "category": "ACTUAL_GODOT_RENDER",
+      "exit": 0,
+      "status": "PASS",
+      "started": "2026-10-21T14:36:23.695373+00:00",
+      "finished": "2026-10-21T14:36:45.229699+00:00",
+      "result": "evidence/r25/visual/r27-final001-r25cache/RESULT.json",
+      "observed_status": "PASS_SCOPED_PUBLIC_UI"
+    },
+    {
+      "name": "visual-r25skins",
+      "category": "ACTUAL_GODOT_RENDER",
+      "exit": 0,
+      "status": "PASS",
+      "started": "2026-10-21T14:36:45.231445+00:00",
+      "finished": "2026-10-21T14:37:06.830316+00:00",
+      "result": "evidence/r25/visual/r27-final001-r25skins/RESULT.json",
+      "observed_status": "PASS_SCOPED_PUBLIC_UI"
+    },
+    {
+      "name": "visual-r25performance",
+      "category": "ACTUAL_GODOT_RENDER",
+      "exit": 0,
+      "status": "PASS",
+      "started": "2026-10-21T14:37:06.830767+00:00",
+      "finished": "2026-10-21T14:37:26.409882+00:00",
+      "result": "evidence/r25/visual/r27-final001-r25performance/RESULT.json",
+      "observed_status": "PASS_SCOPED_PUBLIC_UI"
+    },
+    {
+      "name": "actual-items-ui",
+      "category": "ACTUAL_GODOT_UI_INPUT_SAVE",
+      "exit": 0,
+      "status": "PASS",
+      "started": "2026-10-21T14:37:26.410324+00:00",
+      "finished": "2026-10-21T14:38:30.177241+00:00",
+      "result": "evidence/r25/items-ui/r27-final001/RECEIPT.json",
+      "observed_status": "PASS_SCOPED_FULL_UI_NPC_SHOP_QUEST_SAVE"
+    },
+    {
+      "name": "backup-restore",
+      "category": "ACTUAL_INPUT_OR_STORAGE",
+      "exit": 0,
+      "status": "PASS",
+      "started": "2026-10-21T14:38:30.179216+00:00",
+      "finished": "2026-10-21T14:38:38.555424+00:00",
+      "result": "evidence/r25/final-runtime/r27-final001-backup-restore/RESULT.json",
+      "observed_status": "PASS"
+    }
+  ],
+  "physical_android": "NOT_RUN",
+  "whole_game_performance": "FAIL_RETAINED"
+}

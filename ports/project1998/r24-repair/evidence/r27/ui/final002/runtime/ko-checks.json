@@ -1,0 +1,115 @@
+{
+  "status": "PASS_SCOPED_ACTUAL_TOUCH_MOUSE_ITEM_DETAILS_ACTIVATION_AND_SAVE",
+  "checks": [
+    {
+      "name": "synthetic_fixture_committed_only_to_isolated_copy",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "single_bag_tap_does_not_open_action_modal",
+      "status": "PASS",
+      "observed": {
+        "ModalOpen": false
+      }
+    },
+    {
+      "name": "single_bag_tap_shows_immediate_durability_and_requirements",
+      "status": "PASS",
+      "observed": "\uBB34\uAE30  \u00B7  \uC218\uB7C9 1\n\uB0B4\uAD6C\uB3C4 357 / 1,000 (35.7%)\n\uACF5\uACA9\uB825  \uC18C\uD615 5~10 / \uB300\uD615 5~10\n\uD544\uC694 \uB808\uBCA8 1 (\uD604\uC7AC 8)  \u00B7  \uD544\uC694 \uD798 0 (\uD604\uC7AC 12)\n\uC9C1\uC5C5: \uC81C\uD55C \uC5C6\uC74C\n\uC131\uBCC4: \uACF5\uC6A9  \u00B7  \uD544\uC694 \uC2B9\uAE09 0\n\uBC29\uC5B4 AC 0  (\uB0AE\uC744\uC218\uB85D \uD53C\uD574 \uAC10\uC18C)\n\uBA85\uC911 0  \u00B7  \uACF5\uACA9 \uBCF4\uC815 0\n\uCD5C\uB300 HP 0  \u00B7  \uCD5C\uB300 MP 0\n\uD798 0  \u00B7  \uC9C0\uB825 0  \u00B7  \uBBFC\uCCA9 0\n\uB9C8\uBC95 \uBC29\uC5B4 0\nHP \uC7AC\uC0DD 0%  \u00B7  MP \uC7AC\uC0DD 0%\n\uC218\uB9AC \uAC00\uB2A5\n\uBE44\uAD50: \uD574\uB2F9 \uC7A5\uBE44 \uCE78\uC774 \uBE44\uC5B4 \uC788\uC2B5\uB2C8\uB2E4.\n\uAE30\uC900 \uAD6C\uB9E4\uAC00 1\uC804 / \uD310\uB9E4\uAC00 1\uC804"
+    },
+    {
+      "name": "inspection_does_not_mutate_character",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "double_touch_equips_original_instance_once",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "food_single_touch_only_inspects",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "food_effect_matches_original_use_script_data",
+      "status": "PASS",
+      "observed": "\uC74C\uC2DD  \u00B7  \uC218\uB7C9 3\n\uD6A8\uACFC: HP 5 \uD68C\uBCF5\n\uB0B4\uAD6C\uB3C4: \uD574\uB2F9 \uC5C6\uC74C\n\uAE30\uC900 \uAD6C\uB9E4\uAC00 10\uC804 / \uD310\uB9E4\uAC00 5\uC804"
+    },
+    {
+      "name": "double_touch_eats_exactly_one",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "weapon_inspection_shows_bonuses_and_actual_worn_comparison",
+      "status": "PASS",
+      "observed": "\uBB34\uAE30  \u00B7  \uC218\uB7C9 1\n\uB0B4\uAD6C\uB3C4 4,567 / 5,000 (91.3%)\n\uACF5\uACA9\uB825  \uC18C\uD615 15~20 / \uB300\uD615 15~20\n\uD544\uC694 \uB808\uBCA8 5 (\uD604\uC7AC 8)  \u00B7  \uD544\uC694 \uD798 0 (\uD604\uC7AC 12)\n\uC9C1\uC5C5: \uC8FC\uC220\uC0AC\n\uC131\uBCC4: \uACF5\uC6A9  \u00B7  \uD544\uC694 \uC2B9\uAE09 0\n\uBC29\uC5B4 AC 0  (\uB0AE\uC744\uC218\uB85D \uD53C\uD574 \uAC10\uC18C)\n\uBA85\uC911 0  \u00B7  \uACF5\uACA9 \uBCF4\uC815 0\n\uCD5C\uB300 HP \u002B10  \u00B7  \uCD5C\uB300 MP \u002B10\n\uD798 0  \u00B7  \uC9C0\uB825 \u002B1  \u00B7  \uBBFC\uCCA9 0\n\uB9C8\uBC95 \uBC29\uC5B4 \u002B1\nHP \uC7AC\uC0DD 0%  \u00B7  MP \uC7AC\uC0DD 0%\n\uC591\uC190 \uBB34\uAE30: \uBC29\uD328\uC640 \uD568\uAED8 \uC7A5\uCC29 \uBD88\uAC00\n\uC218\uB9AC \uAC00\uB2A5\n\n\uD604\uC7AC \uC7A5\uBE44\uC640 \uBE44\uAD50: \uB098\uBB34\uB3C4\n\uC18C\uD615 \uACF5\uACA9 \u002B10~\u002B10 / \uB300\uD615 \u002B10~\u002B10\nAC 0  \u00B7  \uBA85\uC911 0  \u00B7  \uACF5\uACA9 \uBCF4\uC815 0\nHP \u002B10  \u00B7  MP \u002B10\n\uD798 0  \u00B7  \uC9C0\uB825 \u002B1  \u00B7  \uBBFC\uCCA9 0\n\uAE30\uC900 \uAD6C\uB9E4\uAC00 200\uC804 / \uD310\uB9E4\uAC00 100\uC804"
+    },
+    {
+      "name": "slow_two_touches_do_not_activate",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "different_item_touch_does_not_activate",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "desktop_double_click_equips_and_returns_old_instance",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "level_gate_still_refuses_without_consuming",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "panel_change_cancels_pending_pair",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "page_change_cancels_pending_pair",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "drag_cancels_pending_pair",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "focus_loss_cancels_pending_pair",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "long_hold_followed_by_one_tap_does_not_eat",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "menu_closing_does_not_complete_old_double_tap",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "normal_reopen_preserves_equipment_food_durability_and_progress",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "original_commits_and_runtime_remain_healthy",
+      "status": "PASS",
+      "observed": null
+    }
+  ],
+  "error": "",
+  "physical_android": "NOT_RUN",
+  "scope": "Actual Godot input on isolated synthetic copy, original Session actions and FULL SQLite."
+}

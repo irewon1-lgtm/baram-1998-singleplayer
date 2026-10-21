@@ -1,0 +1,35 @@
+{
+  "status": "PASS_R26_CONTENT_AND_PROTECTED_CORE_UNCHANGED",
+  "content_files_compared": 8056,
+  "changed_content": [],
+  "protected_core": [
+    {
+      "path": "candidate/Server/World.OfflineState.cs",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/Server/World.OfflineMobCapture.cs",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/Server/World.OfflineCreatureWriter.cs",
+      "unchanged": true
+    },
+    {
+      "path": "Host/OfflineMapState.cs",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/Server/Session.Items.cs",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/Server/Session.RecoveredItems.cs",
+      "unchanged": true
+    },
+    {
+      "path": "candidate/Shared/CharacterStore.cs",
+      "unchanged": true
+    }
+  ]
+}

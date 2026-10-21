@@ -1,0 +1,153 @@
+{
+  "status": "PASS_STAGE1_TEXT_BLOBS_IDENTICAL_AND_WORK_REF_UPDATED",
+  "local_commit": "e963ff47e9aed680961c9ce09de41885a8ac7c5c",
+  "remote_commit": "1cc88e9117ed5c6553280fe196aaa66f156a50ce",
+  "tree_sha": "e7854dea9d16c50d2e241ff56b6ea10d1b5033a5",
+  "entries": [
+    {
+      "path": "ports/project1998/r24-repair/Host/ClientScene.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fa41f414c68a735c75ac85d5cb63ba2447f00d48"
+    },
+    {
+      "path": "ports/project1998/r24-repair/Host/EmbeddedHost.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "81a8950b84d27ac4aa84ce5ec5443b9200cffb85"
+    },
+    {
+      "path": "ports/project1998/r24-repair/Host/PlaySession.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2fa2543544e5b58485a940851dde7461757a4a6b"
+    },
+    {
+      "path": "ports/project1998/r24-repair/README-r27.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cdefc17a0fe5bf6a1746438dfe5845a36c4c1988"
+    },
+    {
+      "path": "ports/project1998/r24-repair/android/GameHud.Items.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a665726117de74e95b3d63fa527d1b1644139866"
+    },
+    {
+      "path": "ports/project1998/r24-repair/android/GameHud.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4f0fd13e602bedf470b52108347698a7d94f5cb7"
+    },
+    {
+      "path": "ports/project1998/r24-repair/android/Main.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "97cb67a3322f43a417f3e72608d7cb0b75f4ffb8"
+    },
+    {
+      "path": "ports/project1998/r24-repair/android/build/build_r27.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2b86d3aa1cd5c51642749c832d725dcb1d571b3f"
+    },
+    {
+      "path": "ports/project1998/r24-repair/android/export_presets.cfg",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "217462ac924a8838575e6ae7666b10718814b4ec"
+    },
+    {
+      "path": "ports/project1998/r24-repair/candidate/Server/Session.OfflineInventoryInspection.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8dfaa40b162824e7c55a22c2a7b0c320d03fdd91"
+    },
+    {
+      "path": "ports/project1998/r24-repair/candidate/Server/Session.OfflinePersistence.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4097887d0038f3f5b4ce18003b456d6eee31fc39"
+    },
+    {
+      "path": "ports/project1998/r24-repair/candidate/Tests/OfflineInventoryInspectionTests.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dd960d66d59bea90c17daad75f6e6ba2a28f8ec9"
+    },
+    {
+      "path": "ports/project1998/r24-repair/verification/r27/BASELINE-SOURCE.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ebc46bfaad4699799ab0905501c75b05035095bf"
+    },
+    {
+      "path": "ports/project1998/r24-repair/verification/r27/ExistingItemsUiSmoke.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "031a577ed752153559718b7f5c4bc5d0e1256853"
+    },
+    {
+      "path": "ports/project1998/r24-repair/verification/r27/FINAL-PC-PRODUCTS.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2046bc93de20c759ba0ad8dd626c6c474a87a90a"
+    },
+    {
+      "path": "ports/project1998/r24-repair/verification/r27/InventoryUiSmoke.cs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1b91b6a0c5e1091fe9e9f65650b2a2e5f21cbebd"
+    },
+    {
+      "path": "ports/project1998/r24-repair/verification/r27/STATE.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6e101b083a7abbe840d23a48c9ccac90c86f4664"
+    },
+    {
+      "path": "ports/project1998/r24-repair/verification/r27/TOOLCHAIN-RECOVERY.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f5dd4d3c8103f4c8887808267259797bc3ed01f6"
+    },
+    {
+      "path": "ports/project1998/r24-repair/verification/r27/compare_xunit.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "298d2f3b758fa1160c7f0743f239ec663fc9c539"
+    },
+    {
+      "path": "ports/project1998/r24-repair/verification/r27/restore_tools.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "46366bd694a8d33c305498055773c4d37f3eda1a"
+    },
+    {
+      "path": "ports/project1998/r24-repair/verification/r27/run_existing_items_ui.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ab41a2fe5e1b7de06ec2e767be939e33ddaa2eab"
+    },
+    {
+      "path": "ports/project1998/r24-repair/verification/r27/run_repair_suite.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7491710c6d0fdd019d36143c6d817f2287698034"
+    },
+    {
+      "path": "ports/project1998/r24-repair/verification/r27/run_ui.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dfb61f99682af8042ff5faabd8a5460bcee7574a"
+    },
+    {
+      "path": "ports/project1998/r24-repair/verification/r27/run_visual.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b8724fed3a8b2519205bfe2e5ca39215dbb01551"
+    }
+  ],
+  "branch": "work/project1998-r24-repair-20261021"
+}

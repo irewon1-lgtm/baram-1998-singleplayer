@@ -1,0 +1,10 @@
+{
+  "status": "FAIL_REPRODUCED_EXPECTED_MISSING_BEHAVIOR",
+  "prior_environment_status": "BLOCKED_XKBFILE_LIBRARY_MISSING; compile/import succeeded",
+  "resumed_command_log": "r27-baseline-ui-resume.log",
+  "display_receipt": "evidence/r20-performance/display/r27-items-baseline002-resume1/launch.json",
+  "actual_checks": "evidence/r27/ui/baseline002/runtime/ko-checks.json",
+  "expected_failure": "single_bag_tap_does_not_open_action_modal",
+  "observed_modal_open": true,
+  "physical_android": "NOT_RUN"
+}

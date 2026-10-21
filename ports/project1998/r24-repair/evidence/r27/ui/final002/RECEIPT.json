@@ -1,0 +1,103 @@
+{
+  "schema": "P1998_R24_FULL_UI_1",
+  "started": "2026-10-21T14:26:04.406799+00:00",
+  "physical_android": "NOT_RUN",
+  "fixture": "NEW_R25_SYNTHETIC_BASELINE; the supplied current contract hash is checked. Original old fixture bytes are unavailable.",
+  "parent_character_hash_matches": true,
+  "parent_source_hashes": {
+    "state/project1998.db": "31b0f6669e49303bea772658c76cd8557d01840c6b7b51f2eed54c4c0a44d4ff",
+    "g2-local-profile.json": "1efb54d2cc7ac9208d707131682b4436fdad5a8f000b08ddc9afefe345a4a768",
+    "ko-contract.json": "9db36282757648e367ed9a6eaa86c417c9cc316d18f1f4cf4afba2c28348209f",
+    "local-character-selection-v1.json": "304567d6664a427ba5e115cd36e31d09049e4e46c877f43ee4737f31f32949b6",
+    "profiles/repairgamma.json": "db217ab17dd1fb466070da1403bc2034569c29c4cbc29b8dd27f132786fa5c7a",
+    "profiles/repairbeta.json": "ab92dd9f482bdbd44df5206d06565d885d4a5fe9b6defece07ca36e66aa0b909",
+    "profiles/repairalpha.json": "1efb54d2cc7ac9208d707131682b4436fdad5a8f000b08ddc9afefe345a4a768",
+    "state/offline-save-watermarks/repairgamma.json": "b9ab33db558bf3b8281c1ba6f9943c5fe502d7419c436ff044ff5cb26fc00bf6",
+    "state/offline-save-watermarks/repairbeta.json": "f7a252476cffb3ce0203faee0028ef4af28ecb0e17b08f228121bfac9806c4cd",
+    "state/offline-save-watermarks/repairalpha.json": "42e1d39a363ee537fe4e084ee8df5a1687ca0617bf15194ad6e774a40102d71d"
+  },
+  "steps": [
+    {
+      "step": "compile",
+      "command": [
+        "/workspace/scratch/5d391e8c81da/toolchain-r27/dotnet/dotnet",
+        "build",
+        "/workspace/scratch/5d391e8c81da/source/p1998-r25-restore/evidence/r27/ui/final002/test-only-project/G1BProbe.csproj",
+        "-c",
+        "Release",
+        "-m:1",
+        "-p:NuGetAudit=false",
+        "-p:RestoreSources=/workspace/scratch/5d391e8c81da/toolchain-r27/nuget/feed"
+      ],
+      "exit": 0
+    },
+    {
+      "step": "import",
+      "command": [
+        "/workspace/scratch/5d391e8c81da/toolchain-r27/godot-mono/Godot_v4.6-stable_mono_linux_x86_64/Godot_v4.6-stable_mono_linux.x86_64",
+        "--headless",
+        "--editor",
+        "--path",
+        "/workspace/scratch/5d391e8c81da/source/p1998-r25-restore/evidence/r27/ui/final002/test-only-project",
+        "--import",
+        "--quit"
+      ],
+      "exit": 0
+    },
+    {
+      "step": "actual-Godot-UI",
+      "command": [
+        "python3",
+        "/workspace/scratch/5d391e8c81da/source/p1998-r25-restore/verification/r20/performance/display.py",
+        "--attempt",
+        "r27-items-final002",
+        "--timeout",
+        "480",
+        "--",
+        "/workspace/scratch/5d391e8c81da/toolchain-r27/godot-mono/Godot_v4.6-stable_mono_linux_x86_64/Godot_v4.6-stable_mono_linux.x86_64",
+        "--path",
+        "/workspace/scratch/5d391e8c81da/source/p1998-r25-restore/evidence/r27/ui/final002/test-only-project",
+        "--display-driver",
+        "x11",
+        "--rendering-method",
+        "gl_compatibility",
+        "--rendering-driver",
+        "opengl3",
+        "--audio-driver",
+        "Dummy",
+        "--",
+        "--r24-items-ui"
+      ],
+      "exit": 0
+    }
+  ],
+  "products": {
+    "SQLitePCLRaw.provider.e_sqlite3.dll": "66a5ea09aa318f9a05093c28ed19d3eb2491d8c3710ff5fb622b8902ab866ce8",
+    "SQLitePCLRaw.core.dll": "c33995427edd44fa641cf702df8b63cc82cb7054dd984dc8277d15ee7c958874",
+    "MoonSharp.Interpreter.dll": "d1caf8c1a1cd7669b749d4cacdda88e949d5138b86e8ac3f73943abebd6e7e18",
+    "Server.dll": "33a60f343c79862345d0a22a9a88b18a5825734639c98eb54356e115a7c549a7",
+    "Microsoft.Data.Sqlite.dll": "fb967fae5437a1a1932d4076760d4dfe893518c9a03e2059c5470af26755c775",
+    "GodotSharp.dll": "29f51de8fbb29dd058e1f85c0e8468d037353bf556967a5cf24412828dc72647",
+    "Shared.Core.dll": "6a2db799a49131813751c2830070f41fa4a763826c57ca1827a28d58eb2c1ca9",
+    "BCrypt.Net-Next.dll": "115b9faff8b909a1a08b65b315058eb182c0c4c3a77c19fcd5f4da9da49d4a63",
+    "SQLitePCLRaw.batteries_v2.dll": "e2709fda3ee4137dcea3398221f0afcd6241db0ea6fa55fd31a33610be78cf02",
+    "Shared.dll": "e64e3ccbdfa635e01e7592bf4caf79fbae2b99d958f2b518b7b17868ce12404c",
+    "EmbeddedHost.dll": "fc0a75e7e4d101fcf2dfdb9408373dc92b807385fbee5dae6954c52902d44cdf",
+    "G1BProbe.dll": "d4bf0ca8690c10e5ff799ba722319e84fadaabf196d11ff39cd9be57c972815d",
+    "Protocol.Tk495.dll": "a86c17029407cc8596efd0f4415d7b5a491f5b85a90758fb42633f80b501d638"
+  },
+  "check_status": "PASS_SCOPED_ACTUAL_TOUCH_MOUSE_ITEM_DETAILS_ACTIVATION_AND_SAVE",
+  "check_count": 21,
+  "parent_source_bytes_preserved": true,
+  "integrity": [
+    [
+      "ok"
+    ]
+  ],
+  "other_characters_unchanged": {
+    "repairbeta": true,
+    "repairgamma": true
+  },
+  "status": "PASS_SCOPED_FULL_UI_NPC_SHOP_QUEST_SAVE",
+  "finished": "2026-10-21T14:26:50.332240+00:00"
+}
