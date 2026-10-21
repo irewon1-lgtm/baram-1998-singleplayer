@@ -56,9 +56,9 @@ public sealed class EmbeddedHost
     public string CharacterJson => _session.CaptureOfflineCharacterJson();
     public RecoveredAppearance RecoveredAppearance => _session.CaptureRecoveredAppearance();
     public string WorldJson => CaptureOfflineExtra();
-    public List<double> InputMilliseconds { get; } = new();
-    public List<double> TickMilliseconds { get; } = new();
-    public List<object> CommitObservations { get; } = new();
+    public BoundedHistory<double> InputMilliseconds { get; } = new(512, value => value);
+    public BoundedHistory<double> TickMilliseconds { get; } = new(512, value => value);
+    public BoundedHistory<object> CommitObservations { get; } = new(256);
     public double InitializationMilliseconds { get; private set; }
     public EntryDiagnostics? StartupDiagnostics { get; private set; }
     internal bool EntryEnteredWorld => _session.EmbeddedEnteredWorld;

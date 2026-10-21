@@ -4,20 +4,20 @@
   "apk_baseline_sha256": "5cef47098ca9c3ad6d3cde7e1a720c8d3a5220e0a797270a1fa27e945ce2d5e0",
   "canonical_parent": "c1f3c5a0 (actual latest work/rebuild-p3-remediation-20261016, no reset)",
   "active_branch": "work/project1998-r24-repair-20261021",
-  "current_step": 3,
+  "current_step": 4,
   "steps": {
     "0": "PASS",
     "1": "PASS",
     "2": "PASS_SCOPED_RENDER",
-    "3": "IN_PROGRESS",
-    "4": "NOT_RUN",
+    "3": "PASS_SCOPED_MEASUREMENT",
+    "4": "IN_PROGRESS",
     "5": "NOT_RUN"
   },
   "toolchain": "P1998_TOOLCHAIN=/workspace/p1998-toolchain-r25",
   "r24_after_changes_found": 0,
   "user_save_writes": 0,
   "signing": "Existing private key recovered separately; never package or commit it",
-  "next_action": "Measure fixed cold actor scene and source reads, replace large atlas reads with lossless small-frame access and bounded LRU, bound diagnostic histories",
+  "next_action": "Improve six blade skins using retained native sword-family animation sheets; keep other skins and mounts explicitly substituted; run original-frame pixel comparison",
   "rulings": [
     "User explicitly requests Work-only execution: no subagent dispatch, including final review; perform and label a separate self-review.",
     "Outer repository BARAM G2 plan concerns another game implementation; current direct user r24 repair specification governs this port. Preserve all outer-game files.",
@@ -45,7 +45,13 @@
     "step2": [
       "evidence/r25/visual/appearance-baseline003/RESULT.json",
       "evidence/r25/visual/appearance-fix001/RESULT.json"
+    ],
+    "step3": [
+      "evidence/r25/PERFORMANCE-COMPARISON.json",
+      "evidence/r25/diagnostics/baseline002/RESULT.json",
+      "evidence/r25/diagnostics/fix001/RESULT.json",
+      "evidence/r25/visual/cache001/RESULT.json"
     ]
   },
-  "canonical_remote": "1e633e037331e7e0afa910815ddc2c4f4ba52042"
+  "canonical_remote": "bc6551b00aba2e7a2e563334e559833aa1cacc90"
 }

@@ -1,0 +1,14 @@
+{
+  "status": "FAIL",
+  "scope": "concurrent recorder stress, synthetic samples, not gameplay latency",
+  "samples": 100000,
+  "bounded": false,
+  "tail": true,
+  "errors": [
+    "ArgumentException"
+  ],
+  "input": 100002,
+  "ticks": 100000,
+  "commits": 100000,
+  "summary": null
+}

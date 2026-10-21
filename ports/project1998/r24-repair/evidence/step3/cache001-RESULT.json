@@ -1,0 +1,40 @@
+{
+  "status": "PASS_SCOPED_PUBLIC_UI",
+  "checks": [
+    {
+      "name": "720_colours_keep_incremental_512_entry_texture_budget",
+      "status": "PASS",
+      "observed": {
+        "atlas_reads": 0,
+        "atlas_read_bytes": 0,
+        "custom_misses": 724,
+        "small_frame_reads": 36,
+        "small_frame_compressed_bytes": 6939,
+        "small_frame_read_ms": 17.652961,
+        "texture_entries": 512,
+        "texture_rgba_bytes": 634400,
+        "texture_limit_entries": 512,
+        "texture_limit_rgba_bytes": 4194304,
+        "source_entries": 36,
+        "source_rgba_bytes": 48396,
+        "source_limit_entries": 256,
+        "source_limit_rgba_bytes": 2097152,
+        "texture_evictions": 212,
+        "source_evictions": 0
+      }
+    },
+    {
+      "name": "source_frame_cache_respects_256_entry_2MiB_budget",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "cache_pressure_never_reads_original_gpu_atlas",
+      "status": "PASS",
+      "observed": null
+    }
+  ],
+  "error": null,
+  "physical_android": "NOT_RUN",
+  "missing": []
+}

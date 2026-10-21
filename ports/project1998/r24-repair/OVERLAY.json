@@ -1,10 +1,13 @@
 {
   "baseline_sha256": "07a0129381b484ec8c34743716efc8ce7f9473d47e2c786845c00c829f9e43e4",
   "files": [
+    "Host/BoundedHistory.cs",
     "Host/BoundedOutbound.cs",
     "Host/EmbeddedHost.cs",
     "Host/packages.lock.json",
+    "android/ArtCatalog.cs",
     "android/GameHud.cs",
+    "android/Main.cs",
     "android/packages.lock.json",
     "candidate/Server/Session.OfflinePersistence.cs",
     "candidate/Server/Session.RecoveredBags.cs",
@@ -19,12 +22,14 @@
     "verification/r24/run_visual.py",
     "verification/r25/CONTRACT.md",
     "verification/r25/CrashProbe.cs",
+    "verification/r25/DiagnosticsProbe.cs",
     "verification/r25/FixtureProbe.cs",
     "verification/r25/RepairVisualProbe.cs",
     "verification/r25/STATE.json",
     "verification/r25/TransactionProbe.cs",
     "verification/r25/checkpoint.py",
     "verification/r25/environment.py",
+    "verification/r25/pack_character_pixels.py",
     "verification/r25/prepare_fixtures.py",
     "verification/r25/run_crash.py",
     "verification/r25/run_visual.py"

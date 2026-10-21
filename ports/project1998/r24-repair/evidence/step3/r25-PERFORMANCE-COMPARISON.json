@@ -1,0 +1,49 @@
+{
+  "status": "PASS_SCOPED_OPTIMIZATION_NOT_WHOLE_GAME_FPS",
+  "same_pixels": 72,
+  "total_draws": 72,
+  "before": {
+    "p50_ms": 19.57025,
+    "p95_ms": 69.3606,
+    "maximum_ms": 141.0897,
+    "total_managed_allocated": 89000928,
+    "rss_before": 529752064,
+    "rss_after": 700125184,
+    "customization": {
+      "atlas_reads": 80,
+      "atlas_read_bytes": 1992359936,
+      "atlas_read_ms": 1556.224374,
+      "custom_misses": 80
+    }
+  },
+  "after": {
+    "p50_ms": 7.9147,
+    "p95_ms": 10.7736,
+    "maximum_ms": 50.5301,
+    "total_managed_allocated": 89142704,
+    "rss_before": 542416896,
+    "rss_after": 602779648,
+    "customization": {
+      "atlas_reads": 0,
+      "atlas_read_bytes": 0,
+      "custom_misses": 80,
+      "small_frame_reads": 72,
+      "small_frame_compressed_bytes": 10932,
+      "small_frame_read_ms": 8.099986,
+      "texture_entries": 80,
+      "texture_rgba_bytes": 103008,
+      "texture_limit_entries": 512,
+      "texture_limit_rgba_bytes": 4194304,
+      "source_entries": 72,
+      "source_rgba_bytes": 92848,
+      "source_limit_entries": 256,
+      "source_limit_rgba_bytes": 2097152,
+      "texture_evictions": 0,
+      "source_evictions": 0
+    }
+  },
+  "scope": "72 fixed cold actor draws; actual X11 llvmpipe, not device FPS",
+  "physical_android": "NOT_RUN",
+  "existing_game_performance": "FAIL_RETAINED",
+  "allocation_note": "Managed allocations include framebuffer readbacks for pixel hashing; no allocation reduction claimed."
+}

@@ -64,4 +64,28 @@ public partial class VisualProbe
         Check("all_72_fixed_actor_draws_execute",samples.Count==72&&_art.Missing.Count==0);
         gallery.QueueFree();_view.Visible=true;_hud.Visible=true;
     }
+    private async Task R25Cache(ClientSceneSnapshot scene)
+    {
+        _view.Visible=false;_hud.Visible=false;
+        var gallery=new Gallery{Size=new(640,480),TextureFilter=TextureFilterEnum.Nearest};AddChild(gallery);
+        for(int page=0;page<60;page++)
+        {
+            int batch=page;
+            gallery.Paint=t=>
+            {
+                for(int col=0;col<12;col++)
+                {
+                    int i=batch*12+col;byte[] app={0,0,(byte)(i%32),0,0,0,255};
+                    var cosmetic=new RecoveredAppearance(true,0x304050+i*1451,0,0,-1,0,0,17477,0,0);
+                    _art.Actor(t,app,i%4,i%4,0,new Vector2(30+col*50,230),0,1,cosmetics:cosmetic);
+                }
+            };
+            gallery.QueueRedraw();await Flush();
+        }
+        using var doc=JsonDocument.Parse(JsonSerializer.Serialize(_art.GetType().GetMethod("CustomizationDiagnostics")!.Invoke(_art,null)));
+        var d=doc.RootElement;Check("720_colours_keep_incremental_512_entry_texture_budget",d.GetProperty("texture_entries").GetInt32()==512&&d.GetProperty("texture_rgba_bytes").GetInt64()<=4194304&&d.GetProperty("texture_evictions").GetInt64()>0,d.Clone());
+        Check("source_frame_cache_respects_256_entry_2MiB_budget",d.GetProperty("source_entries").GetInt32()<=256&&d.GetProperty("source_rgba_bytes").GetInt64()<=2097152);
+        Check("cache_pressure_never_reads_original_gpu_atlas",d.GetProperty("atlas_reads").GetInt64()==0&&_art.Missing.Count==0);
+        gallery.QueueFree();_view.Visible=true;_hud.Visible=true;
+    }
 }
