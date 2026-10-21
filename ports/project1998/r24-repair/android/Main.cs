@@ -10,7 +10,7 @@ using IO = System.IO;
 /// local credentials and Korean display metadata never replace original game rules.</summary>
 public partial class Main : Control
 {
-    public const string BuildId = "P1998-G7-V4-20261021-r25";
+    public const string BuildId = "P1998-G7-V4-20261021-r26";
     private sealed record Profile(string Id, string Password, string Name, int HairTone = 0, int SkinTone = 0);
     private sealed record UiLatency(string Kind, double Milliseconds, bool Committed, bool HostFaulted);
     private readonly ConcurrentQueue<Action> _ui = new();
@@ -46,7 +46,9 @@ public partial class Main : Control
     private int _lastMap = -1, _confirmedFacing = -1;
     private readonly InputIntentState _input = new();
     private (int Map, int X, int Y)? _destination;
-    private long _destinationVersion, _nextDestinationStep;
+    private ClientNavigation.Route? _destinationRoute;
+    private int _destinationRouteIndex, _destinationRetries;
+    private long _destinationVersion, _nextDestinationStep, _destinationPlanningVersion = -1;
     private bool _hudAttackHeld, _keyboardAttackHeld;
     private long _lastDialog;
     private string _smokeResult = "NOT_RUN", _apkSha = "NOT_RUN_PC", _package = "NOT_RUN_PC";
@@ -338,20 +340,32 @@ public partial class Main : Control
             else _ = Execute("attack", p => p.AttackAsync());
         }
     }
-    private void CancelDestination() { _destination = null; _destinationVersion++; _nextDestinationStep = 0; }
+    private void CancelDestination()
+    {
+        _destination = null; _destinationRoute = null; _destinationRouteIndex = _destinationRetries = 0;
+        _destinationVersion++; _nextDestinationStep = 0; _destinationPlanningVersion = -1;
+    }
     private void ResetInput()
     { CancelDestination(); _input.Clear(); _view?.CancelWorldTouch(); _hudAttackHeld = _keyboardAttackHeld = false; _hud?.ResetHeld(); }
     private void HoldDirection(int direction)
     { if (direction >= 0) { CancelDestination(); _input.SetDirection(direction); } else _input.CancelDirection(); }
     private void BeginDestination(int x, int y)
     {
-        ResetInput(); var play = _play;
-        if (!_playing || play?.Ready != true || _busy || _background || _exiting || _hud.ModalOpen) return;
+        var play = _play;
+        if (!_playing || play?.Ready != true || _background || _exiting || _hud.ModalOpen) return;
         var scene = play.Capture();
         if (scene.Dialog is not null || scene.Shop is not null || scene.WorldMap is not null) return;
+        // A new tap wins, even while an old movement receipt is still in flight.
+        // Its previous in-flight step may commit once; the new route is planned
+        // from the confirmed position as soon as that receipt clears _busy.
+        ResetInput();
+        _hud.SelectedTarget = 0;
+        _view.SelectedTarget = 0;
         if (x == scene.X && y == scene.Y) return;
-        if (ClientNavigation.NextDirection(scene, x, y) is null) { Status("그곳까지 이동할 수 없습니다. 문이나 길을 확인하세요."); return; }
-        _destination = (scene.Map, x, y); _nextDestinationStep = 0;
+        _destination = (scene.Map, x, y);
+        _nextDestinationStep = 0;
+        // The potentially large A* search is dispatched by ProcessDestination
+        // off the frame/UI thread after any in-flight old move has settled.
     }
     private void ProcessDestination(PlaySession play)
     {
@@ -359,24 +373,79 @@ public partial class Main : Control
         var scene = play.Capture();
         if (scene.Map != target.Map || scene.Dialog is not null || scene.Shop is not null || scene.WorldMap is not null
             || (scene.X == target.X && scene.Y == target.Y)) { CancelDestination(); return; }
-        int? direction = ClientNavigation.NextDirection(scene, target.X, target.Y);
-        if (direction is null) { CancelDestination(); Status("길이 막혀 이동을 멈췄습니다."); return; }
+        // Replan if a creature moved, a door/collision tile changed, or another
+        // action changed our position. The route's immutable terrain is indexed
+        // once per plan, not on every step like the old per-frame BFS.
+        if (_destinationRoute is null || !_destinationRoute.CanAdvance(scene, _destinationRouteIndex))
+        {
+            _destinationRoute = null;
+            if (_destinationPlanningVersion != _destinationVersion)
+            {
+                long requestVersion = _destinationVersion;
+                _destinationPlanningVersion = requestVersion;
+                _ = PlanDestinationAsync(play, scene, target.X, target.Y, requestVersion);
+            }
+            return;
+        }
+        int direction = _destinationRoute.Directions[_destinationRouteIndex];
         long version = _destinationVersion;
+        int routeIndex = _destinationRouteIndex;
         _nextDestinationStep = play.Host.GameMilliseconds + InputIntentState.DirectionRepeatMilliseconds;
-        _ = ExecuteDestination(play, scene, direction.Value, version);
+        _ = ExecuteDestination(play, scene, direction, version, routeIndex);
     }
-    private async Task ExecuteDestination(PlaySession play, ClientSceneSnapshot before, int direction, long version)
+    private async Task PlanDestinationAsync(PlaySession play, ClientSceneSnapshot scene, int x, int y, long version)
+    {
+        ClientNavigation.PlanResult result;
+        try { result = await Task.Run(() => ClientNavigation.Plan(scene, x, y,
+            () => Volatile.Read(ref _destinationVersion) != version)); }
+        catch (Exception error)
+        {
+            _ui.Enqueue(() =>
+            {
+                if (version != _destinationVersion || !ReferenceEquals(play, _play)) return;
+                CancelDestination(); Status("길찾기 오류: " + error.Message);
+            });
+            return;
+        }
+        _ui.Enqueue(() =>
+        {
+            if (version != _destinationVersion || !ReferenceEquals(play, _play)) return;
+            _destinationPlanningVersion = -1;
+            if (result.Route is null) { CancelDestination(); Status(result.Reason); return; }
+            // On the next frame CanAdvance rechecks the original confirmed
+            // position, current terrain and dynamic creature occupancy.
+            _destinationRoute = result.Route;
+            _destinationRouteIndex = 0;
+        });
+    }
+    private async Task ExecuteDestination(PlaySession play, ClientSceneSnapshot before, int direction, long version, int routeIndex)
     {
         bool turn = before.Direction != direction;
         await Execute(turn ? "touch-turn" : "touch-walk", p => turn ? p.TurnAsync(direction) : p.StepAsync(direction));
         var after = play.Capture();
         _ui.Enqueue(() =>
         {
+            // An old receipt must never resurrect a canceled or retargeted walk.
             if (version != _destinationVersion || !ReferenceEquals(play, _play)) return;
-            if (!play.Ready || after.Map != before.Map || (turn && after.Direction != direction)
-                || (!turn && (after.X != before.X + (direction == 1 ? 1 : direction == 3 ? -1 : 0)
-                    || after.Y != before.Y + (direction == 2 ? 1 : direction == 0 ? -1 : 0))))
-            { CancelDestination(); Status("원본 이동 응답에 따라 이동을 멈췄습니다."); }
+            bool advanced = after.X == before.X + (direction == 1 ? 1 : direction == 3 ? -1 : 0)
+                && after.Y == before.Y + (direction == 2 ? 1 : direction == 0 ? -1 : 0);
+            if (!play.Ready || after.Map != before.Map || after.Dialog is not null || after.Shop is not null
+                || after.WorldMap is not null || (turn && after.Direction != direction))
+            { CancelDestination(); return; }
+            if (turn) return; // Original 4.95 turns in place before moving.
+            if (!advanced)
+            {
+                // The original handler can reject a now-occupied tile even when
+                // the client route was clear. Replan from authoritative state,
+                // but do not loop forever against an invisible solid wall.
+                if (after.X == before.X && after.Y == before.Y && ++_destinationRetries <= 2)
+                { _destinationRoute = null; _nextDestinationStep = 0; return; }
+                CancelDestination(); Status("길이 막혀 자동이동을 멈췄습니다. 지도 충돌을 확인하세요."); return;
+            }
+            _destinationRouteIndex = routeIndex + 1;
+            _destinationRetries = 0;
+            if (_destination is { } target && after.X == target.X && after.Y == target.Y)
+                CancelDestination();
         });
     }
     private void DismissTextInput()
@@ -482,7 +551,15 @@ public partial class Main : Control
             if (play.Model.MapEpoch != mapEpoch)
                 _ui.Enqueue(() => { if (ReferenceEquals(play, _play)) ResetInput(); });
             Record(_actions, new { kind, result, dispatch_to_receipt_ms = elapsedMs, before = new { before.Map, before.X, before.Y }, after = new { after.Map, after.X, after.Y }, t = play.Host.GameMilliseconds });
-            _ui.Enqueue(() => { _confirmedFacing = after.Direction; if (play.Faulted) Failure(kind, new IO.IOException(result.Error ?? result.Receipt.Error ?? (result.Committed ? "Output/session fault after the original action; inspect the committed receipt." : "Original action was not committed."))); else Status(result.Committed ? "원본 응답 수신 · " + kind : "입력이 처리되지 않았습니다 · " + kind); });
+            _ui.Enqueue(() =>
+            {
+                _confirmedFacing = after.Direction;
+                if (play.Faulted) Failure(kind, new IO.IOException(result.Error ?? result.Receipt.Error
+                    ?? (result.Committed ? "Output/session fault after the original action; inspect the committed receipt."
+                        : "Original action was not committed.")));
+                else if (!kind.StartsWith("touch-", StringComparison.Ordinal) || !result.Committed)
+                    Status(result.Committed ? "원본 응답 수신 · " + kind : "입력이 처리되지 않았습니다 · " + kind);
+            });
         }
         catch (Exception e) when (e is ArgumentException or InvalidOperationException or OperationCanceledException && !play.Faulted)
         { Record(_actions, new { kind, status = "INPUT_REJECTED", error = e.Message }); _ui.Enqueue(() => Status(e.Message)); }
@@ -580,7 +657,7 @@ public partial class Main : Control
             apk_sha256 = _apkSha, package = _package, godot = Engine.GetVersionInfo()["string"].AsString(), dotnet = System.Environment.Version.ToString(), release = !OS.IsDebugBuild(),
             startup = new { phase = _startupPhase, status = _startupComplete ? "READY" : _fatal.Length > 0 ? "FAIL" : "STARTING" },
             stage = 8, stage5 = "G4_PRIOR_PARTIAL_WITH_DEFERRED_ISSUES", stage6 = "G5_PRIOR_DEVICE_PASS_SCOPED_WITH_DEFERRED_ISSUES", stage7 = "G6_REGION_CLASS_EXPANSION_PARTIAL", stage8 = "G7_QUALITY_IN_PROGRESS_NOT_WHOLE_STAGE_PASS", airplane_mode = "REMOVED_BY_USER", status = _fatal.Length > 0 || p?.Faulted == true ? "FAIL" : "REVIEW_REQUIRED", smoke = _smokeResult,
-            input = new { direction = _input.Direction, attack_held = _input.AttackHeld, pending_attack_press = _input.PendingAttackPress, pending_direction_press = _input.PendingDirectionPress, bounded_intent = true, direction_repeat_ms = InputIntentState.DirectionRepeatMilliseconds, attack_repeat_ms = InputIntentState.AttackRepeatMilliseconds, native_input_timing_parity = "NOT_RUN", destination = _destination is { } destination ? new { destination.Map, destination.X, destination.Y } : null, destination_route = "LEGACY_COMPATIBILITY_ONLY_DEFAULT_FLOATING_STICK", movement_control = "PRESS_CENTER_CARDINAL_DRAG_RELEASE_CANCEL_ORIGINAL_HANDLER", local_characters = profileCatalog, local_characters_observed_utc = profileCatalogObservedUtc,
+            input = new { direction = _input.Direction, attack_held = _input.AttackHeld, pending_attack_press = _input.PendingAttackPress, pending_direction_press = _input.PendingDirectionPress, bounded_intent = true, direction_repeat_ms = InputIntentState.DirectionRepeatMilliseconds, attack_repeat_ms = InputIntentState.AttackRepeatMilliseconds, native_input_timing_parity = "NOT_RUN", destination = _destination is { } destination ? new { destination.Map, destination.X, destination.Y } : null, destination_route = "TAP_TO_MOVE_ASTAR_CARDINAL_ORIGINAL_TURN_STEP", movement_control = "TAP_SHORTEST_ROUTE_OR_DRAG_MANUAL_ORIGINAL_HANDLER", local_characters = profileCatalog, local_characters_observed_utc = profileCatalogObservedUtc,
                 local_characters_scope = "LAST_EXPLICIT_PROFILE_DISCOVERY_SNAPSHOT; CURRENT_PLAYING_CHARACTER_IS_REPORTED_SEPARATELY; ORIGINAL_LOGIN_AUTHENTICATION_UNCHANGED", fullscreen = new { viewport = new { Size.X, Size.Y }, frame_width = _view?.FrameWidth, controller_gutters = false, native_bitmap_font_parity = "NOT_RUN" } },
             character = s is null ? null : new { s.Map, s.X, s.Y, s.Direction, s.Stats, s.EntryComplete, inventory = s.Inventory, equipment = s.Equipment, spells = s.Spells },
             save = p?.Host.LastSave, t = p?.Host.GameMilliseconds, actions, lifecycle, failures, latency_samples = latencies,

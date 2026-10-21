@@ -25,7 +25,7 @@ foreach(var pair in Content.Maps.OrderBy(x=>x.Key)){
    int sx=x-(d==1?1:d==3?-1:0),sy=y-(d==2?1:d==0?-1:0);
    if(sx<0||sy<0||sx>=width||sy>=height)continue;int u=sy*width+sx;
    if(distance[u]>=0||portal.Contains(u)||(!portal.Contains(v)&&map.BlockedMove(x,y,d)))continue;
-   if(map.Pass(sx,sy)!=0||Enumerable.Range(0,4).All(k=>ObjectFlags.Blocks(map.Obj(sx,sy),k)))continue;
+   // A saved arrival may start on a solid cell and legally step out; only destination edges block.
    distance[u]=distance[v]+1;q.Enqueue(u);
   }
  }

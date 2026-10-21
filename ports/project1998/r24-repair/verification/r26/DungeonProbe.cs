@@ -29,7 +29,7 @@ foreach(ushort city in new ushort[]{0,330}){
  var start=options.OrderBy(x=>Math.Abs(x.length-8)).First();var map=Content.Maps[city];
  var clock=new GameClock();clock.Resume();var world=new World(clock);var outbound=new BoundedOutbound(16384);
  var store=CharacterStore.ForDatabase(Path.Combine(args[1],"legacy"+city),Path.Combine(args[1],"route"+city+".db"));
- var c=new Character{SchemaVersion=Character.CurrentSchemaVersion,Id=world.AllocatePlayerId(),Name="route"+city,Map=city,MapXs=map.Xs,MapYs=map.Ys,X=(ushort)start.x,Y=(ushort)start.y,Level=30,ClassName="Warrior",Hp=1000,MaxHp=1000,Mp=1000,MaxMp=1000,Coins=123456};
+ var c=new Character{SchemaVersion=Character.CurrentSchemaVersion,Id=world.AllocatePlayerId(),Name="route"+city,Map=city,MapXs=map.Xs,MapYs=map.Ys,X=(ushort)start.x,Y=(ushort)start.y,Level=30,ClassName="Warrior",Might=240,Hp=1000,MaxHp=1000,Mp=1000,MaxMp=1000,Coins=123456};
  var session=new Session(outbound,2005,store,world,c);session.EnableOfflineLifecycle();session.EnableOfflinePersistence();world.EnterMap(session,city);outbound.Drain();
  int moves=0;var travelled=new List<object>();
  bool WalkTo(ushort target){
@@ -46,7 +46,12 @@ foreach(ushort city in new ushort[]{0,330}){
     var after=CharacterStore.Deserialize(session.CaptureOfflineCharacterJson());moves++;
     if(!receipt.Committed)return false;
     if(old.Map!=after.Map){travelled.Add(new{from=old.Map,to=after.Map,from_x=old.X,from_y=old.Y,after.X,after.Y,warp_x=chosen.w.Key.x,warp_y=chosen.w.Key.y});return after.Map==target;}
-    if(old.X==after.X&&old.Y==after.Y){Thread.Sleep(650);world.TickOffline();outbound.Drain();occupied.Clear();blocked=true;break;}
+    if(old.X==after.X&&old.Y==after.Y){var mob=world.MobNear(old.Map,old.X+(d==1?1:d==3?-1:0),old.Y+(d==2?1:d==0?-1:0),0,m=>m.Alive&&!m.IsNpc);
+    if(mob is not null){
+     foreach(var packet in new[]{(ClientOp.Turn,new byte[]{(byte)d}),(ClientOp.Attack,Array.Empty<byte>())}){
+      outbound.BeginStage();session.ExecuteOfflineAction(()=>session.ReceiveEmbeddedFrame(TkPacket.Build(packet.Item1,0,TkCrypt.Crypt(packet.Item2,0,TkCrypt.LoginKey))),outbound.CompleteStage);outbound.Drain();}
+    }
+    Thread.Sleep(650);world.TickOffline();outbound.Drain();occupied.Clear();blocked=true;break;}
    }if(!blocked)return false;
   }return false;
  }
