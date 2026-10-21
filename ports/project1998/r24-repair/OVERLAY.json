@@ -4,6 +4,7 @@
     "Host/BoundedOutbound.cs",
     "Host/EmbeddedHost.cs",
     "Host/packages.lock.json",
+    "android/GameHud.cs",
     "android/packages.lock.json",
     "candidate/Server/Session.OfflinePersistence.cs",
     "candidate/Server/Session.RecoveredBags.cs",

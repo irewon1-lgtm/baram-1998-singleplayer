@@ -60,7 +60,7 @@ public partial class VisualProbe
             using var image=GetViewport().GetTexture().GetImage();
             samples.Add(new{index=i,milliseconds=watch.Elapsed.TotalMilliseconds,allocated=GC.GetTotalAllocatedBytes(false)-alloc,hash=ImageHash(image)});
         }
-        IO.File.WriteAllText(IO.Path.Combine(_out,"PERFORMANCE.json"),JsonSerializer.Serialize(new{scope="72 fixed cold actor draws; actual X11 llvmpipe, not device FPS",samples,total_allocated=GC.GetTotalAllocatedBytes(true)-startAllocated,rss_before=startRss,rss_after=Process.GetCurrentProcess().WorkingSet64,physical_android="NOT_RUN",existing_game_performance="FAIL_RETAINED"},new JsonSerializerOptions{WriteIndented=true}));
+        IO.File.WriteAllText(IO.Path.Combine(_out,"PERFORMANCE.json"),JsonSerializer.Serialize(new{scope="72 fixed cold actor draws; actual X11 llvmpipe, not device FPS",samples,total_allocated=GC.GetTotalAllocatedBytes(true)-startAllocated,rss_before=startRss,rss_after=Process.GetCurrentProcess().WorkingSet64,physical_android="NOT_RUN",existing_game_performance="FAIL_RETAINED",customization=_art.GetType().GetMethod("CustomizationDiagnostics")?.Invoke(_art,null)},new JsonSerializerOptions{WriteIndented=true}));
         Check("all_72_fixed_actor_draws_execute",samples.Count==72&&_art.Missing.Count==0);
         gallery.QueueFree();_view.Visible=true;_hud.Visible=true;
     }

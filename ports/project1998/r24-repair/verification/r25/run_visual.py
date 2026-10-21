@@ -8,6 +8,15 @@ out=root/'evidence/r25/visual'/a.attempt;out.mkdir(parents=True,exist_ok=False)
 project=root.parent/'r25-visual-projects'/a.attempt;project.mkdir(parents=True,exist_ok=False)
 names=['GameView.cs','GameHud.cs','ArtCatalog.cs','ActorPose.cs','TileMotion.cs','InputIntentState.cs','KoreanText.cs','ReconstructedGraphics.cs','GameAudio.cs']
 for n in names:shutil.copy2(root/'android'/n,project/n)
+
+# Measurement-only baseline counters. No colours, cache policy or draw outputs change.
+art=project/'ArtCatalog.cs';txt=art.read_text()
+if 'CustomizationDiagnostics' not in txt:
+ txt=txt.replace('    public const string NativeParityStatus', '    private long _r25Reads,_r25Bytes,_r25Ticks,_r25Misses;\n    public object CustomizationDiagnostics()=>new { atlas_reads=_r25Reads,atlas_read_bytes=_r25Bytes,atlas_read_ms=_r25Ticks*1000.0/System.Diagnostics.Stopwatch.Frequency,custom_misses=_r25Misses };\n    public const string NativeParityStatus')
+ txt=txt.replace('var f=_frames[key];var source=TextureFor(f);','_r25Misses++;var f=_frames[key];var source=TextureFor(f);long measured=System.Diagnostics.Stopwatch.GetTimestamp();_r25Reads++;_r25Bytes+=(long)source.GetWidth()*source.GetHeight()*4;')
+ txt=txt.replace('image.Convert(Image.Format.Rgba8);','_r25Ticks+=System.Diagnostics.Stopwatch.GetTimestamp()-measured;image.Convert(Image.Format.Rgba8);')
+ art.write_text(txt)
+
 shutil.copy2(root/'verification/r24/VisualProbe.cs',project/'VisualProbe.cs')
 shutil.copy2(root/'verification/r24/GraphicsProbe.cs',project/'GraphicsProbe.cs')
 shutil.copy2(root/'verification/r25/RepairVisualProbe.cs',project/'RepairVisualProbe.cs')
