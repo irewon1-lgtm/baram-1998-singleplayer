@@ -1,0 +1,152 @@
+{
+  "status": "PASS_SCOPED_FINAL_RUNTIME",
+  "results": [
+    {
+      "name": "cosmetic-24",
+      "exit": 0,
+      "status": "PASS_PUBLIC_COSMETIC_USE_AND_SAVE",
+      "checks": 2600,
+      "failures": 0,
+      "result": "evidence/r24/runtime/final002-cosmetic-24/RESULT.json"
+    },
+    {
+      "name": "cosmetic-25",
+      "exit": 0,
+      "status": "PASS_PUBLIC_COSMETIC_USE_AND_SAVE",
+      "checks": 207,
+      "failures": 0,
+      "result": "evidence/r24/runtime/final002-cosmetic-25/RESULT.json"
+    },
+    {
+      "name": "cosmetic-27",
+      "exit": 0,
+      "status": "PASS_PUBLIC_COSMETIC_USE_AND_SAVE",
+      "checks": 168,
+      "failures": 0,
+      "result": "evidence/r24/runtime/final002-cosmetic-27/RESULT.json"
+    },
+    {
+      "name": "cosmetic-28",
+      "exit": 0,
+      "status": "PASS_PUBLIC_COSMETIC_USE_AND_SAVE",
+      "checks": 670,
+      "failures": 0,
+      "result": "evidence/r24/runtime/final002-cosmetic-28/RESULT.json"
+    },
+    {
+      "name": "cosmetic-29",
+      "exit": 0,
+      "status": "PASS_PUBLIC_COSMETIC_USE_AND_SAVE",
+      "checks": 936,
+      "failures": 0,
+      "result": "evidence/r24/runtime/final002-cosmetic-29/RESULT.json"
+    },
+    {
+      "name": "bags",
+      "exit": 0,
+      "status": "PASS_PUBLIC_CONTAINER_USE_TRANSFER_AND_SAVE",
+      "checks": 546,
+      "failures": 0,
+      "result": "evidence/r24/runtime/final002-bags/RESULT.json"
+    },
+    {
+      "name": "arrows",
+      "exit": 0,
+      "status": "PASS_PUBLIC_AUTHORED_ARROW_SHOTS_AND_SAVE",
+      "checks": 440,
+      "failures": 0,
+      "result": "evidence/r24/runtime/final002-arrows/RESULT.json"
+    },
+    {
+      "name": "guides",
+      "exit": 0,
+      "status": "PASS_PUBLIC_GUIDES_AND_DETECTOR",
+      "checks": 48,
+      "failures": 0,
+      "result": "evidence/r24/runtime/final002-guides/RESULT.json"
+    },
+    {
+      "name": "shop531",
+      "exit": 0,
+      "status": "PASS_SCOPED_PUBLIC_NPC_SHOP_TRAVEL_EQUIP_SAVE",
+      "checks": 1629,
+      "failures": 0,
+      "result": "evidence/r24/runtime/final002-shop531/RESULT.json"
+    },
+    {
+      "name": "inventory",
+      "exit": 0,
+      "status": "PASS_RUNTIME_CONTENT_LOAD",
+      "checks": 1802,
+      "failures": 0,
+      "result": "evidence/r24/runtime/final002-inventory/RESULT.json"
+    },
+    {
+      "name": "flow",
+      "exit": 0,
+      "status": "PASS_SCOPED_PUBLIC_NPC_SHOP_TRAVEL_EQUIP_SAVE",
+      "checks": 5419,
+      "failures": 0,
+      "result": "evidence/r24/runtime/final002-flow/RESULT.json"
+    },
+    {
+      "name": "regen",
+      "exit": 0,
+      "status": "PASS_SCOPED_PUBLIC_NPC_SHOP_TRAVEL_EQUIP_SAVE",
+      "checks": 12,
+      "failures": 0,
+      "result": "evidence/r24/runtime/final002-regen/RESULT.json"
+    },
+    {
+      "name": "aliasoffer",
+      "exit": 0,
+      "status": "PASS_ORIGINAL_ID_OFFERS",
+      "checks": 6,
+      "failures": 0,
+      "result": "evidence/r24/runtime/final002-aliasoffer/RESULT.json"
+    },
+    {
+      "name": "chance",
+      "exit": 0,
+      "status": "PASS_PUBLIC_CAST",
+      "checks": 4,
+      "failures": 0,
+      "result": "evidence/r24/runtime/final002-chance/RESULT.json"
+    },
+    {
+      "name": "world23",
+      "exit": 0,
+      "status": "PASS_ACTUAL_WORLD_NPC_AND_MONSTER_PLACEMENT",
+      "checks": 1634,
+      "failures": 0,
+      "result": "evidence/r24/runtime/final002-world23/RESULT.json"
+    },
+    {
+      "name": "repair",
+      "exit": 0,
+      "status": "PASS_SCOPED_PUBLIC_NPC_SHOP_TRAVEL_EQUIP_SAVE",
+      "checks": 19,
+      "failures": 0,
+      "result": "evidence/r24/runtime/final002-repair/RESULT.json"
+    },
+    {
+      "name": "bank32",
+      "exit": 0,
+      "status": "PASS_SCOPED_PUBLIC_NPC_SHOP_TRAVEL_EQUIP_SAVE",
+      "checks": 7,
+      "failures": 0,
+      "result": "evidence/r24/runtime/final002-bank32/RESULT.json"
+    },
+    {
+      "name": "durability",
+      "exit": 0,
+      "status": "PASS_DOCUMENTED_DURABILITY",
+      "checks": 24,
+      "failures": 0,
+      "result": "evidence/r24/runtime/final002-durability/RESULT.json"
+    }
+  ],
+  "physical_android": "NOT_RUN",
+  "products": "/workspace/scratch/77de96510fca/r25-work/p1998-r24-restore/evidence/r25/products/ordinary-fix001",
+  "game_data_archive_sha256": "2a46d86ca8cf5ba8f05324e5fde736893dc16c766f0dbe330f7badee4a198aeb"
+}

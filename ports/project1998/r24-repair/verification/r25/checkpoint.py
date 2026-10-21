@@ -4,7 +4,7 @@ from pathlib import Path
 from environment import ROOT
 p=argparse.ArgumentParser();p.add_argument('--canonical',type=Path,required=True);p.add_argument('--baseline',type=Path,required=True);a=p.parse_args()
 out=a.canonical/'ports/project1998/r24-repair';out.mkdir(parents=True,exist_ok=True)
-extensions={'.cs','.py','.json','.md','.txt','.csv','.csproj','.godot','.cfg','.props','.targets'}
+extensions={'.cs','.py','.json','.md','.txt','.csv','.csproj','.godot','.cfg','.props','.targets','.html'}
 skip={'.git','.godot','obj','bin','evidence','__pycache__','state','profiles','logs'}
 with zipfile.ZipFile(a.baseline)as z:
  baseline={n.split('/',1)[1]:hashlib.sha256(z.read(n)).hexdigest()for n in z.namelist()if '/'in n and not n.endswith('/')}

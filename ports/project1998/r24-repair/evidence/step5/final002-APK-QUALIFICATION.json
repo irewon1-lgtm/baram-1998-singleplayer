@@ -1,0 +1,42 @@
+{
+  "status": "PASS_SCOPED_UPDATE_PACKAGE_REQUIREMENTS",
+  "artifacts": {
+    "retained_r24": {
+      "sha256": "5cef47098ca9c3ad6d3cde7e1a720c8d3a5220e0a797270a1fa27e945ce2d5e0",
+      "bytes": 91245172,
+      "certificate_sha256": "ecea13778e2466b3e568f45bfe1facb6fd708bdd0ed3f6ae2a4c305da2ebb030",
+      "package": "com.irewon.project1998.g1bv4",
+      "version_code": 27,
+      "v2_verified": true,
+      "v3_verified": true
+    },
+    "update_r25": {
+      "sha256": "fb0f67905cdfc9bfcc85f4d6f2c4d94ef7e4374a7ce429f7f17b417f05ad120c",
+      "bytes": 98782075,
+      "certificate_sha256": "ecea13778e2466b3e568f45bfe1facb6fd708bdd0ed3f6ae2a4c305da2ebb030",
+      "package": "com.irewon.project1998.g1bv4",
+      "version_code": 28,
+      "v2_verified": true,
+      "v3_verified": true
+    }
+  },
+  "save_path_binary_loaded": "project1998_g1b_v4",
+  "game_data_archive_unchanged_sha256": "2a46d86ca8cf5ba8f05324e5fde736893dc16c766f0dbe330f7badee4a198aeb",
+  "small_frame_and_skin_payloads_match": {
+    "character-pixels.bin": true,
+    "character-pixels.json": true,
+    "skin-families.json": true
+  },
+  "compiled_fix_symbols_found": {
+    "Server.dll": true,
+    "EmbeddedHost.dll": true,
+    "G1BProbe.dll": true
+  },
+  "frozen_cs_sources_match": 211,
+  "all_export_inputs_still_match": 9119,
+  "forbidden_saved_data_or_private_keys_in_apk": [],
+  "physical_update_install": "NOT_RUN",
+  "user_save_migration_on_device": "NOT_RUN",
+  "user_save_writes": 0,
+  "whole_game_performance": "FAIL_RETAINED"
+}

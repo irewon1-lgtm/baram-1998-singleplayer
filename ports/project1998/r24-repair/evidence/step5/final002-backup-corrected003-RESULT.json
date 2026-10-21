@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "all_sqlite_tables_roundtrip",
+      "status": "PASS"
+    },
+    {
+      "name": "profiles_selection_and_save_witnesses_roundtrip",
+      "status": "PASS"
+    },
+    {
+      "name": "restore_refuses_existing_directory_without_changes",
+      "status": "PASS"
+    },
+    {
+      "name": "restored_actual_play_session_opens",
+      "status": "PASS"
+    },
+    {
+      "name": "closed_source_tables_and_profiles_unchanged",
+      "status": "PASS"
+    },
+    {
+      "name": "source_ui_backup_archive_bytes_preserved",
+      "status": "PASS"
+    }
+  ],
+  "physical_android": "NOT_RUN",
+  "scope": "public backup/restore/reopen on new synthetic test root only",
+  "sourceArchiveSha256": "7721a4dc1b2dc41559e37aee11213bee0d607bbbf2ee2fc663a118379bbebab8"
+}

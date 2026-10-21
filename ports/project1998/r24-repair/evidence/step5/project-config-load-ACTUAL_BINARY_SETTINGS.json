@@ -1,0 +1,37 @@
+{
+  "expected": {
+    "application/config/custom_user_dir_name": "project1998_g1b_v4",
+    "application/config/icon": "res://assets/runtime/ui-extra/launcher-original.png",
+    "application/config/name": "Project1998 V4",
+    "application/config/use_custom_user_dir": true,
+    "application/run/main_scene": "res://Boot.tscn",
+    "display/window/handheld/orientation": 4.0,
+    "display/window/size/mode": 3.0,
+    "display/window/size/viewport_height": 480.0,
+    "display/window/size/viewport_width": 640.0,
+    "display/window/stretch/aspect": "expand",
+    "display/window/stretch/mode": "canvas_items",
+    "dotnet/project/assembly_name": "G1BProbe",
+    "input_devices/pointing/emulate_mouse_from_touch": true,
+    "rendering/renderer/rendering_method": "gl_compatibility"
+  },
+  "failed_settings": [],
+  "observed": {
+    "application/config/custom_user_dir_name": "project1998_g1b_v4",
+    "application/config/icon": "res://assets/runtime/ui-extra/launcher-original.png",
+    "application/config/name": "Project1998 V4",
+    "application/config/use_custom_user_dir": true,
+    "application/run/main_scene": "res://Boot.tscn",
+    "display/window/handheld/orientation": 4,
+    "display/window/size/mode": 3,
+    "display/window/size/viewport_height": 480,
+    "display/window/size/viewport_width": 640,
+    "display/window/stretch/aspect": "expand",
+    "display/window/stretch/mode": "canvas_items",
+    "dotnet/project/assembly_name": "G1BProbe",
+    "input_devices/pointing/emulate_mouse_from_touch": true,
+    "rendering/renderer/rendering_method": "gl_compatibility"
+  },
+  "pass": true,
+  "textual_project_godot_present": false
+}

@@ -59,6 +59,15 @@ Read every result; a completed driver is not a blanket acceptance. Original xUni
 failures remain FAIL and are compared against the unchanged r24 control. Assertions,
 source-pixel integrity rows, content IDs and actual play scenarios have separate units.
 
+The final accepted product snapshot is `ordinary-fix001`; final batch `final002`
+completed with the 66 inherited unit failures and a backup-fixture rejection.
+The latter was traced to the existing isolated death test's deliberately profile-less
+account. The test-only item UI harness now uses the original public backup API after
+normal stop, before injecting the death fixture. Corrected UI `final002-backup003`
+and backup `final002-backup-corrected003` passed on the same frozen product.
+No accounts were deleted or product validators weakened. The original FAIL remains
+in the batch result; read `REPAIR-QUALIFICATION.json` and `BACKUP-FIXTURE-REVIEW.json`.
+
 Create the APK only after transaction/save safety is verified. Run
 `python3 android/build/build_r25.py --help` for explicit paths. Supply the existing
 private signing directory separately and `P1998_BASELINE_APK`; never regenerate or

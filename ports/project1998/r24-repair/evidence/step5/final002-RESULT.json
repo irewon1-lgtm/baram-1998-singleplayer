@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "scenarios": [
+    {
+      "status": "PASS",
+      "mode": "verify_before",
+      "Coins": 1000,
+      "inventory": 0,
+      "Revision": 1,
+      "scope": "actual SQLite atomic snapshot killed immediately before or after commit; no world rollback claim"
+    },
+    {
+      "status": "PASS",
+      "mode": "verify_after",
+      "Coins": 900,
+      "inventory": 1,
+      "Revision": 2,
+      "scope": "actual SQLite atomic snapshot killed immediately before or after commit; no world rollback claim"
+    }
+  ],
+  "physical_android": "NOT_RUN"
+}

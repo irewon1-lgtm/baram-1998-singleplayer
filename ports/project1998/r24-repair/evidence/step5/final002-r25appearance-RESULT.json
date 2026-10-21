@@ -1,0 +1,145 @@
+{
+  "status": "PASS_SCOPED_PUBLIC_UI",
+  "checks": [
+    {
+      "name": "same_captured_cosmetic_visible_in_field_and_equipment_dye_green",
+      "status": "PASS",
+      "observed": {
+        "field": "371abb9d740ffadc1eccc9370bacc49dae21ff3038cc54a4d4b59b8b1f523950",
+        "panel": "460d6178d97945f5c48dae0b09a8e4d4d90071717533795ba0247017c962870d"
+      }
+    },
+    {
+      "name": "removal_refresh_restores_equipment_dye_green",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "same_captured_cosmetic_visible_in_field_and_equipment_dye_purple_refresh",
+      "status": "PASS",
+      "observed": {
+        "field": "edb1e4ce57ce268ac840715efadeaf61446810a1891627ba2c6d890df8fab66c",
+        "panel": "cb5ee38c2c09138be0e62e56c8acfd90fd41d3633b3758150f3b40655347e26e"
+      }
+    },
+    {
+      "name": "removal_refresh_restores_equipment_dye_purple_refresh",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "same_captured_cosmetic_visible_in_field_and_equipment_beard",
+      "status": "PASS",
+      "observed": {
+        "field": "c74ae3a33126ea1ead9a8d8ed27cb01f598f27f2a22c6f42984021e88ae9a12c",
+        "panel": "004d7e364a1c54417f6d4690d2de227cd473f8d1ef750b85b1b364e1adb5f2fc"
+      }
+    },
+    {
+      "name": "removal_refresh_restores_equipment_beard",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "same_captured_cosmetic_visible_in_field_and_equipment_weapon_skin",
+      "status": "PASS",
+      "observed": {
+        "field": "afa860d3e84a19b37b0dd4b7a2fc171a05e9feaa6727396bb81ddf959dbbab9c",
+        "panel": "1305bef101ff4fb70a49596902fd80f7e4f79ea941fb0e2c9e930aa744fe4ef2"
+      }
+    },
+    {
+      "name": "removal_refresh_restores_equipment_weapon_skin",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "portrait_keeps_cosmetics_with_direction_scene_refresh_0_0",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "portrait_keeps_cosmetics_with_direction_scene_refresh_0_1",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "portrait_keeps_cosmetics_with_direction_scene_refresh_0_2",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "portrait_keeps_cosmetics_with_direction_scene_refresh_0_3",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "portrait_keeps_cosmetics_with_direction_scene_refresh_1_0",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "portrait_keeps_cosmetics_with_direction_scene_refresh_1_1",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "portrait_keeps_cosmetics_with_direction_scene_refresh_1_2",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "portrait_keeps_cosmetics_with_direction_scene_refresh_1_3",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "portrait_keeps_cosmetics_with_direction_scene_refresh_2_0",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "portrait_keeps_cosmetics_with_direction_scene_refresh_2_1",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "portrait_keeps_cosmetics_with_direction_scene_refresh_2_2",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "portrait_keeps_cosmetics_with_direction_scene_refresh_2_3",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "portrait_keeps_cosmetics_with_direction_scene_refresh_3_0",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "portrait_keeps_cosmetics_with_direction_scene_refresh_3_1",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "portrait_keeps_cosmetics_with_direction_scene_refresh_3_2",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "portrait_keeps_cosmetics_with_direction_scene_refresh_3_3",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "account_scene_reset_clears_cosmetic_pixels",
+      "status": "PASS",
+      "observed": null
+    }
+  ],
+  "error": null,
+  "physical_android": "NOT_RUN",
+  "missing": []
+}

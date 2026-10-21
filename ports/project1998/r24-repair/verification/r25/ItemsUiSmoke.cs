@@ -140,7 +140,14 @@ public partial class Main
                 && G4Character(p).RecoveredFaceItemId == 18051 && G4Character(p).RecoveredWeaponSkinId == 16001
                 && G4Character(p).Inventory.Single(i => i.ItemId == 17024).Dura == 4);
             await KoPicture("r24-reopened"); KoCheck("r24_host_and_art_have_no_fault", !p.Faulted && _fatal.Length == 0 && _art.Missing.Count == 0);
-            await R15Return(); await KoDeathMenuFixture(); KoWrite("PASS_SCOPED_R25_ACTUAL_UI_INPUT_SAVE_AND_REVIVE"); GetTree().Quit(0);
+            await R15Return();
+            // Preserve the valid, closed UI save before the separate death test creates an
+            // intentionally profile-less account. The public backup validator must reject
+            // that later mixed fixture; it must not be weakened to make this test pass.
+            string backup = IO.Path.Combine(_root, "r25-before-death-ui.zip");
+            OfflineBackupStore.Create(_root, backup);
+            KoCheck("r25_public_backup_captures_closed_actual_ui_save_before_isolated_death_fixture", IO.File.Exists(backup));
+            await KoDeathMenuFixture(); KoWrite("PASS_SCOPED_R25_ACTUAL_UI_INPUT_SAVE_AND_REVIVE"); GetTree().Quit(0);
         }
         catch (Exception e)
         {

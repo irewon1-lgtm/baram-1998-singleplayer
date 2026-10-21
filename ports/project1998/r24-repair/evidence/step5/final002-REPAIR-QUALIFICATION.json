@@ -1,0 +1,166 @@
+{
+  "status": "SCOPED_REPAIR_CHECKS_PASS_WITH_66_INHERITED_UNIT_FAILURES",
+  "at": "2026-10-21T07:48:23.132292+00:00",
+  "full_driver_status_kept": "FAIL_OR_BLOCKED",
+  "full_driver_exceptions": {
+    "original-xunit": "FAIL: 66 failures, exact same names and messages reproduced on unchanged r24 control; not fixed or skipped",
+    "backup-restore": "Original FAIL retained. Mixed synthetic death account caused intentional tuple rejection. No product source change; corrected actual UI save before isolated death fixture and public backup test passed. See BACKUP-FIXTURE-REVIEW.json."
+  },
+  "corrected_ui": "evidence/r25/items-ui/final002-backup003/RECEIPT.json",
+  "corrected_backup": "evidence/r25/final-runtime/final002-backup-corrected003/RESULT.json",
+  "product_source_freeze": "evidence/r25/products/ordinary-fix001/BUILD.json",
+  "frozen_cs_sources": 211,
+  "changed_product_sources": [],
+  "checks": {
+    "transactions": {
+      "path": "evidence/r25/final-runtime/final002-transactions/RESULT.json",
+      "sha256": "537a1146882ec25c209491cb9c3d708880884248de04418abc8f8e2833688411",
+      "status": "PASS",
+      "keys": [
+        "status",
+        "category",
+        "checks",
+        "physical_android",
+        "world_rollback"
+      ],
+      "checks": 21
+    },
+    "ordinary_shop": {
+      "path": "evidence/r25/final-runtime/final002-ordinary-shop/RESULT.json",
+      "sha256": "d9197078fb4a899a7e94ccfe7c1c5f1c16d9eb14ad68936de423490d3e46231c",
+      "status": "PASS",
+      "keys": [
+        "status",
+        "category",
+        "checks",
+        "physical_android",
+        "world_rollback"
+      ],
+      "checks": 10
+    },
+    "appearance": {
+      "path": "evidence/r25/visual/final002-r25appearance/RESULT.json",
+      "sha256": "9c5fcae3ca67677484090383aa33203c5760e64409692a4a6d3a45721d972d61",
+      "status": "PASS_SCOPED_PUBLIC_UI",
+      "keys": [
+        "status",
+        "checks",
+        "error",
+        "physical_android",
+        "missing"
+      ],
+      "checks": 25
+    },
+    "skins": {
+      "path": "evidence/r25/visual/final002-r25skins/RESULT.json",
+      "sha256": "5e910e7ca1e55d238a44f78629de773b5817210e5375a5370e7822c2d9e73ee2",
+      "status": "PASS_SCOPED_PUBLIC_UI",
+      "keys": [
+        "status",
+        "checks",
+        "error",
+        "physical_android",
+        "missing"
+      ],
+      "checks": 145
+    },
+    "render_all": {
+      "path": "evidence/r25/visual/final002-all/RESULT.json",
+      "sha256": "b33d6ab2e457e6d7969688d2d3655f8f150aeec10e141d8d600042d95aa14a01",
+      "status": "PASS_SCOPED_PUBLIC_UI",
+      "keys": [
+        "status",
+        "checks",
+        "error",
+        "physical_android",
+        "missing"
+      ],
+      "checks": 7059
+    },
+    "actual_ui": {
+      "path": "evidence/r25/items-ui/final002-backup003/runtime/ko-checks.json",
+      "sha256": "b03d40034659ac7f1b839a1d412d64b623df70a42d4c4126e09efc995d9781bd",
+      "status": "PASS_SCOPED_R25_ACTUAL_UI_INPUT_SAVE_AND_REVIVE",
+      "keys": [
+        "status",
+        "build_id",
+        "checks",
+        "screens",
+        "error",
+        "physical_android",
+        "performance",
+        "whole_content_localized",
+        "stage8"
+      ],
+      "checks": 676
+    },
+    "backup_restore": {
+      "path": "evidence/r25/final-runtime/final002-backup-corrected003/RESULT.json",
+      "sha256": "0892cc7ed69724ba487ed27f2451d46781f269b66807f73bc4c31e888d854d20",
+      "status": "PASS",
+      "keys": [
+        "status",
+        "checks",
+        "physical_android",
+        "scope",
+        "sourceArchiveSha256"
+      ],
+      "checks": 6
+    },
+    "crash_atomicity": {
+      "path": "evidence/r25/crash/final002/RESULT.json",
+      "sha256": "6323f1ec77e89bb6c1de507ce10a589d0859fbd9d5f8a80050038b77cfd5ab21",
+      "status": "PASS",
+      "keys": [
+        "status",
+        "scenarios",
+        "physical_android"
+      ],
+      "checks": 0
+    },
+    "existing_console": {
+      "path": "evidence/r24/console-final002/RESULT.json",
+      "sha256": "4a1fca6d6a89f4cb0c3410a139f6d34b055d4ea3f060b865c0c6054ce96101cc",
+      "status": "PASS_SCOPED_FINAL_RUNTIME",
+      "keys": [
+        "status",
+        "results",
+        "physical_android",
+        "products",
+        "game_data_archive_sha256"
+      ],
+      "checks": 0
+    }
+  },
+  "unit_tests": {
+    "status": "FAIL_66_INHERITED_NO_NEW_FAILURE_NAMES",
+    "final_total": 2065,
+    "final_passed": 1999,
+    "final_failed": 66,
+    "baseline_control_total": 225,
+    "baseline_control_failed": 66,
+    "same_failed_test_names": true,
+    "new_failures": [],
+    "no_longer_failed": [],
+    "message_changes": [],
+    "failed_by_class": {
+      "Tests.NpcCompositionPinTests": 48,
+      "Tests.ChangedPicksSurviveLoginTests": 1,
+      "Tests.StatusFileTests": 10,
+      "Tests.ContentReloadTests": 1,
+      "Tests.OfflineFloorItemTests": 2,
+      "Tests.ContentSmokeTests": 1,
+      "Tests.SpellDispatchRouteTests": 1,
+      "Tests.SendMapLogTests": 1,
+      "Tests.TableSpecTests": 1
+    },
+    "scope": "Original suite is FAIL. Matching failed test names were independently reproduced on unchanged r24 in a 225-test control. No test rewritten or skipped. Original source retained."
+  },
+  "known_transaction_or_save_corruption_in_repair_scope": "none_observed_in_executed_tests",
+  "world_rollback": "NOT_IMPLEMENTED_BY_CHARACTER_TRANSACTION; failed detached actions fence and abandon session; no full world rollback claim",
+  "actual_user_save": "NOT_AVAILABLE_NOT_RUN; user_save_writes=0",
+  "physical_android": "NOT_RUN",
+  "whole_game_performance": "FAIL_RETAINED",
+  "long_duration_mobile_stability": "NOT_RUN",
+  "claim_limit": "This is not a blanket PASS for the original unit suite, all content, original art restoration or Android runtime."
+}

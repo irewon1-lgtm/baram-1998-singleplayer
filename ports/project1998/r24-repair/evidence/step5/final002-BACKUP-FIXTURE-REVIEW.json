@@ -1,0 +1,10 @@
+{
+  "finding": "Test fixture contamination, not a product code fix",
+  "original_result": "FAIL in final002 backup-restore, kept unchanged",
+  "cause": "The existing KoDeathMenuFixture intentionally creates localedead directly through PlaySession without a LocalProfileStore entry. The tuple validator correctly refuses that later synthetic mixed root.",
+  "control": "final002-backup-baseline002: same unchanged product and public backup/restore passed all five checks on three normal generated accounts",
+  "test_harness_change": "After actual UI purchase/use/save/reopen and normal stop, create an archive using the original OfflineBackupStore.Create before the isolated death test. BackupProbe restores that exact archive to a new root, compares all tables and saved metadata and reopens it. No deleting accounts, weakening the validator or modifying production code.",
+  "product_sources_changed_since_final_freeze": [],
+  "rerun": "items-ui/final002-backup003, then final-runtime/final002-backup-corrected003",
+  "at": "2026-10-21T07:47:11.273883+00:00"
+}

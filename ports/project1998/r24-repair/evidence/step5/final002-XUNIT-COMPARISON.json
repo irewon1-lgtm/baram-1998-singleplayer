@@ -1,0 +1,24 @@
+{
+  "status": "FAIL_66_INHERITED_NO_NEW_FAILURE_NAMES",
+  "final_total": 2065,
+  "final_passed": 1999,
+  "final_failed": 66,
+  "baseline_control_total": 225,
+  "baseline_control_failed": 66,
+  "same_failed_test_names": true,
+  "new_failures": [],
+  "no_longer_failed": [],
+  "message_changes": [],
+  "failed_by_class": {
+    "Tests.NpcCompositionPinTests": 48,
+    "Tests.ChangedPicksSurviveLoginTests": 1,
+    "Tests.StatusFileTests": 10,
+    "Tests.ContentReloadTests": 1,
+    "Tests.OfflineFloorItemTests": 2,
+    "Tests.ContentSmokeTests": 1,
+    "Tests.SpellDispatchRouteTests": 1,
+    "Tests.SendMapLogTests": 1,
+    "Tests.TableSpecTests": 1
+  },
+  "scope": "Original suite is FAIL. Matching failed test names were independently reproduced on unchanged r24 in a 225-test control. No test rewritten or skipped. Original source retained."
+}

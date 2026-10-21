@@ -1,0 +1,117 @@
+"""Package the verified r25 source and executed evidence without saves or signing material."""
+import argparse, datetime, hashlib, html, json, os, zipfile
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+p = argparse.ArgumentParser()
+p.add_argument('--output', type=Path, required=True)
+a = p.parse_args()
+out = a.output.resolve(); out.mkdir(parents=True, exist_ok=True)
+sha = lambda path: hashlib.sha256(path.read_bytes()).hexdigest()
+suite = ROOT / 'evidence/r25/suite/final002'
+qualification = json.loads((suite/'REPAIR-QUALIFICATION.json').read_text())
+package = json.loads((suite/'APK-QUALIFICATION.json').read_text())
+build = json.loads((ROOT/'android/evidence/build-r25-001/BUILD_RECEIPT.json').read_text())
+assert qualification['status'] == 'SCOPED_REPAIR_CHECKS_PASS_WITH_66_INHERITED_UNIT_FAILURES'
+assert package['status'] == 'PASS_SCOPED_UPDATE_PACKAGE_REQUIREMENTS'
+apk = out/'Project1998-G7-V4-r25-update-arm64.apk'
+assert sha(apk) == build['sha256'] == package['artifacts']['update_r25']['sha256']
+
+report_name = 'Project1998-r25-repair-report.html'
+report = '''<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Project1998 r25 보수 결과</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f1f3f6;color:#202831;font:16px/1.65 system-ui,sans-serif}main{max-width:1020px;margin:24px auto;padding:28px;background:white;border-radius:12px}h1{font-size:26px;margin:0}h2{font-size:20px;margin:28px 0 10px}p{margin:10px 0}table{border-collapse:collapse;width:100%;font-size:14px}th,td{border:1px solid #dce1e8;padding:9px 11px;text-align:left;vertical-align:top}th{background:#eef3f9}code{font-size:12px;overflow-wrap:anywhere}.note{background:#edf4ff;border-left:4px solid #2769ae;padding:12px 16px}.muted{color:#566577}a{color:#185fa5}details{margin-top:14px} @media(max-width:650px){main{margin:0;padding:18px;border-radius:0}table{font-size:12px}th,td{padding:6px}h1{font-size:23px}}
+</style><main>
+<h1>Project1998 r25 보수 결과</h1><p class="muted">2026-10-21 · r24 소스에서 계속 작업 · Work 단독 수행</p>
+<p class="note"><b>업데이트 APK 제작 완료.</b> 수리·구매·소모의 중단 및 저장 실패 처리, 장비창 외형 갱신, 이미지 처리와 진단 기록을 보수했습니다. 기존 단위검사 실패 66개와 전체 게임 성능 FAIL은 그대로 남깁니다. 실기기 설치·실행은 NOT_RUN입니다.</p>
+<p><b>설치:</b> 기존 앱을 삭제하거나 데이터를 지우지 말고 r25 APK로 업데이트하세요. 같은 패키지·인증서·저장 경로이며 버전 코드는 27→28입니다. 실제 기기에서 업데이트 설치와 기존 저장 유지까지 실행한 것은 아닙니다.</p>
+<h2>고친 문제 — 0→5단계</h2>
+<table><tr><th>단계</th><th>실제 변경·결과</th><th>판정</th></tr>
+<tr><td>0. 시작점</td><td>r24 APK·소스 해시를 고정하고 최신 정본과 대조. 이후 변경 발견 0개. 고정 버전 도구와 비식별 계정 3개 생성·저장·재접속 준비.</td><td>완료</td></tr>
+<tr><td>1. 거래·저장</td><td>대화 응답 뒤 수리·특수 구매·외형/주머니 변경을 짧은 저장 경계로 보호. 일반 구매·판매에서도 같은 결함 10개를 추가 재현해 보수. 현재 물품을 다시 확인하고 저장 실패 시 캐릭터를 되돌리며 성공 출력을 취소. 지연 처리 실패 시 해당 세션을 중지.</td><td>31/31 시험 통과</td></tr>
+<tr><td>2. 장비창</td><td>필드와 같은 외형 정보를 장비창에 전달하고 염색·수염·스킨 변경 시 갱신. 적용·제거·색 변경·세션 전환 25개 및 실제 무기 교체·저장·재접속·부활 조작 검증.</td><td>범위 내 통과</td></tr>
+<tr><td>3. 처리 비용</td><td>색 변경 시 큰 텍스처를 읽던 경로를 작은 원본 프레임 읽기로 교체. 캐시는 항목 수·용량을 제한해 조금씩 비움. 무한 누적 진단 목록을 고정 크기·동시 읽기 가능한 기록으로 변경.</td><td>아래 실측 참고</td></tr>
+<tr><td>4. 원본 활용</td><td>무기 스킨 24개 중 6개를 보유한 원본 검 애니메이션 5종에 연결. 4방향·걷기·공격을 대조. 의미에 맞춰 빌려 연결한 외형이며 후기 스킨 원본 복구로 세지 않음. 신규 아이템·지역 추가 0개.</td><td>6개 개선 / 18개 기존 대체</td></tr>
+<tr><td>5. 최종본</td><td>동결한 제품 코드로 최종 회귀 실행. 실제 APK의 데이터·DLL·리소스·서명·정렬·패키지·저장 경로 확인. 수정 소스와 원시 시험 기록 포함.</td><td>APK 제작·패키지 검사 통과<br>실기기 NOT_RUN</td></tr></table>
+<p>F01~F05는 연결 누락 또는 재현한 오류를 보수했습니다. F06의 과도한 수량 해석과 F07의 재현 환경은 시험·보고 방식을 고쳤습니다. F08의 원작 충실도는 일부만 개선했습니다. 기존 Matt Pocock TDD와 단계별 검증 방식으로 실패 재현→최소 수정→관련 재검사→최종 회귀 순서를 유지했습니다.</p>
+<h2>실제 시험</h2>
+<table><tr><th>시험 단위</th><th>결과</th><th>범위·해석</th></tr>
+<tr><td>거래·중단·저장 장애</td><td>31/31 통과</td><td>수리·특수 사용 등 21개 + 일반 구매·판매 10개. 실제 SQLite 쓰기 거절·잠금, 일시정지·종료, 그래프 교체 포함.</td></tr>
+<tr><td>커밋 직전/직후 강제 종료</td><td>2/2 통과</td><td>프로세스를 실제 종료 후 SQLite 스냅샷 확인. 전체 세계의 롤백을 보장하는 시험은 아님.</td></tr>
+<tr><td>정상 시작·기존 기능</td><td>정상 생성→진행→획득→장착→저장→재접속 통과<br>기존 콘솔 회귀 18/18 그룹 통과</td><td>531개 기본 사용 ID 연결도 재검사. 531가지 원작 고유 동작 완성이라는 뜻은 아님.</td></tr>
+<tr><td>실제 Godot 화면</td><td>기존 렌더 검사 7,059개, 외형 25개, 검 스킨 145개 통과</td><td>검 스킨은 6×4방향×6자세=144개 + 유령 1개. 모든 콘텐츠를 사람이 직접 플레이했다는 뜻은 아님.</td></tr>
+<tr><td>실제 UI 입력·저장</td><td>676개 검사 통과</td><td>601개는 이름·번역 문자열 검사. 나머지 75개는 조작·준비조건·화면·저장 확인으로, 75개 독립 시나리오로 세지 않음. 구매·주머니·외형·무기 교체·사망 상태의 부활·재접속을 실행.</td></tr>
+<tr><td>백업·복구</td><td>6/6 통과</td><td>실제 UI 조작 후 정상 종료한 시험 저장을 공개 백업 API로 생성·복구. 전체 테이블·프로필·선택·저장 증표 일치, 재접속, 원본 보존, 기존 폴더 덮어쓰기 거부 확인.</td></tr>
+<tr><td>원래 단위검사 전체</td><td>2,065개 중 1,999 통과 / 66 실패</td><td>실패 66개의 이름과 오류 내용은 변경 없는 r24의 해당 225개 대조 시험에서도 모두 동일. 새 실패 0개. 기존 실패를 통과로 바꾸거나 시험을 건너뛰지 않음.</td></tr></table>
+<p><b>최종 묶음의 실패 기록도 보존:</b> 원래 단위검사 66개와 첫 백업 시험의 거절 기록은 그대로 있습니다. 백업 거절 원인은 별도 사망 시험이 의도적으로 넣은 프로필 없는 계정이었습니다. 제품 코드는 바꾸지 않고 실제 UI 저장을 사망 시험 전에 공개 API로 백업하도록 시험 준비를 수정한 뒤 UI·백업 검사를 다시 통과했습니다.</p>
+<p><b>성능 실측:</b> 동일한 72개 첫 외형 표시에서 픽셀 72/72 일치. 표시 시간 p95 <b>69.36→10.77ms</b>, 큰 텍스처 읽기 <b>80→0회</b>. PC 소프트웨어 렌더링 조건이며 휴대폰 FPS 결과가 아닙니다. 관리 메모리 할당량 감소는 입증하지 못했습니다. 원본에서 잘라 저장한 30,736개 프레임은 원본 픽셀과 모두 같으며, 이를 새 콘텐츠 복구 개수로 세지 않습니다.</p>
+<h2>남은 문제 — 완료로 쓰지 않은 항목</h2>
+<table><tr><th>대상</th><th>완료·미완료 수량과 이유</th></tr>
+<tr><td>무기 스킨 24개</td><td>6개는 검 계열에 원본 애니메이션을 빌려 연결. 18개는 기존 아이콘 대체 유지. 6개도 창·활·부채를 들면 호환 대체 유지. 후기 스킨 자체의 동일 원본 복구는 0개.</td></tr>
+<tr><td>그림·소리 286개</td><td>기존 다른 버전 원본 85 / 재구성 110 / 호환 대체 91 유지. 이번 동일 원본 신규 복구 0개. 해당 286개 중 정확한 원본을 못 찾은 201개는 남아 있음. 검 스킨 연결 6개와 합산하지 않음.</td></tr>
+<tr><td>기본 동작 531개</td><td>연결 유지·재검사. 탈것 260개는 공통 말, 화살통 9개는 속성별 추가 효과 없음. 얼굴 23개·염색 67개·수염 104개도 고유 원본 동일 복구로 세지 않음.</td></tr>
+<tr><td>기존 단위검사 66개</td><td>NPC 구성 기대값 48, 환경의 프로세스 메모리 조회 10, 알 수 없는 바닥 물품 예약자 처리 기대값 2, 기타 이전 메뉴·기술·표 수·출력 기대값 6. 이번 보수와 무관한 기존 실패로 남김. 전체 테스트 PASS 아님.</td></tr>
+<tr><td>기존 세계·진행 완성도</td><td>재구성 지역·미니게임·주거·영어 후보·EXP150은 이번에 전면 해결하지 않음. 전체 대상 수를 확정하지 않았으므로 100% 구현·한글화 완료라고 보고하지 않음.</td></tr>
+<tr><td>전체 성능</td><td>기존 FAIL 유지. 일부 표시 경로의 개선만 증명했으며 전체 플레이 FPS 합격 근거는 없음.</td></tr></table>
+<h2>미실행</h2><p><b>NOT_RUN:</b> Galaxy Tab S10 FE 등 물리 Android 기기의 업데이트 설치, 실제 사용자 저장으로 이어하기·백업 복구, 터치 반응·소리 청취·발열·전체 FPS·장시간 안정성. 사용자 저장을 수정한 횟수는 0회입니다. 수리 등의 저장 실패 보수는 캐릭터와 지원 타이머 범위이며 전체 세계 롤백을 새로 구현한 것은 아닙니다.</p>
+<h2>제출 파일·추적</h2><p>APK: <b>Project1998-G7-V4-r25-update-arm64.apk</b> · 98,782,075 bytes (약 98.8MB) · arm64</p>
+<p>패키지 <code>com.irewon.project1998.g1bv4</code> · 버전 <code>0.1.0-g7-v4-r25</code> · 저장 경로 <code>project1998_g1b_v4</code><br>인증서 SHA-256 <code>ecea13778e2466b3e568f45bfe1facb6fd708bdd0ed3f6ae2a4c305da2ebb030</code><br>APK SHA-256 <code>fb0f67905cdfc9bfcc85f4d6f2c4d94ef7e4374a7ce429f7f17b417f05ad120c</code></p>
+<p>수정 소스·재현 도구·선택한 실제 시험 로그는 <b>Project1998-r25-source-and-tests.zip</b>에 포함했습니다. 서명 개인키·사용자 저장·설치 도구 전체는 포함하지 않습니다. 기존 게임 데이터 8,056개와 내장 데이터 ZIP 해시는 유지했습니다. 내보내기 입력 9,119개와 최종 소스 일치, APK v2/v3 서명·16K 정렬 검사를 통과했습니다.</p>
+<p>정본 작업: <a href="https://github.com/irewon1-lgtm/baram-1998-singleplayer/tree/work/project1998-r24-repair-20261021/ports/project1998/r24-repair">work/project1998-r24-repair-20261021</a>. 기존 외부 게임 프로젝트는 보존하고 이번 이식 소스의 텍스트 변경·검증 근거를 별도 경로에 커밋했습니다. main 병합·공개 앱 배포·유료 자원 사용은 하지 않았습니다.</p>
+<details><summary>원시 증거 위치</summary><p><code>verification/r25/STATE.json</code> / <code>evidence/r25/suite/final002/REPAIR-QUALIFICATION.json</code> / <code>APK-QUALIFICATION.json</code> / <code>XUNIT-COMPARISON.json</code> / <code>BACKUP-FIXTURE-REVIEW.json</code> / <code>android/evidence/build-r25-001/BUILD_RECEIPT.json</code>. 최종 첫 묶음의 FAIL 기록은 삭제하지 않았습니다. Godot 내보내기 종료 시 EditorSettings 관련 오류 로그 1건은 남아 있으나 내보내기 종료 0 및 후속 APK 검사를 통과했습니다. 기기 실행 결과로 대체하지 않습니다.</p></details>
+</main></html>'''
+report_path = out/report_name
+report_path.write_text(report, encoding='utf-8')
+report_copy = ROOT/'r25-report'/report_name
+report_copy.parent.mkdir(exist_ok=True); report_copy.write_bytes(report_path.read_bytes())
+
+excluded_dirs = {'.git','.godot','obj','bin','__pycache__','evidence','state','profiles'}
+excluded_suffixes = {'.keystore','.jks','.pfx','.p12','.pem','.key','.db','.db-wal','.db-shm','.sqlite','.sqlite3','.idsig'}
+files = {}
+def safe(path):
+    return path.suffix.lower() not in excluded_suffixes and not path.name.endswith(('.db-wal','.db-shm','.sqlite3-wal','.sqlite3-shm')) and path.name != 'signing-password'
+for folder in ['candidate','Host','android','reference','verification','r23-release-report','r24-release-report','r25-report']:
+    base=ROOT/folder
+    for parent,dirs,names in os.walk(base):
+        dirs[:] = sorted(d for d in dirs if d not in excluded_dirs and not d.startswith('private-'))
+        for n in sorted(names):
+            f=Path(parent)/n
+            if f.is_file() and not f.is_symlink() and safe(f): files[f.relative_to(ROOT).as_posix()]=f
+
+evidence_bases=[ROOT/'evidence/r25', ROOT/'evidence/r24/console-final002',ROOT/'evidence/r24/assets-audit',ROOT/'android/evidence/build-r25-001']
+legacy=json.loads((ROOT/'evidence/r24/console-final002/RESULT.json').read_text())
+evidence_bases += [(ROOT/row['result']).parent for row in legacy['results']]
+map_screens=sorted((ROOT/'evidence/r25/visual/final002-all').glob('*.png'))
+# Keep all check records and pixel hashes, with 20 distributed map screenshots.
+# Repeated full screenshot sets are unnecessary in a source deliverable.
+selected_map_screens={map_screens[round(i*(len(map_screens)-1)/19)].name for i in range(20)} if map_screens else set()
+for base in evidence_bases:
+    for parent,dirs,names in os.walk(base):
+        dirs[:] = sorted(d for d in dirs if d not in {'.godot','obj','bin','__pycache__','project','test-only-project','state','profiles','restored','closed-ui-source','data'} and not d.startswith('content-'))
+        for n in sorted(names):
+            f=Path(parent)/n
+            if not f.is_file() or f.is_symlink() or not safe(f) or f.suffix not in {'.json','.log','.txt','.md','.csv','.png','.trx'}: continue
+            if 'runtime' in f.relative_to(base).parts and n!='ko-checks.json' and f.suffix!='.png': continue
+            if f.suffix=='.png':
+                parts=f.relative_to(ROOT).parts
+                if 'visual' in parts:
+                    phase=parts[parts.index('visual')+1]
+                    if phase.endswith('-all') and (phase!='final002-all' or n not in selected_map_screens): continue
+                if 'items-ui' in parts and parts[parts.index('items-ui')+1]!='final002-backup003': continue
+            files[f.relative_to(ROOT).as_posix()]=f
+
+prefix='p1998-r25-restore/'
+archive=out/'Project1998-r25-source-and-tests.zip'
+assert not archive.exists(), 'Existing source archive is never overwritten'
+manifest={'schema':'P1998_R25_DELIVERY_1','baseline_source_sha256':'07a0129381b484ec8c34743716efc8ce7f9473d47e2c786845c00c829f9e43e4','build_id':build['build_id'],'apk_sha256':build['sha256'],'keys_and_saves_included':False,'evidence_note':'All selected raw check records/hashes retained; 20 distributed final map screenshots, focused before/after appearance and corrected UI screenshots included. Duplicate full map screenshot sets omitted from the source archive.','files':{n:{'bytes':f.stat().st_size,'sha256':sha(f)}for n,f in sorted(files.items())}}
+with zipfile.ZipFile(archive,'x',zipfile.ZIP_DEFLATED,compresslevel=6)as z:
+    for n,f in sorted(files.items()): z.write(f,prefix+n)
+    z.writestr(prefix+'DELIVERY-MANIFEST.json',json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
+with zipfile.ZipFile(archive)as z:
+    assert z.testzip() is None
+    for n,row in manifest['files'].items():
+        assert hashlib.sha256(z.read(prefix+n)).hexdigest()==row['sha256'],n
+    assert all(not name.endswith(('.db','.sqlite3','.keystore','.jks','.pfx','.p12','.pem','.key','.idsig'))and 'signing-password' not in name for name in z.namelist())
+receipt={'status':'PASS_VERIFIED_DELIVERY_BYTES','files':[{'path':str(f),'bytes':f.stat().st_size,'sha256':sha(f)}for f in [apk,archive,report_path]],'source_entries':len(files),'source_manifest_sha256':hashlib.sha256((json.dumps(manifest,ensure_ascii=False,indent=2)+'\n').encode()).hexdigest(),'physical_android':'NOT_RUN','whole_game_performance':'FAIL_RETAINED'}
+(out/'DELIVERY-RECEIPT.json').write_text(json.dumps(receipt,indent=2)+'\n')
+print(json.dumps(receipt,indent=2))

@@ -22,6 +22,9 @@ static class BackupProbe
     {
         string source=a[3],outDir=a[1];Directory.CreateDirectory(outDir);var checks=new List<object>();bool failed=false;
         void Check(string name,bool ok){checks.Add(new{name,status=ok?"PASS":"FAIL"});failed|=!ok;}
+        string? sourceArchive=File.Exists(source)?source:null;
+        string? archiveBefore=sourceArchive is null?null:Hash(sourceArchive);
+        if(sourceArchive is not null){source=Path.Combine(outDir,"closed-ui-source");OfflineBackupStore.RestoreNew(sourceArchive,source);}
         string before=Tables(source),meta=JsonSerializer.Serialize(Metadata(source));
         string archive=Path.Combine(outDir,"backup.zip"),restored=Path.Combine(outDir,"restored");
         OfflineBackupStore.Create(source,archive);OfflineBackupStore.RestoreNew(archive,restored);
@@ -32,6 +35,7 @@ static class BackupProbe
         var play=await PlaySession.OpenAsync(new(Path.Combine(restored,"state"),a[0],profile.Id,profile.Password,profile.Name,false,false));
         Check("restored_actual_play_session_opens",play.Ready&&!play.Faulted);await play.StopAsync();
         Check("closed_source_tables_and_profiles_unchanged",Tables(source)==before&&JsonSerializer.Serialize(Metadata(source))==meta);
-        File.WriteAllText(a[2],JsonSerializer.Serialize(new{status=failed?"FAIL":"PASS",checks,physical_android="NOT_RUN",scope="public backup/restore/reopen on new synthetic test root only"},new JsonSerializerOptions{WriteIndented=true}));return failed?1:0;
+        if(sourceArchive is not null)Check("source_ui_backup_archive_bytes_preserved",Hash(sourceArchive)==archiveBefore);
+        File.WriteAllText(a[2],JsonSerializer.Serialize(new{status=failed?"FAIL":"PASS",checks,physical_android="NOT_RUN",scope="public backup/restore/reopen on new synthetic test root only",sourceArchiveSha256=archiveBefore},new JsonSerializerOptions{WriteIndented=true}));return failed?1:0;
     }
 }

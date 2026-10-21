@@ -28,7 +28,7 @@ for mode in ['all','r25appearance','r25cache','r25skins','r25performance']:
 run('actual-items-ui',['python3',ROOT/'verification/r25/run_items_ui.py',a.attempt],'ACTUAL_GODOT_UI_INPUT_SAVE',ROOT/'evidence/r25/items-ui'/a.attempt/'RECEIPT.json',{'P1998_UI_FIXTURE':str(fixture)})
 ui=ROOT/'evidence/r25/items-ui'/a.attempt/'runtime'
 if(ui/'ko-checks.json').exists()and json.loads((ui/'ko-checks.json').read_text()).get('status','').startswith('PASS'):
- console('backup-restore','BackupProbe.cs',[str(ui)])
+ console('backup-restore','BackupProbe.cs',[str(ui/'r25-before-death-ui.zip')])
 else:rows.append(dict(name='backup-restore',category='ACTUAL_STORAGE',status='BLOCKED',reason='Actual UI save fixture did not finish; source preserved.'))
 report=dict(status='PASS_SCOPED_FINAL_REGRESSION'if all(x['status']=='PASS'for x in rows)else'FAIL_OR_BLOCKED',results=rows,physical_android='NOT_RUN',whole_game_performance='FAIL_RETAINED')
 (out/'RESULT.json').write_text(json.dumps(report,indent=2));raise SystemExit(0 if report['status'].startswith('PASS')else 1)

@@ -1,0 +1,1165 @@
+{
+  "status": "PASS_SCOPED_PUBLIC_UI",
+  "checks": [
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16001_0_0_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "21e08ef8e52215d232306e2ced905fba2e61a044d09f7d14bd9b01d1f16421fc",
+        "original": "21e08ef8e52215d232306e2ced905fba2e61a044d09f7d14bd9b01d1f16421fc"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16001_0_0_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "846a2e4eaacab9b5c5a11bdbe2b795e960c1ac804d22967d6d98c50bd23035b9",
+        "original": "846a2e4eaacab9b5c5a11bdbe2b795e960c1ac804d22967d6d98c50bd23035b9"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16001_0_0_2",
+      "status": "PASS",
+      "observed": {
+        "actual": "21e08ef8e52215d232306e2ced905fba2e61a044d09f7d14bd9b01d1f16421fc",
+        "original": "21e08ef8e52215d232306e2ced905fba2e61a044d09f7d14bd9b01d1f16421fc"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16001_0_0_3",
+      "status": "PASS",
+      "observed": {
+        "actual": "00bf635728a48891f38b6b8a016716fdc930130fe790d469e182a935efb6233a",
+        "original": "00bf635728a48891f38b6b8a016716fdc930130fe790d469e182a935efb6233a"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16001_0_1_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "262f6e129896c73a4fad927032e7a39cf00392ee93bc5672abcb95257259614b",
+        "original": "262f6e129896c73a4fad927032e7a39cf00392ee93bc5672abcb95257259614b"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16001_0_1_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "8913efb4127acd3db2c59f1eefd4c03c742fc69782ef798d048e8c90f131fd08",
+        "original": "8913efb4127acd3db2c59f1eefd4c03c742fc69782ef798d048e8c90f131fd08"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16001_1_0_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "1c6a5b81081466c75cd8fffc1db8e362d9a4ec2df8c3cf55056c834bbea7633e",
+        "original": "1c6a5b81081466c75cd8fffc1db8e362d9a4ec2df8c3cf55056c834bbea7633e"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16001_1_0_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "a9df6286d844423899a0ba4515ce1c7ba7316b70bea27636d871d692c6044c7e",
+        "original": "a9df6286d844423899a0ba4515ce1c7ba7316b70bea27636d871d692c6044c7e"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16001_1_0_2",
+      "status": "PASS",
+      "observed": {
+        "actual": "1c6a5b81081466c75cd8fffc1db8e362d9a4ec2df8c3cf55056c834bbea7633e",
+        "original": "1c6a5b81081466c75cd8fffc1db8e362d9a4ec2df8c3cf55056c834bbea7633e"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16001_1_0_3",
+      "status": "PASS",
+      "observed": {
+        "actual": "5179b0048707c11438a13d16c06f935a008bf3760b69a733928944df9f405967",
+        "original": "5179b0048707c11438a13d16c06f935a008bf3760b69a733928944df9f405967"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16001_1_1_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "a4389e1e106aa1e397c0f18d48257318606c27e437134bbeceef3247ea4688ab",
+        "original": "a4389e1e106aa1e397c0f18d48257318606c27e437134bbeceef3247ea4688ab"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16001_1_1_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "9b34d7fc61ca406cc8576adfd884416a7f77d8a7688847f736b690c577118e59",
+        "original": "9b34d7fc61ca406cc8576adfd884416a7f77d8a7688847f736b690c577118e59"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16001_2_0_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "b160ab95da05c8ea75b85ae9eff0c26dce6bed9f35cc2596bd2a2e789025215a",
+        "original": "b160ab95da05c8ea75b85ae9eff0c26dce6bed9f35cc2596bd2a2e789025215a"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16001_2_0_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "98aea82433cc19f42818428332b08d3757ef7f6d842a893ca36af3bf1a583461",
+        "original": "98aea82433cc19f42818428332b08d3757ef7f6d842a893ca36af3bf1a583461"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16001_2_0_2",
+      "status": "PASS",
+      "observed": {
+        "actual": "b160ab95da05c8ea75b85ae9eff0c26dce6bed9f35cc2596bd2a2e789025215a",
+        "original": "b160ab95da05c8ea75b85ae9eff0c26dce6bed9f35cc2596bd2a2e789025215a"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16001_2_0_3",
+      "status": "PASS",
+      "observed": {
+        "actual": "f53f2b7686ddce9b8388db8f9719e3aac62127ede583a300b7c76de2117ff487",
+        "original": "f53f2b7686ddce9b8388db8f9719e3aac62127ede583a300b7c76de2117ff487"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16001_2_1_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "4877aa905a878990f636bbbd352565f7940c9e4e46ed6e428ecbfaaeca6bcde0",
+        "original": "4877aa905a878990f636bbbd352565f7940c9e4e46ed6e428ecbfaaeca6bcde0"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16001_2_1_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "ba12f5592c820199c761331f56be99da6d2e1a16d3daa35d75cd2039e8de720c",
+        "original": "ba12f5592c820199c761331f56be99da6d2e1a16d3daa35d75cd2039e8de720c"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16001_3_0_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "4835dbaf0c6e92a690e5057dc3be393dc65ef9e2b376f8671403509dadfff232",
+        "original": "4835dbaf0c6e92a690e5057dc3be393dc65ef9e2b376f8671403509dadfff232"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16001_3_0_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "354c622a1cc00c6cca94602eae590b61267f7c30dc8a6c49ba485ef07ad69fdb",
+        "original": "354c622a1cc00c6cca94602eae590b61267f7c30dc8a6c49ba485ef07ad69fdb"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16001_3_0_2",
+      "status": "PASS",
+      "observed": {
+        "actual": "4835dbaf0c6e92a690e5057dc3be393dc65ef9e2b376f8671403509dadfff232",
+        "original": "4835dbaf0c6e92a690e5057dc3be393dc65ef9e2b376f8671403509dadfff232"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16001_3_0_3",
+      "status": "PASS",
+      "observed": {
+        "actual": "32250e86fefa27e896fd176e2d49f6c2438d2ec37d8b502e4a2c0f1f697fd8b1",
+        "original": "32250e86fefa27e896fd176e2d49f6c2438d2ec37d8b502e4a2c0f1f697fd8b1"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16001_3_1_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "aae15b785415737ba947621628a4f785b985fb337c5e8b7b15aba0c12cd47132",
+        "original": "aae15b785415737ba947621628a4f785b985fb337c5e8b7b15aba0c12cd47132"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16001_3_1_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "6095fe0af660e0e8de5f5c75898c0d3e16de117c6a293cfd595e967e771ced12",
+        "original": "6095fe0af660e0e8de5f5c75898c0d3e16de117c6a293cfd595e967e771ced12"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16002_0_0_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "21e08ef8e52215d232306e2ced905fba2e61a044d09f7d14bd9b01d1f16421fc",
+        "original": "21e08ef8e52215d232306e2ced905fba2e61a044d09f7d14bd9b01d1f16421fc"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16002_0_0_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "846a2e4eaacab9b5c5a11bdbe2b795e960c1ac804d22967d6d98c50bd23035b9",
+        "original": "846a2e4eaacab9b5c5a11bdbe2b795e960c1ac804d22967d6d98c50bd23035b9"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16002_0_0_2",
+      "status": "PASS",
+      "observed": {
+        "actual": "21e08ef8e52215d232306e2ced905fba2e61a044d09f7d14bd9b01d1f16421fc",
+        "original": "21e08ef8e52215d232306e2ced905fba2e61a044d09f7d14bd9b01d1f16421fc"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16002_0_0_3",
+      "status": "PASS",
+      "observed": {
+        "actual": "00bf635728a48891f38b6b8a016716fdc930130fe790d469e182a935efb6233a",
+        "original": "00bf635728a48891f38b6b8a016716fdc930130fe790d469e182a935efb6233a"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16002_0_1_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "262f6e129896c73a4fad927032e7a39cf00392ee93bc5672abcb95257259614b",
+        "original": "262f6e129896c73a4fad927032e7a39cf00392ee93bc5672abcb95257259614b"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16002_0_1_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "8913efb4127acd3db2c59f1eefd4c03c742fc69782ef798d048e8c90f131fd08",
+        "original": "8913efb4127acd3db2c59f1eefd4c03c742fc69782ef798d048e8c90f131fd08"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16002_1_0_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "1c6a5b81081466c75cd8fffc1db8e362d9a4ec2df8c3cf55056c834bbea7633e",
+        "original": "1c6a5b81081466c75cd8fffc1db8e362d9a4ec2df8c3cf55056c834bbea7633e"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16002_1_0_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "a9df6286d844423899a0ba4515ce1c7ba7316b70bea27636d871d692c6044c7e",
+        "original": "a9df6286d844423899a0ba4515ce1c7ba7316b70bea27636d871d692c6044c7e"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16002_1_0_2",
+      "status": "PASS",
+      "observed": {
+        "actual": "1c6a5b81081466c75cd8fffc1db8e362d9a4ec2df8c3cf55056c834bbea7633e",
+        "original": "1c6a5b81081466c75cd8fffc1db8e362d9a4ec2df8c3cf55056c834bbea7633e"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16002_1_0_3",
+      "status": "PASS",
+      "observed": {
+        "actual": "5179b0048707c11438a13d16c06f935a008bf3760b69a733928944df9f405967",
+        "original": "5179b0048707c11438a13d16c06f935a008bf3760b69a733928944df9f405967"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16002_1_1_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "a4389e1e106aa1e397c0f18d48257318606c27e437134bbeceef3247ea4688ab",
+        "original": "a4389e1e106aa1e397c0f18d48257318606c27e437134bbeceef3247ea4688ab"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16002_1_1_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "9b34d7fc61ca406cc8576adfd884416a7f77d8a7688847f736b690c577118e59",
+        "original": "9b34d7fc61ca406cc8576adfd884416a7f77d8a7688847f736b690c577118e59"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16002_2_0_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "b160ab95da05c8ea75b85ae9eff0c26dce6bed9f35cc2596bd2a2e789025215a",
+        "original": "b160ab95da05c8ea75b85ae9eff0c26dce6bed9f35cc2596bd2a2e789025215a"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16002_2_0_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "98aea82433cc19f42818428332b08d3757ef7f6d842a893ca36af3bf1a583461",
+        "original": "98aea82433cc19f42818428332b08d3757ef7f6d842a893ca36af3bf1a583461"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16002_2_0_2",
+      "status": "PASS",
+      "observed": {
+        "actual": "b160ab95da05c8ea75b85ae9eff0c26dce6bed9f35cc2596bd2a2e789025215a",
+        "original": "b160ab95da05c8ea75b85ae9eff0c26dce6bed9f35cc2596bd2a2e789025215a"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16002_2_0_3",
+      "status": "PASS",
+      "observed": {
+        "actual": "f53f2b7686ddce9b8388db8f9719e3aac62127ede583a300b7c76de2117ff487",
+        "original": "f53f2b7686ddce9b8388db8f9719e3aac62127ede583a300b7c76de2117ff487"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16002_2_1_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "4877aa905a878990f636bbbd352565f7940c9e4e46ed6e428ecbfaaeca6bcde0",
+        "original": "4877aa905a878990f636bbbd352565f7940c9e4e46ed6e428ecbfaaeca6bcde0"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16002_2_1_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "ba12f5592c820199c761331f56be99da6d2e1a16d3daa35d75cd2039e8de720c",
+        "original": "ba12f5592c820199c761331f56be99da6d2e1a16d3daa35d75cd2039e8de720c"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16002_3_0_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "4835dbaf0c6e92a690e5057dc3be393dc65ef9e2b376f8671403509dadfff232",
+        "original": "4835dbaf0c6e92a690e5057dc3be393dc65ef9e2b376f8671403509dadfff232"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16002_3_0_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "354c622a1cc00c6cca94602eae590b61267f7c30dc8a6c49ba485ef07ad69fdb",
+        "original": "354c622a1cc00c6cca94602eae590b61267f7c30dc8a6c49ba485ef07ad69fdb"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16002_3_0_2",
+      "status": "PASS",
+      "observed": {
+        "actual": "4835dbaf0c6e92a690e5057dc3be393dc65ef9e2b376f8671403509dadfff232",
+        "original": "4835dbaf0c6e92a690e5057dc3be393dc65ef9e2b376f8671403509dadfff232"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16002_3_0_3",
+      "status": "PASS",
+      "observed": {
+        "actual": "32250e86fefa27e896fd176e2d49f6c2438d2ec37d8b502e4a2c0f1f697fd8b1",
+        "original": "32250e86fefa27e896fd176e2d49f6c2438d2ec37d8b502e4a2c0f1f697fd8b1"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16002_3_1_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "aae15b785415737ba947621628a4f785b985fb337c5e8b7b15aba0c12cd47132",
+        "original": "aae15b785415737ba947621628a4f785b985fb337c5e8b7b15aba0c12cd47132"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16002_3_1_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "6095fe0af660e0e8de5f5c75898c0d3e16de117c6a293cfd595e967e771ced12",
+        "original": "6095fe0af660e0e8de5f5c75898c0d3e16de117c6a293cfd595e967e771ced12"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16003_0_0_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "3805f8eea7766733712fff1d882a242e0a0ceed47d51adf5d8c14e5d1202856f",
+        "original": "3805f8eea7766733712fff1d882a242e0a0ceed47d51adf5d8c14e5d1202856f"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16003_0_0_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "4688bb43e3ef6cf2145b00d4a817c666aba415325e696fae15d43d7de26b34ad",
+        "original": "4688bb43e3ef6cf2145b00d4a817c666aba415325e696fae15d43d7de26b34ad"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16003_0_0_2",
+      "status": "PASS",
+      "observed": {
+        "actual": "3805f8eea7766733712fff1d882a242e0a0ceed47d51adf5d8c14e5d1202856f",
+        "original": "3805f8eea7766733712fff1d882a242e0a0ceed47d51adf5d8c14e5d1202856f"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16003_0_0_3",
+      "status": "PASS",
+      "observed": {
+        "actual": "ae230db24748532fdb09f5b6208b24a2557a2b0f1ad304596e8b7acd9e4527ab",
+        "original": "ae230db24748532fdb09f5b6208b24a2557a2b0f1ad304596e8b7acd9e4527ab"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16003_0_1_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "1138a40d372a5b0a75fae12b3caef4af0f9d69baaf41bbdad24aa334387ce61a",
+        "original": "1138a40d372a5b0a75fae12b3caef4af0f9d69baaf41bbdad24aa334387ce61a"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16003_0_1_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "35909150ce9e629bed992ad5b13237cbd054261bbd567867be73b4dd6a381ef5",
+        "original": "35909150ce9e629bed992ad5b13237cbd054261bbd567867be73b4dd6a381ef5"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16003_1_0_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "b16c4a68066806e0e90308e153cf6743f636fec56e3bddc100320bcafb3ed872",
+        "original": "b16c4a68066806e0e90308e153cf6743f636fec56e3bddc100320bcafb3ed872"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16003_1_0_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "ee0f101bd460a95f4d954e71851bad3ad69a1951e62696bac1ca6aac17233f77",
+        "original": "ee0f101bd460a95f4d954e71851bad3ad69a1951e62696bac1ca6aac17233f77"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16003_1_0_2",
+      "status": "PASS",
+      "observed": {
+        "actual": "b16c4a68066806e0e90308e153cf6743f636fec56e3bddc100320bcafb3ed872",
+        "original": "b16c4a68066806e0e90308e153cf6743f636fec56e3bddc100320bcafb3ed872"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16003_1_0_3",
+      "status": "PASS",
+      "observed": {
+        "actual": "f45356e0b82e4dfc0220ebea14283e4d6ab003dae1224d547368127975d3ab87",
+        "original": "f45356e0b82e4dfc0220ebea14283e4d6ab003dae1224d547368127975d3ab87"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16003_1_1_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "6da5d2d6c846130805febff6f81862bcf06b110e1d9adb058c3b261e11894ae2",
+        "original": "6da5d2d6c846130805febff6f81862bcf06b110e1d9adb058c3b261e11894ae2"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16003_1_1_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "bacd8d632b26059e22f066aec4ff31b0fbac0d4f854ed4db5a74f422f11da37b",
+        "original": "bacd8d632b26059e22f066aec4ff31b0fbac0d4f854ed4db5a74f422f11da37b"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16003_2_0_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "234b8f2fa03c1fa32cc6f9a070552a76c149f2b49809a7d779550ab3f57dfe3a",
+        "original": "234b8f2fa03c1fa32cc6f9a070552a76c149f2b49809a7d779550ab3f57dfe3a"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16003_2_0_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "ee2faeae490746b1a71683d3c0973105fa4a5d08867795b6674863845635fef4",
+        "original": "ee2faeae490746b1a71683d3c0973105fa4a5d08867795b6674863845635fef4"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16003_2_0_2",
+      "status": "PASS",
+      "observed": {
+        "actual": "234b8f2fa03c1fa32cc6f9a070552a76c149f2b49809a7d779550ab3f57dfe3a",
+        "original": "234b8f2fa03c1fa32cc6f9a070552a76c149f2b49809a7d779550ab3f57dfe3a"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16003_2_0_3",
+      "status": "PASS",
+      "observed": {
+        "actual": "9d3989cf1936121dc16992caf24bb7cb33f139856c4f6774554bb5d3aa60be28",
+        "original": "9d3989cf1936121dc16992caf24bb7cb33f139856c4f6774554bb5d3aa60be28"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16003_2_1_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "5d44142eb4fa0170e2e32e6c61f182934e28c1ce9be5e3b68da1526d9d5a5ee1",
+        "original": "5d44142eb4fa0170e2e32e6c61f182934e28c1ce9be5e3b68da1526d9d5a5ee1"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16003_2_1_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "d74d567430ffedb94cd9cae02f50a2226c04b01cc8110037e1fc722761b5a571",
+        "original": "d74d567430ffedb94cd9cae02f50a2226c04b01cc8110037e1fc722761b5a571"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16003_3_0_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "ac8c1d6ba317b5004774ad362645c467966accaad7a3df97c2ccf7e749b39630",
+        "original": "ac8c1d6ba317b5004774ad362645c467966accaad7a3df97c2ccf7e749b39630"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16003_3_0_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "bbb9d42ac3d8953f31399d3fb3c4927f2fa61dc608e8d12dbdbd6c0430bc4eac",
+        "original": "bbb9d42ac3d8953f31399d3fb3c4927f2fa61dc608e8d12dbdbd6c0430bc4eac"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16003_3_0_2",
+      "status": "PASS",
+      "observed": {
+        "actual": "ac8c1d6ba317b5004774ad362645c467966accaad7a3df97c2ccf7e749b39630",
+        "original": "ac8c1d6ba317b5004774ad362645c467966accaad7a3df97c2ccf7e749b39630"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16003_3_0_3",
+      "status": "PASS",
+      "observed": {
+        "actual": "e98297cd000f59e14242d2fe937438245ec3ed33318f9ae326b8438255d17363",
+        "original": "e98297cd000f59e14242d2fe937438245ec3ed33318f9ae326b8438255d17363"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16003_3_1_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "1f414f9d5821fe8ebc937b7033a0c8eec05e3950f0d05d6cedb2f3c45fc20af5",
+        "original": "1f414f9d5821fe8ebc937b7033a0c8eec05e3950f0d05d6cedb2f3c45fc20af5"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16003_3_1_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "bb560962808657a7136a17673d42439d8ffff67af8a147c1854611c2f211bbd4",
+        "original": "bb560962808657a7136a17673d42439d8ffff67af8a147c1854611c2f211bbd4"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16004_0_0_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "28400367425dfca228e4896cd64b4993a5846651c0e88fdf634fc2cb12a233df",
+        "original": "28400367425dfca228e4896cd64b4993a5846651c0e88fdf634fc2cb12a233df"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16004_0_0_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "f6a4f31a3a97e7f29984a8ea2a53512b621722b0a6d6f3efa00db700d084c588",
+        "original": "f6a4f31a3a97e7f29984a8ea2a53512b621722b0a6d6f3efa00db700d084c588"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16004_0_0_2",
+      "status": "PASS",
+      "observed": {
+        "actual": "28400367425dfca228e4896cd64b4993a5846651c0e88fdf634fc2cb12a233df",
+        "original": "28400367425dfca228e4896cd64b4993a5846651c0e88fdf634fc2cb12a233df"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16004_0_0_3",
+      "status": "PASS",
+      "observed": {
+        "actual": "c119f420dc5a2289323ea844b234a5d1db7f354334ff10111b2b32aef799d24a",
+        "original": "c119f420dc5a2289323ea844b234a5d1db7f354334ff10111b2b32aef799d24a"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16004_0_1_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "ce9c716f3994f032c0d51a611057b72989e57269b686abd730498b28ece48211",
+        "original": "ce9c716f3994f032c0d51a611057b72989e57269b686abd730498b28ece48211"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16004_0_1_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "91671f5f35d48dd10d2f5d964d283c0f70698dccc571449ead12226f36bc601f",
+        "original": "91671f5f35d48dd10d2f5d964d283c0f70698dccc571449ead12226f36bc601f"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16004_1_0_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "aebc131591bce5a4b6180cfbb3e03654dd13fd6494184805d0ce81918ed7e7e7",
+        "original": "aebc131591bce5a4b6180cfbb3e03654dd13fd6494184805d0ce81918ed7e7e7"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16004_1_0_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "e998c91de34b896431973cba3387253f41f6308092f12c93142527b6ecc50c86",
+        "original": "e998c91de34b896431973cba3387253f41f6308092f12c93142527b6ecc50c86"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16004_1_0_2",
+      "status": "PASS",
+      "observed": {
+        "actual": "aebc131591bce5a4b6180cfbb3e03654dd13fd6494184805d0ce81918ed7e7e7",
+        "original": "aebc131591bce5a4b6180cfbb3e03654dd13fd6494184805d0ce81918ed7e7e7"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16004_1_0_3",
+      "status": "PASS",
+      "observed": {
+        "actual": "b4237d116619dd767798b8a50df2133efec1f4d82a1ec7a7b65ff14714fcb286",
+        "original": "b4237d116619dd767798b8a50df2133efec1f4d82a1ec7a7b65ff14714fcb286"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16004_1_1_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "e7005b36ab55ffd6ed7032c1fc9a8a24dbdd85abbc1be81920192bb6aa06aa28",
+        "original": "e7005b36ab55ffd6ed7032c1fc9a8a24dbdd85abbc1be81920192bb6aa06aa28"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16004_1_1_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "099a06e8d1eb7ceebfd1f3a0996c7b1fc1ab3b62a9138c3acdc3bf2c29011dc8",
+        "original": "099a06e8d1eb7ceebfd1f3a0996c7b1fc1ab3b62a9138c3acdc3bf2c29011dc8"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16004_2_0_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "1da2759db4a2d1a020d635c8457694634414750898033b5571b3a3d109d2f09c",
+        "original": "1da2759db4a2d1a020d635c8457694634414750898033b5571b3a3d109d2f09c"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16004_2_0_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "a32c7aa11238c02a81e35beda43c0fcbd7b3b26c6a12337b3a492ef4bfb64ad9",
+        "original": "a32c7aa11238c02a81e35beda43c0fcbd7b3b26c6a12337b3a492ef4bfb64ad9"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16004_2_0_2",
+      "status": "PASS",
+      "observed": {
+        "actual": "1da2759db4a2d1a020d635c8457694634414750898033b5571b3a3d109d2f09c",
+        "original": "1da2759db4a2d1a020d635c8457694634414750898033b5571b3a3d109d2f09c"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16004_2_0_3",
+      "status": "PASS",
+      "observed": {
+        "actual": "18460aea58a8f1b95f0836debc5095f497b1600e31ecd6104b39e2b4a13c01be",
+        "original": "18460aea58a8f1b95f0836debc5095f497b1600e31ecd6104b39e2b4a13c01be"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16004_2_1_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "6f52eec6ffe593dba3b5d8b5915885876687e25d8f985e30729fdcc4118f0cae",
+        "original": "6f52eec6ffe593dba3b5d8b5915885876687e25d8f985e30729fdcc4118f0cae"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16004_2_1_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "fee46f37f71ddb30ebd7976c48e7fa7e3efc50d18feaefc45f5a0877d77363d2",
+        "original": "fee46f37f71ddb30ebd7976c48e7fa7e3efc50d18feaefc45f5a0877d77363d2"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16004_3_0_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "e6c1b1a43a96ab44e2b07e2d8bd3a00760241340b4b5cb93799a5a9a030476c9",
+        "original": "e6c1b1a43a96ab44e2b07e2d8bd3a00760241340b4b5cb93799a5a9a030476c9"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16004_3_0_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "c44f93f058dbc314028410e565ea3da3628e0f47f2c21f28e548fe64528e3461",
+        "original": "c44f93f058dbc314028410e565ea3da3628e0f47f2c21f28e548fe64528e3461"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16004_3_0_2",
+      "status": "PASS",
+      "observed": {
+        "actual": "e6c1b1a43a96ab44e2b07e2d8bd3a00760241340b4b5cb93799a5a9a030476c9",
+        "original": "e6c1b1a43a96ab44e2b07e2d8bd3a00760241340b4b5cb93799a5a9a030476c9"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16004_3_0_3",
+      "status": "PASS",
+      "observed": {
+        "actual": "4590b359aee76c1142d16fdda799c63520cce2318dd3ec72c53671b8de638a63",
+        "original": "4590b359aee76c1142d16fdda799c63520cce2318dd3ec72c53671b8de638a63"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16004_3_1_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "4af9094568bff7e5818cb4f55cf60aede15cf63edf2df64132e2f3c732440c30",
+        "original": "4af9094568bff7e5818cb4f55cf60aede15cf63edf2df64132e2f3c732440c30"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16004_3_1_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "71bcf5ffd54175f9821a9a33371af10f04eb341caee0603bf8b75703452b8b5d",
+        "original": "71bcf5ffd54175f9821a9a33371af10f04eb341caee0603bf8b75703452b8b5d"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16005_0_0_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "0a2b5f502e9a8a20dd151998d83550285981ecc49ad89dff9a80a65729628849",
+        "original": "0a2b5f502e9a8a20dd151998d83550285981ecc49ad89dff9a80a65729628849"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16005_0_0_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "748617beb22ae640ee568c50027c624045e3cbf04b601e01106392ca446ad4a7",
+        "original": "748617beb22ae640ee568c50027c624045e3cbf04b601e01106392ca446ad4a7"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16005_0_0_2",
+      "status": "PASS",
+      "observed": {
+        "actual": "0a2b5f502e9a8a20dd151998d83550285981ecc49ad89dff9a80a65729628849",
+        "original": "0a2b5f502e9a8a20dd151998d83550285981ecc49ad89dff9a80a65729628849"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16005_0_0_3",
+      "status": "PASS",
+      "observed": {
+        "actual": "c4b11f1f73576f1544f20950c2db504c12c9e3bd34eab890a2da8098f582d9c8",
+        "original": "c4b11f1f73576f1544f20950c2db504c12c9e3bd34eab890a2da8098f582d9c8"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16005_0_1_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "10ff18ec440f38489542e367e2516c66f8c1f2e9d7f20a305954e040cba9d415",
+        "original": "10ff18ec440f38489542e367e2516c66f8c1f2e9d7f20a305954e040cba9d415"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16005_0_1_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "f258ca47690f56fb31825af327d34081ce31068c78ab8d5b5cffd8b8b7c48ba6",
+        "original": "f258ca47690f56fb31825af327d34081ce31068c78ab8d5b5cffd8b8b7c48ba6"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16005_1_0_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "6f69e1d9378a08fd836ba428a81a058f642e96f0586e29854eb88423a5ce213d",
+        "original": "6f69e1d9378a08fd836ba428a81a058f642e96f0586e29854eb88423a5ce213d"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16005_1_0_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "af78c8e8fbb67f1594adf612e063c19d11b49a2d1d3eb52fcc0947db7918bd08",
+        "original": "af78c8e8fbb67f1594adf612e063c19d11b49a2d1d3eb52fcc0947db7918bd08"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16005_1_0_2",
+      "status": "PASS",
+      "observed": {
+        "actual": "6f69e1d9378a08fd836ba428a81a058f642e96f0586e29854eb88423a5ce213d",
+        "original": "6f69e1d9378a08fd836ba428a81a058f642e96f0586e29854eb88423a5ce213d"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16005_1_0_3",
+      "status": "PASS",
+      "observed": {
+        "actual": "9f474a0e55cbc18d8aea4943007a06bf876157684800f82f6bb7bff3032a9c41",
+        "original": "9f474a0e55cbc18d8aea4943007a06bf876157684800f82f6bb7bff3032a9c41"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16005_1_1_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "35c71d38080fc8eec2cac6650b8d4be1246c4c8798ebae62a3febe487a179a28",
+        "original": "35c71d38080fc8eec2cac6650b8d4be1246c4c8798ebae62a3febe487a179a28"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16005_1_1_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "3c4226a58503fa268eae9d8b7fff546179e5b464b293556e5f20b39978a9ee42",
+        "original": "3c4226a58503fa268eae9d8b7fff546179e5b464b293556e5f20b39978a9ee42"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16005_2_0_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "8b3dd933ef65d1c2d38a1d07bef69dce6fe27d8780bb4c7687daa59e27033cee",
+        "original": "8b3dd933ef65d1c2d38a1d07bef69dce6fe27d8780bb4c7687daa59e27033cee"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16005_2_0_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "c45a3f6927b1f2eb775daf5da3d08489a30126ad1fefe3d5ee44e525c1cc637c",
+        "original": "c45a3f6927b1f2eb775daf5da3d08489a30126ad1fefe3d5ee44e525c1cc637c"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16005_2_0_2",
+      "status": "PASS",
+      "observed": {
+        "actual": "8b3dd933ef65d1c2d38a1d07bef69dce6fe27d8780bb4c7687daa59e27033cee",
+        "original": "8b3dd933ef65d1c2d38a1d07bef69dce6fe27d8780bb4c7687daa59e27033cee"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16005_2_0_3",
+      "status": "PASS",
+      "observed": {
+        "actual": "02ad1851f9f25b8e8ce8831f06b41405fcf6026d55b3275c3117c94720ae44a5",
+        "original": "02ad1851f9f25b8e8ce8831f06b41405fcf6026d55b3275c3117c94720ae44a5"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16005_2_1_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "7394022d5f9f2809f1c9d278a3c31b293c8c390039026259cce21a92d38616bd",
+        "original": "7394022d5f9f2809f1c9d278a3c31b293c8c390039026259cce21a92d38616bd"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16005_2_1_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "de2bc7eca064a648f8af7d6ea089c11b945ed0470ec2000ddec0eeab9d5ba59c",
+        "original": "de2bc7eca064a648f8af7d6ea089c11b945ed0470ec2000ddec0eeab9d5ba59c"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16005_3_0_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "782b0400bd77a939d8e5bbc360af1c3ccbaeabedf628ed0b0030bdce7c62cbc6",
+        "original": "782b0400bd77a939d8e5bbc360af1c3ccbaeabedf628ed0b0030bdce7c62cbc6"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16005_3_0_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "6e5c37ced9733ad3f965185fd138812eb0d27af8d225c94313b7f80969326869",
+        "original": "6e5c37ced9733ad3f965185fd138812eb0d27af8d225c94313b7f80969326869"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16005_3_0_2",
+      "status": "PASS",
+      "observed": {
+        "actual": "782b0400bd77a939d8e5bbc360af1c3ccbaeabedf628ed0b0030bdce7c62cbc6",
+        "original": "782b0400bd77a939d8e5bbc360af1c3ccbaeabedf628ed0b0030bdce7c62cbc6"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16005_3_0_3",
+      "status": "PASS",
+      "observed": {
+        "actual": "f1b80e995457d2645466b6692404ec17a3e8bc29edd79e54c67f3880ee048fff",
+        "original": "f1b80e995457d2645466b6692404ec17a3e8bc29edd79e54c67f3880ee048fff"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16005_3_1_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "199e64fcbd41456464e64dc1bbc65b345a5d3a67c6ed8fa7fda1a24a0a11518c",
+        "original": "199e64fcbd41456464e64dc1bbc65b345a5d3a67c6ed8fa7fda1a24a0a11518c"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16005_3_1_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "a2d8f504e346395fb5e3a77d6833d678076bea6ac8b7eac62f941d8e09a61f53",
+        "original": "a2d8f504e346395fb5e3a77d6833d678076bea6ac8b7eac62f941d8e09a61f53"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16006_0_0_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "4d698d6cf1fd6da32ee2608cdc13c5bae6986071a4974609dacaaf308785fbc6",
+        "original": "4d698d6cf1fd6da32ee2608cdc13c5bae6986071a4974609dacaaf308785fbc6"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16006_0_0_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "5083b8d7dde273e68e2599641e7c853b5ca1cad68c53823bc129f584421004b0",
+        "original": "5083b8d7dde273e68e2599641e7c853b5ca1cad68c53823bc129f584421004b0"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16006_0_0_2",
+      "status": "PASS",
+      "observed": {
+        "actual": "4d698d6cf1fd6da32ee2608cdc13c5bae6986071a4974609dacaaf308785fbc6",
+        "original": "4d698d6cf1fd6da32ee2608cdc13c5bae6986071a4974609dacaaf308785fbc6"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16006_0_0_3",
+      "status": "PASS",
+      "observed": {
+        "actual": "035677560c593aede4a0db90a924d18cc1893ba49f85b5212bd45cd4103f43a7",
+        "original": "035677560c593aede4a0db90a924d18cc1893ba49f85b5212bd45cd4103f43a7"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16006_0_1_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "3447655575f29015e9e574f140e4d0f80dfd8a82e19646b0b655e0aab96f5435",
+        "original": "3447655575f29015e9e574f140e4d0f80dfd8a82e19646b0b655e0aab96f5435"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16006_0_1_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "282e08b60d5c6e79e16edeadeeeecb6f96a64051d8ecd82d1869d8c7818b238a",
+        "original": "282e08b60d5c6e79e16edeadeeeecb6f96a64051d8ecd82d1869d8c7818b238a"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16006_1_0_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "e1722c89b453f3f769ab2f88330a0360b15ecdd69acca3328f650d7dc1f89bfb",
+        "original": "e1722c89b453f3f769ab2f88330a0360b15ecdd69acca3328f650d7dc1f89bfb"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16006_1_0_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "baa6b9f2869f30db290a1a5f18e124285c8a6d8ce70ab935d0212b0ac129c993",
+        "original": "baa6b9f2869f30db290a1a5f18e124285c8a6d8ce70ab935d0212b0ac129c993"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16006_1_0_2",
+      "status": "PASS",
+      "observed": {
+        "actual": "e1722c89b453f3f769ab2f88330a0360b15ecdd69acca3328f650d7dc1f89bfb",
+        "original": "e1722c89b453f3f769ab2f88330a0360b15ecdd69acca3328f650d7dc1f89bfb"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16006_1_0_3",
+      "status": "PASS",
+      "observed": {
+        "actual": "16a671f35684ec65cd1cf95d7d2093b8fcc05bc7dc2243055cbc52bfb63be986",
+        "original": "16a671f35684ec65cd1cf95d7d2093b8fcc05bc7dc2243055cbc52bfb63be986"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16006_1_1_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "4c6022d63b82bd6942b29003cbdee2b278abc1c95264cb0640eb5dff80e56793",
+        "original": "4c6022d63b82bd6942b29003cbdee2b278abc1c95264cb0640eb5dff80e56793"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16006_1_1_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "e659a0be57a43da26a992c4a31a1cc725c84c89ae940df9e23f2679dff50c9b9",
+        "original": "e659a0be57a43da26a992c4a31a1cc725c84c89ae940df9e23f2679dff50c9b9"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16006_2_0_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "6ed6126c7066958eec034d27a63b284eb223de786beb094068681b09805a73ff",
+        "original": "6ed6126c7066958eec034d27a63b284eb223de786beb094068681b09805a73ff"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16006_2_0_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "3341ab91e106ef146d788c224ff2dcba3bce62b084039f805a712ded5bbef5e4",
+        "original": "3341ab91e106ef146d788c224ff2dcba3bce62b084039f805a712ded5bbef5e4"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16006_2_0_2",
+      "status": "PASS",
+      "observed": {
+        "actual": "6ed6126c7066958eec034d27a63b284eb223de786beb094068681b09805a73ff",
+        "original": "6ed6126c7066958eec034d27a63b284eb223de786beb094068681b09805a73ff"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16006_2_0_3",
+      "status": "PASS",
+      "observed": {
+        "actual": "a20eea88063e8472b566d059d34f4750e8f6bee98b82f5857f0411753e6e5690",
+        "original": "a20eea88063e8472b566d059d34f4750e8f6bee98b82f5857f0411753e6e5690"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16006_2_1_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "67ab479c212697c903b03ec517c02c0b7a792882d4aeba5c92afd5531d89fa26",
+        "original": "67ab479c212697c903b03ec517c02c0b7a792882d4aeba5c92afd5531d89fa26"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16006_2_1_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "e0431ec61191fced31643f75fad534dbbcceca4edc69547e23465bcef93d9d1e",
+        "original": "e0431ec61191fced31643f75fad534dbbcceca4edc69547e23465bcef93d9d1e"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16006_3_0_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "85c4aa49c6852155a6a8dfaef40d41f91a5afdd2adec9542d7c890a1b656e396",
+        "original": "85c4aa49c6852155a6a8dfaef40d41f91a5afdd2adec9542d7c890a1b656e396"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16006_3_0_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "7bc006ed3b10fc53fc0e32bdc65827f86a759e756c9818d1c26a8499c73e90d6",
+        "original": "7bc006ed3b10fc53fc0e32bdc65827f86a759e756c9818d1c26a8499c73e90d6"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16006_3_0_2",
+      "status": "PASS",
+      "observed": {
+        "actual": "85c4aa49c6852155a6a8dfaef40d41f91a5afdd2adec9542d7c890a1b656e396",
+        "original": "85c4aa49c6852155a6a8dfaef40d41f91a5afdd2adec9542d7c890a1b656e396"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16006_3_0_3",
+      "status": "PASS",
+      "observed": {
+        "actual": "d279ae4f14061401028cbda699a60627e76847ddb4dfb2544885fd2b2814b887",
+        "original": "d279ae4f14061401028cbda699a60627e76847ddb4dfb2544885fd2b2814b887"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16006_3_1_0",
+      "status": "PASS",
+      "observed": {
+        "actual": "911851c3476bb42bff557b4623e2f89c16433813ae4f255ee485bf6c1ba0023d",
+        "original": "911851c3476bb42bff557b4623e2f89c16433813ae4f255ee485bf6c1ba0023d"
+      }
+    },
+    {
+      "name": "adapted_skin_uses_existing_native_pose_16006_3_1_1",
+      "status": "PASS",
+      "observed": {
+        "actual": "5abf66de0c619b772b1a86ddc719a5992a6074dcef5fe2ebb1659a68e7c7b93a",
+        "original": "5abf66de0c619b772b1a86ddc719a5992a6074dcef5fe2ebb1659a68e7c7b93a"
+      }
+    },
+    {
+      "name": "death_uses_original_ghost_without_stray_cosmetic_layers",
+      "status": "PASS",
+      "observed": null
+    }
+  ],
+  "error": null,
+  "physical_android": "NOT_RUN",
+  "missing": []
+}
