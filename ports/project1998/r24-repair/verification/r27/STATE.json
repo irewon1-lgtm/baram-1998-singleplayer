@@ -2,7 +2,7 @@
   "task": "P1998_R27_INVENTORY_DETAILS_AND_DOUBLE_ACTIVATION",
   "baseline_local": "abc509659dd45d56147acffdb033c7a182c8c4ec",
   "baseline_remote": "55d7cb02cf488b2232d9c81aede8556bbf3d4535",
-  "step": "4_DELIVERY",
+  "step": "5_DELIVERED",
   "requirements": [
     "One bag tap immediately shows authoritative item stats, restrictions and current/max durability without an action-choice modal",
     "Two short taps on the same unchanged item equip, eat or use it exactly once through existing original handlers",
@@ -23,7 +23,7 @@
   "inspection_and_failure_tests": "PASS_11: evidence/r27/xunit-targeted001",
   "final_ui": "PASS_21: evidence/r27/ui/final002/RECEIPT.json",
   "full_xunit": "2076 executed /2010 PASS /66 inherited FAIL; exact failure names/messages unchanged",
-  "remaining": "Upload handoff only; physical Android installation and actual progressed save remain NOT_RUN.",
+  "remaining": "Physical Android installation, actual progressed user save and thermal NOT_RUN; earlier r26 world reviews retained.",
   "apk": {
     "name": "Project1998-r27-items-update-arm64.apk",
     "version_code": 31,
@@ -44,5 +44,12 @@
     "archive": "Project1998-r27-source-tests.zip",
     "bytes": 195912166,
     "sha256": "9d06b72ef79569fe0f1ed4a7ba065bab86463fe218fb0f2701fe422fd32cc732"
-  }
+  },
+  "delivery": "Three verified files persisted successfully: APK, full source/tests ZIP, result HTML.",
+  "delivered_files": [
+    "Project1998-r27-items-update-arm64.apk",
+    "Project1998-r27-source-tests.zip",
+    "Project1998-r27-report.html"
+  ],
+  "last_verified_remote": "6bc069b1e8f80f309a0c1f2db17919ade8c5052f"
 }
