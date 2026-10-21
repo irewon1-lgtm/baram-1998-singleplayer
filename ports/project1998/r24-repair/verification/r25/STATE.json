@@ -1,0 +1,34 @@
+{
+  "task": "Project1998 r24 repair, user-approved steps 0 through 5",
+  "source_baseline_sha256": "07a0129381b484ec8c34743716efc8ce7f9473d47e2c786845c00c829f9e43e4",
+  "apk_baseline_sha256": "5cef47098ca9c3ad6d3cde7e1a720c8d3a5220e0a797270a1fa27e945ce2d5e0",
+  "canonical_parent": "c1f3c5a0 (actual latest work/rebuild-p3-remediation-20261016, no reset)",
+  "active_branch": "work/project1998-r24-repair-20261021",
+  "current_step": 1,
+  "steps": {
+    "0": "PASS",
+    "1": "IN_PROGRESS",
+    "2": "NOT_RUN",
+    "3": "NOT_RUN",
+    "4": "NOT_RUN",
+    "5": "NOT_RUN"
+  },
+  "toolchain": "P1998_TOOLCHAIN=/workspace/p1998-toolchain-r25",
+  "r24_after_changes_found": 0,
+  "user_save_writes": 0,
+  "signing": "Existing private key recovered separately; never package or commit it",
+  "next_action": "Reproduce queued smith repair cancellation and real SQLite failure in deferred purchase/container/cosmetic mutations on frozen baseline002",
+  "rulings": [
+    "User explicitly requests Work-only execution: no subagent dispatch, including final review; perform and label a separate self-review.",
+    "Outer repository BARAM G2 plan concerns another game implementation; current direct user r24 repair specification governs this port. Preserve all outer-game files.",
+    "Original r20 UI fixtures are unavailable; generate a new non-identifying baseline and do not call it a replay of the old exact fixture.",
+    "Restore NuGet lock contentHash via SDK locked restore; raw signed nupkg ZIP SHA512 is a different digest and is recorded separately."
+  ],
+  "physical_android": "NOT_RUN",
+  "prior_performance": "FAIL retained",
+  "EXP150": "UNKNOWN retained",
+  "step0_evidence": [
+    "evidence/r25/products/baseline002/BUILD.json",
+    "evidence/r25/fixtures/synthetic002/RESULT.json"
+  ]
+}

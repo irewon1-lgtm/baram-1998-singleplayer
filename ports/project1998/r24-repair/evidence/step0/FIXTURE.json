@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "fixture": "NEW_R25_SYNTHETIC_BASELINE_NOT_OLD_R20_BYTES",
+  "checks": [
+    {
+      "scenario": "normal_creation_save_reopen",
+      "id": "repairalpha",
+      "status": "PASS"
+    },
+    {
+      "scenario": "normal_creation_save_reopen",
+      "id": "repairbeta",
+      "status": "PASS"
+    },
+    {
+      "scenario": "normal_creation_save_reopen",
+      "id": "repairgamma",
+      "status": "PASS"
+    }
+  ],
+  "hashes": {
+    "repairalpha": "f907a5ea8abe62a021e4f99460fc3eaf2ce29be986e13ae2bae65e40b7f82037",
+    "repairbeta": "9f09c41468e813f5ce705c5f020a2856615a7b9313358a434cd536b099c3544e",
+    "repairgamma": "20e7eef43457730b24cc24561e3a88c5abf19f9455f405b534a3c90459fbad2d"
+  },
+  "integrity": "ok",
+  "user_save_writes": 0
+}
