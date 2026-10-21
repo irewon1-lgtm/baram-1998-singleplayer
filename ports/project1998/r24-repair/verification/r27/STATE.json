@@ -2,7 +2,7 @@
   "task": "P1998_R27_INVENTORY_DETAILS_AND_DOUBLE_ACTIVATION",
   "baseline_local": "abc509659dd45d56147acffdb033c7a182c8c4ec",
   "baseline_remote": "55d7cb02cf488b2232d9c81aede8556bbf3d4535",
-  "step": "2_FINAL_UI_REGRESSION_AND_STRICT_APK",
+  "step": "3_DELIVERY_PACKAGING",
   "requirements": [
     "One bag tap immediately shows authoritative item stats, restrictions and current/max durability without an action-choice modal",
     "Two short taps on the same unchanged item equip, eat or use it exactly once through existing original handlers",
@@ -15,7 +15,7 @@
     "Snapshot property values match original ItemDef and InvItem; no UI-thread Session lock or character/world serialization",
     "Affected and complete regression, strict APK frozen-input/signature checks; physical Android NOT_RUN if no device"
   ],
-  "status": "IN_PROGRESS",
+  "status": "PASS_SCOPED_R27_ITEM_FIXES_WITH_INHERITED_FAILURES",
   "physical_android": "NOT_RUN",
   "user_save_writes": 0,
   "baseline_ui": "FAIL_REPRODUCED: actual PC touch opens modal; evidence/r27/ui/baseline002/runtime/ko-checks.json",
@@ -23,5 +23,17 @@
   "inspection_and_failure_tests": "PASS_11: evidence/r27/xunit-targeted001",
   "final_ui": "PASS_21: evidence/r27/ui/final002/RECEIPT.json",
   "full_xunit": "2076 executed /2010 PASS /66 inherited FAIL; exact failure names/messages unchanged",
-  "remaining": "Existing final render/items/backup batch running; strict code31 export pending"
+  "remaining": "Finalize source/evidence archive and handoff; physical Android install/real progressed save/thermal NOT_RUN",
+  "apk": {
+    "name": "Project1998-r27-items-update-arm64.apk",
+    "version_code": 31,
+    "sha256": "99174092e63c307bab9c09b66899a8cb7c5b933d314e919ed60f67790ea234a4",
+    "certificate_sha256": "ecea13778e2466b3e568f45bfe1facb6fd708bdd0ed3f6ae2a4c305da2ebb030",
+    "source_input_count": 9127
+  },
+  "full_regression": "COMPLETE; all groups except original 66 xUnit failures PASS, new failure names/messages0",
+  "existing_item_ui": "PASS_676",
+  "backup_restore": "PASS_6",
+  "previous_scope": "r26 remaining world/condition and physical-profile reviews retained; not claimed fixed",
+  "remote_stage1": "1cc88e9117ed5c6553280fe196aaa66f156a50ce"
 }
