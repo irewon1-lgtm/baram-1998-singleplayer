@@ -1,6 +1,6 @@
 {
   "task": "P1998_R29_SEVEN_HUD_REPAIRS",
-  "step": "3_FINAL_REGRESSION",
+  "step": "3C_FINAL_REGRESSION_IN_PROGRESS",
   "baseline_remote": "33ce4ec29f2944a9e94c76c150bfea09a8b0fead",
   "baseline_source_sha256": "4d778e6cc0a85a44a3cc6b168df27b94d5f0bb7d06dc51d36a5aa56286d918af",
   "requirements": [
@@ -39,8 +39,42 @@
   "status": "IN_PROGRESS",
   "build_preflight": "PASS8056 content files/original-key preparation/pinned tools",
   "red_ui": "11 failures reproduced,2existing behavior passes: r29-red002; red001 includes test viewport-size mistake",
-  "new_hud_ui": "PASS15 real Godot render/input and actual static pixel stability: r29-final001",
+  "new_hud_ui": "PASS15 on emergency final sources: r29-emergency-final001",
   "spell_swap_storage": "PASS10 original handler/FULL save/reopen/forced SQLite rollback: r29-swap-green001",
-  "runtime_source": "Frozen235 files in verification/r29/RELEASE-PRODUCTS.json",
-  "actual_gameplay_ui": "PASS10 final001 actual touch -> Main -> original 0x30 -> FULL save -> cross-page swap -> cancel -> reopen"
+  "runtime_source": "Frozen236 files in verification/r29/RELEASE-PRODUCTS.json",
+  "actual_gameplay_ui": "PASS10 actual touch, original saved book, cancel, reopen: final002",
+  "emergency": {
+    "user": "totogo",
+    "reported_from": [
+      1014,
+      0,
+      17
+    ],
+    "requested_to": [
+      330,
+      29,
+      143
+    ],
+    "level": 17,
+    "diagnostic": "P1998-G6-result-20261022-205340.json",
+    "diagnostic_sha256": "88f57e64b1697bbbb4aeb2742d169eaa77509e7db20a7153e59b198aba0498b5",
+    "actual_user_database_available": false,
+    "reconstruction_from_diagnostic": "FORBIDDEN_INCOMPLETE_CHARACTER_DATA",
+    "strategy": "Guarded position-only recovery of existing on-device save with durable full backup before mutation; validate synthetic rich save and exact non-position bytes. Never label actual device recovery PASS before installed execution.",
+    "synthetic_recovery_checks": "17 PASS including automatic original login, exact non-position preservation, full backup restore and forced write failure",
+    "map1014_connections": "10/10 actual host road entry, interior, return, outside move PASS; physical Android NOT_RUN",
+    "repaired_cells": [
+      [
+        1014,
+        0,
+        16
+      ],
+      [
+        1014,
+        1,
+        16
+      ]
+    ],
+    "user_device_recovery": "NOT_RUN"
+  }
 }

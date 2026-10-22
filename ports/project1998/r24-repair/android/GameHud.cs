@@ -629,7 +629,7 @@ public partial class GameHud : Control
                     foreach (var cell in NativeEquipmentCells)
                     {
                         var item = _scene.Equipment.FirstOrDefault(e => e.WireSlot == cell.Slot);
-                        var button = NativeRow("native-equipment-slot-" + cell.Slot, item is null ? cell.Name : "", () => { if (CanUseNativeRows) OpenLocal("equipment"); }, 0, 26, 26);
+                        var button = NativeRow("native-equipment-slot-" + cell.Slot, item is null && cell.Slot is 1 or 3 ? cell.Name : "", () => { if (CanUseNativeRows) OpenLocal("equipment"); }, 0, 26, 26);
                         button.Position = new Vector2(434, 12) + cell.Center - new Vector2(13, 13);
                         button.TooltipText = cell.Name + " · " + (item is null ? "비어 있음" : KoreanText.Display(item.Name)) + " · 터치하여 장비 보기";
                     }

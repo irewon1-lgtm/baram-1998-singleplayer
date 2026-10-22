@@ -32,7 +32,7 @@ public partial class Main
             await R27Tap("native-cast-3");(order[0],order[2])=(order[2],order[0]);
             await WaitUi(()=>G4Character(p).Spells.SequenceEqual(order),"Actual original swapped spellbook");await InputSettle();
             R27Check("r29_actual_tap_reorders_original_saved_book",G4Character(p).Spells.SequenceEqual(order)&&p.Host.LastSave.Committed);
-            R27Check("r29_actual_swap_preserves_mana_items_and_quests",G4Character(p).Mp==initial.Mp&&G4Character(p).Coins==initial.Coins&&G4Character(p).Inventory.Select(i=>(i.ItemId,i.Amount,i.Dura)).SequenceEqual(initial.Inventory.Select(i=>(i.ItemId,i.Amount,i.Dura))));
+            R27Check("r29_actual_swap_preserves_mana_coins_inventory",G4Character(p).Mp==initial.Mp&&G4Character(p).Coins==initial.Coins&&G4Character(p).Inventory.Select(i=>(i.ItemId,i.Amount,i.Dura)).SequenceEqual(initial.Inventory.Select(i=>(i.ItemId,i.Amount,i.Dura))));
             await R29Hold("native-cast-1");await R27Tap("native-page-next");await R27Tap("native-cast-12");(order[0],order[11])=(order[11],order[0]);
             await WaitUi(()=>G4Character(p).Spells.SequenceEqual(order),"Cross page original swap");await InputSettle();
             R27Check("r29_actual_cross_page_long_hold_swap",G4Character(p).Spells.SequenceEqual(order));

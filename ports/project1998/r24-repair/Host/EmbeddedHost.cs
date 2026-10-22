@@ -66,6 +66,7 @@ public sealed class EmbeddedHost
     public BoundedHistory<object> CommitObservations { get; } = new(256);
     public double InitializationMilliseconds { get; private set; }
     public EntryDiagnostics? StartupDiagnostics { get; private set; }
+    public PositionRecoveryReceipt? PositionRecovery { get; private set; }
     internal bool EntryEnteredWorld => _session.EmbeddedEnteredWorld;
     internal bool EntrySessionOpen => !_session.EmbeddedClosed;
     internal bool EntryOutboundOpen => !_out.Closed;
@@ -155,11 +156,14 @@ public sealed class EmbeddedHost
                 restoredMapIds = OfflineMapState.Restore(extra); // authored baseline exists before runtime deltas
                 world.RestoreOfflineStateJson(extra); // original reader ignores the optional host extension
             }
+            trace.Mark("reported_position_recovery");
+            var positionRecovery = OfflinePositionRecovery.TryRecover(store,state,options.InternalId,stateLease!);
             trace.Mark("original_session_construction");
             var outbound = new BoundedOutbound(options.OutputCapacity);
             var session = new Session(outbound, 2005, store, world); // character:null: only original Arrival may load it
             session.EnableOfflineLifecycle();
             var host = opening = new EmbeddedHost(options, world, store, session, outbound);
+            host.PositionRecovery = positionRecovery;
             host._stateLease = stateLease;
             stateLease = null; // the admitted host releases it only after final teardown
             lock (host._visitedMapGate) foreach (ushort id in restoredMapIds) host._visitedMaps.Add(id);

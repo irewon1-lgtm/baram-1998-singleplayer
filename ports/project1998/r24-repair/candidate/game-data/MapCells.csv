@@ -9202,3 +9202,6 @@ Map,X,Y,Tile,Pass,Obj,Sources
 330,111,134,43,0,445,r26-reconstructed-kan-shop-roof
 330,112,134,43,0,446,r26-reconstructed-kan-shop-roof
 330,113,134,43,0,455,r26-reconstructed-kan-shop-roof
+# r29 derived collision correction: original south fence permits one-way entry to closed (0..1,17); original art and diagnostic evidence retained. Not a historical pass-flag restoration.
+1014,0,16,,3,,r29-derived-south-fence-closed-strip-20261022
+1014,1,16,,3,,r29-derived-south-fence-closed-strip-20261022
