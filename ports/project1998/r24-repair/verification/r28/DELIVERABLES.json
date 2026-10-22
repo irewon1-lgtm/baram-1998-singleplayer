@@ -1,0 +1,27 @@
+{
+  "status": "ALL_FOUR_FILES_QUALIFIED_AND_SAVED",
+  "files": {
+    "Project1998-r28-update-arm64.apk": {
+      "bytes": 98843787,
+      "sha256": "2066fd5032b3f2a75749f97817010a7e69ad1d96db56e630cd6d7a5b3957c2ec",
+      "file_save": "SUCCEEDED"
+    },
+    "Project1998-r28-source-tests.zip": {
+      "bytes": 200540764,
+      "sha256": "4d778e6cc0a85a44a3cc6b168df27b94d5f0bb7d06dc51d36a5aa56286d918af",
+      "file_save": "SUCCEEDED"
+    },
+    "Project1998-r28-world-ledger.zip": {
+      "bytes": 35023012,
+      "sha256": "8af212052fa8a58b29db408478614b35ffabb943035da2f6b55a0f4d94d794dd",
+      "file_save": "SUCCEEDED"
+    },
+    "Project1998-r28-report.html": {
+      "bytes": 1087562,
+      "sha256": "24bd41f4507ebb2cdf8014e4461bfed459745c717f7c389ddbdca33b28e091b1",
+      "file_save": "SUCCEEDED"
+    }
+  },
+  "physical_android": "NOT_RUN",
+  "source_archive_state": "Packaging checkpoint; final authoritative STATE is on the work branch"
+}

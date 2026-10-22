@@ -1,6 +1,6 @@
 {
   "task": "P1998_R28_NPC_BAG_STACK_MAP",
-  "step": "4_FINAL_REGRESSION_RERUN",
+  "step": "5_DELIVERED",
   "baseline_remote": "bafb8cd1cd4623c2839b4e93f4d2b28dbac0f8a7",
   "requirements": [
     "Nested NPC close/back returns previous menu safely",
@@ -10,7 +10,7 @@
   ],
   "physical_android": "NOT_RUN",
   "user_save_writes": 0,
-  "status": "IN_PROGRESS",
+  "status": "SIGNED_APK_AND_FOUR_FILES_SAVED_WITH_EXPLICIT_REMAINING_SCOPE",
   "build_preflight": "PASS: pinned tools, original certificate,8056 content files; baseline neutral build passed",
   "baseline_npc": "FAIL_REPRODUCED: r27 actual touch shop cancel closes conversation (ui/baseline002 and003)",
   "baseline_stacking": "FAIL_REPRODUCED: stack-red001 10 FAIL /1 PASS",
@@ -18,9 +18,9 @@
   "queued_transactions": "PASS21: affected/transactions001",
   "actual_ui": "PASS28_FINAL_C3: evidence/r28/ui/final002",
   "remaining": [
-    "Final source full regression and new UI verification",
-    "Strict original-key signed versionCode32 export",
-    "Package and persist source/tests/results"
+    "Physical Android installation, real progressed character performance/thermal comparison: NOT_RUN",
+    "Inherited66 xUnit failures remain; no new final failure",
+    "Whole-world7200 reviews/exclusions and22 source guide-coordinate reviews remain"
   ],
   "remote_stage1": "b8e32a9a0a94d5a8f1a3dd28a1c9b97bc41b8459",
   "previous_item_ui": "PASS21_FINAL_C3: evidence/r27/ui/r28-final-regression002",
@@ -29,6 +29,57 @@
     "Bag source-cap assertion superseded by explicit user 99-spill behavior; strengthened quantity conservation check",
     "Legacy UI now explicitly cancels the returned NPC root before opening the home menu",
     "286-asset audit dependency recovered byte-for-byte from included r24 audited report",
-    "Initial full xUnit observed67 failures including one sweep frame notice; baseline and current isolated runs pass. Final full rerun pending."
-  ]
+    "Initial full xUnit67 failures; final full2093 tests returns66 inherited failures with exact same names/messages. Isolated sweep guard PASS; initial cause not established."
+  ],
+  "full_xunit": "2093 executed /2027 PASS /66 inherited FAIL; exact names/messages unchanged",
+  "full_regression": "Every group except inherited66 xUnit failures PASS",
+  "legacy_item_ui": "PASS676",
+  "backup_restore": "PASS6",
+  "remote_stage2": "f6066f6e99784bdd3052f92c132313f7f6feb50f",
+  "remote_stage3": "92e29544aef16a374175145603c5a6d8152272a5",
+  "apk_sha256": "2066fd5032b3f2a75749f97817010a7e69ad1d96db56e630cd6d7a5b3957c2ec",
+  "apk": "Project1998-r28-update-arm64.apk",
+  "signed_apk": "BUILD_PASS_ORIGINAL_CERT_CODE32",
+  "map_catalog": {
+    "status": "PASS_METADATA_ONLY_NO_TERRAIN_LOADING",
+    "registered_maps": 7948,
+    "guide_points": 9241,
+    "source_coordinate_reviews": 22,
+    "cache_before": {
+      "Maps": 0,
+      "Cells": 0,
+      "TerrainArrayBytes": 0
+    },
+    "cache_after": {
+      "Maps": 0,
+      "Cells": 0,
+      "TerrainArrayBytes": 0
+    },
+    "effective_warps": 10533,
+    "enabled_npcs": 401,
+    "full_runtime_traversal": "NOT_RUN_THIS_PROBE",
+    "physical_android": "NOT_RUN"
+  },
+  "deliverables": {
+    "Project1998-r28-update-arm64.apk": {
+      "bytes": 98843787,
+      "sha256": "2066fd5032b3f2a75749f97817010a7e69ad1d96db56e630cd6d7a5b3957c2ec",
+      "file_save": "SUCCEEDED"
+    },
+    "Project1998-r28-source-tests.zip": {
+      "bytes": 200540764,
+      "sha256": "4d778e6cc0a85a44a3cc6b168df27b94d5f0bb7d06dc51d36a5aa56286d918af",
+      "file_save": "SUCCEEDED"
+    },
+    "Project1998-r28-world-ledger.zip": {
+      "bytes": 35023012,
+      "sha256": "8af212052fa8a58b29db408478614b35ffabb943035da2f6b55a0f4d94d794dd",
+      "file_save": "SUCCEEDED"
+    },
+    "Project1998-r28-report.html": {
+      "bytes": 1087562,
+      "sha256": "24bd41f4507ebb2cdf8014e4461bfed459745c717f7c389ddbdca33b28e091b1",
+      "file_save": "SUCCEEDED"
+    }
+  }
 }
