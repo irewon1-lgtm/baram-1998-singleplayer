@@ -88,7 +88,7 @@ public partial class GameHud : Control
         _legendIcons = Enumerable.Range(0, 16).Select(i => ResourceLoader.Load<Texture2D>("res://assets/runtime/r15-hud/legend-icon-" + i + ".png")
             ?? throw new System.IO.InvalidDataException("Original legend icon is missing: " + i)).ToArray();
         AddChild(NativeOverlay); NativeOverlay.AddChild(_nativeRight);
-        BuildNativePanel(); BuildTouchControls(); BuildItemInspection();
+        BuildNativePanel(); BuildTouchControls(); BuildItemInspection(); BuildMapAccess();
         var style = new StyleBoxFlat { BgColor = new Color("362719"), BorderColor = new Color("bf925e"), BorderWidthLeft = 2,
             BorderWidthTop = 2, BorderWidthRight = 2, BorderWidthBottom = 2,
             ContentMarginLeft = 18, ContentMarginTop = 16, ContentMarginRight = 18, ContentMarginBottom = 16 };
@@ -200,6 +200,7 @@ public partial class GameHud : Control
 
             pad.AddChild(button);
         }
+        InFrameButton("area-map", "지도", () => { _guideMap = _scene?.Map ?? -1; _guidePoint = null; OpenLocal("area-map"); });
         InFrameButton("talk", "말하기", () => Emit("talk"));
         InFrameButton("menu", "메뉴", () => OpenLocal("menu"));
         InFrameButton("door", "문열기", () => Emit("door"));
@@ -295,6 +296,7 @@ public partial class GameHud : Control
     public override void _Input(InputEvent e)
     {
         if (!IsVisibleInTree() || _pad is null) return;
+        if (HandleBagMouseSwipe(e)) return;
         TrackItemPointer(e);
         // Physical holds retain their own indexed paths below. Other native UI
         // controls receive the first finger through the same GUI mouse path as
@@ -307,12 +309,15 @@ public partial class GameHud : Control
             bool owned = false;
             if (touch.Index == _uiTouchPointer && (!touch.Pressed || touch.Canceled))
             {
-                _uiTouchPointer = -1;
+                bool swipe = _bagTouchSwipe && !touch.Canceled;
+                _bagTouchSwipe = false; _uiTouchPointer = -1;
                 TouchGuiMouse(touch.Canceled || _uiTouchDragged ? new(-10000, -10000) : touch.Position, false);
                 _uiTouchScroll = null; owned = true;
+                if (swipe && _uiTouchDragged) FinishBagSwipe(_uiTouchOrigin, touch.Position);
             }
             else if (touch.Pressed && !touch.Canceled && _uiTouchPointer < 0 && IsGuiTouchPoint(touch.Position))
             {
+                _bagTouchSwipe = OnBag(touch.Position);
                 _uiTouchPointer = touch.Index; _uiTouchPosition = _uiTouchOrigin = touch.Position; _uiTouchDragged = false;
                 _uiTouchScroll = FindChildren("*", "ScrollContainer", true, false).OfType<ScrollContainer>()
                     .LastOrDefault(s => s.IsVisibleInTree() && s.GetGlobalRect().HasPoint(touch.Position));
@@ -387,7 +392,7 @@ public partial class GameHud : Control
         if (_itemCard.Visible && _itemCard.GetGlobalRect().HasPoint(point)) return true;
         if (_pad.IsVisibleInTree() && _pad.GetGlobalRect().HasPoint(point)) return false;
         if (Buttons["attack"].IsVisibleInTree() && Buttons["attack"].GetGlobalRect().HasPoint(point)) return false;
-        return ModalOpen || Buttons.Values.Any(b => b.IsVisibleInTree() && b.GetGlobalRect().HasPoint(point))
+        return OnBag(point) || ModalOpen || Buttons.Values.Any(b => b.IsVisibleInTree() && b.GetGlobalRect().HasPoint(point))
             || _nativeRows.FindChildren("*", "ScrollContainer", true, false).OfType<ScrollContainer>()
                 .Any(s => s.IsVisibleInTree() && s.GetGlobalRect().HasPoint(point));
     }
@@ -404,7 +409,7 @@ public partial class GameHud : Control
     }
     private void CancelInputs()
     {
-        ResetItemTap();
+        ResetItemTap(); _bagTouchSwipe = _bagMouseSwipe = _bagMouseDragged = false;
         // A cancel must also discard the controller's one pending press. Ordinary pointer-up
         // only releases its level intent, so a valid short tap can survive a slow render poll.
         if (_uiTouchPointer >= 0)
@@ -428,7 +433,11 @@ public partial class GameHud : Control
     public void Present(ClientSceneSnapshot scene, string displayName, string status, bool busy, bool hostFaulted = false)
     {
         bool newFault = hostFaulted && !_hostFaulted;
-        if (_scene is not null && (_scene.SelfId != scene.SelfId || _scene.MapEpoch != scene.MapEpoch)) ClearItemInspection();
+        if (_scene is not null && (_scene.SelfId != scene.SelfId || _scene.MapEpoch != scene.MapEpoch))
+        {
+            ClearItemInspection();
+            if (_localPanel == "area-map") { _localPanel = ""; _modalKey = ""; _guideLoad++; }
+        }
         _scene = scene; _name = displayName; _busy = busy; _hostFaulted = hostFaulted;
         if (newFault)
         {
@@ -456,6 +465,7 @@ public partial class GameHud : Control
         var vitals = (scene.Stats.Hp, scene.Stats.MaxHp, scene.Stats.Mp, scene.Stats.MaxMp);
         if (_nativeVitals != vitals) { _nativeVitals = vitals; NativeOverlay.QueueRedraw(); }
         _equipment.Text = scene.Equipment.Length == 0 ? "장착 장비 없음" : string.Join("\n", scene.Equipment.Take(3).Select(e => KoreanText.Display(e.Name)));
+        _areaLocation.Text = AreaGuide.Region(scene.Map)+" · "+KoreanText.Display(scene.MapTitle)+$"  ({scene.X}, {scene.Y})";
         _location.Text = $"{KoreanText.Display(scene.MapTitle)}\n{scene.X}, {scene.Y}  ·  지도 {scene.Map}";
         // Original 0x0D bytes cannot distinguish self speech from SendLog. Only the
         // embedded frame's explicit provenance permits system-log translation; typed speech stays opaque.
@@ -633,7 +643,7 @@ public partial class GameHud : Control
                 int row = 0;
                 foreach (var item in _scene.Inventory.Skip(_nativePage * 10).Take(10))
                 {
-                    var button = NativeRow("native-item-" + item.WireSlot, $"{item.WireSlot}. {KoreanText.Display(item.Name)} ×{item.Amount:N0}", () => TapBagItem(item.WireSlot), row++ * 23, 158, 23);
+                    var button = NativeRow("native-item-" + item.WireSlot, $"{item.WireSlot}. {BagItemName(item)} ×{item.Amount:N0}", () => TapBagItem(item.WireSlot), row++ * 23, 158, 23);
                     button.Icon = IconTexture?.Invoke(item.Icon); button.ExpandIcon = true; button.AddThemeConstantOverride("icon_max_width", 18); button.Size = new(158, 23);
                 }
                 if (_scene.Inventory.Length == 0)
@@ -641,6 +651,10 @@ public partial class GameHud : Control
             }
             NativePageButton("native-page-prev", -1, new Vector2(519, 276), _nativePage > 0);
             NativePageButton("native-page-next", 1, new Vector2(531, 276), _nativePage + 1 < pages);
+            var pageHint = Text($"{_nativePage+1} / {pages} ↔", 11, verbatim:true);
+            pageHint.Name="BagPageIndicator"; pageHint.MouseFilter=MouseFilterEnum.Ignore;
+            pageHint.Position=new Vector2(493,274)-_nativeRows.Position;pageHint.Size=new(70,22);
+            pageHint.HorizontalAlignment=HorizontalAlignment.Center;_nativeRows.AddChild(pageHint);
         }
         if (Buttons.TryGetValue("native-page-prev", out var previous)) previous.Disabled = !CanUseNativeRows || _nativePage == 0;
         if (Buttons.TryGetValue("native-page-next", out var next)) next.Disabled = !CanUseNativeRows || _nativePage + 1 >= pages;
@@ -778,13 +792,9 @@ public partial class GameHud : Control
 
     private void NativePageButton(string key, int step, Vector2 position, bool enabled)
     {
-        var button = NativeRow(key, "", () =>
-        {
-            if (!CanUseNativeRows || !enabled) return;
-            _nativePage += step; _nativeRowsVersion = ""; UpdateNativePanel(); NativeOverlay.QueueRedraw();
-        }, position.Y - _nativeRows.Position.Y, 12, 18);
-        button.Position = position - _nativeRows.Position; button.Size = new(12, 18);
-        button.TooltipText = step < 0 ? "이전 쪽" : "다음 쪽";
+        var button = NativeRow(key, step<0?"‹ 이전":"다음 ›", () => ChangeNativePage(step), 0, 43, 24);
+        button.Position = new Vector2(step<0?450:565,272)-_nativeRows.Position;button.Size=new(43,24);
+        button.TooltipText = step < 0 ? "오른쪽으로 밀어 이전 쪽" : "왼쪽으로 밀어 다음 쪽";
         button.Disabled = !enabled || !CanUseNativeRows;
     }
 
@@ -857,6 +867,7 @@ public partial class GameHud : Control
         _dynamicKeys.Clear();
         foreach (Node child in _modalContent.GetChildren()) { _modalContent.RemoveChild(child); child.QueueFree(); }
         if (!_modal.Visible) return;
+        _modalContent.AddThemeConstantOverride("separation",10);
         if (recoveryMenu) BuildLocal("menu");
         else if (_scene.Dialog is not null) BuildDialog(_scene.Dialog);
         else if (_scene.Shop is not null) BuildShop(_scene.Shop);
@@ -884,6 +895,7 @@ public partial class GameHud : Control
     private void BuildLocal(string panel)
     {
         if (_scene is null) return;
+        if (panel == "area-map") { BuildAreaMap(); return; }
         Heading(panel switch { "inventory" => "가방", "equipment" => "장착 장비", "spells" => "기술", "chat" => "채팅", "cast-input" => "기술 입력", _ => "메뉴" });
         var body = ScrollBody();
         if (panel == "inventory")

@@ -10,7 +10,7 @@ using IO = System.IO;
 /// local credentials and Korean display metadata never replace original game rules.</summary>
 public partial class Main : Control
 {
-    public const string BuildId = "P1998-G7-V4-20261021-r27";
+    public const string BuildId = "P1998-G7-V4-20261022-r28";
     private sealed record Profile(string Id, string Password, string Name, int HairTone = 0, int SkinTone = 0);
     private sealed record UiLatency(string Kind, double Milliseconds, bool Committed, bool HostFaulted);
     private readonly ConcurrentQueue<Action> _ui = new();
@@ -518,6 +518,13 @@ public partial class Main : Control
             _hud.CloseLocalPanel(); return;
         }
         if (command.Kind is "menu" or "exit") { ResetInput(); await End(command.Kind == "exit"); return; }
+        if (command.Kind == "map-walk")
+        {
+            var current=p?.Capture();
+            if(current is not null && command.Text==current.Map.ToString() && command.Sequence==current.MapEpoch)
+                BeginDestination(command.Number,checked((int)command.EntityId));
+            return;
+        }
         ResetInput(); if (p is null || _busy) return;
         try
         {
