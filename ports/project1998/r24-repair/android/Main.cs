@@ -10,7 +10,7 @@ using IO = System.IO;
 /// local credentials and Korean display metadata never replace original game rules.</summary>
 public partial class Main : Control
 {
-    public const string BuildId = "P1998-G7-V4-20261022-r28";
+    public const string BuildId = "P1998-G7-V4-20261022-r29";
     private sealed record Profile(string Id, string Password, string Name, int HairTone = 0, int SkinTone = 0);
     private sealed record UiLatency(string Kind, double Milliseconds, bool Committed, bool HostFaulted);
     private readonly ConcurrentQueue<Action> _ui = new();
@@ -549,6 +549,10 @@ public partial class Main : Control
                 case "drop": case "drop-all": await Execute(command.Kind, q => q.DropAsync(checked((byte)command.Number), command.Kind == "drop-all")); break;
                 case "hand": case "hand-all": await Execute(command.Kind, q => q.HandItemAsync(checked((byte)command.Number), command.Kind == "hand-all")); break;
                 case "ride": await Execute("ride", q => q.RideAsync()); break;
+                case "swap-spells":
+                    var spellNames = JsonSerializer.Deserialize<string[]>(command.Text);
+                    if (spellNames is { Length: 2 }) await Execute("swap-spells", q => q.SwapSpellsAsync(checked((byte)command.Number), checked((byte)command.EntityId), spellNames[0], spellNames[1], command.Sequence));
+                    break;
                 case "cast": await Execute("cast", q => q.CastAsync(checked((byte)command.Number), command.EntityId == 0 ? null : command.EntityId, command.Text.Length == 0 ? null : command.Text)); break;
                 case "chat": await Execute("chat", q => q.ChatAsync(command.Text)); break;
                 case "dialog-next": case "dialog-previous":

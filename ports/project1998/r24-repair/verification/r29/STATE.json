@@ -1,0 +1,46 @@
+{
+  "task": "P1998_R29_SEVEN_HUD_REPAIRS",
+  "step": "3_FINAL_REGRESSION",
+  "baseline_remote": "33ce4ec29f2944a9e94c76c150bfea09a8b0fead",
+  "baseline_source_sha256": "4d778e6cc0a85a44a3cc6b168df27b94d5f0bb7d06dc51d36a5aa56286d918af",
+  "requirements": [
+    "Long hold selects a spell then tap destination to reorder without cast; persist per character",
+    "At least5 readable chat lines",
+    "Scroll tabs outside original artwork with matching parchment style",
+    "Legible separated action cells",
+    "Stable controls while movement actions are pending",
+    "Explicit weapon and shield cells with actual equipped icons",
+    "Dark aligned equipment and skill typography"
+  ],
+  "stages": [
+    {
+      "id": 0,
+      "expected": "Exact r28 restore, original key and pinned APK export path available"
+    },
+    {
+      "id": 1,
+      "expected": "Root causes and failing PC UI checks recorded"
+    },
+    {
+      "id": 2,
+      "expected": "Affected UI, gesture, cast, item and persistence checks PASS"
+    },
+    {
+      "id": 3,
+      "expected": "Final regression compared with inherited66 failures"
+    },
+    {
+      "id": 4,
+      "expected": "Actual signed APK code33, original cert/package/save path, all frozen inputs verified; files saved"
+    }
+  ],
+  "physical_android": "NOT_RUN",
+  "user_save_writes": 0,
+  "status": "IN_PROGRESS",
+  "build_preflight": "PASS8056 content files/original-key preparation/pinned tools",
+  "red_ui": "11 failures reproduced,2existing behavior passes: r29-red002; red001 includes test viewport-size mistake",
+  "new_hud_ui": "PASS15 real Godot render/input and actual static pixel stability: r29-final001",
+  "spell_swap_storage": "PASS10 original handler/FULL save/reopen/forced SQLite rollback: r29-swap-green001",
+  "runtime_source": "Frozen235 files in verification/r29/RELEASE-PRODUCTS.json",
+  "actual_gameplay_ui": "PASS10 final001 actual touch -> Main -> original 0x30 -> FULL save -> cross-page swap -> cancel -> reopen"
+}

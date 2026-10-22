@@ -127,6 +127,20 @@ public sealed class PlaySession
             BinaryPrimitives.WriteUInt32BigEndian(body.AsSpan(1), target.Value); return body;
         });
     }
+    // Original 0x30 pane1 swap: Session owns the book mutation and its existing FULL commit.
+    public Task<OfflineActionResult> SwapSpellsAsync(byte from, byte to, string expectedFrom, string expectedTo, long expectedMapEpoch)
+    {
+        if (from == 0 || to == 0) throw new ArgumentOutOfRangeException(nameof(from));
+        return Queue(ClientOp.ChangePos, () =>
+        {
+            var scene = Model.CaptureScene();
+            if (scene.MapEpoch != expectedMapEpoch || scene.Dialog is not null || scene.Shop is not null || scene.WorldMap is not null
+                || scene.Spells.FirstOrDefault(s => s.WireSlot == from)?.Name != expectedFrom
+                || scene.Spells.FirstOrDefault(s => s.WireSlot == to)?.Name != expectedTo)
+                throw new InvalidOperationException("지난 기술 선택을 취소했습니다. 다시 선택하세요.");
+            return new byte[] { 1, from, to, 0 };
+        });
+    }
     public Task<OfflineActionResult> ChatAsync(string text)
     {
         byte[] bytes = OriginalAscii(text);

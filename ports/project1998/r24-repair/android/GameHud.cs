@@ -61,9 +61,9 @@ public partial class GameHud : Control
     private Label? _inputError, _recoveryStatus;
     // Native SELFLOOK page1, draw0x473960. The client's RECT order is
     // top,left,bottom,right; these are the translated x,y source coordinates.
-    // Weapon/armor/shield are composite sprite layers, not extra ground-icon boxes.
+    // Weapon/shield cells are touch adaptations; slots and icons remain original wire facts.
     private static readonly (byte Slot, Vector2 Center, string Name)[] NativeEquipmentCells = {
-        (4, new(97, 133), "투구"), (7, new(123, 189), "왼손"), (8, new(72, 189), "오른손")
+        (1, new(57, 159), "무기"), (3, new(137, 159), "방패"), (4, new(97, 133), "투구"), (7, new(123, 189), "왼손"), (8, new(72, 189), "오른손")
     };
 
     public bool InitializationComplete { get; private set; }
@@ -71,6 +71,8 @@ public partial class GameHud : Control
     {
         Name = "GameHud"; MouseFilter = MouseFilterEnum.Ignore;
         SetAnchorsAndOffsetsPreset(LayoutPreset.FullRect);
+        Theme = new Theme { DefaultFontSize = 18, DefaultFont = new FontVariation { BaseFont = GetThemeDefaultFont(),
+            VariationOpentype = new Godot.Collections.Dictionary { { "wght", 550 } } } };
         AddThemeFontSizeOverride("font_size", 18);
         ((NativeHudCanvas)NativeOverlay).OwnerHud = this;
         _nativeHpBar = ResourceLoader.Load<Texture2D>("res://assets/runtime/ui-extra/bar-hp.png")
@@ -88,7 +90,7 @@ public partial class GameHud : Control
         _legendIcons = Enumerable.Range(0, 16).Select(i => ResourceLoader.Load<Texture2D>("res://assets/runtime/r15-hud/legend-icon-" + i + ".png")
             ?? throw new System.IO.InvalidDataException("Original legend icon is missing: " + i)).ToArray();
         AddChild(NativeOverlay); NativeOverlay.AddChild(_nativeRight);
-        BuildNativePanel(); BuildTouchControls(); BuildItemInspection(); BuildMapAccess();
+        BuildNativePanel(); BuildTouchControls(); BuildItemInspection(); BuildMapAccess(); BuildSpellSorting();
         var style = new StyleBoxFlat { BgColor = new Color("362719"), BorderColor = new Color("bf925e"), BorderWidthLeft = 2,
             BorderWidthTop = 2, BorderWidthRight = 2, BorderWidthBottom = 2,
             ContentMarginLeft = 18, ContentMarginTop = 16, ContentMarginRight = 18, ContentMarginBottom = 16 };
@@ -110,7 +112,7 @@ public partial class GameHud : Control
         NativeLabel(_identity, new(504, 87), new(108, 16), 10);
         NativeLabel(_nativeEntries, new(449, 31), new(164, 236), 10); _nativeEntries.Visible = false;
         NativeLabel(_equipment, new(445, 222), new(169, 49), 10);
-        NativeLabel(_location, new(445, 330), new(173, 42), 10);
+        NativeLabel(_location, new(445, 354), new(173, 20), 10);
         NativeLabel(_nameLine, new(439, 377), new(180, 15), 10);
         // USERSTAT's authored rows are only 13px high. Independent labels keep the
         // font's line spacing from drifting into icons, later rows or outside the frame.
@@ -125,7 +127,8 @@ public partial class GameHud : Control
         NativeValue(_experience, new(535, 432), new(91, 11));
         NativeValue(_coins, new(535, 445), new(91, 11));
         NativeValue(_coordinates, new(535, 458), new(91, 11));
-        NativeLabel(_chat, new(23, 392), new(388, 48), 11); _chat.ClipText = true;
+        NativeLabel(_chat, new(23, 383), new(388, 64), 10); _chat.Name = "ChatHistory"; _chat.ClipText = true;
+        _chat.MaxLinesVisible = 5; _chat.AddThemeConstantOverride("line_spacing", -4);
         _chat.AutowrapMode = TextServer.AutowrapMode.WordSmart;
         _chat.AddThemeColorOverride("font_color", Colors.Black);
         _chat.AddThemeConstantOverride("shadow_offset_x", 0); _chat.AddThemeConstantOverride("shadow_offset_y", 0);
@@ -142,15 +145,15 @@ public partial class GameHud : Control
             string panel = kinds[i];
             var button = Button("native-" + panel, tabs[i], () => SelectNativePanel(panel), 10);
             // Keep the source panel's own bottom page arrows visible.
-            button.CustomMinimumSize = new(0, 23); button.Position = new(443 + i * 59, 302); button.Size = new(56, 23);
+            button.CustomMinimumSize = new(0, 24); button.Position = new(443 + i * 59, 328); button.Size = new(56, 24);
             foreach (string state in new[] { "normal", "hover", "pressed", "disabled" })
             {
                 var compact = (StyleBoxFlat)button.GetThemeStylebox(state).Duplicate();
                 compact.ContentMarginTop = compact.ContentMarginBottom = 1;
                 button.AddThemeStyleboxOverride(state, compact);
             }
-            button.Size = new(56, 23);
-            _nativeRight.AddChild(button);
+            button.Size = new(56, 24); ScrollChrome(button);
+            _nativeRight.AddChild(button); button.Size = new(56, 24);
         }
     }
 
@@ -221,7 +224,7 @@ public partial class GameHud : Control
 
     private Button InFrameButton(string key, string text, Action pressed)
     {
-        var button = Button(key, text, pressed, 10); button.Name = "InFrame-" + key;
+        var button = Button(key, text, pressed, 11); button.Name = "InFrame-" + key;
         button.CustomMinimumSize = new(0, 24); button.SizeFlagsHorizontal = SizeFlags.ExpandFill;
         foreach (string state in new[] { "normal", "hover", "pressed", "disabled" })
         {
@@ -232,21 +235,21 @@ public partial class GameHud : Control
         button.AddThemeColorOverride("font_color", Colors.Black);
         button.AddThemeColorOverride("font_hover_color", Colors.Black);
         button.AddThemeColorOverride("font_pressed_color", new Color("fff0c7"));
-        _actions.AddChild(button); return button;
+        ScrollChrome(button); _actions.AddChild(button); return button;
     }
 
     public void ConfigureFrame(float width)
     {
         if (!float.IsFinite(width) || width < 640) throw new ArgumentOutOfRangeException(nameof(width));
         _frameWidth = width; NativeOverlay.Size = new(width, 480); _nativeRight.Position = new(width - 640, 0);
-        _chat.Size = new(width - 252, 48); _actions.Position = new(23, 442); _actions.Size = new(width - 252, 26);
+        _chat.Size = new(width - 252, 64); _actions.Position = new(23, 448); _actions.Size = new(width - 252, 26);
         if (_pad is not null) { _pad.Position = new(22, 276); _pad.Size = new(86, 86); }
         NativeOverlay.QueueRedraw();
     }
 
     private Button Button(string key, string text, Action? pressed, int size = 18, bool dynamic = false)
     {
-        var button = new Button { Text = KoreanText.Display(text), TooltipText = KoreanText.Display(text), ClipText = true, CustomMinimumSize = new(0, 54), FocusMode = FocusModeEnum.None,
+        var button = new Button { TextureFilter = TextureFilterEnum.Linear, Text = KoreanText.Display(text), TooltipText = KoreanText.Display(text), ClipText = true, CustomMinimumSize = new(0, 54), FocusMode = FocusModeEnum.None,
             MouseFilter = MouseFilterEnum.Stop, SizeFlagsHorizontal = SizeFlags.ExpandFill };
         button.AddThemeFontSizeOverride("font_size", size);
         button.AddThemeColorOverride("font_color", new Color("ffedc1"));
@@ -296,7 +299,7 @@ public partial class GameHud : Control
     public override void _Input(InputEvent e)
     {
         if (!IsVisibleInTree() || _pad is null) return;
-        if (HandleBagMouseSwipe(e)) return;
+        if (HandleSpellPointer(e) || HandleBagMouseSwipe(e)) return;
         TrackItemPointer(e);
         // Physical holds retain their own indexed paths below. Other native UI
         // controls receive the first finger through the same GUI mouse path as
@@ -409,7 +412,7 @@ public partial class GameHud : Control
     }
     private void CancelInputs()
     {
-        ResetItemTap(); _bagTouchSwipe = _bagMouseSwipe = _bagMouseDragged = false;
+        CancelSpellSort(); ResetItemTap(); _bagTouchSwipe = _bagMouseSwipe = _bagMouseDragged = false;
         // A cancel must also discard the controller's one pending press. Ordinary pointer-up
         // only releases its level intent, so a valid short tap can survive a slow render poll.
         if (_uiTouchPointer >= 0)
@@ -438,7 +441,7 @@ public partial class GameHud : Control
             ClearItemInspection();
             if (_localPanel == "area-map") { _localPanel = ""; _modalKey = ""; _guideLoad++; }
         }
-        _scene = scene; _name = displayName; _busy = busy; _hostFaulted = hostFaulted;
+        _scene = scene; _name = displayName; _busy = busy; _hostFaulted = hostFaulted; ValidateSpellSort(scene);
         if (newFault)
         {
             // The existing recovery menu may cover a pending authoritative prompt, but it
@@ -466,20 +469,24 @@ public partial class GameHud : Control
         if (_nativeVitals != vitals) { _nativeVitals = vitals; NativeOverlay.QueueRedraw(); }
         _equipment.Text = scene.Equipment.Length == 0 ? "장착 장비 없음" : string.Join("\n", scene.Equipment.Take(3).Select(e => KoreanText.Display(e.Name)));
         _areaLocation.Text = AreaGuide.Region(scene.Map)+" · "+KoreanText.Display(scene.MapTitle)+$"  ({scene.X}, {scene.Y})";
-        _location.Text = $"{KoreanText.Display(scene.MapTitle)}\n{scene.X}, {scene.Y}  ·  지도 {scene.Map}";
+        _location.AutowrapMode = TextServer.AutowrapMode.Off; _location.ClipText = true;
+        _location.Text = $"{KoreanText.Display(scene.MapTitle)} ({scene.X}, {scene.Y})";
+        _location.TooltipText = _areaLocation.Text + $" · 지도 {scene.Map}";
         // Original 0x0D bytes cannot distinguish self speech from SendLog. Only the
         // embedded frame's explicit provenance permits system-log translation; typed speech stays opaque.
-        var chatLines = scene.Events.Where(e => e.Kind is "message" or "speech").TakeLast(1)
+        var chatLines = scene.Events.Where(e => e.Kind is "message" or "speech").TakeLast(50)
             .Select(e => e.Kind == "speech"
                 ? KoreanText.Speech(e.Text, e.SystemGenerated, e.EntityId == scene.SelfId || scene.Players.Any(p => p.Id == e.EntityId))
                 : KoreanText.Display(e.Text));
         bool routineStatus = status.StartsWith("원본 응답 수신 · ", StringComparison.Ordinal);
-        _chat.Text = string.Join("\n", routineStatus ? chatLines : chatLines.Append(KoreanText.Display(status)));
+        string history = string.Join("\n", routineStatus ? chatLines : chatLines.Append(KoreanText.Display(status)));
+        if (_chat.Text != history) { _chat.LinesSkipped = 0; _chat.Text = history; }
+        _chat.LinesSkipped = Math.Max(0, _chat.GetLineCount() - 5);
         _status.Text = KoreanText.Display(status);
         if (_recoveryStatus is not null) _recoveryStatus.Text = KoreanText.Display(status);
         foreach (var pair in Buttons)
-            pair.Value.Disabled = (hostFaulted && pair.Key is "menu-save" or "menu-ride" or "menu-original-help") || (busy && !pair.Key.StartsWith("direction-", StringComparison.Ordinal) && pair.Key is not ("attack" or "menu" or "export" or "menu-return" or "menu-export" or "local-close"))
-                || (_nativeRowKeys.Contains(pair.Key) && !CanUseNativeRows);
+            pair.Value.Disabled = (hostFaulted && pair.Key is "menu-save" or "menu-ride" or "menu-original-help")
+                || (_nativeRowKeys.Contains(pair.Key) && !NativeRowsAvailable);
         UpdateNativePanel();
         byte[]? look = scene.SelfLook?.Appearance;
         if ((look is null) != (_nativeLook is null) || (look is not null && (_nativeLook is null || !look.AsSpan().SequenceEqual(_nativeLook))))
@@ -508,9 +515,9 @@ public partial class GameHud : Control
         if (Art is null) return;
         // Native chat: default white base and original CHATBACK frame0 repeated
         // per 13px row. The bottom action row is an Android touch adaptation.
-        var chatRect = new Rect2(14, 390, _frameWidth - 220, 78);
-        target.DrawRect(chatRect, Colors.White);
-        target.DrawTextureRect(_nativeChat, chatRect, tile: true);
+        var chatRect = new Rect2(14, 381, _frameWidth - 220, 93);
+        target.DrawRect(chatRect, new Color("e4d2ab"));
+        target.DrawTextureRect(_nativeChat, chatRect, tile: true, modulate: new Color(1, 1, 1, .15f));
         target.DrawSetTransform(new Vector2(_frameWidth - 640, 0));
         string panel = _nativePanel == "inventory" ? "ITEMINV" : _nativePanel == "spells" ? "SPELLINV" : "SELFLOOK";
         // SELFLOOK stores its signed origin at (-96,-144); other panels start at (0,0).
@@ -541,8 +548,13 @@ public partial class GameHud : Control
             {
                 var item = equipmentScene.Equipment.FirstOrDefault(e => e.WireSlot == cell.Slot);
                 var icon = item is null ? null : IconTexture?.Invoke(item.Icon);
+                if (cell.Slot is 1 or 3) { var box = new Rect2(new Vector2(434,12)+cell.Center-new Vector2(14,14),new Vector2(28,28));
+                    target.DrawRect(box,new Color("dfc79a")); target.DrawRect(box,new Color("795633"),filled:false,width:1); }
                 if (icon is not null)
-                    target.DrawTexture(icon, new Vector2(434, 12) + cell.Center - new Vector2(icon.GetWidth() / 2, icon.GetHeight() / 2));
+                {
+                    if (cell.Slot is 1 or 3) target.DrawTextureRect(icon,new Rect2(new Vector2(434,12)+cell.Center-new Vector2(12,12),new Vector2(24,24)),false);
+                    else target.DrawTexture(icon, new Vector2(434, 12) + cell.Center - new Vector2(icon.GetWidth() / 2, icon.GetHeight() / 2));
+                }
             }
         }
         DrawNativeNumber(target, _level, 2);
@@ -617,7 +629,7 @@ public partial class GameHud : Control
                     foreach (var cell in NativeEquipmentCells)
                     {
                         var item = _scene.Equipment.FirstOrDefault(e => e.WireSlot == cell.Slot);
-                        var button = NativeRow("native-equipment-slot-" + cell.Slot, "", () => { if (CanUseNativeRows) OpenLocal("equipment"); }, 0, 26, 26);
+                        var button = NativeRow("native-equipment-slot-" + cell.Slot, item is null ? cell.Name : "", () => { if (CanUseNativeRows) OpenLocal("equipment"); }, 0, 26, 26);
                         button.Position = new Vector2(434, 12) + cell.Center - new Vector2(13, 13);
                         button.TooltipText = cell.Name + " · " + (item is null ? "비어 있음" : KoreanText.Display(item.Name)) + " · 터치하여 장비 보기";
                     }
@@ -628,12 +640,8 @@ public partial class GameHud : Control
                 _nativeRows.Position = new(450, 36); _nativeRows.Size = new(158, 230);
                 int row = 0;
                 foreach (var spell in _scene.Spells.Skip(_nativePage * 10).Take(10))
-                    NativeRow("native-cast-" + spell.WireSlot, $"{spell.WireSlot}. {KoreanText.Spell(spell.Name, _scene.Stats.Nation)}", () =>
-                    {
-                        if (!CanUseNativeRows) return;
-                        if (spell.Type == 1) OpenSpellInput(spell);
-                        else Emit("cast", spell.WireSlot, spell.Type == 2 ? SelectedTarget : 0);
-                    }, row++ * 23, 158, 23);
+                    NativeRow("native-cast-" + spell.WireSlot, $"{spell.WireSlot}. {KoreanText.Spell(spell.Name, _scene.Stats.Nation)}",
+                        () => ActivateSpell(spell), row++ * 23, 158, 23);
                 if (_scene.Spells.Length == 0)
                 { var empty = Text("배운 기술 없음", 10); empty.Position = Vector2.Zero; empty.Size = _nativeRows.Size; empty.AddThemeColorOverride("font_color", new Color("352717")); _nativeRows.AddChild(empty); }
             }
@@ -656,8 +664,9 @@ public partial class GameHud : Control
             pageHint.Position=new Vector2(493,274)-_nativeRows.Position;pageHint.Size=new(70,22);
             pageHint.HorizontalAlignment=HorizontalAlignment.Center;_nativeRows.AddChild(pageHint);
         }
-        if (Buttons.TryGetValue("native-page-prev", out var previous)) previous.Disabled = !CanUseNativeRows || _nativePage == 0;
-        if (Buttons.TryGetValue("native-page-next", out var next)) next.Disabled = !CanUseNativeRows || _nativePage + 1 >= pages;
+        RefreshSpellSortHint();
+        if (Buttons.TryGetValue("native-page-prev", out var previous)) previous.Disabled = !NativeRowsAvailable || _nativePage == 0;
+        if (Buttons.TryGetValue("native-page-next", out var next)) next.Disabled = !NativeRowsAvailable || _nativePage + 1 >= pages;
         _nativeEntries.Text = _nativePanel == "spells"
             ? (_scene.Spells.Length == 0 ? "배운 기술 없음" : string.Join("\n", _scene.Spells.Take(10).Select(i => $"{i.WireSlot}. {KoreanText.Spell(i.Name, _scene.Stats.Nation)}")))
             : (_scene.Inventory.Length == 0 ? "가방이 비어 있습니다" : string.Join("\n", _scene.Inventory.Take(10).Select(i => $"{i.WireSlot}. {KoreanText.Display(i.Name)} ×{i.Amount}")));
@@ -769,7 +778,8 @@ public partial class GameHud : Control
         }
     }
 
-    private bool CanUseNativeRows => !_busy && !_hostFaulted && _scene?.EntryComplete == true && !ModalOpen && _scene.Dialog is null && _scene.Shop is null && _scene.WorldMap is null;
+    private bool CanUseNativeRows => !_busy && NativeRowsAvailable;
+    private bool NativeRowsAvailable => !_hostFaulted && _scene?.EntryComplete == true && !ModalOpen && _scene.Dialog is null && _scene.Shop is null && _scene.WorldMap is null;
     private void SelectNativePanel(string panel)
     {
         if (_scene?.Dialog is not null || _scene?.Shop is not null || _scene?.WorldMap is not null) return;
@@ -780,8 +790,11 @@ public partial class GameHud : Control
     {
         var button = Button(key, text, pressed, 10);
         button.Name = key; button.CustomMinimumSize = Vector2.Zero; button.Position = new(0, y); button.Size = new(width, height);
-        button.Alignment = HorizontalAlignment.Left; button.Disabled = !CanUseNativeRows;
-        button.AddThemeColorOverride("font_color", new Color(_nativePanel == "inventory" ? "fff0c7" : "352717"));
+        button.Alignment = HorizontalAlignment.Left; button.Disabled = !NativeRowsAvailable;
+        button.AddThemeFontSizeOverride("font_size", 11);
+        foreach (string state in new[] { "font_color", "font_hover_color", "font_pressed_color", "font_focus_color", "font_disabled_color" })
+            button.AddThemeColorOverride(state, new Color(_nativePanel == "inventory" ? "f2d69b" : "352717"));
+        button.AddThemeColorOverride("font_shadow_color", Colors.Transparent);
         var normal = new StyleBoxFlat { BgColor = new Color(0, 0, 0, 0), ContentMarginLeft = 2, ContentMarginRight = 2, ContentMarginTop = 0, ContentMarginBottom = 0 };
         button.AddThemeStyleboxOverride("normal", normal);
         button.AddThemeStyleboxOverride("disabled", normal);
@@ -795,7 +808,7 @@ public partial class GameHud : Control
         var button = NativeRow(key, step<0?"‹ 이전":"다음 ›", () => ChangeNativePage(step), 0, 43, 24);
         button.Position = new Vector2(step<0?450:565,272)-_nativeRows.Position;button.Size=new(43,24);
         button.TooltipText = step < 0 ? "오른쪽으로 밀어 이전 쪽" : "왼쪽으로 밀어 다음 쪽";
-        button.Disabled = !enabled || !CanUseNativeRows;
+        ScrollChrome(button); button.Disabled = !enabled || !NativeRowsAvailable;
     }
 
     private void Layout()
@@ -867,12 +880,22 @@ public partial class GameHud : Control
         _dynamicKeys.Clear();
         foreach (Node child in _modalContent.GetChildren()) { _modalContent.RemoveChild(child); child.QueueFree(); }
         if (!_modal.Visible) return;
+        bool profilePaper = key.StartsWith("local:equipment:", StringComparison.Ordinal) || key.StartsWith("local:spells:", StringComparison.Ordinal);
+        var modalPaper = (StyleBoxFlat)_modal.GetThemeStylebox("panel").Duplicate();
+        modalPaper.BgColor = new Color(profilePaper ? "deca9f" : "362719");
+        _modal.AddThemeStyleboxOverride("panel", modalPaper);
         _modalContent.AddThemeConstantOverride("separation",10);
         if (recoveryMenu) BuildLocal("menu");
         else if (_scene.Dialog is not null) BuildDialog(_scene.Dialog);
         else if (_scene.Shop is not null) BuildShop(_scene.Shop);
         else if (_scene.WorldMap is not null) BuildWorldMap(_scene.WorldMap);
         else BuildLocal(_localPanel);
+        if (profilePaper)
+        {
+            foreach (var label in _modalContent.FindChildren("*", "Label", true, false).OfType<Label>())
+            { label.AddThemeColorOverride("font_color",new Color("352717"));label.AddThemeFontSizeOverride("font_size",Math.Min(18,label.GetThemeFontSize("font_size"))); }
+            foreach (var button in _modalContent.FindChildren("*", "Button", true, false).OfType<Button>()) ScrollChrome(button);
+        }
         Layout();
     }
 

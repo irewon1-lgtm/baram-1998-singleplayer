@@ -16,7 +16,7 @@ public partial class GameHud
     {
         if (!CanUseNativeRows || _scene is null) return;
         int count=_nativePanel=="spells"?_scene.Spells.Length:_scene.Inventory.Length;
-        int page=Math.Clamp(_nativePage+step,0,Math.Max(0,(count-1)/10));
+        int page=Math.Clamp(_nativePage+step,0,_nativePanel=="equipment"?2:Math.Max(0,(count-1)/10));
         ClearItemInspection();ResetItemTap();
         if(page==_nativePage)return;
         _nativePage=page;_nativeRowsVersion="";UpdateNativePanel();NativeOverlay.QueueRedraw();
