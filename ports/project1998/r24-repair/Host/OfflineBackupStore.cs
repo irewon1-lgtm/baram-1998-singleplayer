@@ -180,8 +180,17 @@ public static class OfflineBackupStore
         var catalog = new LocalProfileStore(root).Load();
         // Password changes deliberately retain the old credential archive. A current
         // matching credential still makes that account openable; keep its history too.
+        // Older shipped probe rows legitimately have no device credential. Preserve those
+        // database rows byte-for-byte; a backup must not invent passwords or require them
+        // to authenticate. Their saved JSON and watermarks were checked above. The selected
+        // character and at least one saved character must still have valid credentials.
+        bool selectedCanOpen = catalog.SelectedId is null || catalog.Characters.Any(p =>
+            string.Equals(p.Id, catalog.SelectedId, StringComparison.OrdinalIgnoreCase) && p.CanOpen);
+        bool PreservableLegacy(LocalCharacterEntry p) => p.Issue == "CREDENTIAL_UNAVAILABLE"
+            && p.Level is >= 1 and <= 99 && p.Map is >= 0 and <= ushort.MaxValue;
         if (catalog.Warnings.Any(p => !p.StartsWith("CONFLICTING_ARCHIVED_CREDENTIALS:", StringComparison.Ordinal))
-            || catalog.Characters.Length == 0 || catalog.Characters.Any(p => !p.CanOpen))
+            || !selectedCanOpen || !catalog.Characters.Any(p => p.CanOpen)
+            || catalog.Characters.Any(p => !p.CanOpen && !PreservableLegacy(p)))
             throw new InvalidDataException("Backup profiles and saved accounts are incomplete or inconsistent.");
     }
 }

@@ -10,7 +10,7 @@ using IO = System.IO;
 /// local credentials and Korean display metadata never replace original game rules.</summary>
 public partial class Main : Control
 {
-    public const string BuildId = "P1998-G7-V4-20261022-r29";
+    public const string BuildId = "P1998-G7-V4-20261022-r30";
     private sealed record Profile(string Id, string Password, string Name, int HairTone = 0, int SkinTone = 0);
     private sealed record UiLatency(string Kind, double Milliseconds, bool Committed, bool HostFaulted);
     private readonly ConcurrentQueue<Action> _ui = new();
