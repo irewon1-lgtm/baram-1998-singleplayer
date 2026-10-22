@@ -1,6 +1,6 @@
 {
   "task": "P1998_R30_RECOVERY_STARTUP_REGRESSION",
-  "step": "R30_SIGNED_APK_BUILD",
+  "step": "R30_DELIVERED",
   "baseline_remote": "33ce4ec29f2944a9e94c76c150bfea09a8b0fead",
   "baseline_source_sha256": "4d778e6cc0a85a44a3cc6b168df27b94d5f0bb7d06dc51d36a5aa56286d918af",
   "requirements": [
@@ -41,12 +41,12 @@
   ],
   "physical_android": "NOT_RUN",
   "user_save_writes": 0,
-  "status": "MIXED_CATALOG15_AND_ACTUAL_UI8_PASS; LEGACY_RECOVERY17_AND_BACKUP6_PASS; XUNIT66_UNCHANGED",
+  "status": "SIGNED_CODE34_AND_THREE_DELIVERABLES_SAVED; PHYSICAL_ANDROID_NOT_RUN",
   "build_preflight": "PASS8056 content files/original-key preparation/pinned tools",
   "red_ui": "11 failures reproduced,2existing behavior passes: r29-red002; red001 includes test viewport-size mistake",
   "new_hud_ui": "PASS15 on emergency final sources: r29-emergency-final001",
   "spell_swap_storage": "PASS10 original handler/FULL save/reopen/forced SQLite rollback: r29-swap-green001",
-  "runtime_source": "Frozen236 files in verification/r29/RELEASE-PRODUCTS.json",
+  "runtime_source": "Frozen236 files in verification/r30/RELEASE-PRODUCTS.json",
   "actual_gameplay_ui": "PASS10 actual touch, original saved book, cancel, reopen: final002",
   "emergency": {
     "user": "totogo",
@@ -97,13 +97,10 @@
   },
   "legacy_actual_ui": "PASS676 final002",
   "backup_restore": "PASS6 final002",
-  "apk_sha256": "4a339ac69841b8d7259198257e21872abc2527f0cda9f4d1a10344150f908bda",
-  "remaining": [
-    "Original-signature code34 APK",
-    "Source/test ZIP and delivery"
-  ],
-  "delivery": "verification/r29/DELIVERY.json",
-  "source_archive_checkpoint": "Source ZIP retains the pre-packaging STATE. Packaging succeeded: all9147 frozen APK inputs match,13847 entries, CRC and private-file exclusion PASS. Use this later branch STATE and DELIVERY.json to resume; do not repeat completed tests.",
+  "apk_sha256": "b140133ca237fd7da42636032e4bec88e499c2a131e09d7089e67d719ee1aa66",
+  "remaining": [],
+  "delivery": "verification/r30/DELIVERY.json",
+  "source_archive_checkpoint": "r30 source ZIP retains pre-packaging STATE; packaging verified all9148 frozen APK inputs,13988 entries,CRC/private exclusion PASS. This branch STATE and verification/r30/DELIVERY.json are the final continuation point; do not rerun completed tests.",
   "unresolved": [
     "Actual physical Android install/totogo migration and thermal comparison NOT_RUN",
     "All66 original xUnit failures remain FAIL with identical names/messages; new0",
@@ -120,6 +117,22 @@
     "actual_ui": "evidence/r30/ui/final004/RECEIPT.json",
     "previous_guard_regression": "evidence/r24/runtime/r30-recovery-final001/RESULT.json",
     "backup_restore": "evidence/r24/runtime/r30-backup-final001/RESULT.json",
-    "xunit": "evidence/r30/XUNIT-COMPARISON.json"
+    "xunit": "evidence/r30/XUNIT-COMPARISON.json",
+    "signed_apk_sha256": "b140133ca237fd7da42636032e4bec88e499c2a131e09d7089e67d719ee1aa66",
+    "delivery_source_zip_sha256": "573002e3261a0efab3b6f9ff7b16a6863bcfe132b4796a6112a7bd712169fef2",
+    "saved_files": [
+      {
+        "name": "Project1998-r30-update-arm64.apk",
+        "library_file_id": "libfile_174a1b0b7edc8191b13ce7308ac4d616"
+      },
+      {
+        "name": "Project1998-r30-source-tests.zip",
+        "library_file_id": "libfile_4be5d30a7e908191b0cc6298308da930"
+      },
+      {
+        "name": "Project1998-r30-report.html",
+        "library_file_id": "libfile_6b2ff12a74248191afac1c9b13da2958"
+      }
+    ]
   }
 }

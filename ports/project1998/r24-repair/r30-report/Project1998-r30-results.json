@@ -1,0 +1,138 @@
+{
+  "schema": "P1998_R30_STARTUP_BACKUP_REPAIR_1",
+  "generated_utc": "2026-10-22T13:46:48.196187+00:00",
+  "status": "SIGNED_UPDATE_READY_SCOPED_DEVICE_NOT_RUN",
+  "build": {
+    "status": "BUILD_PASS",
+    "kind": "R30_LEGACY_CATALOG_BACKUP_STARTUP_REPAIR",
+    "build_id": "P1998-G7-V4-20261022-r30",
+    "apk": "/workspace/scratch/5d391e8c81da/deliverables/Project1998-r30-update-arm64.apk",
+    "bytes": 98852119,
+    "sha256": "b140133ca237fd7da42636032e4bec88e499c2a131e09d7089e67d719ee1aa66",
+    "native": {
+      "arm64-v8a": "43596fc3907bae3538c7b85a567336bd4fd720f018fb6364dd4f13161acb86a1"
+    },
+    "content_archive_sha256": "824aad76ad6df2fd62c883ab9691440949c9a120ccde6d18d5c7af90f31fd3fd",
+    "certificate_sha256": "ecea13778e2466b3e568f45bfe1facb6fd708bdd0ed3f6ae2a4c305da2ebb030",
+    "content_files": 8056,
+    "release_export": true,
+    "trimmed": false,
+    "aot": false,
+    "optional_source_test_fixture_sha256": null,
+    "test_fixture_packaged": false,
+    "device_runtime": "NOT_RUN",
+    "stage7_runtime": "NOT_RUN",
+    "stage6": "PRIOR_EVIDENCE_ONLY_NOT_R30_DEVICE_PASS",
+    "stage7": "IN_PROGRESS",
+    "stage8": "IN_PROGRESS_NOT_WHOLE_STAGE_PASS",
+    "original_assemblies": [
+      "assets/.godot/mono/publish/arm64/Shared.dll",
+      "assets/.godot/mono/publish/arm64/Server.dll"
+    ],
+    "assembly_sha256": {
+      "assets/.godot/mono/publish/arm64/G1BProbe.dll": "66a03e34a3c367cdc99053dd6aa88e98b6a0f4a156b2b0cbae0576d4d2abee2b",
+      "assets/.godot/mono/publish/arm64/Shared.dll": "92cbebed8c7c0e034d8cb510befd5f8616e47dc7c2858f140a8dec7d71e6a5a4",
+      "assets/.godot/mono/publish/arm64/Protocol.Tk495.dll": "6db10871d79310112f67083a80d7277f049ff3cd502d8c71290e5e94e1f0ffc0",
+      "assets/.godot/mono/publish/arm64/Server.dll": "5cc49893f38fe19ea27fabf6f8dc5e1584bbc65f1f56a9c0d604ba6389ff7013",
+      "assets/.godot/mono/publish/arm64/EmbeddedHost.dll": "8daac47acc5665980046ef3281a649894be87a24983bf53596dd5c09058cfb16",
+      "assets/.godot/mono/publish/arm64/Shared.Core.dll": "e3bd774c1fb5f679724494e67e6e553e4c283ade8da306e1e4af795e4ca825c4"
+    },
+    "project_binary_bytes": 1225,
+    "project_binary_sha256": "a839e4bec388f9f8e22620825fd03c388508104dadd2e1a67c929ef5dd05afc3",
+    "project_settings_load_receipt_sha256": "410f531336da9ad23cdda31270b20b30e070043c1b78cf1d6036c8183b5e34a1",
+    "binary_settings_loaded_without_textual_fallback": true,
+    "runtime_asset_receipt_sha256": "023d1ee482a55741ad94be19c9520d3233078d532ed3a373fc38e37d90668e1e",
+    "runtime_asset_sources_verified": 490,
+    "bootstrap_resource_receipt_sha256": "94468658a97519290fa354bd7e51eb0ef82e59cc52cd9982c614549199066597",
+    "launcher_resource_receipt_sha256": "d4db5f60b40e587b180f89684efa6d7c79641440b57e6e66554ba1f7e4967121",
+    "source_inputs_sha256": "12609295189d7ce40b8d442b5b57b54e8121807fbb689e38a57b3dc7e4b21a7e",
+    "source_input_count": 9148,
+    "post_abi_package_locks": {
+      "Host": {
+        "source": "/workspace/scratch/5d391e8c81da/source/p1998-r25-restore/Host/packages.lock.json",
+        "sha256": "c1779a169e32269202a734b5fce862f1d861dafc2f03c3d28962fd81734335e3",
+        "dependency_targets": [
+          "net8.0",
+          "net8.0/android-arm64"
+        ],
+        "evidence": "POST_BUILD_Host_packages.lock.json",
+        "frozen_sha256": "c1779a169e32269202a734b5fce862f1d861dafc2f03c3d28962fd81734335e3"
+      },
+      "Android": {
+        "source": "/workspace/scratch/5d391e8c81da/source/p1998-r25-restore/android/packages.lock.json",
+        "sha256": "a70faf31ec767d8ffd94742d6308c4b91b1ce9b5e8efa2b6bb603a9aac08b33a",
+        "dependency_targets": [
+          "net9.0",
+          "net9.0/android-arm64"
+        ],
+        "evidence": "POST_BUILD_Android_packages.lock.json",
+        "frozen_sha256": "a70faf31ec767d8ffd94742d6308c4b91b1ce9b5e8efa2b6bb603a9aac08b33a"
+      }
+    },
+    "post_build_inputs_receipt_sha256": "9ac796183b17df0db21265ae346f694febc597fa769bf56cce23f0356541b6ac",
+    "package": "com.irewon.project1998.g1bv4",
+    "version_code": 34,
+    "version_name": "0.1.0-g7-v4-r30",
+    "previous_apk_preserved": "/workspace/scratch/5d391e8c81da/deliverables/Project1998-r29-update-arm64.apk",
+    "predecessor_verification": {
+      "status": "PASS_ACTUAL_LATEST_R29_BYTES",
+      "sha256": "4a339ac69841b8d7259198257e21872abc2527f0cda9f4d1a10344150f908bda",
+      "bytes": 98852119
+    },
+    "abis": [
+      "arm64-v8a"
+    ],
+    "phone_compact_receipt_sha256": "702690ca78e3987bbc14081dcaea82b8329014df9def519b6b63beef4cb44633",
+    "sdk_recovery_sources_receipt_sha256": "eb5346ba92a3c95c3bc3459fa1575afc9998a8e6609bf0706b0de963639e1373"
+  },
+  "root_cause": "r29 recovery uses a whole backup validator requiring every account to have an archived credential. Actual supplied diagnostic lists gibprobe/gionetest as CREDENTIAL_UNAVAILABLE and totogo as CanOpen. The same catalog reproduces reported_position_recovery/Backup profiles and saved accounts are incomplete or inconsistent.",
+  "source_changes": [
+    "Host/OfflineBackupStore.cs",
+    "android/Main.cs"
+  ],
+  "fix": "Allow readable database-only legacy rows to remain unavailable while preserving their DB data. The selected character must authenticate; metadata warnings, SQLite integrity, every JSON/watermark, hashes, exclusive ownership and no-overwrite restore stay enforced. No credential is invented or account deleted.",
+  "cases": [
+    {
+      "name": "Mixed legacy catalog, recovery and refusal safety",
+      "checks": 15,
+      "status": "PASS",
+      "evidence": "evidence/r24/runtime/r30-catalog-final001/RESULT.json"
+    },
+    {
+      "name": "Original position-only recovery and failure guards",
+      "checks": 17,
+      "status": "PASS",
+      "evidence": "evidence/r24/runtime/r30-recovery-final001/RESULT.json"
+    },
+    {
+      "name": "Whole backup, restore and normal login",
+      "checks": 6,
+      "status": "PASS",
+      "evidence": "evidence/r24/runtime/r30-backup-final001/RESULT.json"
+    },
+    {
+      "name": "Actual Godot selection, recovery, floor tap, return and reopen",
+      "checks": 8,
+      "status": "PASS",
+      "evidence": "evidence/r30/ui/final004/runtime/ko-checks.json"
+    }
+  ],
+  "xunit": {
+    "executed": 2093,
+    "passed": 2027,
+    "failed": 66,
+    "new": [],
+    "changed": []
+  },
+  "content_files_unchanged_from_r29": 8056,
+  "reused_r29_evidence": "All UI, Server rules and content source bytes are identical; prior render and UI seven-issue evidence stays scoped to its original execution. Main BuildId and BackupStore are the only changed runtime CS files. A new actual Main login/recovery/tap/reopen test executes the changed startup path.",
+  "limitations": [
+    "Actual user save DB and physical Android r30 execution NOT_RUN. The actual r28 diagnostic catalog and supplied r29 failure screenshot are evidence; the passing recovery uses separate generated saves.",
+    "Original xUnit66 failures remain FAIL with identical names/messages; no new failures. Full world and thermal limitations from r29 remain.",
+    "Earlier development fixtures that staged then detached legacy credentials showed conflicting credential rediscovery; these are retained as failed development attempts, not device evidence. The final fixture creates legacy probe accounts directly without ever archiving credentials, matching HostProbe and the supplied diagnostic.",
+    "Initial fixture also seeded level17 with level1 derived AC and read the restored DB through the process-default CharacterStore constructor. Both test errors were corrected without weakening any preservation assertion; original Arrival derives AC as100-level."
+  ],
+  "actual_user_save_recovery": "NOT_RUN_UNTIL_INSTALLED_AND_TOTOGO_CONTINUE",
+  "physical_android": "NOT_RUN",
+  "user_save_writes_in_this_workspace": 0
+}

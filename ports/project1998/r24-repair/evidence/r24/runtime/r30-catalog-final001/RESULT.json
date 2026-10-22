@@ -1,0 +1,116 @@
+{
+  "status": "PASS_MIXED_LEGACY_CATALOG_RECOVERY",
+  "checks": [
+    {
+      "name": "fixture_matches_actual_diagnostic_two_database_only_accounts",
+      "status": "PASS",
+      "observed": {
+        "SelectedId": "totogo",
+        "Characters": [
+          {
+            "Id": "gibprobe",
+            "Name": "gibprobe",
+            "CanOpen": false,
+            "Level": 1,
+            "Map": 4711,
+            "Issue": "CREDENTIAL_UNAVAILABLE"
+          },
+          {
+            "Id": "gionetest",
+            "Name": "gionetest",
+            "CanOpen": false,
+            "Level": 1,
+            "Map": 4711,
+            "Issue": "CREDENTIAL_UNAVAILABLE"
+          },
+          {
+            "Id": "totogo",
+            "Name": "totogo",
+            "CanOpen": true,
+            "Level": 17,
+            "Map": 1014,
+            "Issue": null
+          }
+        ],
+        "Warnings": []
+      }
+    },
+    {
+      "name": "normal_start_recovers_totogo_with_legacy_accounts_present",
+      "status": "PASS",
+      "observed": {
+        "Map": 330,
+        "X": 29,
+        "Y": 143
+      }
+    },
+    {
+      "name": "other_character_fields_preserved",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "legacy_database_only_character_tuples_preserved",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "actual_original_move_after_automatic_recovery",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "whole_backup_restores_original_stuck_totogo_exactly",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "every_original_sqlite_table_is_preserved_by_backup",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "whole_backup_restores_unopenable_legacy_accounts_without_inventing_credentials",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "original_backup_restore_admission_accepts_preserved_legacy_catalog",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "legacy_accounts_do_not_gain_invented_credentials_or_login",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "selected_account_without_credentials_still_refuses_backup",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "malformed_archived_credential_still_refuses_backup",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "legacy_account_save_witness_corruption_still_refuses_backup",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "changed_archive_payload_is_rejected_before_restore",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "restore_never_overwrites_existing_player_root",
+      "status": "PASS",
+      "observed": null
+    }
+  ],
+  "error": null,
+  "physical_android": "NOT_RUN",
+  "actual_user_database": "NOT_AVAILABLE; CATALOG_SHAPE_FROM_ACTUAL_SUPPLIED_DIAGNOSTIC"
+}

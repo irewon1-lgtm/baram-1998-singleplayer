@@ -1,0 +1,96 @@
+{
+  "status": "PASS_POSITION_ONLY_BACKUP_RECOVERY_AND_FENCE_PREVENTION",
+  "checks": [
+    {
+      "name": "visible_south_fence_prevents_entry_into_closed_strip",
+      "status": "PASS",
+      "observed": {
+        "X": 0,
+        "Y": 15,
+        "return_y": 14
+      }
+    },
+    {
+      "name": "position_only_recovery_entry_exists",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "unsupported_future_fields_are_preserved_and_refused",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "recovery_moves_exactly_to_buya_330_29_143",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "all_other_character_fields_and_raw_values_are_exact",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "world_runtime_and_other_character_are_unchanged",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "original_full_commit_revision_advances_once",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "complete_backup_exists_before_position_commit",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "backup_restores_original_level17_stuck_save_exactly",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "repeated_recovery_does_not_reapply_or_write",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "unrelated_character_never_migrates",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "normal_authenticated_entry_uses_recovered_coordinate",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "recovered_character_can_move_normally",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "wrong_level_does_not_match_guard",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "normal_app_start_applies_recovery_without_manual_invocation",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "automatic_start_preserves_exp_coins_items_and_quests",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "failed_position_commit_preserves_original_save",
+      "status": "PASS",
+      "observed": null
+    }
+  ],
+  "physical_android": "NOT_RUN",
+  "actual_user_database": "NOT_AVAILABLE; SYNTHETIC_RICH_SAVE_ONLY"
+}

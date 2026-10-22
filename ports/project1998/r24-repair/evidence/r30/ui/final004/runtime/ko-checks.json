@@ -1,0 +1,113 @@
+{
+  "status": "PASS_ACTUAL_GODOT_MIXED_CATALOG_SELECT_RECOVER_TAP_RETURN_REOPEN",
+  "checks": [
+    {
+      "name": "r30_synthetic_stuck_save_seeded_through_original_full_commit",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "r30_real_character_select_button_enters_buya_330_29_143",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "r30_actual_main_login_preserves_every_nonposition_character_field",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "r30_real_login_keeps_database_only_legacy_rows_and_missing_credentials",
+      "status": "PASS",
+      "observed": {
+        "catalog": {
+          "SelectedId": "totogo",
+          "Characters": [
+            {
+              "Id": "gibprobe",
+              "Name": "gibprobe",
+              "CanOpen": false,
+              "Level": 1,
+              "Map": 4711,
+              "Issue": "CREDENTIAL_UNAVAILABLE"
+            },
+            {
+              "Id": "gionetest",
+              "Name": "gionetest",
+              "CanOpen": false,
+              "Level": 1,
+              "Map": 4711,
+              "Issue": "CREDENTIAL_UNAVAILABLE"
+            },
+            {
+              "Id": "repairalpha",
+              "Name": "repairalpha",
+              "CanOpen": true,
+              "Level": 1,
+              "Map": 4711,
+              "Issue": null
+            },
+            {
+              "Id": "repairbeta",
+              "Name": "repairbeta",
+              "CanOpen": true,
+              "Level": 1,
+              "Map": 4711,
+              "Issue": null
+            },
+            {
+              "Id": "repairgamma",
+              "Name": "repairgamma",
+              "CanOpen": true,
+              "Level": 1,
+              "Map": 4711,
+              "Issue": null
+            },
+            {
+              "Id": "totogo",
+              "Name": "totogo",
+              "CanOpen": true,
+              "Level": 17,
+              "Map": 330,
+              "Issue": null
+            }
+          ],
+          "Warnings": []
+        },
+        "legacy_tuples": {
+          "gibprobe": true,
+          "gionetest": true
+        },
+        "profile_files": [
+          "totogo.json",
+          "repairgamma.json",
+          "repairalpha.json",
+          "repairbeta.json"
+        ]
+      }
+    },
+    {
+      "name": "r30_backup_exists_before_normal_world_entry",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "r30_actual_floor_tap_moves_after_recovery",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "r30_actual_return_and_second_login_keep_progress_without_repeat_migration",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "r30_original_save_and_entry_remain_healthy",
+      "status": "PASS",
+      "observed": null
+    }
+  ],
+  "error": "",
+  "physical_android": "NOT_RUN",
+  "actual_user_database": "NOT_AVAILABLE; ISOLATED_MIXED_CATALOG_FIXTURE"
+}

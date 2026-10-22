@@ -1,0 +1,57 @@
+{
+  "status": "FAIL_REPRODUCED_R29_CATALOG_BACKUP_STARTUP_BLOCK",
+  "checks": [
+    {
+      "name": "fixture_matches_actual_diagnostic_two_database_only_accounts",
+      "status": "PASS",
+      "observed": {
+        "SelectedId": "totogo",
+        "Characters": [
+          {
+            "Id": "gibprobe",
+            "Name": "gibprobe",
+            "CanOpen": false,
+            "Level": 1,
+            "Map": 4711,
+            "Issue": "CREDENTIAL_UNAVAILABLE"
+          },
+          {
+            "Id": "gionetest",
+            "Name": "gionetest",
+            "CanOpen": false,
+            "Level": 1,
+            "Map": 4711,
+            "Issue": "CREDENTIAL_UNAVAILABLE"
+          },
+          {
+            "Id": "totogo",
+            "Name": "totogo",
+            "CanOpen": true,
+            "Level": 17,
+            "Map": 1014,
+            "Issue": null
+          }
+        ],
+        "Warnings": []
+      }
+    },
+    {
+      "name": "normal_start_recovers_totogo_with_legacy_accounts_present",
+      "status": "FAIL",
+      "observed": "P1998.Embedded.EmbeddedStartupException: Embedded startup failed at reported_position_recovery: System.IO.InvalidDataException: Backup profiles and saved accounts are incomplete or inconsistent.\n   at P1998.Embedded.OfflineBackupStore.ValidateTuple(String root) in /workspace/scratch/5d391e8c81da/source/p1998-r25-restore/Host/OfflineBackupStore.cs:line 185\n   at P1998.Embedded.OfflineBackupStore.CreateCore(String rootDirectory, String archivePath, OfflineStateLease owned) in /workspace/scratch/5d391e8c81da/source/p1998-r25-restore/Host/OfflineBackupStore.cs:line 61\n   at P1998.Embedded.OfflineBackupStore.CreateWithOwnedLease(String rootDirectory, String archivePath, OfflineStateLease lease) in /workspace/scratch/5d391e8c81da/source/p1998-r25-restore/Host/OfflineBackupStore.cs:line 37\n   at P1998.Embedded.OfflinePositionRecovery.TryRecover(CharacterStore store, String state, String account, OfflineStateLease lease) in /workspace/scratch/5d391e8c81da/source/p1998-r25-restore/Host/OfflinePositionRecovery.cs:line 59\n   at P1998.Embedded.EmbeddedHost.\u003C\u003Ec__DisplayClass96_0.\u003C\u003COpenWorkerAsync\u003Eb__0\u003Ed.MoveNext() in /workspace/scratch/5d391e8c81da/source/p1998-r25-restore/Host/EmbeddedHost.cs:line 160\n ---\u003E System.IO.InvalidDataException: Backup profiles and saved accounts are incomplete or inconsistent.\n   at P1998.Embedded.OfflineBackupStore.ValidateTuple(String root) in /workspace/scratch/5d391e8c81da/source/p1998-r25-restore/Host/OfflineBackupStore.cs:line 185\n   at P1998.Embedded.OfflineBackupStore.CreateCore(String rootDirectory, String archivePath, OfflineStateLease owned) in /workspace/scratch/5d391e8c81da/source/p1998-r25-restore/Host/OfflineBackupStore.cs:line 61\n   at P1998.Embedded.OfflineBackupStore.CreateWithOwnedLease(String rootDirectory, String archivePath, OfflineStateLease lease) in /workspace/scratch/5d391e8c81da/source/p1998-r25-restore/Host/OfflineBackupStore.cs:line 37\n   at P1998.Embedded.OfflinePositionRecovery.TryRecover(CharacterStore store, String state, String account, OfflineStateLease lease) in /workspace/scratch/5d391e8c81da/source/p1998-r25-restore/Host/OfflinePositionRecovery.cs:line 59\n   at P1998.Embedded.EmbeddedHost.\u003C\u003Ec__DisplayClass96_0.\u003C\u003COpenWorkerAsync\u003Eb__0\u003Ed.MoveNext() in /workspace/scratch/5d391e8c81da/source/p1998-r25-restore/Host/EmbeddedHost.cs:line 160\n   --- End of inner exception stack trace ---\n   at P1998.Embedded.EmbeddedHost.\u003C\u003Ec__DisplayClass96_0.\u003C\u003COpenWorkerAsync\u003Eb__0\u003Ed.MoveNext() in /workspace/scratch/5d391e8c81da/source/p1998-r25-restore/Host/EmbeddedHost.cs:line 262\n--- End of stack trace from previous location ---\n   at P1998.Embedded.PlaySession.OpenAsync(HostOptions options, CancellationToken cancellationToken, Action\u00601 preparedCallback) in /workspace/scratch/5d391e8c81da/source/p1998-r25-restore/Host/PlaySession.cs:line 41\n   at P1998.Embedded.PlaySession.OpenAsync(HostOptions options, CancellationToken cancellationToken, Action\u00601 preparedCallback) in /workspace/scratch/5d391e8c81da/source/p1998-r25-restore/Host/PlaySession.cs:line 69\n   at LegacyCatalogRecoveryProbe.Main(String[] a) in /workspace/scratch/5d391e8c81da/source/p1998-r25-restore/evidence/r24/runtime/r30-catalog-red001/project/Probe.cs:line 26"
+    },
+    {
+      "name": "other_character_fields_preserved",
+      "status": "PASS",
+      "observed": null
+    },
+    {
+      "name": "legacy_database_only_character_tuples_preserved",
+      "status": "PASS",
+      "observed": null
+    }
+  ],
+  "error": "P1998.Embedded.EmbeddedStartupException: Embedded startup failed at reported_position_recovery: System.IO.InvalidDataException: Backup profiles and saved accounts are incomplete or inconsistent.\n   at P1998.Embedded.OfflineBackupStore.ValidateTuple(String root) in /workspace/scratch/5d391e8c81da/source/p1998-r25-restore/Host/OfflineBackupStore.cs:line 185\n   at P1998.Embedded.OfflineBackupStore.CreateCore(String rootDirectory, String archivePath, OfflineStateLease owned) in /workspace/scratch/5d391e8c81da/source/p1998-r25-restore/Host/OfflineBackupStore.cs:line 61\n   at P1998.Embedded.OfflineBackupStore.CreateWithOwnedLease(String rootDirectory, String archivePath, OfflineStateLease lease) in /workspace/scratch/5d391e8c81da/source/p1998-r25-restore/Host/OfflineBackupStore.cs:line 37\n   at P1998.Embedded.OfflinePositionRecovery.TryRecover(CharacterStore store, String state, String account, OfflineStateLease lease) in /workspace/scratch/5d391e8c81da/source/p1998-r25-restore/Host/OfflinePositionRecovery.cs:line 59\n   at P1998.Embedded.EmbeddedHost.\u003C\u003Ec__DisplayClass96_0.\u003C\u003COpenWorkerAsync\u003Eb__0\u003Ed.MoveNext() in /workspace/scratch/5d391e8c81da/source/p1998-r25-restore/Host/EmbeddedHost.cs:line 160\n ---\u003E System.IO.InvalidDataException: Backup profiles and saved accounts are incomplete or inconsistent.\n   at P1998.Embedded.OfflineBackupStore.ValidateTuple(String root) in /workspace/scratch/5d391e8c81da/source/p1998-r25-restore/Host/OfflineBackupStore.cs:line 185\n   at P1998.Embedded.OfflineBackupStore.CreateCore(String rootDirectory, String archivePath, OfflineStateLease owned) in /workspace/scratch/5d391e8c81da/source/p1998-r25-restore/Host/OfflineBackupStore.cs:line 61\n   at P1998.Embedded.OfflineBackupStore.CreateWithOwnedLease(String rootDirectory, String archivePath, OfflineStateLease lease) in /workspace/scratch/5d391e8c81da/source/p1998-r25-restore/Host/OfflineBackupStore.cs:line 37\n   at P1998.Embedded.OfflinePositionRecovery.TryRecover(CharacterStore store, String state, String account, OfflineStateLease lease) in /workspace/scratch/5d391e8c81da/source/p1998-r25-restore/Host/OfflinePositionRecovery.cs:line 59\n   at P1998.Embedded.EmbeddedHost.\u003C\u003Ec__DisplayClass96_0.\u003C\u003COpenWorkerAsync\u003Eb__0\u003Ed.MoveNext() in /workspace/scratch/5d391e8c81da/source/p1998-r25-restore/Host/EmbeddedHost.cs:line 160\n   --- End of inner exception stack trace ---\n   at P1998.Embedded.EmbeddedHost.\u003C\u003Ec__DisplayClass96_0.\u003C\u003COpenWorkerAsync\u003Eb__0\u003Ed.MoveNext() in /workspace/scratch/5d391e8c81da/source/p1998-r25-restore/Host/EmbeddedHost.cs:line 262\n--- End of stack trace from previous location ---\n   at P1998.Embedded.PlaySession.OpenAsync(HostOptions options, CancellationToken cancellationToken, Action\u00601 preparedCallback) in /workspace/scratch/5d391e8c81da/source/p1998-r25-restore/Host/PlaySession.cs:line 41\n   at P1998.Embedded.PlaySession.OpenAsync(HostOptions options, CancellationToken cancellationToken, Action\u00601 preparedCallback) in /workspace/scratch/5d391e8c81da/source/p1998-r25-restore/Host/PlaySession.cs:line 69\n   at LegacyCatalogRecoveryProbe.Main(String[] a) in /workspace/scratch/5d391e8c81da/source/p1998-r25-restore/evidence/r24/runtime/r30-catalog-red001/project/Probe.cs:line 26",
+  "physical_android": "NOT_RUN",
+  "actual_user_database": "NOT_AVAILABLE; CATALOG_SHAPE_FROM_ACTUAL_SUPPLIED_DIAGNOSTIC"
+}
