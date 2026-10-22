@@ -22,7 +22,7 @@ run('synthetic-fixture',['python3',ROOT/'verification/r25/prepare_fixtures.py',a
 fixture=ROOT/'evidence/r25/fixtures'/a.attempt/'state'
 console('transactions','TransactionProbe.cs');console('ordinary-shop','TransactionProbe.cs',['ordinary-only']);console('normal-entry-route','NormalEntryProbe.cs');console('diagnostic-stress','DiagnosticsProbe.cs')
 run('crash-atomicity',['python3',ROOT/'verification/r25/run_crash.py',a.attempt,'--products',products],'ACTUAL_SQLITE_PROCESS_KILL',ROOT/'evidence/r25/crash'/a.attempt/'RESULT.json')
-run('existing-console-regression',['python3',ROOT/'verification/r24/run_final_console.py',a.attempt,products],'EXISTING_ID_INPUT_SAVE_REGRESSIONS',ROOT/'evidence/r24'/('console-'+a.attempt)/'RESULT.json')
+run('existing-console-regression',['python3',ROOT/'verification/r28/run_final_console.py',a.attempt,products],'EXISTING_ID_INPUT_SAVE_REGRESSIONS',ROOT/'evidence/r24'/('console-'+a.attempt)/'RESULT.json')
 run('original-xunit',[e.dotnet,'test',ROOT/'candidate/Tests/Tests.csproj','-c','Release','--no-restore','-m:1','-p:UseSharedCompilation=false','--logger','trx','--results-directory',out/'xunit'],'ORIGINAL_UNIT_AND_INTEGRATION_TESTS')
 for mode in ['all','r25appearance','r25cache','r25skins','r25performance']:
  tag=a.attempt+'-'+mode

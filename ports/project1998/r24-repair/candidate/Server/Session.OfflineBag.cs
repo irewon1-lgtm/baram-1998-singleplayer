@@ -40,14 +40,18 @@ public sealed partial class Session
         using var held = EnterState();
         if (!_offlinePersistence || DialogBusy || _shopReply is not null) return;
         var before = _char.Inventory.ToDictionary(i => i.Slot, i => i.Clone());
+        bool changed = false;
         foreach (var group in _char.Inventory.Where(i => i.Amount > 0 && i.Slot < _char.MaxInv
                      && Content.ItemById(i.ItemId) is not null).OrderBy(i => i.Slot)
                      .GroupBy(i => (i.ItemId, i.CustomName, i.Owner, i.Dura, i.Repair, i.Protected)).ToArray())
         {
             var entries = group.ToArray();
             long total = entries.Sum(i => (long)i.Amount);
+            if (entries.Length == (total + 98) / 99 && entries.Select((item, index) =>
+                    item.Amount == Math.Min(99L, total - index * 99L)).All(same => same)) continue;
             int free = Enumerable.Range(0, _char.MaxInv).Count(n => _char.Inventory.All(i => i.Slot != n));
             if ((total + 98) / 99 > entries.Length + free) continue;
+            changed = true;
             foreach (var item in entries) _char.Inventory.Remove(item);
             int used = 0;
             while (total > 0)
@@ -59,6 +63,7 @@ public sealed partial class Session
                 _char.Inventory.Add(copy); total -= copy.Amount; used++;
             }
         }
+        if (!changed) return;
         foreach (var old in before.Values)
             if (_char.Inventory.All(i => i.Slot != old.Slot)) SendDelItem(old.Slot, DelReason.Removed);
         foreach (var item in _char.Inventory.OrderBy(i => i.Slot))

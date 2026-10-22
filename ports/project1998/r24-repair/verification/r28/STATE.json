@@ -1,6 +1,6 @@
 {
   "task": "P1998_R28_NPC_BAG_STACK_MAP",
-  "step": "4_FINAL_REGRESSION_AND_SIGNED_APK",
+  "step": "4_FINAL_REGRESSION_RERUN",
   "baseline_remote": "bafb8cd1cd4623c2839b4e93f4d2b28dbac0f8a7",
   "requirements": [
     "Nested NPC close/back returns previous menu safely",
@@ -14,13 +14,21 @@
   "build_preflight": "PASS: pinned tools, original certificate,8056 content files; baseline neutral build passed",
   "baseline_npc": "FAIL_REPRODUCED: r27 actual touch shop cancel closes conversation (ui/baseline002 and003)",
   "baseline_stacking": "FAIL_REPRODUCED: stack-red001 10 FAIL /1 PASS",
-  "safety": "PASS27: safety-final001",
+  "safety": "PASS28 bag/inspection +1 isolated sweep test: safety-final002",
   "queued_transactions": "PASS21: affected/transactions001",
-  "actual_ui": "PASS28_FINAL_SOURCE: evidence/r28/ui/final001; parent fixture bytes and both other characters unchanged",
+  "actual_ui": "PASS28_FINAL_C3: evidence/r28/ui/final002",
   "remaining": [
     "Final source full regression and new UI verification",
     "Strict original-key signed versionCode32 export",
     "Package and persist source/tests/results"
   ],
-  "remote_stage1": "b8e32a9a0a94d5a8f1a3dd28a1c9b97bc41b8459"
+  "remote_stage1": "b8e32a9a0a94d5a8f1a3dd28a1c9b97bc41b8459",
+  "previous_item_ui": "PASS21_FINAL_C3: evidence/r27/ui/r28-final-regression002",
+  "final_source_products": "verification/r28/RELEASE-PRODUCTS.json",
+  "initial_regression_notes": [
+    "Bag source-cap assertion superseded by explicit user 99-spill behavior; strengthened quantity conservation check",
+    "Legacy UI now explicitly cancels the returned NPC root before opening the home menu",
+    "286-asset audit dependency recovered byte-for-byte from included r24 audited report",
+    "Initial full xUnit observed67 failures including one sweep frame notice; baseline and current isolated runs pass. Final full rerun pending."
+  ]
 }

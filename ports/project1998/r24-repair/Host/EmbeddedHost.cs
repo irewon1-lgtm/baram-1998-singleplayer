@@ -192,12 +192,10 @@ public sealed class EmbeddedHost
             if (!session.EmbeddedEnteredWorld || session.EmbeddedClosed) throw new InvalidOperationException("Original Arrival rejected.");
             world.BindRestoredOfflineOwner(options.InternalId, session.PlayerId);
             trace.Mark("offline_bag_compaction");
+            trace.Mark("arrival_snapshot_commit");
             var compact = session.ExecuteOfflineAction(session.CompactOfflineInventory, host._out.CompleteStage, host._out.BeginStage);
             if (!compact.Committed) throw new IOException("Bag compaction did not commit: " + compact.Error);
             host.Drain();
-            trace.Mark("arrival_snapshot_commit");
-            var receipt = session.OfflineFlush("arrival");
-            if (!receipt.Committed) throw new IOException("Arrival snapshot did not commit: " + receipt.Error);
             lock (host._lifecycleGate) if (!session.OfflinePaused && !session.OfflineStopped) clock.Resume();
             // A real map request starts armed music. Do not equate a login SFX with BGM.
             trace.Mark("original_map_request");

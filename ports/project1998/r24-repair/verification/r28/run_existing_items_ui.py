@@ -17,6 +17,10 @@ for p in files:
  dst=runtime/p.relative_to(source);dst.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(p,dst)
 project=out/'test-only-project'
 shutil.copytree(r/'android',project,ignore=shutil.ignore_patterns('.godot','obj','bin'))
+returns=project/'Stage7R15Smoke.cs';original_return=returns.read_text();anchor='    private async Task R15Return()\n    {\n'
+assert anchor in original_return
+returns.write_text(original_return.replace(anchor,anchor+'        for(int n=0;n<16;n++){if(_play?.Capture().Dialog is not null)await R15Hud("dialog-cancel");else if(_play?.Capture().Shop is not null)await R15Hud("shop-cancel");else break;await InputDelay(60); }\n',1))
+
 # Only verification code differs: wait for HUD presentation after host snapshots.
 smoke=project/'Stage4Smoke.cs'; original=smoke.read_text(); modified=original.replace('while (!predicate())','while (!predicate())',1).replace('    private async Task Click(Control control', '    private async Task Click(Control control',1)
 loc=project/'LocalizationSmoke.cs'; original_loc=loc.read_text(); modified_loc=original_loc.replace('await WaitUi(()=>p.Capture().Dialog?.Kind==2,"Actual original F1 menu from Main command");','await WaitUi(()=>p.Capture().Dialog?.Kind==2 && _hud.Buttons.TryGetValue("dialog-menu-1",out var presented) && presented.IsVisibleInTree(),"Actual original F1 menu from Main command");')

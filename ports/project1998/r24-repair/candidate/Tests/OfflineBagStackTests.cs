@@ -89,5 +89,12 @@ public sealed class OfflineBagStackTests : IDisposable
         var r=_session.ExecuteOfflineAction(()=>method.Invoke(_session,new object[]{new Mob(0x1234,0,0,0,"Bank",1),"Acorn",150}),_=>{});
         Assert.True(r.Committed,r.Error);Assert.Equal(149,_char.BankItems.Single().Amount);Assert.Equal(99,_char.Inventory.First().Amount);
     }
+    [Fact] public void AlreadyPackedBagRetainsExactSavedListOrderAndObjectIdentities()
+    {
+        _char.Inventory=new(){new InvItem(7,10009,2),new InvItem(0,102,1,357),new InvItem(3,10001,2)};
+        string before=CharacterStore.Serialize(_char);var references=_char.Inventory.ToArray();
+        var r=_session.ExecuteOfflineAction(_session.CompactOfflineInventory,_=>{});Assert.True(r.Committed,r.Error);
+        Assert.Equal(before,CharacterStore.Serialize(_char));Assert.True(references.Zip(_char.Inventory).All(p=>ReferenceEquals(p.First,p.Second)));
+    }
     public void Dispose(){_session.AbandonOfflinePersistence("isolated stack test finished");}
 }
