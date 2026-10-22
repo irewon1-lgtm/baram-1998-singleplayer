@@ -1,0 +1,70 @@
+{
+  "schema": "P1998_R29_TOTOGO_INCIDENT_1",
+  "diagnostic": "P1998-G6-result-20261022-205340.json",
+  "sha256": "88f57e64b1697bbbb4aeb2742d169eaa77509e7db20a7153e59b198aba0498b5",
+  "baseline_apk_sha256": "2066fd5032b3f2a75749f97817010a7e69ad1d96db56e630cd6d7a5b3957c2ec",
+  "character": {
+    "Map": 1014,
+    "X": 0,
+    "Y": 17,
+    "Direction": 3,
+    "Stats": {
+      "Nation": 2,
+      "Totem": 1,
+      "Level": 17,
+      "MaxHp": 781,
+      "MaxMp": 694,
+      "Might": 9,
+      "Will": 18,
+      "Grace": 11,
+      "Hp": 781,
+      "Mp": 694,
+      "Experience": 47186,
+      "Coins": 61,
+      "FastMove": true
+    },
+    "EntryComplete": true
+  },
+  "actions_analyzed": 13,
+  "reported_failures": [],
+  "requested_position": {
+    "map": 330,
+    "x": 29,
+    "y": 143
+  },
+  "actual_full_save_available": false,
+  "root_cause": {
+    "map": 1014,
+    "component": [
+      [
+        0,
+        17
+      ],
+      [
+        1,
+        17
+      ]
+    ],
+    "one_way_entry_fence_cells": [
+      [
+        0,
+        16
+      ],
+      [
+        1,
+        16
+      ]
+    ],
+    "original_fence_objects": [
+      1243,
+      1244
+    ],
+    "old_pass": 0,
+    "new_pass": 3,
+    "basis": "Original visible fence artwork plus actual movement reproduction. Derived collision correction, not historical passflag recovery. Two overrides only; original terrain binaries and warp rows unchanged."
+  },
+  "user_device_recovery": "NOT_RUN",
+  "synthetic_recovery": "evidence/r24/runtime/r29-recovery-green003/RESULT.json",
+  "map_connections": "evidence/r24/runtime/r29-map1014-final001/warp-execution.jsonl",
+  "new_apk_strategy": "On valid normal totogo login, only if original saved map1014 (0,17), level17: full SQLite backup, then patch Map/MapXs/MapYs/X/Y only, expected-revision FULL transaction, readback and watermark. Original arrival runs afterward. Never reconstruct from diagnostic."
+}

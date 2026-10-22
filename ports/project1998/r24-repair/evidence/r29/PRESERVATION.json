@@ -1,0 +1,42 @@
+{
+  "status": "PASS_SCOPED_PRESERVATION_WITH_TWO_DERIVED_FENCE_FLAGS",
+  "baseline": "Delivered r28 source",
+  "content_files": 8056,
+  "changed_content": [
+    "candidate/game-data/MapCells.csv"
+  ],
+  "protected_files": {
+    "candidate/Shared/CharacterStore.cs": true,
+    "candidate/Server/World.OfflineState.cs": true,
+    "candidate/Server/World.OfflineMobCapture.cs": true,
+    "candidate/Server/World.OfflineCreatureWriter.cs": true,
+    "Host/OfflineMapState.cs": true,
+    "candidate/Server/Session.OfflinePersistence.cs": true,
+    "candidate/Server/Session.RecoveredItems.cs": true,
+    "android/GameHud.Items.cs": true,
+    "Host/ClientNavigation.cs": true
+  },
+  "source": "baseline-input/Project1998-r28-source-tests.zip",
+  "package": "com.irewon.project1998.g1bv4",
+  "save_folder": "project1998_g1b_v4",
+  "unchanged_content_files": 8055,
+  "changed_cells": [
+    {
+      "map": 1014,
+      "x": 0,
+      "y": 16,
+      "old_pass": 0,
+      "new_pass": 3,
+      "basis": "Visible original fence and reproduced one-way trap; reconstructed collision override, not recovered original historical passflag"
+    },
+    {
+      "map": 1014,
+      "x": 1,
+      "y": 16,
+      "old_pass": 0,
+      "new_pass": 3,
+      "basis": "Visible original fence and reproduced one-way trap; reconstructed collision override, not recovered original historical passflag"
+    }
+  ],
+  "original_map_binaries_unchanged": true
+}

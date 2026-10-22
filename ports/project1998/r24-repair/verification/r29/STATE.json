@@ -1,6 +1,6 @@
 {
-  "task": "P1998_R29_SEVEN_HUD_REPAIRS",
-  "step": "3C_FINAL_REGRESSION_IN_PROGRESS",
+  "task": "P1998_R29_SEVEN_HUD_AND_TOTOGO_RECOVERY",
+  "step": "5_DELIVERED",
   "baseline_remote": "33ce4ec29f2944a9e94c76c150bfea09a8b0fead",
   "baseline_source_sha256": "4d778e6cc0a85a44a3cc6b168df27b94d5f0bb7d06dc51d36a5aa56286d918af",
   "requirements": [
@@ -15,28 +15,33 @@
   "stages": [
     {
       "id": 0,
-      "expected": "Exact r28 restore, original key and pinned APK export path available"
+      "expected": "Exact r28 restore, original key and pinned APK export path available",
+      "result": "RECOVERED_EXACT_R28_AND_ORIGINAL_KEY; ACTUAL_SIGNED_R29_BUILD_PASS"
     },
     {
       "id": 1,
-      "expected": "Root causes and failing PC UI checks recorded"
+      "expected": "Root causes and failing PC UI checks recorded",
+      "result": "REPRODUCED_UI11_FAILURES_AND_MAP1014_CLOSED_STRIP"
     },
     {
       "id": 2,
-      "expected": "Affected UI, gesture, cast, item and persistence checks PASS"
+      "expected": "Affected UI, gesture, cast, item and persistence checks PASS",
+      "result": "HUD15; GAMEPLAY10; ORIGINAL_SWAP_SAVE10; RECOVERY17; MAP1014_ROUNDTRIPS10 PASS"
     },
     {
       "id": 3,
-      "expected": "Final regression compared with inherited66 failures"
+      "expected": "Final regression compared with inherited66 failures",
+      "result": "EXECUTED_ALL_FINAL_GROUPS; XUNIT2093/2027PASS/66UNCHANGED_FAIL; OTHER_GROUPS_PASS"
     },
     {
       "id": 4,
-      "expected": "Actual signed APK code33, original cert/package/save path, all frozen inputs verified; files saved"
+      "expected": "Actual signed APK code33, original cert/package/save path, all frozen inputs verified; files saved",
+      "result": "SIGNED_APK_CODE33; ORIGINAL_CERT_PACKAGE_SAVE_FOLDER; ALL9147_INPUTS_MATCH; FIVE_DELIVERABLES_SAVED"
     }
   ],
   "physical_android": "NOT_RUN",
   "user_save_writes": 0,
-  "status": "IN_PROGRESS",
+  "status": "SCOPED_R29_SIGNED_UPDATE_DELIVERED_WITH_INHERITED_FAILURES_AND_DEVICE_NOT_RUN",
   "build_preflight": "PASS8056 content files/original-key preparation/pinned tools",
   "red_ui": "11 failures reproduced,2existing behavior passes: r29-red002; red001 includes test viewport-size mistake",
   "new_hud_ui": "PASS15 on emergency final sources: r29-emergency-final001",
@@ -76,5 +81,29 @@
       ]
     ],
     "user_device_recovery": "NOT_RUN"
-  }
+  },
+  "full_xunit": {
+    "executed": 2093,
+    "passed": 2027,
+    "inherited_failures": 66,
+    "new_failure_names": [],
+    "changed_failure_messages": []
+  },
+  "source_checkpoint": "3419afdb665fd06f173281076448e18d93b471c0",
+  "related_failure_rechecks": {
+    "stable_floor_creature_and_timers": "PASS6 r29-continuity-final002",
+    "current_named_totem_menu_and_reopen": "PASS3 r29-totem-final001",
+    "original66_status": "FAIL_RETAINED; distinct from the scoped rechecks"
+  },
+  "legacy_actual_ui": "PASS676 final002",
+  "backup_restore": "PASS6 final002",
+  "apk_sha256": "4a339ac69841b8d7259198257e21872abc2527f0cda9f4d1a10344150f908bda",
+  "remaining": [],
+  "delivery": "verification/r29/DELIVERY.json",
+  "source_archive_checkpoint": "Source ZIP retains the pre-packaging STATE. Packaging succeeded: all9147 frozen APK inputs match,13847 entries, CRC and private-file exclusion PASS. Use this later branch STATE and DELIVERY.json to resume; do not repeat completed tests.",
+  "unresolved": [
+    "Actual physical Android install/totogo migration and thermal comparison NOT_RUN",
+    "All66 original xUnit failures remain FAIL with identical names/messages; new0",
+    "Historical whole-world7200 review/exclusion rows and r28 guide22 coordinate reviews retained"
+  ]
 }

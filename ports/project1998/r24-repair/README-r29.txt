@@ -1,0 +1,5 @@
+Project1998 r29 complete source/tests. Active STATE: verification/r29/STATE.json
+Seven HUD repairs from latest delivered r28; original certificate/package/save folder retained.
+Hold a spell0.5s, release, tap another occupied spell position to swap. Other pages supported. Original0x30 and FULL save, no new spellbook storage.
+New checks: position recovery17, map1014 complete road/interior/return routes10, HUD15, actual gameplay10, original handler/save/rollback10 PASS. Emergency on-device totogo migration runs before normal arrival only at map1014 (0,17), level17; backup first, five position fields only. Actual user-save application NOT_RUN; diagnostic is not a full database. Preserved r27 item21, r28 usability28, legacy item676 PASS. Full xUnit2093/2027 PASS/66 unchanged FAIL. Physical Android NOT_RUN. 8055/8056 game-data files unchanged. MapCells.csv only adds two visible-fence collision overrides on map1014. Old map reviews and progressed-character thermal tests remain explicitly unresolved/NOT_RUN.
+Read r29-report/Project1998-r29-report.html. Keys, passwords and save databases excluded.

@@ -1,0 +1,83 @@
+{
+  "status": "BUILD_PASS",
+  "kind": "R29_SEVEN_HUD_AND_TOTOGO_POSITION_ONLY_RECOVERY",
+  "build_id": "P1998-G7-V4-20261022-r29",
+  "apk": "/workspace/scratch/5d391e8c81da/deliverables/Project1998-r29-update-arm64.apk",
+  "bytes": 98852119,
+  "sha256": "4a339ac69841b8d7259198257e21872abc2527f0cda9f4d1a10344150f908bda",
+  "native": {
+    "arm64-v8a": "43596fc3907bae3538c7b85a567336bd4fd720f018fb6364dd4f13161acb86a1"
+  },
+  "content_archive_sha256": "824aad76ad6df2fd62c883ab9691440949c9a120ccde6d18d5c7af90f31fd3fd",
+  "certificate_sha256": "ecea13778e2466b3e568f45bfe1facb6fd708bdd0ed3f6ae2a4c305da2ebb030",
+  "content_files": 8056,
+  "release_export": true,
+  "trimmed": false,
+  "aot": false,
+  "optional_source_test_fixture_sha256": null,
+  "test_fixture_packaged": false,
+  "device_runtime": "NOT_RUN",
+  "stage7_runtime": "NOT_RUN",
+  "stage6": "PRIOR_EVIDENCE_ONLY_NOT_R29_DEVICE_PASS",
+  "stage7": "IN_PROGRESS",
+  "stage8": "IN_PROGRESS_NOT_WHOLE_STAGE_PASS",
+  "original_assemblies": [
+    "assets/.godot/mono/publish/arm64/Shared.dll",
+    "assets/.godot/mono/publish/arm64/Server.dll"
+  ],
+  "assembly_sha256": {
+    "assets/.godot/mono/publish/arm64/G1BProbe.dll": "4be066d2d5140a2e2ab30068f73dd9c2ab02dd57402ed24e236e69e79a887d50",
+    "assets/.godot/mono/publish/arm64/Shared.dll": "863895442b135d8fc2e253ca06dfa0444d4a488d3db2de36d67c85826c95fa49",
+    "assets/.godot/mono/publish/arm64/Protocol.Tk495.dll": "8b875d6888e3e5a1b081dae4dd46604e0aec844422488b06b64a07ba8c704e68",
+    "assets/.godot/mono/publish/arm64/Server.dll": "ef9129c04ac70fdccb7317c9038e112f54691075a5584d4f17edcd1f833f1d19",
+    "assets/.godot/mono/publish/arm64/EmbeddedHost.dll": "84aeba02a7c024cc880c0ad174690e18b41472de689fc246811cb76ec1fca4aa",
+    "assets/.godot/mono/publish/arm64/Shared.Core.dll": "ce7899cc562c6606fd1d2ef7f22146e02acaa8db5448c83b9c99ad34df294480"
+  },
+  "project_binary_bytes": 1225,
+  "project_binary_sha256": "a839e4bec388f9f8e22620825fd03c388508104dadd2e1a67c929ef5dd05afc3",
+  "project_settings_load_receipt_sha256": "0f7831ea2d5a313dfb8e98b52b14a14ee0c3508225b6b2a21f30efc1b01b5bc8",
+  "binary_settings_loaded_without_textual_fallback": true,
+  "runtime_asset_receipt_sha256": "023d1ee482a55741ad94be19c9520d3233078d532ed3a373fc38e37d90668e1e",
+  "runtime_asset_sources_verified": 490,
+  "bootstrap_resource_receipt_sha256": "94468658a97519290fa354bd7e51eb0ef82e59cc52cd9982c614549199066597",
+  "launcher_resource_receipt_sha256": "5e4b6f6fb2ceba5495978de678b1c9c42dec639ba1a1c90776452f5704b04e26",
+  "source_inputs_sha256": "3160602ef12e0391d92defb59c45cef322c68104a7a0ffdb6e3dd07f28ac27bd",
+  "source_input_count": 9147,
+  "post_abi_package_locks": {
+    "Host": {
+      "source": "/workspace/scratch/5d391e8c81da/source/p1998-r25-restore/Host/packages.lock.json",
+      "sha256": "c1779a169e32269202a734b5fce862f1d861dafc2f03c3d28962fd81734335e3",
+      "dependency_targets": [
+        "net8.0",
+        "net8.0/android-arm64"
+      ],
+      "evidence": "POST_BUILD_Host_packages.lock.json",
+      "frozen_sha256": "c1779a169e32269202a734b5fce862f1d861dafc2f03c3d28962fd81734335e3"
+    },
+    "Android": {
+      "source": "/workspace/scratch/5d391e8c81da/source/p1998-r25-restore/android/packages.lock.json",
+      "sha256": "a70faf31ec767d8ffd94742d6308c4b91b1ce9b5e8efa2b6bb603a9aac08b33a",
+      "dependency_targets": [
+        "net9.0",
+        "net9.0/android-arm64"
+      ],
+      "evidence": "POST_BUILD_Android_packages.lock.json",
+      "frozen_sha256": "a70faf31ec767d8ffd94742d6308c4b91b1ce9b5e8efa2b6bb603a9aac08b33a"
+    }
+  },
+  "post_build_inputs_receipt_sha256": "e86a8ac2ea9acba3f0c7ee5bcddf4d96bd204c9e57f64b18f21cb32da9df2cce",
+  "package": "com.irewon.project1998.g1bv4",
+  "version_code": 33,
+  "version_name": "0.1.0-g7-v4-r29",
+  "previous_apk_preserved": "/workspace/scratch/5d391e8c81da/baseline-input/Project1998-r28-update-arm64.apk",
+  "predecessor_verification": {
+    "status": "PASS_ACTUAL_LATEST_R28_BYTES",
+    "sha256": "2066fd5032b3f2a75749f97817010a7e69ad1d96db56e630cd6d7a5b3957c2ec",
+    "bytes": 98843787
+  },
+  "abis": [
+    "arm64-v8a"
+  ],
+  "phone_compact_receipt_sha256": "7c59e3c9399bbdc3624a99f5ac85314b55ab275e22dbd4ffe5e7a6c5911126e9",
+  "sdk_recovery_sources_receipt_sha256": "eb5346ba92a3c95c3bc3459fa1575afc9998a8e6609bf0706b0de963639e1373"
+}

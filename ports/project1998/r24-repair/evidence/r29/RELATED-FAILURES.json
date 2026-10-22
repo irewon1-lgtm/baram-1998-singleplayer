@@ -1,0 +1,18 @@
+{
+  "schema": "P1998_R29_RELATED_INHERITED_FAILURES_1",
+  "original_failures_remain_failures": true,
+  "xunit_compare": "XUNIT-COMPARISON.json",
+  "floor_item_two_failures": {
+    "cause_review": "Numeric owner1 without stable account mapping is intentionally not resurrected. Original anti-ID-reuse safety retained.",
+    "current_actual_recheck": "evidence/r24/runtime/r29-continuity-final002/RESULT.json",
+    "checks_passed": 6
+  },
+  "totem_pre_logout_assertion": {
+    "cause_review": "Old hardcoded menu index fails before persistence; named current recovered option executes original path.",
+    "current_actual_recheck": "evidence/r24/runtime/r29-totem-final001/RESULT.json",
+    "checks_passed": 3
+  },
+  "historical_invalid_room_database_branch": "NOT_RUN: original historical growth DB not supplied to this attempt. Initial helper call missing its required argument aborted before result; source preserved in r29-continuity-final001. Separate final002 checks only six self-contained owner/item/monster/time invariants.",
+  "scope": "This investigation does not turn the original66 FAILs into PASS and does not certify all NPC/skill rules. No owner safety rule or content gating weakened.",
+  "physical_android": "NOT_RUN"
+}

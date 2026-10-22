@@ -1,0 +1,40 @@
+{
+  "status": "ALL_FIVE_DELIVERABLES_SAVED",
+  "files": [
+    {
+      "name": "Project1998-r29-update-arm64.apk",
+      "bytes": 98852119,
+      "sha256": "4a339ac69841b8d7259198257e21872abc2527f0cda9f4d1a10344150f908bda",
+      "saved": true
+    },
+    {
+      "name": "Project1998-r29-source-tests.zip",
+      "bytes": 206064162,
+      "sha256": "33384b1f0b8650dfc19b8e6e781b7f8f7297e604eecd88caa4f5eb15a6a78855",
+      "saved": true
+    },
+    {
+      "name": "Project1998-r29-world-ledger.zip",
+      "bytes": 36350401,
+      "sha256": "5f92e1833bc1067de4560ef1bfed9ba6ac7d69e446a9bfb0c090bf7e0c4665c8",
+      "saved": true
+    },
+    {
+      "name": "Project1998-r29-report.html",
+      "bytes": 1513571,
+      "sha256": "c9e0d1faf4471eb1b69205b4c03f98144d4364b40e8f37eed2ce2606f31b35f8",
+      "saved": true
+    },
+    {
+      "name": "Project1998-r29-install.txt",
+      "bytes": 1137,
+      "sha256": "297c9531301038c9635a54a2f8e7213c39063b1058b7dc899c69f13d357c71f0",
+      "saved": true
+    }
+  ],
+  "source_archive_frozen_inputs": 9147,
+  "source_archive_entries": 13847,
+  "all_frozen_inputs_match": true,
+  "physical_android": "NOT_RUN",
+  "actual_user_save_recovery": "NOT_RUN_UNTIL_INSTALL_AND_TOTOGO_CONTINUE"
+}
