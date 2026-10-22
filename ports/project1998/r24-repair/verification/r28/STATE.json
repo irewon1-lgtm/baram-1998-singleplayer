@@ -1,0 +1,25 @@
+{
+  "task": "P1998_R28_NPC_BAG_STACK_MAP",
+  "step": "3_ACTUAL_UI_VERIFICATION",
+  "baseline_remote": "bafb8cd1cd4623c2839b4e93f4d2b28dbac0f8a7",
+  "requirements": [
+    "Nested NPC close/back returns previous menu safely",
+    "Bag swipe pagination cancels item activation",
+    "Identical compatible items stack to99 preserving all quantities and instance state",
+    "Detailed region/current map with real NPC/entrance coordinates and navigation"
+  ],
+  "physical_android": "NOT_RUN",
+  "user_save_writes": 0,
+  "status": "IN_PROGRESS",
+  "build_preflight": "PASS: pinned tools, original certificate,8056 content files; baseline neutral build passed",
+  "baseline_npc": "FAIL_REPRODUCED: r27 actual touch shop cancel closes conversation (ui/baseline002 and003)",
+  "baseline_stacking": "FAIL_REPRODUCED: stack-red001 10 FAIL /1 PASS",
+  "safety": "PASS27: safety-final001",
+  "queued_transactions": "PASS21: affected/transactions001",
+  "actual_ui": "NPC Back and bag swipe cases passed; detailed map layout being verified",
+  "remaining": [
+    "Complete actual map input and Lua back/page tests",
+    "Full final regression",
+    "Signed versionCode32 APK and source/test artifacts"
+  ]
+}

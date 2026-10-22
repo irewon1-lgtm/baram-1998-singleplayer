@@ -188,13 +188,13 @@ public sealed partial class Session
         { CarryCapNotice(material); return; }
         // Match GivePlaced's strict plain-instance compatibility, valid free slots and
         // source carry/stack caps. Emptying retains the shell in the SAME occupied slot.
-        long room = material.Stackable ? _char.Inventory.Where(entry =>
+        long room = BagStackable(material) ? _char.Inventory.Where(entry =>
                 entry.ItemId == material.Id && entry.CustomName.Length == 0 && entry.Owner.Length == 0
                 && entry.Dura == 0 && entry.Repair == 0 && entry.Protected == 0
-                && entry.Amount < material.StackCap)
-            .Sum(entry => (long)material.StackCap - entry.Amount) : 0;
+                && entry.Amount < BagStackCap(material))
+            .Sum(entry => (long)BagStackCap(material) - entry.Amount) : 0;
         for (int slot = 0; slot < _char.MaxInv; slot++)
-            if (_char.Inventory.All(entry => entry.Slot != slot)) room += material.StackCap;
+            if (_char.Inventory.All(entry => entry.Slot != slot)) room += BagStackCap(material);
         if (room < amount)
         { SendMiniText("Free space in your inventory before removing those materials."); return; }
 

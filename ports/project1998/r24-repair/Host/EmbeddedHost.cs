@@ -191,6 +191,10 @@ public sealed class EmbeddedHost
             trace.Mark("original_arrival_acceptance");
             if (!session.EmbeddedEnteredWorld || session.EmbeddedClosed) throw new InvalidOperationException("Original Arrival rejected.");
             world.BindRestoredOfflineOwner(options.InternalId, session.PlayerId);
+            trace.Mark("offline_bag_compaction");
+            var compact = session.ExecuteOfflineAction(session.CompactOfflineInventory, host._out.CompleteStage, host._out.BeginStage);
+            if (!compact.Committed) throw new IOException("Bag compaction did not commit: " + compact.Error);
+            host.Drain();
             trace.Mark("arrival_snapshot_commit");
             var receipt = session.OfflineFlush("arrival");
             if (!receipt.Committed) throw new IOException("Arrival snapshot did not commit: " + receipt.Error);

@@ -450,6 +450,25 @@ public sealed partial class Session
     // NPC — the abilities carry all the behaviour, so nothing NPC-specific lives here.
     private async Task RunNpcAsync(Mob npc, NpcDef def)
     {
+        if (!_offlinePersistence) { await RunNpcOnceAsync(npc, def); return; }
+        var navigation = new NpcNavigation(); _npcNavigation = navigation;
+        long generation = CaptureOfflineGeneration(); ushort map = _char.Map;
+        try
+        {
+            do
+            {
+                navigation.BeginRound();
+                try { await RunNpcOnceAsync(npc, def); }
+                catch (NpcReturnException) { /* Back aborts the branch before later mutations. */ }
+            }
+            while (ReferenceEquals(_npcNavigation, navigation) && navigation.RootMenu && !navigation.RootCanceled
+                && !OfflineStopped && _offlineHandlerFailure is null && CaptureOfflineGeneration() == generation && _char.Map == map);
+        }
+        finally { if (ReferenceEquals(_npcNavigation, navigation)) _npcNavigation = null; }
+    }
+
+    private async Task RunNpcOnceAsync(Mob npc, NpcDef def)
+    {
         try
         {
             var ctx = new NpcContext(this, npc, def);
@@ -489,6 +508,7 @@ public sealed partial class Session
             int choice = await ctx.Menu($"{def.Name}: How can I help you today?", entries.Select(e => e.label).ToList());
             if (choice >= 1 && choice <= entries.Count) await entries[choice - 1].run(ctx);
         }
+        catch (NpcReturnException) { throw; }
         catch (OfflineStoppedException) { /* explicit lifecycle cancellation, not a player response */ }
         catch (OfflinePausedException) { /* a not-yet-started conversation lost admission to pause */ }
         catch (Exception e)
@@ -634,8 +654,11 @@ public sealed partial class Session
     // Each sends a 0x30 and awaits the client's 0x3A. A menu returns the 1-based pick (0 = cancelled).
     internal async Task<int> DlgMenu(Mob npc, string prompt, IReadOnlyList<string> options)
     {
+        bool root = ObserveNpcMenu(options);
         var r = await SendDialogPrompt(() => SendNpcMenu(npc, prompt, options));
-        return r.Kind == 0x02 ? r.MenuIndex : 0;
+        int choice = r.Kind == 0x02 ? r.MenuIndex : 0;
+        if (root && choice == 0 && _npcNavigation is { } nav) nav.RootCanceled = true;
+        return choice;
     }
 
     /// <summary>A menu whose portrait is the PLAYER's own paperdoll wearing <paramref name="face"/> instead of
@@ -652,7 +675,8 @@ public sealed partial class Session
     {
         // next:true gives the box a "continue" affordance — the click the client answers with a 0x3A that
         // resumes this await. A prev/next-less box has "nothing to do": dismissing it sends no reply and hangs.
-        await SendDialogPrompt(() => SendScriptMessage(npc.Id, text, NpcPortrait(npc), npc.Color, next: true));
+        var reply = await SendDialogPrompt(() => SendScriptMessage(npc.Id, text, NpcPortrait(npc), npc.Color, next: true));
+        if (reply.Step == 0 && _npcNavigation is not null) throw new NpcReturnException();
     }
 
     // Free-text input box. Returns the typed string, or null if the player cancelled. The client confirms a
@@ -749,21 +773,31 @@ public sealed partial class Session
         var cats = catalogue?.Where(c => c.Keys.Any(k => Content.ItemByKey(k) is not null)).ToList() ?? new();
         if (cats.Count == 0) { await DlgSay(npc, "I've nothing to sell right now."); return; }
 
-        Shops.Category cat;
-        if (cats.Count == 1) cat = cats[0];   // flat shop (inn) — no category step
-        else
+        while (true)
         {
-            int ci = await DlgMenu(npc, "What would you like to buy?", cats.Select(c => c.Name).ToList());
-            if (ci < 1 || ci > cats.Count) return;
-            cat = cats[ci - 1];
+            Shops.Category cat;
+            if (cats.Count == 1) cat = cats[0];
+            else
+            {
+                int ci = await DlgMenu(npc, "What would you like to buy?", cats.Select(c => c.Name).ToList());
+                if (ci < 1 || ci > cats.Count) return;
+                cat = cats[ci - 1];
+            }
+            await DlgBuyCategory(npc, cat, generation);
+            if (cats.Count == 1 || !_offlinePersistence) return;
         }
+    }
 
+    private async Task DlgBuyCategory(Mob npc, Shops.Category cat, long generation)
+    {
         // The native icon grid (0x2f sub-kind 4) rather than a text menu — it carries the item's real Item.epf
         // icon, price and blurb, which a menu line can't. It answers by NAME, so the row list is what maps a
         // reply back to an item; duplicate names in one catalogue would be indistinguishable (none exist today).
         var items = cat.Keys.Select(Content.ItemByKey).OfType<ItemDef>().ToList();
         while (true)
         {
+            try
+            {
             Task<ShopReply> reply;
             using (EnterState())
             using (EnterOfflineEffect(generation))
@@ -796,6 +830,8 @@ public sealed partial class Session
                 return;
             }
             await DlgSay(npc, $"You bought {it.Name} for {it.BuyPrice} gold.");
+            }
+            catch (NpcReturnException) { /* Back from a shop receipt returns to its live grid. */ }
         }
     }
 
@@ -928,10 +964,11 @@ public sealed partial class Session
 
         int pick = await DlgMenu(npc, "What would you like to send?", sendable.Select(t => t.def!.Name).ToList());
         if (pick < 1 || pick > sendable.Count) return;
-        var (item, def) = sendable[pick - 1];
+        var (item, candidateDef) = sendable[pick - 1];
+        var def = candidateDef!;
 
         int amount = 1;
-        if (def!.Stackable && item.Amount > 1)
+        if (BagStackable(def!) && item.Amount > 1)
         {
             var aStr = await DlgInput(npc, $"How many {def.Name} do you want to send?");
             if (aStr is null) return;
@@ -1324,16 +1361,12 @@ public sealed partial class Session
         foreach (var bi in stack)
         {
             if (remaining <= 0) break;
-            int slot = FreeSlot();
-            // No room to hand it back: the banker refuses out loud AND the rule goes to minitext, since the
-            // two say different things — one is her declining, the other is why.
-            if (slot < 0) { if (moved == 0) { NpcBubble(npc, "I can't return that to you."); SendMiniText("You can't have more."); } break; }
-            int take = Math.Min(Math.Min(remaining, bi.Amount), CarryRoom(def));
-            if (take <= 0) { if (moved == 0) CarryCapNotice(def); break; }
-            moved += take;
-            remaining -= take;
-            if (take >= bi.Amount) { _char.BankItems.Remove(bi); bi.Slot = (byte)slot; _char.Inventory.Add(bi); SendAddItem(bi); }
-            else { bi.Amount -= take; var give = CopyBankAmount(bi, take, (byte)slot); _char.Inventory.Add(give); SendAddItem(give); }
+            int take = Math.Min(remaining, bi.Amount);
+            int accepted = GivePlaced(def, take, bi.Dura, bi.CustomName, owner: bi.Owner, instance: bi);
+            if (accepted <= 0) break;
+            moved += accepted; remaining -= accepted;
+            if (accepted >= bi.Amount) _char.BankItems.Remove(bi);
+            else bi.Amount -= accepted;
         }
         SaveChar();
         // RTK: "Here's your <item>." — count in parens when > 1.
@@ -1358,9 +1391,9 @@ public sealed partial class Session
         // Capped at ItemDef.StackCap like a bag slot, so the vault can't build a pile the player could never
         // have carried — and so a withdrawal always fits in one slot. Merging is deliberately bounded: an
         // unbounded merge is how a 271-Acorn stack (cap 201) became withdrawable.
-        if (Content.ItemById(it.ItemId) is { Stackable: true } def)
+        if (Content.ItemById(it.ItemId) is { } def && BagStackable(def))
         {
-            int cap = def.StackCap, left = it.Amount;
+            int cap = BagStackCap(def), left = it.Amount;
             foreach (var b in _char.BankItems
                          .Where(b => b.ItemId == it.ItemId && b.Dura == it.Dura && b.CustomName == it.CustomName
                              && b.Owner == it.Owner && b.Repair == it.Repair && b.Protected == it.Protected
@@ -1493,22 +1526,11 @@ public sealed partial class Session
         // item. Refused rather than trimmed, like every other quantity here.
         if (take > CarryRoom(def)) { CarryCapNotice(def); continue; }
 
-        int slot = FreeSlot();
-        if (slot < 0) { NpcBubble(npc, "I can't return that to you."); SendMiniText("You can't have more."); continue; }
-        if (take >= bi.Amount)
-        {
-            _char.BankItems.Remove(bi);
-            bi.Slot = (byte)slot;               // assign a fresh bag slot (vault slots are meaningless)
-            _char.Inventory.Add(bi);
-            SendAddItem(bi);
-        }
-        else
-        {
-            bi.Amount -= take;                  // part of it: the rest stays in the vault
-            var give = CopyBankAmount(bi, take, (byte)slot);
-            _char.Inventory.Add(give);
-            SendAddItem(give);
-        }
+        int accepted = GivePlaced(def, take, bi.Dura, bi.CustomName, owner: bi.Owner, instance: bi);
+        if (accepted <= 0) continue;
+        take = accepted;
+        if (accepted >= bi.Amount) _char.BankItems.Remove(bi);
+        else bi.Amount -= accepted;
         MarkDirty();
         // Same lines the spoken withdraw gives ("Here's your Acorn." / "Here's your Acorn (13).").
         NpcBubble(npc, take > 1 ? $"Here's your {def!.Name} ({take})." : $"Here's your {def!.Name}.");
@@ -1688,8 +1710,12 @@ public sealed partial class Session
         // dismissing it sends no reply, so the sequence hangs on page one. RTK drives multi-page dialog the same
         // way (moreFlag -> the next arrow). The last page's "next" click simply ends the sequence.
         long generation = CaptureOfflineGeneration();
-        foreach (var page in pages)
-            await SendDialogPrompt(() => SendScriptMessageP(npc.Id, page, p, prev: false, next: true), generation);
+        for (int index = 0; index < pages.Count;)
+        {
+            var reply = await SendDialogPrompt(() => SendScriptMessageP(npc.Id, pages[index], p, prev: _offlinePersistence && index > 0, next: true), generation);
+            if (reply.Step == 0 && _npcNavigation is not null) throw new NpcReturnException();
+            index = reply.Step == 1 ? Math.Max(0, index - 1) : index + 1;
+        }
     }
     internal Task DlgSayNpc(Mob npc, IReadOnlyList<string> pages)  => DlgSeq(npc, DialogPortrait.Npc(npc), pages);
     internal Task DlgSayLook(Mob npc, int look, int color, IReadOnlyList<string> pages) => DlgSeq(npc, DialogPortrait.Look(look, color), pages);
